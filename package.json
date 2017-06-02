@@ -1,0 +1,22 @@
+{
+  "name": "keyclic_api_reference",
+  "version": "1.12.1",
+  "description": "The_Keyclic_API_is_build_around__REST_httpsen_wikipedia_orgwikiRepresentational_State_Transfer__br_Our_API_has_resource_oriented_URLs_and_uses_HTTP_response_codes_to_indicate_API_errors__We_support_CQRS_and_all_API_accesses_are_performed_over_HTTPS_allowing_you_to_interact_securely_with_our_API_from_a_client_side_web_application_brbr_Authentication_br_Authentication_is_performed_thought__JSON_Web_Tokens_httpsjwt_io__br_JSON_Web_Tokens_are_an_open_industry_standard_RFC_7519_method_for_representing_claims_securely_between_two_parties_brThere_are_many__open_source_projects_httpsauth0_comopensource_built_around_JWT_in_several_programming_languages_that_you_can_use_in_your_application_brbrErrors_brWe_uses_conventional_HTTP_response_codes_to_indicate_the_success_or_failure_of_an_API_request_errors_are_represented_as_JSON_objects_following_the__vnd_error_httpsgithub_comblongdenvnd_error_standard_brbrIntegrationbrTo_make_the_API_integration_easy_as_possible_we_have_a_sandbox_environment_to_interact_securely_with_our_API_",
+  "license": "Unlicense",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --recursive"
+  },
+  "dependencies": {
+    "es6-promise": "^4.1.0",
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.4.0",
+    "expect.js": "~0.3.1",
+    "mocha": "~2.3.4",
+    "sinon": "1.17.3"
+  }
+}
