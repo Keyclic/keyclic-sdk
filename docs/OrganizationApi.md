@@ -1,56 +1,77 @@
-# KeyclicApiReference.OrganizationApi
+# KeyclicApi.OrganizationApi
 
 All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cget**](OrganizationApi.md#cget) | **GET** /organizations | Retrieve all organizations
-[**get**](OrganizationApi.md#get) | **GET** /organizations/{organization} | Retrieve an organization.
-[**patch**](OrganizationApi.md#patch) | **PATCH** /organizations/{organization} | Edit an organization.
-[**post**](OrganizationApi.md#post) | **POST** /organizations | Create a new organization.
+[**cgetOrganizations**](OrganizationApi.md#cgetOrganizations) | **GET** /organizations | Retrieve all Organization resources.
+[**getOrganization**](OrganizationApi.md#getOrganization) | **GET** /organizations/{organization} | Retrieve one Organization resource.
+[**patchOrganization**](OrganizationApi.md#patchOrganization) | **PATCH** /organizations/{organization} | Edit one Organization resource.
+[**postOrganization**](OrganizationApi.md#postOrganization) | **POST** /organizations | Create one Organization resource.
 
 
-<a name="cget"></a>
-# **cget**
-> OrganizationPagination cget(opts)
+<a name="cgetOrganizations"></a>
+# **cgetOrganizations**
+> OrganizationPagination cgetOrganizations(xKeyclicApp, , opts)
 
-Retrieve all organizations
+Retrieve all Organization resources.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.OrganizationApi();
+let apiInstance = new KeyclicApi.OrganizationApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
 let opts = { 
-  'page': 1, // Number | The page number of the overview.
-  'limit': 20, // Number | The number of items per page.
-  'search': "search_example", // String | 
-  'geoCoordinates': "geoCoordinates_example", // String | [-+]latitude[-+]longitude
-  'organization': "organization_example" // String | Organization GUID.
+  'acceptLanguage': "fr-FR", // String | 
+  'geoCoordinates': "geoCoordinates_example", // String | 
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
+  'order': "desc", // String | 
+  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'searchName': "searchName_example", // String | 
+  'searchAlternateName': "searchAlternateName_example", // String | 
+  'searchDescription': "searchDescription_example", // String | 
+  'searchBillingEmailAddress': "searchBillingEmailAddress_example", // String | 
+  'searchNotificationEmailAddress': "searchNotificationEmailAddress_example" // String | 
 };
-apiInstance.cget(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.cgetOrganizations(xKeyclicApp, , opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Number**| The page number of the overview. | [optional] [default to 1]
- **limit** | **Number**| The number of items per page. | [optional] [default to 20]
- **search** | **String**|  | [optional] 
- **geoCoordinates** | **String**| [-+]latitude[-+]longitude | [optional] 
- **organization** | **String**| Organization GUID. | [optional] 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **geoCoordinates** | **String**|  | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
+ **order** | **String**|  | [optional] [default to desc]
+ **after** | **Date**|  | [optional] 
+ **before** | **Date**|  | [optional] 
+ **searchName** | **String**|  | [optional] 
+ **searchAlternateName** | **String**|  | [optional] 
+ **searchDescription** | **String**|  | [optional] 
+ **searchBillingEmailAddress** | **String**|  | [optional] 
+ **searchNotificationEmailAddress** | **String**|  | [optional] 
 
 ### Return type
 
@@ -58,45 +79,56 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="get"></a>
-# **get**
-> Organization get(organization)
+<a name="getOrganization"></a>
+# **getOrganization**
+> Organization getOrganization(xKeyclicApp, organization, opts)
 
-Retrieve an organization.
+Retrieve one Organization resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.OrganizationApi();
+let apiInstance = new KeyclicApi.OrganizationApi();
 
-let organization = "organization_example"; // String | 
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-apiInstance.get(organization).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+};
+
+apiInstance.getOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **String**|  | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
 
 ### Return type
 
@@ -104,50 +136,58 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="patch"></a>
-# **patch**
-> Organization patch(organization, body)
+<a name="patchOrganization"></a>
+# **patchOrganization**
+> Organization patchOrganization(xKeyclicApp, organization, opts)
 
-Edit an organization.
-
-• https://tools.ietf.org/html/rfc5789
+Edit one Organization resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.OrganizationApi();
+let apiInstance = new KeyclicApi.OrganizationApi();
 
-let organization = "organization_example"; // String | 
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let body = [new KeyclicApiReference.OrganizationPatchDocument()]; // [OrganizationPatchDocument] | A JSON document according the rfc5789 specification.
+let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
 
-apiInstance.patch(organization, body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'organizationPatch': new KeyclicApi.OrganizationPatch() // OrganizationPatch | 
+};
+
+apiInstance.patchOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **String**|  | 
- **body** | [**[OrganizationPatchDocument]**](OrganizationPatchDocument.md)| A JSON document according the rfc5789 specification. | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **organizationPatch** | [**OrganizationPatch**](OrganizationPatch.md)|  | [optional] 
 
 ### Return type
 
@@ -155,45 +195,55 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="post"></a>
-# **post**
-> Organization post(body)
+<a name="postOrganization"></a>
+# **postOrganization**
+> Organization postOrganization(xKeyclicApp, , opts)
 
-Create a new organization.
+Create one Organization resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.OrganizationApi();
+let apiInstance = new KeyclicApi.OrganizationApi();
 
-let body = new KeyclicApiReference.OrganizationBody(); // OrganizationBody | 
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-apiInstance.post(body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'organizationData': new KeyclicApi.OrganizationData() // OrganizationData | 
+};
+
+apiInstance.postOrganization(xKeyclicApp, , opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OrganizationBody**](OrganizationBody.md)|  | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **organizationData** | [**OrganizationData**](OrganizationData.md)|  | [optional] 
 
 ### Return type
 
@@ -201,10 +251,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 

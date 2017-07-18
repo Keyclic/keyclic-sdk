@@ -1,9 +1,9 @@
-# KeyclicApiReference.PersonLinksSelf
+# KeyclicApi.PersonLinksSelf
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** | The URI of the current person. | [optional] 
-**iriTemplate** | [**FeedbackLinksReporterIriTemplate**](FeedbackLinksReporterIriTemplate.md) |  | [optional] 
+**href** | **String** | The URI of the self associated to the given person. | [optional] 
+**iriTemplate** | [**ApplicationLinksSelfIriTemplate**](ApplicationLinksSelfIriTemplate.md) |  | [optional] 
 
 

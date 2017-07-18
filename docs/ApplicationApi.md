@@ -1,39 +1,48 @@
-# KeyclicApiReference.ApplicationApi
+# KeyclicApi.ApplicationApi
 
 All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get**](ApplicationApi.md#get) | **GET** /applications/{application} | Retrieve an application.
+[**getApplication**](ApplicationApi.md#getApplication) | **GET** /applications/{application} | Retrieve one Application resource.
 
 
-<a name="get"></a>
-# **get**
-> Application get(application)
+<a name="getApplication"></a>
+# **getApplication**
+> Application getApplication(xKeyclicApp, application, opts)
 
-Retrieve an application.
+Retrieve one Application resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
+import KeyclicApi from 'keyclic_api';
 
-let apiInstance = new KeyclicApiReference.ApplicationApi();
+let apiInstance = new KeyclicApi.ApplicationApi();
 
-let application = "application_example"; // String | The application's token.
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-apiInstance.get(application).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let application = "application_example"; // String | The identifier of the resource formatted as GUID string.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+};
+
+apiInstance.getApplication(xKeyclicApp, application, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application** | **String**| The application&#39;s token. | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **application** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
 
 ### Return type
 
@@ -45,6 +54,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 

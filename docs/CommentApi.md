@@ -1,47 +1,174 @@
-# KeyclicApiReference.CommentApi
+# KeyclicApi.CommentApi
 
 All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cgetByFeedback**](CommentApi.md#cgetByFeedback) | **GET** /feedbacks/{feedback}/comments | Retrieve all comments for the given feedback.
-[**cgetByOperation**](CommentApi.md#cgetByOperation) | **GET** /operations/{operation}/comments | Retrieve all comments for the given operation.
-[**postByFeedback**](CommentApi.md#postByFeedback) | **POST** /feedbacks/{feedback}/comments | Add a new comment on the given feedback.
-[**postByOperation**](CommentApi.md#postByOperation) | **POST** /operations/{operation}/comments | Add a new comment on the given operation.
+[**cgetCommentsByFeedback**](CommentApi.md#cgetCommentsByFeedback) | **GET** /feedbacks/{feedback}/comments | Retrieve all Comment resources.
+[**cgetCommentsByOperation**](CommentApi.md#cgetCommentsByOperation) | **GET** /operations/{operation}/comments | Retrieve all Comment resources.
+[**postCommentByFeedback**](CommentApi.md#postCommentByFeedback) | **POST** /feedbacks/{feedback}/comments | Create one Comment resource.
+[**postCommentByOperation**](CommentApi.md#postCommentByOperation) | **POST** /operations/{operation}/comments | Create one Comment resource.
 
 
-<a name="cgetByFeedback"></a>
-# **cgetByFeedback**
-> cgetByFeedback(feedback)
+<a name="cgetCommentsByFeedback"></a>
+# **cgetCommentsByFeedback**
+> ActivityPagination cgetCommentsByFeedback(xKeyclicApp, feedback, opts)
 
-Retrieve all comments for the given feedback.
+Retrieve all Comment resources.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.CommentApi();
+let apiInstance = new KeyclicApi.CommentApi();
 
-let feedback = "feedback_example"; // String | 
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-apiInstance.cgetByFeedback(feedback).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+let feedback = "feedback_example"; // String | The identifier of the resource formatted as GUID string.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+};
+
+apiInstance.cgetCommentsByFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feedback** | **String**|  | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+
+### Return type
+
+[**ActivityPagination**](ActivityPagination.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
+<a name="cgetCommentsByOperation"></a>
+# **cgetCommentsByOperation**
+> ActivityPagination cgetCommentsByOperation(xKeyclicApp, operation, opts)
+
+Retrieve all Comment resources.
+
+### Example
+```javascript
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new KeyclicApi.CommentApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let operation = "operation_example"; // String | The identifier of the resource formatted as GUID string.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+};
+
+apiInstance.cgetCommentsByOperation(xKeyclicApp, operation, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **operation** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+
+### Return type
+
+[**ActivityPagination**](ActivityPagination.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
+<a name="postCommentByFeedback"></a>
+# **postCommentByFeedback**
+> postCommentByFeedback(xKeyclicApp, feedback, opts)
+
+Create one Comment resource.
+
+### Example
+```javascript
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new KeyclicApi.CommentApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let feedback = "feedback_example"; // String | The identifier of the resource formatted as GUID string.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'commentData': new KeyclicApi.CommentData() // CommentData | 
+};
+
+apiInstance.postCommentByFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **commentData** | [**CommentData**](CommentData.md)|  | [optional] 
 
 ### Return type
 
@@ -49,143 +176,58 @@ null (empty response body)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="cgetByOperation"></a>
-# **cgetByOperation**
-> cgetByOperation(operation)
+<a name="postCommentByOperation"></a>
+# **postCommentByOperation**
+> Operation postCommentByOperation(xKeyclicApp, operation, opts)
 
-Retrieve all comments for the given operation.
+Create one Comment resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.CommentApi();
+let apiInstance = new KeyclicApi.CommentApi();
 
-let operation = "operation_example"; // String | The operation guid.
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-apiInstance.cgetByOperation(operation).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
+let operation = "operation_example"; // String | The identifier of the resource formatted as GUID string.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'commentData': new KeyclicApi.CommentData() // CommentData | 
+};
+
+apiInstance.postCommentByOperation(xKeyclicApp, operation, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **operation** | **String**| The operation guid. | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="postByFeedback"></a>
-# **postByFeedback**
-> Feedback postByFeedback(feedback, text)
-
-Add a new comment on the given feedback.
-
-### Example
-```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
-
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new KeyclicApiReference.CommentApi();
-
-let feedback = "feedback_example"; // String | The feedback guid.
-
-let text = "text_example"; // String | A text described the commentary.
-
-apiInstance.postByFeedback(feedback, text).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **feedback** | **String**| The feedback guid. | 
- **text** | **String**| A text described the commentary. | 
-
-### Return type
-
-[**Feedback**](Feedback.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="postByOperation"></a>
-# **postByOperation**
-> Operation postByOperation(operation, text)
-
-Add a new comment on the given operation.
-
-### Example
-```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
-
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new KeyclicApiReference.CommentApi();
-
-let operation = "operation_example"; // String | The operation guid.
-
-let text = "text_example"; // String | A text described the commentary.
-
-apiInstance.postByOperation(operation, text).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **operation** | **String**| The operation guid. | 
- **text** | **String**| A text described the commentary. | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **operation** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **commentData** | [**CommentData**](CommentData.md)|  | [optional] 
 
 ### Return type
 
@@ -193,10 +235,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 

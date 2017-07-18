@@ -1,64 +1,78 @@
-# KeyclicApiReference.FeedbackApi
+# KeyclicApi.FeedbackApi
 
 All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cget**](FeedbackApi.md#cget) | **GET** /feedbacks | Retrieve all feedbacks for the given application.
-[**cgetByPerson**](FeedbackApi.md#cgetByPerson) | **GET** /people/{person}/feedbacks | Retrieve all feedbacks for the given person.
-[**get**](FeedbackApi.md#get) | **GET** /feedbacks/{feedback} | Retrieve a feedback.
-[**patchState**](FeedbackApi.md#patchState) | **PATCH** /feedbacks/{feedback}/state | Apply a state transition on the given feedback.
-[**postImage**](FeedbackApi.md#postImage) | **POST** /feedbacks/{feedback}/images | Add a new image on the given feedback.
-[**postIssue**](FeedbackApi.md#postIssue) | **POST** /feedbacks/issues | Create a new feedback (type issue).
+[**cgetFeedbacks**](FeedbackApi.md#cgetFeedbacks) | **GET** /feedbacks | Retrieve all Feedback resources.
+[**cgetFeedbacksByPerson**](FeedbackApi.md#cgetFeedbacksByPerson) | **GET** /people/{person}/feedbacks | Retrieve all Feedback resources.
+[**getFeedback**](FeedbackApi.md#getFeedback) | **GET** /feedbacks/{feedback} | Retrieve one Feedback resource.
 
 
-<a name="cget"></a>
-# **cget**
-> FeedbackPagination cget(opts)
+<a name="cgetFeedbacks"></a>
+# **cgetFeedbacks**
+> FeedbackPagination cgetFeedbacks(xKeyclicApp, , opts)
 
-Retrieve all feedbacks for the given application.
+Retrieve all Feedback resources.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.FeedbackApi();
+let apiInstance = new KeyclicApi.FeedbackApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
 let opts = { 
-  'page': 1, // Number | The page number of the overview.
-  'limit': 20, // Number | The number of items per page.
-  'before': new Date("2013-10-20"), // Date | Filter by the creation date.
-  'after': new Date("2013-10-20"), // Date | Filter by the creation date.
-  'geoNear': "geoNear_example", // String | Filter by a radius and a distance.
-  'geoHash': "geoHash_example", // String | Filter by a geohash.
-  'organization': "organization_example", // String | Filter by an organization.
-  'category': "category_example" // String | Filter by a category.
+  'acceptLanguage': "fr-FR", // String | 
+  'state': "DELIVERED", // String | 
+  'category': "category_example", // String | The identifier of the resource formatted as GUID string.
+  'geoHash': "geoHash_example", // String | 
+  'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
+  'order': "desc", // String | 
+  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'geoNearGeoCoordinates': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'geoNearRadius': 56, // Number | 
+  'searchDescription': "searchDescription_example", // String | 
 };
-apiInstance.cget(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.cgetFeedbacks(xKeyclicApp, , opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Number**| The page number of the overview. | [optional] [default to 1]
- **limit** | **Number**| The number of items per page. | [optional] [default to 20]
- **before** | **Date**| Filter by the creation date. | [optional] 
- **after** | **Date**| Filter by the creation date. | [optional] 
- **geoNear** | **String**| Filter by a radius and a distance. | [optional] 
- **geoHash** | **String**| Filter by a geohash. | [optional] 
- **organization** | **String**| Filter by an organization. | [optional] 
- **category** | **String**| Filter by a category. | [optional] 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **state** | **String**|  | [optional] [default to DELIVERED]
+ **category** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **geoHash** | **String**|  | [optional] 
+ **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
+ **order** | **String**|  | [optional] [default to desc]
+ **after** | **Date**|  | [optional] 
+ **before** | **Date**|  | [optional] 
+ **geoNearGeoCoordinates** | **Date**|  | [optional] 
+ **geoNearRadius** | **Number**|  | [optional] 
+ **searchDescription** | **String**|  | [optional] 
 
 ### Return type
 
@@ -66,55 +80,80 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="cgetByPerson"></a>
-# **cgetByPerson**
-> FeedbackPagination cgetByPerson(person, opts)
+<a name="cgetFeedbacksByPerson"></a>
+# **cgetFeedbacksByPerson**
+> FeedbackPagination cgetFeedbacksByPerson(xKeyclicApp, person, opts)
 
-Retrieve all feedbacks for the given person.
+Retrieve all Feedback resources.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.FeedbackApi();
+let apiInstance = new KeyclicApi.FeedbackApi();
 
-let person = "person_example"; // String | The person id.
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let person = "person_example"; // String | The identifier of the resource formatted as GUID string.
 
 let opts = { 
-  'page': 1, // Number | The page number of the overview.
-  'limit': 20, // Number | The number of items per page.
-  'before': "before_example", // String | 
-  'after': "after_example" // String | 
+  'acceptLanguage': "fr-FR", // String | 
+  'category': "category_example", // String | The identifier of the resource formatted as GUID string.
+  'geoHash': "geoHash_example", // String | 
+  'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
+  'state': "state_example", // String | 
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
+  'order': "desc", // String | 
+  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'geoNearGeoCoordinates': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'geoNearRadius': 56, // Number | 
+  'searchDescription': "searchDescription_example", // String | 
 };
-apiInstance.cgetByPerson(person, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.cgetFeedbacksByPerson(xKeyclicApp, person, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person** | **String**| The person id. | 
- **page** | **Number**| The page number of the overview. | [optional] [default to 1]
- **limit** | **Number**| The number of items per page. | [optional] [default to 20]
- **before** | **String**|  | [optional] 
- **after** | **String**|  | [optional] 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **person** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **category** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **geoHash** | **String**|  | [optional] 
+ **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **state** | **String**|  | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
+ **order** | **String**|  | [optional] [default to desc]
+ **after** | **Date**|  | [optional] 
+ **before** | **Date**|  | [optional] 
+ **geoNearGeoCoordinates** | **Date**|  | [optional] 
+ **geoNearRadius** | **Number**|  | [optional] 
+ **searchDescription** | **String**|  | [optional] 
 
 ### Return type
 
@@ -122,45 +161,56 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="get"></a>
-# **get**
-> Feedback get(feedback)
+<a name="getFeedback"></a>
+# **getFeedback**
+> Feedback getFeedback(xKeyclicApp, feedback, opts)
 
-Retrieve a feedback.
+Retrieve one Feedback resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.FeedbackApi();
+let apiInstance = new KeyclicApi.FeedbackApi();
 
-let feedback = "feedback_example"; // String | 
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-apiInstance.get(feedback).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let feedback = "feedback_example"; // String | The identifier of the resource formatted as GUID string.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+};
+
+apiInstance.getFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feedback** | **String**|  | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
 
 ### Return type
 
@@ -168,156 +218,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="patchState"></a>
-# **patchState**
-> Feedback patchState(feedback, body)
-
-Apply a state transition on the given feedback.
-
-Apply transition for a feedback.  For more informations about PATCH implementation, please refer to the RFC 5789.  • https://tools.ietf.org/html/rfc5789  Required transition must be send as a JSON patch document.
-
-### Example
-```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
-
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new KeyclicApiReference.FeedbackApi();
-
-let feedback = "feedback_example"; // String | 
-
-let body = [new KeyclicApiReference.FeedbackStatePatchDocument()]; // [FeedbackStatePatchDocument] | A JSON document according the rfc5789 specification.
-
-apiInstance.patchState(feedback, body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **feedback** | **String**|  | 
- **body** | [**[FeedbackStatePatchDocument]**](FeedbackStatePatchDocument.md)| A JSON document according the rfc5789 specification. | 
-
-### Return type
-
-[**Feedback**](Feedback.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="postImage"></a>
-# **postImage**
-> Feedback postImage(feedback, image)
-
-Add a new image on the given feedback.
-
-### Example
-```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
-
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new KeyclicApiReference.FeedbackApi();
-
-let feedback = "feedback_example"; // String | The feedback guid.
-
-let image = "image_example"; // String | The image as a string (encoded in base64).
-
-apiInstance.postImage(feedback, image).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **feedback** | **String**| The feedback guid. | 
- **image** | **String**| The image as a string (encoded in base64). | 
-
-### Return type
-
-[**Feedback**](Feedback.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="postIssue"></a>
-# **postIssue**
-> Feedback postIssue(body)
-
-Create a new feedback (type issue).
-
-### Example
-```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
-
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new KeyclicApiReference.FeedbackApi();
-
-let body = new KeyclicApiReference.FeedbackBody(); // FeedbackBody | 
-
-apiInstance.postIssue(body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**FeedbackBody**](FeedbackBody.md)|  | 
-
-### Return type
-
-[**Feedback**](Feedback.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 

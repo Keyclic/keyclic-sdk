@@ -1,60 +1,76 @@
-# KeyclicApiReference.CategoryApi
+# KeyclicApi.CategoryApi
 
 All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cget**](CategoryApi.md#cget) | **GET** /categories | Retrieve all categories available for the given application.
-[**cgetByOrganization**](CategoryApi.md#cgetByOrganization) | **GET** /organizations/{organization}/categories | Retrieve all categories for the given organization.
-[**get**](CategoryApi.md#get) | **GET** /categories/{category} | Retrieve a category.
-[**patch**](CategoryApi.md#patch) | **PATCH** /categories/{category} | Edit a category.
-[**postByOrganization**](CategoryApi.md#postByOrganization) | **POST** /organizations/{organization}/categories | Create a new category for the given organization.
+[**cgetCategories**](CategoryApi.md#cgetCategories) | **GET** /categories | Retrieve all Category resources.
+[**cgetCategoriesByOrganization**](CategoryApi.md#cgetCategoriesByOrganization) | **GET** /organizations/{organization}/categories | Retrieve all Category resources.
+[**getCategory**](CategoryApi.md#getCategory) | **GET** /categories/{category} | Retrieve one Category resource.
+[**patchCategory**](CategoryApi.md#patchCategory) | **PATCH** /categories/{category} | Edit one Category resource.
+[**postCategoryByOrganization**](CategoryApi.md#postCategoryByOrganization) | **POST** /organizations/{organization}/categories | Create one Category resource.
 
 
-<a name="cget"></a>
-# **cget**
-> CategoryPagination cget(xKeyclicApp, , opts)
+<a name="cgetCategories"></a>
+# **cgetCategories**
+> CategoryPagination cgetCategories(xKeyclicApp, , opts)
 
-Retrieve all categories available for the given application.
-
-The list of the categories available to use them when your are creating a new feedback can be retrieve using this endpoint.  A valid access token, application token and geoCoordinates parameter are required to retrieve categories which are located in the places which are matching the given geoCoordinates.  Application token must be stored in the request header \&quot;X-Keyclic-App\&quot;.
+Retrieve all Category resources.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.CategoryApi();
+let apiInstance = new KeyclicApi.CategoryApi();
 
-let xKeyclicApp = "com.keyclic.app"; // String | The application token.
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
 let opts = { 
-  'page': 1, // Number | The page number of the overview.
-  'limit': 20, // Number | The number of items per page.
-  'geoCoordinates': "geoCoordinates_example", // String | Filter by geo coordinates.
-  'organization': "organization_example", // String | Filter by an organization.
+  'acceptLanguage': "fr-FR", // String | 
+  'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
+  'geoCoordinates': "geoCoordinates_example", // String | 
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
+  'order': "desc", // String | 
+  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'searchName': "searchName_example", // String | 
+  'searchColor': "searchColor_example", // String | 
+  'searchIcon': "searchIcon_example" // String | 
 };
-apiInstance.cget(xKeyclicApp, , opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.cgetCategories(xKeyclicApp, , opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xKeyclicApp** | **String**| The application token. | [default to com.keyclic.app]
- **page** | **Number**| The page number of the overview. | [optional] [default to 1]
- **limit** | **Number**| The number of items per page. | [optional] [default to 20]
- **geoCoordinates** | **String**| Filter by geo coordinates. | [optional] 
- **organization** | **String**| Filter by an organization. | [optional] 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **geoCoordinates** | **String**|  | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
+ **order** | **String**|  | [optional] [default to desc]
+ **after** | **Date**|  | [optional] 
+ **before** | **Date**|  | [optional] 
+ **searchName** | **String**|  | [optional] 
+ **searchColor** | **String**|  | [optional] 
+ **searchIcon** | **String**|  | [optional] 
 
 ### Return type
 
@@ -62,53 +78,74 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="cgetByOrganization"></a>
-# **cgetByOrganization**
-> CategoryPagination cgetByOrganization(organization, opts)
+<a name="cgetCategoriesByOrganization"></a>
+# **cgetCategoriesByOrganization**
+> CategoryPagination cgetCategoriesByOrganization(xKeyclicApp, organization, opts)
 
-Retrieve all categories for the given organization.
+Retrieve all Category resources.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.CategoryApi();
+let apiInstance = new KeyclicApi.CategoryApi();
 
-let organization = "organization_example"; // String | 
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
 
 let opts = { 
-  'page': 1, // Number | The page number of the overview.
-  'limit': 20, // Number | The number of items per page.
-  'search': "search_example" // String | 
+  'acceptLanguage': "fr-FR", // String | 
+  'geoCoordinates': "geoCoordinates_example", // String | 
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
+  'order': "desc", // String | 
+  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'searchName': "searchName_example", // String | 
+  'searchColor': "searchColor_example", // String | 
+  'searchIcon': "searchIcon_example" // String | 
 };
-apiInstance.cgetByOrganization(organization, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.cgetCategoriesByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **String**|  | 
- **page** | **Number**| The page number of the overview. | [optional] [default to 1]
- **limit** | **Number**| The number of items per page. | [optional] [default to 20]
- **search** | **String**|  | [optional] 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **geoCoordinates** | **String**|  | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
+ **order** | **String**|  | [optional] [default to desc]
+ **after** | **Date**|  | [optional] 
+ **before** | **Date**|  | [optional] 
+ **searchName** | **String**|  | [optional] 
+ **searchColor** | **String**|  | [optional] 
+ **searchIcon** | **String**|  | [optional] 
 
 ### Return type
 
@@ -116,45 +153,56 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="get"></a>
-# **get**
-> Category get(category)
+<a name="getCategory"></a>
+# **getCategory**
+> Category getCategory(xKeyclicApp, category, opts)
 
-Retrieve a category.
+Retrieve one Category resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.CategoryApi();
+let apiInstance = new KeyclicApi.CategoryApi();
 
-let category = "category_example"; // String | 
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-apiInstance.get(category).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let category = "category_example"; // String | The identifier of the resource formatted as GUID string.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+};
+
+apiInstance.getCategory(xKeyclicApp, category, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **category** | **String**|  | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **category** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
 
 ### Return type
 
@@ -162,45 +210,58 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="patch"></a>
-# **patch**
-> Category patch(category, body)
+<a name="patchCategory"></a>
+# **patchCategory**
+> Category patchCategory(xKeyclicApp, category, opts)
 
-Edit a category.
-
-Update one category resource.  For more information about PATCH implementation, please refer to the RFC.  • https://tools.ietf.org/html/rfc5789
+Edit one Category resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-let apiInstance = new KeyclicApiReference.CategoryApi();
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let category = "category_example"; // String | 
+let apiInstance = new KeyclicApi.CategoryApi();
 
-let body = [new KeyclicApiReference.CategoryPatchDocument()]; // [CategoryPatchDocument] | A JSON document according the rfc5789 specification.
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-apiInstance.patch(category, body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let category = "category_example"; // String | The identifier of the resource formatted as GUID string.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'categoryPatch': new KeyclicApi.CategoryPatch() // CategoryPatch | 
+};
+
+apiInstance.patchCategory(xKeyclicApp, category, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **category** | **String**|  | 
- **body** | [**[CategoryPatchDocument]**](CategoryPatchDocument.md)| A JSON document according the rfc5789 specification. | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **category** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **categoryPatch** | [**CategoryPatch**](CategoryPatch.md)|  | [optional] 
 
 ### Return type
 
@@ -208,48 +269,58 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="postByOrganization"></a>
-# **postByOrganization**
-> Category postByOrganization(organization, body)
+<a name="postCategoryByOrganization"></a>
+# **postCategoryByOrganization**
+> Category postCategoryByOrganization(xKeyclicApp, organization, opts)
 
-Create a new category for the given organization.
+Create one Category resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.CategoryApi();
+let apiInstance = new KeyclicApi.CategoryApi();
 
-let organization = "organization_example"; // String | The name id of the organization.
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let body = new KeyclicApiReference.CategoryBody(); // CategoryBody | 
+let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
 
-apiInstance.postByOrganization(organization, body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'categoryData': new KeyclicApi.CategoryData() // CategoryData | 
+};
+
+apiInstance.postCategoryByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **String**| The name id of the organization. | 
- **body** | [**CategoryBody**](CategoryBody.md)|  | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **categoryData** | [**CategoryData**](CategoryData.md)|  | [optional] 
 
 ### Return type
 
@@ -257,10 +328,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 

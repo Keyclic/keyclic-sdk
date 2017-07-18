@@ -4,6 +4,7 @@ import promise from 'es6-promise';
 promise.polyfill();
 
 import fetch from 'isomorphic-fetch';
+import * as url from 'url';
 
 /**
 * @module {{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}ApiClient
@@ -42,20 +43,17 @@ export default class ApiClient {
             },
                 {{/isBasic}}
                 {{#isApiKey}}
+                    {{#isKeyInHeader}}
             '{{&name}}': {
                 'type': 'apiKey',
-                    {{#isKeyInHeader}}
                 'in': 'header',
-                    {{/isKeyInHeader}}
-                    {{^isKeyInHeader}}
-                'in': 'query',
-                    {{/isKeyInHeader}}
-                'name': '{{keyParamName}}',
+                'name': '{{&keyParamName}}',
             },
+                    {{/isKeyInHeader}}
                 {{/isApiKey}}
                 {{#isOAuth}}
             '{{&name}}': {
-                    'type': 'oauth2',
+                'type': 'oauth2'
             },
                 {{/isOAuth}}
             {{/authMethods}}
@@ -93,13 +91,13 @@ export default class ApiClient {
         authNames.forEach((authName) => {
             let auth = this.authentications[authName];
             switch (auth.type) {
-                case 'oauth2':
-                    if (credentials.hasOwnProperty('accessToken') === false || typeof credentials.accessToken === 'undefined') {
-                        throw new Error('Oauth2 authentication claims an "accessToken" as credentials');
+                case 'apiKey':
+                    if (credentials.hasOwnProperty('accessToken') === false || typeof credentials.accessToken === 'undefined' || credentials.accessToken === null) {
+                        throw new Error('ApiKey authentication claims an "accessToken" as credentials.');
                     }
 
-                    options.headers.append(auth.name, 'Bearer ' + credentials.accessToken)
-                break;
+                    options.headers.append(auth.name, 'Bearer ' + credentials.accessToken);
+                    break;
                 default:
                     throw new Error('Unknown authentication type: ' + auth.type);
             }
@@ -110,25 +108,19 @@ export default class ApiClient {
 
     /**
      * Deserializes an HTTP response body into a value of the specified type.
-     * @param {Object} response A SuperAgent response object.
-     * @param {String|String[]|Object} returnType The type to return. Pass a string for simple types
+     * @param { Object } data A response.json() object.
+     * @param { String|String[]|Object } returnType The type to return. Pass a string for simple types
      * or the constructor function for a complex type. Pass an array containing the type name to return an array of that type. To
      * return an object, pass an object with one property whose name is the key type and whose value is the corresponding value type:
      * all properties on datacode will be converted to this type.
-     * @returns A value of the specified type.
+     * @returns { Object } A value of the specified type.
      */
-    deserialize(response, returnType) {
-        if (response === null || returnType === null || response.status === 204) {
-            return null;
+    deserialize(data, returnType) {
+        if (returnType === null) {
+            return data;
         }
 
-        let data = response.body;
-        if (data === null || (typeof data === 'object' && typeof data.length === 'undefined' && !Object.keys(data).length)) {
-            // SuperAgent does not always produce a body; use the unparsed response as a fallback
-            data = response.text;
-        }
-
-        return exports.convertToType(data, returnType);
+        return ApiClient.convertToType(data, returnType);
     }
 
     /**
@@ -136,7 +128,10 @@ export default class ApiClient {
      */
     checkResponse(response) {
         if (response.status < 200 || response.status >= 300) {
-            throw response;
+            let error = new Error('Code status error: '+ response.status);
+            error.status = response.status;
+            error.response = response;
+            throw error;
         }
     }
 
@@ -148,7 +143,7 @@ export default class ApiClient {
      * @returns {String} The encoded path with parameter values substituted.
      */
     buildUri(path, pathParams) {
-        if (!path.match(/^\//)) {
+        if (path.length > 0 && path.match(/^\//) === false) {
             path = '/' + path;
         }
 
@@ -156,7 +151,7 @@ export default class ApiClient {
         uri = uri.replace(/\{([\w-]+)\}/g, (fullMatch, key) => {
             let value = fullMatch;
             if (pathParams.hasOwnProperty(key)) {
-                value = ApiClient.paramToString(pathParams[key]);
+                value = ApiClientUtils.paramToString(pathParams[key]);
             }
 
             return encodeURIComponent(value);
@@ -166,12 +161,12 @@ export default class ApiClient {
     }
 
     appendQueryParams(uri, queryParams = {}) {
-        queryParam = this.normalizeParams(queryParams);
+        queryParams = ApiClientUtils.normalizeParams(queryParams);
 
-        let uriObject = url.parse(uri, true);
-        uriObject.query = Object.assign({}, uriObject.query, queryParams);
+        let urlObj = url.parse(uri, true);
+        urlObj.query = Object.assign({}, urlObj.query, queryParams);
 
-        return url.format(uriObject);
+        return url.format(urlObj);
     }
 
     /**
@@ -200,16 +195,15 @@ export default class ApiClient {
                 headers.append(property, headerParams[property]);
             }
         }
+
+        return headers;
     }
 
-    buildBody(contentType, bodyParams, formParams) {
+    buildBody(contentType, bodyParams) {
         let body = null;
         switch(contentType) {
-            case 'application/x-www-form-urlencoded':
-                body = querystring.stringify(this.normalizeParams(formParams));
-                break;
             default:
-                body = bodyParams;
+                body = bodyParams === null ? null : JSON.stringify(bodyParams);
         }
 
         return body;
@@ -222,7 +216,6 @@ export default class ApiClient {
      * @param {Object} pathParams A map of path parameters and their values.
      * @param {Object} queryParams A map of query parameters and their values.
      * @param {Object} headerParams A map of header parameters and their values.
-     * @param {Object} formParams A map of form parameters and their values.
      * @param {Object} bodyParam The value to pass as the request body.
      * @param {String[]} authNames An array of authentication type names.
      * @param {Object} credentials An object with good properties to use different types of authentication.
@@ -237,7 +230,6 @@ export default class ApiClient {
         pathParams,
         queryParams,
         headerParams,
-        formParams,
         bodyParam,
         authNames,
         credentials,
@@ -248,13 +240,13 @@ export default class ApiClient {
         let contentType = ApiClientUtils.jsonPreferredMime(contentTypes);
         let accept = ApiClientUtils.jsonPreferredMime(accepts);
 
-        let uri = this.buildUri(path, pathParams);
+        let apiUri = this.buildUri(path, pathParams);
 
-        let url = this.appendQueryParams(uri, queryParams);
+        let apiUrl = this.appendQueryParams(apiUri, queryParams);
 
         let headers = this.buildHeaders(headerParams, contentType, accept);
 
-        let body = this.buildBody(contentType, bodyParam, formParams);
+        let body = this.buildBody(contentType, bodyParam);
 
         let options = {
             'body': body,
@@ -270,39 +262,41 @@ export default class ApiClient {
             options = Object.assign({}, { 'timeout': this.timeout }, options)
         }
 
-        return fetch(url, options)
+        return fetch(apiUrl, options)
             .then((response) => {
                 this.checkResponse(response);
 
+                if (response === null || response.status === 204) {
+                    return null;
+                }
+
                 return response
                     .json()
-                    .then((json) => {
-                        try {
-                            let data = this.deserialize(json, returnType);
+                    .then((data) => {
+                        data = this.deserialize(data, returnType);
 
-                            return {
-                                'data': data,
-                                'response': json,
-                            };
-                        } catch (error) {
-                            throw error;
-                        }
+                        return {
+                            'data': data,
+                            'response': response,
+                        };
+                    })
+                    .catch((error) => {
+                        throw error;
                     });
             });
     }
 
     /**
      * Converts a value to the specified type.
-     * @param {(String|Object)} data The data to convert, as a string or object.
-     * @param {(String|String[]|Object|Function)} type The type to return. Pass a string for simple types
-     * or the constructor function for a complex type. Pass an array containing the type name to return an array of that type. To
-     * return an object, pass an object with one property whose name is the key type and whose value is the corresponding value type:
-     * all properties on "data" will be converted to this type.
-     * @returns An instance of the specified type or null or undefined if data is null or undefined.
+     * @param {String|Object} data The data to convert, as a string or object.
+     * @param {String|String[]|Object|Function} type The type to return. Pass a string for simple types or the constructor function for a complex type. Pass an array containing the type name to return an array of that type. To
+     * return an object, pass an object with one property whose name is the key type and whose value is the corresponding value type: all properties on "data" will be converted to this type.
+     * @returns {String|Object|Boolean|int|float|string|date|Blob} An instance of the specified type or null or undefined if data is null or undefined.
      */
     static convertToType(data, type) {
-        if (data === null || data === undefined)
-            return data
+        if (data === null || typeof data === 'undefined') {
+            return data;
+        }
 
         switch (type) {
             case 'Boolean':
@@ -313,103 +307,38 @@ export default class ApiClient {
                 return parseFloat(data);
             case 'String':
                 return String(data);
-            case 'Date':
-                return this.parseDate(String(data));
+            case 'Date': {
+                // Don't remove bracket scope to prevet let declaration outside it.
+                // Parses an ISO-8601 string representation of a date value.
+                let date = String(data).replace(/T/i, ' ');
+
+                return new Date(date);
+            }
             case 'Blob':
                 return data;
             default:
-                if (type === Object) {
-                    // generic object, return directly
-                    return data;
-                } else if (typeof type === 'function') {
+                if (typeof type === 'function') {
                     // for model type like: User
-                    return type.constructFromObject(data);
-                } else if (Array.isArray(type)) {
+                    return type.constructFromObject(data, type);
+                }
+
+                if (Array.isArray(type)) {
                     // for array type like: ['String']
                     let itemType = type[0];
 
                     return data.map((item) => {
-                        return exports.convertToType(item, itemType);
+                        return ApiClient.convertToType(item, itemType);
                     });
-                } else if (typeof type === 'object') {
-                    // for plain object type like: {'String': 'Integer'}
-                    let keyType, valueType;
-                    for (let k in type) {
-                        if (type.hasOwnProperty(k)) {
-                            keyType = k;
-                            valueType = type[k];
-                            break;
-                        }
-                    }
-
-                    let result = {};
-                    for (let k in data) {
-                        if (data.hasOwnProperty(k)) {
-                            let key = exports.convertToType(k, keyType);
-                            let value = exports.convertToType(data[k], valueType);
-                            result[key] = value;
-                        }
-                    }
-
-                    return result;
-                } else {
-                    // for unknown type, return the data directly
-                    return data;
                 }
-        }
-    }
 
-    /**
-     * Constructs a new map or array model from REST data.
-     * @param data {Object|Array} The REST data.
-     * @param obj {Object|Array} The target object or array.
-     */
-    static constructFromObject(data, obj, itemType) {
-        if (Array.isArray(data)) {
-            for (let i = 0; i < data.length; i++) {
-                if (data.hasOwnProperty(i))
-                    obj[i] = exports.convertToType(data[i], itemType);
-            }
-        } else {
-            for (let k in data) {
-                if (data.hasOwnProperty(k))
-                    obj[k] = exports.convertToType(data[k], itemType);
-            }
+                // For unknown type, return the data directly.
+                return data;
         }
     }
 }
 
 
 class ApiClientUtils {
-    /**
-     * Checks whether the given parameter value represents file-like content.
-     * @param param The parameter to check.
-     * @returns {Boolean} "true" if "param" represents a file.
-     */
-    static isFileParam(param) {
-        // fs.ReadStream in Node.js (but not in runtime like browserify)
-        if (typeof window === 'undefined' && typeof require === 'function' && require('fs') && param instanceof require('fs').ReadStream) {
-            return true;
-        }
-
-        // Buffer in Node.js
-        if (typeof Buffer === 'function' && param instanceof Buffer) {
-            return true;
-        }
-
-        // Blob in browser
-        if (typeof Blob === 'function' && param instanceof Blob) {
-            return true;
-        }
-
-        // File in browser (it seems File object is also instance of Blob, but keep this for safe)
-        if (typeof File === 'function' && param instanceof File) {
-            return true;
-        }
-
-        return false;
-    }
-
     /**
      * Checks whether the given content type represents JSON.
      * JSON content type examples:
@@ -452,7 +381,7 @@ class ApiClientUtils {
             if (params.hasOwnProperty(key) && typeof params[key] !== 'undefined' && params[key] !== null) {
                 let value = params[key];
 
-                if (ApiClientUtils.isFileParam(value) || Array.isArray(value)) {
+                if (Array.isArray(value)) {
                     newParams[key] = value;
                     continue;
                 }
@@ -479,14 +408,5 @@ class ApiClientUtils {
         }
 
         return param.toString();
-    }
-
-    /**
-     * Parses an ISO-8601 string representation of a date value.
-     * @param {String} str The date value as a string.
-     * @returns {Date} The parsed date object.
-     */
-    static parseDate(str) {
-        return new Date(str.replace(/T/i, ' '));
     }
 }

@@ -1,9 +1,9 @@
-# KeyclicApiReference.FeedbackLinksImage
+# KeyclicApi.FeedbackLinksImage
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** | The URI of the linked image. | [optional] 
-**iriTemplate** | [**FeedbackLinksImageIriTemplate**](FeedbackLinksImageIriTemplate.md) |  | [optional] 
+**href** | **String** | The URI of the image associated to the given feedback. | [optional] 
+**iriTemplate** | [**ApplicationLinksSelfIriTemplate**](ApplicationLinksSelfIriTemplate.md) |  | [optional] 
 
 

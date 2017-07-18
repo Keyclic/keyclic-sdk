@@ -1,9 +1,9 @@
-# KeyclicApiReference.ReportLinksFeedback
+# KeyclicApi.ReportLinksFeedback
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** | The URI of the linked feedback. | [optional] 
-**iriTemplate** | [**FeedbackLinksSelfIriTemplate**](FeedbackLinksSelfIriTemplate.md) |  | [optional] 
+**href** | **String** | The URI of the feedback associated to the given report. | [optional] 
+**iriTemplate** | [**ApplicationLinksSelfIriTemplate**](ApplicationLinksSelfIriTemplate.md) |  | [optional] 
 
 

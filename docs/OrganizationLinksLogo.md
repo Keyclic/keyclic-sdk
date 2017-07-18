@@ -1,9 +1,9 @@
-# KeyclicApiReference.OrganizationLinksLogo
+# KeyclicApi.OrganizationLinksLogo
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** | The URI of the linked logo. | [optional] 
-**iriTemplate** | [**CategoryLinksIriTemplate**](CategoryLinksIriTemplate.md) |  | [optional] 
+**href** | **String** | The URI of the logo associated to the given organization. | [optional] 
+**iriTemplate** | [**ApplicationLinksSelfIriTemplate**](ApplicationLinksSelfIriTemplate.md) |  | [optional] 
 
 

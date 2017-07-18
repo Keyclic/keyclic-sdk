@@ -5,143 +5,154 @@
  * @module {{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{classname}}
  * @version {{projectVersion}}
  */
-export default class {{classname}} {
+export default class {{&classname}} {{#useInheritance}}{{#interfaceModels}}extends {{classname}}{{/interfaceModels}}{{/useInheritance}} {
     /**
-     * Constructs a new <code>{{classname}}</code>.
+     * Constructs a new "{{classname}}".
     {{#description}}
      * {{description}}
     {{/description}}
      * @alias module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{classname}}
      * @class
-    {{#useInheritance}}{{#parent}}
-     * @extends {{#parentModel}}module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{classname}}{{/parentModel}}{{^parentModel}}{{#vendorExtensions.x-isArray}}Array{{/vendorExtensions.x-isArray}}{{#vendorExtensions.x-isMap}}Object{{/vendorExtensions.x-isMap}}{{/parentModel}}
-    {{/parent}}{{#interfaces}}
-     * @implements module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{.}}{{/interfaces}}{{/useInheritance}}
-    {{#vendorExtensions.x-all-required}}
-     * @param {{name}} {{=<% %>=}}{<%&vendorExtensions.x-jsdoc-type%>}<%={{ }}=%> {{#description}}{{&description}}{{/description}}
-    {{/vendorExtensions.x-all-required}}
+    {{#vars}}{{#required}}
+     * @param {{name}} { {{&vendorExtensions.x-jsdoc-type}} } {{#description}}{{&description}}{{/description}}
+    {{/required}}{{/vars}}
      */
     constructor(
-    {{#vendorExtensions.x-all-required}}
-    {{name}}{{^-last}}, {{/-last}}
-    {{/vendorExtensions.x-all-required}}
+    {{#vars}}{{#required}}
+        {{name}},
+    {{/required}}{{/vars}}
     ) {
-        {{#parent}}{{^parentModel}}{{#vendorExtensions.x-isArray}}
-        this = new Array();
-        Object.setPrototypeOf(this, exports);
-        {{/vendorExtensions.x-isArray}}{{/parentModel}}{{/parent}}
-
         {{#useInheritance}}
-            {{#parentModel}}
-        {{classname}}.call(this{{#vendorExtensions.x-all-required}}, {{name}}{{/vendorExtensions.x-all-required}});
-            {{/parentModel}}
             {{#interfaceModels}}
-        {{classname}}.call(this{{#vendorExtensions.x-all-required}}, {{name}}{{/vendorExtensions.x-all-required}});
+        super(
+                {{#vars}}{{#required}}
+            {{name}},
+                {{/required}}{{/vars}}
+        );
             {{/interfaceModels}}
         {{/useInheritance}}
 
-        {{#vars}}{{#required}}this['{{baseName}}'] = {{name}};{{/required}}{{/vars}}
+        {{#vars}}
+            {{#required}}
+        this.{{name}} = {{name}};
+            {{/required}}
+            {{^required}}
+                {{#defaultValue}}
+        this.{{name}} = {{&defaultValue}};
+                {{/defaultValue}}
+                {{^defaultValue}}
+                    {{#isContainer}}
+        this.{{name}} = [];
+                    {{/isContainer}}
+                    {{^isContainer}}
+        this.{{name}} = null;
+                    {{/isContainer}}
+                {{/defaultValue}}
+            {{/required}}
+        {{/vars}}
 
-        {{#parent}}{{^parentModel}}return this;{{/parentModel}}{{/parent}}
+        {{#vars}}
+            {{#complexType}}
+        this.{{&name}}Type = {{&complexType}};
+            {{/complexType}}
+        {{/vars}}
     }
 
     /**
-    * Constructs a <code>{{classname}}</code> from a plain JavaScript object, optionally creating a new instance.
-    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-    * @param {Object} data The plain JavaScript object bearing properties of interest.
-    * @param {{=<% %>=}}{module:<%#invokerPackage%><%invokerPackage%>/<%/invokerPackage%><%#modelPackage%><%modelPackage%>/<%/modelPackage%><%classname%>}<%={{ }}=%> obj Optional instance to populate.
-    * @return {{=<% %>=}}{module:<%#invokerPackage%><%invokerPackage%>/<%/invokerPackage%><%#modelPackage%><%modelPackage%>/<%/modelPackage%><%classname%>}<%={{ }}=%> The populated <code>{{classname}}</code> instance.
+    * Constructs a "{{classname}}" from a plain JavaScript object.
+    * @param { object } data The plain JavaScript object bearing properties of interest.
+    * @param { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{classname}} } type Optional instance to populate.
+    * @return { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{classname}} } The populated "{{classname}}" instance.
     */
-    static constructFromObject(data, obj) {
-        if (data){{! TODO: support polymorphism: discriminator property on data determines class to instantiate.}} {
-            obj = obj || new {{classname}}();
-
-            {{#parent}}{{^parentModel}}
-            ApiClient.constructFromObject(data, obj, '{{vendorExtensions.x-itemType}}');
-            {{/parentModel}}{{/parent}}
-
-            {{#useInheritance}}
-                {{#parentModel}}
-            {{classname}}.constructFromObject(data, obj);
-                {{/parentModel}}
-                {{#interfaces}}
-            {{.}}.constructFromObject(data, obj);
-                {{/interfaces}}
-            {{/useInheritance}}
-
-            {{#vars}}
-            if (data.hasOwnProperty('{{baseName}}')) {
-                obj['{{baseName}}']{{{defaultValueWithParam}}}
-            }
-            {{/vars}}
+    static constructFromObject(
+        data,
+        type = {{&classname}},
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
         }
-        return obj;
+
+        {{#interfaceModels}}
+        let object = super.constructFromObject(
+            data,
+            type
+        );
+        {{/interfaceModels}}
+
+        {{^interfaceModels}}
+        let object = new type();
+        {{/interfaceModels}}
+
+        {{#vars}}
+        if (data.hasOwnProperty('{{&baseName}}')) {
+            {{#complexType}}
+                {{#isContainer}}
+            object.{{name}} = ApiClient.convertToType(data['{{&baseName}}'], [object.{{&name}}Type]);
+                {{/isContainer}}
+                {{^isContainer}}
+            object.{{name}} = ApiClient.convertToType(data['{{&baseName}}'], object.{{&name}}Type);
+                {{/isContainer}}
+            {{/complexType}}
+            {{^complexType}}
+                {{#isContainer}}
+                    {{#items}}
+            object.{{name}} = ApiClient.convertToType(data['{{&baseName}}'], '[\'{{&baseType}}\']');
+                    {{/items}}
+                {{/isContainer}}
+                {{^isContainer}}
+            object.{{name}} = ApiClient.convertToType(data['{{&baseName}}'], '{{&baseType}}');
+                {{/isContainer}}
+            {{/complexType}}
+        }
+        {{/vars}}
+
+        return object;
+
     }
-
-    {{#vars}}
-    /**
-        {{#description}}
-     * {{&description}}
-        {{/description}}
-     * @member {{=<% %>=}}{<%&vendorExtensions.x-jsdoc-type%>}<%={{ }}=%> {{baseName}}
-        {{#defaultValue}}
-     * @default {{{defaultValue}}}
-        {{/defaultValue}}
-     */
-    {{baseName}} = {{#defaultValue}}{{{defaultValue}}}{{/defaultValue}}{{^defaultValue}}undefined{{/defaultValue}};
-    {{/vars}}
-
-    {{#useInheritance}}{{#interfaceModels}}
-    // Implement {{classname}} interface:
-        {{#allVars}}
-    /**
-            {{#description}}
-    * {{{description}}}
-            {{/description}}
-    * @member {{=<% %>=}}{<%&vendorExtensions.x-jsdoc-type%>}<%={{ }}=%> {{baseName}}
-            {{#defaultValue}}
-    * @default {{{defaultValue}}}
-            {{/defaultValue}}
-    */
-    {{baseName}} = {{#defaultValue}}{{{defaultValue}}}{{/defaultValue}}{{^defaultValue}}undefined{{/defaultValue}};
-        {{/allVars}}
-    {{/interfaceModels}}{{/useInheritance}}
-
 
     {{#emitModelMethods}}{{#vars}}
-    /**{{#description}}
-    * Returns {{{description}}}{{/description}}{{#minimum}}
-    * minimum: {{minimum}}{{/minimum}}{{#maximum}}
-    * maximum: {{maximum}}{{/maximum}}
-    * @return {{=< >=}}{<&vendorExtensions.x-jsdoc-type>}<={{ }}=>
-    */
+    /**
+        {{#description}}
+     * Returns {{&description}}
+        {{/description}}
+        {{#minimum}}
+     * minimum: {{minimum}}
+        {{/minimum}}
+        {{#maximum}}
+     * maximum: {{maximum}}
+        {{/maximum}}
+     * @return { {{&vendorExtensions.x-jsdoc-type}} }
+     */
     {{getter}}() {
-        return this.{{baseName}};
+        return this.{{name}};
     }
 
-    /**{{#description}}
-    * Sets {{{description}}}{{/description}}
-    * @param {{=< >=}}{<&vendorExtensions.x-jsdoc-type>}<={{ }}=> {{name}}{{#description}} {{{description}}}{{/description}}
-    */
+        {{#isReadOnly}}
+    /**
+            {{#description}}
+     * Sets {{&description}}
+            {{/description}}
+     * @param { {{&vendorExtensions.x-jsdoc-type}} } {{name}}{{#description}} {{&description}}{{/description}}
+     */
     {{setter}}({{name}}) {
-        this['{{baseName}}'] = {{name}};
+        this.{{name}} = {{name}};
     }
-{{/vars}}{{/emitModelMethods}}
+        {{/isReadOnly}}
+    {{/vars}}{{/emitModelMethods}}
 
-{{#vars}}
-{{#isEnum}}
-{{^isContainer}}
-{{>partial_model_inner_enum}}
-{{/isContainer}}
-{{/isEnum}}
-{{#items.isEnum}}
-{{#items}}
-{{^isContainer}}
-{{>partial_model_inner_enum}}
-{{/isContainer}}
-{{/items}}
-{{/items.isEnum}}
-{{/vars}}
-
-{{/model}}{{/models}}
+    {{#vars}}
+        {{#isEnum}}
+            {{^isContainer}}
+    {{>partial_model_inner_enum}}
+            {{/isContainer}}
+        {{/isEnum}}
+        {{#items.isEnum}}
+            {{#items}}
+                {{^isContainer}}
+    {{>partial_model_inner_enum}}
+                {{/isContainer}}
+            {{/items}}
+        {{/items.isEnum}}
+    {{/vars}}
 }
+{{/model}}{{/models}}

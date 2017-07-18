@@ -1,9 +1,9 @@
-# KeyclicApiReference.CategoryLinksOrganization
+# KeyclicApi.CategoryLinksOrganization
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** | The URI of the linked organization. | [optional] 
-**iriTemplate** | [**CategoryLinksIriTemplate**](CategoryLinksIriTemplate.md) |  | [optional] 
+**href** | **String** | The URI of the organization associated to the given category. | [optional] 
+**iriTemplate** | [**ApplicationLinksSelfIriTemplate**](ApplicationLinksSelfIriTemplate.md) |  | [optional] 
 
 

@@ -5,9 +5,9 @@ java \
 -DdebugOperations \
 -jar ./generator/swagger-codegen-cli.jar \
 generate \
--i ../keyclic-api/web/swagger.correct.json \
+-i ../keyclic-api/web/swagger.json \
 -l javascript \
--t ./generator/templates/javascript-es6 \
 -o ./ \
---additional-properties usePromises=true,useInheritance=true \
+--additional-properties useInheritance=true \
+-t ./generator/templates/javascript-es6 \
 > ./.mustache.log

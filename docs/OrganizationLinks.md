@@ -1,4 +1,4 @@
-# KeyclicApiReference.OrganizationLinks
+# KeyclicApi.OrganizationLinks
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,9 +1,9 @@
-# KeyclicApiReference.OperationLinksReport
+# KeyclicApi.OperationLinksReport
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** | The URI of the linked report. | [optional] 
-**iriTemplate** | [**OperationLinksReportIriTemplate**](OperationLinksReportIriTemplate.md) |  | [optional] 
+**href** | **String** | The URI of the report associated to the given operation. | [optional] 
+**iriTemplate** | [**ApplicationLinksSelfIriTemplate**](ApplicationLinksSelfIriTemplate.md) |  | [optional] 
 
 

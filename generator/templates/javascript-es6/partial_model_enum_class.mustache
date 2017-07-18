@@ -5,10 +5,10 @@
 */
 export default class {{classname}} {
     {{#allowableValues}}{{#enumVars}}
-        {{#emitJSDoc}}/**
+        /**
          * value: {{{value}}}
          * @const
-         */{{/emitJSDoc}}
+         */
         {{name}} = {{{value}}};
 
     {{/enumVars}}{{/allowableValues}}

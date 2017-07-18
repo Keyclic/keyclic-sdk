@@ -1,22 +1,118 @@
 {
-  "name": "{{{projectName}}}",
-  "version": "{{{projectVersion}}}",
-  "description": "{{{projectDescription}}}",
-  "license": "Unlicense",
-  "main": "{{sourceFolder}}{{#invokerPackage}}/{{invokerPackage}}{{/invokerPackage}}/index.js",
-  "scripts": {
-    "test": "mocha --compilers js:babel-core/register --recursive"
-  },
-  "dependencies": {
-    "es6-promise": "^4.1.0",
-    "isomorphic-fetch": "^2.2.1"
-  },
-  "devDependencies": {
-    "babel-core": "^6.24.1",
-    "babel-eslint": "^7.2.3",
-    "babel-preset-env": "^1.4.0",
-    "expect.js": "~0.3.1",
-    "mocha": "~2.3.4",
-    "sinon": "1.17.3"
-  }
+    "name": "keyclic-sdk",
+    "version": "{{&projectVersion}}",
+    "description": "{{&projectDescription}}",
+    "license": "Unlicense",
+    "main": "{{sourceFolder}}{{#invokerPackage}}/{{invokerPackage}}{{/invokerPackage}}/index.js",
+    "scripts": {
+        "test": "mocha --compilers js:babel-core/register --recursive"
+    },
+    "dependencies": {
+        "es6-promise": "^4.1.1",
+        "isomorphic-fetch": "^2.2.1"
+    },
+    "devDependencies": {
+        "babel-core": "^6.24.1",
+        "babel-eslint": "^7.2.3",
+        "babel-preset-env": "^1.4.0",
+        "babel-preset-flow": "^6.23.0",
+        "babel-preset-stage-2": "^6.24.1",
+        "eslint": "^3.13",
+        "eslint-plugin-flowtype": "^2.34.0",
+        "expect.js": "~0.3.1",
+        "mocha": "~2.3.4",
+        "sinon": "1.17.3"
+    },
+    "babel": {
+        "presets": [
+            "env",
+            "flow",
+            "stage-2"
+        ]
+    },
+    "eslintConfig": {
+        "plugins": [
+            "flowtype"
+        ],
+        "extends": [
+            "eslint:recommended",
+            "plugin:flowtype/recommended"
+        ],
+        "env": {
+            "es6": true,
+            "node": true,
+            "browser": true
+        },
+        "parser": "babel-eslint",
+        "parserOptions": {
+            "sourceType": "module"
+        },
+        "rules": {
+            "comma-style": [
+                "error"
+            ],
+            "comma-dangle": [
+                "error",
+                "always-multiline"
+            ],
+            "comma-spacing": [
+                "error",
+                {
+                    "before": false,
+                    "after": true
+                }
+            ],
+            "indent": [
+                "error",
+                4,
+                {
+                    "SwitchCase": 1
+                }
+            ],
+            "newline-before-return": [
+                "error"
+            ],
+            "newline-per-chained-call": [
+                "error"
+            ],
+            "no-process-env": [
+                "off"
+            ],
+            "no-undefined": [
+                "error"
+            ],
+            "no-unused-vars": [
+                "warn"
+            ],
+            "quotes": [
+                "error",
+                "single",
+                {
+                    "avoidEscape": true,
+                    "allowTemplateLiterals": true
+                }
+            ],
+            "quote-props": [
+                "error",
+                "always"
+            ],
+            "valid-jsdoc": [
+                "off",
+                {
+                    "prefer": {
+                        "return": "returns"
+                    },
+                    "requireParamDescription": false,
+                    "requireReturnDescription": false
+                }
+            ],
+            "space-before-function-paren": [
+                "error",
+                {
+                    "anonymous": "always",
+                    "named": "never"
+                }
+            ]
+        }
+    }
 }

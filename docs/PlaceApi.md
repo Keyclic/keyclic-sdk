@@ -1,55 +1,76 @@
-# KeyclicApiReference.PlaceApi
+# KeyclicApi.PlaceApi
 
 All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cget**](PlaceApi.md#cget) | **GET** /places | Retrieve all places for the given application.
-[**cgetByOrganization**](PlaceApi.md#cgetByOrganization) | **GET** /organizations/{organization}/places | Retrieve all places for the given organization.
-[**get**](PlaceApi.md#get) | **GET** /places/{place} | Retrieve a place.
-[**patch**](PlaceApi.md#patch) | **PATCH** /places/{place} | Edit a place.
-[**postByOrganization**](PlaceApi.md#postByOrganization) | **POST** /organizations/{organization}/places | Create a new place for the given organization.
+[**cgetPlaces**](PlaceApi.md#cgetPlaces) | **GET** /places | Retrieve all Place resources.
+[**cgetPlacesByOrganization**](PlaceApi.md#cgetPlacesByOrganization) | **GET** /organizations/{organization}/places | Retrieve all Place resources.
+[**getPlace**](PlaceApi.md#getPlace) | **GET** /places/{place} | Retrieve one Place resource.
+[**patchPlace**](PlaceApi.md#patchPlace) | **PATCH** /places/{place} | Edit one Place resource.
+[**postPlaceByOrganization**](PlaceApi.md#postPlaceByOrganization) | **POST** /organizations/{organization}/places | Create one Place resource.
 
 
-<a name="cget"></a>
-# **cget**
-> PlacePagination cget(opts)
+<a name="cgetPlaces"></a>
+# **cgetPlaces**
+> PlacePagination cgetPlaces(xKeyclicApp, , opts)
 
-Retrieve all places for the given application.
+Retrieve all Place resources.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.PlaceApi();
+let apiInstance = new KeyclicApi.PlaceApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
 let opts = { 
-  'page': 1, // Number | The page number of the overview.
-  'limit': 20, // Number | The number of items per page.
-  'geoCoordinates': "geoCoordinates_example", // String | [-+]latitude[-+]longitude
-  'organization': "organization_example" // String | Organization GUID.
+  'acceptLanguage': "fr-FR", // String | 
+  'geoHash': "geoHash_example", // String | 
+  'geoCoordinates': "geoCoordinates_example", // String | 
+  'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
+  'order': "desc", // String | 
+  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'searchBranchCode': "searchBranchCode_example", // String | 
+  'searchName': "searchName_example", // String | 
 };
-apiInstance.cget(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.cgetPlaces(xKeyclicApp, , opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Number**| The page number of the overview. | [optional] [default to 1]
- **limit** | **Number**| The number of items per page. | [optional] [default to 20]
- **geoCoordinates** | **String**| [-+]latitude[-+]longitude | [optional] 
- **organization** | **String**| Organization GUID. | [optional] 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **geoHash** | **String**|  | [optional] 
+ **geoCoordinates** | **String**|  | [optional] 
+ **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
+ **order** | **String**|  | [optional] [default to desc]
+ **after** | **Date**|  | [optional] 
+ **before** | **Date**|  | [optional] 
+ **searchBranchCode** | **String**|  | [optional] 
+ **searchName** | **String**|  | [optional] 
 
 ### Return type
 
@@ -57,53 +78,74 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="cgetByOrganization"></a>
-# **cgetByOrganization**
-> PlacePagination cgetByOrganization(organization, opts)
+<a name="cgetPlacesByOrganization"></a>
+# **cgetPlacesByOrganization**
+> PlacePagination cgetPlacesByOrganization(xKeyclicApp, organization, opts)
 
-Retrieve all places for the given organization.
+Retrieve all Place resources.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.PlaceApi();
+let apiInstance = new KeyclicApi.PlaceApi();
 
-let organization = "organization_example"; // String | 
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
 
 let opts = { 
-  'page': 1, // Number | The page number of the overview.
-  'limit': 20, // Number | The number of items per page.
-  'search': "search_example" // String | 
+  'acceptLanguage': "fr-FR", // String | 
+  'geoHash': "geoHash_example", // String | 
+  'geoCoordinates': "geoCoordinates_example", // String | 
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
+  'order': "desc", // String | 
+  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'searchBranchCode': "searchBranchCode_example", // String | 
+  'searchName': "searchName_example", // String | 
 };
-apiInstance.cgetByOrganization(organization, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.cgetPlacesByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **String**|  | 
- **page** | **Number**| The page number of the overview. | [optional] [default to 1]
- **limit** | **Number**| The number of items per page. | [optional] [default to 20]
- **search** | **String**|  | [optional] 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **geoHash** | **String**|  | [optional] 
+ **geoCoordinates** | **String**|  | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
+ **order** | **String**|  | [optional] [default to desc]
+ **after** | **Date**|  | [optional] 
+ **before** | **Date**|  | [optional] 
+ **searchBranchCode** | **String**|  | [optional] 
+ **searchName** | **String**|  | [optional] 
 
 ### Return type
 
@@ -111,45 +153,56 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="get"></a>
-# **get**
-> Place get(place)
+<a name="getPlace"></a>
+# **getPlace**
+> Place getPlace(xKeyclicApp, place, opts)
 
-Retrieve a place.
+Retrieve one Place resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.PlaceApi();
+let apiInstance = new KeyclicApi.PlaceApi();
 
-let place = "place_example"; // String | 
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-apiInstance.get(place).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let place = "place_example"; // String | The identifier of the resource formatted as GUID string.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+};
+
+apiInstance.getPlace(xKeyclicApp, place, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **place** | **String**|  | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **place** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
 
 ### Return type
 
@@ -157,48 +210,58 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="patch"></a>
-# **patch**
-> Place patch(place, body)
+<a name="patchPlace"></a>
+# **patchPlace**
+> Place patchPlace(xKeyclicApp, place, opts)
 
-Edit a place.
+Edit one Place resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.PlaceApi();
+let apiInstance = new KeyclicApi.PlaceApi();
 
-let place = "place_example"; // String | 
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let body = [new KeyclicApiReference.PlacePatchDocument()]; // [PlacePatchDocument] | A JSON document according the rfc5789 specification.
+let place = "place_example"; // String | The identifier of the resource formatted as GUID string.
 
-apiInstance.patch(place, body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'placePatch': new KeyclicApi.PlacePatch() // PlacePatch | 
+};
+
+apiInstance.patchPlace(xKeyclicApp, place, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **place** | **String**|  | 
- **body** | [**[PlacePatchDocument]**](PlacePatchDocument.md)| A JSON document according the rfc5789 specification. | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **place** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **placePatch** | [**PlacePatch**](PlacePatch.md)|  | [optional] 
 
 ### Return type
 
@@ -206,45 +269,58 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="postByOrganization"></a>
-# **postByOrganization**
-> Place postByOrganization(organization)
+<a name="postPlaceByOrganization"></a>
+# **postPlaceByOrganization**
+> Place postPlaceByOrganization(xKeyclicApp, organization, opts)
 
-Create a new place for the given organization.
+Create one Place resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.PlaceApi();
+let apiInstance = new KeyclicApi.PlaceApi();
 
-let organization = "organization_example"; // String | 
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-apiInstance.postByOrganization(organization).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'placeData': new KeyclicApi.PlaceData() // PlaceData | 
+};
+
+apiInstance.postPlaceByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **String**|  | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **placeData** | [**PlaceData**](PlaceData.md)|  | [optional] 
 
 ### Return type
 
@@ -252,10 +328,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 

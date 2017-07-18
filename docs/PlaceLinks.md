@@ -1,4 +1,4 @@
-# KeyclicApiReference.PlaceLinks
+# KeyclicApi.PlaceLinks
 
 ## Properties
 Name | Type | Description | Notes

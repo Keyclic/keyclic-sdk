@@ -1,4 +1,4 @@
-# KeyclicApiReference.ErrorEmbedded
+# KeyclicApi.ErrorEmbedded
 
 ## Properties
 Name | Type | Description | Notes

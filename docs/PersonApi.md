@@ -1,51 +1,74 @@
-# KeyclicApiReference.PersonApi
+# KeyclicApi.PersonApi
 
 All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cget**](PersonApi.md#cget) | **GET** /people | Retrieve all people for the given application.
-[**get**](PersonApi.md#get) | **GET** /people/{person} | Retrieve a person.
-[**patch**](PersonApi.md#patch) | **PATCH** /people/{person} | Edit a person.
+[**cgetPeople**](PersonApi.md#cgetPeople) | **GET** /people | Retrieve all Person resources.
+[**getPerson**](PersonApi.md#getPerson) | **GET** /people/{person} | Retrieve one Person resource.
+[**patchPerson**](PersonApi.md#patchPerson) | **PATCH** /people/{person} | Edit one Person resource.
 
 
-<a name="cget"></a>
-# **cget**
-> PersonPagination cget(opts)
+<a name="cgetPeople"></a>
+# **cgetPeople**
+> PersonPagination cgetPeople(xKeyclicApp, , opts)
 
-Retrieve all people for the given application.
+Retrieve all Person resources.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.PersonApi();
+let apiInstance = new KeyclicApi.PersonApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
 let opts = { 
-  'page': 1, // Number | The page number of the overview.
-  'limit': 20, // Number | The number of items per page.
-  'search': "search_example" // String | 
+  'acceptLanguage': "fr-FR", // String | 
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
+  'order': "desc", // String | 
+  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'searchFamilyName': "searchFamilyName_example", // String | 
+  'searchGivenName': "searchGivenName_example", // String | 
+  'searchJobTitle': "searchJobTitle_example", // String | 
+  'searchUsername': "searchUsername_example", // String | 
+  'searchEmail': "searchEmail_example" // String | 
 };
-apiInstance.cget(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.cgetPeople(xKeyclicApp, , opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Number**| The page number of the overview. | [optional] [default to 1]
- **limit** | **Number**| The number of items per page. | [optional] [default to 20]
- **search** | **String**|  | [optional] 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
+ **order** | **String**|  | [optional] [default to desc]
+ **after** | **Date**|  | [optional] 
+ **before** | **Date**|  | [optional] 
+ **searchFamilyName** | **String**|  | [optional] 
+ **searchGivenName** | **String**|  | [optional] 
+ **searchJobTitle** | **String**|  | [optional] 
+ **searchUsername** | **String**|  | [optional] 
+ **searchEmail** | **String**|  | [optional] 
 
 ### Return type
 
@@ -53,45 +76,56 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="get"></a>
-# **get**
-> Person get(person)
+<a name="getPerson"></a>
+# **getPerson**
+> Person getPerson(xKeyclicApp, person, opts)
 
-Retrieve a person.
+Retrieve one Person resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.PersonApi();
+let apiInstance = new KeyclicApi.PersonApi();
 
-let person = "person_example"; // String | The person id.
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-apiInstance.get(person).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let person = "person_example"; // String | The identifier of the resource formatted as GUID string.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+};
+
+apiInstance.getPerson(xKeyclicApp, person, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person** | **String**| The person id. | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **person** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
 
 ### Return type
 
@@ -99,48 +133,58 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="patch"></a>
-# **patch**
-> Person patch(person, body)
+<a name="patchPerson"></a>
+# **patchPerson**
+> Person patchPerson(xKeyclicApp, person, opts)
 
-Edit a person.
+Edit one Person resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.PersonApi();
+let apiInstance = new KeyclicApi.PersonApi();
 
-let person = "person_example"; // String | The person id.
+let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let body = [new KeyclicApiReference.PersonPatchDocument()]; // [PersonPatchDocument] | A JSON document according the rfc5789 specification.
+let person = "person_example"; // String | The identifier of the resource formatted as GUID string.
 
-apiInstance.patch(person, body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'personPatch': new KeyclicApi.PersonPatch() // PersonPatch | 
+};
+
+apiInstance.patchPerson(xKeyclicApp, person, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 });
-
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **person** | **String**| The person id. | 
- **body** | [**[PersonPatchDocument]**](PersonPatchDocument.md)| A JSON document according the rfc5789 specification. | 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **person** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **personPatch** | [**PersonPatch**](PersonPatch.md)|  | [optional] 
 
 ### Return type
 
@@ -148,10 +192,10 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 

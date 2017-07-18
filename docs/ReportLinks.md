@@ -1,13 +1,15 @@
-# KeyclicApiReference.ReportLinks
+# KeyclicApi.ReportLinks
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **self** | [**ReportLinksSelf**](ReportLinksSelf.md) |  | [optional] 
-**category** | [**FeedbackLinksCategory**](FeedbackLinksCategory.md) |  | [optional] 
 **feedback** | [**ReportLinksFeedback**](ReportLinksFeedback.md) |  | [optional] 
 **operations** | [**ReportLinksOperations**](ReportLinksOperations.md) |  | [optional] 
-**organization** | [**CategoryLinksOrganization**](CategoryLinksOrganization.md) |  | [optional] 
+**organization** | [**ReportLinksOrganization**](ReportLinksOrganization.md) |  | [optional] 
+**category** | [**ReportLinksCategory**](ReportLinksCategory.md) |  | [optional] 
+**delegatedTo** | [**ReportLinksDelegatedTo**](ReportLinksDelegatedTo.md) |  | [optional] 
+**delegatedFrom** | [**ReportLinksDelegatedFrom**](ReportLinksDelegatedFrom.md) |  | [optional] 
 **tracking** | [**ReportLinksTracking**](ReportLinksTracking.md) |  | [optional] 
 
 

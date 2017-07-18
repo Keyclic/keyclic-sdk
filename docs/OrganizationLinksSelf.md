@@ -1,9 +1,9 @@
-# KeyclicApiReference.OrganizationLinksSelf
+# KeyclicApi.OrganizationLinksSelf
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** | The URI of the current organization. | [optional] 
-**iriTemplate** | [**CategoryLinksIriTemplate**](CategoryLinksIriTemplate.md) |  | [optional] 
+**href** | **String** | The URI of the self associated to the given organization. | [optional] 
+**iriTemplate** | [**ApplicationLinksSelfIriTemplate**](ApplicationLinksSelfIriTemplate.md) |  | [optional] 
 
 

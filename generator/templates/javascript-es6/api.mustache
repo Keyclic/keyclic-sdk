@@ -1,6 +1,5 @@
 {{>licenseInfo}}
-
-import ApiClient from "../ApiClient";
+import ApiClient from '../ApiClient';
 {{#imports}}
 import {{&import}} from '../{{#modelPackage}}{{&modelPackage}}/{{/modelPackage}}{{&import}}';
 {{/imports}}
@@ -12,12 +11,13 @@ import {{&import}} from '../{{#modelPackage}}{{&modelPackage}}/{{/modelPackage}}
  */
 export default class {{classname}} extends ApiClient {
     /**
-     * Constructs a new {{&classname}}.
-     * {{#description}}{{description}}{{/description}}
-     * @alias module:{{#invokerPackage}}{{&invokerPackage}}/{{/invokerPackage}}{{#apiPackage}}{{&apiPackage}}/{{/apiPackage}}{{classname}}
+    {{#description}}
+     * {{description}}
+    {{/description}}
      * @class
-     * @param {module:{{#invokerPackage}}{{&invokerPackage}}/{{/invokerPackage}}ApiClient} apiClient Optional API client implementation to use,
-     * default to {@link module:{{#invokerPackage}}{{&invokerPackage}}/{{/invokerPackage}}ApiClient#instance} if unspecified.
+     * { string } basePath To override basePath.
+     * { object } headers Additional headers for the instance.
+     * { int } timeout Number in seconds before timeout.
      */
     constructor(
         basePath = null,
@@ -26,7 +26,6 @@ export default class {{classname}} extends ApiClient {
     ) {
         super(basePath, headers, timeout);
     }
-
 {{#operations}}{{#operation}}
     /**
     {{#summary}}
@@ -37,63 +36,73 @@ export default class {{classname}} extends ApiClient {
     {{/notes}}
     {{#allParams}}
         {{#required}}
-     * @param {{=<% %>=}}{<%&vendorExtensions.x-jsdoc-type%>}<%={{ }}=%> {{paramName}} {{description}}
+     * @param { {{&vendorExtensions.x-jsdoc-type}} } {{paramName}} {{description}}
         {{/required}}
     {{/allParams}}
     {{#hasAuthMethods}}
-     * @param {Object} credentials The required credentials with good properties to use different types of authentication.
+     * @param { Object } credentials The required credentials with good properties to use different types of authentication.
     {{/hasAuthMethods}}
-     * @param {{#returnType}}{{=<% %>=}}{<%&returnType%>}<%={{ }}=%>{{/returnType}}{{^returnType}}{Object}{{/returnType}} returnType The required type to return; can be a string for simple types or the constructor for a complex type{{^returnType}} (default to null){{/returnType}}.
+     * @param {{#returnType}}{ {{&returnType}} } {{/returnType}}{{^returnType}}{ Object }{{/returnType}} returnType The required type to return; can be a string for simple types or the constructor for a complex type{{^returnType}} (default to null){{/returnType}}.
     {{#allParams}}
         {{^required}}
-     * @param {{=<% %>=}}{<%&vendorExtensions.x-jsdoc-type%>}<%={{ }}=%> {{paramName}} {{description}} {{#defaultValue}} (default to {{.}}){{/defaultValue}}
+     * @param { {{&vendorExtensions.x-jsdoc-type}} } {{paramName}} {{description}} {{#defaultValue}} (default to {{.}}){{/defaultValue}}
         {{/required}}
     {{/allParams}}
      */
     {{operationId}}(
-    {{#allParams}}
-        {{#required}}
-        {{&paramName}},
-        {{/required}}
-    {{/allParams}}
+        returnType = null,
+        options,
     {{#hasAuthMethods}}
         credentials,
     {{/hasAuthMethods}}
-    {{#returnType}}
-        returnType = {{&returnType}},
-    {{/returnType}}
-    {{^returnType}}
-        returnType = null,
-    {{/returnType}}
-    {{#allParams}}
-        {{^required}}
-        {{paramName}} = {{#defaultValue}}{{#example}}{{&example}}{{/example}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}},
-        {{/required}}
-    {{/allParams}}
     ) {
-        {{#allParams}}
-            {{#required}}
-        // verify the required parameter '{{paramName}}' is set
-        if (typeof {{paramName}} === 'undefined' || {{paramName}} === null) {
-            throw new Error('Missing the required parameter "{{paramName}}" when calling {{operationId}}');
+        {{#returnType}}
+        if (returnType === null) {
+            returnType = {{&returnType}};
         }
-            {{/required}}
+        {{/returnType}}
+
+        let {
+        {{#allParams}}
+            {{&paramName}},
         {{/allParams}}
+        } = options;
+
+        {{#allParams}}{{#required}}
+        // verify the required parameter '{{&paramName}}' is set
+        if (typeof {{&paramName}} === 'undefined' || {{&paramName}} === null) {
+            throw new window.Error('Missing the required parameter "{{&paramName}}" when calling {{&operationId}}');
+        }
+        {{/required}}{{/allParams}}
+
+        {{#allParams}}{{^required}}{{#defaultValue}}
+        // verify the default value of parameter '{{&paramName}}'
+        if (typeof {{paramName}} === 'undefined' || {{paramName}} === null) {
+            {{&paramName}} = {{#example}}{{&example}}{{/example}};  // eslint-disable-line quotes
+        }
+        {{/defaultValue}}{{/required}}{{/allParams}}
+
+        {{#allParams}}{{^required}}{{^defaultValue}}
+        // verify the null value of parameter '{{&paramName}}'
+        if (typeof {{paramName}} === 'undefined') {
+            {{&paramName}} = null;
+        }
+        {{/defaultValue}}{{/required}}{{/allParams}}
 
         {{#hasAuthMethods}}
         if (typeof credentials === 'undefined' || credentials === null) {
-            throw new Error('Missing the required parameter "credentials" when calling {{operationId}}');
+            throw new window.Error('Missing the required parameter "credentials" when calling {{&operationId}}');
         }
         {{/hasAuthMethods}}
 
         let pathParams = {
         {{#pathParams}}
-            '{{baseName}}': {{&paramName}},
+            '{{&baseName}}': {{&paramName}},
         {{/pathParams}}
         };
 
         {{#bodyParam}}
-        let bodyParam = {{paramName}};
+        let bodyParam = {{&paramName}};
         {{/bodyParam}}
         {{^bodyParam}}
         let bodyParam = null;
@@ -101,20 +110,14 @@ export default class {{classname}} extends ApiClient {
 
         let queryParams = {
             {{#queryParams}}
-            '{{baseName}}': {{paramName}},
+            '{{&baseName}}': {{&paramName}},
             {{/queryParams}}
         };
 
         let headerParams = {
             {{#headerParams}}
-            '{{baseName}}': {{paramName}},
+            '{{&baseName}}': {{&paramName}},
             {{/headerParams}}
-        };
-
-        let formParams = {
-            {{#formParams}}
-            '{{baseName}}': {{paramName}},
-            {{/formParams}}
         };
 
         {{#hasAuthMethods}}
@@ -126,7 +129,7 @@ export default class {{classname}} extends ApiClient {
 
         let authNames = [
             {{#authMethods}}
-            '{{name}}',
+            '{{&name}}',
             {{/authMethods}}
         ];
 
@@ -148,7 +151,6 @@ export default class {{classname}} extends ApiClient {
             pathParams,
             queryParams,
             headerParams,
-            formParams,
             bodyParam,
             authNames,
             credentialParams,

@@ -1,31 +1,19 @@
-# KeyclicApiReference.Operation
+# KeyclicApi.Operation
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** | The type of the resource according to schema.org: https://schema.org/Operation. | [optional] [default to &#39;Operation&#39;]
-**name** | **String** | The name of the operation | [optional] [default to &#39;&#39;]
-**description** | **String** | The description of the operation. | [optional] [default to &#39;&#39;]
-**state** | **String** | The state of the operation. | [optional] 
+**name** | **String** |  | [optional] 
+**description** | **String** |  | [optional] 
+**duration** | **Number** |  | [optional] 
+**startDate** | **Date** |  | [optional] 
+**id** | **String** |  | 
+**identificationNumber** | **String** |  | [optional] 
+**createdAt** | **Date** |  | 
+**updatedAt** | **Date** |  | 
+**type** | **String** |  | [optional] 
+**state** | **[String]** |  | [optional] 
 **links** | [**OperationLinks**](OperationLinks.md) |  | [optional] 
-
-
-<a name="StateEnum"></a>
-## Enum: StateEnum
-
-
-* `new` (value: `"new"`)
-
-* `assigned` (value: `"assigned"`)
-
-* `accepted` (value: `"accepted"`)
-
-* `refused` (value: `"refused"`)
-
-* `in_progress` (value: `"in_progress"`)
-
-* `resolved` (value: `"resolved"`)
-
-
+**embedded** | [**OperationEmbedded**](OperationEmbedded.md) |  | [optional] 
 
 

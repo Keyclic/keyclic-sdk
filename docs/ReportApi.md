@@ -1,61 +1,79 @@
-# KeyclicApiReference.ReportApi
+# KeyclicApi.ReportApi
 
 All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cgetByOrganization**](ReportApi.md#cgetByOrganization) | **GET** /organizations/{organization}/reports | Retrieve all reports for the given organization.
-[**exportByOrganization**](ReportApi.md#exportByOrganization) | **POST** /organizations/{organization}/reports/exports | Export all reports for the given organization.
-[**get**](ReportApi.md#get) | **GET** /reports/{report} | Retrieve a report.
-[**patch**](ReportApi.md#patch) | **PATCH** /reports/{report} | Edit a report.
-[**patchState**](ReportApi.md#patchState) | **PATCH** /reports/{report}/state | Apply a state transition on the given report.
-[**postDelegate**](ReportApi.md#postDelegate) | **POST** /organizations/{organization}/delegates | Delegate a report to an other organization.
+[**cgetReportsByOrganization**](ReportApi.md#cgetReportsByOrganization) | **GET** /organizations/{organization}/reports | Retrieve all Report resources.
+[**getReport**](ReportApi.md#getReport) | **GET** /reports/{report} | Retrieve one Report resource.
+[**patchReport**](ReportApi.md#patchReport) | **PATCH** /reports/{report} | Edit one Report resource.
 
 
-<a name="cgetByOrganization"></a>
-# **cgetByOrganization**
-> ReportPagination cgetByOrganization(organization, opts)
+<a name="cgetReportsByOrganization"></a>
+# **cgetReportsByOrganization**
+> ReportPagination cgetReportsByOrganization(xKeyclicApp, organization, opts)
 
-Retrieve all reports for the given organization.
+Retrieve all Report resources.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.ReportApi();
+let apiInstance = new KeyclicApi.ReportApi();
 
-let organization = "organization_example"; // String | 
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
 
 let opts = { 
-  'page': 1, // Number | The page number of the overview.
-  'limit': 20, // Number | The number of items per page.
-  'before': "before_example", // String | 
-  'after': "after_example", // String | 
-  'place': "place_example" // String | 
+  'acceptLanguage': "fr-FR", // String | 
+  'state': "state_example", // String | 
+  'place': "place_example", // String | The identifier of the resource formatted as GUID string.
+  'category': "category_example", // String | The identifier of the resource formatted as GUID string.
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
+  'order': "desc", // String | 
+  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'searchDescription': "searchDescription_example", // String | 
+  'searchFeedback': "searchFeedback_example", // String | 
+  'searchIdentificationNumber': "searchIdentificationNumber_example" // String | 
 };
-apiInstance.cgetByOrganization(organization, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.cgetReportsByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **String**|  | 
- **page** | **Number**| The page number of the overview. | [optional] [default to 1]
- **limit** | **Number**| The number of items per page. | [optional] [default to 20]
- **before** | **String**|  | [optional] 
- **after** | **String**|  | [optional] 
- **place** | **String**|  | [optional] 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **state** | **String**|  | [optional] 
+ **place** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **category** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
+ **order** | **String**|  | [optional] [default to desc]
+ **after** | **Date**|  | [optional] 
+ **before** | **Date**|  | [optional] 
+ **searchDescription** | **String**|  | [optional] 
+ **searchFeedback** | **String**|  | [optional] 
+ **searchIdentificationNumber** | **String**|  | [optional] 
 
 ### Return type
 
@@ -63,55 +81,113 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="exportByOrganization"></a>
-# **exportByOrganization**
-> exportByOrganization(organization, opts)
+<a name="getReport"></a>
+# **getReport**
+> Report getReport(xKeyclicApp, report, opts)
 
-Export all reports for the given organization.
-
-The export is a CSV file send by email.
+Retrieve one Report resource.
 
 ### Example
 ```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
 
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
 
-let apiInstance = new KeyclicApiReference.ReportApi();
+let apiInstance = new KeyclicApi.ReportApi();
 
-let organization = "organization_example"; // String | 
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let report = "report_example"; // String | The identifier of the resource formatted as GUID string.
 
 let opts = { 
-  'before': "before_example", // String | 
-  'after': "after_example", // String | 
-  'place': "place_example" // String | 
+  'acceptLanguage': "fr-FR", // String | 
 };
-apiInstance.exportByOrganization(organization, opts).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.getReport(xKeyclicApp, report, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **String**|  | 
- **before** | **String**|  | [optional] 
- **after** | **String**|  | [optional] 
- **place** | **String**|  | [optional] 
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **report** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+
+### Return type
+
+[**Report**](Report.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
+<a name="patchReport"></a>
+# **patchReport**
+> patchReport(xKeyclicApp, report, opts)
+
+Edit one Report resource.
+
+### Example
+```javascript
+import KeyclicApi from 'keyclic_api';
+let defaultClient = KeyclicApi.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new KeyclicApi.ReportApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let report = "report_example"; // String | The identifier of the resource formatted as GUID string.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+};
+
+apiInstance.patchReport(xKeyclicApp, report, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **report** | **String**| The identifier of the resource formatted as GUID string. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
 
 ### Return type
 
@@ -119,205 +195,10 @@ null (empty response body)
 
 ### Authorization
 
-[JWT](../README.md#JWT)
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="get"></a>
-# **get**
-> Report get(report)
-
-Retrieve a report.
-
-### Example
-```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
-
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new KeyclicApiReference.ReportApi();
-
-let report = "report_example"; // String | 
-
-apiInstance.get(report).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **report** | **String**|  | 
-
-### Return type
-
-[**Report**](Report.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="patch"></a>
-# **patch**
-> Report patch(report, body)
-
-Edit a report.
-
-### Example
-```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
-
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new KeyclicApiReference.ReportApi();
-
-let report = "report_example"; // String | 
-
-let body = [new KeyclicApiReference.ReportPatchDocument()]; // [ReportPatchDocument] | A JSON document according the rfc5789 specification.
-
-apiInstance.patch(report, body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **report** | **String**|  | 
- **body** | [**[ReportPatchDocument]**](ReportPatchDocument.md)| A JSON document according the rfc5789 specification. | 
-
-### Return type
-
-[**Report**](Report.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="patchState"></a>
-# **patchState**
-> Report patchState(report, body)
-
-Apply a state transition on the given report.
-
-Apply transition for an organization.  For more informations about PATCH implementation, please refer to the RFC.  • https://tools.ietf.org/html/rfc5789
-
-### Example
-```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
-
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new KeyclicApiReference.ReportApi();
-
-let report = "report_example"; // String | 
-
-let body = [new KeyclicApiReference.ReportStatePatchDocument()]; // [ReportStatePatchDocument] | A JSON document according the rfc5789 specification.
-
-apiInstance.patchState(report, body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **report** | **String**|  | 
- **body** | [**[ReportStatePatchDocument]**](ReportStatePatchDocument.md)| A JSON document according the rfc5789 specification. | 
-
-### Return type
-
-[**Report**](Report.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="postDelegate"></a>
-# **postDelegate**
-> Report postDelegate(organization, delegateObject)
-
-Delegate a report to an other organization.
-
-### Example
-```javascript
-import KeyclicApiReference from 'keyclic_api_reference';
-let defaultClient = KeyclicApiReference.ApiClient.default;
-
-// Configure OAuth2 access token for authorization: JWT
-let JWT = defaultClient.authentications['JWT'];
-JWT.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new KeyclicApiReference.ReportApi();
-
-let organization = "organization_example"; // String | The organization id
-
-let delegateObject = new KeyclicApiReference.DelegateBody(); // DelegateBody | The body object for delegate a report to an other organization
-
-apiInstance.postDelegate(organization, delegateObject).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | **String**| The organization id | 
- **delegateObject** | [**DelegateBody**](DelegateBody.md)| The body object for delegate a report to an other organization | 
-
-### Return type
-
-[**Report**](Report.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
