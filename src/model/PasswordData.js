@@ -43,26 +43,26 @@ export default class PasswordData  {
     /**
     * Constructs a "PasswordData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/PasswordData } type Optional instance to populate.
+    * @param { module:model/PasswordData } object Optional instance to populate.
     * @return { module:model/PasswordData } The populated "PasswordData" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = PasswordData,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new PasswordData();
+        }
 
         if (data.hasOwnProperty('password')) {
             object.password = ApiClient.convertToType(data['password'], 'String');
         }
 
         return object;
-
     }
 
     

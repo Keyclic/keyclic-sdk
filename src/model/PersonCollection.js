@@ -41,26 +41,26 @@ export default class PersonCollection  {
     /**
     * Constructs a "PersonCollection" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/PersonCollection } type Optional instance to populate.
+    * @param { module:model/PersonCollection } object Optional instance to populate.
     * @return { module:model/PersonCollection } The populated "PersonCollection" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = PersonCollection,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new PersonCollection();
+        }
 
         if (data.hasOwnProperty('items')) {
             object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
         }
 
         return object;
-
     }
 
     

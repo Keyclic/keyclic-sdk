@@ -66,19 +66,20 @@ export default class Place  {
     /**
     * Constructs a "Place" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/Place } type Optional instance to populate.
+    * @param { module:model/Place } object Optional instance to populate.
     * @return { module:model/Place } The populated "Place" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = Place,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new Place();
+        }
 
         if (data.hasOwnProperty('branchCode')) {
             object.branchCode = ApiClient.convertToType(data['branchCode'], 'String');
@@ -106,7 +107,6 @@ export default class Place  {
         }
 
         return object;
-
     }
 
     

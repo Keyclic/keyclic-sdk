@@ -48,19 +48,20 @@ export default class RegisterData  {
     /**
     * Constructs a "RegisterData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/RegisterData } type Optional instance to populate.
+    * @param { module:model/RegisterData } object Optional instance to populate.
     * @return { module:model/RegisterData } The populated "RegisterData" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = RegisterData,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new RegisterData();
+        }
 
         if (data.hasOwnProperty('email')) {
             object.email = ApiClient.convertToType(data['email'], 'String');
@@ -70,7 +71,6 @@ export default class RegisterData  {
         }
 
         return object;
-
     }
 
     

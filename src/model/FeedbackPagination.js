@@ -46,29 +46,27 @@ export default class FeedbackPagination extends Pagination {
     /**
     * Constructs a "FeedbackPagination" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/FeedbackPagination } type Optional instance to populate.
+    * @param { module:model/FeedbackPagination } object Optional instance to populate.
     * @return { module:model/FeedbackPagination } The populated "FeedbackPagination" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = FeedbackPagination,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-        let object = super.constructFromObject(
-            data,
-            type
-        );
-
+        if (object === null) {
+            object = new FeedbackPagination();
+        }
+        object = super.constructFromData(data, object);
 
         if (data.hasOwnProperty('_embedded')) {
             object.embedded = ApiClient.convertToType(data['_embedded'], object.embeddedType);
         }
 
         return object;
-
     }
 
     

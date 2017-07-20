@@ -42,19 +42,20 @@ export default class OperationLinksReport  {
     /**
     * Constructs a "OperationLinksReport" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/OperationLinksReport } type Optional instance to populate.
+    * @param { module:model/OperationLinksReport } object Optional instance to populate.
     * @return { module:model/OperationLinksReport } The populated "OperationLinksReport" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = OperationLinksReport,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new OperationLinksReport();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
@@ -64,7 +65,6 @@ export default class OperationLinksReport  {
         }
 
         return object;
-
     }
 
     

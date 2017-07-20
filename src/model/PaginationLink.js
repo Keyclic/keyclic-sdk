@@ -39,26 +39,26 @@ export default class PaginationLink  {
     /**
     * Constructs a "PaginationLink" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/PaginationLink } type Optional instance to populate.
+    * @param { module:model/PaginationLink } object Optional instance to populate.
     * @return { module:model/PaginationLink } The populated "PaginationLink" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = PaginationLink,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new PaginationLink();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
         }
 
         return object;
-
     }
 
     

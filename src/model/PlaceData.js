@@ -50,19 +50,20 @@ export default class PlaceData  {
     /**
     * Constructs a "PlaceData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/PlaceData } type Optional instance to populate.
+    * @param { module:model/PlaceData } object Optional instance to populate.
     * @return { module:model/PlaceData } The populated "PlaceData" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = PlaceData,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new PlaceData();
+        }
 
         if (data.hasOwnProperty('name')) {
             object.name = ApiClient.convertToType(data['name'], 'String');
@@ -78,7 +79,6 @@ export default class PlaceData  {
         }
 
         return object;
-
     }
 
     

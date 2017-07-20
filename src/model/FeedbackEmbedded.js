@@ -39,26 +39,26 @@ export default class FeedbackEmbedded  {
     /**
     * Constructs a "FeedbackEmbedded" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/FeedbackEmbedded } type Optional instance to populate.
+    * @param { module:model/FeedbackEmbedded } object Optional instance to populate.
     * @return { module:model/FeedbackEmbedded } The populated "FeedbackEmbedded" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = FeedbackEmbedded,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new FeedbackEmbedded();
+        }
 
         if (data.hasOwnProperty('stateTransitions')) {
             object.stateTransitions = ApiClient.convertToType(data['stateTransitions'], '[\'String\']');
         }
 
         return object;
-
     }
 
     

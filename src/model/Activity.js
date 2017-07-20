@@ -63,19 +63,20 @@ export default class Activity  {
     /**
     * Constructs a "Activity" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/Activity } type Optional instance to populate.
+    * @param { module:model/Activity } object Optional instance to populate.
     * @return { module:model/Activity } The populated "Activity" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = Activity,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new Activity();
+        }
 
         if (data.hasOwnProperty('actor')) {
             object.actor = ApiClient.convertToType(data['actor'], 'String');
@@ -94,7 +95,6 @@ export default class Activity  {
         }
 
         return object;
-
     }
 
     

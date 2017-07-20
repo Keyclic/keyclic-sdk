@@ -43,26 +43,26 @@ export default class FeedbackStatePatch  {
     /**
     * Constructs a "FeedbackStatePatch" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/FeedbackStatePatch } type Optional instance to populate.
+    * @param { module:model/FeedbackStatePatch } object Optional instance to populate.
     * @return { module:model/FeedbackStatePatch } The populated "FeedbackStatePatch" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = FeedbackStatePatch,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new FeedbackStatePatch();
+        }
 
         if (data.hasOwnProperty('transition')) {
             object.transition = ApiClient.convertToType(data['transition'], 'String');
         }
 
         return object;
-
     }
 
     

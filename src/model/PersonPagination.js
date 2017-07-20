@@ -46,29 +46,27 @@ export default class PersonPagination extends Pagination {
     /**
     * Constructs a "PersonPagination" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/PersonPagination } type Optional instance to populate.
+    * @param { module:model/PersonPagination } object Optional instance to populate.
     * @return { module:model/PersonPagination } The populated "PersonPagination" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = PersonPagination,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-        let object = super.constructFromObject(
-            data,
-            type
-        );
-
+        if (object === null) {
+            object = new PersonPagination();
+        }
+        object = super.constructFromData(data, object);
 
         if (data.hasOwnProperty('_embedded')) {
             object.embedded = ApiClient.convertToType(data['_embedded'], object.embeddedType);
         }
 
         return object;
-
     }
 
     

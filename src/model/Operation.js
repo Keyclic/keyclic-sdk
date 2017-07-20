@@ -66,19 +66,20 @@ export default class Operation  {
     /**
     * Constructs a "Operation" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/Operation } type Optional instance to populate.
+    * @param { module:model/Operation } object Optional instance to populate.
     * @return { module:model/Operation } The populated "Operation" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = Operation,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new Operation();
+        }
 
         if (data.hasOwnProperty('name')) {
             object.name = ApiClient.convertToType(data['name'], 'String');
@@ -118,7 +119,6 @@ export default class Operation  {
         }
 
         return object;
-
     }
 
     

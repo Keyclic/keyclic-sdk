@@ -43,26 +43,26 @@ export default class OperationStatePatch  {
     /**
     * Constructs a "OperationStatePatch" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/OperationStatePatch } type Optional instance to populate.
+    * @param { module:model/OperationStatePatch } object Optional instance to populate.
     * @return { module:model/OperationStatePatch } The populated "OperationStatePatch" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = OperationStatePatch,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new OperationStatePatch();
+        }
 
         if (data.hasOwnProperty('transition')) {
             object.transition = ApiClient.convertToType(data['transition'], 'String');
         }
 
         return object;
-
     }
 
     

@@ -44,19 +44,20 @@ export default class PlaceGeoPolygon  {
     /**
     * Constructs a "PlaceGeoPolygon" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/PlaceGeoPolygon } type Optional instance to populate.
+    * @param { module:model/PlaceGeoPolygon } object Optional instance to populate.
     * @return { module:model/PlaceGeoPolygon } The populated "PlaceGeoPolygon" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = PlaceGeoPolygon,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new PlaceGeoPolygon();
+        }
 
         if (data.hasOwnProperty('type')) {
             object.type = ApiClient.convertToType(data['type'], 'String');
@@ -66,7 +67,6 @@ export default class PlaceGeoPolygon  {
         }
 
         return object;
-
     }
 
     

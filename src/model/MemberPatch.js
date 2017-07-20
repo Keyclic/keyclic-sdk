@@ -39,26 +39,26 @@ export default class MemberPatch  {
     /**
     * Constructs a "MemberPatch" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/MemberPatch } type Optional instance to populate.
+    * @param { module:model/MemberPatch } object Optional instance to populate.
     * @return { module:model/MemberPatch } The populated "MemberPatch" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = MemberPatch,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new MemberPatch();
+        }
 
         if (data.hasOwnProperty('roles')) {
             object.roles = ApiClient.convertToType(data['roles'], 'String');
         }
 
         return object;
-
     }
 
     

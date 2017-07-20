@@ -42,19 +42,20 @@ export default class MemberLinksSelf  {
     /**
     * Constructs a "MemberLinksSelf" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/MemberLinksSelf } type Optional instance to populate.
+    * @param { module:model/MemberLinksSelf } object Optional instance to populate.
     * @return { module:model/MemberLinksSelf } The populated "MemberLinksSelf" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = MemberLinksSelf,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new MemberLinksSelf();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
@@ -64,7 +65,6 @@ export default class MemberLinksSelf  {
         }
 
         return object;
-
     }
 
     

@@ -40,19 +40,20 @@ export default class OperationEmbedded  {
     /**
     * Constructs a "OperationEmbedded" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/OperationEmbedded } type Optional instance to populate.
+    * @param { module:model/OperationEmbedded } object Optional instance to populate.
     * @return { module:model/OperationEmbedded } The populated "OperationEmbedded" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = OperationEmbedded,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new OperationEmbedded();
+        }
 
         if (data.hasOwnProperty('transitions')) {
             object.transitions = ApiClient.convertToType(data['transitions'], '[\'String\']');
@@ -62,7 +63,6 @@ export default class OperationEmbedded  {
         }
 
         return object;
-
     }
 
     

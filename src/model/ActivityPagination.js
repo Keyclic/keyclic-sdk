@@ -43,19 +43,20 @@ export default class ActivityPagination  {
     /**
     * Constructs a "ActivityPagination" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/ActivityPagination } type Optional instance to populate.
+    * @param { module:model/ActivityPagination } object Optional instance to populate.
     * @return { module:model/ActivityPagination } The populated "ActivityPagination" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = ActivityPagination,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new ActivityPagination();
+        }
 
         if (data.hasOwnProperty('duration')) {
             object.duration = ApiClient.convertToType(data['duration'], 'String');
@@ -68,7 +69,6 @@ export default class ActivityPagination  {
         }
 
         return object;
-
     }
 
     

@@ -43,19 +43,20 @@ export default class SuccessLogin  {
     /**
     * Constructs a "SuccessLogin" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/SuccessLogin } type Optional instance to populate.
+    * @param { module:model/SuccessLogin } object Optional instance to populate.
     * @return { module:model/SuccessLogin } The populated "SuccessLogin" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = SuccessLogin,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new SuccessLogin();
+        }
 
         if (data.hasOwnProperty('accessToken')) {
             object.accessToken = ApiClient.convertToType(data['accessToken'], 'String');
@@ -68,7 +69,6 @@ export default class SuccessLogin  {
         }
 
         return object;
-
     }
 
     

@@ -41,26 +41,26 @@ export default class OrganizationCollection  {
     /**
     * Constructs a "OrganizationCollection" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/OrganizationCollection } type Optional instance to populate.
+    * @param { module:model/OrganizationCollection } object Optional instance to populate.
     * @return { module:model/OrganizationCollection } The populated "OrganizationCollection" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = OrganizationCollection,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new OrganizationCollection();
+        }
 
         if (data.hasOwnProperty('items')) {
             object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
         }
 
         return object;
-
     }
 
     

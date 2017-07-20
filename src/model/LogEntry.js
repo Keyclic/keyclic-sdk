@@ -58,19 +58,20 @@ export default class LogEntry  {
     /**
     * Constructs a "LogEntry" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/LogEntry } type Optional instance to populate.
+    * @param { module:model/LogEntry } object Optional instance to populate.
     * @return { module:model/LogEntry } The populated "LogEntry" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = LogEntry,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new LogEntry();
+        }
 
         if (data.hasOwnProperty('action')) {
             object.action = ApiClient.convertToType(data['action'], 'String');
@@ -86,7 +87,6 @@ export default class LogEntry  {
         }
 
         return object;
-
     }
 
     

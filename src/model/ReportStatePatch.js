@@ -43,26 +43,26 @@ export default class ReportStatePatch  {
     /**
     * Constructs a "ReportStatePatch" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/ReportStatePatch } type Optional instance to populate.
+    * @param { module:model/ReportStatePatch } object Optional instance to populate.
     * @return { module:model/ReportStatePatch } The populated "ReportStatePatch" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = ReportStatePatch,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new ReportStatePatch();
+        }
 
         if (data.hasOwnProperty('transition')) {
             object.transition = ApiClient.convertToType(data['transition'], 'String');
         }
 
         return object;
-
     }
 
     

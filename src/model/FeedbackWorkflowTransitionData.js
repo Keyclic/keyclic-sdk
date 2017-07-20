@@ -43,26 +43,26 @@ export default class FeedbackWorkflowTransitionData  {
     /**
     * Constructs a "FeedbackWorkflowTransitionData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/FeedbackWorkflowTransitionData } type Optional instance to populate.
+    * @param { module:model/FeedbackWorkflowTransitionData } object Optional instance to populate.
     * @return { module:model/FeedbackWorkflowTransitionData } The populated "FeedbackWorkflowTransitionData" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = FeedbackWorkflowTransitionData,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new FeedbackWorkflowTransitionData();
+        }
 
         if (data.hasOwnProperty('transition')) {
             object.transition = ApiClient.convertToType(data['transition'], 'String');
         }
 
         return object;
-
     }
 
     

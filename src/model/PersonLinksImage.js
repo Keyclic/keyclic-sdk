@@ -42,19 +42,20 @@ export default class PersonLinksImage  {
     /**
     * Constructs a "PersonLinksImage" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/PersonLinksImage } type Optional instance to populate.
+    * @param { module:model/PersonLinksImage } object Optional instance to populate.
     * @return { module:model/PersonLinksImage } The populated "PersonLinksImage" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = PersonLinksImage,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new PersonLinksImage();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
@@ -64,7 +65,6 @@ export default class PersonLinksImage  {
         }
 
         return object;
-
     }
 
     

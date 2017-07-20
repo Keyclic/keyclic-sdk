@@ -42,19 +42,20 @@ export default class ReportPatch  {
     /**
     * Constructs a "ReportPatch" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/ReportPatch } type Optional instance to populate.
+    * @param { module:model/ReportPatch } object Optional instance to populate.
     * @return { module:model/ReportPatch } The populated "ReportPatch" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = ReportPatch,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new ReportPatch();
+        }
 
         if (data.hasOwnProperty('description')) {
             object.description = ApiClient.convertToType(data['description'], 'String');
@@ -70,7 +71,6 @@ export default class ReportPatch  {
         }
 
         return object;
-
     }
 
     

@@ -43,26 +43,26 @@ export default class CommentData  {
     /**
     * Constructs a "CommentData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/CommentData } type Optional instance to populate.
+    * @param { module:model/CommentData } object Optional instance to populate.
     * @return { module:model/CommentData } The populated "CommentData" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = CommentData,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new CommentData();
+        }
 
         if (data.hasOwnProperty('text')) {
             object.text = ApiClient.convertToType(data['text'], 'String');
         }
 
         return object;
-
     }
 
     

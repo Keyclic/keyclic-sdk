@@ -56,19 +56,20 @@ export default class Feedback  {
     /**
     * Constructs a "Feedback" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/Feedback } type Optional instance to populate.
+    * @param { module:model/Feedback } object Optional instance to populate.
     * @return { module:model/Feedback } The populated "Feedback" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = Feedback,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new Feedback();
+        }
 
         if (data.hasOwnProperty('description')) {
             object.description = ApiClient.convertToType(data['description'], 'String');
@@ -96,7 +97,6 @@ export default class Feedback  {
         }
 
         return object;
-
     }
 
     

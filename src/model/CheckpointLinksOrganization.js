@@ -42,19 +42,20 @@ export default class CheckpointLinksOrganization  {
     /**
     * Constructs a "CheckpointLinksOrganization" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/CheckpointLinksOrganization } type Optional instance to populate.
+    * @param { module:model/CheckpointLinksOrganization } object Optional instance to populate.
     * @return { module:model/CheckpointLinksOrganization } The populated "CheckpointLinksOrganization" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = CheckpointLinksOrganization,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new CheckpointLinksOrganization();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
@@ -64,7 +65,6 @@ export default class CheckpointLinksOrganization  {
         }
 
         return object;
-
     }
 
     

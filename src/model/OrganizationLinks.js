@@ -44,19 +44,20 @@ export default class OrganizationLinks  {
     /**
     * Constructs a "OrganizationLinks" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/OrganizationLinks } type Optional instance to populate.
+    * @param { module:model/OrganizationLinks } object Optional instance to populate.
     * @return { module:model/OrganizationLinks } The populated "OrganizationLinks" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = OrganizationLinks,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new OrganizationLinks();
+        }
 
         if (data.hasOwnProperty('self')) {
             object.self = ApiClient.convertToType(data['self'], object.selfType);
@@ -66,7 +67,6 @@ export default class OrganizationLinks  {
         }
 
         return object;
-
     }
 
     

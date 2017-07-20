@@ -40,19 +40,20 @@ export default class SuccessLoginCredentialsOrganization  {
     /**
     * Constructs a "SuccessLoginCredentialsOrganization" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/SuccessLoginCredentialsOrganization } type Optional instance to populate.
+    * @param { module:model/SuccessLoginCredentialsOrganization } object Optional instance to populate.
     * @return { module:model/SuccessLoginCredentialsOrganization } The populated "SuccessLoginCredentialsOrganization" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = SuccessLoginCredentialsOrganization,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new SuccessLoginCredentialsOrganization();
+        }
 
         if (data.hasOwnProperty('type')) {
             object.type = ApiClient.convertToType(data['type'], 'String');
@@ -62,7 +63,6 @@ export default class SuccessLoginCredentialsOrganization  {
         }
 
         return object;
-
     }
 
     

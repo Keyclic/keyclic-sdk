@@ -41,19 +41,20 @@ export default class SuccessLoginCredentialsAdministratorOf  {
     /**
     * Constructs a "SuccessLoginCredentialsAdministratorOf" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/SuccessLoginCredentialsAdministratorOf } type Optional instance to populate.
+    * @param { module:model/SuccessLoginCredentialsAdministratorOf } object Optional instance to populate.
     * @return { module:model/SuccessLoginCredentialsAdministratorOf } The populated "SuccessLoginCredentialsAdministratorOf" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = SuccessLoginCredentialsAdministratorOf,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new SuccessLoginCredentialsAdministratorOf();
+        }
 
         if (data.hasOwnProperty('id')) {
             object.id = ApiClient.convertToType(data['id'], 'String');
@@ -66,7 +67,6 @@ export default class SuccessLoginCredentialsAdministratorOf  {
         }
 
         return object;
-
     }
 
     

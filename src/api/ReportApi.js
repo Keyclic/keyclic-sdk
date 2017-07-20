@@ -14,6 +14,7 @@ import ApiClient from '../ApiClient';
 import Error from '../model/Error';
 import Report from '../model/Report';
 import ReportPagination from '../model/ReportPagination';
+import ReportPatch from '../model/ReportPatch';
 
 /**
  * Report service.
@@ -310,19 +311,24 @@ export default class ReportApi extends ApiClient {
      * @param { String } xKeyclicApp 
      * @param { String } report The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
+     * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { module:model/ReportPatch } reportPatch  
      */
     patchReport(
         returnType = null,
         options,
         credentials,
     ) {
+        if (returnType === null) {
+            returnType = Report;
+        }
 
         let {
             xKeyclicApp,
             report,
             acceptLanguage,
+            reportPatch,
         } = options;
 
         
@@ -345,6 +351,11 @@ export default class ReportApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'reportPatch'
+        if (typeof reportPatch === 'undefined') {
+            reportPatch = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchReport');
@@ -354,7 +365,7 @@ export default class ReportApi extends ApiClient {
             'report': report,
         };
 
-        let bodyParam = null;
+        let bodyParam = reportPatch;
 
         let queryParams = {
         };

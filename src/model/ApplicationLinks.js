@@ -41,26 +41,26 @@ export default class ApplicationLinks  {
     /**
     * Constructs a "ApplicationLinks" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/ApplicationLinks } type Optional instance to populate.
+    * @param { module:model/ApplicationLinks } object Optional instance to populate.
     * @return { module:model/ApplicationLinks } The populated "ApplicationLinks" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = ApplicationLinks,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new ApplicationLinks();
+        }
 
         if (data.hasOwnProperty('self')) {
             object.self = ApiClient.convertToType(data['self'], object.selfType);
         }
 
         return object;
-
     }
 
     

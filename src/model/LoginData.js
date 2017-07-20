@@ -48,19 +48,20 @@ export default class LoginData  {
     /**
     * Constructs a "LoginData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/LoginData } type Optional instance to populate.
+    * @param { module:model/LoginData } object Optional instance to populate.
     * @return { module:model/LoginData } The populated "LoginData" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = LoginData,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new LoginData();
+        }
 
         if (data.hasOwnProperty('login')) {
             object.login = ApiClient.convertToType(data['login'], 'String');
@@ -70,7 +71,6 @@ export default class LoginData  {
         }
 
         return object;
-
     }
 
     

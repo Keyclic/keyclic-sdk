@@ -33,7 +33,7 @@ export default class Checkpoint  {
     
     ) {
 
-        this.state = null;
+        this.state = [];
         this.links = null;
 
         this.linksType = CheckpointLinks;
@@ -42,29 +42,29 @@ export default class Checkpoint  {
     /**
     * Constructs a "Checkpoint" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/Checkpoint } type Optional instance to populate.
+    * @param { module:model/Checkpoint } object Optional instance to populate.
     * @return { module:model/Checkpoint } The populated "Checkpoint" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = Checkpoint,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new Checkpoint();
+        }
 
         if (data.hasOwnProperty('state')) {
-            object.state = ApiClient.convertToType(data['state'], 'String');
+            object.state = ApiClient.convertToType(data['state'], '[\'String\']');
         }
         if (data.hasOwnProperty('_links')) {
             object.links = ApiClient.convertToType(data['_links'], object.linksType);
         }
 
         return object;
-
     }
 
     

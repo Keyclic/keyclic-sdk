@@ -43,26 +43,26 @@ export default class MemberData  {
     /**
     * Constructs a "MemberData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/MemberData } type Optional instance to populate.
+    * @param { module:model/MemberData } object Optional instance to populate.
     * @return { module:model/MemberData } The populated "MemberData" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = MemberData,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new MemberData();
+        }
 
         if (data.hasOwnProperty('member')) {
             object.member = ApiClient.convertToType(data['member'], 'String');
         }
 
         return object;
-
     }
 
     

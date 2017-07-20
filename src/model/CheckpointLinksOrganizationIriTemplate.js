@@ -39,26 +39,26 @@ export default class CheckpointLinksOrganizationIriTemplate  {
     /**
     * Constructs a "CheckpointLinksOrganizationIriTemplate" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/CheckpointLinksOrganizationIriTemplate } type Optional instance to populate.
+    * @param { module:model/CheckpointLinksOrganizationIriTemplate } object Optional instance to populate.
     * @return { module:model/CheckpointLinksOrganizationIriTemplate } The populated "CheckpointLinksOrganizationIriTemplate" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = CheckpointLinksOrganizationIriTemplate,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new CheckpointLinksOrganizationIriTemplate();
+        }
 
         if (data.hasOwnProperty('mapping')) {
             object.mapping = ApiClient.convertToType(data['mapping'], '[\'Object\']');
         }
 
         return object;
-
     }
 
     

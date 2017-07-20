@@ -53,19 +53,20 @@ export default class CategoryData  {
     /**
     * Constructs a "CategoryData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/CategoryData } type Optional instance to populate.
+    * @param { module:model/CategoryData } object Optional instance to populate.
     * @return { module:model/CategoryData } The populated "CategoryData" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = CategoryData,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new CategoryData();
+        }
 
         if (data.hasOwnProperty('name')) {
             object.name = ApiClient.convertToType(data['name'], 'String');
@@ -78,7 +79,6 @@ export default class CategoryData  {
         }
 
         return object;
-
     }
 
     

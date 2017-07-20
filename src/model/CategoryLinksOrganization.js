@@ -42,19 +42,20 @@ export default class CategoryLinksOrganization  {
     /**
     * Constructs a "CategoryLinksOrganization" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/CategoryLinksOrganization } type Optional instance to populate.
+    * @param { module:model/CategoryLinksOrganization } object Optional instance to populate.
     * @return { module:model/CategoryLinksOrganization } The populated "CategoryLinksOrganization" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = CategoryLinksOrganization,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new CategoryLinksOrganization();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
@@ -64,7 +65,6 @@ export default class CategoryLinksOrganization  {
         }
 
         return object;
-
     }
 
     

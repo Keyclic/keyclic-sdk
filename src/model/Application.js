@@ -58,19 +58,20 @@ export default class Application  {
     /**
     * Constructs a "Application" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/Application } type Optional instance to populate.
+    * @param { module:model/Application } object Optional instance to populate.
     * @return { module:model/Application } The populated "Application" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = Application,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new Application();
+        }
 
         if (data.hasOwnProperty('name')) {
             object.name = ApiClient.convertToType(data['name'], 'String');
@@ -92,7 +93,6 @@ export default class Application  {
         }
 
         return object;
-
     }
 
     

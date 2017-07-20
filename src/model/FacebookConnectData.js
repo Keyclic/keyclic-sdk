@@ -43,26 +43,26 @@ export default class FacebookConnectData  {
     /**
     * Constructs a "FacebookConnectData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/FacebookConnectData } type Optional instance to populate.
+    * @param { module:model/FacebookConnectData } object Optional instance to populate.
     * @return { module:model/FacebookConnectData } The populated "FacebookConnectData" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = FacebookConnectData,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new FacebookConnectData();
+        }
 
         if (data.hasOwnProperty('accessToken')) {
             object.accessToken = ApiClient.convertToType(data['accessToken'], 'String');
         }
 
         return object;
-
     }
 
     

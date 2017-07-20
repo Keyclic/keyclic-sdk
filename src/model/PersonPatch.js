@@ -43,19 +43,20 @@ export default class PersonPatch  {
     /**
     * Constructs a "PersonPatch" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/PersonPatch } type Optional instance to populate.
+    * @param { module:model/PersonPatch } object Optional instance to populate.
     * @return { module:model/PersonPatch } The populated "PersonPatch" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = PersonPatch,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new PersonPatch();
+        }
 
         if (data.hasOwnProperty('givenName')) {
             object.givenName = ApiClient.convertToType(data['givenName'], 'String');
@@ -74,7 +75,6 @@ export default class PersonPatch  {
         }
 
         return object;
-
     }
 
     

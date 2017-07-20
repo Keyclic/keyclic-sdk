@@ -15,10 +15,8 @@ import Error from '../model/Error';
 import Feedback from '../model/Feedback';
 import FeedbackStatePatch from '../model/FeedbackStatePatch';
 import Operation from '../model/Operation';
-import OperationPatch from '../model/OperationPatch';
 import OperationStatePatch from '../model/OperationStatePatch';
 import Report from '../model/Report';
-import ReportPatch from '../model/ReportPatch';
 import ReportStatePatch from '../model/ReportStatePatch';
 
 /**
@@ -146,7 +144,6 @@ export default class StateApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { module:model/OperationPatch } operationPatch  
      * @param { module:model/OperationStatePatch } operationStatePatch  
      */
     patchStateByOperation(
@@ -162,7 +159,6 @@ export default class StateApi extends ApiClient {
             xKeyclicApp,
             operation,
             acceptLanguage,
-            operationPatch,
             operationStatePatch,
         } = options;
 
@@ -185,11 +181,6 @@ export default class StateApi extends ApiClient {
         }
         
 
-        
-        // verify the null value of parameter 'operationPatch'
-        if (typeof operationPatch === 'undefined') {
-            operationPatch = null;
-        }
         
         // verify the null value of parameter 'operationStatePatch'
         if (typeof operationStatePatch === 'undefined') {
@@ -251,7 +242,6 @@ export default class StateApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { module:model/ReportPatch } reportPatch  
      * @param { module:model/ReportStatePatch } reportStatePatch  
      */
     patchStateByReport(
@@ -267,7 +257,6 @@ export default class StateApi extends ApiClient {
             xKeyclicApp,
             report,
             acceptLanguage,
-            reportPatch,
             reportStatePatch,
         } = options;
 
@@ -290,11 +279,6 @@ export default class StateApi extends ApiClient {
         }
         
 
-        
-        // verify the null value of parameter 'reportPatch'
-        if (typeof reportPatch === 'undefined') {
-            reportPatch = null;
-        }
         
         // verify the null value of parameter 'reportStatePatch'
         if (typeof reportStatePatch === 'undefined') {

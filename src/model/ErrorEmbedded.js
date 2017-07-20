@@ -41,26 +41,26 @@ export default class ErrorEmbedded  {
     /**
     * Constructs a "ErrorEmbedded" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/ErrorEmbedded } type Optional instance to populate.
+    * @param { module:model/ErrorEmbedded } object Optional instance to populate.
     * @return { module:model/ErrorEmbedded } The populated "ErrorEmbedded" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = ErrorEmbedded,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new ErrorEmbedded();
+        }
 
         if (data.hasOwnProperty('errors')) {
             object.errors = ApiClient.convertToType(data['errors'], [object.errorsType]);
         }
 
         return object;
-
     }
 
     

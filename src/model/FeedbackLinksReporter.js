@@ -42,19 +42,20 @@ export default class FeedbackLinksReporter  {
     /**
     * Constructs a "FeedbackLinksReporter" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/FeedbackLinksReporter } type Optional instance to populate.
+    * @param { module:model/FeedbackLinksReporter } object Optional instance to populate.
     * @return { module:model/FeedbackLinksReporter } The populated "FeedbackLinksReporter" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = FeedbackLinksReporter,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new FeedbackLinksReporter();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
@@ -64,7 +65,6 @@ export default class FeedbackLinksReporter  {
         }
 
         return object;
-
     }
 
     

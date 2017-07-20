@@ -42,19 +42,20 @@ export default class OrganizationLinksLogo  {
     /**
     * Constructs a "OrganizationLinksLogo" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/OrganizationLinksLogo } type Optional instance to populate.
+    * @param { module:model/OrganizationLinksLogo } object Optional instance to populate.
     * @return { module:model/OrganizationLinksLogo } The populated "OrganizationLinksLogo" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = OrganizationLinksLogo,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new OrganizationLinksLogo();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
@@ -64,7 +65,6 @@ export default class OrganizationLinksLogo  {
         }
 
         return object;
-
     }
 
     

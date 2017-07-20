@@ -93,7 +93,6 @@ let operation = "operation_example"; // String | The identifier of the resource 
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
-  'operationPatch': new KeyclicApi.OperationPatch(), // OperationPatch | 
   'operationStatePatch': new KeyclicApi.OperationStatePatch() // OperationStatePatch | 
 };
 
@@ -113,7 +112,6 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **operation** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
- **operationPatch** | [**OperationPatch**](OperationPatch.md)|  | [optional] 
  **operationStatePatch** | [**OperationStatePatch**](OperationStatePatch.md)|  | [optional] 
 
 ### Return type
@@ -154,7 +152,6 @@ let report = "report_example"; // String | The identifier of the resource format
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
-  'reportPatch': new KeyclicApi.ReportPatch(), // ReportPatch | 
   'reportStatePatch': new KeyclicApi.ReportStatePatch() // ReportStatePatch | 
 };
 
@@ -174,7 +171,6 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **report** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
- **reportPatch** | [**ReportPatch**](ReportPatch.md)|  | [optional] 
  **reportStatePatch** | [**ReportStatePatch**](ReportStatePatch.md)|  | [optional] 
 
 ### Return type

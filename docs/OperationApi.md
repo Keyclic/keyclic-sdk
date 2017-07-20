@@ -377,7 +377,7 @@ let operation = "operation_example"; // String | The identifier of the resource 
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
-  'operationPatch': new KeyclicApi.OperationPatch(), // OperationPatch | 
+  'operationPatch': new KeyclicApi.OperationPatch() // OperationPatch | 
 };
 
 apiInstance.patchOperation(xKeyclicApp, operation, opts, (error, data, response) => {

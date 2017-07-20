@@ -43,26 +43,26 @@ export default class RelationshipData  {
     /**
     * Constructs a "RelationshipData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/RelationshipData } type Optional instance to populate.
+    * @param { module:model/RelationshipData } object Optional instance to populate.
     * @return { module:model/RelationshipData } The populated "RelationshipData" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = RelationshipData,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new RelationshipData();
+        }
 
         if (data.hasOwnProperty('organization')) {
             object.organization = ApiClient.convertToType(data['organization'], 'String');
         }
 
         return object;
-
     }
 
     

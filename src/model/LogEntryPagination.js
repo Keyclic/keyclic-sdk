@@ -46,29 +46,27 @@ export default class LogEntryPagination extends Pagination {
     /**
     * Constructs a "LogEntryPagination" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/LogEntryPagination } type Optional instance to populate.
+    * @param { module:model/LogEntryPagination } object Optional instance to populate.
     * @return { module:model/LogEntryPagination } The populated "LogEntryPagination" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = LogEntryPagination,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-        let object = super.constructFromObject(
-            data,
-            type
-        );
-
+        if (object === null) {
+            object = new LogEntryPagination();
+        }
+        object = super.constructFromData(data, object);
 
         if (data.hasOwnProperty('_embedded')) {
             object.embedded = ApiClient.convertToType(data['_embedded'], object.embeddedType);
         }
 
         return object;
-
     }
 
     

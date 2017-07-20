@@ -52,19 +52,20 @@ export default class Tracking  {
     /**
     * Constructs a "Tracking" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/Tracking } type Optional instance to populate.
+    * @param { module:model/Tracking } object Optional instance to populate.
     * @return { module:model/Tracking } The populated "Tracking" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = Tracking,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new Tracking();
+        }
 
         if (data.hasOwnProperty('state')) {
             object.state = ApiClient.convertToType(data['state'], 'String');
@@ -80,7 +81,6 @@ export default class Tracking  {
         }
 
         return object;
-
     }
 
     

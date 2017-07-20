@@ -43,19 +43,20 @@ export default class OperationPatch  {
     /**
     * Constructs a "OperationPatch" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/OperationPatch } type Optional instance to populate.
+    * @param { module:model/OperationPatch } object Optional instance to populate.
     * @return { module:model/OperationPatch } The populated "OperationPatch" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = OperationPatch,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new OperationPatch();
+        }
 
         if (data.hasOwnProperty('description')) {
             object.description = ApiClient.convertToType(data['description'], 'String');
@@ -74,7 +75,6 @@ export default class OperationPatch  {
         }
 
         return object;
-
     }
 
     

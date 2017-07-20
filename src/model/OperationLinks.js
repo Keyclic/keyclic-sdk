@@ -50,19 +50,20 @@ export default class OperationLinks  {
     /**
     * Constructs a "OperationLinks" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/OperationLinks } type Optional instance to populate.
+    * @param { module:model/OperationLinks } object Optional instance to populate.
     * @return { module:model/OperationLinks } The populated "OperationLinks" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = OperationLinks,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new OperationLinks();
+        }
 
         if (data.hasOwnProperty('self')) {
             object.self = ApiClient.convertToType(data['self'], object.selfType);
@@ -78,7 +79,6 @@ export default class OperationLinks  {
         }
 
         return object;
-
     }
 
     

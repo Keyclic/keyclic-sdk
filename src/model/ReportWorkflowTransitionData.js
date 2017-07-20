@@ -43,26 +43,26 @@ export default class ReportWorkflowTransitionData  {
     /**
     * Constructs a "ReportWorkflowTransitionData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/ReportWorkflowTransitionData } type Optional instance to populate.
+    * @param { module:model/ReportWorkflowTransitionData } object Optional instance to populate.
     * @return { module:model/ReportWorkflowTransitionData } The populated "ReportWorkflowTransitionData" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = ReportWorkflowTransitionData,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new ReportWorkflowTransitionData();
+        }
 
         if (data.hasOwnProperty('transition')) {
             object.transition = ApiClient.convertToType(data['transition'], 'String');
         }
 
         return object;
-
     }
 
     

@@ -42,19 +42,20 @@ export default class MemberLinksPerson  {
     /**
     * Constructs a "MemberLinksPerson" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/MemberLinksPerson } type Optional instance to populate.
+    * @param { module:model/MemberLinksPerson } object Optional instance to populate.
     * @return { module:model/MemberLinksPerson } The populated "MemberLinksPerson" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = MemberLinksPerson,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new MemberLinksPerson();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
@@ -64,7 +65,6 @@ export default class MemberLinksPerson  {
         }
 
         return object;
-
     }
 
     

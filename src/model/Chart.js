@@ -48,19 +48,20 @@ export default class Chart  {
     /**
     * Constructs a "Chart" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/Chart } type Optional instance to populate.
+    * @param { module:model/Chart } object Optional instance to populate.
     * @return { module:model/Chart } The populated "Chart" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = Chart,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new Chart();
+        }
 
         if (data.hasOwnProperty('labels')) {
             object.labels = ApiClient.convertToType(data['labels'], '[\'String\']');
@@ -70,7 +71,6 @@ export default class Chart  {
         }
 
         return object;
-
     }
 
     

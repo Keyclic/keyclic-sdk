@@ -41,26 +41,26 @@ export default class CategoryCollection  {
     /**
     * Constructs a "CategoryCollection" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/CategoryCollection } type Optional instance to populate.
+    * @param { module:model/CategoryCollection } object Optional instance to populate.
     * @return { module:model/CategoryCollection } The populated "CategoryCollection" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = CategoryCollection,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new CategoryCollection();
+        }
 
         if (data.hasOwnProperty('items')) {
             object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
         }
 
         return object;
-
     }
 
     

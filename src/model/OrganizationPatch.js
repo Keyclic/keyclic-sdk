@@ -44,19 +44,20 @@ export default class OrganizationPatch  {
     /**
     * Constructs a "OrganizationPatch" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/OrganizationPatch } type Optional instance to populate.
+    * @param { module:model/OrganizationPatch } object Optional instance to populate.
     * @return { module:model/OrganizationPatch } The populated "OrganizationPatch" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = OrganizationPatch,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new OrganizationPatch();
+        }
 
         if (data.hasOwnProperty('name')) {
             object.name = ApiClient.convertToType(data['name'], 'String');
@@ -78,7 +79,6 @@ export default class OrganizationPatch  {
         }
 
         return object;
-
     }
 
     

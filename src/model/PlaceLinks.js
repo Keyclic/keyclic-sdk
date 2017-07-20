@@ -41,26 +41,26 @@ export default class PlaceLinks  {
     /**
     * Constructs a "PlaceLinks" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/PlaceLinks } type Optional instance to populate.
+    * @param { module:model/PlaceLinks } object Optional instance to populate.
     * @return { module:model/PlaceLinks } The populated "PlaceLinks" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = PlaceLinks,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new PlaceLinks();
+        }
 
         if (data.hasOwnProperty('self')) {
             object.self = ApiClient.convertToType(data['self'], object.selfType);
         }
 
         return object;
-
     }
 
     

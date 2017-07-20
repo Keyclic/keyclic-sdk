@@ -39,26 +39,26 @@ export default class MemberEmbedded  {
     /**
     * Constructs a "MemberEmbedded" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/MemberEmbedded } type Optional instance to populate.
+    * @param { module:model/MemberEmbedded } object Optional instance to populate.
     * @return { module:model/MemberEmbedded } The populated "MemberEmbedded" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = MemberEmbedded,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new MemberEmbedded();
+        }
 
         if (data.hasOwnProperty('availableRoles')) {
             object.availableRoles = ApiClient.convertToType(data['availableRoles'], '[\'String\']');
         }
 
         return object;
-
     }
 
     

@@ -314,7 +314,7 @@ export default class ApiClient {
             default:
                 if (typeof type === 'function') {
                     // for model type like: User
-                    return type.constructFromObject(data, type);
+                    return type.constructFromData(data, null);
                 }
 
                 if (Array.isArray(type)) {

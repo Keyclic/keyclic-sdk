@@ -48,19 +48,20 @@ export default class DelegateData  {
     /**
     * Constructs a "DelegateData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/DelegateData } type Optional instance to populate.
+    * @param { module:model/DelegateData } object Optional instance to populate.
     * @return { module:model/DelegateData } The populated "DelegateData" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = DelegateData,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new DelegateData();
+        }
 
         if (data.hasOwnProperty('report')) {
             object.report = ApiClient.convertToType(data['report'], 'String');
@@ -70,7 +71,6 @@ export default class DelegateData  {
         }
 
         return object;
-
     }
 
     

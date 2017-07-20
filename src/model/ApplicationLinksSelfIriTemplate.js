@@ -39,26 +39,26 @@ export default class ApplicationLinksSelfIriTemplate  {
     /**
     * Constructs a "ApplicationLinksSelfIriTemplate" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/ApplicationLinksSelfIriTemplate } type Optional instance to populate.
+    * @param { module:model/ApplicationLinksSelfIriTemplate } object Optional instance to populate.
     * @return { module:model/ApplicationLinksSelfIriTemplate } The populated "ApplicationLinksSelfIriTemplate" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = ApplicationLinksSelfIriTemplate,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new ApplicationLinksSelfIriTemplate();
+        }
 
         if (data.hasOwnProperty('mapping')) {
             object.mapping = ApiClient.convertToType(data['mapping'], '[\'String\']');
         }
 
         return object;
-
     }
 
     

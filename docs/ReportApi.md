@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 <a name="patchReport"></a>
 # **patchReport**
-> patchReport(xKeyclicApp, report, opts)
+> Report patchReport(xKeyclicApp, report, opts)
 
 Edit one Report resource.
 
@@ -170,13 +170,14 @@ let report = "report_example"; // String | The identifier of the resource format
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'reportPatch': new KeyclicApi.ReportPatch() // ReportPatch | 
 };
 
 apiInstance.patchReport(xKeyclicApp, report, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -188,10 +189,11 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **report** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **reportPatch** | [**ReportPatch**](ReportPatch.md)|  | [optional] 
 
 ### Return type
 
-null (empty response body)
+[**Report**](Report.md)
 
 ### Authorization
 

@@ -61,26 +61,22 @@ export default class {{&classname}} {{#useInheritance}}{{#interfaceModels}}exten
     /**
     * Constructs a "{{classname}}" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{classname}} } type Optional instance to populate.
-    * @return { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{classname}} } The populated "{{classname}}" instance.
+    * @param { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{&classname}} } object Optional instance to populate.
+    * @return { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{&classname}} } The populated "{{classname}}" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = {{&classname}},
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
+        if (object === null) {
+            object = new {{&classname}}();
+        }
         {{#interfaceModels}}
-        let object = super.constructFromObject(
-            data,
-            type
-        );
-        {{/interfaceModels}}
-
-        {{^interfaceModels}}
-        let object = new type();
+        object = super.constructFromData(data, object);
         {{/interfaceModels}}
 
         {{#vars}}
@@ -107,7 +103,6 @@ export default class {{&classname}} {{#useInheritance}}{{#interfaceModels}}exten
         {{/vars}}
 
         return object;
-
     }
 
     {{#emitModelMethods}}{{#vars}}

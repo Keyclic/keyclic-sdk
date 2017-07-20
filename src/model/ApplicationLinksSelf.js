@@ -42,19 +42,20 @@ export default class ApplicationLinksSelf  {
     /**
     * Constructs a "ApplicationLinksSelf" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/ApplicationLinksSelf } type Optional instance to populate.
+    * @param { module:model/ApplicationLinksSelf } object Optional instance to populate.
     * @return { module:model/ApplicationLinksSelf } The populated "ApplicationLinksSelf" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = ApplicationLinksSelf,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new ApplicationLinksSelf();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
@@ -64,7 +65,6 @@ export default class ApplicationLinksSelf  {
         }
 
         return object;
-
     }
 
     

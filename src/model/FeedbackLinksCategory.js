@@ -42,19 +42,20 @@ export default class FeedbackLinksCategory  {
     /**
     * Constructs a "FeedbackLinksCategory" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/FeedbackLinksCategory } type Optional instance to populate.
+    * @param { module:model/FeedbackLinksCategory } object Optional instance to populate.
     * @return { module:model/FeedbackLinksCategory } The populated "FeedbackLinksCategory" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = FeedbackLinksCategory,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new FeedbackLinksCategory();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
@@ -64,7 +65,6 @@ export default class FeedbackLinksCategory  {
         }
 
         return object;
-
     }
 
     

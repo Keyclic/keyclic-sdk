@@ -53,19 +53,20 @@ export default class FeedbackLinks  {
     /**
     * Constructs a "FeedbackLinks" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/FeedbackLinks } type Optional instance to populate.
+    * @param { module:model/FeedbackLinks } object Optional instance to populate.
     * @return { module:model/FeedbackLinks } The populated "FeedbackLinks" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = FeedbackLinks,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new FeedbackLinks();
+        }
 
         if (data.hasOwnProperty('self')) {
             object.self = ApiClient.convertToType(data['self'], object.selfType);
@@ -84,7 +85,6 @@ export default class FeedbackLinks  {
         }
 
         return object;
-
     }
 
     

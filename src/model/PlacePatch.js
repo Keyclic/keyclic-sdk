@@ -40,19 +40,20 @@ export default class PlacePatch  {
     /**
     * Constructs a "PlacePatch" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/PlacePatch } type Optional instance to populate.
+    * @param { module:model/PlacePatch } object Optional instance to populate.
     * @return { module:model/PlacePatch } The populated "PlacePatch" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = PlacePatch,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new PlacePatch();
+        }
 
         if (data.hasOwnProperty('branchCode')) {
             object.branchCode = ApiClient.convertToType(data['branchCode'], 'String');
@@ -62,7 +63,6 @@ export default class PlacePatch  {
         }
 
         return object;
-
     }
 
     

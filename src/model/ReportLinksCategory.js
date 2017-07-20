@@ -42,19 +42,20 @@ export default class ReportLinksCategory  {
     /**
     * Constructs a "ReportLinksCategory" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/ReportLinksCategory } type Optional instance to populate.
+    * @param { module:model/ReportLinksCategory } object Optional instance to populate.
     * @return { module:model/ReportLinksCategory } The populated "ReportLinksCategory" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = ReportLinksCategory,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new ReportLinksCategory();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
@@ -64,7 +65,6 @@ export default class ReportLinksCategory  {
         }
 
         return object;
-
     }
 
     

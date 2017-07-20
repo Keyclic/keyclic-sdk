@@ -42,19 +42,20 @@ export default class ReportLinksDelegatedTo  {
     /**
     * Constructs a "ReportLinksDelegatedTo" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/ReportLinksDelegatedTo } type Optional instance to populate.
+    * @param { module:model/ReportLinksDelegatedTo } object Optional instance to populate.
     * @return { module:model/ReportLinksDelegatedTo } The populated "ReportLinksDelegatedTo" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = ReportLinksDelegatedTo,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new ReportLinksDelegatedTo();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
@@ -64,7 +65,6 @@ export default class ReportLinksDelegatedTo  {
         }
 
         return object;
-
     }
 
     

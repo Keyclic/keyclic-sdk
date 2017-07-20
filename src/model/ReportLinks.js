@@ -62,19 +62,20 @@ export default class ReportLinks  {
     /**
     * Constructs a "ReportLinks" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/ReportLinks } type Optional instance to populate.
+    * @param { module:model/ReportLinks } object Optional instance to populate.
     * @return { module:model/ReportLinks } The populated "ReportLinks" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = ReportLinks,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new ReportLinks();
+        }
 
         if (data.hasOwnProperty('self')) {
             object.self = ApiClient.convertToType(data['self'], object.selfType);
@@ -102,7 +103,6 @@ export default class ReportLinks  {
         }
 
         return object;
-
     }
 
     

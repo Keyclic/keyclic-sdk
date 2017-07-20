@@ -42,19 +42,20 @@ export default class ReportLinksSelf  {
     /**
     * Constructs a "ReportLinksSelf" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/ReportLinksSelf } type Optional instance to populate.
+    * @param { module:model/ReportLinksSelf } object Optional instance to populate.
     * @return { module:model/ReportLinksSelf } The populated "ReportLinksSelf" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = ReportLinksSelf,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new ReportLinksSelf();
+        }
 
         if (data.hasOwnProperty('href')) {
             object.href = ApiClient.convertToType(data['href'], 'String');
@@ -64,7 +65,6 @@ export default class ReportLinksSelf  {
         }
 
         return object;
-
     }
 
     

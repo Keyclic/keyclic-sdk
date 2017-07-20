@@ -47,19 +47,20 @@ export default class PaginationLinks  {
     /**
     * Constructs a "PaginationLinks" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/PaginationLinks } type Optional instance to populate.
+    * @param { module:model/PaginationLinks } object Optional instance to populate.
     * @return { module:model/PaginationLinks } The populated "PaginationLinks" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = PaginationLinks,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new PaginationLinks();
+        }
 
         if (data.hasOwnProperty('first')) {
             object.first = ApiClient.convertToType(data['first'], object.firstType);
@@ -75,7 +76,6 @@ export default class PaginationLinks  {
         }
 
         return object;
-
     }
 
     

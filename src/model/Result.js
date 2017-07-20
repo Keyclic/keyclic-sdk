@@ -48,19 +48,20 @@ export default class Result  {
     /**
     * Constructs a "Result" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/Result } type Optional instance to populate.
+    * @param { module:model/Result } object Optional instance to populate.
     * @return { module:model/Result } The populated "Result" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = Result,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new Result();
+        }
 
         if (data.hasOwnProperty('activities')) {
             object.activities = ApiClient.convertToType(data['activities'], [object.activitiesType]);
@@ -88,7 +89,6 @@ export default class Result  {
         }
 
         return object;
-
     }
 
     

@@ -41,26 +41,26 @@ export default class OperationCollection  {
     /**
     * Constructs a "OperationCollection" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/OperationCollection } type Optional instance to populate.
+    * @param { module:model/OperationCollection } object Optional instance to populate.
     * @return { module:model/OperationCollection } The populated "OperationCollection" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = OperationCollection,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new OperationCollection();
+        }
 
         if (data.hasOwnProperty('items')) {
             object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
         }
 
         return object;
-
     }
 
     

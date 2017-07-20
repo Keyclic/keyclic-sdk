@@ -41,19 +41,20 @@ export default class FeedbackDataGeoPoint  {
     /**
     * Constructs a "FeedbackDataGeoPoint" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/FeedbackDataGeoPoint } type Optional instance to populate.
+    * @param { module:model/FeedbackDataGeoPoint } object Optional instance to populate.
     * @return { module:model/FeedbackDataGeoPoint } The populated "FeedbackDataGeoPoint" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = FeedbackDataGeoPoint,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new FeedbackDataGeoPoint();
+        }
 
         if (data.hasOwnProperty('latitude')) {
             object.latitude = ApiClient.convertToType(data['latitude'], 'Number');
@@ -66,7 +67,6 @@ export default class FeedbackDataGeoPoint  {
         }
 
         return object;
-
     }
 
     

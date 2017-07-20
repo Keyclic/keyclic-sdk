@@ -43,19 +43,20 @@ export default class Error  {
     /**
     * Constructs a "Error" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/Error } type Optional instance to populate.
+    * @param { module:model/Error } object Optional instance to populate.
     * @return { module:model/Error } The populated "Error" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = Error,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new Error();
+        }
 
         if (data.hasOwnProperty('message')) {
             object.message = ApiClient.convertToType(data['message'], 'String');
@@ -68,7 +69,6 @@ export default class Error  {
         }
 
         return object;
-
     }
 
     

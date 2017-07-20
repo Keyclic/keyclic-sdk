@@ -43,26 +43,26 @@ export default class OperationWorkflowTransitionData  {
     /**
     * Constructs a "OperationWorkflowTransitionData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/OperationWorkflowTransitionData } type Optional instance to populate.
+    * @param { module:model/OperationWorkflowTransitionData } object Optional instance to populate.
     * @return { module:model/OperationWorkflowTransitionData } The populated "OperationWorkflowTransitionData" instance.
     */
-    static constructFromObject(
+    static constructFromData(
         data,
-        type = OperationWorkflowTransitionData,
+        object = null,
     ) {
         if (data === null) {
             throw new Error('No data to build object');
         }
 
-
-        let object = new type();
+        if (object === null) {
+            object = new OperationWorkflowTransitionData();
+        }
 
         if (data.hasOwnProperty('transition')) {
             object.transition = ApiClient.convertToType(data['transition'], 'String');
         }
 
         return object;
-
     }
 
     
