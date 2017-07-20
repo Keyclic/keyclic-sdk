@@ -30,7 +30,6 @@ import Chart from './model/Chart';
 import Checkpoint from './model/Checkpoint';
 import CheckpointLinks from './model/CheckpointLinks';
 import CheckpointLinksOrganization from './model/CheckpointLinksOrganization';
-import CheckpointLinksOrganizationIriTemplate from './model/CheckpointLinksOrganizationIriTemplate';
 import Collection from './model/Collection';
 import CommentData from './model/CommentData';
 import DelegateData from './model/DelegateData';
@@ -129,6 +128,7 @@ import SuccessLoginCredentialsAdministratorOf from './model/SuccessLoginCredenti
 import SuccessLoginCredentialsMemberOf from './model/SuccessLoginCredentialsMemberOf';
 import SuccessLoginCredentialsOrganization from './model/SuccessLoginCredentialsOrganization';
 import Tracking from './model/Tracking';
+import TrackingProgression from './model/TrackingProgression';
 import CategoryPagination from './model/CategoryPagination';
 import FeedbackPagination from './model/FeedbackPagination';
 import LogEntryPagination from './model/LogEntryPagination';
@@ -286,11 +286,6 @@ export {
      * @property { module:model/CheckpointLinksOrganization }
      */
     CheckpointLinksOrganization,
-    /**
-     * The CheckpointLinksOrganizationIriTemplate model constructor.
-     * @property { module:model/CheckpointLinksOrganizationIriTemplate }
-     */
-    CheckpointLinksOrganizationIriTemplate,
     /**
      * The Collection model constructor.
      * @property { module:model/Collection }
@@ -781,6 +776,11 @@ export {
      * @property { module:model/Tracking }
      */
     Tracking,
+    /**
+     * The TrackingProgression model constructor.
+     * @property { module:model/TrackingProgression }
+     */
+    TrackingProgression,
     /**
      * The CategoryPagination model constructor.
      * @property { module:model/CategoryPagination }

@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import Checkpoint from './Checkpoint';
+import TrackingProgression from './TrackingProgression';
 
 
     
@@ -30,22 +31,19 @@ export default class Tracking  {
     
      * @param state { String } 
     
-     * @param progression { Array.<String> } 
-    
      */
     constructor(
     
         state,
     
-        progression,
-    
     ) {
 
         this.state = state;
-        this.progression = progression;
+        this.progression = null;
         this.time = null;
         this.checkpoints = [];
 
+        this.progressionType = TrackingProgression;
         this.checkpointsType = Checkpoint;
     }
 
@@ -71,7 +69,7 @@ export default class Tracking  {
             object.state = ApiClient.convertToType(data['state'], 'String');
         }
         if (data.hasOwnProperty('progression')) {
-            object.progression = ApiClient.convertToType(data['progression'], '[\'String\']');
+            object.progression = ApiClient.convertToType(data['progression'], object.progressionType);
         }
         if (data.hasOwnProperty('time')) {
             object.time = ApiClient.convertToType(data['time'], 'Number');

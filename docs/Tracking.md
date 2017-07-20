@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **state** | **String** |  | 
-**progression** | **[String]** |  | 
+**progression** | [**TrackingProgression**](TrackingProgression.md) |  | [optional] 
 **time** | **Number** |  | [optional] 
 **checkpoints** | [**[Checkpoint]**](Checkpoint.md) |  | [optional] 
 

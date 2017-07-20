@@ -12,7 +12,7 @@
 
 
 import ApiClient from '../ApiClient';
-import CheckpointLinksOrganizationIriTemplate from './CheckpointLinksOrganizationIriTemplate';
+import ApplicationLinksSelfIriTemplate from './ApplicationLinksSelfIriTemplate';
 
 
     
@@ -36,7 +36,7 @@ export default class CheckpointLinksOrganization  {
         this.href = null;
         this.iriTemplate = null;
 
-        this.iriTemplateType = CheckpointLinksOrganizationIriTemplate;
+        this.iriTemplateType = ApplicationLinksSelfIriTemplate;
     }
 
     /**
