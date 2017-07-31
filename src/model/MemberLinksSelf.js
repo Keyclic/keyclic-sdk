@@ -12,7 +12,7 @@
 
 
 import ApiClient from '../ApiClient';
-import ApplicationLinksSelfIriTemplate from './ApplicationLinksSelfIriTemplate';
+import MemberLinksSelfIriTemplate from './MemberLinksSelfIriTemplate';
 
 
     
@@ -36,7 +36,7 @@ export default class MemberLinksSelf  {
         this.href = null;
         this.iriTemplate = null;
 
-        this.iriTemplateType = ApplicationLinksSelfIriTemplate;
+        this.iriTemplateType = MemberLinksSelfIriTemplate;
     }
 
     /**

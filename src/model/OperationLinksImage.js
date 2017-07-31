@@ -12,7 +12,7 @@
 
 
 import ApiClient from '../ApiClient';
-import ApplicationLinksSelfIriTemplate from './ApplicationLinksSelfIriTemplate';
+import OperationLinksImageIriTemplate from './OperationLinksImageIriTemplate';
 
 
     
@@ -36,7 +36,7 @@ export default class OperationLinksImage  {
         this.href = null;
         this.iriTemplate = null;
 
-        this.iriTemplateType = ApplicationLinksSelfIriTemplate;
+        this.iriTemplateType = OperationLinksImageIriTemplate;
     }
 
     /**

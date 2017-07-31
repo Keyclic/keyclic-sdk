@@ -19,12 +19,17 @@ import Application from './model/Application';
 import ApplicationLinks from './model/ApplicationLinks';
 import ApplicationLinksSelf from './model/ApplicationLinksSelf';
 import ApplicationLinksSelfIriTemplate from './model/ApplicationLinksSelfIriTemplate';
+import ApplicationLinksSelfIriTemplateMapping from './model/ApplicationLinksSelfIriTemplateMapping';
 import Category from './model/Category';
 import CategoryCollection from './model/CategoryCollection';
 import CategoryData from './model/CategoryData';
 import CategoryLinks from './model/CategoryLinks';
 import CategoryLinksOrganization from './model/CategoryLinksOrganization';
+import CategoryLinksOrganizationIriTemplate from './model/CategoryLinksOrganizationIriTemplate';
+import CategoryLinksOrganizationIriTemplateMapping from './model/CategoryLinksOrganizationIriTemplateMapping';
 import CategoryLinksSelf from './model/CategoryLinksSelf';
+import CategoryLinksSelfIriTemplate from './model/CategoryLinksSelfIriTemplate';
+import CategoryLinksSelfIriTemplateMapping from './model/CategoryLinksSelfIriTemplateMapping';
 import CategoryPatch from './model/CategoryPatch';
 import Chart from './model/Chart';
 import Checkpoint from './model/Checkpoint';
@@ -48,8 +53,14 @@ import FeedbackGeoCoordinatesPoint from './model/FeedbackGeoCoordinatesPoint';
 import FeedbackLinks from './model/FeedbackLinks';
 import FeedbackLinksCategory from './model/FeedbackLinksCategory';
 import FeedbackLinksImage from './model/FeedbackLinksImage';
+import FeedbackLinksImageIriTemplate from './model/FeedbackLinksImageIriTemplate';
+import FeedbackLinksImageIriTemplateMapping from './model/FeedbackLinksImageIriTemplateMapping';
 import FeedbackLinksReporter from './model/FeedbackLinksReporter';
+import FeedbackLinksReporterIriTemplate from './model/FeedbackLinksReporterIriTemplate';
+import FeedbackLinksReporterIriTemplateMapping from './model/FeedbackLinksReporterIriTemplateMapping';
 import FeedbackLinksSelf from './model/FeedbackLinksSelf';
+import FeedbackLinksSelfIriTemplate from './model/FeedbackLinksSelfIriTemplate';
+import FeedbackLinksSelfIriTemplateMapping from './model/FeedbackLinksSelfIriTemplateMapping';
 import FeedbackLinksTracking from './model/FeedbackLinksTracking';
 import FeedbackStatePatch from './model/FeedbackStatePatch';
 import FeedbackWorkflowTransitionData from './model/FeedbackWorkflowTransitionData';
@@ -65,6 +76,8 @@ import MemberLinks from './model/MemberLinks';
 import MemberLinksOrganization from './model/MemberLinksOrganization';
 import MemberLinksPerson from './model/MemberLinksPerson';
 import MemberLinksSelf from './model/MemberLinksSelf';
+import MemberLinksSelfIriTemplate from './model/MemberLinksSelfIriTemplate';
+import MemberLinksSelfIriTemplateMapping from './model/MemberLinksSelfIriTemplateMapping';
 import MemberPatch from './model/MemberPatch';
 import Operation from './model/Operation';
 import OperationCollection from './model/OperationCollection';
@@ -72,9 +85,15 @@ import OperationData from './model/OperationData';
 import OperationEmbedded from './model/OperationEmbedded';
 import OperationLinks from './model/OperationLinks';
 import OperationLinksImage from './model/OperationLinksImage';
+import OperationLinksImageIriTemplate from './model/OperationLinksImageIriTemplate';
+import OperationLinksImageIriTemplateMapping from './model/OperationLinksImageIriTemplateMapping';
 import OperationLinksOperator from './model/OperationLinksOperator';
 import OperationLinksReport from './model/OperationLinksReport';
+import OperationLinksReportIriTemplate from './model/OperationLinksReportIriTemplate';
+import OperationLinksReportIriTemplateMapping from './model/OperationLinksReportIriTemplateMapping';
 import OperationLinksSelf from './model/OperationLinksSelf';
+import OperationLinksSelfIriTemplate from './model/OperationLinksSelfIriTemplate';
+import OperationLinksSelfIriTemplateMapping from './model/OperationLinksSelfIriTemplateMapping';
 import OperationPatch from './model/OperationPatch';
 import OperationStatePatch from './model/OperationStatePatch';
 import OperationWorkflowTransitionData from './model/OperationWorkflowTransitionData';
@@ -104,6 +123,8 @@ import PlaceGeo from './model/PlaceGeo';
 import PlaceGeoPolygon from './model/PlaceGeoPolygon';
 import PlaceLinks from './model/PlaceLinks';
 import PlaceLinksSelf from './model/PlaceLinksSelf';
+import PlaceLinksSelfIriTemplate from './model/PlaceLinksSelfIriTemplate';
+import PlaceLinksSelfIriTemplateMapping from './model/PlaceLinksSelfIriTemplateMapping';
 import PlacePatch from './model/PlacePatch';
 import RegisterData from './model/RegisterData';
 import RelationshipData from './model/RelationshipData';
@@ -232,6 +253,11 @@ export {
      */
     ApplicationLinksSelfIriTemplate,
     /**
+     * The ApplicationLinksSelfIriTemplateMapping model constructor.
+     * @property { module:model/ApplicationLinksSelfIriTemplateMapping }
+     */
+    ApplicationLinksSelfIriTemplateMapping,
+    /**
      * The Category model constructor.
      * @property { module:model/Category }
      */
@@ -257,10 +283,30 @@ export {
      */
     CategoryLinksOrganization,
     /**
+     * The CategoryLinksOrganizationIriTemplate model constructor.
+     * @property { module:model/CategoryLinksOrganizationIriTemplate }
+     */
+    CategoryLinksOrganizationIriTemplate,
+    /**
+     * The CategoryLinksOrganizationIriTemplateMapping model constructor.
+     * @property { module:model/CategoryLinksOrganizationIriTemplateMapping }
+     */
+    CategoryLinksOrganizationIriTemplateMapping,
+    /**
      * The CategoryLinksSelf model constructor.
      * @property { module:model/CategoryLinksSelf }
      */
     CategoryLinksSelf,
+    /**
+     * The CategoryLinksSelfIriTemplate model constructor.
+     * @property { module:model/CategoryLinksSelfIriTemplate }
+     */
+    CategoryLinksSelfIriTemplate,
+    /**
+     * The CategoryLinksSelfIriTemplateMapping model constructor.
+     * @property { module:model/CategoryLinksSelfIriTemplateMapping }
+     */
+    CategoryLinksSelfIriTemplateMapping,
     /**
      * The CategoryPatch model constructor.
      * @property { module:model/CategoryPatch }
@@ -377,15 +423,45 @@ export {
      */
     FeedbackLinksImage,
     /**
+     * The FeedbackLinksImageIriTemplate model constructor.
+     * @property { module:model/FeedbackLinksImageIriTemplate }
+     */
+    FeedbackLinksImageIriTemplate,
+    /**
+     * The FeedbackLinksImageIriTemplateMapping model constructor.
+     * @property { module:model/FeedbackLinksImageIriTemplateMapping }
+     */
+    FeedbackLinksImageIriTemplateMapping,
+    /**
      * The FeedbackLinksReporter model constructor.
      * @property { module:model/FeedbackLinksReporter }
      */
     FeedbackLinksReporter,
     /**
+     * The FeedbackLinksReporterIriTemplate model constructor.
+     * @property { module:model/FeedbackLinksReporterIriTemplate }
+     */
+    FeedbackLinksReporterIriTemplate,
+    /**
+     * The FeedbackLinksReporterIriTemplateMapping model constructor.
+     * @property { module:model/FeedbackLinksReporterIriTemplateMapping }
+     */
+    FeedbackLinksReporterIriTemplateMapping,
+    /**
      * The FeedbackLinksSelf model constructor.
      * @property { module:model/FeedbackLinksSelf }
      */
     FeedbackLinksSelf,
+    /**
+     * The FeedbackLinksSelfIriTemplate model constructor.
+     * @property { module:model/FeedbackLinksSelfIriTemplate }
+     */
+    FeedbackLinksSelfIriTemplate,
+    /**
+     * The FeedbackLinksSelfIriTemplateMapping model constructor.
+     * @property { module:model/FeedbackLinksSelfIriTemplateMapping }
+     */
+    FeedbackLinksSelfIriTemplateMapping,
     /**
      * The FeedbackLinksTracking model constructor.
      * @property { module:model/FeedbackLinksTracking }
@@ -462,6 +538,16 @@ export {
      */
     MemberLinksSelf,
     /**
+     * The MemberLinksSelfIriTemplate model constructor.
+     * @property { module:model/MemberLinksSelfIriTemplate }
+     */
+    MemberLinksSelfIriTemplate,
+    /**
+     * The MemberLinksSelfIriTemplateMapping model constructor.
+     * @property { module:model/MemberLinksSelfIriTemplateMapping }
+     */
+    MemberLinksSelfIriTemplateMapping,
+    /**
      * The MemberPatch model constructor.
      * @property { module:model/MemberPatch }
      */
@@ -497,6 +583,16 @@ export {
      */
     OperationLinksImage,
     /**
+     * The OperationLinksImageIriTemplate model constructor.
+     * @property { module:model/OperationLinksImageIriTemplate }
+     */
+    OperationLinksImageIriTemplate,
+    /**
+     * The OperationLinksImageIriTemplateMapping model constructor.
+     * @property { module:model/OperationLinksImageIriTemplateMapping }
+     */
+    OperationLinksImageIriTemplateMapping,
+    /**
      * The OperationLinksOperator model constructor.
      * @property { module:model/OperationLinksOperator }
      */
@@ -507,10 +603,30 @@ export {
      */
     OperationLinksReport,
     /**
+     * The OperationLinksReportIriTemplate model constructor.
+     * @property { module:model/OperationLinksReportIriTemplate }
+     */
+    OperationLinksReportIriTemplate,
+    /**
+     * The OperationLinksReportIriTemplateMapping model constructor.
+     * @property { module:model/OperationLinksReportIriTemplateMapping }
+     */
+    OperationLinksReportIriTemplateMapping,
+    /**
      * The OperationLinksSelf model constructor.
      * @property { module:model/OperationLinksSelf }
      */
     OperationLinksSelf,
+    /**
+     * The OperationLinksSelfIriTemplate model constructor.
+     * @property { module:model/OperationLinksSelfIriTemplate }
+     */
+    OperationLinksSelfIriTemplate,
+    /**
+     * The OperationLinksSelfIriTemplateMapping model constructor.
+     * @property { module:model/OperationLinksSelfIriTemplateMapping }
+     */
+    OperationLinksSelfIriTemplateMapping,
     /**
      * The OperationPatch model constructor.
      * @property { module:model/OperationPatch }
@@ -656,6 +772,16 @@ export {
      * @property { module:model/PlaceLinksSelf }
      */
     PlaceLinksSelf,
+    /**
+     * The PlaceLinksSelfIriTemplate model constructor.
+     * @property { module:model/PlaceLinksSelfIriTemplate }
+     */
+    PlaceLinksSelfIriTemplate,
+    /**
+     * The PlaceLinksSelfIriTemplateMapping model constructor.
+     * @property { module:model/PlaceLinksSelfIriTemplateMapping }
+     */
+    PlaceLinksSelfIriTemplateMapping,
     /**
      * The PlacePatch model constructor.
      * @property { module:model/PlacePatch }

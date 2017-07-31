@@ -33,6 +33,7 @@ export default class Checkpoint  {
     
     ) {
 
+        this.createdAt = null;
         this.state = [];
         this.links = null;
 
@@ -57,6 +58,9 @@ export default class Checkpoint  {
             object = new Checkpoint();
         }
 
+        if (data.hasOwnProperty('createdAt')) {
+            object.createdAt = ApiClient.convertToType(data['createdAt'], 'Date');
+        }
         if (data.hasOwnProperty('state')) {
             object.state = ApiClient.convertToType(data['state'], '[\'String\']');
         }

@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 <a name="postCommentByFeedback"></a>
 # **postCommentByFeedback**
-> postCommentByFeedback(xKeyclicApp, feedback, opts)
+> Feedback postCommentByFeedback(xKeyclicApp, feedback, opts)
 
 Create one Comment resource.
 
@@ -156,7 +156,7 @@ apiInstance.postCommentByFeedback(xKeyclicApp, feedback, opts, (error, data, res
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Feedback**](Feedback.md)
 
 ### Authorization
 

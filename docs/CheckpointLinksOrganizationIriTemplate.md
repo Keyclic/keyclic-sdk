@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mapping** | **[Object]** |  | [optional] 
+**mapping** | [**CheckpointLinksOrganizationIriTemplateMapping**](CheckpointLinksOrganizationIriTemplateMapping.md) |  | [optional] 
 
 

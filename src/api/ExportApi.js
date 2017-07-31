@@ -49,9 +49,6 @@ export default class ExportApi extends ApiClient {
      * @param { module:model/String } order   (default to desc)
      * @param { Date } after  
      * @param { Date } before  
-     * @param { String } searchDescription  
-     * @param { String } searchFeedback  
-     * @param { String } searchIdentificationNumber  
      */
     cpostExportByOrganization(
         returnType = null,
@@ -74,9 +71,6 @@ export default class ExportApi extends ApiClient {
             order,
             after,
             before,
-            searchDescription,
-            searchFeedback,
-            searchIdentificationNumber,
         } = options;
 
         
@@ -139,21 +133,6 @@ export default class ExportApi extends ApiClient {
             before = null;
         }
         
-        // verify the null value of parameter 'searchDescription'
-        if (typeof searchDescription === 'undefined') {
-            searchDescription = null;
-        }
-        
-        // verify the null value of parameter 'searchFeedback'
-        if (typeof searchFeedback === 'undefined') {
-            searchFeedback = null;
-        }
-        
-        // verify the null value of parameter 'searchIdentificationNumber'
-        if (typeof searchIdentificationNumber === 'undefined') {
-            searchIdentificationNumber = null;
-        }
-        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cpostExportByOrganization');
@@ -174,9 +153,6 @@ export default class ExportApi extends ApiClient {
             'order': order,
             'after': after,
             'before': before,
-            'search[description]': searchDescription,
-            'search[feedback]': searchFeedback,
-            'search[identificationNumber]': searchIdentificationNumber,
         };
 
         let headerParams = {

@@ -35,6 +35,8 @@ export default class LogEntry  {
     
      * @param version { String } 
     
+     * @param data { Array.<String> } 
+    
      */
     constructor(
     
@@ -46,12 +48,15 @@ export default class LogEntry  {
     
         version,
     
+        data,
+    
     ) {
 
         this.action = action;
         this.loggedAt = loggedAt;
         this.objectId = objectId;
         this.version = version;
+        this.data = data;
 
     }
 
@@ -84,6 +89,9 @@ export default class LogEntry  {
         }
         if (data.hasOwnProperty('version')) {
             object.version = ApiClient.convertToType(data['version'], 'String');
+        }
+        if (data.hasOwnProperty('data')) {
+            object.data = ApiClient.convertToType(data['data'], '[\'String\']');
         }
 
         return object;

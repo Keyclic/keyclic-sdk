@@ -41,9 +41,8 @@ let opts = {
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'geoNearGeoCoordinates': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'geoNearRadius': 56, // Number | 
-  'searchDescription': "searchDescription_example", // String | 
+  'geoNearGeoCoordinates': "geoNearGeoCoordinates_example", // String | 
+  'geoNearRadius': 56 // Number | 
 };
 
 apiInstance.cgetFeedbacks(xKeyclicApp, , opts, (error, data, response) => {
@@ -70,9 +69,8 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
- **geoNearGeoCoordinates** | **Date**|  | [optional] 
+ **geoNearGeoCoordinates** | **String**|  | [optional] 
  **geoNearRadius** | **Number**|  | [optional] 
- **searchDescription** | **String**|  | [optional] 
 
 ### Return type
 
@@ -121,9 +119,8 @@ let opts = {
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'geoNearGeoCoordinates': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'geoNearRadius': 56, // Number | 
-  'searchDescription': "searchDescription_example", // String | 
+  'geoNearGeoCoordinates': "geoNearGeoCoordinates_example", // String | 
+  'geoNearRadius': 56 // Number | 
 };
 
 apiInstance.cgetFeedbacksByPerson(xKeyclicApp, person, opts, (error, data, response) => {
@@ -151,9 +148,8 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
- **geoNearGeoCoordinates** | **Date**|  | [optional] 
+ **geoNearGeoCoordinates** | **String**|  | [optional] 
  **geoNearRadius** | **Number**|  | [optional] 
- **searchDescription** | **String**|  | [optional] 
 
 ### Return type
 

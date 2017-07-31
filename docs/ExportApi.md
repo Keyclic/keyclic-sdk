@@ -40,9 +40,6 @@ let opts = {
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'searchDescription': "searchDescription_example", // String | 
-  'searchFeedback': "searchFeedback_example", // String | 
-  'searchIdentificationNumber': "searchIdentificationNumber_example" // String | 
 };
 
 apiInstance.cpostExportByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
@@ -69,9 +66,6 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
- **searchDescription** | **String**|  | [optional] 
- **searchFeedback** | **String**|  | [optional] 
- **searchIdentificationNumber** | **String**|  | [optional] 
 
 ### Return type
 

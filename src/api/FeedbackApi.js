@@ -50,9 +50,8 @@ export default class FeedbackApi extends ApiClient {
      * @param { module:model/String } order   (default to desc)
      * @param { Date } after  
      * @param { Date } before  
-     * @param { Date } geoNearGeoCoordinates  
+     * @param { String } geoNearGeoCoordinates  
      * @param { Number } geoNearRadius  
-     * @param { String } searchDescription  
      */
     cgetFeedbacks(
         returnType = null,
@@ -77,7 +76,6 @@ export default class FeedbackApi extends ApiClient {
             before,
             geoNearGeoCoordinates,
             geoNearRadius,
-            searchDescription,
         } = options;
 
         
@@ -150,11 +148,6 @@ export default class FeedbackApi extends ApiClient {
             geoNearRadius = null;
         }
         
-        // verify the null value of parameter 'searchDescription'
-        if (typeof searchDescription === 'undefined') {
-            searchDescription = null;
-        }
-        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetFeedbacks');
@@ -177,7 +170,6 @@ export default class FeedbackApi extends ApiClient {
             'before': before,
             'geo_near[geo_coordinates]': geoNearGeoCoordinates,
             'geo_near[radius]': geoNearRadius,
-            'search[description]': searchDescription,
         };
 
         let headerParams = {
@@ -230,9 +222,8 @@ export default class FeedbackApi extends ApiClient {
      * @param { module:model/String } order   (default to desc)
      * @param { Date } after  
      * @param { Date } before  
-     * @param { Date } geoNearGeoCoordinates  
+     * @param { String } geoNearGeoCoordinates  
      * @param { Number } geoNearRadius  
-     * @param { String } searchDescription  
      */
     cgetFeedbacksByPerson(
         returnType = null,
@@ -258,7 +249,6 @@ export default class FeedbackApi extends ApiClient {
             before,
             geoNearGeoCoordinates,
             geoNearRadius,
-            searchDescription,
         } = options;
 
         
@@ -336,11 +326,6 @@ export default class FeedbackApi extends ApiClient {
             geoNearRadius = null;
         }
         
-        // verify the null value of parameter 'searchDescription'
-        if (typeof searchDescription === 'undefined') {
-            searchDescription = null;
-        }
-        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetFeedbacksByPerson');
@@ -364,7 +349,6 @@ export default class FeedbackApi extends ApiClient {
             'before': before,
             'geo_near[geo_coordinates]': geoNearGeoCoordinates,
             'geo_near[radius]': geoNearRadius,
-            'search[description]': searchDescription,
         };
 
         let headerParams = {

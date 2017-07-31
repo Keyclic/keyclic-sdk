@@ -36,6 +36,8 @@ export default class Organization  {
     
      * @param id { String } 
     
+     * @param createdAt { Date } 
+    
      * @param updatedAt { Date } 
     
      */
@@ -49,6 +51,8 @@ export default class Organization  {
     
         id,
     
+        createdAt,
+    
         updatedAt,
     
     ) {
@@ -59,6 +63,7 @@ export default class Organization  {
         this.billingEmailAddress = billingEmailAddress;
         this.notificationEmailAddress = notificationEmailAddress;
         this.id = id;
+        this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.type = null;
         this.links = null;
@@ -101,6 +106,9 @@ export default class Organization  {
         }
         if (data.hasOwnProperty('id')) {
             object.id = ApiClient.convertToType(data['id'], 'String');
+        }
+        if (data.hasOwnProperty('createdAt')) {
+            object.createdAt = ApiClient.convertToType(data['createdAt'], 'Date');
         }
         if (data.hasOwnProperty('updatedAt')) {
             object.updatedAt = ApiClient.convertToType(data['updatedAt'], 'Date');

@@ -13,6 +13,7 @@
 import ApiClient from '../ApiClient';
 import ActivityAggregatedPagination from '../model/ActivityAggregatedPagination';
 import Error from '../model/Error';
+import Operation from '../model/Operation';
 
 /**
  * Contribution service.
@@ -130,7 +131,7 @@ export default class ContributionApi extends ApiClient {
      * @param { String } xKeyclicApp 
      * @param { String } feedback The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
+     * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      */
     postContributionByFeedback(
@@ -138,6 +139,9 @@ export default class ContributionApi extends ApiClient {
         options,
         credentials,
     ) {
+        if (returnType === null) {
+            returnType = Operation;
+        }
 
         let {
             xKeyclicApp,

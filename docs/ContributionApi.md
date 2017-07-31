@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 <a name="postContributionByFeedback"></a>
 # **postContributionByFeedback**
-> postContributionByFeedback(xKeyclicApp, feedback, opts)
+> Operation postContributionByFeedback(xKeyclicApp, feedback, opts)
 
 Create one Contribution resource.
 
@@ -96,7 +96,7 @@ apiInstance.postContributionByFeedback(xKeyclicApp, feedback, opts, (error, data
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Operation**](Operation.md)
 
 ### Authorization
 

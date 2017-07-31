@@ -41,9 +41,6 @@ let opts = {
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'searchName': "searchName_example", // String | 
-  'searchColor': "searchColor_example", // String | 
-  'searchIcon': "searchIcon_example" // String | 
 };
 
 apiInstance.cgetCategories(xKeyclicApp, , opts, (error, data, response) => {
@@ -68,9 +65,6 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
- **searchName** | **String**|  | [optional] 
- **searchColor** | **String**|  | [optional] 
- **searchIcon** | **String**|  | [optional] 
 
 ### Return type
 
@@ -116,9 +110,6 @@ let opts = {
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'searchName': "searchName_example", // String | 
-  'searchColor': "searchColor_example", // String | 
-  'searchIcon': "searchIcon_example" // String | 
 };
 
 apiInstance.cgetCategoriesByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
@@ -143,9 +134,6 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
- **searchName** | **String**|  | [optional] 
- **searchColor** | **String**|  | [optional] 
- **searchIcon** | **String**|  | [optional] 
 
 ### Return type
 

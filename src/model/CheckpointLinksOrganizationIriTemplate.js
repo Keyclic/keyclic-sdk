@@ -12,6 +12,7 @@
 
 
 import ApiClient from '../ApiClient';
+import CheckpointLinksOrganizationIriTemplateMapping from './CheckpointLinksOrganizationIriTemplateMapping';
 
 
     
@@ -32,8 +33,9 @@ export default class CheckpointLinksOrganizationIriTemplate  {
     
     ) {
 
-        this.mapping = [];
+        this.mapping = null;
 
+        this.mappingType = CheckpointLinksOrganizationIriTemplateMapping;
     }
 
     /**
@@ -55,7 +57,7 @@ export default class CheckpointLinksOrganizationIriTemplate  {
         }
 
         if (data.hasOwnProperty('mapping')) {
-            object.mapping = ApiClient.convertToType(data['mapping'], '[\'Object\']');
+            object.mapping = ApiClient.convertToType(data['mapping'], object.mappingType);
         }
 
         return object;

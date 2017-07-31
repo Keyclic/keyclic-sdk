@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mapping** | **[String]** |  | [optional] 
+**mapping** | [**ApplicationLinksSelfIriTemplateMapping**](ApplicationLinksSelfIriTemplateMapping.md) |  | [optional] 
 
 
