@@ -53,20 +53,20 @@
       //expect(instance).to.be.a(KeyclicApi.CategoryPatch);
     });
 
-    it('should have the property op (base name: "op")', function() {
-      // uncomment below and update the code to test the property op
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instane = new KeyclicApi.CategoryPatch();
       //expect(instance).to.be();
     });
 
-    it('should have the property path (base name: "path")', function() {
-      // uncomment below and update the code to test the property path
+    it('should have the property color (base name: "color")', function() {
+      // uncomment below and update the code to test the property color
       //var instane = new KeyclicApi.CategoryPatch();
       //expect(instance).to.be();
     });
 
-    it('should have the property value (base name: "value")', function() {
-      // uncomment below and update the code to test the property value
+    it('should have the property icon (base name: "icon")', function() {
+      // uncomment below and update the code to test the property icon
       //var instane = new KeyclicApi.CategoryPatch();
       //expect(instance).to.be();
     });

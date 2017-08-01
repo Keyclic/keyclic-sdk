@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **String** | The URI of the self associated to the given feedback. | [optional] 
-**iriTemplate** | [**ApplicationLinksSelfIriTemplate**](ApplicationLinksSelfIriTemplate.md) |  | [optional] 
+**iriTemplate** | [**FeedbackLinksSelfIriTemplate**](FeedbackLinksSelfIriTemplate.md) |  | [optional] 
 
 

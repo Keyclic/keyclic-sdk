@@ -53,20 +53,38 @@
       //expect(instance).to.be.a(KeyclicApi.OrganizationPatch);
     });
 
-    it('should have the property op (base name: "op")', function() {
-      // uncomment below and update the code to test the property op
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instane = new KeyclicApi.OrganizationPatch();
       //expect(instance).to.be();
     });
 
-    it('should have the property path (base name: "path")', function() {
-      // uncomment below and update the code to test the property path
+    it('should have the property alternateName (base name: "alternateName")', function() {
+      // uncomment below and update the code to test the property alternateName
       //var instane = new KeyclicApi.OrganizationPatch();
       //expect(instance).to.be();
     });
 
-    it('should have the property value (base name: "value")', function() {
-      // uncomment below and update the code to test the property value
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new KeyclicApi.OrganizationPatch();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property logo (base name: "logo")', function() {
+      // uncomment below and update the code to test the property logo
+      //var instane = new KeyclicApi.OrganizationPatch();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property billingEmailAddress (base name: "billingEmailAddress")', function() {
+      // uncomment below and update the code to test the property billingEmailAddress
+      //var instane = new KeyclicApi.OrganizationPatch();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property notificationEmailAddress (base name: "notificationEmailAddress")', function() {
+      // uncomment below and update the code to test the property notificationEmailAddress
       //var instane = new KeyclicApi.OrganizationPatch();
       //expect(instance).to.be();
     });

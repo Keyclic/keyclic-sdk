@@ -12,6 +12,7 @@
 
 
 import ApiClient from '../ApiClient';
+import ApplicationLinksSelfIriTemplateMapping from './ApplicationLinksSelfIriTemplateMapping';
 
 
     
@@ -32,8 +33,9 @@ export default class ApplicationLinksSelfIriTemplate  {
     
     ) {
 
-        this.mapping = [];
+        this.mapping = null;
 
+        this.mappingType = ApplicationLinksSelfIriTemplateMapping;
     }
 
     /**
@@ -55,7 +57,7 @@ export default class ApplicationLinksSelfIriTemplate  {
         }
 
         if (data.hasOwnProperty('mapping')) {
-            object.mapping = ApiClient.convertToType(data['mapping'], '[\'String\']');
+            object.mapping = ApiClient.convertToType(data['mapping'], object.mappingType);
         }
 
         return object;

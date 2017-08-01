@@ -14,6 +14,7 @@ import ApiClient from '../ApiClient';
 import ActivityPagination from '../model/ActivityPagination';
 import CommentData from '../model/CommentData';
 import Error from '../model/Error';
+import Feedback from '../model/Feedback';
 import Operation from '../model/Operation';
 
 /**
@@ -223,7 +224,7 @@ export default class CommentApi extends ApiClient {
      * @param { String } xKeyclicApp 
      * @param { String } feedback The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
+     * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { module:model/CommentData } commentData  
      */
@@ -232,6 +233,9 @@ export default class CommentApi extends ApiClient {
         options,
         credentials,
     ) {
+        if (returnType === null) {
+            returnType = Feedback;
+        }
 
         let {
             xKeyclicApp,

@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **loggedAt** | **Date** |  | 
 **objectId** | **String** |  | 
 **version** | **String** |  | 
+**data** | **[String]** |  | 
 
 

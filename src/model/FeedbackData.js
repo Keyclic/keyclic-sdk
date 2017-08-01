@@ -30,10 +30,14 @@ export default class FeedbackData  {
     
      * @param reporter { String } 
     
+     * @param visibility { module:model/FeedbackData.VisibilityEnum } 
+    
      */
     constructor(
     
         reporter,
+    
+        visibility,
     
     ) {
 
@@ -41,6 +45,7 @@ export default class FeedbackData  {
         this.category = null;
         this.geo = null;
         this.description = null;
+        this.visibility = visibility;
         this.organization = null;
 
         this.geoType = FeedbackDataGeo;
@@ -76,6 +81,9 @@ export default class FeedbackData  {
         if (data.hasOwnProperty('description')) {
             object.description = ApiClient.convertToType(data['description'], 'String');
         }
+        if (data.hasOwnProperty('visibility')) {
+            object.visibility = ApiClient.convertToType(data['visibility'], 'String');
+        }
         if (data.hasOwnProperty('organization')) {
             object.organization = ApiClient.convertToType(data['organization'], 'String');
         }
@@ -84,6 +92,25 @@ export default class FeedbackData  {
     }
 
     
+
+       /**
+    * Allowed values for the "visibility" property.
+    * @enum { String }
+    */
+    static VisibilityEnum = {
+        /**
+         * value: "VISIBILITY_PUBLIC"
+         * @const
+         * @readonly
+         */
+        "PUBLIC": "VISIBILITY_PUBLIC", // eslint-disable-line quotes
+        /**
+         * value: "VISIBILITY_PRIVATE"
+         * @const
+         * @readonly
+         */
+        "PRIVATE": "VISIBILITY_PRIVATE", // eslint-disable-line quotes
+    };
 
 }
 

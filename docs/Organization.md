@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **billingEmailAddress** | **String** |  | 
 **notificationEmailAddress** | **String** |  | 
 **id** | **String** |  | 
+**createdAt** | **Date** |  | 
 **updatedAt** | **Date** |  | 
 **type** | **String** |  | [optional] 
 **links** | [**OrganizationLinks**](OrganizationLinks.md) |  | [optional] 
