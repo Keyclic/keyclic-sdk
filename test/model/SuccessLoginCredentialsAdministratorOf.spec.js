@@ -59,6 +59,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property token (base name: "token")', function() {
+      // uncomment below and update the code to test the property token
+      //var instane = new KeyclicApi.SuccessLoginCredentialsAdministratorOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new KeyclicApi.SuccessLoginCredentialsAdministratorOf();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

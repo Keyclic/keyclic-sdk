@@ -53,20 +53,32 @@
       //expect(instance).to.be.a(KeyclicApi.PersonPatch);
     });
 
-    it('should have the property op (base name: "op")', function() {
-      // uncomment below and update the code to test the property op
+    it('should have the property givenName (base name: "givenName")', function() {
+      // uncomment below and update the code to test the property givenName
       //var instane = new KeyclicApi.PersonPatch();
       //expect(instance).to.be();
     });
 
-    it('should have the property path (base name: "path")', function() {
-      // uncomment below and update the code to test the property path
+    it('should have the property familyName (base name: "familyName")', function() {
+      // uncomment below and update the code to test the property familyName
       //var instane = new KeyclicApi.PersonPatch();
       //expect(instance).to.be();
     });
 
-    it('should have the property value (base name: "value")', function() {
-      // uncomment below and update the code to test the property value
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instane = new KeyclicApi.PersonPatch();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property jobTitle (base name: "jobTitle")', function() {
+      // uncomment below and update the code to test the property jobTitle
+      //var instane = new KeyclicApi.PersonPatch();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property image (base name: "image")', function() {
+      // uncomment below and update the code to test the property image
       //var instane = new KeyclicApi.PersonPatch();
       //expect(instance).to.be();
     });

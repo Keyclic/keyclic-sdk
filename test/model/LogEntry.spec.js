@@ -77,6 +77,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property data (base name: "data")', function() {
+      // uncomment below and update the code to test the property data
+      //var instane = new KeyclicApi.LogEntry();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

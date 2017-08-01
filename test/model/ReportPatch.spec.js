@@ -53,20 +53,26 @@
       //expect(instance).to.be.a(KeyclicApi.ReportPatch);
     });
 
-    it('should have the property op (base name: "op")', function() {
-      // uncomment below and update the code to test the property op
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
       //var instane = new KeyclicApi.ReportPatch();
       //expect(instance).to.be();
     });
 
-    it('should have the property path (base name: "path")', function() {
-      // uncomment below and update the code to test the property path
+    it('should have the property identificationNumber (base name: "identificationNumber")', function() {
+      // uncomment below and update the code to test the property identificationNumber
       //var instane = new KeyclicApi.ReportPatch();
       //expect(instance).to.be();
     });
 
-    it('should have the property value (base name: "value")', function() {
-      // uncomment below and update the code to test the property value
+    it('should have the property priority (base name: "priority")', function() {
+      // uncomment below and update the code to test the property priority
+      //var instane = new KeyclicApi.ReportPatch();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
       //var instane = new KeyclicApi.ReportPatch();
       //expect(instance).to.be();
     });
