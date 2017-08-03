@@ -47,10 +47,10 @@
   }
 
   describe('ExportApi', function() {
-    describe('postExportByOrganization', function() {
-      it('should call postExportByOrganization successfully', function(done) {
-        //uncomment below and update the code to test postExportByOrganization
-        //instance.postExportByOrganization(function(error) {
+    describe('cpostExportByOrganization', function() {
+      it('should call cpostExportByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cpostExportByOrganization
+        //instance.cpostExportByOrganization(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

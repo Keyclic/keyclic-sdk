@@ -53,20 +53,14 @@
       //expect(instance).to.be.a(KeyclicApi.PlacePatch);
     });
 
-    it('should have the property op (base name: "op")', function() {
-      // uncomment below and update the code to test the property op
+    it('should have the property branchCode (base name: "branchCode")', function() {
+      // uncomment below and update the code to test the property branchCode
       //var instane = new KeyclicApi.PlacePatch();
       //expect(instance).to.be();
     });
 
-    it('should have the property path (base name: "path")', function() {
-      // uncomment below and update the code to test the property path
-      //var instane = new KeyclicApi.PlacePatch();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property value (base name: "value")', function() {
-      // uncomment below and update the code to test the property value
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instane = new KeyclicApi.PlacePatch();
       //expect(instance).to.be();
     });
