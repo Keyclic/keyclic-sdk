@@ -42,6 +42,8 @@ let opts = {
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'searchBranchCode': "searchBranchCode_example", // String | 
+  'searchName': "searchName_example", // String | 
 };
 
 apiInstance.cgetPlaces(xKeyclicApp, , opts, (error, data, response) => {
@@ -67,6 +69,8 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
+ **searchBranchCode** | **String**|  | [optional] 
+ **searchName** | **String**|  | [optional] 
 
 ### Return type
 
@@ -113,6 +117,8 @@ let opts = {
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'searchBranchCode': "searchBranchCode_example", // String | 
+  'searchName': "searchName_example", // String | 
 };
 
 apiInstance.cgetPlacesByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
@@ -138,6 +144,8 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
+ **searchBranchCode** | **String**|  | [optional] 
+ **searchName** | **String**|  | [optional] 
 
 ### Return type
 

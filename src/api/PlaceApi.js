@@ -51,6 +51,8 @@ export default class PlaceApi extends ApiClient {
      * @param { module:model/String } order   (default to desc)
      * @param { Date } after  
      * @param { Date } before  
+     * @param { String } searchBranchCode  
+     * @param { String } searchName  
      */
     cgetPlaces(
         returnType = null,
@@ -72,6 +74,8 @@ export default class PlaceApi extends ApiClient {
             order,
             after,
             before,
+            searchBranchCode,
+            searchName,
         } = options;
 
         
@@ -129,6 +133,16 @@ export default class PlaceApi extends ApiClient {
             before = null;
         }
         
+        // verify the null value of parameter 'searchBranchCode'
+        if (typeof searchBranchCode === 'undefined') {
+            searchBranchCode = null;
+        }
+        
+        // verify the null value of parameter 'searchName'
+        if (typeof searchName === 'undefined') {
+            searchName = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetPlaces');
@@ -148,6 +162,8 @@ export default class PlaceApi extends ApiClient {
             'order': order,
             'after': after,
             'before': before,
+            'search[branchCode]': searchBranchCode,
+            'search[name]': searchName,
         };
 
         let headerParams = {
@@ -198,6 +214,8 @@ export default class PlaceApi extends ApiClient {
      * @param { module:model/String } order   (default to desc)
      * @param { Date } after  
      * @param { Date } before  
+     * @param { String } searchBranchCode  
+     * @param { String } searchName  
      */
     cgetPlacesByOrganization(
         returnType = null,
@@ -219,6 +237,8 @@ export default class PlaceApi extends ApiClient {
             order,
             after,
             before,
+            searchBranchCode,
+            searchName,
         } = options;
 
         
@@ -276,6 +296,16 @@ export default class PlaceApi extends ApiClient {
             before = null;
         }
         
+        // verify the null value of parameter 'searchBranchCode'
+        if (typeof searchBranchCode === 'undefined') {
+            searchBranchCode = null;
+        }
+        
+        // verify the null value of parameter 'searchName'
+        if (typeof searchName === 'undefined') {
+            searchName = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetPlacesByOrganization');
@@ -295,6 +325,8 @@ export default class PlaceApi extends ApiClient {
             'order': order,
             'after': after,
             'before': before,
+            'search[branchCode]': searchBranchCode,
+            'search[name]': searchName,
         };
 
         let headerParams = {
