@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="cgetOperationsByOrganization"></a>
 # **cgetOperationsByOrganization**
-> OperationPagination cgetOperationsByOrganization(xKeyclicApp, organization, opts)
+> OperationPagination cgetOperationsByOrganization(xKeyclicApporganization, opts)
 
 Retrieve all Operation resources.
 
@@ -49,7 +49,7 @@ let opts = {
   'searchIdentificationNumber': "searchIdentificationNumber_example" // String | 
 };
 
-apiInstance.cgetOperationsByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+apiInstance.cgetOperationsByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 <a name="cgetOperationsByPerson"></a>
 # **cgetOperationsByPerson**
-> OperationPagination cgetOperationsByPerson(xKeyclicApp, person, opts)
+> OperationPagination cgetOperationsByPerson(xKeyclicAppperson, opts)
 
 Retrieve all Operation resources.
 
@@ -124,7 +124,7 @@ let opts = {
   'searchIdentificationNumber': "searchIdentificationNumber_example" // String | 
 };
 
-apiInstance.cgetOperationsByPerson(xKeyclicApp, person, opts, (error, data, response) => {
+apiInstance.cgetOperationsByPerson(xKeyclicAppperson, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 <a name="cgetOperationsByReport"></a>
 # **cgetOperationsByReport**
-> OperationPagination cgetOperationsByReport(xKeyclicApp, report, opts)
+> OperationPagination cgetOperationsByReport(xKeyclicAppreport, opts)
 
 Retrieve all Operation resources.
 
@@ -199,7 +199,7 @@ let opts = {
   'searchIdentificationNumber': "searchIdentificationNumber_example" // String | 
 };
 
-apiInstance.cgetOperationsByReport(xKeyclicApp, report, opts, (error, data, response) => {
+apiInstance.cgetOperationsByReport(xKeyclicAppreport, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteOperation"></a>
 # **deleteOperation**
-> deleteOperation(xKeyclicApp, operation, opts)
+> deleteOperation(xKeyclicAppoperation, opts)
 
 Remove one Operation resource.
 
@@ -265,7 +265,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.deleteOperation(xKeyclicApp, operation, opts, (error, data, response) => {
+apiInstance.deleteOperation(xKeyclicAppoperation, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -297,7 +297,7 @@ null (empty response body)
 
 <a name="getOperation"></a>
 # **getOperation**
-> Operation getOperation(xKeyclicApp, operation, opts)
+> Operation getOperation(xKeyclicAppoperation, opts)
 
 Retrieve one Operation resource.
 
@@ -322,7 +322,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getOperation(xKeyclicApp, operation, opts, (error, data, response) => {
+apiInstance.getOperation(xKeyclicAppoperation, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 <a name="patchOperation"></a>
 # **patchOperation**
-> Operation patchOperation(xKeyclicApp, operation, opts)
+> Operation patchOperation(xKeyclicAppoperation, opts)
 
 Edit one Operation resource.
 
@@ -380,7 +380,7 @@ let opts = {
   'operationPatch': new KeyclicApi.OperationPatch() // OperationPatch | 
 };
 
-apiInstance.patchOperation(xKeyclicApp, operation, opts, (error, data, response) => {
+apiInstance.patchOperation(xKeyclicAppoperation, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 
 <a name="postOperation"></a>
 # **postOperation**
-> Operation postOperation(xKeyclicApp, , opts)
+> Operation postOperation(xKeyclicApp, opts)
 
 Create one Operation resource.
 
@@ -437,7 +437,7 @@ let opts = {
   'operationData': new KeyclicApi.OperationData() // OperationData | 
 };
 
-apiInstance.postOperation(xKeyclicApp, , opts, (error, data, response) => {
+apiInstance.postOperation(xKeyclicApp, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

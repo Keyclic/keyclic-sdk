@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getTrackingByFeedback"></a>
 # **getTrackingByFeedback**
-> Tracking getTrackingByFeedback(xKeyclicApp, feedback, opts)
+> Tracking getTrackingByFeedback(xKeyclicAppfeedback, opts)
 
 Retrieve one Tracking resource.
 
@@ -35,7 +35,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getTrackingByFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
+apiInstance.getTrackingByFeedback(xKeyclicAppfeedback, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 <a name="getTrackingByReport"></a>
 # **getTrackingByReport**
-> Tracking getTrackingByReport(xKeyclicApp, report, opts)
+> Tracking getTrackingByReport(xKeyclicAppreport, opts)
 
 Retrieve one Tracking resource.
 
@@ -92,7 +92,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getTrackingByReport(xKeyclicApp, report, opts, (error, data, response) => {
+apiInstance.getTrackingByReport(xKeyclicAppreport, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

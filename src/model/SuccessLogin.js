@@ -35,6 +35,7 @@ export default class SuccessLogin  {
 
         this.accessToken = null;
         this.credentials = null;
+        this.refreshToken = null;
         this.tokenType = 'Bearer';
 
         this.credentialsType = SuccessLoginCredentials;
@@ -63,6 +64,9 @@ export default class SuccessLogin  {
         }
         if (data.hasOwnProperty('credentials')) {
             object.credentials = ApiClient.convertToType(data['credentials'], object.credentialsType);
+        }
+        if (data.hasOwnProperty('refreshToken')) {
+            object.refreshToken = ApiClient.convertToType(data['refreshToken'], 'String');
         }
         if (data.hasOwnProperty('tokenType')) {
             object.tokenType = ApiClient.convertToType(data['tokenType'], 'String');

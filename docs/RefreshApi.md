@@ -1,38 +1,36 @@
-# KeyclicApi.ChangeApi
+# KeyclicApi.RefreshApi
 
 All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**postChangeByToken**](ChangeApi.md#postChangeByToken) | **POST** /security/password/change/{token} | Create one Change resource.
+[**postRefresh**](RefreshApi.md#postRefresh) | **POST** /security/login/refresh | Create one Refresh resource.
 
 
-<a name="postChangeByToken"></a>
-# **postChangeByToken**
-> postChangeByToken(xKeyclicApptoken, opts)
+<a name="postRefresh"></a>
+# **postRefresh**
+> SuccessLogin postRefresh(xKeyclicApp, opts)
 
-Create one Change resource.
+Create one Refresh resource.
 
 ### Example
 ```javascript
 import KeyclicApi from 'keyclic_api';
 
-let apiInstance = new KeyclicApi.ChangeApi();
+let apiInstance = new KeyclicApi.RefreshApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let token = "token_example"; // String | 
-
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
-  'passwordData': new KeyclicApi.PasswordData() // PasswordData | 
+  'refreshToken': new KeyclicApi.RefreshToken() // RefreshToken | 
 };
 
-apiInstance.postChangeByToken(xKeyclicApptoken, opts, (error, data, response) => {
+apiInstance.postRefresh(xKeyclicApp, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -42,13 +40,12 @@ apiInstance.postChangeByToken(xKeyclicApptoken, opts, (error, data, response) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **token** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
- **passwordData** | [**PasswordData**](PasswordData.md)|  | [optional] 
+ **refreshToken** | [**RefreshToken**](RefreshToken.md)|  | [optional] 
 
 ### Return type
 
-null (empty response body)
+[**SuccessLogin**](SuccessLogin.md)
 
 ### Authorization
 

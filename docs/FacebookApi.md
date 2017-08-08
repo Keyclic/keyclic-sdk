@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="postFacebook"></a>
 # **postFacebook**
-> SuccessLogin postFacebook(xKeyclicApp, , opts)
+> SuccessLogin postFacebook(xKeyclicApp, opts)
 
 Create one Facebook resource.
 
@@ -26,7 +26,7 @@ let opts = {
   'facebookConnectData': new KeyclicApi.FacebookConnectData() // FacebookConnectData | 
 };
 
-apiInstance.postFacebook(xKeyclicApp, , opts, (error, data, response) => {
+apiInstance.postFacebook(xKeyclicApp, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="cgetLogsByOperation"></a>
 # **cgetLogsByOperation**
-> LogEntryPagination cgetLogsByOperation(xKeyclicApp, operation, opts)
+> LogEntryPagination cgetLogsByOperation(xKeyclicAppoperation, opts)
 
 Retrieve all Log resources.
 
@@ -34,7 +34,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.cgetLogsByOperation(xKeyclicApp, operation, opts, (error, data, response) => {
+apiInstance.cgetLogsByOperation(xKeyclicAppoperation, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

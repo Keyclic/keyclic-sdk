@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getApplication"></a>
 # **getApplication**
-> Application getApplication(xKeyclicApp, application, opts)
+> Application getApplication(xKeyclicAppapplication, opts)
 
 Retrieve one Application resource.
 
@@ -27,7 +27,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getApplication(xKeyclicApp, application, opts, (error, data, response) => {
+apiInstance.getApplication(xKeyclicAppapplication, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

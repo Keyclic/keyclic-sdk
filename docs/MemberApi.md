@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="cgetMembersByOrganization"></a>
 # **cgetMembersByOrganization**
-> MemberPagination cgetMembersByOrganization(xKeyclicApp, organization, opts)
+> MemberPagination cgetMembersByOrganization(xKeyclicApporganization, opts)
 
 Retrieve all Member resources.
 
@@ -48,7 +48,7 @@ let opts = {
   'searchEmail': "searchEmail_example" // String | 
 };
 
-apiInstance.cgetMembersByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+apiInstance.cgetMembersByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteMemberByOrganizationAndMember"></a>
 # **deleteMemberByOrganizationAndMember**
-> deleteMemberByOrganizationAndMember(xKeyclicApp, organization, member, opts)
+> deleteMemberByOrganizationAndMember(xKeyclicApporganization, member, opts)
 
 Remove one Member resource.
 
@@ -117,7 +117,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.deleteMemberByOrganizationAndMember(xKeyclicApp, organization, member, opts, (error, data, response) => {
+apiInstance.deleteMemberByOrganizationAndMember(xKeyclicApporganization, member, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -150,7 +150,7 @@ null (empty response body)
 
 <a name="getMemberByOrganizationAndMember"></a>
 # **getMemberByOrganizationAndMember**
-> Member getMemberByOrganizationAndMember(xKeyclicApp, organization, member, opts)
+> Member getMemberByOrganizationAndMember(xKeyclicApporganization, member, opts)
 
 Retrieve one Member resource.
 
@@ -177,7 +177,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getMemberByOrganizationAndMember(xKeyclicApp, organization, member, opts, (error, data, response) => {
+apiInstance.getMemberByOrganizationAndMember(xKeyclicApporganization, member, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 <a name="patchMemberByOrganizationAndMember"></a>
 # **patchMemberByOrganizationAndMember**
-> Member patchMemberByOrganizationAndMember(xKeyclicApp, organization, member, opts)
+> Member patchMemberByOrganizationAndMember(xKeyclicApporganization, member, opts)
 
 Edit one Member resource.
 
@@ -238,7 +238,7 @@ let opts = {
   'memberPatch': new KeyclicApi.MemberPatch() // MemberPatch | 
 };
 
-apiInstance.patchMemberByOrganizationAndMember(xKeyclicApp, organization, member, opts, (error, data, response) => {
+apiInstance.patchMemberByOrganizationAndMember(xKeyclicApporganization, member, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 <a name="postMemberByOrganization"></a>
 # **postMemberByOrganization**
-> Member postMemberByOrganization(xKeyclicApp, organization, opts)
+> Member postMemberByOrganization(xKeyclicApporganization, opts)
 
 Create one Member resource.
 
@@ -298,7 +298,7 @@ let opts = {
   'personData': new KeyclicApi.PersonData() // PersonData | 
 };
 
-apiInstance.postMemberByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+apiInstance.postMemberByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

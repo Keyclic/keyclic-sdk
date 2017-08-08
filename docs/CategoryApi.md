@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="cgetCategories"></a>
 # **cgetCategories**
-> CategoryPagination cgetCategories(xKeyclicApp, , opts)
+> CategoryPagination cgetCategories(xKeyclicApp, opts)
 
 Retrieve all Category resources.
 
@@ -43,7 +43,7 @@ let opts = {
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
 };
 
-apiInstance.cgetCategories(xKeyclicApp, , opts, (error, data, response) => {
+apiInstance.cgetCategories(xKeyclicApp, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 <a name="cgetCategoriesByOrganization"></a>
 # **cgetCategoriesByOrganization**
-> CategoryPagination cgetCategoriesByOrganization(xKeyclicApp, organization, opts)
+> CategoryPagination cgetCategoriesByOrganization(xKeyclicApporganization, opts)
 
 Retrieve all Category resources.
 
@@ -112,7 +112,7 @@ let opts = {
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
 };
 
-apiInstance.cgetCategoriesByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+apiInstance.cgetCategoriesByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategory"></a>
 # **getCategory**
-> Category getCategory(xKeyclicApp, category, opts)
+> Category getCategory(xKeyclicAppcategory, opts)
 
 Retrieve one Category resource.
 
@@ -175,7 +175,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getCategory(xKeyclicApp, category, opts, (error, data, response) => {
+apiInstance.getCategory(xKeyclicAppcategory, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 <a name="patchCategory"></a>
 # **patchCategory**
-> Category patchCategory(xKeyclicApp, category, opts)
+> Category patchCategory(xKeyclicAppcategory, opts)
 
 Edit one Category resource.
 
@@ -233,7 +233,7 @@ let opts = {
   'categoryPatch': new KeyclicApi.CategoryPatch() // CategoryPatch | 
 };
 
-apiInstance.patchCategory(xKeyclicApp, category, opts, (error, data, response) => {
+apiInstance.patchCategory(xKeyclicAppcategory, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 <a name="postCategoryByOrganization"></a>
 # **postCategoryByOrganization**
-> Category postCategoryByOrganization(xKeyclicApp, organization, opts)
+> Category postCategoryByOrganization(xKeyclicApporganization, opts)
 
 Create one Category resource.
 
@@ -292,7 +292,7 @@ let opts = {
   'categoryData': new KeyclicApi.CategoryData() // CategoryData | 
 };
 
-apiInstance.postCategoryByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+apiInstance.postCategoryByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

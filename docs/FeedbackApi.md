@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="cgetFeedbacks"></a>
 # **cgetFeedbacks**
-> FeedbackPagination cgetFeedbacks(xKeyclicApp, , opts)
+> FeedbackPagination cgetFeedbacks(xKeyclicApp, opts)
 
 Retrieve all Feedback resources.
 
@@ -45,7 +45,7 @@ let opts = {
   'geoNearRadius': 56 // Number | 
 };
 
-apiInstance.cgetFeedbacks(xKeyclicApp, , opts, (error, data, response) => {
+apiInstance.cgetFeedbacks(xKeyclicApp, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 <a name="cgetFeedbacksByPerson"></a>
 # **cgetFeedbacksByPerson**
-> FeedbackPagination cgetFeedbacksByPerson(xKeyclicApp, person, opts)
+> FeedbackPagination cgetFeedbacksByPerson(xKeyclicAppperson, opts)
 
 Retrieve all Feedback resources.
 
@@ -123,7 +123,7 @@ let opts = {
   'geoNearRadius': 56 // Number | 
 };
 
-apiInstance.cgetFeedbacksByPerson(xKeyclicApp, person, opts, (error, data, response) => {
+apiInstance.cgetFeedbacksByPerson(xKeyclicAppperson, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 <a name="getFeedback"></a>
 # **getFeedback**
-> Feedback getFeedback(xKeyclicApp, feedback, opts)
+> Feedback getFeedback(xKeyclicAppfeedback, opts)
 
 Retrieve one Feedback resource.
 
@@ -191,7 +191,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
+apiInstance.getFeedback(xKeyclicAppfeedback, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

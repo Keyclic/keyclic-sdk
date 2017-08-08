@@ -1,8 +1,8 @@
-# KeyclicApi.ImageData
+# KeyclicApi.RefreshToken
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**image** | **Blob** |  | [optional] 
+**refreshToken** | **String** |  | 
 
 

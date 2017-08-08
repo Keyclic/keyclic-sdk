@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="postLogin"></a>
 # **postLogin**
-> SuccessLogin postLogin(xKeyclicApp, , opts)
+> SuccessLogin postLogin(xKeyclicApp, opts)
 
 Create one Login resource.
 
@@ -26,7 +26,7 @@ let opts = {
   'loginData': new KeyclicApi.LoginData() // LoginData | 
 };
 
-apiInstance.postLogin(xKeyclicApp, , opts, (error, data, response) => {
+apiInstance.postLogin(xKeyclicApp, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="postTransitionByFeedback"></a>
 # **postTransitionByFeedback**
-> Feedback postTransitionByFeedback(xKeyclicApp, feedback, opts)
+> Feedback postTransitionByFeedback(xKeyclicAppfeedback, opts)
 
 Create one Transition resource.
 
@@ -37,7 +37,7 @@ let opts = {
   'feedbackWorkflowTransitionData': new KeyclicApi.FeedbackWorkflowTransitionData() // FeedbackWorkflowTransitionData | 
 };
 
-apiInstance.postTransitionByFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
+apiInstance.postTransitionByFeedback(xKeyclicAppfeedback, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 <a name="postTransitionByOperation"></a>
 # **postTransitionByOperation**
-> Operation postTransitionByOperation(xKeyclicApp, operation, opts)
+> Operation postTransitionByOperation(xKeyclicAppoperation, opts)
 
 Create one Transition resource.
 
@@ -96,7 +96,7 @@ let opts = {
   'operationWorkflowTransitionData': new KeyclicApi.OperationWorkflowTransitionData() // OperationWorkflowTransitionData | 
 };
 
-apiInstance.postTransitionByOperation(xKeyclicApp, operation, opts, (error, data, response) => {
+apiInstance.postTransitionByOperation(xKeyclicAppoperation, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 <a name="postTransitionByReport"></a>
 # **postTransitionByReport**
-> Report postTransitionByReport(xKeyclicApp, report, opts)
+> Report postTransitionByReport(xKeyclicAppreport, opts)
 
 Create one Transition resource.
 
@@ -155,7 +155,7 @@ let opts = {
   'reportWorkflowTransitionData': new KeyclicApi.ReportWorkflowTransitionData() // ReportWorkflowTransitionData | 
 };
 
-apiInstance.postTransitionByReport(xKeyclicApp, report, opts, (error, data, response) => {
+apiInstance.postTransitionByReport(xKeyclicAppreport, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

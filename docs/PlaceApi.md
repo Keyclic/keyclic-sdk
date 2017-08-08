@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="cgetPlaces"></a>
 # **cgetPlaces**
-> PlacePagination cgetPlaces(xKeyclicApp, , opts)
+> PlacePagination cgetPlaces(xKeyclicApp, opts)
 
 Retrieve all Place resources.
 
@@ -42,11 +42,9 @@ let opts = {
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'searchBranchCode': "searchBranchCode_example", // String | 
-  'searchName': "searchName_example", // String | 
 };
 
-apiInstance.cgetPlaces(xKeyclicApp, , opts, (error, data, response) => {
+apiInstance.cgetPlaces(xKeyclicApp, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -69,8 +67,6 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
- **searchBranchCode** | **String**|  | [optional] 
- **searchName** | **String**|  | [optional] 
 
 ### Return type
 
@@ -87,7 +83,7 @@ Name | Type | Description  | Notes
 
 <a name="cgetPlacesByOrganization"></a>
 # **cgetPlacesByOrganization**
-> PlacePagination cgetPlacesByOrganization(xKeyclicApp, organization, opts)
+> PlacePagination cgetPlacesByOrganization(xKeyclicApporganization, opts)
 
 Retrieve all Place resources.
 
@@ -117,11 +113,9 @@ let opts = {
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'searchBranchCode': "searchBranchCode_example", // String | 
-  'searchName': "searchName_example", // String | 
 };
 
-apiInstance.cgetPlacesByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+apiInstance.cgetPlacesByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -144,8 +138,6 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
- **searchBranchCode** | **String**|  | [optional] 
- **searchName** | **String**|  | [optional] 
 
 ### Return type
 
@@ -162,7 +154,7 @@ Name | Type | Description  | Notes
 
 <a name="getPlace"></a>
 # **getPlace**
-> Place getPlace(xKeyclicApp, place, opts)
+> Place getPlace(xKeyclicAppplace, opts)
 
 Retrieve one Place resource.
 
@@ -187,7 +179,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getPlace(xKeyclicApp, place, opts, (error, data, response) => {
+apiInstance.getPlace(xKeyclicAppplace, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -219,7 +211,7 @@ Name | Type | Description  | Notes
 
 <a name="patchPlace"></a>
 # **patchPlace**
-> Place patchPlace(xKeyclicApp, place, opts)
+> Place patchPlace(xKeyclicAppplace, opts)
 
 Edit one Place resource.
 
@@ -245,7 +237,7 @@ let opts = {
   'placePatch': new KeyclicApi.PlacePatch() // PlacePatch | 
 };
 
-apiInstance.patchPlace(xKeyclicApp, place, opts, (error, data, response) => {
+apiInstance.patchPlace(xKeyclicAppplace, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -278,7 +270,7 @@ Name | Type | Description  | Notes
 
 <a name="postPlaceByOrganization"></a>
 # **postPlaceByOrganization**
-> Place postPlaceByOrganization(xKeyclicApp, organization, opts)
+> Place postPlaceByOrganization(xKeyclicApporganization, opts)
 
 Create one Place resource.
 
@@ -304,7 +296,7 @@ let opts = {
   'placeData': new KeyclicApi.PlaceData() // PlaceData | 
 };
 
-apiInstance.postPlaceByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+apiInstance.postPlaceByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

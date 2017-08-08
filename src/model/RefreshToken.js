@@ -17,30 +17,34 @@ import ApiClient from '../ApiClient';
     
 
 /**
- * The ImageData model module.
- * @module model/ImageData
+ * The RefreshToken model module.
+ * @module model/RefreshToken
  * @version 1.0
  */
-export default class ImageData  {
+export default class RefreshToken  {
     /**
-     * Constructs a new "ImageData".
-     * @alias module:model/ImageData
+     * Constructs a new "RefreshToken".
+     * @alias module:model/RefreshToken
      * @class
+    
+     * @param refreshToken { String } 
     
      */
     constructor(
     
+        refreshToken,
+    
     ) {
 
-        this.image = null;
+        this.refreshToken = refreshToken;
 
     }
 
     /**
-    * Constructs a "ImageData" from a plain JavaScript object.
+    * Constructs a "RefreshToken" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/ImageData } object Optional instance to populate.
-    * @return { module:model/ImageData } The populated "ImageData" instance.
+    * @param { module:model/RefreshToken } object Optional instance to populate.
+    * @return { module:model/RefreshToken } The populated "RefreshToken" instance.
     */
     static constructFromData(
         data,
@@ -51,11 +55,11 @@ export default class ImageData  {
         }
 
         if (object === null) {
-            object = new ImageData();
+            object = new RefreshToken();
         }
 
-        if (data.hasOwnProperty('image')) {
-            object.image = ApiClient.convertToType(data['image'], 'Blob');
+        if (data.hasOwnProperty('refreshToken')) {
+            object.refreshToken = ApiClient.convertToType(data['refreshToken'], 'String');
         }
 
         return object;

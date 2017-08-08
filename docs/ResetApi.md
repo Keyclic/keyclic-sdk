@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="postReset"></a>
 # **postReset**
-> postReset(xKeyclicApp, , opts)
+> postReset(xKeyclicApp, opts)
 
 Create one Reset resource.
 
@@ -26,7 +26,7 @@ let opts = {
   'emailData': new KeyclicApi.EmailData() // EmailData | 
 };
 
-apiInstance.postReset(xKeyclicApp, , opts, (error, data, response) => {
+apiInstance.postReset(xKeyclicApp, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

@@ -85,7 +85,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getAnalyticByOrganization(xKeyclicApp, organization, opts, callback);
+api.getAnalyticByOrganization(xKeyclicApporganization, opts, callback);
 
 ```
 
@@ -150,6 +150,7 @@ Class | Method | HTTP request | Description
 *KeyclicApi.PlaceApi* | [**getPlace**](docs/PlaceApi.md#getPlace) | **GET** /places/{place} | Retrieve one Place resource.
 *KeyclicApi.PlaceApi* | [**patchPlace**](docs/PlaceApi.md#patchPlace) | **PATCH** /places/{place} | Edit one Place resource.
 *KeyclicApi.PlaceApi* | [**postPlaceByOrganization**](docs/PlaceApi.md#postPlaceByOrganization) | **POST** /organizations/{organization}/places | Create one Place resource.
+*KeyclicApi.RefreshApi* | [**postRefresh**](docs/RefreshApi.md#postRefresh) | **POST** /security/login/refresh | Create one Refresh resource.
 *KeyclicApi.RegisterApi* | [**postRegister**](docs/RegisterApi.md#postRegister) | **POST** /security/register | Create one Register resource.
 *KeyclicApi.RelationshipApi* | [**cgetRelationshipsByOrganization**](docs/RelationshipApi.md#cgetRelationshipsByOrganization) | **GET** /organizations/{organization}/relationships | Retrieve all Relationship resources.
 *KeyclicApi.RelationshipApi* | [**deleteRelationshipByOrganizationAndRelationship**](docs/RelationshipApi.md#deleteRelationshipByOrganizationAndRelationship) | **DELETE** /organizations/{organization}/relationships/{relationship} | Remove one Relationship resource.
@@ -284,6 +285,7 @@ Class | Method | HTTP request | Description
  - [KeyclicApi.PlaceLinksSelfIriTemplate](docs/PlaceLinksSelfIriTemplate.md)
  - [KeyclicApi.PlaceLinksSelfIriTemplateMapping](docs/PlaceLinksSelfIriTemplateMapping.md)
  - [KeyclicApi.PlacePatch](docs/PlacePatch.md)
+ - [KeyclicApi.RefreshToken](docs/RefreshToken.md)
  - [KeyclicApi.RegisterData](docs/RegisterData.md)
  - [KeyclicApi.RelationshipData](docs/RelationshipData.md)
  - [KeyclicApi.Report](docs/Report.md)

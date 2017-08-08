@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="cgetOrganizations"></a>
 # **cgetOrganizations**
-> OrganizationPagination cgetOrganizations(xKeyclicApp, , opts)
+> OrganizationPagination cgetOrganizations(xKeyclicApp, opts)
 
 Retrieve all Organization resources.
 
@@ -46,7 +46,7 @@ let opts = {
   'searchNotificationEmailAddress': "searchNotificationEmailAddress_example" // String | 
 };
 
-apiInstance.cgetOrganizations(xKeyclicApp, , opts, (error, data, response) => {
+apiInstance.cgetOrganizations(xKeyclicApp, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganization"></a>
 # **getOrganization**
-> Organization getOrganization(xKeyclicApp, organization, opts)
+> Organization getOrganization(xKeyclicApporganization, opts)
 
 Retrieve one Organization resource.
 
@@ -113,7 +113,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+apiInstance.getOrganization(xKeyclicApporganization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 <a name="patchOrganization"></a>
 # **patchOrganization**
-> Organization patchOrganization(xKeyclicApp, organization, opts)
+> Organization patchOrganization(xKeyclicApporganization, opts)
 
 Edit one Organization resource.
 
@@ -171,7 +171,7 @@ let opts = {
   'organizationPatch': new KeyclicApi.OrganizationPatch() // OrganizationPatch | 
 };
 
-apiInstance.patchOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+apiInstance.patchOrganization(xKeyclicApporganization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 <a name="postOrganization"></a>
 # **postOrganization**
-> Organization postOrganization(xKeyclicApp, , opts)
+> Organization postOrganization(xKeyclicApp, opts)
 
 Create one Organization resource.
 
@@ -228,7 +228,7 @@ let opts = {
   'organizationData': new KeyclicApi.OrganizationData() // OrganizationData | 
 };
 
-apiInstance.postOrganization(xKeyclicApp, , opts, (error, data, response) => {
+apiInstance.postOrganization(xKeyclicApp, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

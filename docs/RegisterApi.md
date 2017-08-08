@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="postRegister"></a>
 # **postRegister**
-> Person postRegister(xKeyclicApp, , opts)
+> Person postRegister(xKeyclicApp, opts)
 
 Create one Register resource.
 
@@ -26,7 +26,7 @@ let opts = {
   'registerData': new KeyclicApi.RegisterData() // RegisterData | 
 };
 
-apiInstance.postRegister(xKeyclicApp, , opts, (error, data, response) => {
+apiInstance.postRegister(xKeyclicApp, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

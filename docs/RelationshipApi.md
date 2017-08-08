@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="cgetRelationshipsByOrganization"></a>
 # **cgetRelationshipsByOrganization**
-> OrganizationPagination cgetRelationshipsByOrganization(xKeyclicApp, organization, opts)
+> OrganizationPagination cgetRelationshipsByOrganization(xKeyclicApporganization, opts)
 
 Retrieve all Relationship resources.
 
@@ -47,7 +47,7 @@ let opts = {
   'searchNotificationEmailAddress': "searchNotificationEmailAddress_example" // String | 
 };
 
-apiInstance.cgetRelationshipsByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+apiInstance.cgetRelationshipsByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteRelationshipByOrganizationAndRelationship"></a>
 # **deleteRelationshipByOrganizationAndRelationship**
-> deleteRelationshipByOrganizationAndRelationship(xKeyclicApp, organization, relationship, opts)
+> deleteRelationshipByOrganizationAndRelationship(xKeyclicApporganization, relationship, opts)
 
 Remove one Relationship resource.
 
@@ -117,7 +117,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.deleteRelationshipByOrganizationAndRelationship(xKeyclicApp, organization, relationship, opts, (error, data, response) => {
+apiInstance.deleteRelationshipByOrganizationAndRelationship(xKeyclicApporganization, relationship, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -150,7 +150,7 @@ null (empty response body)
 
 <a name="postRelationshipByOrganization"></a>
 # **postRelationshipByOrganization**
-> Organization postRelationshipByOrganization(xKeyclicApp, organization, opts)
+> Organization postRelationshipByOrganization(xKeyclicApporganization, opts)
 
 Create one Relationship resource.
 
@@ -176,7 +176,7 @@ let opts = {
   'relationshipData': new KeyclicApi.RelationshipData() // RelationshipData | 
 };
 
-apiInstance.postRelationshipByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+apiInstance.postRelationshipByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

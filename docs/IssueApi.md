@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="postIssue"></a>
 # **postIssue**
-> Feedback postIssue(xKeyclicApp, , opts)
+> Feedback postIssue(xKeyclicApp, opts)
 
 Create one Issue resource.
 
@@ -33,7 +33,7 @@ let opts = {
   'feedbackData': new KeyclicApi.FeedbackData() // FeedbackData | 
 };
 
-apiInstance.postIssue(xKeyclicApp, , opts, (error, data, response) => {
+apiInstance.postIssue(xKeyclicApp, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
