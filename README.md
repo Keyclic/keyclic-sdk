@@ -85,7 +85,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getAnalyticByOrganization(xKeyclicApporganization, opts, callback);
+api.getAnalyticByOrganization(xKeyclicApp, organization, opts, callback);
 
 ```
 
@@ -96,7 +96,7 @@ All URIs are relative to *https://api.keyclic.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *KeyclicApi.AnalyticApi* | [**getAnalyticByOrganization**](docs/AnalyticApi.md#getAnalyticByOrganization) | **GET** /organizations/{organization}/analytics | Retrieve one Analytic resource.
-*KeyclicApi.ApplicationApi* | [**getApplication**](docs/ApplicationApi.md#getApplication) | **GET** /applications/{application} | Retrieve one Application resource.
+*KeyclicApi.ApplicationApi* | [**getApplicationByToken**](docs/ApplicationApi.md#getApplicationByToken) | **GET** /applications/{token} | Retrieve one Application resource.
 *KeyclicApi.AssignApi* | [**postAssignByOperation**](docs/AssignApi.md#postAssignByOperation) | **POST** /operations/{operation}/assign | Create one Assign resource.
 *KeyclicApi.CategoryApi* | [**cgetCategories**](docs/CategoryApi.md#cgetCategories) | **GET** /categories | Retrieve all Category resources.
 *KeyclicApi.CategoryApi* | [**cgetCategoriesByOrganization**](docs/CategoryApi.md#cgetCategoriesByOrganization) | **GET** /organizations/{organization}/categories | Retrieve all Category resources.
@@ -150,7 +150,6 @@ Class | Method | HTTP request | Description
 *KeyclicApi.PlaceApi* | [**getPlace**](docs/PlaceApi.md#getPlace) | **GET** /places/{place} | Retrieve one Place resource.
 *KeyclicApi.PlaceApi* | [**patchPlace**](docs/PlaceApi.md#patchPlace) | **PATCH** /places/{place} | Edit one Place resource.
 *KeyclicApi.PlaceApi* | [**postPlaceByOrganization**](docs/PlaceApi.md#postPlaceByOrganization) | **POST** /organizations/{organization}/places | Create one Place resource.
-*KeyclicApi.RefreshApi* | [**postRefresh**](docs/RefreshApi.md#postRefresh) | **POST** /security/login/refresh | Create one Refresh resource.
 *KeyclicApi.RegisterApi* | [**postRegister**](docs/RegisterApi.md#postRegister) | **POST** /security/register | Create one Register resource.
 *KeyclicApi.RelationshipApi* | [**cgetRelationshipsByOrganization**](docs/RelationshipApi.md#cgetRelationshipsByOrganization) | **GET** /organizations/{organization}/relationships | Retrieve all Relationship resources.
 *KeyclicApi.RelationshipApi* | [**deleteRelationshipByOrganizationAndRelationship**](docs/RelationshipApi.md#deleteRelationshipByOrganizationAndRelationship) | **DELETE** /organizations/{organization}/relationships/{relationship} | Remove one Relationship resource.
@@ -281,11 +280,14 @@ Class | Method | HTTP request | Description
  - [KeyclicApi.PlaceGeo](docs/PlaceGeo.md)
  - [KeyclicApi.PlaceGeoPolygon](docs/PlaceGeoPolygon.md)
  - [KeyclicApi.PlaceLinks](docs/PlaceLinks.md)
+ - [KeyclicApi.PlaceLinksContainsPlaces](docs/PlaceLinksContainsPlaces.md)
+ - [KeyclicApi.PlaceLinksContainsPlacesIriTemplate](docs/PlaceLinksContainsPlacesIriTemplate.md)
+ - [KeyclicApi.PlaceLinksContainsPlacesIriTemplateMapping](docs/PlaceLinksContainsPlacesIriTemplateMapping.md)
+ - [KeyclicApi.PlaceLinksOrganization](docs/PlaceLinksOrganization.md)
  - [KeyclicApi.PlaceLinksSelf](docs/PlaceLinksSelf.md)
  - [KeyclicApi.PlaceLinksSelfIriTemplate](docs/PlaceLinksSelfIriTemplate.md)
  - [KeyclicApi.PlaceLinksSelfIriTemplateMapping](docs/PlaceLinksSelfIriTemplateMapping.md)
  - [KeyclicApi.PlacePatch](docs/PlacePatch.md)
- - [KeyclicApi.RefreshToken](docs/RefreshToken.md)
  - [KeyclicApi.RegisterData](docs/RegisterData.md)
  - [KeyclicApi.RelationshipData](docs/RelationshipData.md)
  - [KeyclicApi.Report](docs/Report.md)

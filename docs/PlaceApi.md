@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="cgetPlaces"></a>
 # **cgetPlaces**
-> PlacePagination cgetPlaces(xKeyclicApp, opts)
+> PlacePagination cgetPlaces(xKeyclicApp, , opts)
 
 Retrieve all Place resources.
 
@@ -34,17 +34,21 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
-  'geoHash': "geoHash_example", // String | 
   'geoCoordinates': "geoCoordinates_example", // String | 
+  'geoElevation': 56, // Number | 
+  'geoHash': "geoHash_example", // String | 
   'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
+  'parent': "parent_example", // String | The identifier of the resource formatted as GUID string.
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'searchBranchCode': "searchBranchCode_example", // String | 
+  'searchName': "searchName_example", // String | 
 };
 
-apiInstance.cgetPlaces(xKeyclicApp, opts, (error, data, response) => {
+apiInstance.cgetPlaces(xKeyclicApp, , opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -59,14 +63,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
- **geoHash** | **String**|  | [optional] 
  **geoCoordinates** | **String**|  | [optional] 
+ **geoElevation** | **Number**|  | [optional] 
+ **geoHash** | **String**|  | [optional] 
  **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **parent** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
+ **searchBranchCode** | **String**|  | [optional] 
+ **searchName** | **String**|  | [optional] 
 
 ### Return type
 
@@ -83,7 +91,7 @@ Name | Type | Description  | Notes
 
 <a name="cgetPlacesByOrganization"></a>
 # **cgetPlacesByOrganization**
-> PlacePagination cgetPlacesByOrganization(xKeyclicApporganization, opts)
+> PlacePagination cgetPlacesByOrganization(xKeyclicApp, organization, opts)
 
 Retrieve all Place resources.
 
@@ -106,16 +114,20 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
-  'geoHash': "geoHash_example", // String | 
   'geoCoordinates': "geoCoordinates_example", // String | 
+  'geoElevation': 56, // Number | 
+  'geoHash': "geoHash_example", // String | 
+  'parent': "parent_example", // String | The identifier of the resource formatted as GUID string.
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'searchBranchCode': "searchBranchCode_example", // String | 
+  'searchName': "searchName_example", // String | 
 };
 
-apiInstance.cgetPlacesByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
+apiInstance.cgetPlacesByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -131,13 +143,17 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
- **geoHash** | **String**|  | [optional] 
  **geoCoordinates** | **String**|  | [optional] 
+ **geoElevation** | **Number**|  | [optional] 
+ **geoHash** | **String**|  | [optional] 
+ **parent** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
+ **searchBranchCode** | **String**|  | [optional] 
+ **searchName** | **String**|  | [optional] 
 
 ### Return type
 
@@ -154,7 +170,7 @@ Name | Type | Description  | Notes
 
 <a name="getPlace"></a>
 # **getPlace**
-> Place getPlace(xKeyclicAppplace, opts)
+> Place getPlace(xKeyclicApp, place, opts)
 
 Retrieve one Place resource.
 
@@ -179,7 +195,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getPlace(xKeyclicAppplace, opts, (error, data, response) => {
+apiInstance.getPlace(xKeyclicApp, place, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -211,7 +227,7 @@ Name | Type | Description  | Notes
 
 <a name="patchPlace"></a>
 # **patchPlace**
-> Place patchPlace(xKeyclicAppplace, opts)
+> Place patchPlace(xKeyclicApp, place, opts)
 
 Edit one Place resource.
 
@@ -237,7 +253,7 @@ let opts = {
   'placePatch': new KeyclicApi.PlacePatch() // PlacePatch | 
 };
 
-apiInstance.patchPlace(xKeyclicAppplace, opts, (error, data, response) => {
+apiInstance.patchPlace(xKeyclicApp, place, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -270,7 +286,7 @@ Name | Type | Description  | Notes
 
 <a name="postPlaceByOrganization"></a>
 # **postPlaceByOrganization**
-> Place postPlaceByOrganization(xKeyclicApporganization, opts)
+> Place postPlaceByOrganization(xKeyclicApp, organization, opts)
 
 Create one Place resource.
 
@@ -296,7 +312,7 @@ let opts = {
   'placeData': new KeyclicApi.PlaceData() // PlaceData | 
 };
 
-apiInstance.postPlaceByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
+apiInstance.postPlaceByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

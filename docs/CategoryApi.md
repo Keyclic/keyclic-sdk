@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="cgetCategories"></a>
 # **cgetCategories**
-> CategoryPagination cgetCategories(xKeyclicApp, opts)
+> CategoryPagination cgetCategories(xKeyclicApp, , opts)
 
 Retrieve all Category resources.
 
@@ -41,9 +41,12 @@ let opts = {
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'searchName': "searchName_example", // String | 
+  'searchColor': "searchColor_example", // String | 
+  'searchIcon': "searchIcon_example" // String | 
 };
 
-apiInstance.cgetCategories(xKeyclicApp, opts, (error, data, response) => {
+apiInstance.cgetCategories(xKeyclicApp, , opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -65,6 +68,9 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
+ **searchName** | **String**|  | [optional] 
+ **searchColor** | **String**|  | [optional] 
+ **searchIcon** | **String**|  | [optional] 
 
 ### Return type
 
@@ -81,7 +87,7 @@ Name | Type | Description  | Notes
 
 <a name="cgetCategoriesByOrganization"></a>
 # **cgetCategoriesByOrganization**
-> CategoryPagination cgetCategoriesByOrganization(xKeyclicApporganization, opts)
+> CategoryPagination cgetCategoriesByOrganization(xKeyclicApp, organization, opts)
 
 Retrieve all Category resources.
 
@@ -110,9 +116,12 @@ let opts = {
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'searchName': "searchName_example", // String | 
+  'searchColor': "searchColor_example", // String | 
+  'searchIcon': "searchIcon_example" // String | 
 };
 
-apiInstance.cgetCategoriesByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
+apiInstance.cgetCategoriesByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -134,6 +143,9 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
+ **searchName** | **String**|  | [optional] 
+ **searchColor** | **String**|  | [optional] 
+ **searchIcon** | **String**|  | [optional] 
 
 ### Return type
 
@@ -150,7 +162,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategory"></a>
 # **getCategory**
-> Category getCategory(xKeyclicAppcategory, opts)
+> Category getCategory(xKeyclicApp, category, opts)
 
 Retrieve one Category resource.
 
@@ -175,7 +187,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getCategory(xKeyclicAppcategory, opts, (error, data, response) => {
+apiInstance.getCategory(xKeyclicApp, category, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -207,7 +219,7 @@ Name | Type | Description  | Notes
 
 <a name="patchCategory"></a>
 # **patchCategory**
-> Category patchCategory(xKeyclicAppcategory, opts)
+> Category patchCategory(xKeyclicApp, category, opts)
 
 Edit one Category resource.
 
@@ -233,7 +245,7 @@ let opts = {
   'categoryPatch': new KeyclicApi.CategoryPatch() // CategoryPatch | 
 };
 
-apiInstance.patchCategory(xKeyclicAppcategory, opts, (error, data, response) => {
+apiInstance.patchCategory(xKeyclicApp, category, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -266,7 +278,7 @@ Name | Type | Description  | Notes
 
 <a name="postCategoryByOrganization"></a>
 # **postCategoryByOrganization**
-> Category postCategoryByOrganization(xKeyclicApporganization, opts)
+> Category postCategoryByOrganization(xKeyclicApp, organization, opts)
 
 Create one Category resource.
 
@@ -292,7 +304,7 @@ let opts = {
   'categoryData': new KeyclicApi.CategoryData() // CategoryData | 
 };
 
-apiInstance.postCategoryByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
+apiInstance.postCategoryByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

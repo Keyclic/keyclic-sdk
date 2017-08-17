@@ -28,16 +28,12 @@ export default class FeedbackGeoCoordinates  {
      * @alias module:model/FeedbackGeoCoordinates
      * @class
     
-     * @param elevation { Number } 
-    
      */
     constructor(
     
-        elevation,
-    
     ) {
 
-        this.elevation = elevation;
+        this.elevation = null;
         this.point = null;
 
         this.pointType = FeedbackGeoCoordinatesPoint;

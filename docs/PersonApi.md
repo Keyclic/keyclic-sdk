@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="cgetPeople"></a>
 # **cgetPeople**
-> PersonPagination cgetPeople(xKeyclicApp, opts)
+> PersonPagination cgetPeople(xKeyclicApp, , opts)
 
 Retrieve all Person resources.
 
@@ -44,7 +44,7 @@ let opts = {
   'searchEmail': "searchEmail_example" // String | 
 };
 
-apiInstance.cgetPeople(xKeyclicApp, opts, (error, data, response) => {
+apiInstance.cgetPeople(xKeyclicApp, , opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 <a name="getPerson"></a>
 # **getPerson**
-> Person getPerson(xKeyclicAppperson, opts)
+> Person getPerson(xKeyclicApp, person, opts)
 
 Retrieve one Person resource.
 
@@ -110,7 +110,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getPerson(xKeyclicAppperson, opts, (error, data, response) => {
+apiInstance.getPerson(xKeyclicApp, person, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 <a name="patchPerson"></a>
 # **patchPerson**
-> Person patchPerson(xKeyclicAppperson, opts)
+> Person patchPerson(xKeyclicApp, person, opts)
 
 Edit one Person resource.
 
@@ -168,7 +168,7 @@ let opts = {
   'personPatch': new KeyclicApi.PersonPatch() // PersonPatch | 
 };
 
-apiInstance.patchPerson(xKeyclicAppperson, opts, (error, data, response) => {
+apiInstance.patchPerson(xKeyclicApp, person, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

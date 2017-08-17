@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new KeyclicApi.ApplicationApi();
+    instance = new KeyclicApi.PlaceLinksOrganization();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,17 +46,25 @@
       object[property] = value;
   }
 
-  describe('ApplicationApi', function() {
-    describe('getApplicationByToken', function() {
-      it('should call getApplicationByToken successfully', function(done) {
-        //uncomment below and update the code to test getApplicationByToken
-        //instance.getApplicationByToken(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('PlaceLinksOrganization', function() {
+    it('should create an instance of PlaceLinksOrganization', function() {
+      // uncomment below and update the code to test PlaceLinksOrganization
+      //var instane = new KeyclicApi.PlaceLinksOrganization();
+      //expect(instance).to.be.a(KeyclicApi.PlaceLinksOrganization);
     });
+
+    it('should have the property href (base name: "href")', function() {
+      // uncomment below and update the code to test the property href
+      //var instane = new KeyclicApi.PlaceLinksOrganization();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iriTemplate (base name: "iriTemplate")', function() {
+      // uncomment below and update the code to test the property iriTemplate
+      //var instane = new KeyclicApi.PlaceLinksOrganization();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

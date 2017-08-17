@@ -1,8 +1,8 @@
-# KeyclicApi.RefreshToken
+# KeyclicApi.PlaceLinksContainsPlacesIriTemplateMapping
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**refreshToken** | **String** |  | 
+**parent** | **String** |  | [optional] 
 
 

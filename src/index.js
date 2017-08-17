@@ -122,11 +122,14 @@ import PlaceData from './model/PlaceData';
 import PlaceGeo from './model/PlaceGeo';
 import PlaceGeoPolygon from './model/PlaceGeoPolygon';
 import PlaceLinks from './model/PlaceLinks';
+import PlaceLinksContainsPlaces from './model/PlaceLinksContainsPlaces';
+import PlaceLinksContainsPlacesIriTemplate from './model/PlaceLinksContainsPlacesIriTemplate';
+import PlaceLinksContainsPlacesIriTemplateMapping from './model/PlaceLinksContainsPlacesIriTemplateMapping';
+import PlaceLinksOrganization from './model/PlaceLinksOrganization';
 import PlaceLinksSelf from './model/PlaceLinksSelf';
 import PlaceLinksSelfIriTemplate from './model/PlaceLinksSelfIriTemplate';
 import PlaceLinksSelfIriTemplateMapping from './model/PlaceLinksSelfIriTemplateMapping';
 import PlacePatch from './model/PlacePatch';
-import RefreshToken from './model/RefreshToken';
 import RegisterData from './model/RegisterData';
 import RelationshipData from './model/RelationshipData';
 import Report from './model/Report';
@@ -181,7 +184,6 @@ import OperationApi from './api/OperationApi';
 import OrganizationApi from './api/OrganizationApi';
 import PersonApi from './api/PersonApi';
 import PlaceApi from './api/PlaceApi';
-import RefreshApi from './api/RefreshApi';
 import RegisterApi from './api/RegisterApi';
 import RelationshipApi from './api/RelationshipApi';
 import ReportApi from './api/ReportApi';
@@ -770,6 +772,26 @@ export {
      */
     PlaceLinks,
     /**
+     * The PlaceLinksContainsPlaces model constructor.
+     * @property { module:model/PlaceLinksContainsPlaces }
+     */
+    PlaceLinksContainsPlaces,
+    /**
+     * The PlaceLinksContainsPlacesIriTemplate model constructor.
+     * @property { module:model/PlaceLinksContainsPlacesIriTemplate }
+     */
+    PlaceLinksContainsPlacesIriTemplate,
+    /**
+     * The PlaceLinksContainsPlacesIriTemplateMapping model constructor.
+     * @property { module:model/PlaceLinksContainsPlacesIriTemplateMapping }
+     */
+    PlaceLinksContainsPlacesIriTemplateMapping,
+    /**
+     * The PlaceLinksOrganization model constructor.
+     * @property { module:model/PlaceLinksOrganization }
+     */
+    PlaceLinksOrganization,
+    /**
      * The PlaceLinksSelf model constructor.
      * @property { module:model/PlaceLinksSelf }
      */
@@ -789,11 +811,6 @@ export {
      * @property { module:model/PlacePatch }
      */
     PlacePatch,
-    /**
-     * The RefreshToken model constructor.
-     * @property { module:model/RefreshToken }
-     */
-    RefreshToken,
     /**
      * The RegisterData model constructor.
      * @property { module:model/RegisterData }
@@ -1065,11 +1082,6 @@ export {
      * @property { module:api/PlaceApi }
      */
     PlaceApi,
-    /**
-     * The RefreshApi service constructor.
-     * @property { module:api/RefreshApi }
-     */
-    RefreshApi,
     /**
      * The RegisterApi service constructor.
      * @property { module:api/RegisterApi }

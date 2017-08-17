@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="postAssignByOperation"></a>
 # **postAssignByOperation**
-> Operation postAssignByOperation(xKeyclicAppoperation, opts)
+> Operation postAssignByOperation(xKeyclicApp, operation, opts)
 
 Create one Assign resource.
 
@@ -35,7 +35,7 @@ let opts = {
   'memberData': new KeyclicApi.MemberData() // MemberData | 
 };
 
-apiInstance.postAssignByOperation(xKeyclicAppoperation, opts, (error, data, response) => {
+apiInstance.postAssignByOperation(xKeyclicApp, operation, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

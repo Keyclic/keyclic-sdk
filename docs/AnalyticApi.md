@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getAnalyticByOrganization"></a>
 # **getAnalyticByOrganization**
-> Chart getAnalyticByOrganization(xKeyclicApporganization, opts)
+> Chart getAnalyticByOrganization(xKeyclicApp, organization, opts)
 
 Retrieve one Analytic resource.
 
@@ -41,7 +41,7 @@ let opts = {
   'optionsSort': "optionsSort_example" // String | 
 };
 
-apiInstance.getAnalyticByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
+apiInstance.getAnalyticByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

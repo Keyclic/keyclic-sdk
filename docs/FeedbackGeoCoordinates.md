@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elevation** | **Number** |  | 
+**elevation** | **Number** |  | [optional] 
 **point** | [**FeedbackGeoCoordinatesPoint**](FeedbackGeoCoordinatesPoint.md) |  | [optional] 
 
 

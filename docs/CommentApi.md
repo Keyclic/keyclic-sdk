@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="cgetCommentsByFeedback"></a>
 # **cgetCommentsByFeedback**
-> ActivityPagination cgetCommentsByFeedback(xKeyclicAppfeedback, opts)
+> ActivityPagination cgetCommentsByFeedback(xKeyclicApp, feedback, opts)
 
 Retrieve all Comment resources.
 
@@ -37,7 +37,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.cgetCommentsByFeedback(xKeyclicAppfeedback, opts, (error, data, response) => {
+apiInstance.cgetCommentsByFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 <a name="cgetCommentsByOperation"></a>
 # **cgetCommentsByOperation**
-> ActivityPagination cgetCommentsByOperation(xKeyclicAppoperation, opts)
+> ActivityPagination cgetCommentsByOperation(xKeyclicApp, operation, opts)
 
 Retrieve all Comment resources.
 
@@ -94,7 +94,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.cgetCommentsByOperation(xKeyclicAppoperation, opts, (error, data, response) => {
+apiInstance.cgetCommentsByOperation(xKeyclicApp, operation, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 <a name="postCommentByFeedback"></a>
 # **postCommentByFeedback**
-> Feedback postCommentByFeedback(xKeyclicAppfeedback, opts)
+> Feedback postCommentByFeedback(xKeyclicApp, feedback, opts)
 
 Create one Comment resource.
 
@@ -152,7 +152,7 @@ let opts = {
   'commentData': new KeyclicApi.CommentData() // CommentData | 
 };
 
-apiInstance.postCommentByFeedback(xKeyclicAppfeedback, opts, (error, data, response) => {
+apiInstance.postCommentByFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 <a name="postCommentByOperation"></a>
 # **postCommentByOperation**
-> Operation postCommentByOperation(xKeyclicAppoperation, opts)
+> Operation postCommentByOperation(xKeyclicApp, operation, opts)
 
 Create one Comment resource.
 
@@ -211,7 +211,7 @@ let opts = {
   'commentData': new KeyclicApi.CommentData() // CommentData | 
 };
 
-apiInstance.postCommentByOperation(xKeyclicAppoperation, opts, (error, data, response) => {
+apiInstance.postCommentByOperation(xKeyclicApp, operation, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

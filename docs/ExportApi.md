@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="cpostExportByOrganization"></a>
 # **cpostExportByOrganization**
-> Report cpostExportByOrganization(xKeyclicApporganization, opts)
+> Report cpostExportByOrganization(xKeyclicApp, organization, opts)
 
 Retrieve all Export resources.
 
@@ -42,7 +42,7 @@ let opts = {
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
 };
 
-apiInstance.cpostExportByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
+apiInstance.cpostExportByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

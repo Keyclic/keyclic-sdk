@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="cgetReportsByOrganization"></a>
 # **cgetReportsByOrganization**
-> ReportPagination cgetReportsByOrganization(xKeyclicApporganization, opts)
+> ReportPagination cgetReportsByOrganization(xKeyclicApp, organization, opts)
 
 Retrieve all Report resources.
 
@@ -44,7 +44,7 @@ let opts = {
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
 };
 
-apiInstance.cgetReportsByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
+apiInstance.cgetReportsByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 <a name="getReport"></a>
 # **getReport**
-> Report getReport(xKeyclicAppreport, opts)
+> Report getReport(xKeyclicApp, report, opts)
 
 Retrieve one Report resource.
 
@@ -109,7 +109,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getReport(xKeyclicAppreport, opts, (error, data, response) => {
+apiInstance.getReport(xKeyclicApp, report, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 <a name="patchReport"></a>
 # **patchReport**
-> Report patchReport(xKeyclicAppreport, opts)
+> Report patchReport(xKeyclicApp, report, opts)
 
 Edit one Report resource.
 
@@ -167,7 +167,7 @@ let opts = {
   'reportPatch': new KeyclicApi.ReportPatch() // ReportPatch | 
 };
 
-apiInstance.patchReport(xKeyclicAppreport, opts, (error, data, response) => {
+apiInstance.patchReport(xKeyclicApp, report, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

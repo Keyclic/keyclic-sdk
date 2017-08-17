@@ -53,8 +53,8 @@
       //expect(instance).to.be.a(KeyclicApi.ApplicationLinksSelfIriTemplateMapping);
     });
 
-    it('should have the property application (base name: "application")', function() {
-      // uncomment below and update the code to test the property application
+    it('should have the property token (base name: "token")', function() {
+      // uncomment below and update the code to test the property token
       //var instane = new KeyclicApi.ApplicationLinksSelfIriTemplateMapping();
       //expect(instance).to.be();
     });

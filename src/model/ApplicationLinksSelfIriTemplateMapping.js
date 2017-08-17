@@ -32,7 +32,7 @@ export default class ApplicationLinksSelfIriTemplateMapping  {
     
     ) {
 
-        this.application = null;
+        this.token = null;
 
     }
 
@@ -54,8 +54,8 @@ export default class ApplicationLinksSelfIriTemplateMapping  {
             object = new ApplicationLinksSelfIriTemplateMapping();
         }
 
-        if (data.hasOwnProperty('application')) {
-            object.application = ApiClient.convertToType(data['application'], 'String');
+        if (data.hasOwnProperty('token')) {
+            object.token = ApiClient.convertToType(data['token'], 'String');
         }
 
         return object;

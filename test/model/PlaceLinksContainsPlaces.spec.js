@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new KeyclicApi.RefreshApi();
+    instance = new KeyclicApi.PlaceLinksContainsPlaces();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,17 +46,25 @@
       object[property] = value;
   }
 
-  describe('RefreshApi', function() {
-    describe('postRefresh', function() {
-      it('should call postRefresh successfully', function(done) {
-        //uncomment below and update the code to test postRefresh
-        //instance.postRefresh(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('PlaceLinksContainsPlaces', function() {
+    it('should create an instance of PlaceLinksContainsPlaces', function() {
+      // uncomment below and update the code to test PlaceLinksContainsPlaces
+      //var instane = new KeyclicApi.PlaceLinksContainsPlaces();
+      //expect(instance).to.be.a(KeyclicApi.PlaceLinksContainsPlaces);
     });
+
+    it('should have the property href (base name: "href")', function() {
+      // uncomment below and update the code to test the property href
+      //var instane = new KeyclicApi.PlaceLinksContainsPlaces();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iriTemplate (base name: "iriTemplate")', function() {
+      // uncomment below and update the code to test the property iriTemplate
+      //var instane = new KeyclicApi.PlaceLinksContainsPlaces();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

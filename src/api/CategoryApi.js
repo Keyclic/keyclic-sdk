@@ -50,6 +50,9 @@ export default class CategoryApi extends ApiClient {
      * @param { module:model/String } order   (default to desc)
      * @param { Date } after  
      * @param { Date } before  
+     * @param { String } searchName  
+     * @param { String } searchColor  
+     * @param { String } searchIcon  
      */
     cgetCategories(
         returnType = null,
@@ -70,6 +73,9 @@ export default class CategoryApi extends ApiClient {
             order,
             after,
             before,
+            searchName,
+            searchColor,
+            searchIcon,
         } = options;
 
         
@@ -122,6 +128,21 @@ export default class CategoryApi extends ApiClient {
             before = null;
         }
         
+        // verify the null value of parameter 'searchName'
+        if (typeof searchName === 'undefined') {
+            searchName = null;
+        }
+        
+        // verify the null value of parameter 'searchColor'
+        if (typeof searchColor === 'undefined') {
+            searchColor = null;
+        }
+        
+        // verify the null value of parameter 'searchIcon'
+        if (typeof searchIcon === 'undefined') {
+            searchIcon = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCategories');
@@ -140,6 +161,9 @@ export default class CategoryApi extends ApiClient {
             'order': order,
             'after': after,
             'before': before,
+            'search[name]': searchName,
+            'search[color]': searchColor,
+            'search[icon]': searchIcon,
         };
 
         let headerParams = {
@@ -189,6 +213,9 @@ export default class CategoryApi extends ApiClient {
      * @param { module:model/String } order   (default to desc)
      * @param { Date } after  
      * @param { Date } before  
+     * @param { String } searchName  
+     * @param { String } searchColor  
+     * @param { String } searchIcon  
      */
     cgetCategoriesByOrganization(
         returnType = null,
@@ -209,6 +236,9 @@ export default class CategoryApi extends ApiClient {
             order,
             after,
             before,
+            searchName,
+            searchColor,
+            searchIcon,
         } = options;
 
         
@@ -261,6 +291,21 @@ export default class CategoryApi extends ApiClient {
             before = null;
         }
         
+        // verify the null value of parameter 'searchName'
+        if (typeof searchName === 'undefined') {
+            searchName = null;
+        }
+        
+        // verify the null value of parameter 'searchColor'
+        if (typeof searchColor === 'undefined') {
+            searchColor = null;
+        }
+        
+        // verify the null value of parameter 'searchIcon'
+        if (typeof searchIcon === 'undefined') {
+            searchIcon = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCategoriesByOrganization');
@@ -279,6 +324,9 @@ export default class CategoryApi extends ApiClient {
             'order': order,
             'after': after,
             'before': before,
+            'search[name]': searchName,
+            'search[color]': searchColor,
+            'search[icon]': searchIcon,
         };
 
         let headerParams = {

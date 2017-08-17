@@ -59,6 +59,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property organization (base name: "organization")', function() {
+      // uncomment below and update the code to test the property organization
+      //var instane = new KeyclicApi.PlaceLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property containsPlaces (base name: "containsPlaces")', function() {
+      // uncomment below and update the code to test the property containsPlaces
+      //var instane = new KeyclicApi.PlaceLinks();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

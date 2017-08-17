@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getLogoByOrganizationAndWidthAndHeight"></a>
 # **getLogoByOrganizationAndWidthAndHeight**
-> File getLogoByOrganizationAndWidthAndHeight(xKeyclicApporganization, width, height, opts)
+> File getLogoByOrganizationAndWidthAndHeight(xKeyclicApp, organization, width, height, opts)
 
 Retrieve one Logo resource.
 
@@ -38,7 +38,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getLogoByOrganizationAndWidthAndHeight(xKeyclicApporganization, width, height, opts, (error, data, response) => {
+apiInstance.getLogoByOrganizationAndWidthAndHeight(xKeyclicApp, organization, width, height, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

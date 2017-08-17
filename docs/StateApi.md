@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="patchStateByFeedback"></a>
 # **patchStateByFeedback**
-> Feedback patchStateByFeedback(xKeyclicAppfeedback, opts)
+> Feedback patchStateByFeedback(xKeyclicApp, feedback, opts)
 
 Edit one State resource.
 
@@ -37,7 +37,7 @@ let opts = {
   'feedbackStatePatch': new KeyclicApi.FeedbackStatePatch() // FeedbackStatePatch | 
 };
 
-apiInstance.patchStateByFeedback(xKeyclicAppfeedback, opts, (error, data, response) => {
+apiInstance.patchStateByFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 <a name="patchStateByOperation"></a>
 # **patchStateByOperation**
-> Operation patchStateByOperation(xKeyclicAppoperation, opts)
+> Operation patchStateByOperation(xKeyclicApp, operation, opts)
 
 Edit one State resource.
 
@@ -96,7 +96,7 @@ let opts = {
   'operationStatePatch': new KeyclicApi.OperationStatePatch() // OperationStatePatch | 
 };
 
-apiInstance.patchStateByOperation(xKeyclicAppoperation, opts, (error, data, response) => {
+apiInstance.patchStateByOperation(xKeyclicApp, operation, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 <a name="patchStateByReport"></a>
 # **patchStateByReport**
-> Report patchStateByReport(xKeyclicAppreport, opts)
+> Report patchStateByReport(xKeyclicApp, report, opts)
 
 Edit one State resource.
 
@@ -155,7 +155,7 @@ let opts = {
   'reportStatePatch': new KeyclicApi.ReportStatePatch() // ReportStatePatch | 
 };
 
-apiInstance.patchStateByReport(xKeyclicAppreport, opts, (error, data, response) => {
+apiInstance.patchStateByReport(xKeyclicApp, report, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

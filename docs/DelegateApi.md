@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="postDelegateByOrganization"></a>
 # **postDelegateByOrganization**
-> Report postDelegateByOrganization(xKeyclicApporganization, opts)
+> Report postDelegateByOrganization(xKeyclicApp, organization, opts)
 
 Create one Delegate resource.
 
@@ -35,7 +35,7 @@ let opts = {
   'delegateData': new KeyclicApi.DelegateData() // DelegateData | 
 };
 
-apiInstance.postDelegateByOrganization(xKeyclicApporganization, opts, (error, data, response) => {
+apiInstance.postDelegateByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

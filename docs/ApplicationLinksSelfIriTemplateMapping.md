@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**application** | **String** |  | [optional] 
+**token** | **String** |  | [optional] 
 
 

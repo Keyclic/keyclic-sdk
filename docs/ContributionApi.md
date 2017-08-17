@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="cgetContributionsByFeedback"></a>
 # **cgetContributionsByFeedback**
-> ActivityAggregatedPagination cgetContributionsByFeedback(xKeyclicAppfeedback, opts)
+> ActivityAggregatedPagination cgetContributionsByFeedback(xKeyclicApp, feedback, opts)
 
 Retrieve all Contribution resources.
 
@@ -35,7 +35,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.cgetContributionsByFeedback(xKeyclicAppfeedback, opts, (error, data, response) => {
+apiInstance.cgetContributionsByFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 <a name="postContributionByFeedback"></a>
 # **postContributionByFeedback**
-> Operation postContributionByFeedback(xKeyclicAppfeedback, opts)
+> Operation postContributionByFeedback(xKeyclicApp, feedback, opts)
 
 Create one Contribution resource.
 
@@ -92,7 +92,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.postContributionByFeedback(xKeyclicAppfeedback, opts, (error, data, response) => {
+apiInstance.postContributionByFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

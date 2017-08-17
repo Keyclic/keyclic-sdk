@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="postChangeByToken"></a>
 # **postChangeByToken**
-> postChangeByToken(xKeyclicApptoken, opts)
+> postChangeByToken(xKeyclicApp, token, opts)
 
 Create one Change resource.
 
@@ -28,7 +28,7 @@ let opts = {
   'passwordData': new KeyclicApi.PasswordData() // PasswordData | 
 };
 
-apiInstance.postChangeByToken(xKeyclicApptoken, opts, (error, data, response) => {
+apiInstance.postChangeByToken(xKeyclicApp, token, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

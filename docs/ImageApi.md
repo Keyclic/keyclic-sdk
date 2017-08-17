@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="deleteImageByOperationAndImage"></a>
 # **deleteImageByOperationAndImage**
-> deleteImageByOperationAndImage(xKeyclicAppoperation, image, opts)
+> deleteImageByOperationAndImage(xKeyclicApp, operation, image, opts)
 
 Remove one Image resource.
 
@@ -41,7 +41,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.deleteImageByOperationAndImage(xKeyclicAppoperation, image, opts, (error, data, response) => {
+apiInstance.deleteImageByOperationAndImage(xKeyclicApp, operation, image, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -74,7 +74,7 @@ null (empty response body)
 
 <a name="getImageByFeedbackAndImageAndWidthAndHeight"></a>
 # **getImageByFeedbackAndImageAndWidthAndHeight**
-> File getImageByFeedbackAndImageAndWidthAndHeight(xKeyclicAppfeedback, image, width, height, opts)
+> File getImageByFeedbackAndImageAndWidthAndHeight(xKeyclicApp, feedback, image, width, height, opts)
 
 Retrieve one Image resource.
 
@@ -105,7 +105,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getImageByFeedbackAndImageAndWidthAndHeight(xKeyclicAppfeedback, image, width, height, opts, (error, data, response) => {
+apiInstance.getImageByFeedbackAndImageAndWidthAndHeight(xKeyclicApp, feedback, image, width, height, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 <a name="getImageByOperationAndImageAndWidthAndHeight"></a>
 # **getImageByOperationAndImageAndWidthAndHeight**
-> File getImageByOperationAndImageAndWidthAndHeight(xKeyclicAppoperation, image, width, height, opts)
+> File getImageByOperationAndImageAndWidthAndHeight(xKeyclicApp, operation, image, width, height, opts)
 
 Retrieve one Image resource.
 
@@ -171,7 +171,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getImageByOperationAndImageAndWidthAndHeight(xKeyclicAppoperation, image, width, height, opts, (error, data, response) => {
+apiInstance.getImageByOperationAndImageAndWidthAndHeight(xKeyclicApp, operation, image, width, height, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 <a name="getImageByPersonAndWidthAndHeight"></a>
 # **getImageByPersonAndWidthAndHeight**
-> File getImageByPersonAndWidthAndHeight(xKeyclicAppperson, width, height, opts)
+> File getImageByPersonAndWidthAndHeight(xKeyclicApp, person, width, height, opts)
 
 Retrieve one Image resource.
 
@@ -235,7 +235,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getImageByPersonAndWidthAndHeight(xKeyclicAppperson, width, height, opts, (error, data, response) => {
+apiInstance.getImageByPersonAndWidthAndHeight(xKeyclicApp, person, width, height, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 <a name="postImageByFeedback"></a>
 # **postImageByFeedback**
-> Feedback postImageByFeedback(xKeyclicAppfeedback, opts)
+> Feedback postImageByFeedback(xKeyclicApp, feedback, opts)
 
 Create one Image resource.
 
@@ -295,7 +295,7 @@ let opts = {
   'imageData': new KeyclicApi.ImageData() // ImageData | 
 };
 
-apiInstance.postImageByFeedback(xKeyclicAppfeedback, opts, (error, data, response) => {
+apiInstance.postImageByFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 <a name="postImageByOperation"></a>
 # **postImageByOperation**
-> Operation postImageByOperation(xKeyclicAppoperation, opts)
+> Operation postImageByOperation(xKeyclicApp, operation, opts)
 
 Create one Image resource.
 
@@ -354,7 +354,7 @@ let opts = {
   'imageData': new KeyclicApi.ImageData() // ImageData | 
 };
 
-apiInstance.postImageByOperation(xKeyclicAppoperation, opts, (error, data, response) => {
+apiInstance.postImageByOperation(xKeyclicApp, operation, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

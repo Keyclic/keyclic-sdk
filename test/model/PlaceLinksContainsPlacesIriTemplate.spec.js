@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new KeyclicApi.RefreshToken();
+    instance = new KeyclicApi.PlaceLinksContainsPlacesIriTemplate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,16 +46,16 @@
       object[property] = value;
   }
 
-  describe('RefreshToken', function() {
-    it('should create an instance of RefreshToken', function() {
-      // uncomment below and update the code to test RefreshToken
-      //var instane = new KeyclicApi.RefreshToken();
-      //expect(instance).to.be.a(KeyclicApi.RefreshToken);
+  describe('PlaceLinksContainsPlacesIriTemplate', function() {
+    it('should create an instance of PlaceLinksContainsPlacesIriTemplate', function() {
+      // uncomment below and update the code to test PlaceLinksContainsPlacesIriTemplate
+      //var instane = new KeyclicApi.PlaceLinksContainsPlacesIriTemplate();
+      //expect(instance).to.be.a(KeyclicApi.PlaceLinksContainsPlacesIriTemplate);
     });
 
-    it('should have the property refreshToken (base name: "refresh_token")', function() {
-      // uncomment below and update the code to test the property refreshToken
-      //var instane = new KeyclicApi.RefreshToken();
+    it('should have the property mapping (base name: "mapping")', function() {
+      // uncomment below and update the code to test the property mapping
+      //var instane = new KeyclicApi.PlaceLinksContainsPlacesIriTemplate();
       //expect(instance).to.be();
     });
 

@@ -27,12 +27,16 @@ export default class ImageData  {
      * @alias module:model/ImageData
      * @class
     
+     * @param image { Blob } 
+    
      */
     constructor(
     
+        image,
+    
     ) {
 
-        this.image = null;
+        this.image = image;
 
     }
 

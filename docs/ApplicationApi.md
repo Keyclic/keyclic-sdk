@@ -4,12 +4,12 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getApplication**](ApplicationApi.md#getApplication) | **GET** /applications/{application} | Retrieve one Application resource.
+[**getApplicationByToken**](ApplicationApi.md#getApplicationByToken) | **GET** /applications/{token} | Retrieve one Application resource.
 
 
-<a name="getApplication"></a>
-# **getApplication**
-> Application getApplication(xKeyclicAppapplication, opts)
+<a name="getApplicationByToken"></a>
+# **getApplicationByToken**
+> Application getApplicationByToken(xKeyclicApp, token, opts)
 
 Retrieve one Application resource.
 
@@ -21,13 +21,13 @@ let apiInstance = new KeyclicApi.ApplicationApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let application = "application_example"; // String | The identifier of the resource formatted as GUID string.
+let token = "token_example"; // String | 
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
 };
 
-apiInstance.getApplication(xKeyclicAppapplication, opts, (error, data, response) => {
+apiInstance.getApplicationByToken(xKeyclicApp, token, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -41,7 +41,7 @@ apiInstance.getApplication(xKeyclicAppapplication, opts, (error, data, response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **application** | **String**| The identifier of the resource formatted as GUID string. | 
+ **token** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
 
 ### Return type

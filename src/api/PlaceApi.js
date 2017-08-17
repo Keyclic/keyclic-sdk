@@ -43,14 +43,18 @@ export default class PlaceApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } geoHash  
      * @param { String } geoCoordinates  
+     * @param { Number } geoElevation  
+     * @param { String } geoHash  
      * @param { String } organization The identifier of the resource formatted as GUID string. 
+     * @param { String } parent The identifier of the resource formatted as GUID string. 
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
      * @param { Date } after  
      * @param { Date } before  
+     * @param { String } searchBranchCode  
+     * @param { String } searchName  
      */
     cgetPlaces(
         returnType = null,
@@ -64,14 +68,18 @@ export default class PlaceApi extends ApiClient {
         let {
             xKeyclicApp,
             acceptLanguage,
-            geoHash,
             geoCoordinates,
+            geoElevation,
+            geoHash,
             organization,
+            parent,
             page,
             limit,
             order,
             after,
             before,
+            searchBranchCode,
+            searchName,
         } = options;
 
         
@@ -104,19 +112,29 @@ export default class PlaceApi extends ApiClient {
         
 
         
-        // verify the null value of parameter 'geoHash'
-        if (typeof geoHash === 'undefined') {
-            geoHash = null;
-        }
-        
         // verify the null value of parameter 'geoCoordinates'
         if (typeof geoCoordinates === 'undefined') {
             geoCoordinates = null;
         }
         
+        // verify the null value of parameter 'geoElevation'
+        if (typeof geoElevation === 'undefined') {
+            geoElevation = null;
+        }
+        
+        // verify the null value of parameter 'geoHash'
+        if (typeof geoHash === 'undefined') {
+            geoHash = null;
+        }
+        
         // verify the null value of parameter 'organization'
         if (typeof organization === 'undefined') {
             organization = null;
+        }
+        
+        // verify the null value of parameter 'parent'
+        if (typeof parent === 'undefined') {
+            parent = null;
         }
         
         // verify the null value of parameter 'after'
@@ -127,6 +145,16 @@ export default class PlaceApi extends ApiClient {
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
+        }
+        
+        // verify the null value of parameter 'searchBranchCode'
+        if (typeof searchBranchCode === 'undefined') {
+            searchBranchCode = null;
+        }
+        
+        // verify the null value of parameter 'searchName'
+        if (typeof searchName === 'undefined') {
+            searchName = null;
         }
         
 
@@ -140,14 +168,18 @@ export default class PlaceApi extends ApiClient {
         let bodyParam = null;
 
         let queryParams = {
-            'geo_hash[]': geoHash,
             'geo_coordinates': geoCoordinates,
+            'geo_elevation': geoElevation,
+            'geo_hash[]': geoHash,
             'organization': organization,
+            'parent': parent,
             'page': page,
             'limit': limit,
             'order': order,
             'after': after,
             'before': before,
+            'search[branchCode]': searchBranchCode,
+            'search[name]': searchName,
         };
 
         let headerParams = {
@@ -191,13 +223,17 @@ export default class PlaceApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } geoHash  
      * @param { String } geoCoordinates  
+     * @param { Number } geoElevation  
+     * @param { String } geoHash  
+     * @param { String } parent The identifier of the resource formatted as GUID string. 
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
      * @param { Date } after  
      * @param { Date } before  
+     * @param { String } searchBranchCode  
+     * @param { String } searchName  
      */
     cgetPlacesByOrganization(
         returnType = null,
@@ -212,13 +248,17 @@ export default class PlaceApi extends ApiClient {
             xKeyclicApp,
             organization,
             acceptLanguage,
-            geoHash,
             geoCoordinates,
+            geoElevation,
+            geoHash,
+            parent,
             page,
             limit,
             order,
             after,
             before,
+            searchBranchCode,
+            searchName,
         } = options;
 
         
@@ -256,14 +296,24 @@ export default class PlaceApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'geoCoordinates'
+        if (typeof geoCoordinates === 'undefined') {
+            geoCoordinates = null;
+        }
+        
+        // verify the null value of parameter 'geoElevation'
+        if (typeof geoElevation === 'undefined') {
+            geoElevation = null;
+        }
+        
         // verify the null value of parameter 'geoHash'
         if (typeof geoHash === 'undefined') {
             geoHash = null;
         }
         
-        // verify the null value of parameter 'geoCoordinates'
-        if (typeof geoCoordinates === 'undefined') {
-            geoCoordinates = null;
+        // verify the null value of parameter 'parent'
+        if (typeof parent === 'undefined') {
+            parent = null;
         }
         
         // verify the null value of parameter 'after'
@@ -274,6 +324,16 @@ export default class PlaceApi extends ApiClient {
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
+        }
+        
+        // verify the null value of parameter 'searchBranchCode'
+        if (typeof searchBranchCode === 'undefined') {
+            searchBranchCode = null;
+        }
+        
+        // verify the null value of parameter 'searchName'
+        if (typeof searchName === 'undefined') {
+            searchName = null;
         }
         
 
@@ -288,13 +348,17 @@ export default class PlaceApi extends ApiClient {
         let bodyParam = null;
 
         let queryParams = {
-            'geo_hash[]': geoHash,
             'geo_coordinates': geoCoordinates,
+            'geo_elevation': geoElevation,
+            'geo_hash[]': geoHash,
+            'parent': parent,
             'page': page,
             'limit': limit,
             'order': order,
             'after': after,
             'before': before,
+            'search[branchCode]': searchBranchCode,
+            'search[name]': searchName,
         };
 
         let headerParams = {

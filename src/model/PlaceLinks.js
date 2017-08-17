@@ -12,6 +12,8 @@
 
 
 import ApiClient from '../ApiClient';
+import PlaceLinksContainsPlaces from './PlaceLinksContainsPlaces';
+import PlaceLinksOrganization from './PlaceLinksOrganization';
 import PlaceLinksSelf from './PlaceLinksSelf';
 
 
@@ -34,8 +36,12 @@ export default class PlaceLinks  {
     ) {
 
         this.self = null;
+        this.organization = null;
+        this.containsPlaces = null;
 
         this.selfType = PlaceLinksSelf;
+        this.organizationType = PlaceLinksOrganization;
+        this.containsPlacesType = PlaceLinksContainsPlaces;
     }
 
     /**
@@ -58,6 +64,12 @@ export default class PlaceLinks  {
 
         if (data.hasOwnProperty('self')) {
             object.self = ApiClient.convertToType(data['self'], object.selfType);
+        }
+        if (data.hasOwnProperty('organization')) {
+            object.organization = ApiClient.convertToType(data['organization'], object.organizationType);
+        }
+        if (data.hasOwnProperty('containsPlaces')) {
+            object.containsPlaces = ApiClient.convertToType(data['containsPlaces'], object.containsPlacesType);
         }
 
         return object;
