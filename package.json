@@ -2,7 +2,8 @@
     "name": "keyclic-sdk",
     "version": "1.0.0",
     "description": "",
-    "license": "Unlicense",
+    "license": "MIT",
+    "main": "src/index.js",
     "scripts": {
         "test": "mocha --compilers js:babel-core/register --recursive"
     },
