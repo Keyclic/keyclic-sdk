@@ -45,6 +45,7 @@ export default class FeedbackApi extends ApiClient {
      * @param { String } category The identifier of the resource formatted as GUID string. 
      * @param { String } geoHash  
      * @param { String } organization The identifier of the resource formatted as GUID string. 
+     * @param { module:model/String } visibility   (default to VISIBILITY_PUBLIC)
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
@@ -69,6 +70,7 @@ export default class FeedbackApi extends ApiClient {
             category,
             geoHash,
             organization,
+            visibility,
             page,
             limit,
             order,
@@ -94,6 +96,11 @@ export default class FeedbackApi extends ApiClient {
         // verify the default value of parameter 'state'
         if (typeof state === 'undefined' || state === null) {
             state = "DELIVERED";  // eslint-disable-line quotes
+        }
+        
+        // verify the default value of parameter 'visibility'
+        if (typeof visibility === 'undefined' || visibility === null) {
+            visibility = "VISIBILITY_PUBLIC";  // eslint-disable-line quotes
         }
         
         // verify the default value of parameter 'page'
@@ -163,6 +170,7 @@ export default class FeedbackApi extends ApiClient {
             'category': category,
             'geo_hash[]': geoHash,
             'organization': organization,
+            'visibility[]': visibility,
             'page': page,
             'limit': limit,
             'order': order,
@@ -217,6 +225,7 @@ export default class FeedbackApi extends ApiClient {
      * @param { String } geoHash  
      * @param { String } organization The identifier of the resource formatted as GUID string. 
      * @param { String } state  
+     * @param { module:model/String } visibility   (default to VISIBILITY_PUBLIC)
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
@@ -242,6 +251,7 @@ export default class FeedbackApi extends ApiClient {
             geoHash,
             organization,
             state,
+            visibility,
             page,
             limit,
             order,
@@ -267,6 +277,11 @@ export default class FeedbackApi extends ApiClient {
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+        // verify the default value of parameter 'visibility'
+        if (typeof visibility === 'undefined' || visibility === null) {
+            visibility = "VISIBILITY_PUBLIC";  // eslint-disable-line quotes
         }
         
         // verify the default value of parameter 'page'
@@ -342,6 +357,7 @@ export default class FeedbackApi extends ApiClient {
             'geo_hash[]': geoHash,
             'organization': organization,
             'state': state,
+            'visibility[]': visibility,
             'page': page,
             'limit': limit,
             'order': order,

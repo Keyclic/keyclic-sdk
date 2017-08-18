@@ -36,6 +36,7 @@ let opts = {
   'category': "category_example", // String | The identifier of the resource formatted as GUID string.
   'geoHash': "geoHash_example", // String | 
   'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
+  'visibility': "VISIBILITY_PUBLIC", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
   'order': "desc", // String | 
@@ -64,6 +65,7 @@ Name | Type | Description  | Notes
  **category** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
  **geoHash** | **String**|  | [optional] 
  **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **visibility** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **order** | **String**|  | [optional] [default to desc]
@@ -114,6 +116,7 @@ let opts = {
   'geoHash': "geoHash_example", // String | 
   'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
   'state': "state_example", // String | 
+  'visibility': "VISIBILITY_PUBLIC", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
   'order': "desc", // String | 
@@ -143,6 +146,7 @@ Name | Type | Description  | Notes
  **geoHash** | **String**|  | [optional] 
  **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
  **state** | **String**|  | [optional] 
+ **visibility** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **order** | **String**|  | [optional] [default to desc]
