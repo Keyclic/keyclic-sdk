@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+SWAGGER_FILE="$1"
+CODEGEN_CLI_FILE="./generator/swagger-codegen-cli-2.3.0.jar"
+
+if [ ! -f "${SWAGGER_FILE}" ]; then
+    SWAGGER_FILE="https://api.keyclic.com/swagger.json"
+fi
+
+echo "Use file $SWAGGER_FILE as definition API."
+
+java \
+-DdebugModels \
+-DdebugOperations \
+-jar $CODEGEN_CLI_FILE \
+generate \
+-i $SWAGGER_FILE \
+-l javascript \
+-o ./ \
+--additional-properties useInheritance=true \
+-t ./generator/templates/javascript-es6 \
+> ./.codegen.log
