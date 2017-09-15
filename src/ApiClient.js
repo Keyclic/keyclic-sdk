@@ -195,10 +195,10 @@ export default class ApiClient {
     }
 
     buildBody(contentType, bodyParams) {
-        let body = null;
+        let body = undefined;
         switch(contentType) {
             default:
-                body = bodyParams === null ? null : JSON.stringify(bodyParams);
+                body = bodyParams === null ? undefined : JSON.stringify(bodyParams);
         }
 
         return body;
