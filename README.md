@@ -111,6 +111,8 @@ Class | Method | HTTP request | Description
 *KeyclicApi.ContributionApi* | [**cgetContributionsByFeedback**](docs/ContributionApi.md#cgetContributionsByFeedback) | **GET** /feedbacks/{feedback}/contributions | Retrieve all Contribution resources.
 *KeyclicApi.ContributionApi* | [**postContributionByFeedback**](docs/ContributionApi.md#postContributionByFeedback) | **POST** /feedbacks/{feedback}/contributions | Create one Contribution resource.
 *KeyclicApi.DelegateApi* | [**postDelegateByOrganization**](docs/DelegateApi.md#postDelegateByOrganization) | **POST** /organizations/{organization}/delegates | Create one Delegate resource.
+*KeyclicApi.DeviceApi* | [**deleteDeviceByPersonAndDevice**](docs/DeviceApi.md#deleteDeviceByPersonAndDevice) | **DELETE** /people/{person}/devices/{device} | Remove one Device resource.
+*KeyclicApi.DeviceApi* | [**postDeviceByPerson**](docs/DeviceApi.md#postDeviceByPerson) | **POST** /people/{person}/devices | Create one Device resource.
 *KeyclicApi.ExportApi* | [**cpostExportByOrganization**](docs/ExportApi.md#cpostExportByOrganization) | **POST** /organizations/{organization}/reports/exports | Retrieve all Export resources.
 *KeyclicApi.FacebookApi* | [**postFacebook**](docs/FacebookApi.md#postFacebook) | **POST** /security/connect/facebook | Create one Facebook resource.
 *KeyclicApi.FeedbackApi* | [**cgetFeedbacks**](docs/FeedbackApi.md#cgetFeedbacks) | **GET** /feedbacks | Retrieve all Feedback resources.
@@ -196,6 +198,8 @@ Class | Method | HTTP request | Description
  - [KeyclicApi.Collection](docs/Collection.md)
  - [KeyclicApi.CommentData](docs/CommentData.md)
  - [KeyclicApi.DelegateData](docs/DelegateData.md)
+ - [KeyclicApi.Device](docs/Device.md)
+ - [KeyclicApi.DeviceData](docs/DeviceData.md)
  - [KeyclicApi.EmailData](docs/EmailData.md)
  - [KeyclicApi.Error](docs/Error.md)
  - [KeyclicApi.ErrorEmbedded](docs/ErrorEmbedded.md)

@@ -38,6 +38,8 @@ import CheckpointLinksOrganization from './model/CheckpointLinksOrganization';
 import Collection from './model/Collection';
 import CommentData from './model/CommentData';
 import DelegateData from './model/DelegateData';
+import Device from './model/Device';
+import DeviceData from './model/DeviceData';
 import EmailData from './model/EmailData';
 import Error from './model/Error';
 import ErrorEmbedded from './model/ErrorEmbedded';
@@ -171,6 +173,7 @@ import ChangeApi from './api/ChangeApi';
 import CommentApi from './api/CommentApi';
 import ContributionApi from './api/ContributionApi';
 import DelegateApi from './api/DelegateApi';
+import DeviceApi from './api/DeviceApi';
 import ExportApi from './api/ExportApi';
 import FacebookApi from './api/FacebookApi';
 import FeedbackApi from './api/FeedbackApi';
@@ -351,6 +354,16 @@ export {
      * @property { module:model/DelegateData }
      */
     DelegateData,
+    /**
+     * The Device model constructor.
+     * @property { module:model/Device }
+     */
+    Device,
+    /**
+     * The DeviceData model constructor.
+     * @property { module:model/DeviceData }
+     */
+    DeviceData,
     /**
      * The EmailData model constructor.
      * @property { module:model/EmailData }
@@ -1017,6 +1030,11 @@ export {
      * @property { module:api/DelegateApi }
      */
     DelegateApi,
+    /**
+     * The DeviceApi service constructor.
+     * @property { module:api/DeviceApi }
+     */
+    DeviceApi,
     /**
      * The ExportApi service constructor.
      * @property { module:api/ExportApi }
