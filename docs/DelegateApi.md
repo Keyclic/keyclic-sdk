@@ -32,6 +32,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'delegateData': new KeyclicApi.DelegateData() // DelegateData | 
 };
 
@@ -51,6 +52,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **delegateData** | [**DelegateData**](DelegateData.md)|  | [optional] 
 
 ### Return type

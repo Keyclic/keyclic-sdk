@@ -23,6 +23,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'emailData': new KeyclicApi.EmailData() // EmailData | 
 };
 
@@ -41,6 +42,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **emailData** | [**EmailData**](EmailData.md)|  | [optional] 
 
 ### Return type

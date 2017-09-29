@@ -46,6 +46,7 @@ export default class TransitionApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/FeedbackWorkflowTransitionData } feedbackWorkflowTransitionData  
      */
     postTransitionByFeedback(
@@ -61,6 +62,7 @@ export default class TransitionApi extends ApiClient {
             xKeyclicApp,
             feedback,
             acceptLanguage,
+            xKeyclicAppVersion,
             feedbackWorkflowTransitionData,
         } = options;
 
@@ -84,6 +86,11 @@ export default class TransitionApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'feedbackWorkflowTransitionData'
         if (typeof feedbackWorkflowTransitionData === 'undefined') {
             feedbackWorkflowTransitionData = null;
@@ -104,8 +111,9 @@ export default class TransitionApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -144,6 +152,7 @@ export default class TransitionApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/OperationWorkflowTransitionData } operationWorkflowTransitionData  
      */
     postTransitionByOperation(
@@ -159,6 +168,7 @@ export default class TransitionApi extends ApiClient {
             xKeyclicApp,
             operation,
             acceptLanguage,
+            xKeyclicAppVersion,
             operationWorkflowTransitionData,
         } = options;
 
@@ -182,6 +192,11 @@ export default class TransitionApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'operationWorkflowTransitionData'
         if (typeof operationWorkflowTransitionData === 'undefined') {
             operationWorkflowTransitionData = null;
@@ -202,8 +217,9 @@ export default class TransitionApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -242,6 +258,7 @@ export default class TransitionApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/ReportWorkflowTransitionData } reportWorkflowTransitionData  
      */
     postTransitionByReport(
@@ -257,6 +274,7 @@ export default class TransitionApi extends ApiClient {
             xKeyclicApp,
             report,
             acceptLanguage,
+            xKeyclicAppVersion,
             reportWorkflowTransitionData,
         } = options;
 
@@ -280,6 +298,11 @@ export default class TransitionApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'reportWorkflowTransitionData'
         if (typeof reportWorkflowTransitionData === 'undefined') {
             reportWorkflowTransitionData = null;
@@ -300,8 +323,9 @@ export default class TransitionApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;

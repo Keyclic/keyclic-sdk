@@ -18,17 +18,17 @@ import fetch from 'isomorphic-fetch';
 import * as url from 'url';
 
 /**
-* @module ApiClient
-* @version 1.0
-*/
+ * @module ApiClient
+ * @version 1.0
+ */
 
 /**
-* Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
-* application to use this class directly - the *Api and model classes provide the public API for the service. The
-* contents of this file should be regarded as internal but are documented for completeness.
-* @alias module:ApiClient
-* @class
-*/
+ * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
+ * application to use this class directly - the *Api and model classes provide the public API for the service. The
+ * contents of this file should be regarded as internal but are documented for completeness.
+ * @alias module:ApiClient
+ * @class
+ */
 export default class ApiClient {
     constructor(
         basePath = null,
@@ -122,6 +122,10 @@ export default class ApiClient {
      * Check code status of response
      */
     checkResponse(response) {
+        if (response.status === 406) {
+            throw response;
+        }
+
         if (response.status < 200 || response.status >= 300) {
             let error = new Error('Code status error: '+ response.status);
             error.status = response.status;
@@ -232,6 +236,8 @@ export default class ApiClient {
         accepts,
         returnType
     ) {
+        console.log('callApi');
+
         let contentType = ApiClientUtils.jsonPreferredMime(contentTypes);
         let accept = ApiClientUtils.jsonPreferredMime(accepts);
 

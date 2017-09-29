@@ -32,6 +32,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'state': "DELIVERED", // String | 
   'category': "category_example", // String | The identifier of the resource formatted as GUID string.
   'geoHash': "geoHash_example", // String | 
@@ -61,6 +62,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **state** | **String**|  | [optional] [default to DELIVERED]
  **category** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
  **geoHash** | **String**|  | [optional] 
@@ -112,6 +114,7 @@ let person = "person_example"; // String | The identifier of the resource format
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'category': "category_example", // String | The identifier of the resource formatted as GUID string.
   'geoHash': "geoHash_example", // String | 
   'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
@@ -142,6 +145,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **person** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **category** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
  **geoHash** | **String**|  | [optional] 
  **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
@@ -193,6 +197,7 @@ let feedback = "feedback_example"; // String | The identifier of the resource fo
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
 };
 
 apiInstance.getFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
@@ -211,6 +216,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 

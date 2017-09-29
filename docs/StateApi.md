@@ -34,6 +34,7 @@ let feedback = "feedback_example"; // String | The identifier of the resource fo
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'feedbackStatePatch': new KeyclicApi.FeedbackStatePatch() // FeedbackStatePatch | 
 };
 
@@ -53,6 +54,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **feedbackStatePatch** | [**FeedbackStatePatch**](FeedbackStatePatch.md)|  | [optional] 
 
 ### Return type
@@ -93,6 +95,7 @@ let operation = "operation_example"; // String | The identifier of the resource 
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'operationStatePatch': new KeyclicApi.OperationStatePatch() // OperationStatePatch | 
 };
 
@@ -112,6 +115,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **operation** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **operationStatePatch** | [**OperationStatePatch**](OperationStatePatch.md)|  | [optional] 
 
 ### Return type
@@ -152,6 +156,7 @@ let report = "report_example"; // String | The identifier of the resource format
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'reportStatePatch': new KeyclicApi.ReportStatePatch() // ReportStatePatch | 
 };
 
@@ -171,6 +176,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **report** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **reportStatePatch** | [**ReportStatePatch**](ReportStatePatch.md)|  | [optional] 
 
 ### Return type

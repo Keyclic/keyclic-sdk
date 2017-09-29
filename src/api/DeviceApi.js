@@ -43,6 +43,7 @@ export default class DeviceApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     deleteDeviceByPersonAndDevice(
         returnType = null,
@@ -55,6 +56,7 @@ export default class DeviceApi extends ApiClient {
             person,
             device,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -82,6 +84,11 @@ export default class DeviceApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling deleteDeviceByPersonAndDevice');
@@ -98,8 +105,9 @@ export default class DeviceApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -138,6 +146,7 @@ export default class DeviceApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Device }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/DeviceData } deviceData  
      */
     postDeviceByPerson(
@@ -153,6 +162,7 @@ export default class DeviceApi extends ApiClient {
             xKeyclicApp,
             person,
             acceptLanguage,
+            xKeyclicAppVersion,
             deviceData,
         } = options;
 
@@ -176,6 +186,11 @@ export default class DeviceApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'deviceData'
         if (typeof deviceData === 'undefined') {
             deviceData = null;
@@ -196,8 +211,9 @@ export default class DeviceApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;

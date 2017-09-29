@@ -32,6 +32,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
   'order': "desc", // String | 
@@ -59,6 +60,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **order** | **String**|  | [optional] [default to desc]
@@ -108,6 +110,7 @@ let person = "person_example"; // String | The identifier of the resource format
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
 };
 
 apiInstance.getPerson(xKeyclicApp, person, opts, (error, data, response) => {
@@ -126,6 +129,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **person** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 
@@ -165,6 +169,7 @@ let person = "person_example"; // String | The identifier of the resource format
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'personPatch': new KeyclicApi.PersonPatch() // PersonPatch | 
 };
 
@@ -184,6 +189,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **person** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **personPatch** | [**PersonPatch**](PersonPatch.md)|  | [optional] 
 
 ### Return type

@@ -44,6 +44,7 @@ export default class CommentApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { ActivityPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     cgetCommentsByFeedback(
         returnType = null,
@@ -58,6 +59,7 @@ export default class CommentApi extends ApiClient {
             xKeyclicApp,
             feedback,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -80,6 +82,11 @@ export default class CommentApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCommentsByFeedback');
@@ -95,8 +102,9 @@ export default class CommentApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -135,6 +143,7 @@ export default class CommentApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { ActivityPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     cgetCommentsByOperation(
         returnType = null,
@@ -149,6 +158,7 @@ export default class CommentApi extends ApiClient {
             xKeyclicApp,
             operation,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -171,6 +181,11 @@ export default class CommentApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCommentsByOperation');
@@ -186,8 +201,9 @@ export default class CommentApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -226,6 +242,7 @@ export default class CommentApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/CommentData } commentData  
      */
     postCommentByFeedback(
@@ -241,6 +258,7 @@ export default class CommentApi extends ApiClient {
             xKeyclicApp,
             feedback,
             acceptLanguage,
+            xKeyclicAppVersion,
             commentData,
         } = options;
 
@@ -264,6 +282,11 @@ export default class CommentApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'commentData'
         if (typeof commentData === 'undefined') {
             commentData = null;
@@ -284,8 +307,9 @@ export default class CommentApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -324,6 +348,7 @@ export default class CommentApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/CommentData } commentData  
      */
     postCommentByOperation(
@@ -339,6 +364,7 @@ export default class CommentApi extends ApiClient {
             xKeyclicApp,
             operation,
             acceptLanguage,
+            xKeyclicAppVersion,
             commentData,
         } = options;
 
@@ -362,6 +388,11 @@ export default class CommentApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'commentData'
         if (typeof commentData === 'undefined') {
             commentData = null;
@@ -382,8 +413,9 @@ export default class CommentApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;

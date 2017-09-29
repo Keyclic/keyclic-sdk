@@ -43,6 +43,7 @@ export default class PlaceApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { String } geoCoordinates  
      * @param { Number } geoElevation  
      * @param { String } geoHash  
@@ -68,6 +69,7 @@ export default class PlaceApi extends ApiClient {
         let {
             xKeyclicApp,
             acceptLanguage,
+            xKeyclicAppVersion,
             geoCoordinates,
             geoElevation,
             geoHash,
@@ -111,6 +113,11 @@ export default class PlaceApi extends ApiClient {
         }
         
 
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
         
         // verify the null value of parameter 'geoCoordinates'
         if (typeof geoCoordinates === 'undefined') {
@@ -183,8 +190,9 @@ export default class PlaceApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -223,6 +231,7 @@ export default class PlaceApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { String } geoCoordinates  
      * @param { Number } geoElevation  
      * @param { String } geoHash  
@@ -248,6 +257,7 @@ export default class PlaceApi extends ApiClient {
             xKeyclicApp,
             organization,
             acceptLanguage,
+            xKeyclicAppVersion,
             geoCoordinates,
             geoElevation,
             geoHash,
@@ -295,6 +305,11 @@ export default class PlaceApi extends ApiClient {
         }
         
 
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
         
         // verify the null value of parameter 'geoCoordinates'
         if (typeof geoCoordinates === 'undefined') {
@@ -362,8 +377,9 @@ export default class PlaceApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -402,6 +418,7 @@ export default class PlaceApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Place }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     getPlace(
         returnType = null,
@@ -416,6 +433,7 @@ export default class PlaceApi extends ApiClient {
             xKeyclicApp,
             place,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -438,6 +456,11 @@ export default class PlaceApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getPlace');
@@ -453,8 +476,9 @@ export default class PlaceApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -493,6 +517,7 @@ export default class PlaceApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Place }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/PlacePatch } placePatch  
      */
     patchPlace(
@@ -508,6 +533,7 @@ export default class PlaceApi extends ApiClient {
             xKeyclicApp,
             place,
             acceptLanguage,
+            xKeyclicAppVersion,
             placePatch,
         } = options;
 
@@ -531,6 +557,11 @@ export default class PlaceApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'placePatch'
         if (typeof placePatch === 'undefined') {
             placePatch = null;
@@ -551,8 +582,9 @@ export default class PlaceApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -591,6 +623,7 @@ export default class PlaceApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Place }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/PlaceData } placeData  
      */
     postPlaceByOrganization(
@@ -606,6 +639,7 @@ export default class PlaceApi extends ApiClient {
             xKeyclicApp,
             organization,
             acceptLanguage,
+            xKeyclicAppVersion,
             placeData,
         } = options;
 
@@ -629,6 +663,11 @@ export default class PlaceApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'placeData'
         if (typeof placeData === 'undefined') {
             placeData = null;
@@ -649,8 +688,9 @@ export default class PlaceApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;

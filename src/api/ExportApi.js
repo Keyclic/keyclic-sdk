@@ -41,6 +41,7 @@ export default class ExportApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { String } place The identifier of the resource formatted as GUID string. 
      * @param { String } state  
      * @param { String } category The identifier of the resource formatted as GUID string. 
@@ -63,6 +64,7 @@ export default class ExportApi extends ApiClient {
             xKeyclicApp,
             organization,
             acceptLanguage,
+            xKeyclicAppVersion,
             place,
             state,
             category,
@@ -107,6 +109,11 @@ export default class ExportApi extends ApiClient {
         }
         
 
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
         
         // verify the null value of parameter 'place'
         if (typeof place === 'undefined') {
@@ -156,8 +163,9 @@ export default class ExportApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;

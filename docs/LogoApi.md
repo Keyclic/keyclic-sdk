@@ -36,6 +36,7 @@ let height = "height_example"; // String |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
 };
 
 apiInstance.getLogoByOrganizationAndWidthAndHeight(xKeyclicApp, organization, width, height, opts, (error, data, response) => {
@@ -56,6 +57,7 @@ Name | Type | Description  | Notes
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 

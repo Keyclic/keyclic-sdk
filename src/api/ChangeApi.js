@@ -40,6 +40,7 @@ export default class ChangeApi extends ApiClient {
      * @param { String } token 
      * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/PasswordData } passwordData  
      */
     postChangeByToken(
@@ -51,6 +52,7 @@ export default class ChangeApi extends ApiClient {
             xKeyclicApp,
             token,
             acceptLanguage,
+            xKeyclicAppVersion,
             passwordData,
         } = options;
 
@@ -74,6 +76,11 @@ export default class ChangeApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'passwordData'
         if (typeof passwordData === 'undefined') {
             passwordData = null;
@@ -91,8 +98,9 @@ export default class ChangeApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = null;

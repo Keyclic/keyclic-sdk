@@ -41,6 +41,7 @@ export default class IssueApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/FeedbackData } feedbackData  
      */
     postIssue(
@@ -55,6 +56,7 @@ export default class IssueApi extends ApiClient {
         let {
             xKeyclicApp,
             acceptLanguage,
+            xKeyclicAppVersion,
             feedbackData,
         } = options;
 
@@ -72,6 +74,11 @@ export default class IssueApi extends ApiClient {
         }
         
 
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
         
         // verify the null value of parameter 'feedbackData'
         if (typeof feedbackData === 'undefined') {
@@ -92,8 +99,9 @@ export default class IssueApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;

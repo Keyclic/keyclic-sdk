@@ -41,6 +41,7 @@ export default class LogApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { LogEntryPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     cgetLogsByOperation(
         returnType = null,
@@ -55,6 +56,7 @@ export default class LogApi extends ApiClient {
             xKeyclicApp,
             operation,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -77,6 +79,11 @@ export default class LogApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetLogsByOperation');
@@ -92,8 +99,9 @@ export default class LogApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;

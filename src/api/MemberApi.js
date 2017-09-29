@@ -44,6 +44,7 @@ export default class MemberApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { MemberPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
@@ -68,6 +69,7 @@ export default class MemberApi extends ApiClient {
             xKeyclicApp,
             organization,
             acceptLanguage,
+            xKeyclicAppVersion,
             page,
             limit,
             order,
@@ -114,6 +116,11 @@ export default class MemberApi extends ApiClient {
         }
         
 
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
         
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
@@ -175,8 +182,9 @@ export default class MemberApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -216,6 +224,7 @@ export default class MemberApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     deleteMemberByOrganizationAndMember(
         returnType = null,
@@ -228,6 +237,7 @@ export default class MemberApi extends ApiClient {
             organization,
             member,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -255,6 +265,11 @@ export default class MemberApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling deleteMemberByOrganizationAndMember');
@@ -271,8 +286,9 @@ export default class MemberApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -312,6 +328,7 @@ export default class MemberApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Member }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     getMemberByOrganizationAndMember(
         returnType = null,
@@ -327,6 +344,7 @@ export default class MemberApi extends ApiClient {
             organization,
             member,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -354,6 +372,11 @@ export default class MemberApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getMemberByOrganizationAndMember');
@@ -370,8 +393,9 @@ export default class MemberApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -411,6 +435,7 @@ export default class MemberApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Member }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/MemberPatch } memberPatch  
      */
     patchMemberByOrganizationAndMember(
@@ -427,6 +452,7 @@ export default class MemberApi extends ApiClient {
             organization,
             member,
             acceptLanguage,
+            xKeyclicAppVersion,
             memberPatch,
         } = options;
 
@@ -455,6 +481,11 @@ export default class MemberApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'memberPatch'
         if (typeof memberPatch === 'undefined') {
             memberPatch = null;
@@ -476,8 +507,9 @@ export default class MemberApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -516,6 +548,7 @@ export default class MemberApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Member }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/PersonData } personData  
      */
     postMemberByOrganization(
@@ -531,6 +564,7 @@ export default class MemberApi extends ApiClient {
             xKeyclicApp,
             organization,
             acceptLanguage,
+            xKeyclicAppVersion,
             personData,
         } = options;
 
@@ -554,6 +588,11 @@ export default class MemberApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'personData'
         if (typeof personData === 'undefined') {
             personData = null;
@@ -574,8 +613,9 @@ export default class MemberApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;

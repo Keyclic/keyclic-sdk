@@ -32,6 +32,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'place': "place_example", // String | The identifier of the resource formatted as GUID string.
   'state': "state_example", // String | 
   'category': "category_example", // String | The identifier of the resource formatted as GUID string.
@@ -58,6 +59,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **place** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
  **state** | **String**|  | [optional] 
  **category** | **String**| The identifier of the resource formatted as GUID string. | [optional] 

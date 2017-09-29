@@ -41,6 +41,7 @@ export default class FeedbackApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { FeedbackPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { String } state   (default to DELIVERED)
      * @param { String } category The identifier of the resource formatted as GUID string. 
      * @param { String } geoHash  
@@ -66,6 +67,7 @@ export default class FeedbackApi extends ApiClient {
         let {
             xKeyclicApp,
             acceptLanguage,
+            xKeyclicAppVersion,
             state,
             category,
             geoHash,
@@ -119,6 +121,11 @@ export default class FeedbackApi extends ApiClient {
         }
         
 
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
         
         // verify the null value of parameter 'category'
         if (typeof category === 'undefined') {
@@ -181,8 +188,9 @@ export default class FeedbackApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -221,6 +229,7 @@ export default class FeedbackApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { FeedbackPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { String } category The identifier of the resource formatted as GUID string. 
      * @param { String } geoHash  
      * @param { String } organization The identifier of the resource formatted as GUID string. 
@@ -247,6 +256,7 @@ export default class FeedbackApi extends ApiClient {
             xKeyclicApp,
             person,
             acceptLanguage,
+            xKeyclicAppVersion,
             category,
             geoHash,
             organization,
@@ -300,6 +310,11 @@ export default class FeedbackApi extends ApiClient {
         }
         
 
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
         
         // verify the null value of parameter 'category'
         if (typeof category === 'undefined') {
@@ -368,8 +383,9 @@ export default class FeedbackApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -408,6 +424,7 @@ export default class FeedbackApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     getFeedback(
         returnType = null,
@@ -422,6 +439,7 @@ export default class FeedbackApi extends ApiClient {
             xKeyclicApp,
             feedback,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -444,6 +462,11 @@ export default class FeedbackApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getFeedback');
@@ -459,8 +482,9 @@ export default class FeedbackApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;

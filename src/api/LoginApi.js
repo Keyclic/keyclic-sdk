@@ -40,6 +40,7 @@ export default class LoginApi extends ApiClient {
      * @param { String } xKeyclicApp 
      * @param { SuccessLogin }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/LoginData } loginData  
      */
     postLogin(
@@ -53,6 +54,7 @@ export default class LoginApi extends ApiClient {
         let {
             xKeyclicApp,
             acceptLanguage,
+            xKeyclicAppVersion,
             loginData,
         } = options;
 
@@ -71,6 +73,11 @@ export default class LoginApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'loginData'
         if (typeof loginData === 'undefined') {
             loginData = null;
@@ -87,8 +94,9 @@ export default class LoginApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = null;

@@ -34,6 +34,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'geoCoordinates': "geoCoordinates_example", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
@@ -63,6 +64,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **geoCoordinates** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
@@ -115,6 +117,7 @@ let relationship = "relationship_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
 };
 
 apiInstance.deleteRelationshipByOrganizationAndRelationship(xKeyclicApp, organization, relationship, opts, (error, data, response) => {
@@ -134,6 +137,7 @@ Name | Type | Description  | Notes
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **relationship** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 
@@ -173,6 +177,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'relationshipData': new KeyclicApi.RelationshipData() // RelationshipData | 
 };
 
@@ -192,6 +197,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **relationshipData** | [**RelationshipData**](RelationshipData.md)|  | [optional] 
 
 ### Return type
