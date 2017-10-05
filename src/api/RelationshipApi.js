@@ -43,6 +43,7 @@ export default class RelationshipApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { OrganizationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { String } geoCoordinates  
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
@@ -68,6 +69,7 @@ export default class RelationshipApi extends ApiClient {
             xKeyclicApp,
             organization,
             acceptLanguage,
+            xKeyclicAppVersion,
             geoCoordinates,
             page,
             limit,
@@ -115,6 +117,11 @@ export default class RelationshipApi extends ApiClient {
         }
         
 
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
         
         // verify the null value of parameter 'geoCoordinates'
         if (typeof geoCoordinates === 'undefined') {
@@ -182,8 +189,9 @@ export default class RelationshipApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -223,6 +231,7 @@ export default class RelationshipApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     deleteRelationshipByOrganizationAndRelationship(
         returnType = null,
@@ -235,6 +244,7 @@ export default class RelationshipApi extends ApiClient {
             organization,
             relationship,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -262,6 +272,11 @@ export default class RelationshipApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling deleteRelationshipByOrganizationAndRelationship');
@@ -278,8 +293,9 @@ export default class RelationshipApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -318,6 +334,7 @@ export default class RelationshipApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Organization }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/RelationshipData } relationshipData  
      */
     postRelationshipByOrganization(
@@ -333,6 +350,7 @@ export default class RelationshipApi extends ApiClient {
             xKeyclicApp,
             organization,
             acceptLanguage,
+            xKeyclicAppVersion,
             relationshipData,
         } = options;
 
@@ -356,6 +374,11 @@ export default class RelationshipApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'relationshipData'
         if (typeof relationshipData === 'undefined') {
             relationshipData = null;
@@ -376,8 +399,9 @@ export default class RelationshipApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;

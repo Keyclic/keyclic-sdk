@@ -43,6 +43,7 @@ export default class ReportApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { ReportPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { String } state  
      * @param { String } place The identifier of the resource formatted as GUID string. 
      * @param { String } category The identifier of the resource formatted as GUID string. 
@@ -65,6 +66,7 @@ export default class ReportApi extends ApiClient {
             xKeyclicApp,
             organization,
             acceptLanguage,
+            xKeyclicAppVersion,
             state,
             place,
             category,
@@ -109,6 +111,11 @@ export default class ReportApi extends ApiClient {
         }
         
 
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
         
         // verify the null value of parameter 'state'
         if (typeof state === 'undefined') {
@@ -158,8 +165,9 @@ export default class ReportApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -198,6 +206,7 @@ export default class ReportApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     getReport(
         returnType = null,
@@ -212,6 +221,7 @@ export default class ReportApi extends ApiClient {
             xKeyclicApp,
             report,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -234,6 +244,11 @@ export default class ReportApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getReport');
@@ -249,8 +264,9 @@ export default class ReportApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -289,6 +305,7 @@ export default class ReportApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/ReportPatch } reportPatch  
      */
     patchReport(
@@ -304,6 +321,7 @@ export default class ReportApi extends ApiClient {
             xKeyclicApp,
             report,
             acceptLanguage,
+            xKeyclicAppVersion,
             reportPatch,
         } = options;
 
@@ -327,6 +345,11 @@ export default class ReportApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'reportPatch'
         if (typeof reportPatch === 'undefined') {
             reportPatch = null;
@@ -347,8 +370,9 @@ export default class ReportApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;

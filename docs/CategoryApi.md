@@ -34,6 +34,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
   'geoCoordinates': "geoCoordinates_example", // String | 
   'page': 1, // Number | Page of the overview.
@@ -61,6 +62,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
  **geoCoordinates** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
@@ -110,6 +112,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'geoCoordinates': "geoCoordinates_example", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
@@ -137,6 +140,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **geoCoordinates** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
@@ -185,6 +189,7 @@ let category = "category_example"; // String | The identifier of the resource fo
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
 };
 
 apiInstance.getCategory(xKeyclicApp, category, opts, (error, data, response) => {
@@ -203,6 +208,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **category** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 
@@ -242,6 +248,7 @@ let category = "category_example"; // String | The identifier of the resource fo
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'categoryPatch': new KeyclicApi.CategoryPatch() // CategoryPatch | 
 };
 
@@ -261,6 +268,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **category** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **categoryPatch** | [**CategoryPatch**](CategoryPatch.md)|  | [optional] 
 
 ### Return type
@@ -301,6 +309,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'categoryData': new KeyclicApi.CategoryData() // CategoryData | 
 };
 
@@ -320,6 +329,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **categoryData** | [**CategoryData**](CategoryData.md)|  | [optional] 
 
 ### Return type

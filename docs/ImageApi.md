@@ -39,6 +39,7 @@ let image = "image_example"; // String | The identifier of the resource formatte
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
 };
 
 apiInstance.deleteImageByOperationAndImage(xKeyclicApp, operation, image, opts, (error, data, response) => {
@@ -58,6 +59,7 @@ Name | Type | Description  | Notes
  **operation** | **String**| The identifier of the resource formatted as GUID string. | 
  **image** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 
@@ -103,6 +105,7 @@ let height = "height_example"; // String |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
 };
 
 apiInstance.getImageByFeedbackAndImageAndWidthAndHeight(xKeyclicApp, feedback, image, width, height, opts, (error, data, response) => {
@@ -124,6 +127,7 @@ Name | Type | Description  | Notes
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 
@@ -169,6 +173,7 @@ let height = "height_example"; // String |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
 };
 
 apiInstance.getImageByOperationAndImageAndWidthAndHeight(xKeyclicApp, operation, image, width, height, opts, (error, data, response) => {
@@ -190,6 +195,7 @@ Name | Type | Description  | Notes
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 
@@ -233,6 +239,7 @@ let height = "height_example"; // String |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
 };
 
 apiInstance.getImageByPersonAndWidthAndHeight(xKeyclicApp, person, width, height, opts, (error, data, response) => {
@@ -253,6 +260,7 @@ Name | Type | Description  | Notes
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 
@@ -292,6 +300,7 @@ let feedback = "feedback_example"; // String | The identifier of the resource fo
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'imageData': new KeyclicApi.ImageData() // ImageData | 
 };
 
@@ -311,6 +320,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **imageData** | [**ImageData**](ImageData.md)|  | [optional] 
 
 ### Return type
@@ -351,6 +361,7 @@ let operation = "operation_example"; // String | The identifier of the resource 
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'imageData': new KeyclicApi.ImageData() // ImageData | 
 };
 
@@ -370,6 +381,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **operation** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **imageData** | [**ImageData**](ImageData.md)|  | [optional] 
 
 ### Return type

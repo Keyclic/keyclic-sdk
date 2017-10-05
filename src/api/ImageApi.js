@@ -44,6 +44,7 @@ export default class ImageApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     deleteImageByOperationAndImage(
         returnType = null,
@@ -56,6 +57,7 @@ export default class ImageApi extends ApiClient {
             operation,
             image,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -83,6 +85,11 @@ export default class ImageApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling deleteImageByOperationAndImage');
@@ -99,8 +106,9 @@ export default class ImageApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -142,6 +150,7 @@ export default class ImageApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { File }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     getImageByFeedbackAndImageAndWidthAndHeight(
         returnType = null,
@@ -159,6 +168,7 @@ export default class ImageApi extends ApiClient {
             width,
             height,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -196,6 +206,11 @@ export default class ImageApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getImageByFeedbackAndImageAndWidthAndHeight');
@@ -214,8 +229,9 @@ export default class ImageApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -257,6 +273,7 @@ export default class ImageApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { File }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     getImageByOperationAndImageAndWidthAndHeight(
         returnType = null,
@@ -274,6 +291,7 @@ export default class ImageApi extends ApiClient {
             width,
             height,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -311,6 +329,11 @@ export default class ImageApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getImageByOperationAndImageAndWidthAndHeight');
@@ -329,8 +352,9 @@ export default class ImageApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -371,6 +395,7 @@ export default class ImageApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { File }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     getImageByPersonAndWidthAndHeight(
         returnType = null,
@@ -387,6 +412,7 @@ export default class ImageApi extends ApiClient {
             width,
             height,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -419,6 +445,11 @@ export default class ImageApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getImageByPersonAndWidthAndHeight');
@@ -436,8 +467,9 @@ export default class ImageApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -476,6 +508,7 @@ export default class ImageApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/ImageData } imageData  
      */
     postImageByFeedback(
@@ -491,6 +524,7 @@ export default class ImageApi extends ApiClient {
             xKeyclicApp,
             feedback,
             acceptLanguage,
+            xKeyclicAppVersion,
             imageData,
         } = options;
 
@@ -514,6 +548,11 @@ export default class ImageApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'imageData'
         if (typeof imageData === 'undefined') {
             imageData = null;
@@ -534,8 +573,9 @@ export default class ImageApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -574,6 +614,7 @@ export default class ImageApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/ImageData } imageData  
      */
     postImageByOperation(
@@ -589,6 +630,7 @@ export default class ImageApi extends ApiClient {
             xKeyclicApp,
             operation,
             acceptLanguage,
+            xKeyclicAppVersion,
             imageData,
         } = options;
 
@@ -612,6 +654,11 @@ export default class ImageApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'imageData'
         if (typeof imageData === 'undefined') {
             imageData = null;
@@ -632,8 +679,9 @@ export default class ImageApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;

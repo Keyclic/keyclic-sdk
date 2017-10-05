@@ -32,6 +32,7 @@ let operation = "operation_example"; // String | The identifier of the resource 
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'memberData': new KeyclicApi.MemberData() // MemberData | 
 };
 
@@ -51,6 +52,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **operation** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **memberData** | [**MemberData**](MemberData.md)|  | [optional] 
 
 ### Return type

@@ -42,6 +42,7 @@ export default class PersonApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { PersonPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
@@ -65,6 +66,7 @@ export default class PersonApi extends ApiClient {
         let {
             xKeyclicApp,
             acceptLanguage,
+            xKeyclicAppVersion,
             page,
             limit,
             order,
@@ -106,6 +108,11 @@ export default class PersonApi extends ApiClient {
         }
         
 
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
         
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
@@ -166,8 +173,9 @@ export default class PersonApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -206,6 +214,7 @@ export default class PersonApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      */
     getPerson(
         returnType = null,
@@ -220,6 +229,7 @@ export default class PersonApi extends ApiClient {
             xKeyclicApp,
             person,
             acceptLanguage,
+            xKeyclicAppVersion,
         } = options;
 
         
@@ -242,6 +252,11 @@ export default class PersonApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getPerson');
@@ -257,8 +272,9 @@ export default class PersonApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;
@@ -297,6 +313,7 @@ export default class PersonApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { String } xKeyclicAppVersion  
      * @param { module:model/PersonPatch } personPatch  
      */
     patchPerson(
@@ -312,6 +329,7 @@ export default class PersonApi extends ApiClient {
             xKeyclicApp,
             person,
             acceptLanguage,
+            xKeyclicAppVersion,
             personPatch,
         } = options;
 
@@ -335,6 +353,11 @@ export default class PersonApi extends ApiClient {
         
 
         
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
         // verify the null value of parameter 'personPatch'
         if (typeof personPatch === 'undefined') {
             personPatch = null;
@@ -355,8 +378,9 @@ export default class PersonApi extends ApiClient {
         };
 
         let headerParams = {
-            'x-keyclic-app': xKeyclicApp,
             'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
         };
 
         let credentialParams = credentials;

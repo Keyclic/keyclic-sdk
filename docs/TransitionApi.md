@@ -34,6 +34,7 @@ let feedback = "feedback_example"; // String | The identifier of the resource fo
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'feedbackWorkflowTransitionData': new KeyclicApi.FeedbackWorkflowTransitionData() // FeedbackWorkflowTransitionData | 
 };
 
@@ -53,6 +54,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **feedbackWorkflowTransitionData** | [**FeedbackWorkflowTransitionData**](FeedbackWorkflowTransitionData.md)|  | [optional] 
 
 ### Return type
@@ -93,6 +95,7 @@ let operation = "operation_example"; // String | The identifier of the resource 
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'operationWorkflowTransitionData': new KeyclicApi.OperationWorkflowTransitionData() // OperationWorkflowTransitionData | 
 };
 
@@ -112,6 +115,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **operation** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **operationWorkflowTransitionData** | [**OperationWorkflowTransitionData**](OperationWorkflowTransitionData.md)|  | [optional] 
 
 ### Return type
@@ -152,6 +156,7 @@ let report = "report_example"; // String | The identifier of the resource format
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'reportWorkflowTransitionData': new KeyclicApi.ReportWorkflowTransitionData() // ReportWorkflowTransitionData | 
 };
 
@@ -171,6 +176,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **report** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **reportWorkflowTransitionData** | [**ReportWorkflowTransitionData**](ReportWorkflowTransitionData.md)|  | [optional] 
 
 ### Return type

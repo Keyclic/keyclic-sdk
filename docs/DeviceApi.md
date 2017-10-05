@@ -35,6 +35,7 @@ let device = "device_example"; // String |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
 };
 
 apiInstance.deleteDeviceByPersonAndDevice(xKeyclicApp, person, device, opts, (error, data, response) => {
@@ -54,6 +55,7 @@ Name | Type | Description  | Notes
  **person** | **String**| The identifier of the resource formatted as GUID string. | 
  **device** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 
@@ -93,6 +95,7 @@ let person = "person_example"; // String | The identifier of the resource format
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'deviceData': new KeyclicApi.DeviceData() // DeviceData | 
 };
 
@@ -112,6 +115,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **person** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **deviceData** | [**DeviceData**](DeviceData.md)|  | [optional] 
 
 ### Return type

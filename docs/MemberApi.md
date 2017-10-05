@@ -36,6 +36,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
   'order': "desc", // String | 
@@ -64,6 +65,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **order** | **String**|  | [optional] [default to desc]
@@ -115,6 +117,7 @@ let member = "member_example"; // String | The identifier of the resource format
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
 };
 
 apiInstance.deleteMemberByOrganizationAndMember(xKeyclicApp, organization, member, opts, (error, data, response) => {
@@ -134,6 +137,7 @@ Name | Type | Description  | Notes
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **member** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 
@@ -175,6 +179,7 @@ let member = "member_example"; // String | The identifier of the resource format
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
 };
 
 apiInstance.getMemberByOrganizationAndMember(xKeyclicApp, organization, member, opts, (error, data, response) => {
@@ -194,6 +199,7 @@ Name | Type | Description  | Notes
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **member** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 
@@ -235,6 +241,7 @@ let member = "member_example"; // String | The identifier of the resource format
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'memberPatch': new KeyclicApi.MemberPatch() // MemberPatch | 
 };
 
@@ -255,6 +262,7 @@ Name | Type | Description  | Notes
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **member** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **memberPatch** | [**MemberPatch**](MemberPatch.md)|  | [optional] 
 
 ### Return type
@@ -295,6 +303,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'personData': new KeyclicApi.PersonData() // PersonData | 
 };
 
@@ -314,6 +323,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
  **personData** | [**PersonData**](PersonData.md)|  | [optional] 
 
 ### Return type

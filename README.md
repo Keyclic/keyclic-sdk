@@ -69,6 +69,7 @@ var organization = "organization_example"; // {String} The identifier of the res
 
 var opts = { 
   'acceptLanguage': "fr-FR", // {String} 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example", // {String} 
   'place': "place_example", // {String} The identifier of the resource formatted as GUID string.
   'category': "category_example", // {String} The identifier of the resource formatted as GUID string.
   'state': "state_example", // {String} 
