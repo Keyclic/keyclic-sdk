@@ -53,6 +53,7 @@ export default class Category  {
         this.color = color;
         this.icon = null;
         this.id = id;
+        this.identificationNumber = null;
         this.createdAt = createdAt;
         this.type = null;
         this.links = null;
@@ -89,6 +90,9 @@ export default class Category  {
         }
         if (data.hasOwnProperty('id')) {
             object.id = ApiClient.convertToType(data['id'], 'String');
+        }
+        if (data.hasOwnProperty('identificationNumber')) {
+            object.identificationNumber = ApiClient.convertToType(data['identificationNumber'], 'String');
         }
         if (data.hasOwnProperty('createdAt')) {
             object.createdAt = ApiClient.convertToType(data['createdAt'], 'Date');

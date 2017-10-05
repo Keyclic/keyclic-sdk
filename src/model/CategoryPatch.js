@@ -35,6 +35,7 @@ export default class CategoryPatch  {
         this.name = null;
         this.color = null;
         this.icon = null;
+        this.identificationNumber = null;
 
     }
 
@@ -64,6 +65,9 @@ export default class CategoryPatch  {
         }
         if (data.hasOwnProperty('icon')) {
             object.icon = ApiClient.convertToType(data['icon'], 'String');
+        }
+        if (data.hasOwnProperty('identificationNumber')) {
+            object.identificationNumber = ApiClient.convertToType(data['identificationNumber'], 'String');
         }
 
         return object;
