@@ -308,11 +308,7 @@ export default class ApiClient {
             case 'String':
                 return String(data);
             case 'Date': {
-                // Don't remove bracket scope to prevet let declaration outside it.
-                // Parses an ISO-8601 string representation of a date value.
-                let date = String(data).replace(/T/i, ' ');
-
-                return new Date(date);
+                return new Date(data);
             }
             case 'Blob':
                 return data;

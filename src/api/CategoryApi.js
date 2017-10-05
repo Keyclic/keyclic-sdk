@@ -54,6 +54,7 @@ export default class CategoryApi extends ApiClient {
      * @param { String } searchName  
      * @param { String } searchColor  
      * @param { String } searchIcon  
+     * @param { String } searchIdentificationNumber  
      */
     cgetCategories(
         returnType = null,
@@ -78,6 +79,7 @@ export default class CategoryApi extends ApiClient {
             searchName,
             searchColor,
             searchIcon,
+            searchIdentificationNumber,
         } = options;
 
         
@@ -150,6 +152,11 @@ export default class CategoryApi extends ApiClient {
             searchIcon = null;
         }
         
+        // verify the null value of parameter 'searchIdentificationNumber'
+        if (typeof searchIdentificationNumber === 'undefined') {
+            searchIdentificationNumber = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCategories');
@@ -171,6 +178,7 @@ export default class CategoryApi extends ApiClient {
             'search[name]': searchName,
             'search[color]': searchColor,
             'search[icon]': searchIcon,
+            'search[identificationNumber]': searchIdentificationNumber,
         };
 
         let headerParams = {
@@ -225,6 +233,7 @@ export default class CategoryApi extends ApiClient {
      * @param { String } searchName  
      * @param { String } searchColor  
      * @param { String } searchIcon  
+     * @param { String } searchIdentificationNumber  
      */
     cgetCategoriesByOrganization(
         returnType = null,
@@ -249,6 +258,7 @@ export default class CategoryApi extends ApiClient {
             searchName,
             searchColor,
             searchIcon,
+            searchIdentificationNumber,
         } = options;
 
         
@@ -321,6 +331,11 @@ export default class CategoryApi extends ApiClient {
             searchIcon = null;
         }
         
+        // verify the null value of parameter 'searchIdentificationNumber'
+        if (typeof searchIdentificationNumber === 'undefined') {
+            searchIdentificationNumber = null;
+        }
+        
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCategoriesByOrganization');
@@ -342,6 +357,7 @@ export default class CategoryApi extends ApiClient {
             'search[name]': searchName,
             'search[color]': searchColor,
             'search[icon]': searchIcon,
+            'search[identificationNumber]': searchIdentificationNumber,
         };
 
         let headerParams = {
