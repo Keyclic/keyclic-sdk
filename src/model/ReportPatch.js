@@ -35,7 +35,7 @@ export default class ReportPatch  {
         this.description = null;
         this.identificationNumber = null;
         this.priority = null;
-        this.tags = null;
+        this.tags = [];
 
     }
 
@@ -64,10 +64,10 @@ export default class ReportPatch  {
             object.identificationNumber = ApiClient.convertToType(data['identificationNumber'], 'String');
         }
         if (data.hasOwnProperty('priority')) {
-            object.priority = ApiClient.convertToType(data['priority'], 'String');
+            object.priority = ApiClient.convertToType(data['priority'], 'Number');
         }
         if (data.hasOwnProperty('tags')) {
-            object.tags = ApiClient.convertToType(data['tags'], 'String');
+            object.tags = ApiClient.convertToType(data['tags'], '[\'String\']');
         }
 
         return object;

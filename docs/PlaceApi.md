@@ -35,11 +35,13 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
+  'businessActivity': "businessActivity_example", // String | The identifier of the resource formatted as GUID string.
   'geoCoordinates': "geoCoordinates_example", // String | 
   'geoElevation': 56, // Number | 
   'geoHash': "geoHash_example", // String | 
   'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
   'parent': "parent_example", // String | The identifier of the resource formatted as GUID string.
+  'parents': "parents_example", // String | The identifier of the resource formatted as GUID string.
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
   'order': "desc", // String | 
@@ -65,11 +67,13 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
+ **businessActivity** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
  **geoCoordinates** | **String**|  | [optional] 
  **geoElevation** | **Number**|  | [optional] 
  **geoHash** | **String**|  | [optional] 
  **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
  **parent** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **parents** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **order** | **String**|  | [optional] [default to desc]
@@ -117,10 +121,12 @@ let organization = "organization_example"; // String | The identifier of the res
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
+  'businessActivity': "businessActivity_example", // String | The identifier of the resource formatted as GUID string.
   'geoCoordinates': "geoCoordinates_example", // String | 
   'geoElevation': 56, // Number | 
   'geoHash': "geoHash_example", // String | 
   'parent': "parent_example", // String | The identifier of the resource formatted as GUID string.
+  'parents': "parents_example", // String | The identifier of the resource formatted as GUID string.
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
   'order': "desc", // String | 
@@ -147,10 +153,12 @@ Name | Type | Description  | Notes
  **organization** | **String**| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
+ **businessActivity** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
  **geoCoordinates** | **String**|  | [optional] 
  **geoElevation** | **Number**|  | [optional] 
  **geoHash** | **String**|  | [optional] 
  **parent** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **parents** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **order** | **String**|  | [optional] [default to desc]

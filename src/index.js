@@ -20,6 +20,8 @@ import ApplicationLinks from './model/ApplicationLinks';
 import ApplicationLinksSelf from './model/ApplicationLinksSelf';
 import ApplicationLinksSelfIriTemplate from './model/ApplicationLinksSelfIriTemplate';
 import ApplicationLinksSelfIriTemplateMapping from './model/ApplicationLinksSelfIriTemplateMapping';
+import BusinessActivity from './model/BusinessActivity';
+import BusinessActivityCollection from './model/BusinessActivityCollection';
 import Category from './model/Category';
 import CategoryCollection from './model/CategoryCollection';
 import CategoryData from './model/CategoryData';
@@ -156,6 +158,7 @@ import SuccessLoginCredentialsMemberOf from './model/SuccessLoginCredentialsMemb
 import SuccessLoginCredentialsOrganization from './model/SuccessLoginCredentialsOrganization';
 import Tracking from './model/Tracking';
 import TrackingProgression from './model/TrackingProgression';
+import BusinessActivityPagination from './model/BusinessActivityPagination';
 import CategoryPagination from './model/CategoryPagination';
 import FeedbackPagination from './model/FeedbackPagination';
 import LogEntryPagination from './model/LogEntryPagination';
@@ -168,6 +171,7 @@ import ReportPagination from './model/ReportPagination';
 import AnalyticApi from './api/AnalyticApi';
 import ApplicationApi from './api/ApplicationApi';
 import AssignApi from './api/AssignApi';
+import BusinessActivityApi from './api/BusinessActivityApi';
 import CategoryApi from './api/CategoryApi';
 import ChangeApi from './api/ChangeApi';
 import CommentApi from './api/CommentApi';
@@ -264,6 +268,16 @@ export {
      * @property { module:model/ApplicationLinksSelfIriTemplateMapping }
      */
     ApplicationLinksSelfIriTemplateMapping,
+    /**
+     * The BusinessActivity model constructor.
+     * @property { module:model/BusinessActivity }
+     */
+    BusinessActivity,
+    /**
+     * The BusinessActivityCollection model constructor.
+     * @property { module:model/BusinessActivityCollection }
+     */
+    BusinessActivityCollection,
     /**
      * The Category model constructor.
      * @property { module:model/Category }
@@ -945,6 +959,11 @@ export {
      */
     TrackingProgression,
     /**
+     * The BusinessActivityPagination model constructor.
+     * @property { module:model/BusinessActivityPagination }
+     */
+    BusinessActivityPagination,
+    /**
      * The CategoryPagination model constructor.
      * @property { module:model/CategoryPagination }
      */
@@ -1005,6 +1024,11 @@ export {
      * @property { module:api/AssignApi }
      */
     AssignApi,
+    /**
+     * The BusinessActivityApi service constructor.
+     * @property { module:api/BusinessActivityApi }
+     */
+    BusinessActivityApi,
     /**
      * The CategoryApi service constructor.
      * @property { module:api/CategoryApi }

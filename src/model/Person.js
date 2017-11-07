@@ -30,6 +30,8 @@ export default class Person  {
     
      * @param id { String } 
     
+     * @param optIn { Boolean } 
+    
      * @param createdAt { Date } 
     
      * @param updatedAt { Date } 
@@ -38,6 +40,8 @@ export default class Person  {
     constructor(
     
         id,
+    
+        optIn,
     
         createdAt,
     
@@ -49,6 +53,7 @@ export default class Person  {
         this.familyName = null;
         this.givenName = null;
         this.jobTitle = null;
+        this.optIn = optIn;
         this.username = null;
         this.email = null;
         this.createdAt = createdAt;
@@ -88,6 +93,9 @@ export default class Person  {
         }
         if (data.hasOwnProperty('jobTitle')) {
             object.jobTitle = ApiClient.convertToType(data['jobTitle'], 'String');
+        }
+        if (data.hasOwnProperty('optIn')) {
+            object.optIn = ApiClient.convertToType(data['optIn'], 'Boolean');
         }
         if (data.hasOwnProperty('username')) {
             object.username = ApiClient.convertToType(data['username'], 'String');

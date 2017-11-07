@@ -47,6 +47,7 @@ export default class FeedbackData  {
         this.description = null;
         this.visibility = visibility;
         this.organization = null;
+        this.businessActivity = null;
 
         this.geoType = FeedbackDataGeo;
     }
@@ -86,6 +87,9 @@ export default class FeedbackData  {
         }
         if (data.hasOwnProperty('organization')) {
             object.organization = ApiClient.convertToType(data['organization'], 'String');
+        }
+        if (data.hasOwnProperty('businessActivity')) {
+            object.businessActivity = ApiClient.convertToType(data['businessActivity'], 'String');
         }
 
         return object;

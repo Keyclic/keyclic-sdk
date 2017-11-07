@@ -99,6 +99,7 @@ Class | Method | HTTP request | Description
 *KeyclicApi.AnalyticApi* | [**getAnalyticByOrganization**](docs/AnalyticApi.md#getAnalyticByOrganization) | **GET** /organizations/{organization}/analytics | Retrieve one Analytic resource.
 *KeyclicApi.ApplicationApi* | [**getApplicationByToken**](docs/ApplicationApi.md#getApplicationByToken) | **GET** /applications/{token} | Retrieve one Application resource.
 *KeyclicApi.AssignApi* | [**postAssignByOperation**](docs/AssignApi.md#postAssignByOperation) | **POST** /operations/{operation}/assign | Create one Assign resource.
+*KeyclicApi.BusinessActivityApi* | [**cgetBusinessActivities**](docs/BusinessActivityApi.md#cgetBusinessActivities) | **GET** /businessactivities | Retrieve all BusinessActivity resources.
 *KeyclicApi.CategoryApi* | [**cgetCategories**](docs/CategoryApi.md#cgetCategories) | **GET** /categories | Retrieve all Category resources.
 *KeyclicApi.CategoryApi* | [**cgetCategoriesByOrganization**](docs/CategoryApi.md#cgetCategoriesByOrganization) | **GET** /organizations/{organization}/categories | Retrieve all Category resources.
 *KeyclicApi.CategoryApi* | [**getCategory**](docs/CategoryApi.md#getCategory) | **GET** /categories/{category} | Retrieve one Category resource.
@@ -181,6 +182,8 @@ Class | Method | HTTP request | Description
  - [KeyclicApi.ApplicationLinksSelf](docs/ApplicationLinksSelf.md)
  - [KeyclicApi.ApplicationLinksSelfIriTemplate](docs/ApplicationLinksSelfIriTemplate.md)
  - [KeyclicApi.ApplicationLinksSelfIriTemplateMapping](docs/ApplicationLinksSelfIriTemplateMapping.md)
+ - [KeyclicApi.BusinessActivity](docs/BusinessActivity.md)
+ - [KeyclicApi.BusinessActivityCollection](docs/BusinessActivityCollection.md)
  - [KeyclicApi.Category](docs/Category.md)
  - [KeyclicApi.CategoryCollection](docs/CategoryCollection.md)
  - [KeyclicApi.CategoryData](docs/CategoryData.md)
@@ -317,6 +320,7 @@ Class | Method | HTTP request | Description
  - [KeyclicApi.SuccessLoginCredentialsOrganization](docs/SuccessLoginCredentialsOrganization.md)
  - [KeyclicApi.Tracking](docs/Tracking.md)
  - [KeyclicApi.TrackingProgression](docs/TrackingProgression.md)
+ - [KeyclicApi.BusinessActivityPagination](docs/BusinessActivityPagination.md)
  - [KeyclicApi.CategoryPagination](docs/CategoryPagination.md)
  - [KeyclicApi.FeedbackPagination](docs/FeedbackPagination.md)
  - [KeyclicApi.LogEntryPagination](docs/LogEntryPagination.md)

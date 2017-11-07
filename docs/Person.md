@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **familyName** | **String** |  | [optional] 
 **givenName** | **String** |  | [optional] 
 **jobTitle** | **String** |  | [optional] 
+**optIn** | **Boolean** |  | 
 **username** | **String** |  | [optional] 
 **email** | **String** |  | [optional] 
 **createdAt** | **Date** |  | 

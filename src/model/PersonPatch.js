@@ -37,6 +37,7 @@ export default class PersonPatch  {
         this.email = null;
         this.jobTitle = null;
         this.image = null;
+        this.optIn = null;
 
     }
 
@@ -72,6 +73,9 @@ export default class PersonPatch  {
         }
         if (data.hasOwnProperty('image')) {
             object.image = ApiClient.convertToType(data['image'], 'String');
+        }
+        if (data.hasOwnProperty('optIn')) {
+            object.optIn = ApiClient.convertToType(data['optIn'], 'Boolean');
         }
 
         return object;

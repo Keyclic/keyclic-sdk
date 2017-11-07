@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | 
 **color** | **String** |  | 
 **icon** | **String** |  | [optional] 
+**name** | **String** |  | 
 **id** | **String** |  | 
 **identificationNumber** | **String** |  | [optional] 
 **createdAt** | **Date** |  | 

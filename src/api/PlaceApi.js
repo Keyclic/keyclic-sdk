@@ -44,11 +44,13 @@ export default class PlaceApi extends ApiClient {
      * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion  
+     * @param { String } businessActivity The identifier of the resource formatted as GUID string. 
      * @param { String } geoCoordinates  
      * @param { Number } geoElevation  
      * @param { String } geoHash  
      * @param { String } organization The identifier of the resource formatted as GUID string. 
      * @param { String } parent The identifier of the resource formatted as GUID string. 
+     * @param { String } parents The identifier of the resource formatted as GUID string. 
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
@@ -70,11 +72,13 @@ export default class PlaceApi extends ApiClient {
             xKeyclicApp,
             acceptLanguage,
             xKeyclicAppVersion,
+            businessActivity,
             geoCoordinates,
             geoElevation,
             geoHash,
             organization,
             parent,
+            parents,
             page,
             limit,
             order,
@@ -119,6 +123,11 @@ export default class PlaceApi extends ApiClient {
             xKeyclicAppVersion = null;
         }
         
+        // verify the null value of parameter 'businessActivity'
+        if (typeof businessActivity === 'undefined') {
+            businessActivity = null;
+        }
+        
         // verify the null value of parameter 'geoCoordinates'
         if (typeof geoCoordinates === 'undefined') {
             geoCoordinates = null;
@@ -142,6 +151,11 @@ export default class PlaceApi extends ApiClient {
         // verify the null value of parameter 'parent'
         if (typeof parent === 'undefined') {
             parent = null;
+        }
+        
+        // verify the null value of parameter 'parents'
+        if (typeof parents === 'undefined') {
+            parents = null;
         }
         
         // verify the null value of parameter 'after'
@@ -175,11 +189,13 @@ export default class PlaceApi extends ApiClient {
         let bodyParam = null;
 
         let queryParams = {
+            'business_activity': businessActivity,
             'geo_coordinates': geoCoordinates,
             'geo_elevation': geoElevation,
             'geo_hash[]': geoHash,
             'organization': organization,
             'parent': parent,
+            'parents[]': parents,
             'page': page,
             'limit': limit,
             'order': order,
@@ -232,10 +248,12 @@ export default class PlaceApi extends ApiClient {
      * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion  
+     * @param { String } businessActivity The identifier of the resource formatted as GUID string. 
      * @param { String } geoCoordinates  
      * @param { Number } geoElevation  
      * @param { String } geoHash  
      * @param { String } parent The identifier of the resource formatted as GUID string. 
+     * @param { String } parents The identifier of the resource formatted as GUID string. 
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
@@ -258,10 +276,12 @@ export default class PlaceApi extends ApiClient {
             organization,
             acceptLanguage,
             xKeyclicAppVersion,
+            businessActivity,
             geoCoordinates,
             geoElevation,
             geoHash,
             parent,
+            parents,
             page,
             limit,
             order,
@@ -311,6 +331,11 @@ export default class PlaceApi extends ApiClient {
             xKeyclicAppVersion = null;
         }
         
+        // verify the null value of parameter 'businessActivity'
+        if (typeof businessActivity === 'undefined') {
+            businessActivity = null;
+        }
+        
         // verify the null value of parameter 'geoCoordinates'
         if (typeof geoCoordinates === 'undefined') {
             geoCoordinates = null;
@@ -329,6 +354,11 @@ export default class PlaceApi extends ApiClient {
         // verify the null value of parameter 'parent'
         if (typeof parent === 'undefined') {
             parent = null;
+        }
+        
+        // verify the null value of parameter 'parents'
+        if (typeof parents === 'undefined') {
+            parents = null;
         }
         
         // verify the null value of parameter 'after'
@@ -363,10 +393,12 @@ export default class PlaceApi extends ApiClient {
         let bodyParam = null;
 
         let queryParams = {
+            'business_activity': businessActivity,
             'geo_coordinates': geoCoordinates,
             'geo_elevation': geoElevation,
             'geo_hash[]': geoHash,
             'parent': parent,
+            'parents[]': parents,
             'page': page,
             'limit': limit,
             'order': order,

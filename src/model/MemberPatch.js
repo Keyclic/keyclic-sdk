@@ -32,7 +32,7 @@ export default class MemberPatch  {
     
     ) {
 
-        this.roles = null;
+        this.roles = [];
 
     }
 
@@ -55,7 +55,7 @@ export default class MemberPatch  {
         }
 
         if (data.hasOwnProperty('roles')) {
-            object.roles = ApiClient.convertToType(data['roles'], 'String');
+            object.roles = ApiClient.convertToType(data['roles'], '[\'String\']');
         }
 
         return object;

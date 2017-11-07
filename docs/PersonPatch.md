@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **email** | **String** |  | [optional] 
 **jobTitle** | **String** |  | [optional] 
 **image** | **String** |  | [optional] 
+**optIn** | **Boolean** |  | [optional] 
 
 

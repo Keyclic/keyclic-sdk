@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **visibility** | **String** |  | 
 **organization** | **String** |  | [optional] 
+**businessActivity** | **String** |  | [optional] 
 
 
 <a name="VisibilityEnum"></a>

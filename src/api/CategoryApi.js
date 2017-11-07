@@ -44,6 +44,7 @@ export default class CategoryApi extends ApiClient {
      * @param { CategoryPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion  
+     * @param { String } businessActivity The identifier of the resource formatted as GUID string. 
      * @param { String } organization The identifier of the resource formatted as GUID string. 
      * @param { String } geoCoordinates  
      * @param { Number } page Page of the overview.  (default to 1)
@@ -51,9 +52,9 @@ export default class CategoryApi extends ApiClient {
      * @param { module:model/String } order   (default to desc)
      * @param { Date } after  
      * @param { Date } before  
-     * @param { String } searchName  
      * @param { String } searchColor  
      * @param { String } searchIcon  
+     * @param { String } searchName  
      * @param { String } searchIdentificationNumber  
      */
     cgetCategories(
@@ -69,6 +70,7 @@ export default class CategoryApi extends ApiClient {
             xKeyclicApp,
             acceptLanguage,
             xKeyclicAppVersion,
+            businessActivity,
             organization,
             geoCoordinates,
             page,
@@ -76,9 +78,9 @@ export default class CategoryApi extends ApiClient {
             order,
             after,
             before,
-            searchName,
             searchColor,
             searchIcon,
+            searchName,
             searchIdentificationNumber,
         } = options;
 
@@ -117,6 +119,11 @@ export default class CategoryApi extends ApiClient {
             xKeyclicAppVersion = null;
         }
         
+        // verify the null value of parameter 'businessActivity'
+        if (typeof businessActivity === 'undefined') {
+            businessActivity = null;
+        }
+        
         // verify the null value of parameter 'organization'
         if (typeof organization === 'undefined') {
             organization = null;
@@ -137,11 +144,6 @@ export default class CategoryApi extends ApiClient {
             before = null;
         }
         
-        // verify the null value of parameter 'searchName'
-        if (typeof searchName === 'undefined') {
-            searchName = null;
-        }
-        
         // verify the null value of parameter 'searchColor'
         if (typeof searchColor === 'undefined') {
             searchColor = null;
@@ -150,6 +152,11 @@ export default class CategoryApi extends ApiClient {
         // verify the null value of parameter 'searchIcon'
         if (typeof searchIcon === 'undefined') {
             searchIcon = null;
+        }
+        
+        // verify the null value of parameter 'searchName'
+        if (typeof searchName === 'undefined') {
+            searchName = null;
         }
         
         // verify the null value of parameter 'searchIdentificationNumber'
@@ -168,6 +175,7 @@ export default class CategoryApi extends ApiClient {
         let bodyParam = null;
 
         let queryParams = {
+            'business_activity': businessActivity,
             'organization': organization,
             'geo_coordinates': geoCoordinates,
             'page': page,
@@ -175,9 +183,9 @@ export default class CategoryApi extends ApiClient {
             'order': order,
             'after': after,
             'before': before,
-            'search[name]': searchName,
             'search[color]': searchColor,
             'search[icon]': searchIcon,
+            'search[name]': searchName,
             'search[identificationNumber]': searchIdentificationNumber,
         };
 
@@ -224,15 +232,16 @@ export default class CategoryApi extends ApiClient {
      * @param { CategoryPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion  
+     * @param { String } businessActivity The identifier of the resource formatted as GUID string. 
      * @param { String } geoCoordinates  
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
      * @param { Date } after  
      * @param { Date } before  
-     * @param { String } searchName  
      * @param { String } searchColor  
      * @param { String } searchIcon  
+     * @param { String } searchName  
      * @param { String } searchIdentificationNumber  
      */
     cgetCategoriesByOrganization(
@@ -249,15 +258,16 @@ export default class CategoryApi extends ApiClient {
             organization,
             acceptLanguage,
             xKeyclicAppVersion,
+            businessActivity,
             geoCoordinates,
             page,
             limit,
             order,
             after,
             before,
-            searchName,
             searchColor,
             searchIcon,
+            searchName,
             searchIdentificationNumber,
         } = options;
 
@@ -301,6 +311,11 @@ export default class CategoryApi extends ApiClient {
             xKeyclicAppVersion = null;
         }
         
+        // verify the null value of parameter 'businessActivity'
+        if (typeof businessActivity === 'undefined') {
+            businessActivity = null;
+        }
+        
         // verify the null value of parameter 'geoCoordinates'
         if (typeof geoCoordinates === 'undefined') {
             geoCoordinates = null;
@@ -316,11 +331,6 @@ export default class CategoryApi extends ApiClient {
             before = null;
         }
         
-        // verify the null value of parameter 'searchName'
-        if (typeof searchName === 'undefined') {
-            searchName = null;
-        }
-        
         // verify the null value of parameter 'searchColor'
         if (typeof searchColor === 'undefined') {
             searchColor = null;
@@ -329,6 +339,11 @@ export default class CategoryApi extends ApiClient {
         // verify the null value of parameter 'searchIcon'
         if (typeof searchIcon === 'undefined') {
             searchIcon = null;
+        }
+        
+        // verify the null value of parameter 'searchName'
+        if (typeof searchName === 'undefined') {
+            searchName = null;
         }
         
         // verify the null value of parameter 'searchIdentificationNumber'
@@ -348,15 +363,16 @@ export default class CategoryApi extends ApiClient {
         let bodyParam = null;
 
         let queryParams = {
+            'business_activity': businessActivity,
             'geo_coordinates': geoCoordinates,
             'page': page,
             'limit': limit,
             'order': order,
             'after': after,
             'before': before,
-            'search[name]': searchName,
             'search[color]': searchColor,
             'search[icon]': searchIcon,
+            'search[name]': searchName,
             'search[identificationNumber]': searchIdentificationNumber,
         };
 

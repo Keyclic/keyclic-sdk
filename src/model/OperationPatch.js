@@ -62,7 +62,7 @@ export default class OperationPatch  {
             object.description = ApiClient.convertToType(data['description'], 'String');
         }
         if (data.hasOwnProperty('duration')) {
-            object.duration = ApiClient.convertToType(data['duration'], 'String');
+            object.duration = ApiClient.convertToType(data['duration'], 'Number');
         }
         if (data.hasOwnProperty('identificationNumber')) {
             object.identificationNumber = ApiClient.convertToType(data['identificationNumber'], 'String');
@@ -71,7 +71,7 @@ export default class OperationPatch  {
             object.name = ApiClient.convertToType(data['name'], 'String');
         }
         if (data.hasOwnProperty('startDate')) {
-            object.startDate = ApiClient.convertToType(data['startDate'], 'String');
+            object.startDate = ApiClient.convertToType(data['startDate'], 'Date');
         }
 
         return object;

@@ -30,10 +30,6 @@ export default class Organization  {
     
      * @param name { String } 
     
-     * @param billingEmailAddress { String } 
-    
-     * @param notificationEmailAddress { String } 
-    
      * @param id { String } 
     
      * @param createdAt { Date } 
@@ -44,10 +40,6 @@ export default class Organization  {
     constructor(
     
         name,
-    
-        billingEmailAddress,
-    
-        notificationEmailAddress,
     
         id,
     
@@ -60,12 +52,13 @@ export default class Organization  {
         this.name = name;
         this.alternateName = null;
         this.description = null;
-        this.billingEmailAddress = billingEmailAddress;
-        this.notificationEmailAddress = notificationEmailAddress;
+        this.billingEmailAddress = null;
+        this.notificationEmailAddress = null;
         this.id = id;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.type = null;
+        this.isEnabled = null;
         this.links = null;
 
         this.linksType = OrganizationLinks;
@@ -115,6 +108,9 @@ export default class Organization  {
         }
         if (data.hasOwnProperty('type')) {
             object.type = ApiClient.convertToType(data['type'], 'String');
+        }
+        if (data.hasOwnProperty('isEnabled')) {
+            object.isEnabled = ApiClient.convertToType(data['isEnabled'], 'Boolean');
         }
         if (data.hasOwnProperty('_links')) {
             object.links = ApiClient.convertToType(data['_links'], object.linksType);

@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **String** |  | [optional] 
-**duration** | **String** |  | [optional] 
+**duration** | **Number** |  | [optional] 
 **identificationNumber** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**startDate** | **String** |  | [optional] 
+**startDate** | **Date** |  | [optional] 
 
 

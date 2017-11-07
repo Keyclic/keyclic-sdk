@@ -28,9 +28,9 @@ export default class Category  {
      * @alias module:model/Category
      * @class
     
-     * @param name { String } 
-    
      * @param color { String } 
+    
+     * @param name { String } 
     
      * @param id { String } 
     
@@ -39,9 +39,9 @@ export default class Category  {
      */
     constructor(
     
-        name,
-    
         color,
+    
+        name,
     
         id,
     
@@ -49,9 +49,9 @@ export default class Category  {
     
     ) {
 
-        this.name = name;
         this.color = color;
         this.icon = null;
+        this.name = name;
         this.id = id;
         this.identificationNumber = null;
         this.createdAt = createdAt;
@@ -79,14 +79,14 @@ export default class Category  {
             object = new Category();
         }
 
-        if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data['name'], 'String');
-        }
         if (data.hasOwnProperty('color')) {
             object.color = ApiClient.convertToType(data['color'], 'String');
         }
         if (data.hasOwnProperty('icon')) {
             object.icon = ApiClient.convertToType(data['icon'], 'String');
+        }
+        if (data.hasOwnProperty('name')) {
+            object.name = ApiClient.convertToType(data['name'], 'String');
         }
         if (data.hasOwnProperty('id')) {
             object.id = ApiClient.convertToType(data['id'], 'String');
