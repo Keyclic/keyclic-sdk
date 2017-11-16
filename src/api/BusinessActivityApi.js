@@ -42,6 +42,7 @@ export default class BusinessActivityApi extends ApiClient {
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion  
      * @param { String } geoCoordinates  
+     * @param { String } organization The identifier of the resource formatted as GUID string. 
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
@@ -62,6 +63,7 @@ export default class BusinessActivityApi extends ApiClient {
             acceptLanguage,
             xKeyclicAppVersion,
             geoCoordinates,
+            organization,
             page,
             limit,
             order,
@@ -109,6 +111,11 @@ export default class BusinessActivityApi extends ApiClient {
             geoCoordinates = null;
         }
         
+        // verify the null value of parameter 'organization'
+        if (typeof organization === 'undefined') {
+            organization = null;
+        }
+        
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
@@ -131,6 +138,7 @@ export default class BusinessActivityApi extends ApiClient {
 
         let queryParams = {
             'geo_coordinates': geoCoordinates,
+            'organization': organization,
             'page': page,
             'limit': limit,
             'order': order,
