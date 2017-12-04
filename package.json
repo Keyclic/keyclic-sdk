@@ -1,8 +1,9 @@
 {
-    "name": "keyclic-sdk",
+    "name": "app-sdk",
     "version": "1.15.12",
     "description": "",
     "license": "MIT",
+    "homepage" : "https://github.com/Keyclic/app-sdk",
     "main": "src/index.js",
     "scripts": {
         "test": "mocha --compilers js:babel-core/register --recursive"
