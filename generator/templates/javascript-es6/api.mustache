@@ -36,7 +36,7 @@ export default class {{classname}} extends ApiClient {
     {{/notes}}
     {{#allParams}}
         {{#required}}
-     * @param { {{&vendorExtensions.x-jsdoc-type}} } {{paramName}} {{description}}
+     * @param { {{&vendorExtensions.x-jsdoc-type}} } {{paramName}}{{#description}} {{&description}}{{/description}}
         {{/required}}
     {{/allParams}}
     {{#hasAuthMethods}}
