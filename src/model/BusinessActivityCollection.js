@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import BusinessActivity from './BusinessActivity';
 
 
-    
+
 
 /**
  * The BusinessActivityCollection model module.
@@ -27,10 +27,10 @@ export default class BusinessActivityCollection  {
      * Constructs a new "BusinessActivityCollection".
      * @alias module:model/BusinessActivityCollection
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.items = [];
@@ -57,13 +57,13 @@ export default class BusinessActivityCollection  {
         }
 
         if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
+            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

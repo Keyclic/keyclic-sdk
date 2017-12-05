@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The OperationEmbedded model module.
@@ -26,10 +26,10 @@ export default class OperationEmbedded  {
      * Constructs a new "OperationEmbedded".
      * @alias module:model/OperationEmbedded
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.transitions = [];
@@ -56,16 +56,16 @@ export default class OperationEmbedded  {
         }
 
         if (data.hasOwnProperty('transitions')) {
-            object.transitions = ApiClient.convertToType(data['transitions'], '[\'String\']');
+            object.transitions = ApiClient.convertToType(data.transitions, '[\'String\']');
         }
         if (data.hasOwnProperty('stateTransitions')) {
-            object.stateTransitions = ApiClient.convertToType(data['stateTransitions'], '[\'String\']');
+            object.stateTransitions = ApiClient.convertToType(data.stateTransitions, '[\'String\']');
         }
 
         return object;
     }
 
-    
+
 
 }
 

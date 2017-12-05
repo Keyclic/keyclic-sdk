@@ -282,6 +282,7 @@ Class | Method | HTTP request | Description
  - [KeyclicApi.PersonLinksMemberOf](docs/PersonLinksMemberOf.md)
  - [KeyclicApi.PersonLinksSelf](docs/PersonLinksSelf.md)
  - [KeyclicApi.PersonPatch](docs/PersonPatch.md)
+ - [KeyclicApi.PersonPreferences](docs/PersonPreferences.md)
  - [KeyclicApi.Place](docs/Place.md)
  - [KeyclicApi.PlaceCollection](docs/PlaceCollection.md)
  - [KeyclicApi.PlaceData](docs/PlaceData.md)

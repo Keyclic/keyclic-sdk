@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import Report from './Report';
 
 
-    
+
 
 /**
  * The ReportCollection model module.
@@ -27,10 +27,10 @@ export default class ReportCollection  {
      * Constructs a new "ReportCollection".
      * @alias module:model/ReportCollection
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.items = [];
@@ -57,13 +57,13 @@ export default class ReportCollection  {
         }
 
         if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
+            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

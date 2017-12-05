@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The FeedbackEmbedded model module.
@@ -26,10 +26,10 @@ export default class FeedbackEmbedded  {
      * Constructs a new "FeedbackEmbedded".
      * @alias module:model/FeedbackEmbedded
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.stateTransitions = [];
@@ -55,13 +55,13 @@ export default class FeedbackEmbedded  {
         }
 
         if (data.hasOwnProperty('stateTransitions')) {
-            object.stateTransitions = ApiClient.convertToType(data['stateTransitions'], '[\'String\']');
+            object.stateTransitions = ApiClient.convertToType(data.stateTransitions, '[\'String\']');
         }
 
         return object;
     }
 
-    
+
 
 }
 

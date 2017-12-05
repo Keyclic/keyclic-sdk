@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import OrganizationLinks from './OrganizationLinks';
 
 
-    
+
 
 /**
  * The Organization model module.
@@ -27,26 +27,26 @@ export default class Organization  {
      * Constructs a new "Organization".
      * @alias module:model/Organization
      * @class
-    
-     * @param name { String } 
-    
-     * @param id { String } 
-    
-     * @param createdAt { Date } 
-    
-     * @param updatedAt { Date } 
-    
+
+     * @param name { String }
+
+     * @param id { String }
+
+     * @param createdAt { Date }
+
+     * @param updatedAt { Date }
+
      */
     constructor(
-    
+
         name,
-    
+
         id,
-    
+
         createdAt,
-    
+
         updatedAt,
-    
+
     ) {
 
         this.name = name;
@@ -83,43 +83,43 @@ export default class Organization  {
         }
 
         if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data['name'], 'String');
+            object.name = ApiClient.convertToType(data.name, 'String');
         }
         if (data.hasOwnProperty('alternateName')) {
-            object.alternateName = ApiClient.convertToType(data['alternateName'], 'String');
+            object.alternateName = ApiClient.convertToType(data.alternateName, 'String');
         }
         if (data.hasOwnProperty('description')) {
-            object.description = ApiClient.convertToType(data['description'], 'String');
+            object.description = ApiClient.convertToType(data.description, 'String');
         }
         if (data.hasOwnProperty('billingEmailAddress')) {
-            object.billingEmailAddress = ApiClient.convertToType(data['billingEmailAddress'], 'String');
+            object.billingEmailAddress = ApiClient.convertToType(data.billingEmailAddress, 'String');
         }
         if (data.hasOwnProperty('notificationEmailAddress')) {
-            object.notificationEmailAddress = ApiClient.convertToType(data['notificationEmailAddress'], 'String');
+            object.notificationEmailAddress = ApiClient.convertToType(data.notificationEmailAddress, 'String');
         }
         if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data['id'], 'String');
+            object.id = ApiClient.convertToType(data.id, 'String');
         }
         if (data.hasOwnProperty('createdAt')) {
-            object.createdAt = ApiClient.convertToType(data['createdAt'], 'Date');
+            object.createdAt = ApiClient.convertToType(data.createdAt, 'Date');
         }
         if (data.hasOwnProperty('updatedAt')) {
-            object.updatedAt = ApiClient.convertToType(data['updatedAt'], 'Date');
+            object.updatedAt = ApiClient.convertToType(data.updatedAt, 'Date');
         }
         if (data.hasOwnProperty('type')) {
-            object.type = ApiClient.convertToType(data['type'], 'String');
+            object.type = ApiClient.convertToType(data.type, 'String');
         }
         if (data.hasOwnProperty('isEnabled')) {
-            object.isEnabled = ApiClient.convertToType(data['isEnabled'], 'Boolean');
+            object.isEnabled = ApiClient.convertToType(data.isEnabled, 'Boolean');
         }
         if (data.hasOwnProperty('_links')) {
-            object.links = ApiClient.convertToType(data['_links'], object.linksType);
+            object.links = ApiClient.convertToType(data._links, object.linksType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

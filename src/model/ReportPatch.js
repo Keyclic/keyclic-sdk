@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The ReportPatch model module.
@@ -26,10 +26,10 @@ export default class ReportPatch  {
      * Constructs a new "ReportPatch".
      * @alias module:model/ReportPatch
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.description = null;
@@ -58,22 +58,22 @@ export default class ReportPatch  {
         }
 
         if (data.hasOwnProperty('description')) {
-            object.description = ApiClient.convertToType(data['description'], 'String');
+            object.description = ApiClient.convertToType(data.description, 'String');
         }
         if (data.hasOwnProperty('identificationNumber')) {
-            object.identificationNumber = ApiClient.convertToType(data['identificationNumber'], 'String');
+            object.identificationNumber = ApiClient.convertToType(data.identificationNumber, 'String');
         }
         if (data.hasOwnProperty('priority')) {
-            object.priority = ApiClient.convertToType(data['priority'], 'Number');
+            object.priority = ApiClient.convertToType(data.priority, 'Number');
         }
         if (data.hasOwnProperty('tags')) {
-            object.tags = ApiClient.convertToType(data['tags'], '[\'String\']');
+            object.tags = ApiClient.convertToType(data.tags, '[\'String\']');
         }
 
         return object;
     }
 
-    
+
 
 }
 

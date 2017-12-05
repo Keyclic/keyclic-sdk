@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The SuccessLoginCredentialsAdministratorOf model module.
@@ -26,10 +26,10 @@ export default class SuccessLoginCredentialsAdministratorOf  {
      * Constructs a new "SuccessLoginCredentialsAdministratorOf".
      * @alias module:model/SuccessLoginCredentialsAdministratorOf
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.id = null;
@@ -57,19 +57,19 @@ export default class SuccessLoginCredentialsAdministratorOf  {
         }
 
         if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data['id'], 'String');
+            object.id = ApiClient.convertToType(data.id, 'String');
         }
         if (data.hasOwnProperty('token')) {
-            object.token = ApiClient.convertToType(data['token'], 'String');
+            object.token = ApiClient.convertToType(data.token, 'String');
         }
         if (data.hasOwnProperty('type')) {
-            object.type = ApiClient.convertToType(data['type'], 'String');
+            object.type = ApiClient.convertToType(data.type, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

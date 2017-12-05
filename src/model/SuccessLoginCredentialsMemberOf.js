@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import SuccessLoginCredentialsOrganization from './SuccessLoginCredentialsOrganization';
 
 
-    
+
 
 /**
  * The SuccessLoginCredentialsMemberOf model module.
@@ -27,10 +27,10 @@ export default class SuccessLoginCredentialsMemberOf  {
      * Constructs a new "SuccessLoginCredentialsMemberOf".
      * @alias module:model/SuccessLoginCredentialsMemberOf
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.id = null;
@@ -59,19 +59,19 @@ export default class SuccessLoginCredentialsMemberOf  {
         }
 
         if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data['id'], 'String');
+            object.id = ApiClient.convertToType(data.id, 'String');
         }
         if (data.hasOwnProperty('organization')) {
-            object.organization = ApiClient.convertToType(data['organization'], object.organizationType);
+            object.organization = ApiClient.convertToType(data.organization, object.organizationType);
         }
         if (data.hasOwnProperty('roles')) {
-            object.roles = ApiClient.convertToType(data['roles'], '[\'String\']');
+            object.roles = ApiClient.convertToType(data.roles, '[\'String\']');
         }
 
         return object;
     }
 
-    
+
 
 }
 

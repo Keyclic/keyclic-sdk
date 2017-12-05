@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The OperationWorkflowTransitionData model module.
@@ -26,14 +26,14 @@ export default class OperationWorkflowTransitionData  {
      * Constructs a new "OperationWorkflowTransitionData".
      * @alias module:model/OperationWorkflowTransitionData
      * @class
-    
-     * @param transition { module:model/OperationWorkflowTransitionData.TransitionEnum } 
-    
+
+     * @param transition { module:model/OperationWorkflowTransitionData.TransitionEnum }
+
      */
     constructor(
-    
+
         transition,
-    
+
     ) {
 
         this.transition = transition;
@@ -59,15 +59,15 @@ export default class OperationWorkflowTransitionData  {
         }
 
         if (data.hasOwnProperty('transition')) {
-            object.transition = ApiClient.convertToType(data['transition'], 'String');
+            object.transition = ApiClient.convertToType(data.transition, 'String');
         }
 
         return object;
     }
 
-    
 
-       /**
+
+    /**
     * Allowed values for the "transition" property.
     * @enum { String }
     */

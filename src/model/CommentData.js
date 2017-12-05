@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The CommentData model module.
@@ -26,14 +26,14 @@ export default class CommentData  {
      * Constructs a new "CommentData".
      * @alias module:model/CommentData
      * @class
-    
-     * @param text { String } 
-    
+
+     * @param text { String }
+
      */
     constructor(
-    
+
         text,
-    
+
     ) {
 
         this.text = text;
@@ -59,13 +59,13 @@ export default class CommentData  {
         }
 
         if (data.hasOwnProperty('text')) {
-            object.text = ApiClient.convertToType(data['text'], 'String');
+            object.text = ApiClient.convertToType(data.text, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

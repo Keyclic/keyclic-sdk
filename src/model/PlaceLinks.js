@@ -17,7 +17,7 @@ import PlaceLinksOrganization from './PlaceLinksOrganization';
 import PlaceLinksSelf from './PlaceLinksSelf';
 
 
-    
+
 
 /**
  * The PlaceLinks model module.
@@ -29,10 +29,10 @@ export default class PlaceLinks  {
      * Constructs a new "PlaceLinks".
      * @alias module:model/PlaceLinks
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.self = null;
@@ -63,19 +63,19 @@ export default class PlaceLinks  {
         }
 
         if (data.hasOwnProperty('self')) {
-            object.self = ApiClient.convertToType(data['self'], object.selfType);
+            object.self = ApiClient.convertToType(data.self, object.selfType);
         }
         if (data.hasOwnProperty('organization')) {
-            object.organization = ApiClient.convertToType(data['organization'], object.organizationType);
+            object.organization = ApiClient.convertToType(data.organization, object.organizationType);
         }
         if (data.hasOwnProperty('containsPlaces')) {
-            object.containsPlaces = ApiClient.convertToType(data['containsPlaces'], object.containsPlacesType);
+            object.containsPlaces = ApiClient.convertToType(data.containsPlaces, object.containsPlacesType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

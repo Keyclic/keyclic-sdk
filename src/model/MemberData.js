@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The MemberData model module.
@@ -26,14 +26,14 @@ export default class MemberData  {
      * Constructs a new "MemberData".
      * @alias module:model/MemberData
      * @class
-    
-     * @param member { String } 
-    
+
+     * @param member { String }
+
      */
     constructor(
-    
+
         member,
-    
+
     ) {
 
         this.member = member;
@@ -59,13 +59,13 @@ export default class MemberData  {
         }
 
         if (data.hasOwnProperty('member')) {
-            object.member = ApiClient.convertToType(data['member'], 'String');
+            object.member = ApiClient.convertToType(data.member, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

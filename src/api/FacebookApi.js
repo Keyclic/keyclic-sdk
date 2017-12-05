@@ -37,11 +37,11 @@ export default class FacebookApi extends ApiClient {
 
     /**
      * Create one Facebook resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { SuccessLogin }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/FacebookConnectData } facebookConnectData  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/FacebookConnectData } facebookConnectData
      */
     postFacebook(
         returnType = null,
@@ -58,31 +58,31 @@ export default class FacebookApi extends ApiClient {
             facebookConnectData,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postFacebook');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'facebookConnectData'
         if (typeof facebookConnectData === 'undefined') {
             facebookConnectData = null;
         }
-        
+
 
 
         let pathParams = {

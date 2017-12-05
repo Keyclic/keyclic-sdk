@@ -14,7 +14,7 @@ export default class {{&classname}} {{#useInheritance}}{{#interfaceModels}}exten
      * @alias module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{classname}}
      * @class
     {{#vars}}{{#required}}
-     * @param {{name}} { {{&vendorExtensions.x-jsdoc-type}} } {{#description}}{{&description}}{{/description}}
+     * @param {{name}} { {{&vendorExtensions.x-jsdoc-type}} }{{#description}} {{&description}}{{/description}}
     {{/required}}{{/vars}}
      */
     constructor(
@@ -83,20 +83,20 @@ export default class {{&classname}} {{#useInheritance}}{{#interfaceModels}}exten
         if (data.hasOwnProperty('{{&baseName}}')) {
             {{#complexType}}
                 {{#isContainer}}
-            object.{{name}} = ApiClient.convertToType(data['{{&baseName}}'], [object.{{&name}}Type]);
+            object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, [object.{{&name}}Type]);
                 {{/isContainer}}
                 {{^isContainer}}
-            object.{{name}} = ApiClient.convertToType(data['{{&baseName}}'], object.{{&name}}Type);
+            object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, object.{{&name}}Type);
                 {{/isContainer}}
             {{/complexType}}
             {{^complexType}}
                 {{#isContainer}}
                     {{#items}}
-            object.{{name}} = ApiClient.convertToType(data['{{&baseName}}'], '[\'{{&baseType}}\']');
+            object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, '[\'{{&baseType}}\']');
                     {{/items}}
                 {{/isContainer}}
                 {{^isContainer}}
-            object.{{name}} = ApiClient.convertToType(data['{{&baseName}}'], '{{&baseType}}');
+            object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, '{{&baseType}}');
                 {{/isContainer}}
             {{/complexType}}
         }

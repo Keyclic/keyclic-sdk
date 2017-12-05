@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The PaginationLink model module.
@@ -26,10 +26,10 @@ export default class PaginationLink  {
      * Constructs a new "PaginationLink".
      * @alias module:model/PaginationLink
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.href = null;
@@ -55,13 +55,13 @@ export default class PaginationLink  {
         }
 
         if (data.hasOwnProperty('href')) {
-            object.href = ApiClient.convertToType(data['href'], 'String');
+            object.href = ApiClient.convertToType(data.href, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

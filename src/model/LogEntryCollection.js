@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import LogEntry from './LogEntry';
 
 
-    
+
 
 /**
  * The LogEntryCollection model module.
@@ -27,10 +27,10 @@ export default class LogEntryCollection  {
      * Constructs a new "LogEntryCollection".
      * @alias module:model/LogEntryCollection
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.items = [];
@@ -57,13 +57,13 @@ export default class LogEntryCollection  {
         }
 
         if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
+            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

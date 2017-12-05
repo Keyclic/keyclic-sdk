@@ -59,12 +59,12 @@ apiInstance.cgetReportsByOrganization(xKeyclicApp, organization, opts, (error, d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
- **place** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
- **category** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **order** | **String**|  | [optional] [default to desc]
@@ -126,7 +126,7 @@ apiInstance.getReport(xKeyclicApp, report, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **report** | **String**| The identifier of the resource formatted as GUID string. | 
+ **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -186,7 +186,7 @@ apiInstance.patchReport(xKeyclicApp, report, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **report** | **String**| The identifier of the resource formatted as GUID string. | 
+ **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **reportPatch** | [**ReportPatch**](ReportPatch.md)|  | [optional] 

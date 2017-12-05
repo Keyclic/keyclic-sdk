@@ -56,11 +56,11 @@ apiInstance.getAnalyticByOrganization(xKeyclicApp, organization, opts, (error, d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **place** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
- **category** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **state** | **String**|  | [optional] 
  **before** | **Date**|  | [optional] 
  **after** | **Date**|  | [optional] 

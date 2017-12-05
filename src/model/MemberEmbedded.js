@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The MemberEmbedded model module.
@@ -26,10 +26,10 @@ export default class MemberEmbedded  {
      * Constructs a new "MemberEmbedded".
      * @alias module:model/MemberEmbedded
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.availableRoles = [];
@@ -55,13 +55,13 @@ export default class MemberEmbedded  {
         }
 
         if (data.hasOwnProperty('availableRoles')) {
-            object.availableRoles = ApiClient.convertToType(data['availableRoles'], '[\'String\']');
+            object.availableRoles = ApiClient.convertToType(data.availableRoles, '[\'String\']');
         }
 
         return object;
     }
 
-    
+
 
 }
 

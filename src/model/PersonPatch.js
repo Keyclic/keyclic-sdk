@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The PersonPatch model module.
@@ -26,10 +26,10 @@ export default class PersonPatch  {
      * Constructs a new "PersonPatch".
      * @alias module:model/PersonPatch
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.givenName = null;
@@ -38,6 +38,8 @@ export default class PersonPatch  {
         this.jobTitle = null;
         this.image = null;
         this.optIn = null;
+        this.preferencesMessageEmailEnabled = null;
+        this.preferencesMessagePushEnabled = null;
 
     }
 
@@ -60,28 +62,34 @@ export default class PersonPatch  {
         }
 
         if (data.hasOwnProperty('givenName')) {
-            object.givenName = ApiClient.convertToType(data['givenName'], 'String');
+            object.givenName = ApiClient.convertToType(data.givenName, 'String');
         }
         if (data.hasOwnProperty('familyName')) {
-            object.familyName = ApiClient.convertToType(data['familyName'], 'String');
+            object.familyName = ApiClient.convertToType(data.familyName, 'String');
         }
         if (data.hasOwnProperty('email')) {
-            object.email = ApiClient.convertToType(data['email'], 'String');
+            object.email = ApiClient.convertToType(data.email, 'String');
         }
         if (data.hasOwnProperty('jobTitle')) {
-            object.jobTitle = ApiClient.convertToType(data['jobTitle'], 'String');
+            object.jobTitle = ApiClient.convertToType(data.jobTitle, 'String');
         }
         if (data.hasOwnProperty('image')) {
-            object.image = ApiClient.convertToType(data['image'], 'String');
+            object.image = ApiClient.convertToType(data.image, 'String');
         }
         if (data.hasOwnProperty('optIn')) {
-            object.optIn = ApiClient.convertToType(data['optIn'], 'Boolean');
+            object.optIn = ApiClient.convertToType(data.optIn, 'Boolean');
+        }
+        if (data.hasOwnProperty('preferences.messageEmailEnabled')) {
+            object.preferencesMessageEmailEnabled = ApiClient.convertToType(data.preferences.messageEmailEnabled, 'String');
+        }
+        if (data.hasOwnProperty('preferences.messagePushEnabled')) {
+            object.preferencesMessagePushEnabled = ApiClient.convertToType(data.preferences.messagePushEnabled, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

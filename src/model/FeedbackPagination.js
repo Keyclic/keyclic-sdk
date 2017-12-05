@@ -17,7 +17,7 @@ import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
 
 
-    
+
 
 /**
  * The FeedbackPagination model module.
@@ -29,13 +29,13 @@ export default class FeedbackPagination extends Pagination {
      * Constructs a new "FeedbackPagination".
      * @alias module:model/FeedbackPagination
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
         super(
-                
+
         );
 
         this.embedded = null;
@@ -63,13 +63,13 @@ export default class FeedbackPagination extends Pagination {
         object = super.constructFromData(data, object);
 
         if (data.hasOwnProperty('_embedded')) {
-            object.embedded = ApiClient.convertToType(data['_embedded'], object.embeddedType);
+            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import Result from './Result';
 
 
-    
+
 
 /**
  * The ActivityAggregatedPagination model module.
@@ -27,10 +27,10 @@ export default class ActivityAggregatedPagination  {
      * Constructs a new "ActivityAggregatedPagination".
      * @alias module:model/ActivityAggregatedPagination
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.duration = null;
@@ -59,19 +59,19 @@ export default class ActivityAggregatedPagination  {
         }
 
         if (data.hasOwnProperty('duration')) {
-            object.duration = ApiClient.convertToType(data['duration'], 'String');
+            object.duration = ApiClient.convertToType(data.duration, 'String');
         }
         if (data.hasOwnProperty('next')) {
-            object.next = ApiClient.convertToType(data['next'], 'String');
+            object.next = ApiClient.convertToType(data.next, 'String');
         }
         if (data.hasOwnProperty('results')) {
-            object.results = ApiClient.convertToType(data['results'], [object.resultsType]);
+            object.results = ApiClient.convertToType(data.results, [object.resultsType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

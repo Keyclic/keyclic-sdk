@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The RegisterData model module.
@@ -26,18 +26,18 @@ export default class RegisterData  {
      * Constructs a new "RegisterData".
      * @alias module:model/RegisterData
      * @class
-    
-     * @param email { String } 
-    
-     * @param password { String } 
-    
+
+     * @param email { String }
+
+     * @param password { String }
+
      */
     constructor(
-    
+
         email,
-    
+
         password,
-    
+
     ) {
 
         this.email = email;
@@ -64,16 +64,16 @@ export default class RegisterData  {
         }
 
         if (data.hasOwnProperty('email')) {
-            object.email = ApiClient.convertToType(data['email'], 'String');
+            object.email = ApiClient.convertToType(data.email, 'String');
         }
         if (data.hasOwnProperty('password')) {
-            object.password = ApiClient.convertToType(data['password'], 'String');
+            object.password = ApiClient.convertToType(data.password, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -16,7 +16,7 @@ import OperationEmbedded from './OperationEmbedded';
 import OperationLinks from './OperationLinks';
 
 
-    
+
 
 /**
  * The Operation model module.
@@ -28,22 +28,22 @@ export default class Operation  {
      * Constructs a new "Operation".
      * @alias module:model/Operation
      * @class
-    
-     * @param id { String } 
-    
-     * @param createdAt { Date } 
-    
-     * @param updatedAt { Date } 
-    
+
+     * @param id { String }
+
+     * @param createdAt { Date }
+
+     * @param updatedAt { Date }
+
      */
     constructor(
-    
+
         id,
-    
+
         createdAt,
-    
+
         updatedAt,
-    
+
     ) {
 
         this.name = null;
@@ -82,46 +82,46 @@ export default class Operation  {
         }
 
         if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data['name'], 'String');
+            object.name = ApiClient.convertToType(data.name, 'String');
         }
         if (data.hasOwnProperty('description')) {
-            object.description = ApiClient.convertToType(data['description'], 'String');
+            object.description = ApiClient.convertToType(data.description, 'String');
         }
         if (data.hasOwnProperty('duration')) {
-            object.duration = ApiClient.convertToType(data['duration'], 'Number');
+            object.duration = ApiClient.convertToType(data.duration, 'Number');
         }
         if (data.hasOwnProperty('startDate')) {
-            object.startDate = ApiClient.convertToType(data['startDate'], 'Date');
+            object.startDate = ApiClient.convertToType(data.startDate, 'Date');
         }
         if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data['id'], 'String');
+            object.id = ApiClient.convertToType(data.id, 'String');
         }
         if (data.hasOwnProperty('identificationNumber')) {
-            object.identificationNumber = ApiClient.convertToType(data['identificationNumber'], 'String');
+            object.identificationNumber = ApiClient.convertToType(data.identificationNumber, 'String');
         }
         if (data.hasOwnProperty('createdAt')) {
-            object.createdAt = ApiClient.convertToType(data['createdAt'], 'Date');
+            object.createdAt = ApiClient.convertToType(data.createdAt, 'Date');
         }
         if (data.hasOwnProperty('updatedAt')) {
-            object.updatedAt = ApiClient.convertToType(data['updatedAt'], 'Date');
+            object.updatedAt = ApiClient.convertToType(data.updatedAt, 'Date');
         }
         if (data.hasOwnProperty('type')) {
-            object.type = ApiClient.convertToType(data['type'], 'String');
+            object.type = ApiClient.convertToType(data.type, 'String');
         }
         if (data.hasOwnProperty('state')) {
-            object.state = ApiClient.convertToType(data['state'], '[\'String\']');
+            object.state = ApiClient.convertToType(data.state, '[\'String\']');
         }
         if (data.hasOwnProperty('_links')) {
-            object.links = ApiClient.convertToType(data['_links'], object.linksType);
+            object.links = ApiClient.convertToType(data._links, object.linksType);
         }
         if (data.hasOwnProperty('_embedded')) {
-            object.embedded = ApiClient.convertToType(data['_embedded'], object.embeddedType);
+            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

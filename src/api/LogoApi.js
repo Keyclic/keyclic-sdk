@@ -35,14 +35,14 @@ export default class LogoApi extends ApiClient {
 
     /**
      * Retrieve one Logo resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
-     * @param { String } width 
-     * @param { String } height 
+     * @param { String } width
+     * @param { String } height
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { File }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     getLogoByOrganizationAndWidthAndHeight(
         returnType = null,
@@ -62,41 +62,41 @@ export default class LogoApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getLogoByOrganizationAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling getLogoByOrganizationAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'width' is set
         if (typeof width === 'undefined' || width === null) {
             throw new window.Error('Missing the required parameter "width" when calling getLogoByOrganizationAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'height' is set
         if (typeof height === 'undefined' || height === null) {
             throw new window.Error('Missing the required parameter "height" when calling getLogoByOrganizationAndWidthAndHeight');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getLogoByOrganizationAndWidthAndHeight');

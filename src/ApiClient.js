@@ -123,7 +123,7 @@ export default class ApiClient {
      */
     checkResponse(response) {
         if (response.status < 200 || response.status >= 300) {
-            let error = new Error('Code status error: '+ response.status);
+            let error = new Error('Code status error: ' + response.status);
             error.status = response.status;
             error.response = response;
             throw error;
@@ -195,10 +195,12 @@ export default class ApiClient {
     }
 
     buildBody(contentType, bodyParams) {
-        let body = undefined;
-        switch(contentType) {
+        let body;
+        switch (contentType) {
             default:
-                body = bodyParams === null ? undefined : JSON.stringify(bodyParams);
+                if (bodyParams !== null) {
+                    body = JSON.stringify(bodyParams);
+                }
         }
 
         return body;
@@ -254,7 +256,7 @@ export default class ApiClient {
         options = this.applyAuthToRequest(options, authNames, credentials);
 
         if (this.timeout !== null) {
-            options = Object.assign({}, { 'timeout': this.timeout }, options)
+            options = Object.assign({}, { 'timeout': this.timeout }, options);
         }
 
         return fetch(apiUrl, options)

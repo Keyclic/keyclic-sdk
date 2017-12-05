@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **givenName** | **String** |  | [optional] 
 **jobTitle** | **String** |  | [optional] 
 **optIn** | **Boolean** |  | 
+**preferences** | [**PersonPreferences**](PersonPreferences.md) |  | 
 **username** | **String** |  | [optional] 
 **email** | **String** |  | [optional] 
 **createdAt** | **Date** |  | 

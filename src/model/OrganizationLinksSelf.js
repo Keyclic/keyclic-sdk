@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIriTemplate';
 
 
-    
+
 
 /**
  * The OrganizationLinksSelf model module.
@@ -27,10 +27,10 @@ export default class OrganizationLinksSelf  {
      * Constructs a new "OrganizationLinksSelf".
      * @alias module:model/OrganizationLinksSelf
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.href = null;
@@ -58,16 +58,16 @@ export default class OrganizationLinksSelf  {
         }
 
         if (data.hasOwnProperty('href')) {
-            object.href = ApiClient.convertToType(data['href'], 'String');
+            object.href = ApiClient.convertToType(data.href, 'String');
         }
         if (data.hasOwnProperty('iriTemplate')) {
-            object.iriTemplate = ApiClient.convertToType(data['iriTemplate'], object.iriTemplateType);
+            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

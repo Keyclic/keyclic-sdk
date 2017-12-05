@@ -36,19 +36,19 @@ export default class AnalyticApi extends ApiClient {
 
     /**
      * Retrieve one Analytic resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Chart }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { String } place The identifier of the resource formatted as GUID string. 
-     * @param { String } category The identifier of the resource formatted as GUID string. 
-     * @param { String } state  
-     * @param { Date } before  
-     * @param { Date } after  
-     * @param { String } optionsProperty  
-     * @param { module:model/String } optionsSort  
+     * @param { String } xKeyclicAppVersion
+     * @param { String } place The identifier of the resource formatted as GUID string.
+     * @param { String } category The identifier of the resource formatted as GUID string.
+     * @param { String } state
+     * @param { Date } before
+     * @param { Date } after
+     * @param { String } optionsProperty
+     * @param { module:model/String } optionsSort
      */
     getAnalyticByOrganization(
         returnType = null,
@@ -73,66 +73,66 @@ export default class AnalyticApi extends ApiClient {
             optionsSort,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getAnalyticByOrganization');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling getAnalyticByOrganization');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'place'
         if (typeof place === 'undefined') {
             place = null;
         }
-        
+
         // verify the null value of parameter 'category'
         if (typeof category === 'undefined') {
             category = null;
         }
-        
+
         // verify the null value of parameter 'state'
         if (typeof state === 'undefined') {
             state = null;
         }
-        
+
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
         }
-        
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
         }
-        
+
         // verify the null value of parameter 'optionsProperty'
         if (typeof optionsProperty === 'undefined') {
             optionsProperty = null;
         }
-        
+
         // verify the null value of parameter 'optionsSort'
         if (typeof optionsSort === 'undefined') {
             optionsSort = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getAnalyticByOrganization');

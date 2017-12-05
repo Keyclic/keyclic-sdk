@@ -50,7 +50,7 @@ apiInstance.cgetContributionsByFeedback(xKeyclicApp, feedback, opts, (error, dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -109,7 +109,7 @@ apiInstance.postContributionByFeedback(xKeyclicApp, feedback, opts, (error, data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

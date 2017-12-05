@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import Feedback from './Feedback';
 
 
-    
+
 
 /**
  * The FeedbackCollection model module.
@@ -27,10 +27,10 @@ export default class FeedbackCollection  {
      * Constructs a new "FeedbackCollection".
      * @alias module:model/FeedbackCollection
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.items = [];
@@ -57,13 +57,13 @@ export default class FeedbackCollection  {
         }
 
         if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
+            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

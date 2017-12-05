@@ -62,7 +62,7 @@ apiInstance.cgetRelationshipsByOrganization(xKeyclicApp, organization, opts, (er
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **geoCoordinates** | **String**|  | [optional] 
@@ -134,8 +134,8 @@ apiInstance.deleteRelationshipByOrganizationAndRelationship(xKeyclicApp, organiz
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | **String**| The identifier of the resource formatted as GUID string. | 
- **relationship** | **String**| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **relationship** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -195,7 +195,7 @@ apiInstance.postRelationshipByOrganization(xKeyclicApp, organization, opts, (err
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **relationshipData** | [**RelationshipData**](RelationshipData.md)|  | [optional] 

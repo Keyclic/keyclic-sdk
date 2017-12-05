@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The OperationStatePatch model module.
@@ -26,14 +26,14 @@ export default class OperationStatePatch  {
      * Constructs a new "OperationStatePatch".
      * @alias module:model/OperationStatePatch
      * @class
-    
-     * @param transition { module:model/OperationStatePatch.TransitionEnum } 
-    
+
+     * @param transition { module:model/OperationStatePatch.TransitionEnum }
+
      */
     constructor(
-    
+
         transition,
-    
+
     ) {
 
         this.transition = transition;
@@ -59,15 +59,15 @@ export default class OperationStatePatch  {
         }
 
         if (data.hasOwnProperty('transition')) {
-            object.transition = ApiClient.convertToType(data['transition'], 'String');
+            object.transition = ApiClient.convertToType(data.transition, 'String');
         }
 
         return object;
     }
 
-    
 
-       /**
+
+    /**
     * Allowed values for the "transition" property.
     * @enum { String }
     */

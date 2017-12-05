@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The CategoryLinksOrganizationIriTemplateMapping model module.
@@ -26,10 +26,10 @@ export default class CategoryLinksOrganizationIriTemplateMapping  {
      * Constructs a new "CategoryLinksOrganizationIriTemplateMapping".
      * @alias module:model/CategoryLinksOrganizationIriTemplateMapping
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.organization = null;
@@ -55,13 +55,13 @@ export default class CategoryLinksOrganizationIriTemplateMapping  {
         }
 
         if (data.hasOwnProperty('organization')) {
-            object.organization = ApiClient.convertToType(data['organization'], 'String');
+            object.organization = ApiClient.convertToType(data.organization, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIriTemplate';
 
 
-    
+
 
 /**
  * The ReportLinksDelegatedTo model module.
@@ -27,10 +27,10 @@ export default class ReportLinksDelegatedTo  {
      * Constructs a new "ReportLinksDelegatedTo".
      * @alias module:model/ReportLinksDelegatedTo
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.href = null;
@@ -58,16 +58,16 @@ export default class ReportLinksDelegatedTo  {
         }
 
         if (data.hasOwnProperty('href')) {
-            object.href = ApiClient.convertToType(data['href'], 'String');
+            object.href = ApiClient.convertToType(data.href, 'String');
         }
         if (data.hasOwnProperty('iriTemplate')) {
-            object.iriTemplate = ApiClient.convertToType(data['iriTemplate'], object.iriTemplateType);
+            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import FeedbackLinksSelfIriTemplate from './FeedbackLinksSelfIriTemplate';
 
 
-    
+
 
 /**
  * The FeedbackLinksTracking model module.
@@ -27,10 +27,10 @@ export default class FeedbackLinksTracking  {
      * Constructs a new "FeedbackLinksTracking".
      * @alias module:model/FeedbackLinksTracking
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.href = null;
@@ -58,16 +58,16 @@ export default class FeedbackLinksTracking  {
         }
 
         if (data.hasOwnProperty('href')) {
-            object.href = ApiClient.convertToType(data['href'], 'String');
+            object.href = ApiClient.convertToType(data.href, 'String');
         }
         if (data.hasOwnProperty('iriTemplate')) {
-            object.iriTemplate = ApiClient.convertToType(data['iriTemplate'], object.iriTemplateType);
+            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

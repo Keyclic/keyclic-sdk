@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The FacebookConnectData model module.
@@ -26,14 +26,14 @@ export default class FacebookConnectData  {
      * Constructs a new "FacebookConnectData".
      * @alias module:model/FacebookConnectData
      * @class
-    
-     * @param accessToken { String } 
-    
+
+     * @param accessToken { String }
+
      */
     constructor(
-    
+
         accessToken,
-    
+
     ) {
 
         this.accessToken = accessToken;
@@ -59,13 +59,13 @@ export default class FacebookConnectData  {
         }
 
         if (data.hasOwnProperty('accessToken')) {
-            object.accessToken = ApiClient.convertToType(data['accessToken'], 'String');
+            object.accessToken = ApiClient.convertToType(data.accessToken, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

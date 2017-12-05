@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import ApplicationLinks from './ApplicationLinks';
 
 
-    
+
 
 /**
  * The Application model module.
@@ -27,22 +27,22 @@ export default class Application  {
      * Constructs a new "Application".
      * @alias module:model/Application
      * @class
-    
-     * @param name { String } 
-    
-     * @param token { String } 
-    
-     * @param id { String } 
-    
+
+     * @param name { String }
+
+     * @param token { String }
+
+     * @param id { String }
+
      */
     constructor(
-    
+
         name,
-    
+
         token,
-    
+
         id,
-    
+
     ) {
 
         this.name = name;
@@ -74,28 +74,28 @@ export default class Application  {
         }
 
         if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data['name'], 'String');
+            object.name = ApiClient.convertToType(data.name, 'String');
         }
         if (data.hasOwnProperty('token')) {
-            object.token = ApiClient.convertToType(data['token'], 'String');
+            object.token = ApiClient.convertToType(data.token, 'String');
         }
         if (data.hasOwnProperty('version')) {
-            object.version = ApiClient.convertToType(data['version'], 'String');
+            object.version = ApiClient.convertToType(data.version, 'String');
         }
         if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data['id'], 'String');
+            object.id = ApiClient.convertToType(data.id, 'String');
         }
         if (data.hasOwnProperty('type')) {
-            object.type = ApiClient.convertToType(data['type'], 'String');
+            object.type = ApiClient.convertToType(data.type, 'String');
         }
         if (data.hasOwnProperty('_links')) {
-            object.links = ApiClient.convertToType(data['_links'], object.linksType);
+            object.links = ApiClient.convertToType(data._links, object.linksType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

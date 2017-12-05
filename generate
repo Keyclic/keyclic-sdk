@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SWAGGER_FILE="$1"
-CODEGEN_CLI_FILE="./generator/swagger-codegen-cli-2.3.0.jar"
+CODEGEN_CLI_FILE="./generator/swagger-codegen-cli-3.0.0.jar"
 
 if [ ! -f "${SWAGGER_FILE}" ]; then
     SWAGGER_FILE="https://api.keyclic.com/swagger.json"
@@ -20,3 +20,5 @@ generate \
 --additional-properties useInheritance=true \
 -t ./generator/templates/javascript-es6 \
 > ./.codegen.log
+
+npx eslint --fix src/*

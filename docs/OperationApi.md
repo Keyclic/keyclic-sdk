@@ -64,7 +64,7 @@ apiInstance.cgetOperationsByOrganization(xKeyclicApp, organization, opts, (error
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
@@ -141,7 +141,7 @@ apiInstance.cgetOperationsByPerson(xKeyclicApp, person, opts, (error, data, resp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | **String**| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
@@ -218,7 +218,7 @@ apiInstance.cgetOperationsByReport(xKeyclicApp, report, opts, (error, data, resp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **report** | **String**| The identifier of the resource formatted as GUID string. | 
+ **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
@@ -286,7 +286,7 @@ apiInstance.deleteOperation(xKeyclicApp, operation, opts, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | **String**| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -345,7 +345,7 @@ apiInstance.getOperation(xKeyclicApp, operation, opts, (error, data, response) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | **String**| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -405,7 +405,7 @@ apiInstance.patchOperation(xKeyclicApp, operation, opts, (error, data, response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | **String**| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **operationPatch** | [**OperationPatch**](OperationPatch.md)|  | [optional] 

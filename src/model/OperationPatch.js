@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The OperationPatch model module.
@@ -26,10 +26,10 @@ export default class OperationPatch  {
      * Constructs a new "OperationPatch".
      * @alias module:model/OperationPatch
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.description = null;
@@ -59,25 +59,25 @@ export default class OperationPatch  {
         }
 
         if (data.hasOwnProperty('description')) {
-            object.description = ApiClient.convertToType(data['description'], 'String');
+            object.description = ApiClient.convertToType(data.description, 'String');
         }
         if (data.hasOwnProperty('duration')) {
-            object.duration = ApiClient.convertToType(data['duration'], 'Number');
+            object.duration = ApiClient.convertToType(data.duration, 'Number');
         }
         if (data.hasOwnProperty('identificationNumber')) {
-            object.identificationNumber = ApiClient.convertToType(data['identificationNumber'], 'String');
+            object.identificationNumber = ApiClient.convertToType(data.identificationNumber, 'String');
         }
         if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data['name'], 'String');
+            object.name = ApiClient.convertToType(data.name, 'String');
         }
         if (data.hasOwnProperty('startDate')) {
-            object.startDate = ApiClient.convertToType(data['startDate'], 'Date');
+            object.startDate = ApiClient.convertToType(data.startDate, 'Date');
         }
 
         return object;
     }
 
-    
+
 
 }
 

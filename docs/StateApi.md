@@ -52,7 +52,7 @@ apiInstance.patchStateByFeedback(xKeyclicApp, feedback, opts, (error, data, resp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **feedbackStatePatch** | [**FeedbackStatePatch**](FeedbackStatePatch.md)|  | [optional] 
@@ -113,7 +113,7 @@ apiInstance.patchStateByOperation(xKeyclicApp, operation, opts, (error, data, re
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | **String**| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **operationStatePatch** | [**OperationStatePatch**](OperationStatePatch.md)|  | [optional] 
@@ -174,7 +174,7 @@ apiInstance.patchStateByReport(xKeyclicApp, report, opts, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **report** | **String**| The identifier of the resource formatted as GUID string. | 
+ **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **reportStatePatch** | [**ReportStatePatch**](ReportStatePatch.md)|  | [optional] 

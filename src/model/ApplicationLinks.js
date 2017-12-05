@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import ApplicationLinksSelf from './ApplicationLinksSelf';
 
 
-    
+
 
 /**
  * The ApplicationLinks model module.
@@ -27,10 +27,10 @@ export default class ApplicationLinks  {
      * Constructs a new "ApplicationLinks".
      * @alias module:model/ApplicationLinks
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.self = null;
@@ -57,13 +57,13 @@ export default class ApplicationLinks  {
         }
 
         if (data.hasOwnProperty('self')) {
-            object.self = ApiClient.convertToType(data['self'], object.selfType);
+            object.self = ApiClient.convertToType(data.self, object.selfType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

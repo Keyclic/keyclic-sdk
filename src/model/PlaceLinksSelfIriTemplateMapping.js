@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The PlaceLinksSelfIriTemplateMapping model module.
@@ -26,10 +26,10 @@ export default class PlaceLinksSelfIriTemplateMapping  {
      * Constructs a new "PlaceLinksSelfIriTemplateMapping".
      * @alias module:model/PlaceLinksSelfIriTemplateMapping
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.place = null;
@@ -55,13 +55,13 @@ export default class PlaceLinksSelfIriTemplateMapping  {
         }
 
         if (data.hasOwnProperty('place')) {
-            object.place = ApiClient.convertToType(data['place'], 'String');
+            object.place = ApiClient.convertToType(data.place, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

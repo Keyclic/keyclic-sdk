@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import FeedbackDataGeo from './FeedbackDataGeo';
 
 
-    
+
 
 /**
  * The FeedbackData model module.
@@ -27,27 +27,32 @@ export default class FeedbackData  {
      * Constructs a new "FeedbackData".
      * @alias module:model/FeedbackData
      * @class
-    
-     * @param reporter { String } 
-    
-     * @param visibility { module:model/FeedbackData.VisibilityEnum } 
-    
+
+     * @param reporter { String }
+
+     * @param geo { module:model/FeedbackDataGeo }
+
+     * @param visibility { module:model/FeedbackData.VisibilityEnum }
+
      */
     constructor(
-    
+
         reporter,
-    
+
+        geo,
+
         visibility,
-    
+
     ) {
 
         this.reporter = reporter;
         this.category = null;
-        this.geo = null;
+        this.geo = geo;
         this.description = null;
         this.visibility = visibility;
         this.organization = null;
         this.businessActivity = null;
+        this.proMode = null;
 
         this.geoType = FeedbackDataGeo;
     }
@@ -71,33 +76,36 @@ export default class FeedbackData  {
         }
 
         if (data.hasOwnProperty('reporter')) {
-            object.reporter = ApiClient.convertToType(data['reporter'], 'String');
+            object.reporter = ApiClient.convertToType(data.reporter, 'String');
         }
         if (data.hasOwnProperty('category')) {
-            object.category = ApiClient.convertToType(data['category'], 'String');
+            object.category = ApiClient.convertToType(data.category, 'String');
         }
         if (data.hasOwnProperty('geo')) {
-            object.geo = ApiClient.convertToType(data['geo'], object.geoType);
+            object.geo = ApiClient.convertToType(data.geo, object.geoType);
         }
         if (data.hasOwnProperty('description')) {
-            object.description = ApiClient.convertToType(data['description'], 'String');
+            object.description = ApiClient.convertToType(data.description, 'String');
         }
         if (data.hasOwnProperty('visibility')) {
-            object.visibility = ApiClient.convertToType(data['visibility'], 'String');
+            object.visibility = ApiClient.convertToType(data.visibility, 'String');
         }
         if (data.hasOwnProperty('organization')) {
-            object.organization = ApiClient.convertToType(data['organization'], 'String');
+            object.organization = ApiClient.convertToType(data.organization, 'String');
         }
         if (data.hasOwnProperty('businessActivity')) {
-            object.businessActivity = ApiClient.convertToType(data['businessActivity'], 'String');
+            object.businessActivity = ApiClient.convertToType(data.businessActivity, 'String');
+        }
+        if (data.hasOwnProperty('proMode')) {
+            object.proMode = ApiClient.convertToType(data.proMode, 'String');
         }
 
         return object;
     }
 
-    
 
-       /**
+
+    /**
     * Allowed values for the "visibility" property.
     * @enum { String }
     */

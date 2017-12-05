@@ -17,7 +17,7 @@ import PaginationLinks from './PaginationLinks';
 import PlaceCollection from './PlaceCollection';
 
 
-    
+
 
 /**
  * The PlacePagination model module.
@@ -29,13 +29,13 @@ export default class PlacePagination extends Pagination {
      * Constructs a new "PlacePagination".
      * @alias module:model/PlacePagination
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
         super(
-                
+
         );
 
         this.embedded = null;
@@ -63,13 +63,13 @@ export default class PlacePagination extends Pagination {
         object = super.constructFromData(data, object);
 
         if (data.hasOwnProperty('_embedded')) {
-            object.embedded = ApiClient.convertToType(data['_embedded'], object.embeddedType);
+            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

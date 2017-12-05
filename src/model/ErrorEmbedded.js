@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import Error from './Error';
 
 
-    
+
 
 /**
  * The ErrorEmbedded model module.
@@ -27,10 +27,10 @@ export default class ErrorEmbedded  {
      * Constructs a new "ErrorEmbedded".
      * @alias module:model/ErrorEmbedded
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.errors = [];
@@ -57,13 +57,13 @@ export default class ErrorEmbedded  {
         }
 
         if (data.hasOwnProperty('errors')) {
-            object.errors = ApiClient.convertToType(data['errors'], [object.errorsType]);
+            object.errors = ApiClient.convertToType(data.errors, [object.errorsType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

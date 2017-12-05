@@ -17,7 +17,7 @@ import FeedbackGeoCoordinates from './FeedbackGeoCoordinates';
 import FeedbackLinks from './FeedbackLinks';
 
 
-    
+
 
 /**
  * The Feedback model module.
@@ -29,18 +29,22 @@ export default class Feedback  {
      * Constructs a new "Feedback".
      * @alias module:model/Feedback
      * @class
-    
-     * @param id { String } 
-    
+
+     * @param geoCoordinates { module:model/FeedbackGeoCoordinates }
+
+     * @param id { String }
+
      */
     constructor(
-    
+
+        geoCoordinates,
+
         id,
-    
+
     ) {
 
         this.description = null;
-        this.geoCoordinates = null;
+        this.geoCoordinates = geoCoordinates;
         this.id = id;
         this.createdAt = null;
         this.type = null;
@@ -72,34 +76,34 @@ export default class Feedback  {
         }
 
         if (data.hasOwnProperty('description')) {
-            object.description = ApiClient.convertToType(data['description'], 'String');
+            object.description = ApiClient.convertToType(data.description, 'String');
         }
         if (data.hasOwnProperty('geoCoordinates')) {
-            object.geoCoordinates = ApiClient.convertToType(data['geoCoordinates'], object.geoCoordinatesType);
+            object.geoCoordinates = ApiClient.convertToType(data.geoCoordinates, object.geoCoordinatesType);
         }
         if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data['id'], 'String');
+            object.id = ApiClient.convertToType(data.id, 'String');
         }
         if (data.hasOwnProperty('createdAt')) {
-            object.createdAt = ApiClient.convertToType(data['createdAt'], 'Date');
+            object.createdAt = ApiClient.convertToType(data.createdAt, 'Date');
         }
         if (data.hasOwnProperty('type')) {
-            object.type = ApiClient.convertToType(data['type'], 'String');
+            object.type = ApiClient.convertToType(data.type, 'String');
         }
         if (data.hasOwnProperty('state')) {
-            object.state = ApiClient.convertToType(data['state'], '[\'String\']');
+            object.state = ApiClient.convertToType(data.state, '[\'String\']');
         }
         if (data.hasOwnProperty('_links')) {
-            object.links = ApiClient.convertToType(data['_links'], object.linksType);
+            object.links = ApiClient.convertToType(data._links, object.linksType);
         }
         if (data.hasOwnProperty('_embedded')) {
-            object.embedded = ApiClient.convertToType(data['_embedded'], object.embeddedType);
+            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

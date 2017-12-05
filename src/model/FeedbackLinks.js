@@ -19,7 +19,7 @@ import FeedbackLinksSelf from './FeedbackLinksSelf';
 import FeedbackLinksTracking from './FeedbackLinksTracking';
 
 
-    
+
 
 /**
  * The FeedbackLinks model module.
@@ -31,10 +31,10 @@ export default class FeedbackLinks  {
      * Constructs a new "FeedbackLinks".
      * @alias module:model/FeedbackLinks
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.self = null;
@@ -69,25 +69,25 @@ export default class FeedbackLinks  {
         }
 
         if (data.hasOwnProperty('self')) {
-            object.self = ApiClient.convertToType(data['self'], object.selfType);
+            object.self = ApiClient.convertToType(data.self, object.selfType);
         }
         if (data.hasOwnProperty('category')) {
-            object.category = ApiClient.convertToType(data['category'], object.categoryType);
+            object.category = ApiClient.convertToType(data.category, object.categoryType);
         }
         if (data.hasOwnProperty('reporter')) {
-            object.reporter = ApiClient.convertToType(data['reporter'], object.reporterType);
+            object.reporter = ApiClient.convertToType(data.reporter, object.reporterType);
         }
         if (data.hasOwnProperty('image')) {
-            object.image = ApiClient.convertToType(data['image'], object.imageType);
+            object.image = ApiClient.convertToType(data.image, object.imageType);
         }
         if (data.hasOwnProperty('tracking')) {
-            object.tracking = ApiClient.convertToType(data['tracking'], object.trackingType);
+            object.tracking = ApiClient.convertToType(data.tracking, object.trackingType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -38,13 +38,13 @@ export default class ImageApi extends ApiClient {
 
     /**
      * Remove one Image resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } operation The identifier of the resource formatted as GUID string.
      * @param { String } image The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     deleteImageByOperationAndImage(
         returnType = null,
@@ -60,36 +60,36 @@ export default class ImageApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling deleteImageByOperationAndImage');
         }
-        
+
         // verify the required parameter 'operation' is set
         if (typeof operation === 'undefined' || operation === null) {
             throw new window.Error('Missing the required parameter "operation" when calling deleteImageByOperationAndImage');
         }
-        
+
         // verify the required parameter 'image' is set
         if (typeof image === 'undefined' || image === null) {
             throw new window.Error('Missing the required parameter "image" when calling deleteImageByOperationAndImage');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling deleteImageByOperationAndImage');
@@ -142,15 +142,15 @@ export default class ImageApi extends ApiClient {
 
     /**
      * Retrieve one Image resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } feedback The identifier of the resource formatted as GUID string.
      * @param { String } image The identifier of the resource formatted as GUID string.
-     * @param { String } width 
-     * @param { String } height 
+     * @param { String } width
+     * @param { String } height
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { File }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     getImageByFeedbackAndImageAndWidthAndHeight(
         returnType = null,
@@ -171,46 +171,46 @@ export default class ImageApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getImageByFeedbackAndImageAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'feedback' is set
         if (typeof feedback === 'undefined' || feedback === null) {
             throw new window.Error('Missing the required parameter "feedback" when calling getImageByFeedbackAndImageAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'image' is set
         if (typeof image === 'undefined' || image === null) {
             throw new window.Error('Missing the required parameter "image" when calling getImageByFeedbackAndImageAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'width' is set
         if (typeof width === 'undefined' || width === null) {
             throw new window.Error('Missing the required parameter "width" when calling getImageByFeedbackAndImageAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'height' is set
         if (typeof height === 'undefined' || height === null) {
             throw new window.Error('Missing the required parameter "height" when calling getImageByFeedbackAndImageAndWidthAndHeight');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getImageByFeedbackAndImageAndWidthAndHeight');
@@ -265,15 +265,15 @@ export default class ImageApi extends ApiClient {
 
     /**
      * Retrieve one Image resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } operation The identifier of the resource formatted as GUID string.
      * @param { String } image The identifier of the resource formatted as GUID string.
-     * @param { String } width 
-     * @param { String } height 
+     * @param { String } width
+     * @param { String } height
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { File }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     getImageByOperationAndImageAndWidthAndHeight(
         returnType = null,
@@ -294,46 +294,46 @@ export default class ImageApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getImageByOperationAndImageAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'operation' is set
         if (typeof operation === 'undefined' || operation === null) {
             throw new window.Error('Missing the required parameter "operation" when calling getImageByOperationAndImageAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'image' is set
         if (typeof image === 'undefined' || image === null) {
             throw new window.Error('Missing the required parameter "image" when calling getImageByOperationAndImageAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'width' is set
         if (typeof width === 'undefined' || width === null) {
             throw new window.Error('Missing the required parameter "width" when calling getImageByOperationAndImageAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'height' is set
         if (typeof height === 'undefined' || height === null) {
             throw new window.Error('Missing the required parameter "height" when calling getImageByOperationAndImageAndWidthAndHeight');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getImageByOperationAndImageAndWidthAndHeight');
@@ -388,14 +388,14 @@ export default class ImageApi extends ApiClient {
 
     /**
      * Retrieve one Image resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } person The identifier of the resource formatted as GUID string.
-     * @param { String } width 
-     * @param { String } height 
+     * @param { String } width
+     * @param { String } height
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { File }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     getImageByPersonAndWidthAndHeight(
         returnType = null,
@@ -415,41 +415,41 @@ export default class ImageApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getImageByPersonAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'person' is set
         if (typeof person === 'undefined' || person === null) {
             throw new window.Error('Missing the required parameter "person" when calling getImageByPersonAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'width' is set
         if (typeof width === 'undefined' || width === null) {
             throw new window.Error('Missing the required parameter "width" when calling getImageByPersonAndWidthAndHeight');
         }
-        
+
         // verify the required parameter 'height' is set
         if (typeof height === 'undefined' || height === null) {
             throw new window.Error('Missing the required parameter "height" when calling getImageByPersonAndWidthAndHeight');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getImageByPersonAndWidthAndHeight');
@@ -503,13 +503,13 @@ export default class ImageApi extends ApiClient {
 
     /**
      * Create one Image resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } feedback The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/ImageData } imageData  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/ImageData } imageData
      */
     postImageByFeedback(
         returnType = null,
@@ -528,36 +528,36 @@ export default class ImageApi extends ApiClient {
             imageData,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postImageByFeedback');
         }
-        
+
         // verify the required parameter 'feedback' is set
         if (typeof feedback === 'undefined' || feedback === null) {
             throw new window.Error('Missing the required parameter "feedback" when calling postImageByFeedback');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'imageData'
         if (typeof imageData === 'undefined') {
             imageData = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postImageByFeedback');
@@ -609,13 +609,13 @@ export default class ImageApi extends ApiClient {
 
     /**
      * Create one Image resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } operation The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/ImageData } imageData  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/ImageData } imageData
      */
     postImageByOperation(
         returnType = null,
@@ -634,36 +634,36 @@ export default class ImageApi extends ApiClient {
             imageData,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postImageByOperation');
         }
-        
+
         // verify the required parameter 'operation' is set
         if (typeof operation === 'undefined' || operation === null) {
             throw new window.Error('Missing the required parameter "operation" when calling postImageByOperation');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'imageData'
         if (typeof imageData === 'undefined') {
             imageData = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postImageByOperation');

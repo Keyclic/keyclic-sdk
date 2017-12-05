@@ -39,22 +39,22 @@ export default class OrganizationApi extends ApiClient {
 
     /**
      * Retrieve all Organization resources.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { OrganizationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { String } geoCoordinates  
+     * @param { String } xKeyclicAppVersion
+     * @param { String } geoCoordinates
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after  
-     * @param { Date } before  
-     * @param { String } searchName  
-     * @param { String } searchAlternateName  
-     * @param { String } searchDescription  
-     * @param { String } searchBillingEmailAddress  
-     * @param { String } searchNotificationEmailAddress  
+     * @param { Date } after
+     * @param { Date } before
+     * @param { String } searchName
+     * @param { String } searchAlternateName
+     * @param { String } searchDescription
+     * @param { String } searchBillingEmailAddress
+     * @param { String } searchNotificationEmailAddress
      */
     cgetOrganizations(
         returnType = null,
@@ -82,81 +82,81 @@ export default class OrganizationApi extends ApiClient {
             searchNotificationEmailAddress,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetOrganizations');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
             page = 1;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
             limit = 10;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
             order = "desc";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'geoCoordinates'
         if (typeof geoCoordinates === 'undefined') {
             geoCoordinates = null;
         }
-        
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
         }
-        
+
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
         }
-        
+
         // verify the null value of parameter 'searchName'
         if (typeof searchName === 'undefined') {
             searchName = null;
         }
-        
+
         // verify the null value of parameter 'searchAlternateName'
         if (typeof searchAlternateName === 'undefined') {
             searchAlternateName = null;
         }
-        
+
         // verify the null value of parameter 'searchDescription'
         if (typeof searchDescription === 'undefined') {
             searchDescription = null;
         }
-        
+
         // verify the null value of parameter 'searchBillingEmailAddress'
         if (typeof searchBillingEmailAddress === 'undefined') {
             searchBillingEmailAddress = null;
         }
-        
+
         // verify the null value of parameter 'searchNotificationEmailAddress'
         if (typeof searchNotificationEmailAddress === 'undefined') {
             searchNotificationEmailAddress = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetOrganizations');
@@ -218,12 +218,12 @@ export default class OrganizationApi extends ApiClient {
 
     /**
      * Retrieve one Organization resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Organization }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     getOrganization(
         returnType = null,
@@ -241,31 +241,31 @@ export default class OrganizationApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getOrganization');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling getOrganization');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getOrganization');
@@ -317,13 +317,13 @@ export default class OrganizationApi extends ApiClient {
 
     /**
      * Edit one Organization resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Organization }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/OrganizationPatch } organizationPatch  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/OrganizationPatch } organizationPatch
      */
     patchOrganization(
         returnType = null,
@@ -342,36 +342,36 @@ export default class OrganizationApi extends ApiClient {
             organizationPatch,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchOrganization');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling patchOrganization');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'organizationPatch'
         if (typeof organizationPatch === 'undefined') {
             organizationPatch = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchOrganization');
@@ -423,12 +423,12 @@ export default class OrganizationApi extends ApiClient {
 
     /**
      * Create one Organization resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Organization }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/OrganizationData } organizationData  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/OrganizationData } organizationData
      */
     postOrganization(
         returnType = null,
@@ -446,31 +446,31 @@ export default class OrganizationApi extends ApiClient {
             organizationData,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postOrganization');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'organizationData'
         if (typeof organizationData === 'undefined') {
             organizationData = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postOrganization');

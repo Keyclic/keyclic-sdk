@@ -36,20 +36,20 @@ export default class ExportApi extends ApiClient {
 
     /**
      * Retrieve all Export resources.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { String } place The identifier of the resource formatted as GUID string. 
-     * @param { String } state  
-     * @param { String } category The identifier of the resource formatted as GUID string. 
+     * @param { String } xKeyclicAppVersion
+     * @param { String } place The identifier of the resource formatted as GUID string.
+     * @param { String } state
+     * @param { String } category The identifier of the resource formatted as GUID string.
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after  
-     * @param { Date } before  
+     * @param { Date } after
+     * @param { Date } before
      */
     cpostExportByOrganization(
         returnType = null,
@@ -75,71 +75,71 @@ export default class ExportApi extends ApiClient {
             before,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cpostExportByOrganization');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling cpostExportByOrganization');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
             page = 1;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
             limit = 10;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
             order = "desc";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'place'
         if (typeof place === 'undefined') {
             place = null;
         }
-        
+
         // verify the null value of parameter 'state'
         if (typeof state === 'undefined') {
             state = null;
         }
-        
+
         // verify the null value of parameter 'category'
         if (typeof category === 'undefined') {
             category = null;
         }
-        
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
         }
-        
+
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cpostExportByOrganization');

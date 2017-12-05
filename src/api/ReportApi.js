@@ -38,20 +38,20 @@ export default class ReportApi extends ApiClient {
 
     /**
      * Retrieve all Report resources.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { ReportPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { String } state  
-     * @param { String } place The identifier of the resource formatted as GUID string. 
-     * @param { String } category The identifier of the resource formatted as GUID string. 
+     * @param { String } xKeyclicAppVersion
+     * @param { String } state
+     * @param { String } place The identifier of the resource formatted as GUID string.
+     * @param { String } category The identifier of the resource formatted as GUID string.
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after  
-     * @param { Date } before  
+     * @param { Date } after
+     * @param { Date } before
      */
     cgetReportsByOrganization(
         returnType = null,
@@ -77,71 +77,71 @@ export default class ReportApi extends ApiClient {
             before,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetReportsByOrganization');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling cgetReportsByOrganization');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
             page = 1;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
             limit = 10;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
             order = "desc";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'state'
         if (typeof state === 'undefined') {
             state = null;
         }
-        
+
         // verify the null value of parameter 'place'
         if (typeof place === 'undefined') {
             place = null;
         }
-        
+
         // verify the null value of parameter 'category'
         if (typeof category === 'undefined') {
             category = null;
         }
-        
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
         }
-        
+
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetReportsByOrganization');
@@ -201,12 +201,12 @@ export default class ReportApi extends ApiClient {
 
     /**
      * Retrieve one Report resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } report The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     getReport(
         returnType = null,
@@ -224,31 +224,31 @@ export default class ReportApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getReport');
         }
-        
+
         // verify the required parameter 'report' is set
         if (typeof report === 'undefined' || report === null) {
             throw new window.Error('Missing the required parameter "report" when calling getReport');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getReport');
@@ -300,13 +300,13 @@ export default class ReportApi extends ApiClient {
 
     /**
      * Edit one Report resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } report The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/ReportPatch } reportPatch  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/ReportPatch } reportPatch
      */
     patchReport(
         returnType = null,
@@ -325,36 +325,36 @@ export default class ReportApi extends ApiClient {
             reportPatch,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchReport');
         }
-        
+
         // verify the required parameter 'report' is set
         if (typeof report === 'undefined' || report === null) {
             throw new window.Error('Missing the required parameter "report" when calling patchReport');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'reportPatch'
         if (typeof reportPatch === 'undefined') {
             reportPatch = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchReport');

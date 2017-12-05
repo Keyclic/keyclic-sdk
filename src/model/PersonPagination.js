@@ -17,7 +17,7 @@ import PaginationLinks from './PaginationLinks';
 import PersonCollection from './PersonCollection';
 
 
-    
+
 
 /**
  * The PersonPagination model module.
@@ -29,13 +29,13 @@ export default class PersonPagination extends Pagination {
      * Constructs a new "PersonPagination".
      * @alias module:model/PersonPagination
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
         super(
-                
+
         );
 
         this.embedded = null;
@@ -63,13 +63,13 @@ export default class PersonPagination extends Pagination {
         object = super.constructFromData(data, object);
 
         if (data.hasOwnProperty('_embedded')) {
-            object.embedded = ApiClient.convertToType(data['_embedded'], object.embeddedType);
+            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

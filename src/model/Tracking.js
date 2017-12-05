@@ -16,7 +16,7 @@ import Checkpoint from './Checkpoint';
 import TrackingProgression from './TrackingProgression';
 
 
-    
+
 
 /**
  * The Tracking model module.
@@ -28,18 +28,22 @@ export default class Tracking  {
      * Constructs a new "Tracking".
      * @alias module:model/Tracking
      * @class
-    
-     * @param state { String } 
-    
+
+     * @param state { String }
+
+     * @param progression { module:model/TrackingProgression }
+
      */
     constructor(
-    
+
         state,
-    
+
+        progression,
+
     ) {
 
         this.state = state;
-        this.progression = null;
+        this.progression = progression;
         this.time = null;
         this.checkpoints = [];
 
@@ -66,22 +70,22 @@ export default class Tracking  {
         }
 
         if (data.hasOwnProperty('state')) {
-            object.state = ApiClient.convertToType(data['state'], 'String');
+            object.state = ApiClient.convertToType(data.state, 'String');
         }
         if (data.hasOwnProperty('progression')) {
-            object.progression = ApiClient.convertToType(data['progression'], object.progressionType);
+            object.progression = ApiClient.convertToType(data.progression, object.progressionType);
         }
         if (data.hasOwnProperty('time')) {
-            object.time = ApiClient.convertToType(data['time'], 'Number');
+            object.time = ApiClient.convertToType(data.time, 'Number');
         }
         if (data.hasOwnProperty('checkpoints')) {
-            object.checkpoints = ApiClient.convertToType(data['checkpoints'], [object.checkpointsType]);
+            object.checkpoints = ApiClient.convertToType(data.checkpoints, [object.checkpointsType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

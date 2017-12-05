@@ -39,12 +39,12 @@ export default class CommentApi extends ApiClient {
 
     /**
      * Retrieve all Comment resources.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } feedback The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { ActivityPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     cgetCommentsByFeedback(
         returnType = null,
@@ -62,31 +62,31 @@ export default class CommentApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetCommentsByFeedback');
         }
-        
+
         // verify the required parameter 'feedback' is set
         if (typeof feedback === 'undefined' || feedback === null) {
             throw new window.Error('Missing the required parameter "feedback" when calling cgetCommentsByFeedback');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCommentsByFeedback');
@@ -138,12 +138,12 @@ export default class CommentApi extends ApiClient {
 
     /**
      * Retrieve all Comment resources.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } operation The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { ActivityPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     cgetCommentsByOperation(
         returnType = null,
@@ -161,31 +161,31 @@ export default class CommentApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetCommentsByOperation');
         }
-        
+
         // verify the required parameter 'operation' is set
         if (typeof operation === 'undefined' || operation === null) {
             throw new window.Error('Missing the required parameter "operation" when calling cgetCommentsByOperation');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCommentsByOperation');
@@ -237,13 +237,13 @@ export default class CommentApi extends ApiClient {
 
     /**
      * Create one Comment resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } feedback The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/CommentData } commentData  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/CommentData } commentData
      */
     postCommentByFeedback(
         returnType = null,
@@ -262,36 +262,36 @@ export default class CommentApi extends ApiClient {
             commentData,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postCommentByFeedback');
         }
-        
+
         // verify the required parameter 'feedback' is set
         if (typeof feedback === 'undefined' || feedback === null) {
             throw new window.Error('Missing the required parameter "feedback" when calling postCommentByFeedback');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'commentData'
         if (typeof commentData === 'undefined') {
             commentData = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postCommentByFeedback');
@@ -343,13 +343,13 @@ export default class CommentApi extends ApiClient {
 
     /**
      * Create one Comment resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } operation The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/CommentData } commentData  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/CommentData } commentData
      */
     postCommentByOperation(
         returnType = null,
@@ -368,36 +368,36 @@ export default class CommentApi extends ApiClient {
             commentData,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postCommentByOperation');
         }
-        
+
         // verify the required parameter 'operation' is set
         if (typeof operation === 'undefined' || operation === null) {
             throw new window.Error('Missing the required parameter "operation" when calling postCommentByOperation');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'commentData'
         if (typeof commentData === 'undefined') {
             commentData = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postCommentByOperation');

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIriTemplate';
 
 
-    
+
 
 /**
  * The CategoryLinksOrganization model module.
@@ -27,10 +27,10 @@ export default class CategoryLinksOrganization  {
      * Constructs a new "CategoryLinksOrganization".
      * @alias module:model/CategoryLinksOrganization
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.href = null;
@@ -58,16 +58,16 @@ export default class CategoryLinksOrganization  {
         }
 
         if (data.hasOwnProperty('href')) {
-            object.href = ApiClient.convertToType(data['href'], 'String');
+            object.href = ApiClient.convertToType(data.href, 'String');
         }
         if (data.hasOwnProperty('iriTemplate')) {
-            object.iriTemplate = ApiClient.convertToType(data['iriTemplate'], object.iriTemplateType);
+            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

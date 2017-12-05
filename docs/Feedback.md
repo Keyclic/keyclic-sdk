@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **String** |  | [optional] 
-**geoCoordinates** | [**FeedbackGeoCoordinates**](FeedbackGeoCoordinates.md) |  | [optional] 
+**geoCoordinates** | [**FeedbackGeoCoordinates**](FeedbackGeoCoordinates.md) |  | 
 **id** | **String** |  | 
 **createdAt** | **Date** |  | [optional] 
 **type** | **String** |  | [optional] 

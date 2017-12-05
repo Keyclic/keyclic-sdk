@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The FeedbackDataGeoPoint model module.
@@ -26,10 +26,10 @@ export default class FeedbackDataGeoPoint  {
      * Constructs a new "FeedbackDataGeoPoint".
      * @alias module:model/FeedbackDataGeoPoint
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.latitude = null;
@@ -57,19 +57,19 @@ export default class FeedbackDataGeoPoint  {
         }
 
         if (data.hasOwnProperty('latitude')) {
-            object.latitude = ApiClient.convertToType(data['latitude'], 'Number');
+            object.latitude = ApiClient.convertToType(data.latitude, 'Number');
         }
         if (data.hasOwnProperty('longitude')) {
-            object.longitude = ApiClient.convertToType(data['longitude'], 'Number');
+            object.longitude = ApiClient.convertToType(data.longitude, 'Number');
         }
         if (data.hasOwnProperty('srid')) {
-            object.srid = ApiClient.convertToType(data['srid'], 'Number');
+            object.srid = ApiClient.convertToType(data.srid, 'Number');
         }
 
         return object;
     }
 
-    
+
 
 }
 

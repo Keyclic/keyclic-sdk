@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The OperationLinksSelfIriTemplateMapping model module.
@@ -26,10 +26,10 @@ export default class OperationLinksSelfIriTemplateMapping  {
      * Constructs a new "OperationLinksSelfIriTemplateMapping".
      * @alias module:model/OperationLinksSelfIriTemplateMapping
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.operation = null;
@@ -55,13 +55,13 @@ export default class OperationLinksSelfIriTemplateMapping  {
         }
 
         if (data.hasOwnProperty('operation')) {
-            object.operation = ApiClient.convertToType(data['operation'], 'String');
+            object.operation = ApiClient.convertToType(data.operation, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

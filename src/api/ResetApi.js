@@ -36,11 +36,11 @@ export default class ResetApi extends ApiClient {
 
     /**
      * Create one Reset resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/EmailData } emailData  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/EmailData } emailData
      */
     postReset(
         returnType = null,
@@ -54,31 +54,31 @@ export default class ResetApi extends ApiClient {
             emailData,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postReset');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'emailData'
         if (typeof emailData === 'undefined') {
             emailData = null;
         }
-        
+
 
 
         let pathParams = {

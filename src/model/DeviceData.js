@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The DeviceData model module.
@@ -26,14 +26,14 @@ export default class DeviceData  {
      * Constructs a new "DeviceData".
      * @alias module:model/DeviceData
      * @class
-    
-     * @param token { String } 
-    
+
+     * @param token { String }
+
      */
     constructor(
-    
+
         token,
-    
+
     ) {
 
         this.token = token;
@@ -59,13 +59,13 @@ export default class DeviceData  {
         }
 
         if (data.hasOwnProperty('token')) {
-            object.token = ApiClient.convertToType(data['token'], 'String');
+            object.token = ApiClient.convertToType(data.token, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

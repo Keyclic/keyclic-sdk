@@ -52,7 +52,7 @@ apiInstance.postTransitionByFeedback(xKeyclicApp, feedback, opts, (error, data, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **feedbackWorkflowTransitionData** | [**FeedbackWorkflowTransitionData**](FeedbackWorkflowTransitionData.md)|  | [optional] 
@@ -113,7 +113,7 @@ apiInstance.postTransitionByOperation(xKeyclicApp, operation, opts, (error, data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | **String**| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **operationWorkflowTransitionData** | [**OperationWorkflowTransitionData**](OperationWorkflowTransitionData.md)|  | [optional] 
@@ -174,7 +174,7 @@ apiInstance.postTransitionByReport(xKeyclicApp, report, opts, (error, data, resp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **report** | **String**| The identifier of the resource formatted as GUID string. | 
+ **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **reportWorkflowTransitionData** | [**ReportWorkflowTransitionData**](ReportWorkflowTransitionData.md)|  | [optional] 

@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **elevation** | **Number** |  | [optional] 
-**point** | [**FeedbackGeoCoordinatesPoint**](FeedbackGeoCoordinatesPoint.md) |  | [optional] 
+**point** | [**FeedbackGeoCoordinatesPoint**](FeedbackGeoCoordinatesPoint.md) |  | 
 
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import ApplicationLinksSelfIriTemplateMapping from './ApplicationLinksSelfIriTemplateMapping';
 
 
-    
+
 
 /**
  * The ApplicationLinksSelfIriTemplate model module.
@@ -27,10 +27,10 @@ export default class ApplicationLinksSelfIriTemplate  {
      * Constructs a new "ApplicationLinksSelfIriTemplate".
      * @alias module:model/ApplicationLinksSelfIriTemplate
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.mapping = null;
@@ -57,13 +57,13 @@ export default class ApplicationLinksSelfIriTemplate  {
         }
 
         if (data.hasOwnProperty('mapping')) {
-            object.mapping = ApiClient.convertToType(data['mapping'], object.mappingType);
+            object.mapping = ApiClient.convertToType(data.mapping, object.mappingType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

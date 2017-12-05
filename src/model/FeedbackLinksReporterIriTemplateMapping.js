@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The FeedbackLinksReporterIriTemplateMapping model module.
@@ -26,10 +26,10 @@ export default class FeedbackLinksReporterIriTemplateMapping  {
      * Constructs a new "FeedbackLinksReporterIriTemplateMapping".
      * @alias module:model/FeedbackLinksReporterIriTemplateMapping
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.person = null;
@@ -55,13 +55,13 @@ export default class FeedbackLinksReporterIriTemplateMapping  {
         }
 
         if (data.hasOwnProperty('person')) {
-            object.person = ApiClient.convertToType(data['person'], 'String');
+            object.person = ApiClient.convertToType(data.person, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -18,7 +18,7 @@ import OperationLinksReport from './OperationLinksReport';
 import OperationLinksSelf from './OperationLinksSelf';
 
 
-    
+
 
 /**
  * The OperationLinks model module.
@@ -30,10 +30,10 @@ export default class OperationLinks  {
      * Constructs a new "OperationLinks".
      * @alias module:model/OperationLinks
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.self = null;
@@ -66,22 +66,22 @@ export default class OperationLinks  {
         }
 
         if (data.hasOwnProperty('self')) {
-            object.self = ApiClient.convertToType(data['self'], object.selfType);
+            object.self = ApiClient.convertToType(data.self, object.selfType);
         }
         if (data.hasOwnProperty('image')) {
-            object.image = ApiClient.convertToType(data['image'], object.imageType);
+            object.image = ApiClient.convertToType(data.image, object.imageType);
         }
         if (data.hasOwnProperty('report')) {
-            object.report = ApiClient.convertToType(data['report'], object.reportType);
+            object.report = ApiClient.convertToType(data.report, object.reportType);
         }
         if (data.hasOwnProperty('operator')) {
-            object.operator = ApiClient.convertToType(data['operator'], object.operatorType);
+            object.operator = ApiClient.convertToType(data.operator, object.operatorType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

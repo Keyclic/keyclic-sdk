@@ -41,13 +41,13 @@ export default class StateApi extends ApiClient {
 
     /**
      * Edit one State resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } feedback The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/FeedbackStatePatch } feedbackStatePatch  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/FeedbackStatePatch } feedbackStatePatch
      */
     patchStateByFeedback(
         returnType = null,
@@ -66,36 +66,36 @@ export default class StateApi extends ApiClient {
             feedbackStatePatch,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchStateByFeedback');
         }
-        
+
         // verify the required parameter 'feedback' is set
         if (typeof feedback === 'undefined' || feedback === null) {
             throw new window.Error('Missing the required parameter "feedback" when calling patchStateByFeedback');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'feedbackStatePatch'
         if (typeof feedbackStatePatch === 'undefined') {
             feedbackStatePatch = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchStateByFeedback');
@@ -147,13 +147,13 @@ export default class StateApi extends ApiClient {
 
     /**
      * Edit one State resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } operation The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/OperationStatePatch } operationStatePatch  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/OperationStatePatch } operationStatePatch
      */
     patchStateByOperation(
         returnType = null,
@@ -172,36 +172,36 @@ export default class StateApi extends ApiClient {
             operationStatePatch,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchStateByOperation');
         }
-        
+
         // verify the required parameter 'operation' is set
         if (typeof operation === 'undefined' || operation === null) {
             throw new window.Error('Missing the required parameter "operation" when calling patchStateByOperation');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'operationStatePatch'
         if (typeof operationStatePatch === 'undefined') {
             operationStatePatch = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchStateByOperation');
@@ -253,13 +253,13 @@ export default class StateApi extends ApiClient {
 
     /**
      * Edit one State resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } report The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/ReportStatePatch } reportStatePatch  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/ReportStatePatch } reportStatePatch
      */
     patchStateByReport(
         returnType = null,
@@ -278,36 +278,36 @@ export default class StateApi extends ApiClient {
             reportStatePatch,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchStateByReport');
         }
-        
+
         // verify the required parameter 'report' is set
         if (typeof report === 'undefined' || report === null) {
             throw new window.Error('Missing the required parameter "report" when calling patchStateByReport');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'reportStatePatch'
         if (typeof reportStatePatch === 'undefined') {
             reportStatePatch = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchStateByReport');

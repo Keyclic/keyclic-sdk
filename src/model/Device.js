@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The Device model module.
@@ -26,30 +26,30 @@ export default class Device  {
      * Constructs a new "Device".
      * @alias module:model/Device
      * @class
-    
-     * @param person { Object } 
-    
-     * @param token { String } 
-    
-     * @param id { String } 
-    
-     * @param createdAt { Date } 
-    
-     * @param updatedAt { Date } 
-    
+
+     * @param person { Object }
+
+     * @param token { String }
+
+     * @param id { String }
+
+     * @param createdAt { Date }
+
+     * @param updatedAt { Date }
+
      */
     constructor(
-    
+
         person,
-    
+
         token,
-    
+
         id,
-    
+
         createdAt,
-    
+
         updatedAt,
-    
+
     ) {
 
         this.person = person;
@@ -80,28 +80,28 @@ export default class Device  {
         }
 
         if (data.hasOwnProperty('person')) {
-            object.person = ApiClient.convertToType(data['person'], 'Object');
+            object.person = ApiClient.convertToType(data.person, 'Object');
         }
         if (data.hasOwnProperty('token')) {
-            object.token = ApiClient.convertToType(data['token'], 'String');
+            object.token = ApiClient.convertToType(data.token, 'String');
         }
         if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data['id'], 'String');
+            object.id = ApiClient.convertToType(data.id, 'String');
         }
         if (data.hasOwnProperty('created_at')) {
-            object.createdAt = ApiClient.convertToType(data['created_at'], 'Date');
+            object.createdAt = ApiClient.convertToType(data.created_at, 'Date');
         }
         if (data.hasOwnProperty('updated_at')) {
-            object.updatedAt = ApiClient.convertToType(data['updated_at'], 'Date');
+            object.updatedAt = ApiClient.convertToType(data.updated_at, 'Date');
         }
         if (data.hasOwnProperty('type')) {
-            object.type = ApiClient.convertToType(data['type'], 'String');
+            object.type = ApiClient.convertToType(data.type, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

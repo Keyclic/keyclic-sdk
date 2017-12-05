@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The RelationshipData model module.
@@ -26,14 +26,14 @@ export default class RelationshipData  {
      * Constructs a new "RelationshipData".
      * @alias module:model/RelationshipData
      * @class
-    
-     * @param organization { String } 
-    
+
+     * @param organization { String }
+
      */
     constructor(
-    
+
         organization,
-    
+
     ) {
 
         this.organization = organization;
@@ -59,13 +59,13 @@ export default class RelationshipData  {
         }
 
         if (data.hasOwnProperty('organization')) {
-            object.organization = ApiClient.convertToType(data['organization'], 'String');
+            object.organization = ApiClient.convertToType(data.organization, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 
