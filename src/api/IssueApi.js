@@ -37,12 +37,12 @@ export default class IssueApi extends ApiClient {
 
     /**
      * Create one Issue resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/FeedbackData } feedbackData  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/FeedbackData } feedbackData
      */
     postIssue(
         returnType = null,
@@ -60,31 +60,31 @@ export default class IssueApi extends ApiClient {
             feedbackData,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postIssue');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'feedbackData'
         if (typeof feedbackData === 'undefined') {
             feedbackData = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postIssue');

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import PaginationLink from './PaginationLink';
 
 
-    
+
 
 /**
  * The PaginationLinks model module.
@@ -27,10 +27,10 @@ export default class PaginationLinks  {
      * Constructs a new "PaginationLinks".
      * @alias module:model/PaginationLinks
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.first = null;
@@ -63,22 +63,22 @@ export default class PaginationLinks  {
         }
 
         if (data.hasOwnProperty('first')) {
-            object.first = ApiClient.convertToType(data['first'], object.firstType);
+            object.first = ApiClient.convertToType(data.first, object.firstType);
         }
         if (data.hasOwnProperty('last')) {
-            object.last = ApiClient.convertToType(data['last'], object.lastType);
+            object.last = ApiClient.convertToType(data.last, object.lastType);
         }
         if (data.hasOwnProperty('next')) {
-            object.next = ApiClient.convertToType(data['next'], object.nextType);
+            object.next = ApiClient.convertToType(data.next, object.nextType);
         }
         if (data.hasOwnProperty('self')) {
-            object.self = ApiClient.convertToType(data['self'], object.selfType);
+            object.self = ApiClient.convertToType(data.self, object.selfType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The PersonData model module.
@@ -26,14 +26,14 @@ export default class PersonData  {
      * Constructs a new "PersonData".
      * @alias module:model/PersonData
      * @class
-    
-     * @param person { String } 
-    
+
+     * @param person { String }
+
      */
     constructor(
-    
+
         person,
-    
+
     ) {
 
         this.person = person;
@@ -59,13 +59,13 @@ export default class PersonData  {
         }
 
         if (data.hasOwnProperty('person')) {
-            object.person = ApiClient.convertToType(data['person'], 'String');
+            object.person = ApiClient.convertToType(data.person, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

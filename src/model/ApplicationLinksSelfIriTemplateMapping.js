@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The ApplicationLinksSelfIriTemplateMapping model module.
@@ -26,10 +26,10 @@ export default class ApplicationLinksSelfIriTemplateMapping  {
      * Constructs a new "ApplicationLinksSelfIriTemplateMapping".
      * @alias module:model/ApplicationLinksSelfIriTemplateMapping
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.token = null;
@@ -55,13 +55,13 @@ export default class ApplicationLinksSelfIriTemplateMapping  {
         }
 
         if (data.hasOwnProperty('token')) {
-            object.token = ApiClient.convertToType(data['token'], 'String');
+            object.token = ApiClient.convertToType(data.token, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

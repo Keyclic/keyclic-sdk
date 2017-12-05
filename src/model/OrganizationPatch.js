@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The OrganizationPatch model module.
@@ -26,10 +26,10 @@ export default class OrganizationPatch  {
      * Constructs a new "OrganizationPatch".
      * @alias module:model/OrganizationPatch
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.name = null;
@@ -60,28 +60,28 @@ export default class OrganizationPatch  {
         }
 
         if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data['name'], 'String');
+            object.name = ApiClient.convertToType(data.name, 'String');
         }
         if (data.hasOwnProperty('alternateName')) {
-            object.alternateName = ApiClient.convertToType(data['alternateName'], 'String');
+            object.alternateName = ApiClient.convertToType(data.alternateName, 'String');
         }
         if (data.hasOwnProperty('description')) {
-            object.description = ApiClient.convertToType(data['description'], 'String');
+            object.description = ApiClient.convertToType(data.description, 'String');
         }
         if (data.hasOwnProperty('logo')) {
-            object.logo = ApiClient.convertToType(data['logo'], 'String');
+            object.logo = ApiClient.convertToType(data.logo, 'String');
         }
         if (data.hasOwnProperty('billingEmailAddress')) {
-            object.billingEmailAddress = ApiClient.convertToType(data['billingEmailAddress'], 'String');
+            object.billingEmailAddress = ApiClient.convertToType(data.billingEmailAddress, 'String');
         }
         if (data.hasOwnProperty('notificationEmailAddress')) {
-            object.notificationEmailAddress = ApiClient.convertToType(data['notificationEmailAddress'], 'String');
+            object.notificationEmailAddress = ApiClient.convertToType(data.notificationEmailAddress, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

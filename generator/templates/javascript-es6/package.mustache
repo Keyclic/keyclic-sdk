@@ -1,6 +1,6 @@
 {
     "name": "keyclic-sdk",
-    "version": "1.1.1",
+    "version": "1.15.3",
     "description": "{{&projectDescription}}",
     "license": "MIT",
     "main": "{{sourceFolder}}{{#invokerPackage}}/{{invokerPackage}}{{/invokerPackage}}/index.js",
@@ -12,14 +12,11 @@
         "isomorphic-fetch": "^2.2.1"
     },
     "devDependencies": {
-        "babel-core": "^6.24.1",
-        "babel-eslint": "^7.2.3",
-        "babel-preset-env": "^1.4.0",
+        "babel-core": "^6.26.0",
+        "babel-eslint": "^8.0.3",
+        "babel-preset-env": "^1.6.1",
         "babel-preset-stage-2": "^6.24.1",
-        "eslint": "^3.13",
-        "expect.js": "~0.3.1",
-        "mocha": "~2.3.4",
-        "sinon": "1.17.3"
+        "@keyclic/eslint-config-keyclic": "^1.0.0"
     },
     "babel": {
         "presets": [
@@ -29,83 +26,11 @@
     },
     "eslintConfig": {
         "extends": [
-            "eslint:recommended"
+            "@keyclic/eslint-config-keyclic"
         ],
-        "env": {
-            "es6": true,
-            "node": true,
-            "browser": true
-        },
         "parser": "babel-eslint",
         "parserOptions": {
             "sourceType": "module"
-        },
-        "rules": {
-            "comma-style": [
-                "error"
-            ],
-            "comma-dangle": [
-                "error",
-                "always-multiline"
-            ],
-            "comma-spacing": [
-                "error",
-                {
-                    "before": false,
-                    "after": true
-                }
-            ],
-            "indent": [
-                "error",
-                4,
-                {
-                    "SwitchCase": 1
-                }
-            ],
-            "newline-before-return": [
-                "error"
-            ],
-            "newline-per-chained-call": [
-                "error"
-            ],
-            "no-process-env": [
-                "off"
-            ],
-            "no-undefined": [
-                "error"
-            ],
-            "no-unused-vars": [
-                "warn"
-            ],
-            "quotes": [
-                "error",
-                "single",
-                {
-                    "avoidEscape": true,
-                    "allowTemplateLiterals": true
-                }
-            ],
-            "quote-props": [
-                "error",
-                "always"
-            ],
-            "valid-jsdoc": [
-                "off",
-                {
-                    "prefer": {
-                        "return": "returns"
-                    },
-                    "requireParamDescription": false,
-                    "requireReturnDescription": false
-                }
-            ],
-            "space-before-function-paren": [
-                "error",
-                {
-                    "anonymous": "always",
-                    "named": "never"
-                }
-            ]
         }
     }
 }

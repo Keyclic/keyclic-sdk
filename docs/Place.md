@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **branchCode** | **String** |  | [optional] 
 **name** | **String** |  | 
-**geo** | [**PlaceGeo**](PlaceGeo.md) |  | [optional] 
+**geo** | [**PlaceGeo**](PlaceGeo.md) |  | 
 **id** | **String** |  | 
 **createdAt** | **Date** |  | 
 **updatedAt** | **Date** |  | 

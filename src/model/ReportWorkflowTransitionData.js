@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The ReportWorkflowTransitionData model module.
@@ -26,14 +26,14 @@ export default class ReportWorkflowTransitionData  {
      * Constructs a new "ReportWorkflowTransitionData".
      * @alias module:model/ReportWorkflowTransitionData
      * @class
-    
-     * @param transition { module:model/ReportWorkflowTransitionData.TransitionEnum } 
-    
+
+     * @param transition { module:model/ReportWorkflowTransitionData.TransitionEnum }
+
      */
     constructor(
-    
+
         transition,
-    
+
     ) {
 
         this.transition = transition;
@@ -59,15 +59,15 @@ export default class ReportWorkflowTransitionData  {
         }
 
         if (data.hasOwnProperty('transition')) {
-            object.transition = ApiClient.convertToType(data['transition'], 'String');
+            object.transition = ApiClient.convertToType(data.transition, 'String');
         }
 
         return object;
     }
 
-    
 
-       /**
+
+    /**
     * Allowed values for the "transition" property.
     * @enum { String }
     */

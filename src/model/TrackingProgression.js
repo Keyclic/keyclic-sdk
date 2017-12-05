@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The TrackingProgression model module.
@@ -26,10 +26,10 @@ export default class TrackingProgression  {
      * Constructs a new "TrackingProgression".
      * @alias module:model/TrackingProgression
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.resolved = null;
@@ -56,16 +56,16 @@ export default class TrackingProgression  {
         }
 
         if (data.hasOwnProperty('resolved')) {
-            object.resolved = ApiClient.convertToType(data['resolved'], 'Number');
+            object.resolved = ApiClient.convertToType(data.resolved, 'Number');
         }
         if (data.hasOwnProperty('total')) {
-            object.total = ApiClient.convertToType(data['total'], 'Number');
+            object.total = ApiClient.convertToType(data.total, 'Number');
         }
 
         return object;
     }
 
-    
+
 
 }
 

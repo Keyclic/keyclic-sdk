@@ -120,6 +120,7 @@ import PersonLinksImage from './model/PersonLinksImage';
 import PersonLinksMemberOf from './model/PersonLinksMemberOf';
 import PersonLinksSelf from './model/PersonLinksSelf';
 import PersonPatch from './model/PersonPatch';
+import PersonPreferences from './model/PersonPreferences';
 import Place from './model/Place';
 import PlaceCollection from './model/PlaceCollection';
 import PlaceData from './model/PlaceData';
@@ -768,6 +769,11 @@ export {
      * @property { module:model/PersonPatch }
      */
     PersonPatch,
+    /**
+     * The PersonPreferences model constructor.
+     * @property { module:model/PersonPreferences }
+     */
+    PersonPreferences,
     /**
      * The Place model constructor.
      * @property { module:model/Place }

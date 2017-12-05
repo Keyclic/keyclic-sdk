@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The OrganizationData model module.
@@ -26,22 +26,22 @@ export default class OrganizationData  {
      * Constructs a new "OrganizationData".
      * @alias module:model/OrganizationData
      * @class
-    
-     * @param name { String } 
-    
-     * @param billingEmailAddress { String } 
-    
-     * @param notificationEmailAddress { String } 
-    
+
+     * @param name { String }
+
+     * @param billingEmailAddress { String }
+
+     * @param notificationEmailAddress { String }
+
      */
     constructor(
-    
+
         name,
-    
+
         billingEmailAddress,
-    
+
         notificationEmailAddress,
-    
+
     ) {
 
         this.name = name;
@@ -70,22 +70,22 @@ export default class OrganizationData  {
         }
 
         if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data['name'], 'String');
+            object.name = ApiClient.convertToType(data.name, 'String');
         }
         if (data.hasOwnProperty('logo')) {
-            object.logo = ApiClient.convertToType(data['logo'], 'Blob');
+            object.logo = ApiClient.convertToType(data.logo, 'Blob');
         }
         if (data.hasOwnProperty('billingEmailAddress')) {
-            object.billingEmailAddress = ApiClient.convertToType(data['billingEmailAddress'], 'String');
+            object.billingEmailAddress = ApiClient.convertToType(data.billingEmailAddress, 'String');
         }
         if (data.hasOwnProperty('notificationEmailAddress')) {
-            object.notificationEmailAddress = ApiClient.convertToType(data['notificationEmailAddress'], 'String');
+            object.notificationEmailAddress = ApiClient.convertToType(data.notificationEmailAddress, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

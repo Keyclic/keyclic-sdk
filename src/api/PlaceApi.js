@@ -39,25 +39,25 @@ export default class PlaceApi extends ApiClient {
 
     /**
      * Retrieve all Place resources.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { String } businessActivity The identifier of the resource formatted as GUID string. 
-     * @param { String } geoCoordinates  
-     * @param { Number } geoElevation  
-     * @param { String } geoHash  
-     * @param { String } organization The identifier of the resource formatted as GUID string. 
-     * @param { String } parent The identifier of the resource formatted as GUID string. 
-     * @param { String } parents The identifier of the resource formatted as GUID string. 
+     * @param { String } xKeyclicAppVersion
+     * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+     * @param { String } geoCoordinates
+     * @param { Number } geoElevation
+     * @param { String } geoHash
+     * @param { String } organization The identifier of the resource formatted as GUID string.
+     * @param { String } parent The identifier of the resource formatted as GUID string.
+     * @param { String } parents The identifier of the resource formatted as GUID string.
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after  
-     * @param { Date } before  
-     * @param { String } searchBranchCode  
-     * @param { String } searchName  
+     * @param { Date } after
+     * @param { Date } before
+     * @param { String } searchBranchCode
+     * @param { String } searchName
      */
     cgetPlaces(
         returnType = null,
@@ -88,96 +88,96 @@ export default class PlaceApi extends ApiClient {
             searchName,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetPlaces');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
             page = 1;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
             limit = 10;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
             order = "desc";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'businessActivity'
         if (typeof businessActivity === 'undefined') {
             businessActivity = null;
         }
-        
+
         // verify the null value of parameter 'geoCoordinates'
         if (typeof geoCoordinates === 'undefined') {
             geoCoordinates = null;
         }
-        
+
         // verify the null value of parameter 'geoElevation'
         if (typeof geoElevation === 'undefined') {
             geoElevation = null;
         }
-        
+
         // verify the null value of parameter 'geoHash'
         if (typeof geoHash === 'undefined') {
             geoHash = null;
         }
-        
+
         // verify the null value of parameter 'organization'
         if (typeof organization === 'undefined') {
             organization = null;
         }
-        
+
         // verify the null value of parameter 'parent'
         if (typeof parent === 'undefined') {
             parent = null;
         }
-        
+
         // verify the null value of parameter 'parents'
         if (typeof parents === 'undefined') {
             parents = null;
         }
-        
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
         }
-        
+
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
         }
-        
+
         // verify the null value of parameter 'searchBranchCode'
         if (typeof searchBranchCode === 'undefined') {
             searchBranchCode = null;
         }
-        
+
         // verify the null value of parameter 'searchName'
         if (typeof searchName === 'undefined') {
             searchName = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetPlaces');
@@ -242,25 +242,25 @@ export default class PlaceApi extends ApiClient {
 
     /**
      * Retrieve all Place resources.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { String } businessActivity The identifier of the resource formatted as GUID string. 
-     * @param { String } geoCoordinates  
-     * @param { Number } geoElevation  
-     * @param { String } geoHash  
-     * @param { String } parent The identifier of the resource formatted as GUID string. 
-     * @param { String } parents The identifier of the resource formatted as GUID string. 
+     * @param { String } xKeyclicAppVersion
+     * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+     * @param { String } geoCoordinates
+     * @param { Number } geoElevation
+     * @param { String } geoHash
+     * @param { String } parent The identifier of the resource formatted as GUID string.
+     * @param { String } parents The identifier of the resource formatted as GUID string.
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after  
-     * @param { Date } before  
-     * @param { String } searchBranchCode  
-     * @param { String } searchName  
+     * @param { Date } after
+     * @param { Date } before
+     * @param { String } searchBranchCode
+     * @param { String } searchName
      */
     cgetPlacesByOrganization(
         returnType = null,
@@ -291,96 +291,96 @@ export default class PlaceApi extends ApiClient {
             searchName,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetPlacesByOrganization');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling cgetPlacesByOrganization');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
             page = 1;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
             limit = 10;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
             order = "desc";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'businessActivity'
         if (typeof businessActivity === 'undefined') {
             businessActivity = null;
         }
-        
+
         // verify the null value of parameter 'geoCoordinates'
         if (typeof geoCoordinates === 'undefined') {
             geoCoordinates = null;
         }
-        
+
         // verify the null value of parameter 'geoElevation'
         if (typeof geoElevation === 'undefined') {
             geoElevation = null;
         }
-        
+
         // verify the null value of parameter 'geoHash'
         if (typeof geoHash === 'undefined') {
             geoHash = null;
         }
-        
+
         // verify the null value of parameter 'parent'
         if (typeof parent === 'undefined') {
             parent = null;
         }
-        
+
         // verify the null value of parameter 'parents'
         if (typeof parents === 'undefined') {
             parents = null;
         }
-        
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
         }
-        
+
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
         }
-        
+
         // verify the null value of parameter 'searchBranchCode'
         if (typeof searchBranchCode === 'undefined') {
             searchBranchCode = null;
         }
-        
+
         // verify the null value of parameter 'searchName'
         if (typeof searchName === 'undefined') {
             searchName = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetPlacesByOrganization');
@@ -445,12 +445,12 @@ export default class PlaceApi extends ApiClient {
 
     /**
      * Retrieve one Place resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } place The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Place }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     getPlace(
         returnType = null,
@@ -468,31 +468,31 @@ export default class PlaceApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getPlace');
         }
-        
+
         // verify the required parameter 'place' is set
         if (typeof place === 'undefined' || place === null) {
             throw new window.Error('Missing the required parameter "place" when calling getPlace');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getPlace');
@@ -544,13 +544,13 @@ export default class PlaceApi extends ApiClient {
 
     /**
      * Edit one Place resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } place The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Place }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/PlacePatch } placePatch  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/PlacePatch } placePatch
      */
     patchPlace(
         returnType = null,
@@ -569,36 +569,36 @@ export default class PlaceApi extends ApiClient {
             placePatch,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchPlace');
         }
-        
+
         // verify the required parameter 'place' is set
         if (typeof place === 'undefined' || place === null) {
             throw new window.Error('Missing the required parameter "place" when calling patchPlace');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'placePatch'
         if (typeof placePatch === 'undefined') {
             placePatch = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchPlace');
@@ -650,13 +650,13 @@ export default class PlaceApi extends ApiClient {
 
     /**
      * Create one Place resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Place }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/PlaceData } placeData  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/PlaceData } placeData
      */
     postPlaceByOrganization(
         returnType = null,
@@ -675,36 +675,36 @@ export default class PlaceApi extends ApiClient {
             placeData,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postPlaceByOrganization');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling postPlaceByOrganization');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'placeData'
         if (typeof placeData === 'undefined') {
             placeData = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postPlaceByOrganization');

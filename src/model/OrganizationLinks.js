@@ -16,7 +16,7 @@ import OrganizationLinksLogo from './OrganizationLinksLogo';
 import OrganizationLinksSelf from './OrganizationLinksSelf';
 
 
-    
+
 
 /**
  * The OrganizationLinks model module.
@@ -28,10 +28,10 @@ export default class OrganizationLinks  {
      * Constructs a new "OrganizationLinks".
      * @alias module:model/OrganizationLinks
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.self = null;
@@ -60,16 +60,16 @@ export default class OrganizationLinks  {
         }
 
         if (data.hasOwnProperty('self')) {
-            object.self = ApiClient.convertToType(data['self'], object.selfType);
+            object.self = ApiClient.convertToType(data.self, object.selfType);
         }
         if (data.hasOwnProperty('logo')) {
-            object.logo = ApiClient.convertToType(data['logo'], object.logoType);
+            object.logo = ApiClient.convertToType(data.logo, object.logoType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

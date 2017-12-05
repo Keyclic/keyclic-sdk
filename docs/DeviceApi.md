@@ -52,7 +52,7 @@ apiInstance.deleteDeviceByPersonAndDevice(xKeyclicApp, person, device, opts, (er
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | **String**| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **device** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
@@ -113,7 +113,7 @@ apiInstance.postDeviceByPerson(xKeyclicApp, person, opts, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | **String**| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **deviceData** | [**DeviceData**](DeviceData.md)|  | [optional] 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import Organization from './Organization';
 
 
-    
+
 
 /**
  * The OrganizationCollection model module.
@@ -27,10 +27,10 @@ export default class OrganizationCollection  {
      * Constructs a new "OrganizationCollection".
      * @alias module:model/OrganizationCollection
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.items = [];
@@ -57,13 +57,13 @@ export default class OrganizationCollection  {
         }
 
         if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
+            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

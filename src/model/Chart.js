@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The Chart model module.
@@ -26,18 +26,18 @@ export default class Chart  {
      * Constructs a new "Chart".
      * @alias module:model/Chart
      * @class
-    
-     * @param labels { Array.<String> } 
-    
-     * @param data { Array.<String> } 
-    
+
+     * @param labels { Array.<String> }
+
+     * @param data { Array.<String> }
+
      */
     constructor(
-    
+
         labels,
-    
+
         data,
-    
+
     ) {
 
         this.labels = labels;
@@ -64,16 +64,16 @@ export default class Chart  {
         }
 
         if (data.hasOwnProperty('labels')) {
-            object.labels = ApiClient.convertToType(data['labels'], '[\'String\']');
+            object.labels = ApiClient.convertToType(data.labels, '[\'String\']');
         }
         if (data.hasOwnProperty('data')) {
-            object.data = ApiClient.convertToType(data['data'], '[\'String\']');
+            object.data = ApiClient.convertToType(data.data, '[\'String\']');
         }
 
         return object;
     }
 
-    
+
 
 }
 

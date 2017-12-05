@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import Member from './Member';
 
 
-    
+
 
 /**
  * The MemberCollection model module.
@@ -27,10 +27,10 @@ export default class MemberCollection  {
      * Constructs a new "MemberCollection".
      * @alias module:model/MemberCollection
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.items = [];
@@ -57,13 +57,13 @@ export default class MemberCollection  {
         }
 
         if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
+            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

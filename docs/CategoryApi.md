@@ -65,8 +65,8 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **businessActivity** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
- **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **geoCoordinates** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
@@ -144,10 +144,10 @@ apiInstance.cgetCategoriesByOrganization(xKeyclicApp, organization, opts, (error
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **businessActivity** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **geoCoordinates** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
@@ -214,7 +214,7 @@ apiInstance.getCategory(xKeyclicApp, category, opts, (error, data, response) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **category** | **String**| The identifier of the resource formatted as GUID string. | 
+ **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -274,7 +274,7 @@ apiInstance.patchCategory(xKeyclicApp, category, opts, (error, data, response) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **category** | **String**| The identifier of the resource formatted as GUID string. | 
+ **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **categoryPatch** | [**CategoryPatch**](CategoryPatch.md)|  | [optional] 
@@ -335,7 +335,7 @@ apiInstance.postCategoryByOrganization(xKeyclicApp, organization, opts, (error, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **categoryData** | [**CategoryData**](CategoryData.md)|  | [optional] 

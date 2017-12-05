@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import Category from './Category';
 
 
-    
+
 
 /**
  * The CategoryCollection model module.
@@ -27,10 +27,10 @@ export default class CategoryCollection  {
      * Constructs a new "CategoryCollection".
      * @alias module:model/CategoryCollection
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.items = [];
@@ -57,13 +57,13 @@ export default class CategoryCollection  {
         }
 
         if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
+            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

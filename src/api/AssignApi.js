@@ -37,13 +37,13 @@ export default class AssignApi extends ApiClient {
 
     /**
      * Create one Assign resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } operation The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/MemberData } memberData  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/MemberData } memberData
      */
     postAssignByOperation(
         returnType = null,
@@ -62,36 +62,36 @@ export default class AssignApi extends ApiClient {
             memberData,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postAssignByOperation');
         }
-        
+
         // verify the required parameter 'operation' is set
         if (typeof operation === 'undefined' || operation === null) {
             throw new window.Error('Missing the required parameter "operation" when calling postAssignByOperation');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'memberData'
         if (typeof memberData === 'undefined') {
             memberData = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postAssignByOperation');

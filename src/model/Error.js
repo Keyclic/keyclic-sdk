@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import ErrorEmbedded from './ErrorEmbedded';
 
 
-    
+
 
 /**
  * The Error model module.
@@ -27,10 +27,10 @@ export default class Error  {
      * Constructs a new "Error".
      * @alias module:model/Error
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.message = null;
@@ -59,19 +59,19 @@ export default class Error  {
         }
 
         if (data.hasOwnProperty('message')) {
-            object.message = ApiClient.convertToType(data['message'], 'String');
+            object.message = ApiClient.convertToType(data.message, 'String');
         }
         if (data.hasOwnProperty('total')) {
-            object.total = ApiClient.convertToType(data['total'], 'Number');
+            object.total = ApiClient.convertToType(data.total, 'Number');
         }
         if (data.hasOwnProperty('_embedded')) {
-            object.embedded = ApiClient.convertToType(data['_embedded'], object.embeddedType);
+            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

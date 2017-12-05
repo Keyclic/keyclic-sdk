@@ -36,12 +36,12 @@ export default class ChangeApi extends ApiClient {
 
     /**
      * Create one Change resource.
-     * @param { String } xKeyclicApp 
-     * @param { String } token 
+     * @param { String } xKeyclicApp
+     * @param { String } token
      * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/PasswordData } passwordData  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/PasswordData } passwordData
      */
     postChangeByToken(
         returnType = null,
@@ -56,36 +56,36 @@ export default class ChangeApi extends ApiClient {
             passwordData,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postChangeByToken');
         }
-        
+
         // verify the required parameter 'token' is set
         if (typeof token === 'undefined' || token === null) {
             throw new window.Error('Missing the required parameter "token" when calling postChangeByToken');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'passwordData'
         if (typeof passwordData === 'undefined') {
             passwordData = null;
         }
-        
+
 
 
         let pathParams = {

@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The OperationData model module.
@@ -26,14 +26,14 @@ export default class OperationData  {
      * Constructs a new "OperationData".
      * @alias module:model/OperationData
      * @class
-    
-     * @param report { String } 
-    
+
+     * @param report { String }
+
      */
     constructor(
-    
+
         report,
-    
+
     ) {
 
         this.description = null;
@@ -64,28 +64,28 @@ export default class OperationData  {
         }
 
         if (data.hasOwnProperty('description')) {
-            object.description = ApiClient.convertToType(data['description'], 'String');
+            object.description = ApiClient.convertToType(data.description, 'String');
         }
         if (data.hasOwnProperty('duration')) {
-            object.duration = ApiClient.convertToType(data['duration'], 'Number');
+            object.duration = ApiClient.convertToType(data.duration, 'Number');
         }
         if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data['name'], 'String');
+            object.name = ApiClient.convertToType(data.name, 'String');
         }
         if (data.hasOwnProperty('identificationNumber')) {
-            object.identificationNumber = ApiClient.convertToType(data['identificationNumber'], 'String');
+            object.identificationNumber = ApiClient.convertToType(data.identificationNumber, 'String');
         }
         if (data.hasOwnProperty('report')) {
-            object.report = ApiClient.convertToType(data['report'], 'String');
+            object.report = ApiClient.convertToType(data.report, 'String');
         }
         if (data.hasOwnProperty('startDate')) {
-            object.startDate = ApiClient.convertToType(data['startDate'], 'String');
+            object.startDate = ApiClient.convertToType(data.startDate, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -13,9 +13,10 @@
 
 import ApiClient from '../ApiClient';
 import PersonLinks from './PersonLinks';
+import PersonPreferences from './PersonPreferences';
 
 
-    
+
 
 /**
  * The Person model module.
@@ -27,26 +28,30 @@ export default class Person  {
      * Constructs a new "Person".
      * @alias module:model/Person
      * @class
-    
-     * @param id { String } 
-    
-     * @param optIn { Boolean } 
-    
-     * @param createdAt { Date } 
-    
-     * @param updatedAt { Date } 
-    
+
+     * @param id { String }
+
+     * @param optIn { Boolean }
+
+     * @param preferences { module:model/PersonPreferences }
+
+     * @param createdAt { Date }
+
+     * @param updatedAt { Date }
+
      */
     constructor(
-    
+
         id,
-    
+
         optIn,
-    
+
+        preferences,
+
         createdAt,
-    
+
         updatedAt,
-    
+
     ) {
 
         this.id = id;
@@ -54,6 +59,7 @@ export default class Person  {
         this.givenName = null;
         this.jobTitle = null;
         this.optIn = optIn;
+        this.preferences = preferences;
         this.username = null;
         this.email = null;
         this.createdAt = createdAt;
@@ -61,6 +67,7 @@ export default class Person  {
         this.type = null;
         this.links = null;
 
+        this.preferencesType = PersonPreferences;
         this.linksType = PersonLinks;
     }
 
@@ -83,43 +90,46 @@ export default class Person  {
         }
 
         if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data['id'], 'String');
+            object.id = ApiClient.convertToType(data.id, 'String');
         }
         if (data.hasOwnProperty('familyName')) {
-            object.familyName = ApiClient.convertToType(data['familyName'], 'String');
+            object.familyName = ApiClient.convertToType(data.familyName, 'String');
         }
         if (data.hasOwnProperty('givenName')) {
-            object.givenName = ApiClient.convertToType(data['givenName'], 'String');
+            object.givenName = ApiClient.convertToType(data.givenName, 'String');
         }
         if (data.hasOwnProperty('jobTitle')) {
-            object.jobTitle = ApiClient.convertToType(data['jobTitle'], 'String');
+            object.jobTitle = ApiClient.convertToType(data.jobTitle, 'String');
         }
         if (data.hasOwnProperty('optIn')) {
-            object.optIn = ApiClient.convertToType(data['optIn'], 'Boolean');
+            object.optIn = ApiClient.convertToType(data.optIn, 'Boolean');
+        }
+        if (data.hasOwnProperty('preferences')) {
+            object.preferences = ApiClient.convertToType(data.preferences, object.preferencesType);
         }
         if (data.hasOwnProperty('username')) {
-            object.username = ApiClient.convertToType(data['username'], 'String');
+            object.username = ApiClient.convertToType(data.username, 'String');
         }
         if (data.hasOwnProperty('email')) {
-            object.email = ApiClient.convertToType(data['email'], 'String');
+            object.email = ApiClient.convertToType(data.email, 'String');
         }
         if (data.hasOwnProperty('createdAt')) {
-            object.createdAt = ApiClient.convertToType(data['createdAt'], 'Date');
+            object.createdAt = ApiClient.convertToType(data.createdAt, 'Date');
         }
         if (data.hasOwnProperty('updatedAt')) {
-            object.updatedAt = ApiClient.convertToType(data['updatedAt'], 'Date');
+            object.updatedAt = ApiClient.convertToType(data.updatedAt, 'Date');
         }
         if (data.hasOwnProperty('type')) {
-            object.type = ApiClient.convertToType(data['type'], 'String');
+            object.type = ApiClient.convertToType(data.type, 'String');
         }
         if (data.hasOwnProperty('_links')) {
-            object.links = ApiClient.convertToType(data['_links'], object.linksType);
+            object.links = ApiClient.convertToType(data._links, object.linksType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

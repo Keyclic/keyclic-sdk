@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The CategoryPatch model module.
@@ -26,10 +26,10 @@ export default class CategoryPatch  {
      * Constructs a new "CategoryPatch".
      * @alias module:model/CategoryPatch
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.name = null;
@@ -58,22 +58,22 @@ export default class CategoryPatch  {
         }
 
         if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data['name'], 'String');
+            object.name = ApiClient.convertToType(data.name, 'String');
         }
         if (data.hasOwnProperty('color')) {
-            object.color = ApiClient.convertToType(data['color'], 'String');
+            object.color = ApiClient.convertToType(data.color, 'String');
         }
         if (data.hasOwnProperty('icon')) {
-            object.icon = ApiClient.convertToType(data['icon'], 'String');
+            object.icon = ApiClient.convertToType(data.icon, 'String');
         }
         if (data.hasOwnProperty('identificationNumber')) {
-            object.identificationNumber = ApiClient.convertToType(data['identificationNumber'], 'String');
+            object.identificationNumber = ApiClient.convertToType(data.identificationNumber, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

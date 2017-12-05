@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import CheckpointLinks from './CheckpointLinks';
 
 
-    
+
 
 /**
  * The Checkpoint model module.
@@ -27,10 +27,10 @@ export default class Checkpoint  {
      * Constructs a new "Checkpoint".
      * @alias module:model/Checkpoint
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.createdAt = null;
@@ -59,19 +59,19 @@ export default class Checkpoint  {
         }
 
         if (data.hasOwnProperty('createdAt')) {
-            object.createdAt = ApiClient.convertToType(data['createdAt'], 'Date');
+            object.createdAt = ApiClient.convertToType(data.createdAt, 'Date');
         }
         if (data.hasOwnProperty('state')) {
-            object.state = ApiClient.convertToType(data['state'], '[\'String\']');
+            object.state = ApiClient.convertToType(data.state, '[\'String\']');
         }
         if (data.hasOwnProperty('_links')) {
-            object.links = ApiClient.convertToType(data['_links'], object.linksType);
+            object.links = ApiClient.convertToType(data._links, object.linksType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

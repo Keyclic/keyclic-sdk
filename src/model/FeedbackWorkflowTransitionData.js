@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The FeedbackWorkflowTransitionData model module.
@@ -26,14 +26,14 @@ export default class FeedbackWorkflowTransitionData  {
      * Constructs a new "FeedbackWorkflowTransitionData".
      * @alias module:model/FeedbackWorkflowTransitionData
      * @class
-    
-     * @param transition { module:model/FeedbackWorkflowTransitionData.TransitionEnum } 
-    
+
+     * @param transition { module:model/FeedbackWorkflowTransitionData.TransitionEnum }
+
      */
     constructor(
-    
+
         transition,
-    
+
     ) {
 
         this.transition = transition;
@@ -59,15 +59,15 @@ export default class FeedbackWorkflowTransitionData  {
         }
 
         if (data.hasOwnProperty('transition')) {
-            object.transition = ApiClient.convertToType(data['transition'], 'String');
+            object.transition = ApiClient.convertToType(data.transition, 'String');
         }
 
         return object;
     }
 
-    
 
-       /**
+
+    /**
     * Allowed values for the "transition" property.
     * @enum { String }
     */

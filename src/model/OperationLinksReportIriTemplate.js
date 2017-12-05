@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import OperationLinksReportIriTemplateMapping from './OperationLinksReportIriTemplateMapping';
 
 
-    
+
 
 /**
  * The OperationLinksReportIriTemplate model module.
@@ -27,10 +27,10 @@ export default class OperationLinksReportIriTemplate  {
      * Constructs a new "OperationLinksReportIriTemplate".
      * @alias module:model/OperationLinksReportIriTemplate
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.mapping = null;
@@ -57,13 +57,13 @@ export default class OperationLinksReportIriTemplate  {
         }
 
         if (data.hasOwnProperty('mapping')) {
-            object.mapping = ApiClient.convertToType(data['mapping'], object.mappingType);
+            object.mapping = ApiClient.convertToType(data.mapping, object.mappingType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

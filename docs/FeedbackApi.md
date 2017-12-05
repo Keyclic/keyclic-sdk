@@ -64,9 +64,9 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **state** | **String**|  | [optional] [default to DELIVERED]
- **category** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **geoHash** | **String**|  | [optional] 
- **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **visibility** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
@@ -143,12 +143,12 @@ apiInstance.cgetFeedbacksByPerson(xKeyclicApp, person, opts, (error, data, respo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | **String**| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **category** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **geoHash** | **String**|  | [optional] 
- **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **state** | **String**|  | [optional] 
  **visibility** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
@@ -214,7 +214,7 @@ apiInstance.getFeedback(xKeyclicApp, feedback, opts, (error, data, response) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

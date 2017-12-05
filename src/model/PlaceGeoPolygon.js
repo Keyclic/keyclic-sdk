@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The PlaceGeoPolygon model module.
@@ -26,14 +26,14 @@ export default class PlaceGeoPolygon  {
      * Constructs a new "PlaceGeoPolygon".
      * @alias module:model/PlaceGeoPolygon
      * @class
-    
-     * @param type { String } 
-    
+
+     * @param type { String }
+
      */
     constructor(
-    
+
         type,
-    
+
     ) {
 
         this.type = type;
@@ -60,16 +60,16 @@ export default class PlaceGeoPolygon  {
         }
 
         if (data.hasOwnProperty('type')) {
-            object.type = ApiClient.convertToType(data['type'], 'String');
+            object.type = ApiClient.convertToType(data.type, 'String');
         }
         if (data.hasOwnProperty('features')) {
-            object.features = ApiClient.convertToType(data['features'], '[\'String\']');
+            object.features = ApiClient.convertToType(data.features, '[\'String\']');
         }
 
         return object;
     }
 
-    
+
 
 }
 

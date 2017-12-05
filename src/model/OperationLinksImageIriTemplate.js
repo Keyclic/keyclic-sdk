@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import OperationLinksImageIriTemplateMapping from './OperationLinksImageIriTemplateMapping';
 
 
-    
+
 
 /**
  * The OperationLinksImageIriTemplate model module.
@@ -27,10 +27,10 @@ export default class OperationLinksImageIriTemplate  {
      * Constructs a new "OperationLinksImageIriTemplate".
      * @alias module:model/OperationLinksImageIriTemplate
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.mapping = null;
@@ -57,13 +57,13 @@ export default class OperationLinksImageIriTemplate  {
         }
 
         if (data.hasOwnProperty('mapping')) {
-            object.mapping = ApiClient.convertToType(data['mapping'], object.mappingType);
+            object.mapping = ApiClient.convertToType(data.mapping, object.mappingType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **geoCoordinates** | **String**|  | [optional] 
- **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **order** | **String**|  | [optional] [default to desc]

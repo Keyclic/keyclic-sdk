@@ -9,5 +9,7 @@ Name | Type | Description | Notes
 **jobTitle** | **String** |  | [optional] 
 **image** | **String** |  | [optional] 
 **optIn** | **Boolean** |  | [optional] 
+**preferencesMessageEmailEnabled** | **String** |  | [optional] 
+**preferencesMessagePushEnabled** | **String** |  | [optional] 
 
 

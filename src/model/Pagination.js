@@ -16,7 +16,7 @@ import Collection from './Collection';
 import PaginationLinks from './PaginationLinks';
 
 
-    
+
 
 /**
  * The Pagination model module.
@@ -28,10 +28,10 @@ export default class Pagination  {
      * Constructs a new "Pagination".
      * @alias module:model/Pagination
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.limit = null;
@@ -64,28 +64,28 @@ export default class Pagination  {
         }
 
         if (data.hasOwnProperty('limit')) {
-            object.limit = ApiClient.convertToType(data['limit'], 'Number');
+            object.limit = ApiClient.convertToType(data.limit, 'Number');
         }
         if (data.hasOwnProperty('page')) {
-            object.page = ApiClient.convertToType(data['page'], 'Number');
+            object.page = ApiClient.convertToType(data.page, 'Number');
         }
         if (data.hasOwnProperty('pages')) {
-            object.pages = ApiClient.convertToType(data['pages'], 'Number');
+            object.pages = ApiClient.convertToType(data.pages, 'Number');
         }
         if (data.hasOwnProperty('total')) {
-            object.total = ApiClient.convertToType(data['total'], 'Number');
+            object.total = ApiClient.convertToType(data.total, 'Number');
         }
         if (data.hasOwnProperty('_embedded')) {
-            object.embedded = ApiClient.convertToType(data['_embedded'], object.embeddedType);
+            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
         }
         if (data.hasOwnProperty('_links')) {
-            object.links = ApiClient.convertToType(data['_links'], object.linksType);
+            object.links = ApiClient.convertToType(data._links, object.linksType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

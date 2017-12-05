@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import Activity from './Activity';
 
 
-    
+
 
 /**
  * The Result model module.
@@ -27,10 +27,10 @@ export default class Result  {
      * Constructs a new "Result".
      * @alias module:model/Result
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.activities = [];
@@ -64,34 +64,34 @@ export default class Result  {
         }
 
         if (data.hasOwnProperty('activities')) {
-            object.activities = ApiClient.convertToType(data['activities'], [object.activitiesType]);
+            object.activities = ApiClient.convertToType(data.activities, [object.activitiesType]);
         }
         if (data.hasOwnProperty('activity_count')) {
-            object.activityCount = ApiClient.convertToType(data['activity_count'], 'Number');
+            object.activityCount = ApiClient.convertToType(data.activity_count, 'Number');
         }
         if (data.hasOwnProperty('actor_count')) {
-            object.actorCount = ApiClient.convertToType(data['actor_count'], 'Number');
+            object.actorCount = ApiClient.convertToType(data.actor_count, 'Number');
         }
         if (data.hasOwnProperty('created_at')) {
-            object.createdAt = ApiClient.convertToType(data['created_at'], 'Date');
+            object.createdAt = ApiClient.convertToType(data.created_at, 'Date');
         }
         if (data.hasOwnProperty('group')) {
-            object.group = ApiClient.convertToType(data['group'], 'String');
+            object.group = ApiClient.convertToType(data.group, 'String');
         }
         if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data['id'], 'String');
+            object.id = ApiClient.convertToType(data.id, 'String');
         }
         if (data.hasOwnProperty('updated_at')) {
-            object.updatedAt = ApiClient.convertToType(data['updated_at'], 'Date');
+            object.updatedAt = ApiClient.convertToType(data.updated_at, 'Date');
         }
         if (data.hasOwnProperty('verb')) {
-            object.verb = ApiClient.convertToType(data['verb'], 'String');
+            object.verb = ApiClient.convertToType(data.verb, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

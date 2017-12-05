@@ -39,22 +39,22 @@ export default class MemberApi extends ApiClient {
 
     /**
      * Retrieve all Member resources.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { MemberPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after  
-     * @param { Date } before  
-     * @param { String } searchFamilyName  
-     * @param { String } searchGivenName  
-     * @param { String } searchJobTitle  
-     * @param { String } searchUsername  
-     * @param { String } searchEmail  
+     * @param { Date } after
+     * @param { Date } before
+     * @param { String } searchFamilyName
+     * @param { String } searchGivenName
+     * @param { String } searchJobTitle
+     * @param { String } searchUsername
+     * @param { String } searchEmail
      */
     cgetMembersByOrganization(
         returnType = null,
@@ -82,81 +82,81 @@ export default class MemberApi extends ApiClient {
             searchEmail,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetMembersByOrganization');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling cgetMembersByOrganization');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
             page = 1;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
             limit = 10;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
             order = "desc";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
         }
-        
+
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
         }
-        
+
         // verify the null value of parameter 'searchFamilyName'
         if (typeof searchFamilyName === 'undefined') {
             searchFamilyName = null;
         }
-        
+
         // verify the null value of parameter 'searchGivenName'
         if (typeof searchGivenName === 'undefined') {
             searchGivenName = null;
         }
-        
+
         // verify the null value of parameter 'searchJobTitle'
         if (typeof searchJobTitle === 'undefined') {
             searchJobTitle = null;
         }
-        
+
         // verify the null value of parameter 'searchUsername'
         if (typeof searchUsername === 'undefined') {
             searchUsername = null;
         }
-        
+
         // verify the null value of parameter 'searchEmail'
         if (typeof searchEmail === 'undefined') {
             searchEmail = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetMembersByOrganization');
@@ -218,13 +218,13 @@ export default class MemberApi extends ApiClient {
 
     /**
      * Remove one Member resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { String } member The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     deleteMemberByOrganizationAndMember(
         returnType = null,
@@ -240,36 +240,36 @@ export default class MemberApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling deleteMemberByOrganizationAndMember');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling deleteMemberByOrganizationAndMember');
         }
-        
+
         // verify the required parameter 'member' is set
         if (typeof member === 'undefined' || member === null) {
             throw new window.Error('Missing the required parameter "member" when calling deleteMemberByOrganizationAndMember');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling deleteMemberByOrganizationAndMember');
@@ -322,13 +322,13 @@ export default class MemberApi extends ApiClient {
 
     /**
      * Retrieve one Member resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { String } member The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Member }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     getMemberByOrganizationAndMember(
         returnType = null,
@@ -347,36 +347,36 @@ export default class MemberApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getMemberByOrganizationAndMember');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling getMemberByOrganizationAndMember');
         }
-        
+
         // verify the required parameter 'member' is set
         if (typeof member === 'undefined' || member === null) {
             throw new window.Error('Missing the required parameter "member" when calling getMemberByOrganizationAndMember');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getMemberByOrganizationAndMember');
@@ -429,14 +429,14 @@ export default class MemberApi extends ApiClient {
 
     /**
      * Edit one Member resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { String } member The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Member }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/MemberPatch } memberPatch  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/MemberPatch } memberPatch
      */
     patchMemberByOrganizationAndMember(
         returnType = null,
@@ -456,41 +456,41 @@ export default class MemberApi extends ApiClient {
             memberPatch,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchMemberByOrganizationAndMember');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling patchMemberByOrganizationAndMember');
         }
-        
+
         // verify the required parameter 'member' is set
         if (typeof member === 'undefined' || member === null) {
             throw new window.Error('Missing the required parameter "member" when calling patchMemberByOrganizationAndMember');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'memberPatch'
         if (typeof memberPatch === 'undefined') {
             memberPatch = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchMemberByOrganizationAndMember');
@@ -543,13 +543,13 @@ export default class MemberApi extends ApiClient {
 
     /**
      * Create one Member resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Member }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/PersonData } personData  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/PersonData } personData
      */
     postMemberByOrganization(
         returnType = null,
@@ -568,36 +568,36 @@ export default class MemberApi extends ApiClient {
             personData,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postMemberByOrganization');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling postMemberByOrganization');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'personData'
         if (typeof personData === 'undefined') {
             personData = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postMemberByOrganization');

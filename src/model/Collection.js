@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The Collection model module.
@@ -26,10 +26,10 @@ export default class Collection  {
      * Constructs a new "Collection".
      * @alias module:model/Collection
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.items = [];
@@ -55,13 +55,13 @@ export default class Collection  {
         }
 
         if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data['items'], '[\'Object\']');
+            object.items = ApiClient.convertToType(data.items, '[\'Object\']');
         }
 
         return object;
     }
 
-    
+
 
 }
 

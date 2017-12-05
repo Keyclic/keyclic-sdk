@@ -16,7 +16,7 @@ import SuccessLoginCredentialsAdministratorOf from './SuccessLoginCredentialsAdm
 import SuccessLoginCredentialsMemberOf from './SuccessLoginCredentialsMemberOf';
 
 
-    
+
 
 /**
  * The SuccessLoginCredentials model module.
@@ -28,10 +28,10 @@ export default class SuccessLoginCredentials  {
      * Constructs a new "SuccessLoginCredentials".
      * @alias module:model/SuccessLoginCredentials
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.id = null;
@@ -63,25 +63,25 @@ export default class SuccessLoginCredentials  {
         }
 
         if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data['id'], 'String');
+            object.id = ApiClient.convertToType(data.id, 'String');
         }
         if (data.hasOwnProperty('login')) {
-            object.login = ApiClient.convertToType(data['login'], 'String');
+            object.login = ApiClient.convertToType(data.login, 'String');
         }
         if (data.hasOwnProperty('roles')) {
-            object.roles = ApiClient.convertToType(data['roles'], '[\'String\']');
+            object.roles = ApiClient.convertToType(data.roles, '[\'String\']');
         }
         if (data.hasOwnProperty('administratorOf')) {
-            object.administratorOf = ApiClient.convertToType(data['administratorOf'], [object.administratorOfType]);
+            object.administratorOf = ApiClient.convertToType(data.administratorOf, [object.administratorOfType]);
         }
         if (data.hasOwnProperty('memberOf')) {
-            object.memberOf = ApiClient.convertToType(data['memberOf'], [object.memberOfType]);
+            object.memberOf = ApiClient.convertToType(data.memberOf, [object.memberOfType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

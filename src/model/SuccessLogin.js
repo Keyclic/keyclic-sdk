@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import SuccessLoginCredentials from './SuccessLoginCredentials';
 
 
-    
+
 
 /**
  * The SuccessLogin model module.
@@ -27,10 +27,10 @@ export default class SuccessLogin  {
      * Constructs a new "SuccessLogin".
      * @alias module:model/SuccessLogin
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.accessToken = null;
@@ -59,19 +59,19 @@ export default class SuccessLogin  {
         }
 
         if (data.hasOwnProperty('accessToken')) {
-            object.accessToken = ApiClient.convertToType(data['accessToken'], 'String');
+            object.accessToken = ApiClient.convertToType(data.accessToken, 'String');
         }
         if (data.hasOwnProperty('credentials')) {
-            object.credentials = ApiClient.convertToType(data['credentials'], object.credentialsType);
+            object.credentials = ApiClient.convertToType(data.credentials, object.credentialsType);
         }
         if (data.hasOwnProperty('tokenType')) {
-            object.tokenType = ApiClient.convertToType(data['tokenType'], 'String');
+            object.tokenType = ApiClient.convertToType(data.tokenType, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

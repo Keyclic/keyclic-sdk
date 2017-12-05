@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import FeedbackGeoCoordinatesPoint from './FeedbackGeoCoordinatesPoint';
 
 
-    
+
 
 /**
  * The FeedbackGeoCoordinates model module.
@@ -27,14 +27,18 @@ export default class FeedbackGeoCoordinates  {
      * Constructs a new "FeedbackGeoCoordinates".
      * @alias module:model/FeedbackGeoCoordinates
      * @class
-    
+
+     * @param point { module:model/FeedbackGeoCoordinatesPoint }
+
      */
     constructor(
-    
+
+        point,
+
     ) {
 
         this.elevation = null;
-        this.point = null;
+        this.point = point;
 
         this.pointType = FeedbackGeoCoordinatesPoint;
     }
@@ -58,16 +62,16 @@ export default class FeedbackGeoCoordinates  {
         }
 
         if (data.hasOwnProperty('elevation')) {
-            object.elevation = ApiClient.convertToType(data['elevation'], 'Number');
+            object.elevation = ApiClient.convertToType(data.elevation, 'Number');
         }
         if (data.hasOwnProperty('point')) {
-            object.point = ApiClient.convertToType(data['point'], object.pointType);
+            object.point = ApiClient.convertToType(data.point, object.pointType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

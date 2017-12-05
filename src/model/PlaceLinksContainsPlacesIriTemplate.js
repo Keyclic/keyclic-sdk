@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import PlaceLinksContainsPlacesIriTemplateMapping from './PlaceLinksContainsPlacesIriTemplateMapping';
 
 
-    
+
 
 /**
  * The PlaceLinksContainsPlacesIriTemplate model module.
@@ -27,10 +27,10 @@ export default class PlaceLinksContainsPlacesIriTemplate  {
      * Constructs a new "PlaceLinksContainsPlacesIriTemplate".
      * @alias module:model/PlaceLinksContainsPlacesIriTemplate
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.mapping = null;
@@ -57,13 +57,13 @@ export default class PlaceLinksContainsPlacesIriTemplate  {
         }
 
         if (data.hasOwnProperty('mapping')) {
-            object.mapping = ApiClient.convertToType(data['mapping'], object.mappingType);
+            object.mapping = ApiClient.convertToType(data.mapping, object.mappingType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The DelegateData model module.
@@ -26,18 +26,18 @@ export default class DelegateData  {
      * Constructs a new "DelegateData".
      * @alias module:model/DelegateData
      * @class
-    
-     * @param report { String } 
-    
-     * @param organization { String } 
-    
+
+     * @param report { String }
+
+     * @param organization { String }
+
      */
     constructor(
-    
+
         report,
-    
+
         organization,
-    
+
     ) {
 
         this.report = report;
@@ -64,16 +64,16 @@ export default class DelegateData  {
         }
 
         if (data.hasOwnProperty('report')) {
-            object.report = ApiClient.convertToType(data['report'], 'String');
+            object.report = ApiClient.convertToType(data.report, 'String');
         }
         if (data.hasOwnProperty('organization')) {
-            object.organization = ApiClient.convertToType(data['organization'], 'String');
+            object.organization = ApiClient.convertToType(data.organization, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import PlaceGeoPolygon from './PlaceGeoPolygon';
 
 
-    
+
 
 /**
  * The PlaceGeo model module.
@@ -27,17 +27,21 @@ export default class PlaceGeo  {
      * Constructs a new "PlaceGeo".
      * @alias module:model/PlaceGeo
      * @class
-    
-     * @param elevation { Number } 
-    
+
+     * @param polygon { module:model/PlaceGeoPolygon }
+
+     * @param elevation { Number }
+
      */
     constructor(
-    
+
+        polygon,
+
         elevation,
-    
+
     ) {
 
-        this.polygon = null;
+        this.polygon = polygon;
         this.elevation = elevation;
 
         this.polygonType = PlaceGeoPolygon;
@@ -62,16 +66,16 @@ export default class PlaceGeo  {
         }
 
         if (data.hasOwnProperty('polygon')) {
-            object.polygon = ApiClient.convertToType(data['polygon'], object.polygonType);
+            object.polygon = ApiClient.convertToType(data.polygon, object.polygonType);
         }
         if (data.hasOwnProperty('elevation')) {
-            object.elevation = ApiClient.convertToType(data['elevation'], 'Number');
+            object.elevation = ApiClient.convertToType(data.elevation, 'Number');
         }
 
         return object;
     }
 
-    
+
 
 }
 

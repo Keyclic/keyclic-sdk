@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The FeedbackLinksImageIriTemplateMapping model module.
@@ -26,10 +26,10 @@ export default class FeedbackLinksImageIriTemplateMapping  {
      * Constructs a new "FeedbackLinksImageIriTemplateMapping".
      * @alias module:model/FeedbackLinksImageIriTemplateMapping
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.image = null;
@@ -56,16 +56,16 @@ export default class FeedbackLinksImageIriTemplateMapping  {
         }
 
         if (data.hasOwnProperty('image')) {
-            object.image = ApiClient.convertToType(data['image'], 'String');
+            object.image = ApiClient.convertToType(data.image, 'String');
         }
         if (data.hasOwnProperty('feedback')) {
-            object.feedback = ApiClient.convertToType(data['feedback'], 'String');
+            object.feedback = ApiClient.convertToType(data.feedback, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

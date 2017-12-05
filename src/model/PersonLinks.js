@@ -17,7 +17,7 @@ import PersonLinksMemberOf from './PersonLinksMemberOf';
 import PersonLinksSelf from './PersonLinksSelf';
 
 
-    
+
 
 /**
  * The PersonLinks model module.
@@ -29,10 +29,10 @@ export default class PersonLinks  {
      * Constructs a new "PersonLinks".
      * @alias module:model/PersonLinks
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.self = null;
@@ -63,19 +63,19 @@ export default class PersonLinks  {
         }
 
         if (data.hasOwnProperty('self')) {
-            object.self = ApiClient.convertToType(data['self'], object.selfType);
+            object.self = ApiClient.convertToType(data.self, object.selfType);
         }
         if (data.hasOwnProperty('image')) {
-            object.image = ApiClient.convertToType(data['image'], object.imageType);
+            object.image = ApiClient.convertToType(data.image, object.imageType);
         }
         if (data.hasOwnProperty('memberOf')) {
-            object.memberOf = ApiClient.convertToType(data['memberOf'], object.memberOfType);
+            object.memberOf = ApiClient.convertToType(data.memberOf, object.memberOfType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

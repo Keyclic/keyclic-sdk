@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import Operation from './Operation';
 
 
-    
+
 
 /**
  * The OperationCollection model module.
@@ -27,10 +27,10 @@ export default class OperationCollection  {
      * Constructs a new "OperationCollection".
      * @alias module:model/OperationCollection
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.items = [];
@@ -57,13 +57,13 @@ export default class OperationCollection  {
         }
 
         if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
+            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

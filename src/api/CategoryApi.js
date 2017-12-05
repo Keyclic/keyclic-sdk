@@ -39,23 +39,23 @@ export default class CategoryApi extends ApiClient {
 
     /**
      * Retrieve all Category resources.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { CategoryPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { String } businessActivity The identifier of the resource formatted as GUID string. 
-     * @param { String } organization The identifier of the resource formatted as GUID string. 
-     * @param { String } geoCoordinates  
+     * @param { String } xKeyclicAppVersion
+     * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+     * @param { String } organization The identifier of the resource formatted as GUID string.
+     * @param { String } geoCoordinates
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after  
-     * @param { Date } before  
-     * @param { String } searchColor  
-     * @param { String } searchIcon  
-     * @param { String } searchName  
-     * @param { String } searchIdentificationNumber  
+     * @param { Date } after
+     * @param { Date } before
+     * @param { String } searchColor
+     * @param { String } searchIcon
+     * @param { String } searchName
+     * @param { String } searchIdentificationNumber
      */
     cgetCategories(
         returnType = null,
@@ -84,86 +84,86 @@ export default class CategoryApi extends ApiClient {
             searchIdentificationNumber,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetCategories');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
             page = 1;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
             limit = 10;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
             order = "desc";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'businessActivity'
         if (typeof businessActivity === 'undefined') {
             businessActivity = null;
         }
-        
+
         // verify the null value of parameter 'organization'
         if (typeof organization === 'undefined') {
             organization = null;
         }
-        
+
         // verify the null value of parameter 'geoCoordinates'
         if (typeof geoCoordinates === 'undefined') {
             geoCoordinates = null;
         }
-        
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
         }
-        
+
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
         }
-        
+
         // verify the null value of parameter 'searchColor'
         if (typeof searchColor === 'undefined') {
             searchColor = null;
         }
-        
+
         // verify the null value of parameter 'searchIcon'
         if (typeof searchIcon === 'undefined') {
             searchIcon = null;
         }
-        
+
         // verify the null value of parameter 'searchName'
         if (typeof searchName === 'undefined') {
             searchName = null;
         }
-        
+
         // verify the null value of parameter 'searchIdentificationNumber'
         if (typeof searchIdentificationNumber === 'undefined') {
             searchIdentificationNumber = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCategories');
@@ -226,23 +226,23 @@ export default class CategoryApi extends ApiClient {
 
     /**
      * Retrieve all Category resources.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { CategoryPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { String } businessActivity The identifier of the resource formatted as GUID string. 
-     * @param { String } geoCoordinates  
+     * @param { String } xKeyclicAppVersion
+     * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+     * @param { String } geoCoordinates
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after  
-     * @param { Date } before  
-     * @param { String } searchColor  
-     * @param { String } searchIcon  
-     * @param { String } searchName  
-     * @param { String } searchIdentificationNumber  
+     * @param { Date } after
+     * @param { Date } before
+     * @param { String } searchColor
+     * @param { String } searchIcon
+     * @param { String } searchName
+     * @param { String } searchIdentificationNumber
      */
     cgetCategoriesByOrganization(
         returnType = null,
@@ -271,86 +271,86 @@ export default class CategoryApi extends ApiClient {
             searchIdentificationNumber,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetCategoriesByOrganization');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling cgetCategoriesByOrganization');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
             page = 1;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
             limit = 10;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
             order = "desc";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'businessActivity'
         if (typeof businessActivity === 'undefined') {
             businessActivity = null;
         }
-        
+
         // verify the null value of parameter 'geoCoordinates'
         if (typeof geoCoordinates === 'undefined') {
             geoCoordinates = null;
         }
-        
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
         }
-        
+
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
         }
-        
+
         // verify the null value of parameter 'searchColor'
         if (typeof searchColor === 'undefined') {
             searchColor = null;
         }
-        
+
         // verify the null value of parameter 'searchIcon'
         if (typeof searchIcon === 'undefined') {
             searchIcon = null;
         }
-        
+
         // verify the null value of parameter 'searchName'
         if (typeof searchName === 'undefined') {
             searchName = null;
         }
-        
+
         // verify the null value of parameter 'searchIdentificationNumber'
         if (typeof searchIdentificationNumber === 'undefined') {
             searchIdentificationNumber = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCategoriesByOrganization');
@@ -413,12 +413,12 @@ export default class CategoryApi extends ApiClient {
 
     /**
      * Retrieve one Category resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } category The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Category }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     getCategory(
         returnType = null,
@@ -436,31 +436,31 @@ export default class CategoryApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getCategory');
         }
-        
+
         // verify the required parameter 'category' is set
         if (typeof category === 'undefined' || category === null) {
             throw new window.Error('Missing the required parameter "category" when calling getCategory');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getCategory');
@@ -512,13 +512,13 @@ export default class CategoryApi extends ApiClient {
 
     /**
      * Edit one Category resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } category The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Category }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/CategoryPatch } categoryPatch  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/CategoryPatch } categoryPatch
      */
     patchCategory(
         returnType = null,
@@ -537,36 +537,36 @@ export default class CategoryApi extends ApiClient {
             categoryPatch,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchCategory');
         }
-        
+
         // verify the required parameter 'category' is set
         if (typeof category === 'undefined' || category === null) {
             throw new window.Error('Missing the required parameter "category" when calling patchCategory');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'categoryPatch'
         if (typeof categoryPatch === 'undefined') {
             categoryPatch = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchCategory');
@@ -618,13 +618,13 @@ export default class CategoryApi extends ApiClient {
 
     /**
      * Create one Category resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Category }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/CategoryData } categoryData  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/CategoryData } categoryData
      */
     postCategoryByOrganization(
         returnType = null,
@@ -643,36 +643,36 @@ export default class CategoryApi extends ApiClient {
             categoryData,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postCategoryByOrganization');
         }
-        
+
         // verify the required parameter 'organization' is set
         if (typeof organization === 'undefined' || organization === null) {
             throw new window.Error('Missing the required parameter "organization" when calling postCategoryByOrganization');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'categoryData'
         if (typeof categoryData === 'undefined') {
             categoryData = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postCategoryByOrganization');

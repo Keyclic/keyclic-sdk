@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The LoginData model module.
@@ -26,18 +26,18 @@ export default class LoginData  {
      * Constructs a new "LoginData".
      * @alias module:model/LoginData
      * @class
-    
-     * @param login { String } 
-    
-     * @param password { String } 
-    
+
+     * @param login { String }
+
+     * @param password { String }
+
      */
     constructor(
-    
+
         login,
-    
+
         password,
-    
+
     ) {
 
         this.login = login;
@@ -64,16 +64,16 @@ export default class LoginData  {
         }
 
         if (data.hasOwnProperty('login')) {
-            object.login = ApiClient.convertToType(data['login'], 'String');
+            object.login = ApiClient.convertToType(data.login, 'String');
         }
         if (data.hasOwnProperty('password')) {
-            object.password = ApiClient.convertToType(data['password'], 'String');
+            object.password = ApiClient.convertToType(data.password, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

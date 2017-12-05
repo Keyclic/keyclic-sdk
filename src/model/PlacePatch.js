@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The PlacePatch model module.
@@ -26,10 +26,10 @@ export default class PlacePatch  {
      * Constructs a new "PlacePatch".
      * @alias module:model/PlacePatch
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.branchCode = null;
@@ -56,16 +56,16 @@ export default class PlacePatch  {
         }
 
         if (data.hasOwnProperty('branchCode')) {
-            object.branchCode = ApiClient.convertToType(data['branchCode'], 'String');
+            object.branchCode = ApiClient.convertToType(data.branchCode, 'String');
         }
         if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data['name'], 'String');
+            object.name = ApiClient.convertToType(data.name, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

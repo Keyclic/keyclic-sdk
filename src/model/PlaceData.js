@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The PlaceData model module.
@@ -26,18 +26,18 @@ export default class PlaceData  {
      * Constructs a new "PlaceData".
      * @alias module:model/PlaceData
      * @class
-    
-     * @param name { String } 
-    
-     * @param polygon { String } 
-    
+
+     * @param name { String }
+
+     * @param polygon { String }
+
      */
     constructor(
-    
+
         name,
-    
+
         polygon,
-    
+
     ) {
 
         this.name = name;
@@ -66,22 +66,22 @@ export default class PlaceData  {
         }
 
         if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data['name'], 'String');
+            object.name = ApiClient.convertToType(data.name, 'String');
         }
         if (data.hasOwnProperty('branchCode')) {
-            object.branchCode = ApiClient.convertToType(data['branchCode'], 'String');
+            object.branchCode = ApiClient.convertToType(data.branchCode, 'String');
         }
         if (data.hasOwnProperty('polygon')) {
-            object.polygon = ApiClient.convertToType(data['polygon'], 'String');
+            object.polygon = ApiClient.convertToType(data.polygon, 'String');
         }
         if (data.hasOwnProperty('elevation')) {
-            object.elevation = ApiClient.convertToType(data['elevation'], 'Number');
+            object.elevation = ApiClient.convertToType(data.elevation, 'Number');
         }
 
         return object;
     }
 
-    
+
 
 }
 

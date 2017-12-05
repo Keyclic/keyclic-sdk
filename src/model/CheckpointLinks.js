@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import CheckpointLinksOrganization from './CheckpointLinksOrganization';
 
 
-    
+
 
 /**
  * The CheckpointLinks model module.
@@ -27,10 +27,10 @@ export default class CheckpointLinks  {
      * Constructs a new "CheckpointLinks".
      * @alias module:model/CheckpointLinks
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.organization = null;
@@ -57,13 +57,13 @@ export default class CheckpointLinks  {
         }
 
         if (data.hasOwnProperty('organization')) {
-            object.organization = ApiClient.convertToType(data['organization'], object.organizationType);
+            object.organization = ApiClient.convertToType(data.organization, object.organizationType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

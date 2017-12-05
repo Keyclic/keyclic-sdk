@@ -37,23 +37,23 @@ export default class FeedbackApi extends ApiClient {
 
     /**
      * Retrieve all Feedback resources.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { FeedbackPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      * @param { String } state   (default to DELIVERED)
-     * @param { String } category The identifier of the resource formatted as GUID string. 
-     * @param { String } geoHash  
-     * @param { String } organization The identifier of the resource formatted as GUID string. 
+     * @param { String } category The identifier of the resource formatted as GUID string.
+     * @param { String } geoHash
+     * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { module:model/String } visibility   (default to VISIBILITY_PUBLIC)
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after  
-     * @param { Date } before  
-     * @param { String } geoNearGeoCoordinates  
-     * @param { Number } geoNearRadius  
+     * @param { Date } after
+     * @param { Date } before
+     * @param { String } geoNearGeoCoordinates
+     * @param { Number } geoNearRadius
      */
     cgetFeedbacks(
         returnType = null,
@@ -82,86 +82,86 @@ export default class FeedbackApi extends ApiClient {
             geoNearRadius,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetFeedbacks');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'state'
         if (typeof state === 'undefined' || state === null) {
             state = "DELIVERED";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'visibility'
         if (typeof visibility === 'undefined' || visibility === null) {
             visibility = "VISIBILITY_PUBLIC";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
             page = 1;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
             limit = 10;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
             order = "desc";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'category'
         if (typeof category === 'undefined') {
             category = null;
         }
-        
+
         // verify the null value of parameter 'geoHash'
         if (typeof geoHash === 'undefined') {
             geoHash = null;
         }
-        
+
         // verify the null value of parameter 'organization'
         if (typeof organization === 'undefined') {
             organization = null;
         }
-        
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
         }
-        
+
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
         }
-        
+
         // verify the null value of parameter 'geoNearGeoCoordinates'
         if (typeof geoNearGeoCoordinates === 'undefined') {
             geoNearGeoCoordinates = null;
         }
-        
+
         // verify the null value of parameter 'geoNearRadius'
         if (typeof geoNearRadius === 'undefined') {
             geoNearRadius = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetFeedbacks');
@@ -224,24 +224,24 @@ export default class FeedbackApi extends ApiClient {
 
     /**
      * Retrieve all Feedback resources.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } person The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { FeedbackPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { String } category The identifier of the resource formatted as GUID string. 
-     * @param { String } geoHash  
-     * @param { String } organization The identifier of the resource formatted as GUID string. 
-     * @param { String } state  
+     * @param { String } xKeyclicAppVersion
+     * @param { String } category The identifier of the resource formatted as GUID string.
+     * @param { String } geoHash
+     * @param { String } organization The identifier of the resource formatted as GUID string.
+     * @param { String } state
      * @param { module:model/String } visibility   (default to VISIBILITY_PUBLIC)
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after  
-     * @param { Date } before  
-     * @param { String } geoNearGeoCoordinates  
-     * @param { Number } geoNearRadius  
+     * @param { Date } after
+     * @param { Date } before
+     * @param { String } geoNearGeoCoordinates
+     * @param { Number } geoNearRadius
      */
     cgetFeedbacksByPerson(
         returnType = null,
@@ -271,91 +271,91 @@ export default class FeedbackApi extends ApiClient {
             geoNearRadius,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetFeedbacksByPerson');
         }
-        
+
         // verify the required parameter 'person' is set
         if (typeof person === 'undefined' || person === null) {
             throw new window.Error('Missing the required parameter "person" when calling cgetFeedbacksByPerson');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'visibility'
         if (typeof visibility === 'undefined' || visibility === null) {
             visibility = "VISIBILITY_PUBLIC";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
             page = 1;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
             limit = 10;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
             order = "desc";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'category'
         if (typeof category === 'undefined') {
             category = null;
         }
-        
+
         // verify the null value of parameter 'geoHash'
         if (typeof geoHash === 'undefined') {
             geoHash = null;
         }
-        
+
         // verify the null value of parameter 'organization'
         if (typeof organization === 'undefined') {
             organization = null;
         }
-        
+
         // verify the null value of parameter 'state'
         if (typeof state === 'undefined') {
             state = null;
         }
-        
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
         }
-        
+
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
         }
-        
+
         // verify the null value of parameter 'geoNearGeoCoordinates'
         if (typeof geoNearGeoCoordinates === 'undefined') {
             geoNearGeoCoordinates = null;
         }
-        
+
         // verify the null value of parameter 'geoNearRadius'
         if (typeof geoNearRadius === 'undefined') {
             geoNearRadius = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetFeedbacksByPerson');
@@ -419,12 +419,12 @@ export default class FeedbackApi extends ApiClient {
 
     /**
      * Retrieve one Feedback resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } feedback The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     getFeedback(
         returnType = null,
@@ -442,31 +442,31 @@ export default class FeedbackApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getFeedback');
         }
-        
+
         // verify the required parameter 'feedback' is set
         if (typeof feedback === 'undefined' || feedback === null) {
             throw new window.Error('Missing the required parameter "feedback" when calling getFeedback');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getFeedback');

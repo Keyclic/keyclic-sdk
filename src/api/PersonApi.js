@@ -38,21 +38,21 @@ export default class PersonApi extends ApiClient {
 
     /**
      * Retrieve all Person resources.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { PersonPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after  
-     * @param { Date } before  
-     * @param { String } searchFamilyName  
-     * @param { String } searchGivenName  
-     * @param { String } searchJobTitle  
-     * @param { String } searchUsername  
-     * @param { String } searchEmail  
+     * @param { Date } after
+     * @param { Date } before
+     * @param { String } searchFamilyName
+     * @param { String } searchGivenName
+     * @param { String } searchJobTitle
+     * @param { String } searchUsername
+     * @param { String } searchEmail
      */
     cgetPeople(
         returnType = null,
@@ -79,76 +79,76 @@ export default class PersonApi extends ApiClient {
             searchEmail,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetPeople');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
             page = 1;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
             limit = 10;  // eslint-disable-line quotes
         }
-        
+
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
             order = "desc";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
         }
-        
+
         // verify the null value of parameter 'before'
         if (typeof before === 'undefined') {
             before = null;
         }
-        
+
         // verify the null value of parameter 'searchFamilyName'
         if (typeof searchFamilyName === 'undefined') {
             searchFamilyName = null;
         }
-        
+
         // verify the null value of parameter 'searchGivenName'
         if (typeof searchGivenName === 'undefined') {
             searchGivenName = null;
         }
-        
+
         // verify the null value of parameter 'searchJobTitle'
         if (typeof searchJobTitle === 'undefined') {
             searchJobTitle = null;
         }
-        
+
         // verify the null value of parameter 'searchUsername'
         if (typeof searchUsername === 'undefined') {
             searchUsername = null;
         }
-        
+
         // verify the null value of parameter 'searchEmail'
         if (typeof searchEmail === 'undefined') {
             searchEmail = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetPeople');
@@ -209,12 +209,12 @@ export default class PersonApi extends ApiClient {
 
     /**
      * Retrieve one Person resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } person The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
+     * @param { String } xKeyclicAppVersion
      */
     getPerson(
         returnType = null,
@@ -232,31 +232,31 @@ export default class PersonApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getPerson');
         }
-        
+
         // verify the required parameter 'person' is set
         if (typeof person === 'undefined' || person === null) {
             throw new window.Error('Missing the required parameter "person" when calling getPerson');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getPerson');
@@ -308,13 +308,13 @@ export default class PersonApi extends ApiClient {
 
     /**
      * Edit one Person resource.
-     * @param { String } xKeyclicApp 
+     * @param { String } xKeyclicApp
      * @param { String } person The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion  
-     * @param { module:model/PersonPatch } personPatch  
+     * @param { String } xKeyclicAppVersion
+     * @param { module:model/PersonPatch } personPatch
      */
     patchPerson(
         returnType = null,
@@ -333,36 +333,36 @@ export default class PersonApi extends ApiClient {
             personPatch,
         } = options;
 
-        
+
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchPerson');
         }
-        
+
         // verify the required parameter 'person' is set
         if (typeof person === 'undefined' || person === null) {
             throw new window.Error('Missing the required parameter "person" when calling patchPerson');
         }
-        
 
-        
+
+
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
             acceptLanguage = "fr-FR";  // eslint-disable-line quotes
         }
-        
 
-        
+
+
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-        
+
         // verify the null value of parameter 'personPatch'
         if (typeof personPatch === 'undefined') {
             personPatch = null;
         }
-        
+
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchPerson');

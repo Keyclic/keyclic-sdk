@@ -127,7 +127,7 @@ apiInstance.getPerson(xKeyclicApp, person, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | **String**| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -187,7 +187,7 @@ apiInstance.patchPerson(xKeyclicApp, person, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | **String**| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **personPatch** | [**PersonPatch**](PersonPatch.md)|  | [optional] 

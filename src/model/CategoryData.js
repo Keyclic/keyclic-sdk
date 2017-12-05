@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The CategoryData model module.
@@ -26,22 +26,22 @@ export default class CategoryData  {
      * Constructs a new "CategoryData".
      * @alias module:model/CategoryData
      * @class
-    
-     * @param name { String } 
-    
-     * @param color { String } 
-    
-     * @param icon { String } 
-    
+
+     * @param name { String }
+
+     * @param color { String }
+
+     * @param icon { String }
+
      */
     constructor(
-    
+
         name,
-    
+
         color,
-    
+
         icon,
-    
+
     ) {
 
         this.name = name;
@@ -69,19 +69,19 @@ export default class CategoryData  {
         }
 
         if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data['name'], 'String');
+            object.name = ApiClient.convertToType(data.name, 'String');
         }
         if (data.hasOwnProperty('color')) {
-            object.color = ApiClient.convertToType(data['color'], 'String');
+            object.color = ApiClient.convertToType(data.color, 'String');
         }
         if (data.hasOwnProperty('icon')) {
-            object.icon = ApiClient.convertToType(data['icon'], 'String');
+            object.icon = ApiClient.convertToType(data.icon, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

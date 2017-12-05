@@ -17,7 +17,7 @@ import MemberLinksPerson from './MemberLinksPerson';
 import MemberLinksSelf from './MemberLinksSelf';
 
 
-    
+
 
 /**
  * The MemberLinks model module.
@@ -29,10 +29,10 @@ export default class MemberLinks  {
      * Constructs a new "MemberLinks".
      * @alias module:model/MemberLinks
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.self = null;
@@ -63,19 +63,19 @@ export default class MemberLinks  {
         }
 
         if (data.hasOwnProperty('self')) {
-            object.self = ApiClient.convertToType(data['self'], object.selfType);
+            object.self = ApiClient.convertToType(data.self, object.selfType);
         }
         if (data.hasOwnProperty('person')) {
-            object.person = ApiClient.convertToType(data['person'], object.personType);
+            object.person = ApiClient.convertToType(data.person, object.personType);
         }
         if (data.hasOwnProperty('organization')) {
-            object.organization = ApiClient.convertToType(data['organization'], object.organizationType);
+            object.organization = ApiClient.convertToType(data.organization, object.organizationType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import Person from './Person';
 
 
-    
+
 
 /**
  * The PersonCollection model module.
@@ -27,10 +27,10 @@ export default class PersonCollection  {
      * Constructs a new "PersonCollection".
      * @alias module:model/PersonCollection
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.items = [];
@@ -57,13 +57,13 @@ export default class PersonCollection  {
         }
 
         if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
+            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

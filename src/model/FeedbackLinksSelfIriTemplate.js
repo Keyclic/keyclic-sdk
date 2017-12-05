@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import FeedbackLinksSelfIriTemplateMapping from './FeedbackLinksSelfIriTemplateMapping';
 
 
-    
+
 
 /**
  * The FeedbackLinksSelfIriTemplate model module.
@@ -27,10 +27,10 @@ export default class FeedbackLinksSelfIriTemplate  {
      * Constructs a new "FeedbackLinksSelfIriTemplate".
      * @alias module:model/FeedbackLinksSelfIriTemplate
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.mapping = null;
@@ -57,13 +57,13 @@ export default class FeedbackLinksSelfIriTemplate  {
         }
 
         if (data.hasOwnProperty('mapping')) {
-            object.mapping = ApiClient.convertToType(data['mapping'], object.mappingType);
+            object.mapping = ApiClient.convertToType(data.mapping, object.mappingType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

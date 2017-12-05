@@ -1,12 +1,10 @@
-### Managed by us
-.mustache.log
-
-### Managed by NPM
-/node_modules/*
-npm-debug.log
-
-### Managed by GEM
-Gemfile.lock
+######################### Common configuration #########################
+### Dev template
+*.log
+node_modules/*
+platforms/*
+plugins/*
+vendor/*
 
 ### JetBrains template
 .idea/

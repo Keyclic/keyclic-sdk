@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIriTemplate';
 
 
-    
+
 
 /**
  * The PersonLinksMemberOf model module.
@@ -27,10 +27,10 @@ export default class PersonLinksMemberOf  {
      * Constructs a new "PersonLinksMemberOf".
      * @alias module:model/PersonLinksMemberOf
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.href = null;
@@ -58,16 +58,16 @@ export default class PersonLinksMemberOf  {
         }
 
         if (data.hasOwnProperty('href')) {
-            object.href = ApiClient.convertToType(data['href'], 'String');
+            object.href = ApiClient.convertToType(data.href, 'String');
         }
         if (data.hasOwnProperty('iriTemplate')) {
-            object.iriTemplate = ApiClient.convertToType(data['iriTemplate'], object.iriTemplateType);
+            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The MemberPatch model module.
@@ -26,10 +26,10 @@ export default class MemberPatch  {
      * Constructs a new "MemberPatch".
      * @alias module:model/MemberPatch
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.roles = [];
@@ -55,13 +55,13 @@ export default class MemberPatch  {
         }
 
         if (data.hasOwnProperty('roles')) {
-            object.roles = ApiClient.convertToType(data['roles'], '[\'String\']');
+            object.roles = ApiClient.convertToType(data.roles, '[\'String\']');
         }
 
         return object;
     }
 
-    
+
 
 }
 

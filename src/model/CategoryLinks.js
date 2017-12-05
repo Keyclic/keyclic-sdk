@@ -16,7 +16,7 @@ import CategoryLinksOrganization from './CategoryLinksOrganization';
 import CategoryLinksSelf from './CategoryLinksSelf';
 
 
-    
+
 
 /**
  * The CategoryLinks model module.
@@ -28,10 +28,10 @@ export default class CategoryLinks  {
      * Constructs a new "CategoryLinks".
      * @alias module:model/CategoryLinks
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.self = null;
@@ -60,16 +60,16 @@ export default class CategoryLinks  {
         }
 
         if (data.hasOwnProperty('self')) {
-            object.self = ApiClient.convertToType(data['self'], object.selfType);
+            object.self = ApiClient.convertToType(data.self, object.selfType);
         }
         if (data.hasOwnProperty('organization')) {
-            object.organization = ApiClient.convertToType(data['organization'], object.organizationType);
+            object.organization = ApiClient.convertToType(data.organization, object.organizationType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The ImageData model module.
@@ -26,14 +26,14 @@ export default class ImageData  {
      * Constructs a new "ImageData".
      * @alias module:model/ImageData
      * @class
-    
-     * @param image { Blob } 
-    
+
+     * @param image { Blob }
+
      */
     constructor(
-    
+
         image,
-    
+
     ) {
 
         this.image = image;
@@ -59,13 +59,13 @@ export default class ImageData  {
         }
 
         if (data.hasOwnProperty('image')) {
-            object.image = ApiClient.convertToType(data['image'], 'Blob');
+            object.image = ApiClient.convertToType(data.image, 'Blob');
         }
 
         return object;
     }
 
-    
+
 
 }
 

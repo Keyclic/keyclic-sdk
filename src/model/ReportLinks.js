@@ -22,7 +22,7 @@ import ReportLinksSelf from './ReportLinksSelf';
 import ReportLinksTracking from './ReportLinksTracking';
 
 
-    
+
 
 /**
  * The ReportLinks model module.
@@ -34,10 +34,10 @@ export default class ReportLinks  {
      * Constructs a new "ReportLinks".
      * @alias module:model/ReportLinks
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.self = null;
@@ -78,34 +78,34 @@ export default class ReportLinks  {
         }
 
         if (data.hasOwnProperty('self')) {
-            object.self = ApiClient.convertToType(data['self'], object.selfType);
+            object.self = ApiClient.convertToType(data.self, object.selfType);
         }
         if (data.hasOwnProperty('feedback')) {
-            object.feedback = ApiClient.convertToType(data['feedback'], object.feedbackType);
+            object.feedback = ApiClient.convertToType(data.feedback, object.feedbackType);
         }
         if (data.hasOwnProperty('operations')) {
-            object.operations = ApiClient.convertToType(data['operations'], object.operationsType);
+            object.operations = ApiClient.convertToType(data.operations, object.operationsType);
         }
         if (data.hasOwnProperty('organization')) {
-            object.organization = ApiClient.convertToType(data['organization'], object.organizationType);
+            object.organization = ApiClient.convertToType(data.organization, object.organizationType);
         }
         if (data.hasOwnProperty('category')) {
-            object.category = ApiClient.convertToType(data['category'], object.categoryType);
+            object.category = ApiClient.convertToType(data.category, object.categoryType);
         }
         if (data.hasOwnProperty('delegatedTo')) {
-            object.delegatedTo = ApiClient.convertToType(data['delegatedTo'], object.delegatedToType);
+            object.delegatedTo = ApiClient.convertToType(data.delegatedTo, object.delegatedToType);
         }
         if (data.hasOwnProperty('delegatedFrom')) {
-            object.delegatedFrom = ApiClient.convertToType(data['delegatedFrom'], object.delegatedFromType);
+            object.delegatedFrom = ApiClient.convertToType(data.delegatedFrom, object.delegatedFromType);
         }
         if (data.hasOwnProperty('tracking')) {
-            object.tracking = ApiClient.convertToType(data['tracking'], object.trackingType);
+            object.tracking = ApiClient.convertToType(data.tracking, object.trackingType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

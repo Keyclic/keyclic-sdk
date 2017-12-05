@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import FeedbackLinksReporterIriTemplate from './FeedbackLinksReporterIriTemplate';
 
 
-    
+
 
 /**
  * The OperationLinksOperator model module.
@@ -27,10 +27,10 @@ export default class OperationLinksOperator  {
      * Constructs a new "OperationLinksOperator".
      * @alias module:model/OperationLinksOperator
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.href = null;
@@ -58,16 +58,16 @@ export default class OperationLinksOperator  {
         }
 
         if (data.hasOwnProperty('href')) {
-            object.href = ApiClient.convertToType(data['href'], 'String');
+            object.href = ApiClient.convertToType(data.href, 'String');
         }
         if (data.hasOwnProperty('iriTemplate')) {
-            object.iriTemplate = ApiClient.convertToType(data['iriTemplate'], object.iriTemplateType);
+            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
         }
 
         return object;
     }
 
-    
+
 
 }
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import Place from './Place';
 
 
-    
+
 
 /**
  * The PlaceCollection model module.
@@ -27,10 +27,10 @@ export default class PlaceCollection  {
      * Constructs a new "PlaceCollection".
      * @alias module:model/PlaceCollection
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.items = [];
@@ -57,13 +57,13 @@ export default class PlaceCollection  {
         }
 
         if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data['items'], [object.itemsType]);
+            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
         }
 
         return object;
     }
 
-    
+
 
 }
 

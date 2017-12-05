@@ -56,8 +56,8 @@ apiInstance.deleteImageByOperationAndImage(xKeyclicApp, operation, image, opts, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | **String**| The identifier of the resource formatted as GUID string. | 
- **image** | **String**| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **image** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -122,8 +122,8 @@ apiInstance.getImageByFeedbackAndImageAndWidthAndHeight(xKeyclicApp, feedback, i
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
- **image** | **String**| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **image** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
@@ -190,8 +190,8 @@ apiInstance.getImageByOperationAndImageAndWidthAndHeight(xKeyclicApp, operation,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | **String**| The identifier of the resource formatted as GUID string. | 
- **image** | **String**| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **image** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
@@ -256,7 +256,7 @@ apiInstance.getImageByPersonAndWidthAndHeight(xKeyclicApp, person, width, height
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | **String**| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
@@ -318,7 +318,7 @@ apiInstance.postImageByFeedback(xKeyclicApp, feedback, opts, (error, data, respo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | **String**| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **imageData** | [**ImageData**](ImageData.md)|  | [optional] 
@@ -379,7 +379,7 @@ apiInstance.postImageByOperation(xKeyclicApp, operation, opts, (error, data, res
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | **String**| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **imageData** | [**ImageData**](ImageData.md)|  | [optional] 

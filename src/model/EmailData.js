@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The EmailData model module.
@@ -26,14 +26,14 @@ export default class EmailData  {
      * Constructs a new "EmailData".
      * @alias module:model/EmailData
      * @class
-    
-     * @param email { String } 
-    
+
+     * @param email { String }
+
      */
     constructor(
-    
+
         email,
-    
+
     ) {
 
         this.email = email;
@@ -59,13 +59,13 @@ export default class EmailData  {
         }
 
         if (data.hasOwnProperty('email')) {
-            object.email = ApiClient.convertToType(data['email'], 'String');
+            object.email = ApiClient.convertToType(data.email, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

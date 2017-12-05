@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The SuccessLoginCredentialsOrganization model module.
@@ -26,10 +26,10 @@ export default class SuccessLoginCredentialsOrganization  {
      * Constructs a new "SuccessLoginCredentialsOrganization".
      * @alias module:model/SuccessLoginCredentialsOrganization
      * @class
-    
+
      */
     constructor(
-    
+
     ) {
 
         this.type = null;
@@ -56,16 +56,16 @@ export default class SuccessLoginCredentialsOrganization  {
         }
 
         if (data.hasOwnProperty('type')) {
-            object.type = ApiClient.convertToType(data['type'], 'String');
+            object.type = ApiClient.convertToType(data.type, 'String');
         }
         if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data['id'], 'String');
+            object.id = ApiClient.convertToType(data.id, 'String');
         }
 
         return object;
     }
 
-    
+
 
 }
 

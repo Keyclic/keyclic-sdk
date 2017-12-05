@@ -67,13 +67,13 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **businessActivity** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **geoCoordinates** | **String**|  | [optional] 
  **geoElevation** | **Number**|  | [optional] 
  **geoHash** | **String**|  | [optional] 
- **organization** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
- **parent** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
- **parents** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **parent** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **parents** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **order** | **String**|  | [optional] [default to desc]
@@ -150,15 +150,15 @@ apiInstance.cgetPlacesByOrganization(xKeyclicApp, organization, opts, (error, da
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **businessActivity** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **geoCoordinates** | **String**|  | [optional] 
  **geoElevation** | **Number**|  | [optional] 
  **geoHash** | **String**|  | [optional] 
- **parent** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
- **parents** | **String**| The identifier of the resource formatted as GUID string. | [optional] 
+ **parent** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **parents** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **order** | **String**|  | [optional] [default to desc]
@@ -222,7 +222,7 @@ apiInstance.getPlace(xKeyclicApp, place, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **place** | **String**| The identifier of the resource formatted as GUID string. | 
+ **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -282,7 +282,7 @@ apiInstance.patchPlace(xKeyclicApp, place, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **place** | **String**| The identifier of the resource formatted as GUID string. | 
+ **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **placePatch** | [**PlacePatch**](PlacePatch.md)|  | [optional] 
@@ -343,7 +343,7 @@ apiInstance.postPlaceByOrganization(xKeyclicApp, organization, opts, (error, dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | **String**| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **placeData** | [**PlaceData**](PlaceData.md)|  | [optional] 

@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 
 
-    
+
 
 /**
  * The LogEntry model module.
@@ -26,30 +26,30 @@ export default class LogEntry  {
      * Constructs a new "LogEntry".
      * @alias module:model/LogEntry
      * @class
-    
-     * @param action { String } 
-    
-     * @param loggedAt { Date } 
-    
-     * @param objectId { String } 
-    
-     * @param version { String } 
-    
-     * @param data { Array.<String> } 
-    
+
+     * @param action { String }
+
+     * @param loggedAt { Date }
+
+     * @param objectId { String }
+
+     * @param version { String }
+
+     * @param data { Array.<String> }
+
      */
     constructor(
-    
+
         action,
-    
+
         loggedAt,
-    
+
         objectId,
-    
+
         version,
-    
+
         data,
-    
+
     ) {
 
         this.action = action;
@@ -79,25 +79,25 @@ export default class LogEntry  {
         }
 
         if (data.hasOwnProperty('action')) {
-            object.action = ApiClient.convertToType(data['action'], 'String');
+            object.action = ApiClient.convertToType(data.action, 'String');
         }
         if (data.hasOwnProperty('loggedAt')) {
-            object.loggedAt = ApiClient.convertToType(data['loggedAt'], 'Date');
+            object.loggedAt = ApiClient.convertToType(data.loggedAt, 'Date');
         }
         if (data.hasOwnProperty('objectId')) {
-            object.objectId = ApiClient.convertToType(data['objectId'], 'String');
+            object.objectId = ApiClient.convertToType(data.objectId, 'String');
         }
         if (data.hasOwnProperty('version')) {
-            object.version = ApiClient.convertToType(data['version'], 'String');
+            object.version = ApiClient.convertToType(data.version, 'String');
         }
         if (data.hasOwnProperty('data')) {
-            object.data = ApiClient.convertToType(data['data'], '[\'String\']');
+            object.data = ApiClient.convertToType(data.data, '[\'String\']');
         }
 
         return object;
     }
 
-    
+
 
 }
 
