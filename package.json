@@ -1,6 +1,6 @@
 {
     "name": "@keyclic/app-sdk",
-    "version": "1.15.3",
+    "version": "1.16.0",
     "description": "",
     "license": "MIT",
     "main": "src/index.js",
