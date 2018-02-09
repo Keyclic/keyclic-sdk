@@ -1,0 +1,36 @@
+{
+    "name": "@keyclic/app-sdk",
+    "version": "{{{appVersion}}}",
+    "description": "{{{projectDescription}}}",
+    "license": "MIT",
+    "main": "{{sourceFolder}}{{#invokerPackage}}/{{invokerPackage}}{{/invokerPackage}}/index.js",
+    "scripts": {
+        "test": "mocha --compilers js:babel-core/register --recursive"
+    },
+    "dependencies": {
+        "es6-promise": "^4.1.1",
+        "isomorphic-fetch": "^2.2.1"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-eslint": "^8.0.3",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-stage-2": "^6.24.1",
+        "@keyclic/eslint-config-keyclic": "^1.0.0"
+    },
+    "babel": {
+        "presets": [
+            "env",
+            "stage-2"
+        ]
+    },
+    "eslintConfig": {
+        "extends": [
+            "@keyclic/eslint-config-keyclic"
+        ],
+        "parser": "babel-eslint",
+        "parserOptions": {
+            "sourceType": "module"
+        }
+    }
+}

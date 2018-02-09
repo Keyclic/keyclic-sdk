@@ -1,5 +1,6 @@
 ######################### Common configuration #########################
 ### Dev template
+.env
 *.log
 node_modules/*
 platforms/*

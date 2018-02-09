@@ -1,0 +1,153 @@
+{{#models}}{{#model}}
+
+/**
+ * The {{classname}} model module.
+ * @module {{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{classname}}
+ * @version {{appVersion}}
+ */
+export default class {{{classname}}} {{#interfaceModels}}extends {{{classname}}}{{/interfaceModels}} {
+    /**
+     * Constructs a new "{{{classname}}}".
+    {{#description}}
+     * {{description}}
+    {{/description}}
+     * @alias module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{classname}}
+     * @class
+    {{#vars}}{{#required}}
+     * @param {{name}} { {{&vendorExtensions.x-jsdoc-type}} }{{#description}} {{&description}}{{/description}}
+    {{/required}}{{/vars}}
+     */
+    constructor(
+    {{#vars}}{{#required}}
+        {{name}},
+    {{/required}}{{/vars}}
+    ) {
+        {{#useInheritance}}
+            {{#interfaceModels}}
+        super(
+                {{#vars}}{{#required}}
+            {{name}},
+                {{/required}}{{/vars}}
+        );
+            {{/interfaceModels}}
+        {{/useInheritance}}
+
+        {{#vars}}
+            {{#required}}
+        this.{{name}} = {{name}};
+            {{/required}}
+            {{^required}}
+                {{#defaultValue}}
+        this.{{name}} = {{&defaultValue}};
+                {{/defaultValue}}
+                {{^defaultValue}}
+                    {{#isContainer}}
+        this.{{name}} = [];
+                    {{/isContainer}}
+                    {{^isContainer}}
+        this.{{name}} = null;
+                    {{/isContainer}}
+                {{/defaultValue}}
+            {{/required}}
+        {{/vars}}
+
+        {{#vars}}
+            {{#complexType}}
+        this.{{&name}}Type = {{&complexType}};
+            {{/complexType}}
+        {{/vars}}
+    }
+
+    /**
+    * Constructs a "{{classname}}" from a plain JavaScript object.
+    * @param { object } data The plain JavaScript object bearing properties of interest.
+    * @param { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{&classname}} } object Optional instance to populate.
+    * @return { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{&classname}} } The populated "{{classname}}" instance.
+    */
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new {{&classname}}();
+        }
+        {{#interfaceModels}}
+        object = super.constructFromData(data, object);
+        {{/interfaceModels}}
+
+        {{#vars}}
+        if (data.hasOwnProperty('{{&baseName}}')) {
+            {{#complexType}}
+                {{#isContainer}}
+            object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, [object.{{&name}}Type]);
+                {{/isContainer}}
+                {{^isContainer}}
+            object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, object.{{&name}}Type);
+                {{/isContainer}}
+            {{/complexType}}
+            {{^complexType}}
+                {{#isContainer}}
+                    {{#items}}
+            object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, '[\'{{&baseType}}\']');
+                    {{/items}}
+                {{/isContainer}}
+                {{^isContainer}}
+            object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, '{{&baseType}}');
+                {{/isContainer}}
+            {{/complexType}}
+        }
+        {{/vars}}
+
+        return object;
+    }
+
+    {{#emitModelMethods}}{{#vars}}
+    /**
+        {{#description}}
+     * Returns {{&description}}
+        {{/description}}
+        {{#minimum}}
+     * minimum: {{minimum}}
+        {{/minimum}}
+        {{#maximum}}
+     * maximum: {{maximum}}
+        {{/maximum}}
+     * @return { {{&vendorExtensions.x-jsdoc-type}} }
+     */
+    {{getter}}() {
+        return this.{{name}};
+    }
+
+        {{#isReadOnly}}
+    /**
+            {{#description}}
+     * Sets {{&description}}
+            {{/description}}
+     * @param { {{&vendorExtensions.x-jsdoc-type}} } {{name}}{{#description}} {{&description}}{{/description}}
+     */
+    {{setter}}({{name}}) {
+        this.{{name}} = {{name}};
+    }
+        {{/isReadOnly}}
+    {{/vars}}{{/emitModelMethods}}
+
+    {{#vars}}
+        {{#isEnum}}
+            {{^isContainer}}
+    {{>partial_model_inner_enum}}
+            {{/isContainer}}
+        {{/isEnum}}
+        {{#items.isEnum}}
+            {{#items}}
+                {{^isContainer}}
+    {{>partial_model_inner_enum}}
+                {{/isContainer}}
+            {{/items}}
+        {{/items.isEnum}}
+    {{/vars}}
+}
+{{/model}}{{/models}}
