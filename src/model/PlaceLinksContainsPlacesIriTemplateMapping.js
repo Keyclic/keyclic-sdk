@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The PlaceLinksContainsPlacesIriTemplateMapping model module.
  * @module model/PlaceLinksContainsPlacesIriTemplateMapping
- * @version 1.19.1
  */
 export default class PlaceLinksContainsPlacesIriTemplateMapping  {
     /**

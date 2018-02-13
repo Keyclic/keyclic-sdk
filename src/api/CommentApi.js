@@ -20,7 +20,6 @@ import Operation from '../model/Operation';
 /**
  * Comment service.
  * @module api/CommentApi
- * @version 1.19.1
  */
 export default class CommentApi extends ApiClient {
     /**

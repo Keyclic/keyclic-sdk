@@ -12,7 +12,7 @@
 
 
 import ApiClient from '../ApiClient';
-import OperationEmbedded from './OperationEmbedded';
+import FeedbackEmbedded from './FeedbackEmbedded';
 import OperationLinks from './OperationLinks';
 
 
@@ -21,7 +21,6 @@ import OperationLinks from './OperationLinks';
 /**
  * The Operation model module.
  * @module model/Operation
- * @version 1.19.1
  */
 export default class Operation  {
     /**
@@ -60,7 +59,7 @@ export default class Operation  {
         this.embedded = null;
 
         this.linksType = OperationLinks;
-        this.embeddedType = OperationEmbedded;
+        this.embeddedType = FeedbackEmbedded;
     }
 
     /**

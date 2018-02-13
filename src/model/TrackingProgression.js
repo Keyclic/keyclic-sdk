@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The TrackingProgression model module.
  * @module model/TrackingProgression
- * @version 1.19.1
  */
 export default class TrackingProgression  {
     /**

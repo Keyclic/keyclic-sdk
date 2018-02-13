@@ -22,7 +22,6 @@ import ReportStatePatch from '../model/ReportStatePatch';
 /**
  * State service.
  * @module api/StateApi
- * @version 1.19.1
  */
 export default class StateApi extends ApiClient {
     /**

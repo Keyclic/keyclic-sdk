@@ -22,7 +22,6 @@ import MemberLinksSelf from './MemberLinksSelf';
 /**
  * The MemberLinks model module.
  * @module model/MemberLinks
- * @version 1.19.1
  */
 export default class MemberLinks  {
     /**

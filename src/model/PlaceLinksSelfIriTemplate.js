@@ -20,7 +20,6 @@ import PlaceLinksSelfIriTemplateMapping from './PlaceLinksSelfIriTemplateMapping
 /**
  * The PlaceLinksSelfIriTemplate model module.
  * @module model/PlaceLinksSelfIriTemplate
- * @version 1.19.1
  */
 export default class PlaceLinksSelfIriTemplate  {
     /**

@@ -20,7 +20,6 @@ import FeedbackLinksSelfIriTemplate from './FeedbackLinksSelfIriTemplate';
 /**
  * The FeedbackLinksTracking model module.
  * @module model/FeedbackLinksTracking
- * @version 1.19.1
  */
 export default class FeedbackLinksTracking  {
     /**

@@ -20,7 +20,6 @@ import FeedbackDataGeoPoint from './FeedbackDataGeoPoint';
 /**
  * The FeedbackDataGeo model module.
  * @module model/FeedbackDataGeo
- * @version 1.19.1
  */
 export default class FeedbackDataGeo  {
     /**

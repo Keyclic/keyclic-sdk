@@ -20,7 +20,6 @@ import FeedbackLinksReporterIriTemplate from './FeedbackLinksReporterIriTemplate
 /**
  * The OperationLinksOperator model module.
  * @module model/OperationLinksOperator
- * @version 1.19.1
  */
 export default class OperationLinksOperator  {
     /**

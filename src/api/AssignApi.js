@@ -18,7 +18,6 @@ import Operation from '../model/Operation';
 /**
  * Assign service.
  * @module api/AssignApi
- * @version 1.19.1
  */
 export default class AssignApi extends ApiClient {
     /**

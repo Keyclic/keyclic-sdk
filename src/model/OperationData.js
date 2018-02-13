@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationData model module.
  * @module model/OperationData
- * @version 1.19.1
  */
 export default class OperationData  {
     /**

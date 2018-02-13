@@ -20,7 +20,6 @@ import MemberLinksSelfIriTemplateMapping from './MemberLinksSelfIriTemplateMappi
 /**
  * The MemberLinksSelfIriTemplate model module.
  * @module model/MemberLinksSelfIriTemplate
- * @version 1.19.1
  */
 export default class MemberLinksSelfIriTemplate  {
     /**

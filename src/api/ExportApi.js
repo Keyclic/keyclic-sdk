@@ -17,7 +17,6 @@ import Report from '../model/Report';
 /**
  * Export service.
  * @module api/ExportApi
- * @version 1.19.1
  */
 export default class ExportApi extends ApiClient {
     /**

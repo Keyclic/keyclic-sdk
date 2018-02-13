@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The FeedbackStatePatch model module.
  * @module model/FeedbackStatePatch
- * @version 1.19.1
  */
 export default class FeedbackStatePatch  {
     /**

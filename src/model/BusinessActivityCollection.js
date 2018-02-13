@@ -20,7 +20,6 @@ import BusinessActivity from './BusinessActivity';
 /**
  * The BusinessActivityCollection model module.
  * @module model/BusinessActivityCollection
- * @version 1.19.1
  */
 export default class BusinessActivityCollection  {
     /**

@@ -21,7 +21,6 @@ import SuccessLoginCredentialsMemberOf from './SuccessLoginCredentialsMemberOf';
 /**
  * The SuccessLoginCredentials model module.
  * @module model/SuccessLoginCredentials
- * @version 1.19.1
  */
 export default class SuccessLoginCredentials  {
     /**

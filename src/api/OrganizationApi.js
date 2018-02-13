@@ -20,7 +20,6 @@ import OrganizationPatch from '../model/OrganizationPatch';
 /**
  * Organization service.
  * @module api/OrganizationApi
- * @version 1.19.1
  */
 export default class OrganizationApi extends ApiClient {
     /**

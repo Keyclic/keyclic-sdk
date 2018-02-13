@@ -22,7 +22,6 @@ import PersonLinksSelf from './PersonLinksSelf';
 /**
  * The PersonLinks model module.
  * @module model/PersonLinks
- * @version 1.19.1
  */
 export default class PersonLinks  {
     /**

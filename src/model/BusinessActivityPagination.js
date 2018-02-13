@@ -22,7 +22,6 @@ import PaginationLinks from './PaginationLinks';
 /**
  * The BusinessActivityPagination model module.
  * @module model/BusinessActivityPagination
- * @version 1.19.1
  */
 export default class BusinessActivityPagination extends Pagination {
     /**

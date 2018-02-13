@@ -19,7 +19,6 @@ import Operation from '../model/Operation';
 /**
  * Image service.
  * @module api/ImageApi
- * @version 1.19.1
  */
 export default class ImageApi extends ApiClient {
     /**

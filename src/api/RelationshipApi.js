@@ -19,7 +19,6 @@ import RelationshipData from '../model/RelationshipData';
 /**
  * Relationship service.
  * @module api/RelationshipApi
- * @version 1.19.1
  */
 export default class RelationshipApi extends ApiClient {
     /**

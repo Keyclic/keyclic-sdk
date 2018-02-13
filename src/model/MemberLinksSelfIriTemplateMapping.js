@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberLinksSelfIriTemplateMapping model module.
  * @module model/MemberLinksSelfIriTemplateMapping
- * @version 1.19.1
  */
 export default class MemberLinksSelfIriTemplateMapping  {
     /**

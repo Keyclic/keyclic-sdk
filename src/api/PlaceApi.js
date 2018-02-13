@@ -20,7 +20,6 @@ import PlacePatch from '../model/PlacePatch';
 /**
  * Place service.
  * @module api/PlaceApi
- * @version 1.19.1
  */
 export default class PlaceApi extends ApiClient {
     /**

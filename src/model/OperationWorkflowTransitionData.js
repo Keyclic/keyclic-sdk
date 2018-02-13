@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationWorkflowTransitionData model module.
  * @module model/OperationWorkflowTransitionData
- * @version 1.19.1
  */
 export default class OperationWorkflowTransitionData  {
     /**

@@ -16,7 +16,6 @@ import Error from '../model/Error';
 /**
  * Logo service.
  * @module api/LogoApi
- * @version 1.19.1
  */
 export default class LogoApi extends ApiClient {
     /**

@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailData model module.
  * @module model/EmailData
- * @version 1.19.1
  */
 export default class EmailData  {
     /**

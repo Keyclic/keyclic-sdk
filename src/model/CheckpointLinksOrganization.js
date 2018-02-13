@@ -20,7 +20,6 @@ import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIri
 /**
  * The CheckpointLinksOrganization model module.
  * @module model/CheckpointLinksOrganization
- * @version 1.19.1
  */
 export default class CheckpointLinksOrganization  {
     /**

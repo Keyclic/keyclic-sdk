@@ -21,7 +21,6 @@ import CategoryLinksSelf from './CategoryLinksSelf';
 /**
  * The CategoryLinks model module.
  * @module model/CategoryLinks
- * @version 1.19.1
  */
 export default class CategoryLinks  {
     /**

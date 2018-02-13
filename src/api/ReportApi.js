@@ -19,7 +19,6 @@ import ReportPatch from '../model/ReportPatch';
 /**
  * Report service.
  * @module api/ReportApi
- * @version 1.19.1
  */
 export default class ReportApi extends ApiClient {
     /**

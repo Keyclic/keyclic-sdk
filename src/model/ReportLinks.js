@@ -27,7 +27,6 @@ import ReportLinksTracking from './ReportLinksTracking';
 /**
  * The ReportLinks model module.
  * @module model/ReportLinks
- * @version 1.19.1
  */
 export default class ReportLinks  {
     /**

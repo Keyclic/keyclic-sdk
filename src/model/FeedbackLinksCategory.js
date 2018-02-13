@@ -20,7 +20,6 @@ import CategoryLinksSelfIriTemplate from './CategoryLinksSelfIriTemplate';
 /**
  * The FeedbackLinksCategory model module.
  * @module model/FeedbackLinksCategory
- * @version 1.19.1
  */
 export default class FeedbackLinksCategory  {
     /**

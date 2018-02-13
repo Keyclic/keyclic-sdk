@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The BusinessActivity model module.
  * @module model/BusinessActivity
- * @version 1.19.1
  */
 export default class BusinessActivity  {
     /**

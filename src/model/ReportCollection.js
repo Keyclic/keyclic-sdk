@@ -20,7 +20,6 @@ import Report from './Report';
 /**
  * The ReportCollection model module.
  * @module model/ReportCollection
- * @version 1.19.1
  */
 export default class ReportCollection  {
     /**

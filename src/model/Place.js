@@ -21,7 +21,6 @@ import PlaceLinks from './PlaceLinks';
 /**
  * The Place model module.
  * @module model/Place
- * @version 1.19.1
  */
 export default class Place  {
     /**

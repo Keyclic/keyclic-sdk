@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationLinksSelfIriTemplateMapping model module.
  * @module model/OperationLinksSelfIriTemplateMapping
- * @version 1.19.1
  */
 export default class OperationLinksSelfIriTemplateMapping  {
     /**

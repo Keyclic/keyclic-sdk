@@ -20,7 +20,6 @@ import PlaceGeoPolygon from './PlaceGeoPolygon';
 /**
  * The PlaceGeo model module.
  * @module model/PlaceGeo
- * @version 1.19.1
  */
 export default class PlaceGeo  {
     /**

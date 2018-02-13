@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The FeedbackDataGeoPoint model module.
  * @module model/FeedbackDataGeoPoint
- * @version 1.19.1
  */
 export default class FeedbackDataGeoPoint  {
     /**

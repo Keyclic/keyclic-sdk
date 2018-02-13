@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The FeedbackWorkflowTransitionData model module.
  * @module model/FeedbackWorkflowTransitionData
- * @version 1.19.1
  */
 export default class FeedbackWorkflowTransitionData  {
     /**

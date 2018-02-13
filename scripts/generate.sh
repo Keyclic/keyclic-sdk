@@ -32,6 +32,7 @@ mvn clean package
 CODEGEN_CLI_PATH="${TEMP_DIR}/${GENERATOR_NAME}/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar"
 TEMPLATE_DIR="${CURRENT_DIR}/templates/javascript-es6"
 cd ${CURRENT_DIR}
+rm -rf src/*
 java \
     -DdebugModels \
     -DdebugOperations \

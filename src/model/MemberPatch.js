@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberPatch model module.
  * @module model/MemberPatch
- * @version 1.19.1
  */
 export default class MemberPatch  {
     /**

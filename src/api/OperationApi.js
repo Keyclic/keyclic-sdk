@@ -20,7 +20,6 @@ import OperationPatch from '../model/OperationPatch';
 /**
  * Operation service.
  * @module api/OperationApi
- * @version 1.19.1
  */
 export default class OperationApi extends ApiClient {
     /**

@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ReportWorkflowTransitionData model module.
  * @module model/ReportWorkflowTransitionData
- * @version 1.19.1
  */
 export default class ReportWorkflowTransitionData  {
     /**

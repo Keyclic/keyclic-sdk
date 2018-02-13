@@ -20,7 +20,6 @@ import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIri
 /**
  * The OrganizationLinksLogo model module.
  * @module model/OrganizationLinksLogo
- * @version 1.19.1
  */
 export default class OrganizationLinksLogo  {
     /**

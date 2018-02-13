@@ -21,7 +21,6 @@ import OrganizationLinksSelf from './OrganizationLinksSelf';
 /**
  * The OrganizationLinks model module.
  * @module model/OrganizationLinks
- * @version 1.19.1
  */
 export default class OrganizationLinks  {
     /**

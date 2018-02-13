@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The PersonPatch model module.
  * @module model/PersonPatch
- * @version 1.19.1
  */
 export default class PersonPatch  {
     /**

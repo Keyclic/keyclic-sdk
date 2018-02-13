@@ -20,7 +20,6 @@ import PlaceLinksContainsPlacesIriTemplateMapping from './PlaceLinksContainsPlac
 /**
  * The PlaceLinksContainsPlacesIriTemplate model module.
  * @module model/PlaceLinksContainsPlacesIriTemplate
- * @version 1.19.1
  */
 export default class PlaceLinksContainsPlacesIriTemplate  {
     /**

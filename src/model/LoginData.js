@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LoginData model module.
  * @module model/LoginData
- * @version 1.19.1
  */
 export default class LoginData  {
     /**

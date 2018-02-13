@@ -18,7 +18,6 @@ import Operation from '../model/Operation';
 /**
  * Contribution service.
  * @module api/ContributionApi
- * @version 1.19.1
  */
 export default class ContributionApi extends ApiClient {
     /**

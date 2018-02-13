@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The PasswordData model module.
  * @module model/PasswordData
- * @version 1.19.1
  */
 export default class PasswordData  {
     /**

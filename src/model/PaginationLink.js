@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The PaginationLink model module.
  * @module model/PaginationLink
- * @version 1.19.1
  */
 export default class PaginationLink  {
     /**

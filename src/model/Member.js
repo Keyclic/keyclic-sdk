@@ -21,7 +21,6 @@ import MemberLinks from './MemberLinks';
 /**
  * The Member model module.
  * @module model/Member
- * @version 1.19.1
  */
 export default class Member  {
     /**

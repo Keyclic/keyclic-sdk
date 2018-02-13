@@ -22,7 +22,6 @@ import ReportWorkflowTransitionData from '../model/ReportWorkflowTransitionData'
 /**
  * Transition service.
  * @module api/TransitionApi
- * @version 1.19.1
  */
 export default class TransitionApi extends ApiClient {
     /**

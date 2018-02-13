@@ -20,7 +20,6 @@ import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIri
 /**
  * The ReportLinksDelegatedFrom model module.
  * @module model/ReportLinksDelegatedFrom
- * @version 1.19.1
  */
 export default class ReportLinksDelegatedFrom  {
     /**

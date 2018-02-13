@@ -20,7 +20,6 @@ import OperationLinksReportIriTemplate from './OperationLinksReportIriTemplate';
 /**
  * The ReportLinksSelf model module.
  * @module model/ReportLinksSelf
- * @version 1.19.1
  */
 export default class ReportLinksSelf  {
     /**

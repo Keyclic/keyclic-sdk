@@ -20,7 +20,6 @@ import PaginationLink from './PaginationLink';
 /**
  * The PaginationLinks model module.
  * @module model/PaginationLinks
- * @version 1.19.1
  */
 export default class PaginationLinks  {
     /**

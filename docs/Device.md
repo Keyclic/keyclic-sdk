@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **person** | **Object** |  | 
+**platform** | **String** |  | [optional] 
 **token** | **String** |  | 
 **id** | **String** |  | 
 **createdAt** | **Date** |  | 

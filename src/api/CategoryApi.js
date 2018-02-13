@@ -20,7 +20,6 @@ import Error from '../model/Error';
 /**
  * Category service.
  * @module api/CategoryApi
- * @version 1.19.1
  */
 export default class CategoryApi extends ApiClient {
     /**

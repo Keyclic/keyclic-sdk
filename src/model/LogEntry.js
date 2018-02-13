@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The LogEntry model module.
  * @module model/LogEntry
- * @version 1.19.1
  */
 export default class LogEntry  {
     /**

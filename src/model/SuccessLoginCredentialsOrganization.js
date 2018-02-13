@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The SuccessLoginCredentialsOrganization model module.
  * @module model/SuccessLoginCredentialsOrganization
- * @version 1.19.1
  */
 export default class SuccessLoginCredentialsOrganization  {
     /**

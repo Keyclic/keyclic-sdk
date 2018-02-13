@@ -18,7 +18,6 @@ import SuccessLogin from '../model/SuccessLogin';
 /**
  * Login service.
  * @module api/LoginApi
- * @version 1.19.1
  */
 export default class LoginApi extends ApiClient {
     /**

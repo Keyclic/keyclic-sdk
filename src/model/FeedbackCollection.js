@@ -20,7 +20,6 @@ import Feedback from './Feedback';
 /**
  * The FeedbackCollection model module.
  * @module model/FeedbackCollection
- * @version 1.19.1
  */
 export default class FeedbackCollection  {
     /**

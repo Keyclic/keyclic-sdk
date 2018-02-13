@@ -21,7 +21,6 @@ import ReportLinks from './ReportLinks';
 /**
  * The Report model module.
  * @module model/Report
- * @version 1.19.1
  */
 export default class Report  {
     /**

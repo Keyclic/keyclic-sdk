@@ -17,7 +17,6 @@ import PasswordData from '../model/PasswordData';
 /**
  * Change service.
  * @module api/ChangeApi
- * @version 1.19.1
  */
 export default class ChangeApi extends ApiClient {
     /**

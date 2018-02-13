@@ -20,7 +20,6 @@ import FeedbackGeoCoordinatesPoint from './FeedbackGeoCoordinatesPoint';
 /**
  * The FeedbackGeoCoordinates model module.
  * @module model/FeedbackGeoCoordinates
- * @version 1.19.1
  */
 export default class FeedbackGeoCoordinates  {
     /**

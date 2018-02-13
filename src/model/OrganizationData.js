@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The OrganizationData model module.
  * @module model/OrganizationData
- * @version 1.19.1
  */
 export default class OrganizationData  {
     /**
@@ -29,25 +28,20 @@ export default class OrganizationData  {
 
      * @param name { String }
 
-     * @param billingEmailAddress { String }
-
-     * @param notificationEmailAddress { String }
+     * @param businessActivity { String }
 
      */
     constructor(
 
         name,
 
-        billingEmailAddress,
-
-        notificationEmailAddress,
+        businessActivity,
 
     ) {
 
         this.name = name;
+        this.businessActivity = businessActivity;
         this.logo = null;
-        this.billingEmailAddress = billingEmailAddress;
-        this.notificationEmailAddress = notificationEmailAddress;
 
     }
 
@@ -72,14 +66,11 @@ export default class OrganizationData  {
         if (data.hasOwnProperty('name')) {
             object.name = ApiClient.convertToType(data.name, 'String');
         }
+        if (data.hasOwnProperty('businessActivity')) {
+            object.businessActivity = ApiClient.convertToType(data.businessActivity, 'String');
+        }
         if (data.hasOwnProperty('logo')) {
             object.logo = ApiClient.convertToType(data.logo, 'Blob');
-        }
-        if (data.hasOwnProperty('billingEmailAddress')) {
-            object.billingEmailAddress = ApiClient.convertToType(data.billingEmailAddress, 'String');
-        }
-        if (data.hasOwnProperty('notificationEmailAddress')) {
-            object.notificationEmailAddress = ApiClient.convertToType(data.notificationEmailAddress, 'String');
         }
 
         return object;

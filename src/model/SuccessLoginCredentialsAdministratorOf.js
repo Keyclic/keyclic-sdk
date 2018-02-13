@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The SuccessLoginCredentialsAdministratorOf model module.
  * @module model/SuccessLoginCredentialsAdministratorOf
- * @version 1.19.1
  */
 export default class SuccessLoginCredentialsAdministratorOf  {
     /**

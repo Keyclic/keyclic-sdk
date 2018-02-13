@@ -20,7 +20,6 @@ import CheckpointLinks from './CheckpointLinks';
 /**
  * The Checkpoint model module.
  * @module model/Checkpoint
- * @version 1.19.1
  */
 export default class Checkpoint  {
     /**

@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CommentData model module.
  * @module model/CommentData
- * @version 1.19.1
  */
 export default class CommentData  {
     /**

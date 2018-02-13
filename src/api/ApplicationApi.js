@@ -17,7 +17,6 @@ import Error from '../model/Error';
 /**
  * Application service.
  * @module api/ApplicationApi
- * @version 1.19.1
  */
 export default class ApplicationApi extends ApiClient {
     /**

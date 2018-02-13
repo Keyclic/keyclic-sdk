@@ -17,7 +17,6 @@ import LogEntryPagination from '../model/LogEntryPagination';
 /**
  * Log service.
  * @module api/LogApi
- * @version 1.19.1
  */
 export default class LogApi extends ApiClient {
     /**

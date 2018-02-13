@@ -17,7 +17,6 @@ import Error from '../model/Error';
 /**
  * Reset service.
  * @module api/ResetApi
- * @version 1.19.1
  */
 export default class ResetApi extends ApiClient {
     /**

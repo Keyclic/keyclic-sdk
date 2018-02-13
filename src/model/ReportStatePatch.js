@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ReportStatePatch model module.
  * @module model/ReportStatePatch
- * @version 1.19.1
  */
 export default class ReportStatePatch  {
     /**

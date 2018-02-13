@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The OrganizationPatch model module.
  * @module model/OrganizationPatch
- * @version 1.19.1
  */
 export default class OrganizationPatch  {
     /**

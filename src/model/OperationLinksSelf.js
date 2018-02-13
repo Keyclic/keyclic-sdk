@@ -20,7 +20,6 @@ import OperationLinksSelfIriTemplate from './OperationLinksSelfIriTemplate';
 /**
  * The OperationLinksSelf model module.
  * @module model/OperationLinksSelf
- * @version 1.19.1
  */
 export default class OperationLinksSelf  {
     /**

@@ -22,7 +22,6 @@ import PaginationLinks from './PaginationLinks';
 /**
  * The CategoryPagination model module.
  * @module model/CategoryPagination
- * @version 1.19.1
  */
 export default class CategoryPagination extends Pagination {
     /**

@@ -20,7 +20,6 @@ import FeedbackLinksSelfIriTemplateMapping from './FeedbackLinksSelfIriTemplateM
 /**
  * The FeedbackLinksSelfIriTemplate model module.
  * @module model/FeedbackLinksSelfIriTemplate
- * @version 1.19.1
  */
 export default class FeedbackLinksSelfIriTemplate  {
     /**

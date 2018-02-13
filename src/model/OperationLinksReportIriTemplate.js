@@ -20,7 +20,6 @@ import OperationLinksReportIriTemplateMapping from './OperationLinksReportIriTem
 /**
  * The OperationLinksReportIriTemplate model module.
  * @module model/OperationLinksReportIriTemplate
- * @version 1.19.1
  */
 export default class OperationLinksReportIriTemplate  {
     /**

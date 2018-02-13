@@ -20,7 +20,6 @@ import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIri
 /**
  * The ReportLinksOrganization model module.
  * @module model/ReportLinksOrganization
- * @version 1.19.1
  */
 export default class ReportLinksOrganization  {
     /**

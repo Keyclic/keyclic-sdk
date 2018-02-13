@@ -20,7 +20,6 @@ import CategoryLinksSelfIriTemplate from './CategoryLinksSelfIriTemplate';
 /**
  * The CategoryLinksSelf model module.
  * @module model/CategoryLinksSelf
- * @version 1.19.1
  */
 export default class CategoryLinksSelf  {
     /**

@@ -20,7 +20,6 @@ import FeedbackLinksImageIriTemplateMapping from './FeedbackLinksImageIriTemplat
 /**
  * The FeedbackLinksImageIriTemplate model module.
  * @module model/FeedbackLinksImageIriTemplate
- * @version 1.19.1
  */
 export default class FeedbackLinksImageIriTemplate  {
     /**

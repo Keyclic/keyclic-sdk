@@ -20,7 +20,6 @@ import ApplicationLinksSelfIriTemplate from './ApplicationLinksSelfIriTemplate';
 /**
  * The ApplicationLinksSelf model module.
  * @module model/ApplicationLinksSelf
- * @version 1.19.1
  */
 export default class ApplicationLinksSelf  {
     /**

@@ -20,7 +20,6 @@ import Category from './Category';
 /**
  * The CategoryCollection model module.
  * @module model/CategoryCollection
- * @version 1.19.1
  */
 export default class CategoryCollection  {
     /**

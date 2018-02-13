@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The PlacePatch model module.
  * @module model/PlacePatch
- * @version 1.19.1
  */
 export default class PlacePatch  {
     /**

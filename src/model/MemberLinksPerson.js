@@ -20,7 +20,6 @@ import FeedbackLinksReporterIriTemplate from './FeedbackLinksReporterIriTemplate
 /**
  * The MemberLinksPerson model module.
  * @module model/MemberLinksPerson
- * @version 1.19.1
  */
 export default class MemberLinksPerson  {
     /**

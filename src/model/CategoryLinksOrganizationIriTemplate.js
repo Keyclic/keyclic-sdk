@@ -20,7 +20,6 @@ import CategoryLinksOrganizationIriTemplateMapping from './CategoryLinksOrganiza
 /**
  * The CategoryLinksOrganizationIriTemplate model module.
  * @module model/CategoryLinksOrganizationIriTemplate
- * @version 1.19.1
  */
 export default class CategoryLinksOrganizationIriTemplate  {
     /**

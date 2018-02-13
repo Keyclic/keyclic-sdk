@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The FacebookConnectData model module.
  * @module model/FacebookConnectData
- * @version 1.19.1
  */
 export default class FacebookConnectData  {
     /**

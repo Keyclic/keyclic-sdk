@@ -21,7 +21,6 @@ import TrackingProgression from './TrackingProgression';
 /**
  * The Tracking model module.
  * @module model/Tracking
- * @version 1.19.1
  */
 export default class Tracking  {
     /**

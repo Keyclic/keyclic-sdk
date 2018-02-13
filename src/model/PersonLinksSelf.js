@@ -20,7 +20,6 @@ import FeedbackLinksReporterIriTemplate from './FeedbackLinksReporterIriTemplate
 /**
  * The PersonLinksSelf model module.
  * @module model/PersonLinksSelf
- * @version 1.19.1
  */
 export default class PersonLinksSelf  {
     /**

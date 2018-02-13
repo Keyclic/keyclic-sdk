@@ -22,7 +22,6 @@ import FeedbackLinks from './FeedbackLinks';
 /**
  * The Feedback model module.
  * @module model/Feedback
- * @version 1.19.1
  */
 export default class Feedback  {
     /**

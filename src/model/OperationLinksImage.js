@@ -20,7 +20,6 @@ import OperationLinksImageIriTemplate from './OperationLinksImageIriTemplate';
 /**
  * The OperationLinksImage model module.
  * @module model/OperationLinksImage
- * @version 1.19.1
  */
 export default class OperationLinksImage  {
     /**

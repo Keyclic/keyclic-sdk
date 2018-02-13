@@ -24,7 +24,6 @@ import FeedbackLinksTracking from './FeedbackLinksTracking';
 /**
  * The FeedbackLinks model module.
  * @module model/FeedbackLinks
- * @version 1.19.1
  */
 export default class FeedbackLinks  {
     /**

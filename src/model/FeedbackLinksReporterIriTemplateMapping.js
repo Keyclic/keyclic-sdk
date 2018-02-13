@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The FeedbackLinksReporterIriTemplateMapping model module.
  * @module model/FeedbackLinksReporterIriTemplateMapping
- * @version 1.19.1
  */
 export default class FeedbackLinksReporterIriTemplateMapping  {
     /**

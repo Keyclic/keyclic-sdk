@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The Device model module.
  * @module model/Device
- * @version 1.19.1
  */
 export default class Device  {
     /**
@@ -53,6 +52,7 @@ export default class Device  {
     ) {
 
         this.person = person;
+        this.platform = null;
         this.token = token;
         this.id = id;
         this.createdAt = createdAt;
@@ -81,6 +81,9 @@ export default class Device  {
 
         if (data.hasOwnProperty('person')) {
             object.person = ApiClient.convertToType(data.person, 'Object');
+        }
+        if (data.hasOwnProperty('platform')) {
+            object.platform = ApiClient.convertToType(data.platform, 'String');
         }
         if (data.hasOwnProperty('token')) {
             object.token = ApiClient.convertToType(data.token, 'String');

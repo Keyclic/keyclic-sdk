@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The FeedbackGeoCoordinatesPoint model module.
  * @module model/FeedbackGeoCoordinatesPoint
- * @version 1.19.1
  */
 export default class FeedbackGeoCoordinatesPoint  {
     /**

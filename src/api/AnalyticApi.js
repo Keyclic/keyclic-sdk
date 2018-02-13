@@ -17,7 +17,6 @@ import Error from '../model/Error';
 /**
  * Analytic service.
  * @module api/AnalyticApi
- * @version 1.19.1
  */
 export default class AnalyticApi extends ApiClient {
     /**

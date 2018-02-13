@@ -18,7 +18,6 @@ import RegisterData from '../model/RegisterData';
 /**
  * Register service.
  * @module api/RegisterApi
- * @version 1.19.1
  */
 export default class RegisterApi extends ApiClient {
     /**

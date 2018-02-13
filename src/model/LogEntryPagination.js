@@ -22,7 +22,6 @@ import PaginationLinks from './PaginationLinks';
 /**
  * The LogEntryPagination model module.
  * @module model/LogEntryPagination
- * @version 1.19.1
  */
 export default class LogEntryPagination extends Pagination {
     /**

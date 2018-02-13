@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RegisterData model module.
  * @module model/RegisterData
- * @version 1.19.1
  */
 export default class RegisterData  {
     /**

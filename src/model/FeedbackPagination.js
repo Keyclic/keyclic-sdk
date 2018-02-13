@@ -22,7 +22,6 @@ import PaginationLinks from './PaginationLinks';
 /**
  * The FeedbackPagination model module.
  * @module model/FeedbackPagination
- * @version 1.19.1
  */
 export default class FeedbackPagination extends Pagination {
     /**

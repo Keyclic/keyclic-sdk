@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationLinksReportIriTemplateMapping model module.
  * @module model/OperationLinksReportIriTemplateMapping
- * @version 1.19.1
  */
 export default class OperationLinksReportIriTemplateMapping  {
     /**

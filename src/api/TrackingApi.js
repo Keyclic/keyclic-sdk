@@ -17,7 +17,6 @@ import Tracking from '../model/Tracking';
 /**
  * Tracking service.
  * @module api/TrackingApi
- * @version 1.19.1
  */
 export default class TrackingApi extends ApiClient {
     /**

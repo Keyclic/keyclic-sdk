@@ -20,7 +20,6 @@ import Error from './Error';
 /**
  * The ErrorEmbedded model module.
  * @module model/ErrorEmbedded
- * @version 1.19.1
  */
 export default class ErrorEmbedded  {
     /**

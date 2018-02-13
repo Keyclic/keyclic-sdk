@@ -20,7 +20,6 @@ import Activity from './Activity';
 /**
  * The ActivityPagination model module.
  * @module model/ActivityPagination
- * @version 1.19.1
  */
 export default class ActivityPagination  {
     /**

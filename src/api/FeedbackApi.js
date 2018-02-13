@@ -18,7 +18,6 @@ import FeedbackPagination from '../model/FeedbackPagination';
 /**
  * Feedback service.
  * @module api/FeedbackApi
- * @version 1.19.1
  */
 export default class FeedbackApi extends ApiClient {
     /**

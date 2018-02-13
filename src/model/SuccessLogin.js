@@ -20,7 +20,6 @@ import SuccessLoginCredentials from './SuccessLoginCredentials';
 /**
  * The SuccessLogin model module.
  * @module model/SuccessLogin
- * @version 1.19.1
  */
 export default class SuccessLogin  {
     /**

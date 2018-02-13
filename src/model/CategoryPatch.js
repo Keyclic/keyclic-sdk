@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CategoryPatch model module.
  * @module model/CategoryPatch
- * @version 1.19.1
  */
 export default class CategoryPatch  {
     /**

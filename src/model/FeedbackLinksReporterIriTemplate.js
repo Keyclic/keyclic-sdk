@@ -20,7 +20,6 @@ import FeedbackLinksReporterIriTemplateMapping from './FeedbackLinksReporterIriT
 /**
  * The FeedbackLinksReporterIriTemplate model module.
  * @module model/FeedbackLinksReporterIriTemplate
- * @version 1.19.1
  */
 export default class FeedbackLinksReporterIriTemplate  {
     /**

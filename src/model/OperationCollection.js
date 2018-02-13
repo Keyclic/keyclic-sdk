@@ -20,7 +20,6 @@ import Operation from './Operation';
 /**
  * The OperationCollection model module.
  * @module model/OperationCollection
- * @version 1.19.1
  */
 export default class OperationCollection  {
     /**

@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplicationLinksSelfIriTemplateMapping model module.
  * @module model/ApplicationLinksSelfIriTemplateMapping
- * @version 1.19.1
  */
 export default class ApplicationLinksSelfIriTemplateMapping  {
     /**

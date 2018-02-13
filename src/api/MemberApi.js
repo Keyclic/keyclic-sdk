@@ -20,7 +20,6 @@ import PersonData from '../model/PersonData';
 /**
  * Member service.
  * @module api/MemberApi
- * @version 1.19.1
  */
 export default class MemberApi extends ApiClient {
     /**

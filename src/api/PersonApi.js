@@ -19,7 +19,6 @@ import PersonPatch from '../model/PersonPatch';
 /**
  * Person service.
  * @module api/PersonApi
- * @version 1.19.1
  */
 export default class PersonApi extends ApiClient {
     /**

@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The FeedbackLinksImageIriTemplateMapping model module.
  * @module model/FeedbackLinksImageIriTemplateMapping
- * @version 1.19.1
  */
 export default class FeedbackLinksImageIriTemplateMapping  {
     /**

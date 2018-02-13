@@ -20,7 +20,6 @@ import OrganizationLinks from './OrganizationLinks';
 /**
  * The Organization model module.
  * @module model/Organization
- * @version 1.19.1
  */
 export default class Organization  {
     /**

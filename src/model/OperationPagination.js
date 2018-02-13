@@ -22,7 +22,6 @@ import PaginationLinks from './PaginationLinks';
 /**
  * The OperationPagination model module.
  * @module model/OperationPagination
- * @version 1.19.1
  */
 export default class OperationPagination extends Pagination {
     /**

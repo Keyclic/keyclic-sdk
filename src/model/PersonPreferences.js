@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The PersonPreferences model module.
  * @module model/PersonPreferences
- * @version 1.19.1
  */
 export default class PersonPreferences  {
     /**

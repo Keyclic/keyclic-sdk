@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The OperationStatePatch model module.
  * @module model/OperationStatePatch
- * @version 1.19.1
  */
 export default class OperationStatePatch  {
     /**

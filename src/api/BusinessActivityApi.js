@@ -17,7 +17,6 @@ import Error from '../model/Error';
 /**
  * BusinessActivity service.
  * @module api/BusinessActivityApi
- * @version 1.19.1
  */
 export default class BusinessActivityApi extends ApiClient {
     /**

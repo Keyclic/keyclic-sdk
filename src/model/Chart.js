@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The Chart model module.
  * @module model/Chart
- * @version 1.19.1
  */
 export default class Chart  {
     /**

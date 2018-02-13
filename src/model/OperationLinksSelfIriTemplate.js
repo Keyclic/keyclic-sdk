@@ -20,7 +20,6 @@ import OperationLinksSelfIriTemplateMapping from './OperationLinksSelfIriTemplat
 /**
  * The OperationLinksSelfIriTemplate model module.
  * @module model/OperationLinksSelfIriTemplate
- * @version 1.19.1
  */
 export default class OperationLinksSelfIriTemplate  {
     /**

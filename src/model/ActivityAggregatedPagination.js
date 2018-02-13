@@ -20,7 +20,6 @@ import Result from './Result';
 /**
  * The ActivityAggregatedPagination model module.
  * @module model/ActivityAggregatedPagination
- * @version 1.19.1
  */
 export default class ActivityAggregatedPagination  {
     /**

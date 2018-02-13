@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The DelegateData model module.
  * @module model/DelegateData
- * @version 1.19.1
  */
 export default class DelegateData  {
     /**

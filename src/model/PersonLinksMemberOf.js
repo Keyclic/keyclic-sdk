@@ -20,7 +20,6 @@ import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIri
 /**
  * The PersonLinksMemberOf model module.
  * @module model/PersonLinksMemberOf
- * @version 1.19.1
  */
 export default class PersonLinksMemberOf  {
     /**

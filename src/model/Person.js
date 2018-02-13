@@ -21,7 +21,6 @@ import PersonPreferences from './PersonPreferences';
 /**
  * The Person model module.
  * @module model/Person
- * @version 1.19.1
  */
 export default class Person  {
     /**

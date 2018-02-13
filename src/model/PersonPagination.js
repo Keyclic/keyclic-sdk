@@ -22,7 +22,6 @@ import PersonCollection from './PersonCollection';
 /**
  * The PersonPagination model module.
  * @module model/PersonPagination
- * @version 1.19.1
  */
 export default class PersonPagination extends Pagination {
     /**

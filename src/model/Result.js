@@ -20,7 +20,6 @@ import Activity from './Activity';
 /**
  * The Result model module.
  * @module model/Result
- * @version 1.19.1
  */
 export default class Result  {
     /**

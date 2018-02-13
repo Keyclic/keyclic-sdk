@@ -20,7 +20,6 @@ import FeedbackLinksImageIriTemplate from './FeedbackLinksImageIriTemplate';
 /**
  * The FeedbackLinksImage model module.
  * @module model/FeedbackLinksImage
- * @version 1.19.1
  */
 export default class FeedbackLinksImage  {
     /**

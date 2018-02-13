@@ -22,7 +22,6 @@ import PaginationLinks from './PaginationLinks';
 /**
  * The MemberPagination model module.
  * @module model/MemberPagination
- * @version 1.19.1
  */
 export default class MemberPagination extends Pagination {
     /**

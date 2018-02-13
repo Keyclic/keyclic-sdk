@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The FeedbackEmbedded model module.
  * @module model/FeedbackEmbedded
- * @version 1.19.1
  */
 export default class FeedbackEmbedded  {
     /**

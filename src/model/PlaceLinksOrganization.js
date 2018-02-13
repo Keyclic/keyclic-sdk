@@ -20,7 +20,6 @@ import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIri
 /**
  * The PlaceLinksOrganization model module.
  * @module model/PlaceLinksOrganization
- * @version 1.19.1
  */
 export default class PlaceLinksOrganization  {
     /**

@@ -23,7 +23,6 @@ import OperationLinksSelf from './OperationLinksSelf';
 /**
  * The OperationLinks model module.
  * @module model/OperationLinks
- * @version 1.19.1
  */
 export default class OperationLinks  {
     /**

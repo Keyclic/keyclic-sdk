@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CategoryLinksOrganizationIriTemplateMapping model module.
  * @module model/CategoryLinksOrganizationIriTemplateMapping
- * @version 1.19.1
  */
 export default class CategoryLinksOrganizationIriTemplateMapping  {
     /**

@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberData model module.
  * @module model/MemberData
- * @version 1.19.1
  */
 export default class MemberData  {
     /**

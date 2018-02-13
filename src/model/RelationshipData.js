@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The RelationshipData model module.
  * @module model/RelationshipData
- * @version 1.19.1
  */
 export default class RelationshipData  {
     /**

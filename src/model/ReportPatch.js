@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The ReportPatch model module.
  * @module model/ReportPatch
- * @version 1.19.1
  */
 export default class ReportPatch  {
     /**

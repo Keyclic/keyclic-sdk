@@ -20,7 +20,6 @@ import LogEntry from './LogEntry';
 /**
  * The LogEntryCollection model module.
  * @module model/LogEntryCollection
- * @version 1.19.1
  */
 export default class LogEntryCollection  {
     /**

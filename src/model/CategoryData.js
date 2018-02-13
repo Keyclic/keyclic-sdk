@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CategoryData model module.
  * @module model/CategoryData
- * @version 1.19.1
  */
 export default class CategoryData  {
     /**

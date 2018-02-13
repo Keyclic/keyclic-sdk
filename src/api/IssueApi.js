@@ -18,7 +18,6 @@ import FeedbackData from '../model/FeedbackData';
 /**
  * Issue service.
  * @module api/IssueApi
- * @version 1.19.1
  */
 export default class IssueApi extends ApiClient {
     /**

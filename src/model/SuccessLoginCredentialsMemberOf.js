@@ -20,7 +20,6 @@ import SuccessLoginCredentialsOrganization from './SuccessLoginCredentialsOrgani
 /**
  * The SuccessLoginCredentialsMemberOf model module.
  * @module model/SuccessLoginCredentialsMemberOf
- * @version 1.19.1
  */
 export default class SuccessLoginCredentialsMemberOf  {
     /**

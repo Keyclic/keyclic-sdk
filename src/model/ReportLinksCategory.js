@@ -20,7 +20,6 @@ import CategoryLinksSelfIriTemplate from './CategoryLinksSelfIriTemplate';
 /**
  * The ReportLinksCategory model module.
  * @module model/ReportLinksCategory
- * @version 1.19.1
  */
 export default class ReportLinksCategory  {
     /**

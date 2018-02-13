@@ -20,7 +20,6 @@ import CategoryLinks from './CategoryLinks';
 /**
  * The Category model module.
  * @module model/Category
- * @version 1.19.1
  */
 export default class Category  {
     /**

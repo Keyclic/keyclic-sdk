@@ -20,7 +20,6 @@ import CheckpointLinksOrganization from './CheckpointLinksOrganization';
 /**
  * The CheckpointLinks model module.
  * @module model/CheckpointLinks
- * @version 1.19.1
  */
 export default class CheckpointLinks  {
     /**

@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The CategoryLinksSelfIriTemplateMapping model module.
  * @module model/CategoryLinksSelfIriTemplateMapping
- * @version 1.19.1
  */
 export default class CategoryLinksSelfIriTemplateMapping  {
     /**

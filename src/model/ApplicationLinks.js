@@ -20,7 +20,6 @@ import ApplicationLinksSelf from './ApplicationLinksSelf';
 /**
  * The ApplicationLinks model module.
  * @module model/ApplicationLinks
- * @version 1.19.1
  */
 export default class ApplicationLinks  {
     /**

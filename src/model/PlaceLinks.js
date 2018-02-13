@@ -22,7 +22,6 @@ import PlaceLinksSelf from './PlaceLinksSelf';
 /**
  * The PlaceLinks model module.
  * @module model/PlaceLinks
- * @version 1.19.1
  */
 export default class PlaceLinks  {
     /**

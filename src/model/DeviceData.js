@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The DeviceData model module.
  * @module model/DeviceData
- * @version 1.19.1
  */
 export default class DeviceData  {
     /**
@@ -37,6 +36,7 @@ export default class DeviceData  {
     ) {
 
         this.token = token;
+        this.platform = null;
 
     }
 
@@ -60,6 +60,9 @@ export default class DeviceData  {
 
         if (data.hasOwnProperty('token')) {
             object.token = ApiClient.convertToType(data.token, 'String');
+        }
+        if (data.hasOwnProperty('platform')) {
+            object.platform = ApiClient.convertToType(data.platform, 'String');
         }
 
         return object;

@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The PlaceLinksSelfIriTemplateMapping model module.
  * @module model/PlaceLinksSelfIriTemplateMapping
- * @version 1.19.1
  */
 export default class PlaceLinksSelfIriTemplateMapping  {
     /**

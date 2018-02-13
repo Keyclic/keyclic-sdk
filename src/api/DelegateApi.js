@@ -18,7 +18,6 @@ import Report from '../model/Report';
 /**
  * Delegate service.
  * @module api/DelegateApi
- * @version 1.19.1
  */
 export default class DelegateApi extends ApiClient {
     /**

@@ -20,7 +20,6 @@ import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIri
 /**
  * The OrganizationLinksSelf model module.
  * @module model/OrganizationLinksSelf
- * @version 1.19.1
  */
 export default class OrganizationLinksSelf  {
     /**

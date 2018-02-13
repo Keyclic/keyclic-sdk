@@ -22,7 +22,6 @@ import PlaceCollection from './PlaceCollection';
 /**
  * The PlacePagination model module.
  * @module model/PlacePagination
- * @version 1.19.1
  */
 export default class PlacePagination extends Pagination {
     /**

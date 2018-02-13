@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The PersonData model module.
  * @module model/PersonData
- * @version 1.19.1
  */
 export default class PersonData  {
     /**

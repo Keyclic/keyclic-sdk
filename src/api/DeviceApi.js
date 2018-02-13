@@ -18,7 +18,6 @@ import Error from '../model/Error';
 /**
  * Device service.
  * @module api/DeviceApi
- * @version 1.19.1
  */
 export default class DeviceApi extends ApiClient {
     /**

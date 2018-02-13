@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The MemberEmbedded model module.
  * @module model/MemberEmbedded
- * @version 1.19.1
  */
 export default class MemberEmbedded  {
     /**

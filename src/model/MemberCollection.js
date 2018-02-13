@@ -20,7 +20,6 @@ import Member from './Member';
 /**
  * The MemberCollection model module.
  * @module model/MemberCollection
- * @version 1.19.1
  */
 export default class MemberCollection  {
     /**

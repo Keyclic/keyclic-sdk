@@ -22,7 +22,6 @@ import ReportCollection from './ReportCollection';
 /**
  * The ReportPagination model module.
  * @module model/ReportPagination
- * @version 1.19.1
  */
 export default class ReportPagination extends Pagination {
     /**

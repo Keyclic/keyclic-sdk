@@ -20,7 +20,6 @@ import ApplicationLinks from './ApplicationLinks';
 /**
  * The Application model module.
  * @module model/Application
- * @version 1.19.1
  */
 export default class Application  {
     /**

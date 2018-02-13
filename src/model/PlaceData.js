@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The PlaceData model module.
  * @module model/PlaceData
- * @version 1.19.1
  */
 export default class PlaceData  {
     /**

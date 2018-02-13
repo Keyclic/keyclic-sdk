@@ -20,7 +20,6 @@ import Person from './Person';
 /**
  * The PersonCollection model module.
  * @module model/PersonCollection
- * @version 1.19.1
  */
 export default class PersonCollection  {
     /**

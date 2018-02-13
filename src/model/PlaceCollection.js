@@ -20,7 +20,6 @@ import Place from './Place';
 /**
  * The PlaceCollection model module.
  * @module model/PlaceCollection
- * @version 1.19.1
  */
 export default class PlaceCollection  {
     /**

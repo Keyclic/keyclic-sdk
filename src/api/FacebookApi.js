@@ -18,7 +18,6 @@ import SuccessLogin from '../model/SuccessLogin';
 /**
  * Facebook service.
  * @module api/FacebookApi
- * @version 1.19.1
  */
 export default class FacebookApi extends ApiClient {
     /**

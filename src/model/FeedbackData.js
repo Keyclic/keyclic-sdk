@@ -20,15 +20,12 @@ import FeedbackDataGeo from './FeedbackDataGeo';
 /**
  * The FeedbackData model module.
  * @module model/FeedbackData
- * @version 1.19.1
  */
 export default class FeedbackData  {
     /**
      * Constructs a new "FeedbackData".
      * @alias module:model/FeedbackData
      * @class
-
-     * @param reporter { String }
 
      * @param geo { module:model/FeedbackDataGeo }
 
@@ -37,20 +34,16 @@ export default class FeedbackData  {
      */
     constructor(
 
-        reporter,
-
         geo,
 
         visibility,
 
     ) {
 
-        this.reporter = reporter;
         this.category = null;
         this.geo = geo;
         this.description = null;
         this.visibility = visibility;
-        this.organization = null;
         this.businessActivity = null;
         this.proMode = null;
 
@@ -75,9 +68,6 @@ export default class FeedbackData  {
             object = new FeedbackData();
         }
 
-        if (data.hasOwnProperty('reporter')) {
-            object.reporter = ApiClient.convertToType(data.reporter, 'String');
-        }
         if (data.hasOwnProperty('category')) {
             object.category = ApiClient.convertToType(data.category, 'String');
         }
@@ -89,9 +79,6 @@ export default class FeedbackData  {
         }
         if (data.hasOwnProperty('visibility')) {
             object.visibility = ApiClient.convertToType(data.visibility, 'String');
-        }
-        if (data.hasOwnProperty('organization')) {
-            object.organization = ApiClient.convertToType(data.organization, 'String');
         }
         if (data.hasOwnProperty('businessActivity')) {
             object.businessActivity = ApiClient.convertToType(data.businessActivity, 'String');

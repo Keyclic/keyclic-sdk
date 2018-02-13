@@ -20,7 +20,6 @@ import Organization from './Organization';
 /**
  * The OrganizationCollection model module.
  * @module model/OrganizationCollection
- * @version 1.19.1
  */
 export default class OrganizationCollection  {
     /**

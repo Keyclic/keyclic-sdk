@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The Activity model module.
  * @module model/Activity
- * @version 1.19.1
  */
 export default class Activity  {
     /**

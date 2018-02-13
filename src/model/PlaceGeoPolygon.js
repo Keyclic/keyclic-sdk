@@ -19,7 +19,6 @@ import ApiClient from '../ApiClient';
 /**
  * The PlaceGeoPolygon model module.
  * @module model/PlaceGeoPolygon
- * @version 1.19.1
  */
 export default class PlaceGeoPolygon  {
     /**
