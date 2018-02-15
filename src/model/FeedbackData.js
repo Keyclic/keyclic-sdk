@@ -84,7 +84,7 @@ export default class FeedbackData  {
             object.businessActivity = ApiClient.convertToType(data.businessActivity, 'String');
         }
         if (data.hasOwnProperty('proMode')) {
-            object.proMode = ApiClient.convertToType(data.proMode, 'String');
+            object.proMode = ApiClient.convertToType(data.proMode, 'Boolean');
         }
 
         return object;

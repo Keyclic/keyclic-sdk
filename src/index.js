@@ -219,7 +219,7 @@ import TransitionApi from './api/TransitionApi';
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 1.19.3
+ * @version 1.19.4
  */
 export {
     /**

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **visibility** | **String** |  | 
 **businessActivity** | **String** |  | [optional] 
-**proMode** | **String** |  | [optional] 
+**proMode** | **Boolean** |  | [optional] 
 
 
 <a name="VisibilityEnum"></a>
