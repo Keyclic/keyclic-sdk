@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Feedback from './Feedback';
-
-
-
 
 /**
  * The FeedbackCollection model module.
  * @module model/FeedbackCollection
  */
-export default class FeedbackCollection  {
+export default class FeedbackCollection {
     /**
      * Constructs a new "FeedbackCollection".
      * @alias module:model/FeedbackCollection
@@ -31,7 +27,6 @@ export default class FeedbackCollection  {
     constructor(
 
     ) {
-
         this.items = [];
 
         this.itemsType = Feedback;
@@ -61,10 +56,4 @@ export default class FeedbackCollection  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Organization from './Organization';
-
-
-
 
 /**
  * The OrganizationCollection model module.
  * @module model/OrganizationCollection
  */
-export default class OrganizationCollection  {
+export default class OrganizationCollection {
     /**
      * Constructs a new "OrganizationCollection".
      * @alias module:model/OrganizationCollection
@@ -31,7 +27,6 @@ export default class OrganizationCollection  {
     constructor(
 
     ) {
-
         this.items = [];
 
         this.itemsType = Organization;
@@ -61,10 +56,4 @@ export default class OrganizationCollection  {
 
         return object;
     }
-
-
-
 }
-
-
-

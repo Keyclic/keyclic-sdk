@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The OperationPatch model module.
  * @module model/OperationPatch
  */
-export default class OperationPatch  {
+export default class OperationPatch {
     /**
      * Constructs a new "OperationPatch".
      * @alias module:model/OperationPatch
@@ -30,13 +26,11 @@ export default class OperationPatch  {
     constructor(
 
     ) {
-
         this.description = null;
         this.duration = null;
         this.identificationNumber = null;
         this.name = null;
         this.startDate = null;
-
     }
 
     /**
@@ -75,10 +69,4 @@ export default class OperationPatch  {
 
         return object;
     }
-
-
-
 }
-
-
-

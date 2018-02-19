@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The CommentData model module.
  * @module model/CommentData
  */
-export default class CommentData  {
+export default class CommentData {
     /**
      * Constructs a new "CommentData".
      * @alias module:model/CommentData
@@ -34,9 +30,7 @@ export default class CommentData  {
         text,
 
     ) {
-
         this.text = text;
-
     }
 
     /**
@@ -63,10 +57,4 @@ export default class CommentData  {
 
         return object;
     }
-
-
-
 }
-
-
-

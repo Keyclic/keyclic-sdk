@@ -10,20 +10,16 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import PlaceLinksContainsPlaces from './PlaceLinksContainsPlaces';
 import PlaceLinksOrganization from './PlaceLinksOrganization';
 import PlaceLinksSelf from './PlaceLinksSelf';
 
-
-
-
 /**
  * The PlaceLinks model module.
  * @module model/PlaceLinks
  */
-export default class PlaceLinks  {
+export default class PlaceLinks {
     /**
      * Constructs a new "PlaceLinks".
      * @alias module:model/PlaceLinks
@@ -33,7 +29,6 @@ export default class PlaceLinks  {
     constructor(
 
     ) {
-
         this.self = null;
         this.organization = null;
         this.containsPlaces = null;
@@ -73,10 +68,4 @@ export default class PlaceLinks  {
 
         return object;
     }
-
-
-
 }
-
-
-

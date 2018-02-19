@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import CategoryLinksSelfIriTemplateMapping from './CategoryLinksSelfIriTemplateMapping';
-
-
-
 
 /**
  * The CategoryLinksSelfIriTemplate model module.
  * @module model/CategoryLinksSelfIriTemplate
  */
-export default class CategoryLinksSelfIriTemplate  {
+export default class CategoryLinksSelfIriTemplate {
     /**
      * Constructs a new "CategoryLinksSelfIriTemplate".
      * @alias module:model/CategoryLinksSelfIriTemplate
@@ -31,7 +27,6 @@ export default class CategoryLinksSelfIriTemplate  {
     constructor(
 
     ) {
-
         this.mapping = null;
 
         this.mappingType = CategoryLinksSelfIriTemplateMapping;
@@ -61,10 +56,4 @@ export default class CategoryLinksSelfIriTemplate  {
 
         return object;
     }
-
-
-
 }
-
-
-

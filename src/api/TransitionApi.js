@@ -65,7 +65,6 @@ export default class TransitionApi extends ApiClient {
             feedbackWorkflowTransitionData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postTransitionByFeedback');
@@ -76,14 +75,10 @@ export default class TransitionApi extends ApiClient {
             throw new window.Error('Missing the required parameter "feedback" when calling postTransitionByFeedback');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -94,7 +89,6 @@ export default class TransitionApi extends ApiClient {
         if (typeof feedbackWorkflowTransitionData === 'undefined') {
             feedbackWorkflowTransitionData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postTransitionByFeedback');
@@ -171,7 +165,6 @@ export default class TransitionApi extends ApiClient {
             operationWorkflowTransitionData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postTransitionByOperation');
@@ -182,14 +175,10 @@ export default class TransitionApi extends ApiClient {
             throw new window.Error('Missing the required parameter "operation" when calling postTransitionByOperation');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -200,7 +189,6 @@ export default class TransitionApi extends ApiClient {
         if (typeof operationWorkflowTransitionData === 'undefined') {
             operationWorkflowTransitionData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postTransitionByOperation');
@@ -277,7 +265,6 @@ export default class TransitionApi extends ApiClient {
             reportWorkflowTransitionData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postTransitionByReport');
@@ -288,14 +275,10 @@ export default class TransitionApi extends ApiClient {
             throw new window.Error('Missing the required parameter "report" when calling postTransitionByReport');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -306,7 +289,6 @@ export default class TransitionApi extends ApiClient {
         if (typeof reportWorkflowTransitionData === 'undefined') {
             reportWorkflowTransitionData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postTransitionByReport');
@@ -355,5 +337,4 @@ export default class TransitionApi extends ApiClient {
             returnType
         );
     }
-
 }

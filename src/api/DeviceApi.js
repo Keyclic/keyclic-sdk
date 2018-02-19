@@ -49,7 +49,6 @@ export default class DeviceApi extends ApiClient {
         options,
         credentials,
     ) {
-
         let {
             xKeyclicApp,
             person,
@@ -57,7 +56,6 @@ export default class DeviceApi extends ApiClient {
             acceptLanguage,
             xKeyclicAppVersion,
         } = options;
-
 
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
@@ -74,20 +72,15 @@ export default class DeviceApi extends ApiClient {
             throw new window.Error('Missing the required parameter "device" when calling deleteDeviceByPersonAndDevice');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling deleteDeviceByPersonAndDevice');
@@ -165,7 +158,6 @@ export default class DeviceApi extends ApiClient {
             deviceData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postDeviceByPerson');
@@ -176,14 +168,10 @@ export default class DeviceApi extends ApiClient {
             throw new window.Error('Missing the required parameter "person" when calling postDeviceByPerson');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -194,7 +182,6 @@ export default class DeviceApi extends ApiClient {
         if (typeof deviceData === 'undefined') {
             deviceData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postDeviceByPerson');
@@ -243,5 +230,4 @@ export default class DeviceApi extends ApiClient {
             returnType
         );
     }
-
 }

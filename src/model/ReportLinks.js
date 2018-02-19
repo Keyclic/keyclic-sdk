@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import ReportLinksCategory from './ReportLinksCategory';
 import ReportLinksDelegatedFrom from './ReportLinksDelegatedFrom';
@@ -21,14 +20,11 @@ import ReportLinksOrganization from './ReportLinksOrganization';
 import ReportLinksSelf from './ReportLinksSelf';
 import ReportLinksTracking from './ReportLinksTracking';
 
-
-
-
 /**
  * The ReportLinks model module.
  * @module model/ReportLinks
  */
-export default class ReportLinks  {
+export default class ReportLinks {
     /**
      * Constructs a new "ReportLinks".
      * @alias module:model/ReportLinks
@@ -38,7 +34,6 @@ export default class ReportLinks  {
     constructor(
 
     ) {
-
         this.self = null;
         this.feedback = null;
         this.operations = null;
@@ -103,10 +98,4 @@ export default class ReportLinks  {
 
         return object;
     }
-
-
-
 }
-
-
-

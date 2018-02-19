@@ -10,19 +10,15 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import MemberEmbedded from './MemberEmbedded';
 import MemberLinks from './MemberLinks';
-
-
-
 
 /**
  * The Member model module.
  * @module model/Member
  */
-export default class Member  {
+export default class Member {
     /**
      * Constructs a new "Member".
      * @alias module:model/Member
@@ -40,7 +36,6 @@ export default class Member  {
         createdAt,
 
     ) {
-
         this.roles = [];
         this.id = id;
         this.createdAt = createdAt;
@@ -91,10 +86,4 @@ export default class Member  {
 
         return object;
     }
-
-
-
 }
-
-
-

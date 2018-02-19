@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The OperationData model module.
  * @module model/OperationData
  */
-export default class OperationData  {
+export default class OperationData {
     /**
      * Constructs a new "OperationData".
      * @alias module:model/OperationData
@@ -34,14 +30,12 @@ export default class OperationData  {
         report,
 
     ) {
-
         this.description = null;
         this.duration = null;
         this.name = null;
         this.identificationNumber = null;
         this.report = report;
         this.startDate = null;
-
     }
 
     /**
@@ -83,10 +77,4 @@ export default class OperationData  {
 
         return object;
     }
-
-
-
 }
-
-
-

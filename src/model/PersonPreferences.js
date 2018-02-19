@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The PersonPreferences model module.
  * @module model/PersonPreferences
  */
-export default class PersonPreferences  {
+export default class PersonPreferences {
     /**
      * Constructs a new "PersonPreferences".
      * @alias module:model/PersonPreferences
@@ -38,10 +34,8 @@ export default class PersonPreferences  {
         messagePushEnabled,
 
     ) {
-
         this.messageEmailEnabled = messageEmailEnabled;
         this.messagePushEnabled = messagePushEnabled;
-
     }
 
     /**
@@ -71,10 +65,4 @@ export default class PersonPreferences  {
 
         return object;
     }
-
-
-
 }
-
-
-

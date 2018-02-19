@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The FeedbackGeoCoordinatesPoint model module.
  * @module model/FeedbackGeoCoordinatesPoint
  */
-export default class FeedbackGeoCoordinatesPoint  {
+export default class FeedbackGeoCoordinatesPoint {
     /**
      * Constructs a new "FeedbackGeoCoordinatesPoint".
      * @alias module:model/FeedbackGeoCoordinatesPoint
@@ -42,11 +38,9 @@ export default class FeedbackGeoCoordinatesPoint  {
         srid,
 
     ) {
-
         this.latitude = latitude;
         this.longitude = longitude;
         this.srid = srid;
-
     }
 
     /**
@@ -79,10 +73,4 @@ export default class FeedbackGeoCoordinatesPoint  {
 
         return object;
     }
-
-
-
 }
-
-
-

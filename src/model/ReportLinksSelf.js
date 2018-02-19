@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import OperationLinksReportIriTemplate from './OperationLinksReportIriTemplate';
-
-
-
 
 /**
  * The ReportLinksSelf model module.
  * @module model/ReportLinksSelf
  */
-export default class ReportLinksSelf  {
+export default class ReportLinksSelf {
     /**
      * Constructs a new "ReportLinksSelf".
      * @alias module:model/ReportLinksSelf
@@ -31,7 +27,6 @@ export default class ReportLinksSelf  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class ReportLinksSelf  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The MemberPatch model module.
  * @module model/MemberPatch
  */
-export default class MemberPatch  {
+export default class MemberPatch {
     /**
      * Constructs a new "MemberPatch".
      * @alias module:model/MemberPatch
@@ -30,9 +26,7 @@ export default class MemberPatch  {
     constructor(
 
     ) {
-
         this.roles = [];
-
     }
 
     /**
@@ -59,10 +53,4 @@ export default class MemberPatch  {
 
         return object;
     }
-
-
-
 }
-
-
-

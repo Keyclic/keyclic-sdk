@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The SuccessLoginCredentialsOrganization model module.
  * @module model/SuccessLoginCredentialsOrganization
  */
-export default class SuccessLoginCredentialsOrganization  {
+export default class SuccessLoginCredentialsOrganization {
     /**
      * Constructs a new "SuccessLoginCredentialsOrganization".
      * @alias module:model/SuccessLoginCredentialsOrganization
@@ -30,10 +26,8 @@ export default class SuccessLoginCredentialsOrganization  {
     constructor(
 
     ) {
-
         this.type = null;
         this.id = null;
-
     }
 
     /**
@@ -63,10 +57,4 @@ export default class SuccessLoginCredentialsOrganization  {
 
         return object;
     }
-
-
-
 }
-
-
-

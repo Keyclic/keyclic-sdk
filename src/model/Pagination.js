@@ -10,19 +10,15 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Collection from './Collection';
 import PaginationLinks from './PaginationLinks';
-
-
-
 
 /**
  * The Pagination model module.
  * @module model/Pagination
  */
-export default class Pagination  {
+export default class Pagination {
     /**
      * Constructs a new "Pagination".
      * @alias module:model/Pagination
@@ -32,7 +28,6 @@ export default class Pagination  {
     constructor(
 
     ) {
-
         this.limit = null;
         this.page = null;
         this.pages = null;
@@ -83,10 +78,4 @@ export default class Pagination  {
 
         return object;
     }
-
-
-
 }
-
-
-

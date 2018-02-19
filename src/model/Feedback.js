@@ -10,20 +10,16 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import FeedbackEmbedded from './FeedbackEmbedded';
 import FeedbackGeoCoordinates from './FeedbackGeoCoordinates';
 import FeedbackLinks from './FeedbackLinks';
 
-
-
-
 /**
  * The Feedback model module.
  * @module model/Feedback
  */
-export default class Feedback  {
+export default class Feedback {
     /**
      * Constructs a new "Feedback".
      * @alias module:model/Feedback
@@ -41,7 +37,6 @@ export default class Feedback  {
         id,
 
     ) {
-
         this.description = null;
         this.geoCoordinates = geoCoordinates;
         this.id = id;
@@ -101,10 +96,4 @@ export default class Feedback  {
 
         return object;
     }
-
-
-
 }
-
-
-

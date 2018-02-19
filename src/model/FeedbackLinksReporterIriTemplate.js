@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import FeedbackLinksReporterIriTemplateMapping from './FeedbackLinksReporterIriTemplateMapping';
-
-
-
 
 /**
  * The FeedbackLinksReporterIriTemplate model module.
  * @module model/FeedbackLinksReporterIriTemplate
  */
-export default class FeedbackLinksReporterIriTemplate  {
+export default class FeedbackLinksReporterIriTemplate {
     /**
      * Constructs a new "FeedbackLinksReporterIriTemplate".
      * @alias module:model/FeedbackLinksReporterIriTemplate
@@ -31,7 +27,6 @@ export default class FeedbackLinksReporterIriTemplate  {
     constructor(
 
     ) {
-
         this.mapping = null;
 
         this.mappingType = FeedbackLinksReporterIriTemplateMapping;
@@ -61,10 +56,4 @@ export default class FeedbackLinksReporterIriTemplate  {
 
         return object;
     }
-
-
-
 }
-
-
-

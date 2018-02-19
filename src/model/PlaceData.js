@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The PlaceData model module.
  * @module model/PlaceData
  */
-export default class PlaceData  {
+export default class PlaceData {
     /**
      * Constructs a new "PlaceData".
      * @alias module:model/PlaceData
@@ -38,12 +34,10 @@ export default class PlaceData  {
         polygon,
 
     ) {
-
         this.name = name;
         this.branchCode = null;
         this.polygon = polygon;
         this.elevation = null;
-
     }
 
     /**
@@ -79,10 +73,4 @@ export default class PlaceData  {
 
         return object;
     }
-
-
-
 }
-
-
-

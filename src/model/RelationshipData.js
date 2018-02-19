@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The RelationshipData model module.
  * @module model/RelationshipData
  */
-export default class RelationshipData  {
+export default class RelationshipData {
     /**
      * Constructs a new "RelationshipData".
      * @alias module:model/RelationshipData
@@ -34,9 +30,7 @@ export default class RelationshipData  {
         organization,
 
     ) {
-
         this.organization = organization;
-
     }
 
     /**
@@ -63,10 +57,4 @@ export default class RelationshipData  {
 
         return object;
     }
-
-
-
 }
-
-
-

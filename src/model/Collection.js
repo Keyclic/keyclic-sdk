@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The Collection model module.
  * @module model/Collection
  */
-export default class Collection  {
+export default class Collection {
     /**
      * Constructs a new "Collection".
      * @alias module:model/Collection
@@ -30,9 +26,7 @@ export default class Collection  {
     constructor(
 
     ) {
-
         this.items = [];
-
     }
 
     /**
@@ -59,10 +53,4 @@ export default class Collection  {
 
         return object;
     }
-
-
-
 }
-
-
-

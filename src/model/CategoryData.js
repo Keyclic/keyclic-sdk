@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The CategoryData model module.
  * @module model/CategoryData
  */
-export default class CategoryData  {
+export default class CategoryData {
     /**
      * Constructs a new "CategoryData".
      * @alias module:model/CategoryData
@@ -42,11 +38,9 @@ export default class CategoryData  {
         icon,
 
     ) {
-
         this.name = name;
         this.color = color;
         this.icon = icon;
-
     }
 
     /**
@@ -79,10 +73,4 @@ export default class CategoryData  {
 
         return object;
     }
-
-
-
 }
-
-
-

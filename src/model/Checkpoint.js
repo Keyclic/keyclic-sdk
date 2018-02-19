@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import CheckpointLinks from './CheckpointLinks';
-
-
-
 
 /**
  * The Checkpoint model module.
  * @module model/Checkpoint
  */
-export default class Checkpoint  {
+export default class Checkpoint {
     /**
      * Constructs a new "Checkpoint".
      * @alias module:model/Checkpoint
@@ -31,7 +27,6 @@ export default class Checkpoint  {
     constructor(
 
     ) {
-
         this.createdAt = null;
         this.state = [];
         this.links = null;
@@ -69,10 +64,4 @@ export default class Checkpoint  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import ApplicationLinksSelfIriTemplateMapping from './ApplicationLinksSelfIriTemplateMapping';
-
-
-
 
 /**
  * The ApplicationLinksSelfIriTemplate model module.
  * @module model/ApplicationLinksSelfIriTemplate
  */
-export default class ApplicationLinksSelfIriTemplate  {
+export default class ApplicationLinksSelfIriTemplate {
     /**
      * Constructs a new "ApplicationLinksSelfIriTemplate".
      * @alias module:model/ApplicationLinksSelfIriTemplate
@@ -31,7 +27,6 @@ export default class ApplicationLinksSelfIriTemplate  {
     constructor(
 
     ) {
-
         this.mapping = null;
 
         this.mappingType = ApplicationLinksSelfIriTemplateMapping;
@@ -61,10 +56,4 @@ export default class ApplicationLinksSelfIriTemplate  {
 
         return object;
     }
-
-
-
 }
-
-
-

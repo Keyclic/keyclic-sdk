@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import CategoryLinks from './CategoryLinks';
-
-
-
 
 /**
  * The Category model module.
  * @module model/Category
  */
-export default class Category  {
+export default class Category {
     /**
      * Constructs a new "Category".
      * @alias module:model/Category
@@ -47,7 +43,6 @@ export default class Category  {
         createdAt,
 
     ) {
-
         this.color = color;
         this.icon = null;
         this.name = name;
@@ -105,10 +100,4 @@ export default class Category  {
 
         return object;
     }
-
-
-
 }
-
-
-

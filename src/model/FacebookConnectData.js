@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The FacebookConnectData model module.
  * @module model/FacebookConnectData
  */
-export default class FacebookConnectData  {
+export default class FacebookConnectData {
     /**
      * Constructs a new "FacebookConnectData".
      * @alias module:model/FacebookConnectData
@@ -34,9 +30,7 @@ export default class FacebookConnectData  {
         accessToken,
 
     ) {
-
         this.accessToken = accessToken;
-
     }
 
     /**
@@ -63,10 +57,4 @@ export default class FacebookConnectData  {
 
         return object;
     }
-
-
-
 }
-
-
-

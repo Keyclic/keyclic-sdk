@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIriTemplate';
-
-
-
 
 /**
  * The ReportLinksDelegatedFrom model module.
  * @module model/ReportLinksDelegatedFrom
  */
-export default class ReportLinksDelegatedFrom  {
+export default class ReportLinksDelegatedFrom {
     /**
      * Constructs a new "ReportLinksDelegatedFrom".
      * @alias module:model/ReportLinksDelegatedFrom
@@ -31,7 +27,6 @@ export default class ReportLinksDelegatedFrom  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class ReportLinksDelegatedFrom  {
 
         return object;
     }
-
-
-
 }
-
-
-

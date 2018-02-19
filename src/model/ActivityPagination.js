@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Activity from './Activity';
-
-
-
 
 /**
  * The ActivityPagination model module.
  * @module model/ActivityPagination
  */
-export default class ActivityPagination  {
+export default class ActivityPagination {
     /**
      * Constructs a new "ActivityPagination".
      * @alias module:model/ActivityPagination
@@ -31,7 +27,6 @@ export default class ActivityPagination  {
     constructor(
 
     ) {
-
         this.duration = null;
         this.next = null;
         this.results = [];
@@ -69,10 +64,4 @@ export default class ActivityPagination  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The MemberEmbedded model module.
  * @module model/MemberEmbedded
  */
-export default class MemberEmbedded  {
+export default class MemberEmbedded {
     /**
      * Constructs a new "MemberEmbedded".
      * @alias module:model/MemberEmbedded
@@ -30,9 +26,7 @@ export default class MemberEmbedded  {
     constructor(
 
     ) {
-
         this.availableRoles = [];
-
     }
 
     /**
@@ -59,10 +53,4 @@ export default class MemberEmbedded  {
 
         return object;
     }
-
-
-
 }
-
-
-

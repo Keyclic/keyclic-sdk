@@ -10,19 +10,15 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import FeedbackEmbedded from './FeedbackEmbedded';
 import OperationLinks from './OperationLinks';
-
-
-
 
 /**
  * The Operation model module.
  * @module model/Operation
  */
-export default class Operation  {
+export default class Operation {
     /**
      * Constructs a new "Operation".
      * @alias module:model/Operation
@@ -44,7 +40,6 @@ export default class Operation  {
         updatedAt,
 
     ) {
-
         this.name = null;
         this.description = null;
         this.duration = null;
@@ -119,10 +114,4 @@ export default class Operation  {
 
         return object;
     }
-
-
-
 }
-
-
-

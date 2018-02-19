@@ -61,7 +61,6 @@ export default class LogoApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getLogoByOrganizationAndWidthAndHeight');
@@ -82,20 +81,15 @@ export default class LogoApi extends ApiClient {
             throw new window.Error('Missing the required parameter "height" when calling getLogoByOrganizationAndWidthAndHeight');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getLogoByOrganizationAndWidthAndHeight');
@@ -146,5 +140,4 @@ export default class LogoApi extends ApiClient {
             returnType
         );
     }
-
 }

@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The PlaceLinksSelfIriTemplateMapping model module.
  * @module model/PlaceLinksSelfIriTemplateMapping
  */
-export default class PlaceLinksSelfIriTemplateMapping  {
+export default class PlaceLinksSelfIriTemplateMapping {
     /**
      * Constructs a new "PlaceLinksSelfIriTemplateMapping".
      * @alias module:model/PlaceLinksSelfIriTemplateMapping
@@ -30,9 +26,7 @@ export default class PlaceLinksSelfIriTemplateMapping  {
     constructor(
 
     ) {
-
         this.place = null;
-
     }
 
     /**
@@ -59,10 +53,4 @@ export default class PlaceLinksSelfIriTemplateMapping  {
 
         return object;
     }
-
-
-
 }
-
-
-

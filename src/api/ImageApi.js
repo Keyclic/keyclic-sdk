@@ -50,7 +50,6 @@ export default class ImageApi extends ApiClient {
         options,
         credentials,
     ) {
-
         let {
             xKeyclicApp,
             operation,
@@ -58,7 +57,6 @@ export default class ImageApi extends ApiClient {
             acceptLanguage,
             xKeyclicAppVersion,
         } = options;
-
 
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
@@ -75,20 +73,15 @@ export default class ImageApi extends ApiClient {
             throw new window.Error('Missing the required parameter "image" when calling deleteImageByOperationAndImage');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling deleteImageByOperationAndImage');
@@ -170,7 +163,6 @@ export default class ImageApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getImageByFeedbackAndImageAndWidthAndHeight');
@@ -196,20 +188,15 @@ export default class ImageApi extends ApiClient {
             throw new window.Error('Missing the required parameter "height" when calling getImageByFeedbackAndImageAndWidthAndHeight');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getImageByFeedbackAndImageAndWidthAndHeight');
@@ -293,7 +280,6 @@ export default class ImageApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getImageByOperationAndImageAndWidthAndHeight');
@@ -319,20 +305,15 @@ export default class ImageApi extends ApiClient {
             throw new window.Error('Missing the required parameter "height" when calling getImageByOperationAndImageAndWidthAndHeight');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getImageByOperationAndImageAndWidthAndHeight');
@@ -414,7 +395,6 @@ export default class ImageApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getImageByPersonAndWidthAndHeight');
@@ -435,20 +415,15 @@ export default class ImageApi extends ApiClient {
             throw new window.Error('Missing the required parameter "height" when calling getImageByPersonAndWidthAndHeight');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getImageByPersonAndWidthAndHeight');
@@ -527,7 +502,6 @@ export default class ImageApi extends ApiClient {
             imageData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postImageByFeedback');
@@ -538,14 +512,10 @@ export default class ImageApi extends ApiClient {
             throw new window.Error('Missing the required parameter "feedback" when calling postImageByFeedback');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -556,7 +526,6 @@ export default class ImageApi extends ApiClient {
         if (typeof imageData === 'undefined') {
             imageData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postImageByFeedback');
@@ -633,7 +602,6 @@ export default class ImageApi extends ApiClient {
             imageData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postImageByOperation');
@@ -644,14 +612,10 @@ export default class ImageApi extends ApiClient {
             throw new window.Error('Missing the required parameter "operation" when calling postImageByOperation');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -662,7 +626,6 @@ export default class ImageApi extends ApiClient {
         if (typeof imageData === 'undefined') {
             imageData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postImageByOperation');
@@ -711,5 +674,4 @@ export default class ImageApi extends ApiClient {
             returnType
         );
     }
-
 }

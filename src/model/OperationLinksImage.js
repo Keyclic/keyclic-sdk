@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import OperationLinksImageIriTemplate from './OperationLinksImageIriTemplate';
-
-
-
 
 /**
  * The OperationLinksImage model module.
  * @module model/OperationLinksImage
  */
-export default class OperationLinksImage  {
+export default class OperationLinksImage {
     /**
      * Constructs a new "OperationLinksImage".
      * @alias module:model/OperationLinksImage
@@ -31,7 +27,6 @@ export default class OperationLinksImage  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class OperationLinksImage  {
 
         return object;
     }
-
-
-
 }
-
-
-

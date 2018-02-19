@@ -56,7 +56,6 @@ export default class ApplicationApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getApplicationByToken');
@@ -67,21 +66,15 @@ export default class ApplicationApi extends ApiClient {
             throw new window.Error('Missing the required parameter "token" when calling getApplicationByToken');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
-
 
         let pathParams = {
             'token': token,
@@ -125,5 +118,4 @@ export default class ApplicationApi extends ApiClient {
             returnType
         );
     }
-
 }

@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The MemberData model module.
  * @module model/MemberData
  */
-export default class MemberData  {
+export default class MemberData {
     /**
      * Constructs a new "MemberData".
      * @alias module:model/MemberData
@@ -34,9 +30,7 @@ export default class MemberData  {
         member,
 
     ) {
-
         this.member = member;
-
     }
 
     /**
@@ -63,10 +57,4 @@ export default class MemberData  {
 
         return object;
     }
-
-
-
 }
-
-
-

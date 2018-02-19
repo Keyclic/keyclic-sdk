@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Category from './Category';
-
-
-
 
 /**
  * The CategoryCollection model module.
  * @module model/CategoryCollection
  */
-export default class CategoryCollection  {
+export default class CategoryCollection {
     /**
      * Constructs a new "CategoryCollection".
      * @alias module:model/CategoryCollection
@@ -31,7 +27,6 @@ export default class CategoryCollection  {
     constructor(
 
     ) {
-
         this.items = [];
 
         this.itemsType = Category;
@@ -61,10 +56,4 @@ export default class CategoryCollection  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The PlacePatch model module.
  * @module model/PlacePatch
  */
-export default class PlacePatch  {
+export default class PlacePatch {
     /**
      * Constructs a new "PlacePatch".
      * @alias module:model/PlacePatch
@@ -30,10 +26,8 @@ export default class PlacePatch  {
     constructor(
 
     ) {
-
         this.branchCode = null;
         this.name = null;
-
     }
 
     /**
@@ -63,10 +57,4 @@ export default class PlacePatch  {
 
         return object;
     }
-
-
-
 }
-
-
-

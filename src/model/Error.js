@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import ErrorEmbedded from './ErrorEmbedded';
-
-
-
 
 /**
  * The Error model module.
  * @module model/Error
  */
-export default class Error  {
+export default class Error {
     /**
      * Constructs a new "Error".
      * @alias module:model/Error
@@ -31,7 +27,6 @@ export default class Error  {
     constructor(
 
     ) {
-
         this.message = null;
         this.total = null;
         this.embedded = null;
@@ -69,10 +64,4 @@ export default class Error  {
 
         return object;
     }
-
-
-
 }
-
-
-

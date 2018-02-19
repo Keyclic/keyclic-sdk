@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import OperationLinksSelfIriTemplate from './OperationLinksSelfIriTemplate';
-
-
-
 
 /**
  * The OperationLinksSelf model module.
  * @module model/OperationLinksSelf
  */
-export default class OperationLinksSelf  {
+export default class OperationLinksSelf {
     /**
      * Constructs a new "OperationLinksSelf".
      * @alias module:model/OperationLinksSelf
@@ -31,7 +27,6 @@ export default class OperationLinksSelf  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class OperationLinksSelf  {
 
         return object;
     }
-
-
-
 }
-
-
-

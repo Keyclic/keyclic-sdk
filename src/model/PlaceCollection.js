@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Place from './Place';
-
-
-
 
 /**
  * The PlaceCollection model module.
  * @module model/PlaceCollection
  */
-export default class PlaceCollection  {
+export default class PlaceCollection {
     /**
      * Constructs a new "PlaceCollection".
      * @alias module:model/PlaceCollection
@@ -31,7 +27,6 @@ export default class PlaceCollection  {
     constructor(
 
     ) {
-
         this.items = [];
 
         this.itemsType = Place;
@@ -61,10 +56,4 @@ export default class PlaceCollection  {
 
         return object;
     }
-
-
-
 }
-
-
-

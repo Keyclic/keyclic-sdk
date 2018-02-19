@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import OrganizationLinks from './OrganizationLinks';
-
-
-
 
 /**
  * The Organization model module.
  * @module model/Organization
  */
-export default class Organization  {
+export default class Organization {
     /**
      * Constructs a new "Organization".
      * @alias module:model/Organization
@@ -47,7 +43,6 @@ export default class Organization  {
         updatedAt,
 
     ) {
-
         this.name = name;
         this.alternateName = null;
         this.description = null;
@@ -117,10 +112,4 @@ export default class Organization  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The EmailData model module.
  * @module model/EmailData
  */
-export default class EmailData  {
+export default class EmailData {
     /**
      * Constructs a new "EmailData".
      * @alias module:model/EmailData
@@ -34,9 +30,7 @@ export default class EmailData  {
         email,
 
     ) {
-
         this.email = email;
-
     }
 
     /**
@@ -63,10 +57,4 @@ export default class EmailData  {
 
         return object;
     }
-
-
-
 }
-
-
-

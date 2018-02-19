@@ -10,19 +10,15 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import CategoryLinksOrganization from './CategoryLinksOrganization';
 import CategoryLinksSelf from './CategoryLinksSelf';
-
-
-
 
 /**
  * The CategoryLinks model module.
  * @module model/CategoryLinks
  */
-export default class CategoryLinks  {
+export default class CategoryLinks {
     /**
      * Constructs a new "CategoryLinks".
      * @alias module:model/CategoryLinks
@@ -32,7 +28,6 @@ export default class CategoryLinks  {
     constructor(
 
     ) {
-
         this.self = null;
         this.organization = null;
 
@@ -67,10 +62,4 @@ export default class CategoryLinks  {
 
         return object;
     }
-
-
-
 }
-
-
-

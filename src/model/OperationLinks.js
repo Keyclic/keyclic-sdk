@@ -10,21 +10,17 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import OperationLinksImage from './OperationLinksImage';
 import OperationLinksOperator from './OperationLinksOperator';
 import OperationLinksReport from './OperationLinksReport';
 import OperationLinksSelf from './OperationLinksSelf';
 
-
-
-
 /**
  * The OperationLinks model module.
  * @module model/OperationLinks
  */
-export default class OperationLinks  {
+export default class OperationLinks {
     /**
      * Constructs a new "OperationLinks".
      * @alias module:model/OperationLinks
@@ -34,7 +30,6 @@ export default class OperationLinks  {
     constructor(
 
     ) {
-
         this.self = null;
         this.image = null;
         this.report = null;
@@ -79,10 +74,4 @@ export default class OperationLinks  {
 
         return object;
     }
-
-
-
 }
-
-
-

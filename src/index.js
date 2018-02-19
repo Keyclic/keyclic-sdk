@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from './ApiClient';
 import Activity from './model/Activity';
 import ActivityAggregatedPagination from './model/ActivityAggregatedPagination';
@@ -22,6 +21,10 @@ import ApplicationLinksSelfIriTemplate from './model/ApplicationLinksSelfIriTemp
 import ApplicationLinksSelfIriTemplateMapping from './model/ApplicationLinksSelfIriTemplateMapping';
 import BusinessActivity from './model/BusinessActivity';
 import BusinessActivityCollection from './model/BusinessActivityCollection';
+import BusinessActivityLinks from './model/BusinessActivityLinks';
+import BusinessActivityLinksSelf from './model/BusinessActivityLinksSelf';
+import BusinessActivityLinksSelfIriTemplate from './model/BusinessActivityLinksSelfIriTemplate';
+import BusinessActivityLinksSelfIriTemplateMapping from './model/BusinessActivityLinksSelfIriTemplateMapping';
 import Category from './model/Category';
 import CategoryCollection from './model/CategoryCollection';
 import CategoryData from './model/CategoryData';
@@ -55,6 +58,7 @@ import FeedbackEmbedded from './model/FeedbackEmbedded';
 import FeedbackGeoCoordinates from './model/FeedbackGeoCoordinates';
 import FeedbackGeoCoordinatesPoint from './model/FeedbackGeoCoordinatesPoint';
 import FeedbackLinks from './model/FeedbackLinks';
+import FeedbackLinksBusinessActivity from './model/FeedbackLinksBusinessActivity';
 import FeedbackLinksCategory from './model/FeedbackLinksCategory';
 import FeedbackLinksImage from './model/FeedbackLinksImage';
 import FeedbackLinksImageIriTemplate from './model/FeedbackLinksImageIriTemplate';
@@ -104,6 +108,7 @@ import Organization from './model/Organization';
 import OrganizationCollection from './model/OrganizationCollection';
 import OrganizationData from './model/OrganizationData';
 import OrganizationLinks from './model/OrganizationLinks';
+import OrganizationLinksBusinessActivity from './model/OrganizationLinksBusinessActivity';
 import OrganizationLinksLogo from './model/OrganizationLinksLogo';
 import OrganizationLinksSelf from './model/OrganizationLinksSelf';
 import OrganizationPatch from './model/OrganizationPatch';
@@ -187,6 +192,7 @@ import LogApi from './api/LogApi';
 import LoginApi from './api/LoginApi';
 import LogoApi from './api/LogoApi';
 import MemberApi from './api/MemberApi';
+import MembershipApi from './api/MembershipApi';
 import OperationApi from './api/OperationApi';
 import OrganizationApi from './api/OrganizationApi';
 import PersonApi from './api/PersonApi';
@@ -219,7 +225,7 @@ import TransitionApi from './api/TransitionApi';
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 1.19.4
+ * @version 1.19.5
  */
 export {
     /**
@@ -278,6 +284,26 @@ export {
      * @property { module:model/BusinessActivityCollection }
      */
     BusinessActivityCollection,
+    /**
+     * The BusinessActivityLinks model constructor.
+     * @property { module:model/BusinessActivityLinks }
+     */
+    BusinessActivityLinks,
+    /**
+     * The BusinessActivityLinksSelf model constructor.
+     * @property { module:model/BusinessActivityLinksSelf }
+     */
+    BusinessActivityLinksSelf,
+    /**
+     * The BusinessActivityLinksSelfIriTemplate model constructor.
+     * @property { module:model/BusinessActivityLinksSelfIriTemplate }
+     */
+    BusinessActivityLinksSelfIriTemplate,
+    /**
+     * The BusinessActivityLinksSelfIriTemplateMapping model constructor.
+     * @property { module:model/BusinessActivityLinksSelfIriTemplateMapping }
+     */
+    BusinessActivityLinksSelfIriTemplateMapping,
     /**
      * The Category model constructor.
      * @property { module:model/Category }
@@ -443,6 +469,11 @@ export {
      * @property { module:model/FeedbackLinks }
      */
     FeedbackLinks,
+    /**
+     * The FeedbackLinksBusinessActivity model constructor.
+     * @property { module:model/FeedbackLinksBusinessActivity }
+     */
+    FeedbackLinksBusinessActivity,
     /**
      * The FeedbackLinksCategory model constructor.
      * @property { module:model/FeedbackLinksCategory }
@@ -688,6 +719,11 @@ export {
      * @property { module:model/OrganizationLinks }
      */
     OrganizationLinks,
+    /**
+     * The OrganizationLinksBusinessActivity model constructor.
+     * @property { module:model/OrganizationLinksBusinessActivity }
+     */
+    OrganizationLinksBusinessActivity,
     /**
      * The OrganizationLinksLogo model constructor.
      * @property { module:model/OrganizationLinksLogo }
@@ -1104,6 +1140,11 @@ export {
      * @property { module:api/MemberApi }
      */
     MemberApi,
+    /**
+     * The MembershipApi service constructor.
+     * @property { module:api/MembershipApi }
+     */
+    MembershipApi,
     /**
      * The OperationApi service constructor.
      * @property { module:api/OperationApi }

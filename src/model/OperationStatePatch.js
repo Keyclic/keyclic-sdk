@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The OperationStatePatch model module.
  * @module model/OperationStatePatch
  */
-export default class OperationStatePatch  {
+export default class OperationStatePatch {
     /**
      * Constructs a new "OperationStatePatch".
      * @alias module:model/OperationStatePatch
@@ -34,9 +30,7 @@ export default class OperationStatePatch  {
         transition,
 
     ) {
-
         this.transition = transition;
-
     }
 
     /**
@@ -63,8 +57,6 @@ export default class OperationStatePatch  {
 
         return object;
     }
-
-
 
     /**
     * Allowed values for the "transition" property.
@@ -108,8 +100,4 @@ export default class OperationStatePatch  {
          */
         "resolve": "resolve", // eslint-disable-line quotes
     };
-
 }
-
-
-

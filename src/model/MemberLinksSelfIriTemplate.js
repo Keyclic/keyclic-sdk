@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import MemberLinksSelfIriTemplateMapping from './MemberLinksSelfIriTemplateMapping';
-
-
-
 
 /**
  * The MemberLinksSelfIriTemplate model module.
  * @module model/MemberLinksSelfIriTemplate
  */
-export default class MemberLinksSelfIriTemplate  {
+export default class MemberLinksSelfIriTemplate {
     /**
      * Constructs a new "MemberLinksSelfIriTemplate".
      * @alias module:model/MemberLinksSelfIriTemplate
@@ -31,7 +27,6 @@ export default class MemberLinksSelfIriTemplate  {
     constructor(
 
     ) {
-
         this.mapping = null;
 
         this.mappingType = MemberLinksSelfIriTemplateMapping;
@@ -61,10 +56,4 @@ export default class MemberLinksSelfIriTemplate  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,14 +10,10 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import FeedbackCollection from './FeedbackCollection';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
-
-
-
 
 /**
  * The FeedbackPagination model module.
@@ -67,10 +63,4 @@ export default class FeedbackPagination extends Pagination {
 
         return object;
     }
-
-
-
 }
-
-
-

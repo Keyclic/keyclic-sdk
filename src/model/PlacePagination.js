@@ -10,14 +10,10 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
 import PlaceCollection from './PlaceCollection';
-
-
-
 
 /**
  * The PlacePagination model module.
@@ -67,10 +63,4 @@ export default class PlacePagination extends Pagination {
 
         return object;
     }
-
-
-
 }
-
-
-

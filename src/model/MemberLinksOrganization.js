@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIriTemplate';
-
-
-
 
 /**
  * The MemberLinksOrganization model module.
  * @module model/MemberLinksOrganization
  */
-export default class MemberLinksOrganization  {
+export default class MemberLinksOrganization {
     /**
      * Constructs a new "MemberLinksOrganization".
      * @alias module:model/MemberLinksOrganization
@@ -31,7 +27,6 @@ export default class MemberLinksOrganization  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class MemberLinksOrganization  {
 
         return object;
     }
-
-
-
 }
-
-
-

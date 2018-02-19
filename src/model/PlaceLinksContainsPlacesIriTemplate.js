@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import PlaceLinksContainsPlacesIriTemplateMapping from './PlaceLinksContainsPlacesIriTemplateMapping';
-
-
-
 
 /**
  * The PlaceLinksContainsPlacesIriTemplate model module.
  * @module model/PlaceLinksContainsPlacesIriTemplate
  */
-export default class PlaceLinksContainsPlacesIriTemplate  {
+export default class PlaceLinksContainsPlacesIriTemplate {
     /**
      * Constructs a new "PlaceLinksContainsPlacesIriTemplate".
      * @alias module:model/PlaceLinksContainsPlacesIriTemplate
@@ -31,7 +27,6 @@ export default class PlaceLinksContainsPlacesIriTemplate  {
     constructor(
 
     ) {
-
         this.mapping = null;
 
         this.mappingType = PlaceLinksContainsPlacesIriTemplateMapping;
@@ -61,10 +56,4 @@ export default class PlaceLinksContainsPlacesIriTemplate  {
 
         return object;
     }
-
-
-
 }
-
-
-

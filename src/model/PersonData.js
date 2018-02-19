@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The PersonData model module.
  * @module model/PersonData
  */
-export default class PersonData  {
+export default class PersonData {
     /**
      * Constructs a new "PersonData".
      * @alias module:model/PersonData
@@ -34,9 +30,7 @@ export default class PersonData  {
         person,
 
     ) {
-
         this.person = person;
-
     }
 
     /**
@@ -63,10 +57,4 @@ export default class PersonData  {
 
         return object;
     }
-
-
-
 }
-
-
-

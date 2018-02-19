@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import OperationLinksImageIriTemplateMapping from './OperationLinksImageIriTemplateMapping';
-
-
-
 
 /**
  * The OperationLinksImageIriTemplate model module.
  * @module model/OperationLinksImageIriTemplate
  */
-export default class OperationLinksImageIriTemplate  {
+export default class OperationLinksImageIriTemplate {
     /**
      * Constructs a new "OperationLinksImageIriTemplate".
      * @alias module:model/OperationLinksImageIriTemplate
@@ -31,7 +27,6 @@ export default class OperationLinksImageIriTemplate  {
     constructor(
 
     ) {
-
         this.mapping = null;
 
         this.mappingType = OperationLinksImageIriTemplateMapping;
@@ -61,10 +56,4 @@ export default class OperationLinksImageIriTemplate  {
 
         return object;
     }
-
-
-
 }
-
-
-

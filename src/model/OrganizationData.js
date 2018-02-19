@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The OrganizationData model module.
  * @module model/OrganizationData
  */
-export default class OrganizationData  {
+export default class OrganizationData {
     /**
      * Constructs a new "OrganizationData".
      * @alias module:model/OrganizationData
@@ -38,11 +34,9 @@ export default class OrganizationData  {
         businessActivity,
 
     ) {
-
         this.name = name;
         this.businessActivity = businessActivity;
         this.logo = null;
-
     }
 
     /**
@@ -75,10 +69,4 @@ export default class OrganizationData  {
 
         return object;
     }
-
-
-
 }
-
-
-

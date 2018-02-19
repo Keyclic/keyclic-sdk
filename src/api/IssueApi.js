@@ -59,20 +59,15 @@ export default class IssueApi extends ApiClient {
             feedbackData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postIssue');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -83,7 +78,6 @@ export default class IssueApi extends ApiClient {
         if (typeof feedbackData === 'undefined') {
             feedbackData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postIssue');
@@ -131,5 +125,4 @@ export default class IssueApi extends ApiClient {
             returnType
         );
     }
-
 }

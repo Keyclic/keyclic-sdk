@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The DelegateData model module.
  * @module model/DelegateData
  */
-export default class DelegateData  {
+export default class DelegateData {
     /**
      * Constructs a new "DelegateData".
      * @alias module:model/DelegateData
@@ -38,10 +34,8 @@ export default class DelegateData  {
         organization,
 
     ) {
-
         this.report = report;
         this.organization = organization;
-
     }
 
     /**
@@ -71,10 +65,4 @@ export default class DelegateData  {
 
         return object;
     }
-
-
-
 }
-
-
-

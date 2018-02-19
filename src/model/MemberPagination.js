@@ -10,14 +10,10 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import MemberCollection from './MemberCollection';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
-
-
-
 
 /**
  * The MemberPagination model module.
@@ -67,10 +63,4 @@ export default class MemberPagination extends Pagination {
 
         return object;
     }
-
-
-
 }
-
-
-

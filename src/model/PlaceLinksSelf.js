@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import PlaceLinksSelfIriTemplate from './PlaceLinksSelfIriTemplate';
-
-
-
 
 /**
  * The PlaceLinksSelf model module.
  * @module model/PlaceLinksSelf
  */
-export default class PlaceLinksSelf  {
+export default class PlaceLinksSelf {
     /**
      * Constructs a new "PlaceLinksSelf".
      * @alias module:model/PlaceLinksSelf
@@ -31,7 +27,6 @@ export default class PlaceLinksSelf  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class PlaceLinksSelf  {
 
         return object;
     }
-
-
-
 }
-
-
-

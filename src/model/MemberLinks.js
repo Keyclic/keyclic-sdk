@@ -10,20 +10,16 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import MemberLinksOrganization from './MemberLinksOrganization';
 import MemberLinksPerson from './MemberLinksPerson';
 import MemberLinksSelf from './MemberLinksSelf';
 
-
-
-
 /**
  * The MemberLinks model module.
  * @module model/MemberLinks
  */
-export default class MemberLinks  {
+export default class MemberLinks {
     /**
      * Constructs a new "MemberLinks".
      * @alias module:model/MemberLinks
@@ -33,7 +29,6 @@ export default class MemberLinks  {
     constructor(
 
     ) {
-
         this.self = null;
         this.person = null;
         this.organization = null;
@@ -73,10 +68,4 @@ export default class MemberLinks  {
 
         return object;
     }
-
-
-
 }
-
-
-

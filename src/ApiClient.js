@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 import promise from 'es6-promise';
 promise.polyfill();
 
@@ -19,7 +18,7 @@ import * as url from 'url';
 
 /**
 * @module ApiClient
-* @version 1.19.4
+* @version 1.19.5
 */
 
 /**
@@ -329,7 +328,6 @@ export default class ApiClient {
         }
     }
 }
-
 
 class ApiClientUtils {
     /**

@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Activity from './Activity';
-
-
-
 
 /**
  * The Result model module.
  * @module model/Result
  */
-export default class Result  {
+export default class Result {
     /**
      * Constructs a new "Result".
      * @alias module:model/Result
@@ -31,7 +27,6 @@ export default class Result  {
     constructor(
 
     ) {
-
         this.activities = [];
         this.activityCount = null;
         this.actorCount = null;
@@ -89,10 +84,4 @@ export default class Result  {
 
         return object;
     }
-
-
-
 }
-
-
-

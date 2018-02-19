@@ -10,14 +10,10 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import OperationCollection from './OperationCollection';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
-
-
-
 
 /**
  * The OperationPagination model module.
@@ -67,10 +63,4 @@ export default class OperationPagination extends Pagination {
 
         return object;
     }
-
-
-
 }
-
-
-

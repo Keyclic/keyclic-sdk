@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The Chart model module.
  * @module model/Chart
  */
-export default class Chart  {
+export default class Chart {
     /**
      * Constructs a new "Chart".
      * @alias module:model/Chart
@@ -38,10 +34,8 @@ export default class Chart  {
         data,
 
     ) {
-
         this.labels = labels;
         this.data = data;
-
     }
 
     /**
@@ -71,10 +65,4 @@ export default class Chart  {
 
         return object;
     }
-
-
-
 }
-
-
-

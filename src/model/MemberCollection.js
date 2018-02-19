@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Member from './Member';
-
-
-
 
 /**
  * The MemberCollection model module.
  * @module model/MemberCollection
  */
-export default class MemberCollection  {
+export default class MemberCollection {
     /**
      * Constructs a new "MemberCollection".
      * @alias module:model/MemberCollection
@@ -31,7 +27,6 @@ export default class MemberCollection  {
     constructor(
 
     ) {
-
         this.items = [];
 
         this.itemsType = Member;
@@ -61,10 +56,4 @@ export default class MemberCollection  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -65,7 +65,6 @@ export default class StateApi extends ApiClient {
             feedbackStatePatch,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchStateByFeedback');
@@ -76,14 +75,10 @@ export default class StateApi extends ApiClient {
             throw new window.Error('Missing the required parameter "feedback" when calling patchStateByFeedback');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -94,7 +89,6 @@ export default class StateApi extends ApiClient {
         if (typeof feedbackStatePatch === 'undefined') {
             feedbackStatePatch = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchStateByFeedback');
@@ -171,7 +165,6 @@ export default class StateApi extends ApiClient {
             operationStatePatch,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchStateByOperation');
@@ -182,14 +175,10 @@ export default class StateApi extends ApiClient {
             throw new window.Error('Missing the required parameter "operation" when calling patchStateByOperation');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -200,7 +189,6 @@ export default class StateApi extends ApiClient {
         if (typeof operationStatePatch === 'undefined') {
             operationStatePatch = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchStateByOperation');
@@ -277,7 +265,6 @@ export default class StateApi extends ApiClient {
             reportStatePatch,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchStateByReport');
@@ -288,14 +275,10 @@ export default class StateApi extends ApiClient {
             throw new window.Error('Missing the required parameter "report" when calling patchStateByReport');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -306,7 +289,6 @@ export default class StateApi extends ApiClient {
         if (typeof reportStatePatch === 'undefined') {
             reportStatePatch = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchStateByReport');
@@ -355,5 +337,4 @@ export default class StateApi extends ApiClient {
             returnType
         );
     }
-
 }

@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The RegisterData model module.
  * @module model/RegisterData
  */
-export default class RegisterData  {
+export default class RegisterData {
     /**
      * Constructs a new "RegisterData".
      * @alias module:model/RegisterData
@@ -38,10 +34,8 @@ export default class RegisterData  {
         password,
 
     ) {
-
         this.email = email;
         this.password = password;
-
     }
 
     /**
@@ -71,10 +65,4 @@ export default class RegisterData  {
 
         return object;
     }
-
-
-
 }
-
-
-

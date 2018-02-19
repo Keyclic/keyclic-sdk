@@ -72,7 +72,6 @@ export default class AnalyticApi extends ApiClient {
             optionsSort,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getAnalyticByOrganization');
@@ -83,14 +82,10 @@ export default class AnalyticApi extends ApiClient {
             throw new window.Error('Missing the required parameter "organization" when calling getAnalyticByOrganization');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -131,7 +126,6 @@ export default class AnalyticApi extends ApiClient {
         if (typeof optionsSort === 'undefined') {
             optionsSort = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getAnalyticByOrganization');
@@ -187,5 +181,4 @@ export default class AnalyticApi extends ApiClient {
             returnType
         );
     }
-
 }

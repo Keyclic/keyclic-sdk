@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Report from './Report';
-
-
-
 
 /**
  * The ReportCollection model module.
  * @module model/ReportCollection
  */
-export default class ReportCollection  {
+export default class ReportCollection {
     /**
      * Constructs a new "ReportCollection".
      * @alias module:model/ReportCollection
@@ -31,7 +27,6 @@ export default class ReportCollection  {
     constructor(
 
     ) {
-
         this.items = [];
 
         this.itemsType = Report;
@@ -61,10 +56,4 @@ export default class ReportCollection  {
 
         return object;
     }
-
-
-
 }
-
-
-

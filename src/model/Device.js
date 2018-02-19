@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The Device model module.
  * @module model/Device
  */
-export default class Device  {
+export default class Device {
     /**
      * Constructs a new "Device".
      * @alias module:model/Device
@@ -50,7 +46,6 @@ export default class Device  {
         updatedAt,
 
     ) {
-
         this.person = person;
         this.platform = null;
         this.token = token;
@@ -58,7 +53,6 @@ export default class Device  {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.type = null;
-
     }
 
     /**
@@ -103,10 +97,4 @@ export default class Device  {
 
         return object;
     }
-
-
-
 }
-
-
-

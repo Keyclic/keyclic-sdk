@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The ImageData model module.
  * @module model/ImageData
  */
-export default class ImageData  {
+export default class ImageData {
     /**
      * Constructs a new "ImageData".
      * @alias module:model/ImageData
@@ -34,9 +30,7 @@ export default class ImageData  {
         image,
 
     ) {
-
         this.image = image;
-
     }
 
     /**
@@ -63,10 +57,4 @@ export default class ImageData  {
 
         return object;
     }
-
-
-
 }
-
-
-

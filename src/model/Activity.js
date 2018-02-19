@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The Activity model module.
  * @module model/Activity
  */
-export default class Activity  {
+export default class Activity {
     /**
      * Constructs a new "Activity".
      * @alias module:model/Activity
@@ -50,13 +46,11 @@ export default class Activity  {
         time,
 
     ) {
-
         this.actor = actor;
         this.verb = verb;
         this._object = _object;
         this.message = message;
         this.time = time;
-
     }
 
     /**
@@ -95,10 +89,4 @@ export default class Activity  {
 
         return object;
     }
-
-
-
 }
-
-
-

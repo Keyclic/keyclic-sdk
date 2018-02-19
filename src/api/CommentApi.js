@@ -61,7 +61,6 @@ export default class CommentApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetCommentsByFeedback');
@@ -72,20 +71,15 @@ export default class CommentApi extends ApiClient {
             throw new window.Error('Missing the required parameter "feedback" when calling cgetCommentsByFeedback');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCommentsByFeedback');
@@ -160,7 +154,6 @@ export default class CommentApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetCommentsByOperation');
@@ -171,20 +164,15 @@ export default class CommentApi extends ApiClient {
             throw new window.Error('Missing the required parameter "operation" when calling cgetCommentsByOperation');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCommentsByOperation');
@@ -261,7 +249,6 @@ export default class CommentApi extends ApiClient {
             commentData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postCommentByFeedback');
@@ -272,14 +259,10 @@ export default class CommentApi extends ApiClient {
             throw new window.Error('Missing the required parameter "feedback" when calling postCommentByFeedback');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -290,7 +273,6 @@ export default class CommentApi extends ApiClient {
         if (typeof commentData === 'undefined') {
             commentData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postCommentByFeedback');
@@ -367,7 +349,6 @@ export default class CommentApi extends ApiClient {
             commentData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postCommentByOperation');
@@ -378,14 +359,10 @@ export default class CommentApi extends ApiClient {
             throw new window.Error('Missing the required parameter "operation" when calling postCommentByOperation');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -396,7 +373,6 @@ export default class CommentApi extends ApiClient {
         if (typeof commentData === 'undefined') {
             commentData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postCommentByOperation');
@@ -445,5 +421,4 @@ export default class CommentApi extends ApiClient {
             returnType
         );
     }
-
 }

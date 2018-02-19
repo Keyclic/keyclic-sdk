@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The PlaceLinksContainsPlacesIriTemplateMapping model module.
  * @module model/PlaceLinksContainsPlacesIriTemplateMapping
  */
-export default class PlaceLinksContainsPlacesIriTemplateMapping  {
+export default class PlaceLinksContainsPlacesIriTemplateMapping {
     /**
      * Constructs a new "PlaceLinksContainsPlacesIriTemplateMapping".
      * @alias module:model/PlaceLinksContainsPlacesIriTemplateMapping
@@ -30,9 +26,7 @@ export default class PlaceLinksContainsPlacesIriTemplateMapping  {
     constructor(
 
     ) {
-
         this.parent = null;
-
     }
 
     /**
@@ -59,10 +53,4 @@ export default class PlaceLinksContainsPlacesIriTemplateMapping  {
 
         return object;
     }
-
-
-
 }
-
-
-

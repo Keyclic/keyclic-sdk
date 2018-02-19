@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIriTemplate';
-
-
-
 
 /**
  * The OrganizationLinksLogo model module.
  * @module model/OrganizationLinksLogo
  */
-export default class OrganizationLinksLogo  {
+export default class OrganizationLinksLogo {
     /**
      * Constructs a new "OrganizationLinksLogo".
      * @alias module:model/OrganizationLinksLogo
@@ -31,7 +27,6 @@ export default class OrganizationLinksLogo  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class OrganizationLinksLogo  {
 
         return object;
     }
-
-
-
 }
-
-
-

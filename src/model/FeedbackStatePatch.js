@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The FeedbackStatePatch model module.
  * @module model/FeedbackStatePatch
  */
-export default class FeedbackStatePatch  {
+export default class FeedbackStatePatch {
     /**
      * Constructs a new "FeedbackStatePatch".
      * @alias module:model/FeedbackStatePatch
@@ -34,9 +30,7 @@ export default class FeedbackStatePatch  {
         transition,
 
     ) {
-
         this.transition = transition;
-
     }
 
     /**
@@ -64,8 +58,6 @@ export default class FeedbackStatePatch  {
         return object;
     }
 
-
-
     /**
     * Allowed values for the "transition" property.
     * @enum { String }
@@ -90,8 +82,4 @@ export default class FeedbackStatePatch  {
          */
         "refuse": "refuse", // eslint-disable-line quotes
     };
-
 }
-
-
-

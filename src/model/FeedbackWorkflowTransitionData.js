@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The FeedbackWorkflowTransitionData model module.
  * @module model/FeedbackWorkflowTransitionData
  */
-export default class FeedbackWorkflowTransitionData  {
+export default class FeedbackWorkflowTransitionData {
     /**
      * Constructs a new "FeedbackWorkflowTransitionData".
      * @alias module:model/FeedbackWorkflowTransitionData
@@ -34,9 +30,7 @@ export default class FeedbackWorkflowTransitionData  {
         transition,
 
     ) {
-
         this.transition = transition;
-
     }
 
     /**
@@ -63,8 +57,6 @@ export default class FeedbackWorkflowTransitionData  {
 
         return object;
     }
-
-
 
     /**
     * Allowed values for the "transition" property.
@@ -120,8 +112,4 @@ export default class FeedbackWorkflowTransitionData  {
          */
         "dispatch": "dispatch", // eslint-disable-line quotes
     };
-
 }
-
-
-

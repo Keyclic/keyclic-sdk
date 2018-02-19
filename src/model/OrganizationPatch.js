@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The OrganizationPatch model module.
  * @module model/OrganizationPatch
  */
-export default class OrganizationPatch  {
+export default class OrganizationPatch {
     /**
      * Constructs a new "OrganizationPatch".
      * @alias module:model/OrganizationPatch
@@ -30,14 +26,12 @@ export default class OrganizationPatch  {
     constructor(
 
     ) {
-
         this.name = null;
         this.alternateName = null;
         this.description = null;
         this.logo = null;
         this.billingEmailAddress = null;
         this.notificationEmailAddress = null;
-
     }
 
     /**
@@ -79,10 +73,4 @@ export default class OrganizationPatch  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,19 +10,15 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import PersonLinks from './PersonLinks';
 import PersonPreferences from './PersonPreferences';
-
-
-
 
 /**
  * The Person model module.
  * @module model/Person
  */
-export default class Person  {
+export default class Person {
     /**
      * Constructs a new "Person".
      * @alias module:model/Person
@@ -52,7 +48,6 @@ export default class Person  {
         updatedAt,
 
     ) {
-
         this.id = id;
         this.familyName = null;
         this.givenName = null;
@@ -127,10 +122,4 @@ export default class Person  {
 
         return object;
     }
-
-
-
 }
-
-
-

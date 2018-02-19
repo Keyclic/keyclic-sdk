@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import MemberLinksSelfIriTemplate from './MemberLinksSelfIriTemplate';
-
-
-
 
 /**
  * The MemberLinksSelf model module.
  * @module model/MemberLinksSelf
  */
-export default class MemberLinksSelf  {
+export default class MemberLinksSelf {
     /**
      * Constructs a new "MemberLinksSelf".
      * @alias module:model/MemberLinksSelf
@@ -31,7 +27,6 @@ export default class MemberLinksSelf  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class MemberLinksSelf  {
 
         return object;
     }
-
-
-
 }
-
-
-

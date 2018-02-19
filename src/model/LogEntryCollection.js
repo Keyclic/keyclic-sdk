@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import LogEntry from './LogEntry';
-
-
-
 
 /**
  * The LogEntryCollection model module.
  * @module model/LogEntryCollection
  */
-export default class LogEntryCollection  {
+export default class LogEntryCollection {
     /**
      * Constructs a new "LogEntryCollection".
      * @alias module:model/LogEntryCollection
@@ -31,7 +27,6 @@ export default class LogEntryCollection  {
     constructor(
 
     ) {
-
         this.items = [];
 
         this.itemsType = LogEntry;
@@ -61,10 +56,4 @@ export default class LogEntryCollection  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The ReportPatch model module.
  * @module model/ReportPatch
  */
-export default class ReportPatch  {
+export default class ReportPatch {
     /**
      * Constructs a new "ReportPatch".
      * @alias module:model/ReportPatch
@@ -30,12 +26,10 @@ export default class ReportPatch  {
     constructor(
 
     ) {
-
         this.description = null;
         this.identificationNumber = null;
         this.priority = null;
         this.tags = [];
-
     }
 
     /**
@@ -71,10 +65,4 @@ export default class ReportPatch  {
 
         return object;
     }
-
-
-
 }
-
-
-

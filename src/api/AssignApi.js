@@ -61,7 +61,6 @@ export default class AssignApi extends ApiClient {
             memberData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postAssignByOperation');
@@ -72,14 +71,10 @@ export default class AssignApi extends ApiClient {
             throw new window.Error('Missing the required parameter "operation" when calling postAssignByOperation');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -90,7 +85,6 @@ export default class AssignApi extends ApiClient {
         if (typeof memberData === 'undefined') {
             memberData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postAssignByOperation');
@@ -139,5 +133,4 @@ export default class AssignApi extends ApiClient {
             returnType
         );
     }
-
 }

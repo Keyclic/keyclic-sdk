@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The CategoryPatch model module.
  * @module model/CategoryPatch
  */
-export default class CategoryPatch  {
+export default class CategoryPatch {
     /**
      * Constructs a new "CategoryPatch".
      * @alias module:model/CategoryPatch
@@ -30,12 +26,10 @@ export default class CategoryPatch  {
     constructor(
 
     ) {
-
         this.name = null;
         this.color = null;
         this.icon = null;
         this.identificationNumber = null;
-
     }
 
     /**
@@ -71,10 +65,4 @@ export default class CategoryPatch  {
 
         return object;
     }
-
-
-
 }
-
-
-

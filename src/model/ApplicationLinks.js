@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import ApplicationLinksSelf from './ApplicationLinksSelf';
-
-
-
 
 /**
  * The ApplicationLinks model module.
  * @module model/ApplicationLinks
  */
-export default class ApplicationLinks  {
+export default class ApplicationLinks {
     /**
      * Constructs a new "ApplicationLinks".
      * @alias module:model/ApplicationLinks
@@ -31,7 +27,6 @@ export default class ApplicationLinks  {
     constructor(
 
     ) {
-
         this.self = null;
 
         this.selfType = ApplicationLinksSelf;
@@ -61,10 +56,4 @@ export default class ApplicationLinks  {
 
         return object;
     }
-
-
-
 }
-
-
-

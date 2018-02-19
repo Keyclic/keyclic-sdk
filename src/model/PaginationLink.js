@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The PaginationLink model module.
  * @module model/PaginationLink
  */
-export default class PaginationLink  {
+export default class PaginationLink {
     /**
      * Constructs a new "PaginationLink".
      * @alias module:model/PaginationLink
@@ -30,9 +26,7 @@ export default class PaginationLink  {
     constructor(
 
     ) {
-
         this.href = null;
-
     }
 
     /**
@@ -59,10 +53,4 @@ export default class PaginationLink  {
 
         return object;
     }
-
-
-
 }
-
-
-

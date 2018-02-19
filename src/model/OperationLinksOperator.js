@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import FeedbackLinksReporterIriTemplate from './FeedbackLinksReporterIriTemplate';
-
-
-
 
 /**
  * The OperationLinksOperator model module.
  * @module model/OperationLinksOperator
  */
-export default class OperationLinksOperator  {
+export default class OperationLinksOperator {
     /**
      * Constructs a new "OperationLinksOperator".
      * @alias module:model/OperationLinksOperator
@@ -31,7 +27,6 @@ export default class OperationLinksOperator  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class OperationLinksOperator  {
 
         return object;
     }
-
-
-
 }
-
-
-

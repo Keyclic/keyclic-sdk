@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The ReportStatePatch model module.
  * @module model/ReportStatePatch
  */
-export default class ReportStatePatch  {
+export default class ReportStatePatch {
     /**
      * Constructs a new "ReportStatePatch".
      * @alias module:model/ReportStatePatch
@@ -34,9 +30,7 @@ export default class ReportStatePatch  {
         transition,
 
     ) {
-
         this.transition = transition;
-
     }
 
     /**
@@ -63,8 +57,6 @@ export default class ReportStatePatch  {
 
         return object;
     }
-
-
 
     /**
     * Allowed values for the "transition" property.
@@ -102,8 +94,4 @@ export default class ReportStatePatch  {
          */
         "close": "close", // eslint-disable-line quotes
     };
-
 }
-
-
-

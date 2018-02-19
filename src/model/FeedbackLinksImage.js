@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import FeedbackLinksImageIriTemplate from './FeedbackLinksImageIriTemplate';
-
-
-
 
 /**
  * The FeedbackLinksImage model module.
  * @module model/FeedbackLinksImage
  */
-export default class FeedbackLinksImage  {
+export default class FeedbackLinksImage {
     /**
      * Constructs a new "FeedbackLinksImage".
      * @alias module:model/FeedbackLinksImage
@@ -31,7 +27,6 @@ export default class FeedbackLinksImage  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class FeedbackLinksImage  {
 
         return object;
     }
-
-
-
 }
-
-
-

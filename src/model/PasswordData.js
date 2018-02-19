@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The PasswordData model module.
  * @module model/PasswordData
  */
-export default class PasswordData  {
+export default class PasswordData {
     /**
      * Constructs a new "PasswordData".
      * @alias module:model/PasswordData
@@ -34,9 +30,7 @@ export default class PasswordData  {
         password,
 
     ) {
-
         this.password = password;
-
     }
 
     /**
@@ -63,10 +57,4 @@ export default class PasswordData  {
 
         return object;
     }
-
-
-
 }
-
-
-

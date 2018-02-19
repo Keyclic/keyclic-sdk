@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIriTemplate';
-
-
-
 
 /**
  * The PersonLinksMemberOf model module.
  * @module model/PersonLinksMemberOf
  */
-export default class PersonLinksMemberOf  {
+export default class PersonLinksMemberOf {
     /**
      * Constructs a new "PersonLinksMemberOf".
      * @alias module:model/PersonLinksMemberOf
@@ -31,7 +27,6 @@ export default class PersonLinksMemberOf  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class PersonLinksMemberOf  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,14 +10,10 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import BusinessActivityCollection from './BusinessActivityCollection';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
-
-
-
 
 /**
  * The BusinessActivityPagination model module.
@@ -67,10 +63,4 @@ export default class BusinessActivityPagination extends Pagination {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import PlaceGeoPolygon from './PlaceGeoPolygon';
-
-
-
 
 /**
  * The PlaceGeo model module.
  * @module model/PlaceGeo
  */
-export default class PlaceGeo  {
+export default class PlaceGeo {
     /**
      * Constructs a new "PlaceGeo".
      * @alias module:model/PlaceGeo
@@ -39,7 +35,6 @@ export default class PlaceGeo  {
         elevation,
 
     ) {
-
         this.polygon = polygon;
         this.elevation = elevation;
 
@@ -73,10 +68,4 @@ export default class PlaceGeo  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The FeedbackDataGeoPoint model module.
  * @module model/FeedbackDataGeoPoint
  */
-export default class FeedbackDataGeoPoint  {
+export default class FeedbackDataGeoPoint {
     /**
      * Constructs a new "FeedbackDataGeoPoint".
      * @alias module:model/FeedbackDataGeoPoint
@@ -30,11 +26,9 @@ export default class FeedbackDataGeoPoint  {
     constructor(
 
     ) {
-
         this.latitude = null;
         this.longitude = null;
         this.srid = null;
-
     }
 
     /**
@@ -67,10 +61,4 @@ export default class FeedbackDataGeoPoint  {
 
         return object;
     }
-
-
-
 }
-
-
-

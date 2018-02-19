@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Result from './Result';
-
-
-
 
 /**
  * The ActivityAggregatedPagination model module.
  * @module model/ActivityAggregatedPagination
  */
-export default class ActivityAggregatedPagination  {
+export default class ActivityAggregatedPagination {
     /**
      * Constructs a new "ActivityAggregatedPagination".
      * @alias module:model/ActivityAggregatedPagination
@@ -31,7 +27,6 @@ export default class ActivityAggregatedPagination  {
     constructor(
 
     ) {
-
         this.duration = null;
         this.next = null;
         this.results = [];
@@ -69,10 +64,4 @@ export default class ActivityAggregatedPagination  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The DeviceData model module.
  * @module model/DeviceData
  */
-export default class DeviceData  {
+export default class DeviceData {
     /**
      * Constructs a new "DeviceData".
      * @alias module:model/DeviceData
@@ -34,10 +30,8 @@ export default class DeviceData  {
         token,
 
     ) {
-
         this.token = token;
         this.platform = null;
-
     }
 
     /**
@@ -67,10 +61,4 @@ export default class DeviceData  {
 
         return object;
     }
-
-
-
 }
-
-
-

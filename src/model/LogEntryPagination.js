@@ -10,14 +10,10 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import LogEntryCollection from './LogEntryCollection';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
-
-
-
 
 /**
  * The LogEntryPagination model module.
@@ -67,10 +63,4 @@ export default class LogEntryPagination extends Pagination {
 
         return object;
     }
-
-
-
 }
-
-
-

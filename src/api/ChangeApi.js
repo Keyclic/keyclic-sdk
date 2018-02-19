@@ -46,7 +46,6 @@ export default class ChangeApi extends ApiClient {
         returnType = null,
         options,
     ) {
-
         let {
             xKeyclicApp,
             token,
@@ -54,7 +53,6 @@ export default class ChangeApi extends ApiClient {
             xKeyclicAppVersion,
             passwordData,
         } = options;
-
 
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
@@ -66,14 +64,10 @@ export default class ChangeApi extends ApiClient {
             throw new window.Error('Missing the required parameter "token" when calling postChangeByToken');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -84,8 +78,6 @@ export default class ChangeApi extends ApiClient {
         if (typeof passwordData === 'undefined') {
             passwordData = null;
         }
-
-
 
         let pathParams = {
             'token': token,
@@ -129,5 +121,4 @@ export default class ChangeApi extends ApiClient {
             returnType
         );
     }
-
 }

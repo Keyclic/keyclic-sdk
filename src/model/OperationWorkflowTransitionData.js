@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The OperationWorkflowTransitionData model module.
  * @module model/OperationWorkflowTransitionData
  */
-export default class OperationWorkflowTransitionData  {
+export default class OperationWorkflowTransitionData {
     /**
      * Constructs a new "OperationWorkflowTransitionData".
      * @alias module:model/OperationWorkflowTransitionData
@@ -34,9 +30,7 @@ export default class OperationWorkflowTransitionData  {
         transition,
 
     ) {
-
         this.transition = transition;
-
     }
 
     /**
@@ -63,8 +57,6 @@ export default class OperationWorkflowTransitionData  {
 
         return object;
     }
-
-
 
     /**
     * Allowed values for the "transition" property.
@@ -108,8 +100,4 @@ export default class OperationWorkflowTransitionData  {
          */
         "resolve": "resolve", // eslint-disable-line quotes
     };
-
 }
-
-
-

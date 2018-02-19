@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The ReportWorkflowTransitionData model module.
  * @module model/ReportWorkflowTransitionData
  */
-export default class ReportWorkflowTransitionData  {
+export default class ReportWorkflowTransitionData {
     /**
      * Constructs a new "ReportWorkflowTransitionData".
      * @alias module:model/ReportWorkflowTransitionData
@@ -34,9 +30,7 @@ export default class ReportWorkflowTransitionData  {
         transition,
 
     ) {
-
         this.transition = transition;
-
     }
 
     /**
@@ -63,8 +57,6 @@ export default class ReportWorkflowTransitionData  {
 
         return object;
     }
-
-
 
     /**
     * Allowed values for the "transition" property.
@@ -102,8 +94,4 @@ export default class ReportWorkflowTransitionData  {
          */
         "close": "close", // eslint-disable-line quotes
     };
-
 }
-
-
-

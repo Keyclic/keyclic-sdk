@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import CategoryLinksSelfIriTemplate from './CategoryLinksSelfIriTemplate';
-
-
-
 
 /**
  * The FeedbackLinksCategory model module.
  * @module model/FeedbackLinksCategory
  */
-export default class FeedbackLinksCategory  {
+export default class FeedbackLinksCategory {
     /**
      * Constructs a new "FeedbackLinksCategory".
      * @alias module:model/FeedbackLinksCategory
@@ -31,7 +27,6 @@ export default class FeedbackLinksCategory  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class FeedbackLinksCategory  {
 
         return object;
     }
-
-
-
 }
-
-
-

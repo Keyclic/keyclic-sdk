@@ -10,19 +10,15 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import FeedbackEmbedded from './FeedbackEmbedded';
 import ReportLinks from './ReportLinks';
-
-
-
 
 /**
  * The Report model module.
  * @module model/Report
  */
-export default class Report  {
+export default class Report {
     /**
      * Constructs a new "Report".
      * @alias module:model/Report
@@ -44,7 +40,6 @@ export default class Report  {
         updatedAt,
 
     ) {
-
         this.description = null;
         this.priority = priority;
         this.tags = [];
@@ -115,10 +110,4 @@ export default class Report  {
 
         return object;
     }
-
-
-
 }
-
-
-

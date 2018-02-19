@@ -10,19 +10,15 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Checkpoint from './Checkpoint';
 import TrackingProgression from './TrackingProgression';
-
-
-
 
 /**
  * The Tracking model module.
  * @module model/Tracking
  */
-export default class Tracking  {
+export default class Tracking {
     /**
      * Constructs a new "Tracking".
      * @alias module:model/Tracking
@@ -40,7 +36,6 @@ export default class Tracking  {
         progression,
 
     ) {
-
         this.state = state;
         this.progression = progression;
         this.time = null;
@@ -83,10 +78,4 @@ export default class Tracking  {
 
         return object;
     }
-
-
-
 }
-
-
-

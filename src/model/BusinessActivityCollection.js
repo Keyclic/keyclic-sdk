@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import BusinessActivity from './BusinessActivity';
-
-
-
 
 /**
  * The BusinessActivityCollection model module.
  * @module model/BusinessActivityCollection
  */
-export default class BusinessActivityCollection  {
+export default class BusinessActivityCollection {
     /**
      * Constructs a new "BusinessActivityCollection".
      * @alias module:model/BusinessActivityCollection
@@ -31,7 +27,6 @@ export default class BusinessActivityCollection  {
     constructor(
 
     ) {
-
         this.items = [];
 
         this.itemsType = BusinessActivity;
@@ -61,10 +56,4 @@ export default class BusinessActivityCollection  {
 
         return object;
     }
-
-
-
 }
-
-
-

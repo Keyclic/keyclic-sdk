@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import FeedbackGeoCoordinatesPoint from './FeedbackGeoCoordinatesPoint';
-
-
-
 
 /**
  * The FeedbackGeoCoordinates model module.
  * @module model/FeedbackGeoCoordinates
  */
-export default class FeedbackGeoCoordinates  {
+export default class FeedbackGeoCoordinates {
     /**
      * Constructs a new "FeedbackGeoCoordinates".
      * @alias module:model/FeedbackGeoCoordinates
@@ -35,7 +31,6 @@ export default class FeedbackGeoCoordinates  {
         point,
 
     ) {
-
         this.elevation = null;
         this.point = point;
 
@@ -69,10 +64,4 @@ export default class FeedbackGeoCoordinates  {
 
         return object;
     }
-
-
-
 }
-
-
-

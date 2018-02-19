@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The LogEntry model module.
  * @module model/LogEntry
  */
-export default class LogEntry  {
+export default class LogEntry {
     /**
      * Constructs a new "LogEntry".
      * @alias module:model/LogEntry
@@ -50,13 +46,11 @@ export default class LogEntry  {
         data,
 
     ) {
-
         this.action = action;
         this.loggedAt = loggedAt;
         this.objectId = objectId;
         this.version = version;
         this.data = data;
-
     }
 
     /**
@@ -95,10 +89,4 @@ export default class LogEntry  {
 
         return object;
     }
-
-
-
 }
-
-
-

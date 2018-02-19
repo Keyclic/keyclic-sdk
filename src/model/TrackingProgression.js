@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The TrackingProgression model module.
  * @module model/TrackingProgression
  */
-export default class TrackingProgression  {
+export default class TrackingProgression {
     /**
      * Constructs a new "TrackingProgression".
      * @alias module:model/TrackingProgression
@@ -30,10 +26,8 @@ export default class TrackingProgression  {
     constructor(
 
     ) {
-
         this.resolved = null;
         this.total = null;
-
     }
 
     /**
@@ -63,10 +57,4 @@ export default class TrackingProgression  {
 
         return object;
     }
-
-
-
 }
-
-
-

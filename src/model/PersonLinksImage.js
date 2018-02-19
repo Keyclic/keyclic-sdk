@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import FeedbackLinksReporterIriTemplate from './FeedbackLinksReporterIriTemplate';
-
-
-
 
 /**
  * The PersonLinksImage model module.
  * @module model/PersonLinksImage
  */
-export default class PersonLinksImage  {
+export default class PersonLinksImage {
     /**
      * Constructs a new "PersonLinksImage".
      * @alias module:model/PersonLinksImage
@@ -31,7 +27,6 @@ export default class PersonLinksImage  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class PersonLinksImage  {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import SuccessLoginCredentials from './SuccessLoginCredentials';
-
-
-
 
 /**
  * The SuccessLogin model module.
  * @module model/SuccessLogin
  */
-export default class SuccessLogin  {
+export default class SuccessLogin {
     /**
      * Constructs a new "SuccessLogin".
      * @alias module:model/SuccessLogin
@@ -31,7 +27,6 @@ export default class SuccessLogin  {
     constructor(
 
     ) {
-
         this.accessToken = null;
         this.credentials = null;
         this.tokenType = 'Bearer';
@@ -69,10 +64,4 @@ export default class SuccessLogin  {
 
         return object;
     }
-
-
-
 }
-
-
-

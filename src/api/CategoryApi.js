@@ -83,35 +83,30 @@ export default class CategoryApi extends ApiClient {
             searchIdentificationNumber,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetCategories');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
-            page = 1;  // eslint-disable-line quotes
+            page = 1; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
-            limit = 10;  // eslint-disable-line quotes
+            limit = 10; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
-            order = "desc";  // eslint-disable-line quotes
+            order = "desc"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -162,7 +157,6 @@ export default class CategoryApi extends ApiClient {
         if (typeof searchIdentificationNumber === 'undefined') {
             searchIdentificationNumber = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCategories');
@@ -270,7 +264,6 @@ export default class CategoryApi extends ApiClient {
             searchIdentificationNumber,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetCategoriesByOrganization');
@@ -281,29 +274,25 @@ export default class CategoryApi extends ApiClient {
             throw new window.Error('Missing the required parameter "organization" when calling cgetCategoriesByOrganization');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
-            page = 1;  // eslint-disable-line quotes
+            page = 1; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
-            limit = 10;  // eslint-disable-line quotes
+            limit = 10; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
-            order = "desc";  // eslint-disable-line quotes
+            order = "desc"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -349,7 +338,6 @@ export default class CategoryApi extends ApiClient {
         if (typeof searchIdentificationNumber === 'undefined') {
             searchIdentificationNumber = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetCategoriesByOrganization');
@@ -435,7 +423,6 @@ export default class CategoryApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getCategory');
@@ -446,20 +433,15 @@ export default class CategoryApi extends ApiClient {
             throw new window.Error('Missing the required parameter "category" when calling getCategory');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getCategory');
@@ -536,7 +518,6 @@ export default class CategoryApi extends ApiClient {
             categoryPatch,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchCategory');
@@ -547,14 +528,10 @@ export default class CategoryApi extends ApiClient {
             throw new window.Error('Missing the required parameter "category" when calling patchCategory');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -565,7 +542,6 @@ export default class CategoryApi extends ApiClient {
         if (typeof categoryPatch === 'undefined') {
             categoryPatch = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchCategory');
@@ -642,7 +618,6 @@ export default class CategoryApi extends ApiClient {
             categoryData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postCategoryByOrganization');
@@ -653,14 +628,10 @@ export default class CategoryApi extends ApiClient {
             throw new window.Error('Missing the required parameter "organization" when calling postCategoryByOrganization');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -671,7 +642,6 @@ export default class CategoryApi extends ApiClient {
         if (typeof categoryData === 'undefined') {
             categoryData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postCategoryByOrganization');
@@ -720,5 +690,4 @@ export default class CategoryApi extends ApiClient {
             returnType
         );
     }
-
 }

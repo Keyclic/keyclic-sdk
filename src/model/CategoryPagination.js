@@ -10,14 +10,10 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import CategoryCollection from './CategoryCollection';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
-
-
-
 
 /**
  * The CategoryPagination model module.
@@ -67,10 +63,4 @@ export default class CategoryPagination extends Pagination {
 
         return object;
     }
-
-
-
 }
-
-
-

@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The PersonPatch model module.
  * @module model/PersonPatch
  */
-export default class PersonPatch  {
+export default class PersonPatch {
     /**
      * Constructs a new "PersonPatch".
      * @alias module:model/PersonPatch
@@ -30,7 +26,6 @@ export default class PersonPatch  {
     constructor(
 
     ) {
-
         this.givenName = null;
         this.familyName = null;
         this.email = null;
@@ -39,7 +34,6 @@ export default class PersonPatch  {
         this.optIn = null;
         this.preferencesMessageEmailEnabled = null;
         this.preferencesMessagePushEnabled = null;
-
     }
 
     /**
@@ -87,10 +81,4 @@ export default class PersonPatch  {
 
         return object;
     }
-
-
-
 }
-
-
-

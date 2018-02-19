@@ -79,7 +79,6 @@ export default class OperationApi extends ApiClient {
             searchIdentificationNumber,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetOperationsByOrganization');
@@ -90,29 +89,25 @@ export default class OperationApi extends ApiClient {
             throw new window.Error('Missing the required parameter "organization" when calling cgetOperationsByOrganization');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
-            page = 1;  // eslint-disable-line quotes
+            page = 1; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
-            limit = 10;  // eslint-disable-line quotes
+            limit = 10; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
-            order = "desc";  // eslint-disable-line quotes
+            order = "desc"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -148,7 +143,6 @@ export default class OperationApi extends ApiClient {
         if (typeof searchIdentificationNumber === 'undefined') {
             searchIdentificationNumber = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetOperationsByOrganization');
@@ -250,7 +244,6 @@ export default class OperationApi extends ApiClient {
             searchIdentificationNumber,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetOperationsByPerson');
@@ -261,29 +254,25 @@ export default class OperationApi extends ApiClient {
             throw new window.Error('Missing the required parameter "person" when calling cgetOperationsByPerson');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
-            page = 1;  // eslint-disable-line quotes
+            page = 1; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
-            limit = 10;  // eslint-disable-line quotes
+            limit = 10; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
-            order = "desc";  // eslint-disable-line quotes
+            order = "desc"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -319,7 +308,6 @@ export default class OperationApi extends ApiClient {
         if (typeof searchIdentificationNumber === 'undefined') {
             searchIdentificationNumber = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetOperationsByPerson');
@@ -421,7 +409,6 @@ export default class OperationApi extends ApiClient {
             searchIdentificationNumber,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetOperationsByReport');
@@ -432,29 +419,25 @@ export default class OperationApi extends ApiClient {
             throw new window.Error('Missing the required parameter "report" when calling cgetOperationsByReport');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
-            page = 1;  // eslint-disable-line quotes
+            page = 1; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
-            limit = 10;  // eslint-disable-line quotes
+            limit = 10; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
-            order = "desc";  // eslint-disable-line quotes
+            order = "desc"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -490,7 +473,6 @@ export default class OperationApi extends ApiClient {
         if (typeof searchIdentificationNumber === 'undefined') {
             searchIdentificationNumber = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetOperationsByReport');
@@ -563,14 +545,12 @@ export default class OperationApi extends ApiClient {
         options,
         credentials,
     ) {
-
         let {
             xKeyclicApp,
             operation,
             acceptLanguage,
             xKeyclicAppVersion,
         } = options;
-
 
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
@@ -582,20 +562,15 @@ export default class OperationApi extends ApiClient {
             throw new window.Error('Missing the required parameter "operation" when calling deleteOperation');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling deleteOperation');
@@ -670,7 +645,6 @@ export default class OperationApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getOperation');
@@ -681,20 +655,15 @@ export default class OperationApi extends ApiClient {
             throw new window.Error('Missing the required parameter "operation" when calling getOperation');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getOperation');
@@ -771,7 +740,6 @@ export default class OperationApi extends ApiClient {
             operationPatch,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchOperation');
@@ -782,14 +750,10 @@ export default class OperationApi extends ApiClient {
             throw new window.Error('Missing the required parameter "operation" when calling patchOperation');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -800,7 +764,6 @@ export default class OperationApi extends ApiClient {
         if (typeof operationPatch === 'undefined') {
             operationPatch = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchOperation');
@@ -875,20 +838,15 @@ export default class OperationApi extends ApiClient {
             operationData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postOperation');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -899,7 +857,6 @@ export default class OperationApi extends ApiClient {
         if (typeof operationData === 'undefined') {
             operationData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postOperation');
@@ -947,5 +904,4 @@ export default class OperationApi extends ApiClient {
             returnType
         );
     }
-
 }

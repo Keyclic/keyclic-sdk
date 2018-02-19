@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The FeedbackLinksSelfIriTemplateMapping model module.
  * @module model/FeedbackLinksSelfIriTemplateMapping
  */
-export default class FeedbackLinksSelfIriTemplateMapping  {
+export default class FeedbackLinksSelfIriTemplateMapping {
     /**
      * Constructs a new "FeedbackLinksSelfIriTemplateMapping".
      * @alias module:model/FeedbackLinksSelfIriTemplateMapping
@@ -30,9 +26,7 @@ export default class FeedbackLinksSelfIriTemplateMapping  {
     constructor(
 
     ) {
-
         this.feedback = null;
-
     }
 
     /**
@@ -59,10 +53,4 @@ export default class FeedbackLinksSelfIriTemplateMapping  {
 
         return object;
     }
-
-
-
 }
-
-
-

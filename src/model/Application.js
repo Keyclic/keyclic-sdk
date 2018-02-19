@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import ApplicationLinks from './ApplicationLinks';
-
-
-
 
 /**
  * The Application model module.
  * @module model/Application
  */
-export default class Application  {
+export default class Application {
     /**
      * Constructs a new "Application".
      * @alias module:model/Application
@@ -43,7 +39,6 @@ export default class Application  {
         id,
 
     ) {
-
         this.name = name;
         this.token = token;
         this.version = null;
@@ -93,10 +88,4 @@ export default class Application  {
 
         return object;
     }
-
-
-
 }
-
-
-

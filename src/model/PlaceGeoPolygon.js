@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The PlaceGeoPolygon model module.
  * @module model/PlaceGeoPolygon
  */
-export default class PlaceGeoPolygon  {
+export default class PlaceGeoPolygon {
     /**
      * Constructs a new "PlaceGeoPolygon".
      * @alias module:model/PlaceGeoPolygon
@@ -34,10 +30,8 @@ export default class PlaceGeoPolygon  {
         type,
 
     ) {
-
         this.type = type;
         this.features = [];
-
     }
 
     /**
@@ -67,10 +61,4 @@ export default class PlaceGeoPolygon  {
 
         return object;
     }
-
-
-
 }
-
-
-

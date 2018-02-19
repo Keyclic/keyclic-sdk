@@ -82,7 +82,6 @@ export default class RelationshipApi extends ApiClient {
             searchNotificationEmailAddress,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetRelationshipsByOrganization');
@@ -93,29 +92,25 @@ export default class RelationshipApi extends ApiClient {
             throw new window.Error('Missing the required parameter "organization" when calling cgetRelationshipsByOrganization');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
-            page = 1;  // eslint-disable-line quotes
+            page = 1; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
-            limit = 10;  // eslint-disable-line quotes
+            limit = 10; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
-            order = "desc";  // eslint-disable-line quotes
+            order = "desc"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -161,7 +156,6 @@ export default class RelationshipApi extends ApiClient {
         if (typeof searchNotificationEmailAddress === 'undefined') {
             searchNotificationEmailAddress = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetRelationshipsByOrganization');
@@ -237,7 +231,6 @@ export default class RelationshipApi extends ApiClient {
         options,
         credentials,
     ) {
-
         let {
             xKeyclicApp,
             organization,
@@ -245,7 +238,6 @@ export default class RelationshipApi extends ApiClient {
             acceptLanguage,
             xKeyclicAppVersion,
         } = options;
-
 
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
@@ -262,20 +254,15 @@ export default class RelationshipApi extends ApiClient {
             throw new window.Error('Missing the required parameter "relationship" when calling deleteRelationshipByOrganizationAndRelationship');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling deleteRelationshipByOrganizationAndRelationship');
@@ -353,7 +340,6 @@ export default class RelationshipApi extends ApiClient {
             relationshipData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postRelationshipByOrganization');
@@ -364,14 +350,10 @@ export default class RelationshipApi extends ApiClient {
             throw new window.Error('Missing the required parameter "organization" when calling postRelationshipByOrganization');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -382,7 +364,6 @@ export default class RelationshipApi extends ApiClient {
         if (typeof relationshipData === 'undefined') {
             relationshipData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postRelationshipByOrganization');
@@ -431,5 +412,4 @@ export default class RelationshipApi extends ApiClient {
             returnType
         );
     }
-
 }

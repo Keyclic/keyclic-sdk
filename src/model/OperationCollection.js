@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Operation from './Operation';
-
-
-
 
 /**
  * The OperationCollection model module.
  * @module model/OperationCollection
  */
-export default class OperationCollection  {
+export default class OperationCollection {
     /**
      * Constructs a new "OperationCollection".
      * @alias module:model/OperationCollection
@@ -31,7 +27,6 @@ export default class OperationCollection  {
     constructor(
 
     ) {
-
         this.items = [];
 
         this.itemsType = Operation;
@@ -61,10 +56,4 @@ export default class OperationCollection  {
 
         return object;
     }
-
-
-
 }
-
-
-

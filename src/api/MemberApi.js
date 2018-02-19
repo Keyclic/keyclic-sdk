@@ -81,7 +81,6 @@ export default class MemberApi extends ApiClient {
             searchEmail,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetMembersByOrganization');
@@ -92,29 +91,25 @@ export default class MemberApi extends ApiClient {
             throw new window.Error('Missing the required parameter "organization" when calling cgetMembersByOrganization');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
-            page = 1;  // eslint-disable-line quotes
+            page = 1; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
-            limit = 10;  // eslint-disable-line quotes
+            limit = 10; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
-            order = "desc";  // eslint-disable-line quotes
+            order = "desc"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -155,7 +150,6 @@ export default class MemberApi extends ApiClient {
         if (typeof searchEmail === 'undefined') {
             searchEmail = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetMembersByOrganization');
@@ -230,7 +224,6 @@ export default class MemberApi extends ApiClient {
         options,
         credentials,
     ) {
-
         let {
             xKeyclicApp,
             organization,
@@ -238,7 +231,6 @@ export default class MemberApi extends ApiClient {
             acceptLanguage,
             xKeyclicAppVersion,
         } = options;
-
 
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
@@ -255,20 +247,15 @@ export default class MemberApi extends ApiClient {
             throw new window.Error('Missing the required parameter "member" when calling deleteMemberByOrganizationAndMember');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling deleteMemberByOrganizationAndMember');
@@ -346,7 +333,6 @@ export default class MemberApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getMemberByOrganizationAndMember');
@@ -362,20 +348,15 @@ export default class MemberApi extends ApiClient {
             throw new window.Error('Missing the required parameter "member" when calling getMemberByOrganizationAndMember');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getMemberByOrganizationAndMember');
@@ -455,7 +436,6 @@ export default class MemberApi extends ApiClient {
             memberPatch,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchMemberByOrganizationAndMember');
@@ -471,14 +451,10 @@ export default class MemberApi extends ApiClient {
             throw new window.Error('Missing the required parameter "member" when calling patchMemberByOrganizationAndMember');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -489,7 +465,6 @@ export default class MemberApi extends ApiClient {
         if (typeof memberPatch === 'undefined') {
             memberPatch = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchMemberByOrganizationAndMember');
@@ -567,7 +542,6 @@ export default class MemberApi extends ApiClient {
             personData,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postMemberByOrganization');
@@ -578,14 +552,10 @@ export default class MemberApi extends ApiClient {
             throw new window.Error('Missing the required parameter "organization" when calling postMemberByOrganization');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -596,7 +566,6 @@ export default class MemberApi extends ApiClient {
         if (typeof personData === 'undefined') {
             personData = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling postMemberByOrganization');
@@ -645,5 +614,4 @@ export default class MemberApi extends ApiClient {
             returnType
         );
     }
-
 }

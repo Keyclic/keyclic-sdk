@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import ApplicationLinksSelfIriTemplate from './ApplicationLinksSelfIriTemplate';
-
-
-
 
 /**
  * The ApplicationLinksSelf model module.
  * @module model/ApplicationLinksSelf
  */
-export default class ApplicationLinksSelf  {
+export default class ApplicationLinksSelf {
     /**
      * Constructs a new "ApplicationLinksSelf".
      * @alias module:model/ApplicationLinksSelf
@@ -31,7 +27,6 @@ export default class ApplicationLinksSelf  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class ApplicationLinksSelf  {
 
         return object;
     }
-
-
-
 }
-
-
-

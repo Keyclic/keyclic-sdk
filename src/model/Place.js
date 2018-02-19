@@ -10,19 +10,15 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import PlaceGeo from './PlaceGeo';
 import PlaceLinks from './PlaceLinks';
-
-
-
 
 /**
  * The Place model module.
  * @module model/Place
  */
-export default class Place  {
+export default class Place {
     /**
      * Constructs a new "Place".
      * @alias module:model/Place
@@ -52,7 +48,6 @@ export default class Place  {
         updatedAt,
 
     ) {
-
         this.branchCode = null;
         this.name = name;
         this.geo = geo;
@@ -111,10 +106,4 @@ export default class Place  {
 
         return object;
     }
-
-
-
 }
-
-
-

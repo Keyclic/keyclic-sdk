@@ -10,17 +10,13 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
-
-
-
 
 /**
  * The FeedbackEmbedded model module.
  * @module model/FeedbackEmbedded
  */
-export default class FeedbackEmbedded  {
+export default class FeedbackEmbedded {
     /**
      * Constructs a new "FeedbackEmbedded".
      * @alias module:model/FeedbackEmbedded
@@ -30,9 +26,7 @@ export default class FeedbackEmbedded  {
     constructor(
 
     ) {
-
         this.stateTransitions = [];
-
     }
 
     /**
@@ -59,10 +53,4 @@ export default class FeedbackEmbedded  {
 
         return object;
     }
-
-
-
 }
-
-
-

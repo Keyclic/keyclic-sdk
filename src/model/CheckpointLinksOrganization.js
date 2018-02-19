@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIriTemplate';
-
-
-
 
 /**
  * The CheckpointLinksOrganization model module.
  * @module model/CheckpointLinksOrganization
  */
-export default class CheckpointLinksOrganization  {
+export default class CheckpointLinksOrganization {
     /**
      * Constructs a new "CheckpointLinksOrganization".
      * @alias module:model/CheckpointLinksOrganization
@@ -31,7 +27,6 @@ export default class CheckpointLinksOrganization  {
     constructor(
 
     ) {
-
         this.href = null;
         this.iriTemplate = null;
 
@@ -65,10 +60,4 @@ export default class CheckpointLinksOrganization  {
 
         return object;
     }
-
-
-
 }
-
-
-

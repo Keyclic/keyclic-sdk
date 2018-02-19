@@ -78,35 +78,30 @@ export default class PersonApi extends ApiClient {
             searchEmail,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetPeople');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'page'
         if (typeof page === 'undefined' || page === null) {
-            page = 1;  // eslint-disable-line quotes
+            page = 1; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'limit'
         if (typeof limit === 'undefined' || limit === null) {
-            limit = 10;  // eslint-disable-line quotes
+            limit = 10; // eslint-disable-line quotes
         }
 
         // verify the default value of parameter 'order'
         if (typeof order === 'undefined' || order === null) {
-            order = "desc";  // eslint-disable-line quotes
+            order = "desc"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -147,7 +142,6 @@ export default class PersonApi extends ApiClient {
         if (typeof searchEmail === 'undefined') {
             searchEmail = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling cgetPeople');
@@ -231,7 +225,6 @@ export default class PersonApi extends ApiClient {
             xKeyclicAppVersion,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getPerson');
@@ -242,20 +235,15 @@ export default class PersonApi extends ApiClient {
             throw new window.Error('Missing the required parameter "person" when calling getPerson');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
             xKeyclicAppVersion = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling getPerson');
@@ -332,7 +320,6 @@ export default class PersonApi extends ApiClient {
             personPatch,
         } = options;
 
-
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
             throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchPerson');
@@ -343,14 +330,10 @@ export default class PersonApi extends ApiClient {
             throw new window.Error('Missing the required parameter "person" when calling patchPerson');
         }
 
-
-
         // verify the default value of parameter 'acceptLanguage'
         if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
         }
-
-
 
         // verify the null value of parameter 'xKeyclicAppVersion'
         if (typeof xKeyclicAppVersion === 'undefined') {
@@ -361,7 +344,6 @@ export default class PersonApi extends ApiClient {
         if (typeof personPatch === 'undefined') {
             personPatch = null;
         }
-
 
         if (typeof credentials === 'undefined' || credentials === null) {
             throw new window.Error('Missing the required parameter "credentials" when calling patchPerson');
@@ -410,5 +392,4 @@ export default class PersonApi extends ApiClient {
             returnType
         );
     }
-
 }

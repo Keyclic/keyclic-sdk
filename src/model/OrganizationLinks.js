@@ -10,19 +10,16 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
+import OrganizationLinksBusinessActivity from './OrganizationLinksBusinessActivity';
 import OrganizationLinksLogo from './OrganizationLinksLogo';
 import OrganizationLinksSelf from './OrganizationLinksSelf';
-
-
-
 
 /**
  * The OrganizationLinks model module.
  * @module model/OrganizationLinks
  */
-export default class OrganizationLinks  {
+export default class OrganizationLinks {
     /**
      * Constructs a new "OrganizationLinks".
      * @alias module:model/OrganizationLinks
@@ -32,11 +29,12 @@ export default class OrganizationLinks  {
     constructor(
 
     ) {
-
         this.self = null;
+        this.businessActivity = null;
         this.logo = null;
 
         this.selfType = OrganizationLinksSelf;
+        this.businessActivityType = OrganizationLinksBusinessActivity;
         this.logoType = OrganizationLinksLogo;
     }
 
@@ -61,16 +59,13 @@ export default class OrganizationLinks  {
         if (data.hasOwnProperty('self')) {
             object.self = ApiClient.convertToType(data.self, object.selfType);
         }
+        if (data.hasOwnProperty('businessActivity')) {
+            object.businessActivity = ApiClient.convertToType(data.businessActivity, object.businessActivityType);
+        }
         if (data.hasOwnProperty('logo')) {
             object.logo = ApiClient.convertToType(data.logo, object.logoType);
         }
 
         return object;
     }
-
-
-
 }
-
-
-

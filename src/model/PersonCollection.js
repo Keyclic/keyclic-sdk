@@ -10,18 +10,14 @@
  * Do not edit the class manually.
  */
 
-
 import ApiClient from '../ApiClient';
 import Person from './Person';
-
-
-
 
 /**
  * The PersonCollection model module.
  * @module model/PersonCollection
  */
-export default class PersonCollection  {
+export default class PersonCollection {
     /**
      * Constructs a new "PersonCollection".
      * @alias module:model/PersonCollection
@@ -31,7 +27,6 @@ export default class PersonCollection  {
     constructor(
 
     ) {
-
         this.items = [];
 
         this.itemsType = Person;
@@ -61,10 +56,4 @@ export default class PersonCollection  {
 
         return object;
     }
-
-
-
 }
-
-
-
