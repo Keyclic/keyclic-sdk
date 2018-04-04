@@ -53,6 +53,7 @@ export default class Organization {
         this.updatedAt = updatedAt;
         this.type = null;
         this.isEnabled = null;
+        this.enabled = null;
         this.links = null;
 
         this.linksType = OrganizationLinks;
@@ -105,6 +106,9 @@ export default class Organization {
         }
         if (data.hasOwnProperty('isEnabled')) {
             object.isEnabled = ApiClient.convertToType(data.isEnabled, 'Boolean');
+        }
+        if (data.hasOwnProperty('enabled')) {
+            object.enabled = ApiClient.convertToType(data.enabled, 'Boolean');
         }
         if (data.hasOwnProperty('_links')) {
             object.links = ApiClient.convertToType(data._links, object.linksType);

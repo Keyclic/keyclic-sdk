@@ -43,6 +43,7 @@ export default class FeedbackApi extends ApiClient {
      * @param { String } xKeyclicAppVersion
      * @param { String } state   (default to DELIVERED)
      * @param { String } category The identifier of the resource formatted as GUID string.
+     * @param { module:model/String } geoNear One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
      * @param { String } geoHash
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { module:model/String } visibility   (default to VISIBILITY_PUBLIC)
@@ -51,10 +52,8 @@ export default class FeedbackApi extends ApiClient {
      * @param { module:model/String } order   (default to desc)
      * @param { Date } after
      * @param { Date } before
-     * @param { String } geoNearGeoCoordinates
-     * @param { Number } geoNearRadius
      */
-    cgetFeedbacks(
+    cgetFeedback(
         returnType = null,
         options,
         credentials,
@@ -69,6 +68,7 @@ export default class FeedbackApi extends ApiClient {
             xKeyclicAppVersion,
             state,
             category,
+            geoNear,
             geoHash,
             organization,
             visibility,
@@ -77,13 +77,11 @@ export default class FeedbackApi extends ApiClient {
             order,
             after,
             before,
-            geoNearGeoCoordinates,
-            geoNearRadius,
         } = options;
 
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetFeedbacks');
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetFeedback');
         }
 
         // verify the default value of parameter 'acceptLanguage'
@@ -126,6 +124,11 @@ export default class FeedbackApi extends ApiClient {
             category = null;
         }
 
+        // verify the null value of parameter 'geoNear'
+        if (typeof geoNear === 'undefined') {
+            geoNear = null;
+        }
+
         // verify the null value of parameter 'geoHash'
         if (typeof geoHash === 'undefined') {
             geoHash = null;
@@ -146,18 +149,8 @@ export default class FeedbackApi extends ApiClient {
             before = null;
         }
 
-        // verify the null value of parameter 'geoNearGeoCoordinates'
-        if (typeof geoNearGeoCoordinates === 'undefined') {
-            geoNearGeoCoordinates = null;
-        }
-
-        // verify the null value of parameter 'geoNearRadius'
-        if (typeof geoNearRadius === 'undefined') {
-            geoNearRadius = null;
-        }
-
         if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling cgetFeedbacks');
+            throw new window.Error('Missing the required parameter "credentials" when calling cgetFeedback');
         }
 
         let pathParams = {
@@ -168,6 +161,7 @@ export default class FeedbackApi extends ApiClient {
         let queryParams = {
             'state': state,
             'category': category,
+            'geo_near': geoNear,
             'geo_hash[]': geoHash,
             'organization': organization,
             'visibility[]': visibility,
@@ -176,8 +170,6 @@ export default class FeedbackApi extends ApiClient {
             'order': order,
             'after': after,
             'before': before,
-            'geo_near[geo_coordinates]': geoNearGeoCoordinates,
-            'geo_near[radius]': geoNearRadius,
         };
 
         let headerParams = {
@@ -224,6 +216,7 @@ export default class FeedbackApi extends ApiClient {
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
      * @param { String } category The identifier of the resource formatted as GUID string.
+     * @param { module:model/String } geoNear One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
      * @param { String } geoHash
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { String } state
@@ -233,10 +226,8 @@ export default class FeedbackApi extends ApiClient {
      * @param { module:model/String } order   (default to desc)
      * @param { Date } after
      * @param { Date } before
-     * @param { String } geoNearGeoCoordinates
-     * @param { Number } geoNearRadius
      */
-    cgetFeedbacksByPerson(
+    cgetFeedbackByPerson(
         returnType = null,
         options,
         credentials,
@@ -251,6 +242,7 @@ export default class FeedbackApi extends ApiClient {
             acceptLanguage,
             xKeyclicAppVersion,
             category,
+            geoNear,
             geoHash,
             organization,
             state,
@@ -260,18 +252,16 @@ export default class FeedbackApi extends ApiClient {
             order,
             after,
             before,
-            geoNearGeoCoordinates,
-            geoNearRadius,
         } = options;
 
         // verify the required parameter 'xKeyclicApp' is set
         if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetFeedbacksByPerson');
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetFeedbackByPerson');
         }
 
         // verify the required parameter 'person' is set
         if (typeof person === 'undefined' || person === null) {
-            throw new window.Error('Missing the required parameter "person" when calling cgetFeedbacksByPerson');
+            throw new window.Error('Missing the required parameter "person" when calling cgetFeedbackByPerson');
         }
 
         // verify the default value of parameter 'acceptLanguage'
@@ -309,6 +299,11 @@ export default class FeedbackApi extends ApiClient {
             category = null;
         }
 
+        // verify the null value of parameter 'geoNear'
+        if (typeof geoNear === 'undefined') {
+            geoNear = null;
+        }
+
         // verify the null value of parameter 'geoHash'
         if (typeof geoHash === 'undefined') {
             geoHash = null;
@@ -334,18 +329,8 @@ export default class FeedbackApi extends ApiClient {
             before = null;
         }
 
-        // verify the null value of parameter 'geoNearGeoCoordinates'
-        if (typeof geoNearGeoCoordinates === 'undefined') {
-            geoNearGeoCoordinates = null;
-        }
-
-        // verify the null value of parameter 'geoNearRadius'
-        if (typeof geoNearRadius === 'undefined') {
-            geoNearRadius = null;
-        }
-
         if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling cgetFeedbacksByPerson');
+            throw new window.Error('Missing the required parameter "credentials" when calling cgetFeedbackByPerson');
         }
 
         let pathParams = {
@@ -356,6 +341,7 @@ export default class FeedbackApi extends ApiClient {
 
         let queryParams = {
             'category': category,
+            'geo_near': geoNear,
             'geo_hash[]': geoHash,
             'organization': organization,
             'state': state,
@@ -365,8 +351,6 @@ export default class FeedbackApi extends ApiClient {
             'order': order,
             'after': after,
             'before': before,
-            'geo_near[geo_coordinates]': geoNearGeoCoordinates,
-            'geo_near[radius]': geoNearRadius,
         };
 
         let headerParams = {

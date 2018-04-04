@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **updatedAt** | **Date** |  | 
 **type** | **String** |  | [optional] 
 **isEnabled** | **Boolean** |  | [optional] 
+**enabled** | **Boolean** |  | [optional] 
 **links** | [**OrganizationLinks**](OrganizationLinks.md) |  | [optional] 
 
 

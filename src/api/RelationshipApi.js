@@ -43,7 +43,9 @@ export default class RelationshipApi extends ApiClient {
      * @param { OrganizationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { String } geoCoordinates
+     * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+     * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
@@ -69,7 +71,9 @@ export default class RelationshipApi extends ApiClient {
             organization,
             acceptLanguage,
             xKeyclicAppVersion,
+            businessActivity,
             geoCoordinates,
+            geoPoint,
             page,
             limit,
             order,
@@ -117,9 +121,19 @@ export default class RelationshipApi extends ApiClient {
             xKeyclicAppVersion = null;
         }
 
+        // verify the null value of parameter 'businessActivity'
+        if (typeof businessActivity === 'undefined') {
+            businessActivity = null;
+        }
+
         // verify the null value of parameter 'geoCoordinates'
         if (typeof geoCoordinates === 'undefined') {
             geoCoordinates = null;
+        }
+
+        // verify the null value of parameter 'geoPoint'
+        if (typeof geoPoint === 'undefined') {
+            geoPoint = null;
         }
 
         // verify the null value of parameter 'after'
@@ -168,7 +182,9 @@ export default class RelationshipApi extends ApiClient {
         let bodyParam = null;
 
         let queryParams = {
+            'business_activity': businessActivity,
             'geo_coordinates': geoCoordinates,
+            'geo_point': geoPoint,
             'page': page,
             'limit': limit,
             'order': order,

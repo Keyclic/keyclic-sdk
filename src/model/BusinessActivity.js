@@ -39,6 +39,7 @@ export default class BusinessActivity {
         this.alternateName = null;
         this.id = id;
         this.type = null;
+        this.metadataSchema = [];
         this.links = null;
 
         this.linksType = BusinessActivityLinks;
@@ -73,6 +74,9 @@ export default class BusinessActivity {
         }
         if (data.hasOwnProperty('type')) {
             object.type = ApiClient.convertToType(data.type, 'String');
+        }
+        if (data.hasOwnProperty('metadataSchema')) {
+            object.metadataSchema = ApiClient.convertToType(data.metadataSchema, '[\'String\']');
         }
         if (data.hasOwnProperty('_links')) {
             object.links = ApiClient.convertToType(data._links, object.linksType);

@@ -45,7 +45,8 @@ export default class CategoryApi extends ApiClient {
      * @param { String } xKeyclicAppVersion
      * @param { String } businessActivity The identifier of the resource formatted as GUID string.
      * @param { String } organization The identifier of the resource formatted as GUID string.
-     * @param { String } geoCoordinates
+     * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
@@ -72,6 +73,7 @@ export default class CategoryApi extends ApiClient {
             businessActivity,
             organization,
             geoCoordinates,
+            geoPoint,
             page,
             limit,
             order,
@@ -128,6 +130,11 @@ export default class CategoryApi extends ApiClient {
             geoCoordinates = null;
         }
 
+        // verify the null value of parameter 'geoPoint'
+        if (typeof geoPoint === 'undefined') {
+            geoPoint = null;
+        }
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
@@ -171,6 +178,7 @@ export default class CategoryApi extends ApiClient {
             'business_activity': businessActivity,
             'organization': organization,
             'geo_coordinates': geoCoordinates,
+            'geo_point': geoPoint,
             'page': page,
             'limit': limit,
             'order': order,
@@ -226,7 +234,8 @@ export default class CategoryApi extends ApiClient {
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
      * @param { String } businessActivity The identifier of the resource formatted as GUID string.
-     * @param { String } geoCoordinates
+     * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
@@ -253,6 +262,7 @@ export default class CategoryApi extends ApiClient {
             xKeyclicAppVersion,
             businessActivity,
             geoCoordinates,
+            geoPoint,
             page,
             limit,
             order,
@@ -309,6 +319,11 @@ export default class CategoryApi extends ApiClient {
             geoCoordinates = null;
         }
 
+        // verify the null value of parameter 'geoPoint'
+        if (typeof geoPoint === 'undefined') {
+            geoPoint = null;
+        }
+
         // verify the null value of parameter 'after'
         if (typeof after === 'undefined') {
             after = null;
@@ -352,6 +367,7 @@ export default class CategoryApi extends ApiClient {
         let queryParams = {
             'business_activity': businessActivity,
             'geo_coordinates': geoCoordinates,
+            'geo_point': geoPoint,
             'page': page,
             'limit': limit,
             'order': order,

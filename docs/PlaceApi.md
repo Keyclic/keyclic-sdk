@@ -36,9 +36,10 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'businessActivity': "businessActivity_example", // String | The identifier of the resource formatted as GUID string.
-  'geoCoordinates': "geoCoordinates_example", // String | 
-  'geoElevation': 56, // Number | 
+  'geoCoordinates': "geoCoordinates_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+  'geoElevation': "geoElevation_example", // String | 
   'geoHash': "geoHash_example", // String | 
+  'geoPoint': "geoPoint_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
   'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
   'parent': "parent_example", // String | The identifier of the resource formatted as GUID string.
   'parents': "parents_example", // String | The identifier of the resource formatted as GUID string.
@@ -68,9 +69,10 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **geoCoordinates** | **String**|  | [optional] 
- **geoElevation** | **Number**|  | [optional] 
+ **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **geoElevation** | **String**|  | [optional] 
  **geoHash** | **String**|  | [optional] 
+ **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **parent** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **parents** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
@@ -122,9 +124,10 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'businessActivity': "businessActivity_example", // String | The identifier of the resource formatted as GUID string.
-  'geoCoordinates': "geoCoordinates_example", // String | 
-  'geoElevation': 56, // Number | 
+  'geoCoordinates': "geoCoordinates_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+  'geoElevation': "geoElevation_example", // String | 
   'geoHash': "geoHash_example", // String | 
+  'geoPoint': "geoPoint_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
   'parent': "parent_example", // String | The identifier of the resource formatted as GUID string.
   'parents': "parents_example", // String | The identifier of the resource formatted as GUID string.
   'page': 1, // Number | Page of the overview.
@@ -154,9 +157,10 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **geoCoordinates** | **String**|  | [optional] 
- **geoElevation** | **Number**|  | [optional] 
+ **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **geoElevation** | **String**|  | [optional] 
  **geoHash** | **String**|  | [optional] 
+ **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **parent** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **parents** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]

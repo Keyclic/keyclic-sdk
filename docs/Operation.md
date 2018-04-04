@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **type** | **String** |  | [optional] 
 **state** | **[String]** |  | [optional] 
 **links** | [**OperationLinks**](OperationLinks.md) |  | [optional] 
-**embedded** | [**FeedbackEmbedded**](FeedbackEmbedded.md) |  | [optional] 
+**embedded** | [**OperationEmbedded**](OperationEmbedded.md) |  | [optional] 
 
 

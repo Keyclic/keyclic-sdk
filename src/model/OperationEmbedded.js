@@ -13,13 +13,13 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The FeedbackEmbedded model module.
- * @module model/FeedbackEmbedded
+ * The OperationEmbedded model module.
+ * @module model/OperationEmbedded
  */
-export default class FeedbackEmbedded {
+export default class OperationEmbedded {
     /**
-     * Constructs a new "FeedbackEmbedded".
-     * @alias module:model/FeedbackEmbedded
+     * Constructs a new "OperationEmbedded".
+     * @alias module:model/OperationEmbedded
      * @class
 
      */
@@ -27,14 +27,13 @@ export default class FeedbackEmbedded {
 
     ) {
         this.stateTransitions = [];
-        this.tracking = null;
     }
 
     /**
-    * Constructs a "FeedbackEmbedded" from a plain JavaScript object.
+    * Constructs a "OperationEmbedded" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:model/FeedbackEmbedded } object Optional instance to populate.
-    * @return { module:model/FeedbackEmbedded } The populated "FeedbackEmbedded" instance.
+    * @param { module:model/OperationEmbedded } object Optional instance to populate.
+    * @return { module:model/OperationEmbedded } The populated "OperationEmbedded" instance.
     */
     static constructFromData(
         data,
@@ -45,14 +44,11 @@ export default class FeedbackEmbedded {
         }
 
         if (object === null) {
-            object = new FeedbackEmbedded();
+            object = new OperationEmbedded();
         }
 
         if (data.hasOwnProperty('stateTransitions')) {
             object.stateTransitions = ApiClient.convertToType(data.stateTransitions, '[\'String\']');
-        }
-        if (data.hasOwnProperty('tracking')) {
-            object.tracking = ApiClient.convertToType(data.tracking, 'String');
         }
 
         return object;

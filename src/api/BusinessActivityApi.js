@@ -41,7 +41,8 @@ export default class BusinessActivityApi extends ApiClient {
      * @param { BusinessActivityPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { String } geoCoordinates
+     * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
@@ -63,6 +64,7 @@ export default class BusinessActivityApi extends ApiClient {
             acceptLanguage,
             xKeyclicAppVersion,
             geoCoordinates,
+            geoPoint,
             organization,
             page,
             limit,
@@ -106,6 +108,11 @@ export default class BusinessActivityApi extends ApiClient {
             geoCoordinates = null;
         }
 
+        // verify the null value of parameter 'geoPoint'
+        if (typeof geoPoint === 'undefined') {
+            geoPoint = null;
+        }
+
         // verify the null value of parameter 'organization'
         if (typeof organization === 'undefined') {
             organization = null;
@@ -132,6 +139,7 @@ export default class BusinessActivityApi extends ApiClient {
 
         let queryParams = {
             'geo_coordinates': geoCoordinates,
+            'geo_point': geoPoint,
             'organization': organization,
             'page': page,
             'limit': limit,

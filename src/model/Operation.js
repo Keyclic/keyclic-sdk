@@ -11,7 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import FeedbackEmbedded from './FeedbackEmbedded';
+import OperationEmbedded from './OperationEmbedded';
 import OperationLinks from './OperationLinks';
 
 /**
@@ -54,7 +54,7 @@ export default class Operation {
         this.embedded = null;
 
         this.linksType = OperationLinks;
-        this.embeddedType = FeedbackEmbedded;
+        this.embeddedType = OperationEmbedded;
     }
 
     /**

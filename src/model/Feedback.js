@@ -39,9 +39,11 @@ export default class Feedback {
     ) {
         this.description = null;
         this.geoCoordinates = geoCoordinates;
+        this.metadata = [];
         this.id = id;
         this.createdAt = null;
         this.type = null;
+        this._public = null;
         this.state = [];
         this.links = null;
         this.embedded = null;
@@ -75,6 +77,9 @@ export default class Feedback {
         if (data.hasOwnProperty('geoCoordinates')) {
             object.geoCoordinates = ApiClient.convertToType(data.geoCoordinates, object.geoCoordinatesType);
         }
+        if (data.hasOwnProperty('metadata')) {
+            object.metadata = ApiClient.convertToType(data.metadata, '[\'String\']');
+        }
         if (data.hasOwnProperty('id')) {
             object.id = ApiClient.convertToType(data.id, 'String');
         }
@@ -83,6 +88,9 @@ export default class Feedback {
         }
         if (data.hasOwnProperty('type')) {
             object.type = ApiClient.convertToType(data.type, 'String');
+        }
+        if (data.hasOwnProperty('public')) {
+            object._public = ApiClient.convertToType(data.public, 'Boolean');
         }
         if (data.hasOwnProperty('state')) {
             object.state = ApiClient.convertToType(data.state, '[\'String\']');

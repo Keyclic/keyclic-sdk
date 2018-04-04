@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **alternateName** | **String** |  | [optional] 
 **id** | **String** |  | 
 **type** | **String** |  | [optional] 
+**metadataSchema** | **[String]** |  | [optional] 
 **links** | [**BusinessActivityLinks**](BusinessActivityLinks.md) |  | [optional] 
 
 

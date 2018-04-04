@@ -90,6 +90,7 @@ import MemberPatch from './model/MemberPatch';
 import Operation from './model/Operation';
 import OperationCollection from './model/OperationCollection';
 import OperationData from './model/OperationData';
+import OperationEmbedded from './model/OperationEmbedded';
 import OperationLinks from './model/OperationLinks';
 import OperationLinksImage from './model/OperationLinksImage';
 import OperationLinksImageIriTemplate from './model/OperationLinksImageIriTemplate';
@@ -225,7 +226,7 @@ import TransitionApi from './api/TransitionApi';
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 1.19.5
+ * @version 1.21.1
  */
 export {
     /**
@@ -629,6 +630,11 @@ export {
      * @property { module:model/OperationData }
      */
     OperationData,
+    /**
+     * The OperationEmbedded model constructor.
+     * @property { module:model/OperationEmbedded }
+     */
+    OperationEmbedded,
     /**
      * The OperationLinks model constructor.
      * @property { module:model/OperationLinks }

@@ -44,9 +44,10 @@ export default class PlaceApi extends ApiClient {
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
      * @param { String } businessActivity The identifier of the resource formatted as GUID string.
-     * @param { String } geoCoordinates
-     * @param { Number } geoElevation
+     * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { String } geoElevation
      * @param { String } geoHash
+     * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { String } parent The identifier of the resource formatted as GUID string.
      * @param { String } parents The identifier of the resource formatted as GUID string.
@@ -75,6 +76,7 @@ export default class PlaceApi extends ApiClient {
             geoCoordinates,
             geoElevation,
             geoHash,
+            geoPoint,
             organization,
             parent,
             parents,
@@ -137,6 +139,11 @@ export default class PlaceApi extends ApiClient {
             geoHash = null;
         }
 
+        // verify the null value of parameter 'geoPoint'
+        if (typeof geoPoint === 'undefined') {
+            geoPoint = null;
+        }
+
         // verify the null value of parameter 'organization'
         if (typeof organization === 'undefined') {
             organization = null;
@@ -186,6 +193,7 @@ export default class PlaceApi extends ApiClient {
             'geo_coordinates': geoCoordinates,
             'geo_elevation': geoElevation,
             'geo_hash[]': geoHash,
+            'geo_point': geoPoint,
             'organization': organization,
             'parent': parent,
             'parents[]': parents,
@@ -242,9 +250,10 @@ export default class PlaceApi extends ApiClient {
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
      * @param { String } businessActivity The identifier of the resource formatted as GUID string.
-     * @param { String } geoCoordinates
-     * @param { Number } geoElevation
+     * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { String } geoElevation
      * @param { String } geoHash
+     * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { String } parent The identifier of the resource formatted as GUID string.
      * @param { String } parents The identifier of the resource formatted as GUID string.
      * @param { Number } page Page of the overview.  (default to 1)
@@ -273,6 +282,7 @@ export default class PlaceApi extends ApiClient {
             geoCoordinates,
             geoElevation,
             geoHash,
+            geoPoint,
             parent,
             parents,
             page,
@@ -339,6 +349,11 @@ export default class PlaceApi extends ApiClient {
             geoHash = null;
         }
 
+        // verify the null value of parameter 'geoPoint'
+        if (typeof geoPoint === 'undefined') {
+            geoPoint = null;
+        }
+
         // verify the null value of parameter 'parent'
         if (typeof parent === 'undefined') {
             parent = null;
@@ -384,6 +399,7 @@ export default class PlaceApi extends ApiClient {
             'geo_coordinates': geoCoordinates,
             'geo_elevation': geoElevation,
             'geo_hash[]': geoHash,
+            'geo_point': geoPoint,
             'parent': parent,
             'parents[]': parents,
             'page': page,

@@ -4,14 +4,14 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cgetFeedbacks**](FeedbackApi.md#cgetFeedbacks) | **GET** /feedbacks | Retrieve all Feedback resources.
-[**cgetFeedbacksByPerson**](FeedbackApi.md#cgetFeedbacksByPerson) | **GET** /people/{person}/feedbacks | Retrieve all Feedback resources.
+[**cgetFeedback**](FeedbackApi.md#cgetFeedback) | **GET** /feedbacks | Retrieve all Feedback resources.
+[**cgetFeedbackByPerson**](FeedbackApi.md#cgetFeedbackByPerson) | **GET** /people/{person}/feedbacks | Retrieve all Feedback resources.
 [**getFeedback**](FeedbackApi.md#getFeedback) | **GET** /feedbacks/{feedback} | Retrieve one Feedback resource.
 
 
-<a name="cgetFeedbacks"></a>
-# **cgetFeedbacks**
-> FeedbackPagination cgetFeedbacks(xKeyclicApp, , opts)
+<a name="cgetFeedback"></a>
+# **cgetFeedback**
+> FeedbackPagination cgetFeedback(xKeyclicApp, , opts)
 
 Retrieve all Feedback resources.
 
@@ -35,6 +35,7 @@ let opts = {
   'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'state': "DELIVERED", // String | 
   'category': "category_example", // String | The identifier of the resource formatted as GUID string.
+  'geoNear': "geoNear_example", // String | One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
   'geoHash': "geoHash_example", // String | 
   'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
   'visibility': "VISIBILITY_PUBLIC", // String | 
@@ -43,11 +44,9 @@ let opts = {
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'geoNearGeoCoordinates': "geoNearGeoCoordinates_example", // String | 
-  'geoNearRadius': 56 // Number | 
 };
 
-apiInstance.cgetFeedbacks(xKeyclicApp, , opts, (error, data, response) => {
+apiInstance.cgetFeedback(xKeyclicApp, , opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -65,6 +64,7 @@ Name | Type | Description  | Notes
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **state** | **String**|  | [optional] [default to DELIVERED]
  **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **geoNear** | **String**| One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign. | [optional] 
  **geoHash** | **String**|  | [optional] 
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **visibility** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
@@ -73,8 +73,6 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
- **geoNearGeoCoordinates** | **String**|  | [optional] 
- **geoNearRadius** | **Number**|  | [optional] 
 
 ### Return type
 
@@ -89,9 +87,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json;charset=UTF-8
  - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="cgetFeedbacksByPerson"></a>
-# **cgetFeedbacksByPerson**
-> FeedbackPagination cgetFeedbacksByPerson(xKeyclicApp, person, opts)
+<a name="cgetFeedbackByPerson"></a>
+# **cgetFeedbackByPerson**
+> FeedbackPagination cgetFeedbackByPerson(xKeyclicApp, person, opts)
 
 Retrieve all Feedback resources.
 
@@ -116,6 +114,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example", // String | 
   'category': "category_example", // String | The identifier of the resource formatted as GUID string.
+  'geoNear': "geoNear_example", // String | One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
   'geoHash': "geoHash_example", // String | 
   'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
   'state': "state_example", // String | 
@@ -125,11 +124,9 @@ let opts = {
   'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'geoNearGeoCoordinates': "geoNearGeoCoordinates_example", // String | 
-  'geoNearRadius': 56 // Number | 
 };
 
-apiInstance.cgetFeedbacksByPerson(xKeyclicApp, person, opts, (error, data, response) => {
+apiInstance.cgetFeedbackByPerson(xKeyclicApp, person, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -147,6 +144,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **geoNear** | **String**| One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign. | [optional] 
  **geoHash** | **String**|  | [optional] 
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **state** | **String**|  | [optional] 
@@ -156,8 +154,6 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
- **geoNearGeoCoordinates** | **String**|  | [optional] 
- **geoNearRadius** | **Number**|  | [optional] 
 
 ### Return type
 
