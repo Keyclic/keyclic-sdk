@@ -10,47 +10,47 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The MemberPatch model module.
  * @module model/MemberPatch
  */
 export default class MemberPatch {
-    /**
+  /**
      * Constructs a new "MemberPatch".
      * @alias module:model/MemberPatch
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.roles = [];
-    }
+  ) {
+    this.roles = []
+  }
 
-    /**
+  /**
     * Constructs a "MemberPatch" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/MemberPatch } object Optional instance to populate.
     * @return { module:model/MemberPatch } The populated "MemberPatch" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new MemberPatch();
-        }
-
-        if (data.hasOwnProperty('roles')) {
-            object.roles = ApiClient.convertToType(data.roles, '[\'String\']');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new MemberPatch()
+    }
+
+    if (data.hasOwnProperty('roles')) {
+      object.roles = ApiClient.convertToType(data.roles, '[\'String\']')
+    }
+
+    return object
+  }
 }

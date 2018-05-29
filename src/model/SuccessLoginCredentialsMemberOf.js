@@ -10,58 +10,58 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import SuccessLoginCredentialsOrganization from './SuccessLoginCredentialsOrganization';
+import ApiClient from '../ApiClient'
+import SuccessLoginCredentialsOrganization from './SuccessLoginCredentialsOrganization'
 
 /**
  * The SuccessLoginCredentialsMemberOf model module.
  * @module model/SuccessLoginCredentialsMemberOf
  */
 export default class SuccessLoginCredentialsMemberOf {
-    /**
+  /**
      * Constructs a new "SuccessLoginCredentialsMemberOf".
      * @alias module:model/SuccessLoginCredentialsMemberOf
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.id = null;
-        this.organization = null;
-        this.roles = [];
+  ) {
+    this.id = null
+    this.organization = null
+    this.roles = []
 
-        this.organizationType = SuccessLoginCredentialsOrganization;
-    }
+    this.organizationType = SuccessLoginCredentialsOrganization
+  }
 
-    /**
+  /**
     * Constructs a "SuccessLoginCredentialsMemberOf" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/SuccessLoginCredentialsMemberOf } object Optional instance to populate.
     * @return { module:model/SuccessLoginCredentialsMemberOf } The populated "SuccessLoginCredentialsMemberOf" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new SuccessLoginCredentialsMemberOf();
-        }
-
-        if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data.id, 'String');
-        }
-        if (data.hasOwnProperty('organization')) {
-            object.organization = ApiClient.convertToType(data.organization, object.organizationType);
-        }
-        if (data.hasOwnProperty('roles')) {
-            object.roles = ApiClient.convertToType(data.roles, '[\'String\']');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new SuccessLoginCredentialsMemberOf()
+    }
+
+    if (data.hasOwnProperty('id')) {
+      object.id = ApiClient.convertToType(data.id, 'String')
+    }
+    if (data.hasOwnProperty('organization')) {
+      object.organization = ApiClient.convertToType(data.organization, object.organizationType)
+    }
+    if (data.hasOwnProperty('roles')) {
+      object.roles = ApiClient.convertToType(data.roles, '[\'String\']')
+    }
+
+    return object
+  }
 }

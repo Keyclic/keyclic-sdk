@@ -10,33 +10,33 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import Error from '../model/Error';
-import Organization from '../model/Organization';
-import OrganizationData from '../model/OrganizationData';
-import OrganizationPagination from '../model/OrganizationPagination';
-import OrganizationPatch from '../model/OrganizationPatch';
+import ApiClient from '../ApiClient'
+import Error from '../model/Error'
+import Organization from '../model/Organization'
+import OrganizationData from '../model/OrganizationData'
+import OrganizationPagination from '../model/OrganizationPagination'
+import OrganizationPatch from '../model/OrganizationPatch'
 
 /**
  * Organization service.
  * @module api/OrganizationApi
  */
 export default class OrganizationApi extends ApiClient {
-    /**
+  /**
      * @class
      * { string } basePath To override basePath.
      * { object } headers Additional headers for the instance.
      * { int } timeout Number in seconds before timeout.
      */
-    constructor(
-        basePath = null,
-        headers = null,
-        timeout = null
-    ) {
-        super(basePath, headers, timeout);
-    }
+  constructor (
+    basePath = null,
+    headers = null,
+    timeout = null
+  ) {
+    super(basePath, headers, timeout)
+  }
 
-    /**
+  /**
      * Retrieve all Organization resources.
      * @param { String } xKeyclicApp
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
@@ -58,182 +58,182 @@ export default class OrganizationApi extends ApiClient {
      * @param { String } searchBillingEmailAddress
      * @param { String } searchNotificationEmailAddress
      */
-    cgetOrganizations(
-        returnType = null,
-        options,
-        credentials,
-    ) {
-        if (returnType === null) {
-            returnType = OrganizationPagination;
-        }
-
-        let {
-            xKeyclicApp,
-            acceptLanguage,
-            xKeyclicAppVersion,
-            businessActivity,
-            geoCoordinates,
-            geoPoint,
-            organization,
-            page,
-            limit,
-            order,
-            after,
-            before,
-            searchName,
-            searchAlternateName,
-            searchDescription,
-            searchBillingEmailAddress,
-            searchNotificationEmailAddress,
-        } = options;
-
-        // verify the required parameter 'xKeyclicApp' is set
-        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetOrganizations');
-        }
-
-        // verify the default value of parameter 'acceptLanguage'
-        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
-        }
-
-        // verify the default value of parameter 'page'
-        if (typeof page === 'undefined' || page === null) {
-            page = 1; // eslint-disable-line quotes
-        }
-
-        // verify the default value of parameter 'limit'
-        if (typeof limit === 'undefined' || limit === null) {
-            limit = 10; // eslint-disable-line quotes
-        }
-
-        // verify the default value of parameter 'order'
-        if (typeof order === 'undefined' || order === null) {
-            order = "desc"; // eslint-disable-line quotes
-        }
-
-        // verify the null value of parameter 'xKeyclicAppVersion'
-        if (typeof xKeyclicAppVersion === 'undefined') {
-            xKeyclicAppVersion = null;
-        }
-
-        // verify the null value of parameter 'businessActivity'
-        if (typeof businessActivity === 'undefined') {
-            businessActivity = null;
-        }
-
-        // verify the null value of parameter 'geoCoordinates'
-        if (typeof geoCoordinates === 'undefined') {
-            geoCoordinates = null;
-        }
-
-        // verify the null value of parameter 'geoPoint'
-        if (typeof geoPoint === 'undefined') {
-            geoPoint = null;
-        }
-
-        // verify the null value of parameter 'organization'
-        if (typeof organization === 'undefined') {
-            organization = null;
-        }
-
-        // verify the null value of parameter 'after'
-        if (typeof after === 'undefined') {
-            after = null;
-        }
-
-        // verify the null value of parameter 'before'
-        if (typeof before === 'undefined') {
-            before = null;
-        }
-
-        // verify the null value of parameter 'searchName'
-        if (typeof searchName === 'undefined') {
-            searchName = null;
-        }
-
-        // verify the null value of parameter 'searchAlternateName'
-        if (typeof searchAlternateName === 'undefined') {
-            searchAlternateName = null;
-        }
-
-        // verify the null value of parameter 'searchDescription'
-        if (typeof searchDescription === 'undefined') {
-            searchDescription = null;
-        }
-
-        // verify the null value of parameter 'searchBillingEmailAddress'
-        if (typeof searchBillingEmailAddress === 'undefined') {
-            searchBillingEmailAddress = null;
-        }
-
-        // verify the null value of parameter 'searchNotificationEmailAddress'
-        if (typeof searchNotificationEmailAddress === 'undefined') {
-            searchNotificationEmailAddress = null;
-        }
-
-        if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling cgetOrganizations');
-        }
-
-        let pathParams = {
-        };
-
-        let bodyParam = null;
-
-        let queryParams = {
-            'business_activity': businessActivity,
-            'geo_coordinates': geoCoordinates,
-            'geo_point': geoPoint,
-            'organization': organization,
-            'page': page,
-            'limit': limit,
-            'order': order,
-            'after': after,
-            'before': before,
-            'search[name]': searchName,
-            'search[alternateName]': searchAlternateName,
-            'search[description]': searchDescription,
-            'search[billingEmailAddress]': searchBillingEmailAddress,
-            'search[notificationEmailAddress]': searchNotificationEmailAddress,
-        };
-
-        let headerParams = {
-            'accept-language': acceptLanguage,
-            'x-keyclic-app': xKeyclicApp,
-            'x-keyclic-app-version': xKeyclicAppVersion,
-        };
-
-        let credentialParams = credentials;
-
-        let authNames = [
-            'bearer',
-        ];
-
-        let contentTypes = [
-            'application/json;charset=UTF-8',
-        ];
-
-        let accepts = [
-            'application/hal+json;charset=UTF-8',
-        ];
-
-        return this.callApi(
-            '/organizations',
-            'GET',
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-        );
+  cgetOrganizations (
+    returnType = null,
+    options,
+    credentials
+  ) {
+    if (returnType === null) {
+      returnType = OrganizationPagination
     }
 
-    /**
+    let {
+      xKeyclicApp,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      businessActivity,
+      geoCoordinates,
+      geoPoint,
+      organization,
+      page,
+      limit,
+      order,
+      after,
+      before,
+      searchName,
+      searchAlternateName,
+      searchDescription,
+      searchBillingEmailAddress,
+      searchNotificationEmailAddress
+    } = options
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetOrganizations')
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+      acceptLanguage = "fr-FR" // eslint-disable-line quotes
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === 'undefined' || page === null) {
+      page = 1 // eslint-disable-line quotes
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === 'undefined' || limit === null) {
+      limit = 10 // eslint-disable-line quotes
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === 'undefined' || order === null) {
+      order = "desc" // eslint-disable-line quotes
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === 'undefined') {
+      xKeyclicAppVersion = null
+    }
+
+    // verify the null value of parameter 'businessActivity'
+    if (typeof businessActivity === 'undefined') {
+      businessActivity = null
+    }
+
+    // verify the null value of parameter 'geoCoordinates'
+    if (typeof geoCoordinates === 'undefined') {
+      geoCoordinates = null
+    }
+
+    // verify the null value of parameter 'geoPoint'
+    if (typeof geoPoint === 'undefined') {
+      geoPoint = null
+    }
+
+    // verify the null value of parameter 'organization'
+    if (typeof organization === 'undefined') {
+      organization = null
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === 'undefined') {
+      after = null
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === 'undefined') {
+      before = null
+    }
+
+    // verify the null value of parameter 'searchName'
+    if (typeof searchName === 'undefined') {
+      searchName = null
+    }
+
+    // verify the null value of parameter 'searchAlternateName'
+    if (typeof searchAlternateName === 'undefined') {
+      searchAlternateName = null
+    }
+
+    // verify the null value of parameter 'searchDescription'
+    if (typeof searchDescription === 'undefined') {
+      searchDescription = null
+    }
+
+    // verify the null value of parameter 'searchBillingEmailAddress'
+    if (typeof searchBillingEmailAddress === 'undefined') {
+      searchBillingEmailAddress = null
+    }
+
+    // verify the null value of parameter 'searchNotificationEmailAddress'
+    if (typeof searchNotificationEmailAddress === 'undefined') {
+      searchNotificationEmailAddress = null
+    }
+
+    if (typeof credentials === 'undefined' || credentials === null) {
+      throw new window.Error('Missing the required parameter "credentials" when calling cgetOrganizations')
+    }
+
+    let pathParams = {
+    }
+
+    let bodyParam = null
+
+    let queryParams = {
+      'business_activity': businessActivity,
+      'geo_coordinates': geoCoordinates,
+      'geo_point': geoPoint,
+      'organization': organization,
+      'page': page,
+      'limit': limit,
+      'order': order,
+      'after': after,
+      'before': before,
+      'search[name]': searchName,
+      'search[alternateName]': searchAlternateName,
+      'search[description]': searchDescription,
+      'search[billingEmailAddress]': searchBillingEmailAddress,
+      'search[notificationEmailAddress]': searchNotificationEmailAddress
+    }
+
+    let headerParams = {
+      'accept-language': acceptLanguage,
+      'x-keyclic-app': xKeyclicApp,
+      'x-keyclic-app-version': xKeyclicAppVersion
+    }
+
+    let credentialParams = credentials
+
+    let authNames = [
+      'bearer'
+    ]
+
+    let contentTypes = [
+      'application/json;charset=UTF-8'
+    ]
+
+    let accepts = [
+      'application/hal+json;charset=UTF-8'
+    ]
+
+    return this.callApi(
+      '/organizations',
+      'GET',
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    )
+  }
+
+  /**
      * Retrieve one Organization resource.
      * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
@@ -242,91 +242,91 @@ export default class OrganizationApi extends ApiClient {
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
      */
-    getOrganization(
-        returnType = null,
-        options,
-        credentials,
-    ) {
-        if (returnType === null) {
-            returnType = Organization;
-        }
-
-        let {
-            xKeyclicApp,
-            organization,
-            acceptLanguage,
-            xKeyclicAppVersion,
-        } = options;
-
-        // verify the required parameter 'xKeyclicApp' is set
-        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getOrganization');
-        }
-
-        // verify the required parameter 'organization' is set
-        if (typeof organization === 'undefined' || organization === null) {
-            throw new window.Error('Missing the required parameter "organization" when calling getOrganization');
-        }
-
-        // verify the default value of parameter 'acceptLanguage'
-        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
-        }
-
-        // verify the null value of parameter 'xKeyclicAppVersion'
-        if (typeof xKeyclicAppVersion === 'undefined') {
-            xKeyclicAppVersion = null;
-        }
-
-        if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling getOrganization');
-        }
-
-        let pathParams = {
-            'organization': organization,
-        };
-
-        let bodyParam = null;
-
-        let queryParams = {
-        };
-
-        let headerParams = {
-            'accept-language': acceptLanguage,
-            'x-keyclic-app': xKeyclicApp,
-            'x-keyclic-app-version': xKeyclicAppVersion,
-        };
-
-        let credentialParams = credentials;
-
-        let authNames = [
-            'bearer',
-        ];
-
-        let contentTypes = [
-            'application/json;charset=UTF-8',
-        ];
-
-        let accepts = [
-            'application/hal+json;charset=UTF-8',
-        ];
-
-        return this.callApi(
-            '/organizations/{organization}',
-            'GET',
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-        );
+  getOrganization (
+    returnType = null,
+    options,
+    credentials
+  ) {
+    if (returnType === null) {
+      returnType = Organization
     }
 
-    /**
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getOrganization')
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === 'undefined' || organization === null) {
+      throw new window.Error('Missing the required parameter "organization" when calling getOrganization')
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+      acceptLanguage = "fr-FR" // eslint-disable-line quotes
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === 'undefined') {
+      xKeyclicAppVersion = null
+    }
+
+    if (typeof credentials === 'undefined' || credentials === null) {
+      throw new window.Error('Missing the required parameter "credentials" when calling getOrganization')
+    }
+
+    let pathParams = {
+      'organization': organization
+    }
+
+    let bodyParam = null
+
+    let queryParams = {
+    }
+
+    let headerParams = {
+      'accept-language': acceptLanguage,
+      'x-keyclic-app': xKeyclicApp,
+      'x-keyclic-app-version': xKeyclicAppVersion
+    }
+
+    let credentialParams = credentials
+
+    let authNames = [
+      'bearer'
+    ]
+
+    let contentTypes = [
+      'application/json;charset=UTF-8'
+    ]
+
+    let accepts = [
+      'application/hal+json;charset=UTF-8'
+    ]
+
+    return this.callApi(
+      '/organizations/{organization}',
+      'GET',
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    )
+  }
+
+  /**
      * Edit one Organization resource.
      * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
@@ -336,97 +336,97 @@ export default class OrganizationApi extends ApiClient {
      * @param { String } xKeyclicAppVersion
      * @param { module:model/OrganizationPatch } organizationPatch
      */
-    patchOrganization(
-        returnType = null,
-        options,
-        credentials,
-    ) {
-        if (returnType === null) {
-            returnType = Organization;
-        }
-
-        let {
-            xKeyclicApp,
-            organization,
-            acceptLanguage,
-            xKeyclicAppVersion,
-            organizationPatch,
-        } = options;
-
-        // verify the required parameter 'xKeyclicApp' is set
-        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchOrganization');
-        }
-
-        // verify the required parameter 'organization' is set
-        if (typeof organization === 'undefined' || organization === null) {
-            throw new window.Error('Missing the required parameter "organization" when calling patchOrganization');
-        }
-
-        // verify the default value of parameter 'acceptLanguage'
-        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
-        }
-
-        // verify the null value of parameter 'xKeyclicAppVersion'
-        if (typeof xKeyclicAppVersion === 'undefined') {
-            xKeyclicAppVersion = null;
-        }
-
-        // verify the null value of parameter 'organizationPatch'
-        if (typeof organizationPatch === 'undefined') {
-            organizationPatch = null;
-        }
-
-        if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling patchOrganization');
-        }
-
-        let pathParams = {
-            'organization': organization,
-        };
-
-        let bodyParam = organizationPatch;
-
-        let queryParams = {
-        };
-
-        let headerParams = {
-            'accept-language': acceptLanguage,
-            'x-keyclic-app': xKeyclicApp,
-            'x-keyclic-app-version': xKeyclicAppVersion,
-        };
-
-        let credentialParams = credentials;
-
-        let authNames = [
-            'bearer',
-        ];
-
-        let contentTypes = [
-            'application/json;charset=UTF-8',
-        ];
-
-        let accepts = [
-            'application/hal+json;charset=UTF-8',
-        ];
-
-        return this.callApi(
-            '/organizations/{organization}',
-            'PATCH',
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-        );
+  patchOrganization (
+    returnType = null,
+    options,
+    credentials
+  ) {
+    if (returnType === null) {
+      returnType = Organization
     }
 
-    /**
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      organizationPatch
+    } = options
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchOrganization')
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === 'undefined' || organization === null) {
+      throw new window.Error('Missing the required parameter "organization" when calling patchOrganization')
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+      acceptLanguage = "fr-FR" // eslint-disable-line quotes
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === 'undefined') {
+      xKeyclicAppVersion = null
+    }
+
+    // verify the null value of parameter 'organizationPatch'
+    if (typeof organizationPatch === 'undefined') {
+      organizationPatch = null
+    }
+
+    if (typeof credentials === 'undefined' || credentials === null) {
+      throw new window.Error('Missing the required parameter "credentials" when calling patchOrganization')
+    }
+
+    let pathParams = {
+      'organization': organization
+    }
+
+    let bodyParam = organizationPatch
+
+    let queryParams = {
+    }
+
+    let headerParams = {
+      'accept-language': acceptLanguage,
+      'x-keyclic-app': xKeyclicApp,
+      'x-keyclic-app-version': xKeyclicAppVersion
+    }
+
+    let credentialParams = credentials
+
+    let authNames = [
+      'bearer'
+    ]
+
+    let contentTypes = [
+      'application/json;charset=UTF-8'
+    ]
+
+    let accepts = [
+      'application/hal+json;charset=UTF-8'
+    ]
+
+    return this.callApi(
+      '/organizations/{organization}',
+      'PATCH',
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    )
+  }
+
+  /**
      * Create one Organization resource.
      * @param { String } xKeyclicApp
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
@@ -435,86 +435,86 @@ export default class OrganizationApi extends ApiClient {
      * @param { String } xKeyclicAppVersion
      * @param { module:model/OrganizationData } organizationData
      */
-    postOrganization(
-        returnType = null,
-        options,
-        credentials,
-    ) {
-        if (returnType === null) {
-            returnType = Organization;
-        }
-
-        let {
-            xKeyclicApp,
-            acceptLanguage,
-            xKeyclicAppVersion,
-            organizationData,
-        } = options;
-
-        // verify the required parameter 'xKeyclicApp' is set
-        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postOrganization');
-        }
-
-        // verify the default value of parameter 'acceptLanguage'
-        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
-        }
-
-        // verify the null value of parameter 'xKeyclicAppVersion'
-        if (typeof xKeyclicAppVersion === 'undefined') {
-            xKeyclicAppVersion = null;
-        }
-
-        // verify the null value of parameter 'organizationData'
-        if (typeof organizationData === 'undefined') {
-            organizationData = null;
-        }
-
-        if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling postOrganization');
-        }
-
-        let pathParams = {
-        };
-
-        let bodyParam = organizationData;
-
-        let queryParams = {
-        };
-
-        let headerParams = {
-            'accept-language': acceptLanguage,
-            'x-keyclic-app': xKeyclicApp,
-            'x-keyclic-app-version': xKeyclicAppVersion,
-        };
-
-        let credentialParams = credentials;
-
-        let authNames = [
-            'bearer',
-        ];
-
-        let contentTypes = [
-            'application/json;charset=UTF-8',
-        ];
-
-        let accepts = [
-            'application/hal+json;charset=UTF-8',
-        ];
-
-        return this.callApi(
-            '/organizations',
-            'POST',
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-        );
+  postOrganization (
+    returnType = null,
+    options,
+    credentials
+  ) {
+    if (returnType === null) {
+      returnType = Organization
     }
+
+    let {
+      xKeyclicApp,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      organizationData
+    } = options
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postOrganization')
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+      acceptLanguage = "fr-FR" // eslint-disable-line quotes
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === 'undefined') {
+      xKeyclicAppVersion = null
+    }
+
+    // verify the null value of parameter 'organizationData'
+    if (typeof organizationData === 'undefined') {
+      organizationData = null
+    }
+
+    if (typeof credentials === 'undefined' || credentials === null) {
+      throw new window.Error('Missing the required parameter "credentials" when calling postOrganization')
+    }
+
+    let pathParams = {
+    }
+
+    let bodyParam = organizationData
+
+    let queryParams = {
+    }
+
+    let headerParams = {
+      'accept-language': acceptLanguage,
+      'x-keyclic-app': xKeyclicApp,
+      'x-keyclic-app-version': xKeyclicAppVersion
+    }
+
+    let credentialParams = credentials
+
+    let authNames = [
+      'bearer'
+    ]
+
+    let contentTypes = [
+      'application/json;charset=UTF-8'
+    ]
+
+    let accepts = [
+      'application/hal+json;charset=UTF-8'
+    ]
+
+    return this.callApi(
+      '/organizations',
+      'POST',
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    )
+  }
 }

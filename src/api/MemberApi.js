@@ -10,33 +10,33 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import Error from '../model/Error';
-import Member from '../model/Member';
-import MemberPagination from '../model/MemberPagination';
-import MemberPatch from '../model/MemberPatch';
-import PersonData from '../model/PersonData';
+import ApiClient from '../ApiClient'
+import Error from '../model/Error'
+import Member from '../model/Member'
+import MemberPagination from '../model/MemberPagination'
+import MemberPatch from '../model/MemberPatch'
+import PersonData from '../model/PersonData'
 
 /**
  * Member service.
  * @module api/MemberApi
  */
 export default class MemberApi extends ApiClient {
-    /**
+  /**
      * @class
      * { string } basePath To override basePath.
      * { object } headers Additional headers for the instance.
      * { int } timeout Number in seconds before timeout.
      */
-    constructor(
-        basePath = null,
-        headers = null,
-        timeout = null
-    ) {
-        super(basePath, headers, timeout);
-    }
+  constructor (
+    basePath = null,
+    headers = null,
+    timeout = null
+  ) {
+    super(basePath, headers, timeout)
+  }
 
-    /**
+  /**
      * Retrieve all Member resources.
      * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
@@ -55,161 +55,161 @@ export default class MemberApi extends ApiClient {
      * @param { String } searchUsername
      * @param { String } searchEmail
      */
-    cgetMembersByOrganization(
-        returnType = null,
-        options,
-        credentials,
-    ) {
-        if (returnType === null) {
-            returnType = MemberPagination;
-        }
-
-        let {
-            xKeyclicApp,
-            organization,
-            acceptLanguage,
-            xKeyclicAppVersion,
-            page,
-            limit,
-            order,
-            after,
-            before,
-            searchFamilyName,
-            searchGivenName,
-            searchJobTitle,
-            searchUsername,
-            searchEmail,
-        } = options;
-
-        // verify the required parameter 'xKeyclicApp' is set
-        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetMembersByOrganization');
-        }
-
-        // verify the required parameter 'organization' is set
-        if (typeof organization === 'undefined' || organization === null) {
-            throw new window.Error('Missing the required parameter "organization" when calling cgetMembersByOrganization');
-        }
-
-        // verify the default value of parameter 'acceptLanguage'
-        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
-        }
-
-        // verify the default value of parameter 'page'
-        if (typeof page === 'undefined' || page === null) {
-            page = 1; // eslint-disable-line quotes
-        }
-
-        // verify the default value of parameter 'limit'
-        if (typeof limit === 'undefined' || limit === null) {
-            limit = 10; // eslint-disable-line quotes
-        }
-
-        // verify the default value of parameter 'order'
-        if (typeof order === 'undefined' || order === null) {
-            order = "desc"; // eslint-disable-line quotes
-        }
-
-        // verify the null value of parameter 'xKeyclicAppVersion'
-        if (typeof xKeyclicAppVersion === 'undefined') {
-            xKeyclicAppVersion = null;
-        }
-
-        // verify the null value of parameter 'after'
-        if (typeof after === 'undefined') {
-            after = null;
-        }
-
-        // verify the null value of parameter 'before'
-        if (typeof before === 'undefined') {
-            before = null;
-        }
-
-        // verify the null value of parameter 'searchFamilyName'
-        if (typeof searchFamilyName === 'undefined') {
-            searchFamilyName = null;
-        }
-
-        // verify the null value of parameter 'searchGivenName'
-        if (typeof searchGivenName === 'undefined') {
-            searchGivenName = null;
-        }
-
-        // verify the null value of parameter 'searchJobTitle'
-        if (typeof searchJobTitle === 'undefined') {
-            searchJobTitle = null;
-        }
-
-        // verify the null value of parameter 'searchUsername'
-        if (typeof searchUsername === 'undefined') {
-            searchUsername = null;
-        }
-
-        // verify the null value of parameter 'searchEmail'
-        if (typeof searchEmail === 'undefined') {
-            searchEmail = null;
-        }
-
-        if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling cgetMembersByOrganization');
-        }
-
-        let pathParams = {
-            'organization': organization,
-        };
-
-        let bodyParam = null;
-
-        let queryParams = {
-            'page': page,
-            'limit': limit,
-            'order': order,
-            'after': after,
-            'before': before,
-            'search[familyName]': searchFamilyName,
-            'search[givenName]': searchGivenName,
-            'search[jobTitle]': searchJobTitle,
-            'search[username]': searchUsername,
-            'search[email]': searchEmail,
-        };
-
-        let headerParams = {
-            'accept-language': acceptLanguage,
-            'x-keyclic-app': xKeyclicApp,
-            'x-keyclic-app-version': xKeyclicAppVersion,
-        };
-
-        let credentialParams = credentials;
-
-        let authNames = [
-            'bearer',
-        ];
-
-        let contentTypes = [
-            'application/json;charset=UTF-8',
-        ];
-
-        let accepts = [
-            'application/hal+json;charset=UTF-8',
-        ];
-
-        return this.callApi(
-            '/organizations/{organization}/members',
-            'GET',
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-        );
+  cgetMembersByOrganization (
+    returnType = null,
+    options,
+    credentials
+  ) {
+    if (returnType === null) {
+      returnType = MemberPagination
     }
 
-    /**
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      page,
+      limit,
+      order,
+      after,
+      before,
+      searchFamilyName,
+      searchGivenName,
+      searchJobTitle,
+      searchUsername,
+      searchEmail
+    } = options
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetMembersByOrganization')
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === 'undefined' || organization === null) {
+      throw new window.Error('Missing the required parameter "organization" when calling cgetMembersByOrganization')
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+      acceptLanguage = "fr-FR" // eslint-disable-line quotes
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === 'undefined' || page === null) {
+      page = 1 // eslint-disable-line quotes
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === 'undefined' || limit === null) {
+      limit = 10 // eslint-disable-line quotes
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === 'undefined' || order === null) {
+      order = "desc" // eslint-disable-line quotes
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === 'undefined') {
+      xKeyclicAppVersion = null
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === 'undefined') {
+      after = null
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === 'undefined') {
+      before = null
+    }
+
+    // verify the null value of parameter 'searchFamilyName'
+    if (typeof searchFamilyName === 'undefined') {
+      searchFamilyName = null
+    }
+
+    // verify the null value of parameter 'searchGivenName'
+    if (typeof searchGivenName === 'undefined') {
+      searchGivenName = null
+    }
+
+    // verify the null value of parameter 'searchJobTitle'
+    if (typeof searchJobTitle === 'undefined') {
+      searchJobTitle = null
+    }
+
+    // verify the null value of parameter 'searchUsername'
+    if (typeof searchUsername === 'undefined') {
+      searchUsername = null
+    }
+
+    // verify the null value of parameter 'searchEmail'
+    if (typeof searchEmail === 'undefined') {
+      searchEmail = null
+    }
+
+    if (typeof credentials === 'undefined' || credentials === null) {
+      throw new window.Error('Missing the required parameter "credentials" when calling cgetMembersByOrganization')
+    }
+
+    let pathParams = {
+      'organization': organization
+    }
+
+    let bodyParam = null
+
+    let queryParams = {
+      'page': page,
+      'limit': limit,
+      'order': order,
+      'after': after,
+      'before': before,
+      'search[familyName]': searchFamilyName,
+      'search[givenName]': searchGivenName,
+      'search[jobTitle]': searchJobTitle,
+      'search[username]': searchUsername,
+      'search[email]': searchEmail
+    }
+
+    let headerParams = {
+      'accept-language': acceptLanguage,
+      'x-keyclic-app': xKeyclicApp,
+      'x-keyclic-app-version': xKeyclicAppVersion
+    }
+
+    let credentialParams = credentials
+
+    let authNames = [
+      'bearer'
+    ]
+
+    let contentTypes = [
+      'application/json;charset=UTF-8'
+    ]
+
+    let accepts = [
+      'application/hal+json;charset=UTF-8'
+    ]
+
+    return this.callApi(
+      '/organizations/{organization}/members',
+      'GET',
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    )
+  }
+
+  /**
      * Remove one Member resource.
      * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
@@ -219,94 +219,94 @@ export default class MemberApi extends ApiClient {
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
      */
-    deleteMemberByOrganizationAndMember(
-        returnType = null,
-        options,
-        credentials,
-    ) {
-        let {
-            xKeyclicApp,
-            organization,
-            member,
-            acceptLanguage,
-            xKeyclicAppVersion,
-        } = options;
+  deleteMemberByOrganizationAndMember (
+    returnType = null,
+    options,
+    credentials
+  ) {
+    let {
+      xKeyclicApp,
+      organization,
+      member,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options
 
-        // verify the required parameter 'xKeyclicApp' is set
-        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling deleteMemberByOrganizationAndMember');
-        }
-
-        // verify the required parameter 'organization' is set
-        if (typeof organization === 'undefined' || organization === null) {
-            throw new window.Error('Missing the required parameter "organization" when calling deleteMemberByOrganizationAndMember');
-        }
-
-        // verify the required parameter 'member' is set
-        if (typeof member === 'undefined' || member === null) {
-            throw new window.Error('Missing the required parameter "member" when calling deleteMemberByOrganizationAndMember');
-        }
-
-        // verify the default value of parameter 'acceptLanguage'
-        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
-        }
-
-        // verify the null value of parameter 'xKeyclicAppVersion'
-        if (typeof xKeyclicAppVersion === 'undefined') {
-            xKeyclicAppVersion = null;
-        }
-
-        if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling deleteMemberByOrganizationAndMember');
-        }
-
-        let pathParams = {
-            'organization': organization,
-            'member': member,
-        };
-
-        let bodyParam = null;
-
-        let queryParams = {
-        };
-
-        let headerParams = {
-            'accept-language': acceptLanguage,
-            'x-keyclic-app': xKeyclicApp,
-            'x-keyclic-app-version': xKeyclicAppVersion,
-        };
-
-        let credentialParams = credentials;
-
-        let authNames = [
-            'bearer',
-        ];
-
-        let contentTypes = [
-            'application/json;charset=UTF-8',
-        ];
-
-        let accepts = [
-            'application/hal+json;charset=UTF-8',
-        ];
-
-        return this.callApi(
-            '/organizations/{organization}/members/{member}',
-            'DELETE',
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-        );
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling deleteMemberByOrganizationAndMember')
     }
 
-    /**
+    // verify the required parameter 'organization' is set
+    if (typeof organization === 'undefined' || organization === null) {
+      throw new window.Error('Missing the required parameter "organization" when calling deleteMemberByOrganizationAndMember')
+    }
+
+    // verify the required parameter 'member' is set
+    if (typeof member === 'undefined' || member === null) {
+      throw new window.Error('Missing the required parameter "member" when calling deleteMemberByOrganizationAndMember')
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+      acceptLanguage = "fr-FR" // eslint-disable-line quotes
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === 'undefined') {
+      xKeyclicAppVersion = null
+    }
+
+    if (typeof credentials === 'undefined' || credentials === null) {
+      throw new window.Error('Missing the required parameter "credentials" when calling deleteMemberByOrganizationAndMember')
+    }
+
+    let pathParams = {
+      'organization': organization,
+      'member': member
+    }
+
+    let bodyParam = null
+
+    let queryParams = {
+    }
+
+    let headerParams = {
+      'accept-language': acceptLanguage,
+      'x-keyclic-app': xKeyclicApp,
+      'x-keyclic-app-version': xKeyclicAppVersion
+    }
+
+    let credentialParams = credentials
+
+    let authNames = [
+      'bearer'
+    ]
+
+    let contentTypes = [
+      'application/json;charset=UTF-8'
+    ]
+
+    let accepts = [
+      'application/hal+json;charset=UTF-8'
+    ]
+
+    return this.callApi(
+      '/organizations/{organization}/members/{member}',
+      'DELETE',
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    )
+  }
+
+  /**
      * Retrieve one Member resource.
      * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
@@ -316,98 +316,98 @@ export default class MemberApi extends ApiClient {
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
      */
-    getMemberByOrganizationAndMember(
-        returnType = null,
-        options,
-        credentials,
-    ) {
-        if (returnType === null) {
-            returnType = Member;
-        }
-
-        let {
-            xKeyclicApp,
-            organization,
-            member,
-            acceptLanguage,
-            xKeyclicAppVersion,
-        } = options;
-
-        // verify the required parameter 'xKeyclicApp' is set
-        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getMemberByOrganizationAndMember');
-        }
-
-        // verify the required parameter 'organization' is set
-        if (typeof organization === 'undefined' || organization === null) {
-            throw new window.Error('Missing the required parameter "organization" when calling getMemberByOrganizationAndMember');
-        }
-
-        // verify the required parameter 'member' is set
-        if (typeof member === 'undefined' || member === null) {
-            throw new window.Error('Missing the required parameter "member" when calling getMemberByOrganizationAndMember');
-        }
-
-        // verify the default value of parameter 'acceptLanguage'
-        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
-        }
-
-        // verify the null value of parameter 'xKeyclicAppVersion'
-        if (typeof xKeyclicAppVersion === 'undefined') {
-            xKeyclicAppVersion = null;
-        }
-
-        if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling getMemberByOrganizationAndMember');
-        }
-
-        let pathParams = {
-            'organization': organization,
-            'member': member,
-        };
-
-        let bodyParam = null;
-
-        let queryParams = {
-        };
-
-        let headerParams = {
-            'accept-language': acceptLanguage,
-            'x-keyclic-app': xKeyclicApp,
-            'x-keyclic-app-version': xKeyclicAppVersion,
-        };
-
-        let credentialParams = credentials;
-
-        let authNames = [
-            'bearer',
-        ];
-
-        let contentTypes = [
-            'application/json;charset=UTF-8',
-        ];
-
-        let accepts = [
-            'application/hal+json;charset=UTF-8',
-        ];
-
-        return this.callApi(
-            '/organizations/{organization}/members/{member}',
-            'GET',
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-        );
+  getMemberByOrganizationAndMember (
+    returnType = null,
+    options,
+    credentials
+  ) {
+    if (returnType === null) {
+      returnType = Member
     }
 
-    /**
+    let {
+      xKeyclicApp,
+      organization,
+      member,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getMemberByOrganizationAndMember')
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === 'undefined' || organization === null) {
+      throw new window.Error('Missing the required parameter "organization" when calling getMemberByOrganizationAndMember')
+    }
+
+    // verify the required parameter 'member' is set
+    if (typeof member === 'undefined' || member === null) {
+      throw new window.Error('Missing the required parameter "member" when calling getMemberByOrganizationAndMember')
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+      acceptLanguage = "fr-FR" // eslint-disable-line quotes
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === 'undefined') {
+      xKeyclicAppVersion = null
+    }
+
+    if (typeof credentials === 'undefined' || credentials === null) {
+      throw new window.Error('Missing the required parameter "credentials" when calling getMemberByOrganizationAndMember')
+    }
+
+    let pathParams = {
+      'organization': organization,
+      'member': member
+    }
+
+    let bodyParam = null
+
+    let queryParams = {
+    }
+
+    let headerParams = {
+      'accept-language': acceptLanguage,
+      'x-keyclic-app': xKeyclicApp,
+      'x-keyclic-app-version': xKeyclicAppVersion
+    }
+
+    let credentialParams = credentials
+
+    let authNames = [
+      'bearer'
+    ]
+
+    let contentTypes = [
+      'application/json;charset=UTF-8'
+    ]
+
+    let accepts = [
+      'application/hal+json;charset=UTF-8'
+    ]
+
+    return this.callApi(
+      '/organizations/{organization}/members/{member}',
+      'GET',
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    )
+  }
+
+  /**
      * Edit one Member resource.
      * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
@@ -418,104 +418,104 @@ export default class MemberApi extends ApiClient {
      * @param { String } xKeyclicAppVersion
      * @param { module:model/MemberPatch } memberPatch
      */
-    patchMemberByOrganizationAndMember(
-        returnType = null,
-        options,
-        credentials,
-    ) {
-        if (returnType === null) {
-            returnType = Member;
-        }
-
-        let {
-            xKeyclicApp,
-            organization,
-            member,
-            acceptLanguage,
-            xKeyclicAppVersion,
-            memberPatch,
-        } = options;
-
-        // verify the required parameter 'xKeyclicApp' is set
-        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchMemberByOrganizationAndMember');
-        }
-
-        // verify the required parameter 'organization' is set
-        if (typeof organization === 'undefined' || organization === null) {
-            throw new window.Error('Missing the required parameter "organization" when calling patchMemberByOrganizationAndMember');
-        }
-
-        // verify the required parameter 'member' is set
-        if (typeof member === 'undefined' || member === null) {
-            throw new window.Error('Missing the required parameter "member" when calling patchMemberByOrganizationAndMember');
-        }
-
-        // verify the default value of parameter 'acceptLanguage'
-        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
-        }
-
-        // verify the null value of parameter 'xKeyclicAppVersion'
-        if (typeof xKeyclicAppVersion === 'undefined') {
-            xKeyclicAppVersion = null;
-        }
-
-        // verify the null value of parameter 'memberPatch'
-        if (typeof memberPatch === 'undefined') {
-            memberPatch = null;
-        }
-
-        if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling patchMemberByOrganizationAndMember');
-        }
-
-        let pathParams = {
-            'organization': organization,
-            'member': member,
-        };
-
-        let bodyParam = memberPatch;
-
-        let queryParams = {
-        };
-
-        let headerParams = {
-            'accept-language': acceptLanguage,
-            'x-keyclic-app': xKeyclicApp,
-            'x-keyclic-app-version': xKeyclicAppVersion,
-        };
-
-        let credentialParams = credentials;
-
-        let authNames = [
-            'bearer',
-        ];
-
-        let contentTypes = [
-            'application/json;charset=UTF-8',
-        ];
-
-        let accepts = [
-            'application/hal+json;charset=UTF-8',
-        ];
-
-        return this.callApi(
-            '/organizations/{organization}/members/{member}',
-            'PATCH',
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-        );
+  patchMemberByOrganizationAndMember (
+    returnType = null,
+    options,
+    credentials
+  ) {
+    if (returnType === null) {
+      returnType = Member
     }
 
-    /**
+    let {
+      xKeyclicApp,
+      organization,
+      member,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      memberPatch
+    } = options
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchMemberByOrganizationAndMember')
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === 'undefined' || organization === null) {
+      throw new window.Error('Missing the required parameter "organization" when calling patchMemberByOrganizationAndMember')
+    }
+
+    // verify the required parameter 'member' is set
+    if (typeof member === 'undefined' || member === null) {
+      throw new window.Error('Missing the required parameter "member" when calling patchMemberByOrganizationAndMember')
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+      acceptLanguage = "fr-FR" // eslint-disable-line quotes
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === 'undefined') {
+      xKeyclicAppVersion = null
+    }
+
+    // verify the null value of parameter 'memberPatch'
+    if (typeof memberPatch === 'undefined') {
+      memberPatch = null
+    }
+
+    if (typeof credentials === 'undefined' || credentials === null) {
+      throw new window.Error('Missing the required parameter "credentials" when calling patchMemberByOrganizationAndMember')
+    }
+
+    let pathParams = {
+      'organization': organization,
+      'member': member
+    }
+
+    let bodyParam = memberPatch
+
+    let queryParams = {
+    }
+
+    let headerParams = {
+      'accept-language': acceptLanguage,
+      'x-keyclic-app': xKeyclicApp,
+      'x-keyclic-app-version': xKeyclicAppVersion
+    }
+
+    let credentialParams = credentials
+
+    let authNames = [
+      'bearer'
+    ]
+
+    let contentTypes = [
+      'application/json;charset=UTF-8'
+    ]
+
+    let accepts = [
+      'application/hal+json;charset=UTF-8'
+    ]
+
+    return this.callApi(
+      '/organizations/{organization}/members/{member}',
+      'PATCH',
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    )
+  }
+
+  /**
      * Create one Member resource.
      * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
@@ -525,93 +525,93 @@ export default class MemberApi extends ApiClient {
      * @param { String } xKeyclicAppVersion
      * @param { module:model/PersonData } personData
      */
-    postMemberByOrganization(
-        returnType = null,
-        options,
-        credentials,
-    ) {
-        if (returnType === null) {
-            returnType = Member;
-        }
-
-        let {
-            xKeyclicApp,
-            organization,
-            acceptLanguage,
-            xKeyclicAppVersion,
-            personData,
-        } = options;
-
-        // verify the required parameter 'xKeyclicApp' is set
-        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postMemberByOrganization');
-        }
-
-        // verify the required parameter 'organization' is set
-        if (typeof organization === 'undefined' || organization === null) {
-            throw new window.Error('Missing the required parameter "organization" when calling postMemberByOrganization');
-        }
-
-        // verify the default value of parameter 'acceptLanguage'
-        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
-        }
-
-        // verify the null value of parameter 'xKeyclicAppVersion'
-        if (typeof xKeyclicAppVersion === 'undefined') {
-            xKeyclicAppVersion = null;
-        }
-
-        // verify the null value of parameter 'personData'
-        if (typeof personData === 'undefined') {
-            personData = null;
-        }
-
-        if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling postMemberByOrganization');
-        }
-
-        let pathParams = {
-            'organization': organization,
-        };
-
-        let bodyParam = personData;
-
-        let queryParams = {
-        };
-
-        let headerParams = {
-            'accept-language': acceptLanguage,
-            'x-keyclic-app': xKeyclicApp,
-            'x-keyclic-app-version': xKeyclicAppVersion,
-        };
-
-        let credentialParams = credentials;
-
-        let authNames = [
-            'bearer',
-        ];
-
-        let contentTypes = [
-            'application/json;charset=UTF-8',
-        ];
-
-        let accepts = [
-            'application/hal+json;charset=UTF-8',
-        ];
-
-        return this.callApi(
-            '/organizations/{organization}/members',
-            'POST',
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-        );
+  postMemberByOrganization (
+    returnType = null,
+    options,
+    credentials
+  ) {
+    if (returnType === null) {
+      returnType = Member
     }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      personData
+    } = options
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postMemberByOrganization')
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === 'undefined' || organization === null) {
+      throw new window.Error('Missing the required parameter "organization" when calling postMemberByOrganization')
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+      acceptLanguage = "fr-FR" // eslint-disable-line quotes
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === 'undefined') {
+      xKeyclicAppVersion = null
+    }
+
+    // verify the null value of parameter 'personData'
+    if (typeof personData === 'undefined') {
+      personData = null
+    }
+
+    if (typeof credentials === 'undefined' || credentials === null) {
+      throw new window.Error('Missing the required parameter "credentials" when calling postMemberByOrganization')
+    }
+
+    let pathParams = {
+      'organization': organization
+    }
+
+    let bodyParam = personData
+
+    let queryParams = {
+    }
+
+    let headerParams = {
+      'accept-language': acceptLanguage,
+      'x-keyclic-app': xKeyclicApp,
+      'x-keyclic-app-version': xKeyclicAppVersion
+    }
+
+    let credentialParams = credentials
+
+    let authNames = [
+      'bearer'
+    ]
+
+    let contentTypes = [
+      'application/json;charset=UTF-8'
+    ]
+
+    let accepts = [
+      'application/hal+json;charset=UTF-8'
+    ]
+
+    return this.callApi(
+      '/organizations/{organization}/members',
+      'POST',
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    )
+  }
 }

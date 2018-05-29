@@ -10,50 +10,50 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import CheckpointLinksOrganization from './CheckpointLinksOrganization';
+import ApiClient from '../ApiClient'
+import CheckpointLinksOrganization from './CheckpointLinksOrganization'
 
 /**
  * The CheckpointLinks model module.
  * @module model/CheckpointLinks
  */
 export default class CheckpointLinks {
-    /**
+  /**
      * Constructs a new "CheckpointLinks".
      * @alias module:model/CheckpointLinks
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.organization = null;
+  ) {
+    this.organization = null
 
-        this.organizationType = CheckpointLinksOrganization;
-    }
+    this.organizationType = CheckpointLinksOrganization
+  }
 
-    /**
+  /**
     * Constructs a "CheckpointLinks" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/CheckpointLinks } object Optional instance to populate.
     * @return { module:model/CheckpointLinks } The populated "CheckpointLinks" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new CheckpointLinks();
-        }
-
-        if (data.hasOwnProperty('organization')) {
-            object.organization = ApiClient.convertToType(data.organization, object.organizationType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new CheckpointLinks()
+    }
+
+    if (data.hasOwnProperty('organization')) {
+      object.organization = ApiClient.convertToType(data.organization, object.organizationType)
+    }
+
+    return object
+  }
 }

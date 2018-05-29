@@ -10,14 +10,14 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The LoginData model module.
  * @module model/LoginData
  */
 export default class LoginData {
-    /**
+  /**
      * Constructs a new "LoginData".
      * @alias module:model/LoginData
      * @class
@@ -27,42 +27,42 @@ export default class LoginData {
      * @param password { String }
 
      */
-    constructor(
+  constructor (
 
-        login,
+    login,
 
-        password,
+    password
 
-    ) {
-        this.login = login;
-        this.password = password;
-    }
+  ) {
+    this.login = login
+    this.password = password
+  }
 
-    /**
+  /**
     * Constructs a "LoginData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/LoginData } object Optional instance to populate.
     * @return { module:model/LoginData } The populated "LoginData" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new LoginData();
-        }
-
-        if (data.hasOwnProperty('login')) {
-            object.login = ApiClient.convertToType(data.login, 'String');
-        }
-        if (data.hasOwnProperty('password')) {
-            object.password = ApiClient.convertToType(data.password, 'String');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new LoginData()
+    }
+
+    if (data.hasOwnProperty('login')) {
+      object.login = ApiClient.convertToType(data.login, 'String')
+    }
+    if (data.hasOwnProperty('password')) {
+      object.password = ApiClient.convertToType(data.password, 'String')
+    }
+
+    return object
+  }
 }

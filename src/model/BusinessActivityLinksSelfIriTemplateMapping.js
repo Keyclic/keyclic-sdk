@@ -10,47 +10,47 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The BusinessActivityLinksSelfIriTemplateMapping model module.
  * @module model/BusinessActivityLinksSelfIriTemplateMapping
  */
 export default class BusinessActivityLinksSelfIriTemplateMapping {
-    /**
+  /**
      * Constructs a new "BusinessActivityLinksSelfIriTemplateMapping".
      * @alias module:model/BusinessActivityLinksSelfIriTemplateMapping
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.businessActivity = null;
-    }
+  ) {
+    this.businessActivity = null
+  }
 
-    /**
+  /**
     * Constructs a "BusinessActivityLinksSelfIriTemplateMapping" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/BusinessActivityLinksSelfIriTemplateMapping } object Optional instance to populate.
     * @return { module:model/BusinessActivityLinksSelfIriTemplateMapping } The populated "BusinessActivityLinksSelfIriTemplateMapping" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new BusinessActivityLinksSelfIriTemplateMapping();
-        }
-
-        if (data.hasOwnProperty('businessActivity')) {
-            object.businessActivity = ApiClient.convertToType(data.businessActivity, 'String');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new BusinessActivityLinksSelfIriTemplateMapping()
+    }
+
+    if (data.hasOwnProperty('businessActivity')) {
+      object.businessActivity = ApiClient.convertToType(data.businessActivity, 'String')
+    }
+
+    return object
+  }
 }

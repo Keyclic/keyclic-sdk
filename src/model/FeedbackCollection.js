@@ -10,50 +10,50 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import Feedback from './Feedback';
+import ApiClient from '../ApiClient'
+import Feedback from './Feedback'
 
 /**
  * The FeedbackCollection model module.
  * @module model/FeedbackCollection
  */
 export default class FeedbackCollection {
-    /**
+  /**
      * Constructs a new "FeedbackCollection".
      * @alias module:model/FeedbackCollection
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.items = [];
+  ) {
+    this.items = []
 
-        this.itemsType = Feedback;
-    }
+    this.itemsType = Feedback
+  }
 
-    /**
+  /**
     * Constructs a "FeedbackCollection" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/FeedbackCollection } object Optional instance to populate.
     * @return { module:model/FeedbackCollection } The populated "FeedbackCollection" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new FeedbackCollection();
-        }
-
-        if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new FeedbackCollection()
+    }
+
+    if (data.hasOwnProperty('items')) {
+      object.items = ApiClient.convertToType(data.items, [object.itemsType])
+    }
+
+    return object
+  }
 }

@@ -10,54 +10,54 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIriTemplate';
+import ApiClient from '../ApiClient'
+import CategoryLinksOrganizationIriTemplate from './CategoryLinksOrganizationIriTemplate'
 
 /**
  * The OrganizationLinksLogo model module.
  * @module model/OrganizationLinksLogo
  */
 export default class OrganizationLinksLogo {
-    /**
+  /**
      * Constructs a new "OrganizationLinksLogo".
      * @alias module:model/OrganizationLinksLogo
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.href = null;
-        this.iriTemplate = null;
+  ) {
+    this.href = null
+    this.iriTemplate = null
 
-        this.iriTemplateType = CategoryLinksOrganizationIriTemplate;
-    }
+    this.iriTemplateType = CategoryLinksOrganizationIriTemplate
+  }
 
-    /**
+  /**
     * Constructs a "OrganizationLinksLogo" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OrganizationLinksLogo } object Optional instance to populate.
     * @return { module:model/OrganizationLinksLogo } The populated "OrganizationLinksLogo" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new OrganizationLinksLogo();
-        }
-
-        if (data.hasOwnProperty('href')) {
-            object.href = ApiClient.convertToType(data.href, 'String');
-        }
-        if (data.hasOwnProperty('iriTemplate')) {
-            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new OrganizationLinksLogo()
+    }
+
+    if (data.hasOwnProperty('href')) {
+      object.href = ApiClient.convertToType(data.href, 'String')
+    }
+    if (data.hasOwnProperty('iriTemplate')) {
+      object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType)
+    }
+
+    return object
+  }
 }

@@ -10,54 +10,54 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import OperationLinksReportIriTemplate from './OperationLinksReportIriTemplate';
+import ApiClient from '../ApiClient'
+import OperationLinksReportIriTemplate from './OperationLinksReportIriTemplate'
 
 /**
  * The OperationLinksReport model module.
  * @module model/OperationLinksReport
  */
 export default class OperationLinksReport {
-    /**
+  /**
      * Constructs a new "OperationLinksReport".
      * @alias module:model/OperationLinksReport
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.href = null;
-        this.iriTemplate = null;
+  ) {
+    this.href = null
+    this.iriTemplate = null
 
-        this.iriTemplateType = OperationLinksReportIriTemplate;
-    }
+    this.iriTemplateType = OperationLinksReportIriTemplate
+  }
 
-    /**
+  /**
     * Constructs a "OperationLinksReport" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OperationLinksReport } object Optional instance to populate.
     * @return { module:model/OperationLinksReport } The populated "OperationLinksReport" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new OperationLinksReport();
-        }
-
-        if (data.hasOwnProperty('href')) {
-            object.href = ApiClient.convertToType(data.href, 'String');
-        }
-        if (data.hasOwnProperty('iriTemplate')) {
-            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new OperationLinksReport()
+    }
+
+    if (data.hasOwnProperty('href')) {
+      object.href = ApiClient.convertToType(data.href, 'String')
+    }
+    if (data.hasOwnProperty('iriTemplate')) {
+      object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType)
+    }
+
+    return object
+  }
 }

@@ -10,31 +10,31 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import Error from '../model/Error';
-import MemberData from '../model/MemberData';
-import Operation from '../model/Operation';
+import ApiClient from '../ApiClient'
+import Error from '../model/Error'
+import MemberData from '../model/MemberData'
+import Operation from '../model/Operation'
 
 /**
  * Assign service.
  * @module api/AssignApi
  */
 export default class AssignApi extends ApiClient {
-    /**
+  /**
      * @class
      * { string } basePath To override basePath.
      * { object } headers Additional headers for the instance.
      * { int } timeout Number in seconds before timeout.
      */
-    constructor(
-        basePath = null,
-        headers = null,
-        timeout = null
-    ) {
-        super(basePath, headers, timeout);
-    }
+  constructor (
+    basePath = null,
+    headers = null,
+    timeout = null
+  ) {
+    super(basePath, headers, timeout)
+  }
 
-    /**
+  /**
      * Create one Assign resource.
      * @param { String } xKeyclicApp
      * @param { String } operation The identifier of the resource formatted as GUID string.
@@ -44,93 +44,93 @@ export default class AssignApi extends ApiClient {
      * @param { String } xKeyclicAppVersion
      * @param { module:model/MemberData } memberData
      */
-    postAssignByOperation(
-        returnType = null,
-        options,
-        credentials,
-    ) {
-        if (returnType === null) {
-            returnType = Operation;
-        }
-
-        let {
-            xKeyclicApp,
-            operation,
-            acceptLanguage,
-            xKeyclicAppVersion,
-            memberData,
-        } = options;
-
-        // verify the required parameter 'xKeyclicApp' is set
-        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postAssignByOperation');
-        }
-
-        // verify the required parameter 'operation' is set
-        if (typeof operation === 'undefined' || operation === null) {
-            throw new window.Error('Missing the required parameter "operation" when calling postAssignByOperation');
-        }
-
-        // verify the default value of parameter 'acceptLanguage'
-        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
-        }
-
-        // verify the null value of parameter 'xKeyclicAppVersion'
-        if (typeof xKeyclicAppVersion === 'undefined') {
-            xKeyclicAppVersion = null;
-        }
-
-        // verify the null value of parameter 'memberData'
-        if (typeof memberData === 'undefined') {
-            memberData = null;
-        }
-
-        if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling postAssignByOperation');
-        }
-
-        let pathParams = {
-            'operation': operation,
-        };
-
-        let bodyParam = memberData;
-
-        let queryParams = {
-        };
-
-        let headerParams = {
-            'accept-language': acceptLanguage,
-            'x-keyclic-app': xKeyclicApp,
-            'x-keyclic-app-version': xKeyclicAppVersion,
-        };
-
-        let credentialParams = credentials;
-
-        let authNames = [
-            'bearer',
-        ];
-
-        let contentTypes = [
-            'application/json;charset=UTF-8',
-        ];
-
-        let accepts = [
-            'application/hal+json;charset=UTF-8',
-        ];
-
-        return this.callApi(
-            '/operations/{operation}/assign',
-            'POST',
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-        );
+  postAssignByOperation (
+    returnType = null,
+    options,
+    credentials
+  ) {
+    if (returnType === null) {
+      returnType = Operation
     }
+
+    let {
+      xKeyclicApp,
+      operation,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      memberData
+    } = options
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postAssignByOperation')
+    }
+
+    // verify the required parameter 'operation' is set
+    if (typeof operation === 'undefined' || operation === null) {
+      throw new window.Error('Missing the required parameter "operation" when calling postAssignByOperation')
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+      acceptLanguage = "fr-FR" // eslint-disable-line quotes
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === 'undefined') {
+      xKeyclicAppVersion = null
+    }
+
+    // verify the null value of parameter 'memberData'
+    if (typeof memberData === 'undefined') {
+      memberData = null
+    }
+
+    if (typeof credentials === 'undefined' || credentials === null) {
+      throw new window.Error('Missing the required parameter "credentials" when calling postAssignByOperation')
+    }
+
+    let pathParams = {
+      'operation': operation
+    }
+
+    let bodyParam = memberData
+
+    let queryParams = {
+    }
+
+    let headerParams = {
+      'accept-language': acceptLanguage,
+      'x-keyclic-app': xKeyclicApp,
+      'x-keyclic-app-version': xKeyclicAppVersion
+    }
+
+    let credentialParams = credentials
+
+    let authNames = [
+      'bearer'
+    ]
+
+    let contentTypes = [
+      'application/json;charset=UTF-8'
+    ]
+
+    let accepts = [
+      'application/hal+json;charset=UTF-8'
+    ]
+
+    return this.callApi(
+      '/operations/{operation}/assign',
+      'POST',
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    )
+  }
 }

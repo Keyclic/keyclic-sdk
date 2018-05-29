@@ -10,30 +10,30 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import Error from '../model/Error';
-import MemberPagination from '../model/MemberPagination';
+import ApiClient from '../ApiClient'
+import Error from '../model/Error'
+import MemberPagination from '../model/MemberPagination'
 
 /**
  * Membership service.
  * @module api/MembershipApi
  */
 export default class MembershipApi extends ApiClient {
-    /**
+  /**
      * @class
      * { string } basePath To override basePath.
      * { object } headers Additional headers for the instance.
      * { int } timeout Number in seconds before timeout.
      */
-    constructor(
-        basePath = null,
-        headers = null,
-        timeout = null
-    ) {
-        super(basePath, headers, timeout);
-    }
+  constructor (
+    basePath = null,
+    headers = null,
+    timeout = null
+  ) {
+    super(basePath, headers, timeout)
+  }
 
-    /**
+  /**
      * Retrieve all Membership resources.
      * @param { String } xKeyclicApp
      * @param { String } person The identifier of the resource formatted as GUID string.
@@ -52,157 +52,157 @@ export default class MembershipApi extends ApiClient {
      * @param { String } searchUsername
      * @param { String } searchEmail
      */
-    cgetMembershipsByPerson(
-        returnType = null,
-        options,
-        credentials,
-    ) {
-        if (returnType === null) {
-            returnType = MemberPagination;
-        }
-
-        let {
-            xKeyclicApp,
-            person,
-            acceptLanguage,
-            xKeyclicAppVersion,
-            page,
-            limit,
-            order,
-            after,
-            before,
-            searchFamilyName,
-            searchGivenName,
-            searchJobTitle,
-            searchUsername,
-            searchEmail,
-        } = options;
-
-        // verify the required parameter 'xKeyclicApp' is set
-        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetMembershipsByPerson');
-        }
-
-        // verify the required parameter 'person' is set
-        if (typeof person === 'undefined' || person === null) {
-            throw new window.Error('Missing the required parameter "person" when calling cgetMembershipsByPerson');
-        }
-
-        // verify the default value of parameter 'acceptLanguage'
-        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
-        }
-
-        // verify the default value of parameter 'page'
-        if (typeof page === 'undefined' || page === null) {
-            page = 1; // eslint-disable-line quotes
-        }
-
-        // verify the default value of parameter 'limit'
-        if (typeof limit === 'undefined' || limit === null) {
-            limit = 10; // eslint-disable-line quotes
-        }
-
-        // verify the default value of parameter 'order'
-        if (typeof order === 'undefined' || order === null) {
-            order = "desc"; // eslint-disable-line quotes
-        }
-
-        // verify the null value of parameter 'xKeyclicAppVersion'
-        if (typeof xKeyclicAppVersion === 'undefined') {
-            xKeyclicAppVersion = null;
-        }
-
-        // verify the null value of parameter 'after'
-        if (typeof after === 'undefined') {
-            after = null;
-        }
-
-        // verify the null value of parameter 'before'
-        if (typeof before === 'undefined') {
-            before = null;
-        }
-
-        // verify the null value of parameter 'searchFamilyName'
-        if (typeof searchFamilyName === 'undefined') {
-            searchFamilyName = null;
-        }
-
-        // verify the null value of parameter 'searchGivenName'
-        if (typeof searchGivenName === 'undefined') {
-            searchGivenName = null;
-        }
-
-        // verify the null value of parameter 'searchJobTitle'
-        if (typeof searchJobTitle === 'undefined') {
-            searchJobTitle = null;
-        }
-
-        // verify the null value of parameter 'searchUsername'
-        if (typeof searchUsername === 'undefined') {
-            searchUsername = null;
-        }
-
-        // verify the null value of parameter 'searchEmail'
-        if (typeof searchEmail === 'undefined') {
-            searchEmail = null;
-        }
-
-        if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling cgetMembershipsByPerson');
-        }
-
-        let pathParams = {
-            'person': person,
-        };
-
-        let bodyParam = null;
-
-        let queryParams = {
-            'page': page,
-            'limit': limit,
-            'order': order,
-            'after': after,
-            'before': before,
-            'search[familyName]': searchFamilyName,
-            'search[givenName]': searchGivenName,
-            'search[jobTitle]': searchJobTitle,
-            'search[username]': searchUsername,
-            'search[email]': searchEmail,
-        };
-
-        let headerParams = {
-            'accept-language': acceptLanguage,
-            'x-keyclic-app': xKeyclicApp,
-            'x-keyclic-app-version': xKeyclicAppVersion,
-        };
-
-        let credentialParams = credentials;
-
-        let authNames = [
-            'bearer',
-        ];
-
-        let contentTypes = [
-            'application/json;charset=UTF-8',
-        ];
-
-        let accepts = [
-            'application/hal+json;charset=UTF-8',
-        ];
-
-        return this.callApi(
-            '/people/{person}/memberships',
-            'GET',
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-        );
+  cgetMembershipsByPerson (
+    returnType = null,
+    options,
+    credentials
+  ) {
+    if (returnType === null) {
+      returnType = MemberPagination
     }
+
+    let {
+      xKeyclicApp,
+      person,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      page,
+      limit,
+      order,
+      after,
+      before,
+      searchFamilyName,
+      searchGivenName,
+      searchJobTitle,
+      searchUsername,
+      searchEmail
+    } = options
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetMembershipsByPerson')
+    }
+
+    // verify the required parameter 'person' is set
+    if (typeof person === 'undefined' || person === null) {
+      throw new window.Error('Missing the required parameter "person" when calling cgetMembershipsByPerson')
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+      acceptLanguage = "fr-FR" // eslint-disable-line quotes
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === 'undefined' || page === null) {
+      page = 1 // eslint-disable-line quotes
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === 'undefined' || limit === null) {
+      limit = 10 // eslint-disable-line quotes
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === 'undefined' || order === null) {
+      order = "desc" // eslint-disable-line quotes
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === 'undefined') {
+      xKeyclicAppVersion = null
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === 'undefined') {
+      after = null
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === 'undefined') {
+      before = null
+    }
+
+    // verify the null value of parameter 'searchFamilyName'
+    if (typeof searchFamilyName === 'undefined') {
+      searchFamilyName = null
+    }
+
+    // verify the null value of parameter 'searchGivenName'
+    if (typeof searchGivenName === 'undefined') {
+      searchGivenName = null
+    }
+
+    // verify the null value of parameter 'searchJobTitle'
+    if (typeof searchJobTitle === 'undefined') {
+      searchJobTitle = null
+    }
+
+    // verify the null value of parameter 'searchUsername'
+    if (typeof searchUsername === 'undefined') {
+      searchUsername = null
+    }
+
+    // verify the null value of parameter 'searchEmail'
+    if (typeof searchEmail === 'undefined') {
+      searchEmail = null
+    }
+
+    if (typeof credentials === 'undefined' || credentials === null) {
+      throw new window.Error('Missing the required parameter "credentials" when calling cgetMembershipsByPerson')
+    }
+
+    let pathParams = {
+      'person': person
+    }
+
+    let bodyParam = null
+
+    let queryParams = {
+      'page': page,
+      'limit': limit,
+      'order': order,
+      'after': after,
+      'before': before,
+      'search[familyName]': searchFamilyName,
+      'search[givenName]': searchGivenName,
+      'search[jobTitle]': searchJobTitle,
+      'search[username]': searchUsername,
+      'search[email]': searchEmail
+    }
+
+    let headerParams = {
+      'accept-language': acceptLanguage,
+      'x-keyclic-app': xKeyclicApp,
+      'x-keyclic-app-version': xKeyclicAppVersion
+    }
+
+    let credentialParams = credentials
+
+    let authNames = [
+      'bearer'
+    ]
+
+    let contentTypes = [
+      'application/json;charset=UTF-8'
+    ]
+
+    let accepts = [
+      'application/hal+json;charset=UTF-8'
+    ]
+
+    return this.callApi(
+      '/people/{person}/memberships',
+      'GET',
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    )
+  }
 }

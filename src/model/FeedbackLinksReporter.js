@@ -10,54 +10,54 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import FeedbackLinksReporterIriTemplate from './FeedbackLinksReporterIriTemplate';
+import ApiClient from '../ApiClient'
+import FeedbackLinksReporterIriTemplate from './FeedbackLinksReporterIriTemplate'
 
 /**
  * The FeedbackLinksReporter model module.
  * @module model/FeedbackLinksReporter
  */
 export default class FeedbackLinksReporter {
-    /**
+  /**
      * Constructs a new "FeedbackLinksReporter".
      * @alias module:model/FeedbackLinksReporter
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.href = null;
-        this.iriTemplate = null;
+  ) {
+    this.href = null
+    this.iriTemplate = null
 
-        this.iriTemplateType = FeedbackLinksReporterIriTemplate;
-    }
+    this.iriTemplateType = FeedbackLinksReporterIriTemplate
+  }
 
-    /**
+  /**
     * Constructs a "FeedbackLinksReporter" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/FeedbackLinksReporter } object Optional instance to populate.
     * @return { module:model/FeedbackLinksReporter } The populated "FeedbackLinksReporter" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new FeedbackLinksReporter();
-        }
-
-        if (data.hasOwnProperty('href')) {
-            object.href = ApiClient.convertToType(data.href, 'String');
-        }
-        if (data.hasOwnProperty('iriTemplate')) {
-            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new FeedbackLinksReporter()
+    }
+
+    if (data.hasOwnProperty('href')) {
+      object.href = ApiClient.convertToType(data.href, 'String')
+    }
+    if (data.hasOwnProperty('iriTemplate')) {
+      object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType)
+    }
+
+    return object
+  }
 }

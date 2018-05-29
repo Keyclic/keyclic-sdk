@@ -10,50 +10,50 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import BusinessActivityLinksSelfIriTemplateMapping from './BusinessActivityLinksSelfIriTemplateMapping';
+import ApiClient from '../ApiClient'
+import BusinessActivityLinksSelfIriTemplateMapping from './BusinessActivityLinksSelfIriTemplateMapping'
 
 /**
  * The BusinessActivityLinksSelfIriTemplate model module.
  * @module model/BusinessActivityLinksSelfIriTemplate
  */
 export default class BusinessActivityLinksSelfIriTemplate {
-    /**
+  /**
      * Constructs a new "BusinessActivityLinksSelfIriTemplate".
      * @alias module:model/BusinessActivityLinksSelfIriTemplate
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.mapping = null;
+  ) {
+    this.mapping = null
 
-        this.mappingType = BusinessActivityLinksSelfIriTemplateMapping;
-    }
+    this.mappingType = BusinessActivityLinksSelfIriTemplateMapping
+  }
 
-    /**
+  /**
     * Constructs a "BusinessActivityLinksSelfIriTemplate" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/BusinessActivityLinksSelfIriTemplate } object Optional instance to populate.
     * @return { module:model/BusinessActivityLinksSelfIriTemplate } The populated "BusinessActivityLinksSelfIriTemplate" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new BusinessActivityLinksSelfIriTemplate();
-        }
-
-        if (data.hasOwnProperty('mapping')) {
-            object.mapping = ApiClient.convertToType(data.mapping, object.mappingType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new BusinessActivityLinksSelfIriTemplate()
+    }
+
+    if (data.hasOwnProperty('mapping')) {
+      object.mapping = ApiClient.convertToType(data.mapping, object.mappingType)
+    }
+
+    return object
+  }
 }

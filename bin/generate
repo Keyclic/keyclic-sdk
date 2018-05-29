@@ -1,23 +1,34 @@
 #!/usr/bin/env bash
 
-# todo: Split it in 2 sequences, one to build generator, other to build sdk, to avoid build generator every time you want to build sdk.
+set -x  # print terminal command
 
+# This script generates Swagger codegen client
+# then it generates app-sdk from templates and swagger.json file
+# then it fixes src and test files.
 CURRENT_DIR=$(pwd)
 
+function cleanup {
+    rm -rf ${TEMP_DIR}
+    echo "Deleted temp directory."
+    echo "Don't forget to publish on Github and NPM."
+}
+
+echo ""
 SWAGGER_FILE="$1"
 if [ ! -f "${SWAGGER_FILE}" ]; then
     SWAGGER_FILE="https://api.keyclic.com/swagger.json"
 fi
 echo "Use file ${SWAGGER_FILE} as definition API."
+echo ""
 
-echo "Making temp deploy directory."
+echo ""
+echo "Making temp directory."
 TEMP_DIR=$(mktemp -d)
-echo "Made ${TEMP_DIR}"
-
 if [[ ! "${TEMP_DIR}" || ! -d "${TEMP_DIR}" ]]; then
-  echo "Could not create temp building directory."
+  echo "Could not create temp deploy directory."
   exit 1
 fi
+echo ""
 
 # Generator builds 3.* versions are not really ready to generate in other languages than Java.
 #curl --fail --silent --show-error --location http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/3.0.0-rc0/swagger-codegen-cli-3.0.0-rc0.jar --output ${CODEGEN_CLI_PATH}
@@ -32,7 +43,7 @@ mvn clean package
 CODEGEN_CLI_PATH="${TEMP_DIR}/${GENERATOR_NAME}/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar"
 TEMPLATE_DIR="${CURRENT_DIR}/templates/javascript-es6"
 cd ${CURRENT_DIR}
-rm -rf src/*
+rm -rf docs/* src/* test/*
 java \
     -DdebugModels \
     -DdebugOperations \
@@ -44,13 +55,8 @@ java \
     --additional-properties useInheritance=true \
     --template-dir ${TEMPLATE_DIR} \
     > .codegen.log
-npx eslint --fix src/*
 
-function cleanup {
-  rm -rf "${TEMP_DIR}"
-  echo "Deleted temp deploy directory."
-  echo "Don't forget to publish on Github and on NPM."
-}
+npx standard --fix deployment/* src/* test/*
 
 # When the script exits call cleanup function.
 trap cleanup EXIT

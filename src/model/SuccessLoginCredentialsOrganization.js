@@ -10,51 +10,51 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The SuccessLoginCredentialsOrganization model module.
  * @module model/SuccessLoginCredentialsOrganization
  */
 export default class SuccessLoginCredentialsOrganization {
-    /**
+  /**
      * Constructs a new "SuccessLoginCredentialsOrganization".
      * @alias module:model/SuccessLoginCredentialsOrganization
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.type = null;
-        this.id = null;
-    }
+  ) {
+    this.type = null
+    this.id = null
+  }
 
-    /**
+  /**
     * Constructs a "SuccessLoginCredentialsOrganization" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/SuccessLoginCredentialsOrganization } object Optional instance to populate.
     * @return { module:model/SuccessLoginCredentialsOrganization } The populated "SuccessLoginCredentialsOrganization" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new SuccessLoginCredentialsOrganization();
-        }
-
-        if (data.hasOwnProperty('type')) {
-            object.type = ApiClient.convertToType(data.type, 'String');
-        }
-        if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data.id, 'String');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new SuccessLoginCredentialsOrganization()
+    }
+
+    if (data.hasOwnProperty('type')) {
+      object.type = ApiClient.convertToType(data.type, 'String')
+    }
+    if (data.hasOwnProperty('id')) {
+      object.id = ApiClient.convertToType(data.id, 'String')
+    }
+
+    return object
+  }
 }

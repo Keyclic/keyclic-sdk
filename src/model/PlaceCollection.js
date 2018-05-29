@@ -10,50 +10,50 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import Place from './Place';
+import ApiClient from '../ApiClient'
+import Place from './Place'
 
 /**
  * The PlaceCollection model module.
  * @module model/PlaceCollection
  */
 export default class PlaceCollection {
-    /**
+  /**
      * Constructs a new "PlaceCollection".
      * @alias module:model/PlaceCollection
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.items = [];
+  ) {
+    this.items = []
 
-        this.itemsType = Place;
-    }
+    this.itemsType = Place
+  }
 
-    /**
+  /**
     * Constructs a "PlaceCollection" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/PlaceCollection } object Optional instance to populate.
     * @return { module:model/PlaceCollection } The populated "PlaceCollection" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new PlaceCollection();
-        }
-
-        if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new PlaceCollection()
+    }
+
+    if (data.hasOwnProperty('items')) {
+      object.items = ApiClient.convertToType(data.items, [object.itemsType])
+    }
+
+    return object
+  }
 }

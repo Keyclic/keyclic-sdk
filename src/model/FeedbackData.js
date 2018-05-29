@@ -10,31 +10,36 @@
  * Do not edit the class manually.
  */
 
+
 import ApiClient from '../ApiClient';
 import FeedbackDataGeo from './FeedbackDataGeo';
+
+
+    
 
 /**
  * The FeedbackData model module.
  * @module model/FeedbackData
  */
-export default class FeedbackData {
+export default class FeedbackData  {
     /**
      * Constructs a new "FeedbackData".
      * @alias module:model/FeedbackData
      * @class
-
+    
      * @param geo { module:model/FeedbackDataGeo }
-
+    
      * @param visibility { module:model/FeedbackData.VisibilityEnum }
-
+    
      */
     constructor(
-
+    
         geo,
-
+    
         visibility,
-
+    
     ) {
+
         this.category = null;
         this.geo = geo;
         this.description = null;
@@ -85,7 +90,9 @@ export default class FeedbackData {
         return object;
     }
 
-    /**
+    
+
+       /**
     * Allowed values for the "visibility" property.
     * @enum { String }
     */
@@ -103,4 +110,8 @@ export default class FeedbackData {
          */
         "PRIVATE": "VISIBILITY_PRIVATE", // eslint-disable-line quotes
     };
+
 }
+
+
+

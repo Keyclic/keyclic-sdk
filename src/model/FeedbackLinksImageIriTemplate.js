@@ -10,50 +10,50 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import FeedbackLinksImageIriTemplateMapping from './FeedbackLinksImageIriTemplateMapping';
+import ApiClient from '../ApiClient'
+import FeedbackLinksImageIriTemplateMapping from './FeedbackLinksImageIriTemplateMapping'
 
 /**
  * The FeedbackLinksImageIriTemplate model module.
  * @module model/FeedbackLinksImageIriTemplate
  */
 export default class FeedbackLinksImageIriTemplate {
-    /**
+  /**
      * Constructs a new "FeedbackLinksImageIriTemplate".
      * @alias module:model/FeedbackLinksImageIriTemplate
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.mapping = null;
+  ) {
+    this.mapping = null
 
-        this.mappingType = FeedbackLinksImageIriTemplateMapping;
-    }
+    this.mappingType = FeedbackLinksImageIriTemplateMapping
+  }
 
-    /**
+  /**
     * Constructs a "FeedbackLinksImageIriTemplate" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/FeedbackLinksImageIriTemplate } object Optional instance to populate.
     * @return { module:model/FeedbackLinksImageIriTemplate } The populated "FeedbackLinksImageIriTemplate" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new FeedbackLinksImageIriTemplate();
-        }
-
-        if (data.hasOwnProperty('mapping')) {
-            object.mapping = ApiClient.convertToType(data.mapping, object.mappingType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new FeedbackLinksImageIriTemplate()
+    }
+
+    if (data.hasOwnProperty('mapping')) {
+      object.mapping = ApiClient.convertToType(data.mapping, object.mappingType)
+    }
+
+    return object
+  }
 }

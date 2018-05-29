@@ -10,50 +10,50 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import Person from './Person';
+import ApiClient from '../ApiClient'
+import Person from './Person'
 
 /**
  * The PersonCollection model module.
  * @module model/PersonCollection
  */
 export default class PersonCollection {
-    /**
+  /**
      * Constructs a new "PersonCollection".
      * @alias module:model/PersonCollection
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.items = [];
+  ) {
+    this.items = []
 
-        this.itemsType = Person;
-    }
+    this.itemsType = Person
+  }
 
-    /**
+  /**
     * Constructs a "PersonCollection" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/PersonCollection } object Optional instance to populate.
     * @return { module:model/PersonCollection } The populated "PersonCollection" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new PersonCollection();
-        }
-
-        if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new PersonCollection()
+    }
+
+    if (data.hasOwnProperty('items')) {
+      object.items = ApiClient.convertToType(data.items, [object.itemsType])
+    }
+
+    return object
+  }
 }

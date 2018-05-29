@@ -10,50 +10,50 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import Category from './Category';
+import ApiClient from '../ApiClient'
+import Category from './Category'
 
 /**
  * The CategoryCollection model module.
  * @module model/CategoryCollection
  */
 export default class CategoryCollection {
-    /**
+  /**
      * Constructs a new "CategoryCollection".
      * @alias module:model/CategoryCollection
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.items = [];
+  ) {
+    this.items = []
 
-        this.itemsType = Category;
-    }
+    this.itemsType = Category
+  }
 
-    /**
+  /**
     * Constructs a "CategoryCollection" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/CategoryCollection } object Optional instance to populate.
     * @return { module:model/CategoryCollection } The populated "CategoryCollection" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new CategoryCollection();
-        }
-
-        if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new CategoryCollection()
+    }
+
+    if (data.hasOwnProperty('items')) {
+      object.items = ApiClient.convertToType(data.items, [object.itemsType])
+    }
+
+    return object
+  }
 }

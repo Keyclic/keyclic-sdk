@@ -10,50 +10,50 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import Report from './Report';
+import ApiClient from '../ApiClient'
+import Report from './Report'
 
 /**
  * The ReportCollection model module.
  * @module model/ReportCollection
  */
 export default class ReportCollection {
-    /**
+  /**
      * Constructs a new "ReportCollection".
      * @alias module:model/ReportCollection
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.items = [];
+  ) {
+    this.items = []
 
-        this.itemsType = Report;
-    }
+    this.itemsType = Report
+  }
 
-    /**
+  /**
     * Constructs a "ReportCollection" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/ReportCollection } object Optional instance to populate.
     * @return { module:model/ReportCollection } The populated "ReportCollection" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new ReportCollection();
-        }
-
-        if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new ReportCollection()
+    }
+
+    if (data.hasOwnProperty('items')) {
+      object.items = ApiClient.convertToType(data.items, [object.itemsType])
+    }
+
+    return object
+  }
 }

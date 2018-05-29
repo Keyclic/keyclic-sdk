@@ -10,51 +10,51 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The OperationLinksImageIriTemplateMapping model module.
  * @module model/OperationLinksImageIriTemplateMapping
  */
 export default class OperationLinksImageIriTemplateMapping {
-    /**
+  /**
      * Constructs a new "OperationLinksImageIriTemplateMapping".
      * @alias module:model/OperationLinksImageIriTemplateMapping
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.image = null;
-        this.operation = null;
-    }
+  ) {
+    this.image = null
+    this.operation = null
+  }
 
-    /**
+  /**
     * Constructs a "OperationLinksImageIriTemplateMapping" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OperationLinksImageIriTemplateMapping } object Optional instance to populate.
     * @return { module:model/OperationLinksImageIriTemplateMapping } The populated "OperationLinksImageIriTemplateMapping" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new OperationLinksImageIriTemplateMapping();
-        }
-
-        if (data.hasOwnProperty('image')) {
-            object.image = ApiClient.convertToType(data.image, 'String');
-        }
-        if (data.hasOwnProperty('operation')) {
-            object.operation = ApiClient.convertToType(data.operation, 'String');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new OperationLinksImageIriTemplateMapping()
+    }
+
+    if (data.hasOwnProperty('image')) {
+      object.image = ApiClient.convertToType(data.image, 'String')
+    }
+    if (data.hasOwnProperty('operation')) {
+      object.operation = ApiClient.convertToType(data.operation, 'String')
+    }
+
+    return object
+  }
 }

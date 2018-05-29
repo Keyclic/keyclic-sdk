@@ -10,54 +10,54 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import ApplicationLinksSelfIriTemplate from './ApplicationLinksSelfIriTemplate';
+import ApiClient from '../ApiClient'
+import ApplicationLinksSelfIriTemplate from './ApplicationLinksSelfIriTemplate'
 
 /**
  * The ApplicationLinksSelf model module.
  * @module model/ApplicationLinksSelf
  */
 export default class ApplicationLinksSelf {
-    /**
+  /**
      * Constructs a new "ApplicationLinksSelf".
      * @alias module:model/ApplicationLinksSelf
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.href = null;
-        this.iriTemplate = null;
+  ) {
+    this.href = null
+    this.iriTemplate = null
 
-        this.iriTemplateType = ApplicationLinksSelfIriTemplate;
-    }
+    this.iriTemplateType = ApplicationLinksSelfIriTemplate
+  }
 
-    /**
+  /**
     * Constructs a "ApplicationLinksSelf" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/ApplicationLinksSelf } object Optional instance to populate.
     * @return { module:model/ApplicationLinksSelf } The populated "ApplicationLinksSelf" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new ApplicationLinksSelf();
-        }
-
-        if (data.hasOwnProperty('href')) {
-            object.href = ApiClient.convertToType(data.href, 'String');
-        }
-        if (data.hasOwnProperty('iriTemplate')) {
-            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new ApplicationLinksSelf()
+    }
+
+    if (data.hasOwnProperty('href')) {
+      object.href = ApiClient.convertToType(data.href, 'String')
+    }
+    if (data.hasOwnProperty('iriTemplate')) {
+      object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType)
+    }
+
+    return object
+  }
 }

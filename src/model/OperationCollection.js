@@ -10,50 +10,50 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import Operation from './Operation';
+import ApiClient from '../ApiClient'
+import Operation from './Operation'
 
 /**
  * The OperationCollection model module.
  * @module model/OperationCollection
  */
 export default class OperationCollection {
-    /**
+  /**
      * Constructs a new "OperationCollection".
      * @alias module:model/OperationCollection
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.items = [];
+  ) {
+    this.items = []
 
-        this.itemsType = Operation;
-    }
+    this.itemsType = Operation
+  }
 
-    /**
+  /**
     * Constructs a "OperationCollection" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OperationCollection } object Optional instance to populate.
     * @return { module:model/OperationCollection } The populated "OperationCollection" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new OperationCollection();
-        }
-
-        if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new OperationCollection()
+    }
+
+    if (data.hasOwnProperty('items')) {
+      object.items = ApiClient.convertToType(data.items, [object.itemsType])
+    }
+
+    return object
+  }
 }

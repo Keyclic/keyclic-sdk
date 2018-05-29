@@ -10,27 +10,33 @@
  * Do not edit the class manually.
  */
 
+
 import ApiClient from '../ApiClient';
+
+
+    
 
 /**
  * The OperationWorkflowTransitionData model module.
  * @module model/OperationWorkflowTransitionData
  */
-export default class OperationWorkflowTransitionData {
+export default class OperationWorkflowTransitionData  {
     /**
      * Constructs a new "OperationWorkflowTransitionData".
      * @alias module:model/OperationWorkflowTransitionData
      * @class
-
+    
      * @param transition { module:model/OperationWorkflowTransitionData.TransitionEnum }
-
+    
      */
     constructor(
-
+    
         transition,
-
+    
     ) {
+
         this.transition = transition;
+
     }
 
     /**
@@ -58,7 +64,9 @@ export default class OperationWorkflowTransitionData {
         return object;
     }
 
-    /**
+    
+
+       /**
     * Allowed values for the "transition" property.
     * @enum { String }
     */
@@ -100,4 +108,8 @@ export default class OperationWorkflowTransitionData {
          */
         "resolve": "resolve", // eslint-disable-line quotes
     };
+
 }
+
+
+

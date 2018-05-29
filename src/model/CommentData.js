@@ -10,14 +10,14 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The CommentData model module.
  * @module model/CommentData
  */
 export default class CommentData {
-    /**
+  /**
      * Constructs a new "CommentData".
      * @alias module:model/CommentData
      * @class
@@ -25,36 +25,36 @@ export default class CommentData {
      * @param text { String }
 
      */
-    constructor(
+  constructor (
 
-        text,
+    text
 
-    ) {
-        this.text = text;
-    }
+  ) {
+    this.text = text
+  }
 
-    /**
+  /**
     * Constructs a "CommentData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/CommentData } object Optional instance to populate.
     * @return { module:model/CommentData } The populated "CommentData" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new CommentData();
-        }
-
-        if (data.hasOwnProperty('text')) {
-            object.text = ApiClient.convertToType(data.text, 'String');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new CommentData()
+    }
+
+    if (data.hasOwnProperty('text')) {
+      object.text = ApiClient.convertToType(data.text, 'String')
+    }
+
+    return object
+  }
 }

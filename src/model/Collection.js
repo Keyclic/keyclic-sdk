@@ -10,47 +10,47 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The Collection model module.
  * @module model/Collection
  */
 export default class Collection {
-    /**
+  /**
      * Constructs a new "Collection".
      * @alias module:model/Collection
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.items = [];
-    }
+  ) {
+    this.items = []
+  }
 
-    /**
+  /**
     * Constructs a "Collection" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/Collection } object Optional instance to populate.
     * @return { module:model/Collection } The populated "Collection" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new Collection();
-        }
-
-        if (data.hasOwnProperty('items')) {
-            object.items = ApiClient.convertToType(data.items, '[\'Object\']');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new Collection()
+    }
+
+    if (data.hasOwnProperty('items')) {
+      object.items = ApiClient.convertToType(data.items, '[\'Object\']')
+    }
+
+    return object
+  }
 }

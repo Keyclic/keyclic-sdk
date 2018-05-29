@@ -10,50 +10,50 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import BusinessActivityLinksSelf from './BusinessActivityLinksSelf';
+import ApiClient from '../ApiClient'
+import BusinessActivityLinksSelf from './BusinessActivityLinksSelf'
 
 /**
  * The BusinessActivityLinks model module.
  * @module model/BusinessActivityLinks
  */
 export default class BusinessActivityLinks {
-    /**
+  /**
      * Constructs a new "BusinessActivityLinks".
      * @alias module:model/BusinessActivityLinks
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.self = null;
+  ) {
+    this.self = null
 
-        this.selfType = BusinessActivityLinksSelf;
-    }
+    this.selfType = BusinessActivityLinksSelf
+  }
 
-    /**
+  /**
     * Constructs a "BusinessActivityLinks" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/BusinessActivityLinks } object Optional instance to populate.
     * @return { module:model/BusinessActivityLinks } The populated "BusinessActivityLinks" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new BusinessActivityLinks();
-        }
-
-        if (data.hasOwnProperty('self')) {
-            object.self = ApiClient.convertToType(data.self, object.selfType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new BusinessActivityLinks()
+    }
+
+    if (data.hasOwnProperty('self')) {
+      object.self = ApiClient.convertToType(data.self, object.selfType)
+    }
+
+    return object
+  }
 }

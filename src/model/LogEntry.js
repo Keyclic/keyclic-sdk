@@ -10,14 +10,14 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The LogEntry model module.
  * @module model/LogEntry
  */
 export default class LogEntry {
-    /**
+  /**
      * Constructs a new "LogEntry".
      * @alias module:model/LogEntry
      * @class
@@ -33,60 +33,60 @@ export default class LogEntry {
      * @param data { Array.<String> }
 
      */
-    constructor(
+  constructor (
 
-        action,
+    action,
 
-        loggedAt,
+    loggedAt,
 
-        objectId,
+    objectId,
 
-        version,
+    version,
 
-        data,
+    data
 
-    ) {
-        this.action = action;
-        this.loggedAt = loggedAt;
-        this.objectId = objectId;
-        this.version = version;
-        this.data = data;
-    }
+  ) {
+    this.action = action
+    this.loggedAt = loggedAt
+    this.objectId = objectId
+    this.version = version
+    this.data = data
+  }
 
-    /**
+  /**
     * Constructs a "LogEntry" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/LogEntry } object Optional instance to populate.
     * @return { module:model/LogEntry } The populated "LogEntry" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new LogEntry();
-        }
-
-        if (data.hasOwnProperty('action')) {
-            object.action = ApiClient.convertToType(data.action, 'String');
-        }
-        if (data.hasOwnProperty('loggedAt')) {
-            object.loggedAt = ApiClient.convertToType(data.loggedAt, 'Date');
-        }
-        if (data.hasOwnProperty('objectId')) {
-            object.objectId = ApiClient.convertToType(data.objectId, 'String');
-        }
-        if (data.hasOwnProperty('version')) {
-            object.version = ApiClient.convertToType(data.version, 'String');
-        }
-        if (data.hasOwnProperty('data')) {
-            object.data = ApiClient.convertToType(data.data, '[\'String\']');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new LogEntry()
+    }
+
+    if (data.hasOwnProperty('action')) {
+      object.action = ApiClient.convertToType(data.action, 'String')
+    }
+    if (data.hasOwnProperty('loggedAt')) {
+      object.loggedAt = ApiClient.convertToType(data.loggedAt, 'Date')
+    }
+    if (data.hasOwnProperty('objectId')) {
+      object.objectId = ApiClient.convertToType(data.objectId, 'String')
+    }
+    if (data.hasOwnProperty('version')) {
+      object.version = ApiClient.convertToType(data.version, 'String')
+    }
+    if (data.hasOwnProperty('data')) {
+      object.data = ApiClient.convertToType(data.data, '[\'String\']')
+    }
+
+    return object
+  }
 }

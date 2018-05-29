@@ -10,47 +10,47 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The FeedbackLinksReporterIriTemplateMapping model module.
  * @module model/FeedbackLinksReporterIriTemplateMapping
  */
 export default class FeedbackLinksReporterIriTemplateMapping {
-    /**
+  /**
      * Constructs a new "FeedbackLinksReporterIriTemplateMapping".
      * @alias module:model/FeedbackLinksReporterIriTemplateMapping
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.person = null;
-    }
+  ) {
+    this.person = null
+  }
 
-    /**
+  /**
     * Constructs a "FeedbackLinksReporterIriTemplateMapping" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/FeedbackLinksReporterIriTemplateMapping } object Optional instance to populate.
     * @return { module:model/FeedbackLinksReporterIriTemplateMapping } The populated "FeedbackLinksReporterIriTemplateMapping" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new FeedbackLinksReporterIriTemplateMapping();
-        }
-
-        if (data.hasOwnProperty('person')) {
-            object.person = ApiClient.convertToType(data.person, 'String');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new FeedbackLinksReporterIriTemplateMapping()
+    }
+
+    if (data.hasOwnProperty('person')) {
+      object.person = ApiClient.convertToType(data.person, 'String')
+    }
+
+    return object
+  }
 }

@@ -10,14 +10,14 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The FeedbackGeoCoordinatesPoint model module.
  * @module model/FeedbackGeoCoordinatesPoint
  */
 export default class FeedbackGeoCoordinatesPoint {
-    /**
+  /**
      * Constructs a new "FeedbackGeoCoordinatesPoint".
      * @alias module:model/FeedbackGeoCoordinatesPoint
      * @class
@@ -29,48 +29,48 @@ export default class FeedbackGeoCoordinatesPoint {
      * @param srid { Number }
 
      */
-    constructor(
+  constructor (
 
-        latitude,
+    latitude,
 
-        longitude,
+    longitude,
 
-        srid,
+    srid
 
-    ) {
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.srid = srid;
-    }
+  ) {
+    this.latitude = latitude
+    this.longitude = longitude
+    this.srid = srid
+  }
 
-    /**
+  /**
     * Constructs a "FeedbackGeoCoordinatesPoint" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/FeedbackGeoCoordinatesPoint } object Optional instance to populate.
     * @return { module:model/FeedbackGeoCoordinatesPoint } The populated "FeedbackGeoCoordinatesPoint" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new FeedbackGeoCoordinatesPoint();
-        }
-
-        if (data.hasOwnProperty('latitude')) {
-            object.latitude = ApiClient.convertToType(data.latitude, 'Number');
-        }
-        if (data.hasOwnProperty('longitude')) {
-            object.longitude = ApiClient.convertToType(data.longitude, 'Number');
-        }
-        if (data.hasOwnProperty('srid')) {
-            object.srid = ApiClient.convertToType(data.srid, 'Number');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new FeedbackGeoCoordinatesPoint()
+    }
+
+    if (data.hasOwnProperty('latitude')) {
+      object.latitude = ApiClient.convertToType(data.latitude, 'Number')
+    }
+    if (data.hasOwnProperty('longitude')) {
+      object.longitude = ApiClient.convertToType(data.longitude, 'Number')
+    }
+    if (data.hasOwnProperty('srid')) {
+      object.srid = ApiClient.convertToType(data.srid, 'Number')
+    }
+
+    return object
+  }
 }

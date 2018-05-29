@@ -10,57 +10,57 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import OrganizationCollection from './OrganizationCollection';
-import Pagination from './Pagination';
-import PaginationLinks from './PaginationLinks';
+import ApiClient from '../ApiClient'
+import OrganizationCollection from './OrganizationCollection'
+import Pagination from './Pagination'
+import PaginationLinks from './PaginationLinks'
 
 /**
  * The OrganizationPagination model module.
  * @module model/OrganizationPagination
  */
 export default class OrganizationPagination extends Pagination {
-    /**
+  /**
      * Constructs a new "OrganizationPagination".
      * @alias module:model/OrganizationPagination
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        super(
+  ) {
+    super(
 
-        );
+    )
 
-        this.embedded = null;
+    this.embedded = null
 
-        this.embeddedType = OrganizationCollection;
-    }
+    this.embeddedType = OrganizationCollection
+  }
 
-    /**
+  /**
     * Constructs a "OrganizationPagination" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OrganizationPagination } object Optional instance to populate.
     * @return { module:model/OrganizationPagination } The populated "OrganizationPagination" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new OrganizationPagination();
-        }
-        object = super.constructFromData(data, object);
-
-        if (data.hasOwnProperty('_embedded')) {
-            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new OrganizationPagination()
+    }
+    object = super.constructFromData(data, object)
+
+    if (data.hasOwnProperty('_embedded')) {
+      object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType)
+    }
+
+    return object
+  }
 }

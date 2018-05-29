@@ -10,62 +10,62 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import OrganizationLinksBusinessActivity from './OrganizationLinksBusinessActivity';
-import OrganizationLinksLogo from './OrganizationLinksLogo';
-import OrganizationLinksSelf from './OrganizationLinksSelf';
+import ApiClient from '../ApiClient'
+import OrganizationLinksBusinessActivity from './OrganizationLinksBusinessActivity'
+import OrganizationLinksLogo from './OrganizationLinksLogo'
+import OrganizationLinksSelf from './OrganizationLinksSelf'
 
 /**
  * The OrganizationLinks model module.
  * @module model/OrganizationLinks
  */
 export default class OrganizationLinks {
-    /**
+  /**
      * Constructs a new "OrganizationLinks".
      * @alias module:model/OrganizationLinks
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.self = null;
-        this.businessActivity = null;
-        this.logo = null;
+  ) {
+    this.self = null
+    this.businessActivity = null
+    this.logo = null
 
-        this.selfType = OrganizationLinksSelf;
-        this.businessActivityType = OrganizationLinksBusinessActivity;
-        this.logoType = OrganizationLinksLogo;
-    }
+    this.selfType = OrganizationLinksSelf
+    this.businessActivityType = OrganizationLinksBusinessActivity
+    this.logoType = OrganizationLinksLogo
+  }
 
-    /**
+  /**
     * Constructs a "OrganizationLinks" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OrganizationLinks } object Optional instance to populate.
     * @return { module:model/OrganizationLinks } The populated "OrganizationLinks" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new OrganizationLinks();
-        }
-
-        if (data.hasOwnProperty('self')) {
-            object.self = ApiClient.convertToType(data.self, object.selfType);
-        }
-        if (data.hasOwnProperty('businessActivity')) {
-            object.businessActivity = ApiClient.convertToType(data.businessActivity, object.businessActivityType);
-        }
-        if (data.hasOwnProperty('logo')) {
-            object.logo = ApiClient.convertToType(data.logo, object.logoType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new OrganizationLinks()
+    }
+
+    if (data.hasOwnProperty('self')) {
+      object.self = ApiClient.convertToType(data.self, object.selfType)
+    }
+    if (data.hasOwnProperty('businessActivity')) {
+      object.businessActivity = ApiClient.convertToType(data.businessActivity, object.businessActivityType)
+    }
+    if (data.hasOwnProperty('logo')) {
+      object.logo = ApiClient.convertToType(data.logo, object.logoType)
+    }
+
+    return object
+  }
 }

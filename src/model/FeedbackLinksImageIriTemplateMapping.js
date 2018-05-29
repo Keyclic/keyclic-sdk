@@ -10,51 +10,51 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The FeedbackLinksImageIriTemplateMapping model module.
  * @module model/FeedbackLinksImageIriTemplateMapping
  */
 export default class FeedbackLinksImageIriTemplateMapping {
-    /**
+  /**
      * Constructs a new "FeedbackLinksImageIriTemplateMapping".
      * @alias module:model/FeedbackLinksImageIriTemplateMapping
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.image = null;
-        this.feedback = null;
-    }
+  ) {
+    this.image = null
+    this.feedback = null
+  }
 
-    /**
+  /**
     * Constructs a "FeedbackLinksImageIriTemplateMapping" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/FeedbackLinksImageIriTemplateMapping } object Optional instance to populate.
     * @return { module:model/FeedbackLinksImageIriTemplateMapping } The populated "FeedbackLinksImageIriTemplateMapping" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new FeedbackLinksImageIriTemplateMapping();
-        }
-
-        if (data.hasOwnProperty('image')) {
-            object.image = ApiClient.convertToType(data.image, 'String');
-        }
-        if (data.hasOwnProperty('feedback')) {
-            object.feedback = ApiClient.convertToType(data.feedback, 'String');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new FeedbackLinksImageIriTemplateMapping()
+    }
+
+    if (data.hasOwnProperty('image')) {
+      object.image = ApiClient.convertToType(data.image, 'String')
+    }
+    if (data.hasOwnProperty('feedback')) {
+      object.feedback = ApiClient.convertToType(data.feedback, 'String')
+    }
+
+    return object
+  }
 }

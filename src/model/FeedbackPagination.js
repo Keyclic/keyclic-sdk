@@ -10,57 +10,57 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import FeedbackCollection from './FeedbackCollection';
-import Pagination from './Pagination';
-import PaginationLinks from './PaginationLinks';
+import ApiClient from '../ApiClient'
+import FeedbackCollection from './FeedbackCollection'
+import Pagination from './Pagination'
+import PaginationLinks from './PaginationLinks'
 
 /**
  * The FeedbackPagination model module.
  * @module model/FeedbackPagination
  */
 export default class FeedbackPagination extends Pagination {
-    /**
+  /**
      * Constructs a new "FeedbackPagination".
      * @alias module:model/FeedbackPagination
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        super(
+  ) {
+    super(
 
-        );
+    )
 
-        this.embedded = null;
+    this.embedded = null
 
-        this.embeddedType = FeedbackCollection;
-    }
+    this.embeddedType = FeedbackCollection
+  }
 
-    /**
+  /**
     * Constructs a "FeedbackPagination" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/FeedbackPagination } object Optional instance to populate.
     * @return { module:model/FeedbackPagination } The populated "FeedbackPagination" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new FeedbackPagination();
-        }
-        object = super.constructFromData(data, object);
-
-        if (data.hasOwnProperty('_embedded')) {
-            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new FeedbackPagination()
+    }
+    object = super.constructFromData(data, object)
+
+    if (data.hasOwnProperty('_embedded')) {
+      object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType)
+    }
+
+    return object
+  }
 }

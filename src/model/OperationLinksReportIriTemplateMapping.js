@@ -10,47 +10,47 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The OperationLinksReportIriTemplateMapping model module.
  * @module model/OperationLinksReportIriTemplateMapping
  */
 export default class OperationLinksReportIriTemplateMapping {
-    /**
+  /**
      * Constructs a new "OperationLinksReportIriTemplateMapping".
      * @alias module:model/OperationLinksReportIriTemplateMapping
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.report = null;
-    }
+  ) {
+    this.report = null
+  }
 
-    /**
+  /**
     * Constructs a "OperationLinksReportIriTemplateMapping" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OperationLinksReportIriTemplateMapping } object Optional instance to populate.
     * @return { module:model/OperationLinksReportIriTemplateMapping } The populated "OperationLinksReportIriTemplateMapping" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new OperationLinksReportIriTemplateMapping();
-        }
-
-        if (data.hasOwnProperty('report')) {
-            object.report = ApiClient.convertToType(data.report, 'String');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new OperationLinksReportIriTemplateMapping()
+    }
+
+    if (data.hasOwnProperty('report')) {
+      object.report = ApiClient.convertToType(data.report, 'String')
+    }
+
+    return object
+  }
 }

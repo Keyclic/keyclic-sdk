@@ -10,15 +10,15 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import OrganizationLinks from './OrganizationLinks';
+import ApiClient from '../ApiClient'
+import OrganizationLinks from './OrganizationLinks'
 
 /**
  * The Organization model module.
  * @module model/Organization
  */
 export default class Organization {
-    /**
+  /**
      * Constructs a new "Organization".
      * @alias module:model/Organization
      * @class
@@ -32,88 +32,88 @@ export default class Organization {
      * @param updatedAt { Date }
 
      */
-    constructor(
+  constructor (
 
-        name,
+    name,
 
-        id,
+    id,
 
-        createdAt,
+    createdAt,
 
-        updatedAt,
+    updatedAt
 
-    ) {
-        this.name = name;
-        this.alternateName = null;
-        this.description = null;
-        this.billingEmailAddress = null;
-        this.notificationEmailAddress = null;
-        this.id = id;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.type = null;
-        this.isEnabled = null;
-        this.enabled = null;
-        this.links = null;
+  ) {
+    this.name = name
+    this.alternateName = null
+    this.description = null
+    this.billingEmailAddress = null
+    this.notificationEmailAddress = null
+    this.id = id
+    this.createdAt = createdAt
+    this.updatedAt = updatedAt
+    this.type = null
+    this.isEnabled = null
+    this.enabled = null
+    this.links = null
 
-        this.linksType = OrganizationLinks;
-    }
+    this.linksType = OrganizationLinks
+  }
 
-    /**
+  /**
     * Constructs a "Organization" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/Organization } object Optional instance to populate.
     * @return { module:model/Organization } The populated "Organization" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new Organization();
-        }
-
-        if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data.name, 'String');
-        }
-        if (data.hasOwnProperty('alternateName')) {
-            object.alternateName = ApiClient.convertToType(data.alternateName, 'String');
-        }
-        if (data.hasOwnProperty('description')) {
-            object.description = ApiClient.convertToType(data.description, 'String');
-        }
-        if (data.hasOwnProperty('billingEmailAddress')) {
-            object.billingEmailAddress = ApiClient.convertToType(data.billingEmailAddress, 'String');
-        }
-        if (data.hasOwnProperty('notificationEmailAddress')) {
-            object.notificationEmailAddress = ApiClient.convertToType(data.notificationEmailAddress, 'String');
-        }
-        if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data.id, 'String');
-        }
-        if (data.hasOwnProperty('createdAt')) {
-            object.createdAt = ApiClient.convertToType(data.createdAt, 'Date');
-        }
-        if (data.hasOwnProperty('updatedAt')) {
-            object.updatedAt = ApiClient.convertToType(data.updatedAt, 'Date');
-        }
-        if (data.hasOwnProperty('type')) {
-            object.type = ApiClient.convertToType(data.type, 'String');
-        }
-        if (data.hasOwnProperty('isEnabled')) {
-            object.isEnabled = ApiClient.convertToType(data.isEnabled, 'Boolean');
-        }
-        if (data.hasOwnProperty('enabled')) {
-            object.enabled = ApiClient.convertToType(data.enabled, 'Boolean');
-        }
-        if (data.hasOwnProperty('_links')) {
-            object.links = ApiClient.convertToType(data._links, object.linksType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new Organization()
+    }
+
+    if (data.hasOwnProperty('name')) {
+      object.name = ApiClient.convertToType(data.name, 'String')
+    }
+    if (data.hasOwnProperty('alternateName')) {
+      object.alternateName = ApiClient.convertToType(data.alternateName, 'String')
+    }
+    if (data.hasOwnProperty('description')) {
+      object.description = ApiClient.convertToType(data.description, 'String')
+    }
+    if (data.hasOwnProperty('billingEmailAddress')) {
+      object.billingEmailAddress = ApiClient.convertToType(data.billingEmailAddress, 'String')
+    }
+    if (data.hasOwnProperty('notificationEmailAddress')) {
+      object.notificationEmailAddress = ApiClient.convertToType(data.notificationEmailAddress, 'String')
+    }
+    if (data.hasOwnProperty('id')) {
+      object.id = ApiClient.convertToType(data.id, 'String')
+    }
+    if (data.hasOwnProperty('createdAt')) {
+      object.createdAt = ApiClient.convertToType(data.createdAt, 'Date')
+    }
+    if (data.hasOwnProperty('updatedAt')) {
+      object.updatedAt = ApiClient.convertToType(data.updatedAt, 'Date')
+    }
+    if (data.hasOwnProperty('type')) {
+      object.type = ApiClient.convertToType(data.type, 'String')
+    }
+    if (data.hasOwnProperty('isEnabled')) {
+      object.isEnabled = ApiClient.convertToType(data.isEnabled, 'Boolean')
+    }
+    if (data.hasOwnProperty('enabled')) {
+      object.enabled = ApiClient.convertToType(data.enabled, 'Boolean')
+    }
+    if (data.hasOwnProperty('_links')) {
+      object.links = ApiClient.convertToType(data._links, object.linksType)
+    }
+
+    return object
+  }
 }

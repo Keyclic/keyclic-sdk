@@ -1,8 +1,9 @@
-# KeyclicApi.OperationEmbedded
+# KeyclicApi.WebhookPatch
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**stateTransitions** | **[String]** |  | [optional] 
+**event** | **String** |  | [optional] 
+**payloadUrl** | **String** |  | [optional] 
 
 

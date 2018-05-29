@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+usage() {
+    echo "Usage of run.sh command:
+
+    deploy                          Deploy project to npmjs.com registry.
+    generate                        Generate documentations, sources and tests thanks to swagger definition.
+    "
+}
+
+deploy () {
+    # This script generates Swagger codegen client
+    # then it generates app-sdk from templates and swagger.json file
+    # then it fixes src and test files.
+    echo "---------------------------------------"
+    echo "Deploying @keyclic/app-sdk to npmjs.com"
+    echo "---------------------------------------"
+
+    npx webpack ./src/index.js -o dist/bundle.js --mode=production --module-bind js=babel-loader
+    npm publish --access public
+}
+
+generate () {
+    ./bin/generate
+}
+
+main () {
+    if [ -z $1 ]; then
+        usage
+        exit 0
+    fi
+
+    if [[ ! $1 =~ ^deploy|generate$ ]]; then
+        echo "$1 is not a supported command."
+        exit 1
+    fi
+
+    "$@"
+}
+
+main "$@"

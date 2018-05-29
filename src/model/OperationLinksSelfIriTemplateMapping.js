@@ -10,47 +10,47 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The OperationLinksSelfIriTemplateMapping model module.
  * @module model/OperationLinksSelfIriTemplateMapping
  */
 export default class OperationLinksSelfIriTemplateMapping {
-    /**
+  /**
      * Constructs a new "OperationLinksSelfIriTemplateMapping".
      * @alias module:model/OperationLinksSelfIriTemplateMapping
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.operation = null;
-    }
+  ) {
+    this.operation = null
+  }
 
-    /**
+  /**
     * Constructs a "OperationLinksSelfIriTemplateMapping" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OperationLinksSelfIriTemplateMapping } object Optional instance to populate.
     * @return { module:model/OperationLinksSelfIriTemplateMapping } The populated "OperationLinksSelfIriTemplateMapping" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new OperationLinksSelfIriTemplateMapping();
-        }
-
-        if (data.hasOwnProperty('operation')) {
-            object.operation = ApiClient.convertToType(data.operation, 'String');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new OperationLinksSelfIriTemplateMapping()
+    }
+
+    if (data.hasOwnProperty('operation')) {
+      object.operation = ApiClient.convertToType(data.operation, 'String')
+    }
+
+    return object
+  }
 }

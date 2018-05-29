@@ -10,51 +10,51 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The PlacePatch model module.
  * @module model/PlacePatch
  */
 export default class PlacePatch {
-    /**
+  /**
      * Constructs a new "PlacePatch".
      * @alias module:model/PlacePatch
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.branchCode = null;
-        this.name = null;
-    }
+  ) {
+    this.branchCode = null
+    this.name = null
+  }
 
-    /**
+  /**
     * Constructs a "PlacePatch" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/PlacePatch } object Optional instance to populate.
     * @return { module:model/PlacePatch } The populated "PlacePatch" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new PlacePatch();
-        }
-
-        if (data.hasOwnProperty('branchCode')) {
-            object.branchCode = ApiClient.convertToType(data.branchCode, 'String');
-        }
-        if (data.hasOwnProperty('name')) {
-            object.name = ApiClient.convertToType(data.name, 'String');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new PlacePatch()
+    }
+
+    if (data.hasOwnProperty('branchCode')) {
+      object.branchCode = ApiClient.convertToType(data.branchCode, 'String')
+    }
+    if (data.hasOwnProperty('name')) {
+      object.name = ApiClient.convertToType(data.name, 'String')
+    }
+
+    return object
+  }
 }

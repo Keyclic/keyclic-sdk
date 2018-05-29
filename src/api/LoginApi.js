@@ -10,31 +10,31 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import Error from '../model/Error';
-import LoginData from '../model/LoginData';
-import SuccessLogin from '../model/SuccessLogin';
+import ApiClient from '../ApiClient'
+import Error from '../model/Error'
+import LoginData from '../model/LoginData'
+import SuccessLogin from '../model/SuccessLogin'
 
 /**
  * Login service.
  * @module api/LoginApi
  */
 export default class LoginApi extends ApiClient {
-    /**
+  /**
      * @class
      * { string } basePath To override basePath.
      * { object } headers Additional headers for the instance.
      * { int } timeout Number in seconds before timeout.
      */
-    constructor(
-        basePath = null,
-        headers = null,
-        timeout = null
-    ) {
-        super(basePath, headers, timeout);
-    }
+  constructor (
+    basePath = null,
+    headers = null,
+    timeout = null
+  ) {
+    super(basePath, headers, timeout)
+  }
 
-    /**
+  /**
      * Create one Login resource.
      * @param { String } xKeyclicApp
      * @param { SuccessLogin }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
@@ -42,80 +42,80 @@ export default class LoginApi extends ApiClient {
      * @param { String } xKeyclicAppVersion
      * @param { module:model/LoginData } loginData
      */
-    postLogin(
-        returnType = null,
-        options,
-    ) {
-        if (returnType === null) {
-            returnType = SuccessLogin;
-        }
-
-        let {
-            xKeyclicApp,
-            acceptLanguage,
-            xKeyclicAppVersion,
-            loginData,
-        } = options;
-
-        // verify the required parameter 'xKeyclicApp' is set
-        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postLogin');
-        }
-
-        // verify the default value of parameter 'acceptLanguage'
-        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
-        }
-
-        // verify the null value of parameter 'xKeyclicAppVersion'
-        if (typeof xKeyclicAppVersion === 'undefined') {
-            xKeyclicAppVersion = null;
-        }
-
-        // verify the null value of parameter 'loginData'
-        if (typeof loginData === 'undefined') {
-            loginData = null;
-        }
-
-        let pathParams = {
-        };
-
-        let bodyParam = loginData;
-
-        let queryParams = {
-        };
-
-        let headerParams = {
-            'accept-language': acceptLanguage,
-            'x-keyclic-app': xKeyclicApp,
-            'x-keyclic-app-version': xKeyclicAppVersion,
-        };
-
-        let credentialParams = null;
-
-        let authNames = [
-        ];
-
-        let contentTypes = [
-            'application/json;charset=UTF-8',
-        ];
-
-        let accepts = [
-            'application/hal+json;charset=UTF-8',
-        ];
-
-        return this.callApi(
-            '/security/login',
-            'POST',
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-        );
+  postLogin (
+    returnType = null,
+    options
+  ) {
+    if (returnType === null) {
+      returnType = SuccessLogin
     }
+
+    let {
+      xKeyclicApp,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      loginData
+    } = options
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postLogin')
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+      acceptLanguage = "fr-FR" // eslint-disable-line quotes
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === 'undefined') {
+      xKeyclicAppVersion = null
+    }
+
+    // verify the null value of parameter 'loginData'
+    if (typeof loginData === 'undefined') {
+      loginData = null
+    }
+
+    let pathParams = {
+    }
+
+    let bodyParam = loginData
+
+    let queryParams = {
+    }
+
+    let headerParams = {
+      'accept-language': acceptLanguage,
+      'x-keyclic-app': xKeyclicApp,
+      'x-keyclic-app-version': xKeyclicAppVersion
+    }
+
+    let credentialParams = null
+
+    let authNames = [
+    ]
+
+    let contentTypes = [
+      'application/json;charset=UTF-8'
+    ]
+
+    let accepts = [
+      'application/hal+json;charset=UTF-8'
+    ]
+
+    return this.callApi(
+      '/security/login',
+      'POST',
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    )
+  }
 }

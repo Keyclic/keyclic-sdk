@@ -10,51 +10,51 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
+import ApiClient from '../ApiClient'
 
 /**
  * The FeedbackEmbedded model module.
  * @module model/FeedbackEmbedded
  */
 export default class FeedbackEmbedded {
-    /**
+  /**
      * Constructs a new "FeedbackEmbedded".
      * @alias module:model/FeedbackEmbedded
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        this.stateTransitions = [];
-        this.tracking = null;
-    }
+  ) {
+    this.stateTransitions = []
+    this.tracking = null
+  }
 
-    /**
+  /**
     * Constructs a "FeedbackEmbedded" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/FeedbackEmbedded } object Optional instance to populate.
     * @return { module:model/FeedbackEmbedded } The populated "FeedbackEmbedded" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new FeedbackEmbedded();
-        }
-
-        if (data.hasOwnProperty('stateTransitions')) {
-            object.stateTransitions = ApiClient.convertToType(data.stateTransitions, '[\'String\']');
-        }
-        if (data.hasOwnProperty('tracking')) {
-            object.tracking = ApiClient.convertToType(data.tracking, 'String');
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new FeedbackEmbedded()
+    }
+
+    if (data.hasOwnProperty('stateTransitions')) {
+      object.stateTransitions = ApiClient.convertToType(data.stateTransitions, '[\'String\']')
+    }
+    if (data.hasOwnProperty('tracking')) {
+      object.tracking = ApiClient.convertToType(data.tracking, 'String')
+    }
+
+    return object
+  }
 }

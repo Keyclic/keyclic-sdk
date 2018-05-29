@@ -10,30 +10,30 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import Error from '../model/Error';
-import Report from '../model/Report';
+import ApiClient from '../ApiClient'
+import Error from '../model/Error'
+import Report from '../model/Report'
 
 /**
  * Export service.
  * @module api/ExportApi
  */
 export default class ExportApi extends ApiClient {
-    /**
+  /**
      * @class
      * { string } basePath To override basePath.
      * { object } headers Additional headers for the instance.
      * { int } timeout Number in seconds before timeout.
      */
-    constructor(
-        basePath = null,
-        headers = null,
-        timeout = null
-    ) {
-        super(basePath, headers, timeout);
-    }
+  constructor (
+    basePath = null,
+    headers = null,
+    timeout = null
+  ) {
+    super(basePath, headers, timeout)
+  }
 
-    /**
+  /**
      * Retrieve all Export resources.
      * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
@@ -50,143 +50,143 @@ export default class ExportApi extends ApiClient {
      * @param { Date } after
      * @param { Date } before
      */
-    cpostExportByOrganization(
-        returnType = null,
-        options,
-        credentials,
-    ) {
-        if (returnType === null) {
-            returnType = Report;
-        }
-
-        let {
-            xKeyclicApp,
-            organization,
-            acceptLanguage,
-            xKeyclicAppVersion,
-            place,
-            state,
-            category,
-            page,
-            limit,
-            order,
-            after,
-            before,
-        } = options;
-
-        // verify the required parameter 'xKeyclicApp' is set
-        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cpostExportByOrganization');
-        }
-
-        // verify the required parameter 'organization' is set
-        if (typeof organization === 'undefined' || organization === null) {
-            throw new window.Error('Missing the required parameter "organization" when calling cpostExportByOrganization');
-        }
-
-        // verify the default value of parameter 'acceptLanguage'
-        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-            acceptLanguage = "fr-FR"; // eslint-disable-line quotes
-        }
-
-        // verify the default value of parameter 'page'
-        if (typeof page === 'undefined' || page === null) {
-            page = 1; // eslint-disable-line quotes
-        }
-
-        // verify the default value of parameter 'limit'
-        if (typeof limit === 'undefined' || limit === null) {
-            limit = 10; // eslint-disable-line quotes
-        }
-
-        // verify the default value of parameter 'order'
-        if (typeof order === 'undefined' || order === null) {
-            order = "desc"; // eslint-disable-line quotes
-        }
-
-        // verify the null value of parameter 'xKeyclicAppVersion'
-        if (typeof xKeyclicAppVersion === 'undefined') {
-            xKeyclicAppVersion = null;
-        }
-
-        // verify the null value of parameter 'place'
-        if (typeof place === 'undefined') {
-            place = null;
-        }
-
-        // verify the null value of parameter 'state'
-        if (typeof state === 'undefined') {
-            state = null;
-        }
-
-        // verify the null value of parameter 'category'
-        if (typeof category === 'undefined') {
-            category = null;
-        }
-
-        // verify the null value of parameter 'after'
-        if (typeof after === 'undefined') {
-            after = null;
-        }
-
-        // verify the null value of parameter 'before'
-        if (typeof before === 'undefined') {
-            before = null;
-        }
-
-        if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling cpostExportByOrganization');
-        }
-
-        let pathParams = {
-            'organization': organization,
-        };
-
-        let bodyParam = null;
-
-        let queryParams = {
-            'place': place,
-            'state': state,
-            'category': category,
-            'page': page,
-            'limit': limit,
-            'order': order,
-            'after': after,
-            'before': before,
-        };
-
-        let headerParams = {
-            'accept-language': acceptLanguage,
-            'x-keyclic-app': xKeyclicApp,
-            'x-keyclic-app-version': xKeyclicAppVersion,
-        };
-
-        let credentialParams = credentials;
-
-        let authNames = [
-            'bearer',
-        ];
-
-        let contentTypes = [
-            'application/json;charset=UTF-8',
-        ];
-
-        let accepts = [
-            'application/hal+json;charset=UTF-8',
-        ];
-
-        return this.callApi(
-            '/organizations/{organization}/reports/exports',
-            'POST',
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-        );
+  cpostExportByOrganization (
+    returnType = null,
+    options,
+    credentials
+  ) {
+    if (returnType === null) {
+      returnType = Report
     }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      place,
+      state,
+      category,
+      page,
+      limit,
+      order,
+      after,
+      before
+    } = options
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cpostExportByOrganization')
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === 'undefined' || organization === null) {
+      throw new window.Error('Missing the required parameter "organization" when calling cpostExportByOrganization')
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+      acceptLanguage = "fr-FR" // eslint-disable-line quotes
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === 'undefined' || page === null) {
+      page = 1 // eslint-disable-line quotes
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === 'undefined' || limit === null) {
+      limit = 10 // eslint-disable-line quotes
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === 'undefined' || order === null) {
+      order = "desc" // eslint-disable-line quotes
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === 'undefined') {
+      xKeyclicAppVersion = null
+    }
+
+    // verify the null value of parameter 'place'
+    if (typeof place === 'undefined') {
+      place = null
+    }
+
+    // verify the null value of parameter 'state'
+    if (typeof state === 'undefined') {
+      state = null
+    }
+
+    // verify the null value of parameter 'category'
+    if (typeof category === 'undefined') {
+      category = null
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === 'undefined') {
+      after = null
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === 'undefined') {
+      before = null
+    }
+
+    if (typeof credentials === 'undefined' || credentials === null) {
+      throw new window.Error('Missing the required parameter "credentials" when calling cpostExportByOrganization')
+    }
+
+    let pathParams = {
+      'organization': organization
+    }
+
+    let bodyParam = null
+
+    let queryParams = {
+      'place': place,
+      'state': state,
+      'category': category,
+      'page': page,
+      'limit': limit,
+      'order': order,
+      'after': after,
+      'before': before
+    }
+
+    let headerParams = {
+      'accept-language': acceptLanguage,
+      'x-keyclic-app': xKeyclicApp,
+      'x-keyclic-app-version': xKeyclicAppVersion
+    }
+
+    let credentialParams = credentials
+
+    let authNames = [
+      'bearer'
+    ]
+
+    let contentTypes = [
+      'application/json;charset=UTF-8'
+    ]
+
+    let accepts = [
+      'application/hal+json;charset=UTF-8'
+    ]
+
+    return this.callApi(
+      '/organizations/{organization}/reports/exports',
+      'POST',
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    )
+  }
 }

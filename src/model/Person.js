@@ -10,16 +10,16 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import PersonLinks from './PersonLinks';
-import PersonPreferences from './PersonPreferences';
+import ApiClient from '../ApiClient'
+import PersonLinks from './PersonLinks'
+import PersonPreferences from './PersonPreferences'
 
 /**
  * The Person model module.
  * @module model/Person
  */
 export default class Person {
-    /**
+  /**
      * Constructs a new "Person".
      * @alias module:model/Person
      * @class
@@ -35,91 +35,91 @@ export default class Person {
      * @param updatedAt { Date }
 
      */
-    constructor(
+  constructor (
 
-        id,
+    id,
 
-        optIn,
+    optIn,
 
-        preferences,
+    preferences,
 
-        createdAt,
+    createdAt,
 
-        updatedAt,
+    updatedAt
 
-    ) {
-        this.id = id;
-        this.familyName = null;
-        this.givenName = null;
-        this.jobTitle = null;
-        this.optIn = optIn;
-        this.preferences = preferences;
-        this.username = null;
-        this.email = null;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.type = null;
-        this.links = null;
+  ) {
+    this.id = id
+    this.familyName = null
+    this.givenName = null
+    this.jobTitle = null
+    this.optIn = optIn
+    this.preferences = preferences
+    this.username = null
+    this.email = null
+    this.createdAt = createdAt
+    this.updatedAt = updatedAt
+    this.type = null
+    this.links = null
 
-        this.preferencesType = PersonPreferences;
-        this.linksType = PersonLinks;
-    }
+    this.preferencesType = PersonPreferences
+    this.linksType = PersonLinks
+  }
 
-    /**
+  /**
     * Constructs a "Person" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/Person } object Optional instance to populate.
     * @return { module:model/Person } The populated "Person" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new Person();
-        }
-
-        if (data.hasOwnProperty('id')) {
-            object.id = ApiClient.convertToType(data.id, 'String');
-        }
-        if (data.hasOwnProperty('familyName')) {
-            object.familyName = ApiClient.convertToType(data.familyName, 'String');
-        }
-        if (data.hasOwnProperty('givenName')) {
-            object.givenName = ApiClient.convertToType(data.givenName, 'String');
-        }
-        if (data.hasOwnProperty('jobTitle')) {
-            object.jobTitle = ApiClient.convertToType(data.jobTitle, 'String');
-        }
-        if (data.hasOwnProperty('optIn')) {
-            object.optIn = ApiClient.convertToType(data.optIn, 'Boolean');
-        }
-        if (data.hasOwnProperty('preferences')) {
-            object.preferences = ApiClient.convertToType(data.preferences, object.preferencesType);
-        }
-        if (data.hasOwnProperty('username')) {
-            object.username = ApiClient.convertToType(data.username, 'String');
-        }
-        if (data.hasOwnProperty('email')) {
-            object.email = ApiClient.convertToType(data.email, 'String');
-        }
-        if (data.hasOwnProperty('createdAt')) {
-            object.createdAt = ApiClient.convertToType(data.createdAt, 'Date');
-        }
-        if (data.hasOwnProperty('updatedAt')) {
-            object.updatedAt = ApiClient.convertToType(data.updatedAt, 'Date');
-        }
-        if (data.hasOwnProperty('type')) {
-            object.type = ApiClient.convertToType(data.type, 'String');
-        }
-        if (data.hasOwnProperty('_links')) {
-            object.links = ApiClient.convertToType(data._links, object.linksType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new Person()
+    }
+
+    if (data.hasOwnProperty('id')) {
+      object.id = ApiClient.convertToType(data.id, 'String')
+    }
+    if (data.hasOwnProperty('familyName')) {
+      object.familyName = ApiClient.convertToType(data.familyName, 'String')
+    }
+    if (data.hasOwnProperty('givenName')) {
+      object.givenName = ApiClient.convertToType(data.givenName, 'String')
+    }
+    if (data.hasOwnProperty('jobTitle')) {
+      object.jobTitle = ApiClient.convertToType(data.jobTitle, 'String')
+    }
+    if (data.hasOwnProperty('optIn')) {
+      object.optIn = ApiClient.convertToType(data.optIn, 'Boolean')
+    }
+    if (data.hasOwnProperty('preferences')) {
+      object.preferences = ApiClient.convertToType(data.preferences, object.preferencesType)
+    }
+    if (data.hasOwnProperty('username')) {
+      object.username = ApiClient.convertToType(data.username, 'String')
+    }
+    if (data.hasOwnProperty('email')) {
+      object.email = ApiClient.convertToType(data.email, 'String')
+    }
+    if (data.hasOwnProperty('createdAt')) {
+      object.createdAt = ApiClient.convertToType(data.createdAt, 'Date')
+    }
+    if (data.hasOwnProperty('updatedAt')) {
+      object.updatedAt = ApiClient.convertToType(data.updatedAt, 'Date')
+    }
+    if (data.hasOwnProperty('type')) {
+      object.type = ApiClient.convertToType(data.type, 'String')
+    }
+    if (data.hasOwnProperty('_links')) {
+      object.links = ApiClient.convertToType(data._links, object.linksType)
+    }
+
+    return object
+  }
 }

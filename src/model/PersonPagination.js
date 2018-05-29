@@ -10,57 +10,57 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient';
-import Pagination from './Pagination';
-import PaginationLinks from './PaginationLinks';
-import PersonCollection from './PersonCollection';
+import ApiClient from '../ApiClient'
+import Pagination from './Pagination'
+import PaginationLinks from './PaginationLinks'
+import PersonCollection from './PersonCollection'
 
 /**
  * The PersonPagination model module.
  * @module model/PersonPagination
  */
 export default class PersonPagination extends Pagination {
-    /**
+  /**
      * Constructs a new "PersonPagination".
      * @alias module:model/PersonPagination
      * @class
 
      */
-    constructor(
+  constructor (
 
-    ) {
-        super(
+  ) {
+    super(
 
-        );
+    )
 
-        this.embedded = null;
+    this.embedded = null
 
-        this.embeddedType = PersonCollection;
-    }
+    this.embeddedType = PersonCollection
+  }
 
-    /**
+  /**
     * Constructs a "PersonPagination" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/PersonPagination } object Optional instance to populate.
     * @return { module:model/PersonPagination } The populated "PersonPagination" instance.
     */
-    static constructFromData(
-        data,
-        object = null,
-    ) {
-        if (data === null) {
-            throw new Error('No data to build object');
-        }
-
-        if (object === null) {
-            object = new PersonPagination();
-        }
-        object = super.constructFromData(data, object);
-
-        if (data.hasOwnProperty('_embedded')) {
-            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
-        }
-
-        return object;
+  static constructFromData (
+    data,
+    object = null
+  ) {
+    if (data === null) {
+      throw new Error('No data to build object')
     }
+
+    if (object === null) {
+      object = new PersonPagination()
+    }
+    object = super.constructFromData(data, object)
+
+    if (data.hasOwnProperty('_embedded')) {
+      object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType)
+    }
+
+    return object
+  }
 }
