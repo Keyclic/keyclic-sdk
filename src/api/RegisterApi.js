@@ -10,112 +10,120 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import Error from '../model/Error'
-import Person from '../model/Person'
-import RegisterData from '../model/RegisterData'
+import ApiClient from '../ApiClient';
+import Error from '../model/Error';
+import Person from '../model/Person';
+import RegisterData from '../model/RegisterData';
 
 /**
  * Register service.
  * @module api/RegisterApi
  */
 export default class RegisterApi extends ApiClient {
-  /**
+    /**
      * @class
      * { string } basePath To override basePath.
      * { object } headers Additional headers for the instance.
      * { int } timeout Number in seconds before timeout.
      */
-  constructor (
-    basePath = null,
-    headers = null,
-    timeout = null
-  ) {
-    super(basePath, headers, timeout)
-  }
+    constructor(
+        basePath = null,
+        headers = null,
+        timeout = null
+    ) {
+        super(basePath, headers, timeout);
+    }
 
-  /**
+    /**
      * Create one Register resource.
      * @param { String } xKeyclicApp
      * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
-     * @param { module:model/RegisterData } registerData
+     * @param { String } xKeyclicAppVersion  
+     * @param { module:model/RegisterData } registerData  
      */
-  postRegister (
-    returnType = null,
-    options
-  ) {
-    if (returnType === null) {
-      returnType = Person
+    postRegister(
+        returnType = null,
+        options,
+    ) {
+        if (returnType === null) {
+            returnType = Person;
+        }
+
+        let {
+            xKeyclicApp,
+            acceptLanguage,
+            xKeyclicAppVersion,
+            registerData,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postRegister');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+        // verify the null value of parameter 'registerData'
+        if (typeof registerData === 'undefined') {
+            registerData = null;
+        }
+        
+
+
+        let pathParams = {
+        };
+
+        let bodyParam = registerData;
+
+        let queryParams = {
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = null;
+
+        let authNames = [
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/security/register',
+            'POST',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    let {
-      xKeyclicApp,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      registerData
-    } = options
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postRegister')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    // verify the null value of parameter 'registerData'
-    if (typeof registerData === 'undefined') {
-      registerData = null
-    }
-
-    let pathParams = {
-    }
-
-    let bodyParam = registerData
-
-    let queryParams = {
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = null
-
-    let authNames = [
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/security/register',
-      'POST',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
 }

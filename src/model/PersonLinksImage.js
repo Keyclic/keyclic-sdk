@@ -10,54 +10,65 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import FeedbackLinksReporterIriTemplate from './FeedbackLinksReporterIriTemplate'
+
+import ApiClient from '../ApiClient';
+import FeedbackLinksReporterIriTemplate from './FeedbackLinksReporterIriTemplate';
+
+
+    
 
 /**
  * The PersonLinksImage model module.
  * @module model/PersonLinksImage
  */
-export default class PersonLinksImage {
-  /**
+export default class PersonLinksImage  {
+    /**
      * Constructs a new "PersonLinksImage".
      * @alias module:model/PersonLinksImage
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.href = null
-    this.iriTemplate = null
+        this.href = null;
+        this.iriTemplate = null;
 
-    this.iriTemplateType = FeedbackLinksReporterIriTemplate
-  }
+        this.iriTemplateType = FeedbackLinksReporterIriTemplate;
+    }
 
-  /**
+    /**
     * Constructs a "PersonLinksImage" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/PersonLinksImage } object Optional instance to populate.
     * @return { module:model/PersonLinksImage } The populated "PersonLinksImage" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new PersonLinksImage();
+        }
+
+        if (data.hasOwnProperty('href')) {
+            object.href = ApiClient.convertToType(data.href, 'String');
+        }
+        if (data.hasOwnProperty('iriTemplate')) {
+            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new PersonLinksImage()
-    }
+    
 
-    if (data.hasOwnProperty('href')) {
-      object.href = ApiClient.convertToType(data.href, 'String')
-    }
-    if (data.hasOwnProperty('iriTemplate')) {
-      object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType)
-    }
-
-    return object
-  }
 }
+
+
+

@@ -10,53 +10,61 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.FeedbackLinksCategory()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.FeedbackLinksCategory();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('FeedbackLinksCategory', function () {
-    it('should create an instance of FeedbackLinksCategory', function () {
+  describe('FeedbackLinksCategory', function() {
+    it('should create an instance of FeedbackLinksCategory', function() {
       // uncomment below and update the code to test FeedbackLinksCategory
-      // var instane = new KeyclicApi.FeedbackLinksCategory();
-      // expect(instance).to.be.a(KeyclicApi.FeedbackLinksCategory);
-    })
+      //var instane = new KeyclicApi.FeedbackLinksCategory();
+      //expect(instance).to.be.a(KeyclicApi.FeedbackLinksCategory);
+    });
 
-    it('should have the property href (base name: "href")', function () {
+    it('should have the property href (base name: "href")', function() {
       // uncomment below and update the code to test the property href
-      // var instane = new KeyclicApi.FeedbackLinksCategory();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.FeedbackLinksCategory();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property iriTemplate (base name: "iriTemplate")', function () {
+    it('should have the property iriTemplate (base name: "iriTemplate")', function() {
       // uncomment below and update the code to test the property iriTemplate
-      // var instane = new KeyclicApi.FeedbackLinksCategory();
-      // expect(instance).to.be();
-    })
-  })
-}))
+      //var instane = new KeyclicApi.FeedbackLinksCategory();
+      //expect(instance).to.be();
+    });
+
+  });
+
+}));

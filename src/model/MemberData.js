@@ -10,51 +10,63 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
+
+import ApiClient from '../ApiClient';
+
+
+    
 
 /**
  * The MemberData model module.
  * @module model/MemberData
  */
-export default class MemberData {
-  /**
+export default class MemberData  {
+    /**
      * Constructs a new "MemberData".
      * @alias module:model/MemberData
      * @class
-
+    
      * @param member { String }
-
+    
      */
-  constructor (
+    constructor(
+    
+        member,
+    
+    ) {
 
-    member
+        this.member = member;
 
-  ) {
-    this.member = member
-  }
+    }
 
-  /**
+    /**
     * Constructs a "MemberData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/MemberData } object Optional instance to populate.
     * @return { module:model/MemberData } The populated "MemberData" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new MemberData();
+        }
+
+        if (data.hasOwnProperty('member')) {
+            object.member = ApiClient.convertToType(data.member, 'String');
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new MemberData()
-    }
+    
 
-    if (data.hasOwnProperty('member')) {
-      object.member = ApiClient.convertToType(data.member, 'String')
-    }
-
-    return object
-  }
 }
+
+
+

@@ -10,67 +10,79 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
+
+import ApiClient from '../ApiClient';
+
+
+    
 
 /**
  * The OrganizationPatch model module.
  * @module model/OrganizationPatch
  */
-export default class OrganizationPatch {
-  /**
+export default class OrganizationPatch  {
+    /**
      * Constructs a new "OrganizationPatch".
      * @alias module:model/OrganizationPatch
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.name = null
-    this.alternateName = null
-    this.description = null
-    this.logo = null
-    this.billingEmailAddress = null
-    this.notificationEmailAddress = null
-  }
+        this.name = null;
+        this.alternateName = null;
+        this.description = null;
+        this.logo = null;
+        this.billingEmailAddress = null;
+        this.notificationEmailAddress = null;
 
-  /**
+    }
+
+    /**
     * Constructs a "OrganizationPatch" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OrganizationPatch } object Optional instance to populate.
     * @return { module:model/OrganizationPatch } The populated "OrganizationPatch" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new OrganizationPatch();
+        }
+
+        if (data.hasOwnProperty('name')) {
+            object.name = ApiClient.convertToType(data.name, 'String');
+        }
+        if (data.hasOwnProperty('alternateName')) {
+            object.alternateName = ApiClient.convertToType(data.alternateName, 'String');
+        }
+        if (data.hasOwnProperty('description')) {
+            object.description = ApiClient.convertToType(data.description, 'String');
+        }
+        if (data.hasOwnProperty('logo')) {
+            object.logo = ApiClient.convertToType(data.logo, 'String');
+        }
+        if (data.hasOwnProperty('billingEmailAddress')) {
+            object.billingEmailAddress = ApiClient.convertToType(data.billingEmailAddress, 'String');
+        }
+        if (data.hasOwnProperty('notificationEmailAddress')) {
+            object.notificationEmailAddress = ApiClient.convertToType(data.notificationEmailAddress, 'String');
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new OrganizationPatch()
-    }
+    
 
-    if (data.hasOwnProperty('name')) {
-      object.name = ApiClient.convertToType(data.name, 'String')
-    }
-    if (data.hasOwnProperty('alternateName')) {
-      object.alternateName = ApiClient.convertToType(data.alternateName, 'String')
-    }
-    if (data.hasOwnProperty('description')) {
-      object.description = ApiClient.convertToType(data.description, 'String')
-    }
-    if (data.hasOwnProperty('logo')) {
-      object.logo = ApiClient.convertToType(data.logo, 'String')
-    }
-    if (data.hasOwnProperty('billingEmailAddress')) {
-      object.billingEmailAddress = ApiClient.convertToType(data.billingEmailAddress, 'String')
-    }
-    if (data.hasOwnProperty('notificationEmailAddress')) {
-      object.notificationEmailAddress = ApiClient.convertToType(data.notificationEmailAddress, 'String')
-    }
-
-    return object
-  }
 }
+
+
+

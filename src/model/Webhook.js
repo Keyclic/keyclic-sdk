@@ -10,86 +10,97 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import WebhookLinks from './WebhookLinks'
+
+import ApiClient from '../ApiClient';
+import WebhookLinks from './WebhookLinks';
+
+
+    
 
 /**
  * The Webhook model module.
  * @module model/Webhook
  */
-export default class Webhook {
-  /**
+export default class Webhook  {
+    /**
      * Constructs a new "Webhook".
      * @alias module:model/Webhook
      * @class
-
+    
      * @param event { String }
-
+    
      * @param payloadUrl { String }
-
+    
      * @param enabled { Boolean }
-
+    
      * @param id { String }
-
+    
      */
-  constructor (
+    constructor(
+    
+        event,
+    
+        payloadUrl,
+    
+        enabled,
+    
+        id,
+    
+    ) {
 
-    event,
+        this.event = event;
+        this.payloadUrl = payloadUrl;
+        this.enabled = enabled;
+        this.id = id;
+        this.type = null;
+        this.links = null;
 
-    payloadUrl,
+        this.linksType = WebhookLinks;
+    }
 
-    enabled,
-
-    id
-
-  ) {
-    this.event = event
-    this.payloadUrl = payloadUrl
-    this.enabled = enabled
-    this.id = id
-    this.type = null
-    this.links = null
-
-    this.linksType = WebhookLinks
-  }
-
-  /**
+    /**
     * Constructs a "Webhook" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/Webhook } object Optional instance to populate.
     * @return { module:model/Webhook } The populated "Webhook" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new Webhook();
+        }
+
+        if (data.hasOwnProperty('event')) {
+            object.event = ApiClient.convertToType(data.event, 'String');
+        }
+        if (data.hasOwnProperty('payloadUrl')) {
+            object.payloadUrl = ApiClient.convertToType(data.payloadUrl, 'String');
+        }
+        if (data.hasOwnProperty('enabled')) {
+            object.enabled = ApiClient.convertToType(data.enabled, 'Boolean');
+        }
+        if (data.hasOwnProperty('id')) {
+            object.id = ApiClient.convertToType(data.id, 'String');
+        }
+        if (data.hasOwnProperty('type')) {
+            object.type = ApiClient.convertToType(data.type, 'String');
+        }
+        if (data.hasOwnProperty('_links')) {
+            object.links = ApiClient.convertToType(data._links, object.linksType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new Webhook()
-    }
+    
 
-    if (data.hasOwnProperty('event')) {
-      object.event = ApiClient.convertToType(data.event, 'String')
-    }
-    if (data.hasOwnProperty('payloadUrl')) {
-      object.payloadUrl = ApiClient.convertToType(data.payloadUrl, 'String')
-    }
-    if (data.hasOwnProperty('enabled')) {
-      object.enabled = ApiClient.convertToType(data.enabled, 'Boolean')
-    }
-    if (data.hasOwnProperty('id')) {
-      object.id = ApiClient.convertToType(data.id, 'String')
-    }
-    if (data.hasOwnProperty('type')) {
-      object.type = ApiClient.convertToType(data.type, 'String')
-    }
-    if (data.hasOwnProperty('_links')) {
-      object.links = ApiClient.convertToType(data._links, object.linksType)
-    }
-
-    return object
-  }
 }
+
+
+

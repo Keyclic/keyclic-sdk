@@ -10,50 +10,61 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import Organization from './Organization'
+
+import ApiClient from '../ApiClient';
+import Organization from './Organization';
+
+
+    
 
 /**
  * The OrganizationCollection model module.
  * @module model/OrganizationCollection
  */
-export default class OrganizationCollection {
-  /**
+export default class OrganizationCollection  {
+    /**
      * Constructs a new "OrganizationCollection".
      * @alias module:model/OrganizationCollection
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.items = []
+        this.items = [];
 
-    this.itemsType = Organization
-  }
+        this.itemsType = Organization;
+    }
 
-  /**
+    /**
     * Constructs a "OrganizationCollection" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OrganizationCollection } object Optional instance to populate.
     * @return { module:model/OrganizationCollection } The populated "OrganizationCollection" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new OrganizationCollection();
+        }
+
+        if (data.hasOwnProperty('items')) {
+            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new OrganizationCollection()
-    }
+    
 
-    if (data.hasOwnProperty('items')) {
-      object.items = ApiClient.convertToType(data.items, [object.itemsType])
-    }
-
-    return object
-  }
 }
+
+
+

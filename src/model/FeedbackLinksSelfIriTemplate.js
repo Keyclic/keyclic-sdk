@@ -10,50 +10,61 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import FeedbackLinksSelfIriTemplateMapping from './FeedbackLinksSelfIriTemplateMapping'
+
+import ApiClient from '../ApiClient';
+import FeedbackLinksSelfIriTemplateMapping from './FeedbackLinksSelfIriTemplateMapping';
+
+
+    
 
 /**
  * The FeedbackLinksSelfIriTemplate model module.
  * @module model/FeedbackLinksSelfIriTemplate
  */
-export default class FeedbackLinksSelfIriTemplate {
-  /**
+export default class FeedbackLinksSelfIriTemplate  {
+    /**
      * Constructs a new "FeedbackLinksSelfIriTemplate".
      * @alias module:model/FeedbackLinksSelfIriTemplate
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.mapping = null
+        this.mapping = null;
 
-    this.mappingType = FeedbackLinksSelfIriTemplateMapping
-  }
+        this.mappingType = FeedbackLinksSelfIriTemplateMapping;
+    }
 
-  /**
+    /**
     * Constructs a "FeedbackLinksSelfIriTemplate" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/FeedbackLinksSelfIriTemplate } object Optional instance to populate.
     * @return { module:model/FeedbackLinksSelfIriTemplate } The populated "FeedbackLinksSelfIriTemplate" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new FeedbackLinksSelfIriTemplate();
+        }
+
+        if (data.hasOwnProperty('mapping')) {
+            object.mapping = ApiClient.convertToType(data.mapping, object.mappingType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new FeedbackLinksSelfIriTemplate()
-    }
+    
 
-    if (data.hasOwnProperty('mapping')) {
-      object.mapping = ApiClient.convertToType(data.mapping, object.mappingType)
-    }
-
-    return object
-  }
 }
+
+
+

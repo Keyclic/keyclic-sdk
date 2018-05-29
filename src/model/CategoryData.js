@@ -10,67 +10,79 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
+
+import ApiClient from '../ApiClient';
+
+
+    
 
 /**
  * The CategoryData model module.
  * @module model/CategoryData
  */
-export default class CategoryData {
-  /**
+export default class CategoryData  {
+    /**
      * Constructs a new "CategoryData".
      * @alias module:model/CategoryData
      * @class
-
+    
      * @param name { String }
-
+    
      * @param color { String }
-
+    
      * @param icon { String }
-
+    
      */
-  constructor (
+    constructor(
+    
+        name,
+    
+        color,
+    
+        icon,
+    
+    ) {
 
-    name,
+        this.name = name;
+        this.color = color;
+        this.icon = icon;
 
-    color,
+    }
 
-    icon
-
-  ) {
-    this.name = name
-    this.color = color
-    this.icon = icon
-  }
-
-  /**
+    /**
     * Constructs a "CategoryData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/CategoryData } object Optional instance to populate.
     * @return { module:model/CategoryData } The populated "CategoryData" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new CategoryData();
+        }
+
+        if (data.hasOwnProperty('name')) {
+            object.name = ApiClient.convertToType(data.name, 'String');
+        }
+        if (data.hasOwnProperty('color')) {
+            object.color = ApiClient.convertToType(data.color, 'String');
+        }
+        if (data.hasOwnProperty('icon')) {
+            object.icon = ApiClient.convertToType(data.icon, 'String');
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new CategoryData()
-    }
+    
 
-    if (data.hasOwnProperty('name')) {
-      object.name = ApiClient.convertToType(data.name, 'String')
-    }
-    if (data.hasOwnProperty('color')) {
-      object.color = ApiClient.convertToType(data.color, 'String')
-    }
-    if (data.hasOwnProperty('icon')) {
-      object.icon = ApiClient.convertToType(data.icon, 'String')
-    }
-
-    return object
-  }
 }
+
+
+

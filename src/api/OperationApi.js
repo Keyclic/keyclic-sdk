@@ -10,898 +10,942 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import Error from '../model/Error'
-import Operation from '../model/Operation'
-import OperationData from '../model/OperationData'
-import OperationPagination from '../model/OperationPagination'
-import OperationPatch from '../model/OperationPatch'
+import ApiClient from '../ApiClient';
+import Error from '../model/Error';
+import Operation from '../model/Operation';
+import OperationData from '../model/OperationData';
+import OperationPagination from '../model/OperationPagination';
+import OperationPatch from '../model/OperationPatch';
 
 /**
  * Operation service.
  * @module api/OperationApi
  */
 export default class OperationApi extends ApiClient {
-  /**
+    /**
      * @class
      * { string } basePath To override basePath.
      * { object } headers Additional headers for the instance.
      * { int } timeout Number in seconds before timeout.
      */
-  constructor (
-    basePath = null,
-    headers = null,
-    timeout = null
-  ) {
-    super(basePath, headers, timeout)
-  }
+    constructor(
+        basePath = null,
+        headers = null,
+        timeout = null
+    ) {
+        super(basePath, headers, timeout);
+    }
 
-  /**
+    /**
      * Retrieve all Operation resources.
      * @param { String } xKeyclicApp
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
-     * @param { String } state
+     * @param { String } xKeyclicAppVersion  
+     * @param { String } state  
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after
-     * @param { Date } before
-     * @param { String } searchName
-     * @param { String } searchDescription
-     * @param { String } searchIdentificationNumber
+     * @param { Date } after  
+     * @param { Date } before  
+     * @param { String } searchName  
+     * @param { String } searchDescription  
+     * @param { String } searchIdentificationNumber  
      */
-  cgetOperationsByOrganization (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    if (returnType === null) {
-      returnType = OperationPagination
+    cgetOperationsByOrganization(
+        returnType = null,
+        options,
+        credentials,
+    ) {
+        if (returnType === null) {
+            returnType = OperationPagination;
+        }
+
+        let {
+            xKeyclicApp,
+            organization,
+            acceptLanguage,
+            xKeyclicAppVersion,
+            state,
+            page,
+            limit,
+            order,
+            after,
+            before,
+            searchName,
+            searchDescription,
+            searchIdentificationNumber,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetOperationsByOrganization');
+        }
+        
+        // verify the required parameter 'organization' is set
+        if (typeof organization === 'undefined' || organization === null) {
+            throw new window.Error('Missing the required parameter "organization" when calling cgetOperationsByOrganization');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+        // verify the default value of parameter 'page'
+        if (typeof page === 'undefined' || page === null) {
+            page = 1;  // eslint-disable-line quotes
+        }
+        
+        // verify the default value of parameter 'limit'
+        if (typeof limit === 'undefined' || limit === null) {
+            limit = 10;  // eslint-disable-line quotes
+        }
+        
+        // verify the default value of parameter 'order'
+        if (typeof order === 'undefined' || order === null) {
+            order = "desc";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+        // verify the null value of parameter 'state'
+        if (typeof state === 'undefined') {
+            state = null;
+        }
+        
+        // verify the null value of parameter 'after'
+        if (typeof after === 'undefined') {
+            after = null;
+        }
+        
+        // verify the null value of parameter 'before'
+        if (typeof before === 'undefined') {
+            before = null;
+        }
+        
+        // verify the null value of parameter 'searchName'
+        if (typeof searchName === 'undefined') {
+            searchName = null;
+        }
+        
+        // verify the null value of parameter 'searchDescription'
+        if (typeof searchDescription === 'undefined') {
+            searchDescription = null;
+        }
+        
+        // verify the null value of parameter 'searchIdentificationNumber'
+        if (typeof searchIdentificationNumber === 'undefined') {
+            searchIdentificationNumber = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling cgetOperationsByOrganization');
+        }
+
+        let pathParams = {
+            'organization': organization,
+        };
+
+        let bodyParam = null;
+
+        let queryParams = {
+            'state': state,
+            'page': page,
+            'limit': limit,
+            'order': order,
+            'after': after,
+            'before': before,
+            'search[name]': searchName,
+            'search[description]': searchDescription,
+            'search[identificationNumber]': searchIdentificationNumber,
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/organizations/{organization}/operations',
+            'GET',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    let {
-      xKeyclicApp,
-      organization,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      state,
-      page,
-      limit,
-      order,
-      after,
-      before,
-      searchName,
-      searchDescription,
-      searchIdentificationNumber
-    } = options
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetOperationsByOrganization')
-    }
-
-    // verify the required parameter 'organization' is set
-    if (typeof organization === 'undefined' || organization === null) {
-      throw new window.Error('Missing the required parameter "organization" when calling cgetOperationsByOrganization')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the default value of parameter 'page'
-    if (typeof page === 'undefined' || page === null) {
-      page = 1 // eslint-disable-line quotes
-    }
-
-    // verify the default value of parameter 'limit'
-    if (typeof limit === 'undefined' || limit === null) {
-      limit = 10 // eslint-disable-line quotes
-    }
-
-    // verify the default value of parameter 'order'
-    if (typeof order === 'undefined' || order === null) {
-      order = "desc" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    // verify the null value of parameter 'state'
-    if (typeof state === 'undefined') {
-      state = null
-    }
-
-    // verify the null value of parameter 'after'
-    if (typeof after === 'undefined') {
-      after = null
-    }
-
-    // verify the null value of parameter 'before'
-    if (typeof before === 'undefined') {
-      before = null
-    }
-
-    // verify the null value of parameter 'searchName'
-    if (typeof searchName === 'undefined') {
-      searchName = null
-    }
-
-    // verify the null value of parameter 'searchDescription'
-    if (typeof searchDescription === 'undefined') {
-      searchDescription = null
-    }
-
-    // verify the null value of parameter 'searchIdentificationNumber'
-    if (typeof searchIdentificationNumber === 'undefined') {
-      searchIdentificationNumber = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling cgetOperationsByOrganization')
-    }
-
-    let pathParams = {
-      'organization': organization
-    }
-
-    let bodyParam = null
-
-    let queryParams = {
-      'state': state,
-      'page': page,
-      'limit': limit,
-      'order': order,
-      'after': after,
-      'before': before,
-      'search[name]': searchName,
-      'search[description]': searchDescription,
-      'search[identificationNumber]': searchIdentificationNumber
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/organizations/{organization}/operations',
-      'GET',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
-
-  /**
+    /**
      * Retrieve all Operation resources.
      * @param { String } xKeyclicApp
      * @param { String } person The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
-     * @param { String } state
+     * @param { String } xKeyclicAppVersion  
+     * @param { String } state  
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after
-     * @param { Date } before
-     * @param { String } searchName
-     * @param { String } searchDescription
-     * @param { String } searchIdentificationNumber
+     * @param { Date } after  
+     * @param { Date } before  
+     * @param { String } searchName  
+     * @param { String } searchDescription  
+     * @param { String } searchIdentificationNumber  
      */
-  cgetOperationsByPerson (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    if (returnType === null) {
-      returnType = OperationPagination
+    cgetOperationsByPerson(
+        returnType = null,
+        options,
+        credentials,
+    ) {
+        if (returnType === null) {
+            returnType = OperationPagination;
+        }
+
+        let {
+            xKeyclicApp,
+            person,
+            acceptLanguage,
+            xKeyclicAppVersion,
+            state,
+            page,
+            limit,
+            order,
+            after,
+            before,
+            searchName,
+            searchDescription,
+            searchIdentificationNumber,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetOperationsByPerson');
+        }
+        
+        // verify the required parameter 'person' is set
+        if (typeof person === 'undefined' || person === null) {
+            throw new window.Error('Missing the required parameter "person" when calling cgetOperationsByPerson');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+        // verify the default value of parameter 'page'
+        if (typeof page === 'undefined' || page === null) {
+            page = 1;  // eslint-disable-line quotes
+        }
+        
+        // verify the default value of parameter 'limit'
+        if (typeof limit === 'undefined' || limit === null) {
+            limit = 10;  // eslint-disable-line quotes
+        }
+        
+        // verify the default value of parameter 'order'
+        if (typeof order === 'undefined' || order === null) {
+            order = "desc";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+        // verify the null value of parameter 'state'
+        if (typeof state === 'undefined') {
+            state = null;
+        }
+        
+        // verify the null value of parameter 'after'
+        if (typeof after === 'undefined') {
+            after = null;
+        }
+        
+        // verify the null value of parameter 'before'
+        if (typeof before === 'undefined') {
+            before = null;
+        }
+        
+        // verify the null value of parameter 'searchName'
+        if (typeof searchName === 'undefined') {
+            searchName = null;
+        }
+        
+        // verify the null value of parameter 'searchDescription'
+        if (typeof searchDescription === 'undefined') {
+            searchDescription = null;
+        }
+        
+        // verify the null value of parameter 'searchIdentificationNumber'
+        if (typeof searchIdentificationNumber === 'undefined') {
+            searchIdentificationNumber = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling cgetOperationsByPerson');
+        }
+
+        let pathParams = {
+            'person': person,
+        };
+
+        let bodyParam = null;
+
+        let queryParams = {
+            'state': state,
+            'page': page,
+            'limit': limit,
+            'order': order,
+            'after': after,
+            'before': before,
+            'search[name]': searchName,
+            'search[description]': searchDescription,
+            'search[identificationNumber]': searchIdentificationNumber,
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/people/{person}/operations',
+            'GET',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    let {
-      xKeyclicApp,
-      person,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      state,
-      page,
-      limit,
-      order,
-      after,
-      before,
-      searchName,
-      searchDescription,
-      searchIdentificationNumber
-    } = options
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetOperationsByPerson')
-    }
-
-    // verify the required parameter 'person' is set
-    if (typeof person === 'undefined' || person === null) {
-      throw new window.Error('Missing the required parameter "person" when calling cgetOperationsByPerson')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the default value of parameter 'page'
-    if (typeof page === 'undefined' || page === null) {
-      page = 1 // eslint-disable-line quotes
-    }
-
-    // verify the default value of parameter 'limit'
-    if (typeof limit === 'undefined' || limit === null) {
-      limit = 10 // eslint-disable-line quotes
-    }
-
-    // verify the default value of parameter 'order'
-    if (typeof order === 'undefined' || order === null) {
-      order = "desc" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    // verify the null value of parameter 'state'
-    if (typeof state === 'undefined') {
-      state = null
-    }
-
-    // verify the null value of parameter 'after'
-    if (typeof after === 'undefined') {
-      after = null
-    }
-
-    // verify the null value of parameter 'before'
-    if (typeof before === 'undefined') {
-      before = null
-    }
-
-    // verify the null value of parameter 'searchName'
-    if (typeof searchName === 'undefined') {
-      searchName = null
-    }
-
-    // verify the null value of parameter 'searchDescription'
-    if (typeof searchDescription === 'undefined') {
-      searchDescription = null
-    }
-
-    // verify the null value of parameter 'searchIdentificationNumber'
-    if (typeof searchIdentificationNumber === 'undefined') {
-      searchIdentificationNumber = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling cgetOperationsByPerson')
-    }
-
-    let pathParams = {
-      'person': person
-    }
-
-    let bodyParam = null
-
-    let queryParams = {
-      'state': state,
-      'page': page,
-      'limit': limit,
-      'order': order,
-      'after': after,
-      'before': before,
-      'search[name]': searchName,
-      'search[description]': searchDescription,
-      'search[identificationNumber]': searchIdentificationNumber
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/people/{person}/operations',
-      'GET',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
-
-  /**
+    /**
      * Retrieve all Operation resources.
      * @param { String } xKeyclicApp
      * @param { String } report The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
-     * @param { String } state
+     * @param { String } xKeyclicAppVersion  
+     * @param { String } state  
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      * @param { module:model/String } order   (default to desc)
-     * @param { Date } after
-     * @param { Date } before
-     * @param { String } searchName
-     * @param { String } searchDescription
-     * @param { String } searchIdentificationNumber
+     * @param { Date } after  
+     * @param { Date } before  
+     * @param { String } searchName  
+     * @param { String } searchDescription  
+     * @param { String } searchIdentificationNumber  
      */
-  cgetOperationsByReport (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    if (returnType === null) {
-      returnType = OperationPagination
+    cgetOperationsByReport(
+        returnType = null,
+        options,
+        credentials,
+    ) {
+        if (returnType === null) {
+            returnType = OperationPagination;
+        }
+
+        let {
+            xKeyclicApp,
+            report,
+            acceptLanguage,
+            xKeyclicAppVersion,
+            state,
+            page,
+            limit,
+            order,
+            after,
+            before,
+            searchName,
+            searchDescription,
+            searchIdentificationNumber,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetOperationsByReport');
+        }
+        
+        // verify the required parameter 'report' is set
+        if (typeof report === 'undefined' || report === null) {
+            throw new window.Error('Missing the required parameter "report" when calling cgetOperationsByReport');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+        // verify the default value of parameter 'page'
+        if (typeof page === 'undefined' || page === null) {
+            page = 1;  // eslint-disable-line quotes
+        }
+        
+        // verify the default value of parameter 'limit'
+        if (typeof limit === 'undefined' || limit === null) {
+            limit = 10;  // eslint-disable-line quotes
+        }
+        
+        // verify the default value of parameter 'order'
+        if (typeof order === 'undefined' || order === null) {
+            order = "desc";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+        // verify the null value of parameter 'state'
+        if (typeof state === 'undefined') {
+            state = null;
+        }
+        
+        // verify the null value of parameter 'after'
+        if (typeof after === 'undefined') {
+            after = null;
+        }
+        
+        // verify the null value of parameter 'before'
+        if (typeof before === 'undefined') {
+            before = null;
+        }
+        
+        // verify the null value of parameter 'searchName'
+        if (typeof searchName === 'undefined') {
+            searchName = null;
+        }
+        
+        // verify the null value of parameter 'searchDescription'
+        if (typeof searchDescription === 'undefined') {
+            searchDescription = null;
+        }
+        
+        // verify the null value of parameter 'searchIdentificationNumber'
+        if (typeof searchIdentificationNumber === 'undefined') {
+            searchIdentificationNumber = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling cgetOperationsByReport');
+        }
+
+        let pathParams = {
+            'report': report,
+        };
+
+        let bodyParam = null;
+
+        let queryParams = {
+            'state': state,
+            'page': page,
+            'limit': limit,
+            'order': order,
+            'after': after,
+            'before': before,
+            'search[name]': searchName,
+            'search[description]': searchDescription,
+            'search[identificationNumber]': searchIdentificationNumber,
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/reports/{report}/operations',
+            'GET',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    let {
-      xKeyclicApp,
-      report,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      state,
-      page,
-      limit,
-      order,
-      after,
-      before,
-      searchName,
-      searchDescription,
-      searchIdentificationNumber
-    } = options
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetOperationsByReport')
-    }
-
-    // verify the required parameter 'report' is set
-    if (typeof report === 'undefined' || report === null) {
-      throw new window.Error('Missing the required parameter "report" when calling cgetOperationsByReport')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the default value of parameter 'page'
-    if (typeof page === 'undefined' || page === null) {
-      page = 1 // eslint-disable-line quotes
-    }
-
-    // verify the default value of parameter 'limit'
-    if (typeof limit === 'undefined' || limit === null) {
-      limit = 10 // eslint-disable-line quotes
-    }
-
-    // verify the default value of parameter 'order'
-    if (typeof order === 'undefined' || order === null) {
-      order = "desc" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    // verify the null value of parameter 'state'
-    if (typeof state === 'undefined') {
-      state = null
-    }
-
-    // verify the null value of parameter 'after'
-    if (typeof after === 'undefined') {
-      after = null
-    }
-
-    // verify the null value of parameter 'before'
-    if (typeof before === 'undefined') {
-      before = null
-    }
-
-    // verify the null value of parameter 'searchName'
-    if (typeof searchName === 'undefined') {
-      searchName = null
-    }
-
-    // verify the null value of parameter 'searchDescription'
-    if (typeof searchDescription === 'undefined') {
-      searchDescription = null
-    }
-
-    // verify the null value of parameter 'searchIdentificationNumber'
-    if (typeof searchIdentificationNumber === 'undefined') {
-      searchIdentificationNumber = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling cgetOperationsByReport')
-    }
-
-    let pathParams = {
-      'report': report
-    }
-
-    let bodyParam = null
-
-    let queryParams = {
-      'state': state,
-      'page': page,
-      'limit': limit,
-      'order': order,
-      'after': after,
-      'before': before,
-      'search[name]': searchName,
-      'search[description]': searchDescription,
-      'search[identificationNumber]': searchIdentificationNumber
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/reports/{report}/operations',
-      'GET',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
-
-  /**
+    /**
      * Remove one Operation resource.
      * @param { String } xKeyclicApp
      * @param { String } operation The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
+     * @param { String } xKeyclicAppVersion  
      */
-  deleteOperation (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    let {
-      xKeyclicApp,
-      operation,
-      acceptLanguage,
-      xKeyclicAppVersion
-    } = options
+    deleteOperation(
+        returnType = null,
+        options,
+        credentials,
+    ) {
 
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling deleteOperation')
+        let {
+            xKeyclicApp,
+            operation,
+            acceptLanguage,
+            xKeyclicAppVersion,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling deleteOperation');
+        }
+        
+        // verify the required parameter 'operation' is set
+        if (typeof operation === 'undefined' || operation === null) {
+            throw new window.Error('Missing the required parameter "operation" when calling deleteOperation');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling deleteOperation');
+        }
+
+        let pathParams = {
+            'operation': operation,
+        };
+
+        let bodyParam = null;
+
+        let queryParams = {
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/operations/{operation}',
+            'DELETE',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    // verify the required parameter 'operation' is set
-    if (typeof operation === 'undefined' || operation === null) {
-      throw new window.Error('Missing the required parameter "operation" when calling deleteOperation')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling deleteOperation')
-    }
-
-    let pathParams = {
-      'operation': operation
-    }
-
-    let bodyParam = null
-
-    let queryParams = {
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/operations/{operation}',
-      'DELETE',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
-
-  /**
+    /**
      * Retrieve one Operation resource.
      * @param { String } xKeyclicApp
      * @param { String } operation The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
+     * @param { String } xKeyclicAppVersion  
      */
-  getOperation (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    if (returnType === null) {
-      returnType = Operation
+    getOperation(
+        returnType = null,
+        options,
+        credentials,
+    ) {
+        if (returnType === null) {
+            returnType = Operation;
+        }
+
+        let {
+            xKeyclicApp,
+            operation,
+            acceptLanguage,
+            xKeyclicAppVersion,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getOperation');
+        }
+        
+        // verify the required parameter 'operation' is set
+        if (typeof operation === 'undefined' || operation === null) {
+            throw new window.Error('Missing the required parameter "operation" when calling getOperation');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling getOperation');
+        }
+
+        let pathParams = {
+            'operation': operation,
+        };
+
+        let bodyParam = null;
+
+        let queryParams = {
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/operations/{operation}',
+            'GET',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    let {
-      xKeyclicApp,
-      operation,
-      acceptLanguage,
-      xKeyclicAppVersion
-    } = options
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling getOperation')
-    }
-
-    // verify the required parameter 'operation' is set
-    if (typeof operation === 'undefined' || operation === null) {
-      throw new window.Error('Missing the required parameter "operation" when calling getOperation')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling getOperation')
-    }
-
-    let pathParams = {
-      'operation': operation
-    }
-
-    let bodyParam = null
-
-    let queryParams = {
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/operations/{operation}',
-      'GET',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
-
-  /**
+    /**
      * Edit one Operation resource.
      * @param { String } xKeyclicApp
      * @param { String } operation The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
-     * @param { module:model/OperationPatch } operationPatch
+     * @param { String } xKeyclicAppVersion  
+     * @param { module:model/OperationPatch } operationPatch  
      */
-  patchOperation (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    if (returnType === null) {
-      returnType = Operation
+    patchOperation(
+        returnType = null,
+        options,
+        credentials,
+    ) {
+        if (returnType === null) {
+            returnType = Operation;
+        }
+
+        let {
+            xKeyclicApp,
+            operation,
+            acceptLanguage,
+            xKeyclicAppVersion,
+            operationPatch,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchOperation');
+        }
+        
+        // verify the required parameter 'operation' is set
+        if (typeof operation === 'undefined' || operation === null) {
+            throw new window.Error('Missing the required parameter "operation" when calling patchOperation');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+        // verify the null value of parameter 'operationPatch'
+        if (typeof operationPatch === 'undefined') {
+            operationPatch = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling patchOperation');
+        }
+
+        let pathParams = {
+            'operation': operation,
+        };
+
+        let bodyParam = operationPatch;
+
+        let queryParams = {
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/operations/{operation}',
+            'PATCH',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    let {
-      xKeyclicApp,
-      operation,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      operationPatch
-    } = options
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling patchOperation')
-    }
-
-    // verify the required parameter 'operation' is set
-    if (typeof operation === 'undefined' || operation === null) {
-      throw new window.Error('Missing the required parameter "operation" when calling patchOperation')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    // verify the null value of parameter 'operationPatch'
-    if (typeof operationPatch === 'undefined') {
-      operationPatch = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling patchOperation')
-    }
-
-    let pathParams = {
-      'operation': operation
-    }
-
-    let bodyParam = operationPatch
-
-    let queryParams = {
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/operations/{operation}',
-      'PATCH',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
-
-  /**
+    /**
      * Create one Operation resource.
      * @param { String } xKeyclicApp
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
-     * @param { module:model/OperationData } operationData
+     * @param { String } xKeyclicAppVersion  
+     * @param { module:model/OperationData } operationData  
      */
-  postOperation (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    if (returnType === null) {
-      returnType = Operation
+    postOperation(
+        returnType = null,
+        options,
+        credentials,
+    ) {
+        if (returnType === null) {
+            returnType = Operation;
+        }
+
+        let {
+            xKeyclicApp,
+            acceptLanguage,
+            xKeyclicAppVersion,
+            operationData,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postOperation');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+        // verify the null value of parameter 'operationData'
+        if (typeof operationData === 'undefined') {
+            operationData = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling postOperation');
+        }
+
+        let pathParams = {
+        };
+
+        let bodyParam = operationData;
+
+        let queryParams = {
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/operations',
+            'POST',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    let {
-      xKeyclicApp,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      operationData
-    } = options
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postOperation')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    // verify the null value of parameter 'operationData'
-    if (typeof operationData === 'undefined') {
-      operationData = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling postOperation')
-    }
-
-    let pathParams = {
-    }
-
-    let bodyParam = operationData
-
-    let queryParams = {
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/operations',
-      'POST',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
 }

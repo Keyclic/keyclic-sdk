@@ -10,58 +10,69 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import FeedbackGeoCoordinatesPoint from './FeedbackGeoCoordinatesPoint'
+
+import ApiClient from '../ApiClient';
+import FeedbackGeoCoordinatesPoint from './FeedbackGeoCoordinatesPoint';
+
+
+    
 
 /**
  * The FeedbackGeoCoordinates model module.
  * @module model/FeedbackGeoCoordinates
  */
-export default class FeedbackGeoCoordinates {
-  /**
+export default class FeedbackGeoCoordinates  {
+    /**
      * Constructs a new "FeedbackGeoCoordinates".
      * @alias module:model/FeedbackGeoCoordinates
      * @class
-
+    
      * @param point { module:model/FeedbackGeoCoordinatesPoint }
-
+    
      */
-  constructor (
+    constructor(
+    
+        point,
+    
+    ) {
 
-    point
+        this.elevation = null;
+        this.point = point;
 
-  ) {
-    this.elevation = null
-    this.point = point
+        this.pointType = FeedbackGeoCoordinatesPoint;
+    }
 
-    this.pointType = FeedbackGeoCoordinatesPoint
-  }
-
-  /**
+    /**
     * Constructs a "FeedbackGeoCoordinates" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/FeedbackGeoCoordinates } object Optional instance to populate.
     * @return { module:model/FeedbackGeoCoordinates } The populated "FeedbackGeoCoordinates" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new FeedbackGeoCoordinates();
+        }
+
+        if (data.hasOwnProperty('elevation')) {
+            object.elevation = ApiClient.convertToType(data.elevation, 'Number');
+        }
+        if (data.hasOwnProperty('point')) {
+            object.point = ApiClient.convertToType(data.point, object.pointType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new FeedbackGeoCoordinates()
-    }
+    
 
-    if (data.hasOwnProperty('elevation')) {
-      object.elevation = ApiClient.convertToType(data.elevation, 'Number')
-    }
-    if (data.hasOwnProperty('point')) {
-      object.point = ApiClient.convertToType(data.point, object.pointType)
-    }
-
-    return object
-  }
 }
+
+
+

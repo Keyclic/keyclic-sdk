@@ -10,54 +10,65 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import BusinessActivityLinksSelfIriTemplate from './BusinessActivityLinksSelfIriTemplate'
+
+import ApiClient from '../ApiClient';
+import BusinessActivityLinksSelfIriTemplate from './BusinessActivityLinksSelfIriTemplate';
+
+
+    
 
 /**
  * The OrganizationLinksBusinessActivity model module.
  * @module model/OrganizationLinksBusinessActivity
  */
-export default class OrganizationLinksBusinessActivity {
-  /**
+export default class OrganizationLinksBusinessActivity  {
+    /**
      * Constructs a new "OrganizationLinksBusinessActivity".
      * @alias module:model/OrganizationLinksBusinessActivity
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.href = null
-    this.iriTemplate = null
+        this.href = null;
+        this.iriTemplate = null;
 
-    this.iriTemplateType = BusinessActivityLinksSelfIriTemplate
-  }
+        this.iriTemplateType = BusinessActivityLinksSelfIriTemplate;
+    }
 
-  /**
+    /**
     * Constructs a "OrganizationLinksBusinessActivity" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OrganizationLinksBusinessActivity } object Optional instance to populate.
     * @return { module:model/OrganizationLinksBusinessActivity } The populated "OrganizationLinksBusinessActivity" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new OrganizationLinksBusinessActivity();
+        }
+
+        if (data.hasOwnProperty('href')) {
+            object.href = ApiClient.convertToType(data.href, 'String');
+        }
+        if (data.hasOwnProperty('iriTemplate')) {
+            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new OrganizationLinksBusinessActivity()
-    }
+    
 
-    if (data.hasOwnProperty('href')) {
-      object.href = ApiClient.convertToType(data.href, 'String')
-    }
-    if (data.hasOwnProperty('iriTemplate')) {
-      object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType)
-    }
-
-    return object
-  }
 }
+
+
+

@@ -10,54 +10,65 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import OperationLinksImageIriTemplate from './OperationLinksImageIriTemplate'
+
+import ApiClient from '../ApiClient';
+import OperationLinksImageIriTemplate from './OperationLinksImageIriTemplate';
+
+
+    
 
 /**
  * The OperationLinksImage model module.
  * @module model/OperationLinksImage
  */
-export default class OperationLinksImage {
-  /**
+export default class OperationLinksImage  {
+    /**
      * Constructs a new "OperationLinksImage".
      * @alias module:model/OperationLinksImage
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.href = null
-    this.iriTemplate = null
+        this.href = null;
+        this.iriTemplate = null;
 
-    this.iriTemplateType = OperationLinksImageIriTemplate
-  }
+        this.iriTemplateType = OperationLinksImageIriTemplate;
+    }
 
-  /**
+    /**
     * Constructs a "OperationLinksImage" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OperationLinksImage } object Optional instance to populate.
     * @return { module:model/OperationLinksImage } The populated "OperationLinksImage" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new OperationLinksImage();
+        }
+
+        if (data.hasOwnProperty('href')) {
+            object.href = ApiClient.convertToType(data.href, 'String');
+        }
+        if (data.hasOwnProperty('iriTemplate')) {
+            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new OperationLinksImage()
-    }
+    
 
-    if (data.hasOwnProperty('href')) {
-      object.href = ApiClient.convertToType(data.href, 'String')
-    }
-    if (data.hasOwnProperty('iriTemplate')) {
-      object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType)
-    }
-
-    return object
-  }
 }
+
+
+

@@ -10,53 +10,61 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.TrackingProgression()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.TrackingProgression();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('TrackingProgression', function () {
-    it('should create an instance of TrackingProgression', function () {
+  describe('TrackingProgression', function() {
+    it('should create an instance of TrackingProgression', function() {
       // uncomment below and update the code to test TrackingProgression
-      // var instane = new KeyclicApi.TrackingProgression();
-      // expect(instance).to.be.a(KeyclicApi.TrackingProgression);
-    })
+      //var instane = new KeyclicApi.TrackingProgression();
+      //expect(instance).to.be.a(KeyclicApi.TrackingProgression);
+    });
 
-    it('should have the property resolved (base name: "resolved")', function () {
+    it('should have the property resolved (base name: "resolved")', function() {
       // uncomment below and update the code to test the property resolved
-      // var instane = new KeyclicApi.TrackingProgression();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.TrackingProgression();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property total (base name: "total")', function () {
+    it('should have the property total (base name: "total")', function() {
       // uncomment below and update the code to test the property total
-      // var instane = new KeyclicApi.TrackingProgression();
-      // expect(instance).to.be();
-    })
-  })
-}))
+      //var instane = new KeyclicApi.TrackingProgression();
+      //expect(instance).to.be();
+    });
+
+  });
+
+}));

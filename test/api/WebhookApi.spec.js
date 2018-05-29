@@ -10,66 +10,73 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.WebhookApi()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.WebhookApi();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('WebhookApi', function () {
-    describe('cgetWebhooksByOrganization', function () {
-      it('should call cgetWebhooksByOrganization successfully', function (done) {
-        // uncomment below and update the code to test cgetWebhooksByOrganization
-        // instance.cgetWebhooksByOrganization(function(error) {
+  describe('WebhookApi', function() {
+    describe('cgetWebhooksByOrganization', function() {
+      it('should call cgetWebhooksByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cgetWebhooksByOrganization
+        //instance.cgetWebhooksByOrganization(function(error) {
         //  if (error) throw error;
-        // expect().to.be();
-        // });
-        done()
-      })
-    })
-    describe('getWebhook', function () {
-      it('should call getWebhook successfully', function (done) {
-        // uncomment below and update the code to test getWebhook
-        // instance.getWebhook(function(error) {
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getWebhook', function() {
+      it('should call getWebhook successfully', function(done) {
+        //uncomment below and update the code to test getWebhook
+        //instance.getWebhook(function(error) {
         //  if (error) throw error;
-        // expect().to.be();
-        // });
-        done()
-      })
-    })
-    describe('patchWebhook', function () {
-      it('should call patchWebhook successfully', function (done) {
-        // uncomment below and update the code to test patchWebhook
-        // instance.patchWebhook(function(error) {
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('patchWebhook', function() {
+      it('should call patchWebhook successfully', function(done) {
+        //uncomment below and update the code to test patchWebhook
+        //instance.patchWebhook(function(error) {
         //  if (error) throw error;
-        // expect().to.be();
-        // });
-        done()
-      })
-    })
-  })
-}))
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+  });
+
+}));

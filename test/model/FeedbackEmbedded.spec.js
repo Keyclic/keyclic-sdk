@@ -10,53 +10,61 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.FeedbackEmbedded()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.FeedbackEmbedded();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('FeedbackEmbedded', function () {
-    it('should create an instance of FeedbackEmbedded', function () {
+  describe('FeedbackEmbedded', function() {
+    it('should create an instance of FeedbackEmbedded', function() {
       // uncomment below and update the code to test FeedbackEmbedded
-      // var instane = new KeyclicApi.FeedbackEmbedded();
-      // expect(instance).to.be.a(KeyclicApi.FeedbackEmbedded);
-    })
+      //var instane = new KeyclicApi.FeedbackEmbedded();
+      //expect(instance).to.be.a(KeyclicApi.FeedbackEmbedded);
+    });
 
-    it('should have the property stateTransitions (base name: "stateTransitions")', function () {
+    it('should have the property stateTransitions (base name: "stateTransitions")', function() {
       // uncomment below and update the code to test the property stateTransitions
-      // var instane = new KeyclicApi.FeedbackEmbedded();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.FeedbackEmbedded();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property tracking (base name: "tracking")', function () {
+    it('should have the property tracking (base name: "tracking")', function() {
       // uncomment below and update the code to test the property tracking
-      // var instane = new KeyclicApi.FeedbackEmbedded();
-      // expect(instance).to.be();
-    })
-  })
-}))
+      //var instane = new KeyclicApi.FeedbackEmbedded();
+      //expect(instance).to.be();
+    });
+
+  });
+
+}));

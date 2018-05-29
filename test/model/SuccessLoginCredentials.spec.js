@@ -10,71 +10,79 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.SuccessLoginCredentials()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.SuccessLoginCredentials();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('SuccessLoginCredentials', function () {
-    it('should create an instance of SuccessLoginCredentials', function () {
+  describe('SuccessLoginCredentials', function() {
+    it('should create an instance of SuccessLoginCredentials', function() {
       // uncomment below and update the code to test SuccessLoginCredentials
-      // var instane = new KeyclicApi.SuccessLoginCredentials();
-      // expect(instance).to.be.a(KeyclicApi.SuccessLoginCredentials);
-    })
+      //var instane = new KeyclicApi.SuccessLoginCredentials();
+      //expect(instance).to.be.a(KeyclicApi.SuccessLoginCredentials);
+    });
 
-    it('should have the property id (base name: "id")', function () {
+    it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      // var instane = new KeyclicApi.SuccessLoginCredentials();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.SuccessLoginCredentials();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property login (base name: "login")', function () {
+    it('should have the property login (base name: "login")', function() {
       // uncomment below and update the code to test the property login
-      // var instane = new KeyclicApi.SuccessLoginCredentials();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.SuccessLoginCredentials();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property roles (base name: "roles")', function () {
+    it('should have the property roles (base name: "roles")', function() {
       // uncomment below and update the code to test the property roles
-      // var instane = new KeyclicApi.SuccessLoginCredentials();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.SuccessLoginCredentials();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property administratorOf (base name: "administratorOf")', function () {
+    it('should have the property administratorOf (base name: "administratorOf")', function() {
       // uncomment below and update the code to test the property administratorOf
-      // var instane = new KeyclicApi.SuccessLoginCredentials();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.SuccessLoginCredentials();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property memberOf (base name: "memberOf")', function () {
+    it('should have the property memberOf (base name: "memberOf")', function() {
       // uncomment below and update the code to test the property memberOf
-      // var instane = new KeyclicApi.SuccessLoginCredentials();
-      // expect(instance).to.be();
-    })
-  })
-}))
+      //var instane = new KeyclicApi.SuccessLoginCredentials();
+      //expect(instance).to.be();
+    });
+
+  });
+
+}));

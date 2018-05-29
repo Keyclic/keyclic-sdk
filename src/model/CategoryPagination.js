@@ -10,57 +10,67 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import CategoryCollection from './CategoryCollection'
-import Pagination from './Pagination'
-import PaginationLinks from './PaginationLinks'
+
+import ApiClient from '../ApiClient';
+import CategoryCollection from './CategoryCollection';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+
+
+    
 
 /**
  * The CategoryPagination model module.
  * @module model/CategoryPagination
  */
 export default class CategoryPagination extends Pagination {
-  /**
+    /**
      * Constructs a new "CategoryPagination".
      * @alias module:model/CategoryPagination
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
+        super(
+                
+        );
 
-  ) {
-    super(
+        this.embedded = null;
 
-    )
+        this.embeddedType = CategoryCollection;
+    }
 
-    this.embedded = null
-
-    this.embeddedType = CategoryCollection
-  }
-
-  /**
+    /**
     * Constructs a "CategoryPagination" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/CategoryPagination } object Optional instance to populate.
     * @return { module:model/CategoryPagination } The populated "CategoryPagination" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new CategoryPagination();
+        }
+        object = super.constructFromData(data, object);
+
+        if (data.hasOwnProperty('_embedded')) {
+            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new CategoryPagination()
-    }
-    object = super.constructFromData(data, object)
+    
 
-    if (data.hasOwnProperty('_embedded')) {
-      object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType)
-    }
-
-    return object
-  }
 }
+
+
+

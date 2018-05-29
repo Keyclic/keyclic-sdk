@@ -10,89 +10,97 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.Result()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.Result();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('Result', function () {
-    it('should create an instance of Result', function () {
+  describe('Result', function() {
+    it('should create an instance of Result', function() {
       // uncomment below and update the code to test Result
-      // var instane = new KeyclicApi.Result();
-      // expect(instance).to.be.a(KeyclicApi.Result);
-    })
+      //var instane = new KeyclicApi.Result();
+      //expect(instance).to.be.a(KeyclicApi.Result);
+    });
 
-    it('should have the property activities (base name: "activities")', function () {
+    it('should have the property activities (base name: "activities")', function() {
       // uncomment below and update the code to test the property activities
-      // var instane = new KeyclicApi.Result();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Result();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property activityCount (base name: "activity_count")', function () {
+    it('should have the property activityCount (base name: "activity_count")', function() {
       // uncomment below and update the code to test the property activityCount
-      // var instane = new KeyclicApi.Result();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Result();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property actorCount (base name: "actor_count")', function () {
+    it('should have the property actorCount (base name: "actor_count")', function() {
       // uncomment below and update the code to test the property actorCount
-      // var instane = new KeyclicApi.Result();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Result();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property createdAt (base name: "created_at")', function () {
+    it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      // var instane = new KeyclicApi.Result();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Result();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property group (base name: "group")', function () {
+    it('should have the property group (base name: "group")', function() {
       // uncomment below and update the code to test the property group
-      // var instane = new KeyclicApi.Result();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Result();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property id (base name: "id")', function () {
+    it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      // var instane = new KeyclicApi.Result();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Result();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property updatedAt (base name: "updated_at")', function () {
+    it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      // var instane = new KeyclicApi.Result();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Result();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property verb (base name: "verb")', function () {
+    it('should have the property verb (base name: "verb")', function() {
       // uncomment below and update the code to test the property verb
-      // var instane = new KeyclicApi.Result();
-      // expect(instance).to.be();
-    })
-  })
-}))
+      //var instane = new KeyclicApi.Result();
+      //expect(instance).to.be();
+    });
+
+  });
+
+}));

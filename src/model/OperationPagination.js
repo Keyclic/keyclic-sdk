@@ -10,57 +10,67 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import OperationCollection from './OperationCollection'
-import Pagination from './Pagination'
-import PaginationLinks from './PaginationLinks'
+
+import ApiClient from '../ApiClient';
+import OperationCollection from './OperationCollection';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+
+
+    
 
 /**
  * The OperationPagination model module.
  * @module model/OperationPagination
  */
 export default class OperationPagination extends Pagination {
-  /**
+    /**
      * Constructs a new "OperationPagination".
      * @alias module:model/OperationPagination
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
+        super(
+                
+        );
 
-  ) {
-    super(
+        this.embedded = null;
 
-    )
+        this.embeddedType = OperationCollection;
+    }
 
-    this.embedded = null
-
-    this.embeddedType = OperationCollection
-  }
-
-  /**
+    /**
     * Constructs a "OperationPagination" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OperationPagination } object Optional instance to populate.
     * @return { module:model/OperationPagination } The populated "OperationPagination" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new OperationPagination();
+        }
+        object = super.constructFromData(data, object);
+
+        if (data.hasOwnProperty('_embedded')) {
+            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new OperationPagination()
-    }
-    object = super.constructFromData(data, object)
+    
 
-    if (data.hasOwnProperty('_embedded')) {
-      object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType)
-    }
-
-    return object
-  }
 }
+
+
+

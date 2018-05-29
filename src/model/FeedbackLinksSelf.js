@@ -10,54 +10,65 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import FeedbackLinksSelfIriTemplate from './FeedbackLinksSelfIriTemplate'
+
+import ApiClient from '../ApiClient';
+import FeedbackLinksSelfIriTemplate from './FeedbackLinksSelfIriTemplate';
+
+
+    
 
 /**
  * The FeedbackLinksSelf model module.
  * @module model/FeedbackLinksSelf
  */
-export default class FeedbackLinksSelf {
-  /**
+export default class FeedbackLinksSelf  {
+    /**
      * Constructs a new "FeedbackLinksSelf".
      * @alias module:model/FeedbackLinksSelf
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.href = null
-    this.iriTemplate = null
+        this.href = null;
+        this.iriTemplate = null;
 
-    this.iriTemplateType = FeedbackLinksSelfIriTemplate
-  }
+        this.iriTemplateType = FeedbackLinksSelfIriTemplate;
+    }
 
-  /**
+    /**
     * Constructs a "FeedbackLinksSelf" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/FeedbackLinksSelf } object Optional instance to populate.
     * @return { module:model/FeedbackLinksSelf } The populated "FeedbackLinksSelf" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new FeedbackLinksSelf();
+        }
+
+        if (data.hasOwnProperty('href')) {
+            object.href = ApiClient.convertToType(data.href, 'String');
+        }
+        if (data.hasOwnProperty('iriTemplate')) {
+            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new FeedbackLinksSelf()
-    }
+    
 
-    if (data.hasOwnProperty('href')) {
-      object.href = ApiClient.convertToType(data.href, 'String')
-    }
-    if (data.hasOwnProperty('iriTemplate')) {
-      object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType)
-    }
-
-    return object
-  }
 }
+
+
+

@@ -10,213 +10,226 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import ActivityAggregatedPagination from '../model/ActivityAggregatedPagination'
-import Error from '../model/Error'
-import Operation from '../model/Operation'
+import ApiClient from '../ApiClient';
+import ActivityAggregatedPagination from '../model/ActivityAggregatedPagination';
+import Error from '../model/Error';
+import Operation from '../model/Operation';
 
 /**
  * Contribution service.
  * @module api/ContributionApi
  */
 export default class ContributionApi extends ApiClient {
-  /**
+    /**
      * @class
      * { string } basePath To override basePath.
      * { object } headers Additional headers for the instance.
      * { int } timeout Number in seconds before timeout.
      */
-  constructor (
-    basePath = null,
-    headers = null,
-    timeout = null
-  ) {
-    super(basePath, headers, timeout)
-  }
+    constructor(
+        basePath = null,
+        headers = null,
+        timeout = null
+    ) {
+        super(basePath, headers, timeout);
+    }
 
-  /**
+    /**
      * Retrieve all Contribution resources.
      * @param { String } xKeyclicApp
      * @param { String } feedback The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { ActivityAggregatedPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
+     * @param { String } xKeyclicAppVersion  
      */
-  cgetContributionsByFeedback (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    if (returnType === null) {
-      returnType = ActivityAggregatedPagination
+    cgetContributionsByFeedback(
+        returnType = null,
+        options,
+        credentials,
+    ) {
+        if (returnType === null) {
+            returnType = ActivityAggregatedPagination;
+        }
+
+        let {
+            xKeyclicApp,
+            feedback,
+            acceptLanguage,
+            xKeyclicAppVersion,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetContributionsByFeedback');
+        }
+        
+        // verify the required parameter 'feedback' is set
+        if (typeof feedback === 'undefined' || feedback === null) {
+            throw new window.Error('Missing the required parameter "feedback" when calling cgetContributionsByFeedback');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling cgetContributionsByFeedback');
+        }
+
+        let pathParams = {
+            'feedback': feedback,
+        };
+
+        let bodyParam = null;
+
+        let queryParams = {
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/feedbacks/{feedback}/contributions',
+            'GET',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    let {
-      xKeyclicApp,
-      feedback,
-      acceptLanguage,
-      xKeyclicAppVersion
-    } = options
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling cgetContributionsByFeedback')
-    }
-
-    // verify the required parameter 'feedback' is set
-    if (typeof feedback === 'undefined' || feedback === null) {
-      throw new window.Error('Missing the required parameter "feedback" when calling cgetContributionsByFeedback')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling cgetContributionsByFeedback')
-    }
-
-    let pathParams = {
-      'feedback': feedback
-    }
-
-    let bodyParam = null
-
-    let queryParams = {
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/feedbacks/{feedback}/contributions',
-      'GET',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
-
-  /**
+    /**
      * Create one Contribution resource.
      * @param { String } xKeyclicApp
      * @param { String } feedback The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
+     * @param { String } xKeyclicAppVersion  
      */
-  postContributionByFeedback (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    if (returnType === null) {
-      returnType = Operation
+    postContributionByFeedback(
+        returnType = null,
+        options,
+        credentials,
+    ) {
+        if (returnType === null) {
+            returnType = Operation;
+        }
+
+        let {
+            xKeyclicApp,
+            feedback,
+            acceptLanguage,
+            xKeyclicAppVersion,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postContributionByFeedback');
+        }
+        
+        // verify the required parameter 'feedback' is set
+        if (typeof feedback === 'undefined' || feedback === null) {
+            throw new window.Error('Missing the required parameter "feedback" when calling postContributionByFeedback');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling postContributionByFeedback');
+        }
+
+        let pathParams = {
+            'feedback': feedback,
+        };
+
+        let bodyParam = null;
+
+        let queryParams = {
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/feedbacks/{feedback}/contributions',
+            'POST',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    let {
-      xKeyclicApp,
-      feedback,
-      acceptLanguage,
-      xKeyclicAppVersion
-    } = options
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postContributionByFeedback')
-    }
-
-    // verify the required parameter 'feedback' is set
-    if (typeof feedback === 'undefined' || feedback === null) {
-      throw new window.Error('Missing the required parameter "feedback" when calling postContributionByFeedback')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling postContributionByFeedback')
-    }
-
-    let pathParams = {
-      'feedback': feedback
-    }
-
-    let bodyParam = null
-
-    let queryParams = {
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/feedbacks/{feedback}/contributions',
-      'POST',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
 }

@@ -10,80 +10,91 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import MemberEmbedded from './MemberEmbedded'
-import MemberLinks from './MemberLinks'
+
+import ApiClient from '../ApiClient';
+import MemberEmbedded from './MemberEmbedded';
+import MemberLinks from './MemberLinks';
+
+
+    
 
 /**
  * The Member model module.
  * @module model/Member
  */
-export default class Member {
-  /**
+export default class Member  {
+    /**
      * Constructs a new "Member".
      * @alias module:model/Member
      * @class
-
+    
      * @param id { String }
-
+    
      * @param createdAt { Date }
-
+    
      */
-  constructor (
+    constructor(
+    
+        id,
+    
+        createdAt,
+    
+    ) {
 
-    id,
+        this.roles = [];
+        this.id = id;
+        this.createdAt = createdAt;
+        this.type = null;
+        this.links = null;
+        this.embedded = null;
 
-    createdAt
+        this.linksType = MemberLinks;
+        this.embeddedType = MemberEmbedded;
+    }
 
-  ) {
-    this.roles = []
-    this.id = id
-    this.createdAt = createdAt
-    this.type = null
-    this.links = null
-    this.embedded = null
-
-    this.linksType = MemberLinks
-    this.embeddedType = MemberEmbedded
-  }
-
-  /**
+    /**
     * Constructs a "Member" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/Member } object Optional instance to populate.
     * @return { module:model/Member } The populated "Member" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new Member();
+        }
+
+        if (data.hasOwnProperty('roles')) {
+            object.roles = ApiClient.convertToType(data.roles, '[\'String\']');
+        }
+        if (data.hasOwnProperty('id')) {
+            object.id = ApiClient.convertToType(data.id, 'String');
+        }
+        if (data.hasOwnProperty('createdAt')) {
+            object.createdAt = ApiClient.convertToType(data.createdAt, 'Date');
+        }
+        if (data.hasOwnProperty('type')) {
+            object.type = ApiClient.convertToType(data.type, 'String');
+        }
+        if (data.hasOwnProperty('_links')) {
+            object.links = ApiClient.convertToType(data._links, object.linksType);
+        }
+        if (data.hasOwnProperty('_embedded')) {
+            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new Member()
-    }
+    
 
-    if (data.hasOwnProperty('roles')) {
-      object.roles = ApiClient.convertToType(data.roles, '[\'String\']')
-    }
-    if (data.hasOwnProperty('id')) {
-      object.id = ApiClient.convertToType(data.id, 'String')
-    }
-    if (data.hasOwnProperty('createdAt')) {
-      object.createdAt = ApiClient.convertToType(data.createdAt, 'Date')
-    }
-    if (data.hasOwnProperty('type')) {
-      object.type = ApiClient.convertToType(data.type, 'String')
-    }
-    if (data.hasOwnProperty('_links')) {
-      object.links = ApiClient.convertToType(data._links, object.linksType)
-    }
-    if (data.hasOwnProperty('_embedded')) {
-      object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType)
-    }
-
-    return object
-  }
 }
+
+
+

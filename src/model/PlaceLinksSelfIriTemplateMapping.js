@@ -10,47 +10,59 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
+
+import ApiClient from '../ApiClient';
+
+
+    
 
 /**
  * The PlaceLinksSelfIriTemplateMapping model module.
  * @module model/PlaceLinksSelfIriTemplateMapping
  */
-export default class PlaceLinksSelfIriTemplateMapping {
-  /**
+export default class PlaceLinksSelfIriTemplateMapping  {
+    /**
      * Constructs a new "PlaceLinksSelfIriTemplateMapping".
      * @alias module:model/PlaceLinksSelfIriTemplateMapping
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.place = null
-  }
+        this.place = null;
 
-  /**
+    }
+
+    /**
     * Constructs a "PlaceLinksSelfIriTemplateMapping" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/PlaceLinksSelfIriTemplateMapping } object Optional instance to populate.
     * @return { module:model/PlaceLinksSelfIriTemplateMapping } The populated "PlaceLinksSelfIriTemplateMapping" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new PlaceLinksSelfIriTemplateMapping();
+        }
+
+        if (data.hasOwnProperty('place')) {
+            object.place = ApiClient.convertToType(data.place, 'String');
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new PlaceLinksSelfIriTemplateMapping()
-    }
+    
 
-    if (data.hasOwnProperty('place')) {
-      object.place = ApiClient.convertToType(data.place, 'String')
-    }
-
-    return object
-  }
 }
+
+
+

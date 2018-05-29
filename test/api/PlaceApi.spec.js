@@ -10,86 +10,93 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.PlaceApi()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.PlaceApi();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('PlaceApi', function () {
-    describe('cgetPlaces', function () {
-      it('should call cgetPlaces successfully', function (done) {
-        // uncomment below and update the code to test cgetPlaces
-        // instance.cgetPlaces(function(error) {
+  describe('PlaceApi', function() {
+    describe('cgetPlaces', function() {
+      it('should call cgetPlaces successfully', function(done) {
+        //uncomment below and update the code to test cgetPlaces
+        //instance.cgetPlaces(function(error) {
         //  if (error) throw error;
-        // expect().to.be();
-        // });
-        done()
-      })
-    })
-    describe('cgetPlacesByOrganization', function () {
-      it('should call cgetPlacesByOrganization successfully', function (done) {
-        // uncomment below and update the code to test cgetPlacesByOrganization
-        // instance.cgetPlacesByOrganization(function(error) {
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetPlacesByOrganization', function() {
+      it('should call cgetPlacesByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cgetPlacesByOrganization
+        //instance.cgetPlacesByOrganization(function(error) {
         //  if (error) throw error;
-        // expect().to.be();
-        // });
-        done()
-      })
-    })
-    describe('getPlace', function () {
-      it('should call getPlace successfully', function (done) {
-        // uncomment below and update the code to test getPlace
-        // instance.getPlace(function(error) {
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getPlace', function() {
+      it('should call getPlace successfully', function(done) {
+        //uncomment below and update the code to test getPlace
+        //instance.getPlace(function(error) {
         //  if (error) throw error;
-        // expect().to.be();
-        // });
-        done()
-      })
-    })
-    describe('patchPlace', function () {
-      it('should call patchPlace successfully', function (done) {
-        // uncomment below and update the code to test patchPlace
-        // instance.patchPlace(function(error) {
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('patchPlace', function() {
+      it('should call patchPlace successfully', function(done) {
+        //uncomment below and update the code to test patchPlace
+        //instance.patchPlace(function(error) {
         //  if (error) throw error;
-        // expect().to.be();
-        // });
-        done()
-      })
-    })
-    describe('postPlaceByOrganization', function () {
-      it('should call postPlaceByOrganization successfully', function (done) {
-        // uncomment below and update the code to test postPlaceByOrganization
-        // instance.postPlaceByOrganization(function(error) {
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postPlaceByOrganization', function() {
+      it('should call postPlaceByOrganization successfully', function(done) {
+        //uncomment below and update the code to test postPlaceByOrganization
+        //instance.postPlaceByOrganization(function(error) {
         //  if (error) throw error;
-        // expect().to.be();
-        // });
-        done()
-      })
-    })
-  })
-}))
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+  });
+
+}));

@@ -10,57 +10,67 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import BusinessActivityCollection from './BusinessActivityCollection'
-import Pagination from './Pagination'
-import PaginationLinks from './PaginationLinks'
+
+import ApiClient from '../ApiClient';
+import BusinessActivityCollection from './BusinessActivityCollection';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+
+
+    
 
 /**
  * The BusinessActivityPagination model module.
  * @module model/BusinessActivityPagination
  */
 export default class BusinessActivityPagination extends Pagination {
-  /**
+    /**
      * Constructs a new "BusinessActivityPagination".
      * @alias module:model/BusinessActivityPagination
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
+        super(
+                
+        );
 
-  ) {
-    super(
+        this.embedded = null;
 
-    )
+        this.embeddedType = BusinessActivityCollection;
+    }
 
-    this.embedded = null
-
-    this.embeddedType = BusinessActivityCollection
-  }
-
-  /**
+    /**
     * Constructs a "BusinessActivityPagination" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/BusinessActivityPagination } object Optional instance to populate.
     * @return { module:model/BusinessActivityPagination } The populated "BusinessActivityPagination" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new BusinessActivityPagination();
+        }
+        object = super.constructFromData(data, object);
+
+        if (data.hasOwnProperty('_embedded')) {
+            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new BusinessActivityPagination()
-    }
-    object = super.constructFromData(data, object)
+    
 
-    if (data.hasOwnProperty('_embedded')) {
-      object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType)
-    }
-
-    return object
-  }
 }
+
+
+

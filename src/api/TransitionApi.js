@@ -10,331 +10,350 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import Error from '../model/Error'
-import Feedback from '../model/Feedback'
-import FeedbackWorkflowTransitionData from '../model/FeedbackWorkflowTransitionData'
-import Operation from '../model/Operation'
-import OperationWorkflowTransitionData from '../model/OperationWorkflowTransitionData'
-import Report from '../model/Report'
-import ReportWorkflowTransitionData from '../model/ReportWorkflowTransitionData'
+import ApiClient from '../ApiClient';
+import Error from '../model/Error';
+import Feedback from '../model/Feedback';
+import FeedbackWorkflowTransitionData from '../model/FeedbackWorkflowTransitionData';
+import Operation from '../model/Operation';
+import OperationWorkflowTransitionData from '../model/OperationWorkflowTransitionData';
+import Report from '../model/Report';
+import ReportWorkflowTransitionData from '../model/ReportWorkflowTransitionData';
 
 /**
  * Transition service.
  * @module api/TransitionApi
  */
 export default class TransitionApi extends ApiClient {
-  /**
+    /**
      * @class
      * { string } basePath To override basePath.
      * { object } headers Additional headers for the instance.
      * { int } timeout Number in seconds before timeout.
      */
-  constructor (
-    basePath = null,
-    headers = null,
-    timeout = null
-  ) {
-    super(basePath, headers, timeout)
-  }
+    constructor(
+        basePath = null,
+        headers = null,
+        timeout = null
+    ) {
+        super(basePath, headers, timeout);
+    }
 
-  /**
+    /**
      * Create one Transition resource.
      * @param { String } xKeyclicApp
      * @param { String } feedback The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
-     * @param { module:model/FeedbackWorkflowTransitionData } feedbackWorkflowTransitionData
+     * @param { String } xKeyclicAppVersion  
+     * @param { module:model/FeedbackWorkflowTransitionData } feedbackWorkflowTransitionData  
      */
-  postTransitionByFeedback (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    if (returnType === null) {
-      returnType = Feedback
+    postTransitionByFeedback(
+        returnType = null,
+        options,
+        credentials,
+    ) {
+        if (returnType === null) {
+            returnType = Feedback;
+        }
+
+        let {
+            xKeyclicApp,
+            feedback,
+            acceptLanguage,
+            xKeyclicAppVersion,
+            feedbackWorkflowTransitionData,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postTransitionByFeedback');
+        }
+        
+        // verify the required parameter 'feedback' is set
+        if (typeof feedback === 'undefined' || feedback === null) {
+            throw new window.Error('Missing the required parameter "feedback" when calling postTransitionByFeedback');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+        // verify the null value of parameter 'feedbackWorkflowTransitionData'
+        if (typeof feedbackWorkflowTransitionData === 'undefined') {
+            feedbackWorkflowTransitionData = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling postTransitionByFeedback');
+        }
+
+        let pathParams = {
+            'feedback': feedback,
+        };
+
+        let bodyParam = feedbackWorkflowTransitionData;
+
+        let queryParams = {
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/feedbacks/{feedback}/workflow/transition',
+            'POST',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    let {
-      xKeyclicApp,
-      feedback,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      feedbackWorkflowTransitionData
-    } = options
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postTransitionByFeedback')
-    }
-
-    // verify the required parameter 'feedback' is set
-    if (typeof feedback === 'undefined' || feedback === null) {
-      throw new window.Error('Missing the required parameter "feedback" when calling postTransitionByFeedback')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    // verify the null value of parameter 'feedbackWorkflowTransitionData'
-    if (typeof feedbackWorkflowTransitionData === 'undefined') {
-      feedbackWorkflowTransitionData = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling postTransitionByFeedback')
-    }
-
-    let pathParams = {
-      'feedback': feedback
-    }
-
-    let bodyParam = feedbackWorkflowTransitionData
-
-    let queryParams = {
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/feedbacks/{feedback}/workflow/transition',
-      'POST',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
-
-  /**
+    /**
      * Create one Transition resource.
      * @param { String } xKeyclicApp
      * @param { String } operation The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
-     * @param { module:model/OperationWorkflowTransitionData } operationWorkflowTransitionData
+     * @param { String } xKeyclicAppVersion  
+     * @param { module:model/OperationWorkflowTransitionData } operationWorkflowTransitionData  
      */
-  postTransitionByOperation (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    if (returnType === null) {
-      returnType = Operation
+    postTransitionByOperation(
+        returnType = null,
+        options,
+        credentials,
+    ) {
+        if (returnType === null) {
+            returnType = Operation;
+        }
+
+        let {
+            xKeyclicApp,
+            operation,
+            acceptLanguage,
+            xKeyclicAppVersion,
+            operationWorkflowTransitionData,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postTransitionByOperation');
+        }
+        
+        // verify the required parameter 'operation' is set
+        if (typeof operation === 'undefined' || operation === null) {
+            throw new window.Error('Missing the required parameter "operation" when calling postTransitionByOperation');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+        // verify the null value of parameter 'operationWorkflowTransitionData'
+        if (typeof operationWorkflowTransitionData === 'undefined') {
+            operationWorkflowTransitionData = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling postTransitionByOperation');
+        }
+
+        let pathParams = {
+            'operation': operation,
+        };
+
+        let bodyParam = operationWorkflowTransitionData;
+
+        let queryParams = {
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/operations/{operation}/workflow/transition',
+            'POST',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    let {
-      xKeyclicApp,
-      operation,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      operationWorkflowTransitionData
-    } = options
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postTransitionByOperation')
-    }
-
-    // verify the required parameter 'operation' is set
-    if (typeof operation === 'undefined' || operation === null) {
-      throw new window.Error('Missing the required parameter "operation" when calling postTransitionByOperation')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    // verify the null value of parameter 'operationWorkflowTransitionData'
-    if (typeof operationWorkflowTransitionData === 'undefined') {
-      operationWorkflowTransitionData = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling postTransitionByOperation')
-    }
-
-    let pathParams = {
-      'operation': operation
-    }
-
-    let bodyParam = operationWorkflowTransitionData
-
-    let queryParams = {
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/operations/{operation}/workflow/transition',
-      'POST',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
-
-  /**
+    /**
      * Create one Transition resource.
      * @param { String } xKeyclicApp
      * @param { String } report The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
-     * @param { module:model/ReportWorkflowTransitionData } reportWorkflowTransitionData
+     * @param { String } xKeyclicAppVersion  
+     * @param { module:model/ReportWorkflowTransitionData } reportWorkflowTransitionData  
      */
-  postTransitionByReport (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    if (returnType === null) {
-      returnType = Report
+    postTransitionByReport(
+        returnType = null,
+        options,
+        credentials,
+    ) {
+        if (returnType === null) {
+            returnType = Report;
+        }
+
+        let {
+            xKeyclicApp,
+            report,
+            acceptLanguage,
+            xKeyclicAppVersion,
+            reportWorkflowTransitionData,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postTransitionByReport');
+        }
+        
+        // verify the required parameter 'report' is set
+        if (typeof report === 'undefined' || report === null) {
+            throw new window.Error('Missing the required parameter "report" when calling postTransitionByReport');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+        // verify the null value of parameter 'reportWorkflowTransitionData'
+        if (typeof reportWorkflowTransitionData === 'undefined') {
+            reportWorkflowTransitionData = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling postTransitionByReport');
+        }
+
+        let pathParams = {
+            'report': report,
+        };
+
+        let bodyParam = reportWorkflowTransitionData;
+
+        let queryParams = {
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/reports/{report}/workflow/transition',
+            'POST',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    let {
-      xKeyclicApp,
-      report,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      reportWorkflowTransitionData
-    } = options
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postTransitionByReport')
-    }
-
-    // verify the required parameter 'report' is set
-    if (typeof report === 'undefined' || report === null) {
-      throw new window.Error('Missing the required parameter "report" when calling postTransitionByReport')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    // verify the null value of parameter 'reportWorkflowTransitionData'
-    if (typeof reportWorkflowTransitionData === 'undefined') {
-      reportWorkflowTransitionData = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling postTransitionByReport')
-    }
-
-    let pathParams = {
-      'report': report
-    }
-
-    let bodyParam = reportWorkflowTransitionData
-
-    let queryParams = {
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/reports/{report}/workflow/transition',
-      'POST',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
 }

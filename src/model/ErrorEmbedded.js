@@ -10,50 +10,61 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import Error from './Error'
+
+import ApiClient from '../ApiClient';
+import Error from './Error';
+
+
+    
 
 /**
  * The ErrorEmbedded model module.
  * @module model/ErrorEmbedded
  */
-export default class ErrorEmbedded {
-  /**
+export default class ErrorEmbedded  {
+    /**
      * Constructs a new "ErrorEmbedded".
      * @alias module:model/ErrorEmbedded
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.errors = []
+        this.errors = [];
 
-    this.errorsType = Error
-  }
+        this.errorsType = Error;
+    }
 
-  /**
+    /**
     * Constructs a "ErrorEmbedded" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/ErrorEmbedded } object Optional instance to populate.
     * @return { module:model/ErrorEmbedded } The populated "ErrorEmbedded" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new ErrorEmbedded();
+        }
+
+        if (data.hasOwnProperty('errors')) {
+            object.errors = ApiClient.convertToType(data.errors, [object.errorsType]);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new ErrorEmbedded()
-    }
+    
 
-    if (data.hasOwnProperty('errors')) {
-      object.errors = ApiClient.convertToType(data.errors, [object.errorsType])
-    }
-
-    return object
-  }
 }
+
+
+

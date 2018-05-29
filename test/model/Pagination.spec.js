@@ -10,77 +10,85 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.Pagination()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.Pagination();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('Pagination', function () {
-    it('should create an instance of Pagination', function () {
+  describe('Pagination', function() {
+    it('should create an instance of Pagination', function() {
       // uncomment below and update the code to test Pagination
-      // var instane = new KeyclicApi.Pagination();
-      // expect(instance).to.be.a(KeyclicApi.Pagination);
-    })
+      //var instane = new KeyclicApi.Pagination();
+      //expect(instance).to.be.a(KeyclicApi.Pagination);
+    });
 
-    it('should have the property limit (base name: "limit")', function () {
+    it('should have the property limit (base name: "limit")', function() {
       // uncomment below and update the code to test the property limit
-      // var instane = new KeyclicApi.Pagination();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Pagination();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property page (base name: "page")', function () {
+    it('should have the property page (base name: "page")', function() {
       // uncomment below and update the code to test the property page
-      // var instane = new KeyclicApi.Pagination();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Pagination();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property pages (base name: "pages")', function () {
+    it('should have the property pages (base name: "pages")', function() {
       // uncomment below and update the code to test the property pages
-      // var instane = new KeyclicApi.Pagination();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Pagination();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property total (base name: "total")', function () {
+    it('should have the property total (base name: "total")', function() {
       // uncomment below and update the code to test the property total
-      // var instane = new KeyclicApi.Pagination();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Pagination();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property embedded (base name: "_embedded")', function () {
+    it('should have the property embedded (base name: "_embedded")', function() {
       // uncomment below and update the code to test the property embedded
-      // var instane = new KeyclicApi.Pagination();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Pagination();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property links (base name: "_links")', function () {
+    it('should have the property links (base name: "_links")', function() {
       // uncomment below and update the code to test the property links
-      // var instane = new KeyclicApi.Pagination();
-      // expect(instance).to.be();
-    })
-  })
-}))
+      //var instane = new KeyclicApi.Pagination();
+      //expect(instance).to.be();
+    });
+
+  });
+
+}));

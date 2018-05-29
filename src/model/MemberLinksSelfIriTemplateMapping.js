@@ -10,51 +10,63 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
+
+import ApiClient from '../ApiClient';
+
+
+    
 
 /**
  * The MemberLinksSelfIriTemplateMapping model module.
  * @module model/MemberLinksSelfIriTemplateMapping
  */
-export default class MemberLinksSelfIriTemplateMapping {
-  /**
+export default class MemberLinksSelfIriTemplateMapping  {
+    /**
      * Constructs a new "MemberLinksSelfIriTemplateMapping".
      * @alias module:model/MemberLinksSelfIriTemplateMapping
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.organization = null
-    this.member = null
-  }
+        this.organization = null;
+        this.member = null;
 
-  /**
+    }
+
+    /**
     * Constructs a "MemberLinksSelfIriTemplateMapping" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/MemberLinksSelfIriTemplateMapping } object Optional instance to populate.
     * @return { module:model/MemberLinksSelfIriTemplateMapping } The populated "MemberLinksSelfIriTemplateMapping" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new MemberLinksSelfIriTemplateMapping();
+        }
+
+        if (data.hasOwnProperty('organization')) {
+            object.organization = ApiClient.convertToType(data.organization, 'String');
+        }
+        if (data.hasOwnProperty('member')) {
+            object.member = ApiClient.convertToType(data.member, 'String');
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new MemberLinksSelfIriTemplateMapping()
-    }
+    
 
-    if (data.hasOwnProperty('organization')) {
-      object.organization = ApiClient.convertToType(data.organization, 'String')
-    }
-    if (data.hasOwnProperty('member')) {
-      object.member = ApiClient.convertToType(data.member, 'String')
-    }
-
-    return object
-  }
 }
+
+
+

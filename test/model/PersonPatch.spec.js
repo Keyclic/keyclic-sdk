@@ -10,89 +10,97 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.PersonPatch()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.PersonPatch();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('PersonPatch', function () {
-    it('should create an instance of PersonPatch', function () {
+  describe('PersonPatch', function() {
+    it('should create an instance of PersonPatch', function() {
       // uncomment below and update the code to test PersonPatch
-      // var instane = new KeyclicApi.PersonPatch();
-      // expect(instance).to.be.a(KeyclicApi.PersonPatch);
-    })
+      //var instane = new KeyclicApi.PersonPatch();
+      //expect(instance).to.be.a(KeyclicApi.PersonPatch);
+    });
 
-    it('should have the property givenName (base name: "givenName")', function () {
+    it('should have the property givenName (base name: "givenName")', function() {
       // uncomment below and update the code to test the property givenName
-      // var instane = new KeyclicApi.PersonPatch();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.PersonPatch();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property familyName (base name: "familyName")', function () {
+    it('should have the property familyName (base name: "familyName")', function() {
       // uncomment below and update the code to test the property familyName
-      // var instane = new KeyclicApi.PersonPatch();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.PersonPatch();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property email (base name: "email")', function () {
+    it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      // var instane = new KeyclicApi.PersonPatch();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.PersonPatch();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property jobTitle (base name: "jobTitle")', function () {
+    it('should have the property jobTitle (base name: "jobTitle")', function() {
       // uncomment below and update the code to test the property jobTitle
-      // var instane = new KeyclicApi.PersonPatch();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.PersonPatch();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property image (base name: "image")', function () {
+    it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
-      // var instane = new KeyclicApi.PersonPatch();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.PersonPatch();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property optIn (base name: "optIn")', function () {
+    it('should have the property optIn (base name: "optIn")', function() {
       // uncomment below and update the code to test the property optIn
-      // var instane = new KeyclicApi.PersonPatch();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.PersonPatch();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property preferencesMessageEmailEnabled (base name: "preferences.messageEmailEnabled")', function () {
+    it('should have the property preferencesMessageEmailEnabled (base name: "preferences.messageEmailEnabled")', function() {
       // uncomment below and update the code to test the property preferencesMessageEmailEnabled
-      // var instane = new KeyclicApi.PersonPatch();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.PersonPatch();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property preferencesMessagePushEnabled (base name: "preferences.messagePushEnabled")', function () {
+    it('should have the property preferencesMessagePushEnabled (base name: "preferences.messagePushEnabled")', function() {
       // uncomment below and update the code to test the property preferencesMessagePushEnabled
-      // var instane = new KeyclicApi.PersonPatch();
-      // expect(instance).to.be();
-    })
-  })
-}))
+      //var instane = new KeyclicApi.PersonPatch();
+      //expect(instance).to.be();
+    });
+
+  });
+
+}));

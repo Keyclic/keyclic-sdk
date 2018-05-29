@@ -10,47 +10,59 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
+
+import ApiClient from '../ApiClient';
+
+
+    
 
 /**
  * The FeedbackLinksSelfIriTemplateMapping model module.
  * @module model/FeedbackLinksSelfIriTemplateMapping
  */
-export default class FeedbackLinksSelfIriTemplateMapping {
-  /**
+export default class FeedbackLinksSelfIriTemplateMapping  {
+    /**
      * Constructs a new "FeedbackLinksSelfIriTemplateMapping".
      * @alias module:model/FeedbackLinksSelfIriTemplateMapping
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.feedback = null
-  }
+        this.feedback = null;
 
-  /**
+    }
+
+    /**
     * Constructs a "FeedbackLinksSelfIriTemplateMapping" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/FeedbackLinksSelfIriTemplateMapping } object Optional instance to populate.
     * @return { module:model/FeedbackLinksSelfIriTemplateMapping } The populated "FeedbackLinksSelfIriTemplateMapping" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new FeedbackLinksSelfIriTemplateMapping();
+        }
+
+        if (data.hasOwnProperty('feedback')) {
+            object.feedback = ApiClient.convertToType(data.feedback, 'String');
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new FeedbackLinksSelfIriTemplateMapping()
-    }
+    
 
-    if (data.hasOwnProperty('feedback')) {
-      object.feedback = ApiClient.convertToType(data.feedback, 'String')
-    }
-
-    return object
-  }
 }
+
+
+

@@ -10,56 +10,67 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import WebhookLinksOrganization from './WebhookLinksOrganization'
-import WebhookLinksSelf from './WebhookLinksSelf'
+
+import ApiClient from '../ApiClient';
+import WebhookLinksOrganization from './WebhookLinksOrganization';
+import WebhookLinksSelf from './WebhookLinksSelf';
+
+
+    
 
 /**
  * The WebhookLinks model module.
  * @module model/WebhookLinks
  */
-export default class WebhookLinks {
-  /**
+export default class WebhookLinks  {
+    /**
      * Constructs a new "WebhookLinks".
      * @alias module:model/WebhookLinks
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.self = null
-    this.organization = null
+        this.self = null;
+        this.organization = null;
 
-    this.selfType = WebhookLinksSelf
-    this.organizationType = WebhookLinksOrganization
-  }
+        this.selfType = WebhookLinksSelf;
+        this.organizationType = WebhookLinksOrganization;
+    }
 
-  /**
+    /**
     * Constructs a "WebhookLinks" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/WebhookLinks } object Optional instance to populate.
     * @return { module:model/WebhookLinks } The populated "WebhookLinks" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new WebhookLinks();
+        }
+
+        if (data.hasOwnProperty('self')) {
+            object.self = ApiClient.convertToType(data.self, object.selfType);
+        }
+        if (data.hasOwnProperty('organization')) {
+            object.organization = ApiClient.convertToType(data.organization, object.organizationType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new WebhookLinks()
-    }
+    
 
-    if (data.hasOwnProperty('self')) {
-      object.self = ApiClient.convertToType(data.self, object.selfType)
-    }
-    if (data.hasOwnProperty('organization')) {
-      object.organization = ApiClient.convertToType(data.organization, object.organizationType)
-    }
-
-    return object
-  }
 }
+
+
+

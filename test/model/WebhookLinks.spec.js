@@ -10,53 +10,61 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.WebhookLinks()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.WebhookLinks();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('WebhookLinks', function () {
-    it('should create an instance of WebhookLinks', function () {
+  describe('WebhookLinks', function() {
+    it('should create an instance of WebhookLinks', function() {
       // uncomment below and update the code to test WebhookLinks
-      // var instane = new KeyclicApi.WebhookLinks();
-      // expect(instance).to.be.a(KeyclicApi.WebhookLinks);
-    })
+      //var instane = new KeyclicApi.WebhookLinks();
+      //expect(instance).to.be.a(KeyclicApi.WebhookLinks);
+    });
 
-    it('should have the property self (base name: "self")', function () {
+    it('should have the property self (base name: "self")', function() {
       // uncomment below and update the code to test the property self
-      // var instane = new KeyclicApi.WebhookLinks();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.WebhookLinks();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property organization (base name: "organization")', function () {
+    it('should have the property organization (base name: "organization")', function() {
       // uncomment below and update the code to test the property organization
-      // var instane = new KeyclicApi.WebhookLinks();
-      // expect(instance).to.be();
-    })
-  })
-}))
+      //var instane = new KeyclicApi.WebhookLinks();
+      //expect(instance).to.be();
+    });
+
+  });
+
+}));

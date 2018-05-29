@@ -10,59 +10,67 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.OrganizationLinks()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.OrganizationLinks();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('OrganizationLinks', function () {
-    it('should create an instance of OrganizationLinks', function () {
+  describe('OrganizationLinks', function() {
+    it('should create an instance of OrganizationLinks', function() {
       // uncomment below and update the code to test OrganizationLinks
-      // var instane = new KeyclicApi.OrganizationLinks();
-      // expect(instance).to.be.a(KeyclicApi.OrganizationLinks);
-    })
+      //var instane = new KeyclicApi.OrganizationLinks();
+      //expect(instance).to.be.a(KeyclicApi.OrganizationLinks);
+    });
 
-    it('should have the property self (base name: "self")', function () {
+    it('should have the property self (base name: "self")', function() {
       // uncomment below and update the code to test the property self
-      // var instane = new KeyclicApi.OrganizationLinks();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.OrganizationLinks();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property businessActivity (base name: "businessActivity")', function () {
+    it('should have the property businessActivity (base name: "businessActivity")', function() {
       // uncomment below and update the code to test the property businessActivity
-      // var instane = new KeyclicApi.OrganizationLinks();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.OrganizationLinks();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property logo (base name: "logo")', function () {
+    it('should have the property logo (base name: "logo")', function() {
       // uncomment below and update the code to test the property logo
-      // var instane = new KeyclicApi.OrganizationLinks();
-      // expect(instance).to.be();
-    })
-  })
-}))
+      //var instane = new KeyclicApi.OrganizationLinks();
+      //expect(instance).to.be();
+    });
+
+  });
+
+}));

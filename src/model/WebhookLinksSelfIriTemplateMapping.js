@@ -10,47 +10,59 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
+
+import ApiClient from '../ApiClient';
+
+
+    
 
 /**
  * The WebhookLinksSelfIriTemplateMapping model module.
  * @module model/WebhookLinksSelfIriTemplateMapping
  */
-export default class WebhookLinksSelfIriTemplateMapping {
-  /**
+export default class WebhookLinksSelfIriTemplateMapping  {
+    /**
      * Constructs a new "WebhookLinksSelfIriTemplateMapping".
      * @alias module:model/WebhookLinksSelfIriTemplateMapping
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.webhook = null
-  }
+        this.webhook = null;
 
-  /**
+    }
+
+    /**
     * Constructs a "WebhookLinksSelfIriTemplateMapping" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/WebhookLinksSelfIriTemplateMapping } object Optional instance to populate.
     * @return { module:model/WebhookLinksSelfIriTemplateMapping } The populated "WebhookLinksSelfIriTemplateMapping" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new WebhookLinksSelfIriTemplateMapping();
+        }
+
+        if (data.hasOwnProperty('webhook')) {
+            object.webhook = ApiClient.convertToType(data.webhook, 'String');
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new WebhookLinksSelfIriTemplateMapping()
-    }
+    
 
-    if (data.hasOwnProperty('webhook')) {
-      object.webhook = ApiClient.convertToType(data.webhook, 'String')
-    }
-
-    return object
-  }
 }
+
+
+

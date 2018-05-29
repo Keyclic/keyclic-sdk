@@ -10,59 +10,67 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.ActivityAggregatedPagination()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.ActivityAggregatedPagination();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('ActivityAggregatedPagination', function () {
-    it('should create an instance of ActivityAggregatedPagination', function () {
+  describe('ActivityAggregatedPagination', function() {
+    it('should create an instance of ActivityAggregatedPagination', function() {
       // uncomment below and update the code to test ActivityAggregatedPagination
-      // var instane = new KeyclicApi.ActivityAggregatedPagination();
-      // expect(instance).to.be.a(KeyclicApi.ActivityAggregatedPagination);
-    })
+      //var instane = new KeyclicApi.ActivityAggregatedPagination();
+      //expect(instance).to.be.a(KeyclicApi.ActivityAggregatedPagination);
+    });
 
-    it('should have the property duration (base name: "duration")', function () {
+    it('should have the property duration (base name: "duration")', function() {
       // uncomment below and update the code to test the property duration
-      // var instane = new KeyclicApi.ActivityAggregatedPagination();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.ActivityAggregatedPagination();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property next (base name: "next")', function () {
+    it('should have the property next (base name: "next")', function() {
       // uncomment below and update the code to test the property next
-      // var instane = new KeyclicApi.ActivityAggregatedPagination();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.ActivityAggregatedPagination();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property results (base name: "results")', function () {
+    it('should have the property results (base name: "results")', function() {
       // uncomment below and update the code to test the property results
-      // var instane = new KeyclicApi.ActivityAggregatedPagination();
-      // expect(instance).to.be();
-    })
-  })
-}))
+      //var instane = new KeyclicApi.ActivityAggregatedPagination();
+      //expect(instance).to.be();
+    });
+
+  });
+
+}));

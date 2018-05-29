@@ -10,82 +10,93 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import ApplicationLinks from './ApplicationLinks'
+
+import ApiClient from '../ApiClient';
+import ApplicationLinks from './ApplicationLinks';
+
+
+    
 
 /**
  * The Application model module.
  * @module model/Application
  */
-export default class Application {
-  /**
+export default class Application  {
+    /**
      * Constructs a new "Application".
      * @alias module:model/Application
      * @class
-
+    
      * @param name { String }
-
+    
      * @param token { String }
-
+    
      * @param id { String }
-
+    
      */
-  constructor (
+    constructor(
+    
+        name,
+    
+        token,
+    
+        id,
+    
+    ) {
 
-    name,
+        this.name = name;
+        this.token = token;
+        this.version = null;
+        this.id = id;
+        this.type = null;
+        this.links = null;
 
-    token,
+        this.linksType = ApplicationLinks;
+    }
 
-    id
-
-  ) {
-    this.name = name
-    this.token = token
-    this.version = null
-    this.id = id
-    this.type = null
-    this.links = null
-
-    this.linksType = ApplicationLinks
-  }
-
-  /**
+    /**
     * Constructs a "Application" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/Application } object Optional instance to populate.
     * @return { module:model/Application } The populated "Application" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new Application();
+        }
+
+        if (data.hasOwnProperty('name')) {
+            object.name = ApiClient.convertToType(data.name, 'String');
+        }
+        if (data.hasOwnProperty('token')) {
+            object.token = ApiClient.convertToType(data.token, 'String');
+        }
+        if (data.hasOwnProperty('version')) {
+            object.version = ApiClient.convertToType(data.version, 'String');
+        }
+        if (data.hasOwnProperty('id')) {
+            object.id = ApiClient.convertToType(data.id, 'String');
+        }
+        if (data.hasOwnProperty('type')) {
+            object.type = ApiClient.convertToType(data.type, 'String');
+        }
+        if (data.hasOwnProperty('_links')) {
+            object.links = ApiClient.convertToType(data._links, object.linksType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new Application()
-    }
+    
 
-    if (data.hasOwnProperty('name')) {
-      object.name = ApiClient.convertToType(data.name, 'String')
-    }
-    if (data.hasOwnProperty('token')) {
-      object.token = ApiClient.convertToType(data.token, 'String')
-    }
-    if (data.hasOwnProperty('version')) {
-      object.version = ApiClient.convertToType(data.version, 'String')
-    }
-    if (data.hasOwnProperty('id')) {
-      object.id = ApiClient.convertToType(data.id, 'String')
-    }
-    if (data.hasOwnProperty('type')) {
-      object.type = ApiClient.convertToType(data.type, 'String')
-    }
-    if (data.hasOwnProperty('_links')) {
-      object.links = ApiClient.convertToType(data._links, object.linksType)
-    }
-
-    return object
-  }
 }
+
+
+

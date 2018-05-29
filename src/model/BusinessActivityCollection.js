@@ -10,50 +10,61 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import BusinessActivity from './BusinessActivity'
+
+import ApiClient from '../ApiClient';
+import BusinessActivity from './BusinessActivity';
+
+
+    
 
 /**
  * The BusinessActivityCollection model module.
  * @module model/BusinessActivityCollection
  */
-export default class BusinessActivityCollection {
-  /**
+export default class BusinessActivityCollection  {
+    /**
      * Constructs a new "BusinessActivityCollection".
      * @alias module:model/BusinessActivityCollection
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.items = []
+        this.items = [];
 
-    this.itemsType = BusinessActivity
-  }
+        this.itemsType = BusinessActivity;
+    }
 
-  /**
+    /**
     * Constructs a "BusinessActivityCollection" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/BusinessActivityCollection } object Optional instance to populate.
     * @return { module:model/BusinessActivityCollection } The populated "BusinessActivityCollection" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new BusinessActivityCollection();
+        }
+
+        if (data.hasOwnProperty('items')) {
+            object.items = ApiClient.convertToType(data.items, [object.itemsType]);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new BusinessActivityCollection()
-    }
+    
 
-    if (data.hasOwnProperty('items')) {
-      object.items = ApiClient.convertToType(data.items, [object.itemsType])
-    }
-
-    return object
-  }
 }
+
+
+

@@ -10,47 +10,59 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
+
+import ApiClient from '../ApiClient';
+
+
+    
 
 /**
  * The MemberEmbedded model module.
  * @module model/MemberEmbedded
  */
-export default class MemberEmbedded {
-  /**
+export default class MemberEmbedded  {
+    /**
      * Constructs a new "MemberEmbedded".
      * @alias module:model/MemberEmbedded
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.availableRoles = []
-  }
+        this.availableRoles = [];
 
-  /**
+    }
+
+    /**
     * Constructs a "MemberEmbedded" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/MemberEmbedded } object Optional instance to populate.
     * @return { module:model/MemberEmbedded } The populated "MemberEmbedded" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new MemberEmbedded();
+        }
+
+        if (data.hasOwnProperty('availableRoles')) {
+            object.availableRoles = ApiClient.convertToType(data.availableRoles, '[\'String\']');
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new MemberEmbedded()
-    }
+    
 
-    if (data.hasOwnProperty('availableRoles')) {
-      object.availableRoles = ApiClient.convertToType(data.availableRoles, '[\'String\']')
-    }
-
-    return object
-  }
 }
+
+
+

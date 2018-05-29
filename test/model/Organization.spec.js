@@ -10,113 +10,121 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.Organization()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.Organization();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('Organization', function () {
-    it('should create an instance of Organization', function () {
+  describe('Organization', function() {
+    it('should create an instance of Organization', function() {
       // uncomment below and update the code to test Organization
-      // var instane = new KeyclicApi.Organization();
-      // expect(instance).to.be.a(KeyclicApi.Organization);
-    })
+      //var instane = new KeyclicApi.Organization();
+      //expect(instance).to.be.a(KeyclicApi.Organization);
+    });
 
-    it('should have the property name (base name: "name")', function () {
+    it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      // var instane = new KeyclicApi.Organization();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Organization();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property alternateName (base name: "alternateName")', function () {
+    it('should have the property alternateName (base name: "alternateName")', function() {
       // uncomment below and update the code to test the property alternateName
-      // var instane = new KeyclicApi.Organization();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Organization();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property description (base name: "description")', function () {
+    it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      // var instane = new KeyclicApi.Organization();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Organization();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property billingEmailAddress (base name: "billingEmailAddress")', function () {
+    it('should have the property billingEmailAddress (base name: "billingEmailAddress")', function() {
       // uncomment below and update the code to test the property billingEmailAddress
-      // var instane = new KeyclicApi.Organization();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Organization();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property notificationEmailAddress (base name: "notificationEmailAddress")', function () {
+    it('should have the property notificationEmailAddress (base name: "notificationEmailAddress")', function() {
       // uncomment below and update the code to test the property notificationEmailAddress
-      // var instane = new KeyclicApi.Organization();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Organization();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property id (base name: "id")', function () {
+    it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      // var instane = new KeyclicApi.Organization();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Organization();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property createdAt (base name: "createdAt")', function () {
+    it('should have the property createdAt (base name: "createdAt")', function() {
       // uncomment below and update the code to test the property createdAt
-      // var instane = new KeyclicApi.Organization();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Organization();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property updatedAt (base name: "updatedAt")', function () {
+    it('should have the property updatedAt (base name: "updatedAt")', function() {
       // uncomment below and update the code to test the property updatedAt
-      // var instane = new KeyclicApi.Organization();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Organization();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property type (base name: "type")', function () {
+    it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      // var instane = new KeyclicApi.Organization();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Organization();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property isEnabled (base name: "isEnabled")', function () {
+    it('should have the property isEnabled (base name: "isEnabled")', function() {
       // uncomment below and update the code to test the property isEnabled
-      // var instane = new KeyclicApi.Organization();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Organization();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property enabled (base name: "enabled")', function () {
+    it('should have the property enabled (base name: "enabled")', function() {
       // uncomment below and update the code to test the property enabled
-      // var instane = new KeyclicApi.Organization();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.Organization();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property links (base name: "_links")', function () {
+    it('should have the property links (base name: "_links")', function() {
       // uncomment below and update the code to test the property links
-      // var instane = new KeyclicApi.Organization();
-      // expect(instance).to.be();
-    })
-  })
-}))
+      //var instane = new KeyclicApi.Organization();
+      //expect(instance).to.be();
+    });
+
+  });
+
+}));

@@ -10,62 +10,73 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import PlaceGeoPolygon from './PlaceGeoPolygon'
+
+import ApiClient from '../ApiClient';
+import PlaceGeoPolygon from './PlaceGeoPolygon';
+
+
+    
 
 /**
  * The PlaceGeo model module.
  * @module model/PlaceGeo
  */
-export default class PlaceGeo {
-  /**
+export default class PlaceGeo  {
+    /**
      * Constructs a new "PlaceGeo".
      * @alias module:model/PlaceGeo
      * @class
-
+    
      * @param polygon { module:model/PlaceGeoPolygon }
-
+    
      * @param elevation { Number }
-
+    
      */
-  constructor (
+    constructor(
+    
+        polygon,
+    
+        elevation,
+    
+    ) {
 
-    polygon,
+        this.polygon = polygon;
+        this.elevation = elevation;
 
-    elevation
+        this.polygonType = PlaceGeoPolygon;
+    }
 
-  ) {
-    this.polygon = polygon
-    this.elevation = elevation
-
-    this.polygonType = PlaceGeoPolygon
-  }
-
-  /**
+    /**
     * Constructs a "PlaceGeo" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/PlaceGeo } object Optional instance to populate.
     * @return { module:model/PlaceGeo } The populated "PlaceGeo" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new PlaceGeo();
+        }
+
+        if (data.hasOwnProperty('polygon')) {
+            object.polygon = ApiClient.convertToType(data.polygon, object.polygonType);
+        }
+        if (data.hasOwnProperty('elevation')) {
+            object.elevation = ApiClient.convertToType(data.elevation, 'Number');
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new PlaceGeo()
-    }
+    
 
-    if (data.hasOwnProperty('polygon')) {
-      object.polygon = ApiClient.convertToType(data.polygon, object.polygonType)
-    }
-    if (data.hasOwnProperty('elevation')) {
-      object.elevation = ApiClient.convertToType(data.elevation, 'Number')
-    }
-
-    return object
-  }
 }
+
+
+

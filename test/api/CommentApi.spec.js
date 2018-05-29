@@ -10,76 +10,83 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.CommentApi()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.CommentApi();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('CommentApi', function () {
-    describe('cgetCommentsByFeedback', function () {
-      it('should call cgetCommentsByFeedback successfully', function (done) {
-        // uncomment below and update the code to test cgetCommentsByFeedback
-        // instance.cgetCommentsByFeedback(function(error) {
+  describe('CommentApi', function() {
+    describe('cgetCommentsByFeedback', function() {
+      it('should call cgetCommentsByFeedback successfully', function(done) {
+        //uncomment below and update the code to test cgetCommentsByFeedback
+        //instance.cgetCommentsByFeedback(function(error) {
         //  if (error) throw error;
-        // expect().to.be();
-        // });
-        done()
-      })
-    })
-    describe('cgetCommentsByOperation', function () {
-      it('should call cgetCommentsByOperation successfully', function (done) {
-        // uncomment below and update the code to test cgetCommentsByOperation
-        // instance.cgetCommentsByOperation(function(error) {
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetCommentsByOperation', function() {
+      it('should call cgetCommentsByOperation successfully', function(done) {
+        //uncomment below and update the code to test cgetCommentsByOperation
+        //instance.cgetCommentsByOperation(function(error) {
         //  if (error) throw error;
-        // expect().to.be();
-        // });
-        done()
-      })
-    })
-    describe('postCommentByFeedback', function () {
-      it('should call postCommentByFeedback successfully', function (done) {
-        // uncomment below and update the code to test postCommentByFeedback
-        // instance.postCommentByFeedback(function(error) {
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postCommentByFeedback', function() {
+      it('should call postCommentByFeedback successfully', function(done) {
+        //uncomment below and update the code to test postCommentByFeedback
+        //instance.postCommentByFeedback(function(error) {
         //  if (error) throw error;
-        // expect().to.be();
-        // });
-        done()
-      })
-    })
-    describe('postCommentByOperation', function () {
-      it('should call postCommentByOperation successfully', function (done) {
-        // uncomment below and update the code to test postCommentByOperation
-        // instance.postCommentByOperation(function(error) {
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postCommentByOperation', function() {
+      it('should call postCommentByOperation successfully', function(done) {
+        //uncomment below and update the code to test postCommentByOperation
+        //instance.postCommentByOperation(function(error) {
         //  if (error) throw error;
-        // expect().to.be();
-        // });
-        done()
-      })
-    })
-  })
-}))
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+  });
+
+}));

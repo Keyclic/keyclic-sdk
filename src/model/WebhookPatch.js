@@ -10,51 +10,63 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
+
+import ApiClient from '../ApiClient';
+
+
+    
 
 /**
  * The WebhookPatch model module.
  * @module model/WebhookPatch
  */
-export default class WebhookPatch {
-  /**
+export default class WebhookPatch  {
+    /**
      * Constructs a new "WebhookPatch".
      * @alias module:model/WebhookPatch
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.event = null
-    this.payloadUrl = null
-  }
+        this.event = null;
+        this.payloadUrl = null;
 
-  /**
+    }
+
+    /**
     * Constructs a "WebhookPatch" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/WebhookPatch } object Optional instance to populate.
     * @return { module:model/WebhookPatch } The populated "WebhookPatch" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new WebhookPatch();
+        }
+
+        if (data.hasOwnProperty('event')) {
+            object.event = ApiClient.convertToType(data.event, 'String');
+        }
+        if (data.hasOwnProperty('payloadUrl')) {
+            object.payloadUrl = ApiClient.convertToType(data.payloadUrl, 'String');
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new WebhookPatch()
-    }
+    
 
-    if (data.hasOwnProperty('event')) {
-      object.event = ApiClient.convertToType(data.event, 'String')
-    }
-    if (data.hasOwnProperty('payloadUrl')) {
-      object.payloadUrl = ApiClient.convertToType(data.payloadUrl, 'String')
-    }
-
-    return object
-  }
 }
+
+
+

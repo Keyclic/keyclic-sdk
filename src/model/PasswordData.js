@@ -10,51 +10,63 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
+
+import ApiClient from '../ApiClient';
+
+
+    
 
 /**
  * The PasswordData model module.
  * @module model/PasswordData
  */
-export default class PasswordData {
-  /**
+export default class PasswordData  {
+    /**
      * Constructs a new "PasswordData".
      * @alias module:model/PasswordData
      * @class
-
+    
      * @param password { String }
-
+    
      */
-  constructor (
+    constructor(
+    
+        password,
+    
+    ) {
 
-    password
+        this.password = password;
 
-  ) {
-    this.password = password
-  }
+    }
 
-  /**
+    /**
     * Constructs a "PasswordData" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/PasswordData } object Optional instance to populate.
     * @return { module:model/PasswordData } The populated "PasswordData" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new PasswordData();
+        }
+
+        if (data.hasOwnProperty('password')) {
+            object.password = ApiClient.convertToType(data.password, 'String');
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new PasswordData()
-    }
+    
 
-    if (data.hasOwnProperty('password')) {
-      object.password = ApiClient.convertToType(data.password, 'String')
-    }
-
-    return object
-  }
 }
+
+
+

@@ -10,57 +10,67 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import LogEntryCollection from './LogEntryCollection'
-import Pagination from './Pagination'
-import PaginationLinks from './PaginationLinks'
+
+import ApiClient from '../ApiClient';
+import LogEntryCollection from './LogEntryCollection';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+
+
+    
 
 /**
  * The LogEntryPagination model module.
  * @module model/LogEntryPagination
  */
 export default class LogEntryPagination extends Pagination {
-  /**
+    /**
      * Constructs a new "LogEntryPagination".
      * @alias module:model/LogEntryPagination
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
+        super(
+                
+        );
 
-  ) {
-    super(
+        this.embedded = null;
 
-    )
+        this.embeddedType = LogEntryCollection;
+    }
 
-    this.embedded = null
-
-    this.embeddedType = LogEntryCollection
-  }
-
-  /**
+    /**
     * Constructs a "LogEntryPagination" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/LogEntryPagination } object Optional instance to populate.
     * @return { module:model/LogEntryPagination } The populated "LogEntryPagination" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new LogEntryPagination();
+        }
+        object = super.constructFromData(data, object);
+
+        if (data.hasOwnProperty('_embedded')) {
+            object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new LogEntryPagination()
-    }
-    object = super.constructFromData(data, object)
+    
 
-    if (data.hasOwnProperty('_embedded')) {
-      object.embedded = ApiClient.convertToType(data._embedded, object.embeddedType)
-    }
-
-    return object
-  }
 }
+
+
+

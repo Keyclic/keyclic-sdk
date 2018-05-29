@@ -10,53 +10,61 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.OperationLinksImageIriTemplateMapping()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.OperationLinksImageIriTemplateMapping();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('OperationLinksImageIriTemplateMapping', function () {
-    it('should create an instance of OperationLinksImageIriTemplateMapping', function () {
+  describe('OperationLinksImageIriTemplateMapping', function() {
+    it('should create an instance of OperationLinksImageIriTemplateMapping', function() {
       // uncomment below and update the code to test OperationLinksImageIriTemplateMapping
-      // var instane = new KeyclicApi.OperationLinksImageIriTemplateMapping();
-      // expect(instance).to.be.a(KeyclicApi.OperationLinksImageIriTemplateMapping);
-    })
+      //var instane = new KeyclicApi.OperationLinksImageIriTemplateMapping();
+      //expect(instance).to.be.a(KeyclicApi.OperationLinksImageIriTemplateMapping);
+    });
 
-    it('should have the property image (base name: "image")', function () {
+    it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
-      // var instane = new KeyclicApi.OperationLinksImageIriTemplateMapping();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.OperationLinksImageIriTemplateMapping();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property operation (base name: "operation")', function () {
+    it('should have the property operation (base name: "operation")', function() {
       // uncomment below and update the code to test the property operation
-      // var instane = new KeyclicApi.OperationLinksImageIriTemplateMapping();
-      // expect(instance).to.be();
-    })
-  })
-}))
+      //var instane = new KeyclicApi.OperationLinksImageIriTemplateMapping();
+      //expect(instance).to.be();
+    });
+
+  });
+
+}));

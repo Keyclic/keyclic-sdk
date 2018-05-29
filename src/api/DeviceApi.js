@@ -10,31 +10,31 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import Device from '../model/Device'
-import DeviceData from '../model/DeviceData'
-import Error from '../model/Error'
+import ApiClient from '../ApiClient';
+import Device from '../model/Device';
+import DeviceData from '../model/DeviceData';
+import Error from '../model/Error';
 
 /**
  * Device service.
  * @module api/DeviceApi
  */
 export default class DeviceApi extends ApiClient {
-  /**
+    /**
      * @class
      * { string } basePath To override basePath.
      * { object } headers Additional headers for the instance.
      * { int } timeout Number in seconds before timeout.
      */
-  constructor (
-    basePath = null,
-    headers = null,
-    timeout = null
-  ) {
-    super(basePath, headers, timeout)
-  }
+    constructor(
+        basePath = null,
+        headers = null,
+        timeout = null
+    ) {
+        super(basePath, headers, timeout);
+    }
 
-  /**
+    /**
      * Remove one Device resource.
      * @param { String } xKeyclicApp
      * @param { String } person The identifier of the resource formatted as GUID string.
@@ -42,192 +42,206 @@ export default class DeviceApi extends ApiClient {
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
+     * @param { String } xKeyclicAppVersion  
      */
-  deleteDeviceByPersonAndDevice (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    let {
-      xKeyclicApp,
-      person,
-      device,
-      acceptLanguage,
-      xKeyclicAppVersion
-    } = options
+    deleteDeviceByPersonAndDevice(
+        returnType = null,
+        options,
+        credentials,
+    ) {
 
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling deleteDeviceByPersonAndDevice')
+        let {
+            xKeyclicApp,
+            person,
+            device,
+            acceptLanguage,
+            xKeyclicAppVersion,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling deleteDeviceByPersonAndDevice');
+        }
+        
+        // verify the required parameter 'person' is set
+        if (typeof person === 'undefined' || person === null) {
+            throw new window.Error('Missing the required parameter "person" when calling deleteDeviceByPersonAndDevice');
+        }
+        
+        // verify the required parameter 'device' is set
+        if (typeof device === 'undefined' || device === null) {
+            throw new window.Error('Missing the required parameter "device" when calling deleteDeviceByPersonAndDevice');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling deleteDeviceByPersonAndDevice');
+        }
+
+        let pathParams = {
+            'person': person,
+            'device': device,
+        };
+
+        let bodyParam = null;
+
+        let queryParams = {
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/people/{person}/devices/{device}',
+            'DELETE',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    // verify the required parameter 'person' is set
-    if (typeof person === 'undefined' || person === null) {
-      throw new window.Error('Missing the required parameter "person" when calling deleteDeviceByPersonAndDevice')
-    }
-
-    // verify the required parameter 'device' is set
-    if (typeof device === 'undefined' || device === null) {
-      throw new window.Error('Missing the required parameter "device" when calling deleteDeviceByPersonAndDevice')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling deleteDeviceByPersonAndDevice')
-    }
-
-    let pathParams = {
-      'person': person,
-      'device': device
-    }
-
-    let bodyParam = null
-
-    let queryParams = {
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/people/{person}/devices/{device}',
-      'DELETE',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
-
-  /**
+    /**
      * Create one Device resource.
      * @param { String } xKeyclicApp
      * @param { String } person The identifier of the resource formatted as GUID string.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Device }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { String } xKeyclicAppVersion
-     * @param { module:model/DeviceData } deviceData
+     * @param { String } xKeyclicAppVersion  
+     * @param { module:model/DeviceData } deviceData  
      */
-  postDeviceByPerson (
-    returnType = null,
-    options,
-    credentials
-  ) {
-    if (returnType === null) {
-      returnType = Device
+    postDeviceByPerson(
+        returnType = null,
+        options,
+        credentials,
+    ) {
+        if (returnType === null) {
+            returnType = Device;
+        }
+
+        let {
+            xKeyclicApp,
+            person,
+            acceptLanguage,
+            xKeyclicAppVersion,
+            deviceData,
+        } = options;
+
+        
+        // verify the required parameter 'xKeyclicApp' is set
+        if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
+            throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postDeviceByPerson');
+        }
+        
+        // verify the required parameter 'person' is set
+        if (typeof person === 'undefined' || person === null) {
+            throw new window.Error('Missing the required parameter "person" when calling postDeviceByPerson');
+        }
+        
+
+        
+        // verify the default value of parameter 'acceptLanguage'
+        if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
+            acceptLanguage = "fr-FR";  // eslint-disable-line quotes
+        }
+        
+
+        
+        // verify the null value of parameter 'xKeyclicAppVersion'
+        if (typeof xKeyclicAppVersion === 'undefined') {
+            xKeyclicAppVersion = null;
+        }
+        
+        // verify the null value of parameter 'deviceData'
+        if (typeof deviceData === 'undefined') {
+            deviceData = null;
+        }
+        
+
+        if (typeof credentials === 'undefined' || credentials === null) {
+            throw new window.Error('Missing the required parameter "credentials" when calling postDeviceByPerson');
+        }
+
+        let pathParams = {
+            'person': person,
+        };
+
+        let bodyParam = deviceData;
+
+        let queryParams = {
+        };
+
+        let headerParams = {
+            'accept-language': acceptLanguage,
+            'x-keyclic-app': xKeyclicApp,
+            'x-keyclic-app-version': xKeyclicAppVersion,
+        };
+
+        let credentialParams = credentials;
+
+        let authNames = [
+            'bearer',
+        ];
+
+        let contentTypes = [
+            'application/json;charset=UTF-8',
+        ];
+
+        let accepts = [
+            'application/hal+json;charset=UTF-8',
+        ];
+
+        return this.callApi(
+            '/people/{person}/devices',
+            'POST',
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+        );
     }
 
-    let {
-      xKeyclicApp,
-      person,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      deviceData
-    } = options
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === 'undefined' || xKeyclicApp === null) {
-      throw new window.Error('Missing the required parameter "xKeyclicApp" when calling postDeviceByPerson')
-    }
-
-    // verify the required parameter 'person' is set
-    if (typeof person === 'undefined' || person === null) {
-      throw new window.Error('Missing the required parameter "person" when calling postDeviceByPerson')
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === 'undefined' || acceptLanguage === null) {
-      acceptLanguage = "fr-FR" // eslint-disable-line quotes
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === 'undefined') {
-      xKeyclicAppVersion = null
-    }
-
-    // verify the null value of parameter 'deviceData'
-    if (typeof deviceData === 'undefined') {
-      deviceData = null
-    }
-
-    if (typeof credentials === 'undefined' || credentials === null) {
-      throw new window.Error('Missing the required parameter "credentials" when calling postDeviceByPerson')
-    }
-
-    let pathParams = {
-      'person': person
-    }
-
-    let bodyParam = deviceData
-
-    let queryParams = {
-    }
-
-    let headerParams = {
-      'accept-language': acceptLanguage,
-      'x-keyclic-app': xKeyclicApp,
-      'x-keyclic-app-version': xKeyclicAppVersion
-    }
-
-    let credentialParams = credentials
-
-    let authNames = [
-      'bearer'
-    ]
-
-    let contentTypes = [
-      'application/json;charset=UTF-8'
-    ]
-
-    let accepts = [
-      'application/hal+json;charset=UTF-8'
-    ]
-
-    return this.callApi(
-      '/people/{person}/devices',
-      'POST',
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    )
-  }
 }

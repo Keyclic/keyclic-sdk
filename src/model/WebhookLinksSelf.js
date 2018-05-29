@@ -10,54 +10,65 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import WebhookLinksSelfIriTemplate from './WebhookLinksSelfIriTemplate'
+
+import ApiClient from '../ApiClient';
+import WebhookLinksSelfIriTemplate from './WebhookLinksSelfIriTemplate';
+
+
+    
 
 /**
  * The WebhookLinksSelf model module.
  * @module model/WebhookLinksSelf
  */
-export default class WebhookLinksSelf {
-  /**
+export default class WebhookLinksSelf  {
+    /**
      * Constructs a new "WebhookLinksSelf".
      * @alias module:model/WebhookLinksSelf
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.href = null
-    this.iriTemplate = null
+        this.href = null;
+        this.iriTemplate = null;
 
-    this.iriTemplateType = WebhookLinksSelfIriTemplate
-  }
+        this.iriTemplateType = WebhookLinksSelfIriTemplate;
+    }
 
-  /**
+    /**
     * Constructs a "WebhookLinksSelf" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/WebhookLinksSelf } object Optional instance to populate.
     * @return { module:model/WebhookLinksSelf } The populated "WebhookLinksSelf" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new WebhookLinksSelf();
+        }
+
+        if (data.hasOwnProperty('href')) {
+            object.href = ApiClient.convertToType(data.href, 'String');
+        }
+        if (data.hasOwnProperty('iriTemplate')) {
+            object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new WebhookLinksSelf()
-    }
+    
 
-    if (data.hasOwnProperty('href')) {
-      object.href = ApiClient.convertToType(data.href, 'String')
-    }
-    if (data.hasOwnProperty('iriTemplate')) {
-      object.iriTemplate = ApiClient.convertToType(data.iriTemplate, object.iriTemplateType)
-    }
-
-    return object
-  }
 }
+
+
+

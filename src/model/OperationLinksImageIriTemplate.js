@@ -10,50 +10,61 @@
  * Do not edit the class manually.
  */
 
-import ApiClient from '../ApiClient'
-import OperationLinksImageIriTemplateMapping from './OperationLinksImageIriTemplateMapping'
+
+import ApiClient from '../ApiClient';
+import OperationLinksImageIriTemplateMapping from './OperationLinksImageIriTemplateMapping';
+
+
+    
 
 /**
  * The OperationLinksImageIriTemplate model module.
  * @module model/OperationLinksImageIriTemplate
  */
-export default class OperationLinksImageIriTemplate {
-  /**
+export default class OperationLinksImageIriTemplate  {
+    /**
      * Constructs a new "OperationLinksImageIriTemplate".
      * @alias module:model/OperationLinksImageIriTemplate
      * @class
-
+    
      */
-  constructor (
+    constructor(
+    
+    ) {
 
-  ) {
-    this.mapping = null
+        this.mapping = null;
 
-    this.mappingType = OperationLinksImageIriTemplateMapping
-  }
+        this.mappingType = OperationLinksImageIriTemplateMapping;
+    }
 
-  /**
+    /**
     * Constructs a "OperationLinksImageIriTemplate" from a plain JavaScript object.
     * @param { object } data The plain JavaScript object bearing properties of interest.
     * @param { module:model/OperationLinksImageIriTemplate } object Optional instance to populate.
     * @return { module:model/OperationLinksImageIriTemplate } The populated "OperationLinksImageIriTemplate" instance.
     */
-  static constructFromData (
-    data,
-    object = null
-  ) {
-    if (data === null) {
-      throw new Error('No data to build object')
+    static constructFromData(
+        data,
+        object = null,
+    ) {
+        if (data === null) {
+            throw new Error('No data to build object');
+        }
+
+        if (object === null) {
+            object = new OperationLinksImageIriTemplate();
+        }
+
+        if (data.hasOwnProperty('mapping')) {
+            object.mapping = ApiClient.convertToType(data.mapping, object.mappingType);
+        }
+
+        return object;
     }
 
-    if (object === null) {
-      object = new OperationLinksImageIriTemplate()
-    }
+    
 
-    if (data.hasOwnProperty('mapping')) {
-      object.mapping = ApiClient.convertToType(data.mapping, object.mappingType)
-    }
-
-    return object
-  }
 }
+
+
+

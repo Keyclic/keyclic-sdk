@@ -10,53 +10,61 @@
  * Do not edit the class manually.
  */
 
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory)
+    define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'))
+    factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.KeyclicApi)
+    factory(root.expect, root.KeyclicApi);
   }
-}(this, function (expect, KeyclicApi) {
-  'use strict'
+}(this, function(expect, KeyclicApi) {
+  'use strict';
 
-  var instance
+  var instance;
 
-  beforeEach(function () {
-    instance = new KeyclicApi.PlacePatch()
-  })
+  beforeEach(function() {
+    instance = new KeyclicApi.PlacePatch();
+  });
 
-  var getProperty = function (object, getter, property) {
+  var getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
   }
 
-  var setProperty = function (object, setter, property, value) {
+  var setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
   }
 
-  describe('PlacePatch', function () {
-    it('should create an instance of PlacePatch', function () {
+  describe('PlacePatch', function() {
+    it('should create an instance of PlacePatch', function() {
       // uncomment below and update the code to test PlacePatch
-      // var instane = new KeyclicApi.PlacePatch();
-      // expect(instance).to.be.a(KeyclicApi.PlacePatch);
-    })
+      //var instane = new KeyclicApi.PlacePatch();
+      //expect(instance).to.be.a(KeyclicApi.PlacePatch);
+    });
 
-    it('should have the property branchCode (base name: "branchCode")', function () {
+    it('should have the property branchCode (base name: "branchCode")', function() {
       // uncomment below and update the code to test the property branchCode
-      // var instane = new KeyclicApi.PlacePatch();
-      // expect(instance).to.be();
-    })
+      //var instane = new KeyclicApi.PlacePatch();
+      //expect(instance).to.be();
+    });
 
-    it('should have the property name (base name: "name")', function () {
+    it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      // var instane = new KeyclicApi.PlacePatch();
-      // expect(instance).to.be();
-    })
-  })
-}))
+      //var instane = new KeyclicApi.PlacePatch();
+      //expect(instance).to.be();
+    });
+
+  });
+
+}));
