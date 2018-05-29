@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 usage() {
-    echo "Usage of run.sh command:
+    echo "Usage of command:
 
     deploy                          Deploy project to npmjs.com registry.
     generate                        Generate documentations, sources and tests thanks to swagger definition.
