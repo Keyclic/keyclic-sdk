@@ -1,23 +1,16 @@
 {
-    "name": "@keyclic/app-sdk",
-    "version": "1.23.0",
-    "description": "",
+    "name": "@keyclic/sdk-javascript",
+    "version": "{{{appVersion}}}",
+    "description": "{{{projectDescription}}}",
     "license": "MIT",
-    "main": "javascript/src/index.js",
+    "main": "src/index.js",
     "scripts": {
         "test": "mocha --compilers js:babel-core/register --recursive",
-        "standard": "standard --fix deployment/* javascript/src/* javascript/test/*"
+        "standard": "standard --fix deployment/* src/* test/*"
     },
     "dependencies": {
-        "babel-core": "^6.26.3",
-        "babel-loader": "^7.1.5",
-        "babel-preset-env": "^1.7.0",
-        "babel-preset-stage-2": "^6.24.1",
         "es6-promise": "^4.2.4",
-        "isomorphic-fetch": "^2.2.1",
-        "standard": "^11.0.1",
-        "webpack": "^4.16.0",
-        "webpack-command": "^0.2.1"
+        "isomorphic-fetch": "^2.2.1"
     },
     "peerDependencies": {
         "babel-core": "^6.26.0",
@@ -34,5 +27,8 @@
             "env",
             "stage-2"
         ]
+    },
+    "publishConfig": {
+        "registry": "https://github.com/keyclic/app-sdk-ts"
     }
 }

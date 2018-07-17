@@ -41,9 +41,10 @@ cd ${GENERATOR_NAME}
 mvn clean package
 
 CODEGEN_CLI_PATH="${TEMP_DIR}/${GENERATOR_NAME}/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar"
-TEMPLATE_DIR="${CURRENT_DIR}/templates/javascript-es6"
+TEMPLATE_DIR="${CURRENT_DIR}/javascript/templates/javascript-es6"
 cd ${CURRENT_DIR}
-rm -rf docs/* src/* test/*
+rm -rf javascript/docs/ javascript/src/
+rm -rf typescript-angular/
 java \
     -DdebugModels \
     -DdebugOperations \
@@ -51,12 +52,26 @@ java \
     generate \
     --input-spec ${SWAGGER_FILE} \
     --lang javascript \
-    --output . \
+    --output javascript/ \
     --additional-properties useInheritance=true \
     --template-dir ${TEMPLATE_DIR} \
-    > .codegen.log
+    > .codegen.javascript.log
 
-npx standard --fix deployment/* src/* test/*
+npx standard --fix deployment/* javascript/src/* javascript/test/*
+
+java \
+    -DdebugModels \
+    -DdebugOperations \
+    -jar ${CODEGEN_CLI_PATH} \
+    generate \
+    --input-spec ${SWAGGER_FILE} \
+    --lang typescript-angular \
+    --output typescript-angular \
+    --config options.json \
+    > .codegen.typescript-angular.log
+
+cd typescript-angular
+yarn && yarn build
 
 # When the script exits call cleanup function.
 trap cleanup EXIT
