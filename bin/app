@@ -9,14 +9,21 @@ usage() {
 }
 
 deploy () {
-    # This script generates Swagger codegen client
-    # then it generates app-sdk from templates and swagger.json file
-    # then it fixes src and test files.
     echo "---------------------------------------"
     echo "Deploying @keyclic/app-sdk to npmjs.com"
     echo "---------------------------------------"
 
-    npm publish --access public
+    echo
+    echo "Need to be logged to npmjs registry,"
+    echo "add user with \"npm adduser --scope=@keyclic\" command."
+
+    rm -rf javascript-es6/dist
+    mkdir -p javascript-es6/dist
+    cp -R javascript-es6/src javascript-es6/dist/.
+    cp javascript-es6/package.json javascript-es6/dist/.
+
+    npm publish javascript-es6/dist --access public
+    npm publish typescript-angular/dist --access public
 }
 
 generate () {
