@@ -1,9 +1,0 @@
-# KeyclicApi.ReportLinksTracking
-
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**href** | **String** | The URI of the tracking associated to the given report. | [optional] 
-**iriTemplate** | [**OperationLinksReportIriTemplate**](OperationLinksReportIriTemplate.md) |  | [optional] 
-
-

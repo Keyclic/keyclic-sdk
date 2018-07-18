@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -x  # print terminal command
+#set -x  # print terminal command
 
 # This script generates Swagger codegen client
 # then it generates app-sdk from templates and swagger.json file
@@ -13,65 +13,72 @@ function cleanup {
     echo "Don't forget to publish on Github and NPM."
 }
 
-echo ""
 SWAGGER_FILE="$1"
 if [ ! -f "${SWAGGER_FILE}" ]; then
     SWAGGER_FILE="https://api.keyclic.com/swagger.json"
 fi
 echo "Use file ${SWAGGER_FILE} as definition API."
-echo ""
+echo
 
-echo ""
-echo "Making temp directory."
 TEMP_DIR=$(mktemp -d)
 if [[ ! "${TEMP_DIR}" || ! -d "${TEMP_DIR}" ]]; then
   echo "Could not create temp deploy directory."
   exit 1
 fi
-echo ""
+echo "Making temp directory."
+echo
 
 # Generator builds 3.* versions are not really ready to generate in other languages than Java.
 #curl --fail --silent --show-error --location http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/3.0.0-rc0/swagger-codegen-cli-3.0.0-rc0.jar --output ${CODEGEN_CLI_PATH}
 
 # We have to compile generator.
 GENERATOR_NAME="swagger-codegen"
-cd ${TEMP_DIR}
+cd ${TEMP_DIR} || exit
 git clone --single-branch https://github.com/swagger-api/swagger-codegen ${GENERATOR_NAME}
-cd ${GENERATOR_NAME}
+cd ${GENERATOR_NAME} || exit
 mvn clean package
-
 CODEGEN_CLI_PATH="${TEMP_DIR}/${GENERATOR_NAME}/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar"
-TEMPLATE_DIR="${CURRENT_DIR}/javascript/templates/javascript-es6"
-cd ${CURRENT_DIR}
-rm -rf javascript/docs/ javascript/src/
-rm -rf typescript-angular/
+
+cd ${CURRENT_DIR} || exit
+rm -rf ${CURRENT_DIR}/javascript-es6
+
+TEMPLATE_DIR="${CURRENT_DIR}/javascript-es6-templates"
 java \
     -DdebugModels \
     -DdebugOperations \
     -jar ${CODEGEN_CLI_PATH} \
     generate \
+    --config options.javascript-es6.json \
     --input-spec ${SWAGGER_FILE} \
     --lang javascript \
-    --output javascript/ \
-    --additional-properties useInheritance=true \
+    --output javascript-es6 \
     --template-dir ${TEMPLATE_DIR} \
-    > .codegen.javascript.log
+    > .codegen.javascript-es6.log
 
-npx standard --fix deployment/* javascript/src/* javascript/test/*
+cd ${CURRENT_DIR}/javascript-es6 || exit
+yarn install
+yarn standard
+
+cd ${CURRENT_DIR} || exit
+rm -rf ${CURRENT_DIR}/typescript-angular
 
 java \
     -DdebugModels \
     -DdebugOperations \
     -jar ${CODEGEN_CLI_PATH} \
     generate \
+    --config options.typescript-angular.json \
     --input-spec ${SWAGGER_FILE} \
     --lang typescript-angular \
     --output typescript-angular \
-    --config options.json \
     > .codegen.typescript-angular.log
 
-cd typescript-angular
-yarn && yarn build
+cd ${CURRENT_DIR}/typescript-angular || exit
+yarn install
+# Upgrade ng-packagr version. Wait for upgrade in swagger typescript-angular template.
+yarn remove ng-packagr
+yarn add ng-packagr --dev
+yarn build
 
 # When the script exits call cleanup function.
 trap cleanup EXIT

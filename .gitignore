@@ -1,9 +1,11 @@
-######################### Project configuration #########################
+######################### Project configuration ########################
+javascript-es6
+typescript-angular
 
 ######################### Common configuration #########################
-### Dev template
-.env
-.php_cs.cache
+### Dev configurations
+.rules/
+build/
 
 ### Packages managers
 node_modules/*
@@ -16,11 +18,10 @@ vendor/*
 *.sublime-project
 *.sublime-workspace
 
-### OS template
+### OS
 *~
 *.sw[mnpcod]
 *.log
-*.lock
 *.tmp
 *.tmp.*
 log.txt
