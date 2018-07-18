@@ -2,8 +2,7 @@ To build SDKs (maven is require).
 
 ```bash
 bin/app generate
-```bash
-
+```
 
 After generation documentations can be found here.
 
