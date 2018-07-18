@@ -1,6 +1,6 @@
 ######################### Project configuration ########################
-javascript-es6
-typescript-angular
+javascript-es6/
+typescript-angular/
 
 ######################### Common configuration #########################
 ### Dev configurations
