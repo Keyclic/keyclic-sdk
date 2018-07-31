@@ -1,4 +1,4 @@
-To build SDKs (maven is require).
+To build SDKs (maven is required).
 
 ```bash
 bin/app generate

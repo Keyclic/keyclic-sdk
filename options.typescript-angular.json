@@ -4,5 +4,6 @@
     "npmRepository": "https://github.com/keyclic/app-sdk",
     "snapshot": false,
     "withInterfaces": true,
-    "ngVersion": "6.0.0"
+    "ngVersion": "6.0.0",
+    "modelPropertyNaming": "original"
 }
