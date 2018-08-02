@@ -5,5 +5,7 @@
     "snapshot": false,
     "withInterfaces": true,
     "ngVersion": "6.0.0",
-    "modelPropertyNaming": "original"
+    "modelPropertyNaming": "original",
+    "sortParamsByRequiredFlag": true,
+    "supportsES6": true
 }
