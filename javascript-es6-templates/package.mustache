@@ -13,15 +13,20 @@
         "isomorphic-fetch": "^2.2.1"
     },
     "devDependencies": {
-        "standard": "^11.0.1"
+        "standard": "^11.0.1",
+        "webpack": "^4.16.4",
+        "webpack-command": "^0.4.1",
+        "babel-loader": "^7.1.5"
     },
     "peerDependencies": {
-        "babel-core": "^6.26.0",
-        "babel-loader": "^7.1.4",
-        "babel-preset-env": "^1.6.1",
-        "babel-preset-stage-2": "^6.24.1",
-        "webpack": "^4.9.1",
-        "webpack-command": "^0.2.0"
+        "@keyclic/eslint-config-keyclic": "^1.1.3",
+        "babel-core": "^6.26.3",
+        "babel-eslint": "^8.2.1",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-stage-2": "^6.24.1"
+    },
+    "publishConfig": {
+        "registry": "https://github.com/keyclic/app-sdk"
     },
     "babel": {
         "babelrc": false,
@@ -30,7 +35,13 @@
             "stage-2"
         ]
     },
-    "publishConfig": {
-        "registry": "https://github.com/keyclic/app-sdk"
+    "eslintConfig": {
+        "extends": [
+            "@keyclic/eslint-config-keyclic"
+        ],
+        "parser": "babel-eslint",
+        "parserOptions": {
+            "sourceType": "module"
+        }
     }
 }
