@@ -58,6 +58,7 @@ java \
 cd ${CURRENT_DIR}/javascript-es6 || exit
 yarn install
 yarn standard
+yarn build
 
 cd ${CURRENT_DIR} || exit
 rm -rf ${CURRENT_DIR}/typescript-angular
