@@ -19,6 +19,7 @@ deploy () {
 
     rm -rf javascript-es6/dist
     mkdir -p javascript-es6/dist
+    cp -R javascript-es6/bundles javascript-es6/dist/.
     cp -R javascript-es6/src javascript-es6/dist/.
     cp javascript-es6/package.json javascript-es6/dist/.
 
