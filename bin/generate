@@ -76,6 +76,9 @@ java \
 
 cd ${CURRENT_DIR}/typescript-angular || exit
 yarn install
+# Upgrade ng-packagr version. Wait for upgrade in swagger typescript-angular template.
+yarn remove ng-packagr
+yarn add ng-packagr --dev
 yarn build
 
 # When the script exits call cleanup function.
