@@ -1,29 +1,27 @@
 {
     "name": "@keyclic/sdk-javascript",
-    "version": "{{{appVersion}}}",
+    "version": "1.24.4",
     "description": "Javascript client for Keyclic API",
     "license": "MIT",
-    "main": "src/index.js",
+    "main": "bundles/main.js",
+    "module": "src/index.js",
     "scripts": {
-        "test": "mocha --compilers js:babel-core/register --recursive",
-        "standard": "standard --fix src/* test/* || true"
+        "build": "wp ./src/index.js --output-path='./bundles' --devtool source-map --module-bind js=babel-loader --output-library='@keyclic/sdk-javascript' --output-library-target='umd'",
+        "standard": "standard --fix src/* test/* || true",
+        "test": "mocha --compilers js:babel-core/register --recursive"
     },
     "dependencies": {
         "es6-promise": "^4.2.4",
         "isomorphic-fetch": "^2.2.1"
     },
     "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.5",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-stage-2": "^6.24.1",
         "standard": "^11.0.1",
         "webpack": "^4.16.4",
-        "webpack-command": "^0.4.1",
-        "babel-loader": "^7.1.5"
-    },
-    "peerDependencies": {
-        "@keyclic/eslint-config-keyclic": "^1.1.3",
-        "babel-core": "^6.26.3",
-        "babel-eslint": "^8.2.1",
-        "babel-preset-env": "^1.7.0",
-        "babel-preset-stage-2": "^6.24.1"
+        "webpack-command": "^0.4.1"
     },
     "publishConfig": {
         "registry": "https://github.com/keyclic/app-sdk"
@@ -34,14 +32,5 @@
             "env",
             "stage-2"
         ]
-    },
-    "eslintConfig": {
-        "extends": [
-            "@keyclic/eslint-config-keyclic"
-        ],
-        "parser": "babel-eslint",
-        "parserOptions": {
-            "sourceType": "module"
-        }
     }
 }
