@@ -1,6 +1,6 @@
 {
     "npmName": "@keyclic/sdk-angular",
-    "npmVersion": "1.24.2",
+    "npmVersion": "1.24.3",
     "npmRepository": "https://github.com/keyclic/app-sdk",
     "snapshot": false,
     "withInterfaces": true,
