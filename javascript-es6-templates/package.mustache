@@ -1,12 +1,11 @@
 {
     "name": "@keyclic/sdk-javascript",
-    "version": "1.24.5",
+    "version": "1.24.6",
     "description": "Javascript client for Keyclic API",
     "license": "MIT",
-    "main": "bundles/main.js",
-    "module": "bundles/main.js",
+    "main": "bundles/index.js",
     "scripts": {
-        "build": "webpack --config webpack.config.js",
+        "build": "babel src --out-dir bundles",
         "standard": "standard --fix src/* test/* || true",
         "test": "mocha --compilers js:babel-core/register --recursive"
     },
@@ -15,15 +14,24 @@
         "isomorphic-fetch": "^2.2.1"
     },
     "devDependencies": {
+        "babel-cli": "^6.26.0",
         "babel-core": "^6.26.3",
-        "babel-loader": "^7.1.5",
+        "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
         "babel-preset-env": "^1.7.0",
         "babel-preset-stage-2": "^6.24.1",
-        "standard": "^11.0.1",
-        "webpack": "^4.16.4",
-        "webpack-command": "^0.4.1"
+        "standard": "^11.0.1"
     },
     "publishConfig": {
         "registry": "https://github.com/keyclic/app-sdk"
+    },
+    "babel": {
+        "babelrc": false,
+        "presets": [
+            "env",
+            "stage-2"
+        ],
+        "plugins": [
+            "transform-es2015-modules-commonjs"
+        ]
     }
 }
