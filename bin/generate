@@ -8,8 +8,7 @@
 CURRENT_DIR=$(pwd)
 
 function cleanup {
-    rm -rf ${TEMP_DIR}
-    echo "Deleted temp directory."
+    cd ${CURRENT_DIR}
     echo "Don't forget to publish on Github and NPM."
 }
 
@@ -20,66 +19,39 @@ fi
 echo "Use file ${SWAGGER_FILE} as definition API."
 echo
 
-TEMP_DIR=$(mktemp -d)
-if [[ ! "${TEMP_DIR}" || ! -d "${TEMP_DIR}" ]]; then
-  echo "Could not create temp deploy directory."
-  exit 1
-fi
-echo "Making temp directory."
-echo
-
-# Generator builds 3.* versions are not really ready to generate in other languages than Java.
-#curl --fail --silent --show-error --location http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/3.0.0-rc0/swagger-codegen-cli-3.0.0-rc0.jar --output ${CODEGEN_CLI_PATH}
-
-# We have to compile generator.
-GENERATOR_NAME="swagger-codegen"
-cd ${TEMP_DIR} || exit
-git clone --single-branch https://github.com/swagger-api/swagger-codegen ${GENERATOR_NAME}
-cd ${GENERATOR_NAME} || exit
-mvn clean package
-CODEGEN_CLI_PATH="${TEMP_DIR}/${GENERATOR_NAME}/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar"
-
-cd ${CURRENT_DIR} || exit
 rm -rf ${CURRENT_DIR}/javascript-es6
-
-TEMPLATE_DIR="${CURRENT_DIR}/javascript-es6-templates"
-java \
-    -DdebugModels \
-    -DdebugOperations \
-    -jar ${CODEGEN_CLI_PATH} \
+docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
+    swaggerapi/swagger-codegen-cli \
     generate \
-    --config options.javascript-es6.json \
+    --config /local/options.javascript-es6.json \
     --input-spec ${SWAGGER_FILE} \
     --lang javascript \
-    --output javascript-es6 \
-    --template-dir ${TEMPLATE_DIR} \
-    > .codegen.javascript-es6.log
+    --output /local/javascript-es6 \
+    --template-dir /local/javascript-es6-templates
+
+rm -rf ${CURRENT_DIR}/dart
+docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
+    swaggerapi/swagger-codegen-cli \
+    generate \
+    --config /local/options.dart.json \
+    --input-spec ${SWAGGER_FILE} \
+    --lang dart \
+    --output /local/dart
+
+# old options example
+#    -DdebugModels \
+#    -DdebugOperations \
+#    generate \
+#    --config options.dart.json \
+#    --input-spec ${SWAGGER_FILE} \
+#    --lang dart \
+#    --output dart \
+#    > .codegen.dart.log
 
 cd ${CURRENT_DIR}/javascript-es6 || exit
-yarn install
-yarn standard
-cp ../webpack.config.js . && yarn build
-
-cd ${CURRENT_DIR} || exit
-rm -rf ${CURRENT_DIR}/typescript-angular
-
-java \
-    -DdebugModels \
-    -DdebugOperations \
-    -jar ${CODEGEN_CLI_PATH} \
-    generate \
-    --config options.typescript-angular.json \
-    --input-spec ${SWAGGER_FILE} \
-    --lang typescript-angular \
-    --output typescript-angular \
-    > .codegen.typescript-angular.log
-
-cd ${CURRENT_DIR}/typescript-angular || exit
-yarn install
-# Upgrade ng-packagr version. Wait for upgrade in swagger typescript-angular template.
-yarn remove ng-packagr
-yarn add ng-packagr --dev
-yarn build
+npm install
+npm run standard
+npm run build
 
 # When the script exits call cleanup function.
 trap cleanup EXIT
