@@ -1,5 +1,5 @@
 {
-    "pubName": "@keyclic/sdk-dart",
+    "pubName": "keyclic_sdk_api",
     "pubVersion": "1.28.0",
     "useEnumExtension": true
 }
