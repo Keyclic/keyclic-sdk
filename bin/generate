@@ -8,7 +8,7 @@
 CURRENT_DIR=$(pwd)
 
 function cleanup {
-    cd ${CURRENT_DIR}
+    cd ${CURRENT_DIR} || exit
     echo "Don't forget to publish on Github and NPM."
 }
 
@@ -48,10 +48,43 @@ docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
 #    --output dart \
 #    > .codegen.dart.log
 
+# Build javascript-es6 package.
 cd ${CURRENT_DIR}/javascript-es6 || exit
 npm install
 npm run standard
 npm run build
+
+# Change some variable name in dart package.
+cd ${CURRENT_DIR}/dart || exit
+sed -i 's/search\[alternateName\]/search_alternateName_/g' lib/api/*
+sed -i 's/search\[billingEmailAddress\]/search_billingEmailAddress_/g' lib/api/*
+sed -i 's/search\[branchCode\]/search_branchCode_/g' lib/api/*
+sed -i 's/search\[color\]/search_color_/g' lib/api/*
+sed -i 's/search\[description\]/search_description_/g' lib/api/*
+sed -i 's/search\[email\]/search_email_/g' lib/api/*
+sed -i 's/search\[familyName\]/search_familyName_/g' lib/api/*
+sed -i 's/search\[givenName\]/search_givenName_/g' lib/api/*
+sed -i 's/search\[icon\]/search_icon_/g' lib/api/*
+sed -i 's/search\[identificationNumber\]/search_identificationNumber_/g' lib/api/*
+sed -i 's/search\[jobTitle\]/search_jobTitle_/g' lib/api/*
+sed -i 's/search\[name\]/search_name_/g' lib/api/*
+sed -i 's/search\[notificationEmailAddress\]/search_notificationEmailAddress_/g' lib/api/*
+sed -i 's/search\[username\]/search_username_/g' lib/api/*
+
+sed -i 's/"search_alternateName_"/"search[alternateName]"/g' lib/api/*
+sed -i 's/"search_billingEmailAddress_"/"search[billingEmailAddress]"/g' lib/api/*
+sed -i 's/"search_branchCode_"/"search[branchCode]"/g' lib/api/*
+sed -i 's/"search_color_"/"search[color]"/g' lib/api/*
+sed -i 's/"search_description_"/"search[description]]"/g' lib/api/*
+sed -i 's/"search_email_"/"search[email]"/g' lib/api/*
+sed -i 's/"search_familyName_"/"search[familyName]"/g' lib/api/*
+sed -i 's/"search_givenName_"/"search[givenName]"/g' lib/api/*
+sed -i 's/"search_icon_"/"search[icon]"/g' lib/api/*
+sed -i 's/"search_identificationNumber_"/"search[identificationNumber]"/g' lib/api/*
+sed -i 's/"search_jobTitle_"/"search[jobTitle]"/g' lib/api/*
+sed -i 's/"search_name_"/"search[name]"/g' lib/api/*
+sed -i 's/"search_notificationEmailAddress_"/"search[notificationEmailAddress]"/g' lib/api/*
+sed -i 's/"search_username_"/"search[username]"/g' lib/api/*
 
 # When the script exits call cleanup function.
 trap cleanup EXIT

@@ -20,6 +20,7 @@ deploy () {
     echo "add user with \"npm adduser --scope=@keyclic\" command."
 
     cd ${CURRENT_DIR}/javascript-es6 || exit
+    # Prepare javascript-es6 package.
     rm -rf dist
     mkdir -p dist
     cp -R bundles dist/.
@@ -29,7 +30,7 @@ deploy () {
 
     cd ${CURRENT_DIR}/dart || exit
     # Change some files to match requirements of pubspec.yaml specifications.
-    mv docs doc
+    if [[ -d "docs" ]]; then mv docs doc; fi
     cp ../LICENSE .
     grep -q "author:" pubspec.yaml || echo "author: Keyclic techies team <techies@keyclic.com>" >> pubspec.yaml
     grep -q "environment:" pubspec.yaml || echo "environment:" >> pubspec.yaml
