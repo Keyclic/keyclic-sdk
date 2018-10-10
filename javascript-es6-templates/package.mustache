@@ -2,13 +2,7 @@
     "name": "@keyclic/sdk-javascript",
     "version": "1.28.0",
     "description": "Javascript client for Keyclic API",
-    "license": "MIT",
-    "main": "bundles/index.js",
-    "scripts": {
-        "build": "babel src --out-dir bundles",
-        "standard": "standard --fix src/* test/* || true",
-        "test": "mocha --compilers js:babel-core/register --recursive"
-    },
+    "author": "Keyclic techies team <techies@keyclic.com>",
     "dependencies": {
         "es6-promise": "^4.2.5",
         "isomorphic-fetch": "^2.2.1"
@@ -21,8 +15,17 @@
         "babel-preset-stage-2": "^6.24.1",
         "standard": "^12.0.1"
     },
-    "publishConfig": {
-        "registry": "https://github.com/keyclic/app-sdk"
+    "homepage": "https://keyclic.com",
+    "license": "MIT",
+    "main": "bundles/index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/keyclic/app-sdk.git"
+    },
+    "scripts": {
+        "build": "babel src --out-dir bundles",
+        "standard": "standard --fix src/* test/* || true",
+        "test": "mocha --compilers js:babel-core/register --recursive"
     },
     "babel": {
         "babelrc": false,
