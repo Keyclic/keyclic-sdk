@@ -56,6 +56,10 @@ npm run build
 
 # Change some variable name in dart package.
 cd ${CURRENT_DIR}/dart || exit
+sed -i 's/geoHash\[\]/geoHash_/g' lib/api/*
+sed -i 's/options\[property\]/options_property_/g' lib/api/*
+sed -i 's/options\[sort\]/options_sort_/g' lib/api/*
+sed -i 's/parents\[\]/parents_/g' lib/api/*
 sed -i 's/search\[alternateName\]/search_alternateName_/g' lib/api/*
 sed -i 's/search\[billingEmailAddress\]/search_billingEmailAddress_/g' lib/api/*
 sed -i 's/search\[branchCode\]/search_branchCode_/g' lib/api/*
@@ -70,7 +74,12 @@ sed -i 's/search\[jobTitle\]/search_jobTitle_/g' lib/api/*
 sed -i 's/search\[name\]/search_name_/g' lib/api/*
 sed -i 's/search\[notificationEmailAddress\]/search_notificationEmailAddress_/g' lib/api/*
 sed -i 's/search\[username\]/search_username_/g' lib/api/*
+sed -i 's/visibility\[\]/visibility_/g' lib/api/*
 
+sed -i 's/"geoHash_"/"geoHash\[\]"/g' lib/api/*
+sed -i 's/"options_property_"/"options\[property\]"/g' lib/api/*
+sed -i 's/"options_sort_"/"options\[sort\]"/g' lib/api/*
+sed -i 's/"parents_"/"parents\[\]"/g' lib/api/*
 sed -i 's/"search_alternateName_"/"search[alternateName]"/g' lib/api/*
 sed -i 's/"search_billingEmailAddress_"/"search[billingEmailAddress]"/g' lib/api/*
 sed -i 's/"search_branchCode_"/"search[branchCode]"/g' lib/api/*
@@ -85,6 +94,7 @@ sed -i 's/"search_jobTitle_"/"search[jobTitle]"/g' lib/api/*
 sed -i 's/"search_name_"/"search[name]"/g' lib/api/*
 sed -i 's/"search_notificationEmailAddress_"/"search[notificationEmailAddress]"/g' lib/api/*
 sed -i 's/"search_username_"/"search[username]"/g' lib/api/*
+sed -i 's/"visibility_"/"visibility\[\]"/g' lib/api/*
 
 # When the script exits call cleanup function.
 trap cleanup EXIT

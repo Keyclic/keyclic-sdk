@@ -1,6 +1,7 @@
 {
+    "browserClient": false,
     "pubDescription": "Dart client for Keyclic API",
     "pubName": "keyclic_sdk_api",
-    "pubVersion": "1.28.2",
+    "pubVersion": "1.28.3",
     "useEnumExtension": true
 }
