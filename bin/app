@@ -11,22 +11,22 @@ usage() {
 deploy () {
     CURRENT_DIR=$(pwd)
 
-    echo "---------------------------------------"
-    echo "Deploying @keyclic/app-sdk to npmjs.com"
-    echo "---------------------------------------"
-
-    echo
-    echo "Need to be logged to npmjs registry,"
-    echo "add user with \"npm adduser --scope=@keyclic\" command."
-
-    cd ${CURRENT_DIR}/javascript-es6 || exit
-    # Prepare javascript-es6 package.
-    rm -rf dist
-    mkdir -p dist
-    cp -R bundles dist/.
-    cp -R src dist/.
-    cp package.json dist/.
-    npm publish dist --access public
+    #echo "---------------------------------------"
+    #echo "Deploying @keyclic/app-sdk to npmjs.com"
+    #echo "---------------------------------------"
+#
+    #echo
+    #echo "Need to be logged to npmjs registry,"
+    #echo "add user with \"npm adduser --scope=@keyclic\" command."
+#
+    #cd ${CURRENT_DIR}/javascript-es6 || exit
+    ## Prepare javascript-es6 package.
+    #rm -rf dist
+    #mkdir -p dist
+    #cp -R bundles dist/.
+    #cp -R src dist/.
+    #cp package.json dist/.
+    #npm publish dist --access public
 
     cd ${CURRENT_DIR}/dart || exit
     # Change some files to match requirements of pubspec.yaml specifications.
@@ -42,7 +42,7 @@ deploy () {
 }
 
 generate () {
-    ./bin/generate
+    ./bin/generate ${@:2}
 }
 
 main () {

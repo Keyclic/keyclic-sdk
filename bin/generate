@@ -11,27 +11,26 @@ function cleanup {
     cd ${CURRENT_DIR} || exit
     echo "Don't forget to publish on Github and NPM."
 }
-
 SWAGGER_FILE="$1"
-if [ ! -f "${SWAGGER_FILE}" ]; then
+if [ -z "$SWAGGER_FILE" ]; then
     SWAGGER_FILE="https://api.keyclic.com/swagger.json"
 fi
 echo "Use file ${SWAGGER_FILE} as definition API."
 echo
 
-rm -rf ${CURRENT_DIR}/javascript-es6
-docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
-    swaggerapi/swagger-codegen-cli \
-    generate \
-    --config /local/options.javascript-es6.json \
-    --input-spec ${SWAGGER_FILE} \
-    --lang javascript \
-    --output /local/javascript-es6 \
-    --template-dir /local/javascript-es6-templates
+# rm -rf ${CURRENT_DIR}/javascript-es6
+# docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
+#     swaggerapi/swagger-codegen-cli \
+#     generate \
+#     --config /local/options.javascript-es6.json \
+#     --input-spec ${SWAGGER_FILE} \
+#     --lang javascript \
+#     --output /local/javascript-es6 \
+#     --template-dir /local/javascript-es6-templates
 
 rm -rf ${CURRENT_DIR}/dart
 docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
-    swaggerapi/swagger-codegen-cli \
+    swaggerapi/swagger-codegen-cli:unstable \
     generate \
     --config /local/options.dart.json \
     --input-spec ${SWAGGER_FILE} \
@@ -48,11 +47,14 @@ docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
 #    --output dart \
 #    > .codegen.dart.log
 
+cd ${CURRENT_DIR}/dart || exit
+flutter pub get
+
 # Build javascript-es6 package.
-cd ${CURRENT_DIR}/javascript-es6 || exit
-npm install
-npm run standard
-npm run build
+#cd ${CURRENT_DIR}/javascript-es6 || exit
+#npm install
+#npm run standard
+#npm run build
 
 # Change some variable name in dart package.
 cd ${CURRENT_DIR}/dart || exit
@@ -84,7 +86,7 @@ sed -i 's/"search_alternateName_"/"search[alternateName]"/g' lib/api/*
 sed -i 's/"search_billingEmailAddress_"/"search[billingEmailAddress]"/g' lib/api/*
 sed -i 's/"search_branchCode_"/"search[branchCode]"/g' lib/api/*
 sed -i 's/"search_color_"/"search[color]"/g' lib/api/*
-sed -i 's/"search_description_"/"search[description]]"/g' lib/api/*
+sed -i 's/"search_description_"/"search[description]"/g' lib/api/*
 sed -i 's/"search_email_"/"search[email]"/g' lib/api/*
 sed -i 's/"search_familyName_"/"search[familyName]"/g' lib/api/*
 sed -i 's/"search_givenName_"/"search[givenName]"/g' lib/api/*
