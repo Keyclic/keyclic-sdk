@@ -37,18 +37,16 @@ docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
     --lang dart \
     --output /local/dart
 
-# old options example
-#    -DdebugModels \
-#    -DdebugOperations \
-#    generate \
-#    --config options.dart.json \
-#    --input-spec ${SWAGGER_FILE} \
-#    --lang dart \
-#    --output dart \
-#    > .codegen.dart.log
-
-cd ${CURRENT_DIR}/dart || exit
-flutter pub get
+#old options example
+#java \
+#   -jar /home/marin/IdeaProjects/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
+#   generate \
+#   --config options.dart.json \
+#   --input-spec ${SWAGGER_FILE} \
+#   --lang dart \
+#   --output dart \
+#   --template-dir dart-templates
+#   > .codegen.dart.log
 
 # Build javascript-es6 package.
 #cd ${CURRENT_DIR}/javascript-es6 || exit
@@ -77,6 +75,9 @@ sed -i 's/search\[name\]/search_name_/g' lib/api/*
 sed -i 's/search\[notificationEmailAddress\]/search_notificationEmailAddress_/g' lib/api/*
 sed -i 's/search\[username\]/search_username_/g' lib/api/*
 sed -i 's/visibility\[\]/visibility_/g' lib/api/*
+sed -i "s/json\['embedded/json\['_embedded/g" lib/model/*
+sed -i "s/json\['enum_/json\['enum/g" lib/model/*
+sed -i "s/json\['links/json\['_links/g" lib/model/*
 
 sed -i 's/"geoHash_"/"geoHash\[\]"/g' lib/api/*
 sed -i 's/"options_property_"/"options\[property\]"/g' lib/api/*
@@ -97,6 +98,13 @@ sed -i 's/"search_name_"/"search[name]"/g' lib/api/*
 sed -i 's/"search_notificationEmailAddress_"/"search[notificationEmailAddress]"/g' lib/api/*
 sed -i 's/"search_username_"/"search[username]"/g' lib/api/*
 sed -i 's/"visibility_"/"visibility\[\]"/g' lib/api/*
+grep -q "author:" pubspec.yaml || echo "author: Keyclic techies team <techies@keyclic.com>" >> pubspec.yaml
+grep -q "environment:" pubspec.yaml || echo "environment:" >> pubspec.yaml
+grep -q "sdk:" pubspec.yaml || echo "  sdk: \"<3.0.0\"" >> pubspec.yaml
+grep -q "homepage:" pubspec.yaml || echo "homepage: https://keyclic.com" >> pubspec.yaml
+
+flutter pub get
+dartfmt -w lib/*
 
 # When the script exits call cleanup function.
 trap cleanup EXIT

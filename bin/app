@@ -42,7 +42,7 @@ deploy () {
 }
 
 generate () {
-    ./bin/generate ${@:2}
+    ./bin/generate "$@"
 }
 
 main () {
