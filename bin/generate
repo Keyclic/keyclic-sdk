@@ -35,7 +35,8 @@ docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
     --config /local/options.dart.json \
     --input-spec ${SWAGGER_FILE} \
     --lang dart \
-    --output /local/dart
+    --output /local/dart \
+    --template-dir /local/dart-templates
 
 #old options example
 #java \
@@ -75,9 +76,6 @@ sed -i 's/search\[name\]/search_name_/g' lib/api/*
 sed -i 's/search\[notificationEmailAddress\]/search_notificationEmailAddress_/g' lib/api/*
 sed -i 's/search\[username\]/search_username_/g' lib/api/*
 sed -i 's/visibility\[\]/visibility_/g' lib/api/*
-sed -i "s/json\['embedded/json\['_embedded/g" lib/model/*
-sed -i "s/json\['enum_/json\['enum/g" lib/model/*
-sed -i "s/json\['links/json\['_links/g" lib/model/*
 
 sed -i 's/"geoHash_"/"geoHash\[\]"/g' lib/api/*
 sed -i 's/"options_property_"/"options\[property\]"/g' lib/api/*
