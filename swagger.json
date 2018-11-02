@@ -7860,7 +7860,9 @@
                     "properties": {
                         "properties": {
                             "type": "object",
-                            "$ref": "#\/definitions\/MetadataProperties"
+                            "additionalProperties": {
+                                "$ref": "#\/definitions\/MetadataProperty"
+                            }
                         }
                     }
                 },
@@ -7897,28 +7899,11 @@
         },
         "MetadataProperties": {
             "type": "object",
-            "properties": {
-                "givenName": {
-                    "$ref": "#\/definitions\/SimpleMetadataPropertyType"
-                },
-                "familyName": {
-                    "$ref": "#\/definitions\/SimpleMetadataPropertyType"
-                },
-                "roomNumber": {
-                    "$ref": "#\/definitions\/SimpleMetadataPropertyType"
-                },
-                "flatNumber": {
-                    "$ref": "#\/definitions\/SimpleMetadataPropertyType"
-                },
-                "telephone": {
-                    "$ref": "#\/definitions\/SimpleMetadataPropertyType"
-                },
-                "ownership": {
-                    "$ref": "#\/definitions\/ComplexMetadataPropertyType"
-                }
+            "additionalProperties": {
+                "$ref": "#\/definitions\/MetadataProperty"
             }
         },
-        "ComplexMetadataPropertyType": {
+        "MetadataProperty": {
             "type": "object",
             "properties": {
                 "type": {
@@ -7929,14 +7914,6 @@
                     "items": {
                         "type": "string"
                     }
-                }
-            }
-        },
-        "SimpleMetadataPropertyType": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string"
                 }
             }
         },
