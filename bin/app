@@ -32,10 +32,10 @@ deploy () {
     # Change some files to match requirements of pubspec.yaml specifications.
     if [[ -d "docs" ]]; then mv docs doc; fi
     cp ../LICENSE .
-    grep -q "author:" pubspec.yaml || echo "author: Keyclic techies team <techies@keyclic.com>" >> pubspec.yaml
-    grep -q "environment:" pubspec.yaml || echo "environment:" >> pubspec.yaml
-    grep -q "sdk:" pubspec.yaml || echo "  sdk: \"<3.0.0\"" >> pubspec.yaml
-    grep -q "homepage:" pubspec.yaml || echo "homepage: https://keyclic.com" >> pubspec.yaml
+    #grep -q "author:" pubspec.yaml || echo "author: Keyclic techies team <techies@keyclic.com>" >> pubspec.yaml
+    #grep -q "environment:" pubspec.yaml || echo "environment:" >> pubspec.yaml
+    #grep -q "sdk:" pubspec.yaml || echo "  sdk: \"<3.0.0\"" >> pubspec.yaml
+    #grep -q "homepage:" pubspec.yaml || echo "homepage: https://keyclic.com" >> pubspec.yaml
     /usr/lib/dart/bin/pub publish
 
     cd ${CURRENT_DIR} || exit

@@ -18,15 +18,15 @@ fi
 echo "Use file ${SWAGGER_FILE} as definition API."
 echo
 
-# rm -rf ${CURRENT_DIR}/javascript-es6
-# docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
-#     swaggerapi/swagger-codegen-cli \
-#     generate \
-#     --config /local/options.javascript-es6.json \
-#     --input-spec ${SWAGGER_FILE} \
-#     --lang javascript \
-#     --output /local/javascript-es6 \
-#     --template-dir /local/javascript-es6-templates
+#rm -rf ${CURRENT_DIR}/javascript-es6
+#docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
+# swaggerapi/swagger-codegen-cli:unstable \
+# generate \
+# --config /local/options.javascript-es6.json \
+# --input-spec ${SWAGGER_FILE} \
+# --lang javascript \
+# --output /local/javascript-es6 \
+# --template-dir /local/javascript-es6-templates
 
 rm -rf ${CURRENT_DIR}/dart
 docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
@@ -98,11 +98,11 @@ sed -i 's/"search_username_"/"search[username]"/g' lib/api/*
 sed -i 's/"visibility_"/"visibility\[\]"/g' lib/api/*
 grep -q "author:" pubspec.yaml || echo "author: Keyclic techies team <techies@keyclic.com>" >> pubspec.yaml
 grep -q "environment:" pubspec.yaml || echo "environment:" >> pubspec.yaml
-grep -q "sdk:" pubspec.yaml || echo "  sdk: \"<3.0.0\"" >> pubspec.yaml
+grep -q "sdk:" pubspec.yaml || echo "  sdk: \">=1.8.0 <3.0.0\"" >> pubspec.yaml
 grep -q "homepage:" pubspec.yaml || echo "homepage: https://keyclic.com" >> pubspec.yaml
 
 flutter pub get
-dartfmt -w lib/*
+flutter format lib/*
 
 # When the script exits call cleanup function.
 trap cleanup EXIT
