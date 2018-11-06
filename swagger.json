@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "1.28.0"
+        "version": "1.28.2"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -3953,6 +3953,217 @@
                 ]
             }
         },
+        "\/organizations\/{organization}\/places": {
+            "get": {
+                "tags": [
+                    "Place"
+                ],
+                "summary": "Retrieve all Place resources.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/developers.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "cgetPlacesByOrganization",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/business_activity"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_coordinates"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_elevation"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_hash__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_point"
+                    },
+                    {
+                        "$ref": "#\/parameters\/parent"
+                    },
+                    {
+                        "$ref": "#\/parameters\/parents__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/page"
+                    },
+                    {
+                        "$ref": "#\/parameters\/limit"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/search_branchCode_"
+                    },
+                    {
+                        "$ref": "#\/parameters\/search_name_"
+                    },
+                    {
+                        "description": "The identifier of the resource formatted as GUID string.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "organization",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/PlacePagination"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Place"
+                ],
+                "summary": "Create one Place resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/developers.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "postPlaceByOrganization",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/PlaceData"
+                    },
+                    {
+                        "description": "The identifier of the resource formatted as GUID string.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "organization",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Returned when the resource is created",
+                        "schema": {
+                            "$ref": "#\/definitions\/Place"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
         "\/organizations\/{organization}\/relationships": {
             "get": {
                 "tags": [
@@ -4161,98 +4372,6 @@
                 ]
             }
         },
-        "\/organizations\/{organization}\/relationships\/{relationship}": {
-            "delete": {
-                "tags": [
-                    "Relationship"
-                ],
-                "summary": "Remove one Relationship resource.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/developers.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "deleteRelationshipByOrganizationAndRelationship",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "description": "The identifier of the resource formatted as GUID string.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "organization",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "description": "The identifier of the resource formatted as GUID string.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "relationship",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Organization"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            }
-        },
         "\/organizations\/{organization}\/reports": {
             "get": {
                 "tags": [
@@ -4364,17 +4483,17 @@
                 ]
             }
         },
-        "\/organizations\/{organization}\/reports\/exports": {
-            "post": {
+        "\/organizations\/{organization}\/services": {
+            "get": {
                 "tags": [
-                    "Export"
+                    "Service"
                 ],
-                "summary": "Retrieve all Export resources.",
+                "summary": "Retrieve all Service resources.",
                 "externalDocs": {
                     "description": "Keyclic API documentation.",
                     "url": "http:\/\/developers.keyclic.com\/fr\/master\/overview.html"
                 },
-                "operationId": "cpostExportByOrganization",
+                "operationId": "cgetServicesByOrganization",
                 "consumes": [
                     "application\/json;charset=UTF-8"
                 ],
@@ -4392,33 +4511,6 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/place"
-                    },
-                    {
-                        "in": "query",
-                        "name": "state",
-                        "pattern": ".*",
-                        "type": "string"
-                    },
-                    {
-                        "$ref": "#\/parameters\/category"
-                    },
-                    {
-                        "$ref": "#\/parameters\/page"
-                    },
-                    {
-                        "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
-                    },
-                    {
                         "description": "The identifier of the resource formatted as GUID string.",
                         "format": "uuid",
                         "in": "path",
@@ -4431,7 +4523,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/Report"
+                            "$ref": "#\/definitions\/ServicePagination"
                         }
                     },
                     "400": {
@@ -4475,17 +4567,17 @@
                 ]
             }
         },
-        "\/organizations\/{organization}\/delegates": {
-            "post": {
+        "\/organizations\/{organization}\/webhooks": {
+            "get": {
                 "tags": [
-                    "Delegate"
+                    "Webhook"
                 ],
-                "summary": "Create one Delegate resource.",
+                "summary": "Retrieve all Webhook resources.",
                 "externalDocs": {
                     "description": "Keyclic API documentation.",
                     "url": "http:\/\/developers.keyclic.com\/fr\/master\/overview.html"
                 },
-                "operationId": "postDelegateByOrganization",
+                "operationId": "cgetWebhooksByOrganization",
                 "consumes": [
                     "application\/json;charset=UTF-8"
                 ],
@@ -4503,9 +4595,6 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/DelegateData"
-                    },
-                    {
                         "description": "The identifier of the resource formatted as GUID string.",
                         "format": "uuid",
                         "in": "path",
@@ -4518,7 +4607,99 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/Report"
+                            "$ref": "#\/definitions\/WebhookPagination"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/organizations\/{organization}\/relationships\/{relationship}": {
+            "delete": {
+                "tags": [
+                    "Relationship"
+                ],
+                "summary": "Remove one Relationship resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/developers.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "deleteRelationshipByOrganizationAndRelationship",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource formatted as GUID string.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "organization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The identifier of the resource formatted as GUID string.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "relationship",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Organization"
                         }
                     },
                     "400": {
@@ -4731,315 +4912,6 @@
                 ]
             }
         },
-        "\/organizations\/{organization}\/logo\/{width}\/{height}": {
-            "get": {
-                "tags": [
-                    "Logo"
-                ],
-                "summary": "Retrieve one Logo resource.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/developers.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "getLogoByOrganizationAndWidthAndHeight",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "description": "The identifier of the resource formatted as GUID string.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "organization",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "path",
-                        "name": "width",
-                        "pattern": "\\d*",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "in": "path",
-                        "name": "height",
-                        "pattern": "\\d*",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "type": "file"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            }
-        },
-        "\/organizations\/{organization}\/places": {
-            "get": {
-                "tags": [
-                    "Place"
-                ],
-                "summary": "Retrieve all Place resources.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/developers.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "cgetPlacesByOrganization",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "$ref": "#\/parameters\/business_activity"
-                    },
-                    {
-                        "$ref": "#\/parameters\/geo_coordinates"
-                    },
-                    {
-                        "$ref": "#\/parameters\/geo_elevation"
-                    },
-                    {
-                        "$ref": "#\/parameters\/geo_hash__"
-                    },
-                    {
-                        "$ref": "#\/parameters\/geo_point"
-                    },
-                    {
-                        "$ref": "#\/parameters\/parent"
-                    },
-                    {
-                        "$ref": "#\/parameters\/parents__"
-                    },
-                    {
-                        "$ref": "#\/parameters\/page"
-                    },
-                    {
-                        "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
-                    },
-                    {
-                        "$ref": "#\/parameters\/search_branchCode_"
-                    },
-                    {
-                        "$ref": "#\/parameters\/search_name_"
-                    },
-                    {
-                        "description": "The identifier of the resource formatted as GUID string.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "organization",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/PlacePagination"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            },
-            "post": {
-                "tags": [
-                    "Place"
-                ],
-                "summary": "Create one Place resource.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/developers.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "postPlaceByOrganization",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "$ref": "#\/parameters\/PlaceData"
-                    },
-                    {
-                        "description": "The identifier of the resource formatted as GUID string.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "organization",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Returned when the resource is created",
-                        "schema": {
-                            "$ref": "#\/definitions\/Place"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            }
-        },
         "\/organizations\/{organization}\/analytics": {
             "get": {
                 "tags": [
@@ -5148,17 +5020,17 @@
                 ]
             }
         },
-        "\/organizations\/{organization}\/services": {
+        "\/organizations\/{organization}\/exports\/{token}": {
             "get": {
                 "tags": [
-                    "Service"
+                    "Export"
                 ],
-                "summary": "Retrieve all Service resources.",
+                "summary": "Retrieve one Export resource.",
                 "externalDocs": {
                     "description": "Keyclic API documentation.",
                     "url": "http:\/\/developers.keyclic.com\/fr\/master\/overview.html"
                 },
-                "operationId": "cgetServicesByOrganization",
+                "operationId": "getExportByOrganizationAndToken",
                 "consumes": [
                     "application\/json;charset=UTF-8"
                 ],
@@ -5182,13 +5054,100 @@
                         "name": "organization",
                         "required": true,
                         "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "token",
+                        "required": true,
+                        "type": "string"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/ServicePagination"
+                            "type": "file"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ]
+            }
+        },
+        "\/organizations\/{organization}\/logo\/{width}\/{height}": {
+            "get": {
+                "tags": [
+                    "Logo"
+                ],
+                "summary": "Retrieve one Logo resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/developers.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "getLogoByOrganizationAndWidthAndHeight",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource formatted as GUID string.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "organization",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "width",
+                        "pattern": "\\d*",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "height",
+                        "pattern": "\\d*",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "file"
                         }
                     },
                     "400": {
@@ -5232,17 +5191,17 @@
                 ]
             }
         },
-        "\/organizations\/{organization}\/webhooks": {
-            "get": {
+        "\/organizations\/{organization}\/delegates": {
+            "post": {
                 "tags": [
-                    "Webhook"
+                    "Delegate"
                 ],
-                "summary": "Retrieve all Webhook resources.",
+                "summary": "Create one Delegate resource.",
                 "externalDocs": {
                     "description": "Keyclic API documentation.",
                     "url": "http:\/\/developers.keyclic.com\/fr\/master\/overview.html"
                 },
-                "operationId": "cgetWebhooksByOrganization",
+                "operationId": "postDelegateByOrganization",
                 "consumes": [
                     "application\/json;charset=UTF-8"
                 ],
@@ -5260,6 +5219,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/DelegateData"
+                    },
+                    {
                         "description": "The identifier of the resource formatted as GUID string.",
                         "format": "uuid",
                         "in": "path",
@@ -5272,7 +5234,118 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/WebhookPagination"
+                            "$ref": "#\/definitions\/Report"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/organizations\/{organization}\/reports\/exports": {
+            "post": {
+                "tags": [
+                    "Export"
+                ],
+                "summary": "Retrieve all Export resources.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/developers.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "cpostExportByOrganization",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/place"
+                    },
+                    {
+                        "in": "query",
+                        "name": "state",
+                        "pattern": ".*",
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "#\/parameters\/category"
+                    },
+                    {
+                        "$ref": "#\/parameters\/page"
+                    },
+                    {
+                        "$ref": "#\/parameters\/limit"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "description": "The identifier of the resource formatted as GUID string.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "organization",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Report"
                         }
                     },
                     "400": {
@@ -7897,12 +7970,6 @@
                 }
             }
         },
-        "MetadataProperties": {
-            "type": "object",
-            "additionalProperties": {
-                "$ref": "#\/definitions\/MetadataProperty"
-            }
-        },
         "MetadataProperty": {
             "type": "object",
             "properties": {
@@ -8207,8 +8274,8 @@
                     }
                 },
                 "metadata": {
-                    "type": "array",
-                    "items": {
+                    "type": "object",
+                    "additionalProperties": {
                         "type": "string"
                     }
                 },
@@ -9046,7 +9113,10 @@
                     "type": "boolean"
                 },
                 "metadata": {
-                    "type": "string"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 }
             },
             "required": [
@@ -9644,16 +9714,190 @@
                 }
             }
         },
-        "RelationshipData": {
+        "Place": {
+            "type": "object",
+            "required": [
+                "geo",
+                "name",
+                "id",
+                "createdAt",
+                "updatedAt"
+            ],
+            "properties": {
+                "branchCode": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "geo": {
+                    "type": "object",
+                    "required": [
+                        "polygon",
+                        "elevation"
+                    ],
+                    "properties": {
+                        "polygon": {
+                            "type": "object",
+                            "required": [
+                                "type"
+                            ],
+                            "properties": {
+                                "type": {
+                                    "type": "string",
+                                    "default": "FeatureCollection",
+                                    "format": "string"
+                                },
+                                "features": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "elevation": {
+                            "type": "number",
+                            "format": "float"
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "id": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "type": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
+                "_links": {
+                    "type": "object",
+                    "properties": {
+                        "self": {
+                            "type": "object",
+                            "properties": {
+                                "href": {
+                                    "description": "The URI of the self associated to the given place.",
+                                    "type": "string",
+                                    "format": "string"
+                                },
+                                "iriTemplate": {
+                                    "type": "object",
+                                    "properties": {
+                                        "mapping": {
+                                            "type": "object",
+                                            "properties": {
+                                                "place": {
+                                                    "type": "string",
+                                                    "format": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "organization": {
+                            "type": "object",
+                            "properties": {
+                                "href": {
+                                    "description": "The URI of the organization associated to the given place.",
+                                    "type": "string",
+                                    "format": "string"
+                                },
+                                "iriTemplate": {
+                                    "type": "object",
+                                    "properties": {
+                                        "mapping": {
+                                            "type": "object",
+                                            "properties": {
+                                                "organization": {
+                                                    "type": "string",
+                                                    "format": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "containsPlaces": {
+                            "type": "object",
+                            "properties": {
+                                "href": {
+                                    "description": "The URI of the containsPlaces associated to the given place.",
+                                    "type": "string",
+                                    "format": "string"
+                                },
+                                "iriTemplate": {
+                                    "type": "object",
+                                    "properties": {
+                                        "mapping": {
+                                            "type": "object",
+                                            "properties": {
+                                                "parent": {
+                                                    "type": "string",
+                                                    "format": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "PlaceCollection": {
             "type": "object",
             "properties": {
-                "organization": {
-                    "type": "string"
+                "items": {
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "$ref": "#\/definitions\/Place"
+                    }
                 }
-            },
-            "required": [
-                "organization"
-            ]
+            }
+        },
+        "PlacePagination": {
+            "type": "object",
+            "properties": {
+                "limit": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "page": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "pages": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "total": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "_embedded": {
+                    "$ref": "#\/definitions\/PlaceCollection"
+                },
+                "_links": {
+                    "$ref": "#\/definitions\/PaginationLinks"
+                }
+            }
         },
         "Report": {
             "type": "object",
@@ -9958,297 +10202,6 @@
                 }
             }
         },
-        "DelegateData": {
-            "type": "object",
-            "properties": {
-                "report": {
-                    "type": "string"
-                },
-                "organization": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "report",
-                "organization"
-            ]
-        },
-        "OrganizationPatch": {
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "format": "string"
-                },
-                "alternateName": {
-                    "type": "string",
-                    "format": "string"
-                },
-                "description": {
-                    "type": "string",
-                    "format": "string"
-                },
-                "logo": {
-                    "type": "string",
-                    "format": "string"
-                },
-                "billingEmailAddress": {
-                    "type": "string",
-                    "format": "string"
-                },
-                "notificationEmailAddress": {
-                    "type": "string",
-                    "format": "string"
-                }
-            }
-        },
-        "Place": {
-            "type": "object",
-            "required": [
-                "geo",
-                "name",
-                "id",
-                "createdAt",
-                "updatedAt"
-            ],
-            "properties": {
-                "branchCode": {
-                    "type": "string",
-                    "format": "string"
-                },
-                "geo": {
-                    "type": "object",
-                    "required": [
-                        "polygon",
-                        "elevation"
-                    ],
-                    "properties": {
-                        "polygon": {
-                            "type": "object",
-                            "required": [
-                                "type"
-                            ],
-                            "properties": {
-                                "type": {
-                                    "type": "string",
-                                    "default": "FeatureCollection",
-                                    "format": "string"
-                                },
-                                "features": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                }
-                            }
-                        },
-                        "elevation": {
-                            "type": "number",
-                            "format": "float"
-                        }
-                    }
-                },
-                "name": {
-                    "type": "string",
-                    "format": "string"
-                },
-                "id": {
-                    "type": "string",
-                    "format": "string"
-                },
-                "createdAt": {
-                    "type": "string",
-                    "format": "date-time"
-                },
-                "updatedAt": {
-                    "type": "string",
-                    "format": "date-time"
-                },
-                "type": {
-                    "type": "string",
-                    "readOnly": true,
-                    "format": "string"
-                },
-                "_links": {
-                    "type": "object",
-                    "properties": {
-                        "self": {
-                            "type": "object",
-                            "properties": {
-                                "href": {
-                                    "description": "The URI of the self associated to the given place.",
-                                    "type": "string",
-                                    "format": "string"
-                                },
-                                "iriTemplate": {
-                                    "type": "object",
-                                    "properties": {
-                                        "mapping": {
-                                            "type": "object",
-                                            "properties": {
-                                                "place": {
-                                                    "type": "string",
-                                                    "format": "string"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "organization": {
-                            "type": "object",
-                            "properties": {
-                                "href": {
-                                    "description": "The URI of the organization associated to the given place.",
-                                    "type": "string",
-                                    "format": "string"
-                                },
-                                "iriTemplate": {
-                                    "type": "object",
-                                    "properties": {
-                                        "mapping": {
-                                            "type": "object",
-                                            "properties": {
-                                                "organization": {
-                                                    "type": "string",
-                                                    "format": "string"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "containsPlaces": {
-                            "type": "object",
-                            "properties": {
-                                "href": {
-                                    "description": "The URI of the containsPlaces associated to the given place.",
-                                    "type": "string",
-                                    "format": "string"
-                                },
-                                "iriTemplate": {
-                                    "type": "object",
-                                    "properties": {
-                                        "mapping": {
-                                            "type": "object",
-                                            "properties": {
-                                                "parent": {
-                                                    "type": "string",
-                                                    "format": "string"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "PlaceCollection": {
-            "type": "object",
-            "properties": {
-                "items": {
-                    "type": "array",
-                    "default": [],
-                    "items": {
-                        "$ref": "#\/definitions\/Place"
-                    }
-                }
-            }
-        },
-        "PlacePagination": {
-            "type": "object",
-            "properties": {
-                "limit": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "page": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "pages": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "total": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "_embedded": {
-                    "$ref": "#\/definitions\/PlaceCollection"
-                },
-                "_links": {
-                    "$ref": "#\/definitions\/PaginationLinks"
-                }
-            }
-        },
-        "PlaceData": {
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "minLength": 0,
-                    "maxLength": 254
-                },
-                "branchCode": {
-                    "type": "string"
-                },
-                "polygon": {
-                    "type": "string"
-                },
-                "elevation": {
-                    "type": "number"
-                }
-            },
-            "required": [
-                "name",
-                "polygon"
-            ]
-        },
-        "OrganizationData": {
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "businessActivity": {
-                    "type": "string"
-                },
-                "logo": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "name",
-                "businessActivity"
-            ]
-        },
-        "Chart": {
-            "type": "object",
-            "required": [
-                "labels",
-                "data"
-            ],
-            "properties": {
-                "labels": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "data": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            }
-        },
         "Service": {
             "type": "object",
             "required": [
@@ -10482,6 +10435,123 @@
                     "$ref": "#\/definitions\/PaginationLinks"
                 }
             }
+        },
+        "Chart": {
+            "type": "object",
+            "required": [
+                "labels",
+                "data"
+            ],
+            "properties": {
+                "labels": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "OrganizationPatch": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "alternateName": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "description": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "logo": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "billingEmailAddress": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "notificationEmailAddress": {
+                    "type": "string",
+                    "format": "string"
+                }
+            }
+        },
+        "OrganizationData": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "businessActivity": {
+                    "type": "string"
+                },
+                "logo": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "businessActivity"
+            ]
+        },
+        "DelegateData": {
+            "type": "object",
+            "properties": {
+                "report": {
+                    "type": "string"
+                },
+                "organization": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "report",
+                "organization"
+            ]
+        },
+        "PlaceData": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 254
+                },
+                "branchCode": {
+                    "type": "string"
+                },
+                "polygon": {
+                    "type": "string"
+                },
+                "elevation": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "name",
+                "polygon"
+            ]
+        },
+        "RelationshipData": {
+            "type": "object",
+            "properties": {
+                "organization": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "organization"
+            ]
         },
         "ReviewRequest": {
             "type": "object",
@@ -11473,37 +11543,6 @@
             "name": "search[notificationEmailAddress]",
             "type": "string"
         },
-        "RelationshipData": {
-            "name": "RelationshipData",
-            "in": "body",
-            "schema": {
-                "$ref": "#\/definitions\/RelationshipData"
-            },
-            "required": true
-        },
-        "place": {
-            "description": "The identifier of the resource formatted as GUID string.",
-            "format": "uuid",
-            "in": "query",
-            "name": "place",
-            "type": "string"
-        },
-        "DelegateData": {
-            "name": "DelegateData",
-            "in": "body",
-            "schema": {
-                "$ref": "#\/definitions\/DelegateData"
-            },
-            "required": true
-        },
-        "OrganizationPatch": {
-            "name": "OrganizationPatch",
-            "in": "body",
-            "schema": {
-                "$ref": "#\/definitions\/OrganizationPatch"
-            },
-            "required": true
-        },
         "geo_elevation": {
             "in": "query",
             "name": "geo_elevation",
@@ -11529,21 +11568,12 @@
             "name": "search[branchCode]",
             "type": "string"
         },
-        "PlaceData": {
-            "name": "PlaceData",
-            "in": "body",
-            "schema": {
-                "$ref": "#\/definitions\/PlaceData"
-            },
-            "required": true
-        },
-        "OrganizationData": {
-            "name": "OrganizationData",
-            "in": "body",
-            "schema": {
-                "$ref": "#\/definitions\/OrganizationData"
-            },
-            "required": true
+        "place": {
+            "description": "The identifier of the resource formatted as GUID string.",
+            "format": "uuid",
+            "in": "query",
+            "name": "place",
+            "type": "string"
         },
         "options_property_": {
             "in": "query",
@@ -11559,6 +11589,46 @@
             "name": "options[sort]",
             "pattern": "asc|desc",
             "type": "string"
+        },
+        "OrganizationPatch": {
+            "name": "OrganizationPatch",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/OrganizationPatch"
+            },
+            "required": true
+        },
+        "OrganizationData": {
+            "name": "OrganizationData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/OrganizationData"
+            },
+            "required": true
+        },
+        "DelegateData": {
+            "name": "DelegateData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/DelegateData"
+            },
+            "required": true
+        },
+        "PlaceData": {
+            "name": "PlaceData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/PlaceData"
+            },
+            "required": true
+        },
+        "RelationshipData": {
+            "name": "RelationshipData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/RelationshipData"
+            },
+            "required": true
         },
         "PersonPatch": {
             "name": "PersonPatch",
