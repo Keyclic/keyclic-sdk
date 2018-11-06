@@ -7,10 +7,11 @@
 # then it fixes src and test files.
 CURRENT_DIR=$(pwd)
 
-function cleanup {
+cleanup() {
     cd ${CURRENT_DIR} || exit
-    echo "Don't forget to publish on Github and NPM."
+    echo "Don't forget to publish on Github, NPM and dart registries."
 }
+
 SWAGGER_FILE="$1"
 if [ -z "$SWAGGER_FILE" ]; then
     SWAGGER_FILE="https://api.keyclic.com/swagger.json"
@@ -18,15 +19,15 @@ fi
 echo "Use file ${SWAGGER_FILE} as definition API."
 echo
 
-# rm -rf ${CURRENT_DIR}/javascript-es6
-# docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
-#     swaggerapi/swagger-codegen-cli \
-#     generate \
-#     --config /local/options.javascript-es6.json \
-#     --input-spec ${SWAGGER_FILE} \
-#     --lang javascript \
-#     --output /local/javascript-es6 \
-#     --template-dir /local/javascript-es6-templates
+#rm -rf ${CURRENT_DIR}/javascript-es6
+#docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
+# swaggerapi/swagger-codegen-cli:unstable \
+# generate \
+# --config /local/options.javascript-es6.json \
+# --input-spec ${SWAGGER_FILE} \
+# --lang javascript \
+# --output /local/javascript-es6 \
+# --template-dir /local/javascript-es6-templates
 
 rm -rf ${CURRENT_DIR}/dart
 docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
@@ -35,20 +36,19 @@ docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
     --config /local/options.dart.json \
     --input-spec ${SWAGGER_FILE} \
     --lang dart \
-    --output /local/dart
+    --output /local/dart \
+    --template-dir /local/dart-templates
 
-# old options example
-#    -DdebugModels \
-#    -DdebugOperations \
-#    generate \
-#    --config options.dart.json \
-#    --input-spec ${SWAGGER_FILE} \
-#    --lang dart \
-#    --output dart \
-#    > .codegen.dart.log
-
-cd ${CURRENT_DIR}/dart || exit
-flutter pub get
+#old options example
+#java \
+#   -jar /home/marin/IdeaProjects/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
+#   generate \
+#   --config options.dart.json \
+#   --input-spec ${SWAGGER_FILE} \
+#   --lang dart \
+#   --output dart \
+#   --template-dir dart-templates
+#   > .codegen.dart.log
 
 # Build javascript-es6 package.
 #cd ${CURRENT_DIR}/javascript-es6 || exit
@@ -97,6 +97,16 @@ sed -i 's/"search_name_"/"search[name]"/g' lib/api/*
 sed -i 's/"search_notificationEmailAddress_"/"search[notificationEmailAddress]"/g' lib/api/*
 sed -i 's/"search_username_"/"search[username]"/g' lib/api/*
 sed -i 's/"visibility_"/"visibility\[\]"/g' lib/api/*
+
+sed -i 's/Map<String, String> metadata/Map<String, dynamic> metadata/g' lib/model/feedback.dart
+
+grep -q "author:" pubspec.yaml || echo "author: Keyclic techies team <techies@keyclic.com>" >> pubspec.yaml
+grep -q "environment:" pubspec.yaml || echo "environment:" >> pubspec.yaml
+grep -q "sdk:" pubspec.yaml || echo "  sdk: \">=1.8.0 <3.0.0\"" >> pubspec.yaml
+grep -q "homepage:" pubspec.yaml || echo "homepage: https://keyclic.com" >> pubspec.yaml
+
+flutter pub get
+flutter format lib/*
 
 # When the script exits call cleanup function.
 trap cleanup EXIT
