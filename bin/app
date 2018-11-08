@@ -36,7 +36,7 @@ deploy () {
     # Change some files to match requirements of pubspec.yaml specifications.
     if [[ -d "docs" ]]; then mv docs doc; fi
     cp ../LICENSE .
-    /usr/lib/dart/bin/pub publish
+    pub publish
 
     cd ${CURRENT_DIR} || exit
 }
