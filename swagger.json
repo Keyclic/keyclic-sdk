@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "1.28.8"
+        "version": "1.28.14"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -224,6 +224,90 @@
                         "description": "",
                         "schema": {
                             "$ref": "#\/definitions\/BusinessActivity"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/businessactivities\/{businessActivity}\/schema": {
+            "get": {
+                "tags": [
+                    "Schema"
+                ],
+                "summary": "Retrieve one Schema resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "getSchemaByBusinessActivity",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource formatted as GUID string.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "businessActivity",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Schema"
                         }
                     },
                     "400": {
@@ -6356,18 +6440,6 @@
                             "$ref": "#\/definitions\/Error"
                         }
                     },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
                     "500": {
                         "description": "",
                         "schema": {
@@ -6377,11 +6449,6 @@
                 },
                 "schemes": [
                     "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
                 ]
             }
         },
@@ -7828,11 +7895,6 @@
     "definitions": {
         "Application": {
             "type": "object",
-            "required": [
-                "name",
-                "token",
-                "id"
-            ],
             "properties": {
                 "name": {
                     "type": "string",
@@ -7884,7 +7946,12 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "name",
+                "token",
+                "id"
+            ]
         },
         "Error": {
             "type": "object",
@@ -7910,12 +7977,128 @@
                 }
             }
         },
+        "Choice": {
+            "type": "object",
+            "properties": {
+                "enum": {
+                    "type": "array",
+                    "readOnly": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
+                "format": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
+                "maxItems": {
+                    "type": "integer",
+                    "readOnly": true,
+                    "format": "int32"
+                },
+                "minItems": {
+                    "type": "integer",
+                    "readOnly": true,
+                    "format": "int32"
+                },
+                "default": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
+                "propertyOrder": {
+                    "type": "integer",
+                    "readOnly": true,
+                    "format": "int32"
+                },
+                "title": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                }
+            }
+        },
+        "Property": {
+            "type": "object",
+            "properties": {
+                "enum": {
+                    "type": "array",
+                    "readOnly": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
+                "format": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
+                "maxItems": {
+                    "type": "integer",
+                    "readOnly": true,
+                    "format": "int32"
+                },
+                "minItems": {
+                    "type": "integer",
+                    "readOnly": true,
+                    "format": "int32"
+                },
+                "default": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
+                "propertyOrder": {
+                    "type": "integer",
+                    "readOnly": true,
+                    "format": "int32"
+                },
+                "title": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
+                "conditions": {
+                    "type": "object",
+                    "readOnly": true,
+                    "properties": {
+                        "allOf": {
+                            "type": "array",
+                            "readOnly": true,
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "items": {
+                    "type": "object",
+                    "readOnly": true,
+                    "properties": {
+                        "oneOf": {
+                            "type": "array",
+                            "readOnly": true,
+                            "items": {
+                                "$ref": "#\/definitions\/Choice"
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "BusinessActivity": {
             "type": "object",
-            "required": [
-                "name",
-                "id"
-            ],
             "properties": {
                 "alternateName": {
                     "type": "string",
@@ -7937,31 +8120,17 @@
                 "metadataSchema": {
                     "type": "object",
                     "properties": {
+                        "required": {
+                            "type": "array",
+                            "readOnly": true,
+                            "items": {
+                                "type": "string"
+                            }
+                        },
                         "properties": {
                             "type": "object",
                             "additionalProperties": {
-                                "type": "object",
-                                "properties": {
-                                    "enum": {
-                                        "type": "array",
-                                        "readOnly": true,
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "maxItems": {
-                                        "type": "integer",
-                                        "readOnly": true
-                                    },
-                                    "minItems": {
-                                        "type": "integer",
-                                        "readOnly": true
-                                    },
-                                    "pattern": {
-                                        "type": "string",
-                                        "readOnly": true
-                                    }
-                                }
+                                "$ref": "#\/definitions\/Property"
                             }
                         }
                     }
@@ -7992,10 +8161,38 @@
                                     }
                                 }
                             }
+                        },
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "href": {
+                                    "description": "The URI of the schema associated to the given businessactivity.",
+                                    "type": "string",
+                                    "format": "string"
+                                },
+                                "iriTemplate": {
+                                    "type": "object",
+                                    "properties": {
+                                        "mapping": {
+                                            "type": "object",
+                                            "properties": {
+                                                "businessActivity": {
+                                                    "type": "string",
+                                                    "format": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "name",
+                "id"
+            ]
         },
         "Feature": {
             "type": "object",
@@ -8019,7 +8216,7 @@
                             "items": {
                                 "type": "array",
                                 "items": {
-                                    "type": "string"
+                                    "type": "number"
                                 }
                             }
                         }
@@ -8099,14 +8296,29 @@
                 }
             }
         },
+        "Schema": {
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#\/definitions\/Property"
+                    }
+                },
+                "required": {
+                    "type": "array",
+                    "readOnly": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "properties"
+            ]
+        },
         "Category": {
             "type": "object",
-            "required": [
-                "color",
-                "name",
-                "id",
-                "createdAt"
-            ],
             "properties": {
                 "color": {
                     "type": "string",
@@ -8192,7 +8404,13 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "color",
+                "name",
+                "id",
+                "createdAt"
+            ]
         },
         "CategoryCollection": {
             "type": "object",
@@ -8278,10 +8496,6 @@
         },
         "Feedback": {
             "type": "object",
-            "required": [
-                "geoCoordinates",
-                "id"
-            ],
             "properties": {
                 "description": {
                     "type": "string",
@@ -8289,9 +8503,6 @@
                 },
                 "geoCoordinates": {
                     "type": "object",
-                    "required": [
-                        "point"
-                    ],
                     "properties": {
                         "elevation": {
                             "type": "number",
@@ -8301,11 +8512,6 @@
                         },
                         "point": {
                             "type": "object",
-                            "required": [
-                                "latitude",
-                                "longitude",
-                                "srid"
-                            ],
                             "properties": {
                                 "latitude": {
                                     "type": "number",
@@ -8319,9 +8525,17 @@
                                     "type": "integer",
                                     "format": "int32"
                                 }
-                            }
+                            },
+                            "required": [
+                                "latitude",
+                                "longitude",
+                                "srid"
+                            ]
                         }
-                    }
+                    },
+                    "required": [
+                        "point"
+                    ]
                 },
                 "metadata": {
                     "type": "object",
@@ -8332,6 +8546,12 @@
                 "id": {
                     "type": "string",
                     "format": "string"
+                },
+                "state": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "createdAt": {
                     "type": "string",
@@ -8345,13 +8565,6 @@
                 "public": {
                     "type": "boolean",
                     "readOnly": true
-                },
-                "state": {
-                    "type": "array",
-                    "readOnly": true,
-                    "items": {
-                        "type": "string"
-                    }
                 },
                 "_links": {
                     "type": "object",
@@ -8534,7 +8747,12 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "geoCoordinates",
+                "id",
+                "state"
+            ]
         },
         "FeedbackCollection": {
             "type": "object",
@@ -8577,13 +8795,6 @@
         },
         "Activity": {
             "type": "object",
-            "required": [
-                "actor",
-                "message",
-                "object",
-                "verb",
-                "time"
-            ],
             "properties": {
                 "actor": {
                     "type": "string",
@@ -8603,9 +8814,16 @@
                 },
                 "time": {
                     "type": "string",
+                    "readOnly": true,
                     "format": "date-time"
                 }
-            }
+            },
+            "required": [
+                "actor",
+                "message",
+                "object",
+                "verb"
+            ]
         },
         "ActivityPagination": {
             "type": "object",
@@ -8628,11 +8846,6 @@
         },
         "Review": {
             "type": "object",
-            "required": [
-                "id",
-                "createdAt",
-                "updatedAt"
-            ],
             "properties": {
                 "reviewBody": {
                     "type": "string",
@@ -8713,7 +8926,12 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "id",
+                "createdAt",
+                "updatedAt"
+            ]
         },
         "ReviewCollection": {
             "type": "object",
@@ -8854,10 +9072,6 @@
         },
         "Tracking": {
             "type": "object",
-            "required": [
-                "state",
-                "progression"
-            ],
             "properties": {
                 "state": {
                     "type": "string",
@@ -8889,7 +9103,11 @@
                         "$ref": "#\/definitions\/Checkpoint"
                     }
                 }
-            }
+            },
+            "required": [
+                "state",
+                "progression"
+            ]
         },
         "FeedbackStatePatch": {
             "type": "object",
@@ -8924,11 +9142,6 @@
         },
         "Operation": {
             "type": "object",
-            "required": [
-                "id",
-                "createdAt",
-                "updatedAt"
-            ],
             "properties": {
                 "description": {
                     "type": "string",
@@ -8954,6 +9167,12 @@
                     "type": "string",
                     "format": "string"
                 },
+                "state": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "createdAt": {
                     "type": "string",
                     "format": "date-time"
@@ -8966,13 +9185,6 @@
                     "type": "string",
                     "readOnly": true,
                     "format": "string"
-                },
-                "state": {
-                    "type": "array",
-                    "readOnly": true,
-                    "items": {
-                        "type": "string"
-                    }
                 },
                 "_links": {
                     "type": "object",
@@ -9143,7 +9355,13 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "id",
+                "state",
+                "createdAt",
+                "updatedAt"
+            ]
         },
         "ImageData": {
             "type": "object",
@@ -9233,10 +9451,6 @@
         },
         "Member": {
             "type": "object",
-            "required": [
-                "id",
-                "createdAt"
-            ],
             "properties": {
                 "roles": {
                     "type": "array",
@@ -9350,7 +9564,11 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "id",
+                "createdAt"
+            ]
         },
         "MemberCollection": {
             "type": "object",
@@ -9393,12 +9611,6 @@
         },
         "Organization": {
             "type": "object",
-            "required": [
-                "name",
-                "id",
-                "createdAt",
-                "updatedAt"
-            ],
             "properties": {
                 "alternateName": {
                     "type": "string",
@@ -9525,7 +9737,13 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "name",
+                "id",
+                "createdAt",
+                "updatedAt"
+            ]
         },
         "MemberPatch": {
             "type": "object",
@@ -9551,13 +9769,6 @@
         },
         "LogEntry": {
             "type": "object",
-            "required": [
-                "action",
-                "loggedAt",
-                "objectId",
-                "version",
-                "data"
-            ],
             "properties": {
                 "action": {
                     "type": "string",
@@ -9581,7 +9792,14 @@
                         "type": "string"
                     }
                 }
-            }
+            },
+            "required": [
+                "action",
+                "loggedAt",
+                "objectId",
+                "version",
+                "data"
+            ]
         },
         "LogEntryCollection": {
             "type": "object",
@@ -9805,13 +10023,6 @@
         },
         "Place": {
             "type": "object",
-            "required": [
-                "geo",
-                "name",
-                "id",
-                "createdAt",
-                "updatedAt"
-            ],
             "properties": {
                 "branchCode": {
                     "type": "string",
@@ -9819,16 +10030,9 @@
                 },
                 "geo": {
                     "type": "object",
-                    "required": [
-                        "polygon",
-                        "elevation"
-                    ],
                     "properties": {
                         "polygon": {
                             "type": "object",
-                            "required": [
-                                "type"
-                            ],
                             "properties": {
                                 "type": {
                                     "type": "string",
@@ -9841,13 +10045,20 @@
                                         "$ref": "#\/definitions\/Feature"
                                     }
                                 }
-                            }
+                            },
+                            "required": [
+                                "type"
+                            ]
                         },
                         "elevation": {
                             "type": "number",
                             "format": "float"
                         }
-                    }
+                    },
+                    "required": [
+                        "polygon",
+                        "elevation"
+                    ]
                 },
                 "name": {
                     "type": "string",
@@ -9971,7 +10182,14 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "geo",
+                "name",
+                "id",
+                "createdAt",
+                "updatedAt"
+            ]
         },
         "PlaceCollection": {
             "type": "object",
@@ -10014,11 +10232,6 @@
         },
         "Report": {
             "type": "object",
-            "required": [
-                "priority",
-                "id",
-                "updatedAt"
-            ],
             "properties": {
                 "description": {
                     "type": "string",
@@ -10042,6 +10255,12 @@
                     "type": "string",
                     "format": "string"
                 },
+                "state": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "createdAt": {
                     "type": "string",
                     "format": "date-time"
@@ -10054,13 +10273,6 @@
                     "type": "string",
                     "readOnly": true,
                     "format": "string"
-                },
-                "state": {
-                    "type": "array",
-                    "readOnly": true,
-                    "items": {
-                        "type": "string"
-                    }
                 },
                 "_links": {
                     "type": "object",
@@ -10275,7 +10487,13 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "priority",
+                "id",
+                "state",
+                "updatedAt"
+            ]
         },
         "ReportCollection": {
             "type": "object",
@@ -10318,17 +10536,9 @@
         },
         "Service": {
             "type": "object",
-            "required": [
-                "contactPoint",
-                "name",
-                "id"
-            ],
             "properties": {
                 "contactPoint": {
                     "type": "object",
-                    "required": [
-                        "telephone"
-                    ],
                     "properties": {
                         "telephone": {
                             "type": "string",
@@ -10338,7 +10548,10 @@
                             "type": "boolean",
                             "readOnly": true
                         }
-                    }
+                    },
+                    "required": [
+                        "telephone"
+                    ]
                 },
                 "description": {
                     "type": "string",
@@ -10386,7 +10599,12 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "contactPoint",
+                "name",
+                "id"
+            ]
         },
         "ServiceCollection": {
             "type": "object",
@@ -10429,12 +10647,6 @@
         },
         "Webhook": {
             "type": "object",
-            "required": [
-                "enabled",
-                "event",
-                "payloadUrl",
-                "id"
-            ],
             "properties": {
                 "enabled": {
                     "type": "boolean"
@@ -10509,7 +10721,13 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "enabled",
+                "event",
+                "payloadUrl",
+                "id"
+            ]
         },
         "WebhookCollection": {
             "type": "object",
@@ -10552,10 +10770,6 @@
         },
         "Chart": {
             "type": "object",
-            "required": [
-                "labels",
-                "data"
-            ],
             "properties": {
                 "labels": {
                     "type": "array",
@@ -10569,7 +10783,11 @@
                         "type": "integer"
                     }
                 }
-            }
+            },
+            "required": [
+                "labels",
+                "data"
+            ]
         },
         "OrganizationPatch": {
             "type": "object",
@@ -10669,11 +10887,6 @@
         },
         "ReviewRequest": {
             "type": "object",
-            "required": [
-                "id",
-                "createdAt",
-                "updatedAt"
-            ],
             "properties": {
                 "id": {
                     "type": "string",
@@ -10769,7 +10982,12 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "id",
+                "createdAt",
+                "updatedAt"
+            ]
         },
         "ReviewRequestCollection": {
             "type": "object",
@@ -10812,18 +11030,7 @@
         },
         "Person": {
             "type": "object",
-            "required": [
-                "id",
-                "optIn",
-                "preferences",
-                "createdAt",
-                "updatedAt"
-            ],
             "properties": {
-                "id": {
-                    "type": "string",
-                    "format": "string"
-                },
                 "familyName": {
                     "type": "string",
                     "minLength": 1,
@@ -10846,10 +11053,6 @@
                 },
                 "preferences": {
                     "type": "object",
-                    "required": [
-                        "messageEmailEnabled",
-                        "messagePushEnabled"
-                    ],
                     "properties": {
                         "messageEmailEnabled": {
                             "type": "boolean"
@@ -10857,7 +11060,15 @@
                         "messagePushEnabled": {
                             "type": "boolean"
                         }
-                    }
+                    },
+                    "required": [
+                        "messageEmailEnabled",
+                        "messagePushEnabled"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "string"
                 },
                 "username": {
                     "type": "string",
@@ -10961,7 +11172,14 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "optIn",
+                "preferences",
+                "id",
+                "createdAt",
+                "updatedAt"
+            ]
         },
         "PersonPatch": {
             "type": "object",
@@ -11054,9 +11272,6 @@
         },
         "Device": {
             "type": "object",
-            "required": [
-                "id"
-            ],
             "properties": {
                 "id": {
                     "type": "string",
@@ -11096,7 +11311,10 @@
                         }
                     }
                 }
-            }
+            },
+            "required": [
+                "id"
+            ]
         },
         "PlacePatch": {
             "type": "object",
