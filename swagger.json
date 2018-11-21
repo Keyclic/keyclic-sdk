@@ -7977,6 +7977,28 @@
                 }
             }
         },
+        "Condition": {
+            "type": "object",
+            "properties": {
+                "operator": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
+                "path": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
+                "value": {
+                    "type": "array",
+                    "readOnly": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
         "Choice": {
             "type": "object",
             "properties": {
@@ -8077,7 +8099,7 @@
                             "type": "array",
                             "readOnly": true,
                             "items": {
-                                "type": "string"
+                                "$ref": "#\/definitions\/Condition"
                             }
                         }
                     }
