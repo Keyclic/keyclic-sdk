@@ -1,6 +1,6 @@
 {
     "name": "@keyclic/sdk-javascript",
-    "version": "1.28.2",
+    "version": "1.28.15",
     "description": "Javascript client for Keyclic API",
     "author": "Keyclic techies team <techies@keyclic.com>",
     "dependencies": {
@@ -8,33 +8,46 @@
         "isomorphic-fetch": "^2.2.1"
     },
     "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-core": "^6.26.3",
-        "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-        "babel-preset-env": "^1.7.0",
-        "babel-preset-stage-2": "^6.24.1",
-        "standard": "^12.0.1"
+        "@babel/cli": "^7.1.5",
+        "@babel/core": "^7.1.6",
+        "@babel/plugin-proposal-class-properties": "^7.1.0",
+        "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+        "@babel/plugin-proposal-function-sent": "^7.1.0",
+        "@babel/plugin-proposal-json-strings": "^7.0.0",
+        "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+        "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+        "@babel/plugin-syntax-import-meta": "^7.0.0",
+        "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+        "@babel/preset-env": "^7.1.6",
+        "prettier": "^1.15.2"
     },
     "homepage": "https://keyclic.com",
     "license": "MIT",
-    "main": "bundles/index.js",
+    "main": "bundle/index.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/keyclic/app-sdk.git"
     },
     "scripts": {
-        "build": "babel src --out-dir bundles",
-        "standard": "standard --fix src/* test/* || true",
-        "test": "mocha --compilers js:babel-core/register --recursive"
+        "build": "babel src --out-dir bundle",
+        "prettier": "prettier --write bundle/**/*.js",
+        "test": "mocha --compilers js:@babel/core/register --recursive"
     },
     "babel": {
-        "babelrc": false,
-        "presets": [
-            "env",
-            "stage-2"
-        ],
         "plugins": [
-            "transform-es2015-modules-commonjs"
+            "@babel/plugin-proposal-class-properties",
+            "@babel/plugin-proposal-export-namespace-from",
+            "@babel/plugin-proposal-function-sent",
+            "@babel/plugin-proposal-json-strings",
+            "@babel/plugin-proposal-numeric-separator",
+            "@babel/plugin-proposal-throw-expressions",
+            "@babel/plugin-syntax-dynamic-import",
+            "@babel/plugin-syntax-import-meta",
+            "@babel/plugin-transform-modules-commonjs"
+        ],
+        "presets": [
+            ["@babel/env", {"targets": "> 0.25%, not dead"}]
         ]
     }
 }

@@ -1,36 +1,23 @@
 #!/usr/bin/env bash
 
 usage() {
-    echo "Usage of command:
+    echo "
+    Usage of command:
 
-    deploy                          Deploy project to npmjs.com registry.
+    deploy-dart                     Deploy SDK to Dart Packages registry (pub.dartlang.org).
+    deploy-js                       Deploy SDK to npmjs.com registry.
     generate                        Generate documentations, sources and tests thanks to swagger definition.
     "
 }
 
-deploy () {
+deploy-dart() {
     CURRENT_DIR=$(pwd)
 
-    echo "---------------------------------------"
-    echo "Deploying @keyclic/app-sdk to npmjs.com"
-    echo "---------------------------------------"
-
-    echo
-    echo "Need to be logged to npmjs registry,"
-    echo "add user with \"npm adduser --scope=@keyclic\" command."
-
-    #cd ${CURRENT_DIR}/javascript-es6 || exit
-    ## Prepare javascript-es6 package.
-    #rm -rf dist
-    #mkdir -p dist
-    #cp -R bundles dist/.
-    #cp -R src dist/.
-    #cp package.json dist/.
-    #npm publish dist --access public
-
-    echo "---------------------------------------------"
-    echo "Deploying keyclic_sdk_api to pub.dartlang.org"
-    echo "---------------------------------------------"
+    echo "
+    ----------------------------------------------------------------------
+    Deploying keyclic_sdk_api to Dart Packages registry (pub.dartlang.org)
+    ----------------------------------------------------------------------
+    "
 
     cd ${CURRENT_DIR}/dart || exit
     # Change some files to match requirements of pubspec.yaml specifications.
@@ -41,18 +28,42 @@ deploy () {
     cd ${CURRENT_DIR} || exit
 }
 
-generate () {
+deploy-js() {
+    CURRENT_DIR=$(pwd)
+
+    echo "
+    ---------------------------------------
+    Deploying @keyclic/app-sdk to npmjs.com
+    ---------------------------------------
+
+    Need to be logged to npmjs registry,
+    add user with \"npm adduser --scope=@keyclic\" command.
+    "
+
+    cd ${CURRENT_DIR}/javascript-es6 || exit
+    # Prepare javascript-es6 package.
+    rm -rf dist 2>&1
+    mkdir -p dist
+    cp -R bundle dist/.
+    cp -R src dist/.
+    cp package.json dist/.
+    npm publish dist --access public
+
+    cd ${CURRENT_DIR} || exit
+}
+
+generate() {
     ./bin/generate "$@"
 }
 
-main () {
-    if [ -z $1 ]; then
+main() {
+    if [[ -z ${1} ]]; then
         usage
         exit 0
     fi
 
-    if [[ ! $1 =~ ^deploy|generate$ ]]; then
-        echo "$1 is not a supported command."
+    if [[ ! ${1} =~ ^deploy-dart|deploy-js|generate$ ]]; then
+        echo "${1} is not a supported command."
         exit 1
     fi
 

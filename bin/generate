@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#set -x  # print terminal command
+#set -o errexit -o nounset -o xtrace
 
 # This script generates Swagger codegen client
 # then it generates app-sdk from templates and swagger.json file
@@ -12,24 +12,26 @@ cleanup() {
     echo "Don't forget to publish on Github, NPM and dart registries."
 }
 
-SWAGGER_FILE="$1"
-if [ -z "$SWAGGER_FILE" ]; then
+SWAGGER_FILE="${1}"
+if [[ -z "${SWAGGER_FILE}" ]]; then
     SWAGGER_FILE="https://api.keyclic.com/swagger.json"
 fi
 echo "Use file ${SWAGGER_FILE} as definition API."
 echo
 
-#rm -rf ${CURRENT_DIR}/javascript-es6
-#docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
-# swaggerapi/swagger-codegen-cli:unstable \
-# generate \
-# --config /local/options.javascript-es6.json \
-# --input-spec ${SWAGGER_FILE} \
-# --lang javascript \
-# --output /local/javascript-es6 \
-# --template-dir /local/javascript-es6-templates
+### Generation of @keyclic/sdk-javascript ###
+rm -rf ${CURRENT_DIR}/javascript-es6 2>&1
+docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
+    swaggerapi/swagger-codegen-cli:unstable \
+    generate \
+    --config /local/options.javascript-es6.json \
+    --input-spec ${SWAGGER_FILE} \
+    --lang javascript \
+    --output /local/javascript-es6 \
+    --template-dir /local/javascript-es6-templates
 
-rm -rf ${CURRENT_DIR}/dart
+### Generation of keyclic_sdk_api ###
+rm -rf ${CURRENT_DIR}/dart 2>&1
 docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
     swaggerapi/swagger-codegen-cli:unstable \
     generate \
@@ -39,24 +41,13 @@ docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
     --output /local/dart \
     --template-dir /local/dart-templates
 
-#old options example
-#java \
-#   -jar /home/marin/IdeaProjects/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
-#   generate \
-#   --config options.dart.json \
-#   --input-spec ${SWAGGER_FILE} \
-#   --lang dart \
-#   --output dart \
-#   --template-dir dart-templates
-#   > .codegen.dart.log
+# Prepare and build package for javascript-es6
+cd ${CURRENT_DIR}/javascript-es6 || exit
+npm install
+npm run build
+npm run prettier
 
-# Build javascript-es6 package.
-#cd ${CURRENT_DIR}/javascript-es6 || exit
-#npm install
-#npm run standard
-#npm run build
-
-# Change some variable name in dart package.
+# Prepare and build package for dart
 cd ${CURRENT_DIR}/dart || exit
 sed -i 's/geoHash\[\]/geoHash_/g' lib/api/*
 sed -i 's/options\[property\]/options_property_/g' lib/api/*
@@ -108,5 +99,16 @@ grep -q "homepage:" pubspec.yaml || echo "homepage: https://keyclic.com" >> pubs
 flutter pub get
 flutter format lib/*
 
-# When the script exits call cleanup function.
+# When the script exits call cleanup function
 trap cleanup EXIT
+
+#Old options example
+#java \
+#   -jar /home/marin/IdeaProjects/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
+#   generate \
+#   --config options.dart.json \
+#   --input-spec ${SWAGGER_FILE} \
+#   --lang dart \
+#   --output dart \
+#   --template-dir dart-templates
+#   > .codegen.dart.log
