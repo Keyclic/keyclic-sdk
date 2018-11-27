@@ -1,7 +1,7 @@
 {
-    "name": "@keyclic/sdk-javascript",
-    "version": "1.28.15",
-    "description": "Javascript client for Keyclic API",
+    "name": "{{{projectName}}}",
+    "version": "{{{projectVersion}}}",
+    "description": "{{{projectDescription}}}",
     "author": "Keyclic techies team <techies@keyclic.com>",
     "dependencies": {
         "es6-promise": "^4.2.5",
@@ -11,14 +11,6 @@
         "@babel/cli": "^7.1.5",
         "@babel/core": "^7.1.6",
         "@babel/plugin-proposal-class-properties": "^7.1.0",
-        "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
-        "@babel/plugin-proposal-function-sent": "^7.1.0",
-        "@babel/plugin-proposal-json-strings": "^7.0.0",
-        "@babel/plugin-proposal-numeric-separator": "^7.0.0",
-        "@babel/plugin-proposal-throw-expressions": "^7.0.0",
-        "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-        "@babel/plugin-syntax-import-meta": "^7.0.0",
-        "@babel/plugin-transform-modules-commonjs": "^7.1.0",
         "@babel/preset-env": "^7.1.6",
         "prettier": "^1.15.2"
     },
@@ -31,23 +23,17 @@
     },
     "scripts": {
         "build": "babel src --out-dir bundle",
-        "prettier": "prettier --write bundle/**/*.js",
+        "prettier": "prettier --write bundle/**/*.js src/**/*.js",
         "test": "mocha --compilers js:@babel/core/register --recursive"
     },
     "babel": {
         "plugins": [
-            "@babel/plugin-proposal-class-properties",
-            "@babel/plugin-proposal-export-namespace-from",
-            "@babel/plugin-proposal-function-sent",
-            "@babel/plugin-proposal-json-strings",
-            "@babel/plugin-proposal-numeric-separator",
-            "@babel/plugin-proposal-throw-expressions",
-            "@babel/plugin-syntax-dynamic-import",
-            "@babel/plugin-syntax-import-meta",
-            "@babel/plugin-transform-modules-commonjs"
+            "@babel/plugin-proposal-class-properties"
         ],
         "presets": [
-            ["@babel/env", {"targets": "> 0.25%, not dead"}]
+            ["@babel/env", {
+                "targets": "> 0.5%, last 1 ie versions, last 1 Safari versions, not dead"
+            }]
         ]
     }
 }
