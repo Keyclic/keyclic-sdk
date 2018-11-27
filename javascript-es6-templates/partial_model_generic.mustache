@@ -63,7 +63,7 @@ export default class {{{classname}}} {{#interfaceModels}}extends {{{classname}}}
     * @param { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{&classname}} } object Optional instance to populate.
     * @return { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{&classname}} } The populated "{{classname}}" instance.
     */
-    static constructFromData(
+    static constructFromObject(
         data,
         object = null,
     ) {
@@ -74,30 +74,14 @@ export default class {{{classname}}} {{#interfaceModels}}extends {{{classname}}}
         if (object === null) {
             object = new {{&classname}}();
         }
+
         {{#interfaceModels}}
-        object = super.constructFromData(data, object);
+        object = super.constructFromObject(data, object);
         {{/interfaceModels}}
 
         {{#vars}}
-        if (data.hasOwnProperty('{{&baseName}}')) {
-            {{#complexType}}
-                {{#isContainer}}
-            object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, [object.{{&name}}Type]);
-                {{/isContainer}}
-                {{^isContainer}}
-            object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, object.{{&name}}Type);
-                {{/isContainer}}
-            {{/complexType}}
-            {{^complexType}}
-                {{#isContainer}}
-                    {{#items}}
-            object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, '[\'{{&baseType}}\']');
-                    {{/items}}
-                {{/isContainer}}
-                {{^isContainer}}
-            object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, '{{&baseType}}');
-                {{/isContainer}}
-            {{/complexType}}
+        if (data.hasOwnProperty('{{baseName}}')) {
+            object['{{baseName}}']{{{defaultValueWithParam}}}
         }
         {{/vars}}
 

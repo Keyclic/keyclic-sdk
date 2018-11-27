@@ -300,38 +300,79 @@ export default class ApiClient {
             return data;
         }
 
-        switch (type) {
-            case 'Boolean':
-                return Boolean(data);
-            case 'Integer':
-                return parseInt(data, 10);
-            case 'Number':
-                return parseFloat(data);
-            case 'String':
-                return String(data);
-            case 'Date': {
-                return new Date(data);
-            }
-            case 'Blob':
-                return data;
-            default:
-                if (typeof type === 'function') {
-                    // for model type like: User
-                    return type.constructFromData(data, null);
-                }
-
-                if (Array.isArray(type)) {
-                    // for array type like: ['String']
-                    let itemType = type[0];
-
-                    return data.map((item) => {
-                        return ApiClient.convertToType(item, itemType);
-                    });
-                }
-
-                // For unknown type, return the data directly.
-                return data;
+        if (type === 'Boolean') {
+            return Boolean(data);
         }
+
+        if (type === 'Integer') {
+            return parseInt(data, 10);
+        }
+
+        if (type === 'Number') {
+            return parseFloat(data);
+        }
+
+        if (type === 'String') {
+            return String(data);
+        }
+
+        if (type === 'Date') {
+            return new Date(data);
+        }
+
+        if (type === 'Blob') {
+            return data;
+        }
+
+        // generic object, return directly
+        if (type === Object) {
+            return data;
+        }
+
+        // for model type like: User
+        if (typeof type === 'function') {
+            return type.constructFromObject(data, null);
+        }
+
+        // for array type like: ['String']
+        if (Array.isArray(type)) {
+            let itemType = type[0];
+
+            if (itemType.length < 1) {
+                return data;
+            }
+
+            return data.map((item) => {
+                return ApiClient.convertToType(item, itemType);
+            });
+        }
+
+        // for plain object type like: {'String': 'Integer'}
+        if (typeof type === 'object') {
+            let typeKeys = Objects.keys(type);
+            let typeValues = Objects.values(type);
+
+            if (keys.length < 1 || values.length < 1) {
+                return data;
+            }
+
+            let typeKey = typeKeys[0];
+            let typeValue = typeValues[0];
+
+            let result = {};
+            for (let k in data) {
+                if (data.hasOwnProperty(k)) {
+                    let key = ApiClient.convertToType(k, typeKey);
+                    let value = ApiClient.convertToType(data[k], typeValue);
+                    result[key] = value;
+                }
+            }
+
+            return result;
+        }
+
+        // for unknown type, return the data directly
+        return data;
     }
 }
 
