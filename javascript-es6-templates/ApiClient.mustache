@@ -344,10 +344,10 @@ export default class ApiClient {
 
         // for plain object type like: {'String': 'Integer'}
         if (typeof type === 'object') {
-            const typeKeys = Objects.keys(type);
-            const typeValues = Objects.values(type);
+            const typeKeys = Object.keys(type);
+            const typeValues = Object.values(type);
 
-            if (keys.length < 1 || values.length < 1) {
+            if (typeKeys.length < 1 || typeValues.length < 1) {
                 return data;
             }
 
