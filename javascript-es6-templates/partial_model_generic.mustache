@@ -93,23 +93,21 @@ export default class {{{classname}}} {{#interfaceModels}}extends {{{classname}}}
             if (data.hasOwnProperty('{{&baseName}}')) {
             {{#complexType}}
                 {{#isListContainer}}
-                    object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, [object.{{&name}}Type]);
+                    object.{{&name}} = ApiClient.convertToType(data["{{&baseName}}"], [object.{{&name}}Type]);
                 {{/isListContainer}}
                 {{#isMapContainer}}
-                    object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, { 'String': object.{{&name}}Type });
+                    object.{{&name}} = ApiClient.convertToType(data["{{&baseName}}"], { 'String': object.{{&name}}Type });
                 {{/isMapContainer}}
                 {{^isContainer}}
-                    object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, object.{{&name}}Type);
+                    object.{{&name}} = ApiClient.convertToType(data["{{&baseName}}"], object.{{&name}}Type);
                 {{/isContainer}}
             {{/complexType}}
             {{^complexType}}
                 {{#isContainer}}
-                    {{#items}}
-                        object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, '[\'{{&baseType}}\']');
-                    {{/items}}
+                    object.{{&name}} = ApiClient.convertToType(data["{{&baseName}}"], '[\'{{#items}}{{&baseType}}{{/items}}\']');
                 {{/isContainer}}
                 {{^isContainer}}
-                    object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, '{{&baseType}}');
+                    object.{{&name}} = ApiClient.convertToType(data["{{&baseName}}"], '{{&baseType}}');
                 {{/isContainer}}
             {{/complexType}}
             }
