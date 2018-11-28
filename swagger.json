@@ -8002,6 +8002,11 @@
         "Choice": {
             "type": "object",
             "properties": {
+                "type": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
                 "enum": {
                     "type": "array",
                     "readOnly": true,
@@ -8049,6 +8054,11 @@
         "Property": {
             "type": "object",
             "properties": {
+                "type": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
                 "enum": {
                     "type": "array",
                     "readOnly": true,
