@@ -105,10 +105,11 @@ trap cleanup EXIT
 #Old options example
 #java \
 #   -jar /home/marin/IdeaProjects/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
+#   -DdebugModels
 #   generate \
 #   --config options.dart.json \
 #   --input-spec ${SWAGGER_FILE} \
 #   --lang dart \
 #   --output dart \
-#   --template-dir dart-templates
+#   --template-dir dart-templates \
 #   > .codegen.dart.log

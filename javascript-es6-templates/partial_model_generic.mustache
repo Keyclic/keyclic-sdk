@@ -58,12 +58,12 @@ export default class {{{classname}}} {{#interfaceModels}}extends {{{classname}}}
     }
 
     /**
-    * Constructs a "{{classname}}" from a plain JavaScript object.
-    * @param { object } data The plain JavaScript object bearing properties of interest.
-    * @param { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{&classname}} } object Optional instance to populate.
-    * @return { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{&classname}} } The populated "{{classname}}" instance.
-    */
-    static constructFromObject(
+     * Constructs a "{{{classname}}}" from a plain JavaScript object.
+     * @param { object } data The plain JavaScript object bearing properties of interest.
+     * @param { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{&classname}} } object Optional instance to populate.
+     * @return { module:{{#invokerPackage}}{{invokerPackage}}/{{/invokerPackage}}{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{&classname}} } The populated "{{{classname}}}" instance.
+     */
+    static constructFromData(
         data,
         object = null,
     ) {
@@ -76,13 +76,43 @@ export default class {{{classname}}} {{#interfaceModels}}extends {{{classname}}}
         }
 
         {{#interfaceModels}}
-        object = super.constructFromObject(data, object);
+        object = super.constructFromData(data, object);
         {{/interfaceModels}}
 
+{{=// \\=}}
+//!
         {{#vars}}
         if (data.hasOwnProperty('{{baseName}}')) {
             object['{{baseName}}']{{{defaultValueWithParam}}}
         }
+        {{/vars}}
+\\
+//={{ }}=\\
+
+        {{#vars}}
+            if (data.hasOwnProperty('{{&baseName}}')) {
+            {{#complexType}}
+                {{#isListContainer}}
+                    object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, [object.{{&name}}Type]);
+                {{/isListContainer}}
+                {{#isMapContainer}}
+                    object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, { 'String': object.{{&name}}Type });
+                {{/isMapContainer}}
+                {{^isContainer}}
+                    object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, object.{{&name}}Type);
+                {{/isContainer}}
+            {{/complexType}}
+            {{^complexType}}
+                {{#isContainer}}
+                    {{#items}}
+                        object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, '[\'{{&baseType}}\']');
+                    {{/items}}
+                {{/isContainer}}
+                {{^isContainer}}
+                    object.{{&name}} = ApiClient.convertToType(data.{{&baseName}}, '{{&baseType}}');
+                {{/isContainer}}
+            {{/complexType}}
+            }
         {{/vars}}
 
         return object;

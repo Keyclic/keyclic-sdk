@@ -1,6 +1,6 @@
 /**
 * Enum class {{classname}}.
-* @enum {{=<% %>=}}{<%datatype%>}<%={{ }}=%>
+* @enum { {{datatype}} }
 * @readonly
 */
 export default class {{classname}} {
@@ -18,7 +18,7 @@ export default class {{classname}} {
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {{=< >=}}{module:<#invokerPackage><invokerPackage>/</invokerPackage><#modelPackage><modelPackage>/</modelPackage><classname>}<={{ }}=> The enum <code>{{classname}}</code> value.
     */
-    static constructFromObject(data) {
+    static constructFromData(data) {
         return data;
     }
 }

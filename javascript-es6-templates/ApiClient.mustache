@@ -324,23 +324,18 @@ export default class ApiClient {
             return data;
         }
 
-        // generic object, return directly
-        if (type === Object) {
-            return data;
-        }
-
         // for model type like: User
         if (typeof type === 'function') {
-            return type.constructFromObject(data, null);
+            return type.constructFromData(data, null);
         }
 
         // for array type like: ['String']
         if (Array.isArray(type)) {
-            let itemType = type[0];
-
-            if (itemType.length < 1) {
+            if (type.length < 1) {
                 return data;
             }
+
+            const itemType = type[0];
 
             return data.map((item) => {
                 return ApiClient.convertToType(item, itemType);
@@ -349,15 +344,15 @@ export default class ApiClient {
 
         // for plain object type like: {'String': 'Integer'}
         if (typeof type === 'object') {
-            let typeKeys = Objects.keys(type);
-            let typeValues = Objects.values(type);
+            const typeKeys = Objects.keys(type);
+            const typeValues = Objects.values(type);
 
             if (keys.length < 1 || values.length < 1) {
                 return data;
             }
 
-            let typeKey = typeKeys[0];
-            let typeValue = typeValues[0];
+            const typeKey = typeKeys[0];
+            const typeValue = typeValues[0];
 
             let result = {};
             for (let k in data) {
