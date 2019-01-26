@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "1.29.2"
+        "version": "1.31.2"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -224,6 +224,104 @@
                         "description": "",
                         "schema": {
                             "$ref": "#\/definitions\/BusinessActivity"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/businessactivities\/{businessActivity}\/image\/{width}\/{height}": {
+            "get": {
+                "tags": [
+                    "Image"
+                ],
+                "summary": "Retrieve one Image resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "getImageByBusinessActivityAndWidthAndHeight",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource formatted as GUID string.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "businessActivity",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "width",
+                        "pattern": "\\d*",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "height",
+                        "pattern": "\\d*",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "file"
                         }
                     },
                     "400": {
@@ -5741,21 +5839,6 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/page"
-                    },
-                    {
-                        "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
-                    },
-                    {
                         "description": "The identifier of the resource formatted as GUID string.",
                         "format": "uuid",
                         "in": "path",
@@ -5768,7 +5851,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/ReviewRequestPagination"
+                            "$ref": "#\/definitions\/FeedbackReviewRequestPagination"
                         }
                     },
                     "400": {
@@ -7286,7 +7369,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/ReviewRequest"
+                            "$ref": "#\/definitions\/FeedbackReviewRequest"
                         }
                     },
                     "400": {
@@ -8199,6 +8282,30 @@
                             "properties": {
                                 "href": {
                                     "description": "The URI of the schema associated to the given businessactivity.",
+                                    "type": "string",
+                                    "format": "string"
+                                },
+                                "iriTemplate": {
+                                    "type": "object",
+                                    "properties": {
+                                        "mapping": {
+                                            "type": "object",
+                                            "properties": {
+                                                "businessActivity": {
+                                                    "type": "string",
+                                                    "format": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "image": {
+                            "type": "object",
+                            "properties": {
+                                "href": {
+                                    "description": "The URI of the image associated to the given businessactivity.",
                                     "type": "string",
                                     "format": "string"
                                 },
@@ -10917,7 +11024,7 @@
                 "organization"
             ]
         },
-        "ReviewRequest": {
+        "FeedbackReviewRequest": {
             "type": "object",
             "properties": {
                 "id": {
@@ -10944,7 +11051,7 @@
                             "type": "object",
                             "properties": {
                                 "href": {
-                                    "description": "The URI of the self associated to the given reviewrequest.",
+                                    "description": "The URI of the self associated to the given feedbackreviewrequest.",
                                     "type": "string",
                                     "format": "string"
                                 },
@@ -10968,7 +11075,7 @@
                             "type": "object",
                             "properties": {
                                 "href": {
-                                    "description": "The URI of the reviewer associated to the given reviewrequest.",
+                                    "description": "The URI of the reviewer associated to the given feedbackreviewrequest.",
                                     "type": "string",
                                     "format": "string"
                                 },
@@ -10992,7 +11099,7 @@
                             "type": "object",
                             "properties": {
                                 "href": {
-                                    "description": "The URI of the review associated to the given reviewrequest.",
+                                    "description": "The URI of the review associated to the given feedbackreviewrequest.",
                                     "type": "string",
                                     "format": "string"
                                 },
@@ -11011,6 +11118,30 @@
                                     }
                                 }
                             }
+                        },
+                        "itemToReview": {
+                            "type": "object",
+                            "properties": {
+                                "href": {
+                                    "description": "The URI of the itemToReview associated to the given feedbackreviewrequest.",
+                                    "type": "string",
+                                    "format": "string"
+                                },
+                                "iriTemplate": {
+                                    "type": "object",
+                                    "properties": {
+                                        "mapping": {
+                                            "type": "object",
+                                            "properties": {
+                                                "feedback": {
+                                                    "type": "string",
+                                                    "format": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -11021,19 +11152,19 @@
                 "updatedAt"
             ]
         },
-        "ReviewRequestCollection": {
+        "FeedbackReviewRequestCollection": {
             "type": "object",
             "properties": {
                 "items": {
                     "type": "array",
                     "default": [],
                     "items": {
-                        "$ref": "#\/definitions\/ReviewRequest"
+                        "$ref": "#\/definitions\/FeedbackReviewRequest"
                     }
                 }
             }
         },
-        "ReviewRequestPagination": {
+        "FeedbackReviewRequestPagination": {
             "type": "object",
             "properties": {
                 "limit": {
@@ -11053,7 +11184,7 @@
                     "format": "int32"
                 },
                 "_embedded": {
-                    "$ref": "#\/definitions\/ReviewRequestCollection"
+                    "$ref": "#\/definitions\/FeedbackReviewRequestCollection"
                 },
                 "_links": {
                     "$ref": "#\/definitions\/PaginationLinks"
@@ -11678,12 +11809,20 @@
             "type": "string"
         },
         "after": {
+            "enum": [
+                "(\\d\\d\\d\\d)(-)?(\\d\\d)(-)?(\\d\\d)(T)?(\\d\\d)(:)?(\\d\\d)(:)?(\\d\\d)(\\.\\d+)?(Z",
+                "([+-])(\\d\\d)(:)?(\\d\\d))"
+            ],
             "format": "date-time",
             "in": "query",
             "name": "after",
             "type": "string"
         },
         "before": {
+            "enum": [
+                "(\\d\\d\\d\\d)(-)?(\\d\\d)(-)?(\\d\\d)(T)?(\\d\\d)(:)?(\\d\\d)(:)?(\\d\\d)(\\.\\d+)?(Z",
+                "([+-])(\\d\\d)(:)?(\\d\\d))"
+            ],
             "format": "date-time",
             "in": "query",
             "name": "before",

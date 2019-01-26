@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 usage() {
-    echo "
-    Usage of command:
+    echo "Usage of app command:
 
     deploy-dart                     Deploy SDK to Dart Packages registry (pub.dartlang.org).
     deploy-js                       Deploy SDK to npmjs.com registry.
