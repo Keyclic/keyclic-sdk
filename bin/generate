@@ -55,6 +55,8 @@ npm run prettier
 
 # Prepare and build package for dart
 cd ${CURRENT_DIR}/dart || exit
+
+# remove bracket in function parameter name
 sed -i 's/geoHash\[\]/geoHash_/g' lib/api/*
 sed -i 's/options\[property\]/options_property_/g' lib/api/*
 sed -i 's/options\[sort\]/options_sort_/g' lib/api/*
@@ -74,7 +76,7 @@ sed -i 's/search\[name\]/search_name_/g' lib/api/*
 sed -i 's/search\[notificationEmailAddress\]/search_notificationEmailAddress_/g' lib/api/*
 sed -i 's/search\[username\]/search_username_/g' lib/api/*
 sed -i 's/visibility\[\]/visibility_/g' lib/api/*
-
+# replace array query parameter name with bracket instead of underscore
 sed -i 's/"geoHash_"/"geoHash\[\]"/g' lib/api/*
 sed -i 's/"options_property_"/"options\[property\]"/g' lib/api/*
 sed -i 's/"options_sort_"/"options\[sort\]"/g' lib/api/*
@@ -94,9 +96,11 @@ sed -i 's/"search_name_"/"search[name]"/g' lib/api/*
 sed -i 's/"search_notificationEmailAddress_"/"search[notificationEmailAddress]"/g' lib/api/*
 sed -i 's/"search_username_"/"search[username]"/g' lib/api/*
 sed -i 's/"visibility_"/"visibility\[\]"/g' lib/api/*
-
+# remove List.listFromJson
+sed -i 's/List.listFromJson//g' lib/model/*
+# fix type of metadata
 sed -i 's/Map<String, String> metadata/Map<String, dynamic> metadata/g' lib/model/feedback.dart
-
+# add some requirements in pubspec.yaml
 grep -q "author:" pubspec.yaml || echo "author: Keyclic techies team <techies@keyclic.com>" >> pubspec.yaml
 grep -q "environment:" pubspec.yaml || echo "environment:" >> pubspec.yaml
 grep -q "sdk:" pubspec.yaml || echo "  sdk: \">=1.8.0 <3.0.0\"" >> pubspec.yaml

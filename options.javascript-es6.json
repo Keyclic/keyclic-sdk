@@ -1,6 +1,6 @@
 {
     "projectDescription": "Javascript client for Keyclic API",
     "projectName": "@keyclic/sdk-javascript",
-    "projectVersion": "1.31.2",
+    "projectVersion": "1.31.3",
     "useInheritance": true
 }
