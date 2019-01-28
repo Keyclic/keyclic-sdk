@@ -21,7 +21,10 @@ echo
 
 ### Generation of @keyclic/sdk-javascript ###
 rm -rf ${CURRENT_DIR}/javascript-es6 2>&1
-docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
+docker run \
+    --rm \
+    --volume ${PWD}:/local \
+    --user "$(id -u)":"$(id -g)" \
     swaggerapi/swagger-codegen-cli:unstable \
     generate \
     --config /local/options.javascript-es6.json \
@@ -32,7 +35,10 @@ docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
 
 ### Generation of keyclic_sdk_api ###
 rm -rf ${CURRENT_DIR}/dart 2>&1
-docker run --rm --volume ${PWD}:/local --user "$(id -u)":"$(id -g)" \
+docker run \
+    --rm \
+    --volume ${PWD}:/local \
+    --user "$(id -u)":"$(id -g)" \
     swaggerapi/swagger-codegen-cli:unstable \
     generate \
     --config /local/options.dart.json \
@@ -104,8 +110,8 @@ trap cleanup EXIT
 
 #Old options example
 #java \
-#   -jar /home/marin/IdeaProjects/swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
-#   -DdebugModels
+#   -DdebugModels \
+#   -jar ../swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
 #   generate \
 #   --config options.dart.json \
 #   --input-spec ${SWAGGER_FILE} \
@@ -113,3 +119,14 @@ trap cleanup EXIT
 #   --output dart \
 #   --template-dir dart-templates \
 #   > .codegen.dart.log
+#
+#java \
+#    -DdebugModels \
+#   -jar ../swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
+#   generate \
+#   --config options.dart.json \
+#   --input-spec ${SWAGGER_FILE} \
+#   --lang javascript \
+#   --output javascript-es6 \
+#   --template-dir javascript-es6-templates \
+#   > .codegen.javascript.log
