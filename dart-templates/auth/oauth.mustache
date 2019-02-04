@@ -1,10 +1,9 @@
 part of {{pubName}}.api;
 
 class OAuth implements Authentication {
-  String accessToken;
+  OAuth({this.accessToken});
 
-  OAuth({this.accessToken}) {
-  }
+  String accessToken;
 
   @override
   void applyToParams(List<QueryParam> queryParams, Map<String, String> headerParams) {
@@ -13,7 +12,5 @@ class OAuth implements Authentication {
     }
   }
 
-  void setAccessToken(String accessToken) {
-    this.accessToken = accessToken;
-  }
+  void setAccessToken(String accessToken) => this.accessToken = accessToken;
 }

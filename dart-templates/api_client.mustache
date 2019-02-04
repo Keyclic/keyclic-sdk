@@ -20,9 +20,12 @@ class ApiClient {
 
   ApiClient({this.basePath: "{{{basePath}}}"}) {
     // Setup authentications (key: authentication name, value: authentication).{{#authMethods}}{{#isBasic}}
-    _authentications['{{name}}'] = new HttpBasicAuth();{{/isBasic}}{{#isApiKey}}
-    _authentications['{{name}}'] = new ApiKeyAuth({{#isKeyInHeader}}"header"{{/isKeyInHeader}}{{^isKeyInHeader}}"query"{{/isKeyInHeader}}, "{{keyParamName}}");{{/isApiKey}}{{#isOAuth}}
-    _authentications['{{name}}'] = new OAuth();{{/isOAuth}}{{/authMethods}}
+    //_authentications['{{name}}'] = new HttpBasicAuth();{{/isBasic}}{{#isApiKey}}
+    //_authentications['{{name}}'] = new ApiKeyAuth({{#isKeyInHeader}}"header"{{/isKeyInHeader}}{{^isKeyInHeader}}"query"{{/isKeyInHeader}}, "{{keyParamName}}");{{/isApiKey}}{{#isOAuth}}
+    //_authentications['{{name}}'] = new OAuth();{{/isOAuth}}{{/authMethods}}
+    {{! override _authentications['bearer'] time to change API }}
+    {{! TODO: change API }}
+    _authentications['{{name}}'] = new OAuth();
   }
 
   void addDefaultHeader(String key, String value) {
