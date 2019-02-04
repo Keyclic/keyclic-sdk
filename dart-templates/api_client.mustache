@@ -24,8 +24,8 @@ class ApiClient {
     //_authentications['{{name}}'] = new ApiKeyAuth({{#isKeyInHeader}}"header"{{/isKeyInHeader}}{{^isKeyInHeader}}"query"{{/isKeyInHeader}}, "{{keyParamName}}");{{/isApiKey}}{{#isOAuth}}
     //_authentications['{{name}}'] = new OAuth();{{/isOAuth}}{{/authMethods}}
     {{! override _authentications['bearer'] time to change API }}
-    {{! TODO: change API }}
-    _authentications['{{name}}'] = new OAuth();
+    {{! TODO: change API to use OAuth2 method in security definition }}
+    {{#authMethods}}_authentications['{{name}}'] = new OAuth();{{/authMethods}}
   }
 
   void addDefaultHeader(String key, String value) {
