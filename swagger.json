@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "1.31.2"
+        "version": "1.31.5-dev.708155b67"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -5839,6 +5839,21 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/page"
+                    },
+                    {
+                        "$ref": "#\/parameters\/limit"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
                         "description": "The identifier of the resource formatted as GUID string.",
                         "format": "uuid",
                         "in": "path",
@@ -8593,10 +8608,6 @@
         "CategoryPatch": {
             "type": "object",
             "properties": {
-                "name": {
-                    "type": "string",
-                    "format": "string"
-                },
                 "color": {
                     "type": "string",
                     "format": "string"
@@ -8606,6 +8617,10 @@
                     "format": "string"
                 },
                 "identificationNumber": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "name": {
                     "type": "string",
                     "format": "string"
                 }
@@ -8862,8 +8877,8 @@
                                 "type": "object",
                                 "properties": {
                                     "href": {
-                                        "type": "string",
-                                        "format": "string"
+                                        "format": "string",
+                                        "type": "string"
                                     }
                                 }
                             }
@@ -9452,6 +9467,30 @@
                                 }
                             }
                         },
+                        "createdBy": {
+                            "type": "object",
+                            "properties": {
+                                "href": {
+                                    "description": "The URI of the createdBy associated to the given operation.",
+                                    "type": "string",
+                                    "format": "string"
+                                },
+                                "iriTemplate": {
+                                    "type": "object",
+                                    "properties": {
+                                        "mapping": {
+                                            "type": "object",
+                                            "properties": {
+                                                "person": {
+                                                    "type": "string",
+                                                    "format": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
                         "tracking": {
                             "type": "object",
                             "properties": {
@@ -9472,6 +9511,18 @@
                                                 }
                                             }
                                         }
+                                    }
+                                }
+                            }
+                        },
+                        "images": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "href": {
+                                        "format": "string",
+                                        "type": "string"
                                     }
                                 }
                             }
@@ -11003,9 +11054,6 @@
                 },
                 "polygon": {
                     "type": "string"
-                },
-                "elevation": {
-                    "type": "number"
                 }
             },
             "required": [
@@ -11371,12 +11419,10 @@
                     "type": "boolean"
                 },
                 "preferences.messageEmailEnabled": {
-                    "type": "string",
-                    "format": "string"
+                    "type": "boolean"
                 },
                 "preferences.messagePushEnabled": {
-                    "type": "string",
-                    "format": "string"
+                    "type": "boolean"
                 }
             }
         },

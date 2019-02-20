@@ -1,7 +1,8 @@
 class {{classname}} {
-  {{#vars}}{{#description}}/* {{{description}}} */{{/description}}
-  {{{datatype}}} {{name}} = {{{defaultValue}}};
-  {{#allowableValues}}{{#min}} // range from {{min}} to {{max}}{{/min}}//{{^min}}enum {{name}}Enum { {{#values}} {{.}}, {{/values}} };{{/min}}{{/allowableValues}}
+  {{#vars}}
+    {{#description}}/* {{{description}}} */{{/description}}
+    {{{datatype}}} {{name}} = {{{defaultValue}}};
+    {{#allowableValues}}{{#min}} // range from {{min}} to {{max}}{{/min}}//{{^min}}enum {{name}}Enum { {{#values}} {{.}}, {{/values}} };{{/min}}{{/allowableValues}}
   {{/vars}}
   {{classname}}();
 
@@ -49,10 +50,10 @@ class {{classname}} {
     return {
     {{#vars}}
       {{#isDateTime}}
-        '{{name}}': {{name}} == null ? '' : {{name}}.toUtc().toIso8601String(){{^-last}},{{/-last}}
+        '{{{baseName}}}': {{name}} == null ? '' : {{name}}.toUtc().toIso8601String(),
       {{/isDateTime}}
       {{^isDateTime}}
-        '{{name}}': {{name}}{{^-last}},{{/-last}}
+        '{{{baseName}}}': {{name}},
       {{/isDateTime}}
     {{/vars}}
      };
