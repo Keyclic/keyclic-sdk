@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "1.32.5-dev.a22ae49c5"
+        "version": "1.32.5-dev.85e4f9876"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -10343,7 +10343,16 @@
                     ]
                 },
                 "permission": {
-                    "type": "object"
+                    "type": "object",
+                    "properties": {
+                        "targetGroup": {
+                            "type": "string",
+                            "format": "string"
+                        }
+                    },
+                    "required": [
+                        "targetGroup"
+                    ]
                 },
                 "id": {
                     "type": "string",
