@@ -12183,8 +12183,8 @@
                     "format": "string"
                 },
                 "duration": {
-                    "type": "string",
-                    "format": "string"
+                    "type": "integer",
+                    "format": "int32"
                 },
                 "identificationNumber": {
                     "type": "string",
@@ -13602,19 +13602,16 @@
                     "format": "string"
                 },
                 "optIn": {
-                    "type": "string",
-                    "format": "string"
+                    "type": "boolean"
                 },
                 "preferences": {
                     "type": "object",
                     "properties": {
                         "messageEmailEnabled": {
-                            "type": "string",
-                            "format": "string"
+                            "type": "boolean"
                         },
                         "messagePushEnabled": {
-                            "type": "string",
-                            "format": "string"
+                            "type": "boolean"
                         }
                     }
                 }
@@ -13988,8 +13985,8 @@
                     "format": "string"
                 },
                 "priority": {
-                    "type": "string",
-                    "format": "string"
+                    "type": "integer",
+                    "format": "int32"
                 },
                 "tags": {
                     "type": "string",
