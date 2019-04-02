@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "0.1.0"
+        "version": "1.33.10"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -1017,170 +1017,6 @@
             }
         },
         "\/documents\/{document}": {
-            "delete": {
-                "tags": [
-                    "Document"
-                ],
-                "summary": "Remove one Document resource.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "deleteDocument",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "description": "The identifier of the resource formatted as GUID string.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "document",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": ""
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            },
-            "patch": {
-                "tags": [
-                    "Document"
-                ],
-                "summary": "Edit one Document resource.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "patchDocument",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "$ref": "#\/parameters\/DocumentPatch"
-                    },
-                    {
-                        "description": "The identifier of the resource formatted as GUID string.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "document",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Document"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            },
             "get": {
                 "tags": [
                     "Document"
@@ -1313,6 +1149,18 @@
                             "$ref": "#\/definitions\/Error"
                         }
                     },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
                     "404": {
                         "description": "Returned when the resource is not found",
                         "schema": {
@@ -1328,6 +1176,11 @@
                 },
                 "schemes": [
                     "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
                 ]
             }
         },
@@ -6629,10 +6482,10 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "",
+                    "201": {
+                        "description": "Returned when the resource is created",
                         "schema": {
-                            "$ref": "#\/definitions\/Report"
+                            "$ref": "#\/definitions\/Delegation"
                         }
                     },
                     "400": {
@@ -10474,29 +10327,6 @@
                 "createdAt"
             ]
         },
-        "DocumentPatch": {
-            "type": "object",
-            "properties": {
-                "file": {
-                    "type": "object",
-                    "properties": {
-                        "name": {
-                            "type": "string",
-                            "format": "string"
-                        }
-                    }
-                },
-                "permission": {
-                    "type": "object",
-                    "properties": {
-                        "targetGroup": {
-                            "type": "string",
-                            "format": "string"
-                        }
-                    }
-                }
-            }
-        },
         "Document": {
             "type": "object",
             "properties": {
@@ -10506,14 +10336,10 @@
                         "contentType": {
                             "type": "string",
                             "format": "string"
-                        },
-                        "name": {
-                            "type": "string",
-                            "format": "string"
                         }
                     },
                     "required": [
-                        "name"
+                        "contentType"
                     ]
                 },
                 "permission": {
@@ -11944,8 +11770,10 @@
             "type": "object",
             "properties": {
                 "roles": {
-                    "type": "string",
-                    "format": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
         },
@@ -12196,7 +12024,7 @@
                 },
                 "startDate": {
                     "type": "string",
-                    "format": "string"
+                    "format": "date-time"
                 }
             }
         },
@@ -13604,16 +13432,11 @@
                 "optIn": {
                     "type": "boolean"
                 },
-                "preferences": {
-                    "type": "object",
-                    "properties": {
-                        "messageEmailEnabled": {
-                            "type": "boolean"
-                        },
-                        "messagePushEnabled": {
-                            "type": "boolean"
-                        }
-                    }
+                "preferences.messageEmailEnabled": {
+                    "type": "boolean"
+                },
+                "preferences.messagePushEnabled": {
+                    "type": "boolean"
                 }
             }
         },
@@ -13974,7 +13797,7 @@
             "properties": {
                 "category": {
                     "type": "string",
-                    "format": "string"
+                    "format": "uuid"
                 },
                 "description": {
                     "type": "string",
@@ -13989,8 +13812,10 @@
                     "format": "int32"
                 },
                 "tags": {
-                    "type": "string",
-                    "format": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
         },
@@ -14374,14 +14199,6 @@
             "in": "body",
             "schema": {
                 "$ref": "#\/definitions\/CategoryData"
-            },
-            "required": true
-        },
-        "DocumentPatch": {
-            "name": "DocumentPatch",
-            "in": "body",
-            "schema": {
-                "$ref": "#\/definitions\/DocumentPatch"
             },
             "required": true
         },
