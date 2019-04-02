@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "1.33.5-dev.e2a3e656c"
+        "version": "0.1.0"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -1053,6 +1053,88 @@
                     }
                 ],
                 "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "patch": {
+                "tags": [
+                    "Document"
+                ],
+                "summary": "Edit one Document resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "patchDocument",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/DocumentPatch"
+                    },
+                    {
+                        "description": "The identifier of the resource formatted as GUID string.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "document",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
                     "200": {
                         "description": "",
                         "schema": {
@@ -1231,18 +1313,6 @@
                             "$ref": "#\/definitions\/Error"
                         }
                     },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
                     "404": {
                         "description": "Returned when the resource is not found",
                         "schema": {
@@ -1258,11 +1328,6 @@
                 },
                 "schemes": [
                     "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
                 ]
             }
         },
@@ -10409,6 +10474,29 @@
                 "createdAt"
             ]
         },
+        "DocumentPatch": {
+            "type": "object",
+            "properties": {
+                "file": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "format": "string"
+                        }
+                    }
+                },
+                "permission": {
+                    "type": "object",
+                    "properties": {
+                        "targetGroup": {
+                            "type": "string",
+                            "format": "string"
+                        }
+                    }
+                }
+            }
+        },
         "Document": {
             "type": "object",
             "properties": {
@@ -10425,7 +10513,6 @@
                         }
                     },
                     "required": [
-                        "contentType",
                         "name"
                     ]
                 },
@@ -11857,10 +11944,8 @@
             "type": "object",
             "properties": {
                 "roles": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string",
+                    "format": "string"
                 }
             }
         },
@@ -12098,8 +12183,8 @@
                     "format": "string"
                 },
                 "duration": {
-                    "type": "integer",
-                    "format": "int32"
+                    "type": "string",
+                    "format": "string"
                 },
                 "identificationNumber": {
                     "type": "string",
@@ -12111,7 +12196,7 @@
                 },
                 "startDate": {
                     "type": "string",
-                    "format": "date-time"
+                    "format": "string"
                 }
             }
         },
@@ -13517,13 +13602,21 @@
                     "format": "string"
                 },
                 "optIn": {
-                    "type": "boolean"
+                    "type": "string",
+                    "format": "string"
                 },
-                "preferences.messageEmailEnabled": {
-                    "type": "boolean"
-                },
-                "preferences.messagePushEnabled": {
-                    "type": "boolean"
+                "preferences": {
+                    "type": "object",
+                    "properties": {
+                        "messageEmailEnabled": {
+                            "type": "string",
+                            "format": "string"
+                        },
+                        "messagePushEnabled": {
+                            "type": "string",
+                            "format": "string"
+                        }
+                    }
                 }
             }
         },
@@ -13884,7 +13977,7 @@
             "properties": {
                 "category": {
                     "type": "string",
-                    "format": "uuid"
+                    "format": "string"
                 },
                 "description": {
                     "type": "string",
@@ -13895,14 +13988,12 @@
                     "format": "string"
                 },
                 "priority": {
-                    "type": "integer",
-                    "format": "int32"
+                    "type": "string",
+                    "format": "string"
                 },
                 "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string",
+                    "format": "string"
                 }
             }
         },
@@ -14286,6 +14377,14 @@
             "in": "body",
             "schema": {
                 "$ref": "#\/definitions\/CategoryData"
+            },
+            "required": true
+        },
+        "DocumentPatch": {
+            "name": "DocumentPatch",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/DocumentPatch"
             },
             "required": true
         },
