@@ -74,6 +74,7 @@ sed -i 's/search\[identificationNumber\]/search_identificationNumber_/g' lib/api
 sed -i 's/search\[jobTitle\]/search_jobTitle_/g' lib/api/*
 sed -i 's/search\[name\]/search_name_/g' lib/api/*
 sed -i 's/search\[notificationEmailAddress\]/search_notificationEmailAddress_/g' lib/api/*
+sed -i 's/search\[telephone\]/search_telephone_/g' lib/api/*
 sed -i 's/search\[username\]/search_username_/g' lib/api/*
 sed -i 's/visibility\[\]/visibility_/g' lib/api/*
 # replace array query parameter name with bracket instead of underscore
@@ -94,6 +95,7 @@ sed -i 's/"search_identificationNumber_"/"search[identificationNumber]"/g' lib/a
 sed -i 's/"search_jobTitle_"/"search[jobTitle]"/g' lib/api/*
 sed -i 's/"search_name_"/"search[name]"/g' lib/api/*
 sed -i 's/"search_notificationEmailAddress_"/"search[notificationEmailAddress]"/g' lib/api/*
+sed -i 's/"search_telephone_"/"search[telephone]"/g' lib/api/*
 sed -i 's/"search_username_"/"search[username]"/g' lib/api/*
 sed -i 's/"visibility_"/"visibility\[\]"/g' lib/api/*
 # fix metadata type
