@@ -14379,18 +14379,18 @@
     "page": {
       "default": 1,
       "description": "Page of the overview.",
+      "format": "int32",
       "in": "query",
       "name": "page",
-      "pattern": "[1-9]\\d*",
-      "type": "string"
+      "type": "integer"
     },
     "limit": {
       "default": 10,
       "description": "Page of the overview.",
+      "format": "int32",
       "in": "query",
       "name": "limit",
-      "pattern": "[1-9]\\d*",
-      "type": "string"
+      "type": "integer"
     },
     "order": {
       "default": "desc",
