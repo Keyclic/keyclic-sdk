@@ -16,7 +16,7 @@ class {{classname}} {
   {{#vars}}
   {{#isDateTime}}
     {{name}} = json['{{baseName}}'] == null ? null : DateTime.parse(json['{{baseName}}']);
-    if ({{name}}.isUtc == false) {
+    if ({{name}} is DateTime && {{name}}.isUtc == false) {
       {{=<% %>=}}
       <%name%> = DateTime.parse('${<%name%>.toIso8601String()}Z');
       <%={{ }}=%>
