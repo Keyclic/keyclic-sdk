@@ -13,13 +13,13 @@ class {{classname}} {
   ///
   /// {{notes}}
   {{#returnType}}Future<{{{returnType}}}> {{/returnType}}{{^returnType}}Future {{/returnType}}{{nickname}}({{#allParams}}{{#required}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/required}}{{/allParams}}{{#hasOptionalParams}}{ {{#allParams}}{{^required}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/required}}{{/allParams}} }{{/hasOptionalParams}}) async {
-    Object postBody = {{#bodyParam}}{{paramName}}{{/bodyParam}}{{^bodyParam}}null{{/bodyParam}};
+    Object postBody{{#bodyParam}} = {{paramName}}{{/bodyParam}};
 
     // verify required params are set
     {{#allParams}}
       {{#required}}
     if({{paramName}} == null) {
-     throw new ApiException(400, "Missing required param: {{paramName}}");
+     throw ApiException(400, "Missing required param: {{paramName}}");
     }
       {{/required}}
     {{/allParams}}
@@ -45,12 +45,12 @@ class {{classname}} {
 
     List<String> contentTypes = [{{#consumes}}"{{{mediaType}}}"{{#hasMore}},{{/hasMore}}{{/consumes}}];
 
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = [{{#authMethods}}"{{name}}"{{#hasMore}}, {{/hasMore}}{{/authMethods}}];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
-      MultipartRequest mp = new MultipartRequest(null, null);
+      MultipartRequest mp = MultipartRequest(null, null);
       {{#formParams}}{{#notFile}}
       if ({{paramName}} != null) {
         hasFields = true;
@@ -67,8 +67,12 @@ class {{classname}} {
         postBody = mp;
     }
     else {
-      {{#formParams}}{{#notFile}}if ({{paramName}} != null)
-        formParams['{{baseName}}'] = parameterToString({{paramName}});{{/notFile}}
+      {{#formParams}}
+        {{#notFile}}
+          if ({{paramName}} != null) {
+            formParams['{{baseName}}'] = parameterToString({{paramName}});
+          }
+        {{/notFile}}
       {{/formParams}}
     }
 
@@ -82,7 +86,7 @@ class {{classname}} {
                                              authNames);
 
     if(response.statusCode >= 400) {
-      throw new ApiException(response.statusCode, response.body);
+      throw ApiException(response.statusCode, response.body);
     } else if(response.body != null) {
       return 
       {{#isListContainer}}
@@ -90,7 +94,7 @@ class {{classname}} {
       {{/isListContainer}}
       {{^isListContainer}}
         {{#isMapContainer}}
-          {{#returnType}}new {{{returnType}}}.from(apiClient.deserialize(response.body, '{{{returnType}}}')) {{/returnType}};
+          {{#returnType}}{{{returnType}}}.from(apiClient.deserialize(response.body, '{{{returnType}}}')) {{/returnType}};
         {{/isMapContainer}}
         {{^isMapContainer}}
           {{#returnType}}apiClient.deserialize(response.body, '{{{returnType}}}') as {{{returnType}}} {{/returnType}};
