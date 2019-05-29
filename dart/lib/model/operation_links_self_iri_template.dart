@@ -1,0 +1,43 @@
+part of keyclic_sdk_api.api;
+
+class OperationLinksSelfIriTemplate {
+  OperationLinksSelfIriTemplate();
+
+  OperationLinksSelfIriTemplate.fromJson(Map<String, dynamic> json) {
+    if (json == null) {
+      return;
+    }
+    mapping = OperationLinksSelfIriTemplateMapping.fromJson(json['mapping']);
+  }
+
+  OperationLinksSelfIriTemplateMapping mapping;
+
+  Map<String, dynamic> toJson() {
+    return {
+      'mapping': mapping,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OperationLinksSelfIriTemplate[mapping=$mapping, ]';
+  }
+
+  static List<OperationLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<OperationLinksSelfIriTemplate>()
+        : json
+            .map((value) => OperationLinksSelfIriTemplate.fromJson(value))
+            .toList();
+  }
+
+  static Map<String, OperationLinksSelfIriTemplate> mapFromJson(
+      Map<String, dynamic> json) {
+    var map = Map<String, OperationLinksSelfIriTemplate>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = OperationLinksSelfIriTemplate.fromJson(value));
+    }
+    return map;
+  }
+}

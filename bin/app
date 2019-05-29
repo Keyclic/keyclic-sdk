@@ -9,6 +9,16 @@ usage() {
     "
 }
 
+check-pana() {
+    command -v pana 1>/dev/null 2>&1 || { pana-installation; exit 1; }
+}
+
+pana-installation() {
+    echo "You need pana to execute this command....
+To install pana:
+    pub global activate pana"
+}
+
 deploy-dart() {
     CURRENT_DIR=$(pwd)
 
@@ -52,7 +62,9 @@ deploy-js() {
 }
 
 generate() {
-    ./bin/generate "$@"
+  check-pana
+
+  ./bin/generate "$@"
 }
 
 main() {

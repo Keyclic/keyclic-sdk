@@ -111,8 +111,13 @@ grep -q "environment:" pubspec.yaml || echo "environment:" >> pubspec.yaml
 grep -q "sdk:" pubspec.yaml || echo "  sdk: \">=1.8.0 <3.0.0\"" >> pubspec.yaml
 grep -q "homepage:" pubspec.yaml || echo "homepage: https://keyclic.com" >> pubspec.yaml
 
+# rename deprecated analysis option file
+mv .analysis_options analysis_options.yaml
+
 flutter pub get
 flutter format lib/*
+# scores package
+pana --source path . --scores --verbosity compact
 
 # When the script exits call cleanup function
 trap cleanup EXIT

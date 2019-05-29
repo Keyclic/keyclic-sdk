@@ -1,62 +1,53 @@
 class {{classname}} {
-  {{#vars}}
-    {{#description}}/* {{{description}}} */{{/description}}
-    {{#isContainer}}
-      {{{datatype}}} {{name}} = {{{defaultValue}}};
-    {{/isContainer}}
-    {{^isContainer}}
-      {{{datatype}}} {{name}};
-    {{/isContainer}}
-    {{#allowableValues}}{{#min}} // range from {{min}} to {{max}}{{/min}}//{{^min}}enum {{name}}Enum { {{#values}} {{.}}, {{/values}} };{{/min}}{{/allowableValues}}
-  {{/vars}}
   {{classname}}();
-
-  @override
-  String toString() {
-    return '{{classname}}[{{#vars}}{{name}}=${{name}}, {{/vars}}]';
-  }
 
   {{classname}}.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-  {{#vars}}
-  {{#isDateTime}}
-    {{name}} = json['{{baseName}}'] == null ? null : DateTime.parse(json['{{baseName}}']);
-    if ({{name}} is DateTime && {{name}}.isUtc == false) {
-      {{=<% %>=}}
-      <%name%> = DateTime.parse('${<%name%>.toIso8601String()}Z');
-      <%={{ }}=%>
-    }
-  {{/isDateTime}}
-  {{^isDateTime}}
-    {{name}} =
-    {{#complexType}}
-      {{#isListContainer}}
-        {{complexType}}.listFromJson(json['{{baseName}}'])
-      {{/isListContainer}}
-      {{^isListContainer}}
-        {{#isMapContainer}}{{complexType}}.mapFromJson(json['{{baseName}}']){{/isMapContainer}}
-        {{^isMapContainer}}{{complexType}}.fromJson(json['{{baseName}}']){{/isMapContainer}}
-      {{/isListContainer}}
-    {{/complexType}}
-    {{^complexType}}
-      {{#isListContainer}}
-        (json['{{baseName}}'] as List)?.map((item) => item as {{items.datatype}})?.toList()
-      {{/isListContainer}}
-      {{^isListContainer}}
-        {{! Double type in dart must have a point separator (0 must be cast in 0.0) }}
-        {{#isFloat}}
-          json['{{baseName}}']?.toDouble()
-        {{/isFloat}}
-        {{^isFloat}}
-          json['{{baseName}}']
-        {{/isFloat}}
-      {{/isListContainer}}
-    {{/complexType}};
-  {{/isDateTime}}
-  {{/vars}}
+    {{#vars}}
+      {{#isDateTime}}
+        {{name}} = json['{{baseName}}'] == null ? null : DateTime.parse(json['{{baseName}}']);
+        if ({{name}} is DateTime && {{name}}.isUtc == false) {
+          {{=<% %>=}}
+            <%name%> = DateTime.parse('${<%name%>.toIso8601String()}Z');
+          <%={{ }}=%>
+        }
+      {{/isDateTime}}
+      {{^isDateTime}}
+        {{name}} =
+        {{#complexType}}
+          {{#isListContainer}}
+            {{complexType}}.listFromJson(json['{{baseName}}'])
+          {{/isListContainer}}
+          {{^isListContainer}}
+            {{#isMapContainer}}{{complexType}}.mapFromJson(json['{{baseName}}']){{/isMapContainer}}
+            {{^isMapContainer}}{{complexType}}.fromJson(json['{{baseName}}']){{/isMapContainer}}
+          {{/isListContainer}}
+        {{/complexType}}
+        {{^complexType}}
+          {{#isListContainer}}
+            (json['{{baseName}}'] as List)?.map((item) => item as {{items.datatype}})?.toList()
+          {{/isListContainer}}
+          {{^isListContainer}}
+          {{! Double type in dart must have a point separator (0 must be cast in 0.0) }}
+            {{#isFloat}}
+              json['{{baseName}}']?.toDouble()
+            {{/isFloat}}
+            {{^isFloat}}
+              json['{{baseName}}']
+            {{/isFloat}}
+          {{/isListContainer}}
+        {{/complexType}};
+      {{/isDateTime}}
+    {{/vars}}
   }
+
+  {{#vars}}
+    {{#description}}/* {{{description}}} */{{/description}}
+    {{{datatype}}} {{name}};
+    {{#allowableValues}}{{#min}} // range from {{min}} to {{max}}{{/min}}//{{^min}}enum {{name}}Enum { {{#values}} {{.}}, {{/values}} };{{/min}}{{/allowableValues}}
+  {{/vars}}
 
   Map<String, dynamic> toJson() {
     return {
@@ -69,6 +60,11 @@ class {{classname}} {
       {{/isDateTime}}
     {{/vars}}
      };
+  }
+
+  @override
+  String toString() {
+    return '{{classname}}[{{#vars}}{{name}}=${{name}}, {{/vars}}]';
   }
 
   static List<{{classname}}> listFromJson(List<dynamic> json) {
