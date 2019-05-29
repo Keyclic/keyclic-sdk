@@ -64,6 +64,7 @@ part 'model/activity.dart';
 part 'model/activity_aggregated_pagination.dart';
 part 'model/activity_group.dart';
 part 'model/activity_pagination.dart';
+part 'model/activity_subject.dart';
 part 'model/application.dart';
 part 'model/application_links.dart';
 part 'model/application_links_self.dart';

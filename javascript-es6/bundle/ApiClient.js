@@ -27,7 +27,7 @@ _es6Promise.default.polyfill();
 
 /**
 * @module ApiClient
-* @version 1.39.2
+* @version 1.39.3
 */
 
 /**

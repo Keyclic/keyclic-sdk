@@ -16,6 +16,7 @@ import Activity from './model/Activity';
 import ActivityAggregatedPagination from './model/ActivityAggregatedPagination';
 import ActivityGroup from './model/ActivityGroup';
 import ActivityPagination from './model/ActivityPagination';
+import ActivitySubject from './model/ActivitySubject';
 import Application from './model/Application';
 import ApplicationLinks from './model/ApplicationLinks';
 import ApplicationLinksSelf from './model/ApplicationLinksSelf';
@@ -348,7 +349,7 @@ import WebhookApi from './api/WebhookApi';
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 1.39.2
+ * @version 1.39.3
  */
 export {
     /**
@@ -377,6 +378,11 @@ export {
      * @property { module:model/ActivityPagination }
      */
     ActivityPagination,
+    /**
+     * The ActivitySubject model constructor.
+     * @property { module:model/ActivitySubject }
+     */
+    ActivitySubject,
     /**
      * The Application model constructor.
      * @property { module:model/Application }

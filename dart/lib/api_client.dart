@@ -46,6 +46,8 @@ class ApiClient {
           return ActivityGroup.fromJson(value);
         case 'ActivityPagination':
           return ActivityPagination.fromJson(value);
+        case 'ActivitySubject':
+          return ActivitySubject.fromJson(value);
         case 'Application':
           return Application.fromJson(value);
         case 'ApplicationLinks':

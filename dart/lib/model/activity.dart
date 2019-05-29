@@ -13,7 +13,7 @@ class Activity {
     verb = json['verb'];
     origin = json['origin'];
     title = json['title'];
-    subject = json['subject'];
+    subject = ActivitySubject.fromJson(json['subject']);
     time = json['time'] == null ? null : DateTime.parse(json['time']);
     if (time is DateTime && time.isUtc == false) {
       time = DateTime.parse('${time.toIso8601String()}Z');
@@ -32,7 +32,7 @@ class Activity {
 
   String title;
 
-  String subject;
+  ActivitySubject subject;
 
   DateTime time;
 

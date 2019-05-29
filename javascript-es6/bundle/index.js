@@ -33,6 +33,12 @@ Object.defineProperty(exports, "ActivityPagination", {
     return _ActivityPagination.default;
   }
 });
+Object.defineProperty(exports, "ActivitySubject", {
+  enumerable: true,
+  get: function get() {
+    return _ActivitySubject.default;
+  }
+});
 Object.defineProperty(exports, "Application", {
   enumerable: true,
   get: function get() {
@@ -1909,6 +1915,8 @@ var _ActivityAggregatedPagination = _interopRequireDefault(require("./model/Acti
 var _ActivityGroup = _interopRequireDefault(require("./model/ActivityGroup"));
 
 var _ActivityPagination = _interopRequireDefault(require("./model/ActivityPagination"));
+
+var _ActivitySubject = _interopRequireDefault(require("./model/ActivitySubject"));
 
 var _Application = _interopRequireDefault(require("./model/Application"));
 

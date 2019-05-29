@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ActivitySubject = _interopRequireDefault(require("./ActivitySubject"));
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -65,6 +67,7 @@ var Activity =
       this.title = null;
       this.subject = null;
       this.time = null;
+      this.subjectType = _ActivitySubject.default;
     }
     /**
      * Constructs a "Activity" from a plain JavaScript object.
@@ -135,7 +138,7 @@ var Activity =
           if (data.hasOwnProperty("subject")) {
             object.subject = _ApiClient.default.convertToType(
               data["subject"],
-              "String"
+              object.subjectType
             );
           }
 

@@ -17,7 +17,7 @@ Dart 1.20.0 or later OR Flutter 0.0.20 or later
 If this Dart package is published to Github, please include the following in pubspec.yaml
 ```
 name: keyclic_sdk_api
-version: 1.39.2+5
+version: 1.39.3
 description: The keyclic_sdk_api package is an implementation of the Keyclic API.
 dependencies:
   keyclic_sdk_api:
@@ -193,6 +193,7 @@ Class | Method | HTTP request | Description
  - [ActivityAggregatedPagination](docs//ActivityAggregatedPagination.md)
  - [ActivityGroup](docs//ActivityGroup.md)
  - [ActivityPagination](docs//ActivityPagination.md)
+ - [ActivitySubject](docs//ActivitySubject.md)
  - [Application](docs//Application.md)
  - [ApplicationLinks](docs//ApplicationLinks.md)
  - [ApplicationLinksSelf](docs//ApplicationLinksSelf.md)

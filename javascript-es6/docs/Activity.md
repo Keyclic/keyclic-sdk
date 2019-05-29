@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **verb** | **String** |  | 
 **origin** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 
-**subject** | **String** |  | [optional] 
+**subject** | [**ActivitySubject**](ActivitySubject.md) |  | [optional] 
 **time** | **Date** |  | [optional] 
 
 

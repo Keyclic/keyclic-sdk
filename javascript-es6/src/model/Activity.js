@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import ActivitySubject from "./ActivitySubject";
 
 /**
  * The Activity model module.
@@ -48,6 +49,8 @@ export default class Activity {
     this.title = null;
     this.subject = null;
     this.time = null;
+
+    this.subjectType = ActivitySubject;
   }
 
   /**
@@ -84,7 +87,10 @@ export default class Activity {
       object.title = ApiClient.convertToType(data["title"], "String");
     }
     if (data.hasOwnProperty("subject")) {
-      object.subject = ApiClient.convertToType(data["subject"], "String");
+      object.subject = ApiClient.convertToType(
+        data["subject"],
+        object.subjectType
+      );
     }
     if (data.hasOwnProperty("time")) {
       object.time = ApiClient.convertToType(data["time"], "Date");
