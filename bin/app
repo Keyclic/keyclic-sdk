@@ -34,10 +34,6 @@ deploy-dart() {
 
     cd ${CURRENT_DIR}/dart || { echo -e "Cannot find ${WORKING_DIR} directory"; exit 1; }
 
-    echo -e " Change some files to match requirements of pubspec.yaml specifications."
-    if [[ -d "docs" ]]; then mv docs doc; fi
-    cp ../LICENSE .
-
     pub publish
 
     cd ${CURRENT_DIR} || exit

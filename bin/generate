@@ -114,6 +114,9 @@ grep -q "environment:" pubspec.yaml || echo "environment:" >> pubspec.yaml
 grep -q "sdk:" pubspec.yaml || echo "  sdk: \">=1.8.0 <3.0.0\"" >> pubspec.yaml
 grep -q "homepage:" pubspec.yaml || echo "homepage: https://keyclic.com" >> pubspec.yaml
 
+# change some files to match requirements of pubspec.yaml specifications
+cp ../LICENSE .
+mv docs doc
 # rename deprecated analysis option file
 mv .analysis_options analysis_options.yaml
 
