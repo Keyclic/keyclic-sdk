@@ -121,7 +121,7 @@ mv docs doc
 mv .analysis_options analysis_options.yaml
 
 pub get
-dartfmt --fix --line-length=240 --overwrite lib
+dartfmt --fix --overwrite lib
 
 rm -rf android
 rm -rf ios
