@@ -1,7 +1,7 @@
 {
     "browserClient": false,
-    "pubDescription": "Dart client for Keyclic API",
+    "pubDescription": "The keyclic_sdk_api package is an implementation of the Keyclic API.",
     "pubName": "keyclic_sdk_api",
-    "pubVersion": "1.39.2",
+    "pubVersion": "1.39.2+5",
     "useEnumExtension": true
 }

@@ -1,5 +1,11 @@
-javascript-es6/
-dart/
+dart/.swagger-codegen/
+dart/.swagger-codegen-ignore
+
+javascript-es6/.swagger-codegen/
+javascript-es6/node_modules/
+javascript-es6/.swagger-codegen-ignore
+
+!.codegen.*.log
 
 ######################### Common configuration #########################
 ### Dev configurations

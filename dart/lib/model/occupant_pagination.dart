@@ -1,0 +1,57 @@
+part of keyclic_sdk_api.api;
+
+class OccupantPagination {
+  OccupantPagination();
+
+  OccupantPagination.fromJson(Map<String, dynamic> json) {
+    if (json == null) {
+      return;
+    }
+    limit = json['limit'];
+    page = json['page'];
+    pages = json['pages'];
+    total = json['total'];
+    embedded = OccupantCollection.fromJson(json['_embedded']);
+    links = PaginationLinks.fromJson(json['_links']);
+  }
+
+  int limit;
+
+  int page;
+
+  int pages;
+
+  int total;
+
+  OccupantCollection embedded;
+
+  PaginationLinks links;
+
+  Map<String, dynamic> toJson() {
+    return {
+      'limit': limit,
+      'page': page,
+      'pages': pages,
+      'total': total,
+      '_embedded': embedded,
+      '_links': links,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OccupantPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
+  }
+
+  static List<OccupantPagination> listFromJson(List<dynamic> json) {
+    return json == null ? List<OccupantPagination>() : json.map((value) => OccupantPagination.fromJson(value)).toList();
+  }
+
+  static Map<String, OccupantPagination> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, OccupantPagination>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) => map[key] = OccupantPagination.fromJson(value));
+    }
+    return map;
+  }
+}
