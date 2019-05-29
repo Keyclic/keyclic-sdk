@@ -29,17 +29,13 @@ class FeedbackGeoCoordinates {
   }
 
   static List<FeedbackGeoCoordinates> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeedbackGeoCoordinates>()
-        : json.map((value) => FeedbackGeoCoordinates.fromJson(value)).toList();
+    return json == null ? List<FeedbackGeoCoordinates>() : json.map((value) => FeedbackGeoCoordinates.fromJson(value)).toList();
   }
 
-  static Map<String, FeedbackGeoCoordinates> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, FeedbackGeoCoordinates> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeedbackGeoCoordinates>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackGeoCoordinates.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = FeedbackGeoCoordinates.fromJson(value));
     }
     return map;
   }

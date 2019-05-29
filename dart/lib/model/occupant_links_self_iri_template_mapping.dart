@@ -27,21 +27,14 @@ class OccupantLinksSelfIriTemplateMapping {
     return 'OccupantLinksSelfIriTemplateMapping[place=$place, occupant=$occupant, ]';
   }
 
-  static List<OccupantLinksSelfIriTemplateMapping> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<OccupantLinksSelfIriTemplateMapping>()
-        : json
-            .map((value) => OccupantLinksSelfIriTemplateMapping.fromJson(value))
-            .toList();
+  static List<OccupantLinksSelfIriTemplateMapping> listFromJson(List<dynamic> json) {
+    return json == null ? List<OccupantLinksSelfIriTemplateMapping>() : json.map((value) => OccupantLinksSelfIriTemplateMapping.fromJson(value)).toList();
   }
 
-  static Map<String, OccupantLinksSelfIriTemplateMapping> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, OccupantLinksSelfIriTemplateMapping> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OccupantLinksSelfIriTemplateMapping>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OccupantLinksSelfIriTemplateMapping.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OccupantLinksSelfIriTemplateMapping.fromJson(value));
     }
     return map;
   }

@@ -44,17 +44,13 @@ class FeedbackPagination {
   }
 
   static List<FeedbackPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeedbackPagination>()
-        : json.map((value) => FeedbackPagination.fromJson(value)).toList();
+    return json == null ? List<FeedbackPagination>() : json.map((value) => FeedbackPagination.fromJson(value)).toList();
   }
 
-  static Map<String, FeedbackPagination> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, FeedbackPagination> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeedbackPagination>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackPagination.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = FeedbackPagination.fromJson(value));
     }
     return map;
   }

@@ -8,8 +8,7 @@ class MemberLinksOrganization {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the organization associated to the given member. */
@@ -30,17 +29,13 @@ class MemberLinksOrganization {
   }
 
   static List<MemberLinksOrganization> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<MemberLinksOrganization>()
-        : json.map((value) => MemberLinksOrganization.fromJson(value)).toList();
+    return json == null ? List<MemberLinksOrganization>() : json.map((value) => MemberLinksOrganization.fromJson(value)).toList();
   }
 
-  static Map<String, MemberLinksOrganization> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, MemberLinksOrganization> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, MemberLinksOrganization>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MemberLinksOrganization.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = MemberLinksOrganization.fromJson(value));
     }
     return map;
   }

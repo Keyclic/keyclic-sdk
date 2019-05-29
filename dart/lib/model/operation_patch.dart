@@ -36,16 +36,13 @@ class OperationPatch {
   }
 
   static List<OperationPatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OperationPatch>()
-        : json.map((value) => OperationPatch.fromJson(value)).toList();
+    return json == null ? List<OperationPatch>() : json.map((value) => OperationPatch.fromJson(value)).toList();
   }
 
   static Map<String, OperationPatch> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OperationPatch>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationPatch.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OperationPatch.fromJson(value));
     }
     return map;
   }

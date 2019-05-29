@@ -8,9 +8,7 @@ class SignApi {
   /// Create one Sign resource.
   ///
   ///
-  Future<Operation> postSignByOperation(
-      String xKeyclicApp, SignatureData signatureData, String operation,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Operation> postSignByOperation(String xKeyclicApp, SignatureData signatureData, String operation, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = signatureData;
 
     // verify required params are set
@@ -25,9 +23,7 @@ class SignApi {
     }
 
     // create path and map variables
-    String path = "/operations/{operation}/sign"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "operation" + "}", operation.toString());
+    String path = "/operations/{operation}/sign".replaceAll("{format}", "json").replaceAll("{" + "operation" + "}", operation.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -39,8 +35,7 @@ class SignApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -50,8 +45,7 @@ class SignApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

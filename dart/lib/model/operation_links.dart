@@ -52,16 +52,13 @@ class OperationLinks {
   }
 
   static List<OperationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OperationLinks>()
-        : json.map((value) => OperationLinks.fromJson(value)).toList();
+    return json == null ? List<OperationLinks>() : json.map((value) => OperationLinks.fromJson(value)).toList();
   }
 
   static Map<String, OperationLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OperationLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationLinks.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OperationLinks.fromJson(value));
     }
     return map;
   }

@@ -28,16 +28,13 @@ class SignatureData {
   }
 
   static List<SignatureData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<SignatureData>()
-        : json.map((value) => SignatureData.fromJson(value)).toList();
+    return json == null ? List<SignatureData>() : json.map((value) => SignatureData.fromJson(value)).toList();
   }
 
   static Map<String, SignatureData> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, SignatureData>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = SignatureData.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = SignatureData.fromJson(value));
     }
     return map;
   }

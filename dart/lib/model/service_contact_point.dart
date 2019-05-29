@@ -28,17 +28,13 @@ class ServiceContactPoint {
   }
 
   static List<ServiceContactPoint> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ServiceContactPoint>()
-        : json.map((value) => ServiceContactPoint.fromJson(value)).toList();
+    return json == null ? List<ServiceContactPoint>() : json.map((value) => ServiceContactPoint.fromJson(value)).toList();
   }
 
-  static Map<String, ServiceContactPoint> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, ServiceContactPoint> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ServiceContactPoint>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ServiceContactPoint.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = ServiceContactPoint.fromJson(value));
     }
     return map;
   }

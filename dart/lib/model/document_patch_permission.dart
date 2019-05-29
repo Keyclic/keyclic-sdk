@@ -24,17 +24,13 @@ class DocumentPatchPermission {
   }
 
   static List<DocumentPatchPermission> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<DocumentPatchPermission>()
-        : json.map((value) => DocumentPatchPermission.fromJson(value)).toList();
+    return json == null ? List<DocumentPatchPermission>() : json.map((value) => DocumentPatchPermission.fromJson(value)).toList();
   }
 
-  static Map<String, DocumentPatchPermission> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, DocumentPatchPermission> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, DocumentPatchPermission>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentPatchPermission.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = DocumentPatchPermission.fromJson(value));
     }
     return map;
   }

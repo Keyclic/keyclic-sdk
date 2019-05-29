@@ -3,14 +3,12 @@ part of keyclic_sdk_api.api;
 class DelegationApi {
   final ApiClient apiClient;
 
-  DelegationApi([ApiClient apiClient])
-      : apiClient = apiClient ?? defaultApiClient;
+  DelegationApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Retrieve one Delegation resource.
   ///
   ///
-  Future<Delegation> getDelegation(String xKeyclicApp, String delegation,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Delegation> getDelegation(String xKeyclicApp, String delegation, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody;
 
     // verify required params are set
@@ -22,9 +20,7 @@ class DelegationApi {
     }
 
     // create path and map variables
-    String path = "/delegations/{delegation}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "delegation" + "}", delegation.toString());
+    String path = "/delegations/{delegation}".replaceAll("{format}", "json").replaceAll("{" + "delegation" + "}", delegation.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -36,8 +32,7 @@ class DelegationApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -47,8 +42,7 @@ class DelegationApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

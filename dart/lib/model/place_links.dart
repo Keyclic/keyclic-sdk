@@ -9,8 +9,7 @@ class PlaceLinks {
     }
     self = PlaceLinksSelf.fromJson(json['self']);
     organization = PlaceLinksOrganization.fromJson(json['organization']);
-    containedInPlace =
-        PlaceLinksContainedInPlace.fromJson(json['containedInPlace']);
+    containedInPlace = PlaceLinksContainedInPlace.fromJson(json['containedInPlace']);
     containsPlaces = PlaceLinksContainsPlaces.fromJson(json['containsPlaces']);
   }
 
@@ -37,16 +36,13 @@ class PlaceLinks {
   }
 
   static List<PlaceLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PlaceLinks>()
-        : json.map((value) => PlaceLinks.fromJson(value)).toList();
+    return json == null ? List<PlaceLinks>() : json.map((value) => PlaceLinks.fromJson(value)).toList();
   }
 
   static Map<String, PlaceLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PlaceLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = PlaceLinks.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = PlaceLinks.fromJson(value));
     }
     return map;
   }

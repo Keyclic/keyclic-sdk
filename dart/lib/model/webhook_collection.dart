@@ -24,16 +24,13 @@ class WebhookCollection {
   }
 
   static List<WebhookCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<WebhookCollection>()
-        : json.map((value) => WebhookCollection.fromJson(value)).toList();
+    return json == null ? List<WebhookCollection>() : json.map((value) => WebhookCollection.fromJson(value)).toList();
   }
 
   static Map<String, WebhookCollection> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, WebhookCollection>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WebhookCollection.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = WebhookCollection.fromJson(value));
     }
     return map;
   }

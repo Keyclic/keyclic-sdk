@@ -32,17 +32,13 @@ class BusinessActivityLinks {
   }
 
   static List<BusinessActivityLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<BusinessActivityLinks>()
-        : json.map((value) => BusinessActivityLinks.fromJson(value)).toList();
+    return json == null ? List<BusinessActivityLinks>() : json.map((value) => BusinessActivityLinks.fromJson(value)).toList();
   }
 
-  static Map<String, BusinessActivityLinks> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, BusinessActivityLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, BusinessActivityLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = BusinessActivityLinks.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = BusinessActivityLinks.fromJson(value));
     }
     return map;
   }

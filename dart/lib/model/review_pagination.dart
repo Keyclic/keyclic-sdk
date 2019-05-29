@@ -44,16 +44,13 @@ class ReviewPagination {
   }
 
   static List<ReviewPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ReviewPagination>()
-        : json.map((value) => ReviewPagination.fromJson(value)).toList();
+    return json == null ? List<ReviewPagination>() : json.map((value) => ReviewPagination.fromJson(value)).toList();
   }
 
   static Map<String, ReviewPagination> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ReviewPagination>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReviewPagination.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = ReviewPagination.fromJson(value));
     }
     return map;
   }

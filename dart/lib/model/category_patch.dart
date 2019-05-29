@@ -36,16 +36,13 @@ class CategoryPatch {
   }
 
   static List<CategoryPatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<CategoryPatch>()
-        : json.map((value) => CategoryPatch.fromJson(value)).toList();
+    return json == null ? List<CategoryPatch>() : json.map((value) => CategoryPatch.fromJson(value)).toList();
   }
 
   static Map<String, CategoryPatch> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, CategoryPatch>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = CategoryPatch.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = CategoryPatch.fromJson(value));
     }
     return map;
   }

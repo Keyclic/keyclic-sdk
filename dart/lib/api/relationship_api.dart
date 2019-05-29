@@ -3,14 +3,12 @@ part of keyclic_sdk_api.api;
 class RelationshipApi {
   final ApiClient apiClient;
 
-  RelationshipApi([ApiClient apiClient])
-      : apiClient = apiClient ?? defaultApiClient;
+  RelationshipApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Retrieve all Relationship resources.
   ///
   ///
-  Future<OrganizationPagination> cgetRelationshipsByOrganization(
-      String xKeyclicApp, String organization,
+  Future<OrganizationPagination> cgetRelationshipsByOrganization(String xKeyclicApp, String organization,
       {String acceptLanguage,
       String xKeyclicAppVersion,
       String businessActivity,
@@ -38,71 +36,53 @@ class RelationshipApi {
     }
 
     // create path and map variables
-    String path = "/organizations/{organization}/relationships"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "organization" + "}", organization.toString());
+    String path = "/organizations/{organization}/relationships".replaceAll("{format}", "json").replaceAll("{" + "organization" + "}", organization.toString());
 
     // query params
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if (businessActivity != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "business_activity", businessActivity));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "business_activity", businessActivity));
     }
     if (geoCoordinates != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "geo_coordinates", geoCoordinates));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "geo_coordinates", geoCoordinates));
     }
     if (geoPoint != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "geo_point", geoPoint));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "geo_point", geoPoint));
     }
     if (query != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "query", query));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "query", query));
     }
     if (page != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "page", page));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     if (limit != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "limit", limit));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
     if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "after", after));
     }
     if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_alternateName_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[alternateName]", search_alternateName_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[alternateName]", search_alternateName_));
     }
     if (search_billingEmailAddress_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[billingEmailAddress]", search_billingEmailAddress_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[billingEmailAddress]", search_billingEmailAddress_));
     }
     if (search_description_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[description]", search_description_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[description]", search_description_));
     }
     if (search_name_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[name]", search_name_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[name]", search_name_));
     }
     if (search_notificationEmailAddress_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "",
-          "search[notificationEmailAddress]",
-          search_notificationEmailAddress_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[notificationEmailAddress]", search_notificationEmailAddress_));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
@@ -110,8 +90,7 @@ class RelationshipApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -121,14 +100,12 @@ class RelationshipApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'OrganizationPagination')
-          as OrganizationPagination;
+      return apiClient.deserialize(response.body, 'OrganizationPagination') as OrganizationPagination;
     } else {
       return null;
     }
@@ -137,9 +114,7 @@ class RelationshipApi {
   /// Remove one Relationship resource.
   ///
   ///
-  Future<Organization> deleteRelationshipByOrganizationAndRelationship(
-      String xKeyclicApp, String organization, String relationship,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Organization> deleteRelationshipByOrganizationAndRelationship(String xKeyclicApp, String organization, String relationship, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody;
 
     // verify required params are set
@@ -154,10 +129,7 @@ class RelationshipApi {
     }
 
     // create path and map variables
-    String path = "/organizations/{organization}/relationships/{relationship}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "organization" + "}", organization.toString())
-        .replaceAll("{" + "relationship" + "}", relationship.toString());
+    String path = "/organizations/{organization}/relationships/{relationship}".replaceAll("{format}", "json").replaceAll("{" + "organization" + "}", organization.toString()).replaceAll("{" + "relationship" + "}", relationship.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -169,8 +141,7 @@ class RelationshipApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -180,14 +151,12 @@ class RelationshipApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'DELETE', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'DELETE', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Organization')
-          as Organization;
+      return apiClient.deserialize(response.body, 'Organization') as Organization;
     } else {
       return null;
     }
@@ -196,9 +165,7 @@ class RelationshipApi {
   /// Create one Relationship resource.
   ///
   ///
-  Future<Organization> postRelationshipByOrganization(String xKeyclicApp,
-      RelationshipData relationshipData, String organization,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Organization> postRelationshipByOrganization(String xKeyclicApp, RelationshipData relationshipData, String organization, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = relationshipData;
 
     // verify required params are set
@@ -213,9 +180,7 @@ class RelationshipApi {
     }
 
     // create path and map variables
-    String path = "/organizations/{organization}/relationships"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "organization" + "}", organization.toString());
+    String path = "/organizations/{organization}/relationships".replaceAll("{format}", "json").replaceAll("{" + "organization" + "}", organization.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -227,8 +192,7 @@ class RelationshipApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -238,14 +202,12 @@ class RelationshipApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Organization')
-          as Organization;
+      return apiClient.deserialize(response.body, 'Organization') as Organization;
     } else {
       return null;
     }

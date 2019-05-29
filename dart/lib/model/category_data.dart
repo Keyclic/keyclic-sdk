@@ -32,16 +32,13 @@ class CategoryData {
   }
 
   static List<CategoryData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<CategoryData>()
-        : json.map((value) => CategoryData.fromJson(value)).toList();
+    return json == null ? List<CategoryData>() : json.map((value) => CategoryData.fromJson(value)).toList();
   }
 
   static Map<String, CategoryData> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, CategoryData>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = CategoryData.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = CategoryData.fromJson(value));
     }
     return map;
   }

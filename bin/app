@@ -9,14 +9,16 @@ usage() {
     "
 }
 
-check-pana() {
-    command -v pana 1>/dev/null 2>&1 || { pana-installation; exit 1; }
-}
+check() {
+    command -v ${1} 1>/dev/null 2>&1 || {
+        if [ -z "${2}" ]; then
+            echo -e 1>&2 "You need ${1} to execute this command....  Aborting.";
+        else
+            echo -e 1>&2 "You need ${1} to execute this command....  Aborting.\nTo install ${1}: ${2}";
+        fi
 
-pana-installation() {
-    echo "You need pana to execute this command....
-To install pana:
-    pub global activate pana"
+        exit 1;
+    }
 }
 
 deploy-dart() {
@@ -28,10 +30,14 @@ deploy-dart() {
     ----------------------------------------------------------------------
     "
 
-    cd ${CURRENT_DIR}/dart || exit
-    # Change some files to match requirements of pubspec.yaml specifications.
+    WORKING_DIR=dart
+
+    cd ${CURRENT_DIR}/dart || { echo -e "Cannot find ${WORKING_DIR} directory"; exit 1; }
+
+    echo -e " Change some files to match requirements of pubspec.yaml specifications."
     if [[ -d "docs" ]]; then mv docs doc; fi
     cp ../LICENSE .
+
     pub publish
 
     cd ${CURRENT_DIR} || exit
@@ -49,20 +55,36 @@ deploy-js() {
     add user with \"npm adduser --scope=@keyclic\" command.
     "
 
-    cd ${CURRENT_DIR}/javascript-es6 || exit
-    # Prepare javascript-es6 package.
+    WORKING_DIR=javascript-es6
+
+    cd ${CURRENT_DIR}/${WORKING_DIR} || { echo -e "Cannot find ${WORKING_DIR} directory"; exit 1; }
+
+    echo -e "Prepare javascript-es6 package."
     rm -rf dist 2>&1
     mkdir -p dist
     cp -R bundle dist/.
     cp -R src dist/.
     cp package.json dist/.
+    cp ../LICENSE dist/.
+
+    echo -e "Publish javascript-es6 package."
     npm publish dist --access public
+
+    rm -rf dist 2>&1
 
     cd ${CURRENT_DIR} || exit
 }
 
+pana() {
+    check pana "pub global activate pana"
+
+    # scores package
+    pana --source path dart --scores --verbosity compact
+}
+
 generate() {
-  check-pana
+  check pub
+  check dartfmt
 
   ./bin/generate "$@"
 }

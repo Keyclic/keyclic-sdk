@@ -32,16 +32,13 @@ class Condition {
   }
 
   static List<Condition> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Condition>()
-        : json.map((value) => Condition.fromJson(value)).toList();
+    return json == null ? List<Condition>() : json.map((value) => Condition.fromJson(value)).toList();
   }
 
   static Map<String, Condition> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Condition>();
     if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Condition.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = Condition.fromJson(value));
     }
     return map;
   }

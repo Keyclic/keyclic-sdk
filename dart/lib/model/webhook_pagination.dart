@@ -44,16 +44,13 @@ class WebhookPagination {
   }
 
   static List<WebhookPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<WebhookPagination>()
-        : json.map((value) => WebhookPagination.fromJson(value)).toList();
+    return json == null ? List<WebhookPagination>() : json.map((value) => WebhookPagination.fromJson(value)).toList();
   }
 
   static Map<String, WebhookPagination> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, WebhookPagination>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WebhookPagination.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = WebhookPagination.fromJson(value));
     }
     return map;
   }

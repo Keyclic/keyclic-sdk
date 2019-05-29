@@ -23,21 +23,14 @@ class OrganizationPreferencesReference {
     return 'OrganizationPreferencesReference[prefix=$prefix, ]';
   }
 
-  static List<OrganizationPreferencesReference> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<OrganizationPreferencesReference>()
-        : json
-            .map((value) => OrganizationPreferencesReference.fromJson(value))
-            .toList();
+  static List<OrganizationPreferencesReference> listFromJson(List<dynamic> json) {
+    return json == null ? List<OrganizationPreferencesReference>() : json.map((value) => OrganizationPreferencesReference.fromJson(value)).toList();
   }
 
-  static Map<String, OrganizationPreferencesReference> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, OrganizationPreferencesReference> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OrganizationPreferencesReference>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OrganizationPreferencesReference.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OrganizationPreferencesReference.fromJson(value));
     }
     return map;
   }

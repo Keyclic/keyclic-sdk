@@ -32,16 +32,13 @@ class OccupantLinks {
   }
 
   static List<OccupantLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OccupantLinks>()
-        : json.map((value) => OccupantLinks.fromJson(value)).toList();
+    return json == null ? List<OccupantLinks>() : json.map((value) => OccupantLinks.fromJson(value)).toList();
   }
 
   static Map<String, OccupantLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OccupantLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OccupantLinks.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OccupantLinks.fromJson(value));
     }
     return map;
   }

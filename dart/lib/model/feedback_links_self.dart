@@ -29,16 +29,13 @@ class FeedbackLinksSelf {
   }
 
   static List<FeedbackLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeedbackLinksSelf>()
-        : json.map((value) => FeedbackLinksSelf.fromJson(value)).toList();
+    return json == null ? List<FeedbackLinksSelf>() : json.map((value) => FeedbackLinksSelf.fromJson(value)).toList();
   }
 
   static Map<String, FeedbackLinksSelf> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeedbackLinksSelf>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackLinksSelf.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = FeedbackLinksSelf.fromJson(value));
     }
     return map;
   }

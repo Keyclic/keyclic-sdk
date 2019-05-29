@@ -29,17 +29,13 @@ class PublicationLinksPlace {
   }
 
   static List<PublicationLinksPlace> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PublicationLinksPlace>()
-        : json.map((value) => PublicationLinksPlace.fromJson(value)).toList();
+    return json == null ? List<PublicationLinksPlace>() : json.map((value) => PublicationLinksPlace.fromJson(value)).toList();
   }
 
-  static Map<String, PublicationLinksPlace> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, PublicationLinksPlace> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PublicationLinksPlace>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PublicationLinksPlace.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = PublicationLinksPlace.fromJson(value));
     }
     return map;
   }

@@ -44,17 +44,13 @@ class OperationPagination {
   }
 
   static List<OperationPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OperationPagination>()
-        : json.map((value) => OperationPagination.fromJson(value)).toList();
+    return json == null ? List<OperationPagination>() : json.map((value) => OperationPagination.fromJson(value)).toList();
   }
 
-  static Map<String, OperationPagination> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, OperationPagination> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OperationPagination>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationPagination.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OperationPagination.fromJson(value));
     }
     return map;
   }

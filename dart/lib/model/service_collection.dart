@@ -24,16 +24,13 @@ class ServiceCollection {
   }
 
   static List<ServiceCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ServiceCollection>()
-        : json.map((value) => ServiceCollection.fromJson(value)).toList();
+    return json == null ? List<ServiceCollection>() : json.map((value) => ServiceCollection.fromJson(value)).toList();
   }
 
   static Map<String, ServiceCollection> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ServiceCollection>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ServiceCollection.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = ServiceCollection.fromJson(value));
     }
     return map;
   }

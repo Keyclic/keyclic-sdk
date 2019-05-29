@@ -29,16 +29,13 @@ class FeatureGeometry {
   }
 
   static List<FeatureGeometry> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeatureGeometry>()
-        : json.map((value) => FeatureGeometry.fromJson(value)).toList();
+    return json == null ? List<FeatureGeometry>() : json.map((value) => FeatureGeometry.fromJson(value)).toList();
   }
 
   static Map<String, FeatureGeometry> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeatureGeometry>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeatureGeometry.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = FeatureGeometry.fromJson(value));
     }
     return map;
   }

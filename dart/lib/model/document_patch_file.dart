@@ -24,16 +24,13 @@ class DocumentPatchFile {
   }
 
   static List<DocumentPatchFile> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<DocumentPatchFile>()
-        : json.map((value) => DocumentPatchFile.fromJson(value)).toList();
+    return json == null ? List<DocumentPatchFile>() : json.map((value) => DocumentPatchFile.fromJson(value)).toList();
   }
 
   static Map<String, DocumentPatchFile> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, DocumentPatchFile>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentPatchFile.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = DocumentPatchFile.fromJson(value));
     }
     return map;
   }

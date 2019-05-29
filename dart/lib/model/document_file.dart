@@ -28,16 +28,13 @@ class DocumentFile {
   }
 
   static List<DocumentFile> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<DocumentFile>()
-        : json.map((value) => DocumentFile.fromJson(value)).toList();
+    return json == null ? List<DocumentFile>() : json.map((value) => DocumentFile.fromJson(value)).toList();
   }
 
   static Map<String, DocumentFile> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, DocumentFile>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentFile.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = DocumentFile.fromJson(value));
     }
     return map;
   }

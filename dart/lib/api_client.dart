@@ -257,8 +257,7 @@ class ApiClient {
         case 'FeedbackReviewRequestLinksSelfIriTemplate':
           return FeedbackReviewRequestLinksSelfIriTemplate.fromJson(value);
         case 'FeedbackReviewRequestLinksSelfIriTemplateMapping':
-          return FeedbackReviewRequestLinksSelfIriTemplateMapping.fromJson(
-              value);
+          return FeedbackReviewRequestLinksSelfIriTemplateMapping.fromJson(value);
         case 'FeedbackReviewRequestPagination':
           return FeedbackReviewRequestPagination.fromJson(value);
         case 'FeedbackStatePatch':
@@ -379,6 +378,8 @@ class ApiClient {
           return OrganizationPatch.fromJson(value);
         case 'OrganizationPatchPreferences':
           return OrganizationPatchPreferences.fromJson(value);
+        case 'OrganizationPatchPreferencesReference':
+          return OrganizationPatchPreferencesReference.fromJson(value);
         case 'OrganizationPreferences':
           return OrganizationPreferences.fromJson(value);
         case 'OrganizationPreferencesReference':
@@ -576,24 +577,19 @@ class ApiClient {
         default:
           {
             Match match;
-            if (value is List &&
-                (match = _RegList.firstMatch(targetType)) != null) {
+            if (value is List && (match = _RegList.firstMatch(targetType)) != null) {
               var newTargetType = match[1];
               return value.map((v) => _deserialize(v, newTargetType)).toList();
-            } else if (value is Map &&
-                (match = _RegMap.firstMatch(targetType)) != null) {
+            } else if (value is Map && (match = _RegMap.firstMatch(targetType)) != null) {
               var newTargetType = match[1];
-              return Map.fromIterables(value.keys,
-                  value.values.map((v) => _deserialize(v, newTargetType)));
+              return Map.fromIterables(value.keys, value.values.map((v) => _deserialize(v, newTargetType)));
             }
           }
       }
     } catch (e, stack) {
-      throw ApiException.withInner(
-          500, 'Exception during deserialization.', e, stack);
+      throw ApiException.withInner(500, 'Exception during deserialization.', e, stack);
     }
-    throw ApiException(
-        500, 'Could not find a suitable class for deserialization');
+    throw ApiException(500, 'Could not find a suitable class for deserialization');
   }
 
   dynamic deserialize(String jsonVal, String targetType) {
@@ -620,20 +616,10 @@ class ApiClient {
 
   // We don't use a Map<String, String> for queryParams.
   // If collectionFormat is 'multi' a key might appear multiple times.
-  Future<Response> invokeAPI(
-      String path,
-      String method,
-      Iterable<QueryParam> queryParams,
-      Object body,
-      Map<String, String> headerParams,
-      Map<String, String> formParams,
-      String contentType,
-      List<String> authNames) async {
+  Future<Response> invokeAPI(String path, String method, Iterable<QueryParam> queryParams, Object body, Map<String, String> headerParams, Map<String, String> formParams, String contentType, List<String> authNames) async {
     _updateParamsForAuth(authNames, queryParams, headerParams);
 
-    var ps = queryParams
-        .where((p) => p.value != null)
-        .map((p) => '${p.name}=${p.value}');
+    var ps = queryParams.where((p) => p.value != null).map((p) => '${p.name}=${p.value}');
     String queryString = ps.isNotEmpty ? '?' + ps.join('&') : '';
 
     String url = basePath + path + queryString;
@@ -650,9 +636,7 @@ class ApiClient {
       var response = await client.send(request);
       return Response.fromStream(response);
     } else {
-      var msgBody = contentType == "application/x-www-form-urlencoded"
-          ? formParams
-          : serialize(body);
+      var msgBody = contentType == "application/x-www-form-urlencoded" ? formParams : serialize(body);
       switch (method) {
         case "POST":
           return client.post(url, headers: headerParams, body: msgBody);
@@ -670,8 +654,7 @@ class ApiClient {
 
   /// Update query and header parameters based on authentication settings.
   /// @param authNames The authentications to apply
-  void _updateParamsForAuth(List<String> authNames,
-      List<QueryParam> queryParams, Map<String, String> headerParams) {
+  void _updateParamsForAuth(List<String> authNames, List<QueryParam> queryParams, Map<String, String> headerParams) {
     authNames.forEach((authName) {
       Authentication auth = _authentications[authName];
       if (auth == null) {

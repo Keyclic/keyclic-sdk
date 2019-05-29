@@ -29,16 +29,13 @@ class PlaceLinksSelf {
   }
 
   static List<PlaceLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PlaceLinksSelf>()
-        : json.map((value) => PlaceLinksSelf.fromJson(value)).toList();
+    return json == null ? List<PlaceLinksSelf>() : json.map((value) => PlaceLinksSelf.fromJson(value)).toList();
   }
 
   static Map<String, PlaceLinksSelf> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PlaceLinksSelf>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PlaceLinksSelf.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = PlaceLinksSelf.fromJson(value));
     }
     return map;
   }

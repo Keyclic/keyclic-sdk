@@ -44,17 +44,13 @@ class OccupantPagination {
   }
 
   static List<OccupantPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OccupantPagination>()
-        : json.map((value) => OccupantPagination.fromJson(value)).toList();
+    return json == null ? List<OccupantPagination>() : json.map((value) => OccupantPagination.fromJson(value)).toList();
   }
 
-  static Map<String, OccupantPagination> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, OccupantPagination> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OccupantPagination>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OccupantPagination.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OccupantPagination.fromJson(value));
     }
     return map;
   }

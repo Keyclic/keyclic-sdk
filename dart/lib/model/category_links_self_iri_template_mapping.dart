@@ -23,21 +23,14 @@ class CategoryLinksSelfIriTemplateMapping {
     return 'CategoryLinksSelfIriTemplateMapping[category=$category, ]';
   }
 
-  static List<CategoryLinksSelfIriTemplateMapping> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<CategoryLinksSelfIriTemplateMapping>()
-        : json
-            .map((value) => CategoryLinksSelfIriTemplateMapping.fromJson(value))
-            .toList();
+  static List<CategoryLinksSelfIriTemplateMapping> listFromJson(List<dynamic> json) {
+    return json == null ? List<CategoryLinksSelfIriTemplateMapping>() : json.map((value) => CategoryLinksSelfIriTemplateMapping.fromJson(value)).toList();
   }
 
-  static Map<String, CategoryLinksSelfIriTemplateMapping> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, CategoryLinksSelfIriTemplateMapping> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, CategoryLinksSelfIriTemplateMapping>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = CategoryLinksSelfIriTemplateMapping.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = CategoryLinksSelfIriTemplateMapping.fromJson(value));
     }
     return map;
   }

@@ -7,10 +7,10 @@ class OrganizationPatchPreferences {
     if (json == null) {
       return;
     }
-    reference = OrganizationPreferencesReference.fromJson(json['reference']);
+    reference = OrganizationPatchPreferencesReference.fromJson(json['reference']);
   }
 
-  OrganizationPreferencesReference reference;
+  OrganizationPatchPreferencesReference reference;
 
   Map<String, dynamic> toJson() {
     return {
@@ -24,19 +24,13 @@ class OrganizationPatchPreferences {
   }
 
   static List<OrganizationPatchPreferences> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OrganizationPatchPreferences>()
-        : json
-            .map((value) => OrganizationPatchPreferences.fromJson(value))
-            .toList();
+    return json == null ? List<OrganizationPatchPreferences>() : json.map((value) => OrganizationPatchPreferences.fromJson(value)).toList();
   }
 
-  static Map<String, OrganizationPatchPreferences> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, OrganizationPatchPreferences> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OrganizationPatchPreferences>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OrganizationPatchPreferences.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OrganizationPatchPreferences.fromJson(value));
     }
     return map;
   }

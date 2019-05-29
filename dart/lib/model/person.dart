@@ -16,13 +16,11 @@ class Person {
     id = json['id'];
     username = json['username'];
     email = json['email'];
-    createdAt =
-        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    updatedAt =
-        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
@@ -80,16 +78,13 @@ class Person {
   }
 
   static List<Person> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Person>()
-        : json.map((value) => Person.fromJson(value)).toList();
+    return json == null ? List<Person>() : json.map((value) => Person.fromJson(value)).toList();
   }
 
   static Map<String, Person> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Person>();
     if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Person.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = Person.fromJson(value));
     }
     return map;
   }

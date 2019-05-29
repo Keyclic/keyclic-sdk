@@ -36,16 +36,13 @@ class PaginationLinks {
   }
 
   static List<PaginationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PaginationLinks>()
-        : json.map((value) => PaginationLinks.fromJson(value)).toList();
+    return json == null ? List<PaginationLinks>() : json.map((value) => PaginationLinks.fromJson(value)).toList();
   }
 
   static Map<String, PaginationLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PaginationLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PaginationLinks.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = PaginationLinks.fromJson(value));
     }
     return map;
   }

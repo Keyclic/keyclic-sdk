@@ -23,21 +23,14 @@ class FeedbackReviewRequestCollection {
     return 'FeedbackReviewRequestCollection[items=$items, ]';
   }
 
-  static List<FeedbackReviewRequestCollection> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<FeedbackReviewRequestCollection>()
-        : json
-            .map((value) => FeedbackReviewRequestCollection.fromJson(value))
-            .toList();
+  static List<FeedbackReviewRequestCollection> listFromJson(List<dynamic> json) {
+    return json == null ? List<FeedbackReviewRequestCollection>() : json.map((value) => FeedbackReviewRequestCollection.fromJson(value)).toList();
   }
 
-  static Map<String, FeedbackReviewRequestCollection> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, FeedbackReviewRequestCollection> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeedbackReviewRequestCollection>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackReviewRequestCollection.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = FeedbackReviewRequestCollection.fromJson(value));
     }
     return map;
   }

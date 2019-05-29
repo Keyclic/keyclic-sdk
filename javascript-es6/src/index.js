@@ -182,6 +182,7 @@ import OrganizationLinksSelf from './model/OrganizationLinksSelf';
 import OrganizationPagination from './model/OrganizationPagination';
 import OrganizationPatch from './model/OrganizationPatch';
 import OrganizationPatchPreferences from './model/OrganizationPatchPreferences';
+import OrganizationPatchPreferencesReference from './model/OrganizationPatchPreferencesReference';
 import OrganizationPreferences from './model/OrganizationPreferences';
 import OrganizationPreferencesReference from './model/OrganizationPreferencesReference';
 import PaginationLink from './model/PaginationLink';
@@ -1206,6 +1207,11 @@ export {
      * @property { module:model/OrganizationPatchPreferences }
      */
     OrganizationPatchPreferences,
+    /**
+     * The OrganizationPatchPreferencesReference model constructor.
+     * @property { module:model/OrganizationPatchPreferencesReference }
+     */
+    OrganizationPatchPreferencesReference,
     /**
      * The OrganizationPreferences model constructor.
      * @property { module:model/OrganizationPreferences }

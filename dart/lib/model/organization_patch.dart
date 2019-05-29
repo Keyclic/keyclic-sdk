@@ -48,16 +48,13 @@ class OrganizationPatch {
   }
 
   static List<OrganizationPatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OrganizationPatch>()
-        : json.map((value) => OrganizationPatch.fromJson(value)).toList();
+    return json == null ? List<OrganizationPatch>() : json.map((value) => OrganizationPatch.fromJson(value)).toList();
   }
 
   static Map<String, OrganizationPatch> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OrganizationPatch>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OrganizationPatch.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OrganizationPatch.fromJson(value));
     }
     return map;
   }

@@ -8,8 +8,7 @@ class Delegation {
       return;
     }
     id = json['id'];
-    createdAt =
-        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
@@ -40,16 +39,13 @@ class Delegation {
   }
 
   static List<Delegation> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Delegation>()
-        : json.map((value) => Delegation.fromJson(value)).toList();
+    return json == null ? List<Delegation>() : json.map((value) => Delegation.fromJson(value)).toList();
   }
 
   static Map<String, Delegation> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Delegation>();
     if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Delegation.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = Delegation.fromJson(value));
     }
     return map;
   }

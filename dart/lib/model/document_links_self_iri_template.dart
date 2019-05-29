@@ -24,19 +24,13 @@ class DocumentLinksSelfIriTemplate {
   }
 
   static List<DocumentLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<DocumentLinksSelfIriTemplate>()
-        : json
-            .map((value) => DocumentLinksSelfIriTemplate.fromJson(value))
-            .toList();
+    return json == null ? List<DocumentLinksSelfIriTemplate>() : json.map((value) => DocumentLinksSelfIriTemplate.fromJson(value)).toList();
   }
 
-  static Map<String, DocumentLinksSelfIriTemplate> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, DocumentLinksSelfIriTemplate> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, DocumentLinksSelfIriTemplate>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentLinksSelfIriTemplate.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = DocumentLinksSelfIriTemplate.fromJson(value));
     }
     return map;
   }

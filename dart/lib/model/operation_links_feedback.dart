@@ -29,17 +29,13 @@ class OperationLinksFeedback {
   }
 
   static List<OperationLinksFeedback> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OperationLinksFeedback>()
-        : json.map((value) => OperationLinksFeedback.fromJson(value)).toList();
+    return json == null ? List<OperationLinksFeedback>() : json.map((value) => OperationLinksFeedback.fromJson(value)).toList();
   }
 
-  static Map<String, OperationLinksFeedback> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, OperationLinksFeedback> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OperationLinksFeedback>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationLinksFeedback.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OperationLinksFeedback.fromJson(value));
     }
     return map;
   }

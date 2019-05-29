@@ -10,13 +10,11 @@ class Review {
     reviewBody = json['reviewBody'];
     reviewRating = json['reviewRating'];
     id = json['id'];
-    createdAt =
-        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    updatedAt =
-        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
@@ -56,16 +54,13 @@ class Review {
   }
 
   static List<Review> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Review>()
-        : json.map((value) => Review.fromJson(value)).toList();
+    return json == null ? List<Review>() : json.map((value) => Review.fromJson(value)).toList();
   }
 
   static Map<String, Review> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Review>();
     if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Review.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = Review.fromJson(value));
     }
     return map;
   }

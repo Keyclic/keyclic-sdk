@@ -24,16 +24,13 @@ class PasswordData {
   }
 
   static List<PasswordData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PasswordData>()
-        : json.map((value) => PasswordData.fromJson(value)).toList();
+    return json == null ? List<PasswordData>() : json.map((value) => PasswordData.fromJson(value)).toList();
   }
 
   static Map<String, PasswordData> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PasswordData>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PasswordData.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = PasswordData.fromJson(value));
     }
     return map;
   }

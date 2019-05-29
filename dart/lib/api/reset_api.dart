@@ -8,8 +8,7 @@ class ResetApi {
   /// Create one Reset resource.
   ///
   ///
-  Future postReset(String xKeyclicApp, EmailData emailData,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future postReset(String xKeyclicApp, EmailData emailData, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = emailData;
 
     // verify required params are set
@@ -21,8 +20,7 @@ class ResetApi {
     }
 
     // create path and map variables
-    String path =
-        "/security/password/change-request".replaceAll("{format}", "json");
+    String path = "/security/password/change-request".replaceAll("{format}", "json");
 
     // query params
     List<QueryParam> queryParams = [];
@@ -34,8 +32,7 @@ class ResetApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = [];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -45,8 +42,7 @@ class ResetApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

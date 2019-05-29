@@ -23,21 +23,14 @@ class DelegationLinksReportIriTemplate {
     return 'DelegationLinksReportIriTemplate[mapping=$mapping, ]';
   }
 
-  static List<DelegationLinksReportIriTemplate> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<DelegationLinksReportIriTemplate>()
-        : json
-            .map((value) => DelegationLinksReportIriTemplate.fromJson(value))
-            .toList();
+  static List<DelegationLinksReportIriTemplate> listFromJson(List<dynamic> json) {
+    return json == null ? List<DelegationLinksReportIriTemplate>() : json.map((value) => DelegationLinksReportIriTemplate.fromJson(value)).toList();
   }
 
-  static Map<String, DelegationLinksReportIriTemplate> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, DelegationLinksReportIriTemplate> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, DelegationLinksReportIriTemplate>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DelegationLinksReportIriTemplate.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = DelegationLinksReportIriTemplate.fromJson(value));
     }
     return map;
   }

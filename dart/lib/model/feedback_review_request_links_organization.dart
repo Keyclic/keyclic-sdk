@@ -8,8 +8,7 @@ class FeedbackReviewRequestLinksOrganization {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the organization associated to the given feedbackreviewrequest. */
@@ -29,22 +28,14 @@ class FeedbackReviewRequestLinksOrganization {
     return 'FeedbackReviewRequestLinksOrganization[href=$href, iriTemplate=$iriTemplate, ]';
   }
 
-  static List<FeedbackReviewRequestLinksOrganization> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<FeedbackReviewRequestLinksOrganization>()
-        : json
-            .map((value) =>
-                FeedbackReviewRequestLinksOrganization.fromJson(value))
-            .toList();
+  static List<FeedbackReviewRequestLinksOrganization> listFromJson(List<dynamic> json) {
+    return json == null ? List<FeedbackReviewRequestLinksOrganization>() : json.map((value) => FeedbackReviewRequestLinksOrganization.fromJson(value)).toList();
   }
 
-  static Map<String, FeedbackReviewRequestLinksOrganization> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, FeedbackReviewRequestLinksOrganization> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeedbackReviewRequestLinksOrganization>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackReviewRequestLinksOrganization.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = FeedbackReviewRequestLinksOrganization.fromJson(value));
     }
     return map;
   }

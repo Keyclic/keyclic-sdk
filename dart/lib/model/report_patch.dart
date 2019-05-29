@@ -40,16 +40,13 @@ class ReportPatch {
   }
 
   static List<ReportPatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ReportPatch>()
-        : json.map((value) => ReportPatch.fromJson(value)).toList();
+    return json == null ? List<ReportPatch>() : json.map((value) => ReportPatch.fromJson(value)).toList();
   }
 
   static Map<String, ReportPatch> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ReportPatch>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReportPatch.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = ReportPatch.fromJson(value));
     }
     return map;
   }

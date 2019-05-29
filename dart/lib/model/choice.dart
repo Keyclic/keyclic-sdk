@@ -56,16 +56,13 @@ class Choice {
   }
 
   static List<Choice> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Choice>()
-        : json.map((value) => Choice.fromJson(value)).toList();
+    return json == null ? List<Choice>() : json.map((value) => Choice.fromJson(value)).toList();
   }
 
   static Map<String, Choice> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Choice>();
     if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Choice.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = Choice.fromJson(value));
     }
     return map;
   }

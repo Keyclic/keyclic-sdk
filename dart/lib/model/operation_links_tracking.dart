@@ -29,17 +29,13 @@ class OperationLinksTracking {
   }
 
   static List<OperationLinksTracking> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OperationLinksTracking>()
-        : json.map((value) => OperationLinksTracking.fromJson(value)).toList();
+    return json == null ? List<OperationLinksTracking>() : json.map((value) => OperationLinksTracking.fromJson(value)).toList();
   }
 
-  static Map<String, OperationLinksTracking> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, OperationLinksTracking> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OperationLinksTracking>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationLinksTracking.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OperationLinksTracking.fromJson(value));
     }
     return map;
   }

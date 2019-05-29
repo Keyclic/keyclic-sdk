@@ -24,17 +24,13 @@ class LogEntryCollection {
   }
 
   static List<LogEntryCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<LogEntryCollection>()
-        : json.map((value) => LogEntryCollection.fromJson(value)).toList();
+    return json == null ? List<LogEntryCollection>() : json.map((value) => LogEntryCollection.fromJson(value)).toList();
   }
 
-  static Map<String, LogEntryCollection> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, LogEntryCollection> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, LogEntryCollection>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = LogEntryCollection.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = LogEntryCollection.fromJson(value));
     }
     return map;
   }

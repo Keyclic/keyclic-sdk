@@ -28,16 +28,13 @@ class DocumentPatch {
   }
 
   static List<DocumentPatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<DocumentPatch>()
-        : json.map((value) => DocumentPatch.fromJson(value)).toList();
+    return json == null ? List<DocumentPatch>() : json.map((value) => DocumentPatch.fromJson(value)).toList();
   }
 
   static Map<String, DocumentPatch> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, DocumentPatch>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentPatch.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = DocumentPatch.fromJson(value));
     }
     return map;
   }

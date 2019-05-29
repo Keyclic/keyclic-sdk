@@ -10,8 +10,7 @@ class SuccessLoginCredentials {
     id = json['id'];
     login = json['login'];
     roles = (json['roles'] as List)?.map((item) => item as String)?.toList();
-    administratorOf = SuccessLoginCredentialsAdministratorOf.listFromJson(
-        json['administratorOf']);
+    administratorOf = SuccessLoginCredentialsAdministratorOf.listFromJson(json['administratorOf']);
     memberOf = SuccessLoginCredentialsMemberOf.listFromJson(json['memberOf']);
   }
 
@@ -41,17 +40,13 @@ class SuccessLoginCredentials {
   }
 
   static List<SuccessLoginCredentials> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<SuccessLoginCredentials>()
-        : json.map((value) => SuccessLoginCredentials.fromJson(value)).toList();
+    return json == null ? List<SuccessLoginCredentials>() : json.map((value) => SuccessLoginCredentials.fromJson(value)).toList();
   }
 
-  static Map<String, SuccessLoginCredentials> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, SuccessLoginCredentials> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, SuccessLoginCredentials>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = SuccessLoginCredentials.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = SuccessLoginCredentials.fromJson(value));
     }
     return map;
   }

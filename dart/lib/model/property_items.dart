@@ -24,16 +24,13 @@ class PropertyItems {
   }
 
   static List<PropertyItems> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PropertyItems>()
-        : json.map((value) => PropertyItems.fromJson(value)).toList();
+    return json == null ? List<PropertyItems>() : json.map((value) => PropertyItems.fromJson(value)).toList();
   }
 
   static Map<String, PropertyItems> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PropertyItems>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PropertyItems.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = PropertyItems.fromJson(value));
     }
     return map;
   }

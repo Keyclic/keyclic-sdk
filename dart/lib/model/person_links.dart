@@ -32,16 +32,13 @@ class PersonLinks {
   }
 
   static List<PersonLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PersonLinks>()
-        : json.map((value) => PersonLinks.fromJson(value)).toList();
+    return json == null ? List<PersonLinks>() : json.map((value) => PersonLinks.fromJson(value)).toList();
   }
 
   static Map<String, PersonLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PersonLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PersonLinks.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = PersonLinks.fromJson(value));
     }
     return map;
   }

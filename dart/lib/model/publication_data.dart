@@ -32,16 +32,13 @@ class PublicationData {
   }
 
   static List<PublicationData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PublicationData>()
-        : json.map((value) => PublicationData.fromJson(value)).toList();
+    return json == null ? List<PublicationData>() : json.map((value) => PublicationData.fromJson(value)).toList();
   }
 
   static Map<String, PublicationData> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PublicationData>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PublicationData.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = PublicationData.fromJson(value));
     }
     return map;
   }

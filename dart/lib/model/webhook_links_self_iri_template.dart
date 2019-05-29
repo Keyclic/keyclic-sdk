@@ -24,19 +24,13 @@ class WebhookLinksSelfIriTemplate {
   }
 
   static List<WebhookLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<WebhookLinksSelfIriTemplate>()
-        : json
-            .map((value) => WebhookLinksSelfIriTemplate.fromJson(value))
-            .toList();
+    return json == null ? List<WebhookLinksSelfIriTemplate>() : json.map((value) => WebhookLinksSelfIriTemplate.fromJson(value)).toList();
   }
 
-  static Map<String, WebhookLinksSelfIriTemplate> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, WebhookLinksSelfIriTemplate> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, WebhookLinksSelfIriTemplate>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WebhookLinksSelfIriTemplate.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = WebhookLinksSelfIriTemplate.fromJson(value));
     }
     return map;
   }

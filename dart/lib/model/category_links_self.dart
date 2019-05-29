@@ -29,16 +29,13 @@ class CategoryLinksSelf {
   }
 
   static List<CategoryLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<CategoryLinksSelf>()
-        : json.map((value) => CategoryLinksSelf.fromJson(value)).toList();
+    return json == null ? List<CategoryLinksSelf>() : json.map((value) => CategoryLinksSelf.fromJson(value)).toList();
   }
 
   static Map<String, CategoryLinksSelf> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, CategoryLinksSelf>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = CategoryLinksSelf.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = CategoryLinksSelf.fromJson(value));
     }
     return map;
   }

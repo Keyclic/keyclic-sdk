@@ -3,13 +3,11 @@ part of keyclic_sdk_api.api;
 class FeedbackReviewRequestLinksSelfIriTemplate {
   FeedbackReviewRequestLinksSelfIriTemplate();
 
-  FeedbackReviewRequestLinksSelfIriTemplate.fromJson(
-      Map<String, dynamic> json) {
+  FeedbackReviewRequestLinksSelfIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    mapping = FeedbackReviewRequestLinksSelfIriTemplateMapping.fromJson(
-        json['mapping']);
+    mapping = FeedbackReviewRequestLinksSelfIriTemplateMapping.fromJson(json['mapping']);
   }
 
   FeedbackReviewRequestLinksSelfIriTemplateMapping mapping;
@@ -25,22 +23,14 @@ class FeedbackReviewRequestLinksSelfIriTemplate {
     return 'FeedbackReviewRequestLinksSelfIriTemplate[mapping=$mapping, ]';
   }
 
-  static List<FeedbackReviewRequestLinksSelfIriTemplate> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<FeedbackReviewRequestLinksSelfIriTemplate>()
-        : json
-            .map((value) =>
-                FeedbackReviewRequestLinksSelfIriTemplate.fromJson(value))
-            .toList();
+  static List<FeedbackReviewRequestLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
+    return json == null ? List<FeedbackReviewRequestLinksSelfIriTemplate>() : json.map((value) => FeedbackReviewRequestLinksSelfIriTemplate.fromJson(value)).toList();
   }
 
-  static Map<String, FeedbackReviewRequestLinksSelfIriTemplate> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, FeedbackReviewRequestLinksSelfIriTemplate> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeedbackReviewRequestLinksSelfIriTemplate>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackReviewRequestLinksSelfIriTemplate.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = FeedbackReviewRequestLinksSelfIriTemplate.fromJson(value));
     }
     return map;
   }

@@ -8,8 +8,7 @@ class BusinessActivityLinksSchema {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the schema associated to the given businessactivity. */
@@ -30,19 +29,13 @@ class BusinessActivityLinksSchema {
   }
 
   static List<BusinessActivityLinksSchema> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<BusinessActivityLinksSchema>()
-        : json
-            .map((value) => BusinessActivityLinksSchema.fromJson(value))
-            .toList();
+    return json == null ? List<BusinessActivityLinksSchema>() : json.map((value) => BusinessActivityLinksSchema.fromJson(value)).toList();
   }
 
-  static Map<String, BusinessActivityLinksSchema> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, BusinessActivityLinksSchema> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, BusinessActivityLinksSchema>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = BusinessActivityLinksSchema.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = BusinessActivityLinksSchema.fromJson(value));
     }
     return map;
   }

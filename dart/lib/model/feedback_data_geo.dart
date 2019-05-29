@@ -28,16 +28,13 @@ class FeedbackDataGeo {
   }
 
   static List<FeedbackDataGeo> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeedbackDataGeo>()
-        : json.map((value) => FeedbackDataGeo.fromJson(value)).toList();
+    return json == null ? List<FeedbackDataGeo>() : json.map((value) => FeedbackDataGeo.fromJson(value)).toList();
   }
 
   static Map<String, FeedbackDataGeo> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeedbackDataGeo>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackDataGeo.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = FeedbackDataGeo.fromJson(value));
     }
     return map;
   }

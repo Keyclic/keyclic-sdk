@@ -8,8 +8,7 @@ class OperationLinksOperator {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the operator associated to the given operation. */
@@ -30,17 +29,13 @@ class OperationLinksOperator {
   }
 
   static List<OperationLinksOperator> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OperationLinksOperator>()
-        : json.map((value) => OperationLinksOperator.fromJson(value)).toList();
+    return json == null ? List<OperationLinksOperator>() : json.map((value) => OperationLinksOperator.fromJson(value)).toList();
   }
 
-  static Map<String, OperationLinksOperator> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, OperationLinksOperator> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OperationLinksOperator>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationLinksOperator.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OperationLinksOperator.fromJson(value));
     }
     return map;
   }

@@ -44,16 +44,13 @@ class Webhook {
   }
 
   static List<Webhook> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Webhook>()
-        : json.map((value) => Webhook.fromJson(value)).toList();
+    return json == null ? List<Webhook>() : json.map((value) => Webhook.fromJson(value)).toList();
   }
 
   static Map<String, Webhook> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Webhook>();
     if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Webhook.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = Webhook.fromJson(value));
     }
     return map;
   }

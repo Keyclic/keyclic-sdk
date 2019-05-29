@@ -28,16 +28,13 @@ class WebhookLinks {
   }
 
   static List<WebhookLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<WebhookLinks>()
-        : json.map((value) => WebhookLinks.fromJson(value)).toList();
+    return json == null ? List<WebhookLinks>() : json.map((value) => WebhookLinks.fromJson(value)).toList();
   }
 
   static Map<String, WebhookLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, WebhookLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WebhookLinks.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = WebhookLinks.fromJson(value));
     }
     return map;
   }

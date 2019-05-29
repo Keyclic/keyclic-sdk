@@ -23,21 +23,14 @@ class DocumentLinksSelfIriTemplateMapping {
     return 'DocumentLinksSelfIriTemplateMapping[document=$document, ]';
   }
 
-  static List<DocumentLinksSelfIriTemplateMapping> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<DocumentLinksSelfIriTemplateMapping>()
-        : json
-            .map((value) => DocumentLinksSelfIriTemplateMapping.fromJson(value))
-            .toList();
+  static List<DocumentLinksSelfIriTemplateMapping> listFromJson(List<dynamic> json) {
+    return json == null ? List<DocumentLinksSelfIriTemplateMapping>() : json.map((value) => DocumentLinksSelfIriTemplateMapping.fromJson(value)).toList();
   }
 
-  static Map<String, DocumentLinksSelfIriTemplateMapping> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, DocumentLinksSelfIriTemplateMapping> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, DocumentLinksSelfIriTemplateMapping>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentLinksSelfIriTemplateMapping.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = DocumentLinksSelfIriTemplateMapping.fromJson(value));
     }
     return map;
   }

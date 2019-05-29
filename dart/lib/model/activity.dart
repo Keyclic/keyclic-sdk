@@ -55,16 +55,13 @@ class Activity {
   }
 
   static List<Activity> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Activity>()
-        : json.map((value) => Activity.fromJson(value)).toList();
+    return json == null ? List<Activity>() : json.map((value) => Activity.fromJson(value)).toList();
   }
 
   static Map<String, Activity> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Activity>();
     if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Activity.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = Activity.fromJson(value));
     }
     return map;
   }

@@ -8,8 +8,7 @@ class IssueApi {
   /// Create one Issue resource.
   ///
   ///
-  Future<Feedback> postIssue(String xKeyclicApp, FeedbackData feedbackData,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Feedback> postIssue(String xKeyclicApp, FeedbackData feedbackData, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = feedbackData;
 
     // verify required params are set
@@ -33,8 +32,7 @@ class IssueApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -44,8 +42,7 @@ class IssueApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

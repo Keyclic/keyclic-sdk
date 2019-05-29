@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import OrganizationPreferencesReference from "./OrganizationPreferencesReference";
+import OrganizationPatchPreferencesReference from "./OrganizationPatchPreferencesReference";
 
 /**
  * The OrganizationPatchPreferences model module.
@@ -27,7 +27,7 @@ export default class OrganizationPatchPreferences {
   constructor() {
     this.reference = null;
 
-    this.referenceType = OrganizationPreferencesReference;
+    this.referenceType = OrganizationPatchPreferencesReference;
   }
 
   /**

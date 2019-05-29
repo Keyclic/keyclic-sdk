@@ -8,8 +8,7 @@ class LogEntry {
       return;
     }
     action = json['action'];
-    loggedAt =
-        json['loggedAt'] == null ? null : DateTime.parse(json['loggedAt']);
+    loggedAt = json['loggedAt'] == null ? null : DateTime.parse(json['loggedAt']);
     if (loggedAt is DateTime && loggedAt.isUtc == false) {
       loggedAt = DateTime.parse('${loggedAt.toIso8601String()}Z');
     }
@@ -44,16 +43,13 @@ class LogEntry {
   }
 
   static List<LogEntry> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<LogEntry>()
-        : json.map((value) => LogEntry.fromJson(value)).toList();
+    return json == null ? List<LogEntry>() : json.map((value) => LogEntry.fromJson(value)).toList();
   }
 
   static Map<String, LogEntry> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, LogEntry>();
     if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = LogEntry.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = LogEntry.fromJson(value));
     }
     return map;
   }

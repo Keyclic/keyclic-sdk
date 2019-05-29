@@ -24,16 +24,13 @@ class ApplicationLinks {
   }
 
   static List<ApplicationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ApplicationLinks>()
-        : json.map((value) => ApplicationLinks.fromJson(value)).toList();
+    return json == null ? List<ApplicationLinks>() : json.map((value) => ApplicationLinks.fromJson(value)).toList();
   }
 
   static Map<String, ApplicationLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ApplicationLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ApplicationLinks.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = ApplicationLinks.fromJson(value));
     }
     return map;
   }

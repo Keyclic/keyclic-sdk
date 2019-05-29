@@ -43,72 +43,55 @@ class PlaceApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if (businessActivity != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "business_activity", businessActivity));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "business_activity", businessActivity));
     }
     if (geoCoordinates != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "geo_coordinates", geoCoordinates));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "geo_coordinates", geoCoordinates));
     }
     if (geoElevation != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "geo_elevation", geoElevation));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "geo_elevation", geoElevation));
     }
     if (geoHash_ != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "geo_hash[]", geoHash_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "geo_hash[]", geoHash_));
     }
     if (geoPoint != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "geo_point", geoPoint));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "geo_point", geoPoint));
     }
     if (organization != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "organization", organization));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "organization", organization));
     }
     if (parent != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "parent", parent));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "parent", parent));
     }
     if (parents_ != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "parents[]", parents_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "parents[]", parents_));
     }
     if (query != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "query", query));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "query", query));
     }
     if (page != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "page", page));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     if (limit != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "limit", limit));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
     if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "after", after));
     }
     if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_branchCode_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[branchCode]", search_branchCode_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[branchCode]", search_branchCode_));
     }
     if (search_description_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[description]", search_description_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[description]", search_description_));
     }
     if (search_name_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[name]", search_name_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[name]", search_name_));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
@@ -116,8 +99,7 @@ class PlaceApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = [];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -127,14 +109,12 @@ class PlaceApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'PlacePagination')
-          as PlacePagination;
+      return apiClient.deserialize(response.body, 'PlacePagination') as PlacePagination;
     } else {
       return null;
     }
@@ -143,8 +123,7 @@ class PlaceApi {
   /// Retrieve all Place resources.
   ///
   ///
-  Future<PlacePagination> cgetPlacesByOrganization(
-      String xKeyclicApp, String organization,
+  Future<PlacePagination> cgetPlacesByOrganization(String xKeyclicApp, String organization,
       {String acceptLanguage,
       String xKeyclicAppVersion,
       String businessActivity,
@@ -174,77 +153,59 @@ class PlaceApi {
     }
 
     // create path and map variables
-    String path = "/organizations/{organization}/places"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "organization" + "}", organization.toString());
+    String path = "/organizations/{organization}/places".replaceAll("{format}", "json").replaceAll("{" + "organization" + "}", organization.toString());
 
     // query params
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if (businessActivity != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "business_activity", businessActivity));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "business_activity", businessActivity));
     }
     if (geoCoordinates != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "geo_coordinates", geoCoordinates));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "geo_coordinates", geoCoordinates));
     }
     if (geoElevation != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "geo_elevation", geoElevation));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "geo_elevation", geoElevation));
     }
     if (geoHash_ != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "geo_hash[]", geoHash_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "geo_hash[]", geoHash_));
     }
     if (geoPoint != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "geo_point", geoPoint));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "geo_point", geoPoint));
     }
     if (parent != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "parent", parent));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "parent", parent));
     }
     if (parents_ != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "parents[]", parents_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "parents[]", parents_));
     }
     if (query != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "query", query));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "query", query));
     }
     if (page != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "page", page));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     if (limit != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "limit", limit));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
     if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "after", after));
     }
     if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_branchCode_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[branchCode]", search_branchCode_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[branchCode]", search_branchCode_));
     }
     if (search_description_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[description]", search_description_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[description]", search_description_));
     }
     if (search_name_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[name]", search_name_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[name]", search_name_));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
@@ -252,8 +213,7 @@ class PlaceApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -263,14 +223,12 @@ class PlaceApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'PlacePagination')
-          as PlacePagination;
+      return apiClient.deserialize(response.body, 'PlacePagination') as PlacePagination;
     } else {
       return null;
     }
@@ -279,8 +237,7 @@ class PlaceApi {
   /// Retrieve one Place resource.
   ///
   ///
-  Future<Place> getPlace(String xKeyclicApp, String place,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Place> getPlace(String xKeyclicApp, String place, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody;
 
     // verify required params are set
@@ -292,9 +249,7 @@ class PlaceApi {
     }
 
     // create path and map variables
-    String path = "/places/{place}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "place" + "}", place.toString());
+    String path = "/places/{place}".replaceAll("{format}", "json").replaceAll("{" + "place" + "}", place.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -306,8 +261,7 @@ class PlaceApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -317,8 +271,7 @@ class PlaceApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -332,9 +285,7 @@ class PlaceApi {
   /// Edit one Place resource.
   ///
   ///
-  Future<Place> patchPlace(
-      String xKeyclicApp, PlacePatch placePatch, String place,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Place> patchPlace(String xKeyclicApp, PlacePatch placePatch, String place, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = placePatch;
 
     // verify required params are set
@@ -349,9 +300,7 @@ class PlaceApi {
     }
 
     // create path and map variables
-    String path = "/places/{place}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "place" + "}", place.toString());
+    String path = "/places/{place}".replaceAll("{format}", "json").replaceAll("{" + "place" + "}", place.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -363,8 +312,7 @@ class PlaceApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -374,8 +322,7 @@ class PlaceApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'PATCH', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'PATCH', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -389,9 +336,7 @@ class PlaceApi {
   /// Create one Place resource.
   ///
   ///
-  Future<Place> postPlaceByOrganization(
-      String xKeyclicApp, PlaceData placeData, String organization,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Place> postPlaceByOrganization(String xKeyclicApp, PlaceData placeData, String organization, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = placeData;
 
     // verify required params are set
@@ -406,9 +351,7 @@ class PlaceApi {
     }
 
     // create path and map variables
-    String path = "/organizations/{organization}/places"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "organization" + "}", organization.toString());
+    String path = "/organizations/{organization}/places".replaceAll("{format}", "json").replaceAll("{" + "organization" + "}", organization.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -420,8 +363,7 @@ class PlaceApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -431,8 +373,7 @@ class PlaceApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

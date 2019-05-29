@@ -8,8 +8,7 @@ class BusinessActivityLinksImage {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the image associated to the given businessactivity. */
@@ -30,19 +29,13 @@ class BusinessActivityLinksImage {
   }
 
   static List<BusinessActivityLinksImage> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<BusinessActivityLinksImage>()
-        : json
-            .map((value) => BusinessActivityLinksImage.fromJson(value))
-            .toList();
+    return json == null ? List<BusinessActivityLinksImage>() : json.map((value) => BusinessActivityLinksImage.fromJson(value)).toList();
   }
 
-  static Map<String, BusinessActivityLinksImage> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, BusinessActivityLinksImage> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, BusinessActivityLinksImage>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = BusinessActivityLinksImage.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = BusinessActivityLinksImage.fromJson(value));
     }
     return map;
   }

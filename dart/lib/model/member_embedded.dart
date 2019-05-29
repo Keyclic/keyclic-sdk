@@ -7,9 +7,7 @@ class MemberEmbedded {
     if (json == null) {
       return;
     }
-    availableRoles = (json['availableRoles'] as List)
-        ?.map((item) => item as String)
-        ?.toList();
+    availableRoles = (json['availableRoles'] as List)?.map((item) => item as String)?.toList();
   }
 
   List<String> availableRoles;
@@ -26,16 +24,13 @@ class MemberEmbedded {
   }
 
   static List<MemberEmbedded> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<MemberEmbedded>()
-        : json.map((value) => MemberEmbedded.fromJson(value)).toList();
+    return json == null ? List<MemberEmbedded>() : json.map((value) => MemberEmbedded.fromJson(value)).toList();
   }
 
   static Map<String, MemberEmbedded> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, MemberEmbedded>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MemberEmbedded.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = MemberEmbedded.fromJson(value));
     }
     return map;
   }

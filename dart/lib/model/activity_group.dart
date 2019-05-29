@@ -10,15 +10,13 @@ class ActivityGroup {
     activities = Activity.listFromJson(json['activities']);
     activityCount = json['activity_count'];
     actorCount = json['actor_count'];
-    createdAt =
-        json['created_at'] == null ? null : DateTime.parse(json['created_at']);
+    createdAt = json['created_at'] == null ? null : DateTime.parse(json['created_at']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
     group = json['group'];
     id = json['id'];
-    updatedAt =
-        json['updated_at'] == null ? null : DateTime.parse(json['updated_at']);
+    updatedAt = json['updated_at'] == null ? null : DateTime.parse(json['updated_at']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
@@ -52,12 +50,10 @@ class ActivityGroup {
       'activities': activities,
       'activity_count': activityCount,
       'actor_count': actorCount,
-      'created_at':
-          createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
+      'created_at': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
       'group': group,
       'id': id,
-      'updated_at':
-          updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
+      'updated_at': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
       'verb': verb,
       'is_read': isRead,
       'is_seen': isSeen,
@@ -70,16 +66,13 @@ class ActivityGroup {
   }
 
   static List<ActivityGroup> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ActivityGroup>()
-        : json.map((value) => ActivityGroup.fromJson(value)).toList();
+    return json == null ? List<ActivityGroup>() : json.map((value) => ActivityGroup.fromJson(value)).toList();
   }
 
   static Map<String, ActivityGroup> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ActivityGroup>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ActivityGroup.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = ActivityGroup.fromJson(value));
     }
     return map;
   }

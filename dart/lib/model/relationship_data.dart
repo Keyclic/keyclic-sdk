@@ -24,16 +24,13 @@ class RelationshipData {
   }
 
   static List<RelationshipData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<RelationshipData>()
-        : json.map((value) => RelationshipData.fromJson(value)).toList();
+    return json == null ? List<RelationshipData>() : json.map((value) => RelationshipData.fromJson(value)).toList();
   }
 
   static Map<String, RelationshipData> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, RelationshipData>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = RelationshipData.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = RelationshipData.fromJson(value));
     }
     return map;
   }

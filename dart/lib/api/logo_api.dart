@@ -8,9 +8,7 @@ class LogoApi {
   /// Retrieve one Logo resource.
   ///
   ///
-  Future<MultipartFile> getLogoByOrganizationAndWidthAndHeight(
-      String xKeyclicApp, String organization, String width, String height,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<MultipartFile> getLogoByOrganizationAndWidthAndHeight(String xKeyclicApp, String organization, String width, String height, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody;
 
     // verify required params are set
@@ -44,8 +42,7 @@ class LogoApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -55,14 +52,12 @@ class LogoApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'MultipartFile')
-          as MultipartFile;
+      return apiClient.deserialize(response.body, 'MultipartFile') as MultipartFile;
     } else {
       return null;
     }

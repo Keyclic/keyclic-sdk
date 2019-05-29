@@ -3,14 +3,12 @@ part of keyclic_sdk_api.api;
 class OperationApi {
   final ApiClient apiClient;
 
-  OperationApi([ApiClient apiClient])
-      : apiClient = apiClient ?? defaultApiClient;
+  OperationApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Retrieve all Operation resources.
   ///
   ///
-  Future<OperationPagination> cgetOperationsByOrganization(
-      String xKeyclicApp, String organization,
+  Future<OperationPagination> cgetOperationsByOrganization(String xKeyclicApp, String organization,
       {String acceptLanguage,
       String xKeyclicAppVersion,
       String state,
@@ -34,53 +32,41 @@ class OperationApi {
     }
 
     // create path and map variables
-    String path = "/organizations/{organization}/operations"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "organization" + "}", organization.toString());
+    String path = "/organizations/{organization}/operations".replaceAll("{format}", "json").replaceAll("{" + "organization" + "}", organization.toString());
 
     // query params
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if (state != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "state", state));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "state", state));
     }
     if (query != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "query", query));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "query", query));
     }
     if (page != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "page", page));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     if (limit != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "limit", limit));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
     if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "after", after));
     }
     if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_description_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[description]", search_description_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[description]", search_description_));
     }
     if (search_name_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[name]", search_name_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[name]", search_name_));
     }
     if (search_identificationNumber_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[identificationNumber]", search_identificationNumber_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[identificationNumber]", search_identificationNumber_));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
@@ -88,8 +74,7 @@ class OperationApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -99,14 +84,12 @@ class OperationApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'OperationPagination')
-          as OperationPagination;
+      return apiClient.deserialize(response.body, 'OperationPagination') as OperationPagination;
     } else {
       return null;
     }
@@ -115,8 +98,7 @@ class OperationApi {
   /// Retrieve all Operation resources.
   ///
   ///
-  Future<OperationPagination> cgetOperationsByPerson(
-      String xKeyclicApp, String person,
+  Future<OperationPagination> cgetOperationsByPerson(String xKeyclicApp, String person,
       {String acceptLanguage,
       String xKeyclicAppVersion,
       String organization,
@@ -141,57 +123,44 @@ class OperationApi {
     }
 
     // create path and map variables
-    String path = "/people/{person}/operations"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "person" + "}", person.toString());
+    String path = "/people/{person}/operations".replaceAll("{format}", "json").replaceAll("{" + "person" + "}", person.toString());
 
     // query params
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if (organization != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "organization", organization));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "organization", organization));
     }
     if (state != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "state", state));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "state", state));
     }
     if (query != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "query", query));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "query", query));
     }
     if (page != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "page", page));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     if (limit != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "limit", limit));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
     if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "after", after));
     }
     if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_description_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[description]", search_description_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[description]", search_description_));
     }
     if (search_name_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[name]", search_name_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[name]", search_name_));
     }
     if (search_identificationNumber_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[identificationNumber]", search_identificationNumber_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[identificationNumber]", search_identificationNumber_));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
@@ -199,8 +168,7 @@ class OperationApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -210,14 +178,12 @@ class OperationApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'OperationPagination')
-          as OperationPagination;
+      return apiClient.deserialize(response.body, 'OperationPagination') as OperationPagination;
     } else {
       return null;
     }
@@ -226,8 +192,7 @@ class OperationApi {
   /// Retrieve all Operation resources.
   ///
   ///
-  Future<OperationPagination> cgetOperationsByReport(
-      String xKeyclicApp, String report,
+  Future<OperationPagination> cgetOperationsByReport(String xKeyclicApp, String report,
       {String acceptLanguage,
       String xKeyclicAppVersion,
       String organization,
@@ -252,57 +217,44 @@ class OperationApi {
     }
 
     // create path and map variables
-    String path = "/reports/{report}/operations"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "report" + "}", report.toString());
+    String path = "/reports/{report}/operations".replaceAll("{format}", "json").replaceAll("{" + "report" + "}", report.toString());
 
     // query params
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if (organization != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "organization", organization));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "organization", organization));
     }
     if (state != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "state", state));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "state", state));
     }
     if (query != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "query", query));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "query", query));
     }
     if (page != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "page", page));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     if (limit != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "limit", limit));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
     if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "after", after));
     }
     if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_description_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[description]", search_description_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[description]", search_description_));
     }
     if (search_name_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[name]", search_name_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[name]", search_name_));
     }
     if (search_identificationNumber_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[identificationNumber]", search_identificationNumber_));
+      queryParams.addAll(_convertParametersForCollectionFormat("", "search[identificationNumber]", search_identificationNumber_));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
@@ -310,8 +262,7 @@ class OperationApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -321,14 +272,12 @@ class OperationApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'OperationPagination')
-          as OperationPagination;
+      return apiClient.deserialize(response.body, 'OperationPagination') as OperationPagination;
     } else {
       return null;
     }
@@ -337,8 +286,7 @@ class OperationApi {
   /// Remove one Operation resource.
   ///
   ///
-  Future deleteOperation(String xKeyclicApp, String operation,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future deleteOperation(String xKeyclicApp, String operation, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody;
 
     // verify required params are set
@@ -350,9 +298,7 @@ class OperationApi {
     }
 
     // create path and map variables
-    String path = "/operations/{operation}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "operation" + "}", operation.toString());
+    String path = "/operations/{operation}".replaceAll("{format}", "json").replaceAll("{" + "operation" + "}", operation.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -364,8 +310,7 @@ class OperationApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -375,8 +320,7 @@ class OperationApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'DELETE', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'DELETE', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -390,8 +334,7 @@ class OperationApi {
   /// Retrieve one Operation resource.
   ///
   ///
-  Future<Operation> getOperation(String xKeyclicApp, String operation,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Operation> getOperation(String xKeyclicApp, String operation, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody;
 
     // verify required params are set
@@ -403,9 +346,7 @@ class OperationApi {
     }
 
     // create path and map variables
-    String path = "/operations/{operation}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "operation" + "}", operation.toString());
+    String path = "/operations/{operation}".replaceAll("{format}", "json").replaceAll("{" + "operation" + "}", operation.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -417,8 +358,7 @@ class OperationApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -428,8 +368,7 @@ class OperationApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -443,9 +382,7 @@ class OperationApi {
   /// Edit one Operation resource.
   ///
   ///
-  Future<Operation> patchOperation(
-      String xKeyclicApp, OperationPatch operationPatch, String operation,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Operation> patchOperation(String xKeyclicApp, OperationPatch operationPatch, String operation, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = operationPatch;
 
     // verify required params are set
@@ -460,9 +397,7 @@ class OperationApi {
     }
 
     // create path and map variables
-    String path = "/operations/{operation}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "operation" + "}", operation.toString());
+    String path = "/operations/{operation}".replaceAll("{format}", "json").replaceAll("{" + "operation" + "}", operation.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -474,8 +409,7 @@ class OperationApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -485,8 +419,7 @@ class OperationApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'PATCH', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'PATCH', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -500,9 +433,7 @@ class OperationApi {
   /// Create one Operation resource.
   ///
   ///
-  Future<Operation> postOperation(
-      String xKeyclicApp, OperationData operationData,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Operation> postOperation(String xKeyclicApp, OperationData operationData, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = operationData;
 
     // verify required params are set
@@ -526,8 +457,7 @@ class OperationApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -537,8 +467,7 @@ class OperationApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

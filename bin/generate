@@ -47,14 +47,17 @@ docker run \
     --output /local/dart \
     --template-dir /local/dart-templates
 
+sleep 10
+
 # Prepare and build package for javascript-es6
-cd ${CURRENT_DIR}/javascript-es6 || exit
+cd ${CURRENT_DIR}/javascript-es6 || { echo -e "Cannot find javascript-es6 directory"; exit 1; }
+
 npm install
 npm run build
 npm run prettier
 
 # Prepare and build package for dart
-cd ${CURRENT_DIR}/dart || exit
+cd ${CURRENT_DIR}/dart || { echo -e "Cannot find dart directory"; exit 1; }
 
 # remove bracket in function parameter name
 sed -i 's/geoHash\[\]/geoHash_/g' lib/api/*
@@ -114,10 +117,11 @@ grep -q "homepage:" pubspec.yaml || echo "homepage: https://keyclic.com" >> pubs
 # rename deprecated analysis option file
 mv .analysis_options analysis_options.yaml
 
-flutter pub get
-flutter format lib/*
-# scores package
-pana --source path . --scores --verbosity compact
+pub get
+dartfmt --fix --line-length=240 --overwrite lib
+
+rm -rf android
+rm -rf ios
 
 # When the script exits call cleanup function
 trap cleanup EXIT

@@ -7,9 +7,7 @@ class FeedbackEmbedded {
     if (json == null) {
       return;
     }
-    stateTransitions = (json['stateTransitions'] as List)
-        ?.map((item) => item as String)
-        ?.toList();
+    stateTransitions = (json['stateTransitions'] as List)?.map((item) => item as String)?.toList();
     tracking = json['tracking'];
   }
 
@@ -30,16 +28,13 @@ class FeedbackEmbedded {
   }
 
   static List<FeedbackEmbedded> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeedbackEmbedded>()
-        : json.map((value) => FeedbackEmbedded.fromJson(value)).toList();
+    return json == null ? List<FeedbackEmbedded>() : json.map((value) => FeedbackEmbedded.fromJson(value)).toList();
   }
 
   static Map<String, FeedbackEmbedded> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeedbackEmbedded>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackEmbedded.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = FeedbackEmbedded.fromJson(value));
     }
     return map;
   }

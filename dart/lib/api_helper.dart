@@ -1,10 +1,9 @@
 part of keyclic_sdk_api.api;
 
-const _delimiters = const {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
+const _delimiters = {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
 
 // port from Java version
-Iterable<QueryParam> _convertParametersForCollectionFormat(
-    String collectionFormat, String name, dynamic value) {
+Iterable<QueryParam> _convertParametersForCollectionFormat(String collectionFormat, String name, dynamic value) {
   var params = <QueryParam>[];
 
   // preconditions
@@ -20,9 +19,7 @@ Iterable<QueryParam> _convertParametersForCollectionFormat(
   List values = value as List;
 
   // get the collection format
-  collectionFormat = (collectionFormat == null || collectionFormat.isEmpty)
-      ? "csv"
-      : collectionFormat; // default: csv
+  collectionFormat = (collectionFormat == null || collectionFormat.isEmpty) ? "csv" : collectionFormat; // default: csv
 
   if (collectionFormat == "multi") {
     return values.map((v) => QueryParam(name, parameterToString(v)));
@@ -30,8 +27,7 @@ Iterable<QueryParam> _convertParametersForCollectionFormat(
 
   String delimiter = _delimiters[collectionFormat] ?? ",";
 
-  params.add(QueryParam(
-      name, values.map((v) => parameterToString(v)).join(delimiter)));
+  params.add(QueryParam(name, values.map((v) => parameterToString(v)).join(delimiter)));
   return params;
 }
 

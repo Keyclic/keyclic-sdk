@@ -3,14 +3,12 @@ part of keyclic_sdk_api.api;
 class UnfollowApi {
   final ApiClient apiClient;
 
-  UnfollowApi([ApiClient apiClient])
-      : apiClient = apiClient ?? defaultApiClient;
+  UnfollowApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   /// Create one Unfollow resource.
   ///
   ///
-  Future postUnfollowByFeed(String xKeyclicApp, String feed,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future postUnfollowByFeed(String xKeyclicApp, String feed, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody;
 
     // verify required params are set
@@ -22,9 +20,7 @@ class UnfollowApi {
     }
 
     // create path and map variables
-    String path = "/feeds/{feed}/unfollow"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "feed" + "}", feed.toString());
+    String path = "/feeds/{feed}/unfollow".replaceAll("{format}", "json").replaceAll("{" + "feed" + "}", feed.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -36,8 +32,7 @@ class UnfollowApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -47,8 +42,7 @@ class UnfollowApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

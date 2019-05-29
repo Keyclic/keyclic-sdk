@@ -52,16 +52,13 @@ class PersonPatch {
   }
 
   static List<PersonPatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PersonPatch>()
-        : json.map((value) => PersonPatch.fromJson(value)).toList();
+    return json == null ? List<PersonPatch>() : json.map((value) => PersonPatch.fromJson(value)).toList();
   }
 
   static Map<String, PersonPatch> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PersonPatch>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PersonPatch.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = PersonPatch.fromJson(value));
     }
     return map;
   }

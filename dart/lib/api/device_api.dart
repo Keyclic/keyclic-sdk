@@ -8,9 +8,7 @@ class DeviceApi {
   /// Remove one Device resource.
   ///
   ///
-  Future deleteDeviceByPersonAndDevice(
-      String xKeyclicApp, String person, String device,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future deleteDeviceByPersonAndDevice(String xKeyclicApp, String person, String device, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody;
 
     // verify required params are set
@@ -25,10 +23,7 @@ class DeviceApi {
     }
 
     // create path and map variables
-    String path = "/people/{person}/devices/{device}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "person" + "}", person.toString())
-        .replaceAll("{" + "device" + "}", device.toString());
+    String path = "/people/{person}/devices/{device}".replaceAll("{format}", "json").replaceAll("{" + "person" + "}", person.toString()).replaceAll("{" + "device" + "}", device.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -40,8 +35,7 @@ class DeviceApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -51,8 +45,7 @@ class DeviceApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'DELETE', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'DELETE', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -66,9 +59,7 @@ class DeviceApi {
   /// Create one Device resource.
   ///
   ///
-  Future<Device> postDeviceByPerson(
-      String xKeyclicApp, DeviceData deviceData, String person,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Device> postDeviceByPerson(String xKeyclicApp, DeviceData deviceData, String person, {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = deviceData;
 
     // verify required params are set
@@ -83,9 +74,7 @@ class DeviceApi {
     }
 
     // create path and map variables
-    String path = "/people/{person}/devices"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "person" + "}", person.toString());
+    String path = "/people/{person}/devices".replaceAll("{format}", "json").replaceAll("{" + "person" + "}", person.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -97,8 +86,7 @@ class DeviceApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -108,8 +96,7 @@ class DeviceApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

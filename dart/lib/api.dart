@@ -230,6 +230,7 @@ part 'model/organization_links_self.dart';
 part 'model/organization_pagination.dart';
 part 'model/organization_patch.dart';
 part 'model/organization_patch_preferences.dart';
+part 'model/organization_patch_preferences_reference.dart';
 part 'model/organization_preferences.dart';
 part 'model/organization_preferences_reference.dart';
 part 'model/pagination_link.dart';

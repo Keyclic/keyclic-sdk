@@ -23,22 +23,14 @@ class ApplicationLinksSelfIriTemplateMapping {
     return 'ApplicationLinksSelfIriTemplateMapping[token=$token, ]';
   }
 
-  static List<ApplicationLinksSelfIriTemplateMapping> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<ApplicationLinksSelfIriTemplateMapping>()
-        : json
-            .map((value) =>
-                ApplicationLinksSelfIriTemplateMapping.fromJson(value))
-            .toList();
+  static List<ApplicationLinksSelfIriTemplateMapping> listFromJson(List<dynamic> json) {
+    return json == null ? List<ApplicationLinksSelfIriTemplateMapping>() : json.map((value) => ApplicationLinksSelfIriTemplateMapping.fromJson(value)).toList();
   }
 
-  static Map<String, ApplicationLinksSelfIriTemplateMapping> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, ApplicationLinksSelfIriTemplateMapping> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ApplicationLinksSelfIriTemplateMapping>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ApplicationLinksSelfIriTemplateMapping.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = ApplicationLinksSelfIriTemplateMapping.fromJson(value));
     }
     return map;
   }

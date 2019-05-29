@@ -8,8 +8,7 @@ class OccupantLinksPerson {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the person associated to the given occupant. */
@@ -30,17 +29,13 @@ class OccupantLinksPerson {
   }
 
   static List<OccupantLinksPerson> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OccupantLinksPerson>()
-        : json.map((value) => OccupantLinksPerson.fromJson(value)).toList();
+    return json == null ? List<OccupantLinksPerson>() : json.map((value) => OccupantLinksPerson.fromJson(value)).toList();
   }
 
-  static Map<String, OccupantLinksPerson> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, OccupantLinksPerson> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OccupantLinksPerson>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OccupantLinksPerson.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OccupantLinksPerson.fromJson(value));
     }
     return map;
   }

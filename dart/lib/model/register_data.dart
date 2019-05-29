@@ -28,16 +28,13 @@ class RegisterData {
   }
 
   static List<RegisterData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<RegisterData>()
-        : json.map((value) => RegisterData.fromJson(value)).toList();
+    return json == null ? List<RegisterData>() : json.map((value) => RegisterData.fromJson(value)).toList();
   }
 
   static Map<String, RegisterData> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, RegisterData>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = RegisterData.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = RegisterData.fromJson(value));
     }
     return map;
   }

@@ -14,13 +14,11 @@ class Report {
     id = json['id'];
     identificationNumber = json['identificationNumber'];
     state = (json['state'] as List)?.map((item) => item as String)?.toList();
-    createdAt =
-        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    updatedAt =
-        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
@@ -76,16 +74,13 @@ class Report {
   }
 
   static List<Report> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Report>()
-        : json.map((value) => Report.fromJson(value)).toList();
+    return json == null ? List<Report>() : json.map((value) => Report.fromJson(value)).toList();
   }
 
   static Map<String, Report> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Report>();
     if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Report.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = Report.fromJson(value));
     }
     return map;
   }

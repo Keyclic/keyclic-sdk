@@ -8,8 +8,7 @@ class FeedbackLinksReporter {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the reporter associated to the given feedback. */
@@ -30,17 +29,13 @@ class FeedbackLinksReporter {
   }
 
   static List<FeedbackLinksReporter> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeedbackLinksReporter>()
-        : json.map((value) => FeedbackLinksReporter.fromJson(value)).toList();
+    return json == null ? List<FeedbackLinksReporter>() : json.map((value) => FeedbackLinksReporter.fromJson(value)).toList();
   }
 
-  static Map<String, FeedbackLinksReporter> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, FeedbackLinksReporter> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeedbackLinksReporter>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackLinksReporter.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = FeedbackLinksReporter.fromJson(value));
     }
     return map;
   }

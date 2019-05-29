@@ -1029,6 +1029,12 @@ Object.defineProperty(exports, "OrganizationPatchPreferences", {
     return _OrganizationPatchPreferences.default;
   }
 });
+Object.defineProperty(exports, "OrganizationPatchPreferencesReference", {
+  enumerable: true,
+  get: function get() {
+    return _OrganizationPatchPreferencesReference.default;
+  }
+});
 Object.defineProperty(exports, "OrganizationPreferences", {
   enumerable: true,
   get: function get() {
@@ -2235,6 +2241,8 @@ var _OrganizationPagination = _interopRequireDefault(require("./model/Organizati
 var _OrganizationPatch = _interopRequireDefault(require("./model/OrganizationPatch"));
 
 var _OrganizationPatchPreferences = _interopRequireDefault(require("./model/OrganizationPatchPreferences"));
+
+var _OrganizationPatchPreferencesReference = _interopRequireDefault(require("./model/OrganizationPatchPreferencesReference"));
 
 var _OrganizationPreferences = _interopRequireDefault(require("./model/OrganizationPreferences"));
 

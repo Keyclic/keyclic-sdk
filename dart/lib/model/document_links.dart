@@ -32,16 +32,13 @@ class DocumentLinks {
   }
 
   static List<DocumentLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<DocumentLinks>()
-        : json.map((value) => DocumentLinks.fromJson(value)).toList();
+    return json == null ? List<DocumentLinks>() : json.map((value) => DocumentLinks.fromJson(value)).toList();
   }
 
   static Map<String, DocumentLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, DocumentLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentLinks.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = DocumentLinks.fromJson(value));
     }
     return map;
   }

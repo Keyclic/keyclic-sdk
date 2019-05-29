@@ -44,16 +44,13 @@ class ReportPagination {
   }
 
   static List<ReportPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ReportPagination>()
-        : json.map((value) => ReportPagination.fromJson(value)).toList();
+    return json == null ? List<ReportPagination>() : json.map((value) => ReportPagination.fromJson(value)).toList();
   }
 
   static Map<String, ReportPagination> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ReportPagination>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReportPagination.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = ReportPagination.fromJson(value));
     }
     return map;
   }

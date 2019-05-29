@@ -8,8 +8,7 @@ class DeviceLinksPerson {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the person associated to the given device. */
@@ -30,16 +29,13 @@ class DeviceLinksPerson {
   }
 
   static List<DeviceLinksPerson> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<DeviceLinksPerson>()
-        : json.map((value) => DeviceLinksPerson.fromJson(value)).toList();
+    return json == null ? List<DeviceLinksPerson>() : json.map((value) => DeviceLinksPerson.fromJson(value)).toList();
   }
 
   static Map<String, DeviceLinksPerson> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, DeviceLinksPerson>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DeviceLinksPerson.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = DeviceLinksPerson.fromJson(value));
     }
     return map;
   }

@@ -8,8 +8,7 @@ class PublicationLinksAuthor {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the author associated to the given publication. */
@@ -30,17 +29,13 @@ class PublicationLinksAuthor {
   }
 
   static List<PublicationLinksAuthor> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PublicationLinksAuthor>()
-        : json.map((value) => PublicationLinksAuthor.fromJson(value)).toList();
+    return json == null ? List<PublicationLinksAuthor>() : json.map((value) => PublicationLinksAuthor.fromJson(value)).toList();
   }
 
-  static Map<String, PublicationLinksAuthor> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, PublicationLinksAuthor> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PublicationLinksAuthor>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PublicationLinksAuthor.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = PublicationLinksAuthor.fromJson(value));
     }
     return map;
   }

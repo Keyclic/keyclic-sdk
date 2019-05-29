@@ -11,8 +11,7 @@ class Publication {
     read = json['read'];
     title = json['title'];
     id = json['id'];
-    createdAt =
-        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
@@ -52,16 +51,13 @@ class Publication {
   }
 
   static List<Publication> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Publication>()
-        : json.map((value) => Publication.fromJson(value)).toList();
+    return json == null ? List<Publication>() : json.map((value) => Publication.fromJson(value)).toList();
   }
 
   static Map<String, Publication> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Publication>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = Publication.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = Publication.fromJson(value));
     }
     return map;
   }

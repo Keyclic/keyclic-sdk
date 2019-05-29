@@ -24,19 +24,13 @@ class FeedbackLinksSelfIriTemplate {
   }
 
   static List<FeedbackLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeedbackLinksSelfIriTemplate>()
-        : json
-            .map((value) => FeedbackLinksSelfIriTemplate.fromJson(value))
-            .toList();
+    return json == null ? List<FeedbackLinksSelfIriTemplate>() : json.map((value) => FeedbackLinksSelfIriTemplate.fromJson(value)).toList();
   }
 
-  static Map<String, FeedbackLinksSelfIriTemplate> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, FeedbackLinksSelfIriTemplate> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeedbackLinksSelfIriTemplate>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackLinksSelfIriTemplate.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = FeedbackLinksSelfIriTemplate.fromJson(value));
     }
     return map;
   }

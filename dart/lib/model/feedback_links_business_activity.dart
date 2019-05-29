@@ -8,8 +8,7 @@ class FeedbackLinksBusinessActivity {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the businessActivity associated to the given feedback. */
@@ -30,19 +29,13 @@ class FeedbackLinksBusinessActivity {
   }
 
   static List<FeedbackLinksBusinessActivity> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeedbackLinksBusinessActivity>()
-        : json
-            .map((value) => FeedbackLinksBusinessActivity.fromJson(value))
-            .toList();
+    return json == null ? List<FeedbackLinksBusinessActivity>() : json.map((value) => FeedbackLinksBusinessActivity.fromJson(value)).toList();
   }
 
-  static Map<String, FeedbackLinksBusinessActivity> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, FeedbackLinksBusinessActivity> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeedbackLinksBusinessActivity>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackLinksBusinessActivity.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = FeedbackLinksBusinessActivity.fromJson(value));
     }
     return map;
   }

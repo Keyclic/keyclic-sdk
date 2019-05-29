@@ -24,17 +24,13 @@ class OperationCollection {
   }
 
   static List<OperationCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OperationCollection>()
-        : json.map((value) => OperationCollection.fromJson(value)).toList();
+    return json == null ? List<OperationCollection>() : json.map((value) => OperationCollection.fromJson(value)).toList();
   }
 
-  static Map<String, OperationCollection> mapFromJson(
-      Map<String, dynamic> json) {
+  static Map<String, OperationCollection> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OperationCollection>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationCollection.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = OperationCollection.fromJson(value));
     }
     return map;
   }

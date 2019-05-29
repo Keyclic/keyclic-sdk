@@ -7,11 +7,8 @@ class ReportEmbedded {
     if (json == null) {
       return;
     }
-    stateTransitions = (json['stateTransitions'] as List)
-        ?.map((item) => item as String)
-        ?.toList();
-    targetGroups =
-        ReportEmbeddedTargetGroups.listFromJson(json['targetGroups']);
+    stateTransitions = (json['stateTransitions'] as List)?.map((item) => item as String)?.toList();
+    targetGroups = ReportEmbeddedTargetGroups.listFromJson(json['targetGroups']);
     tracking = json['tracking'];
   }
 
@@ -35,16 +32,13 @@ class ReportEmbedded {
   }
 
   static List<ReportEmbedded> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ReportEmbedded>()
-        : json.map((value) => ReportEmbedded.fromJson(value)).toList();
+    return json == null ? List<ReportEmbedded>() : json.map((value) => ReportEmbedded.fromJson(value)).toList();
   }
 
   static Map<String, ReportEmbedded> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ReportEmbedded>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReportEmbedded.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = ReportEmbedded.fromJson(value));
     }
     return map;
   }

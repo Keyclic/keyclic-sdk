@@ -52,16 +52,13 @@ class ReportLinks {
   }
 
   static List<ReportLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ReportLinks>()
-        : json.map((value) => ReportLinks.fromJson(value)).toList();
+    return json == null ? List<ReportLinks>() : json.map((value) => ReportLinks.fromJson(value)).toList();
   }
 
   static Map<String, ReportLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ReportLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReportLinks.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = ReportLinks.fromJson(value));
     }
     return map;
   }
