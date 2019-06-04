@@ -3,12 +3,14 @@ part of keyclic_sdk_api.api;
 class ApplicationApi {
   final ApiClient apiClient;
 
-  ApplicationApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  ApplicationApi([ApiClient apiClient])
+      : apiClient = apiClient ?? defaultApiClient;
 
   /// Retrieve one Application resource.
   ///
   ///
-  Future<Application> getApplicationByToken(String xKeyclicApp, String token, {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Application> getApplicationByToken(String xKeyclicApp, String token,
+      {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody;
 
     // verify required params are set
@@ -20,7 +22,9 @@ class ApplicationApi {
     }
 
     // create path and map variables
-    String path = "/applications/{token}".replaceAll("{format}", "json").replaceAll("{" + "token" + "}", token.toString());
+    String path = "/applications/{token}"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "token" + "}", token.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -32,7 +36,8 @@ class ApplicationApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType =
+        contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = [];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -42,7 +47,8 @@ class ApplicationApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
+        headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

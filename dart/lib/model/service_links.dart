@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class ServiceLinks {
-  ServiceLinks();
+  ServiceLinks({
+    this.organization,
+  });
 
   ServiceLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,16 @@ class ServiceLinks {
   }
 
   static List<ServiceLinks> listFromJson(List<dynamic> json) {
-    return json == null ? List<ServiceLinks>() : json.map((value) => ServiceLinks.fromJson(value)).toList();
+    return json == null
+        ? List<ServiceLinks>()
+        : json.map((value) => ServiceLinks.fromJson(value)).toList();
   }
 
   static Map<String, ServiceLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ServiceLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = ServiceLinks.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = ServiceLinks.fromJson(value));
     }
     return map;
   }

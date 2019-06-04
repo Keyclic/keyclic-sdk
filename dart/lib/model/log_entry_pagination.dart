@@ -1,7 +1,14 @@
 part of keyclic_sdk_api.api;
 
 class LogEntryPagination {
-  LogEntryPagination();
+  LogEntryPagination({
+    this.limit,
+    this.page,
+    this.pages,
+    this.total,
+    this.embedded,
+    this.links,
+  });
 
   LogEntryPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -44,13 +51,17 @@ class LogEntryPagination {
   }
 
   static List<LogEntryPagination> listFromJson(List<dynamic> json) {
-    return json == null ? List<LogEntryPagination>() : json.map((value) => LogEntryPagination.fromJson(value)).toList();
+    return json == null
+        ? List<LogEntryPagination>()
+        : json.map((value) => LogEntryPagination.fromJson(value)).toList();
   }
 
-  static Map<String, LogEntryPagination> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, LogEntryPagination> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, LogEntryPagination>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = LogEntryPagination.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = LogEntryPagination.fromJson(value));
     }
     return map;
   }

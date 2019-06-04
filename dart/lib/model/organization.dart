@@ -1,7 +1,21 @@
 part of keyclic_sdk_api.api;
 
 class Organization {
-  Organization();
+  Organization({
+    this.alternateName,
+    this.billingEmailAddress,
+    this.description,
+    this.name,
+    this.notificationEmailAddress,
+    this.preferences,
+    this.id,
+    this.createdAt,
+    this.updatedAt,
+    this.type,
+    this.isEnabled,
+    this.enabled,
+    this.links,
+  });
 
   Organization.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -14,11 +28,13 @@ class Organization {
     notificationEmailAddress = json['notificationEmailAddress'];
     preferences = OrganizationPreferences.fromJson(json['preferences']);
     id = json['id'];
-    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
@@ -78,13 +94,16 @@ class Organization {
   }
 
   static List<Organization> listFromJson(List<dynamic> json) {
-    return json == null ? List<Organization>() : json.map((value) => Organization.fromJson(value)).toList();
+    return json == null
+        ? List<Organization>()
+        : json.map((value) => Organization.fromJson(value)).toList();
   }
 
   static Map<String, Organization> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Organization>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Organization.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = Organization.fromJson(value));
     }
     return map;
   }

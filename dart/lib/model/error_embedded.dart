@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class ErrorEmbedded {
-  ErrorEmbedded();
+  ErrorEmbedded({
+    this.errors,
+  });
 
   ErrorEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,16 @@ class ErrorEmbedded {
   }
 
   static List<ErrorEmbedded> listFromJson(List<dynamic> json) {
-    return json == null ? List<ErrorEmbedded>() : json.map((value) => ErrorEmbedded.fromJson(value)).toList();
+    return json == null
+        ? List<ErrorEmbedded>()
+        : json.map((value) => ErrorEmbedded.fromJson(value)).toList();
   }
 
   static Map<String, ErrorEmbedded> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ErrorEmbedded>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = ErrorEmbedded.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = ErrorEmbedded.fromJson(value));
     }
     return map;
   }

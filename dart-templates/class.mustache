@@ -1,5 +1,5 @@
 class {{classname}} {
-  {{classname}}();
+  {{classname}}({ {{#vars}}this.{{name}},{{/vars}} });
 
   {{classname}}.fromJson(Map<String, dynamic> json) {
     if (json == null) {

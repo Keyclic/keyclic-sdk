@@ -1,14 +1,18 @@
 part of keyclic_sdk_api.api;
 
 class OrganizationLinksBusinessActivity {
-  OrganizationLinksBusinessActivity();
+  OrganizationLinksBusinessActivity({
+    this.href,
+    this.iriTemplate,
+  });
 
   OrganizationLinksBusinessActivity.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
     href = json['href'];
-    iriTemplate = BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate =
+        BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the businessActivity associated to the given organization. */
@@ -28,14 +32,21 @@ class OrganizationLinksBusinessActivity {
     return 'OrganizationLinksBusinessActivity[href=$href, iriTemplate=$iriTemplate, ]';
   }
 
-  static List<OrganizationLinksBusinessActivity> listFromJson(List<dynamic> json) {
-    return json == null ? List<OrganizationLinksBusinessActivity>() : json.map((value) => OrganizationLinksBusinessActivity.fromJson(value)).toList();
+  static List<OrganizationLinksBusinessActivity> listFromJson(
+      List<dynamic> json) {
+    return json == null
+        ? List<OrganizationLinksBusinessActivity>()
+        : json
+            .map((value) => OrganizationLinksBusinessActivity.fromJson(value))
+            .toList();
   }
 
-  static Map<String, OrganizationLinksBusinessActivity> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, OrganizationLinksBusinessActivity> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, OrganizationLinksBusinessActivity>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = OrganizationLinksBusinessActivity.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = OrganizationLinksBusinessActivity.fromJson(value));
     }
     return map;
   }

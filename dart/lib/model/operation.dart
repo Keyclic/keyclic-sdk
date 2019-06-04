@@ -1,7 +1,19 @@
 part of keyclic_sdk_api.api;
 
 class Operation {
-  Operation();
+  Operation({
+    this.description,
+    this.name,
+    this.scheduledAt,
+    this.id,
+    this.identificationNumber,
+    this.state,
+    this.createdAt,
+    this.updatedAt,
+    this.type,
+    this.links,
+    this.embedded,
+  });
 
   Operation.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -9,18 +21,22 @@ class Operation {
     }
     description = json['description'];
     name = json['name'];
-    scheduledAt = json['scheduledAt'] == null ? null : DateTime.parse(json['scheduledAt']);
+    scheduledAt = json['scheduledAt'] == null
+        ? null
+        : DateTime.parse(json['scheduledAt']);
     if (scheduledAt is DateTime && scheduledAt.isUtc == false) {
       scheduledAt = DateTime.parse('${scheduledAt.toIso8601String()}Z');
     }
     id = json['id'];
     identificationNumber = json['identificationNumber'];
     state = (json['state'] as List)?.map((item) => item as String)?.toList();
-    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
@@ -55,7 +71,8 @@ class Operation {
     return {
       'description': description,
       'name': name,
-      'scheduledAt': scheduledAt == null ? '' : scheduledAt.toUtc().toIso8601String(),
+      'scheduledAt':
+          scheduledAt == null ? '' : scheduledAt.toUtc().toIso8601String(),
       'id': id,
       'identificationNumber': identificationNumber,
       'state': state,
@@ -73,13 +90,16 @@ class Operation {
   }
 
   static List<Operation> listFromJson(List<dynamic> json) {
-    return json == null ? List<Operation>() : json.map((value) => Operation.fromJson(value)).toList();
+    return json == null
+        ? List<Operation>()
+        : json.map((value) => Operation.fromJson(value)).toList();
   }
 
   static Map<String, Operation> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Operation>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Operation.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Operation.fromJson(value));
     }
     return map;
   }

@@ -3,13 +3,23 @@ part of keyclic_sdk_api.api;
 class AnalyticApi {
   final ApiClient apiClient;
 
-  AnalyticApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  AnalyticApi([ApiClient apiClient])
+      : apiClient = apiClient ?? defaultApiClient;
 
   /// Retrieve one Analytic resource.
   ///
   ///
-  Future<Chart> getAnalyticByOrganization(String xKeyclicApp, String organization,
-      {String acceptLanguage, String xKeyclicAppVersion, String place, String category, String state, DateTime before, DateTime after, String options_property_, String options_sort_}) async {
+  Future<Chart> getAnalyticByOrganization(
+      String xKeyclicApp, String organization,
+      {String acceptLanguage,
+      String xKeyclicAppVersion,
+      String place,
+      String category,
+      String state,
+      DateTime before,
+      DateTime after,
+      String options_property_,
+      String options_sort_}) async {
     Object postBody;
 
     // verify required params are set
@@ -21,32 +31,41 @@ class AnalyticApi {
     }
 
     // create path and map variables
-    String path = "/organizations/{organization}/analytics".replaceAll("{format}", "json").replaceAll("{" + "organization" + "}", organization.toString());
+    String path = "/organizations/{organization}/analytics"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "organization" + "}", organization.toString());
 
     // query params
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if (place != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "place", place));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "place", place));
     }
     if (category != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "category", category));
+      queryParams.addAll(
+          _convertParametersForCollectionFormat("", "category", category));
     }
     if (state != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "state", state));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "state", state));
     }
     if (before != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "before", before));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (after != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "after", after));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
     }
     if (options_property_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "options[property]", options_property_));
+      queryParams.addAll(_convertParametersForCollectionFormat(
+          "", "options[property]", options_property_));
     }
     if (options_sort_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "options[sort]", options_sort_));
+      queryParams.addAll(_convertParametersForCollectionFormat(
+          "", "options[sort]", options_sort_));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
@@ -54,7 +73,8 @@ class AnalyticApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType =
+        contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -64,7 +84,8 @@ class AnalyticApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
+        headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

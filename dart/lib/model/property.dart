@@ -1,7 +1,19 @@
 part of keyclic_sdk_api.api;
 
 class Property {
-  Property();
+  Property({
+    this.type,
+    this.enum_,
+    this.description,
+    this.format,
+    this.maxItems,
+    this.minItems,
+    this.default_,
+    this.propertyOrder,
+    this.title,
+    this.conditions,
+    this.items,
+  });
 
   Property.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -64,13 +76,16 @@ class Property {
   }
 
   static List<Property> listFromJson(List<dynamic> json) {
-    return json == null ? List<Property>() : json.map((value) => Property.fromJson(value)).toList();
+    return json == null
+        ? List<Property>()
+        : json.map((value) => Property.fromJson(value)).toList();
   }
 
   static Map<String, Property> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Property>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Property.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Property.fromJson(value));
     }
     return map;
   }

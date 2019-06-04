@@ -1,7 +1,10 @@
 part of keyclic_sdk_api.api;
 
 class FeedbackReviewRequestLinksReview {
-  FeedbackReviewRequestLinksReview();
+  FeedbackReviewRequestLinksReview({
+    this.href,
+    this.iriTemplate,
+  });
 
   FeedbackReviewRequestLinksReview.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -28,14 +31,21 @@ class FeedbackReviewRequestLinksReview {
     return 'FeedbackReviewRequestLinksReview[href=$href, iriTemplate=$iriTemplate, ]';
   }
 
-  static List<FeedbackReviewRequestLinksReview> listFromJson(List<dynamic> json) {
-    return json == null ? List<FeedbackReviewRequestLinksReview>() : json.map((value) => FeedbackReviewRequestLinksReview.fromJson(value)).toList();
+  static List<FeedbackReviewRequestLinksReview> listFromJson(
+      List<dynamic> json) {
+    return json == null
+        ? List<FeedbackReviewRequestLinksReview>()
+        : json
+            .map((value) => FeedbackReviewRequestLinksReview.fromJson(value))
+            .toList();
   }
 
-  static Map<String, FeedbackReviewRequestLinksReview> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, FeedbackReviewRequestLinksReview> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, FeedbackReviewRequestLinksReview>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = FeedbackReviewRequestLinksReview.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackReviewRequestLinksReview.fromJson(value));
     }
     return map;
   }

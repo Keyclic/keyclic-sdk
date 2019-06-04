@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class FeedbackCollection {
-  FeedbackCollection();
+  FeedbackCollection({
+    this.items,
+  });
 
   FeedbackCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,17 @@ class FeedbackCollection {
   }
 
   static List<FeedbackCollection> listFromJson(List<dynamic> json) {
-    return json == null ? List<FeedbackCollection>() : json.map((value) => FeedbackCollection.fromJson(value)).toList();
+    return json == null
+        ? List<FeedbackCollection>()
+        : json.map((value) => FeedbackCollection.fromJson(value)).toList();
   }
 
-  static Map<String, FeedbackCollection> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, FeedbackCollection> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, FeedbackCollection>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = FeedbackCollection.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackCollection.fromJson(value));
     }
     return map;
   }

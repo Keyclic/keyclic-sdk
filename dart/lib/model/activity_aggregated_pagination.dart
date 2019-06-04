@@ -1,7 +1,13 @@
 part of keyclic_sdk_api.api;
 
 class ActivityAggregatedPagination {
-  ActivityAggregatedPagination();
+  ActivityAggregatedPagination({
+    this.duration,
+    this.next,
+    this.unseen,
+    this.unread,
+    this.results,
+  });
 
   ActivityAggregatedPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -40,13 +46,19 @@ class ActivityAggregatedPagination {
   }
 
   static List<ActivityAggregatedPagination> listFromJson(List<dynamic> json) {
-    return json == null ? List<ActivityAggregatedPagination>() : json.map((value) => ActivityAggregatedPagination.fromJson(value)).toList();
+    return json == null
+        ? List<ActivityAggregatedPagination>()
+        : json
+            .map((value) => ActivityAggregatedPagination.fromJson(value))
+            .toList();
   }
 
-  static Map<String, ActivityAggregatedPagination> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, ActivityAggregatedPagination> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, ActivityAggregatedPagination>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = ActivityAggregatedPagination.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = ActivityAggregatedPagination.fromJson(value));
     }
     return map;
   }

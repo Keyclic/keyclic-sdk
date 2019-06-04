@@ -1,7 +1,14 @@
 part of keyclic_sdk_api.api;
 
 class ServicePagination {
-  ServicePagination();
+  ServicePagination({
+    this.limit,
+    this.page,
+    this.pages,
+    this.total,
+    this.embedded,
+    this.links,
+  });
 
   ServicePagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -44,13 +51,16 @@ class ServicePagination {
   }
 
   static List<ServicePagination> listFromJson(List<dynamic> json) {
-    return json == null ? List<ServicePagination>() : json.map((value) => ServicePagination.fromJson(value)).toList();
+    return json == null
+        ? List<ServicePagination>()
+        : json.map((value) => ServicePagination.fromJson(value)).toList();
   }
 
   static Map<String, ServicePagination> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ServicePagination>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = ServicePagination.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = ServicePagination.fromJson(value));
     }
     return map;
   }

@@ -1,7 +1,10 @@
 part of keyclic_sdk_api.api;
 
 class ReviewLinks {
-  ReviewLinks();
+  ReviewLinks({
+    this.self,
+    this.author,
+  });
 
   ReviewLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -28,13 +31,16 @@ class ReviewLinks {
   }
 
   static List<ReviewLinks> listFromJson(List<dynamic> json) {
-    return json == null ? List<ReviewLinks>() : json.map((value) => ReviewLinks.fromJson(value)).toList();
+    return json == null
+        ? List<ReviewLinks>()
+        : json.map((value) => ReviewLinks.fromJson(value)).toList();
   }
 
   static Map<String, ReviewLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ReviewLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = ReviewLinks.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = ReviewLinks.fromJson(value));
     }
     return map;
   }

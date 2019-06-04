@@ -8,7 +8,8 @@ class ReadApi {
   /// Create one Read resource.
   ///
   ///
-  Future postReadByFeedAndGroup(String xKeyclicApp, String feed, String group, {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future postReadByFeedAndGroup(String xKeyclicApp, String feed, String group,
+      {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody;
 
     // verify required params are set
@@ -23,7 +24,10 @@ class ReadApi {
     }
 
     // create path and map variables
-    String path = "/feeds/{feed}/read/{group}".replaceAll("{format}", "json").replaceAll("{" + "feed" + "}", feed.toString()).replaceAll("{" + "group" + "}", group.toString());
+    String path = "/feeds/{feed}/read/{group}"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "feed" + "}", feed.toString())
+        .replaceAll("{" + "group" + "}", group.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -35,7 +39,8 @@ class ReadApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType =
+        contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -45,7 +50,8 @@ class ReadApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
+        postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

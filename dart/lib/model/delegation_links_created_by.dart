@@ -1,14 +1,18 @@
 part of keyclic_sdk_api.api;
 
 class DelegationLinksCreatedBy {
-  DelegationLinksCreatedBy();
+  DelegationLinksCreatedBy({
+    this.href,
+    this.iriTemplate,
+  });
 
   DelegationLinksCreatedBy.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
     href = json['href'];
-    iriTemplate = DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate =
+        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the createdBy associated to the given delegation. */
@@ -29,13 +33,19 @@ class DelegationLinksCreatedBy {
   }
 
   static List<DelegationLinksCreatedBy> listFromJson(List<dynamic> json) {
-    return json == null ? List<DelegationLinksCreatedBy>() : json.map((value) => DelegationLinksCreatedBy.fromJson(value)).toList();
+    return json == null
+        ? List<DelegationLinksCreatedBy>()
+        : json
+            .map((value) => DelegationLinksCreatedBy.fromJson(value))
+            .toList();
   }
 
-  static Map<String, DelegationLinksCreatedBy> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, DelegationLinksCreatedBy> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, DelegationLinksCreatedBy>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = DelegationLinksCreatedBy.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = DelegationLinksCreatedBy.fromJson(value));
     }
     return map;
   }

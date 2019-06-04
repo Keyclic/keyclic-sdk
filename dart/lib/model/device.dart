@@ -1,7 +1,11 @@
 part of keyclic_sdk_api.api;
 
 class Device {
-  Device();
+  Device({
+    this.id,
+    this.type,
+    this.links,
+  });
 
   Device.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -32,13 +36,16 @@ class Device {
   }
 
   static List<Device> listFromJson(List<dynamic> json) {
-    return json == null ? List<Device>() : json.map((value) => Device.fromJson(value)).toList();
+    return json == null
+        ? List<Device>()
+        : json.map((value) => Device.fromJson(value)).toList();
   }
 
   static Map<String, Device> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Device>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Device.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Device.fromJson(value));
     }
     return map;
   }

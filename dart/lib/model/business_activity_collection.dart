@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class BusinessActivityCollection {
-  BusinessActivityCollection();
+  BusinessActivityCollection({
+    this.items,
+  });
 
   BusinessActivityCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,19 @@ class BusinessActivityCollection {
   }
 
   static List<BusinessActivityCollection> listFromJson(List<dynamic> json) {
-    return json == null ? List<BusinessActivityCollection>() : json.map((value) => BusinessActivityCollection.fromJson(value)).toList();
+    return json == null
+        ? List<BusinessActivityCollection>()
+        : json
+            .map((value) => BusinessActivityCollection.fromJson(value))
+            .toList();
   }
 
-  static Map<String, BusinessActivityCollection> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, BusinessActivityCollection> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, BusinessActivityCollection>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = BusinessActivityCollection.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = BusinessActivityCollection.fromJson(value));
     }
     return map;
   }

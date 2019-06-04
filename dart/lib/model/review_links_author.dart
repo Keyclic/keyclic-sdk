@@ -1,14 +1,18 @@
 part of keyclic_sdk_api.api;
 
 class ReviewLinksAuthor {
-  ReviewLinksAuthor();
+  ReviewLinksAuthor({
+    this.href,
+    this.iriTemplate,
+  });
 
   ReviewLinksAuthor.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
     href = json['href'];
-    iriTemplate = DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate =
+        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the author associated to the given review. */
@@ -29,13 +33,16 @@ class ReviewLinksAuthor {
   }
 
   static List<ReviewLinksAuthor> listFromJson(List<dynamic> json) {
-    return json == null ? List<ReviewLinksAuthor>() : json.map((value) => ReviewLinksAuthor.fromJson(value)).toList();
+    return json == null
+        ? List<ReviewLinksAuthor>()
+        : json.map((value) => ReviewLinksAuthor.fromJson(value)).toList();
   }
 
   static Map<String, ReviewLinksAuthor> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ReviewLinksAuthor>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = ReviewLinksAuthor.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = ReviewLinksAuthor.fromJson(value));
     }
     return map;
   }

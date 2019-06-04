@@ -8,7 +8,9 @@ class AssignApi {
   /// Create one Assign resource.
   ///
   ///
-  Future<Operation> postAssignByOperation(String xKeyclicApp, MemberData memberData, String operation, {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Operation> postAssignByOperation(
+      String xKeyclicApp, MemberData memberData, String operation,
+      {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = memberData;
 
     // verify required params are set
@@ -23,7 +25,9 @@ class AssignApi {
     }
 
     // create path and map variables
-    String path = "/operations/{operation}/assign".replaceAll("{format}", "json").replaceAll("{" + "operation" + "}", operation.toString());
+    String path = "/operations/{operation}/assign"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "operation" + "}", operation.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -35,7 +39,8 @@ class AssignApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType =
+        contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -45,7 +50,8 @@ class AssignApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
+        postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

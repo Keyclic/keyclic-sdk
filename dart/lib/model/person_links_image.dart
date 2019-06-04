@@ -1,14 +1,18 @@
 part of keyclic_sdk_api.api;
 
 class PersonLinksImage {
-  PersonLinksImage();
+  PersonLinksImage({
+    this.href,
+    this.iriTemplate,
+  });
 
   PersonLinksImage.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
     href = json['href'];
-    iriTemplate = DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate =
+        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the image associated to the given person. */
@@ -29,13 +33,16 @@ class PersonLinksImage {
   }
 
   static List<PersonLinksImage> listFromJson(List<dynamic> json) {
-    return json == null ? List<PersonLinksImage>() : json.map((value) => PersonLinksImage.fromJson(value)).toList();
+    return json == null
+        ? List<PersonLinksImage>()
+        : json.map((value) => PersonLinksImage.fromJson(value)).toList();
   }
 
   static Map<String, PersonLinksImage> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PersonLinksImage>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = PersonLinksImage.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = PersonLinksImage.fromJson(value));
     }
     return map;
   }

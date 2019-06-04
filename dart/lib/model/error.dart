@@ -1,7 +1,11 @@
 part of keyclic_sdk_api.api;
 
 class Error {
-  Error();
+  Error({
+    this.message,
+    this.total,
+    this.embedded,
+  });
 
   Error.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -32,13 +36,16 @@ class Error {
   }
 
   static List<Error> listFromJson(List<dynamic> json) {
-    return json == null ? List<Error>() : json.map((value) => Error.fromJson(value)).toList();
+    return json == null
+        ? List<Error>()
+        : json.map((value) => Error.fromJson(value)).toList();
   }
 
   static Map<String, Error> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Error>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Error.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Error.fromJson(value));
     }
     return map;
   }

@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class FacebookConnectData {
-  FacebookConnectData();
+  FacebookConnectData({
+    this.accessToken,
+  });
 
   FacebookConnectData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,17 @@ class FacebookConnectData {
   }
 
   static List<FacebookConnectData> listFromJson(List<dynamic> json) {
-    return json == null ? List<FacebookConnectData>() : json.map((value) => FacebookConnectData.fromJson(value)).toList();
+    return json == null
+        ? List<FacebookConnectData>()
+        : json.map((value) => FacebookConnectData.fromJson(value)).toList();
   }
 
-  static Map<String, FacebookConnectData> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, FacebookConnectData> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, FacebookConnectData>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = FacebookConnectData.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = FacebookConnectData.fromJson(value));
     }
     return map;
   }

@@ -1,7 +1,18 @@
 part of keyclic_sdk_api.api;
 
 class Feedback {
-  Feedback();
+  Feedback({
+    this.description,
+    this.geoCoordinates,
+    this.metadata,
+    this.id,
+    this.state,
+    this.createdAt,
+    this.type,
+    this.public,
+    this.links,
+    this.embedded,
+  });
 
   Feedback.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -12,7 +23,8 @@ class Feedback {
     metadata = json['metadata'];
     id = json['id'];
     state = (json['state'] as List)?.map((item) => item as String)?.toList();
-    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
@@ -63,13 +75,16 @@ class Feedback {
   }
 
   static List<Feedback> listFromJson(List<dynamic> json) {
-    return json == null ? List<Feedback>() : json.map((value) => Feedback.fromJson(value)).toList();
+    return json == null
+        ? List<Feedback>()
+        : json.map((value) => Feedback.fromJson(value)).toList();
   }
 
   static Map<String, Feedback> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Feedback>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Feedback.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Feedback.fromJson(value));
     }
     return map;
   }

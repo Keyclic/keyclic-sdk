@@ -1,7 +1,17 @@
 part of keyclic_sdk_api.api;
 
 class Choice {
-  Choice();
+  Choice({
+    this.type,
+    this.enum_,
+    this.description,
+    this.format,
+    this.maxItems,
+    this.minItems,
+    this.default_,
+    this.propertyOrder,
+    this.title,
+  });
 
   Choice.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -56,13 +66,16 @@ class Choice {
   }
 
   static List<Choice> listFromJson(List<dynamic> json) {
-    return json == null ? List<Choice>() : json.map((value) => Choice.fromJson(value)).toList();
+    return json == null
+        ? List<Choice>()
+        : json.map((value) => Choice.fromJson(value)).toList();
   }
 
   static Map<String, Choice> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Choice>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Choice.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Choice.fromJson(value));
     }
     return map;
   }

@@ -1,13 +1,18 @@
 part of keyclic_sdk_api.api;
 
 class Checkpoint {
-  Checkpoint();
+  Checkpoint({
+    this.createdAt,
+    this.state,
+    this.links,
+  });
 
   Checkpoint.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
@@ -35,13 +40,16 @@ class Checkpoint {
   }
 
   static List<Checkpoint> listFromJson(List<dynamic> json) {
-    return json == null ? List<Checkpoint>() : json.map((value) => Checkpoint.fromJson(value)).toList();
+    return json == null
+        ? List<Checkpoint>()
+        : json.map((value) => Checkpoint.fromJson(value)).toList();
   }
 
   static Map<String, Checkpoint> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Checkpoint>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Checkpoint.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Checkpoint.fromJson(value));
     }
     return map;
   }

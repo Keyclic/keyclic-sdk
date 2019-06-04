@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class DocumentDataPermission {
-  DocumentDataPermission();
+  DocumentDataPermission({
+    this.targetGroup,
+  });
 
   DocumentDataPermission.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,17 @@ class DocumentDataPermission {
   }
 
   static List<DocumentDataPermission> listFromJson(List<dynamic> json) {
-    return json == null ? List<DocumentDataPermission>() : json.map((value) => DocumentDataPermission.fromJson(value)).toList();
+    return json == null
+        ? List<DocumentDataPermission>()
+        : json.map((value) => DocumentDataPermission.fromJson(value)).toList();
   }
 
-  static Map<String, DocumentDataPermission> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, DocumentDataPermission> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, DocumentDataPermission>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = DocumentDataPermission.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = DocumentDataPermission.fromJson(value));
     }
     return map;
   }

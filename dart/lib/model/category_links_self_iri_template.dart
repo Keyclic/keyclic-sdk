@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class CategoryLinksSelfIriTemplate {
-  CategoryLinksSelfIriTemplate();
+  CategoryLinksSelfIriTemplate({
+    this.mapping,
+  });
 
   CategoryLinksSelfIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,19 @@ class CategoryLinksSelfIriTemplate {
   }
 
   static List<CategoryLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null ? List<CategoryLinksSelfIriTemplate>() : json.map((value) => CategoryLinksSelfIriTemplate.fromJson(value)).toList();
+    return json == null
+        ? List<CategoryLinksSelfIriTemplate>()
+        : json
+            .map((value) => CategoryLinksSelfIriTemplate.fromJson(value))
+            .toList();
   }
 
-  static Map<String, CategoryLinksSelfIriTemplate> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, CategoryLinksSelfIriTemplate> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, CategoryLinksSelfIriTemplate>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = CategoryLinksSelfIriTemplate.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = CategoryLinksSelfIriTemplate.fromJson(value));
     }
     return map;
   }

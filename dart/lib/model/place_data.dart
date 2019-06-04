@@ -1,7 +1,11 @@
 part of keyclic_sdk_api.api;
 
 class PlaceData {
-  PlaceData();
+  PlaceData({
+    this.name,
+    this.branchCode,
+    this.polygon,
+  });
 
   PlaceData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -32,13 +36,16 @@ class PlaceData {
   }
 
   static List<PlaceData> listFromJson(List<dynamic> json) {
-    return json == null ? List<PlaceData>() : json.map((value) => PlaceData.fromJson(value)).toList();
+    return json == null
+        ? List<PlaceData>()
+        : json.map((value) => PlaceData.fromJson(value)).toList();
   }
 
   static Map<String, PlaceData> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PlaceData>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = PlaceData.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = PlaceData.fromJson(value));
     }
     return map;
   }

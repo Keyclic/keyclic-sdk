@@ -8,7 +8,9 @@ class ChangeApi {
   /// Create one Change resource.
   ///
   ///
-  Future postChangeByToken(String xKeyclicApp, PasswordData passwordData, String token, {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future postChangeByToken(
+      String xKeyclicApp, PasswordData passwordData, String token,
+      {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = passwordData;
 
     // verify required params are set
@@ -23,7 +25,9 @@ class ChangeApi {
     }
 
     // create path and map variables
-    String path = "/security/password/change/{token}".replaceAll("{format}", "json").replaceAll("{" + "token" + "}", token.toString());
+    String path = "/security/password/change/{token}"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "token" + "}", token.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -35,7 +39,8 @@ class ChangeApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType =
+        contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = [];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -45,7 +50,8 @@ class ChangeApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
+        postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

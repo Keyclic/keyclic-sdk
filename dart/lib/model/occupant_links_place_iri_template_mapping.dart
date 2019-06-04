@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class OccupantLinksPlaceIriTemplateMapping {
-  OccupantLinksPlaceIriTemplateMapping();
+  OccupantLinksPlaceIriTemplateMapping({
+    this.place,
+  });
 
   OccupantLinksPlaceIriTemplateMapping.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -23,14 +25,22 @@ class OccupantLinksPlaceIriTemplateMapping {
     return 'OccupantLinksPlaceIriTemplateMapping[place=$place, ]';
   }
 
-  static List<OccupantLinksPlaceIriTemplateMapping> listFromJson(List<dynamic> json) {
-    return json == null ? List<OccupantLinksPlaceIriTemplateMapping>() : json.map((value) => OccupantLinksPlaceIriTemplateMapping.fromJson(value)).toList();
+  static List<OccupantLinksPlaceIriTemplateMapping> listFromJson(
+      List<dynamic> json) {
+    return json == null
+        ? List<OccupantLinksPlaceIriTemplateMapping>()
+        : json
+            .map(
+                (value) => OccupantLinksPlaceIriTemplateMapping.fromJson(value))
+            .toList();
   }
 
-  static Map<String, OccupantLinksPlaceIriTemplateMapping> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, OccupantLinksPlaceIriTemplateMapping> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, OccupantLinksPlaceIriTemplateMapping>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = OccupantLinksPlaceIriTemplateMapping.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = OccupantLinksPlaceIriTemplateMapping.fromJson(value));
     }
     return map;
   }

@@ -1,7 +1,10 @@
 part of keyclic_sdk_api.api;
 
 class ReportLinksCategory {
-  ReportLinksCategory();
+  ReportLinksCategory({
+    this.href,
+    this.iriTemplate,
+  });
 
   ReportLinksCategory.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -29,13 +32,17 @@ class ReportLinksCategory {
   }
 
   static List<ReportLinksCategory> listFromJson(List<dynamic> json) {
-    return json == null ? List<ReportLinksCategory>() : json.map((value) => ReportLinksCategory.fromJson(value)).toList();
+    return json == null
+        ? List<ReportLinksCategory>()
+        : json.map((value) => ReportLinksCategory.fromJson(value)).toList();
   }
 
-  static Map<String, ReportLinksCategory> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, ReportLinksCategory> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, ReportLinksCategory>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = ReportLinksCategory.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = ReportLinksCategory.fromJson(value));
     }
     return map;
   }

@@ -1,7 +1,11 @@
 part of keyclic_sdk_api.api;
 
 class DocumentDataFile {
-  DocumentDataFile();
+  DocumentDataFile({
+    this.content,
+    this.contentType,
+    this.name,
+  });
 
   DocumentDataFile.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -32,13 +36,16 @@ class DocumentDataFile {
   }
 
   static List<DocumentDataFile> listFromJson(List<dynamic> json) {
-    return json == null ? List<DocumentDataFile>() : json.map((value) => DocumentDataFile.fromJson(value)).toList();
+    return json == null
+        ? List<DocumentDataFile>()
+        : json.map((value) => DocumentDataFile.fromJson(value)).toList();
   }
 
   static Map<String, DocumentDataFile> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, DocumentDataFile>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = DocumentDataFile.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = DocumentDataFile.fromJson(value));
     }
     return map;
   }

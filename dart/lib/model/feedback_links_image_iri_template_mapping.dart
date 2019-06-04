@@ -1,7 +1,10 @@
 part of keyclic_sdk_api.api;
 
 class FeedbackLinksImageIriTemplateMapping {
-  FeedbackLinksImageIriTemplateMapping();
+  FeedbackLinksImageIriTemplateMapping({
+    this.image,
+    this.feedback,
+  });
 
   FeedbackLinksImageIriTemplateMapping.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -27,14 +30,22 @@ class FeedbackLinksImageIriTemplateMapping {
     return 'FeedbackLinksImageIriTemplateMapping[image=$image, feedback=$feedback, ]';
   }
 
-  static List<FeedbackLinksImageIriTemplateMapping> listFromJson(List<dynamic> json) {
-    return json == null ? List<FeedbackLinksImageIriTemplateMapping>() : json.map((value) => FeedbackLinksImageIriTemplateMapping.fromJson(value)).toList();
+  static List<FeedbackLinksImageIriTemplateMapping> listFromJson(
+      List<dynamic> json) {
+    return json == null
+        ? List<FeedbackLinksImageIriTemplateMapping>()
+        : json
+            .map(
+                (value) => FeedbackLinksImageIriTemplateMapping.fromJson(value))
+            .toList();
   }
 
-  static Map<String, FeedbackLinksImageIriTemplateMapping> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, FeedbackLinksImageIriTemplateMapping> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, FeedbackLinksImageIriTemplateMapping>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = FeedbackLinksImageIriTemplateMapping.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackLinksImageIriTemplateMapping.fromJson(value));
     }
     return map;
   }

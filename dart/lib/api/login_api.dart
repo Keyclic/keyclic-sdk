@@ -8,7 +8,8 @@ class LoginApi {
   /// Create one Login resource.
   ///
   ///
-  Future<SuccessLogin> postLogin(String xKeyclicApp, LoginData loginData, {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<SuccessLogin> postLogin(String xKeyclicApp, LoginData loginData,
+      {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = loginData;
 
     // verify required params are set
@@ -32,7 +33,8 @@ class LoginApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType =
+        contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = [];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -42,12 +44,14 @@ class LoginApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
+        postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'SuccessLogin') as SuccessLogin;
+      return apiClient.deserialize(response.body, 'SuccessLogin')
+          as SuccessLogin;
     } else {
       return null;
     }

@@ -1,7 +1,10 @@
 part of keyclic_sdk_api.api;
 
 class DeviceData {
-  DeviceData();
+  DeviceData({
+    this.token,
+    this.platform,
+  });
 
   DeviceData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -28,13 +31,16 @@ class DeviceData {
   }
 
   static List<DeviceData> listFromJson(List<dynamic> json) {
-    return json == null ? List<DeviceData>() : json.map((value) => DeviceData.fromJson(value)).toList();
+    return json == null
+        ? List<DeviceData>()
+        : json.map((value) => DeviceData.fromJson(value)).toList();
   }
 
   static Map<String, DeviceData> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, DeviceData>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = DeviceData.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = DeviceData.fromJson(value));
     }
     return map;
   }

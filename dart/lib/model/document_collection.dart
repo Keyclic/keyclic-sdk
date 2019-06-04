@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class DocumentCollection {
-  DocumentCollection();
+  DocumentCollection({
+    this.items,
+  });
 
   DocumentCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,17 @@ class DocumentCollection {
   }
 
   static List<DocumentCollection> listFromJson(List<dynamic> json) {
-    return json == null ? List<DocumentCollection>() : json.map((value) => DocumentCollection.fromJson(value)).toList();
+    return json == null
+        ? List<DocumentCollection>()
+        : json.map((value) => DocumentCollection.fromJson(value)).toList();
   }
 
-  static Map<String, DocumentCollection> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, DocumentCollection> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, DocumentCollection>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = DocumentCollection.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = DocumentCollection.fromJson(value));
     }
     return map;
   }

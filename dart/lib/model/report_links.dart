@@ -1,7 +1,16 @@
 part of keyclic_sdk_api.api;
 
 class ReportLinks {
-  ReportLinks();
+  ReportLinks({
+    this.self,
+    this.feedback,
+    this.operations,
+    this.organization,
+    this.category,
+    this.delegatedTo,
+    this.delegatedFrom,
+    this.tracking,
+  });
 
   ReportLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -52,13 +61,16 @@ class ReportLinks {
   }
 
   static List<ReportLinks> listFromJson(List<dynamic> json) {
-    return json == null ? List<ReportLinks>() : json.map((value) => ReportLinks.fromJson(value)).toList();
+    return json == null
+        ? List<ReportLinks>()
+        : json.map((value) => ReportLinks.fromJson(value)).toList();
   }
 
   static Map<String, ReportLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, ReportLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = ReportLinks.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = ReportLinks.fromJson(value));
     }
     return map;
   }

@@ -1,7 +1,10 @@
 part of keyclic_sdk_api.api;
 
 class FeedbackLinksTracking {
-  FeedbackLinksTracking();
+  FeedbackLinksTracking({
+    this.href,
+    this.iriTemplate,
+  });
 
   FeedbackLinksTracking.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -29,13 +32,17 @@ class FeedbackLinksTracking {
   }
 
   static List<FeedbackLinksTracking> listFromJson(List<dynamic> json) {
-    return json == null ? List<FeedbackLinksTracking>() : json.map((value) => FeedbackLinksTracking.fromJson(value)).toList();
+    return json == null
+        ? List<FeedbackLinksTracking>()
+        : json.map((value) => FeedbackLinksTracking.fromJson(value)).toList();
   }
 
-  static Map<String, FeedbackLinksTracking> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, FeedbackLinksTracking> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, FeedbackLinksTracking>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = FeedbackLinksTracking.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackLinksTracking.fromJson(value));
     }
     return map;
   }

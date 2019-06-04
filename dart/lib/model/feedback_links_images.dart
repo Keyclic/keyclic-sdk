@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class FeedbackLinksImages {
-  FeedbackLinksImages();
+  FeedbackLinksImages({
+    this.href,
+  });
 
   FeedbackLinksImages.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,17 @@ class FeedbackLinksImages {
   }
 
   static List<FeedbackLinksImages> listFromJson(List<dynamic> json) {
-    return json == null ? List<FeedbackLinksImages>() : json.map((value) => FeedbackLinksImages.fromJson(value)).toList();
+    return json == null
+        ? List<FeedbackLinksImages>()
+        : json.map((value) => FeedbackLinksImages.fromJson(value)).toList();
   }
 
-  static Map<String, FeedbackLinksImages> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, FeedbackLinksImages> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, FeedbackLinksImages>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = FeedbackLinksImages.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackLinksImages.fromJson(value));
     }
     return map;
   }

@@ -1,15 +1,23 @@
 part of keyclic_sdk_api.api;
 
 class FeedbackReviewRequestLinks {
-  FeedbackReviewRequestLinks();
+  FeedbackReviewRequestLinks({
+    this.self,
+    this.itemToReview,
+    this.organization,
+    this.reviewer,
+    this.review,
+  });
 
   FeedbackReviewRequestLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
     self = FeedbackReviewRequestLinksSelf.fromJson(json['self']);
-    itemToReview = FeedbackReviewRequestLinksItemToReview.fromJson(json['itemToReview']);
-    organization = FeedbackReviewRequestLinksOrganization.fromJson(json['organization']);
+    itemToReview =
+        FeedbackReviewRequestLinksItemToReview.fromJson(json['itemToReview']);
+    organization =
+        FeedbackReviewRequestLinksOrganization.fromJson(json['organization']);
     reviewer = FeedbackReviewRequestLinksReviewer.fromJson(json['reviewer']);
     review = FeedbackReviewRequestLinksReview.fromJson(json['review']);
   }
@@ -40,13 +48,19 @@ class FeedbackReviewRequestLinks {
   }
 
   static List<FeedbackReviewRequestLinks> listFromJson(List<dynamic> json) {
-    return json == null ? List<FeedbackReviewRequestLinks>() : json.map((value) => FeedbackReviewRequestLinks.fromJson(value)).toList();
+    return json == null
+        ? List<FeedbackReviewRequestLinks>()
+        : json
+            .map((value) => FeedbackReviewRequestLinks.fromJson(value))
+            .toList();
   }
 
-  static Map<String, FeedbackReviewRequestLinks> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, FeedbackReviewRequestLinks> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, FeedbackReviewRequestLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = FeedbackReviewRequestLinks.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackReviewRequestLinks.fromJson(value));
     }
     return map;
   }

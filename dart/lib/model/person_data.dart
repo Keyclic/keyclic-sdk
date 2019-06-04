@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class PersonData {
-  PersonData();
+  PersonData({
+    this.person,
+  });
 
   PersonData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,16 @@ class PersonData {
   }
 
   static List<PersonData> listFromJson(List<dynamic> json) {
-    return json == null ? List<PersonData>() : json.map((value) => PersonData.fromJson(value)).toList();
+    return json == null
+        ? List<PersonData>()
+        : json.map((value) => PersonData.fromJson(value)).toList();
   }
 
   static Map<String, PersonData> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PersonData>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = PersonData.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = PersonData.fromJson(value));
     }
     return map;
   }

@@ -1,7 +1,10 @@
 part of keyclic_sdk_api.api;
 
 class DelegationLinksSelf {
-  DelegationLinksSelf();
+  DelegationLinksSelf({
+    this.href,
+    this.iriTemplate,
+  });
 
   DelegationLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -29,13 +32,17 @@ class DelegationLinksSelf {
   }
 
   static List<DelegationLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null ? List<DelegationLinksSelf>() : json.map((value) => DelegationLinksSelf.fromJson(value)).toList();
+    return json == null
+        ? List<DelegationLinksSelf>()
+        : json.map((value) => DelegationLinksSelf.fromJson(value)).toList();
   }
 
-  static Map<String, DelegationLinksSelf> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, DelegationLinksSelf> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, DelegationLinksSelf>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = DelegationLinksSelf.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = DelegationLinksSelf.fromJson(value));
     }
     return map;
   }

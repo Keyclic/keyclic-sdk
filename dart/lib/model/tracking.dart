@@ -1,7 +1,12 @@
 part of keyclic_sdk_api.api;
 
 class Tracking {
-  Tracking();
+  Tracking({
+    this.state,
+    this.progression,
+    this.time,
+    this.checkpoints,
+  });
 
   Tracking.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -36,13 +41,16 @@ class Tracking {
   }
 
   static List<Tracking> listFromJson(List<dynamic> json) {
-    return json == null ? List<Tracking>() : json.map((value) => Tracking.fromJson(value)).toList();
+    return json == null
+        ? List<Tracking>()
+        : json.map((value) => Tracking.fromJson(value)).toList();
   }
 
   static Map<String, Tracking> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Tracking>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Tracking.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Tracking.fromJson(value));
     }
     return map;
   }

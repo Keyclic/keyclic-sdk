@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class CategoryCollection {
-  CategoryCollection();
+  CategoryCollection({
+    this.items,
+  });
 
   CategoryCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,17 @@ class CategoryCollection {
   }
 
   static List<CategoryCollection> listFromJson(List<dynamic> json) {
-    return json == null ? List<CategoryCollection>() : json.map((value) => CategoryCollection.fromJson(value)).toList();
+    return json == null
+        ? List<CategoryCollection>()
+        : json.map((value) => CategoryCollection.fromJson(value)).toList();
   }
 
-  static Map<String, CategoryCollection> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, CategoryCollection> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, CategoryCollection>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = CategoryCollection.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = CategoryCollection.fromJson(value));
     }
     return map;
   }

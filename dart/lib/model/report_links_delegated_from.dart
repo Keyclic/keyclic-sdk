@@ -1,14 +1,18 @@
 part of keyclic_sdk_api.api;
 
 class ReportLinksDelegatedFrom {
-  ReportLinksDelegatedFrom();
+  ReportLinksDelegatedFrom({
+    this.href,
+    this.iriTemplate,
+  });
 
   ReportLinksDelegatedFrom.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
     href = json['href'];
-    iriTemplate = CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate =
+        CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the delegatedFrom associated to the given report. */
@@ -29,13 +33,19 @@ class ReportLinksDelegatedFrom {
   }
 
   static List<ReportLinksDelegatedFrom> listFromJson(List<dynamic> json) {
-    return json == null ? List<ReportLinksDelegatedFrom>() : json.map((value) => ReportLinksDelegatedFrom.fromJson(value)).toList();
+    return json == null
+        ? List<ReportLinksDelegatedFrom>()
+        : json
+            .map((value) => ReportLinksDelegatedFrom.fromJson(value))
+            .toList();
   }
 
-  static Map<String, ReportLinksDelegatedFrom> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, ReportLinksDelegatedFrom> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, ReportLinksDelegatedFrom>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = ReportLinksDelegatedFrom.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = ReportLinksDelegatedFrom.fromJson(value));
     }
     return map;
   }

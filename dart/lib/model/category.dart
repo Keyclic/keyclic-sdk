@@ -1,7 +1,16 @@
 part of keyclic_sdk_api.api;
 
 class Category {
-  Category();
+  Category({
+    this.color,
+    this.icon,
+    this.name,
+    this.id,
+    this.identificationNumber,
+    this.createdAt,
+    this.type,
+    this.links,
+  });
 
   Category.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -12,7 +21,8 @@ class Category {
     name = json['name'];
     id = json['id'];
     identificationNumber = json['identificationNumber'];
-    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
@@ -55,13 +65,16 @@ class Category {
   }
 
   static List<Category> listFromJson(List<dynamic> json) {
-    return json == null ? List<Category>() : json.map((value) => Category.fromJson(value)).toList();
+    return json == null
+        ? List<Category>()
+        : json.map((value) => Category.fromJson(value)).toList();
   }
 
   static Map<String, Category> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Category>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Category.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Category.fromJson(value));
     }
     return map;
   }

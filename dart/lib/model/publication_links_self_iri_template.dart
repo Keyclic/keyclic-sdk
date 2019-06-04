@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class PublicationLinksSelfIriTemplate {
-  PublicationLinksSelfIriTemplate();
+  PublicationLinksSelfIriTemplate({
+    this.mapping,
+  });
 
   PublicationLinksSelfIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -23,14 +25,21 @@ class PublicationLinksSelfIriTemplate {
     return 'PublicationLinksSelfIriTemplate[mapping=$mapping, ]';
   }
 
-  static List<PublicationLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null ? List<PublicationLinksSelfIriTemplate>() : json.map((value) => PublicationLinksSelfIriTemplate.fromJson(value)).toList();
+  static List<PublicationLinksSelfIriTemplate> listFromJson(
+      List<dynamic> json) {
+    return json == null
+        ? List<PublicationLinksSelfIriTemplate>()
+        : json
+            .map((value) => PublicationLinksSelfIriTemplate.fromJson(value))
+            .toList();
   }
 
-  static Map<String, PublicationLinksSelfIriTemplate> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, PublicationLinksSelfIriTemplate> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, PublicationLinksSelfIriTemplate>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = PublicationLinksSelfIriTemplate.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = PublicationLinksSelfIriTemplate.fromJson(value));
     }
     return map;
   }

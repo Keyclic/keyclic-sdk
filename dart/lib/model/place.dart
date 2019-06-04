@@ -1,7 +1,17 @@
 part of keyclic_sdk_api.api;
 
 class Place {
-  Place();
+  Place({
+    this.branchCode,
+    this.description,
+    this.geo,
+    this.name,
+    this.id,
+    this.createdAt,
+    this.updatedAt,
+    this.type,
+    this.links,
+  });
 
   Place.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -12,11 +22,13 @@ class Place {
     geo = PlaceGeo.fromJson(json['geo']);
     name = json['name'];
     id = json['id'];
-    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
@@ -62,13 +74,16 @@ class Place {
   }
 
   static List<Place> listFromJson(List<dynamic> json) {
-    return json == null ? List<Place>() : json.map((value) => Place.fromJson(value)).toList();
+    return json == null
+        ? List<Place>()
+        : json.map((value) => Place.fromJson(value)).toList();
   }
 
   static Map<String, Place> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Place>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Place.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Place.fromJson(value));
     }
     return map;
   }

@@ -1,7 +1,14 @@
 part of keyclic_sdk_api.api;
 
 class Member {
-  Member();
+  Member({
+    this.roles,
+    this.id,
+    this.createdAt,
+    this.type,
+    this.links,
+    this.embedded,
+  });
 
   Member.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -9,7 +16,8 @@ class Member {
     }
     roles = (json['roles'] as List)?.map((item) => item as String)?.toList();
     id = json['id'];
-    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
@@ -47,13 +55,16 @@ class Member {
   }
 
   static List<Member> listFromJson(List<dynamic> json) {
-    return json == null ? List<Member>() : json.map((value) => Member.fromJson(value)).toList();
+    return json == null
+        ? List<Member>()
+        : json.map((value) => Member.fromJson(value)).toList();
   }
 
   static Map<String, Member> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Member>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Member.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Member.fromJson(value));
     }
     return map;
   }

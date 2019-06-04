@@ -1,7 +1,14 @@
 part of keyclic_sdk_api.api;
 
 class BusinessActivity {
-  BusinessActivity();
+  BusinessActivity({
+    this.alternateName,
+    this.name,
+    this.id,
+    this.type,
+    this.metadataSchema,
+    this.links,
+  });
 
   BusinessActivity.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -11,7 +18,8 @@ class BusinessActivity {
     name = json['name'];
     id = json['id'];
     type = json['type'];
-    metadataSchema = BusinessActivityMetadataSchema.fromJson(json['metadataSchema']);
+    metadataSchema =
+        BusinessActivityMetadataSchema.fromJson(json['metadataSchema']);
     links = BusinessActivityLinks.fromJson(json['_links']);
   }
 
@@ -44,13 +52,16 @@ class BusinessActivity {
   }
 
   static List<BusinessActivity> listFromJson(List<dynamic> json) {
-    return json == null ? List<BusinessActivity>() : json.map((value) => BusinessActivity.fromJson(value)).toList();
+    return json == null
+        ? List<BusinessActivity>()
+        : json.map((value) => BusinessActivity.fromJson(value)).toList();
   }
 
   static Map<String, BusinessActivity> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, BusinessActivity>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = BusinessActivity.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = BusinessActivity.fromJson(value));
     }
     return map;
   }

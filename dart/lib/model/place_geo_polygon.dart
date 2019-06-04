@@ -1,7 +1,10 @@
 part of keyclic_sdk_api.api;
 
 class PlaceGeoPolygon {
-  PlaceGeoPolygon();
+  PlaceGeoPolygon({
+    this.type,
+    this.features,
+  });
 
   PlaceGeoPolygon.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -28,13 +31,16 @@ class PlaceGeoPolygon {
   }
 
   static List<PlaceGeoPolygon> listFromJson(List<dynamic> json) {
-    return json == null ? List<PlaceGeoPolygon>() : json.map((value) => PlaceGeoPolygon.fromJson(value)).toList();
+    return json == null
+        ? List<PlaceGeoPolygon>()
+        : json.map((value) => PlaceGeoPolygon.fromJson(value)).toList();
   }
 
   static Map<String, PlaceGeoPolygon> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PlaceGeoPolygon>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = PlaceGeoPolygon.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = PlaceGeoPolygon.fromJson(value));
     }
     return map;
   }

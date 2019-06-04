@@ -1,7 +1,11 @@
 part of keyclic_sdk_api.api;
 
 class MemberLinks {
-  MemberLinks();
+  MemberLinks({
+    this.self,
+    this.person,
+    this.organization,
+  });
 
   MemberLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -32,13 +36,16 @@ class MemberLinks {
   }
 
   static List<MemberLinks> listFromJson(List<dynamic> json) {
-    return json == null ? List<MemberLinks>() : json.map((value) => MemberLinks.fromJson(value)).toList();
+    return json == null
+        ? List<MemberLinks>()
+        : json.map((value) => MemberLinks.fromJson(value)).toList();
   }
 
   static Map<String, MemberLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, MemberLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = MemberLinks.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = MemberLinks.fromJson(value));
     }
     return map;
   }

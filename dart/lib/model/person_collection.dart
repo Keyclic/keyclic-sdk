@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class PersonCollection {
-  PersonCollection();
+  PersonCollection({
+    this.items,
+  });
 
   PersonCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,16 @@ class PersonCollection {
   }
 
   static List<PersonCollection> listFromJson(List<dynamic> json) {
-    return json == null ? List<PersonCollection>() : json.map((value) => PersonCollection.fromJson(value)).toList();
+    return json == null
+        ? List<PersonCollection>()
+        : json.map((value) => PersonCollection.fromJson(value)).toList();
   }
 
   static Map<String, PersonCollection> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PersonCollection>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = PersonCollection.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = PersonCollection.fromJson(value));
     }
     return map;
   }

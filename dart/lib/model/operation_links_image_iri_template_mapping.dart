@@ -1,7 +1,10 @@
 part of keyclic_sdk_api.api;
 
 class OperationLinksImageIriTemplateMapping {
-  OperationLinksImageIriTemplateMapping();
+  OperationLinksImageIriTemplateMapping({
+    this.image,
+    this.operation,
+  });
 
   OperationLinksImageIriTemplateMapping.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -27,14 +30,22 @@ class OperationLinksImageIriTemplateMapping {
     return 'OperationLinksImageIriTemplateMapping[image=$image, operation=$operation, ]';
   }
 
-  static List<OperationLinksImageIriTemplateMapping> listFromJson(List<dynamic> json) {
-    return json == null ? List<OperationLinksImageIriTemplateMapping>() : json.map((value) => OperationLinksImageIriTemplateMapping.fromJson(value)).toList();
+  static List<OperationLinksImageIriTemplateMapping> listFromJson(
+      List<dynamic> json) {
+    return json == null
+        ? List<OperationLinksImageIriTemplateMapping>()
+        : json
+            .map((value) =>
+                OperationLinksImageIriTemplateMapping.fromJson(value))
+            .toList();
   }
 
-  static Map<String, OperationLinksImageIriTemplateMapping> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, OperationLinksImageIriTemplateMapping> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, OperationLinksImageIriTemplateMapping>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = OperationLinksImageIriTemplateMapping.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = OperationLinksImageIriTemplateMapping.fromJson(value));
     }
     return map;
   }

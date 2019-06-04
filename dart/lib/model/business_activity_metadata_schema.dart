@@ -1,13 +1,17 @@
 part of keyclic_sdk_api.api;
 
 class BusinessActivityMetadataSchema {
-  BusinessActivityMetadataSchema();
+  BusinessActivityMetadataSchema({
+    this.required,
+    this.properties,
+  });
 
   BusinessActivityMetadataSchema.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    required = (json['required'] as List)?.map((item) => item as String)?.toList();
+    required =
+        (json['required'] as List)?.map((item) => item as String)?.toList();
     properties = Property.mapFromJson(json['properties']);
   }
 
@@ -28,13 +32,19 @@ class BusinessActivityMetadataSchema {
   }
 
   static List<BusinessActivityMetadataSchema> listFromJson(List<dynamic> json) {
-    return json == null ? List<BusinessActivityMetadataSchema>() : json.map((value) => BusinessActivityMetadataSchema.fromJson(value)).toList();
+    return json == null
+        ? List<BusinessActivityMetadataSchema>()
+        : json
+            .map((value) => BusinessActivityMetadataSchema.fromJson(value))
+            .toList();
   }
 
-  static Map<String, BusinessActivityMetadataSchema> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, BusinessActivityMetadataSchema> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, BusinessActivityMetadataSchema>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = BusinessActivityMetadataSchema.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = BusinessActivityMetadataSchema.fromJson(value));
     }
     return map;
   }

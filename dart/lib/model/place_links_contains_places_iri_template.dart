@@ -1,13 +1,16 @@
 part of keyclic_sdk_api.api;
 
 class PlaceLinksContainsPlacesIriTemplate {
-  PlaceLinksContainsPlacesIriTemplate();
+  PlaceLinksContainsPlacesIriTemplate({
+    this.mapping,
+  });
 
   PlaceLinksContainsPlacesIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    mapping = PlaceLinksContainsPlacesIriTemplateMapping.fromJson(json['mapping']);
+    mapping =
+        PlaceLinksContainsPlacesIriTemplateMapping.fromJson(json['mapping']);
   }
 
   PlaceLinksContainsPlacesIriTemplateMapping mapping;
@@ -23,14 +26,21 @@ class PlaceLinksContainsPlacesIriTemplate {
     return 'PlaceLinksContainsPlacesIriTemplate[mapping=$mapping, ]';
   }
 
-  static List<PlaceLinksContainsPlacesIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null ? List<PlaceLinksContainsPlacesIriTemplate>() : json.map((value) => PlaceLinksContainsPlacesIriTemplate.fromJson(value)).toList();
+  static List<PlaceLinksContainsPlacesIriTemplate> listFromJson(
+      List<dynamic> json) {
+    return json == null
+        ? List<PlaceLinksContainsPlacesIriTemplate>()
+        : json
+            .map((value) => PlaceLinksContainsPlacesIriTemplate.fromJson(value))
+            .toList();
   }
 
-  static Map<String, PlaceLinksContainsPlacesIriTemplate> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, PlaceLinksContainsPlacesIriTemplate> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, PlaceLinksContainsPlacesIriTemplate>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = PlaceLinksContainsPlacesIriTemplate.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = PlaceLinksContainsPlacesIriTemplate.fromJson(value));
     }
     return map;
   }

@@ -1,7 +1,10 @@
 part of keyclic_sdk_api.api;
 
 class SignatureDataSigner {
-  SignatureDataSigner();
+  SignatureDataSigner({
+    this.familyName,
+    this.givenName,
+  });
 
   SignatureDataSigner.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -28,13 +31,17 @@ class SignatureDataSigner {
   }
 
   static List<SignatureDataSigner> listFromJson(List<dynamic> json) {
-    return json == null ? List<SignatureDataSigner>() : json.map((value) => SignatureDataSigner.fromJson(value)).toList();
+    return json == null
+        ? List<SignatureDataSigner>()
+        : json.map((value) => SignatureDataSigner.fromJson(value)).toList();
   }
 
-  static Map<String, SignatureDataSigner> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, SignatureDataSigner> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, SignatureDataSigner>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = SignatureDataSigner.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = SignatureDataSigner.fromJson(value));
     }
     return map;
   }

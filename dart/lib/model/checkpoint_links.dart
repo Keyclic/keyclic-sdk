@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class CheckpointLinks {
-  CheckpointLinks();
+  CheckpointLinks({
+    this.organization,
+  });
 
   CheckpointLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,16 @@ class CheckpointLinks {
   }
 
   static List<CheckpointLinks> listFromJson(List<dynamic> json) {
-    return json == null ? List<CheckpointLinks>() : json.map((value) => CheckpointLinks.fromJson(value)).toList();
+    return json == null
+        ? List<CheckpointLinks>()
+        : json.map((value) => CheckpointLinks.fromJson(value)).toList();
   }
 
   static Map<String, CheckpointLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, CheckpointLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = CheckpointLinks.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = CheckpointLinks.fromJson(value));
     }
     return map;
   }

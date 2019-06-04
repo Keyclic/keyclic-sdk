@@ -1,7 +1,14 @@
 part of keyclic_sdk_api.api;
 
 class Webhook {
-  Webhook();
+  Webhook({
+    this.enabled,
+    this.event,
+    this.payloadUrl,
+    this.id,
+    this.type,
+    this.links,
+  });
 
   Webhook.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -44,13 +51,16 @@ class Webhook {
   }
 
   static List<Webhook> listFromJson(List<dynamic> json) {
-    return json == null ? List<Webhook>() : json.map((value) => Webhook.fromJson(value)).toList();
+    return json == null
+        ? List<Webhook>()
+        : json.map((value) => Webhook.fromJson(value)).toList();
   }
 
   static Map<String, Webhook> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Webhook>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Webhook.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Webhook.fromJson(value));
     }
     return map;
   }

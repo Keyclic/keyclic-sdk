@@ -1,7 +1,13 @@
 part of keyclic_sdk_api.api;
 
 class DelegationLinks {
-  DelegationLinks();
+  DelegationLinks({
+    this.self,
+    this.from,
+    this.to,
+    this.report,
+    this.createdBy,
+  });
 
   DelegationLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -40,13 +46,16 @@ class DelegationLinks {
   }
 
   static List<DelegationLinks> listFromJson(List<dynamic> json) {
-    return json == null ? List<DelegationLinks>() : json.map((value) => DelegationLinks.fromJson(value)).toList();
+    return json == null
+        ? List<DelegationLinks>()
+        : json.map((value) => DelegationLinks.fromJson(value)).toList();
   }
 
   static Map<String, DelegationLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, DelegationLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = DelegationLinks.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = DelegationLinks.fromJson(value));
     }
     return map;
   }

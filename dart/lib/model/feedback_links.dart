@@ -1,7 +1,15 @@
 part of keyclic_sdk_api.api;
 
 class FeedbackLinks {
-  FeedbackLinks();
+  FeedbackLinks({
+    this.self,
+    this.category,
+    this.businessActivity,
+    this.reporter,
+    this.image,
+    this.tracking,
+    this.images,
+  });
 
   FeedbackLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -9,7 +17,8 @@ class FeedbackLinks {
     }
     self = FeedbackLinksSelf.fromJson(json['self']);
     category = FeedbackLinksCategory.fromJson(json['category']);
-    businessActivity = FeedbackLinksBusinessActivity.fromJson(json['businessActivity']);
+    businessActivity =
+        FeedbackLinksBusinessActivity.fromJson(json['businessActivity']);
     reporter = FeedbackLinksReporter.fromJson(json['reporter']);
     image = FeedbackLinksImage.fromJson(json['image']);
     tracking = FeedbackLinksTracking.fromJson(json['tracking']);
@@ -48,13 +57,16 @@ class FeedbackLinks {
   }
 
   static List<FeedbackLinks> listFromJson(List<dynamic> json) {
-    return json == null ? List<FeedbackLinks>() : json.map((value) => FeedbackLinks.fromJson(value)).toList();
+    return json == null
+        ? List<FeedbackLinks>()
+        : json.map((value) => FeedbackLinks.fromJson(value)).toList();
   }
 
   static Map<String, FeedbackLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeedbackLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = FeedbackLinks.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackLinks.fromJson(value));
     }
     return map;
   }

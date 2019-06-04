@@ -1,18 +1,26 @@
 part of keyclic_sdk_api.api;
 
 class FeedbackReviewRequest {
-  FeedbackReviewRequest();
+  FeedbackReviewRequest({
+    this.id,
+    this.createdAt,
+    this.updatedAt,
+    this.type,
+    this.links,
+  });
 
   FeedbackReviewRequest.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
     id = json['id'];
-    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
@@ -46,13 +54,17 @@ class FeedbackReviewRequest {
   }
 
   static List<FeedbackReviewRequest> listFromJson(List<dynamic> json) {
-    return json == null ? List<FeedbackReviewRequest>() : json.map((value) => FeedbackReviewRequest.fromJson(value)).toList();
+    return json == null
+        ? List<FeedbackReviewRequest>()
+        : json.map((value) => FeedbackReviewRequest.fromJson(value)).toList();
   }
 
-  static Map<String, FeedbackReviewRequest> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, FeedbackReviewRequest> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, FeedbackReviewRequest>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = FeedbackReviewRequest.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackReviewRequest.fromJson(value));
     }
     return map;
   }

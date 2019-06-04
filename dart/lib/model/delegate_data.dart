@@ -1,7 +1,10 @@
 part of keyclic_sdk_api.api;
 
 class DelegateData {
-  DelegateData();
+  DelegateData({
+    this.report,
+    this.organization,
+  });
 
   DelegateData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -28,13 +31,16 @@ class DelegateData {
   }
 
   static List<DelegateData> listFromJson(List<dynamic> json) {
-    return json == null ? List<DelegateData>() : json.map((value) => DelegateData.fromJson(value)).toList();
+    return json == null
+        ? List<DelegateData>()
+        : json.map((value) => DelegateData.fromJson(value)).toList();
   }
 
   static Map<String, DelegateData> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, DelegateData>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = DelegateData.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = DelegateData.fromJson(value));
     }
     return map;
   }

@@ -1,7 +1,15 @@
 part of keyclic_sdk_api.api;
 
 class FeedbackData {
-  FeedbackData();
+  FeedbackData({
+    this.category,
+    this.geo,
+    this.description,
+    this.visibility,
+    this.businessActivity,
+    this.proMode,
+    this.metadata,
+  });
 
   FeedbackData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -49,13 +57,16 @@ class FeedbackData {
   }
 
   static List<FeedbackData> listFromJson(List<dynamic> json) {
-    return json == null ? List<FeedbackData>() : json.map((value) => FeedbackData.fromJson(value)).toList();
+    return json == null
+        ? List<FeedbackData>()
+        : json.map((value) => FeedbackData.fromJson(value)).toList();
   }
 
   static Map<String, FeedbackData> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, FeedbackData>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = FeedbackData.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackData.fromJson(value));
     }
     return map;
   }

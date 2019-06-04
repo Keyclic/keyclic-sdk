@@ -1,14 +1,18 @@
 part of keyclic_sdk_api.api;
 
 class FeedbackReviewRequestLinksReviewer {
-  FeedbackReviewRequestLinksReviewer();
+  FeedbackReviewRequestLinksReviewer({
+    this.href,
+    this.iriTemplate,
+  });
 
   FeedbackReviewRequestLinksReviewer.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
     href = json['href'];
-    iriTemplate = DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate =
+        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the reviewer associated to the given feedbackreviewrequest. */
@@ -28,14 +32,21 @@ class FeedbackReviewRequestLinksReviewer {
     return 'FeedbackReviewRequestLinksReviewer[href=$href, iriTemplate=$iriTemplate, ]';
   }
 
-  static List<FeedbackReviewRequestLinksReviewer> listFromJson(List<dynamic> json) {
-    return json == null ? List<FeedbackReviewRequestLinksReviewer>() : json.map((value) => FeedbackReviewRequestLinksReviewer.fromJson(value)).toList();
+  static List<FeedbackReviewRequestLinksReviewer> listFromJson(
+      List<dynamic> json) {
+    return json == null
+        ? List<FeedbackReviewRequestLinksReviewer>()
+        : json
+            .map((value) => FeedbackReviewRequestLinksReviewer.fromJson(value))
+            .toList();
   }
 
-  static Map<String, FeedbackReviewRequestLinksReviewer> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, FeedbackReviewRequestLinksReviewer> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, FeedbackReviewRequestLinksReviewer>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = FeedbackReviewRequestLinksReviewer.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackReviewRequestLinksReviewer.fromJson(value));
     }
     return map;
   }

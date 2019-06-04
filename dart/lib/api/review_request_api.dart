@@ -3,12 +3,15 @@ part of keyclic_sdk_api.api;
 class ReviewRequestApi {
   final ApiClient apiClient;
 
-  ReviewRequestApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  ReviewRequestApi([ApiClient apiClient])
+      : apiClient = apiClient ?? defaultApiClient;
 
   /// Retrieve one ReviewRequest resource.
   ///
   ///
-  Future<FeedbackReviewRequest> getReviewRequest(String xKeyclicApp, String reviewRequest, {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<FeedbackReviewRequest> getReviewRequest(
+      String xKeyclicApp, String reviewRequest,
+      {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody;
 
     // verify required params are set
@@ -20,7 +23,9 @@ class ReviewRequestApi {
     }
 
     // create path and map variables
-    String path = "/review-requests/{reviewRequest}".replaceAll("{format}", "json").replaceAll("{" + "reviewRequest" + "}", reviewRequest.toString());
+    String path = "/review-requests/{reviewRequest}"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "reviewRequest" + "}", reviewRequest.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -32,7 +37,8 @@ class ReviewRequestApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType =
+        contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -42,12 +48,14 @@ class ReviewRequestApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
+        headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'FeedbackReviewRequest') as FeedbackReviewRequest;
+      return apiClient.deserialize(response.body, 'FeedbackReviewRequest')
+          as FeedbackReviewRequest;
     } else {
       return null;
     }

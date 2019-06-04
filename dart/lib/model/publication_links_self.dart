@@ -1,7 +1,10 @@
 part of keyclic_sdk_api.api;
 
 class PublicationLinksSelf {
-  PublicationLinksSelf();
+  PublicationLinksSelf({
+    this.href,
+    this.iriTemplate,
+  });
 
   PublicationLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -29,13 +32,17 @@ class PublicationLinksSelf {
   }
 
   static List<PublicationLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null ? List<PublicationLinksSelf>() : json.map((value) => PublicationLinksSelf.fromJson(value)).toList();
+    return json == null
+        ? List<PublicationLinksSelf>()
+        : json.map((value) => PublicationLinksSelf.fromJson(value)).toList();
   }
 
-  static Map<String, PublicationLinksSelf> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, PublicationLinksSelf> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, PublicationLinksSelf>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = PublicationLinksSelf.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = PublicationLinksSelf.fromJson(value));
     }
     return map;
   }

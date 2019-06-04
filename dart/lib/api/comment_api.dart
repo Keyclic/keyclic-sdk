@@ -8,7 +8,15 @@ class CommentApi {
   /// Retrieve all Comment resources.
   ///
   ///
-  Future<ActivityPagination> cgetCommentsByFeedback(String xKeyclicApp, String feedback, {String acceptLanguage, String xKeyclicAppVersion, int page, int limit, String order, DateTime after, DateTime before}) async {
+  Future<ActivityPagination> cgetCommentsByFeedback(
+      String xKeyclicApp, String feedback,
+      {String acceptLanguage,
+      String xKeyclicAppVersion,
+      int page,
+      int limit,
+      String order,
+      DateTime after,
+      DateTime before}) async {
     Object postBody;
 
     // verify required params are set
@@ -20,26 +28,33 @@ class CommentApi {
     }
 
     // create path and map variables
-    String path = "/feedbacks/{feedback}/comments".replaceAll("{format}", "json").replaceAll("{" + "feedback" + "}", feedback.toString());
+    String path = "/feedbacks/{feedback}/comments"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "feedback" + "}", feedback.toString());
 
     // query params
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if (page != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     if (limit != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "limit", limit));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
     if (order != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (after != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "after", after));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
     }
     if (before != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "before", before));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
@@ -47,7 +62,8 @@ class CommentApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType =
+        contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -57,12 +73,14 @@ class CommentApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
+        headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'ActivityPagination') as ActivityPagination;
+      return apiClient.deserialize(response.body, 'ActivityPagination')
+          as ActivityPagination;
     } else {
       return null;
     }
@@ -71,7 +89,15 @@ class CommentApi {
   /// Retrieve all Comment resources.
   ///
   ///
-  Future<ActivityPagination> cgetCommentsByOperation(String xKeyclicApp, String operation, {String acceptLanguage, String xKeyclicAppVersion, int page, int limit, String order, DateTime after, DateTime before}) async {
+  Future<ActivityPagination> cgetCommentsByOperation(
+      String xKeyclicApp, String operation,
+      {String acceptLanguage,
+      String xKeyclicAppVersion,
+      int page,
+      int limit,
+      String order,
+      DateTime after,
+      DateTime before}) async {
     Object postBody;
 
     // verify required params are set
@@ -83,26 +109,33 @@ class CommentApi {
     }
 
     // create path and map variables
-    String path = "/operations/{operation}/comments".replaceAll("{format}", "json").replaceAll("{" + "operation" + "}", operation.toString());
+    String path = "/operations/{operation}/comments"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "operation" + "}", operation.toString());
 
     // query params
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
     if (page != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "page", page));
     }
     if (limit != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "limit", limit));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
     if (order != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "order", order));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (after != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "after", after));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
     }
     if (before != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "before", before));
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
@@ -110,7 +143,8 @@ class CommentApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType =
+        contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -120,12 +154,14 @@ class CommentApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
+        headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'ActivityPagination') as ActivityPagination;
+      return apiClient.deserialize(response.body, 'ActivityPagination')
+          as ActivityPagination;
     } else {
       return null;
     }
@@ -134,7 +170,9 @@ class CommentApi {
   /// Create one Comment resource.
   ///
   ///
-  Future<Feedback> postCommentByFeedback(String xKeyclicApp, CommentData commentData, String feedback, {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Feedback> postCommentByFeedback(
+      String xKeyclicApp, CommentData commentData, String feedback,
+      {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = commentData;
 
     // verify required params are set
@@ -149,7 +187,9 @@ class CommentApi {
     }
 
     // create path and map variables
-    String path = "/feedbacks/{feedback}/comments".replaceAll("{format}", "json").replaceAll("{" + "feedback" + "}", feedback.toString());
+    String path = "/feedbacks/{feedback}/comments"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "feedback" + "}", feedback.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -161,7 +201,8 @@ class CommentApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType =
+        contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -171,7 +212,8 @@ class CommentApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
+        postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -185,7 +227,9 @@ class CommentApi {
   /// Create one Comment resource.
   ///
   ///
-  Future<Operation> postCommentByOperation(String xKeyclicApp, CommentData commentData, String operation, {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Operation> postCommentByOperation(
+      String xKeyclicApp, CommentData commentData, String operation,
+      {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = commentData;
 
     // verify required params are set
@@ -200,7 +244,9 @@ class CommentApi {
     }
 
     // create path and map variables
-    String path = "/operations/{operation}/comments".replaceAll("{format}", "json").replaceAll("{" + "operation" + "}", operation.toString());
+    String path = "/operations/{operation}/comments"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "operation" + "}", operation.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -212,7 +258,8 @@ class CommentApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType =
+        contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -222,7 +269,8 @@ class CommentApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
+        postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

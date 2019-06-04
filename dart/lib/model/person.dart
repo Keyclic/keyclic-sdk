@@ -1,7 +1,21 @@
 part of keyclic_sdk_api.api;
 
 class Person {
-  Person();
+  Person({
+    this.familyName,
+    this.givenName,
+    this.jobTitle,
+    this.optIn,
+    this.preferences,
+    this.telephone,
+    this.id,
+    this.username,
+    this.email,
+    this.createdAt,
+    this.updatedAt,
+    this.type,
+    this.links,
+  });
 
   Person.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -16,11 +30,13 @@ class Person {
     id = json['id'];
     username = json['username'];
     email = json['email'];
-    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    updatedAt = json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
@@ -78,13 +94,16 @@ class Person {
   }
 
   static List<Person> listFromJson(List<dynamic> json) {
-    return json == null ? List<Person>() : json.map((value) => Person.fromJson(value)).toList();
+    return json == null
+        ? List<Person>()
+        : json.map((value) => Person.fromJson(value)).toList();
   }
 
   static Map<String, Person> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Person>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Person.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Person.fromJson(value));
     }
     return map;
   }

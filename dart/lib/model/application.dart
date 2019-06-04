@@ -1,7 +1,14 @@
 part of keyclic_sdk_api.api;
 
 class Application {
-  Application();
+  Application({
+    this.name,
+    this.token,
+    this.version,
+    this.id,
+    this.type,
+    this.links,
+  });
 
   Application.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -44,13 +51,16 @@ class Application {
   }
 
   static List<Application> listFromJson(List<dynamic> json) {
-    return json == null ? List<Application>() : json.map((value) => Application.fromJson(value)).toList();
+    return json == null
+        ? List<Application>()
+        : json.map((value) => Application.fromJson(value)).toList();
   }
 
   static Map<String, Application> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Application>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Application.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = Application.fromJson(value));
     }
     return map;
   }

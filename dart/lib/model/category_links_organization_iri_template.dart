@@ -1,13 +1,16 @@
 part of keyclic_sdk_api.api;
 
 class CategoryLinksOrganizationIriTemplate {
-  CategoryLinksOrganizationIriTemplate();
+  CategoryLinksOrganizationIriTemplate({
+    this.mapping,
+  });
 
   CategoryLinksOrganizationIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    mapping = CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']);
+    mapping =
+        CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']);
   }
 
   CategoryLinksOrganizationIriTemplateMapping mapping;
@@ -23,14 +26,22 @@ class CategoryLinksOrganizationIriTemplate {
     return 'CategoryLinksOrganizationIriTemplate[mapping=$mapping, ]';
   }
 
-  static List<CategoryLinksOrganizationIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null ? List<CategoryLinksOrganizationIriTemplate>() : json.map((value) => CategoryLinksOrganizationIriTemplate.fromJson(value)).toList();
+  static List<CategoryLinksOrganizationIriTemplate> listFromJson(
+      List<dynamic> json) {
+    return json == null
+        ? List<CategoryLinksOrganizationIriTemplate>()
+        : json
+            .map(
+                (value) => CategoryLinksOrganizationIriTemplate.fromJson(value))
+            .toList();
   }
 
-  static Map<String, CategoryLinksOrganizationIriTemplate> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, CategoryLinksOrganizationIriTemplate> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, CategoryLinksOrganizationIriTemplate>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = CategoryLinksOrganizationIriTemplate.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = CategoryLinksOrganizationIriTemplate.fromJson(value));
     }
     return map;
   }

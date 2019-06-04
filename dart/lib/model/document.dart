@@ -1,7 +1,14 @@
 part of keyclic_sdk_api.api;
 
 class Document {
-  Document();
+  Document({
+    this.file,
+    this.permission,
+    this.id,
+    this.createdAt,
+    this.type,
+    this.links,
+  });
 
   Document.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -10,7 +17,8 @@ class Document {
     file = DocumentFile.fromJson(json['file']);
     permission = DocumentPermission.fromJson(json['permission']);
     id = json['id'];
-    createdAt = json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
@@ -47,13 +55,16 @@ class Document {
   }
 
   static List<Document> listFromJson(List<dynamic> json) {
-    return json == null ? List<Document>() : json.map((value) => Document.fromJson(value)).toList();
+    return json == null
+        ? List<Document>()
+        : json.map((value) => Document.fromJson(value)).toList();
   }
 
   static Map<String, Document> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, Document>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = Document.fromJson(value));
+      json.forEach(
+          (String key, dynamic value) => map[key] = Document.fromJson(value));
     }
     return map;
   }

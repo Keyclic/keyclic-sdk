@@ -1,7 +1,10 @@
 part of keyclic_sdk_api.api;
 
 class WebhookLinksSelf {
-  WebhookLinksSelf();
+  WebhookLinksSelf({
+    this.href,
+    this.iriTemplate,
+  });
 
   WebhookLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -29,13 +32,16 @@ class WebhookLinksSelf {
   }
 
   static List<WebhookLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null ? List<WebhookLinksSelf>() : json.map((value) => WebhookLinksSelf.fromJson(value)).toList();
+    return json == null
+        ? List<WebhookLinksSelf>()
+        : json.map((value) => WebhookLinksSelf.fromJson(value)).toList();
   }
 
   static Map<String, WebhookLinksSelf> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, WebhookLinksSelf>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = WebhookLinksSelf.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = WebhookLinksSelf.fromJson(value));
     }
     return map;
   }

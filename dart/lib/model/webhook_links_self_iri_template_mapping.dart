@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class WebhookLinksSelfIriTemplateMapping {
-  WebhookLinksSelfIriTemplateMapping();
+  WebhookLinksSelfIriTemplateMapping({
+    this.webhook,
+  });
 
   WebhookLinksSelfIriTemplateMapping.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -23,14 +25,21 @@ class WebhookLinksSelfIriTemplateMapping {
     return 'WebhookLinksSelfIriTemplateMapping[webhook=$webhook, ]';
   }
 
-  static List<WebhookLinksSelfIriTemplateMapping> listFromJson(List<dynamic> json) {
-    return json == null ? List<WebhookLinksSelfIriTemplateMapping>() : json.map((value) => WebhookLinksSelfIriTemplateMapping.fromJson(value)).toList();
+  static List<WebhookLinksSelfIriTemplateMapping> listFromJson(
+      List<dynamic> json) {
+    return json == null
+        ? List<WebhookLinksSelfIriTemplateMapping>()
+        : json
+            .map((value) => WebhookLinksSelfIriTemplateMapping.fromJson(value))
+            .toList();
   }
 
-  static Map<String, WebhookLinksSelfIriTemplateMapping> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, WebhookLinksSelfIriTemplateMapping> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, WebhookLinksSelfIriTemplateMapping>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = WebhookLinksSelfIriTemplateMapping.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = WebhookLinksSelfIriTemplateMapping.fromJson(value));
     }
     return map;
   }

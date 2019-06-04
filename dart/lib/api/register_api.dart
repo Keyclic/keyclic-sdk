@@ -3,12 +3,14 @@ part of keyclic_sdk_api.api;
 class RegisterApi {
   final ApiClient apiClient;
 
-  RegisterApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+  RegisterApi([ApiClient apiClient])
+      : apiClient = apiClient ?? defaultApiClient;
 
   /// Create one Register resource.
   ///
   ///
-  Future<Person> postRegister(String xKeyclicApp, RegisterData registerData, {String acceptLanguage, String xKeyclicAppVersion}) async {
+  Future<Person> postRegister(String xKeyclicApp, RegisterData registerData,
+      {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody = registerData;
 
     // verify required params are set
@@ -32,7 +34,8 @@ class RegisterApi {
 
     List<String> contentTypes = ["application/json;charset=UTF-8"];
 
-    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    String contentType =
+        contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = [];
 
     if (contentType.startsWith("multipart/form-data")) {
@@ -42,7 +45,8 @@ class RegisterApi {
       if (hasFields) postBody = mp;
     } else {}
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams, postBody, headerParams, formParams, contentType, authNames);
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
+        postBody, headerParams, formParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

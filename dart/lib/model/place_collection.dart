@@ -1,7 +1,9 @@
 part of keyclic_sdk_api.api;
 
 class PlaceCollection {
-  PlaceCollection();
+  PlaceCollection({
+    this.items,
+  });
 
   PlaceCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
@@ -24,13 +26,16 @@ class PlaceCollection {
   }
 
   static List<PlaceCollection> listFromJson(List<dynamic> json) {
-    return json == null ? List<PlaceCollection>() : json.map((value) => PlaceCollection.fromJson(value)).toList();
+    return json == null
+        ? List<PlaceCollection>()
+        : json.map((value) => PlaceCollection.fromJson(value)).toList();
   }
 
   static Map<String, PlaceCollection> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, PlaceCollection>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = PlaceCollection.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = PlaceCollection.fromJson(value));
     }
     return map;
   }

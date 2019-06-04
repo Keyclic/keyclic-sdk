@@ -1,14 +1,19 @@
 part of keyclic_sdk_api.api;
 
 class OrganizationLinks {
-  OrganizationLinks();
+  OrganizationLinks({
+    this.self,
+    this.businessActivity,
+    this.logo,
+  });
 
   OrganizationLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
     self = OrganizationLinksSelf.fromJson(json['self']);
-    businessActivity = OrganizationLinksBusinessActivity.fromJson(json['businessActivity']);
+    businessActivity =
+        OrganizationLinksBusinessActivity.fromJson(json['businessActivity']);
     logo = OrganizationLinksLogo.fromJson(json['logo']);
   }
 
@@ -32,13 +37,16 @@ class OrganizationLinks {
   }
 
   static List<OrganizationLinks> listFromJson(List<dynamic> json) {
-    return json == null ? List<OrganizationLinks>() : json.map((value) => OrganizationLinks.fromJson(value)).toList();
+    return json == null
+        ? List<OrganizationLinks>()
+        : json.map((value) => OrganizationLinks.fromJson(value)).toList();
   }
 
   static Map<String, OrganizationLinks> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, OrganizationLinks>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = OrganizationLinks.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = OrganizationLinks.fromJson(value));
     }
     return map;
   }

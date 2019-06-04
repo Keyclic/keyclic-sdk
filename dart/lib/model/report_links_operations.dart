@@ -1,14 +1,18 @@
 part of keyclic_sdk_api.api;
 
 class ReportLinksOperations {
-  ReportLinksOperations();
+  ReportLinksOperations({
+    this.href,
+    this.iriTemplate,
+  });
 
   ReportLinksOperations.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
     href = json['href'];
-    iriTemplate = DelegationLinksReportIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate =
+        DelegationLinksReportIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the operations associated to the given report. */
@@ -29,13 +33,17 @@ class ReportLinksOperations {
   }
 
   static List<ReportLinksOperations> listFromJson(List<dynamic> json) {
-    return json == null ? List<ReportLinksOperations>() : json.map((value) => ReportLinksOperations.fromJson(value)).toList();
+    return json == null
+        ? List<ReportLinksOperations>()
+        : json.map((value) => ReportLinksOperations.fromJson(value)).toList();
   }
 
-  static Map<String, ReportLinksOperations> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, ReportLinksOperations> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, ReportLinksOperations>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = ReportLinksOperations.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = ReportLinksOperations.fromJson(value));
     }
     return map;
   }
