@@ -6,6 +6,6 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **identificationNumber** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**scheduledAt** | **String** |  | [optional] 
+**scheduledAt** | **Date** |  | [optional] 
 
 

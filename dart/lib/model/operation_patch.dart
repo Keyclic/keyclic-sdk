@@ -15,7 +15,12 @@ class OperationPatch {
     description = json['description'];
     identificationNumber = json['identificationNumber'];
     name = json['name'];
-    scheduledAt = json['scheduledAt'];
+    scheduledAt = json['scheduledAt'] == null
+        ? null
+        : DateTime.parse(json['scheduledAt']);
+    if (scheduledAt is DateTime && scheduledAt.isUtc == false) {
+      scheduledAt = DateTime.parse('${scheduledAt.toIso8601String()}Z');
+    }
   }
 
   String description;
@@ -24,14 +29,15 @@ class OperationPatch {
 
   String name;
 
-  String scheduledAt;
+  DateTime scheduledAt;
 
   Map<String, dynamic> toJson() {
     return {
       'description': description,
       'identificationNumber': identificationNumber,
       'name': name,
-      'scheduledAt': scheduledAt,
+      'scheduledAt':
+          scheduledAt == null ? '' : scheduledAt.toUtc().toIso8601String(),
     };
   }
 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **businessActivity** | **String** |  | [optional] 
 **proMode** | **Boolean** |  | [optional] 
 **metadata** | **{String: String}** |  | [optional] 
+**place** | **String** |  | [optional] 
 
 
 <a name="VisibilityEnum"></a>

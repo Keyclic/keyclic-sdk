@@ -497,6 +497,8 @@ class ApiClient {
           return ReportLinksOperations.fromJson(value);
         case 'ReportLinksOrganization':
           return ReportLinksOrganization.fromJson(value);
+        case 'ReportLinksPlace':
+          return ReportLinksPlace.fromJson(value);
         case 'ReportLinksSelf':
           return ReportLinksSelf.fromJson(value);
         case 'ReportLinksTracking':
@@ -505,6 +507,8 @@ class ApiClient {
           return ReportPagination.fromJson(value);
         case 'ReportPatch':
           return ReportPatch.fromJson(value);
+        case 'ReportPatchCategory':
+          return ReportPatchCategory.fromJson(value);
         case 'ReportStatePatch':
           return ReportStatePatch.fromJson(value);
         case 'ReportWorkflowTransitionData':

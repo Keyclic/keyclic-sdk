@@ -13,6 +13,7 @@ class MemberApi {
       {String acceptLanguage,
       String xKeyclicAppVersion,
       String role,
+      String roles,
       String query,
       int page,
       int limit,
@@ -47,6 +48,10 @@ class MemberApi {
     if (role != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "role", role));
+    }
+    if (roles != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "roles", roles));
     }
     if (query != null) {
       queryParams

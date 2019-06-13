@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **cgetMembersByOrganization**
-> MemberPagination cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, role, query, page, limit, order, after, before, search[familyName], search[givenName], search[jobTitle], search[telephone], search[username], search[email])
+> MemberPagination cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, role, roles, query, page, limit, order, after, before, search[familyName], search[givenName], search[jobTitle], search[telephone], search[username], search[email])
 
 Retrieve all Member resources.
 
@@ -35,6 +35,7 @@ var organization = ; // String | The identifier of the resource formatted as GUI
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var role = role_example; // String | 
+var roles = roles_example; // String | 
 var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
@@ -49,7 +50,7 @@ var search[username] = search[username]_example; // String |
 var search[email] = search[email]_example; // String | 
 
 try { 
-    var result = api_instance.cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, role, query, page, limit, order, after, before, search[familyName], search[givenName], search[jobTitle], search[telephone], search[username], search[email]);
+    var result = api_instance.cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, role, roles, query, page, limit, order, after, before, search[familyName], search[givenName], search[jobTitle], search[telephone], search[username], search[email]);
     print(result);
 } catch (e) {
     print("Exception when calling MemberApi->cgetMembersByOrganization: $e\n");
@@ -65,6 +66,7 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **role** | **String**|  | [optional] 
+ **roles** | **String**|  | [optional] 
  **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]

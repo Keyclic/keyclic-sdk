@@ -9,10 +9,10 @@ class MemberPatch {
     if (json == null) {
       return;
     }
-    roles = json['roles'];
+    roles = (json['roles'] as List)?.map((item) => item as String)?.toList();
   }
 
-  String roles;
+  List<String> roles;
 
   Map<String, dynamic> toJson() {
     return {

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **category** | [**ReportLinksCategory**](ReportLinksCategory.md) |  | [optional] 
 **delegatedTo** | [**ReportLinksDelegatedTo**](ReportLinksDelegatedTo.md) |  | [optional] 
 **delegatedFrom** | [**ReportLinksDelegatedFrom**](ReportLinksDelegatedFrom.md) |  | [optional] 
+**place** | [**ReportLinksPlace**](ReportLinksPlace.md) |  | [optional] 
 **tracking** | [**ReportLinksTracking**](ReportLinksTracking.md) |  | [optional] 
 
 

@@ -9,6 +9,7 @@ class FeedbackData {
     this.businessActivity,
     this.proMode,
     this.metadata,
+    this.place,
   });
 
   FeedbackData.fromJson(Map<String, dynamic> json) {
@@ -22,6 +23,7 @@ class FeedbackData {
     businessActivity = json['businessActivity'];
     proMode = json['proMode'];
     metadata = json['metadata'];
+    place = json['place'];
   }
 
   String category;
@@ -39,6 +41,8 @@ class FeedbackData {
 
   Map<String, String> metadata;
 
+  String place;
+
   Map<String, dynamic> toJson() {
     return {
       'category': category,
@@ -48,12 +52,13 @@ class FeedbackData {
       'businessActivity': businessActivity,
       'proMode': proMode,
       'metadata': metadata,
+      'place': place,
     };
   }
 
   @override
   String toString() {
-    return 'FeedbackData[category=$category, geo=$geo, description=$description, visibility=$visibility, businessActivity=$businessActivity, proMode=$proMode, metadata=$metadata, ]';
+    return 'FeedbackData[category=$category, geo=$geo, description=$description, visibility=$visibility, businessActivity=$businessActivity, proMode=$proMode, metadata=$metadata, place=$place, ]';
   }
 
   static List<FeedbackData> listFromJson(List<dynamic> json) {

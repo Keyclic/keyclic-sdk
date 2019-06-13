@@ -1,5 +1,5 @@
 name: keyclic_sdk_api
-version: 1.39.3+1
+version: 1.39.4
 description: The keyclic_sdk_api package is an implementation of the Keyclic API.
 dependencies:
   http: '^0.12.0'

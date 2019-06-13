@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _OccupantLinksPlaceIriTemplate = _interopRequireDefault(
+  require("./OccupantLinksPlaceIriTemplate")
+);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -34,31 +38,33 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 /**
- * The MemberPatch model module.
- * @module model/MemberPatch
+ * The ReportLinksPlace model module.
+ * @module model/ReportLinksPlace
  */
-var MemberPatch =
+var ReportLinksPlace =
   /*#__PURE__*/
   (function() {
     /**
-   * Constructs a new "MemberPatch".
-   * @alias module:model/MemberPatch
+   * Constructs a new "ReportLinksPlace".
+   * @alias module:model/ReportLinksPlace
    * @class
   
    */
-    function MemberPatch() {
-      _classCallCheck(this, MemberPatch);
+    function ReportLinksPlace() {
+      _classCallCheck(this, ReportLinksPlace);
 
-      this.roles = [];
+      this.href = null;
+      this.iriTemplate = null;
+      this.iriTemplateType = _OccupantLinksPlaceIriTemplate.default;
     }
     /**
-     * Constructs a "MemberPatch" from a plain JavaScript object.
+     * Constructs a "ReportLinksPlace" from a plain JavaScript object.
      * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/MemberPatch } object Optional instance to populate.
-     * @return { module:model/MemberPatch } The populated "MemberPatch" instance.
+     * @param { module:model/ReportLinksPlace } object Optional instance to populate.
+     * @return { module:model/ReportLinksPlace } The populated "ReportLinksPlace" instance.
      */
 
-    _createClass(MemberPatch, null, [
+    _createClass(ReportLinksPlace, null, [
       {
         key: "constructFromData",
         value: function constructFromData(data) {
@@ -72,13 +78,20 @@ var MemberPatch =
           }
 
           if (object === null) {
-            object = new MemberPatch();
+            object = new ReportLinksPlace();
           }
 
-          if (data.hasOwnProperty("roles")) {
-            object.roles = _ApiClient.default.convertToType(
-              data["roles"],
-              "['String']"
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
             );
           }
 
@@ -87,7 +100,7 @@ var MemberPatch =
       }
     ]);
 
-    return MemberPatch;
+    return ReportLinksPlace;
   })();
 
-exports.default = MemberPatch;
+exports.default = ReportLinksPlace;

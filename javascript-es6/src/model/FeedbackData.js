@@ -40,6 +40,7 @@ export default class FeedbackData {
     this.businessActivity = null;
     this.proMode = null;
     this.metadata = [];
+    this.place = null;
 
     this.geoType = FeedbackDataGeo;
   }
@@ -85,6 +86,9 @@ export default class FeedbackData {
     }
     if (data.hasOwnProperty("metadata")) {
       object.metadata = ApiClient.convertToType(data["metadata"], "['String']");
+    }
+    if (data.hasOwnProperty("place")) {
+      object.place = ApiClient.convertToType(data["place"], "String");
     }
 
     return object;

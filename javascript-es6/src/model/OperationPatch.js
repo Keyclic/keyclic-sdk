@@ -61,10 +61,7 @@ export default class OperationPatch {
       object.name = ApiClient.convertToType(data["name"], "String");
     }
     if (data.hasOwnProperty("scheduledAt")) {
-      object.scheduledAt = ApiClient.convertToType(
-        data["scheduledAt"],
-        "String"
-      );
+      object.scheduledAt = ApiClient.convertToType(data["scheduledAt"], "Date");
     }
 
     return object;

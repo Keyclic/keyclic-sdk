@@ -102,7 +102,7 @@ var OperationPatch =
           if (data.hasOwnProperty("scheduledAt")) {
             object.scheduledAt = _ApiClient.default.convertToType(
               data["scheduledAt"],
-              "String"
+              "Date"
             );
           }
 

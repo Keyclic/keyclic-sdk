@@ -9,6 +9,7 @@ class ReportLinks {
     this.category,
     this.delegatedTo,
     this.delegatedFrom,
+    this.place,
     this.tracking,
   });
 
@@ -23,6 +24,7 @@ class ReportLinks {
     category = ReportLinksCategory.fromJson(json['category']);
     delegatedTo = ReportLinksDelegatedTo.fromJson(json['delegatedTo']);
     delegatedFrom = ReportLinksDelegatedFrom.fromJson(json['delegatedFrom']);
+    place = ReportLinksPlace.fromJson(json['place']);
     tracking = ReportLinksTracking.fromJson(json['tracking']);
   }
 
@@ -40,6 +42,8 @@ class ReportLinks {
 
   ReportLinksDelegatedFrom delegatedFrom;
 
+  ReportLinksPlace place;
+
   ReportLinksTracking tracking;
 
   Map<String, dynamic> toJson() {
@@ -51,13 +55,14 @@ class ReportLinks {
       'category': category,
       'delegatedTo': delegatedTo,
       'delegatedFrom': delegatedFrom,
+      'place': place,
       'tracking': tracking,
     };
   }
 
   @override
   String toString() {
-    return 'ReportLinks[self=$self, feedback=$feedback, operations=$operations, organization=$organization, category=$category, delegatedTo=$delegatedTo, delegatedFrom=$delegatedFrom, tracking=$tracking, ]';
+    return 'ReportLinks[self=$self, feedback=$feedback, operations=$operations, organization=$organization, category=$category, delegatedTo=$delegatedTo, delegatedFrom=$delegatedFrom, place=$place, tracking=$tracking, ]';
   }
 
   static List<ReportLinks> listFromJson(List<dynamic> json) {

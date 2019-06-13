@@ -1383,6 +1383,12 @@ Object.defineProperty(exports, "ReportLinksOrganization", {
     return _ReportLinksOrganization.default;
   }
 });
+Object.defineProperty(exports, "ReportLinksPlace", {
+  enumerable: true,
+  get: function get() {
+    return _ReportLinksPlace.default;
+  }
+});
 Object.defineProperty(exports, "ReportLinksSelf", {
   enumerable: true,
   get: function get() {
@@ -1405,6 +1411,12 @@ Object.defineProperty(exports, "ReportPatch", {
   enumerable: true,
   get: function get() {
     return _ReportPatch.default;
+  }
+});
+Object.defineProperty(exports, "ReportPatchCategory", {
+  enumerable: true,
+  get: function get() {
+    return _ReportPatchCategory.default;
   }
 });
 Object.defineProperty(exports, "ReportStatePatch", {
@@ -2366,6 +2378,8 @@ var _ReportLinksOperations = _interopRequireDefault(require("./model/ReportLinks
 
 var _ReportLinksOrganization = _interopRequireDefault(require("./model/ReportLinksOrganization"));
 
+var _ReportLinksPlace = _interopRequireDefault(require("./model/ReportLinksPlace"));
+
 var _ReportLinksSelf = _interopRequireDefault(require("./model/ReportLinksSelf"));
 
 var _ReportLinksTracking = _interopRequireDefault(require("./model/ReportLinksTracking"));
@@ -2373,6 +2387,8 @@ var _ReportLinksTracking = _interopRequireDefault(require("./model/ReportLinksTr
 var _ReportPagination = _interopRequireDefault(require("./model/ReportPagination"));
 
 var _ReportPatch = _interopRequireDefault(require("./model/ReportPatch"));
+
+var _ReportPatchCategory = _interopRequireDefault(require("./model/ReportPatchCategory"));
 
 var _ReportStatePatch = _interopRequireDefault(require("./model/ReportStatePatch"));
 

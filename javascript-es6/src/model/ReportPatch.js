@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import ReportPatchCategory from "./ReportPatchCategory";
 
 /**
  * The ReportPatch model module.
@@ -28,7 +29,9 @@ export default class ReportPatch {
     this.description = null;
     this.identificationNumber = null;
     this.priority = null;
-    this.tags = null;
+    this.tags = [];
+
+    this.categoryType = ReportPatchCategory;
   }
 
   /**
@@ -47,7 +50,10 @@ export default class ReportPatch {
     }
 
     if (data.hasOwnProperty("category")) {
-      object.category = ApiClient.convertToType(data["category"], "String");
+      object.category = ApiClient.convertToType(
+        data["category"],
+        object.categoryType
+      );
     }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
@@ -65,7 +71,7 @@ export default class ReportPatch {
       object.priority = ApiClient.convertToType(data["priority"], "Number");
     }
     if (data.hasOwnProperty("tags")) {
-      object.tags = ApiClient.convertToType(data["tags"], "String");
+      object.tags = ApiClient.convertToType(data["tags"], "['String']");
     }
 
     return object;

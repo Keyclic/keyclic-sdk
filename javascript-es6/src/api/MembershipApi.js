@@ -38,6 +38,7 @@ export default class MembershipApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    * @param { String } role
+   * @param { String } roles
    * @param { String } query
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
@@ -62,6 +63,7 @@ export default class MembershipApi extends ApiClient {
       acceptLanguage,
       xKeyclicAppVersion,
       role,
+      roles,
       query,
       page,
       limit,
@@ -118,6 +120,11 @@ export default class MembershipApi extends ApiClient {
     // verify the null value of parameter 'role'
     if (typeof role === "undefined") {
       role = null;
+    }
+
+    // verify the null value of parameter 'roles'
+    if (typeof roles === "undefined") {
+      roles = null;
     }
 
     // verify the null value of parameter 'query'
@@ -179,6 +186,7 @@ export default class MembershipApi extends ApiClient {
 
     let queryParams = {
       role: role,
+      roles: roles,
       query: query,
       page: page,
       limit: limit,

@@ -7,10 +7,6 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ReportPatchCategory = _interopRequireDefault(
-  require("./ReportPatchCategory")
-);
-
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -38,36 +34,36 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 /**
- * The ReportPatch model module.
- * @module model/ReportPatch
+ * The ReportPatchCategory model module.
+ * @module model/ReportPatchCategory
  */
-var ReportPatch =
+var ReportPatchCategory =
   /*#__PURE__*/
   (function() {
     /**
-   * Constructs a new "ReportPatch".
-   * @alias module:model/ReportPatch
+   * Constructs a new "ReportPatchCategory".
+   * @alias module:model/ReportPatchCategory
    * @class
   
    */
-    function ReportPatch() {
-      _classCallCheck(this, ReportPatch);
+    function ReportPatchCategory() {
+      _classCallCheck(this, ReportPatchCategory);
 
-      this.category = null;
-      this.description = null;
+      this.type = null;
+      this.id = null;
+      this.color = null;
+      this.icon = null;
+      this.name = null;
       this.identificationNumber = null;
-      this.priority = null;
-      this.tags = [];
-      this.categoryType = _ReportPatchCategory.default;
     }
     /**
-     * Constructs a "ReportPatch" from a plain JavaScript object.
+     * Constructs a "ReportPatchCategory" from a plain JavaScript object.
      * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReportPatch } object Optional instance to populate.
-     * @return { module:model/ReportPatch } The populated "ReportPatch" instance.
+     * @param { module:model/ReportPatchCategory } object Optional instance to populate.
+     * @return { module:model/ReportPatchCategory } The populated "ReportPatchCategory" instance.
      */
 
-    _createClass(ReportPatch, null, [
+    _createClass(ReportPatchCategory, null, [
       {
         key: "constructFromData",
         value: function constructFromData(data) {
@@ -81,19 +77,37 @@ var ReportPatch =
           }
 
           if (object === null) {
-            object = new ReportPatch();
+            object = new ReportPatchCategory();
           }
 
-          if (data.hasOwnProperty("category")) {
-            object.category = _ApiClient.default.convertToType(
-              data["category"],
-              object.categoryType
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
             );
           }
 
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("color")) {
+            object.color = _ApiClient.default.convertToType(
+              data["color"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("icon")) {
+            object.icon = _ApiClient.default.convertToType(
+              data["icon"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
               "String"
             );
           }
@@ -105,26 +119,12 @@ var ReportPatch =
             );
           }
 
-          if (data.hasOwnProperty("priority")) {
-            object.priority = _ApiClient.default.convertToType(
-              data["priority"],
-              "Number"
-            );
-          }
-
-          if (data.hasOwnProperty("tags")) {
-            object.tags = _ApiClient.default.convertToType(
-              data["tags"],
-              "['String']"
-            );
-          }
-
           return object;
         }
       }
     ]);
 
-    return ReportPatch;
+    return ReportPatchCategory;
   })();
 
-exports.default = ReportPatch;
+exports.default = ReportPatchCategory;

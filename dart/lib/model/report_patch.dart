@@ -13,14 +13,14 @@ class ReportPatch {
     if (json == null) {
       return;
     }
-    category = json['category'];
+    category = ReportPatchCategory.fromJson(json['category']);
     description = json['description'];
     identificationNumber = json['identificationNumber'];
     priority = json['priority'];
-    tags = json['tags'];
+    tags = (json['tags'] as List)?.map((item) => item as String)?.toList();
   }
 
-  String category;
+  ReportPatchCategory category;
 
   String description;
 
@@ -28,7 +28,7 @@ class ReportPatch {
 
   int priority;
 
-  String tags;
+  List<String> tags;
 
   Map<String, dynamic> toJson() {
     return {

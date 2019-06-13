@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | **String** |  | [optional] 
+**category** | [**ReportPatchCategory**](ReportPatchCategory.md) |  | [optional] 
 **description** | **String** |  | [optional] 
 **identificationNumber** | **String** |  | [optional] 
 **priority** | **Number** |  | [optional] 
-**tags** | **String** |  | [optional] 
+**tags** | **[String]** |  | [optional] 
 
 

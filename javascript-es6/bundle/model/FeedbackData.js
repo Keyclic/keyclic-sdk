@@ -76,6 +76,7 @@ var FeedbackData =
       this.businessActivity = null;
       this.proMode = null;
       this.metadata = [];
+      this.place = null;
       this.geoType = _FeedbackDataGeo.default;
     }
     /**
@@ -148,6 +149,13 @@ var FeedbackData =
             object.metadata = _ApiClient.default.convertToType(
               data["metadata"],
               "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("place")) {
+            object.place = _ApiClient.default.convertToType(
+              data["place"],
+              "String"
             );
           }
 

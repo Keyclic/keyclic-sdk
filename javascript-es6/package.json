@@ -1,6 +1,6 @@
 {
     "name": "@keyclic/sdk-javascript",
-    "version": "1.39.3",
+    "version": "1.39.4",
     "description": "Javascript client for Keyclic API",
     "author": "Keyclic techies team <techies@keyclic.com>",
     "dependencies": {

@@ -17,6 +17,7 @@ import ReportLinksDelegatedTo from "./ReportLinksDelegatedTo";
 import ReportLinksFeedback from "./ReportLinksFeedback";
 import ReportLinksOperations from "./ReportLinksOperations";
 import ReportLinksOrganization from "./ReportLinksOrganization";
+import ReportLinksPlace from "./ReportLinksPlace";
 import ReportLinksSelf from "./ReportLinksSelf";
 import ReportLinksTracking from "./ReportLinksTracking";
 
@@ -39,6 +40,7 @@ export default class ReportLinks {
     this.category = null;
     this.delegatedTo = null;
     this.delegatedFrom = null;
+    this.place = null;
     this.tracking = null;
 
     this.selfType = ReportLinksSelf;
@@ -48,6 +50,7 @@ export default class ReportLinks {
     this.categoryType = ReportLinksCategory;
     this.delegatedToType = ReportLinksDelegatedTo;
     this.delegatedFromType = ReportLinksDelegatedFrom;
+    this.placeType = ReportLinksPlace;
     this.trackingType = ReportLinksTracking;
   }
 
@@ -104,6 +107,9 @@ export default class ReportLinks {
         data["delegatedFrom"],
         object.delegatedFromType
       );
+    }
+    if (data.hasOwnProperty("place")) {
+      object.place = ApiClient.convertToType(data["place"], object.placeType);
     }
     if (data.hasOwnProperty("tracking")) {
       object.tracking = ApiClient.convertToType(

@@ -155,6 +155,7 @@ var MemberApi =
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
      * @param { String } role
+     * @param { String } roles
      * @param { String } query
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
@@ -189,6 +190,7 @@ var MemberApi =
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             role = options.role,
+            roles = options.roles,
             query = options.query,
             page = options.page,
             limit = options.limit,
@@ -239,6 +241,10 @@ var MemberApi =
 
           if (typeof role === "undefined") {
             role = null;
+          } // verify the null value of parameter 'roles'
+
+          if (typeof roles === "undefined") {
+            roles = null;
           } // verify the null value of parameter 'query'
 
           if (typeof query === "undefined") {
@@ -289,6 +295,7 @@ var MemberApi =
           var bodyParam = null;
           var queryParams = {
             role: role,
+            roles: roles,
             query: query,
             page: page,
             limit: limit,

@@ -95,6 +95,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property place (base name: "place")', function() {
+      // uncomment below and update the code to test the property place
+      //var instane = new @KeyclicSdkJavascript.ReportLinks();
+      //expect(instance).to.be();
+    });
+
     it('should have the property tracking (base name: "tracking")', function() {
       // uncomment below and update the code to test the property tracking
       //var instane = new @KeyclicSdkJavascript.ReportLinks();

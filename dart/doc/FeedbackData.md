@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **businessActivity** | **String** |  | [optional] [default to null]
 **proMode** | **bool** |  | [optional] [default to null]
 **metadata** | **Map&lt;String, String&gt;** |  | [optional] [default to {}]
+**place** | **String** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

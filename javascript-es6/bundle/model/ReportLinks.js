@@ -31,6 +31,8 @@ var _ReportLinksOrganization = _interopRequireDefault(
   require("./ReportLinksOrganization")
 );
 
+var _ReportLinksPlace = _interopRequireDefault(require("./ReportLinksPlace"));
+
 var _ReportLinksSelf = _interopRequireDefault(require("./ReportLinksSelf"));
 
 var _ReportLinksTracking = _interopRequireDefault(
@@ -86,6 +88,7 @@ var ReportLinks =
       this.category = null;
       this.delegatedTo = null;
       this.delegatedFrom = null;
+      this.place = null;
       this.tracking = null;
       this.selfType = _ReportLinksSelf.default;
       this.feedbackType = _ReportLinksFeedback.default;
@@ -94,6 +97,7 @@ var ReportLinks =
       this.categoryType = _ReportLinksCategory.default;
       this.delegatedToType = _ReportLinksDelegatedTo.default;
       this.delegatedFromType = _ReportLinksDelegatedFrom.default;
+      this.placeType = _ReportLinksPlace.default;
       this.trackingType = _ReportLinksTracking.default;
     }
     /**
@@ -166,6 +170,13 @@ var ReportLinks =
             object.delegatedFrom = _ApiClient.default.convertToType(
               data["delegatedFrom"],
               object.delegatedFromType
+            );
+          }
+
+          if (data.hasOwnProperty("place")) {
+            object.place = _ApiClient.default.convertToType(
+              data["place"],
+              object.placeType
             );
           }
 
