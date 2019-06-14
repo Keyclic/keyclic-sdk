@@ -35,6 +35,21 @@ class BusinessActivity {
 
   BusinessActivityLinks links;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is BusinessActivity &&
+        runtimeType == other.runtimeType &&
+        name == other.name &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode => 0 ^ name.hashCode ^ id.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'alternateName': alternateName,

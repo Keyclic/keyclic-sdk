@@ -14,6 +14,20 @@ class MemberData {
 
   String member;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is MemberData &&
+        runtimeType == other.runtimeType &&
+        member == other.member;
+  }
+
+  @override
+  int get hashCode => 0 ^ member.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'member': member,

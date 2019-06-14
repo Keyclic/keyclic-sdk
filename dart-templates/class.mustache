@@ -1,4 +1,4 @@
-class {{classname}} {
+class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
   {{classname}}({ {{#vars}}this.{{name}},{{/vars}} });
 
   {{classname}}.fromJson(Map<String, dynamic> json) {
@@ -48,6 +48,26 @@ class {{classname}} {
     {{{datatype}}} {{name}};
     {{#allowableValues}}{{#min}} // range from {{min}} to {{max}}{{/min}}//{{^min}}enum {{name}}Enum { {{#values}} {{.}}, {{/values}} };{{/min}}{{/allowableValues}}
   {{/vars}}
+
+  @override
+  bool operator==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is {{classname}} && runtimeType == other.runtimeType
+    {{#requiredVars}}
+      {{#isContainer}}
+         && DeepCollectionEquality.unordered().equals({{name}}, other.{{name}})
+      {{/isContainer}}
+      {{^isContainer}}
+         && {{name}} == other.{{name}}
+      {{/isContainer}}
+    {{/requiredVars}};
+  }
+
+  @override
+  int get hashCode => 0{{#requiredVars}}{{^isContainer}} ^ {{name}}.hashCode{{/isContainer}}{{/requiredVars}};
 
   Map<String, dynamic> toJson() {
     return {

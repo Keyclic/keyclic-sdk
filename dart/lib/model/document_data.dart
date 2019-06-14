@@ -18,6 +18,21 @@ class DocumentData {
 
   DocumentDataPermission permission;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is DocumentData &&
+        runtimeType == other.runtimeType &&
+        file == other.file &&
+        permission == other.permission;
+  }
+
+  @override
+  int get hashCode => 0 ^ file.hashCode ^ permission.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'file': file,

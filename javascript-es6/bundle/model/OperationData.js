@@ -55,6 +55,7 @@ var OperationData =
       this.name = null;
       this.identificationNumber = null;
       this.report = report;
+      this.organization = null;
       this.scheduledAt = null;
     }
     /**
@@ -105,6 +106,13 @@ var OperationData =
           if (data.hasOwnProperty("report")) {
             object.report = _ApiClient.default.convertToType(
               data["report"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
               "String"
             );
           }

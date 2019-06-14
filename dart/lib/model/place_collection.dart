@@ -14,6 +14,18 @@ class PlaceCollection {
 
   List<Place> items;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is PlaceCollection && runtimeType == other.runtimeType;
+  }
+
+  @override
+  int get hashCode => 0;
+
   Map<String, dynamic> toJson() {
     return {
       'items': items,

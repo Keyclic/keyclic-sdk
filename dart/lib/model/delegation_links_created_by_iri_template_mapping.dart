@@ -15,6 +15,19 @@ class DelegationLinksCreatedByIriTemplateMapping {
 
   String person;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is DelegationLinksCreatedByIriTemplateMapping &&
+        runtimeType == other.runtimeType;
+  }
+
+  @override
+  int get hashCode => 0;
+
   Map<String, dynamic> toJson() {
     return {
       'person': person,

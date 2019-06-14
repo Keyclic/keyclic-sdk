@@ -18,6 +18,20 @@ class DocumentFile {
 
   String name;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is DocumentFile &&
+        runtimeType == other.runtimeType &&
+        name == other.name;
+  }
+
+  @override
+  int get hashCode => 0 ^ name.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'contentType': contentType,

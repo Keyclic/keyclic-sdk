@@ -14,6 +14,20 @@ class RelationshipData {
 
   String organization;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is RelationshipData &&
+        runtimeType == other.runtimeType &&
+        organization == other.organization;
+  }
+
+  @override
+  int get hashCode => 0 ^ organization.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'organization': organization,

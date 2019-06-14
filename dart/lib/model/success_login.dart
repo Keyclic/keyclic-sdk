@@ -22,6 +22,18 @@ class SuccessLogin {
 
   String tokenType;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is SuccessLogin && runtimeType == other.runtimeType;
+  }
+
+  @override
+  int get hashCode => 0;
+
   Map<String, dynamic> toJson() {
     return {
       'accessToken': accessToken,

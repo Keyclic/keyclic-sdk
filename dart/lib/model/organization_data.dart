@@ -22,6 +22,21 @@ class OrganizationData {
 
   String logo;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is OrganizationData &&
+        runtimeType == other.runtimeType &&
+        name == other.name &&
+        businessActivity == other.businessActivity;
+  }
+
+  @override
+  int get hashCode => 0 ^ name.hashCode ^ businessActivity.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'name': name,

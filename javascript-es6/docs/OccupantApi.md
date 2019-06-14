@@ -4,11 +4,80 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**cgetOccupants**](OccupantApi.md#cgetOccupants) | **GET** /occupants | Retrieve all Occupant resources.
 [**cgetOccupantsByPlace**](OccupantApi.md#cgetOccupantsByPlace) | **GET** /places/{place}/occupants | Retrieve all Occupant resources.
 [**deleteOccupantByPlaceAndOccupant**](OccupantApi.md#deleteOccupantByPlaceAndOccupant) | **DELETE** /places/{place}/occupants/{occupant} | Remove one Occupant resource.
-[**getOccupantByPlaceAndOccupant**](OccupantApi.md#getOccupantByPlaceAndOccupant) | **GET** /places/{place}/occupants/{occupant} | Retrieve one Occupant resource.
+[**getOccupant**](OccupantApi.md#getOccupant) | **GET** /occupants/{occupant} | Retrieve one Occupant resource.
 [**postOccupantByPlace**](OccupantApi.md#postOccupantByPlace) | **POST** /places/{place}/occupants | Create one Occupant resource.
 
+
+<a name="cgetOccupants"></a>
+# **cgetOccupants**
+> OccupantPagination cgetOccupants(xKeyclicApp, , opts)
+
+Retrieve all Occupant resources.
+
+### Example
+```javascript
+import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
+let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new @KeyclicSdkJavascript.OccupantApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+  'person': "person_example", // String | The identifier of the resource formatted as GUID string.
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
+  'order': "desc", // String | 
+  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+};
+
+apiInstance.cgetOccupants(xKeyclicApp, , opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+ **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
+ **order** | **String**|  | [optional] [default to desc]
+ **after** | **Date**|  | [optional] 
+ **before** | **Date**|  | [optional] 
+
+### Return type
+
+[**OccupantPagination**](OccupantPagination.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
 <a name="cgetOccupantsByPlace"></a>
 # **cgetOccupantsByPlace**
@@ -36,6 +105,7 @@ let place = "place_example"; // String | The identifier of the resource formatte
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+  'person': "person_example", // String | The identifier of the resource formatted as GUID string.
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
   'order': "desc", // String | 
@@ -60,6 +130,7 @@ Name | Type | Description  | Notes
  **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
+ **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **order** | **String**|  | [optional] [default to desc]
@@ -141,9 +212,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json;charset=UTF-8
  - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="getOccupantByPlaceAndOccupant"></a>
-# **getOccupantByPlaceAndOccupant**
-> Occupant getOccupantByPlaceAndOccupant(xKeyclicApp, place, occupant, opts)
+<a name="getOccupant"></a>
+# **getOccupant**
+> Occupant getOccupant(xKeyclicApp, occupant, opts)
 
 Retrieve one Occupant resource.
 
@@ -162,8 +233,6 @@ let apiInstance = new @KeyclicSdkJavascript.OccupantApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let place = "place_example"; // String | The identifier of the resource formatted as GUID string.
-
 let occupant = "occupant_example"; // String | The identifier of the resource formatted as GUID string.
 
 let opts = { 
@@ -171,7 +240,7 @@ let opts = {
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.getOccupantByPlaceAndOccupant(xKeyclicApp, place, occupant, opts, (error, data, response) => {
+apiInstance.getOccupant(xKeyclicApp, occupant, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -185,7 +254,6 @@ apiInstance.getOccupantByPlaceAndOccupant(xKeyclicApp, place, occupant, opts, (e
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **occupant** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 

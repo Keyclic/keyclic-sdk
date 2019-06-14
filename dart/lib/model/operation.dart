@@ -67,6 +67,23 @@ class Operation {
 
   FeedbackEmbedded embedded;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Operation &&
+        runtimeType == other.runtimeType &&
+        id == other.id &&
+        DeepCollectionEquality.unordered().equals(state, other.state) &&
+        createdAt == other.createdAt &&
+        updatedAt == other.updatedAt;
+  }
+
+  @override
+  int get hashCode => 0 ^ id.hashCode ^ createdAt.hashCode ^ updatedAt.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'description': description,

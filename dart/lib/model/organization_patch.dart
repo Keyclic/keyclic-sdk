@@ -38,6 +38,18 @@ class OrganizationPatch {
 
   OrganizationPatchPreferences preferences;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is OrganizationPatch && runtimeType == other.runtimeType;
+  }
+
+  @override
+  int get hashCode => 0;
+
   Map<String, dynamic> toJson() {
     return {
       'name': name,

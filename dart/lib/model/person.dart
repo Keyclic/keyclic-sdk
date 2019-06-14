@@ -70,6 +70,30 @@ class Person {
 
   PersonLinks links;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Person &&
+        runtimeType == other.runtimeType &&
+        optIn == other.optIn &&
+        preferences == other.preferences &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        updatedAt == other.updatedAt;
+  }
+
+  @override
+  int get hashCode =>
+      0 ^
+      optIn.hashCode ^
+      preferences.hashCode ^
+      id.hashCode ^
+      createdAt.hashCode ^
+      updatedAt.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'familyName': familyName,

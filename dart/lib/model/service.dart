@@ -34,6 +34,22 @@ class Service {
 
   ServiceLinks links;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Service &&
+        runtimeType == other.runtimeType &&
+        contactPoint == other.contactPoint &&
+        name == other.name &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode => 0 ^ contactPoint.hashCode ^ name.hashCode ^ id.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'contactPoint': contactPoint,

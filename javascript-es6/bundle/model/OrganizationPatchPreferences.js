@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _OrganizationPatchPreferencesReference = _interopRequireDefault(
-  require("./OrganizationPatchPreferencesReference")
+var _OrganizationPreferencesReference = _interopRequireDefault(
+  require("./OrganizationPreferencesReference")
 );
 
 function _interopRequireDefault(obj) {
@@ -54,7 +54,7 @@ var OrganizationPatchPreferences =
       _classCallCheck(this, OrganizationPatchPreferences);
 
       this.reference = null;
-      this.referenceType = _OrganizationPatchPreferencesReference.default;
+      this.referenceType = _OrganizationPreferencesReference.default;
     }
     /**
      * Constructs a "OrganizationPatchPreferences" from a plain JavaScript object.

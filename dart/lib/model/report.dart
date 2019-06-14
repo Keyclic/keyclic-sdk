@@ -66,6 +66,29 @@ class Report {
 
   ReportEmbedded embedded;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Report &&
+        runtimeType == other.runtimeType &&
+        priority == other.priority &&
+        reference == other.reference &&
+        id == other.id &&
+        DeepCollectionEquality.unordered().equals(state, other.state) &&
+        updatedAt == other.updatedAt;
+  }
+
+  @override
+  int get hashCode =>
+      0 ^
+      priority.hashCode ^
+      reference.hashCode ^
+      id.hashCode ^
+      updatedAt.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'description': description,

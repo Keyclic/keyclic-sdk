@@ -18,6 +18,21 @@ class DelegateData {
 
   String organization;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is DelegateData &&
+        runtimeType == other.runtimeType &&
+        report == other.report &&
+        organization == other.organization;
+  }
+
+  @override
+  int get hashCode => 0 ^ report.hashCode ^ organization.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'report': report,

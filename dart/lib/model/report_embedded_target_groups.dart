@@ -22,6 +22,19 @@ class ReportEmbeddedTargetGroups {
 
   String description;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is ReportEmbeddedTargetGroups &&
+        runtimeType == other.runtimeType;
+  }
+
+  @override
+  int get hashCode => 0;
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,

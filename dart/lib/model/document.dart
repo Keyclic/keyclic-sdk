@@ -38,6 +38,28 @@ class Document {
 
   DocumentLinks links;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Document &&
+        runtimeType == other.runtimeType &&
+        file == other.file &&
+        permission == other.permission &&
+        id == other.id &&
+        createdAt == other.createdAt;
+  }
+
+  @override
+  int get hashCode =>
+      0 ^
+      file.hashCode ^
+      permission.hashCode ^
+      id.hashCode ^
+      createdAt.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'file': file,

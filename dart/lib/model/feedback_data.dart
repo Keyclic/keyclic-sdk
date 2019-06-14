@@ -43,6 +43,21 @@ class FeedbackData {
 
   String place;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is FeedbackData &&
+        runtimeType == other.runtimeType &&
+        geo == other.geo &&
+        visibility == other.visibility;
+  }
+
+  @override
+  int get hashCode => 0 ^ geo.hashCode ^ visibility.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'category': category,

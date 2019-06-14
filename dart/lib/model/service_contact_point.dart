@@ -18,6 +18,20 @@ class ServiceContactPoint {
 
   bool isOpen;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is ServiceContactPoint &&
+        runtimeType == other.runtimeType &&
+        telephone == other.telephone;
+  }
+
+  @override
+  int get hashCode => 0 ^ telephone.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'telephone': telephone,

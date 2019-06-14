@@ -18,6 +18,21 @@ class Chart {
 
   List<int> data;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Chart &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(labels, other.labels) &&
+        DeepCollectionEquality.unordered().equals(data, other.data);
+  }
+
+  @override
+  int get hashCode => 0;
+
   Map<String, dynamic> toJson() {
     return {
       'labels': labels,

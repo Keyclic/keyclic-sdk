@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "1.39.1"
+        "version": "1.40.1-dev.3e0c7241e"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -3468,7 +3468,7 @@
                 ]
             }
         },
-        "\/places\/{place}\/occupants": {
+        "\/occupants": {
             "get": {
                 "tags": [
                     "Occupant"
@@ -3478,7 +3478,7 @@
                     "description": "Keyclic API documentation.",
                     "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
                 },
-                "operationId": "cgetOccupantsByPlace",
+                "operationId": "cgetOccupants",
                 "consumes": [
                     "application\/json;charset=UTF-8"
                 ],
@@ -3496,6 +3496,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/person"
+                    },
+                    {
                         "$ref": "#\/parameters\/page"
                     },
                     {
@@ -3509,12 +3512,82 @@
                     },
                     {
                         "$ref": "#\/parameters\/before"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/OccupantPagination"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/occupants\/{occupant}": {
+            "get": {
+                "tags": [
+                    "Occupant"
+                ],
+                "summary": "Retrieve one Occupant resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "getOccupant",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
                         "format": "uuid",
                         "in": "path",
-                        "name": "place",
+                        "name": "occupant",
                         "required": true,
                         "type": "string"
                     }
@@ -3523,7 +3596,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/OccupantPagination"
+                            "$ref": "#\/definitions\/Occupant"
                         }
                     },
                     "400": {
@@ -3565,7 +3638,101 @@
                         "bearer": []
                     }
                 ]
-            },
+            }
+        },
+        "\/places\/{place}\/occupants\/{occupant}": {
+            "delete": {
+                "tags": [
+                    "Occupant"
+                ],
+                "summary": "Remove one Occupant resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "deleteOccupantByPlaceAndOccupant",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource formatted as GUID string.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "place",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "description": "The identifier of the resource formatted as GUID string.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "occupant",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Organization"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/places\/{place}\/occupants": {
             "post": {
                 "tags": [
                     "Occupant"
@@ -3650,19 +3817,17 @@
                         "bearer": []
                     }
                 ]
-            }
-        },
-        "\/places\/{place}\/occupants\/{occupant}": {
+            },
             "get": {
                 "tags": [
                     "Occupant"
                 ],
-                "summary": "Retrieve one Occupant resource.",
+                "summary": "Retrieve all Occupant resources.",
                 "externalDocs": {
                     "description": "Keyclic API documentation.",
                     "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
                 },
-                "operationId": "getOccupantByPlaceAndOccupant",
+                "operationId": "cgetOccupantsByPlace",
                 "consumes": [
                     "application\/json;charset=UTF-8"
                 ],
@@ -3680,94 +3845,22 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "description": "The identifier of the resource formatted as GUID string.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "place",
-                        "required": true,
-                        "type": "string"
+                        "$ref": "#\/parameters\/person"
                     },
                     {
-                        "description": "The identifier of the resource formatted as GUID string.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "occupant",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Occupant"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            },
-            "delete": {
-                "tags": [
-                    "Occupant"
-                ],
-                "summary": "Remove one Occupant resource.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "deleteOccupantByPlaceAndOccupant",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
+                        "$ref": "#\/parameters\/page"
                     },
                     {
-                        "$ref": "#\/parameters\/x-keyclic-app"
+                        "$ref": "#\/parameters\/limit"
                     },
                     {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -3776,21 +3869,13 @@
                         "name": "place",
                         "required": true,
                         "type": "string"
-                    },
-                    {
-                        "description": "The identifier of the resource formatted as GUID string.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "occupant",
-                        "required": true,
-                        "type": "string"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/Organization"
+                            "$ref": "#\/definitions\/OccupantPagination"
                         }
                     },
                     "400": {
@@ -12455,6 +12540,9 @@
                 "report": {
                     "type": "string"
                 },
+                "organization": {
+                    "type": "string"
+                },
                 "scheduledAt": {
                     "type": "string"
                 }
@@ -13438,7 +13526,8 @@
                 },
                 "notificationEmailAddress": {
                     "type": "string",
-                    "format": "string"
+                    "format": "string",
+                    "maxLength": 255
                 },
                 "preferences": {
                     "type": "object",
@@ -13448,6 +13537,7 @@
                             "properties": {
                                 "prefix": {
                                     "type": "string",
+                                    "readOnly": true,
                                     "format": "string"
                                 }
                             }
@@ -14867,6 +14957,13 @@
                 "$ref": "#\/definitions\/PersonData"
             },
             "required": true
+        },
+        "person": {
+            "description": "The identifier of the resource formatted as GUID string.",
+            "format": "uuid",
+            "in": "query",
+            "name": "person",
+            "type": "string"
         },
         "OperationPatch": {
             "name": "OperationPatch",

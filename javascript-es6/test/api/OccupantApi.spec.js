@@ -47,6 +47,16 @@
   }
 
   describe('OccupantApi', function() {
+    describe('cgetOccupants', function() {
+      it('should call cgetOccupants successfully', function(done) {
+        //uncomment below and update the code to test cgetOccupants
+        //instance.cgetOccupants(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('cgetOccupantsByPlace', function() {
       it('should call cgetOccupantsByPlace successfully', function(done) {
         //uncomment below and update the code to test cgetOccupantsByPlace
@@ -67,10 +77,10 @@
         done();
       });
     });
-    describe('getOccupantByPlaceAndOccupant', function() {
-      it('should call getOccupantByPlaceAndOccupant successfully', function(done) {
-        //uncomment below and update the code to test getOccupantByPlaceAndOccupant
-        //instance.getOccupantByPlaceAndOccupant(function(error) {
+    describe('getOccupant', function() {
+      it('should call getOccupant successfully', function(done) {
+        //uncomment below and update the code to test getOccupant
+        //instance.getOccupant(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -14,6 +14,20 @@ class EmailData {
 
   String email;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is EmailData &&
+        runtimeType == other.runtimeType &&
+        email == other.email;
+  }
+
+  @override
+  int get hashCode => 0 ^ email.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'email': email,

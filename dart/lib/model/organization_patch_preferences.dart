@@ -9,11 +9,23 @@ class OrganizationPatchPreferences {
     if (json == null) {
       return;
     }
-    reference =
-        OrganizationPatchPreferencesReference.fromJson(json['reference']);
+    reference = OrganizationPreferencesReference.fromJson(json['reference']);
   }
 
-  OrganizationPatchPreferencesReference reference;
+  OrganizationPreferencesReference reference;
+
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is OrganizationPatchPreferences &&
+        runtimeType == other.runtimeType;
+  }
+
+  @override
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {

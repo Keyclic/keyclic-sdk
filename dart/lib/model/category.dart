@@ -46,6 +46,24 @@ class Category {
 
   CategoryLinks links;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Category &&
+        runtimeType == other.runtimeType &&
+        color == other.color &&
+        name == other.name &&
+        id == other.id &&
+        createdAt == other.createdAt;
+  }
+
+  @override
+  int get hashCode =>
+      0 ^ color.hashCode ^ name.hashCode ^ id.hashCode ^ createdAt.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'color': color,

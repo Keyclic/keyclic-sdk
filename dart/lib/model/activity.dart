@@ -45,6 +45,24 @@ class Activity {
 
   DateTime time;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Activity &&
+        runtimeType == other.runtimeType &&
+        actor == other.actor &&
+        message == other.message &&
+        object == other.object &&
+        verb == other.verb;
+  }
+
+  @override
+  int get hashCode =>
+      0 ^ actor.hashCode ^ message.hashCode ^ object.hashCode ^ verb.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'actor': actor,

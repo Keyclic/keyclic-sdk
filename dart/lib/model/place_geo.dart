@@ -18,6 +18,21 @@ class PlaceGeo {
 
   double elevation;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is PlaceGeo &&
+        runtimeType == other.runtimeType &&
+        polygon == other.polygon &&
+        elevation == other.elevation;
+  }
+
+  @override
+  int get hashCode => 0 ^ polygon.hashCode ^ elevation.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'polygon': polygon,

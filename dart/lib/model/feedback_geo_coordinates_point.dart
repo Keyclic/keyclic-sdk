@@ -22,6 +22,23 @@ class FeedbackGeoCoordinatesPoint {
 
   int srid;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is FeedbackGeoCoordinatesPoint &&
+        runtimeType == other.runtimeType &&
+        latitude == other.latitude &&
+        longitude == other.longitude &&
+        srid == other.srid;
+  }
+
+  @override
+  int get hashCode =>
+      0 ^ latitude.hashCode ^ longitude.hashCode ^ srid.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'latitude': latitude,

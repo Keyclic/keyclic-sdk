@@ -18,6 +18,21 @@ class RegisterData {
 
   String password;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is RegisterData &&
+        runtimeType == other.runtimeType &&
+        email == other.email &&
+        password == other.password;
+  }
+
+  @override
+  int get hashCode => 0 ^ email.hashCode ^ password.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'email': email,

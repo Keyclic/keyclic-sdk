@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reference** | [**OrganizationPatchPreferencesReference**](OrganizationPatchPreferencesReference.md) |  | [optional] 
+**reference** | [**OrganizationPreferencesReference**](OrganizationPreferencesReference.md) |  | [optional] 
 
 

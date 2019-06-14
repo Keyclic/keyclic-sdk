@@ -18,6 +18,20 @@ class DeviceData {
 
   String platform;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is DeviceData &&
+        runtimeType == other.runtimeType &&
+        token == other.token;
+  }
+
+  @override
+  int get hashCode => 0 ^ token.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'token': token,

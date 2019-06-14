@@ -54,6 +54,30 @@ class Place {
 
   PlaceLinks links;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Place &&
+        runtimeType == other.runtimeType &&
+        geo == other.geo &&
+        name == other.name &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        updatedAt == other.updatedAt;
+  }
+
+  @override
+  int get hashCode =>
+      0 ^
+      geo.hashCode ^
+      name.hashCode ^
+      id.hashCode ^
+      createdAt.hashCode ^
+      updatedAt.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'branchCode': branchCode,

@@ -14,6 +14,19 @@ class DelegationLinksReportIriTemplateMapping {
 
   String report;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is DelegationLinksReportIriTemplateMapping &&
+        runtimeType == other.runtimeType;
+  }
+
+  @override
+  int get hashCode => 0;
+
   Map<String, dynamic> toJson() {
     return {
       'report': report,

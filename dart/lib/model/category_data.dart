@@ -22,6 +22,22 @@ class CategoryData {
 
   String icon;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is CategoryData &&
+        runtimeType == other.runtimeType &&
+        name == other.name &&
+        color == other.color &&
+        icon == other.icon;
+  }
+
+  @override
+  int get hashCode => 0 ^ name.hashCode ^ color.hashCode ^ icon.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'name': name,

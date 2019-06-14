@@ -34,6 +34,24 @@ class Webhook {
 
   WebhookLinks links;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Webhook &&
+        runtimeType == other.runtimeType &&
+        enabled == other.enabled &&
+        event == other.event &&
+        payloadUrl == other.payloadUrl &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode =>
+      0 ^ enabled.hashCode ^ event.hashCode ^ payloadUrl.hashCode ^ id.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'enabled': enabled,

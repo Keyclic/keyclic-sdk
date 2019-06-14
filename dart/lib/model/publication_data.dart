@@ -22,6 +22,22 @@ class PublicationData {
 
   String title;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is PublicationData &&
+        runtimeType == other.runtimeType &&
+        message == other.message &&
+        place == other.place &&
+        title == other.title;
+  }
+
+  @override
+  int get hashCode => 0 ^ message.hashCode ^ place.hashCode ^ title.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'message': message,

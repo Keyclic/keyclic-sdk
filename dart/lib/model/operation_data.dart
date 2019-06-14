@@ -6,6 +6,7 @@ class OperationData {
     this.name,
     this.identificationNumber,
     this.report,
+    this.organization,
     this.scheduledAt,
   });
 
@@ -17,6 +18,7 @@ class OperationData {
     name = json['name'];
     identificationNumber = json['identificationNumber'];
     report = json['report'];
+    organization = json['organization'];
     scheduledAt = json['scheduledAt'];
   }
 
@@ -28,7 +30,23 @@ class OperationData {
 
   String report;
 
+  String organization;
+
   String scheduledAt;
+
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is OperationData &&
+        runtimeType == other.runtimeType &&
+        report == other.report;
+  }
+
+  @override
+  int get hashCode => 0 ^ report.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
@@ -36,13 +54,14 @@ class OperationData {
       'name': name,
       'identificationNumber': identificationNumber,
       'report': report,
+      'organization': organization,
       'scheduledAt': scheduledAt,
     };
   }
 
   @override
   String toString() {
-    return 'OperationData[description=$description, name=$name, identificationNumber=$identificationNumber, report=$report, scheduledAt=$scheduledAt, ]';
+    return 'OperationData[description=$description, name=$name, identificationNumber=$identificationNumber, report=$report, organization=$organization, scheduledAt=$scheduledAt, ]';
   }
 
   static List<OperationData> listFromJson(List<dynamic> json) {

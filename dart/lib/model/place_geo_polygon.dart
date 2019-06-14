@@ -18,6 +18,20 @@ class PlaceGeoPolygon {
 
   List<Feature> features;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is PlaceGeoPolygon &&
+        runtimeType == other.runtimeType &&
+        type == other.type;
+  }
+
+  @override
+  int get hashCode => 0 ^ type.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'type': type,

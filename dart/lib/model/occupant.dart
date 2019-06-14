@@ -30,6 +30,21 @@ class Occupant {
 
   OccupantLinks links;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Occupant &&
+        runtimeType == other.runtimeType &&
+        id == other.id &&
+        createdAt == other.createdAt;
+  }
+
+  @override
+  int get hashCode => 0 ^ id.hashCode ^ createdAt.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,

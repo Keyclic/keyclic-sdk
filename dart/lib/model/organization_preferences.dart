@@ -22,6 +22,23 @@ class OrganizationPreferences {
 
   bool reviewEnabled;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is OrganizationPreferences &&
+        runtimeType == other.runtimeType &&
+        public == other.public &&
+        reference == other.reference &&
+        reviewEnabled == other.reviewEnabled;
+  }
+
+  @override
+  int get hashCode =>
+      0 ^ public.hashCode ^ reference.hashCode ^ reviewEnabled.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'public': public,

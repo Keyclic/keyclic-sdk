@@ -15,6 +15,19 @@ class FeedbackReviewRequestLinksSelfIriTemplateMapping {
 
   String reviewRequest;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is FeedbackReviewRequestLinksSelfIriTemplateMapping &&
+        runtimeType == other.runtimeType;
+  }
+
+  @override
+  int get hashCode => 0;
+
   Map<String, dynamic> toJson() {
     return {
       'reviewRequest': reviewRequest,

@@ -14,6 +14,20 @@ class CommentData {
 
   String text;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is CommentData &&
+        runtimeType == other.runtimeType &&
+        text == other.text;
+  }
+
+  @override
+  int get hashCode => 0 ^ text.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'text': text,

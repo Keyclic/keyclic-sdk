@@ -19,6 +19,20 @@ class FeedbackGeoCoordinates {
 
   FeedbackGeoCoordinatesPoint point;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is FeedbackGeoCoordinates &&
+        runtimeType == other.runtimeType &&
+        point == other.point;
+  }
+
+  @override
+  int get hashCode => 0 ^ point.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'elevation': elevation,

@@ -14,6 +14,20 @@ class PersonData {
 
   String person;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is PersonData &&
+        runtimeType == other.runtimeType &&
+        person == other.person;
+  }
+
+  @override
+  int get hashCode => 0 ^ person.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'person': person,

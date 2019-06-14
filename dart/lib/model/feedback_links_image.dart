@@ -19,6 +19,18 @@ class FeedbackLinksImage {
 
   FeedbackLinksImageIriTemplate iriTemplate;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is FeedbackLinksImage && runtimeType == other.runtimeType;
+  }
+
+  @override
+  int get hashCode => 0;
+
   Map<String, dynamic> toJson() {
     return {
       'href': href,

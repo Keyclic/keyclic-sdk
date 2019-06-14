@@ -22,6 +22,20 @@ class Device {
 
   DeviceLinks links;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Device &&
+        runtimeType == other.runtimeType &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode => 0 ^ id.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,

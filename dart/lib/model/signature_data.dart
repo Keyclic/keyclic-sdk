@@ -18,6 +18,20 @@ class SignatureData {
 
   String image;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is SignatureData &&
+        runtimeType == other.runtimeType &&
+        image == other.image;
+  }
+
+  @override
+  int get hashCode => 0 ^ image.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'signer': signer,

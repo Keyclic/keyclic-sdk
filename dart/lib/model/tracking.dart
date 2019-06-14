@@ -26,6 +26,21 @@ class Tracking {
 
   List<Checkpoint> checkpoints;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Tracking &&
+        runtimeType == other.runtimeType &&
+        state == other.state &&
+        progression == other.progression;
+  }
+
+  @override
+  int get hashCode => 0 ^ state.hashCode ^ progression.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'state': state,

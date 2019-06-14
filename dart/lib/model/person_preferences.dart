@@ -18,6 +18,22 @@ class PersonPreferences {
 
   bool messagePushEnabled;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is PersonPreferences &&
+        runtimeType == other.runtimeType &&
+        messageEmailEnabled == other.messageEmailEnabled &&
+        messagePushEnabled == other.messagePushEnabled;
+  }
+
+  @override
+  int get hashCode =>
+      0 ^ messageEmailEnabled.hashCode ^ messagePushEnabled.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'messageEmailEnabled': messageEmailEnabled,

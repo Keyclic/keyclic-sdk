@@ -38,6 +38,22 @@ class FeedbackReviewRequest {
 
   FeedbackReviewRequestLinks links;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is FeedbackReviewRequest &&
+        runtimeType == other.runtimeType &&
+        id == other.id &&
+        createdAt == other.createdAt &&
+        updatedAt == other.updatedAt;
+  }
+
+  @override
+  int get hashCode => 0 ^ id.hashCode ^ createdAt.hashCode ^ updatedAt.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,

@@ -70,6 +70,28 @@ class Organization {
 
   OrganizationLinks links;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Organization &&
+        runtimeType == other.runtimeType &&
+        name == other.name &&
+        preferences == other.preferences &&
+        id == other.id &&
+        updatedAt == other.updatedAt;
+  }
+
+  @override
+  int get hashCode =>
+      0 ^
+      name.hashCode ^
+      preferences.hashCode ^
+      id.hashCode ^
+      updatedAt.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'alternateName': alternateName,

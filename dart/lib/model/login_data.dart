@@ -18,6 +18,21 @@ class LoginData {
 
   String password;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is LoginData &&
+        runtimeType == other.runtimeType &&
+        login == other.login &&
+        password == other.password;
+  }
+
+  @override
+  int get hashCode => 0 ^ login.hashCode ^ password.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'login': login,

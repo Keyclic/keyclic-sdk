@@ -34,6 +34,29 @@ class LogEntry {
 
   List<String> data;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is LogEntry &&
+        runtimeType == other.runtimeType &&
+        action == other.action &&
+        loggedAt == other.loggedAt &&
+        objectId == other.objectId &&
+        version == other.version &&
+        DeepCollectionEquality.unordered().equals(data, other.data);
+  }
+
+  @override
+  int get hashCode =>
+      0 ^
+      action.hashCode ^
+      loggedAt.hashCode ^
+      objectId.hashCode ^
+      version.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'action': action,

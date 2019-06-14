@@ -26,6 +26,18 @@ class Checkpoint {
 
   CheckpointLinks links;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Checkpoint && runtimeType == other.runtimeType;
+  }
+
+  @override
+  int get hashCode => 0;
+
   Map<String, dynamic> toJson() {
     return {
       'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),

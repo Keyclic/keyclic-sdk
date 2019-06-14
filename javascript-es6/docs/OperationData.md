@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **identificationNumber** | **String** |  | [optional] 
 **report** | **String** |  | 
+**organization** | **String** |  | [optional] 
 **scheduledAt** | **String** |  | [optional] 
 
 

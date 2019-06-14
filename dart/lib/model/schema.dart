@@ -19,6 +19,20 @@ class Schema {
 
   List<String> required;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Schema &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(properties, other.properties);
+  }
+
+  @override
+  int get hashCode => 0;
+
   Map<String, dynamic> toJson() {
     return {
       'properties': properties,

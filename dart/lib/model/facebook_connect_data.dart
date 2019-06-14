@@ -14,6 +14,20 @@ class FacebookConnectData {
 
   String accessToken;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is FacebookConnectData &&
+        runtimeType == other.runtimeType &&
+        accessToken == other.accessToken;
+  }
+
+  @override
+  int get hashCode => 0 ^ accessToken.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'accessToken': accessToken,

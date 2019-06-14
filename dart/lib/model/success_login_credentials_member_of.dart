@@ -23,6 +23,19 @@ class SuccessLoginCredentialsMemberOf {
 
   List<String> roles;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is SuccessLoginCredentialsMemberOf &&
+        runtimeType == other.runtimeType;
+  }
+
+  @override
+  int get hashCode => 0;
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,

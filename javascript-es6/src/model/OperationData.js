@@ -30,6 +30,7 @@ export default class OperationData {
     this.name = null;
     this.identificationNumber = null;
     this.report = report;
+    this.organization = null;
     this.scheduledAt = null;
   }
 
@@ -65,6 +66,12 @@ export default class OperationData {
     }
     if (data.hasOwnProperty("report")) {
       object.report = ApiClient.convertToType(data["report"], "String");
+    }
+    if (data.hasOwnProperty("organization")) {
+      object.organization = ApiClient.convertToType(
+        data["organization"],
+        "String"
+      );
     }
     if (data.hasOwnProperty("scheduledAt")) {
       object.scheduledAt = ApiClient.convertToType(

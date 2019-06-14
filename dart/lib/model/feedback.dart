@@ -54,6 +54,22 @@ class Feedback {
 
   FeedbackEmbedded embedded;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Feedback &&
+        runtimeType == other.runtimeType &&
+        geoCoordinates == other.geoCoordinates &&
+        id == other.id &&
+        DeepCollectionEquality.unordered().equals(state, other.state);
+  }
+
+  @override
+  int get hashCode => 0 ^ geoCoordinates.hashCode ^ id.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'description': description,

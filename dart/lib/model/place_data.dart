@@ -22,6 +22,21 @@ class PlaceData {
 
   String polygon;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is PlaceData &&
+        runtimeType == other.runtimeType &&
+        name == other.name &&
+        polygon == other.polygon;
+  }
+
+  @override
+  int get hashCode => 0 ^ name.hashCode ^ polygon.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'name': name,

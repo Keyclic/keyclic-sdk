@@ -381,8 +381,6 @@ class ApiClient {
           return OrganizationPatch.fromJson(value);
         case 'OrganizationPatchPreferences':
           return OrganizationPatchPreferences.fromJson(value);
-        case 'OrganizationPatchPreferencesReference':
-          return OrganizationPatchPreferencesReference.fromJson(value);
         case 'OrganizationPreferences':
           return OrganizationPreferences.fromJson(value);
         case 'OrganizationPreferencesReference':

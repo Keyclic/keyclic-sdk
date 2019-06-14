@@ -34,6 +34,22 @@ class Application {
 
   ApplicationLinks links;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Application &&
+        runtimeType == other.runtimeType &&
+        name == other.name &&
+        token == other.token &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode => 0 ^ name.hashCode ^ token.hashCode ^ id.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'name': name,

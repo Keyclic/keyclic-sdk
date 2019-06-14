@@ -14,6 +14,20 @@ class DocumentPermission {
 
   String targetGroup;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is DocumentPermission &&
+        runtimeType == other.runtimeType &&
+        targetGroup == other.targetGroup;
+  }
+
+  @override
+  int get hashCode => 0 ^ targetGroup.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'targetGroup': targetGroup,

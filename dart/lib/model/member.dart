@@ -38,6 +38,21 @@ class Member {
 
   MemberEmbedded embedded;
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is Member &&
+        runtimeType == other.runtimeType &&
+        id == other.id &&
+        createdAt == other.createdAt;
+  }
+
+  @override
+  int get hashCode => 0 ^ id.hashCode ^ createdAt.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'roles': roles,

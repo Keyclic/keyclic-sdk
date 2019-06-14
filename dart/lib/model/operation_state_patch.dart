@@ -15,6 +15,20 @@ class OperationStatePatch {
   String transition;
   //enum transitionEnum {  reset,  assign,  accept,  refuse,  progress,  resolve,  };
 
+  @override
+  bool operator ==(dynamic other) {
+    if (identical(this, other)) {
+      return true;
+    }
+
+    return other is OperationStatePatch &&
+        runtimeType == other.runtimeType &&
+        transition == other.transition;
+  }
+
+  @override
+  int get hashCode => 0 ^ transition.hashCode;
+
   Map<String, dynamic> toJson() {
     return {
       'transition': transition,

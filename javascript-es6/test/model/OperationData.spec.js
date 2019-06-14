@@ -77,6 +77,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property organization (base name: "organization")', function() {
+      // uncomment below and update the code to test the property organization
+      //var instane = new @KeyclicSdkJavascript.OperationData();
+      //expect(instance).to.be();
+    });
+
     it('should have the property scheduledAt (base name: "scheduledAt")', function() {
       // uncomment below and update the code to test the property scheduledAt
       //var instane = new @KeyclicSdkJavascript.OperationData();
