@@ -118,7 +118,7 @@ class PlaceApi {
 
     String contentType =
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = [];
+    List<String> authNames = ["bearer"];
 
     if (contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;

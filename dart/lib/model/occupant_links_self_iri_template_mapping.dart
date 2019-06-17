@@ -2,7 +2,6 @@ part of keyclic_sdk_api.api;
 
 class OccupantLinksSelfIriTemplateMapping {
   OccupantLinksSelfIriTemplateMapping({
-    this.place,
     this.occupant,
   });
 
@@ -10,11 +9,8 @@ class OccupantLinksSelfIriTemplateMapping {
     if (json == null) {
       return;
     }
-    place = json['place'];
     occupant = json['occupant'];
   }
-
-  String place;
 
   String occupant;
 
@@ -33,14 +29,13 @@ class OccupantLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'place': place,
       'occupant': occupant,
     };
   }
 
   @override
   String toString() {
-    return 'OccupantLinksSelfIriTemplateMapping[place=$place, occupant=$occupant, ]';
+    return 'OccupantLinksSelfIriTemplateMapping[occupant=$occupant, ]';
   }
 
   static List<OccupantLinksSelfIriTemplateMapping> listFromJson(

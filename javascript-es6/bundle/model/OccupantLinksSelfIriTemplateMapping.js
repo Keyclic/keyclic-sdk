@@ -49,7 +49,6 @@ var OccupantLinksSelfIriTemplateMapping =
     function OccupantLinksSelfIriTemplateMapping() {
       _classCallCheck(this, OccupantLinksSelfIriTemplateMapping);
 
-      this.place = null;
       this.occupant = null;
     }
     /**
@@ -74,13 +73,6 @@ var OccupantLinksSelfIriTemplateMapping =
 
           if (object === null) {
             object = new OccupantLinksSelfIriTemplateMapping();
-          }
-
-          if (data.hasOwnProperty("place")) {
-            object.place = _ApiClient.default.convertToType(
-              data["place"],
-              "String"
-            );
           }
 
           if (data.hasOwnProperty("occupant")) {

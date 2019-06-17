@@ -53,12 +53,6 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.OccupantLinksSelfIriTemplateMapping);
     });
 
-    it('should have the property place (base name: "place")', function() {
-      // uncomment below and update the code to test the property place
-      //var instane = new @KeyclicSdkJavascript.OccupantLinksSelfIriTemplateMapping();
-      //expect(instance).to.be();
-    });
-
     it('should have the property occupant (base name: "occupant")', function() {
       // uncomment below and update the code to test the property occupant
       //var instane = new @KeyclicSdkJavascript.OccupantLinksSelfIriTemplateMapping();

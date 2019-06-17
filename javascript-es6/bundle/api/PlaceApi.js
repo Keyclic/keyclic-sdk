@@ -147,6 +147,7 @@ var PlaceApi =
     /**
      * Retrieve all Place resources.
      * @param { String } xKeyclicApp
+     * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
@@ -178,6 +179,7 @@ var PlaceApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
+          var credentials = arguments.length > 2 ? arguments[2] : undefined;
 
           if (returnType === null) {
             returnType = _PlacePagination.default;
@@ -289,6 +291,12 @@ var PlaceApi =
             searchName = null;
           }
 
+          if (typeof credentials === "undefined" || credentials === null) {
+            throw new window.Error(
+              'Missing the required parameter "credentials" when calling cgetPlaces'
+            );
+          }
+
           var pathParams = {};
           var bodyParam = null;
           var queryParams = {
@@ -315,8 +323,8 @@ var PlaceApi =
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
-          var credentialParams = null;
-          var authNames = [];
+          var credentialParams = credentials;
+          var authNames = ["bearer"];
           var contentTypes = ["application/json;charset=UTF-8"];
           var accepts = ["application/hal+json;charset=UTF-8"];
           return this.callApi(

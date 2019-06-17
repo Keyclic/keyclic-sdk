@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "1.40.1-dev.3e0c7241e"
+        "version": "1.40.5"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -8012,6 +8012,18 @@
                             "$ref": "#\/definitions\/Error"
                         }
                     },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
                     "500": {
                         "description": "",
                         "schema": {
@@ -8021,6 +8033,11 @@
                 },
                 "schemes": [
                     "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
                 ]
             }
         },
@@ -12302,10 +12319,6 @@
                                         "mapping": {
                                             "type": "object",
                                             "properties": {
-                                                "place": {
-                                                    "type": "string",
-                                                    "format": "string"
-                                                },
                                                 "occupant": {
                                                     "type": "string",
                                                     "format": "string"

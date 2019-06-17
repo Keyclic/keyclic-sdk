@@ -35,6 +35,7 @@ export default class PlaceApi extends ApiClient {
   /**
    * Retrieve all Place resources.
    * @param { String } xKeyclicApp
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
@@ -56,7 +57,7 @@ export default class PlaceApi extends ApiClient {
    * @param { String } searchDescription
    * @param { String } searchName
    */
-  cgetPlaces(returnType = null, options) {
+  cgetPlaces(returnType = null, options, credentials) {
     if (returnType === null) {
       returnType = PlacePagination;
     }
@@ -186,6 +187,12 @@ export default class PlaceApi extends ApiClient {
       searchName = null;
     }
 
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cgetPlaces'
+      );
+    }
+
     let pathParams = {};
 
     let bodyParam = null;
@@ -216,9 +223,9 @@ export default class PlaceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = null;
+    let credentialParams = credentials;
 
-    let authNames = [];
+    let authNames = ["bearer"];
 
     let contentTypes = ["application/json;charset=UTF-8"];
 

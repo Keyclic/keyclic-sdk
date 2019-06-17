@@ -24,7 +24,6 @@ export default class OccupantLinksSelfIriTemplateMapping {
     
      */
   constructor() {
-    this.place = null;
     this.occupant = null;
   }
 
@@ -43,9 +42,6 @@ export default class OccupantLinksSelfIriTemplateMapping {
       object = new OccupantLinksSelfIriTemplateMapping();
     }
 
-    if (data.hasOwnProperty("place")) {
-      object.place = ApiClient.convertToType(data["place"], "String");
-    }
     if (data.hasOwnProperty("occupant")) {
       object.occupant = ApiClient.convertToType(data["occupant"], "String");
     }
