@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "1.40.5"
+        "version": "1.41.3"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -1311,6 +1311,188 @@
                         "description": "",
                         "schema": {
                             "type": "file"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/feeds": {
+            "get": {
+                "tags": [
+                    "Feed"
+                ],
+                "summary": "Retrieve all Feed resources.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "cgetFeeds",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/page"
+                    },
+                    {
+                        "$ref": "#\/parameters\/limit"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/FeedPagination"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/feeds\/{feed}\/following": {
+            "get": {
+                "tags": [
+                    "Following"
+                ],
+                "summary": "Retrieve all Following resources.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "cgetFollowingsByFeed",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/page"
+                    },
+                    {
+                        "$ref": "#\/parameters\/limit"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "in": "path",
+                        "name": "feed",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/FollowingPagination"
                         }
                     },
                     "400": {
@@ -10909,6 +11091,126 @@
                 "createdAt"
             ]
         },
+        "Feed": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "name": {
+                    "type": "string",
+                    "format": "string"
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ]
+        },
+        "FeedCollection": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "$ref": "#\/definitions\/Feed"
+                    }
+                }
+            }
+        },
+        "FeedPagination": {
+            "type": "object",
+            "properties": {
+                "limit": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "page": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "pages": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "total": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "_embedded": {
+                    "$ref": "#\/definitions\/FeedCollection"
+                },
+                "_links": {
+                    "$ref": "#\/definitions\/PaginationLinks"
+                }
+            }
+        },
+        "Following": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
+                "feed_id": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
+                "target_id": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "readOnly": true,
+                    "format": "string"
+                }
+            }
+        },
+        "FollowingCollection": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "$ref": "#\/definitions\/Following"
+                    }
+                }
+            }
+        },
+        "FollowingPagination": {
+            "type": "object",
+            "properties": {
+                "limit": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "page": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "pages": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "total": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "_embedded": {
+                    "$ref": "#\/definitions\/FollowingCollection"
+                },
+                "_links": {
+                    "$ref": "#\/definitions\/PaginationLinks"
+                }
+            }
+        },
         "Activity": {
             "type": "object",
             "properties": {
@@ -12730,6 +13032,23 @@
                         "elevation": {
                             "type": "number",
                             "format": "float"
+                        },
+                        "centroid": {
+                            "type": "object",
+                            "properties": {
+                                "latitude": {
+                                    "type": "number",
+                                    "format": "float"
+                                },
+                                "longitude": {
+                                    "type": "number",
+                                    "format": "float"
+                                }
+                            },
+                            "required": [
+                                "latitude",
+                                "longitude"
+                            ]
                         }
                     },
                     "required": [
@@ -13206,6 +13525,15 @@
                         "tracking": {
                             "type": "string",
                             "format": "string"
+                        },
+                        "duration": {
+                            "type": "object",
+                            "properties": {
+                                "seconds": {
+                                    "type": "integer",
+                                    "format": "int32"
+                                }
+                            }
                         }
                     }
                 }

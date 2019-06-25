@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import PlaceGeoCentroid from "./PlaceGeoCentroid";
 import PlaceGeoPolygon from "./PlaceGeoPolygon";
 
 /**
@@ -35,8 +36,10 @@ export default class PlaceGeo {
   ) {
     this.polygon = polygon;
     this.elevation = elevation;
+    this.centroid = null;
 
     this.polygonType = PlaceGeoPolygon;
+    this.centroidType = PlaceGeoCentroid;
   }
 
   /**
@@ -62,6 +65,12 @@ export default class PlaceGeo {
     }
     if (data.hasOwnProperty("elevation")) {
       object.elevation = ApiClient.convertToType(data["elevation"], "Number");
+    }
+    if (data.hasOwnProperty("centroid")) {
+      object.centroid = ApiClient.convertToType(
+        data["centroid"],
+        object.centroidType
+      );
     }
 
     return object;

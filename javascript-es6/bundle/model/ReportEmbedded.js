@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ReportEmbeddedDuration = _interopRequireDefault(
+  require("./ReportEmbeddedDuration")
+);
+
 var _ReportEmbeddedTargetGroups = _interopRequireDefault(
   require("./ReportEmbeddedTargetGroups")
 );
@@ -56,7 +60,9 @@ var ReportEmbedded =
       this.stateTransitions = [];
       this.targetGroups = [];
       this.tracking = null;
+      this.duration = null;
       this.targetGroupsType = _ReportEmbeddedTargetGroups.default;
+      this.durationType = _ReportEmbeddedDuration.default;
     }
     /**
      * Constructs a "ReportEmbedded" from a plain JavaScript object.
@@ -100,6 +106,13 @@ var ReportEmbedded =
             object.tracking = _ApiClient.default.convertToType(
               data["tracking"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("duration")) {
+            object.duration = _ApiClient.default.convertToType(
+              data["duration"],
+              object.durationType
             );
           }
 

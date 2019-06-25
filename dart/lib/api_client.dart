@@ -198,6 +198,12 @@ class ApiClient {
           return Feature.fromJson(value);
         case 'FeatureGeometry':
           return FeatureGeometry.fromJson(value);
+        case 'Feed':
+          return Feed.fromJson(value);
+        case 'FeedCollection':
+          return FeedCollection.fromJson(value);
+        case 'FeedPagination':
+          return FeedPagination.fromJson(value);
         case 'Feedback':
           return Feedback.fromJson(value);
         case 'FeedbackCollection':
@@ -267,6 +273,12 @@ class ApiClient {
           return FeedbackStatePatch.fromJson(value);
         case 'FeedbackWorkflowTransitionData':
           return FeedbackWorkflowTransitionData.fromJson(value);
+        case 'Following':
+          return Following.fromJson(value);
+        case 'FollowingCollection':
+          return FollowingCollection.fromJson(value);
+        case 'FollowingPagination':
+          return FollowingPagination.fromJson(value);
         case 'ImageData':
           return ImageData.fromJson(value);
         case 'LogEntry':
@@ -421,6 +433,8 @@ class ApiClient {
           return PlaceData.fromJson(value);
         case 'PlaceGeo':
           return PlaceGeo.fromJson(value);
+        case 'PlaceGeoCentroid':
+          return PlaceGeoCentroid.fromJson(value);
         case 'PlaceGeoPolygon':
           return PlaceGeoPolygon.fromJson(value);
         case 'PlaceLinks':
@@ -479,6 +493,8 @@ class ApiClient {
           return ReportCollection.fromJson(value);
         case 'ReportEmbedded':
           return ReportEmbedded.fromJson(value);
+        case 'ReportEmbeddedDuration':
+          return ReportEmbeddedDuration.fromJson(value);
         case 'ReportEmbeddedTargetGroups':
           return ReportEmbeddedTargetGroups.fromJson(value);
         case 'ReportLinks':

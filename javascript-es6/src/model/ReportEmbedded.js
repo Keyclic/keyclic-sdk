@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import ReportEmbeddedDuration from "./ReportEmbeddedDuration";
 import ReportEmbeddedTargetGroups from "./ReportEmbeddedTargetGroups";
 
 /**
@@ -28,8 +29,10 @@ export default class ReportEmbedded {
     this.stateTransitions = [];
     this.targetGroups = [];
     this.tracking = null;
+    this.duration = null;
 
     this.targetGroupsType = ReportEmbeddedTargetGroups;
+    this.durationType = ReportEmbeddedDuration;
   }
 
   /**
@@ -60,6 +63,12 @@ export default class ReportEmbedded {
     }
     if (data.hasOwnProperty("tracking")) {
       object.tracking = ApiClient.convertToType(data["tracking"], "String");
+    }
+    if (data.hasOwnProperty("duration")) {
+      object.duration = ApiClient.convertToType(
+        data["duration"],
+        object.durationType
+      );
     }
 
     return object;

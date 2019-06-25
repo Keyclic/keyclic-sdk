@@ -92,6 +92,9 @@ import ErrorEmbedded from './model/ErrorEmbedded';
 import FacebookConnectData from './model/FacebookConnectData';
 import Feature from './model/Feature';
 import FeatureGeometry from './model/FeatureGeometry';
+import Feed from './model/Feed';
+import FeedCollection from './model/FeedCollection';
+import FeedPagination from './model/FeedPagination';
 import Feedback from './model/Feedback';
 import FeedbackCollection from './model/FeedbackCollection';
 import FeedbackData from './model/FeedbackData';
@@ -126,6 +129,9 @@ import FeedbackReviewRequestLinksSelfIriTemplateMapping from './model/FeedbackRe
 import FeedbackReviewRequestPagination from './model/FeedbackReviewRequestPagination';
 import FeedbackStatePatch from './model/FeedbackStatePatch';
 import FeedbackWorkflowTransitionData from './model/FeedbackWorkflowTransitionData';
+import Following from './model/Following';
+import FollowingCollection from './model/FollowingCollection';
+import FollowingPagination from './model/FollowingPagination';
 import ImageData from './model/ImageData';
 import LogEntry from './model/LogEntry';
 import LogEntryCollection from './model/LogEntryCollection';
@@ -203,6 +209,7 @@ import Place from './model/Place';
 import PlaceCollection from './model/PlaceCollection';
 import PlaceData from './model/PlaceData';
 import PlaceGeo from './model/PlaceGeo';
+import PlaceGeoCentroid from './model/PlaceGeoCentroid';
 import PlaceGeoPolygon from './model/PlaceGeoPolygon';
 import PlaceLinks from './model/PlaceLinks';
 import PlaceLinksContainedInPlace from './model/PlaceLinksContainedInPlace';
@@ -232,6 +239,7 @@ import RelationshipData from './model/RelationshipData';
 import Report from './model/Report';
 import ReportCollection from './model/ReportCollection';
 import ReportEmbedded from './model/ReportEmbedded';
+import ReportEmbeddedDuration from './model/ReportEmbeddedDuration';
 import ReportEmbeddedTargetGroups from './model/ReportEmbeddedTargetGroups';
 import ReportLinks from './model/ReportLinks';
 import ReportLinksCategory from './model/ReportLinksCategory';
@@ -300,6 +308,7 @@ import FeedApi from './api/FeedApi';
 import FeedbackApi from './api/FeedbackApi';
 import FileApi from './api/FileApi';
 import FollowApi from './api/FollowApi';
+import FollowingApi from './api/FollowingApi';
 import ImageApi from './api/ImageApi';
 import IssueApi from './api/IssueApi';
 import LogApi from './api/LogApi';
@@ -350,7 +359,7 @@ import WebhookApi from './api/WebhookApi';
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 1.40.5
+ * @version 1.41.3
  */
 export {
     /**
@@ -760,6 +769,21 @@ export {
      */
     FeatureGeometry,
     /**
+     * The Feed model constructor.
+     * @property { module:model/Feed }
+     */
+    Feed,
+    /**
+     * The FeedCollection model constructor.
+     * @property { module:model/FeedCollection }
+     */
+    FeedCollection,
+    /**
+     * The FeedPagination model constructor.
+     * @property { module:model/FeedPagination }
+     */
+    FeedPagination,
+    /**
      * The Feedback model constructor.
      * @property { module:model/Feedback }
      */
@@ -929,6 +953,21 @@ export {
      * @property { module:model/FeedbackWorkflowTransitionData }
      */
     FeedbackWorkflowTransitionData,
+    /**
+     * The Following model constructor.
+     * @property { module:model/Following }
+     */
+    Following,
+    /**
+     * The FollowingCollection model constructor.
+     * @property { module:model/FollowingCollection }
+     */
+    FollowingCollection,
+    /**
+     * The FollowingPagination model constructor.
+     * @property { module:model/FollowingPagination }
+     */
+    FollowingPagination,
     /**
      * The ImageData model constructor.
      * @property { module:model/ImageData }
@@ -1315,6 +1354,11 @@ export {
      */
     PlaceGeo,
     /**
+     * The PlaceGeoCentroid model constructor.
+     * @property { module:model/PlaceGeoCentroid }
+     */
+    PlaceGeoCentroid,
+    /**
      * The PlaceGeoPolygon model constructor.
      * @property { module:model/PlaceGeoPolygon }
      */
@@ -1459,6 +1503,11 @@ export {
      * @property { module:model/ReportEmbedded }
      */
     ReportEmbedded,
+    /**
+     * The ReportEmbeddedDuration model constructor.
+     * @property { module:model/ReportEmbeddedDuration }
+     */
+    ReportEmbeddedDuration,
     /**
      * The ReportEmbeddedTargetGroups model constructor.
      * @property { module:model/ReportEmbeddedTargetGroups }
@@ -1800,6 +1849,11 @@ export {
      * @property { module:api/FollowApi }
      */
     FollowApi,
+    /**
+     * The FollowingApi service constructor.
+     * @property { module:api/FollowingApi }
+     */
+    FollowingApi,
     /**
      * The ImageApi service constructor.
      * @property { module:api/ImageApi }

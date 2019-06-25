@@ -5,6 +5,7 @@ class ReportEmbedded {
     this.stateTransitions,
     this.targetGroups,
     this.tracking,
+    this.duration,
   });
 
   ReportEmbedded.fromJson(Map<String, dynamic> json) {
@@ -17,6 +18,7 @@ class ReportEmbedded {
     targetGroups =
         ReportEmbeddedTargetGroups.listFromJson(json['targetGroups']);
     tracking = json['tracking'];
+    duration = ReportEmbeddedDuration.fromJson(json['duration']);
   }
 
   List<String> stateTransitions;
@@ -24,6 +26,8 @@ class ReportEmbedded {
   List<ReportEmbeddedTargetGroups> targetGroups;
 
   String tracking;
+
+  ReportEmbeddedDuration duration;
 
   @override
   bool operator ==(dynamic other) {
@@ -42,12 +46,13 @@ class ReportEmbedded {
       'stateTransitions': stateTransitions,
       'targetGroups': targetGroups,
       'tracking': tracking,
+      'duration': duration,
     };
   }
 
   @override
   String toString() {
-    return 'ReportEmbedded[stateTransitions=$stateTransitions, targetGroups=$targetGroups, tracking=$tracking, ]';
+    return 'ReportEmbedded[stateTransitions=$stateTransitions, targetGroups=$targetGroups, tracking=$tracking, duration=$duration, ]';
   }
 
   static List<ReportEmbedded> listFromJson(List<dynamic> json) {

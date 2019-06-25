@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _PlaceGeoCentroid = _interopRequireDefault(require("./PlaceGeoCentroid"));
+
 var _PlaceGeoPolygon = _interopRequireDefault(require("./PlaceGeoPolygon"));
 
 function _interopRequireDefault(obj) {
@@ -57,7 +59,9 @@ var PlaceGeo =
 
       this.polygon = polygon;
       this.elevation = elevation;
+      this.centroid = null;
       this.polygonType = _PlaceGeoPolygon.default;
+      this.centroidType = _PlaceGeoCentroid.default;
     }
     /**
      * Constructs a "PlaceGeo" from a plain JavaScript object.
@@ -94,6 +98,13 @@ var PlaceGeo =
             object.elevation = _ApiClient.default.convertToType(
               data["elevation"],
               "Number"
+            );
+          }
+
+          if (data.hasOwnProperty("centroid")) {
+            object.centroid = _ApiClient.default.convertToType(
+              data["centroid"],
+              object.centroidType
             );
           }
 

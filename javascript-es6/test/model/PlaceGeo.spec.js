@@ -65,6 +65,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property centroid (base name: "centroid")', function() {
+      // uncomment below and update the code to test the property centroid
+      //var instane = new @KeyclicSdkJavascript.PlaceGeo();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

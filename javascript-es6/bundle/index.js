@@ -489,6 +489,24 @@ Object.defineProperty(exports, "FeatureGeometry", {
     return _FeatureGeometry.default;
   }
 });
+Object.defineProperty(exports, "Feed", {
+  enumerable: true,
+  get: function get() {
+    return _Feed.default;
+  }
+});
+Object.defineProperty(exports, "FeedCollection", {
+  enumerable: true,
+  get: function get() {
+    return _FeedCollection.default;
+  }
+});
+Object.defineProperty(exports, "FeedPagination", {
+  enumerable: true,
+  get: function get() {
+    return _FeedPagination.default;
+  }
+});
 Object.defineProperty(exports, "Feedback", {
   enumerable: true,
   get: function get() {
@@ -691,6 +709,24 @@ Object.defineProperty(exports, "FeedbackWorkflowTransitionData", {
   enumerable: true,
   get: function get() {
     return _FeedbackWorkflowTransitionData.default;
+  }
+});
+Object.defineProperty(exports, "Following", {
+  enumerable: true,
+  get: function get() {
+    return _Following.default;
+  }
+});
+Object.defineProperty(exports, "FollowingCollection", {
+  enumerable: true,
+  get: function get() {
+    return _FollowingCollection.default;
+  }
+});
+Object.defineProperty(exports, "FollowingPagination", {
+  enumerable: true,
+  get: function get() {
+    return _FollowingPagination.default;
   }
 });
 Object.defineProperty(exports, "ImageData", {
@@ -1155,6 +1191,12 @@ Object.defineProperty(exports, "PlaceGeo", {
     return _PlaceGeo.default;
   }
 });
+Object.defineProperty(exports, "PlaceGeoCentroid", {
+  enumerable: true,
+  get: function get() {
+    return _PlaceGeoCentroid.default;
+  }
+});
 Object.defineProperty(exports, "PlaceGeoPolygon", {
   enumerable: true,
   get: function get() {
@@ -1327,6 +1369,12 @@ Object.defineProperty(exports, "ReportEmbedded", {
   enumerable: true,
   get: function get() {
     return _ReportEmbedded.default;
+  }
+});
+Object.defineProperty(exports, "ReportEmbeddedDuration", {
+  enumerable: true,
+  get: function get() {
+    return _ReportEmbeddedDuration.default;
   }
 });
 Object.defineProperty(exports, "ReportEmbeddedTargetGroups", {
@@ -1737,6 +1785,12 @@ Object.defineProperty(exports, "FollowApi", {
     return _FollowApi.default;
   }
 });
+Object.defineProperty(exports, "FollowingApi", {
+  enumerable: true,
+  get: function get() {
+    return _FollowingApi.default;
+  }
+});
 Object.defineProperty(exports, "ImageApi", {
   enumerable: true,
   get: function get() {
@@ -2074,6 +2128,12 @@ var _Feature = _interopRequireDefault(require("./model/Feature"));
 
 var _FeatureGeometry = _interopRequireDefault(require("./model/FeatureGeometry"));
 
+var _Feed = _interopRequireDefault(require("./model/Feed"));
+
+var _FeedCollection = _interopRequireDefault(require("./model/FeedCollection"));
+
+var _FeedPagination = _interopRequireDefault(require("./model/FeedPagination"));
+
 var _Feedback = _interopRequireDefault(require("./model/Feedback"));
 
 var _FeedbackCollection = _interopRequireDefault(require("./model/FeedbackCollection"));
@@ -2141,6 +2201,12 @@ var _FeedbackReviewRequestPagination = _interopRequireDefault(require("./model/F
 var _FeedbackStatePatch = _interopRequireDefault(require("./model/FeedbackStatePatch"));
 
 var _FeedbackWorkflowTransitionData = _interopRequireDefault(require("./model/FeedbackWorkflowTransitionData"));
+
+var _Following = _interopRequireDefault(require("./model/Following"));
+
+var _FollowingCollection = _interopRequireDefault(require("./model/FollowingCollection"));
+
+var _FollowingPagination = _interopRequireDefault(require("./model/FollowingPagination"));
 
 var _ImageData = _interopRequireDefault(require("./model/ImageData"));
 
@@ -2296,6 +2362,8 @@ var _PlaceData = _interopRequireDefault(require("./model/PlaceData"));
 
 var _PlaceGeo = _interopRequireDefault(require("./model/PlaceGeo"));
 
+var _PlaceGeoCentroid = _interopRequireDefault(require("./model/PlaceGeoCentroid"));
+
 var _PlaceGeoPolygon = _interopRequireDefault(require("./model/PlaceGeoPolygon"));
 
 var _PlaceLinks = _interopRequireDefault(require("./model/PlaceLinks"));
@@ -2353,6 +2421,8 @@ var _Report = _interopRequireDefault(require("./model/Report"));
 var _ReportCollection = _interopRequireDefault(require("./model/ReportCollection"));
 
 var _ReportEmbedded = _interopRequireDefault(require("./model/ReportEmbedded"));
+
+var _ReportEmbeddedDuration = _interopRequireDefault(require("./model/ReportEmbeddedDuration"));
 
 var _ReportEmbeddedTargetGroups = _interopRequireDefault(require("./model/ReportEmbeddedTargetGroups"));
 
@@ -2489,6 +2559,8 @@ var _FeedbackApi = _interopRequireDefault(require("./api/FeedbackApi"));
 var _FileApi = _interopRequireDefault(require("./api/FileApi"));
 
 var _FollowApi = _interopRequireDefault(require("./api/FollowApi"));
+
+var _FollowingApi = _interopRequireDefault(require("./api/FollowingApi"));
 
 var _ImageApi = _interopRequireDefault(require("./api/ImageApi"));
 

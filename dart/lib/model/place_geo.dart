@@ -4,6 +4,7 @@ class PlaceGeo {
   PlaceGeo({
     this.polygon,
     this.elevation,
+    this.centroid,
   });
 
   PlaceGeo.fromJson(Map<String, dynamic> json) {
@@ -12,11 +13,14 @@ class PlaceGeo {
     }
     polygon = PlaceGeoPolygon.fromJson(json['polygon']);
     elevation = json['elevation']?.toDouble();
+    centroid = PlaceGeoCentroid.fromJson(json['centroid']);
   }
 
   PlaceGeoPolygon polygon;
 
   double elevation;
+
+  PlaceGeoCentroid centroid;
 
   @override
   bool operator ==(dynamic other) {
@@ -37,12 +41,13 @@ class PlaceGeo {
     return {
       'polygon': polygon,
       'elevation': elevation,
+      'centroid': centroid,
     };
   }
 
   @override
   String toString() {
-    return 'PlaceGeo[polygon=$polygon, elevation=$elevation, ]';
+    return 'PlaceGeo[polygon=$polygon, elevation=$elevation, centroid=$centroid, ]';
   }
 
   static List<PlaceGeo> listFromJson(List<dynamic> json) {
