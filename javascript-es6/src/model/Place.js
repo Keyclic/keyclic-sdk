@@ -13,6 +13,7 @@
 import ApiClient from "../ApiClient";
 import PlaceGeo from "./PlaceGeo";
 import PlaceLinks from "./PlaceLinks";
+import PlacePreferences from "./PlacePreferences";
 
 /**
  * The Place model module.
@@ -28,6 +29,8 @@ export default class Place {
     
      * @param name { String }
     
+     * @param preferences { module:model/PlacePreferences }
+    
      * @param id { String }
     
      * @param createdAt { Date }
@@ -40,6 +43,8 @@ export default class Place {
 
     name,
 
+    preferences,
+
     id,
 
     createdAt,
@@ -50,6 +55,7 @@ export default class Place {
     this.description = null;
     this.geo = geo;
     this.name = name;
+    this.preferences = preferences;
     this.id = id;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
@@ -57,6 +63,7 @@ export default class Place {
     this.links = null;
 
     this.geoType = PlaceGeo;
+    this.preferencesType = PlacePreferences;
     this.linksType = PlaceLinks;
   }
 
@@ -89,6 +96,12 @@ export default class Place {
     }
     if (data.hasOwnProperty("name")) {
       object.name = ApiClient.convertToType(data["name"], "String");
+    }
+    if (data.hasOwnProperty("preferences")) {
+      object.preferences = ApiClient.convertToType(
+        data["preferences"],
+        object.preferencesType
+      );
     }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");

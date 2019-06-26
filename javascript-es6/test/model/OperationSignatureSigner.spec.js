@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.Feed();
+    instance = new @KeyclicSdkJavascript.OperationSignatureSigner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,28 +46,22 @@
       object[property] = value;
   }
 
-  describe('Feed', function() {
-    it('should create an instance of Feed', function() {
-      // uncomment below and update the code to test Feed
-      //var instane = new @KeyclicSdkJavascript.Feed();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.Feed);
+  describe('OperationSignatureSigner', function() {
+    it('should create an instance of OperationSignatureSigner', function() {
+      // uncomment below and update the code to test OperationSignatureSigner
+      //var instane = new @KeyclicSdkJavascript.OperationSignatureSigner();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.OperationSignatureSigner);
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new @KeyclicSdkJavascript.Feed();
+    it('should have the property familyName (base name: "familyName")', function() {
+      // uncomment below and update the code to test the property familyName
+      //var instane = new @KeyclicSdkJavascript.OperationSignatureSigner();
       //expect(instance).to.be();
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new @KeyclicSdkJavascript.Feed();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new @KeyclicSdkJavascript.Feed();
+    it('should have the property givenName (base name: "givenName")', function() {
+      // uncomment below and update the code to test the property givenName
+      //var instane = new @KeyclicSdkJavascript.OperationSignatureSigner();
       //expect(instance).to.be();
     });
 

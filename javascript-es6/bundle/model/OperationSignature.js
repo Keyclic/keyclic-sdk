@@ -7,7 +7,9 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Following = _interopRequireDefault(require("./Following"));
+var _OperationSignatureSigner = _interopRequireDefault(
+  require("./OperationSignatureSigner")
+);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -36,32 +38,37 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 /**
- * The FollowingCollection model module.
- * @module model/FollowingCollection
+ * The OperationSignature model module.
+ * @module model/OperationSignature
  */
-var FollowingCollection =
+var OperationSignature =
   /*#__PURE__*/
   (function() {
     /**
-   * Constructs a new "FollowingCollection".
-   * @alias module:model/FollowingCollection
+   * Constructs a new "OperationSignature".
+   * @alias module:model/OperationSignature
    * @class
   
+   * @param signer { module:model/OperationSignatureSigner }
+  
+   * @param signedAt { Date }
+  
    */
-    function FollowingCollection() {
-      _classCallCheck(this, FollowingCollection);
+    function OperationSignature(signer, signedAt) {
+      _classCallCheck(this, OperationSignature);
 
-      this.items = [];
-      this.itemsType = _Following.default;
+      this.signer = signer;
+      this.signedAt = signedAt;
+      this.signerType = _OperationSignatureSigner.default;
     }
     /**
-     * Constructs a "FollowingCollection" from a plain JavaScript object.
+     * Constructs a "OperationSignature" from a plain JavaScript object.
      * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FollowingCollection } object Optional instance to populate.
-     * @return { module:model/FollowingCollection } The populated "FollowingCollection" instance.
+     * @param { module:model/OperationSignature } object Optional instance to populate.
+     * @return { module:model/OperationSignature } The populated "OperationSignature" instance.
      */
 
-    _createClass(FollowingCollection, null, [
+    _createClass(OperationSignature, null, [
       {
         key: "constructFromData",
         value: function constructFromData(data) {
@@ -75,13 +82,21 @@ var FollowingCollection =
           }
 
           if (object === null) {
-            object = new FollowingCollection();
+            object = new OperationSignature();
           }
 
-          if (data.hasOwnProperty("items")) {
-            object.items = _ApiClient.default.convertToType(data["items"], [
-              object.itemsType
-            ]);
+          if (data.hasOwnProperty("signer")) {
+            object.signer = _ApiClient.default.convertToType(
+              data["signer"],
+              object.signerType
+            );
+          }
+
+          if (data.hasOwnProperty("signedAt")) {
+            object.signedAt = _ApiClient.default.convertToType(
+              data["signedAt"],
+              "Date"
+            );
           }
 
           return object;
@@ -89,7 +104,7 @@ var FollowingCollection =
       }
     ]);
 
-    return FollowingCollection;
+    return OperationSignature;
   })();
 
-exports.default = FollowingCollection;
+exports.default = OperationSignature;

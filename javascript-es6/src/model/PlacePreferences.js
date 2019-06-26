@@ -11,30 +11,29 @@
  */
 
 import ApiClient from "../ApiClient";
-import Following from "./Following";
 
 /**
- * The FollowingCollection model module.
- * @module model/FollowingCollection
+ * The PlacePreferences model module.
+ * @module model/PlacePreferences
  */
-export default class FollowingCollection {
+export default class PlacePreferences {
   /**
-     * Constructs a new "FollowingCollection".
-     * @alias module:model/FollowingCollection
+     * Constructs a new "PlacePreferences".
+     * @alias module:model/PlacePreferences
      * @class
     
+     * @param _public { Boolean }
+    
      */
-  constructor() {
-    this.items = [];
-
-    this.itemsType = Following;
+  constructor(_public) {
+    this._public = _public;
   }
 
   /**
-   * Constructs a "FollowingCollection" from a plain JavaScript object.
+   * Constructs a "PlacePreferences" from a plain JavaScript object.
    * @param { object } data The plain JavaScript object bearing properties of interest.
-   * @param { module:model/FollowingCollection } object Optional instance to populate.
-   * @return { module:model/FollowingCollection } The populated "FollowingCollection" instance.
+   * @param { module:model/PlacePreferences } object Optional instance to populate.
+   * @return { module:model/PlacePreferences } The populated "PlacePreferences" instance.
    */
   static constructFromData(data, object = null) {
     if (data === null) {
@@ -42,11 +41,11 @@ export default class FollowingCollection {
     }
 
     if (object === null) {
-      object = new FollowingCollection();
+      object = new PlacePreferences();
     }
 
-    if (data.hasOwnProperty("items")) {
-      object.items = ApiClient.convertToType(data["items"], [object.itemsType]);
+    if (data.hasOwnProperty("public")) {
+      object._public = ApiClient.convertToType(data["public"], "Boolean");
     }
 
     return object;

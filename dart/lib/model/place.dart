@@ -6,6 +6,7 @@ class Place {
     this.description,
     this.geo,
     this.name,
+    this.preferences,
     this.id,
     this.createdAt,
     this.updatedAt,
@@ -21,6 +22,7 @@ class Place {
     description = json['description'];
     geo = PlaceGeo.fromJson(json['geo']);
     name = json['name'];
+    preferences = PlacePreferences.fromJson(json['preferences']);
     id = json['id'];
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
@@ -44,6 +46,8 @@ class Place {
 
   String name;
 
+  PlacePreferences preferences;
+
   String id;
 
   DateTime createdAt;
@@ -64,6 +68,7 @@ class Place {
         runtimeType == other.runtimeType &&
         geo == other.geo &&
         name == other.name &&
+        preferences == other.preferences &&
         id == other.id &&
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt;
@@ -74,6 +79,7 @@ class Place {
       0 ^
       geo.hashCode ^
       name.hashCode ^
+      preferences.hashCode ^
       id.hashCode ^
       createdAt.hashCode ^
       updatedAt.hashCode;
@@ -84,6 +90,7 @@ class Place {
       'description': description,
       'geo': geo,
       'name': name,
+      'preferences': preferences,
       'id': id,
       'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
       'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
@@ -94,7 +101,7 @@ class Place {
 
   @override
   String toString() {
-    return 'Place[branchCode=$branchCode, description=$description, geo=$geo, name=$name, id=$id, createdAt=$createdAt, updatedAt=$updatedAt, type=$type, links=$links, ]';
+    return 'Place[branchCode=$branchCode, description=$description, geo=$geo, name=$name, preferences=$preferences, id=$id, createdAt=$createdAt, updatedAt=$updatedAt, type=$type, links=$links, ]';
   }
 
   static List<Place> listFromJson(List<dynamic> json) {

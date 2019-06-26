@@ -11,6 +11,10 @@ var _FeedbackEmbedded = _interopRequireDefault(require("./FeedbackEmbedded"));
 
 var _OperationLinks = _interopRequireDefault(require("./OperationLinks"));
 
+var _OperationSignature = _interopRequireDefault(
+  require("./OperationSignature")
+);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -49,6 +53,8 @@ var Operation =
    * @alias module:model/Operation
    * @class
   
+   * @param signature { module:model/OperationSignature }
+  
    * @param id { String }
   
    * @param state { Array.<String> }
@@ -58,12 +64,13 @@ var Operation =
    * @param updatedAt { Date }
   
    */
-    function Operation(id, state, createdAt, updatedAt) {
+    function Operation(signature, id, state, createdAt, updatedAt) {
       _classCallCheck(this, Operation);
 
       this.description = null;
       this.name = null;
       this.scheduledAt = null;
+      this.signature = signature;
       this.id = id;
       this.identificationNumber = null;
       this.state = state;
@@ -72,6 +79,7 @@ var Operation =
       this.type = null;
       this.links = null;
       this.embedded = null;
+      this.signatureType = _OperationSignature.default;
       this.linksType = _OperationLinks.default;
       this.embeddedType = _FeedbackEmbedded.default;
     }
@@ -117,6 +125,13 @@ var Operation =
             object.scheduledAt = _ApiClient.default.convertToType(
               data["scheduledAt"],
               "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("signature")) {
+            object.signature = _ApiClient.default.convertToType(
+              data["signature"],
+              object.signatureType
             );
           }
 

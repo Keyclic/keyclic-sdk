@@ -9,8 +9,8 @@ var _ApiClient2 = _interopRequireDefault(require("../ApiClient"));
 
 var _Error = _interopRequireDefault(require("../model/Error"));
 
-var _FollowingPagination = _interopRequireDefault(
-  require("../model/FollowingPagination")
+var _FeedPagination = _interopRequireDefault(
+  require("../model/FeedPagination")
 );
 
 function _interopRequireDefault(obj) {
@@ -143,7 +143,7 @@ var FollowingApi =
      * @param { String } xKeyclicApp
      * @param { String } feed
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { FollowingPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+     * @param { FeedPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
      * @param { Number } page Page of the overview.  (default to 1)
@@ -165,7 +165,7 @@ var FollowingApi =
           var credentials = arguments.length > 2 ? arguments[2] : undefined;
 
           if (returnType === null) {
-            returnType = _FollowingPagination.default;
+            returnType = _FeedPagination.default;
           }
 
           var xKeyclicApp = options.xKeyclicApp,

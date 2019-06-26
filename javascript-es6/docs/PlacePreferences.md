@@ -1,8 +1,8 @@
-# @KeyclicSdkJavascript.FollowingCollection
+# @KeyclicSdkJavascript.PlacePreferences
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**[Following]**](Following.md) |  | [optional] 
+**_public** | **Boolean** |  | 
 
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **scheduledAt** | **Date** |  | [optional] 
+**signature** | [**OperationSignature**](OperationSignature.md) |  | 
 **id** | **String** |  | 
 **identificationNumber** | **String** |  | [optional] 
 **state** | **[String]** |  | 

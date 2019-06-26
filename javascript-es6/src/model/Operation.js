@@ -13,6 +13,7 @@
 import ApiClient from "../ApiClient";
 import FeedbackEmbedded from "./FeedbackEmbedded";
 import OperationLinks from "./OperationLinks";
+import OperationSignature from "./OperationSignature";
 
 /**
  * The Operation model module.
@@ -24,6 +25,8 @@ export default class Operation {
      * @alias module:model/Operation
      * @class
     
+     * @param signature { module:model/OperationSignature }
+    
      * @param id { String }
     
      * @param state { Array.<String> }
@@ -34,6 +37,8 @@ export default class Operation {
     
      */
   constructor(
+    signature,
+
     id,
 
     state,
@@ -45,6 +50,7 @@ export default class Operation {
     this.description = null;
     this.name = null;
     this.scheduledAt = null;
+    this.signature = signature;
     this.id = id;
     this.identificationNumber = null;
     this.state = state;
@@ -54,6 +60,7 @@ export default class Operation {
     this.links = null;
     this.embedded = null;
 
+    this.signatureType = OperationSignature;
     this.linksType = OperationLinks;
     this.embeddedType = FeedbackEmbedded;
   }
@@ -84,6 +91,12 @@ export default class Operation {
     }
     if (data.hasOwnProperty("scheduledAt")) {
       object.scheduledAt = ApiClient.convertToType(data["scheduledAt"], "Date");
+    }
+    if (data.hasOwnProperty("signature")) {
+      object.signature = ApiClient.convertToType(
+        data["signature"],
+        object.signatureType
+      );
     }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");

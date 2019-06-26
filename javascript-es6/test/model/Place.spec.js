@@ -77,6 +77,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property preferences (base name: "preferences")', function() {
+      // uncomment below and update the code to test the property preferences
+      //var instane = new @KeyclicSdkJavascript.Place();
+      //expect(instance).to.be();
+    });
+
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new @KeyclicSdkJavascript.Place();

@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.Following();
+    instance = new @KeyclicSdkJavascript.PlacePreferences();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,34 +46,16 @@
       object[property] = value;
   }
 
-  describe('Following', function() {
-    it('should create an instance of Following', function() {
-      // uncomment below and update the code to test Following
-      //var instane = new @KeyclicSdkJavascript.Following();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.Following);
+  describe('PlacePreferences', function() {
+    it('should create an instance of PlacePreferences', function() {
+      // uncomment below and update the code to test PlacePreferences
+      //var instane = new @KeyclicSdkJavascript.PlacePreferences();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.PlacePreferences);
     });
 
-    it('should have the property createdAt (base name: "created_at")', function() {
-      // uncomment below and update the code to test the property createdAt
-      //var instane = new @KeyclicSdkJavascript.Following();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property feedId (base name: "feed_id")', function() {
-      // uncomment below and update the code to test the property feedId
-      //var instane = new @KeyclicSdkJavascript.Following();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property targetId (base name: "target_id")', function() {
-      // uncomment below and update the code to test the property targetId
-      //var instane = new @KeyclicSdkJavascript.Following();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property updatedAt (base name: "updated_at")', function() {
-      // uncomment below and update the code to test the property updatedAt
-      //var instane = new @KeyclicSdkJavascript.Following();
+    it('should have the property _public (base name: "public")', function() {
+      // uncomment below and update the code to test the property _public
+      //var instane = new @KeyclicSdkJavascript.PlacePreferences();
       //expect(instance).to.be();
     });
 

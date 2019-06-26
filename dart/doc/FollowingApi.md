@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **cgetFollowingsByFeed**
-> FollowingPagination cgetFollowingsByFeed(xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion, page, limit, order, after, before)
+> FeedPagination cgetFollowingsByFeed(xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion, page, limit, order, after, before)
 
 Retrieve all Following resources.
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FollowingPagination**](FollowingPagination.md)
+[**FeedPagination**](FeedPagination.md)
 
 ### Authorization
 

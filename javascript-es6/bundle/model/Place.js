@@ -11,6 +11,8 @@ var _PlaceGeo = _interopRequireDefault(require("./PlaceGeo"));
 
 var _PlaceLinks = _interopRequireDefault(require("./PlaceLinks"));
 
+var _PlacePreferences = _interopRequireDefault(require("./PlacePreferences"));
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -53,6 +55,8 @@ var Place =
   
    * @param name { String }
   
+   * @param preferences { module:model/PlacePreferences }
+  
    * @param id { String }
   
    * @param createdAt { Date }
@@ -60,19 +64,21 @@ var Place =
    * @param updatedAt { Date }
   
    */
-    function Place(geo, name, id, createdAt, updatedAt) {
+    function Place(geo, name, preferences, id, createdAt, updatedAt) {
       _classCallCheck(this, Place);
 
       this.branchCode = null;
       this.description = null;
       this.geo = geo;
       this.name = name;
+      this.preferences = preferences;
       this.id = id;
       this.createdAt = createdAt;
       this.updatedAt = updatedAt;
       this.type = null;
       this.links = null;
       this.geoType = _PlaceGeo.default;
+      this.preferencesType = _PlacePreferences.default;
       this.linksType = _PlaceLinks.default;
     }
     /**
@@ -124,6 +130,13 @@ var Place =
             object.name = _ApiClient.default.convertToType(
               data["name"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("preferences")) {
+            object.preferences = _ApiClient.default.convertToType(
+              data["preferences"],
+              object.preferencesType
             );
           }
 

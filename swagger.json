@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "1.41.3"
+        "version": "1.41.6-dev.9a46d4588"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -1492,7 +1492,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/FollowingPagination"
+                            "$ref": "#\/definitions\/FeedPagination"
                         }
                     },
                     "400": {
@@ -11094,18 +11094,23 @@
         "Feed": {
             "type": "object",
             "properties": {
-                "id": {
+                "name": {
                     "type": "string",
                     "format": "string"
                 },
-                "name": {
+                "type": {
                     "type": "string",
+                    "format": "string"
+                },
+                "id": {
+                    "type": "string",
+                    "readOnly": true,
                     "format": "string"
                 }
             },
             "required": [
-                "id",
-                "name"
+                "name",
+                "type"
             ]
         },
         "FeedCollection": {
@@ -11141,70 +11146,6 @@
                 },
                 "_embedded": {
                     "$ref": "#\/definitions\/FeedCollection"
-                },
-                "_links": {
-                    "$ref": "#\/definitions\/PaginationLinks"
-                }
-            }
-        },
-        "Following": {
-            "type": "object",
-            "properties": {
-                "created_at": {
-                    "type": "string",
-                    "readOnly": true,
-                    "format": "string"
-                },
-                "feed_id": {
-                    "type": "string",
-                    "readOnly": true,
-                    "format": "string"
-                },
-                "target_id": {
-                    "type": "string",
-                    "readOnly": true,
-                    "format": "string"
-                },
-                "updated_at": {
-                    "type": "string",
-                    "readOnly": true,
-                    "format": "string"
-                }
-            }
-        },
-        "FollowingCollection": {
-            "type": "object",
-            "properties": {
-                "items": {
-                    "type": "array",
-                    "default": [],
-                    "items": {
-                        "$ref": "#\/definitions\/Following"
-                    }
-                }
-            }
-        },
-        "FollowingPagination": {
-            "type": "object",
-            "properties": {
-                "limit": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "page": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "pages": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "total": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "_embedded": {
-                    "$ref": "#\/definitions\/FollowingCollection"
                 },
                 "_links": {
                     "$ref": "#\/definitions\/PaginationLinks"
@@ -11272,10 +11213,10 @@
             "type": "object",
             "properties": {
                 "activities": {
-                    "type": "array",
                     "items": {
                         "$ref": "#\/definitions\/Activity"
-                    }
+                    },
+                    "type": "array"
                 },
                 "activity_count": {
                     "type": "integer"
@@ -11284,19 +11225,19 @@
                     "type": "integer"
                 },
                 "created_at": {
-                    "type": "string",
-                    "format": "date-time"
+                    "format": "date-time",
+                    "type": "string"
                 },
                 "group": {
                     "type": "string"
                 },
                 "id": {
-                    "type": "string",
-                    "format": "uuid"
+                    "format": "uuid",
+                    "type": "string"
                 },
                 "updated_at": {
-                    "type": "string",
-                    "format": "date-time"
+                    "format": "date-time",
+                    "type": "string"
                 },
                 "verb": {
                     "type": "string"
@@ -11915,6 +11856,34 @@
                     "type": "string",
                     "format": "date-time"
                 },
+                "signature": {
+                    "type": "object",
+                    "properties": {
+                        "signer": {
+                            "type": "object",
+                            "properties": {
+                                "familyName": {
+                                    "type": "string",
+                                    "readOnly": true,
+                                    "format": "string"
+                                },
+                                "givenName": {
+                                    "type": "string",
+                                    "readOnly": true,
+                                    "format": "string"
+                                }
+                            }
+                        },
+                        "signedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    "required": [
+                        "signer",
+                        "signedAt"
+                    ]
+                },
                 "id": {
                     "type": "string",
                     "format": "string"
@@ -12149,6 +12118,7 @@
                 }
             },
             "required": [
+                "signature",
                 "id",
                 "state",
                 "createdAt",
@@ -13060,6 +13030,17 @@
                     "type": "string",
                     "format": "string"
                 },
+                "preferences": {
+                    "type": "object",
+                    "properties": {
+                        "public": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "public"
+                    ]
+                },
                 "id": {
                     "type": "string",
                     "format": "string"
@@ -13182,6 +13163,7 @@
             "required": [
                 "geo",
                 "name",
+                "preferences",
                 "id",
                 "createdAt",
                 "updatedAt"

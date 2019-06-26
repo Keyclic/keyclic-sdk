@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] [default to null]
 **geo** | [**PlaceGeo**](PlaceGeo.md) |  | [default to null]
 **name** | **String** |  | [default to null]
+**preferences** | [**PlacePreferences**](PlacePreferences.md) |  | [default to null]
 **id** | **String** |  | [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [default to null]

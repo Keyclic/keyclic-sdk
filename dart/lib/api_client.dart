@@ -273,12 +273,6 @@ class ApiClient {
           return FeedbackStatePatch.fromJson(value);
         case 'FeedbackWorkflowTransitionData':
           return FeedbackWorkflowTransitionData.fromJson(value);
-        case 'Following':
-          return Following.fromJson(value);
-        case 'FollowingCollection':
-          return FollowingCollection.fromJson(value);
-        case 'FollowingPagination':
-          return FollowingPagination.fromJson(value);
         case 'ImageData':
           return ImageData.fromJson(value);
         case 'LogEntry':
@@ -369,6 +363,10 @@ class ApiClient {
           return OperationPagination.fromJson(value);
         case 'OperationPatch':
           return OperationPatch.fromJson(value);
+        case 'OperationSignature':
+          return OperationSignature.fromJson(value);
+        case 'OperationSignatureSigner':
+          return OperationSignatureSigner.fromJson(value);
         case 'OperationStatePatch':
           return OperationStatePatch.fromJson(value);
         case 'OperationWorkflowTransitionData':
@@ -455,6 +453,8 @@ class ApiClient {
           return PlacePagination.fromJson(value);
         case 'PlacePatch':
           return PlacePatch.fromJson(value);
+        case 'PlacePreferences':
+          return PlacePreferences.fromJson(value);
         case 'Property':
           return Property.fromJson(value);
         case 'PropertyConditions':

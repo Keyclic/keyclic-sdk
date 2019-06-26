@@ -12,7 +12,7 @@
 
 import ApiClient from "../ApiClient";
 import Error from "../model/Error";
-import FollowingPagination from "../model/FollowingPagination";
+import FeedPagination from "../model/FeedPagination";
 
 /**
  * Following service.
@@ -34,7 +34,7 @@ export default class FollowingApi extends ApiClient {
    * @param { String } xKeyclicApp
    * @param { String } feed
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { FollowingPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { FeedPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    * @param { Number } page Page of the overview.  (default to 1)
@@ -45,7 +45,7 @@ export default class FollowingApi extends ApiClient {
    */
   cgetFollowingsByFeed(returnType = null, options, credentials) {
     if (returnType === null) {
-      returnType = FollowingPagination;
+      returnType = FeedPagination;
     }
 
     let {

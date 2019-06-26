@@ -22,18 +22,19 @@ export default class Feed {
      * @alias module:model/Feed
      * @class
     
-     * @param id { String }
-    
      * @param name { String }
+    
+     * @param type { String }
     
      */
   constructor(
-    id,
+    name,
 
-    name
+    type
   ) {
-    this.id = id;
     this.name = name;
+    this.type = type;
+    this.id = null;
   }
 
   /**
@@ -51,11 +52,14 @@ export default class Feed {
       object = new Feed();
     }
 
-    if (data.hasOwnProperty("id")) {
-      object.id = ApiClient.convertToType(data["id"], "String");
-    }
     if (data.hasOwnProperty("name")) {
       object.name = ApiClient.convertToType(data["name"], "String");
+    }
+    if (data.hasOwnProperty("type")) {
+      object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
     }
 
     return object;

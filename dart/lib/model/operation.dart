@@ -5,6 +5,7 @@ class Operation {
     this.description,
     this.name,
     this.scheduledAt,
+    this.signature,
     this.id,
     this.identificationNumber,
     this.state,
@@ -27,6 +28,7 @@ class Operation {
     if (scheduledAt is DateTime && scheduledAt.isUtc == false) {
       scheduledAt = DateTime.parse('${scheduledAt.toIso8601String()}Z');
     }
+    signature = OperationSignature.fromJson(json['signature']);
     id = json['id'];
     identificationNumber = json['identificationNumber'];
     state = (json['state'] as List)?.map((item) => item as String)?.toList();
@@ -50,6 +52,8 @@ class Operation {
   String name;
 
   DateTime scheduledAt;
+
+  OperationSignature signature;
 
   String id;
 
@@ -75,6 +79,7 @@ class Operation {
 
     return other is Operation &&
         runtimeType == other.runtimeType &&
+        signature == other.signature &&
         id == other.id &&
         DeepCollectionEquality.unordered().equals(state, other.state) &&
         createdAt == other.createdAt &&
@@ -82,7 +87,12 @@ class Operation {
   }
 
   @override
-  int get hashCode => 0 ^ id.hashCode ^ createdAt.hashCode ^ updatedAt.hashCode;
+  int get hashCode =>
+      0 ^
+      signature.hashCode ^
+      id.hashCode ^
+      createdAt.hashCode ^
+      updatedAt.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
@@ -90,6 +100,7 @@ class Operation {
       'name': name,
       'scheduledAt':
           scheduledAt == null ? '' : scheduledAt.toUtc().toIso8601String(),
+      'signature': signature,
       'id': id,
       'identificationNumber': identificationNumber,
       'state': state,
@@ -103,7 +114,7 @@ class Operation {
 
   @override
   String toString() {
-    return 'Operation[description=$description, name=$name, scheduledAt=$scheduledAt, id=$id, identificationNumber=$identificationNumber, state=$state, createdAt=$createdAt, updatedAt=$updatedAt, type=$type, links=$links, embedded=$embedded, ]';
+    return 'Operation[description=$description, name=$name, scheduledAt=$scheduledAt, signature=$signature, id=$id, identificationNumber=$identificationNumber, state=$state, createdAt=$createdAt, updatedAt=$updatedAt, type=$type, links=$links, embedded=$embedded, ]';
   }
 
   static List<Operation> listFromJson(List<dynamic> json) {

@@ -34,34 +34,33 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 /**
- * The Following model module.
- * @module model/Following
+ * The PlacePreferences model module.
+ * @module model/PlacePreferences
  */
-var Following =
+var PlacePreferences =
   /*#__PURE__*/
   (function() {
     /**
-   * Constructs a new "Following".
-   * @alias module:model/Following
+   * Constructs a new "PlacePreferences".
+   * @alias module:model/PlacePreferences
    * @class
   
+   * @param _public { Boolean }
+  
    */
-    function Following() {
-      _classCallCheck(this, Following);
+    function PlacePreferences(_public) {
+      _classCallCheck(this, PlacePreferences);
 
-      this.createdAt = null;
-      this.feedId = null;
-      this.targetId = null;
-      this.updatedAt = null;
+      this._public = _public;
     }
     /**
-     * Constructs a "Following" from a plain JavaScript object.
+     * Constructs a "PlacePreferences" from a plain JavaScript object.
      * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/Following } object Optional instance to populate.
-     * @return { module:model/Following } The populated "Following" instance.
+     * @param { module:model/PlacePreferences } object Optional instance to populate.
+     * @return { module:model/PlacePreferences } The populated "PlacePreferences" instance.
      */
 
-    _createClass(Following, null, [
+    _createClass(PlacePreferences, null, [
       {
         key: "constructFromData",
         value: function constructFromData(data) {
@@ -75,34 +74,13 @@ var Following =
           }
 
           if (object === null) {
-            object = new Following();
+            object = new PlacePreferences();
           }
 
-          if (data.hasOwnProperty("created_at")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["created_at"],
-              "String"
-            );
-          }
-
-          if (data.hasOwnProperty("feed_id")) {
-            object.feedId = _ApiClient.default.convertToType(
-              data["feed_id"],
-              "String"
-            );
-          }
-
-          if (data.hasOwnProperty("target_id")) {
-            object.targetId = _ApiClient.default.convertToType(
-              data["target_id"],
-              "String"
-            );
-          }
-
-          if (data.hasOwnProperty("updated_at")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updated_at"],
-              "String"
+          if (data.hasOwnProperty("public")) {
+            object._public = _ApiClient.default.convertToType(
+              data["public"],
+              "Boolean"
             );
           }
 
@@ -111,7 +89,7 @@ var Following =
       }
     ]);
 
-    return Following;
+    return PlacePreferences;
   })();
 
-exports.default = Following;
+exports.default = PlacePreferences;

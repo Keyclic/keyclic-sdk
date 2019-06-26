@@ -711,24 +711,6 @@ Object.defineProperty(exports, "FeedbackWorkflowTransitionData", {
     return _FeedbackWorkflowTransitionData.default;
   }
 });
-Object.defineProperty(exports, "Following", {
-  enumerable: true,
-  get: function get() {
-    return _Following.default;
-  }
-});
-Object.defineProperty(exports, "FollowingCollection", {
-  enumerable: true,
-  get: function get() {
-    return _FollowingCollection.default;
-  }
-});
-Object.defineProperty(exports, "FollowingPagination", {
-  enumerable: true,
-  get: function get() {
-    return _FollowingPagination.default;
-  }
-});
 Object.defineProperty(exports, "ImageData", {
   enumerable: true,
   get: function get() {
@@ -999,6 +981,18 @@ Object.defineProperty(exports, "OperationPatch", {
     return _OperationPatch.default;
   }
 });
+Object.defineProperty(exports, "OperationSignature", {
+  enumerable: true,
+  get: function get() {
+    return _OperationSignature.default;
+  }
+});
+Object.defineProperty(exports, "OperationSignatureSigner", {
+  enumerable: true,
+  get: function get() {
+    return _OperationSignatureSigner.default;
+  }
+});
 Object.defineProperty(exports, "OperationStatePatch", {
   enumerable: true,
   get: function get() {
@@ -1255,6 +1249,12 @@ Object.defineProperty(exports, "PlacePatch", {
   enumerable: true,
   get: function get() {
     return _PlacePatch.default;
+  }
+});
+Object.defineProperty(exports, "PlacePreferences", {
+  enumerable: true,
+  get: function get() {
+    return _PlacePreferences.default;
   }
 });
 Object.defineProperty(exports, "Property", {
@@ -2202,12 +2202,6 @@ var _FeedbackStatePatch = _interopRequireDefault(require("./model/FeedbackStateP
 
 var _FeedbackWorkflowTransitionData = _interopRequireDefault(require("./model/FeedbackWorkflowTransitionData"));
 
-var _Following = _interopRequireDefault(require("./model/Following"));
-
-var _FollowingCollection = _interopRequireDefault(require("./model/FollowingCollection"));
-
-var _FollowingPagination = _interopRequireDefault(require("./model/FollowingPagination"));
-
 var _ImageData = _interopRequireDefault(require("./model/ImageData"));
 
 var _LogEntry = _interopRequireDefault(require("./model/LogEntry"));
@@ -2298,6 +2292,10 @@ var _OperationPagination = _interopRequireDefault(require("./model/OperationPagi
 
 var _OperationPatch = _interopRequireDefault(require("./model/OperationPatch"));
 
+var _OperationSignature = _interopRequireDefault(require("./model/OperationSignature"));
+
+var _OperationSignatureSigner = _interopRequireDefault(require("./model/OperationSignatureSigner"));
+
 var _OperationStatePatch = _interopRequireDefault(require("./model/OperationStatePatch"));
 
 var _OperationWorkflowTransitionData = _interopRequireDefault(require("./model/OperationWorkflowTransitionData"));
@@ -2383,6 +2381,8 @@ var _PlaceLinksSelf = _interopRequireDefault(require("./model/PlaceLinksSelf"));
 var _PlacePagination = _interopRequireDefault(require("./model/PlacePagination"));
 
 var _PlacePatch = _interopRequireDefault(require("./model/PlacePatch"));
+
+var _PlacePreferences = _interopRequireDefault(require("./model/PlacePreferences"));
 
 var _Property = _interopRequireDefault(require("./model/Property"));
 

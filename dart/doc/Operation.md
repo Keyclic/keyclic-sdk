@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] [default to null]
 **name** | **String** |  | [optional] [default to null]
 **scheduledAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
+**signature** | [**OperationSignature**](OperationSignature.md) |  | [default to null]
 **id** | **String** |  | [default to null]
 **identificationNumber** | **String** |  | [optional] [default to null]
 **state** | **List&lt;String&gt;** |  | [default to []]

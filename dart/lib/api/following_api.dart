@@ -9,8 +9,7 @@ class FollowingApi {
   /// Retrieve all Following resources.
   ///
   ///
-  Future<FollowingPagination> cgetFollowingsByFeed(
-      String xKeyclicApp, String feed,
+  Future<FeedPagination> cgetFollowingsByFeed(String xKeyclicApp, String feed,
       {String acceptLanguage,
       String xKeyclicAppVersion,
       int page,
@@ -80,8 +79,8 @@ class FollowingApi {
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
     } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'FollowingPagination')
-          as FollowingPagination;
+      return apiClient.deserialize(response.body, 'FeedPagination')
+          as FeedPagination;
     } else {
       return null;
     }

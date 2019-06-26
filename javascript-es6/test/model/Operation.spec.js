@@ -71,6 +71,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property signature (base name: "signature")', function() {
+      // uncomment below and update the code to test the property signature
+      //var instane = new @KeyclicSdkJavascript.Operation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new @KeyclicSdkJavascript.Operation();

@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.FollowingCollection();
+    instance = new @KeyclicSdkJavascript.OperationSignature();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,16 +46,22 @@
       object[property] = value;
   }
 
-  describe('FollowingCollection', function() {
-    it('should create an instance of FollowingCollection', function() {
-      // uncomment below and update the code to test FollowingCollection
-      //var instane = new @KeyclicSdkJavascript.FollowingCollection();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.FollowingCollection);
+  describe('OperationSignature', function() {
+    it('should create an instance of OperationSignature', function() {
+      // uncomment below and update the code to test OperationSignature
+      //var instane = new @KeyclicSdkJavascript.OperationSignature();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.OperationSignature);
     });
 
-    it('should have the property items (base name: "items")', function() {
-      // uncomment below and update the code to test the property items
-      //var instane = new @KeyclicSdkJavascript.FollowingCollection();
+    it('should have the property signer (base name: "signer")', function() {
+      // uncomment below and update the code to test the property signer
+      //var instane = new @KeyclicSdkJavascript.OperationSignature();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property signedAt (base name: "signedAt")', function() {
+      // uncomment below and update the code to test the property signedAt
+      //var instane = new @KeyclicSdkJavascript.OperationSignature();
       //expect(instance).to.be();
     });
 

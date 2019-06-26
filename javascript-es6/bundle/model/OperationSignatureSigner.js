@@ -34,37 +34,32 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 /**
- * The Feed model module.
- * @module model/Feed
+ * The OperationSignatureSigner model module.
+ * @module model/OperationSignatureSigner
  */
-var Feed =
+var OperationSignatureSigner =
   /*#__PURE__*/
   (function() {
     /**
-   * Constructs a new "Feed".
-   * @alias module:model/Feed
+   * Constructs a new "OperationSignatureSigner".
+   * @alias module:model/OperationSignatureSigner
    * @class
   
-   * @param name { String }
-  
-   * @param type { String }
-  
    */
-    function Feed(name, type) {
-      _classCallCheck(this, Feed);
+    function OperationSignatureSigner() {
+      _classCallCheck(this, OperationSignatureSigner);
 
-      this.name = name;
-      this.type = type;
-      this.id = null;
+      this.familyName = null;
+      this.givenName = null;
     }
     /**
-     * Constructs a "Feed" from a plain JavaScript object.
+     * Constructs a "OperationSignatureSigner" from a plain JavaScript object.
      * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/Feed } object Optional instance to populate.
-     * @return { module:model/Feed } The populated "Feed" instance.
+     * @param { module:model/OperationSignatureSigner } object Optional instance to populate.
+     * @return { module:model/OperationSignatureSigner } The populated "OperationSignatureSigner" instance.
      */
 
-    _createClass(Feed, null, [
+    _createClass(OperationSignatureSigner, null, [
       {
         key: "constructFromData",
         value: function constructFromData(data) {
@@ -78,25 +73,21 @@ var Feed =
           }
 
           if (object === null) {
-            object = new Feed();
+            object = new OperationSignatureSigner();
           }
 
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
+          if (data.hasOwnProperty("familyName")) {
+            object.familyName = _ApiClient.default.convertToType(
+              data["familyName"],
               "String"
             );
           }
 
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
+          if (data.hasOwnProperty("givenName")) {
+            object.givenName = _ApiClient.default.convertToType(
+              data["givenName"],
               "String"
             );
-          }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
 
           return object;
@@ -104,7 +95,7 @@ var Feed =
       }
     ]);
 
-    return Feed;
+    return OperationSignatureSigner;
   })();
 
-exports.default = Feed;
+exports.default = OperationSignatureSigner;

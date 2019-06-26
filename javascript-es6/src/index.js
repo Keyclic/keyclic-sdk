@@ -129,9 +129,6 @@ import FeedbackReviewRequestLinksSelfIriTemplateMapping from './model/FeedbackRe
 import FeedbackReviewRequestPagination from './model/FeedbackReviewRequestPagination';
 import FeedbackStatePatch from './model/FeedbackStatePatch';
 import FeedbackWorkflowTransitionData from './model/FeedbackWorkflowTransitionData';
-import Following from './model/Following';
-import FollowingCollection from './model/FollowingCollection';
-import FollowingPagination from './model/FollowingPagination';
 import ImageData from './model/ImageData';
 import LogEntry from './model/LogEntry';
 import LogEntryCollection from './model/LogEntryCollection';
@@ -177,6 +174,8 @@ import OperationLinksSelfIriTemplateMapping from './model/OperationLinksSelfIriT
 import OperationLinksTracking from './model/OperationLinksTracking';
 import OperationPagination from './model/OperationPagination';
 import OperationPatch from './model/OperationPatch';
+import OperationSignature from './model/OperationSignature';
+import OperationSignatureSigner from './model/OperationSignatureSigner';
 import OperationStatePatch from './model/OperationStatePatch';
 import OperationWorkflowTransitionData from './model/OperationWorkflowTransitionData';
 import Organization from './model/Organization';
@@ -220,6 +219,7 @@ import PlaceLinksOrganization from './model/PlaceLinksOrganization';
 import PlaceLinksSelf from './model/PlaceLinksSelf';
 import PlacePagination from './model/PlacePagination';
 import PlacePatch from './model/PlacePatch';
+import PlacePreferences from './model/PlacePreferences';
 import Property from './model/Property';
 import PropertyConditions from './model/PropertyConditions';
 import PropertyItems from './model/PropertyItems';
@@ -359,7 +359,7 @@ import WebhookApi from './api/WebhookApi';
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 1.41.3
+ * @version 1.41.6
  */
 export {
     /**
@@ -954,21 +954,6 @@ export {
      */
     FeedbackWorkflowTransitionData,
     /**
-     * The Following model constructor.
-     * @property { module:model/Following }
-     */
-    Following,
-    /**
-     * The FollowingCollection model constructor.
-     * @property { module:model/FollowingCollection }
-     */
-    FollowingCollection,
-    /**
-     * The FollowingPagination model constructor.
-     * @property { module:model/FollowingPagination }
-     */
-    FollowingPagination,
-    /**
      * The ImageData model constructor.
      * @property { module:model/ImageData }
      */
@@ -1194,6 +1179,16 @@ export {
      */
     OperationPatch,
     /**
+     * The OperationSignature model constructor.
+     * @property { module:model/OperationSignature }
+     */
+    OperationSignature,
+    /**
+     * The OperationSignatureSigner model constructor.
+     * @property { module:model/OperationSignatureSigner }
+     */
+    OperationSignatureSigner,
+    /**
      * The OperationStatePatch model constructor.
      * @property { module:model/OperationStatePatch }
      */
@@ -1408,6 +1403,11 @@ export {
      * @property { module:model/PlacePatch }
      */
     PlacePatch,
+    /**
+     * The PlacePreferences model constructor.
+     * @property { module:model/PlacePreferences }
+     */
+    PlacePreferences,
     /**
      * The Property model constructor.
      * @property { module:model/Property }
