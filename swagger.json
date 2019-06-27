@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "1.41.6-dev.9a46d4588"
+        "version": "1.41.8"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -117,10 +117,19 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/geo_coordinates"
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/geo_point"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_coordinates"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
                     },
                     {
                         "$ref": "#\/parameters\/organization"
@@ -130,15 +139,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     }
                 ],
                 "responses": {
@@ -480,13 +480,22 @@
                         "$ref": "#\/parameters\/business_activity"
                     },
                     {
-                        "$ref": "#\/parameters\/organization"
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_point"
                     },
                     {
                         "$ref": "#\/parameters\/geo_coordinates"
                     },
                     {
-                        "$ref": "#\/parameters\/geo_point"
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organization"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -496,15 +505,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/search_color_"
@@ -846,10 +846,19 @@
                         "$ref": "#\/parameters\/business_activity"
                     },
                     {
-                        "$ref": "#\/parameters\/geo_coordinates"
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/geo_point"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_coordinates"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -859,15 +868,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/search_color_"
@@ -1386,15 +1386,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     }
                 ],
                 "responses": {
@@ -1471,15 +1462,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "in": "path",
@@ -1568,15 +1550,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "in": "path",
@@ -1914,10 +1887,19 @@
                         "$ref": "#\/parameters\/category"
                     },
                     {
-                        "$ref": "#\/parameters\/geo_near"
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/geo_hash__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_near"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
                     },
                     {
                         "$ref": "#\/parameters\/organization"
@@ -1930,15 +1912,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     }
                 ],
                 "responses": {
@@ -1998,15 +1971,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -2178,19 +2142,19 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/page"
+                        "$ref": "#\/parameters\/after"
                     },
                     {
-                        "$ref": "#\/parameters\/limit"
+                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/order"
                     },
                     {
-                        "$ref": "#\/parameters\/after"
+                        "$ref": "#\/parameters\/page"
                     },
                     {
-                        "$ref": "#\/parameters\/before"
+                        "$ref": "#\/parameters\/limit"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -2281,15 +2245,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -3066,28 +3021,28 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/query"
+                    },
+                    {
                         "$ref": "#\/parameters\/role"
                     },
                     {
                         "$ref": "#\/parameters\/roles"
                     },
                     {
-                        "$ref": "#\/parameters\/query"
-                    },
-                    {
                         "$ref": "#\/parameters\/page"
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/search_familyName_"
@@ -3277,28 +3232,28 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/query"
+                    },
+                    {
                         "$ref": "#\/parameters\/role"
                     },
                     {
                         "$ref": "#\/parameters\/roles"
                     },
                     {
-                        "$ref": "#\/parameters\/query"
-                    },
-                    {
                         "$ref": "#\/parameters\/page"
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/search_familyName_"
@@ -3678,6 +3633,15 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
                         "$ref": "#\/parameters\/person"
                     },
                     {
@@ -3685,15 +3649,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     }
                 ],
                 "responses": {
@@ -4027,6 +3982,15 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
                         "$ref": "#\/parameters\/person"
                     },
                     {
@@ -4034,15 +3998,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -4133,15 +4088,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -4317,15 +4263,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -5450,10 +5387,22 @@
                         "$ref": "#\/parameters\/business_activity"
                     },
                     {
-                        "$ref": "#\/parameters\/geo_coordinates"
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/disabledAt"
                     },
                     {
                         "$ref": "#\/parameters\/geo_point"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_coordinates"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
                     },
                     {
                         "$ref": "#\/parameters\/organization"
@@ -5466,15 +5415,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/search_alternateName_"
@@ -5633,28 +5573,28 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/query"
+                    },
+                    {
                         "in": "query",
                         "name": "state",
                         "pattern": ".*",
                         "type": "string"
                     },
                     {
-                        "$ref": "#\/parameters\/query"
-                    },
-                    {
                         "$ref": "#\/parameters\/page"
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/search_description_"
@@ -5753,7 +5693,10 @@
                         "$ref": "#\/parameters\/business_activity"
                     },
                     {
-                        "$ref": "#\/parameters\/geo_coordinates"
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/geo_elevation"
@@ -5763,6 +5706,12 @@
                     },
                     {
                         "$ref": "#\/parameters\/geo_point"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_coordinates"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
                     },
                     {
                         "$ref": "#\/parameters\/parent"
@@ -5778,15 +5727,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/search_branchCode_"
@@ -5970,10 +5910,22 @@
                         "$ref": "#\/parameters\/business_activity"
                     },
                     {
-                        "$ref": "#\/parameters\/geo_coordinates"
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/disabledAt"
                     },
                     {
                         "$ref": "#\/parameters\/geo_point"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_coordinates"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -5983,15 +5935,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/search_alternateName_"
@@ -6178,25 +6121,34 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "in": "query",
-                        "name": "state",
-                        "pattern": ".*",
-                        "type": "string"
-                    },
-                    {
-                        "$ref": "#\/parameters\/place"
+                        "$ref": "#\/parameters\/assigned_to"
                     },
                     {
                         "$ref": "#\/parameters\/category"
                     },
                     {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
                         "$ref": "#\/parameters\/delegated_to"
                     },
                     {
-                        "$ref": "#\/parameters\/assigned_to"
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/place"
                     },
                     {
                         "$ref": "#\/parameters\/query"
+                    },
+                    {
+                        "in": "query",
+                        "name": "state",
+                        "pattern": ".*",
+                        "type": "string"
                     },
                     {
                         "$ref": "#\/parameters\/page"
@@ -6205,13 +6157,13 @@
                         "$ref": "#\/parameters\/limit"
                     },
                     {
-                        "$ref": "#\/parameters\/order"
+                        "$ref": "#\/parameters\/search_description_"
                     },
                     {
-                        "$ref": "#\/parameters\/after"
+                        "$ref": "#\/parameters\/search_reference_"
                     },
                     {
-                        "$ref": "#\/parameters\/before"
+                        "$ref": "#\/parameters\/search_identificationNumber_"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -6298,19 +6250,19 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/page"
+                        "$ref": "#\/parameters\/after"
                     },
                     {
-                        "$ref": "#\/parameters\/limit"
+                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/order"
                     },
                     {
-                        "$ref": "#\/parameters\/after"
+                        "$ref": "#\/parameters\/page"
                     },
                     {
-                        "$ref": "#\/parameters\/before"
+                        "$ref": "#\/parameters\/limit"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -6397,19 +6349,19 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/page"
+                        "$ref": "#\/parameters\/after"
                     },
                     {
-                        "$ref": "#\/parameters\/limit"
+                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/order"
                     },
                     {
-                        "$ref": "#\/parameters\/after"
+                        "$ref": "#\/parameters\/page"
                     },
                     {
-                        "$ref": "#\/parameters\/before"
+                        "$ref": "#\/parameters\/limit"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -6757,22 +6709,16 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/place"
+                        "$ref": "#\/parameters\/category"
                     },
                     {
-                        "$ref": "#\/parameters\/category"
+                        "$ref": "#\/parameters\/place"
                     },
                     {
                         "in": "query",
                         "name": "state",
                         "pattern": ".*",
                         "type": "string"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
                     },
                     {
                         "$ref": "#\/parameters\/options_property_"
@@ -7126,22 +7072,31 @@
                         "$ref": "#\/parameters\/place"
                     },
                     {
-                        "in": "query",
-                        "name": "state",
-                        "pattern": ".*",
-                        "type": "string"
+                        "$ref": "#\/parameters\/assigned_to"
                     },
                     {
                         "$ref": "#\/parameters\/category"
                     },
                     {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
                         "$ref": "#\/parameters\/delegated_to"
                     },
                     {
-                        "$ref": "#\/parameters\/assigned_to"
+                        "$ref": "#\/parameters\/order"
                     },
                     {
                         "$ref": "#\/parameters\/query"
+                    },
+                    {
+                        "in": "query",
+                        "name": "state",
+                        "pattern": ".*",
+                        "type": "string"
                     },
                     {
                         "$ref": "#\/parameters\/page"
@@ -7150,13 +7105,13 @@
                         "$ref": "#\/parameters\/limit"
                     },
                     {
-                        "$ref": "#\/parameters\/order"
+                        "$ref": "#\/parameters\/search_description_"
                     },
                     {
-                        "$ref": "#\/parameters\/after"
+                        "$ref": "#\/parameters\/search_reference_"
                     },
                     {
-                        "$ref": "#\/parameters\/before"
+                        "$ref": "#\/parameters\/search_identificationNumber_"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -7246,10 +7201,19 @@
                         "$ref": "#\/parameters\/category"
                     },
                     {
-                        "$ref": "#\/parameters\/geo_near"
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/geo_hash__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_near"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
                     },
                     {
                         "$ref": "#\/parameters\/organization"
@@ -7268,15 +7232,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -7363,7 +7318,19 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
                         "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "$ref": "#\/parameters\/query"
                     },
                     {
                         "in": "query",
@@ -7372,22 +7339,10 @@
                         "type": "string"
                     },
                     {
-                        "$ref": "#\/parameters\/query"
-                    },
-                    {
                         "$ref": "#\/parameters\/page"
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/search_description_"
@@ -7483,19 +7438,19 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/page"
+                        "$ref": "#\/parameters\/after"
                     },
                     {
-                        "$ref": "#\/parameters\/limit"
+                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/order"
                     },
                     {
-                        "$ref": "#\/parameters\/after"
+                        "$ref": "#\/parameters\/page"
                     },
                     {
-                        "$ref": "#\/parameters\/before"
+                        "$ref": "#\/parameters\/limit"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -7849,6 +7804,15 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
                         "$ref": "#\/parameters\/query"
                     },
                     {
@@ -7856,15 +7820,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/search_familyName_"
@@ -8133,7 +8088,10 @@
                         "$ref": "#\/parameters\/business_activity"
                     },
                     {
-                        "$ref": "#\/parameters\/geo_coordinates"
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/geo_elevation"
@@ -8143,6 +8101,12 @@
                     },
                     {
                         "$ref": "#\/parameters\/geo_point"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_coordinates"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
                     },
                     {
                         "$ref": "#\/parameters\/organization"
@@ -8161,15 +8125,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/search_branchCode_"
@@ -8505,6 +8460,15 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
                         "$ref": "#\/parameters\/place"
                     },
                     {
@@ -8512,15 +8476,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -8699,19 +8654,19 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/page"
+                        "$ref": "#\/parameters\/after"
                     },
                     {
-                        "$ref": "#\/parameters\/limit"
+                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/order"
                     },
                     {
-                        "$ref": "#\/parameters\/after"
+                        "$ref": "#\/parameters\/page"
                     },
                     {
-                        "$ref": "#\/parameters\/before"
+                        "$ref": "#\/parameters\/limit"
                     },
                     {
                         "description": "The identifier of the resource formatted as GUID string.",
@@ -8883,7 +8838,19 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
                         "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "$ref": "#\/parameters\/query"
                     },
                     {
                         "in": "query",
@@ -8892,22 +8859,10 @@
                         "type": "string"
                     },
                     {
-                        "$ref": "#\/parameters\/query"
-                    },
-                    {
                         "$ref": "#\/parameters\/page"
                     },
                     {
                         "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
                     },
                     {
                         "$ref": "#\/parameters\/search_description_"
@@ -15023,11 +14978,24 @@
             "format": "string",
             "required": false
         },
-        "geo_coordinates": {
-            "description": "One latitude and one longitude serialized and separated by a plus or a minus sign.",
+        "after": {
+            "enum": [
+                "(\\d\\d\\d\\d)(-)?(\\d\\d)(-)?(\\d\\d)(T)?(\\d\\d)(:)?(\\d\\d)(:)?(\\d\\d)(\\.\\d+)?(Z",
+                "([+-])(\\d\\d)(:)?(\\d\\d))"
+            ],
+            "format": "date-time",
             "in": "query",
-            "name": "geo_coordinates",
-            "pattern": "^[-+]?\\d*\\.?\\d+[-+]\\d*\\.?\\d+",
+            "name": "after",
+            "type": "string"
+        },
+        "before": {
+            "enum": [
+                "(\\d\\d\\d\\d)(-)?(\\d\\d)(-)?(\\d\\d)(T)?(\\d\\d)(:)?(\\d\\d)(:)?(\\d\\d)(\\.\\d+)?(Z",
+                "([+-])(\\d\\d)(:)?(\\d\\d))"
+            ],
+            "format": "date-time",
+            "in": "query",
+            "name": "before",
             "type": "string"
         },
         "geo_point": {
@@ -15035,6 +15003,24 @@
             "in": "query",
             "name": "geo_point",
             "pattern": "^[-+]?\\d*\\.?\\d+[-+]\\d*\\.?\\d+",
+            "type": "string"
+        },
+        "geo_coordinates": {
+            "description": "One latitude and one longitude serialized and separated by a plus or a minus sign.",
+            "in": "query",
+            "name": "geo_coordinates",
+            "pattern": "^[-+]?\\d*\\.?\\d+[-+]\\d*\\.?\\d+",
+            "type": "string"
+        },
+        "order": {
+            "default": "desc",
+            "enum": [
+                "asc",
+                "desc"
+            ],
+            "in": "query",
+            "name": "order",
+            "pattern": "asc|desc",
             "type": "string"
         },
         "organization": {
@@ -15059,37 +15045,6 @@
             "in": "query",
             "name": "limit",
             "type": "integer"
-        },
-        "order": {
-            "default": "desc",
-            "enum": [
-                "asc",
-                "desc"
-            ],
-            "in": "query",
-            "name": "order",
-            "pattern": "asc|desc",
-            "type": "string"
-        },
-        "after": {
-            "enum": [
-                "(\\d\\d\\d\\d)(-)?(\\d\\d)(-)?(\\d\\d)(T)?(\\d\\d)(:)?(\\d\\d)(:)?(\\d\\d)(\\.\\d+)?(Z",
-                "([+-])(\\d\\d)(:)?(\\d\\d))"
-            ],
-            "format": "date-time",
-            "in": "query",
-            "name": "after",
-            "type": "string"
-        },
-        "before": {
-            "enum": [
-                "(\\d\\d\\d\\d)(-)?(\\d\\d)(-)?(\\d\\d)(T)?(\\d\\d)(:)?(\\d\\d)(:)?(\\d\\d)(\\.\\d+)?(Z",
-                "([+-])(\\d\\d)(:)?(\\d\\d))"
-            ],
-            "format": "date-time",
-            "in": "query",
-            "name": "before",
-            "type": "string"
         },
         "business_activity": {
             "description": "The identifier of the resource formatted as GUID string.",
@@ -15155,6 +15110,12 @@
             "name": "category",
             "type": "string"
         },
+        "geo_hash__": {
+            "in": "query",
+            "name": "geo_hash[]",
+            "pattern": "^.{5}$",
+            "type": "string"
+        },
         "geo_near": {
             "description": "One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.",
             "enum": [
@@ -15165,12 +15126,6 @@
             "in": "query",
             "name": "geo_near",
             "pattern": "^[-+]?\\d*\\.?\\d+[-+]\\d*\\.?\\d+[+]\\d*\\.?\\d+|[-+]?\\d*\\.?\\d+[-+]\\d*\\.?\\d+|[+]?\\d*\\.?\\d+",
-            "type": "string"
-        },
-        "geo_hash__": {
-            "in": "query",
-            "name": "geo_hash[]",
-            "pattern": "^.{5}$",
             "type": "string"
         },
         "visibility__": {
@@ -15335,6 +15290,16 @@
             },
             "required": true
         },
+        "disabledAt": {
+            "enum": [
+                "(\\d\\d\\d\\d)(-)?(\\d\\d)(-)?(\\d\\d)(T)?(\\d\\d)(:)?(\\d\\d)(:)?(\\d\\d)(\\.\\d+)?(Z",
+                "([+-])(\\d\\d)(:)?(\\d\\d))"
+            ],
+            "format": "date-time",
+            "in": "query",
+            "name": "disabledAt",
+            "type": "string"
+        },
         "search_alternateName_": {
             "in": "query",
             "name": "search[alternateName]",
@@ -15380,11 +15345,11 @@
             "name": "search[branchCode]",
             "type": "string"
         },
-        "place": {
+        "assigned_to": {
             "description": "The identifier of the resource formatted as GUID string.",
             "format": "uuid",
             "in": "query",
-            "name": "place",
+            "name": "assigned_to",
             "type": "string"
         },
         "delegated_to": {
@@ -15394,11 +15359,16 @@
             "name": "delegated_to",
             "type": "string"
         },
-        "assigned_to": {
+        "place": {
             "description": "The identifier of the resource formatted as GUID string.",
             "format": "uuid",
             "in": "query",
-            "name": "assigned_to",
+            "name": "place",
+            "type": "string"
+        },
+        "search_reference_": {
+            "in": "query",
+            "name": "search[reference]",
             "type": "string"
         },
         "options_property_": {
