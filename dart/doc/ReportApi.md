@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **cgetReportsByOrganization**
-> ReportPagination cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, state, place, category, delegatedTo, assignedTo, query, page, limit, order, after, before)
+> ReportPagination cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, order, place, query, state, page, limit, search[description], search[reference], search[identificationNumber])
 
 Retrieve all Report resources.
 
@@ -32,20 +32,23 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource formatted as GUID string.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var state = state_example; // String | 
-var place = ; // String | The identifier of the resource formatted as GUID string.
-var category = ; // String | The identifier of the resource formatted as GUID string.
-var delegatedTo = ; // String | The identifier of the resource formatted as GUID string.
 var assignedTo = ; // String | The identifier of the resource formatted as GUID string.
-var query = query_example; // String | 
-var page = 56; // int | Page of the overview.
-var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
+var category = ; // String | The identifier of the resource formatted as GUID string.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
+var delegatedTo = ; // String | The identifier of the resource formatted as GUID string.
+var order = order_example; // String | 
+var place = ; // String | The identifier of the resource formatted as GUID string.
+var query = query_example; // String | 
+var state = state_example; // String | 
+var page = 56; // int | Page of the overview.
+var limit = 56; // int | Page of the overview.
+var search[description] = search[description]_example; // String | 
+var search[reference] = search[reference]_example; // String | 
+var search[identificationNumber] = search[identificationNumber]_example; // String | 
 
 try { 
-    var result = api_instance.cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, state, place, category, delegatedTo, assignedTo, query, page, limit, order, after, before);
+    var result = api_instance.cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, order, place, query, state, page, limit, search[description], search[reference], search[identificationNumber]);
     print(result);
 } catch (e) {
     print("Exception when calling ReportApi->cgetReportsByOrganization: $e\n");
@@ -60,17 +63,20 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **state** | **String**|  | [optional] 
- **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **delegatedTo** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **query** | **String**|  | [optional] 
- **page** | **int**| Page of the overview. | [optional] [default to 1]
- **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
+ **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
+ **delegatedTo** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
+ **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **query** | **String**|  | [optional] 
+ **state** | **String**|  | [optional] 
+ **page** | **int**| Page of the overview. | [optional] [default to 1]
+ **limit** | **int**| Page of the overview. | [optional] [default to 10]
+ **search[description]** | **String**|  | [optional] 
+ **search[reference]** | **String**|  | [optional] 
+ **search[identificationNumber]** | **String**|  | [optional] 
 
 ### Return type
 

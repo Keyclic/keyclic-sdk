@@ -154,14 +154,14 @@ var BusinessActivityApi =
      * @param { BusinessActivityPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { module:model/Date } after
+     * @param { module:model/Date } before
      * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { module:model/String } order   (default to desc)
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { module:model/String } order   (default to desc)
-     * @param { module:model/Date } after
-     * @param { module:model/Date } before
      */
 
     _createClass(BusinessActivityApi, [
@@ -182,14 +182,14 @@ var BusinessActivityApi =
           var xKeyclicApp = options.xKeyclicApp,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
-            geoCoordinates = options.geoCoordinates,
+            after = options.after,
+            before = options.before,
             geoPoint = options.geoPoint,
+            geoCoordinates = options.geoCoordinates,
+            order = options.order,
             organization = options.organization,
             page = options.page,
-            limit = options.limit,
-            order = options.order,
-            after = options.after,
-            before = options.before; // verify the required parameter 'xKeyclicApp' is set
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -202,6 +202,10 @@ var BusinessActivityApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'page'
 
           if (typeof page === "undefined" || page === null) {
@@ -210,26 +214,10 @@ var BusinessActivityApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'geoCoordinates'
-
-          if (typeof geoCoordinates === "undefined") {
-            geoCoordinates = null;
-          } // verify the null value of parameter 'geoPoint'
-
-          if (typeof geoPoint === "undefined") {
-            geoPoint = null;
-          } // verify the null value of parameter 'organization'
-
-          if (typeof organization === "undefined") {
-            organization = null;
           } // verify the null value of parameter 'after'
 
           if (typeof after === "undefined") {
@@ -238,6 +226,18 @@ var BusinessActivityApi =
 
           if (typeof before === "undefined") {
             before = null;
+          } // verify the null value of parameter 'geoPoint'
+
+          if (typeof geoPoint === "undefined") {
+            geoPoint = null;
+          } // verify the null value of parameter 'geoCoordinates'
+
+          if (typeof geoCoordinates === "undefined") {
+            geoCoordinates = null;
+          } // verify the null value of parameter 'organization'
+
+          if (typeof organization === "undefined") {
+            organization = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
@@ -249,14 +249,14 @@ var BusinessActivityApi =
           var pathParams = {};
           var bodyParam = null;
           var queryParams = {
-            geo_coordinates: geoCoordinates,
+            after: after,
+            before: before,
             geo_point: geoPoint,
+            geo_coordinates: geoCoordinates,
+            order: order,
             organization: organization,
             page: page,
-            limit: limit,
-            order: order,
-            after: after,
-            before: before
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,

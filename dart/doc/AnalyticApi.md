@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getAnalyticByOrganization**
-> Chart getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, place, category, state, before, after, options[property], options[sort])
+> Chart getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, category, place, state, options[property], options[sort])
 
 Retrieve one Analytic resource.
 
@@ -30,16 +30,14 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource formatted as GUID string.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var place = ; // String | The identifier of the resource formatted as GUID string.
 var category = ; // String | The identifier of the resource formatted as GUID string.
+var place = ; // String | The identifier of the resource formatted as GUID string.
 var state = state_example; // String | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var options[property] = options[property]_example; // String | 
 var options[sort] = options[sort]_example; // String | 
 
 try { 
-    var result = api_instance.getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, place, category, state, before, after, options[property], options[sort]);
+    var result = api_instance.getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, category, place, state, options[property], options[sort]);
     print(result);
 } catch (e) {
     print("Exception when calling AnalyticApi->getAnalyticByOrganization: $e\n");
@@ -54,11 +52,9 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **state** | **String**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
- **after** | **DateTime**|  | [optional] 
  **options[property]** | **String**|  | [optional] 
  **options[sort]** | **String**|  | [optional] 
 

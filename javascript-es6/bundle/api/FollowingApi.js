@@ -148,9 +148,6 @@ var FollowingApi =
      * @param { String } xKeyclicAppVersion
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { module:model/String } order   (default to desc)
-     * @param { module:model/Date } after
-     * @param { module:model/Date } before
      */
 
     _createClass(FollowingApi, [
@@ -173,10 +170,7 @@ var FollowingApi =
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             page = options.page,
-            limit = options.limit,
-            order = options.order,
-            after = options.after,
-            before = options.before; // verify the required parameter 'xKeyclicApp' is set
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -203,22 +197,10 @@ var FollowingApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'after'
-
-          if (typeof after === "undefined") {
-            after = null;
-          } // verify the null value of parameter 'before'
-
-          if (typeof before === "undefined") {
-            before = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
@@ -233,10 +215,7 @@ var FollowingApi =
           var bodyParam = null;
           var queryParams = {
             page: page,
-            limit: limit,
-            order: order,
-            after: after,
-            before: before
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,

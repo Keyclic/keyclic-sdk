@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **cgetCategories**
-> CategoryPagination cgetCategories(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, organization, geoCoordinates, geoPoint, query, page, limit, order, after, before, search[color], search[icon], search[name], search[identificationNumber])
+> CategoryPagination cgetCategories(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, organization, query, page, limit, search[color], search[icon], search[name], search[identificationNumber])
 
 Retrieve all Category resources.
 
@@ -34,22 +34,22 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var businessActivity = ; // String | The identifier of the resource formatted as GUID string.
-var organization = ; // String | The identifier of the resource formatted as GUID string.
-var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var after = 2013-10-20T19:20:30+01:00; // DateTime | 
+var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var order = order_example; // String | 
+var organization = ; // String | The identifier of the resource formatted as GUID string.
 var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var search[color] = search[color]_example; // String | 
 var search[icon] = search[icon]_example; // String | 
 var search[name] = search[name]_example; // String | 
 var search[identificationNumber] = search[identificationNumber]_example; // String | 
 
 try { 
-    var result = api_instance.cgetCategories(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, organization, geoCoordinates, geoPoint, query, page, limit, order, after, before, search[color], search[icon], search[name], search[identificationNumber]);
+    var result = api_instance.cgetCategories(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, organization, query, page, limit, search[color], search[icon], search[name], search[identificationNumber]);
     print(result);
 } catch (e) {
     print("Exception when calling CategoryApi->cgetCategories: $e\n");
@@ -64,15 +64,15 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **after** | **DateTime**|  | [optional] 
+ **before** | **DateTime**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
  **search[color]** | **String**|  | [optional] 
  **search[icon]** | **String**|  | [optional] 
  **search[name]** | **String**|  | [optional] 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetCategoriesByOrganization**
-> CategoryPagination cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, businessActivity, geoCoordinates, geoPoint, query, page, limit, order, after, before, search[color], search[icon], search[name], search[identificationNumber])
+> CategoryPagination cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, query, page, limit, search[color], search[icon], search[name], search[identificationNumber])
 
 Retrieve all Category resources.
 
@@ -112,21 +112,21 @@ var organization = ; // String | The identifier of the resource formatted as GUI
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var businessActivity = ; // String | The identifier of the resource formatted as GUID string.
-var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var after = 2013-10-20T19:20:30+01:00; // DateTime | 
+var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var order = order_example; // String | 
 var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var search[color] = search[color]_example; // String | 
 var search[icon] = search[icon]_example; // String | 
 var search[name] = search[name]_example; // String | 
 var search[identificationNumber] = search[identificationNumber]_example; // String | 
 
 try { 
-    var result = api_instance.cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, businessActivity, geoCoordinates, geoPoint, query, page, limit, order, after, before, search[color], search[icon], search[name], search[identificationNumber]);
+    var result = api_instance.cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, query, page, limit, search[color], search[icon], search[name], search[identificationNumber]);
     print(result);
 } catch (e) {
     print("Exception when calling CategoryApi->cgetCategoriesByOrganization: $e\n");
@@ -142,14 +142,14 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **after** | **DateTime**|  | [optional] 
+ **before** | **DateTime**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
  **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
  **search[color]** | **String**|  | [optional] 
  **search[icon]** | **String**|  | [optional] 
  **search[name]** | **String**|  | [optional] 

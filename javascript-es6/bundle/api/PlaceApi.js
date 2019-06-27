@@ -152,19 +152,19 @@ var PlaceApi =
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
      * @param { String } businessActivity The identifier of the resource formatted as GUID string.
-     * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { module:model/Date } after
+     * @param { module:model/Date } before
      * @param { String } geoElevation
      * @param { String } geoHash
      * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { module:model/String } order   (default to desc)
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { String } parent The identifier of the resource formatted as GUID string.
      * @param { String } parents The identifier of the resource formatted as GUID string.
      * @param { String } query
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { module:model/String } order   (default to desc)
-     * @param { module:model/Date } after
-     * @param { module:model/Date } before
      * @param { String } searchBranchCode
      * @param { String } searchDescription
      * @param { String } searchName
@@ -189,19 +189,19 @@ var PlaceApi =
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             businessActivity = options.businessActivity,
-            geoCoordinates = options.geoCoordinates,
+            after = options.after,
+            before = options.before,
             geoElevation = options.geoElevation,
             geoHash = options.geoHash,
             geoPoint = options.geoPoint,
+            geoCoordinates = options.geoCoordinates,
+            order = options.order,
             organization = options.organization,
             parent = options.parent,
             parents = options.parents,
             query = options.query,
             page = options.page,
             limit = options.limit,
-            order = options.order,
-            after = options.after,
-            before = options.before,
             searchBranchCode = options.searchBranchCode,
             searchDescription = options.searchDescription,
             searchName = options.searchName; // verify the required parameter 'xKeyclicApp' is set
@@ -217,6 +217,10 @@ var PlaceApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'page'
 
           if (typeof page === "undefined" || page === null) {
@@ -225,10 +229,6 @@ var PlaceApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -237,10 +237,14 @@ var PlaceApi =
 
           if (typeof businessActivity === "undefined") {
             businessActivity = null;
-          } // verify the null value of parameter 'geoCoordinates'
+          } // verify the null value of parameter 'after'
 
-          if (typeof geoCoordinates === "undefined") {
-            geoCoordinates = null;
+          if (typeof after === "undefined") {
+            after = null;
+          } // verify the null value of parameter 'before'
+
+          if (typeof before === "undefined") {
+            before = null;
           } // verify the null value of parameter 'geoElevation'
 
           if (typeof geoElevation === "undefined") {
@@ -253,6 +257,10 @@ var PlaceApi =
 
           if (typeof geoPoint === "undefined") {
             geoPoint = null;
+          } // verify the null value of parameter 'geoCoordinates'
+
+          if (typeof geoCoordinates === "undefined") {
+            geoCoordinates = null;
           } // verify the null value of parameter 'organization'
 
           if (typeof organization === "undefined") {
@@ -269,14 +277,6 @@ var PlaceApi =
 
           if (typeof query === "undefined") {
             query = null;
-          } // verify the null value of parameter 'after'
-
-          if (typeof after === "undefined") {
-            after = null;
-          } // verify the null value of parameter 'before'
-
-          if (typeof before === "undefined") {
-            before = null;
           } // verify the null value of parameter 'searchBranchCode'
 
           if (typeof searchBranchCode === "undefined") {
@@ -301,19 +301,19 @@ var PlaceApi =
           var bodyParam = null;
           var queryParams = {
             business_activity: businessActivity,
-            geo_coordinates: geoCoordinates,
+            after: after,
+            before: before,
             geo_elevation: geoElevation,
             "geo_hash[]": geoHash,
             geo_point: geoPoint,
+            geo_coordinates: geoCoordinates,
+            order: order,
             organization: organization,
             parent: parent,
             "parents[]": parents,
             query: query,
             page: page,
             limit: limit,
-            order: order,
-            after: after,
-            before: before,
             "search[branchCode]": searchBranchCode,
             "search[description]": searchDescription,
             "search[name]": searchName
@@ -350,18 +350,18 @@ var PlaceApi =
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
          * @param { String } xKeyclicAppVersion
          * @param { String } businessActivity The identifier of the resource formatted as GUID string.
-         * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+         * @param { module:model/Date } after
+         * @param { module:model/Date } before
          * @param { String } geoElevation
          * @param { String } geoHash
          * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
+         * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+         * @param { module:model/String } order   (default to desc)
          * @param { String } parent The identifier of the resource formatted as GUID string.
          * @param { String } parents The identifier of the resource formatted as GUID string.
          * @param { String } query
          * @param { Number } page Page of the overview.  (default to 1)
          * @param { Number } limit Page of the overview.  (default to 10)
-         * @param { module:model/String } order   (default to desc)
-         * @param { module:model/Date } after
-         * @param { module:model/Date } before
          * @param { String } searchBranchCode
          * @param { String } searchDescription
          * @param { String } searchName
@@ -386,18 +386,18 @@ var PlaceApi =
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             businessActivity = options.businessActivity,
-            geoCoordinates = options.geoCoordinates,
+            after = options.after,
+            before = options.before,
             geoElevation = options.geoElevation,
             geoHash = options.geoHash,
             geoPoint = options.geoPoint,
+            geoCoordinates = options.geoCoordinates,
+            order = options.order,
             parent = options.parent,
             parents = options.parents,
             query = options.query,
             page = options.page,
             limit = options.limit,
-            order = options.order,
-            after = options.after,
-            before = options.before,
             searchBranchCode = options.searchBranchCode,
             searchDescription = options.searchDescription,
             searchName = options.searchName; // verify the required parameter 'xKeyclicApp' is set
@@ -419,6 +419,10 @@ var PlaceApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'page'
 
           if (typeof page === "undefined" || page === null) {
@@ -427,10 +431,6 @@ var PlaceApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -439,10 +439,14 @@ var PlaceApi =
 
           if (typeof businessActivity === "undefined") {
             businessActivity = null;
-          } // verify the null value of parameter 'geoCoordinates'
+          } // verify the null value of parameter 'after'
 
-          if (typeof geoCoordinates === "undefined") {
-            geoCoordinates = null;
+          if (typeof after === "undefined") {
+            after = null;
+          } // verify the null value of parameter 'before'
+
+          if (typeof before === "undefined") {
+            before = null;
           } // verify the null value of parameter 'geoElevation'
 
           if (typeof geoElevation === "undefined") {
@@ -455,6 +459,10 @@ var PlaceApi =
 
           if (typeof geoPoint === "undefined") {
             geoPoint = null;
+          } // verify the null value of parameter 'geoCoordinates'
+
+          if (typeof geoCoordinates === "undefined") {
+            geoCoordinates = null;
           } // verify the null value of parameter 'parent'
 
           if (typeof parent === "undefined") {
@@ -467,14 +475,6 @@ var PlaceApi =
 
           if (typeof query === "undefined") {
             query = null;
-          } // verify the null value of parameter 'after'
-
-          if (typeof after === "undefined") {
-            after = null;
-          } // verify the null value of parameter 'before'
-
-          if (typeof before === "undefined") {
-            before = null;
           } // verify the null value of parameter 'searchBranchCode'
 
           if (typeof searchBranchCode === "undefined") {
@@ -501,18 +501,18 @@ var PlaceApi =
           var bodyParam = null;
           var queryParams = {
             business_activity: businessActivity,
-            geo_coordinates: geoCoordinates,
+            after: after,
+            before: before,
             geo_elevation: geoElevation,
             "geo_hash[]": geoHash,
             geo_point: geoPoint,
+            geo_coordinates: geoCoordinates,
+            order: order,
             parent: parent,
             "parents[]": parents,
             query: query,
             page: page,
             limit: limit,
-            order: order,
-            after: after,
-            before: before,
             "search[branchCode]": searchBranchCode,
             "search[description]": searchDescription,
             "search[name]": searchName

@@ -37,11 +37,11 @@ export default class ServiceApi extends ApiClient {
    * @param { ServicePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { Number } page Page of the overview.  (default to 1)
-   * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { module:model/String } order   (default to desc)
    * @param { module:model/Date } after
    * @param { module:model/Date } before
+   * @param { module:model/String } order   (default to desc)
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
    */
   cgetServicesByOrganization(returnType = null, options, credentials) {
     if (returnType === null) {
@@ -53,11 +53,11 @@ export default class ServiceApi extends ApiClient {
       organization,
       acceptLanguage,
       xKeyclicAppVersion,
-      page,
-      limit,
-      order,
       after,
-      before
+      before,
+      order,
+      page,
+      limit
     } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -79,6 +79,11 @@ export default class ServiceApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
     // verify the default value of parameter 'page'
     if (typeof page === "undefined" || page === null) {
       page = 1;
@@ -87,11 +92,6 @@ export default class ServiceApi extends ApiClient {
     // verify the default value of parameter 'limit'
     if (typeof limit === "undefined" || limit === null) {
       limit = 10;
-    }
-
-    // verify the default value of parameter 'order'
-    if (typeof order === "undefined" || order === null) {
-      order = "desc";
     }
 
     // verify the null value of parameter 'xKeyclicAppVersion'
@@ -122,11 +122,11 @@ export default class ServiceApi extends ApiClient {
     let bodyParam = null;
 
     let queryParams = {
-      page: page,
-      limit: limit,
-      order: order,
       after: after,
-      before: before
+      before: before,
+      order: order,
+      page: page,
+      limit: limit
     };
 
     let headerParams = {

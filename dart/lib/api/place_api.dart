@@ -12,19 +12,19 @@ class PlaceApi {
       {String acceptLanguage,
       String xKeyclicAppVersion,
       String businessActivity,
-      String geoCoordinates,
+      DateTime after,
+      DateTime before,
       String geoElevation,
       String geoHash_,
       String geoPoint,
+      String geoCoordinates,
+      String order,
       String organization,
       String parent,
       String parents_,
       String query,
       int page,
       int limit,
-      String order,
-      DateTime after,
-      DateTime before,
       String search_branchCode_,
       String search_description_,
       String search_name_}) async {
@@ -46,9 +46,13 @@ class PlaceApi {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "business_activity", businessActivity));
     }
-    if (geoCoordinates != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "geo_coordinates", geoCoordinates));
+    if (after != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
+    }
+    if (before != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (geoElevation != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
@@ -61,6 +65,14 @@ class PlaceApi {
     if (geoPoint != null) {
       queryParams.addAll(
           _convertParametersForCollectionFormat("", "geo_point", geoPoint));
+    }
+    if (geoCoordinates != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat(
+          "", "geo_coordinates", geoCoordinates));
+    }
+    if (order != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (organization != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
@@ -85,18 +97,6 @@ class PlaceApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_branchCode_ != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
@@ -148,18 +148,18 @@ class PlaceApi {
       {String acceptLanguage,
       String xKeyclicAppVersion,
       String businessActivity,
-      String geoCoordinates,
+      DateTime after,
+      DateTime before,
       String geoElevation,
       String geoHash_,
       String geoPoint,
+      String geoCoordinates,
+      String order,
       String parent,
       String parents_,
       String query,
       int page,
       int limit,
-      String order,
-      DateTime after,
-      DateTime before,
       String search_branchCode_,
       String search_description_,
       String search_name_}) async {
@@ -186,9 +186,13 @@ class PlaceApi {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "business_activity", businessActivity));
     }
-    if (geoCoordinates != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "geo_coordinates", geoCoordinates));
+    if (after != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
+    }
+    if (before != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (geoElevation != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
@@ -201,6 +205,14 @@ class PlaceApi {
     if (geoPoint != null) {
       queryParams.addAll(
           _convertParametersForCollectionFormat("", "geo_point", geoPoint));
+    }
+    if (geoCoordinates != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat(
+          "", "geo_coordinates", geoCoordinates));
+    }
+    if (order != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (parent != null) {
       queryParams
@@ -221,18 +233,6 @@ class PlaceApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_branchCode_ != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(

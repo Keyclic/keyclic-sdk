@@ -11,12 +11,12 @@ class PersonApi {
   Future<PersonPagination> cgetPeople(String xKeyclicApp,
       {String acceptLanguage,
       String xKeyclicAppVersion,
+      DateTime after,
+      DateTime before,
+      String order,
       String query,
       int page,
       int limit,
-      String order,
-      DateTime after,
-      DateTime before,
       String search_familyName_,
       String search_givenName_,
       String search_jobTitle_,
@@ -37,6 +37,18 @@ class PersonApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
+    if (after != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
+    }
+    if (before != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
+    }
+    if (order != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
+    }
     if (query != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "query", query));
@@ -48,18 +60,6 @@ class PersonApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_familyName_ != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(

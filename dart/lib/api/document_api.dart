@@ -13,11 +13,11 @@ class DocumentApi {
       String xKeyclicApp, String report,
       {String acceptLanguage,
       String xKeyclicAppVersion,
-      int page,
-      int limit,
-      String order,
       DateTime after,
-      DateTime before}) async {
+      DateTime before,
+      String order,
+      int page,
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -37,18 +37,6 @@ class DocumentApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    if (page != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "page", page));
-    }
-    if (limit != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
     if (after != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "after", after));
@@ -56,6 +44,18 @@ class DocumentApi {
     if (before != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "before", before));
+    }
+    if (order != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
+    }
+    if (page != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "page", page));
+    }
+    if (limit != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;

@@ -148,15 +148,15 @@ var FeedbackApi =
      * @param { String } xKeyclicAppVersion
      * @param { String } state   (default to DELIVERED)
      * @param { String } category The identifier of the resource formatted as GUID string.
-     * @param { module:model/String } geoNear One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
+     * @param { module:model/Date } after
+     * @param { module:model/Date } before
      * @param { String } geoHash
+     * @param { module:model/String } geoNear One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
+     * @param { module:model/String } order   (default to desc)
      * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { module:model/String } visibility   (default to VISIBILITY_PUBLIC)
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { module:model/String } order   (default to desc)
-     * @param { module:model/Date } after
-     * @param { module:model/Date } before
      */
 
     _createClass(FeedbackApi, [
@@ -178,15 +178,15 @@ var FeedbackApi =
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             state = options.state,
             category = options.category,
-            geoNear = options.geoNear,
+            after = options.after,
+            before = options.before,
             geoHash = options.geoHash,
+            geoNear = options.geoNear,
+            order = options.order,
             organization = options.organization,
             visibility = options.visibility,
             page = options.page,
-            limit = options.limit,
-            order = options.order,
-            after = options.after,
-            before = options.before; // verify the required parameter 'xKeyclicApp' is set
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -203,6 +203,10 @@ var FeedbackApi =
 
           if (typeof state === "undefined" || state === null) {
             state = "DELIVERED";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'visibility'
 
           if (typeof visibility === "undefined" || visibility === null) {
@@ -215,10 +219,6 @@ var FeedbackApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -227,18 +227,6 @@ var FeedbackApi =
 
           if (typeof category === "undefined") {
             category = null;
-          } // verify the null value of parameter 'geoNear'
-
-          if (typeof geoNear === "undefined") {
-            geoNear = null;
-          } // verify the null value of parameter 'geoHash'
-
-          if (typeof geoHash === "undefined") {
-            geoHash = null;
-          } // verify the null value of parameter 'organization'
-
-          if (typeof organization === "undefined") {
-            organization = null;
           } // verify the null value of parameter 'after'
 
           if (typeof after === "undefined") {
@@ -247,6 +235,18 @@ var FeedbackApi =
 
           if (typeof before === "undefined") {
             before = null;
+          } // verify the null value of parameter 'geoHash'
+
+          if (typeof geoHash === "undefined") {
+            geoHash = null;
+          } // verify the null value of parameter 'geoNear'
+
+          if (typeof geoNear === "undefined") {
+            geoNear = null;
+          } // verify the null value of parameter 'organization'
+
+          if (typeof organization === "undefined") {
+            organization = null;
           }
 
           var pathParams = {};
@@ -254,15 +254,15 @@ var FeedbackApi =
           var queryParams = {
             state: state,
             category: category,
-            geo_near: geoNear,
+            after: after,
+            before: before,
             "geo_hash[]": geoHash,
+            geo_near: geoNear,
+            order: order,
             organization: organization,
             "visibility[]": visibility,
             page: page,
-            limit: limit,
-            order: order,
-            after: after,
-            before: before
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,
@@ -296,16 +296,16 @@ var FeedbackApi =
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
          * @param { String } xKeyclicAppVersion
          * @param { String } category The identifier of the resource formatted as GUID string.
-         * @param { module:model/String } geoNear One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
+         * @param { module:model/Date } after
+         * @param { module:model/Date } before
          * @param { String } geoHash
+         * @param { module:model/String } geoNear One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
+         * @param { module:model/String } order   (default to desc)
          * @param { String } organization The identifier of the resource formatted as GUID string.
          * @param { String } state
          * @param { module:model/String } visibility   (default to VISIBILITY_PUBLIC)
          * @param { Number } page Page of the overview.  (default to 1)
          * @param { Number } limit Page of the overview.  (default to 10)
-         * @param { module:model/String } order   (default to desc)
-         * @param { module:model/Date } after
-         * @param { module:model/Date } before
          */
       },
       {
@@ -327,16 +327,16 @@ var FeedbackApi =
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             category = options.category,
-            geoNear = options.geoNear,
+            after = options.after,
+            before = options.before,
             geoHash = options.geoHash,
+            geoNear = options.geoNear,
+            order = options.order,
             organization = options.organization,
             state = options.state,
             visibility = options.visibility,
             page = options.page,
-            limit = options.limit,
-            order = options.order,
-            after = options.after,
-            before = options.before; // verify the required parameter 'xKeyclicApp' is set
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -355,6 +355,10 @@ var FeedbackApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'visibility'
 
           if (typeof visibility === "undefined" || visibility === null) {
@@ -367,10 +371,6 @@ var FeedbackApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -379,22 +379,6 @@ var FeedbackApi =
 
           if (typeof category === "undefined") {
             category = null;
-          } // verify the null value of parameter 'geoNear'
-
-          if (typeof geoNear === "undefined") {
-            geoNear = null;
-          } // verify the null value of parameter 'geoHash'
-
-          if (typeof geoHash === "undefined") {
-            geoHash = null;
-          } // verify the null value of parameter 'organization'
-
-          if (typeof organization === "undefined") {
-            organization = null;
-          } // verify the null value of parameter 'state'
-
-          if (typeof state === "undefined") {
-            state = null;
           } // verify the null value of parameter 'after'
 
           if (typeof after === "undefined") {
@@ -403,6 +387,22 @@ var FeedbackApi =
 
           if (typeof before === "undefined") {
             before = null;
+          } // verify the null value of parameter 'geoHash'
+
+          if (typeof geoHash === "undefined") {
+            geoHash = null;
+          } // verify the null value of parameter 'geoNear'
+
+          if (typeof geoNear === "undefined") {
+            geoNear = null;
+          } // verify the null value of parameter 'organization'
+
+          if (typeof organization === "undefined") {
+            organization = null;
+          } // verify the null value of parameter 'state'
+
+          if (typeof state === "undefined") {
+            state = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
@@ -417,16 +417,16 @@ var FeedbackApi =
           var bodyParam = null;
           var queryParams = {
             category: category,
-            geo_near: geoNear,
+            after: after,
+            before: before,
             "geo_hash[]": geoHash,
+            geo_near: geoNear,
+            order: order,
             organization: organization,
             state: state,
             "visibility[]": visibility,
             page: page,
-            limit: limit,
-            order: order,
-            after: after,
-            before: before
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,

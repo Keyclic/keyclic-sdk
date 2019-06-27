@@ -37,14 +37,14 @@ let organization = "organization_example"; // String | The identifier of the res
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'role': "role_example", // String | 
-  'roles': "roles_example", // String | 
-  'query': "query_example", // String | 
-  'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
-  'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'order': "desc", // String | 
+  'query': "query_example", // String | 
+  'role': "role_example", // String | 
+  'roles': "roles_example", // String | 
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
   'searchFamilyName': "searchFamilyName_example", // String | 
   'searchGivenName': "searchGivenName_example", // String | 
   'searchJobTitle': "searchJobTitle_example", // String | 
@@ -70,14 +70,14 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **role** | **String**|  | [optional] 
- **roles** | **String**|  | [optional] 
- **query** | **String**|  | [optional] 
- **page** | **Number**| Page of the overview. | [optional] [default to 1]
- **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
+ **query** | **String**|  | [optional] 
+ **role** | **String**|  | [optional] 
+ **roles** | **String**|  | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **searchFamilyName** | **String**|  | [optional] 
  **searchGivenName** | **String**|  | [optional] 
  **searchJobTitle** | **String**|  | [optional] 

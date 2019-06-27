@@ -42,9 +42,6 @@ export default class CommentApi extends ApiClient {
    * @param { String } xKeyclicAppVersion
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { module:model/String } order   (default to desc)
-   * @param { module:model/Date } after
-   * @param { module:model/Date } before
    */
   cgetCommentsByFeedback(returnType = null, options, credentials) {
     if (returnType === null) {
@@ -57,10 +54,7 @@ export default class CommentApi extends ApiClient {
       acceptLanguage,
       xKeyclicAppVersion,
       page,
-      limit,
-      order,
-      after,
-      before
+      limit
     } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -92,24 +86,9 @@ export default class CommentApi extends ApiClient {
       limit = 10;
     }
 
-    // verify the default value of parameter 'order'
-    if (typeof order === "undefined" || order === null) {
-      order = "desc";
-    }
-
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
-    }
-
-    // verify the null value of parameter 'after'
-    if (typeof after === "undefined") {
-      after = null;
-    }
-
-    // verify the null value of parameter 'before'
-    if (typeof before === "undefined") {
-      before = null;
     }
 
     if (typeof credentials === "undefined" || credentials === null) {
@@ -126,10 +105,7 @@ export default class CommentApi extends ApiClient {
 
     let queryParams = {
       page: page,
-      limit: limit,
-      order: order,
-      after: after,
-      before: before
+      limit: limit
     };
 
     let headerParams = {
@@ -171,9 +147,6 @@ export default class CommentApi extends ApiClient {
    * @param { String } xKeyclicAppVersion
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { module:model/String } order   (default to desc)
-   * @param { module:model/Date } after
-   * @param { module:model/Date } before
    */
   cgetCommentsByOperation(returnType = null, options, credentials) {
     if (returnType === null) {
@@ -186,10 +159,7 @@ export default class CommentApi extends ApiClient {
       acceptLanguage,
       xKeyclicAppVersion,
       page,
-      limit,
-      order,
-      after,
-      before
+      limit
     } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -221,24 +191,9 @@ export default class CommentApi extends ApiClient {
       limit = 10;
     }
 
-    // verify the default value of parameter 'order'
-    if (typeof order === "undefined" || order === null) {
-      order = "desc";
-    }
-
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
-    }
-
-    // verify the null value of parameter 'after'
-    if (typeof after === "undefined") {
-      after = null;
-    }
-
-    // verify the null value of parameter 'before'
-    if (typeof before === "undefined") {
-      before = null;
     }
 
     if (typeof credentials === "undefined" || credentials === null) {
@@ -255,10 +210,7 @@ export default class CommentApi extends ApiClient {
 
     let queryParams = {
       page: page,
-      limit: limit,
-      order: order,
-      after: after,
-      before: before
+      limit: limit
     };
 
     let headerParams = {

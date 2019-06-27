@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **cgetOrganizations**
-> OrganizationPagination cgetOrganizations(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, geoCoordinates, geoPoint, organization, query, page, limit, order, after, before, search[alternateName], search[billingEmailAddress], search[description], search[name], search[notificationEmailAddress])
+> OrganizationPagination cgetOrganizations(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, after, before, disabledAt, geoPoint, geoCoordinates, order, organization, query, page, limit, search[alternateName], search[billingEmailAddress], search[description], search[name], search[notificationEmailAddress])
 
 Retrieve all Organization resources.
 
@@ -33,15 +33,16 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var businessActivity = ; // String | The identifier of the resource formatted as GUID string.
-var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var after = 2013-10-20T19:20:30+01:00; // DateTime | 
+var before = 2013-10-20T19:20:30+01:00; // DateTime | 
+var disabledAt = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var order = order_example; // String | 
 var organization = ; // String | The identifier of the resource formatted as GUID string.
 var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var search[alternateName] = search[alternateName]_example; // String | 
 var search[billingEmailAddress] = search[billingEmailAddress]_example; // String | 
 var search[description] = search[description]_example; // String | 
@@ -49,7 +50,7 @@ var search[name] = search[name]_example; // String |
 var search[notificationEmailAddress] = search[notificationEmailAddress]_example; // String | 
 
 try { 
-    var result = api_instance.cgetOrganizations(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, geoCoordinates, geoPoint, organization, query, page, limit, order, after, before, search[alternateName], search[billingEmailAddress], search[description], search[name], search[notificationEmailAddress]);
+    var result = api_instance.cgetOrganizations(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, after, before, disabledAt, geoPoint, geoCoordinates, order, organization, query, page, limit, search[alternateName], search[billingEmailAddress], search[description], search[name], search[notificationEmailAddress]);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetOrganizations: $e\n");
@@ -64,15 +65,16 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **after** | **DateTime**|  | [optional] 
+ **before** | **DateTime**|  | [optional] 
+ **disabledAt** | **DateTime**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
  **search[alternateName]** | **String**|  | [optional] 
  **search[billingEmailAddress]** | **String**|  | [optional] 
  **search[description]** | **String**|  | [optional] 

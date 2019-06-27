@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **cgetFeedback**
-> FeedbackPagination cgetFeedback(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, state, category, geoNear, geoHash[], organization, visibility[], page, limit, order, after, before)
+> FeedbackPagination cgetFeedback(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, state, category, after, before, geoHash[], geoNear, order, organization, visibility[], page, limit)
 
 Retrieve all Feedback resources.
 
@@ -29,18 +29,18 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var state = state_example; // String | 
 var category = ; // String | The identifier of the resource formatted as GUID string.
-var geoNear = geoNear_example; // String | One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
+var after = 2013-10-20T19:20:30+01:00; // DateTime | 
+var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoHash[] = geoHash[]_example; // String | 
+var geoNear = geoNear_example; // String | One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
+var order = order_example; // String | 
 var organization = ; // String | The identifier of the resource formatted as GUID string.
 var visibility[] = visibility[]_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 
 try { 
-    var result = api_instance.cgetFeedback(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, state, category, geoNear, geoHash[], organization, visibility[], page, limit, order, after, before);
+    var result = api_instance.cgetFeedback(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, state, category, after, before, geoHash[], geoNear, order, organization, visibility[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling FeedbackApi->cgetFeedback: $e\n");
@@ -56,15 +56,15 @@ Name | Type | Description  | Notes
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **state** | **String**|  | [optional] [default to DELIVERED]
  **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **geoNear** | **String**| One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign. | [optional] 
+ **after** | **DateTime**|  | [optional] 
+ **before** | **DateTime**|  | [optional] 
  **geoHash[]** | **String**|  | [optional] 
+ **geoNear** | **String**| One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign. | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **visibility[]** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
 
 ### Return type
 
@@ -82,7 +82,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetFeedbackByPerson**
-> FeedbackPagination cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, category, geoNear, geoHash[], organization, state, visibility[], page, limit, order, after, before)
+> FeedbackPagination cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, category, after, before, geoHash[], geoNear, order, organization, state, visibility[], page, limit)
 
 Retrieve all Feedback resources.
 
@@ -100,19 +100,19 @@ var person = ; // String | The identifier of the resource formatted as GUID stri
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var category = ; // String | The identifier of the resource formatted as GUID string.
-var geoNear = geoNear_example; // String | One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
+var after = 2013-10-20T19:20:30+01:00; // DateTime | 
+var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoHash[] = geoHash[]_example; // String | 
+var geoNear = geoNear_example; // String | One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
+var order = order_example; // String | 
 var organization = ; // String | The identifier of the resource formatted as GUID string.
 var state = state_example; // String | 
 var visibility[] = visibility[]_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 
 try { 
-    var result = api_instance.cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, category, geoNear, geoHash[], organization, state, visibility[], page, limit, order, after, before);
+    var result = api_instance.cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, category, after, before, geoHash[], geoNear, order, organization, state, visibility[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling FeedbackApi->cgetFeedbackByPerson: $e\n");
@@ -128,16 +128,16 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **geoNear** | **String**| One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign. | [optional] 
+ **after** | **DateTime**|  | [optional] 
+ **before** | **DateTime**|  | [optional] 
  **geoHash[]** | **String**|  | [optional] 
+ **geoNear** | **String**| One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign. | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **state** | **String**|  | [optional] 
  **visibility[]** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
 
 ### Return type
 

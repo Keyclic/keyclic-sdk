@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **cgetBusinessActivities**
-> BusinessActivityPagination cgetBusinessActivities(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, geoCoordinates, geoPoint, organization, page, limit, order, after, before)
+> BusinessActivityPagination cgetBusinessActivities(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, geoPoint, geoCoordinates, order, organization, page, limit)
 
 Retrieve all BusinessActivity resources.
 
@@ -30,17 +30,17 @@ var api_instance = BusinessActivityApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var after = 2013-10-20T19:20:30+01:00; // DateTime | 
+var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var order = order_example; // String | 
 var organization = ; // String | The identifier of the resource formatted as GUID string.
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 
 try { 
-    var result = api_instance.cgetBusinessActivities(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, geoCoordinates, geoPoint, organization, page, limit, order, after, before);
+    var result = api_instance.cgetBusinessActivities(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, geoPoint, geoCoordinates, order, organization, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling BusinessActivityApi->cgetBusinessActivities: $e\n");
@@ -54,14 +54,14 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **after** | **DateTime**|  | [optional] 
+ **before** | **DateTime**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
 
 ### Return type
 

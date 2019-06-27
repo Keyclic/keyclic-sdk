@@ -144,11 +144,9 @@ var AnalyticApi =
      * @param { Chart }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { String } place The identifier of the resource formatted as GUID string.
      * @param { String } category The identifier of the resource formatted as GUID string.
+     * @param { String } place The identifier of the resource formatted as GUID string.
      * @param { String } state
-     * @param { module:model/Date } before
-     * @param { module:model/Date } after
      * @param { String } optionsProperty
      * @param { module:model/String } optionsSort
      */
@@ -172,11 +170,9 @@ var AnalyticApi =
             organization = options.organization,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
-            place = options.place,
             category = options.category,
+            place = options.place,
             state = options.state,
-            before = options.before,
-            after = options.after,
             optionsProperty = options.optionsProperty,
             optionsSort = options.optionsSort; // verify the required parameter 'xKeyclicApp' is set
 
@@ -201,26 +197,18 @@ var AnalyticApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'place'
-
-          if (typeof place === "undefined") {
-            place = null;
           } // verify the null value of parameter 'category'
 
           if (typeof category === "undefined") {
             category = null;
+          } // verify the null value of parameter 'place'
+
+          if (typeof place === "undefined") {
+            place = null;
           } // verify the null value of parameter 'state'
 
           if (typeof state === "undefined") {
             state = null;
-          } // verify the null value of parameter 'before'
-
-          if (typeof before === "undefined") {
-            before = null;
-          } // verify the null value of parameter 'after'
-
-          if (typeof after === "undefined") {
-            after = null;
           } // verify the null value of parameter 'optionsProperty'
 
           if (typeof optionsProperty === "undefined") {
@@ -242,11 +230,9 @@ var AnalyticApi =
           };
           var bodyParam = null;
           var queryParams = {
-            place: place,
             category: category,
+            place: place,
             state: state,
-            before: before,
-            after: after,
             "options[property]": optionsProperty,
             "options[sort]": optionsSort
           };

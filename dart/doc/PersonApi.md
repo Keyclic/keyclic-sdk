@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **cgetPeople**
-> PersonPagination cgetPeople(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, query, page, limit, order, after, before, search[familyName], search[givenName], search[jobTitle], search[telephone], search[username], search[email])
+> PersonPagination cgetPeople(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, order, query, page, limit, search[familyName], search[givenName], search[jobTitle], search[telephone], search[username], search[email])
 
 Retrieve all Person resources.
 
@@ -31,12 +31,12 @@ var api_instance = PersonApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
+var after = 2013-10-20T19:20:30+01:00; // DateTime | 
+var before = 2013-10-20T19:20:30+01:00; // DateTime | 
+var order = order_example; // String | 
 var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var search[familyName] = search[familyName]_example; // String | 
 var search[givenName] = search[givenName]_example; // String | 
 var search[jobTitle] = search[jobTitle]_example; // String | 
@@ -45,7 +45,7 @@ var search[username] = search[username]_example; // String |
 var search[email] = search[email]_example; // String | 
 
 try { 
-    var result = api_instance.cgetPeople(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, query, page, limit, order, after, before, search[familyName], search[givenName], search[jobTitle], search[telephone], search[username], search[email]);
+    var result = api_instance.cgetPeople(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, order, query, page, limit, search[familyName], search[givenName], search[jobTitle], search[telephone], search[username], search[email]);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetPeople: $e\n");
@@ -59,12 +59,12 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
+ **after** | **DateTime**|  | [optional] 
+ **before** | **DateTime**|  | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
  **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
  **search[familyName]** | **String**|  | [optional] 
  **search[givenName]** | **String**|  | [optional] 
  **search[jobTitle]** | **String**|  | [optional] 

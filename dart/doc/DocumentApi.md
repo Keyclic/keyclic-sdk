@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **cgetDocumentsByReport**
-> DocumentPagination cgetDocumentsByReport(xKeyclicApp, report, acceptLanguage, xKeyclicAppVersion, page, limit, order, after, before)
+> DocumentPagination cgetDocumentsByReport(xKeyclicApp, report, acceptLanguage, xKeyclicAppVersion, after, before, order, page, limit)
 
 Retrieve all Document resources.
 
@@ -34,14 +34,14 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var report = ; // String | The identifier of the resource formatted as GUID string.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var page = 56; // int | Page of the overview.
-var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
+var order = order_example; // String | 
+var page = 56; // int | Page of the overview.
+var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetDocumentsByReport(xKeyclicApp, report, acceptLanguage, xKeyclicAppVersion, page, limit, order, after, before);
+    var result = api_instance.cgetDocumentsByReport(xKeyclicApp, report, acceptLanguage, xKeyclicAppVersion, after, before, order, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling DocumentApi->cgetDocumentsByReport: $e\n");
@@ -56,11 +56,11 @@ Name | Type | Description  | Notes
  **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **page** | **int**| Page of the overview. | [optional] [default to 1]
- **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
+ **page** | **int**| Page of the overview. | [optional] [default to 1]
+ **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
 ### Return type
 

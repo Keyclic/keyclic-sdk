@@ -33,11 +33,11 @@ let organization = "organization_example"; // String | The identifier of the res
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
-  'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'order': "desc", // String | 
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
 };
 
 apiInstance.cgetServicesByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
@@ -57,11 +57,11 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **page** | **Number**| Page of the overview. | [optional] [default to 1]
- **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
 
 ### Return type
 

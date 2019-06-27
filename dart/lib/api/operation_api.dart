@@ -13,13 +13,13 @@ class OperationApi {
       String xKeyclicApp, String organization,
       {String acceptLanguage,
       String xKeyclicAppVersion,
-      String state,
-      String query,
-      int page,
-      int limit,
-      String order,
       DateTime after,
       DateTime before,
+      String order,
+      String query,
+      String state,
+      int page,
+      int limit,
       String search_description_,
       String search_name_,
       String search_identificationNumber_}) async {
@@ -42,13 +42,25 @@ class OperationApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    if (state != null) {
+    if (after != null) {
       queryParams
-          .addAll(_convertParametersForCollectionFormat("", "state", state));
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
+    }
+    if (before != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
+    }
+    if (order != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (query != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "query", query));
+    }
+    if (state != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "state", state));
     }
     if (page != null) {
       queryParams
@@ -57,18 +69,6 @@ class OperationApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_description_ != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
@@ -119,14 +119,14 @@ class OperationApi {
       String xKeyclicApp, String person,
       {String acceptLanguage,
       String xKeyclicAppVersion,
-      String organization,
-      String state,
-      String query,
-      int page,
-      int limit,
-      String order,
       DateTime after,
       DateTime before,
+      String order,
+      String organization,
+      String query,
+      String state,
+      int page,
+      int limit,
       String search_description_,
       String search_name_,
       String search_identificationNumber_}) async {
@@ -149,17 +149,29 @@ class OperationApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
+    if (after != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
+    }
+    if (before != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
+    }
+    if (order != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
+    }
     if (organization != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "organization", organization));
     }
-    if (state != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "state", state));
-    }
     if (query != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "query", query));
+    }
+    if (state != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "state", state));
     }
     if (page != null) {
       queryParams
@@ -168,18 +180,6 @@ class OperationApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_description_ != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
@@ -230,14 +230,14 @@ class OperationApi {
       String xKeyclicApp, String report,
       {String acceptLanguage,
       String xKeyclicAppVersion,
-      String organization,
-      String state,
-      String query,
-      int page,
-      int limit,
-      String order,
       DateTime after,
       DateTime before,
+      String order,
+      String organization,
+      String query,
+      String state,
+      int page,
+      int limit,
       String search_description_,
       String search_name_,
       String search_identificationNumber_}) async {
@@ -260,17 +260,29 @@ class OperationApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
+    if (after != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
+    }
+    if (before != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
+    }
+    if (order != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
+    }
     if (organization != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "organization", organization));
     }
-    if (state != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "state", state));
-    }
     if (query != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "query", query));
+    }
+    if (state != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "state", state));
     }
     if (page != null) {
       queryParams
@@ -279,18 +291,6 @@ class OperationApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_description_ != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(

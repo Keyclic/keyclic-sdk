@@ -150,17 +150,20 @@ var ReportApi =
      * @param { ReportPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { String } state
-     * @param { String } place The identifier of the resource formatted as GUID string.
-     * @param { String } category The identifier of the resource formatted as GUID string.
-     * @param { String } delegatedTo The identifier of the resource formatted as GUID string.
      * @param { String } assignedTo The identifier of the resource formatted as GUID string.
-     * @param { String } query
-     * @param { Number } page Page of the overview.  (default to 1)
-     * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { module:model/String } order   (default to desc)
+     * @param { String } category The identifier of the resource formatted as GUID string.
      * @param { module:model/Date } after
      * @param { module:model/Date } before
+     * @param { String } delegatedTo The identifier of the resource formatted as GUID string.
+     * @param { module:model/String } order   (default to desc)
+     * @param { String } place The identifier of the resource formatted as GUID string.
+     * @param { String } query
+     * @param { String } state
+     * @param { Number } page Page of the overview.  (default to 1)
+     * @param { Number } limit Page of the overview.  (default to 10)
+     * @param { String } searchDescription
+     * @param { String } searchReference
+     * @param { String } searchIdentificationNumber
      */
 
     _createClass(ReportApi, [
@@ -182,17 +185,20 @@ var ReportApi =
             organization = options.organization,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
-            state = options.state,
-            place = options.place,
-            category = options.category,
-            delegatedTo = options.delegatedTo,
             assignedTo = options.assignedTo,
+            category = options.category,
+            after = options.after,
+            before = options.before,
+            delegatedTo = options.delegatedTo,
+            order = options.order,
+            place = options.place,
             query = options.query,
+            state = options.state,
             page = options.page,
             limit = options.limit,
-            order = options.order,
-            after = options.after,
-            before = options.before; // verify the required parameter 'xKeyclicApp' is set
+            searchDescription = options.searchDescription,
+            searchReference = options.searchReference,
+            searchIdentificationNumber = options.searchIdentificationNumber; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -211,6 +217,10 @@ var ReportApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'page'
 
           if (typeof page === "undefined" || page === null) {
@@ -219,38 +229,18 @@ var ReportApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'state'
-
-          if (typeof state === "undefined") {
-            state = null;
-          } // verify the null value of parameter 'place'
-
-          if (typeof place === "undefined") {
-            place = null;
-          } // verify the null value of parameter 'category'
-
-          if (typeof category === "undefined") {
-            category = null;
-          } // verify the null value of parameter 'delegatedTo'
-
-          if (typeof delegatedTo === "undefined") {
-            delegatedTo = null;
           } // verify the null value of parameter 'assignedTo'
 
           if (typeof assignedTo === "undefined") {
             assignedTo = null;
-          } // verify the null value of parameter 'query'
+          } // verify the null value of parameter 'category'
 
-          if (typeof query === "undefined") {
-            query = null;
+          if (typeof category === "undefined") {
+            category = null;
           } // verify the null value of parameter 'after'
 
           if (typeof after === "undefined") {
@@ -259,6 +249,34 @@ var ReportApi =
 
           if (typeof before === "undefined") {
             before = null;
+          } // verify the null value of parameter 'delegatedTo'
+
+          if (typeof delegatedTo === "undefined") {
+            delegatedTo = null;
+          } // verify the null value of parameter 'place'
+
+          if (typeof place === "undefined") {
+            place = null;
+          } // verify the null value of parameter 'query'
+
+          if (typeof query === "undefined") {
+            query = null;
+          } // verify the null value of parameter 'state'
+
+          if (typeof state === "undefined") {
+            state = null;
+          } // verify the null value of parameter 'searchDescription'
+
+          if (typeof searchDescription === "undefined") {
+            searchDescription = null;
+          } // verify the null value of parameter 'searchReference'
+
+          if (typeof searchReference === "undefined") {
+            searchReference = null;
+          } // verify the null value of parameter 'searchIdentificationNumber'
+
+          if (typeof searchIdentificationNumber === "undefined") {
+            searchIdentificationNumber = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
@@ -272,17 +290,20 @@ var ReportApi =
           };
           var bodyParam = null;
           var queryParams = {
-            state: state,
-            place: place,
-            category: category,
-            delegated_to: delegatedTo,
             assigned_to: assignedTo,
+            category: category,
+            after: after,
+            before: before,
+            delegated_to: delegatedTo,
+            order: order,
+            place: place,
             query: query,
+            state: state,
             page: page,
             limit: limit,
-            order: order,
-            after: after,
-            before: before
+            "search[description]": searchDescription,
+            "search[reference]": searchReference,
+            "search[identificationNumber]": searchIdentificationNumber
           };
           var headerParams = {
             "accept-language": acceptLanguage,

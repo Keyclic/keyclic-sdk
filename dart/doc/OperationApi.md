@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **cgetOperationsByOrganization**
-> OperationPagination cgetOperationsByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, state, query, page, limit, order, after, before, search[description], search[name], search[identificationNumber])
+> OperationPagination cgetOperationsByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, after, before, order, query, state, page, limit, search[description], search[name], search[identificationNumber])
 
 Retrieve all Operation resources.
 
@@ -36,19 +36,19 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource formatted as GUID string.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var state = state_example; // String | 
-var query = query_example; // String | 
-var page = 56; // int | Page of the overview.
-var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
+var order = order_example; // String | 
+var query = query_example; // String | 
+var state = state_example; // String | 
+var page = 56; // int | Page of the overview.
+var limit = 56; // int | Page of the overview.
 var search[description] = search[description]_example; // String | 
 var search[name] = search[name]_example; // String | 
 var search[identificationNumber] = search[identificationNumber]_example; // String | 
 
 try { 
-    var result = api_instance.cgetOperationsByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, state, query, page, limit, order, after, before, search[description], search[name], search[identificationNumber]);
+    var result = api_instance.cgetOperationsByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, after, before, order, query, state, page, limit, search[description], search[name], search[identificationNumber]);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->cgetOperationsByOrganization: $e\n");
@@ -63,13 +63,13 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **state** | **String**|  | [optional] 
- **query** | **String**|  | [optional] 
- **page** | **int**| Page of the overview. | [optional] [default to 1]
- **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
+ **query** | **String**|  | [optional] 
+ **state** | **String**|  | [optional] 
+ **page** | **int**| Page of the overview. | [optional] [default to 1]
+ **limit** | **int**| Page of the overview. | [optional] [default to 10]
  **search[description]** | **String**|  | [optional] 
  **search[name]** | **String**|  | [optional] 
  **search[identificationNumber]** | **String**|  | [optional] 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetOperationsByPerson**
-> OperationPagination cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, organization, state, query, page, limit, order, after, before, search[description], search[name], search[identificationNumber])
+> OperationPagination cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, after, before, order, organization, query, state, page, limit, search[description], search[name], search[identificationNumber])
 
 Retrieve all Operation resources.
 
@@ -107,20 +107,20 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var person = ; // String | The identifier of the resource formatted as GUID string.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
-var state = state_example; // String | 
-var query = query_example; // String | 
-var page = 56; // int | Page of the overview.
-var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
+var order = order_example; // String | 
+var organization = ; // String | The identifier of the resource formatted as GUID string.
+var query = query_example; // String | 
+var state = state_example; // String | 
+var page = 56; // int | Page of the overview.
+var limit = 56; // int | Page of the overview.
 var search[description] = search[description]_example; // String | 
 var search[name] = search[name]_example; // String | 
 var search[identificationNumber] = search[identificationNumber]_example; // String | 
 
 try { 
-    var result = api_instance.cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, organization, state, query, page, limit, order, after, before, search[description], search[name], search[identificationNumber]);
+    var result = api_instance.cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, after, before, order, organization, query, state, page, limit, search[description], search[name], search[identificationNumber]);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->cgetOperationsByPerson: $e\n");
@@ -135,14 +135,14 @@ Name | Type | Description  | Notes
  **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **state** | **String**|  | [optional] 
- **query** | **String**|  | [optional] 
- **page** | **int**| Page of the overview. | [optional] [default to 1]
- **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **query** | **String**|  | [optional] 
+ **state** | **String**|  | [optional] 
+ **page** | **int**| Page of the overview. | [optional] [default to 1]
+ **limit** | **int**| Page of the overview. | [optional] [default to 10]
  **search[description]** | **String**|  | [optional] 
  **search[name]** | **String**|  | [optional] 
  **search[identificationNumber]** | **String**|  | [optional] 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetOperationsByReport**
-> OperationPagination cgetOperationsByReport(xKeyclicApp, report, acceptLanguage, xKeyclicAppVersion, organization, state, query, page, limit, order, after, before, search[description], search[name], search[identificationNumber])
+> OperationPagination cgetOperationsByReport(xKeyclicApp, report, acceptLanguage, xKeyclicAppVersion, after, before, order, organization, query, state, page, limit, search[description], search[name], search[identificationNumber])
 
 Retrieve all Operation resources.
 
@@ -180,20 +180,20 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var report = ; // String | The identifier of the resource formatted as GUID string.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
-var state = state_example; // String | 
-var query = query_example; // String | 
-var page = 56; // int | Page of the overview.
-var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
+var order = order_example; // String | 
+var organization = ; // String | The identifier of the resource formatted as GUID string.
+var query = query_example; // String | 
+var state = state_example; // String | 
+var page = 56; // int | Page of the overview.
+var limit = 56; // int | Page of the overview.
 var search[description] = search[description]_example; // String | 
 var search[name] = search[name]_example; // String | 
 var search[identificationNumber] = search[identificationNumber]_example; // String | 
 
 try { 
-    var result = api_instance.cgetOperationsByReport(xKeyclicApp, report, acceptLanguage, xKeyclicAppVersion, organization, state, query, page, limit, order, after, before, search[description], search[name], search[identificationNumber]);
+    var result = api_instance.cgetOperationsByReport(xKeyclicApp, report, acceptLanguage, xKeyclicAppVersion, after, before, order, organization, query, state, page, limit, search[description], search[name], search[identificationNumber]);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->cgetOperationsByReport: $e\n");
@@ -208,14 +208,14 @@ Name | Type | Description  | Notes
  **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **state** | **String**|  | [optional] 
- **query** | **String**|  | [optional] 
- **page** | **int**| Page of the overview. | [optional] [default to 1]
- **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **query** | **String**|  | [optional] 
+ **state** | **String**|  | [optional] 
+ **page** | **int**| Page of the overview. | [optional] [default to 1]
+ **limit** | **int**| Page of the overview. | [optional] [default to 10]
  **search[description]** | **String**|  | [optional] 
  **search[name]** | **String**|  | [optional] 
  **search[identificationNumber]** | **String**|  | [optional] 

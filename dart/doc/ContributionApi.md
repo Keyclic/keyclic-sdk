@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **cgetContributionsByFeedback**
-> ActivityAggregatedPagination cgetContributionsByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion, page, limit, order, after, before)
+> ActivityAggregatedPagination cgetContributionsByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion, page, limit)
 
 Retrieve all Contribution resources.
 
@@ -33,12 +33,9 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 
 try { 
-    var result = api_instance.cgetContributionsByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion, page, limit, order, after, before);
+    var result = api_instance.cgetContributionsByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling ContributionApi->cgetContributionsByFeedback: $e\n");
@@ -55,9 +52,6 @@ Name | Type | Description  | Notes
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
 
 ### Return type
 

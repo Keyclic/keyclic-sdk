@@ -13,11 +13,9 @@ class AnalyticApi {
       String xKeyclicApp, String organization,
       {String acceptLanguage,
       String xKeyclicAppVersion,
-      String place,
       String category,
+      String place,
       String state,
-      DateTime before,
-      DateTime after,
       String options_property_,
       String options_sort_}) async {
     Object postBody;
@@ -39,25 +37,17 @@ class AnalyticApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    if (place != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "place", place));
-    }
     if (category != null) {
       queryParams.addAll(
           _convertParametersForCollectionFormat("", "category", category));
     }
+    if (place != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "place", place));
+    }
     if (state != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "state", state));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
     }
     if (options_property_ != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(

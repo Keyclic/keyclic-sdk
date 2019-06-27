@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **cgetPlaces**
-> PlacePagination cgetPlaces(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, geoCoordinates, geoElevation, geoHash[], geoPoint, organization, parent, parents[], query, page, limit, order, after, before, search[branchCode], search[description], search[name])
+> PlacePagination cgetPlaces(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, organization, parent, parents[], query, page, limit, search[branchCode], search[description], search[name])
 
 Retrieve all Place resources.
 
@@ -34,25 +34,25 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var businessActivity = ; // String | The identifier of the resource formatted as GUID string.
-var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var after = 2013-10-20T19:20:30+01:00; // DateTime | 
+var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoElevation = geoElevation_example; // String | 
 var geoHash[] = geoHash[]_example; // String | 
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var order = order_example; // String | 
 var organization = ; // String | The identifier of the resource formatted as GUID string.
 var parent = ; // String | The identifier of the resource formatted as GUID string.
 var parents[] = ; // String | The identifier of the resource formatted as GUID string.
 var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var search[branchCode] = search[branchCode]_example; // String | 
 var search[description] = search[description]_example; // String | 
 var search[name] = search[name]_example; // String | 
 
 try { 
-    var result = api_instance.cgetPlaces(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, geoCoordinates, geoElevation, geoHash[], geoPoint, organization, parent, parents[], query, page, limit, order, after, before, search[branchCode], search[description], search[name]);
+    var result = api_instance.cgetPlaces(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, organization, parent, parents[], query, page, limit, search[branchCode], search[description], search[name]);
     print(result);
 } catch (e) {
     print("Exception when calling PlaceApi->cgetPlaces: $e\n");
@@ -67,19 +67,19 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **after** | **DateTime**|  | [optional] 
+ **before** | **DateTime**|  | [optional] 
  **geoElevation** | **String**|  | [optional] 
  **geoHash[]** | **String**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **parent** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **parents[]** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
  **search[branchCode]** | **String**|  | [optional] 
  **search[description]** | **String**|  | [optional] 
  **search[name]** | **String**|  | [optional] 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetPlacesByOrganization**
-> PlacePagination cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, businessActivity, geoCoordinates, geoElevation, geoHash[], geoPoint, parent, parents[], query, page, limit, order, after, before, search[branchCode], search[description], search[name])
+> PlacePagination cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, parent, parents[], query, page, limit, search[branchCode], search[description], search[name])
 
 Retrieve all Place resources.
 
@@ -118,24 +118,24 @@ var organization = ; // String | The identifier of the resource formatted as GUI
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var businessActivity = ; // String | The identifier of the resource formatted as GUID string.
-var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var after = 2013-10-20T19:20:30+01:00; // DateTime | 
+var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoElevation = geoElevation_example; // String | 
 var geoHash[] = geoHash[]_example; // String | 
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var order = order_example; // String | 
 var parent = ; // String | The identifier of the resource formatted as GUID string.
 var parents[] = ; // String | The identifier of the resource formatted as GUID string.
 var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var search[branchCode] = search[branchCode]_example; // String | 
 var search[description] = search[description]_example; // String | 
 var search[name] = search[name]_example; // String | 
 
 try { 
-    var result = api_instance.cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, businessActivity, geoCoordinates, geoElevation, geoHash[], geoPoint, parent, parents[], query, page, limit, order, after, before, search[branchCode], search[description], search[name]);
+    var result = api_instance.cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, parent, parents[], query, page, limit, search[branchCode], search[description], search[name]);
     print(result);
 } catch (e) {
     print("Exception when calling PlaceApi->cgetPlacesByOrganization: $e\n");
@@ -151,18 +151,18 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **after** | **DateTime**|  | [optional] 
+ **before** | **DateTime**|  | [optional] 
  **geoElevation** | **String**|  | [optional] 
  **geoHash[]** | **String**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
  **parent** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **parents[]** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
  **search[branchCode]** | **String**|  | [optional] 
  **search[description]** | **String**|  | [optional] 
  **search[name]** | **String**|  | [optional] 

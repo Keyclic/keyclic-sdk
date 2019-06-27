@@ -36,14 +36,15 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'businessActivity': "businessActivity_example", // String | The identifier of the resource formatted as GUID string.
-  'geoCoordinates': "geoCoordinates_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'disabledAt': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'geoPoint': "geoPoint_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+  'geoCoordinates': "geoCoordinates_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+  'order': "desc", // String | 
   'query': "query_example", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
-  'order': "desc", // String | 
-  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'searchAlternateName': "searchAlternateName_example", // String | 
   'searchBillingEmailAddress': "searchBillingEmailAddress_example", // String | 
   'searchDescription': "searchDescription_example", // String | 
@@ -69,14 +70,15 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **after** | **Date**|  | [optional] 
+ **before** | **Date**|  | [optional] 
+ **disabledAt** | **Date**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
  **query** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **Date**|  | [optional] 
- **before** | **Date**|  | [optional] 
  **searchAlternateName** | **String**|  | [optional] 
  **searchBillingEmailAddress** | **String**|  | [optional] 
  **searchDescription** | **String**|  | [optional] 

@@ -154,13 +154,13 @@ var OperationApi =
      * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { String } state
-     * @param { String } query
-     * @param { Number } page Page of the overview.  (default to 1)
-     * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { module:model/String } order   (default to desc)
      * @param { module:model/Date } after
      * @param { module:model/Date } before
+     * @param { module:model/String } order   (default to desc)
+     * @param { String } query
+     * @param { String } state
+     * @param { Number } page Page of the overview.  (default to 1)
+     * @param { Number } limit Page of the overview.  (default to 10)
      * @param { String } searchDescription
      * @param { String } searchName
      * @param { String } searchIdentificationNumber
@@ -185,13 +185,13 @@ var OperationApi =
             organization = options.organization,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
-            state = options.state,
-            query = options.query,
-            page = options.page,
-            limit = options.limit,
-            order = options.order,
             after = options.after,
             before = options.before,
+            order = options.order,
+            query = options.query,
+            state = options.state,
+            page = options.page,
+            limit = options.limit,
             searchDescription = options.searchDescription,
             searchName = options.searchName,
             searchIdentificationNumber = options.searchIdentificationNumber; // verify the required parameter 'xKeyclicApp' is set
@@ -213,6 +213,10 @@ var OperationApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'page'
 
           if (typeof page === "undefined" || page === null) {
@@ -221,22 +225,10 @@ var OperationApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'state'
-
-          if (typeof state === "undefined") {
-            state = null;
-          } // verify the null value of parameter 'query'
-
-          if (typeof query === "undefined") {
-            query = null;
           } // verify the null value of parameter 'after'
 
           if (typeof after === "undefined") {
@@ -245,6 +237,14 @@ var OperationApi =
 
           if (typeof before === "undefined") {
             before = null;
+          } // verify the null value of parameter 'query'
+
+          if (typeof query === "undefined") {
+            query = null;
+          } // verify the null value of parameter 'state'
+
+          if (typeof state === "undefined") {
+            state = null;
           } // verify the null value of parameter 'searchDescription'
 
           if (typeof searchDescription === "undefined") {
@@ -270,13 +270,13 @@ var OperationApi =
           };
           var bodyParam = null;
           var queryParams = {
-            state: state,
-            query: query,
-            page: page,
-            limit: limit,
-            order: order,
             after: after,
             before: before,
+            order: order,
+            query: query,
+            state: state,
+            page: page,
+            limit: limit,
             "search[description]": searchDescription,
             "search[name]": searchName,
             "search[identificationNumber]": searchIdentificationNumber
@@ -312,14 +312,14 @@ var OperationApi =
          * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
          * @param { String } xKeyclicAppVersion
-         * @param { String } organization The identifier of the resource formatted as GUID string.
-         * @param { String } state
-         * @param { String } query
-         * @param { Number } page Page of the overview.  (default to 1)
-         * @param { Number } limit Page of the overview.  (default to 10)
-         * @param { module:model/String } order   (default to desc)
          * @param { module:model/Date } after
          * @param { module:model/Date } before
+         * @param { module:model/String } order   (default to desc)
+         * @param { String } organization The identifier of the resource formatted as GUID string.
+         * @param { String } query
+         * @param { String } state
+         * @param { Number } page Page of the overview.  (default to 1)
+         * @param { Number } limit Page of the overview.  (default to 10)
          * @param { String } searchDescription
          * @param { String } searchName
          * @param { String } searchIdentificationNumber
@@ -343,14 +343,14 @@ var OperationApi =
             person = options.person,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
-            organization = options.organization,
-            state = options.state,
-            query = options.query,
-            page = options.page,
-            limit = options.limit,
-            order = options.order,
             after = options.after,
             before = options.before,
+            order = options.order,
+            organization = options.organization,
+            query = options.query,
+            state = options.state,
+            page = options.page,
+            limit = options.limit,
             searchDescription = options.searchDescription,
             searchName = options.searchName,
             searchIdentificationNumber = options.searchIdentificationNumber; // verify the required parameter 'xKeyclicApp' is set
@@ -372,6 +372,10 @@ var OperationApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'page'
 
           if (typeof page === "undefined" || page === null) {
@@ -380,26 +384,10 @@ var OperationApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'organization'
-
-          if (typeof organization === "undefined") {
-            organization = null;
-          } // verify the null value of parameter 'state'
-
-          if (typeof state === "undefined") {
-            state = null;
-          } // verify the null value of parameter 'query'
-
-          if (typeof query === "undefined") {
-            query = null;
           } // verify the null value of parameter 'after'
 
           if (typeof after === "undefined") {
@@ -408,6 +396,18 @@ var OperationApi =
 
           if (typeof before === "undefined") {
             before = null;
+          } // verify the null value of parameter 'organization'
+
+          if (typeof organization === "undefined") {
+            organization = null;
+          } // verify the null value of parameter 'query'
+
+          if (typeof query === "undefined") {
+            query = null;
+          } // verify the null value of parameter 'state'
+
+          if (typeof state === "undefined") {
+            state = null;
           } // verify the null value of parameter 'searchDescription'
 
           if (typeof searchDescription === "undefined") {
@@ -433,14 +433,14 @@ var OperationApi =
           };
           var bodyParam = null;
           var queryParams = {
-            organization: organization,
-            state: state,
-            query: query,
-            page: page,
-            limit: limit,
-            order: order,
             after: after,
             before: before,
+            order: order,
+            organization: organization,
+            query: query,
+            state: state,
+            page: page,
+            limit: limit,
             "search[description]": searchDescription,
             "search[name]": searchName,
             "search[identificationNumber]": searchIdentificationNumber
@@ -476,14 +476,14 @@ var OperationApi =
          * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
          * @param { String } xKeyclicAppVersion
-         * @param { String } organization The identifier of the resource formatted as GUID string.
-         * @param { String } state
-         * @param { String } query
-         * @param { Number } page Page of the overview.  (default to 1)
-         * @param { Number } limit Page of the overview.  (default to 10)
-         * @param { module:model/String } order   (default to desc)
          * @param { module:model/Date } after
          * @param { module:model/Date } before
+         * @param { module:model/String } order   (default to desc)
+         * @param { String } organization The identifier of the resource formatted as GUID string.
+         * @param { String } query
+         * @param { String } state
+         * @param { Number } page Page of the overview.  (default to 1)
+         * @param { Number } limit Page of the overview.  (default to 10)
          * @param { String } searchDescription
          * @param { String } searchName
          * @param { String } searchIdentificationNumber
@@ -507,14 +507,14 @@ var OperationApi =
             report = options.report,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
-            organization = options.organization,
-            state = options.state,
-            query = options.query,
-            page = options.page,
-            limit = options.limit,
-            order = options.order,
             after = options.after,
             before = options.before,
+            order = options.order,
+            organization = options.organization,
+            query = options.query,
+            state = options.state,
+            page = options.page,
+            limit = options.limit,
             searchDescription = options.searchDescription,
             searchName = options.searchName,
             searchIdentificationNumber = options.searchIdentificationNumber; // verify the required parameter 'xKeyclicApp' is set
@@ -536,6 +536,10 @@ var OperationApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'page'
 
           if (typeof page === "undefined" || page === null) {
@@ -544,26 +548,10 @@ var OperationApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'organization'
-
-          if (typeof organization === "undefined") {
-            organization = null;
-          } // verify the null value of parameter 'state'
-
-          if (typeof state === "undefined") {
-            state = null;
-          } // verify the null value of parameter 'query'
-
-          if (typeof query === "undefined") {
-            query = null;
           } // verify the null value of parameter 'after'
 
           if (typeof after === "undefined") {
@@ -572,6 +560,18 @@ var OperationApi =
 
           if (typeof before === "undefined") {
             before = null;
+          } // verify the null value of parameter 'organization'
+
+          if (typeof organization === "undefined") {
+            organization = null;
+          } // verify the null value of parameter 'query'
+
+          if (typeof query === "undefined") {
+            query = null;
+          } // verify the null value of parameter 'state'
+
+          if (typeof state === "undefined") {
+            state = null;
           } // verify the null value of parameter 'searchDescription'
 
           if (typeof searchDescription === "undefined") {
@@ -597,14 +597,14 @@ var OperationApi =
           };
           var bodyParam = null;
           var queryParams = {
-            organization: organization,
-            state: state,
-            query: query,
-            page: page,
-            limit: limit,
-            order: order,
             after: after,
             before: before,
+            order: order,
+            organization: organization,
+            query: query,
+            state: state,
+            page: page,
+            limit: limit,
             "search[description]": searchDescription,
             "search[name]": searchName,
             "search[identificationNumber]": searchIdentificationNumber

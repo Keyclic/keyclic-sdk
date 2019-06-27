@@ -33,11 +33,9 @@ let organization = "organization_example"; // String | The identifier of the res
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'place': "place_example", // String | The identifier of the resource formatted as GUID string.
   'category': "category_example", // String | The identifier of the resource formatted as GUID string.
+  'place': "place_example", // String | The identifier of the resource formatted as GUID string.
   'state': "state_example", // String | 
-  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'optionsProperty': "optionsProperty_example", // String | 
   'optionsSort': "optionsSort_example" // String | 
 };
@@ -59,11 +57,9 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **state** | **String**|  | [optional] 
- **before** | **Date**|  | [optional] 
- **after** | **Date**|  | [optional] 
  **optionsProperty** | **String**|  | [optional] 
  **optionsSort** | **String**|  | [optional] 
 

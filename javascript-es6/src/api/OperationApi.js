@@ -40,13 +40,13 @@ export default class OperationApi extends ApiClient {
    * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { String } state
-   * @param { String } query
-   * @param { Number } page Page of the overview.  (default to 1)
-   * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { module:model/String } order   (default to desc)
    * @param { module:model/Date } after
    * @param { module:model/Date } before
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } query
+   * @param { String } state
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
    * @param { String } searchDescription
    * @param { String } searchName
    * @param { String } searchIdentificationNumber
@@ -61,13 +61,13 @@ export default class OperationApi extends ApiClient {
       organization,
       acceptLanguage,
       xKeyclicAppVersion,
-      state,
-      query,
-      page,
-      limit,
-      order,
       after,
       before,
+      order,
+      query,
+      state,
+      page,
+      limit,
       searchDescription,
       searchName,
       searchIdentificationNumber
@@ -92,6 +92,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
     // verify the default value of parameter 'page'
     if (typeof page === "undefined" || page === null) {
       page = 1;
@@ -102,24 +107,9 @@ export default class OperationApi extends ApiClient {
       limit = 10;
     }
 
-    // verify the default value of parameter 'order'
-    if (typeof order === "undefined" || order === null) {
-      order = "desc";
-    }
-
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
-    }
-
-    // verify the null value of parameter 'state'
-    if (typeof state === "undefined") {
-      state = null;
-    }
-
-    // verify the null value of parameter 'query'
-    if (typeof query === "undefined") {
-      query = null;
     }
 
     // verify the null value of parameter 'after'
@@ -130,6 +120,16 @@ export default class OperationApi extends ApiClient {
     // verify the null value of parameter 'before'
     if (typeof before === "undefined") {
       before = null;
+    }
+
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
+    }
+
+    // verify the null value of parameter 'state'
+    if (typeof state === "undefined") {
+      state = null;
     }
 
     // verify the null value of parameter 'searchDescription'
@@ -160,13 +160,13 @@ export default class OperationApi extends ApiClient {
     let bodyParam = null;
 
     let queryParams = {
-      state: state,
-      query: query,
-      page: page,
-      limit: limit,
-      order: order,
       after: after,
       before: before,
+      order: order,
+      query: query,
+      state: state,
+      page: page,
+      limit: limit,
       "search[description]": searchDescription,
       "search[name]": searchName,
       "search[identificationNumber]": searchIdentificationNumber
@@ -209,14 +209,14 @@ export default class OperationApi extends ApiClient {
    * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { String } organization The identifier of the resource formatted as GUID string.
-   * @param { String } state
-   * @param { String } query
-   * @param { Number } page Page of the overview.  (default to 1)
-   * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { module:model/String } order   (default to desc)
    * @param { module:model/Date } after
    * @param { module:model/Date } before
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } query
+   * @param { String } state
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
    * @param { String } searchDescription
    * @param { String } searchName
    * @param { String } searchIdentificationNumber
@@ -231,14 +231,14 @@ export default class OperationApi extends ApiClient {
       person,
       acceptLanguage,
       xKeyclicAppVersion,
-      organization,
-      state,
-      query,
-      page,
-      limit,
-      order,
       after,
       before,
+      order,
+      organization,
+      query,
+      state,
+      page,
+      limit,
       searchDescription,
       searchName,
       searchIdentificationNumber
@@ -263,6 +263,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
     // verify the default value of parameter 'page'
     if (typeof page === "undefined" || page === null) {
       page = 1;
@@ -273,29 +278,9 @@ export default class OperationApi extends ApiClient {
       limit = 10;
     }
 
-    // verify the default value of parameter 'order'
-    if (typeof order === "undefined" || order === null) {
-      order = "desc";
-    }
-
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
-    }
-
-    // verify the null value of parameter 'organization'
-    if (typeof organization === "undefined") {
-      organization = null;
-    }
-
-    // verify the null value of parameter 'state'
-    if (typeof state === "undefined") {
-      state = null;
-    }
-
-    // verify the null value of parameter 'query'
-    if (typeof query === "undefined") {
-      query = null;
     }
 
     // verify the null value of parameter 'after'
@@ -306,6 +291,21 @@ export default class OperationApi extends ApiClient {
     // verify the null value of parameter 'before'
     if (typeof before === "undefined") {
       before = null;
+    }
+
+    // verify the null value of parameter 'organization'
+    if (typeof organization === "undefined") {
+      organization = null;
+    }
+
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
+    }
+
+    // verify the null value of parameter 'state'
+    if (typeof state === "undefined") {
+      state = null;
     }
 
     // verify the null value of parameter 'searchDescription'
@@ -336,14 +336,14 @@ export default class OperationApi extends ApiClient {
     let bodyParam = null;
 
     let queryParams = {
-      organization: organization,
-      state: state,
-      query: query,
-      page: page,
-      limit: limit,
-      order: order,
       after: after,
       before: before,
+      order: order,
+      organization: organization,
+      query: query,
+      state: state,
+      page: page,
+      limit: limit,
       "search[description]": searchDescription,
       "search[name]": searchName,
       "search[identificationNumber]": searchIdentificationNumber
@@ -386,14 +386,14 @@ export default class OperationApi extends ApiClient {
    * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { String } organization The identifier of the resource formatted as GUID string.
-   * @param { String } state
-   * @param { String } query
-   * @param { Number } page Page of the overview.  (default to 1)
-   * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { module:model/String } order   (default to desc)
    * @param { module:model/Date } after
    * @param { module:model/Date } before
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } query
+   * @param { String } state
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
    * @param { String } searchDescription
    * @param { String } searchName
    * @param { String } searchIdentificationNumber
@@ -408,14 +408,14 @@ export default class OperationApi extends ApiClient {
       report,
       acceptLanguage,
       xKeyclicAppVersion,
-      organization,
-      state,
-      query,
-      page,
-      limit,
-      order,
       after,
       before,
+      order,
+      organization,
+      query,
+      state,
+      page,
+      limit,
       searchDescription,
       searchName,
       searchIdentificationNumber
@@ -440,6 +440,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
     // verify the default value of parameter 'page'
     if (typeof page === "undefined" || page === null) {
       page = 1;
@@ -450,29 +455,9 @@ export default class OperationApi extends ApiClient {
       limit = 10;
     }
 
-    // verify the default value of parameter 'order'
-    if (typeof order === "undefined" || order === null) {
-      order = "desc";
-    }
-
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
-    }
-
-    // verify the null value of parameter 'organization'
-    if (typeof organization === "undefined") {
-      organization = null;
-    }
-
-    // verify the null value of parameter 'state'
-    if (typeof state === "undefined") {
-      state = null;
-    }
-
-    // verify the null value of parameter 'query'
-    if (typeof query === "undefined") {
-      query = null;
     }
 
     // verify the null value of parameter 'after'
@@ -483,6 +468,21 @@ export default class OperationApi extends ApiClient {
     // verify the null value of parameter 'before'
     if (typeof before === "undefined") {
       before = null;
+    }
+
+    // verify the null value of parameter 'organization'
+    if (typeof organization === "undefined") {
+      organization = null;
+    }
+
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
+    }
+
+    // verify the null value of parameter 'state'
+    if (typeof state === "undefined") {
+      state = null;
     }
 
     // verify the null value of parameter 'searchDescription'
@@ -513,14 +513,14 @@ export default class OperationApi extends ApiClient {
     let bodyParam = null;
 
     let queryParams = {
-      organization: organization,
-      state: state,
-      query: query,
-      page: page,
-      limit: limit,
-      order: order,
       after: after,
       before: before,
+      order: order,
+      organization: organization,
+      query: query,
+      state: state,
+      page: page,
+      limit: limit,
       "search[description]": searchDescription,
       "search[name]": searchName,
       "search[identificationNumber]": searchIdentificationNumber

@@ -37,11 +37,9 @@ export default class AnalyticApi extends ApiClient {
    * @param { Chart }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { String } place The identifier of the resource formatted as GUID string.
    * @param { String } category The identifier of the resource formatted as GUID string.
+   * @param { String } place The identifier of the resource formatted as GUID string.
    * @param { String } state
-   * @param { module:model/Date } before
-   * @param { module:model/Date } after
    * @param { String } optionsProperty
    * @param { module:model/String } optionsSort
    */
@@ -55,11 +53,9 @@ export default class AnalyticApi extends ApiClient {
       organization,
       acceptLanguage,
       xKeyclicAppVersion,
-      place,
       category,
+      place,
       state,
-      before,
-      after,
       optionsProperty,
       optionsSort
     } = options;
@@ -88,29 +84,19 @@ export default class AnalyticApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    // verify the null value of parameter 'place'
-    if (typeof place === "undefined") {
-      place = null;
-    }
-
     // verify the null value of parameter 'category'
     if (typeof category === "undefined") {
       category = null;
     }
 
+    // verify the null value of parameter 'place'
+    if (typeof place === "undefined") {
+      place = null;
+    }
+
     // verify the null value of parameter 'state'
     if (typeof state === "undefined") {
       state = null;
-    }
-
-    // verify the null value of parameter 'before'
-    if (typeof before === "undefined") {
-      before = null;
-    }
-
-    // verify the null value of parameter 'after'
-    if (typeof after === "undefined") {
-      after = null;
     }
 
     // verify the null value of parameter 'optionsProperty'
@@ -136,11 +122,9 @@ export default class AnalyticApi extends ApiClient {
     let bodyParam = null;
 
     let queryParams = {
-      place: place,
       category: category,
+      place: place,
       state: state,
-      before: before,
-      after: after,
       "options[property]": optionsProperty,
       "options[sort]": optionsSort
     };

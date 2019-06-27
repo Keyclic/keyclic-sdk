@@ -39,13 +39,13 @@ let organization = "organization_example"; // String | The identifier of the res
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'state': "state_example", // String | 
-  'query': "query_example", // String | 
-  'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
-  'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'order': "desc", // String | 
+  'query': "query_example", // String | 
+  'state': "state_example", // String | 
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
   'searchDescription': "searchDescription_example", // String | 
   'searchName': "searchName_example", // String | 
   'searchIdentificationNumber': "searchIdentificationNumber_example" // String | 
@@ -68,13 +68,13 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **state** | **String**|  | [optional] 
- **query** | **String**|  | [optional] 
- **page** | **Number**| Page of the overview. | [optional] [default to 1]
- **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
+ **query** | **String**|  | [optional] 
+ **state** | **String**|  | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **searchDescription** | **String**|  | [optional] 
  **searchName** | **String**|  | [optional] 
  **searchIdentificationNumber** | **String**|  | [optional] 
@@ -118,14 +118,14 @@ let person = "person_example"; // String | The identifier of the resource format
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
-  'state': "state_example", // String | 
-  'query': "query_example", // String | 
-  'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
-  'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'order': "desc", // String | 
+  'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
+  'query': "query_example", // String | 
+  'state': "state_example", // String | 
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
   'searchDescription': "searchDescription_example", // String | 
   'searchName': "searchName_example", // String | 
   'searchIdentificationNumber': "searchIdentificationNumber_example" // String | 
@@ -148,14 +148,14 @@ Name | Type | Description  | Notes
  **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **state** | **String**|  | [optional] 
- **query** | **String**|  | [optional] 
- **page** | **Number**| Page of the overview. | [optional] [default to 1]
- **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **query** | **String**|  | [optional] 
+ **state** | **String**|  | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **searchDescription** | **String**|  | [optional] 
  **searchName** | **String**|  | [optional] 
  **searchIdentificationNumber** | **String**|  | [optional] 
@@ -199,14 +199,14 @@ let report = "report_example"; // String | The identifier of the resource format
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
-  'state': "state_example", // String | 
-  'query': "query_example", // String | 
-  'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
-  'order': "desc", // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'order': "desc", // String | 
+  'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
+  'query': "query_example", // String | 
+  'state': "state_example", // String | 
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
   'searchDescription': "searchDescription_example", // String | 
   'searchName': "searchName_example", // String | 
   'searchIdentificationNumber': "searchIdentificationNumber_example" // String | 
@@ -229,14 +229,14 @@ Name | Type | Description  | Notes
  **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **state** | **String**|  | [optional] 
- **query** | **String**|  | [optional] 
- **page** | **Number**| Page of the overview. | [optional] [default to 1]
- **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
+ **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **query** | **String**|  | [optional] 
+ **state** | **String**|  | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
  **searchDescription** | **String**|  | [optional] 
  **searchName** | **String**|  | [optional] 
  **searchIdentificationNumber** | **String**|  | [optional] 

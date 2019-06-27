@@ -13,15 +13,16 @@ class OrganizationApi {
       {String acceptLanguage,
       String xKeyclicAppVersion,
       String businessActivity,
-      String geoCoordinates,
+      DateTime after,
+      DateTime before,
+      DateTime disabledAt,
       String geoPoint,
+      String geoCoordinates,
+      String order,
       String organization,
       String query,
       int page,
       int limit,
-      String order,
-      DateTime after,
-      DateTime before,
       String search_alternateName_,
       String search_billingEmailAddress_,
       String search_description_,
@@ -45,13 +46,29 @@ class OrganizationApi {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "business_activity", businessActivity));
     }
-    if (geoCoordinates != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "geo_coordinates", geoCoordinates));
+    if (after != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
+    }
+    if (before != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
+    }
+    if (disabledAt != null) {
+      queryParams.addAll(
+          _convertParametersForCollectionFormat("", "disabledAt", disabledAt));
     }
     if (geoPoint != null) {
       queryParams.addAll(
           _convertParametersForCollectionFormat("", "geo_point", geoPoint));
+    }
+    if (geoCoordinates != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat(
+          "", "geo_coordinates", geoCoordinates));
+    }
+    if (order != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (organization != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
@@ -68,18 +85,6 @@ class OrganizationApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_alternateName_ != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(

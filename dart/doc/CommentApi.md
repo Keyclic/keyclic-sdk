@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **cgetCommentsByFeedback**
-> ActivityPagination cgetCommentsByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion, page, limit, order, after, before)
+> ActivityPagination cgetCommentsByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion, page, limit)
 
 Retrieve all Comment resources.
 
@@ -35,12 +35,9 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 
 try { 
-    var result = api_instance.cgetCommentsByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion, page, limit, order, after, before);
+    var result = api_instance.cgetCommentsByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling CommentApi->cgetCommentsByFeedback: $e\n");
@@ -57,9 +54,6 @@ Name | Type | Description  | Notes
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
 
 ### Return type
 
@@ -77,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetCommentsByOperation**
-> ActivityPagination cgetCommentsByOperation(xKeyclicApp, operation, acceptLanguage, xKeyclicAppVersion, page, limit, order, after, before)
+> ActivityPagination cgetCommentsByOperation(xKeyclicApp, operation, acceptLanguage, xKeyclicAppVersion, page, limit)
 
 Retrieve all Comment resources.
 
@@ -96,12 +90,9 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var order = order_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 
 try { 
-    var result = api_instance.cgetCommentsByOperation(xKeyclicApp, operation, acceptLanguage, xKeyclicAppVersion, page, limit, order, after, before);
+    var result = api_instance.cgetCommentsByOperation(xKeyclicApp, operation, acceptLanguage, xKeyclicAppVersion, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling CommentApi->cgetCommentsByOperation: $e\n");
@@ -118,9 +109,6 @@ Name | Type | Description  | Notes
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
 
 ### Return type
 

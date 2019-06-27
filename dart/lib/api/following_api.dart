@@ -13,10 +13,7 @@ class FollowingApi {
       {String acceptLanguage,
       String xKeyclicAppVersion,
       int page,
-      int limit,
-      String order,
-      DateTime after,
-      DateTime before}) async {
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -43,18 +40,6 @@ class FollowingApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;

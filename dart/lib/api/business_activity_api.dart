@@ -12,14 +12,14 @@ class BusinessActivityApi {
   Future<BusinessActivityPagination> cgetBusinessActivities(String xKeyclicApp,
       {String acceptLanguage,
       String xKeyclicAppVersion,
-      String geoCoordinates,
+      DateTime after,
+      DateTime before,
       String geoPoint,
+      String geoCoordinates,
+      String order,
       String organization,
       int page,
-      int limit,
-      String order,
-      DateTime after,
-      DateTime before}) async {
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -34,13 +34,25 @@ class BusinessActivityApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    if (geoCoordinates != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "geo_coordinates", geoCoordinates));
+    if (after != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
+    }
+    if (before != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (geoPoint != null) {
       queryParams.addAll(
           _convertParametersForCollectionFormat("", "geo_point", geoPoint));
+    }
+    if (geoCoordinates != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat(
+          "", "geo_coordinates", geoCoordinates));
+    }
+    if (order != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (organization != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
@@ -53,18 +65,6 @@ class BusinessActivityApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;

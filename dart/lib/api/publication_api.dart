@@ -13,12 +13,12 @@ class PublicationApi {
       String xKeyclicApp, String organization,
       {String acceptLanguage,
       String xKeyclicAppVersion,
+      DateTime after,
+      DateTime before,
+      String order,
       String place,
       int page,
-      int limit,
-      String order,
-      DateTime after,
-      DateTime before}) async {
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -38,6 +38,18 @@ class PublicationApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
+    if (after != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
+    }
+    if (before != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
+    }
+    if (order != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
+    }
     if (place != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "place", place));
@@ -49,18 +61,6 @@ class PublicationApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;

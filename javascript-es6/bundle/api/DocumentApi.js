@@ -152,11 +152,11 @@ var DocumentApi =
      * @param { DocumentPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { Number } page Page of the overview.  (default to 1)
-     * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { module:model/String } order   (default to desc)
      * @param { module:model/Date } after
      * @param { module:model/Date } before
+     * @param { module:model/String } order   (default to desc)
+     * @param { Number } page Page of the overview.  (default to 1)
+     * @param { Number } limit Page of the overview.  (default to 10)
      */
 
     _createClass(DocumentApi, [
@@ -178,11 +178,11 @@ var DocumentApi =
             report = options.report,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
-            page = options.page,
-            limit = options.limit,
-            order = options.order,
             after = options.after,
-            before = options.before; // verify the required parameter 'xKeyclicApp' is set
+            before = options.before,
+            order = options.order,
+            page = options.page,
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -201,6 +201,10 @@ var DocumentApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'page'
 
           if (typeof page === "undefined" || page === null) {
@@ -209,10 +213,6 @@ var DocumentApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -238,11 +238,11 @@ var DocumentApi =
           };
           var bodyParam = null;
           var queryParams = {
-            page: page,
-            limit: limit,
-            order: order,
             after: after,
-            before: before
+            before: before,
+            order: order,
+            page: page,
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,

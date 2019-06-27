@@ -14,15 +14,15 @@ class FeedbackApi {
       String xKeyclicAppVersion,
       String state,
       String category,
-      String geoNear,
+      DateTime after,
+      DateTime before,
       String geoHash_,
+      String geoNear,
+      String order,
       String organization,
       String visibility_,
       int page,
-      int limit,
-      String order,
-      DateTime after,
-      DateTime before}) async {
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -45,13 +45,25 @@ class FeedbackApi {
       queryParams.addAll(
           _convertParametersForCollectionFormat("", "category", category));
     }
-    if (geoNear != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "geo_near", geoNear));
+    if (after != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
+    }
+    if (before != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (geoHash_ != null) {
       queryParams.addAll(
           _convertParametersForCollectionFormat("", "geo_hash[]", geoHash_));
+    }
+    if (geoNear != null) {
+      queryParams.addAll(
+          _convertParametersForCollectionFormat("", "geo_near", geoNear));
+    }
+    if (order != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (organization != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
@@ -68,18 +80,6 @@ class FeedbackApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
@@ -119,16 +119,16 @@ class FeedbackApi {
       {String acceptLanguage,
       String xKeyclicAppVersion,
       String category,
-      String geoNear,
+      DateTime after,
+      DateTime before,
       String geoHash_,
+      String geoNear,
+      String order,
       String organization,
       String state,
       String visibility_,
       int page,
-      int limit,
-      String order,
-      DateTime after,
-      DateTime before}) async {
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -152,13 +152,25 @@ class FeedbackApi {
       queryParams.addAll(
           _convertParametersForCollectionFormat("", "category", category));
     }
-    if (geoNear != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "geo_near", geoNear));
+    if (after != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
+    }
+    if (before != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (geoHash_ != null) {
       queryParams.addAll(
           _convertParametersForCollectionFormat("", "geo_hash[]", geoHash_));
+    }
+    if (geoNear != null) {
+      queryParams.addAll(
+          _convertParametersForCollectionFormat("", "geo_near", geoNear));
+    }
+    if (order != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
     }
     if (organization != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
@@ -179,18 +191,6 @@ class FeedbackApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;

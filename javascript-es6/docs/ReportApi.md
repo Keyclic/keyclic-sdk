@@ -35,17 +35,20 @@ let organization = "organization_example"; // String | The identifier of the res
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'state': "state_example", // String | 
-  'place': "place_example", // String | The identifier of the resource formatted as GUID string.
-  'category': "category_example", // String | The identifier of the resource formatted as GUID string.
-  'delegatedTo': "delegatedTo_example", // String | The identifier of the resource formatted as GUID string.
   'assignedTo': "assignedTo_example", // String | The identifier of the resource formatted as GUID string.
-  'query': "query_example", // String | 
-  'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
-  'order': "desc", // String | 
+  'category': "category_example", // String | The identifier of the resource formatted as GUID string.
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'delegatedTo': "delegatedTo_example", // String | The identifier of the resource formatted as GUID string.
+  'order': "desc", // String | 
+  'place': "place_example", // String | The identifier of the resource formatted as GUID string.
+  'query': "query_example", // String | 
+  'state': "state_example", // String | 
+  'page': 1, // Number | Page of the overview.
+  'limit': 10, // Number | Page of the overview.
+  'searchDescription': "searchDescription_example", // String | 
+  'searchReference': "searchReference_example", // String | 
+  'searchIdentificationNumber': "searchIdentificationNumber_example" // String | 
 };
 
 apiInstance.cgetReportsByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
@@ -65,17 +68,20 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **state** | **String**|  | [optional] 
- **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **delegatedTo** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **query** | **String**|  | [optional] 
- **page** | **Number**| Page of the overview. | [optional] [default to 1]
- **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
+ **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
+ **delegatedTo** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
+ **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **query** | **String**|  | [optional] 
+ **state** | **String**|  | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
+ **searchDescription** | **String**|  | [optional] 
+ **searchReference** | **String**|  | [optional] 
+ **searchIdentificationNumber** | **String**|  | [optional] 
 
 ### Return type
 

@@ -34,9 +34,6 @@ let opts = {
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
-  'order': "desc", // String | 
-  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
 };
 
 apiInstance.cgetFeeds(xKeyclicApp, , opts, (error, data, response) => {
@@ -57,9 +54,6 @@ Name | Type | Description  | Notes
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **Date**|  | [optional] 
- **before** | **Date**|  | [optional] 
 
 ### Return type
 
@@ -102,9 +96,6 @@ let opts = {
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10, // Number | Page of the overview.
-  'order': "desc", // String | 
-  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
 };
 
 apiInstance.cgetFeedsByFeed(xKeyclicApp, feed, opts, (error, data, response) => {
@@ -126,9 +117,6 @@ Name | Type | Description  | Notes
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **order** | **String**|  | [optional] [default to desc]
- **after** | **Date**|  | [optional] 
- **before** | **Date**|  | [optional] 
 
 ### Return type
 

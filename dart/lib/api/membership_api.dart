@@ -13,14 +13,14 @@ class MembershipApi {
       String xKeyclicApp, String person,
       {String acceptLanguage,
       String xKeyclicAppVersion,
-      String role,
-      String roles,
-      String query,
-      int page,
-      int limit,
-      String order,
       DateTime after,
       DateTime before,
+      String order,
+      String query,
+      String role,
+      String roles,
+      int page,
+      int limit,
       String search_familyName_,
       String search_givenName_,
       String search_jobTitle_,
@@ -46,6 +46,22 @@ class MembershipApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
+    if (after != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "after", after));
+    }
+    if (before != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "before", before));
+    }
+    if (order != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "order", order));
+    }
+    if (query != null) {
+      queryParams
+          .addAll(_convertParametersForCollectionFormat("", "query", query));
+    }
     if (role != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "role", role));
@@ -54,10 +70,6 @@ class MembershipApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "roles", roles));
     }
-    if (query != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "query", query));
-    }
     if (page != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "page", page));
@@ -65,18 +77,6 @@ class MembershipApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
     if (search_familyName_ != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(

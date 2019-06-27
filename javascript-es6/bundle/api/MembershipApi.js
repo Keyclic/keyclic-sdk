@@ -146,14 +146,14 @@ var MembershipApi =
      * @param { MemberPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { String } role
-     * @param { String } roles
-     * @param { String } query
-     * @param { Number } page Page of the overview.  (default to 1)
-     * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { module:model/String } order   (default to desc)
      * @param { module:model/Date } after
      * @param { module:model/Date } before
+     * @param { module:model/String } order   (default to desc)
+     * @param { String } query
+     * @param { String } role
+     * @param { String } roles
+     * @param { Number } page Page of the overview.  (default to 1)
+     * @param { Number } limit Page of the overview.  (default to 10)
      * @param { String } searchFamilyName
      * @param { String } searchGivenName
      * @param { String } searchJobTitle
@@ -181,14 +181,14 @@ var MembershipApi =
             person = options.person,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
-            role = options.role,
-            roles = options.roles,
-            query = options.query,
-            page = options.page,
-            limit = options.limit,
-            order = options.order,
             after = options.after,
             before = options.before,
+            order = options.order,
+            query = options.query,
+            role = options.role,
+            roles = options.roles,
+            page = options.page,
+            limit = options.limit,
             searchFamilyName = options.searchFamilyName,
             searchGivenName = options.searchGivenName,
             searchJobTitle = options.searchJobTitle,
@@ -213,6 +213,10 @@ var MembershipApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'page'
 
           if (typeof page === "undefined" || page === null) {
@@ -221,26 +225,10 @@ var MembershipApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'role'
-
-          if (typeof role === "undefined") {
-            role = null;
-          } // verify the null value of parameter 'roles'
-
-          if (typeof roles === "undefined") {
-            roles = null;
-          } // verify the null value of parameter 'query'
-
-          if (typeof query === "undefined") {
-            query = null;
           } // verify the null value of parameter 'after'
 
           if (typeof after === "undefined") {
@@ -249,6 +237,18 @@ var MembershipApi =
 
           if (typeof before === "undefined") {
             before = null;
+          } // verify the null value of parameter 'query'
+
+          if (typeof query === "undefined") {
+            query = null;
+          } // verify the null value of parameter 'role'
+
+          if (typeof role === "undefined") {
+            role = null;
+          } // verify the null value of parameter 'roles'
+
+          if (typeof roles === "undefined") {
+            roles = null;
           } // verify the null value of parameter 'searchFamilyName'
 
           if (typeof searchFamilyName === "undefined") {
@@ -286,14 +286,14 @@ var MembershipApi =
           };
           var bodyParam = null;
           var queryParams = {
-            role: role,
-            roles: roles,
-            query: query,
-            page: page,
-            limit: limit,
-            order: order,
             after: after,
             before: before,
+            order: order,
+            query: query,
+            role: role,
+            roles: roles,
+            page: page,
+            limit: limit,
             "search[familyName]": searchFamilyName,
             "search[givenName]": searchGivenName,
             "search[jobTitle]": searchJobTitle,

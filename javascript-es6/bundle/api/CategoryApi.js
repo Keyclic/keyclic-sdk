@@ -152,15 +152,15 @@ var CategoryApi =
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
      * @param { String } businessActivity The identifier of the resource formatted as GUID string.
-     * @param { String } organization The identifier of the resource formatted as GUID string.
-     * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { module:model/Date } after
+     * @param { module:model/Date } before
      * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+     * @param { module:model/String } order   (default to desc)
+     * @param { String } organization The identifier of the resource formatted as GUID string.
      * @param { String } query
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { module:model/String } order   (default to desc)
-     * @param { module:model/Date } after
-     * @param { module:model/Date } before
      * @param { String } searchColor
      * @param { String } searchIcon
      * @param { String } searchName
@@ -186,15 +186,15 @@ var CategoryApi =
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             businessActivity = options.businessActivity,
-            organization = options.organization,
-            geoCoordinates = options.geoCoordinates,
+            after = options.after,
+            before = options.before,
             geoPoint = options.geoPoint,
+            geoCoordinates = options.geoCoordinates,
+            order = options.order,
+            organization = options.organization,
             query = options.query,
             page = options.page,
             limit = options.limit,
-            order = options.order,
-            after = options.after,
-            before = options.before,
             searchColor = options.searchColor,
             searchIcon = options.searchIcon,
             searchName = options.searchName,
@@ -211,6 +211,10 @@ var CategoryApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'page'
 
           if (typeof page === "undefined" || page === null) {
@@ -219,10 +223,6 @@ var CategoryApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -231,22 +231,6 @@ var CategoryApi =
 
           if (typeof businessActivity === "undefined") {
             businessActivity = null;
-          } // verify the null value of parameter 'organization'
-
-          if (typeof organization === "undefined") {
-            organization = null;
-          } // verify the null value of parameter 'geoCoordinates'
-
-          if (typeof geoCoordinates === "undefined") {
-            geoCoordinates = null;
-          } // verify the null value of parameter 'geoPoint'
-
-          if (typeof geoPoint === "undefined") {
-            geoPoint = null;
-          } // verify the null value of parameter 'query'
-
-          if (typeof query === "undefined") {
-            query = null;
           } // verify the null value of parameter 'after'
 
           if (typeof after === "undefined") {
@@ -255,6 +239,22 @@ var CategoryApi =
 
           if (typeof before === "undefined") {
             before = null;
+          } // verify the null value of parameter 'geoPoint'
+
+          if (typeof geoPoint === "undefined") {
+            geoPoint = null;
+          } // verify the null value of parameter 'geoCoordinates'
+
+          if (typeof geoCoordinates === "undefined") {
+            geoCoordinates = null;
+          } // verify the null value of parameter 'organization'
+
+          if (typeof organization === "undefined") {
+            organization = null;
+          } // verify the null value of parameter 'query'
+
+          if (typeof query === "undefined") {
+            query = null;
           } // verify the null value of parameter 'searchColor'
 
           if (typeof searchColor === "undefined") {
@@ -283,15 +283,15 @@ var CategoryApi =
           var bodyParam = null;
           var queryParams = {
             business_activity: businessActivity,
-            organization: organization,
-            geo_coordinates: geoCoordinates,
+            after: after,
+            before: before,
             geo_point: geoPoint,
+            geo_coordinates: geoCoordinates,
+            order: order,
+            organization: organization,
             query: query,
             page: page,
             limit: limit,
-            order: order,
-            after: after,
-            before: before,
             "search[color]": searchColor,
             "search[icon]": searchIcon,
             "search[name]": searchName,
@@ -329,14 +329,14 @@ var CategoryApi =
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
          * @param { String } xKeyclicAppVersion
          * @param { String } businessActivity The identifier of the resource formatted as GUID string.
-         * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+         * @param { module:model/Date } after
+         * @param { module:model/Date } before
          * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
+         * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+         * @param { module:model/String } order   (default to desc)
          * @param { String } query
          * @param { Number } page Page of the overview.  (default to 1)
          * @param { Number } limit Page of the overview.  (default to 10)
-         * @param { module:model/String } order   (default to desc)
-         * @param { module:model/Date } after
-         * @param { module:model/Date } before
          * @param { String } searchColor
          * @param { String } searchIcon
          * @param { String } searchName
@@ -362,14 +362,14 @@ var CategoryApi =
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             businessActivity = options.businessActivity,
-            geoCoordinates = options.geoCoordinates,
+            after = options.after,
+            before = options.before,
             geoPoint = options.geoPoint,
+            geoCoordinates = options.geoCoordinates,
+            order = options.order,
             query = options.query,
             page = options.page,
             limit = options.limit,
-            order = options.order,
-            after = options.after,
-            before = options.before,
             searchColor = options.searchColor,
             searchIcon = options.searchIcon,
             searchName = options.searchName,
@@ -392,6 +392,10 @@ var CategoryApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'page'
 
           if (typeof page === "undefined" || page === null) {
@@ -400,10 +404,6 @@ var CategoryApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -412,18 +412,6 @@ var CategoryApi =
 
           if (typeof businessActivity === "undefined") {
             businessActivity = null;
-          } // verify the null value of parameter 'geoCoordinates'
-
-          if (typeof geoCoordinates === "undefined") {
-            geoCoordinates = null;
-          } // verify the null value of parameter 'geoPoint'
-
-          if (typeof geoPoint === "undefined") {
-            geoPoint = null;
-          } // verify the null value of parameter 'query'
-
-          if (typeof query === "undefined") {
-            query = null;
           } // verify the null value of parameter 'after'
 
           if (typeof after === "undefined") {
@@ -432,6 +420,18 @@ var CategoryApi =
 
           if (typeof before === "undefined") {
             before = null;
+          } // verify the null value of parameter 'geoPoint'
+
+          if (typeof geoPoint === "undefined") {
+            geoPoint = null;
+          } // verify the null value of parameter 'geoCoordinates'
+
+          if (typeof geoCoordinates === "undefined") {
+            geoCoordinates = null;
+          } // verify the null value of parameter 'query'
+
+          if (typeof query === "undefined") {
+            query = null;
           } // verify the null value of parameter 'searchColor'
 
           if (typeof searchColor === "undefined") {
@@ -462,14 +462,14 @@ var CategoryApi =
           var bodyParam = null;
           var queryParams = {
             business_activity: businessActivity,
-            geo_coordinates: geoCoordinates,
+            after: after,
+            before: before,
             geo_point: geoPoint,
+            geo_coordinates: geoCoordinates,
+            order: order,
             query: query,
             page: page,
             limit: limit,
-            order: order,
-            after: after,
-            before: before,
             "search[color]": searchColor,
             "search[icon]": searchIcon,
             "search[name]": searchName,

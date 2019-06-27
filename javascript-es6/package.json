@@ -1,18 +1,18 @@
 {
     "name": "@keyclic/sdk-javascript",
-    "version": "1.41.6",
+    "version": "1.41.8",
     "description": "Javascript client for Keyclic API",
     "author": "Keyclic techies team <techies@keyclic.com>",
     "dependencies": {
-        "es6-promise": "^4.2.5",
+        "es6-promise": "^4.2.8",
         "isomorphic-fetch": "^2.2.1"
     },
     "devDependencies": {
-        "@babel/cli": "^7.1.5",
-        "@babel/core": "^7.1.6",
-        "@babel/plugin-proposal-class-properties": "^7.1.0",
-        "@babel/preset-env": "^7.1.6",
-        "prettier": "^1.15.2"
+        "@babel/cli": "^7.4.4",
+        "@babel/core": "^7.4.5",
+        "@babel/plugin-proposal-class-properties": "^7.4.4",
+        "@babel/preset-env": "^7.4.5",
+        "prettier": "^1.18.2"
     },
     "homepage": "https://keyclic.com",
     "license": "MIT",
