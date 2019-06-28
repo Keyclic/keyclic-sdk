@@ -253,7 +253,6 @@ import ReportLinksSelf from './model/ReportLinksSelf';
 import ReportLinksTracking from './model/ReportLinksTracking';
 import ReportPagination from './model/ReportPagination';
 import ReportPatch from './model/ReportPatch';
-import ReportPatchCategory from './model/ReportPatchCategory';
 import ReportStatePatch from './model/ReportStatePatch';
 import ReportWorkflowTransitionData from './model/ReportWorkflowTransitionData';
 import Review from './model/Review';
@@ -359,7 +358,7 @@ import WebhookApi from './api/WebhookApi';
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 1.41.8
+ * @version 1.41.9
  */
 export {
     /**
@@ -1573,11 +1572,6 @@ export {
      * @property { module:model/ReportPatch }
      */
     ReportPatch,
-    /**
-     * The ReportPatchCategory model constructor.
-     * @property { module:model/ReportPatchCategory }
-     */
-    ReportPatchCategory,
     /**
      * The ReportStatePatch model constructor.
      * @property { module:model/ReportStatePatch }

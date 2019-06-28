@@ -16,11 +16,11 @@ class FeedbackApi {
       String category,
       DateTime after,
       DateTime before,
-      String geoHash_,
+      String geoHash__,
       String geoNear,
       String order,
       String organization,
-      String visibility_,
+      String visibility__,
       int page,
       int limit}) async {
     Object postBody;
@@ -53,9 +53,9 @@ class FeedbackApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
-    if (geoHash_ != null) {
+    if (geoHash__ != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "geo_hash[]", geoHash_));
+          _convertParametersForCollectionFormat("", "geo_hash[]", geoHash__));
     }
     if (geoNear != null) {
       queryParams.addAll(
@@ -69,9 +69,9 @@ class FeedbackApi {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "organization", organization));
     }
-    if (visibility_ != null) {
+    if (visibility__ != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "visibility[]", visibility_));
+          "", "visibility[]", visibility__));
     }
     if (page != null) {
       queryParams
@@ -121,12 +121,12 @@ class FeedbackApi {
       String category,
       DateTime after,
       DateTime before,
-      String geoHash_,
+      String geoHash__,
       String geoNear,
       String order,
       String organization,
       String state,
-      String visibility_,
+      String visibility__,
       int page,
       int limit}) async {
     Object postBody;
@@ -160,9 +160,9 @@ class FeedbackApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "before", before));
     }
-    if (geoHash_ != null) {
+    if (geoHash__ != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "geo_hash[]", geoHash_));
+          _convertParametersForCollectionFormat("", "geo_hash[]", geoHash__));
     }
     if (geoNear != null) {
       queryParams.addAll(
@@ -180,9 +180,9 @@ class FeedbackApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "state", state));
     }
-    if (visibility_ != null) {
+    if (visibility__ != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "visibility[]", visibility_));
+          "", "visibility[]", visibility__));
     }
     if (page != null) {
       queryParams

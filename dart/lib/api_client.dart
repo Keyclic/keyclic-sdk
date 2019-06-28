@@ -521,8 +521,6 @@ class ApiClient {
           return ReportPagination.fromJson(value);
         case 'ReportPatch':
           return ReportPatch.fromJson(value);
-        case 'ReportPatchCategory':
-          return ReportPatchCategory.fromJson(value);
         case 'ReportStatePatch':
           return ReportStatePatch.fromJson(value);
         case 'ReportWorkflowTransitionData':

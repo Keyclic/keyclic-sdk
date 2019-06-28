@@ -7,10 +7,6 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ReportPatchCategory = _interopRequireDefault(
-  require("./ReportPatchCategory")
-);
-
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -58,7 +54,6 @@ var ReportPatch =
       this.identificationNumber = null;
       this.priority = null;
       this.tags = [];
-      this.categoryType = _ReportPatchCategory.default;
     }
     /**
      * Constructs a "ReportPatch" from a plain JavaScript object.
@@ -87,7 +82,7 @@ var ReportPatch =
           if (data.hasOwnProperty("category")) {
             object.category = _ApiClient.default.convertToType(
               data["category"],
-              object.categoryType
+              "String"
             );
           }
 

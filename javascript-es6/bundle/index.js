@@ -1455,12 +1455,6 @@ Object.defineProperty(exports, "ReportPatch", {
     return _ReportPatch.default;
   }
 });
-Object.defineProperty(exports, "ReportPatchCategory", {
-  enumerable: true,
-  get: function get() {
-    return _ReportPatchCategory.default;
-  }
-});
 Object.defineProperty(exports, "ReportStatePatch", {
   enumerable: true,
   get: function get() {
@@ -2449,8 +2443,6 @@ var _ReportLinksTracking = _interopRequireDefault(require("./model/ReportLinksTr
 var _ReportPagination = _interopRequireDefault(require("./model/ReportPagination"));
 
 var _ReportPatch = _interopRequireDefault(require("./model/ReportPatch"));
-
-var _ReportPatchCategory = _interopRequireDefault(require("./model/ReportPatchCategory"));
 
 var _ReportStatePatch = _interopRequireDefault(require("./model/ReportStatePatch"));
 

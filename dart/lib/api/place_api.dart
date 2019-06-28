@@ -15,13 +15,13 @@ class PlaceApi {
       DateTime after,
       DateTime before,
       String geoElevation,
-      String geoHash_,
+      String geoHash__,
       String geoPoint,
       String geoCoordinates,
       String order,
       String organization,
       String parent,
-      String parents_,
+      String parents__,
       String query,
       int page,
       int limit,
@@ -58,9 +58,9 @@ class PlaceApi {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "geo_elevation", geoElevation));
     }
-    if (geoHash_ != null) {
+    if (geoHash__ != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "geo_hash[]", geoHash_));
+          _convertParametersForCollectionFormat("", "geo_hash[]", geoHash__));
     }
     if (geoPoint != null) {
       queryParams.addAll(
@@ -82,9 +82,9 @@ class PlaceApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "parent", parent));
     }
-    if (parents_ != null) {
+    if (parents__ != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "parents[]", parents_));
+          _convertParametersForCollectionFormat("", "parents[]", parents__));
     }
     if (query != null) {
       queryParams
@@ -151,12 +151,12 @@ class PlaceApi {
       DateTime after,
       DateTime before,
       String geoElevation,
-      String geoHash_,
+      String geoHash__,
       String geoPoint,
       String geoCoordinates,
       String order,
       String parent,
-      String parents_,
+      String parents__,
       String query,
       int page,
       int limit,
@@ -198,9 +198,9 @@ class PlaceApi {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "geo_elevation", geoElevation));
     }
-    if (geoHash_ != null) {
+    if (geoHash__ != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "geo_hash[]", geoHash_));
+          _convertParametersForCollectionFormat("", "geo_hash[]", geoHash__));
     }
     if (geoPoint != null) {
       queryParams.addAll(
@@ -218,9 +218,9 @@ class PlaceApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "parent", parent));
     }
-    if (parents_ != null) {
+    if (parents__ != null) {
       queryParams.addAll(
-          _convertParametersForCollectionFormat("", "parents[]", parents_));
+          _convertParametersForCollectionFormat("", "parents[]", parents__));
     }
     if (query != null) {
       queryParams

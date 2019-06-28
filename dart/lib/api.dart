@@ -303,7 +303,6 @@ part 'model/report_links_self.dart';
 part 'model/report_links_tracking.dart';
 part 'model/report_pagination.dart';
 part 'model/report_patch.dart';
-part 'model/report_patch_category.dart';
 part 'model/report_state_patch.dart';
 part 'model/report_workflow_transition_data.dart';
 part 'model/review.dart';

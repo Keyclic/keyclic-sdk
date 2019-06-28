@@ -13,14 +13,14 @@ class ReportPatch {
     if (json == null) {
       return;
     }
-    category = ReportPatchCategory.fromJson(json['category']);
+    category = json['category'];
     description = json['description'];
     identificationNumber = json['identificationNumber'];
     priority = json['priority'];
     tags = (json['tags'] as List)?.map((item) => item as String)?.toList();
   }
 
-  ReportPatchCategory category;
+  String category;
 
   String description;
 
