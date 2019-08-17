@@ -31,18 +31,6 @@ class DeviceLinksPerson {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DeviceLinksPerson[href=$href, iriTemplate=$iriTemplate, ]';
-  }
-
   static List<DeviceLinksPerson> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DeviceLinksPerson>()
@@ -56,5 +44,17 @@ class DeviceLinksPerson {
           map[key] = DeviceLinksPerson.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DeviceLinksPerson[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

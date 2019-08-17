@@ -49,6 +49,21 @@ class Application {
   @override
   int get hashCode => 0 ^ name.hashCode ^ token.hashCode;
 
+  static List<Application> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Application>()
+        : json.map((value) => Application.fromJson(value)).toList();
+  }
+
+  static Map<String, Application> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Application>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = Application.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       '_links': links,
@@ -63,20 +78,5 @@ class Application {
   @override
   String toString() {
     return 'Application[links=$links, id=$id, name=$name, token=$token, type=$type, version=$version, ]';
-  }
-
-  static List<Application> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Application>()
-        : json.map((value) => Application.fromJson(value)).toList();
-  }
-
-  static Map<String, Application> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Application>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = Application.fromJson(value));
-    }
-    return map;
   }
 }

@@ -26,17 +26,6 @@ class ApplicationLinks {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'self': self,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ApplicationLinks[self=$self, ]';
-  }
-
   static List<ApplicationLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ApplicationLinks>()
@@ -50,5 +39,16 @@ class ApplicationLinks {
           map[key] = ApplicationLinks.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'self': self,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ApplicationLinks[self=$self, ]';
   }
 }

@@ -1,30 +1,32 @@
 part of keyclic_sdk_api.api;
 
 class WebhookApi {
-  final ApiClient apiClient;
-
   WebhookApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
+  final ApiClient apiClient;
 
   /// Retrieve all Webhook resources.
   ///
   ///
   Future<WebhookPagination> cgetWebhooksByOrganization(
-      String xKeyclicApp, String organization,
-      {String acceptLanguage,
-      String xKeyclicAppVersion,
-      DateTime after,
-      DateTime before,
-      String order,
-      int page,
-      int limit}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String organization, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+    DateTime after,
+    DateTime before,
+    String order,
+    int page,
+    int limit,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (organization == null) {
-      throw ApiException(400, "Missing required param: organization");
+      throw ApiException(0, "Missing required param: organization");
     }
 
     // create path and map variables
@@ -34,8 +36,6 @@ class WebhookApi {
 
     // query params
     List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     if (after != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "after", after));
@@ -56,6 +56,9 @@ class WebhookApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
+
+    // header params
+    Map<String, String> headerParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -66,39 +69,40 @@ class WebhookApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'WebhookPagination')
-          as WebhookPagination;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'WebhookPagination')
+        as WebhookPagination;
   }
 
   /// Retrieve one Webhook resource.
   ///
   ///
-  Future<Webhook> getWebhook(String xKeyclicApp, String webhook,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody;
-
+  Future<Webhook> getWebhook(
+    String xKeyclicApp,
+    String webhook, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (webhook == null) {
-      throw ApiException(400, "Missing required param: webhook");
+      throw ApiException(0, "Missing required param: webhook");
     }
 
     // create path and map variables
@@ -108,8 +112,9 @@ class WebhookApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -120,42 +125,44 @@ class WebhookApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Webhook') as Webhook;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Webhook') as Webhook;
   }
 
   /// Edit one Webhook resource.
   ///
   ///
   Future<Webhook> patchWebhook(
-      String xKeyclicApp, WebhookPatch webhookPatch, String webhook,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody = webhookPatch;
-
+    String xKeyclicApp,
+    WebhookPatch webhookPatch,
+    String webhook, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (webhookPatch == null) {
-      throw ApiException(400, "Missing required param: webhookPatch");
+      throw ApiException(0, "Missing required param: webhookPatch");
     }
+
     if (webhook == null) {
-      throw ApiException(400, "Missing required param: webhook");
+      throw ApiException(0, "Missing required param: webhook");
     }
 
     // create path and map variables
@@ -165,8 +172,9 @@ class WebhookApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -177,22 +185,19 @@ class WebhookApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = webhookPatch;
 
     var response = await apiClient.invokeAPI(path, 'PATCH', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Webhook') as Webhook;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Webhook') as Webhook;
   }
 }

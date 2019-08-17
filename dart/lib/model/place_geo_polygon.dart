@@ -32,18 +32,6 @@ class PlaceGeoPolygon {
   @override
   int get hashCode => 0 ^ type.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'features': features,
-      'type': type,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PlaceGeoPolygon[features=$features, type=$type, ]';
-  }
-
   static List<PlaceGeoPolygon> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PlaceGeoPolygon>()
@@ -57,5 +45,17 @@ class PlaceGeoPolygon {
           map[key] = PlaceGeoPolygon.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'features': features,
+      'type': type,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PlaceGeoPolygon[features=$features, type=$type, ]';
   }
 }

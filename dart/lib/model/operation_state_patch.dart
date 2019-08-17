@@ -12,8 +12,8 @@ class OperationStatePatch {
     transition = json['transition'];
   }
 
+  /// enum transitionEnum {  accept,  assign,  progress,  refuse,  reset,  resolve,  };
   String transition;
-  //enum transitionEnum {  accept,  assign,  progress,  refuse,  reset,  resolve,  };
 
   @override
   bool operator ==(dynamic other) {
@@ -29,17 +29,6 @@ class OperationStatePatch {
   @override
   int get hashCode => 0 ^ transition.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'transition': transition,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OperationStatePatch[transition=$transition, ]';
-  }
-
   static List<OperationStatePatch> listFromJson(List<dynamic> json) {
     return json == null
         ? List<OperationStatePatch>()
@@ -54,5 +43,16 @@ class OperationStatePatch {
           map[key] = OperationStatePatch.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'transition': transition,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OperationStatePatch[transition=$transition, ]';
   }
 }

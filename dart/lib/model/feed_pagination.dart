@@ -46,6 +46,21 @@ class FeedPagination {
   @override
   int get hashCode => 0;
 
+  static List<FeedPagination> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<FeedPagination>()
+        : json.map((value) => FeedPagination.fromJson(value)).toList();
+  }
+
+  static Map<String, FeedPagination> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, FeedPagination>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedPagination.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'limit': limit,
@@ -60,20 +75,5 @@ class FeedPagination {
   @override
   String toString() {
     return 'FeedPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
-  }
-
-  static List<FeedPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeedPagination>()
-        : json.map((value) => FeedPagination.fromJson(value)).toList();
-  }
-
-  static Map<String, FeedPagination> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, FeedPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedPagination.fromJson(value));
-    }
-    return map;
   }
 }

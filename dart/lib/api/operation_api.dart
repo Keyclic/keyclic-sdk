@@ -1,33 +1,35 @@
 part of keyclic_sdk_api.api;
 
 class OperationApi {
-  final ApiClient apiClient;
-
   OperationApi([ApiClient apiClient])
       : apiClient = apiClient ?? defaultApiClient;
+
+  final ApiClient apiClient;
 
   /// Retrieve all Operation resources.
   ///
   ///
   Future<OperationPagination> cgetOperationsByOrganization(
-      String xKeyclicApp, String organization,
-      {String acceptLanguage,
-      String xKeyclicAppVersion,
-      DateTime after,
-      DateTime before,
-      String order,
-      String query,
-      String state,
-      int page,
-      int limit}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String organization, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+    DateTime after,
+    DateTime before,
+    String order,
+    String query,
+    String state,
+    int page,
+    int limit,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (organization == null) {
-      throw ApiException(400, "Missing required param: organization");
+      throw ApiException(0, "Missing required param: organization");
     }
 
     // create path and map variables
@@ -37,8 +39,6 @@ class OperationApi {
 
     // query params
     List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     if (after != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "after", after));
@@ -67,6 +67,9 @@ class OperationApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
+
+    // header params
+    Map<String, String> headerParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -77,49 +80,48 @@ class OperationApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'OperationPagination')
-          as OperationPagination;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'OperationPagination')
+        as OperationPagination;
   }
 
   /// Retrieve all Operation resources.
   ///
   ///
   Future<OperationPagination> cgetOperationsByPerson(
-      String xKeyclicApp, String person,
-      {String acceptLanguage,
-      String xKeyclicAppVersion,
-      DateTime after,
-      DateTime before,
-      String order,
-      String organization,
-      String query,
-      String state,
-      int page,
-      int limit}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String person, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+    DateTime after,
+    DateTime before,
+    String order,
+    String organization,
+    String query,
+    String state,
+    int page,
+    int limit,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (person == null) {
-      throw ApiException(400, "Missing required param: person");
+      throw ApiException(0, "Missing required param: person");
     }
 
     // create path and map variables
@@ -129,8 +131,6 @@ class OperationApi {
 
     // query params
     List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     if (after != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "after", after));
@@ -163,6 +163,9 @@ class OperationApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
+
+    // header params
+    Map<String, String> headerParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -173,49 +176,48 @@ class OperationApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'OperationPagination')
-          as OperationPagination;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'OperationPagination')
+        as OperationPagination;
   }
 
   /// Retrieve all Operation resources.
   ///
   ///
   Future<OperationPagination> cgetOperationsByReport(
-      String xKeyclicApp, String report,
-      {String acceptLanguage,
-      String xKeyclicAppVersion,
-      DateTime after,
-      DateTime before,
-      String order,
-      String organization,
-      String query,
-      String state,
-      int page,
-      int limit}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String report, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+    DateTime after,
+    DateTime before,
+    String order,
+    String organization,
+    String query,
+    String state,
+    int page,
+    int limit,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (report == null) {
-      throw ApiException(400, "Missing required param: report");
+      throw ApiException(0, "Missing required param: report");
     }
 
     // create path and map variables
@@ -225,8 +227,6 @@ class OperationApi {
 
     // query params
     List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     if (after != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "after", after));
@@ -259,6 +259,9 @@ class OperationApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
+
+    // header params
+    Map<String, String> headerParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -269,39 +272,40 @@ class OperationApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'OperationPagination')
-          as OperationPagination;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'OperationPagination')
+        as OperationPagination;
   }
 
   /// Remove one Operation resource.
   ///
   ///
-  Future deleteOperation(String xKeyclicApp, String operation,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody;
-
+  Future<void> deleteOperation(
+    String xKeyclicApp,
+    String operation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (operation == null) {
-      throw ApiException(400, "Missing required param: operation");
+      throw ApiException(0, "Missing required param: operation");
     }
 
     // create path and map variables
@@ -311,8 +315,9 @@ class OperationApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -323,38 +328,39 @@ class OperationApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'DELETE', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return;
-    } else {
+    }
+
+    if (response.body == null) {
       return;
     }
+
+    return;
   }
 
   /// Retrieve one Operation resource.
   ///
   ///
-  Future<Operation> getOperation(String xKeyclicApp, String operation,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody;
-
+  Future<Operation> getOperation(
+    String xKeyclicApp,
+    String operation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (operation == null) {
-      throw ApiException(400, "Missing required param: operation");
+      throw ApiException(0, "Missing required param: operation");
     }
 
     // create path and map variables
@@ -364,8 +370,9 @@ class OperationApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -376,42 +383,44 @@ class OperationApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Operation') as Operation;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Operation') as Operation;
   }
 
   /// Edit one Operation resource.
   ///
   ///
   Future<Operation> patchOperation(
-      String xKeyclicApp, OperationPatch operationPatch, String operation,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody = operationPatch;
-
+    String xKeyclicApp,
+    OperationPatch operationPatch,
+    String operation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (operationPatch == null) {
-      throw ApiException(400, "Missing required param: operationPatch");
+      throw ApiException(0, "Missing required param: operationPatch");
     }
+
     if (operation == null) {
-      throw ApiException(400, "Missing required param: operation");
+      throw ApiException(0, "Missing required param: operation");
     }
 
     // create path and map variables
@@ -421,8 +430,9 @@ class OperationApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -433,39 +443,39 @@ class OperationApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = operationPatch;
 
     var response = await apiClient.invokeAPI(path, 'PATCH', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Operation') as Operation;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Operation') as Operation;
   }
 
   /// Create one Operation resource.
   ///
   ///
   Future<Operation> postOperation(
-      String xKeyclicApp, OperationData operationData,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody = operationData;
-
+    String xKeyclicApp,
+    OperationData operationData, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (operationData == null) {
-      throw ApiException(400, "Missing required param: operationData");
+      throw ApiException(0, "Missing required param: operationData");
     }
 
     // create path and map variables
@@ -473,8 +483,9 @@ class OperationApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -485,22 +496,19 @@ class OperationApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = operationData;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Operation') as Operation;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Operation') as Operation;
   }
 }

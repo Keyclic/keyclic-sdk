@@ -32,18 +32,6 @@ class OperationLinksCreatedBy {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OperationLinksCreatedBy[href=$href, iriTemplate=$iriTemplate, ]';
-  }
-
   static List<OperationLinksCreatedBy> listFromJson(List<dynamic> json) {
     return json == null
         ? List<OperationLinksCreatedBy>()
@@ -58,5 +46,17 @@ class OperationLinksCreatedBy {
           map[key] = OperationLinksCreatedBy.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OperationLinksCreatedBy[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

@@ -52,6 +52,21 @@ class Delegation {
   @override
   int get hashCode => 0;
 
+  static List<Delegation> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Delegation>()
+        : json.map((value) => Delegation.fromJson(value)).toList();
+  }
+
+  static Map<String, Delegation> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Delegation>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Delegation.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       '_links': links,
@@ -66,20 +81,5 @@ class Delegation {
   @override
   String toString() {
     return 'Delegation[links=$links, createdAt=$createdAt, description=$description, id=$id, state=$state, type=$type, ]';
-  }
-
-  static List<Delegation> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Delegation>()
-        : json.map((value) => Delegation.fromJson(value)).toList();
-  }
-
-  static Map<String, Delegation> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Delegation>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Delegation.fromJson(value));
-    }
-    return map;
   }
 }

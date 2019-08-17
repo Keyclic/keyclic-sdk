@@ -26,17 +26,6 @@ class MemberPatch {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'roles': roles,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'MemberPatch[roles=$roles, ]';
-  }
-
   static List<MemberPatch> listFromJson(List<dynamic> json) {
     return json == null
         ? List<MemberPatch>()
@@ -50,5 +39,16 @@ class MemberPatch {
           map[key] = MemberPatch.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'roles': roles,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'MemberPatch[roles=$roles, ]';
   }
 }

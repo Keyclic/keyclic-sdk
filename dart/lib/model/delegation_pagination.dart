@@ -46,22 +46,6 @@ class DelegationPagination {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'limit': limit,
-      'page': page,
-      'pages': pages,
-      'total': total,
-      '_embedded': embedded,
-      '_links': links,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DelegationPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
-  }
-
   static List<DelegationPagination> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DelegationPagination>()
@@ -76,5 +60,21 @@ class DelegationPagination {
           map[key] = DelegationPagination.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'limit': limit,
+      'page': page,
+      'pages': pages,
+      'total': total,
+      '_embedded': embedded,
+      '_links': links,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DelegationPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
   }
 }

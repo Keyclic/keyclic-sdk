@@ -46,22 +46,6 @@ class PublicationPagination {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'limit': limit,
-      'page': page,
-      'pages': pages,
-      'total': total,
-      '_embedded': embedded,
-      '_links': links,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PublicationPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
-  }
-
   static List<PublicationPagination> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PublicationPagination>()
@@ -76,5 +60,21 @@ class PublicationPagination {
           map[key] = PublicationPagination.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'limit': limit,
+      'page': page,
+      'pages': pages,
+      'total': total,
+      '_embedded': embedded,
+      '_links': links,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PublicationPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
   }
 }

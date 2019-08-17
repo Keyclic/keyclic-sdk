@@ -42,21 +42,6 @@ class ActivityPagination {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'duration': duration,
-      'next': next,
-      'unseen': unseen,
-      'unread': unread,
-      'results': results,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ActivityPagination[duration=$duration, next=$next, unseen=$unseen, unread=$unread, results=$results, ]';
-  }
-
   static List<ActivityPagination> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ActivityPagination>()
@@ -71,5 +56,20 @@ class ActivityPagination {
           map[key] = ActivityPagination.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'duration': duration,
+      'next': next,
+      'unseen': unseen,
+      'unread': unread,
+      'results': results,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ActivityPagination[duration=$duration, next=$next, unseen=$unseen, unread=$unread, results=$results, ]';
   }
 }

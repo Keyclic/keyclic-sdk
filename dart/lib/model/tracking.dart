@@ -38,20 +38,6 @@ class Tracking {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'checkpoints': checkpoints,
-      'progression': progression,
-      'state': state,
-      'time': time,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'Tracking[checkpoints=$checkpoints, progression=$progression, state=$state, time=$time, ]';
-  }
-
   static List<Tracking> listFromJson(List<dynamic> json) {
     return json == null
         ? List<Tracking>()
@@ -65,5 +51,19 @@ class Tracking {
           (String key, dynamic value) => map[key] = Tracking.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'checkpoints': checkpoints,
+      'progression': progression,
+      'state': state,
+      'time': time,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'Tracking[checkpoints=$checkpoints, progression=$progression, state=$state, time=$time, ]';
   }
 }

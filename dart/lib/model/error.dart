@@ -34,19 +34,6 @@ class Error {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'message': message,
-      'total': total,
-      '_embedded': embedded,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'Error[message=$message, total=$total, embedded=$embedded, ]';
-  }
-
   static List<Error> listFromJson(List<dynamic> json) {
     return json == null
         ? List<Error>()
@@ -60,5 +47,18 @@ class Error {
           (String key, dynamic value) => map[key] = Error.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'message': message,
+      'total': total,
+      '_embedded': embedded,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'Error[message=$message, total=$total, embedded=$embedded, ]';
   }
 }

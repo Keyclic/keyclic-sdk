@@ -58,6 +58,21 @@ class Publication {
   @override
   int get hashCode => 0 ^ message.hashCode ^ read.hashCode ^ title.hashCode;
 
+  static List<Publication> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Publication>()
+        : json.map((value) => Publication.fromJson(value)).toList();
+  }
+
+  static Map<String, Publication> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Publication>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = Publication.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       '_links': links,
@@ -73,20 +88,5 @@ class Publication {
   @override
   String toString() {
     return 'Publication[links=$links, createdAt=$createdAt, id=$id, message=$message, read=$read, title=$title, type=$type, ]';
-  }
-
-  static List<Publication> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Publication>()
-        : json.map((value) => Publication.fromJson(value)).toList();
-  }
-
-  static Map<String, Publication> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Publication>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = Publication.fromJson(value));
-    }
-    return map;
   }
 }

@@ -38,20 +38,6 @@ class ServiceContactPoint {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'email': email,
-      'isOpen': isOpen,
-      'name': name,
-      'telephone': telephone,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ServiceContactPoint[email=$email, isOpen=$isOpen, name=$name, telephone=$telephone, ]';
-  }
-
   static List<ServiceContactPoint> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ServiceContactPoint>()
@@ -66,5 +52,19 @@ class ServiceContactPoint {
           map[key] = ServiceContactPoint.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'email': email,
+      'isOpen': isOpen,
+      'name': name,
+      'telephone': telephone,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ServiceContactPoint[email=$email, isOpen=$isOpen, name=$name, telephone=$telephone, ]';
   }
 }

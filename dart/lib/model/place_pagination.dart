@@ -46,6 +46,21 @@ class PlacePagination {
   @override
   int get hashCode => 0;
 
+  static List<PlacePagination> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<PlacePagination>()
+        : json.map((value) => PlacePagination.fromJson(value)).toList();
+  }
+
+  static Map<String, PlacePagination> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, PlacePagination>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = PlacePagination.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'limit': limit,
@@ -60,20 +75,5 @@ class PlacePagination {
   @override
   String toString() {
     return 'PlacePagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
-  }
-
-  static List<PlacePagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PlacePagination>()
-        : json.map((value) => PlacePagination.fromJson(value)).toList();
-  }
-
-  static Map<String, PlacePagination> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PlacePagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PlacePagination.fromJson(value));
-    }
-    return map;
   }
 }

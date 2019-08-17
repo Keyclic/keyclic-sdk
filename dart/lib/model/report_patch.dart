@@ -42,21 +42,6 @@ class ReportPatch {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'category': category,
-      'description': description,
-      'identificationNumber': identificationNumber,
-      'priority': priority,
-      'tags': tags,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ReportPatch[category=$category, description=$description, identificationNumber=$identificationNumber, priority=$priority, tags=$tags, ]';
-  }
-
   static List<ReportPatch> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ReportPatch>()
@@ -70,5 +55,20 @@ class ReportPatch {
           map[key] = ReportPatch.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'category': category,
+      'description': description,
+      'identificationNumber': identificationNumber,
+      'priority': priority,
+      'tags': tags,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ReportPatch[category=$category, description=$description, identificationNumber=$identificationNumber, priority=$priority, tags=$tags, ]';
   }
 }

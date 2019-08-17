@@ -30,18 +30,6 @@ class DocumentPatch {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'file': file,
-      'permission': permission,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DocumentPatch[file=$file, permission=$permission, ]';
-  }
-
   static List<DocumentPatch> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DocumentPatch>()
@@ -55,5 +43,17 @@ class DocumentPatch {
           map[key] = DocumentPatch.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'file': file,
+      'permission': permission,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DocumentPatch[file=$file, permission=$permission, ]';
   }
 }

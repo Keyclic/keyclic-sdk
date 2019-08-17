@@ -54,6 +54,21 @@ class PersonPatch {
   @override
   int get hashCode => 0;
 
+  static List<PersonPatch> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<PersonPatch>()
+        : json.map((value) => PersonPatch.fromJson(value)).toList();
+  }
+
+  static Map<String, PersonPatch> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, PersonPatch>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = PersonPatch.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'givenName': givenName,
@@ -70,20 +85,5 @@ class PersonPatch {
   @override
   String toString() {
     return 'PersonPatch[givenName=$givenName, familyName=$familyName, email=$email, jobTitle=$jobTitle, image=$image, optIn=$optIn, preferences=$preferences, telephone=$telephone, ]';
-  }
-
-  static List<PersonPatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PersonPatch>()
-        : json.map((value) => PersonPatch.fromJson(value)).toList();
-  }
-
-  static Map<String, PersonPatch> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PersonPatch>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PersonPatch.fromJson(value));
-    }
-    return map;
   }
 }

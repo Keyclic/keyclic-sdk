@@ -40,8 +40,9 @@ class Review {
 
   String reviewBody;
 
+  /// range from 1 to 5
+
   int reviewRating;
-  // range from 1 to 5//
 
   String type;
 
@@ -59,6 +60,21 @@ class Review {
   @override
   int get hashCode => 0;
 
+  static List<Review> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Review>()
+        : json.map((value) => Review.fromJson(value)).toList();
+  }
+
+  static Map<String, Review> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Review>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Review.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       '_links': links,
@@ -74,20 +90,5 @@ class Review {
   @override
   String toString() {
     return 'Review[links=$links, createdAt=$createdAt, id=$id, reviewBody=$reviewBody, reviewRating=$reviewRating, type=$type, updatedAt=$updatedAt, ]';
-  }
-
-  static List<Review> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Review>()
-        : json.map((value) => Review.fromJson(value)).toList();
-  }
-
-  static Map<String, Review> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Review>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Review.fromJson(value));
-    }
-    return map;
   }
 }

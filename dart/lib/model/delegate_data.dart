@@ -40,20 +40,6 @@ class DelegateData {
   @override
   int get hashCode => 0 ^ report.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'description': description,
-      'organization': organization,
-      'report': report,
-      'service': service,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DelegateData[description=$description, organization=$organization, report=$report, service=$service, ]';
-  }
-
   static List<DelegateData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DelegateData>()
@@ -67,5 +53,19 @@ class DelegateData {
           map[key] = DelegateData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'description': description,
+      'organization': organization,
+      'report': report,
+      'service': service,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DelegateData[description=$description, organization=$organization, report=$report, service=$service, ]';
   }
 }

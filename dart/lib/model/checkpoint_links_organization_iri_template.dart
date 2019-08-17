@@ -28,17 +28,6 @@ class CheckpointLinksOrganizationIriTemplate {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'mapping': mapping,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'CheckpointLinksOrganizationIriTemplate[mapping=$mapping, ]';
-  }
-
   static List<CheckpointLinksOrganizationIriTemplate> listFromJson(
       List<dynamic> json) {
     return json == null
@@ -57,5 +46,16 @@ class CheckpointLinksOrganizationIriTemplate {
           map[key] = CheckpointLinksOrganizationIriTemplate.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'mapping': mapping,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'CheckpointLinksOrganizationIriTemplate[mapping=$mapping, ]';
   }
 }

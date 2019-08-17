@@ -28,17 +28,6 @@ class PersonLinksSelfIriTemplate {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'mapping': mapping,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PersonLinksSelfIriTemplate[mapping=$mapping, ]';
-  }
-
   static List<PersonLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PersonLinksSelfIriTemplate>()
@@ -55,5 +44,16 @@ class PersonLinksSelfIriTemplate {
           map[key] = PersonLinksSelfIriTemplate.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'mapping': mapping,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PersonLinksSelfIriTemplate[mapping=$mapping, ]';
   }
 }

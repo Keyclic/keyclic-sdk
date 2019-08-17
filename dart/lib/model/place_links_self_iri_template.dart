@@ -27,17 +27,6 @@ class PlaceLinksSelfIriTemplate {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'mapping': mapping,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PlaceLinksSelfIriTemplate[mapping=$mapping, ]';
-  }
-
   static List<PlaceLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PlaceLinksSelfIriTemplate>()
@@ -54,5 +43,16 @@ class PlaceLinksSelfIriTemplate {
           map[key] = PlaceLinksSelfIriTemplate.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'mapping': mapping,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PlaceLinksSelfIriTemplate[mapping=$mapping, ]';
   }
 }

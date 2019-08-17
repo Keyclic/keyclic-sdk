@@ -46,6 +46,21 @@ class WebhookPagination {
   @override
   int get hashCode => 0;
 
+  static List<WebhookPagination> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<WebhookPagination>()
+        : json.map((value) => WebhookPagination.fromJson(value)).toList();
+  }
+
+  static Map<String, WebhookPagination> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, WebhookPagination>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = WebhookPagination.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'limit': limit,
@@ -60,20 +75,5 @@ class WebhookPagination {
   @override
   String toString() {
     return 'WebhookPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
-  }
-
-  static List<WebhookPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<WebhookPagination>()
-        : json.map((value) => WebhookPagination.fromJson(value)).toList();
-  }
-
-  static Map<String, WebhookPagination> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WebhookPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WebhookPagination.fromJson(value));
-    }
-    return map;
   }
 }

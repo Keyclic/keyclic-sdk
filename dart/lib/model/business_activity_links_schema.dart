@@ -33,18 +33,6 @@ class BusinessActivityLinksSchema {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'BusinessActivityLinksSchema[href=$href, iriTemplate=$iriTemplate, ]';
-  }
-
   static List<BusinessActivityLinksSchema> listFromJson(List<dynamic> json) {
     return json == null
         ? List<BusinessActivityLinksSchema>()
@@ -61,5 +49,17 @@ class BusinessActivityLinksSchema {
           map[key] = BusinessActivityLinksSchema.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'BusinessActivityLinksSchema[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

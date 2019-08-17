@@ -39,20 +39,6 @@ class PlaceLinks {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'containedInPlace': containedInPlace,
-      'containsPlaces': containsPlaces,
-      'organization': organization,
-      'self': self,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PlaceLinks[containedInPlace=$containedInPlace, containsPlaces=$containsPlaces, organization=$organization, self=$self, ]';
-  }
-
   static List<PlaceLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PlaceLinks>()
@@ -66,5 +52,19 @@ class PlaceLinks {
           (String key, dynamic value) => map[key] = PlaceLinks.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'containedInPlace': containedInPlace,
+      'containsPlaces': containsPlaces,
+      'organization': organization,
+      'self': self,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PlaceLinks[containedInPlace=$containedInPlace, containsPlaces=$containsPlaces, organization=$organization, self=$self, ]';
   }
 }

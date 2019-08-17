@@ -10,8 +10,8 @@ class PlaceGeoCentroid {
     if (json == null) {
       return;
     }
-    latitude = json['latitude']?.toDouble();
-    longitude = json['longitude']?.toDouble();
+    latitude = json['latitude'];
+    longitude = json['longitude'];
   }
 
   double latitude;
@@ -33,18 +33,6 @@ class PlaceGeoCentroid {
   @override
   int get hashCode => 0 ^ latitude.hashCode ^ longitude.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'latitude': latitude,
-      'longitude': longitude,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PlaceGeoCentroid[latitude=$latitude, longitude=$longitude, ]';
-  }
-
   static List<PlaceGeoCentroid> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PlaceGeoCentroid>()
@@ -58,5 +46,17 @@ class PlaceGeoCentroid {
           map[key] = PlaceGeoCentroid.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'latitude': latitude,
+      'longitude': longitude,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PlaceGeoCentroid[latitude=$latitude, longitude=$longitude, ]';
   }
 }

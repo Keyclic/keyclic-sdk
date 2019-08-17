@@ -31,18 +31,6 @@ class SuccessLoginCredentialsOrganization {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'type': type,
-      'id': id,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'SuccessLoginCredentialsOrganization[type=$type, id=$id, ]';
-  }
-
   static List<SuccessLoginCredentialsOrganization> listFromJson(
       List<dynamic> json) {
     return json == null
@@ -60,5 +48,17 @@ class SuccessLoginCredentialsOrganization {
           map[key] = SuccessLoginCredentialsOrganization.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'type': type,
+      'id': id,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'SuccessLoginCredentialsOrganization[type=$type, id=$id, ]';
   }
 }

@@ -10,7 +10,7 @@ class TrackingProgression {
     if (json == null) {
       return;
     }
-    resolved = json['resolved']?.toDouble();
+    resolved = json['resolved'];
     total = json['total'];
   }
 
@@ -30,18 +30,6 @@ class TrackingProgression {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'resolved': resolved,
-      'total': total,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'TrackingProgression[resolved=$resolved, total=$total, ]';
-  }
-
   static List<TrackingProgression> listFromJson(List<dynamic> json) {
     return json == null
         ? List<TrackingProgression>()
@@ -56,5 +44,17 @@ class TrackingProgression {
           map[key] = TrackingProgression.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'resolved': resolved,
+      'total': total,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'TrackingProgression[resolved=$resolved, total=$total, ]';
   }
 }

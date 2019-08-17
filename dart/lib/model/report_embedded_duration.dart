@@ -26,17 +26,6 @@ class ReportEmbeddedDuration {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'seconds': seconds,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ReportEmbeddedDuration[seconds=$seconds, ]';
-  }
-
   static List<ReportEmbeddedDuration> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ReportEmbeddedDuration>()
@@ -51,5 +40,16 @@ class ReportEmbeddedDuration {
           map[key] = ReportEmbeddedDuration.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'seconds': seconds,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ReportEmbeddedDuration[seconds=$seconds, ]';
   }
 }

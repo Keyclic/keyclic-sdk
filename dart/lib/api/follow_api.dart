@@ -1,23 +1,27 @@
 part of keyclic_sdk_api.api;
 
 class FollowApi {
-  final ApiClient apiClient;
-
   FollowApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
+  final ApiClient apiClient;
 
   /// Create one Follow resource.
   ///
   ///
-  Future postFollowByFeed(String xKeyclicApp, String feed,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody;
-
+  Future<void> postFollowByFeed(
+    String xKeyclicApp,
+    String feed, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (feed == null) {
-      throw ApiException(400, "Missing required param: feed");
+      throw ApiException(0, "Missing required param: feed");
     }
 
     // create path and map variables
@@ -27,8 +31,9 @@ class FollowApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -39,22 +44,19 @@ class FollowApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return;
-    } else {
+    }
+
+    if (response.body == null) {
       return;
     }
+
+    return;
   }
 }

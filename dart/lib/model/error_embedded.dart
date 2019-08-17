@@ -26,17 +26,6 @@ class ErrorEmbedded {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'errors': errors,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ErrorEmbedded[errors=$errors, ]';
-  }
-
   static List<ErrorEmbedded> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ErrorEmbedded>()
@@ -50,5 +39,16 @@ class ErrorEmbedded {
           map[key] = ErrorEmbedded.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'errors': errors,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ErrorEmbedded[errors=$errors, ]';
   }
 }

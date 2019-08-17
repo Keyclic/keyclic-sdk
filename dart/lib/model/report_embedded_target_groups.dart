@@ -35,19 +35,6 @@ class ReportEmbeddedTargetGroups {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'name': name,
-      'description': description,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ReportEmbeddedTargetGroups[id=$id, name=$name, description=$description, ]';
-  }
-
   static List<ReportEmbeddedTargetGroups> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ReportEmbeddedTargetGroups>()
@@ -64,5 +51,18 @@ class ReportEmbeddedTargetGroups {
           map[key] = ReportEmbeddedTargetGroups.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'description': description,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ReportEmbeddedTargetGroups[id=$id, name=$name, description=$description, ]';
   }
 }

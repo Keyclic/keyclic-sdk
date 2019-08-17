@@ -34,19 +34,6 @@ class DocumentLinks {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'createdBy': createdBy,
-      'file': file,
-      'self': self,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DocumentLinks[createdBy=$createdBy, file=$file, self=$self, ]';
-  }
-
   static List<DocumentLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DocumentLinks>()
@@ -60,5 +47,18 @@ class DocumentLinks {
           map[key] = DocumentLinks.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'createdBy': createdBy,
+      'file': file,
+      'self': self,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DocumentLinks[createdBy=$createdBy, file=$file, self=$self, ]';
   }
 }

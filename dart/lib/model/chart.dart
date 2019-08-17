@@ -30,18 +30,6 @@ class Chart {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'data': data,
-      'labels': labels,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'Chart[data=$data, labels=$labels, ]';
-  }
-
   static List<Chart> listFromJson(List<dynamic> json) {
     return json == null
         ? List<Chart>()
@@ -55,5 +43,17 @@ class Chart {
           (String key, dynamic value) => map[key] = Chart.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'data': data,
+      'labels': labels,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'Chart[data=$data, labels=$labels, ]';
   }
 }

@@ -27,17 +27,6 @@ class OrganizationPatchPreferences {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'reference': reference,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OrganizationPatchPreferences[reference=$reference, ]';
-  }
-
   static List<OrganizationPatchPreferences> listFromJson(List<dynamic> json) {
     return json == null
         ? List<OrganizationPatchPreferences>()
@@ -54,5 +43,16 @@ class OrganizationPatchPreferences {
           map[key] = OrganizationPatchPreferences.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'reference': reference,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OrganizationPatchPreferences[reference=$reference, ]';
   }
 }

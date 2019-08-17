@@ -28,17 +28,6 @@ class MemberLinksOrganizationIriTemplate {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'mapping': mapping,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'MemberLinksOrganizationIriTemplate[mapping=$mapping, ]';
-  }
-
   static List<MemberLinksOrganizationIriTemplate> listFromJson(
       List<dynamic> json) {
     return json == null
@@ -56,5 +45,16 @@ class MemberLinksOrganizationIriTemplate {
           map[key] = MemberLinksOrganizationIriTemplate.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'mapping': mapping,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'MemberLinksOrganizationIriTemplate[mapping=$mapping, ]';
   }
 }

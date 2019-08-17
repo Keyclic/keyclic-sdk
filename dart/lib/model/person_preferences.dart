@@ -34,18 +34,6 @@ class PersonPreferences {
   int get hashCode =>
       0 ^ messageEmailEnabled.hashCode ^ messagePushEnabled.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'messageEmailEnabled': messageEmailEnabled,
-      'messagePushEnabled': messagePushEnabled,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PersonPreferences[messageEmailEnabled=$messageEmailEnabled, messagePushEnabled=$messagePushEnabled, ]';
-  }
-
   static List<PersonPreferences> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PersonPreferences>()
@@ -59,5 +47,17 @@ class PersonPreferences {
           map[key] = PersonPreferences.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'messageEmailEnabled': messageEmailEnabled,
+      'messagePushEnabled': messagePushEnabled,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PersonPreferences[messageEmailEnabled=$messageEmailEnabled, messagePushEnabled=$messagePushEnabled, ]';
   }
 }

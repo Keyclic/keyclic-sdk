@@ -26,17 +26,6 @@ class FeedCollection {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'items': items,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedCollection[items=$items, ]';
-  }
-
   static List<FeedCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? List<FeedCollection>()
@@ -50,5 +39,16 @@ class FeedCollection {
           map[key] = FeedCollection.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'items': items,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedCollection[items=$items, ]';
   }
 }

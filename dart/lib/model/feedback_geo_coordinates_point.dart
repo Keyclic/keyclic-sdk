@@ -11,8 +11,8 @@ class FeedbackGeoCoordinatesPoint {
     if (json == null) {
       return;
     }
-    latitude = json['latitude']?.toDouble();
-    longitude = json['longitude']?.toDouble();
+    latitude = json['latitude'];
+    longitude = json['longitude'];
     srid = json['srid'];
   }
 
@@ -39,19 +39,6 @@ class FeedbackGeoCoordinatesPoint {
   int get hashCode =>
       0 ^ latitude.hashCode ^ longitude.hashCode ^ srid.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'latitude': latitude,
-      'longitude': longitude,
-      'srid': srid,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackGeoCoordinatesPoint[latitude=$latitude, longitude=$longitude, srid=$srid, ]';
-  }
-
   static List<FeedbackGeoCoordinatesPoint> listFromJson(List<dynamic> json) {
     return json == null
         ? List<FeedbackGeoCoordinatesPoint>()
@@ -68,5 +55,18 @@ class FeedbackGeoCoordinatesPoint {
           map[key] = FeedbackGeoCoordinatesPoint.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'latitude': latitude,
+      'longitude': longitude,
+      'srid': srid,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackGeoCoordinatesPoint[latitude=$latitude, longitude=$longitude, srid=$srid, ]';
   }
 }

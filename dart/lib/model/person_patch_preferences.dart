@@ -30,18 +30,6 @@ class PersonPatchPreferences {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'messageEmailEnabled': messageEmailEnabled,
-      'messagePushEnabled': messagePushEnabled,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PersonPatchPreferences[messageEmailEnabled=$messageEmailEnabled, messagePushEnabled=$messagePushEnabled, ]';
-  }
-
   static List<PersonPatchPreferences> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PersonPatchPreferences>()
@@ -56,5 +44,17 @@ class PersonPatchPreferences {
           map[key] = PersonPatchPreferences.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'messageEmailEnabled': messageEmailEnabled,
+      'messagePushEnabled': messagePushEnabled,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PersonPatchPreferences[messageEmailEnabled=$messageEmailEnabled, messagePushEnabled=$messagePushEnabled, ]';
   }
 }

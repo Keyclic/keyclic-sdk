@@ -31,18 +31,6 @@ class OperationSignatureSigner {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'familyName': familyName,
-      'givenName': givenName,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OperationSignatureSigner[familyName=$familyName, givenName=$givenName, ]';
-  }
-
   static List<OperationSignatureSigner> listFromJson(List<dynamic> json) {
     return json == null
         ? List<OperationSignatureSigner>()
@@ -59,5 +47,17 @@ class OperationSignatureSigner {
           map[key] = OperationSignatureSigner.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'familyName': familyName,
+      'givenName': givenName,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OperationSignatureSigner[familyName=$familyName, givenName=$givenName, ]';
   }
 }

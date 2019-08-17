@@ -50,6 +50,21 @@ class Document {
   @override
   int get hashCode => 0;
 
+  static List<Document> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Document>()
+        : json.map((value) => Document.fromJson(value)).toList();
+  }
+
+  static Map<String, Document> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Document>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Document.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       '_links': links,
@@ -64,20 +79,5 @@ class Document {
   @override
   String toString() {
     return 'Document[links=$links, createdAt=$createdAt, file=$file, id=$id, permission=$permission, type=$type, ]';
-  }
-
-  static List<Document> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Document>()
-        : json.map((value) => Document.fromJson(value)).toList();
-  }
-
-  static Map<String, Document> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Document>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Document.fromJson(value));
-    }
-    return map;
   }
 }

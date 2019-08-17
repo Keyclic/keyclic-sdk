@@ -85,6 +85,21 @@ class Operation {
   @override
   int get hashCode => 0;
 
+  static List<Operation> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Operation>()
+        : json.map((value) => Operation.fromJson(value)).toList();
+  }
+
+  static Map<String, Operation> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Operation>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Operation.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       '_embedded': embedded,
@@ -106,20 +121,5 @@ class Operation {
   @override
   String toString() {
     return 'Operation[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, id=$id, identificationNumber=$identificationNumber, name=$name, scheduledAt=$scheduledAt, signature=$signature, state=$state, type=$type, updatedAt=$updatedAt, ]';
-  }
-
-  static List<Operation> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Operation>()
-        : json.map((value) => Operation.fromJson(value)).toList();
-  }
-
-  static Map<String, Operation> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Operation>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Operation.fromJson(value));
-    }
-    return map;
   }
 }

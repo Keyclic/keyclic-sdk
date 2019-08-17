@@ -36,19 +36,6 @@ class OrganizationPreferences {
   @override
   int get hashCode => 0 ^ public.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'public': public,
-      'reference': reference,
-      'reviewEnabled': reviewEnabled,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OrganizationPreferences[public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
-  }
-
   static List<OrganizationPreferences> listFromJson(List<dynamic> json) {
     return json == null
         ? List<OrganizationPreferences>()
@@ -63,5 +50,18 @@ class OrganizationPreferences {
           map[key] = OrganizationPreferences.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'public': public,
+      'reference': reference,
+      'reviewEnabled': reviewEnabled,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OrganizationPreferences[public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
   }
 }

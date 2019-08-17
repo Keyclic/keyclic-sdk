@@ -37,19 +37,6 @@ class OrganizationData {
   @override
   int get hashCode => 0 ^ name.hashCode ^ businessActivity.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'name': name,
-      'businessActivity': businessActivity,
-      'logo': logo,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OrganizationData[name=$name, businessActivity=$businessActivity, logo=$logo, ]';
-  }
-
   static List<OrganizationData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<OrganizationData>()
@@ -63,5 +50,18 @@ class OrganizationData {
           map[key] = OrganizationData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'businessActivity': businessActivity,
+      'logo': logo,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OrganizationData[name=$name, businessActivity=$businessActivity, logo=$logo, ]';
   }
 }

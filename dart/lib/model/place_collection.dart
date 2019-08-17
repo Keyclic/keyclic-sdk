@@ -26,17 +26,6 @@ class PlaceCollection {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'items': items,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PlaceCollection[items=$items, ]';
-  }
-
   static List<PlaceCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PlaceCollection>()
@@ -50,5 +39,16 @@ class PlaceCollection {
           map[key] = PlaceCollection.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'items': items,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PlaceCollection[items=$items, ]';
   }
 }

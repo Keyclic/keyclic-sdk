@@ -14,8 +14,8 @@ class DocumentFile {
     name = json['name'];
   }
 
+  /// enum contentTypeEnum {  text/csv,  application/msword,  application/vnd.openxmlformats-officedocument.wordprocessingml.document,  image/jpeg,  image/jpg,  application/pdf,  image/png,  text/plain,  application/vnd.ms-excel,  application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,  application/zip,  };
   String contentType;
-  //enum contentTypeEnum {  text/csv,  application/msword,  application/vnd.openxmlformats-officedocument.wordprocessingml.document,  image/jpeg,  image/jpg,  application/pdf,  image/png,  text/plain,  application/vnd.ms-excel,  application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,  application/zip,  };
 
   String name;
 
@@ -33,18 +33,6 @@ class DocumentFile {
   @override
   int get hashCode => 0 ^ contentType.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'contentType': contentType,
-      'name': name,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DocumentFile[contentType=$contentType, name=$name, ]';
-  }
-
   static List<DocumentFile> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DocumentFile>()
@@ -58,5 +46,17 @@ class DocumentFile {
           map[key] = DocumentFile.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'contentType': contentType,
+      'name': name,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DocumentFile[contentType=$contentType, name=$name, ]';
   }
 }

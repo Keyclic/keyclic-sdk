@@ -54,6 +54,21 @@ class OperationLinks {
   @override
   int get hashCode => 0;
 
+  static List<OperationLinks> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<OperationLinks>()
+        : json.map((value) => OperationLinks.fromJson(value)).toList();
+  }
+
+  static Map<String, OperationLinks> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, OperationLinks>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = OperationLinks.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'createdBy': createdBy,
@@ -70,20 +85,5 @@ class OperationLinks {
   @override
   String toString() {
     return 'OperationLinks[createdBy=$createdBy, feedback=$feedback, image=$image, images=$images, operator_=$operator_, report=$report, self=$self, tracking=$tracking, ]';
-  }
-
-  static List<OperationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OperationLinks>()
-        : json.map((value) => OperationLinks.fromJson(value)).toList();
-  }
-
-  static Map<String, OperationLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OperationLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationLinks.fromJson(value));
-    }
-    return map;
   }
 }

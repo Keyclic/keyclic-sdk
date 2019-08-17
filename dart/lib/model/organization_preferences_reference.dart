@@ -27,17 +27,6 @@ class OrganizationPreferencesReference {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'prefix': prefix,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OrganizationPreferencesReference[prefix=$prefix, ]';
-  }
-
   static List<OrganizationPreferencesReference> listFromJson(
       List<dynamic> json) {
     return json == null
@@ -55,5 +44,16 @@ class OrganizationPreferencesReference {
           map[key] = OrganizationPreferencesReference.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'prefix': prefix,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OrganizationPreferencesReference[prefix=$prefix, ]';
   }
 }

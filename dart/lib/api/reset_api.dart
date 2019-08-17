@@ -1,23 +1,27 @@
 part of keyclic_sdk_api.api;
 
 class ResetApi {
-  final ApiClient apiClient;
-
   ResetApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
+  final ApiClient apiClient;
 
   /// Create one Reset resource.
   ///
   ///
-  Future postReset(String xKeyclicApp, EmailData emailData,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody = emailData;
-
+  Future<void> postReset(
+    String xKeyclicApp,
+    EmailData emailData, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (emailData == null) {
-      throw ApiException(400, "Missing required param: emailData");
+      throw ApiException(0, "Missing required param: emailData");
     }
 
     // create path and map variables
@@ -26,8 +30,9 @@ class ResetApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -38,22 +43,19 @@ class ResetApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = [];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = emailData;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return;
-    } else {
+    }
+
+    if (response.body == null) {
       return;
     }
+
+    return;
   }
 }

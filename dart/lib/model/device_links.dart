@@ -26,17 +26,6 @@ class DeviceLinks {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'person': person,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DeviceLinks[person=$person, ]';
-  }
-
   static List<DeviceLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DeviceLinks>()
@@ -50,5 +39,16 @@ class DeviceLinks {
           map[key] = DeviceLinks.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'person': person,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DeviceLinks[person=$person, ]';
   }
 }

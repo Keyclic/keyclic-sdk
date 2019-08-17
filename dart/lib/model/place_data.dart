@@ -37,19 +37,6 @@ class PlaceData {
   @override
   int get hashCode => 0 ^ name.hashCode ^ polygon.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'name': name,
-      'branchCode': branchCode,
-      'polygon': polygon,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PlaceData[name=$name, branchCode=$branchCode, polygon=$polygon, ]';
-  }
-
   static List<PlaceData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PlaceData>()
@@ -63,5 +50,18 @@ class PlaceData {
           (String key, dynamic value) => map[key] = PlaceData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'branchCode': branchCode,
+      'polygon': polygon,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PlaceData[name=$name, branchCode=$branchCode, polygon=$polygon, ]';
   }
 }

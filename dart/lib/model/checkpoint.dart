@@ -38,19 +38,6 @@ class Checkpoint {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'state': state,
-      '_links': links,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'Checkpoint[createdAt=$createdAt, state=$state, links=$links, ]';
-  }
-
   static List<Checkpoint> listFromJson(List<dynamic> json) {
     return json == null
         ? List<Checkpoint>()
@@ -64,5 +51,18 @@ class Checkpoint {
           (String key, dynamic value) => map[key] = Checkpoint.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
+      'state': state,
+      '_links': links,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'Checkpoint[createdAt=$createdAt, state=$state, links=$links, ]';
   }
 }

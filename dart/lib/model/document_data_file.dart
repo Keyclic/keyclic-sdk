@@ -34,19 +34,6 @@ class DocumentDataFile {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'content': content,
-      'contentType': contentType,
-      'name': name,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DocumentDataFile[content=$content, contentType=$contentType, name=$name, ]';
-  }
-
   static List<DocumentDataFile> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DocumentDataFile>()
@@ -60,5 +47,18 @@ class DocumentDataFile {
           map[key] = DocumentDataFile.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'content': content,
+      'contentType': contentType,
+      'name': name,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DocumentDataFile[content=$content, contentType=$contentType, name=$name, ]';
   }
 }

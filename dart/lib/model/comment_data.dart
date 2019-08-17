@@ -28,17 +28,6 @@ class CommentData {
   @override
   int get hashCode => 0 ^ text.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'text': text,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'CommentData[text=$text, ]';
-  }
-
   static List<CommentData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<CommentData>()
@@ -52,5 +41,16 @@ class CommentData {
           map[key] = CommentData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'text': text,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'CommentData[text=$text, ]';
   }
 }

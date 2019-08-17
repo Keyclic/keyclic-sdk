@@ -30,18 +30,6 @@ class WebhookPatch {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'event': event,
-      'payloadUrl': payloadUrl,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'WebhookPatch[event=$event, payloadUrl=$payloadUrl, ]';
-  }
-
   static List<WebhookPatch> listFromJson(List<dynamic> json) {
     return json == null
         ? List<WebhookPatch>()
@@ -55,5 +43,17 @@ class WebhookPatch {
           map[key] = WebhookPatch.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'event': event,
+      'payloadUrl': payloadUrl,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'WebhookPatch[event=$event, payloadUrl=$payloadUrl, ]';
   }
 }

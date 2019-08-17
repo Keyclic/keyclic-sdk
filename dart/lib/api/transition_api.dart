@@ -1,32 +1,34 @@
 part of keyclic_sdk_api.api;
 
 class TransitionApi {
-  final ApiClient apiClient;
-
   TransitionApi([ApiClient apiClient])
       : apiClient = apiClient ?? defaultApiClient;
+
+  final ApiClient apiClient;
 
   /// Create one Transition resource.
   ///
   ///
   Future<Delegation> postTransitionByDelegation(
-      String xKeyclicApp,
-      ReportWorkflowTransitionData reportWorkflowTransitionData,
-      String delegation,
-      {String acceptLanguage,
-      String xKeyclicAppVersion}) async {
-    Object postBody = reportWorkflowTransitionData;
-
+    String xKeyclicApp,
+    ReportWorkflowTransitionData reportWorkflowTransitionData,
+    String delegation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (reportWorkflowTransitionData == null) {
       throw ApiException(
-          400, "Missing required param: reportWorkflowTransitionData");
+          0, "Missing required param: reportWorkflowTransitionData");
     }
+
     if (delegation == null) {
-      throw ApiException(400, "Missing required param: delegation");
+      throw ApiException(0, "Missing required param: delegation");
     }
 
     // create path and map variables
@@ -36,8 +38,9 @@ class TransitionApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -48,46 +51,45 @@ class TransitionApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = reportWorkflowTransitionData;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Delegation') as Delegation;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Delegation') as Delegation;
   }
 
   /// Create one Transition resource.
   ///
   ///
   Future<Feedback> postTransitionByFeedback(
-      String xKeyclicApp,
-      FeedbackWorkflowTransitionData feedbackWorkflowTransitionData,
-      String feedback,
-      {String acceptLanguage,
-      String xKeyclicAppVersion}) async {
-    Object postBody = feedbackWorkflowTransitionData;
-
+    String xKeyclicApp,
+    FeedbackWorkflowTransitionData feedbackWorkflowTransitionData,
+    String feedback, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (feedbackWorkflowTransitionData == null) {
       throw ApiException(
-          400, "Missing required param: feedbackWorkflowTransitionData");
+          0, "Missing required param: feedbackWorkflowTransitionData");
     }
+
     if (feedback == null) {
-      throw ApiException(400, "Missing required param: feedback");
+      throw ApiException(0, "Missing required param: feedback");
     }
 
     // create path and map variables
@@ -97,8 +99,9 @@ class TransitionApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -109,46 +112,45 @@ class TransitionApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = feedbackWorkflowTransitionData;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Feedback') as Feedback;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Feedback') as Feedback;
   }
 
   /// Create one Transition resource.
   ///
   ///
   Future<Operation> postTransitionByOperation(
-      String xKeyclicApp,
-      OperationWorkflowTransitionData operationWorkflowTransitionData,
-      String operation,
-      {String acceptLanguage,
-      String xKeyclicAppVersion}) async {
-    Object postBody = operationWorkflowTransitionData;
-
+    String xKeyclicApp,
+    OperationWorkflowTransitionData operationWorkflowTransitionData,
+    String operation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (operationWorkflowTransitionData == null) {
       throw ApiException(
-          400, "Missing required param: operationWorkflowTransitionData");
+          0, "Missing required param: operationWorkflowTransitionData");
     }
+
     if (operation == null) {
-      throw ApiException(400, "Missing required param: operation");
+      throw ApiException(0, "Missing required param: operation");
     }
 
     // create path and map variables
@@ -158,8 +160,9 @@ class TransitionApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -170,43 +173,45 @@ class TransitionApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = operationWorkflowTransitionData;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Operation') as Operation;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Operation') as Operation;
   }
 
   /// Create one Transition resource.
   ///
   ///
-  Future<Report> postTransitionByReport(String xKeyclicApp,
-      ReportWorkflowTransitionData reportWorkflowTransitionData, String report,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody = reportWorkflowTransitionData;
-
+  Future<Report> postTransitionByReport(
+    String xKeyclicApp,
+    ReportWorkflowTransitionData reportWorkflowTransitionData,
+    String report, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (reportWorkflowTransitionData == null) {
       throw ApiException(
-          400, "Missing required param: reportWorkflowTransitionData");
+          0, "Missing required param: reportWorkflowTransitionData");
     }
+
     if (report == null) {
-      throw ApiException(400, "Missing required param: report");
+      throw ApiException(0, "Missing required param: report");
     }
 
     // create path and map variables
@@ -216,8 +221,9 @@ class TransitionApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -228,22 +234,19 @@ class TransitionApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = reportWorkflowTransitionData;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Report') as Report;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Report') as Report;
   }
 }

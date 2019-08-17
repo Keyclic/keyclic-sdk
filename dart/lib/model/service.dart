@@ -60,6 +60,21 @@ class Service {
   @override
   int get hashCode => 0 ^ name.hashCode;
 
+  static List<Service> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Service>()
+        : json.map((value) => Service.fromJson(value)).toList();
+  }
+
+  static Map<String, Service> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Service>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Service.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'contactPoint': contactPoint,
@@ -75,20 +90,5 @@ class Service {
   @override
   String toString() {
     return 'Service[contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
-  }
-
-  static List<Service> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Service>()
-        : json.map((value) => Service.fromJson(value)).toList();
-  }
-
-  static Map<String, Service> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Service>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Service.fromJson(value));
-    }
-    return map;
   }
 }

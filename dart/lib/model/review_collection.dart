@@ -26,17 +26,6 @@ class ReviewCollection {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'items': items,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ReviewCollection[items=$items, ]';
-  }
-
   static List<ReviewCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ReviewCollection>()
@@ -50,5 +39,16 @@ class ReviewCollection {
           map[key] = ReviewCollection.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'items': items,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ReviewCollection[items=$items, ]';
   }
 }

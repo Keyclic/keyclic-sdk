@@ -27,17 +27,6 @@ class DocumentLinksSelfIriTemplate {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'mapping': mapping,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DocumentLinksSelfIriTemplate[mapping=$mapping, ]';
-  }
-
   static List<DocumentLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DocumentLinksSelfIriTemplate>()
@@ -54,5 +43,16 @@ class DocumentLinksSelfIriTemplate {
           map[key] = DocumentLinksSelfIriTemplate.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'mapping': mapping,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DocumentLinksSelfIriTemplate[mapping=$mapping, ]';
   }
 }

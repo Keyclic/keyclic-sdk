@@ -33,18 +33,6 @@ class LoginData {
   @override
   int get hashCode => 0 ^ login.hashCode ^ password.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'login': login,
-      'password': password,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'LoginData[login=$login, password=$password, ]';
-  }
-
   static List<LoginData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<LoginData>()
@@ -58,5 +46,17 @@ class LoginData {
           (String key, dynamic value) => map[key] = LoginData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'login': login,
+      'password': password,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'LoginData[login=$login, password=$password, ]';
   }
 }

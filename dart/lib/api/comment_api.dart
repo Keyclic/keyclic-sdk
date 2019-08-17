@@ -1,27 +1,29 @@
 part of keyclic_sdk_api.api;
 
 class CommentApi {
-  final ApiClient apiClient;
-
   CommentApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
+  final ApiClient apiClient;
 
   /// Retrieve all Comment resources.
   ///
   ///
   Future<ActivityPagination> cgetCommentsByFeedback(
-      String xKeyclicApp, String feedback,
-      {String acceptLanguage,
-      String xKeyclicAppVersion,
-      int page,
-      int limit}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String feedback, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+    int page,
+    int limit,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (feedback == null) {
-      throw ApiException(400, "Missing required param: feedback");
+      throw ApiException(0, "Missing required param: feedback");
     }
 
     // create path and map variables
@@ -31,8 +33,6 @@ class CommentApi {
 
     // query params
     List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     if (page != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "page", page));
@@ -41,6 +41,9 @@ class CommentApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
+
+    // header params
+    Map<String, String> headerParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -51,43 +54,42 @@ class CommentApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'ActivityPagination')
-          as ActivityPagination;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'ActivityPagination')
+        as ActivityPagination;
   }
 
   /// Retrieve all Comment resources.
   ///
   ///
   Future<ActivityPagination> cgetCommentsByOperation(
-      String xKeyclicApp, String operation,
-      {String acceptLanguage,
-      String xKeyclicAppVersion,
-      int page,
-      int limit}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String operation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+    int page,
+    int limit,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (operation == null) {
-      throw ApiException(400, "Missing required param: operation");
+      throw ApiException(0, "Missing required param: operation");
     }
 
     // create path and map variables
@@ -97,8 +99,6 @@ class CommentApi {
 
     // query params
     List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     if (page != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "page", page));
@@ -107,6 +107,9 @@ class CommentApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
+
+    // header params
+    Map<String, String> headerParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -117,43 +120,45 @@ class CommentApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'ActivityPagination')
-          as ActivityPagination;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'ActivityPagination')
+        as ActivityPagination;
   }
 
   /// Create one Comment resource.
   ///
   ///
   Future<Feedback> postCommentByFeedback(
-      String xKeyclicApp, CommentData commentData, String feedback,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody = commentData;
-
+    String xKeyclicApp,
+    CommentData commentData,
+    String feedback, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (commentData == null) {
-      throw ApiException(400, "Missing required param: commentData");
+      throw ApiException(0, "Missing required param: commentData");
     }
+
     if (feedback == null) {
-      throw ApiException(400, "Missing required param: feedback");
+      throw ApiException(0, "Missing required param: feedback");
     }
 
     // create path and map variables
@@ -163,8 +168,9 @@ class CommentApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -175,42 +181,44 @@ class CommentApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = commentData;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Feedback') as Feedback;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Feedback') as Feedback;
   }
 
   /// Create one Comment resource.
   ///
   ///
   Future<Operation> postCommentByOperation(
-      String xKeyclicApp, CommentData commentData, String operation,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody = commentData;
-
+    String xKeyclicApp,
+    CommentData commentData,
+    String operation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (commentData == null) {
-      throw ApiException(400, "Missing required param: commentData");
+      throw ApiException(0, "Missing required param: commentData");
     }
+
     if (operation == null) {
-      throw ApiException(400, "Missing required param: operation");
+      throw ApiException(0, "Missing required param: operation");
     }
 
     // create path and map variables
@@ -220,8 +228,9 @@ class CommentApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -232,22 +241,19 @@ class CommentApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = commentData;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Operation') as Operation;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Operation') as Operation;
   }
 }

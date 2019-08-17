@@ -1,36 +1,38 @@
 part of keyclic_sdk_api.api;
 
 class ReportApi {
-  final ApiClient apiClient;
-
   ReportApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
+  final ApiClient apiClient;
 
   /// Retrieve all Report resources.
   ///
   ///
   Future<ReportPagination> cgetReportsByOrganization(
-      String xKeyclicApp, String organization,
-      {String acceptLanguage,
-      String xKeyclicAppVersion,
-      String assignedTo,
-      String category,
-      DateTime after,
-      DateTime before,
-      String delegatedTo,
-      String order,
-      String place,
-      String query,
-      String state,
-      int page,
-      int limit}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String organization, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+    String assignedTo,
+    String category,
+    DateTime after,
+    DateTime before,
+    String delegatedTo,
+    String order,
+    String place,
+    String query,
+    String state,
+    int page,
+    int limit,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (organization == null) {
-      throw ApiException(400, "Missing required param: organization");
+      throw ApiException(0, "Missing required param: organization");
     }
 
     // create path and map variables
@@ -40,8 +42,6 @@ class ReportApi {
 
     // query params
     List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     if (assignedTo != null) {
       queryParams.addAll(
           _convertParametersForCollectionFormat("", "assigned_to", assignedTo));
@@ -86,6 +86,9 @@ class ReportApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
+
+    // header params
+    Map<String, String> headerParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -96,39 +99,40 @@ class ReportApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'ReportPagination')
-          as ReportPagination;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'ReportPagination')
+        as ReportPagination;
   }
 
   /// Retrieve one Report resource.
   ///
   ///
-  Future<Report> getReport(String xKeyclicApp, String report,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody;
-
+  Future<Report> getReport(
+    String xKeyclicApp,
+    String report, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (report == null) {
-      throw ApiException(400, "Missing required param: report");
+      throw ApiException(0, "Missing required param: report");
     }
 
     // create path and map variables
@@ -138,8 +142,9 @@ class ReportApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -150,42 +155,44 @@ class ReportApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Report') as Report;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Report') as Report;
   }
 
   /// Edit one Report resource.
   ///
   ///
   Future<Report> patchReport(
-      String xKeyclicApp, ReportPatch reportPatch, String report,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody = reportPatch;
-
+    String xKeyclicApp,
+    ReportPatch reportPatch,
+    String report, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (reportPatch == null) {
-      throw ApiException(400, "Missing required param: reportPatch");
+      throw ApiException(0, "Missing required param: reportPatch");
     }
+
     if (report == null) {
-      throw ApiException(400, "Missing required param: report");
+      throw ApiException(0, "Missing required param: report");
     }
 
     // create path and map variables
@@ -195,8 +202,9 @@ class ReportApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -207,22 +215,19 @@ class ReportApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = reportPatch;
 
     var response = await apiClient.invokeAPI(path, 'PATCH', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Report') as Report;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Report') as Report;
   }
 }

@@ -26,17 +26,6 @@ class CheckpointLinks {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'organization': organization,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'CheckpointLinks[organization=$organization, ]';
-  }
-
   static List<CheckpointLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? List<CheckpointLinks>()
@@ -50,5 +39,16 @@ class CheckpointLinks {
           map[key] = CheckpointLinks.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'organization': organization,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'CheckpointLinks[organization=$organization, ]';
   }
 }

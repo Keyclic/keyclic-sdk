@@ -49,6 +49,21 @@ class BusinessActivity {
   @override
   int get hashCode => 0 ^ name.hashCode;
 
+  static List<BusinessActivity> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<BusinessActivity>()
+        : json.map((value) => BusinessActivity.fromJson(value)).toList();
+  }
+
+  static Map<String, BusinessActivity> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, BusinessActivity>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = BusinessActivity.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       '_links': links,
@@ -63,20 +78,5 @@ class BusinessActivity {
   @override
   String toString() {
     return 'BusinessActivity[links=$links, alternateName=$alternateName, id=$id, metadataSchema=$metadataSchema, name=$name, type=$type, ]';
-  }
-
-  static List<BusinessActivity> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<BusinessActivity>()
-        : json.map((value) => BusinessActivity.fromJson(value)).toList();
-  }
-
-  static Map<String, BusinessActivity> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, BusinessActivity>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = BusinessActivity.fromJson(value));
-    }
-    return map;
   }
 }

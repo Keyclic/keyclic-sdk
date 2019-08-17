@@ -43,21 +43,6 @@ class OperationPatch {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'description': description,
-      'identificationNumber': identificationNumber,
-      'name': name,
-      'scheduledAt':
-          scheduledAt == null ? '' : scheduledAt.toUtc().toIso8601String(),
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OperationPatch[description=$description, identificationNumber=$identificationNumber, name=$name, scheduledAt=$scheduledAt, ]';
-  }
-
   static List<OperationPatch> listFromJson(List<dynamic> json) {
     return json == null
         ? List<OperationPatch>()
@@ -71,5 +56,20 @@ class OperationPatch {
           map[key] = OperationPatch.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'description': description,
+      'identificationNumber': identificationNumber,
+      'name': name,
+      'scheduledAt':
+          scheduledAt == null ? '' : scheduledAt.toUtc().toIso8601String(),
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OperationPatch[description=$description, identificationNumber=$identificationNumber, name=$name, scheduledAt=$scheduledAt, ]';
   }
 }

@@ -1,27 +1,32 @@
 part of keyclic_sdk_api.api;
 
 class ChangeApi {
-  final ApiClient apiClient;
-
   ChangeApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
+  final ApiClient apiClient;
 
   /// Create one Change resource.
   ///
   ///
-  Future postChangeByToken(
-      String xKeyclicApp, PasswordData passwordData, String token,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody = passwordData;
-
+  Future<void> postChangeByToken(
+    String xKeyclicApp,
+    PasswordData passwordData,
+    String token, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (passwordData == null) {
-      throw ApiException(400, "Missing required param: passwordData");
+      throw ApiException(0, "Missing required param: passwordData");
     }
+
     if (token == null) {
-      throw ApiException(400, "Missing required param: token");
+      throw ApiException(0, "Missing required param: token");
     }
 
     // create path and map variables
@@ -31,8 +36,9 @@ class ChangeApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -43,22 +49,19 @@ class ChangeApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = [];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = passwordData;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return;
-    } else {
+    }
+
+    if (response.body == null) {
       return;
     }
+
+    return;
   }
 }

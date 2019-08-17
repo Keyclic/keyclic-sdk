@@ -30,18 +30,6 @@ class ActivitySubject {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'type': type,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ActivitySubject[id=$id, type=$type, ]';
-  }
-
   static List<ActivitySubject> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ActivitySubject>()
@@ -55,5 +43,17 @@ class ActivitySubject {
           map[key] = ActivitySubject.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'type': type,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ActivitySubject[id=$id, type=$type, ]';
   }
 }

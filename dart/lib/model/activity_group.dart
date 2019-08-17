@@ -70,6 +70,21 @@ class ActivityGroup {
   @override
   int get hashCode => 0;
 
+  static List<ActivityGroup> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<ActivityGroup>()
+        : json.map((value) => ActivityGroup.fromJson(value)).toList();
+  }
+
+  static Map<String, ActivityGroup> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, ActivityGroup>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = ActivityGroup.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'activities': activities,
@@ -90,20 +105,5 @@ class ActivityGroup {
   @override
   String toString() {
     return 'ActivityGroup[activities=$activities, activityCount=$activityCount, actorCount=$actorCount, createdAt=$createdAt, group=$group, id=$id, updatedAt=$updatedAt, verb=$verb, isRead=$isRead, isSeen=$isSeen, ]';
-  }
-
-  static List<ActivityGroup> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ActivityGroup>()
-        : json.map((value) => ActivityGroup.fromJson(value)).toList();
-  }
-
-  static Map<String, ActivityGroup> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ActivityGroup>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ActivityGroup.fromJson(value));
-    }
-    return map;
   }
 }

@@ -26,17 +26,6 @@ class PropertyItems {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'oneOf': oneOf,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PropertyItems[oneOf=$oneOf, ]';
-  }
-
   static List<PropertyItems> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PropertyItems>()
@@ -50,5 +39,16 @@ class PropertyItems {
           map[key] = PropertyItems.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'oneOf': oneOf,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PropertyItems[oneOf=$oneOf, ]';
   }
 }

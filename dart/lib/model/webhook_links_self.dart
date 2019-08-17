@@ -31,18 +31,6 @@ class WebhookLinksSelf {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'WebhookLinksSelf[href=$href, iriTemplate=$iriTemplate, ]';
-  }
-
   static List<WebhookLinksSelf> listFromJson(List<dynamic> json) {
     return json == null
         ? List<WebhookLinksSelf>()
@@ -56,5 +44,17 @@ class WebhookLinksSelf {
           map[key] = WebhookLinksSelf.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'WebhookLinksSelf[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

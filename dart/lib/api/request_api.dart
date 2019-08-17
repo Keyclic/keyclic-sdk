@@ -1,30 +1,32 @@
 part of keyclic_sdk_api.api;
 
 class RequestApi {
-  final ApiClient apiClient;
-
   RequestApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
+  final ApiClient apiClient;
 
   /// Retrieve all Request resources.
   ///
   ///
   Future<FeedbackReviewRequestPagination> cgetRequestsByPerson(
-      String xKeyclicApp, String person,
-      {String acceptLanguage,
-      String xKeyclicAppVersion,
-      DateTime after,
-      DateTime before,
-      String order,
-      int page,
-      int limit}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String person, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+    DateTime after,
+    DateTime before,
+    String order,
+    int page,
+    int limit,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (person == null) {
-      throw ApiException(400, "Missing required param: person");
+      throw ApiException(0, "Missing required param: person");
     }
 
     // create path and map variables
@@ -34,8 +36,6 @@ class RequestApi {
 
     // query params
     List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     if (after != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "after", after));
@@ -56,6 +56,9 @@ class RequestApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
+
+    // header params
+    Map<String, String> headerParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -66,24 +69,21 @@ class RequestApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(
-              response.body, 'FeedbackReviewRequestPagination')
-          as FeedbackReviewRequestPagination;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(
+            response.body, 'FeedbackReviewRequestPagination')
+        as FeedbackReviewRequestPagination;
   }
 }

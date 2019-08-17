@@ -32,18 +32,6 @@ class BusinessActivityMetadataSchema {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'properties': properties,
-      'required': required,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'BusinessActivityMetadataSchema[properties=$properties, required=$required, ]';
-  }
-
   static List<BusinessActivityMetadataSchema> listFromJson(List<dynamic> json) {
     return json == null
         ? List<BusinessActivityMetadataSchema>()
@@ -60,5 +48,17 @@ class BusinessActivityMetadataSchema {
           map[key] = BusinessActivityMetadataSchema.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'properties': properties,
+      'required': required,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'BusinessActivityMetadataSchema[properties=$properties, required=$required, ]';
   }
 }

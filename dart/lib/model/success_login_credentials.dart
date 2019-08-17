@@ -43,21 +43,6 @@ class SuccessLoginCredentials {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'login': login,
-      'roles': roles,
-      'administratorOf': administratorOf,
-      'memberOf': memberOf,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'SuccessLoginCredentials[id=$id, login=$login, roles=$roles, administratorOf=$administratorOf, memberOf=$memberOf, ]';
-  }
-
   static List<SuccessLoginCredentials> listFromJson(List<dynamic> json) {
     return json == null
         ? List<SuccessLoginCredentials>()
@@ -72,5 +57,20 @@ class SuccessLoginCredentials {
           map[key] = SuccessLoginCredentials.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'login': login,
+      'roles': roles,
+      'administratorOf': administratorOf,
+      'memberOf': memberOf,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'SuccessLoginCredentials[id=$id, login=$login, roles=$roles, administratorOf=$administratorOf, memberOf=$memberOf, ]';
   }
 }

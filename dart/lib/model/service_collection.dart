@@ -26,17 +26,6 @@ class ServiceCollection {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'items': items,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ServiceCollection[items=$items, ]';
-  }
-
   static List<ServiceCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ServiceCollection>()
@@ -50,5 +39,16 @@ class ServiceCollection {
           map[key] = ServiceCollection.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'items': items,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ServiceCollection[items=$items, ]';
   }
 }

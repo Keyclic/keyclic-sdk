@@ -50,21 +50,6 @@ class FeedbackReviewRequest {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      '_links': links,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'id': id,
-      'type': type,
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackReviewRequest[links=$links, createdAt=$createdAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
-  }
-
   static List<FeedbackReviewRequest> listFromJson(List<dynamic> json) {
     return json == null
         ? List<FeedbackReviewRequest>()
@@ -79,5 +64,20 @@ class FeedbackReviewRequest {
           map[key] = FeedbackReviewRequest.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
+      'id': id,
+      'type': type,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackReviewRequest[links=$links, createdAt=$createdAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
   }
 }

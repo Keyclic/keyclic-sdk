@@ -12,8 +12,8 @@ class FeedbackStatePatch {
     transition = json['transition'];
   }
 
+  /// enum transitionEnum {  deliver,  dispatch,  fail,  process,  publish,  success,  };
   String transition;
-  //enum transitionEnum {  deliver,  dispatch,  fail,  process,  publish,  success,  };
 
   @override
   bool operator ==(dynamic other) {
@@ -29,17 +29,6 @@ class FeedbackStatePatch {
   @override
   int get hashCode => 0 ^ transition.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'transition': transition,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackStatePatch[transition=$transition, ]';
-  }
-
   static List<FeedbackStatePatch> listFromJson(List<dynamic> json) {
     return json == null
         ? List<FeedbackStatePatch>()
@@ -54,5 +43,16 @@ class FeedbackStatePatch {
           map[key] = FeedbackStatePatch.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'transition': transition,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackStatePatch[transition=$transition, ]';
   }
 }

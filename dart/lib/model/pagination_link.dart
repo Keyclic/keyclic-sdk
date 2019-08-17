@@ -26,17 +26,6 @@ class PaginationLink {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PaginationLink[href=$href, ]';
-  }
-
   static List<PaginationLink> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PaginationLink>()
@@ -50,5 +39,16 @@ class PaginationLink {
           map[key] = PaginationLink.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PaginationLink[href=$href, ]';
   }
 }

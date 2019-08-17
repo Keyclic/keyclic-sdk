@@ -27,17 +27,6 @@ class DelegationLinksSelfIriTemplateMapping {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'delegation': delegation,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DelegationLinksSelfIriTemplateMapping[delegation=$delegation, ]';
-  }
-
   static List<DelegationLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
@@ -56,5 +45,16 @@ class DelegationLinksSelfIriTemplateMapping {
           map[key] = DelegationLinksSelfIriTemplateMapping.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'delegation': delegation,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DelegationLinksSelfIriTemplateMapping[delegation=$delegation, ]';
   }
 }

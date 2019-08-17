@@ -46,6 +46,21 @@ class ServicePagination {
   @override
   int get hashCode => 0;
 
+  static List<ServicePagination> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<ServicePagination>()
+        : json.map((value) => ServicePagination.fromJson(value)).toList();
+  }
+
+  static Map<String, ServicePagination> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, ServicePagination>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = ServicePagination.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'limit': limit,
@@ -60,20 +75,5 @@ class ServicePagination {
   @override
   String toString() {
     return 'ServicePagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
-  }
-
-  static List<ServicePagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ServicePagination>()
-        : json.map((value) => ServicePagination.fromJson(value)).toList();
-  }
-
-  static Map<String, ServicePagination> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ServicePagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ServicePagination.fromJson(value));
-    }
-    return map;
   }
 }

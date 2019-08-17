@@ -34,19 +34,6 @@ class MemberLinks {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'organization': organization,
-      'person': person,
-      'self': self,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'MemberLinks[organization=$organization, person=$person, self=$self, ]';
-  }
-
   static List<MemberLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? List<MemberLinks>()
@@ -60,5 +47,18 @@ class MemberLinks {
           map[key] = MemberLinks.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'organization': organization,
+      'person': person,
+      'self': self,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'MemberLinks[organization=$organization, person=$person, self=$self, ]';
   }
 }

@@ -34,19 +34,6 @@ class FeedbackDataGeoPoint {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'latitude': latitude,
-      'longitude': longitude,
-      'srid': srid,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackDataGeoPoint[latitude=$latitude, longitude=$longitude, srid=$srid, ]';
-  }
-
   static List<FeedbackDataGeoPoint> listFromJson(List<dynamic> json) {
     return json == null
         ? List<FeedbackDataGeoPoint>()
@@ -61,5 +48,18 @@ class FeedbackDataGeoPoint {
           map[key] = FeedbackDataGeoPoint.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'latitude': latitude,
+      'longitude': longitude,
+      'srid': srid,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackDataGeoPoint[latitude=$latitude, longitude=$longitude, srid=$srid, ]';
   }
 }

@@ -35,19 +35,6 @@ class Feature {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'type': type,
-      'geometry': geometry,
-      'properties': properties,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'Feature[type=$type, geometry=$geometry, properties=$properties, ]';
-  }
-
   static List<Feature> listFromJson(List<dynamic> json) {
     return json == null
         ? List<Feature>()
@@ -61,5 +48,18 @@ class Feature {
           (String key, dynamic value) => map[key] = Feature.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'type': type,
+      'geometry': geometry,
+      'properties': properties,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'Feature[type=$type, geometry=$geometry, properties=$properties, ]';
   }
 }

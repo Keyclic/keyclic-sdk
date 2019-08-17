@@ -32,18 +32,6 @@ class SignatureData {
   @override
   int get hashCode => 0 ^ image.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'signer': signer,
-      'image': image,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'SignatureData[signer=$signer, image=$image, ]';
-  }
-
   static List<SignatureData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<SignatureData>()
@@ -57,5 +45,17 @@ class SignatureData {
           map[key] = SignatureData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'signer': signer,
+      'image': image,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'SignatureData[signer=$signer, image=$image, ]';
   }
 }

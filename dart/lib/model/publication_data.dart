@@ -38,19 +38,6 @@ class PublicationData {
   @override
   int get hashCode => 0 ^ message.hashCode ^ place.hashCode ^ title.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'message': message,
-      'place': place,
-      'title': title,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PublicationData[message=$message, place=$place, title=$title, ]';
-  }
-
   static List<PublicationData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PublicationData>()
@@ -64,5 +51,18 @@ class PublicationData {
           map[key] = PublicationData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'message': message,
+      'place': place,
+      'title': title,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PublicationData[message=$message, place=$place, title=$title, ]';
   }
 }

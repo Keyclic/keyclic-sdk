@@ -51,6 +51,21 @@ class Webhook {
   int get hashCode =>
       0 ^ enabled.hashCode ^ event.hashCode ^ payloadUrl.hashCode;
 
+  static List<Webhook> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Webhook>()
+        : json.map((value) => Webhook.fromJson(value)).toList();
+  }
+
+  static Map<String, Webhook> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Webhook>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Webhook.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       '_links': links,
@@ -65,20 +80,5 @@ class Webhook {
   @override
   String toString() {
     return 'Webhook[links=$links, enabled=$enabled, event=$event, id=$id, payloadUrl=$payloadUrl, type=$type, ]';
-  }
-
-  static List<Webhook> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Webhook>()
-        : json.map((value) => Webhook.fromJson(value)).toList();
-  }
-
-  static Map<String, Webhook> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Webhook>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Webhook.fromJson(value));
-    }
-    return map;
   }
 }

@@ -31,18 +31,6 @@ class Schema {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'properties': properties,
-      'required': required,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'Schema[properties=$properties, required=$required, ]';
-  }
-
   static List<Schema> listFromJson(List<dynamic> json) {
     return json == null
         ? List<Schema>()
@@ -56,5 +44,17 @@ class Schema {
           (String key, dynamic value) => map[key] = Schema.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'properties': properties,
+      'required': required,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'Schema[properties=$properties, required=$required, ]';
   }
 }

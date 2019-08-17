@@ -28,17 +28,6 @@ class DocumentLinksCreatedByIriTemplate {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'mapping': mapping,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DocumentLinksCreatedByIriTemplate[mapping=$mapping, ]';
-  }
-
   static List<DocumentLinksCreatedByIriTemplate> listFromJson(
       List<dynamic> json) {
     return json == null
@@ -56,5 +45,16 @@ class DocumentLinksCreatedByIriTemplate {
           map[key] = DocumentLinksCreatedByIriTemplate.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'mapping': mapping,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DocumentLinksCreatedByIriTemplate[mapping=$mapping, ]';
   }
 }

@@ -84,6 +84,21 @@ class Person {
   @override
   int get hashCode => 0 ^ optIn.hashCode;
 
+  static List<Person> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Person>()
+        : json.map((value) => Person.fromJson(value)).toList();
+  }
+
+  static Map<String, Person> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Person>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Person.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       '_links': links,
@@ -105,20 +120,5 @@ class Person {
   @override
   String toString() {
     return 'Person[links=$links, createdAt=$createdAt, email=$email, familyName=$familyName, givenName=$givenName, id=$id, jobTitle=$jobTitle, optIn=$optIn, preferences=$preferences, telephone=$telephone, type=$type, updatedAt=$updatedAt, username=$username, ]';
-  }
-
-  static List<Person> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Person>()
-        : json.map((value) => Person.fromJson(value)).toList();
-  }
-
-  static Map<String, Person> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Person>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Person.fromJson(value));
-    }
-    return map;
   }
 }

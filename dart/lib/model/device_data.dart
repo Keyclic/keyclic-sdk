@@ -32,18 +32,6 @@ class DeviceData {
   @override
   int get hashCode => 0 ^ token.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'token': token,
-      'platform': platform,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DeviceData[token=$token, platform=$platform, ]';
-  }
-
   static List<DeviceData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DeviceData>()
@@ -57,5 +45,17 @@ class DeviceData {
           (String key, dynamic value) => map[key] = DeviceData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'token': token,
+      'platform': platform,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DeviceData[token=$token, platform=$platform, ]';
   }
 }

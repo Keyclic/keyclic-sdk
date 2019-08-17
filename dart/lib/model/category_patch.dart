@@ -38,20 +38,6 @@ class CategoryPatch {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'color': color,
-      'icon': icon,
-      'identificationNumber': identificationNumber,
-      'name': name,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'CategoryPatch[color=$color, icon=$icon, identificationNumber=$identificationNumber, name=$name, ]';
-  }
-
   static List<CategoryPatch> listFromJson(List<dynamic> json) {
     return json == null
         ? List<CategoryPatch>()
@@ -65,5 +51,19 @@ class CategoryPatch {
           map[key] = CategoryPatch.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'color': color,
+      'icon': icon,
+      'identificationNumber': identificationNumber,
+      'name': name,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'CategoryPatch[color=$color, icon=$icon, identificationNumber=$identificationNumber, name=$name, ]';
   }
 }

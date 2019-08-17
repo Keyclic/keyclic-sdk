@@ -69,6 +69,21 @@ class Feedback {
   @override
   int get hashCode => 0 ^ geoCoordinates.hashCode;
 
+  static List<Feedback> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Feedback>()
+        : json.map((value) => Feedback.fromJson(value)).toList();
+  }
+
+  static Map<String, Feedback> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Feedback>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Feedback.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       '_embedded': embedded,
@@ -87,20 +102,5 @@ class Feedback {
   @override
   String toString() {
     return 'Feedback[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, geoCoordinates=$geoCoordinates, id=$id, metadata=$metadata, public=$public, state=$state, type=$type, ]';
-  }
-
-  static List<Feedback> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Feedback>()
-        : json.map((value) => Feedback.fromJson(value)).toList();
-  }
-
-  static Map<String, Feedback> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Feedback>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Feedback.fromJson(value));
-    }
-    return map;
   }
 }

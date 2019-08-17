@@ -26,17 +26,6 @@ class WebhookCollection {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'items': items,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'WebhookCollection[items=$items, ]';
-  }
-
   static List<WebhookCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? List<WebhookCollection>()
@@ -50,5 +39,16 @@ class WebhookCollection {
           map[key] = WebhookCollection.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'items': items,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'WebhookCollection[items=$items, ]';
   }
 }

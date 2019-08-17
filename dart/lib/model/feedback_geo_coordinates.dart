@@ -10,12 +10,13 @@ class FeedbackGeoCoordinates {
     if (json == null) {
       return;
     }
-    elevation = json['elevation']?.toDouble();
+    elevation = json['elevation'];
     point = FeedbackGeoCoordinatesPoint.fromJson(json['point']);
   }
 
+  /// range from -10000 to 8000
+
   double elevation;
-  // range from -10000 to 8000//
 
   FeedbackGeoCoordinatesPoint point;
 
@@ -33,18 +34,6 @@ class FeedbackGeoCoordinates {
   @override
   int get hashCode => 0 ^ point.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'elevation': elevation,
-      'point': point,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackGeoCoordinates[elevation=$elevation, point=$point, ]';
-  }
-
   static List<FeedbackGeoCoordinates> listFromJson(List<dynamic> json) {
     return json == null
         ? List<FeedbackGeoCoordinates>()
@@ -59,5 +48,17 @@ class FeedbackGeoCoordinates {
           map[key] = FeedbackGeoCoordinates.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'elevation': elevation,
+      'point': point,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackGeoCoordinates[elevation=$elevation, point=$point, ]';
   }
 }

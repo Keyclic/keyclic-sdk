@@ -26,17 +26,6 @@ class PersonCollection {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'items': items,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PersonCollection[items=$items, ]';
-  }
-
   static List<PersonCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PersonCollection>()
@@ -50,5 +39,16 @@ class PersonCollection {
           map[key] = PersonCollection.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'items': items,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PersonCollection[items=$items, ]';
   }
 }

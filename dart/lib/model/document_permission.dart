@@ -26,17 +26,6 @@ class DocumentPermission {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'targetGroup': targetGroup,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DocumentPermission[targetGroup=$targetGroup, ]';
-  }
-
   static List<DocumentPermission> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DocumentPermission>()
@@ -51,5 +40,16 @@ class DocumentPermission {
           map[key] = DocumentPermission.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'targetGroup': targetGroup,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DocumentPermission[targetGroup=$targetGroup, ]';
   }
 }

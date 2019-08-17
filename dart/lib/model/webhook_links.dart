@@ -30,18 +30,6 @@ class WebhookLinks {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'organization': organization,
-      'self': self,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'WebhookLinks[organization=$organization, self=$self, ]';
-  }
-
   static List<WebhookLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? List<WebhookLinks>()
@@ -55,5 +43,17 @@ class WebhookLinks {
           map[key] = WebhookLinks.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'organization': organization,
+      'self': self,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'WebhookLinks[organization=$organization, self=$self, ]';
   }
 }

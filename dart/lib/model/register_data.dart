@@ -33,18 +33,6 @@ class RegisterData {
   @override
   int get hashCode => 0 ^ email.hashCode ^ password.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'email': email,
-      'password': password,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'RegisterData[email=$email, password=$password, ]';
-  }
-
   static List<RegisterData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<RegisterData>()
@@ -58,5 +46,17 @@ class RegisterData {
           map[key] = RegisterData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'email': email,
+      'password': password,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'RegisterData[email=$email, password=$password, ]';
   }
 }

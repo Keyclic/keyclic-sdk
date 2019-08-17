@@ -28,17 +28,6 @@ class DelegationLinksCreatedByIriTemplateMapping {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'person': person,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DelegationLinksCreatedByIriTemplateMapping[person=$person, ]';
-  }
-
   static List<DelegationLinksCreatedByIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
@@ -57,5 +46,16 @@ class DelegationLinksCreatedByIriTemplateMapping {
           DelegationLinksCreatedByIriTemplateMapping.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'person': person,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DelegationLinksCreatedByIriTemplateMapping[person=$person, ]';
   }
 }

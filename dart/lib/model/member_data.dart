@@ -28,17 +28,6 @@ class MemberData {
   @override
   int get hashCode => 0 ^ member.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'member': member,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'MemberData[member=$member, ]';
-  }
-
   static List<MemberData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<MemberData>()
@@ -52,5 +41,16 @@ class MemberData {
           (String key, dynamic value) => map[key] = MemberData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'member': member,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'MemberData[member=$member, ]';
   }
 }

@@ -34,19 +34,6 @@ class SuccessLogin {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'accessToken': accessToken,
-      'credentials': credentials,
-      'tokenType': tokenType,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'SuccessLogin[accessToken=$accessToken, credentials=$credentials, tokenType=$tokenType, ]';
-  }
-
   static List<SuccessLogin> listFromJson(List<dynamic> json) {
     return json == null
         ? List<SuccessLogin>()
@@ -60,5 +47,18 @@ class SuccessLogin {
           map[key] = SuccessLogin.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'accessToken': accessToken,
+      'credentials': credentials,
+      'tokenType': tokenType,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'SuccessLogin[accessToken=$accessToken, credentials=$credentials, tokenType=$tokenType, ]';
   }
 }

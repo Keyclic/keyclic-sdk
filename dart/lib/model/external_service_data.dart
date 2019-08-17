@@ -32,18 +32,6 @@ class ExternalServiceData {
   @override
   int get hashCode => 0 ^ organization.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'organization': organization,
-      'name': name,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ExternalServiceData[organization=$organization, name=$name, ]';
-  }
-
   static List<ExternalServiceData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ExternalServiceData>()
@@ -58,5 +46,17 @@ class ExternalServiceData {
           map[key] = ExternalServiceData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'organization': organization,
+      'name': name,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ExternalServiceData[organization=$organization, name=$name, ]';
   }
 }

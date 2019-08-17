@@ -28,17 +28,6 @@ class EmailData {
   @override
   int get hashCode => 0 ^ email.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'email': email,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'EmailData[email=$email, ]';
-  }
-
   static List<EmailData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<EmailData>()
@@ -52,5 +41,16 @@ class EmailData {
           (String key, dynamic value) => map[key] = EmailData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'email': email,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'EmailData[email=$email, ]';
   }
 }

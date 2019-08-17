@@ -33,18 +33,6 @@ class DocumentData {
   @override
   int get hashCode => 0 ^ file.hashCode ^ permission.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'file': file,
-      'permission': permission,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DocumentData[file=$file, permission=$permission, ]';
-  }
-
   static List<DocumentData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DocumentData>()
@@ -58,5 +46,17 @@ class DocumentData {
           map[key] = DocumentData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'file': file,
+      'permission': permission,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DocumentData[file=$file, permission=$permission, ]';
   }
 }

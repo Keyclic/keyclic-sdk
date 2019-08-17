@@ -28,17 +28,6 @@ class FacebookConnectData {
   @override
   int get hashCode => 0 ^ accessToken.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'accessToken': accessToken,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FacebookConnectData[accessToken=$accessToken, ]';
-  }
-
   static List<FacebookConnectData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<FacebookConnectData>()
@@ -53,5 +42,16 @@ class FacebookConnectData {
           map[key] = FacebookConnectData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'accessToken': accessToken,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FacebookConnectData[accessToken=$accessToken, ]';
   }
 }

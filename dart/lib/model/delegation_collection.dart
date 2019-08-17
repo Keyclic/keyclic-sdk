@@ -26,17 +26,6 @@ class DelegationCollection {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'items': items,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DelegationCollection[items=$items, ]';
-  }
-
   static List<DelegationCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DelegationCollection>()
@@ -51,5 +40,16 @@ class DelegationCollection {
           map[key] = DelegationCollection.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'items': items,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DelegationCollection[items=$items, ]';
   }
 }

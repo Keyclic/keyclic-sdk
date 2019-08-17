@@ -50,6 +50,21 @@ class Member {
   @override
   int get hashCode => 0;
 
+  static List<Member> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Member>()
+        : json.map((value) => Member.fromJson(value)).toList();
+  }
+
+  static Map<String, Member> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Member>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Member.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       '_embedded': embedded,
@@ -64,20 +79,5 @@ class Member {
   @override
   String toString() {
     return 'Member[embedded=$embedded, links=$links, createdAt=$createdAt, id=$id, roles=$roles, type=$type, ]';
-  }
-
-  static List<Member> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Member>()
-        : json.map((value) => Member.fromJson(value)).toList();
-  }
-
-  static Map<String, Member> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Member>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Member.fromJson(value));
-    }
-    return map;
   }
 }

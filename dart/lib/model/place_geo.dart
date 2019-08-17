@@ -12,7 +12,7 @@ class PlaceGeo {
       return;
     }
     centroid = PlaceGeoCentroid.fromJson(json['centroid']);
-    elevation = json['elevation']?.toDouble();
+    elevation = json['elevation'];
     polygon = PlaceGeoPolygon.fromJson(json['polygon']);
   }
 
@@ -36,19 +36,6 @@ class PlaceGeo {
   @override
   int get hashCode => 0 ^ polygon.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'centroid': centroid,
-      'elevation': elevation,
-      'polygon': polygon,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PlaceGeo[centroid=$centroid, elevation=$elevation, polygon=$polygon, ]';
-  }
-
   static List<PlaceGeo> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PlaceGeo>()
@@ -62,5 +49,18 @@ class PlaceGeo {
           (String key, dynamic value) => map[key] = PlaceGeo.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'centroid': centroid,
+      'elevation': elevation,
+      'polygon': polygon,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PlaceGeo[centroid=$centroid, elevation=$elevation, polygon=$polygon, ]';
   }
 }

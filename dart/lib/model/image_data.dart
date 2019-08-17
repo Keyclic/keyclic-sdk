@@ -28,17 +28,6 @@ class ImageData {
   @override
   int get hashCode => 0 ^ image.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'image': image,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ImageData[image=$image, ]';
-  }
-
   static List<ImageData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ImageData>()
@@ -52,5 +41,16 @@ class ImageData {
           (String key, dynamic value) => map[key] = ImageData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'image': image,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ImageData[image=$image, ]';
   }
 }

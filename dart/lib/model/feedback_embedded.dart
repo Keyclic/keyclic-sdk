@@ -32,18 +32,6 @@ class FeedbackEmbedded {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'stateTransitions': stateTransitions,
-      'tracking': tracking,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackEmbedded[stateTransitions=$stateTransitions, tracking=$tracking, ]';
-  }
-
   static List<FeedbackEmbedded> listFromJson(List<dynamic> json) {
     return json == null
         ? List<FeedbackEmbedded>()
@@ -57,5 +45,17 @@ class FeedbackEmbedded {
           map[key] = FeedbackEmbedded.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'stateTransitions': stateTransitions,
+      'tracking': tracking,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackEmbedded[stateTransitions=$stateTransitions, tracking=$tracking, ]';
   }
 }

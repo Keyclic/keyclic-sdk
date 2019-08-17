@@ -28,17 +28,6 @@ class PlaceLinksContainsPlacesIriTemplateMapping {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'parent': parent,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PlaceLinksContainsPlacesIriTemplateMapping[parent=$parent, ]';
-  }
-
   static List<PlaceLinksContainsPlacesIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
@@ -57,5 +46,16 @@ class PlaceLinksContainsPlacesIriTemplateMapping {
           PlaceLinksContainsPlacesIriTemplateMapping.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'parent': parent,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PlaceLinksContainsPlacesIriTemplateMapping[parent=$parent, ]';
   }
 }

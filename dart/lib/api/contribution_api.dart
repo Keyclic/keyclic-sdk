@@ -1,28 +1,30 @@
 part of keyclic_sdk_api.api;
 
 class ContributionApi {
-  final ApiClient apiClient;
-
   ContributionApi([ApiClient apiClient])
       : apiClient = apiClient ?? defaultApiClient;
+
+  final ApiClient apiClient;
 
   /// Retrieve all Contribution resources.
   ///
   ///
   Future<ActivityAggregatedPagination> cgetContributionsByFeedback(
-      String xKeyclicApp, String feedback,
-      {String acceptLanguage,
-      String xKeyclicAppVersion,
-      int page,
-      int limit}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String feedback, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+    int page,
+    int limit,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (feedback == null) {
-      throw ApiException(400, "Missing required param: feedback");
+      throw ApiException(0, "Missing required param: feedback");
     }
 
     // create path and map variables
@@ -32,8 +34,6 @@ class ContributionApi {
 
     // query params
     List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     if (page != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "page", page));
@@ -42,6 +42,9 @@ class ContributionApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
+
+    // header params
+    Map<String, String> headerParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -52,41 +55,40 @@ class ContributionApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(
-              response.body, 'ActivityAggregatedPagination')
-          as ActivityAggregatedPagination;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'ActivityAggregatedPagination')
+        as ActivityAggregatedPagination;
   }
 
   /// Create one Contribution resource.
   ///
   ///
   Future<Operation> postContributionByFeedback(
-      String xKeyclicApp, String feedback,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String feedback, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (feedback == null) {
-      throw ApiException(400, "Missing required param: feedback");
+      throw ApiException(0, "Missing required param: feedback");
     }
 
     // create path and map variables
@@ -96,8 +98,9 @@ class ContributionApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -108,22 +111,19 @@ class ContributionApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Operation') as Operation;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Operation') as Operation;
   }
 }

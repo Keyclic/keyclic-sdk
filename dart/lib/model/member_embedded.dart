@@ -28,17 +28,6 @@ class MemberEmbedded {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'availableRoles': availableRoles,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'MemberEmbedded[availableRoles=$availableRoles, ]';
-  }
-
   static List<MemberEmbedded> listFromJson(List<dynamic> json) {
     return json == null
         ? List<MemberEmbedded>()
@@ -52,5 +41,16 @@ class MemberEmbedded {
           map[key] = MemberEmbedded.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'availableRoles': availableRoles,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'MemberEmbedded[availableRoles=$availableRoles, ]';
   }
 }

@@ -1,35 +1,36 @@
 part of keyclic_sdk_api.api;
 
 class PlaceApi {
-  final ApiClient apiClient;
-
   PlaceApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
+  final ApiClient apiClient;
 
   /// Retrieve all Place resources.
   ///
   ///
-  Future<PlacePagination> cgetPlaces(String xKeyclicApp,
-      {String acceptLanguage,
-      String xKeyclicAppVersion,
-      String businessActivity,
-      DateTime after,
-      DateTime before,
-      String geoElevation,
-      String geoHash__,
-      String geoPoint,
-      String geoCoordinates,
-      String order,
-      String organization,
-      String parent,
-      String parents__,
-      String query,
-      int page,
-      int limit}) async {
-    Object postBody;
-
+  Future<PlacePagination> cgetPlaces(
+    String xKeyclicApp, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+    String businessActivity,
+    DateTime after,
+    DateTime before,
+    String geoElevation,
+    String geoHash__,
+    String geoPoint,
+    String geoCoordinates,
+    String order,
+    String organization,
+    String parent,
+    String parents__,
+    String query,
+    int page,
+    int limit,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
     // create path and map variables
@@ -37,8 +38,6 @@ class PlaceApi {
 
     // query params
     List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     if (businessActivity != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "business_activity", businessActivity));
@@ -95,6 +94,9 @@ class PlaceApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
+
+    // header params
+    Map<String, String> headerParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -105,54 +107,53 @@ class PlaceApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'PlacePagination')
-          as PlacePagination;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'PlacePagination')
+        as PlacePagination;
   }
 
   /// Retrieve all Place resources.
   ///
   ///
   Future<PlacePagination> cgetPlacesByOrganization(
-      String xKeyclicApp, String organization,
-      {String acceptLanguage,
-      String xKeyclicAppVersion,
-      String businessActivity,
-      DateTime after,
-      DateTime before,
-      String geoElevation,
-      String geoHash__,
-      String geoPoint,
-      String geoCoordinates,
-      String order,
-      String parent,
-      String parents__,
-      String query,
-      int page,
-      int limit}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String organization, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+    String businessActivity,
+    DateTime after,
+    DateTime before,
+    String geoElevation,
+    String geoHash__,
+    String geoPoint,
+    String geoCoordinates,
+    String order,
+    String parent,
+    String parents__,
+    String query,
+    int page,
+    int limit,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (organization == null) {
-      throw ApiException(400, "Missing required param: organization");
+      throw ApiException(0, "Missing required param: organization");
     }
 
     // create path and map variables
@@ -162,8 +163,6 @@ class PlaceApi {
 
     // query params
     List<QueryParam> queryParams = [];
-    Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     if (businessActivity != null) {
       queryParams.addAll(_convertParametersForCollectionFormat(
           "", "business_activity", businessActivity));
@@ -216,6 +215,9 @@ class PlaceApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
+
+    // header params
+    Map<String, String> headerParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -226,39 +228,40 @@ class PlaceApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'PlacePagination')
-          as PlacePagination;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'PlacePagination')
+        as PlacePagination;
   }
 
   /// Retrieve one Place resource.
   ///
   ///
-  Future<Place> getPlace(String xKeyclicApp, String place,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody;
-
+  Future<Place> getPlace(
+    String xKeyclicApp,
+    String place, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (place == null) {
-      throw ApiException(400, "Missing required param: place");
+      throw ApiException(0, "Missing required param: place");
     }
 
     // create path and map variables
@@ -268,8 +271,9 @@ class PlaceApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -280,42 +284,44 @@ class PlaceApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Place') as Place;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Place') as Place;
   }
 
   /// Edit one Place resource.
   ///
   ///
   Future<Place> patchPlace(
-      String xKeyclicApp, PlacePatch placePatch, String place,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody = placePatch;
-
+    String xKeyclicApp,
+    PlacePatch placePatch,
+    String place, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (placePatch == null) {
-      throw ApiException(400, "Missing required param: placePatch");
+      throw ApiException(0, "Missing required param: placePatch");
     }
+
     if (place == null) {
-      throw ApiException(400, "Missing required param: place");
+      throw ApiException(0, "Missing required param: place");
     }
 
     // create path and map variables
@@ -325,8 +331,9 @@ class PlaceApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -337,42 +344,44 @@ class PlaceApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = placePatch;
 
     var response = await apiClient.invokeAPI(path, 'PATCH', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Place') as Place;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Place') as Place;
   }
 
   /// Create one Place resource.
   ///
   ///
   Future<Place> postPlaceByOrganization(
-      String xKeyclicApp, PlaceData placeData, String organization,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody = placeData;
-
+    String xKeyclicApp,
+    PlaceData placeData,
+    String organization, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (placeData == null) {
-      throw ApiException(400, "Missing required param: placeData");
+      throw ApiException(0, "Missing required param: placeData");
     }
+
     if (organization == null) {
-      throw ApiException(400, "Missing required param: organization");
+      throw ApiException(0, "Missing required param: organization");
     }
 
     // create path and map variables
@@ -382,8 +391,9 @@ class PlaceApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -394,22 +404,19 @@ class PlaceApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = placeData;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Place') as Place;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Place') as Place;
   }
 }

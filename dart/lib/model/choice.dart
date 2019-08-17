@@ -62,6 +62,21 @@ class Choice {
   @override
   int get hashCode => 0;
 
+  static List<Choice> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Choice>()
+        : json.map((value) => Choice.fromJson(value)).toList();
+  }
+
+  static Map<String, Choice> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Choice>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Choice.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'default': default_,
@@ -80,20 +95,5 @@ class Choice {
   @override
   String toString() {
     return 'Choice[default_=$default_, description=$description, enum_=$enum_, format=$format, id=$id, maxItems=$maxItems, minItems=$minItems, propertyOrder=$propertyOrder, title=$title, type=$type, ]';
-  }
-
-  static List<Choice> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Choice>()
-        : json.map((value) => Choice.fromJson(value)).toList();
-  }
-
-  static Map<String, Choice> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Choice>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Choice.fromJson(value));
-    }
-    return map;
   }
 }

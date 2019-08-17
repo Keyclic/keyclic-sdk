@@ -12,8 +12,8 @@ class ReportWorkflowTransitionData {
     transition = json['transition'];
   }
 
+  /// enum transitionEnum {  accept,  close,  hold,  progress,  refuse,  };
   String transition;
-  //enum transitionEnum {  accept,  close,  hold,  progress,  refuse,  };
 
   @override
   bool operator ==(dynamic other) {
@@ -28,17 +28,6 @@ class ReportWorkflowTransitionData {
 
   @override
   int get hashCode => 0 ^ transition.hashCode;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'transition': transition,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ReportWorkflowTransitionData[transition=$transition, ]';
-  }
 
   static List<ReportWorkflowTransitionData> listFromJson(List<dynamic> json) {
     return json == null
@@ -56,5 +45,16 @@ class ReportWorkflowTransitionData {
           map[key] = ReportWorkflowTransitionData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'transition': transition,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ReportWorkflowTransitionData[transition=$transition, ]';
   }
 }

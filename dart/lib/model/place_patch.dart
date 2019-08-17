@@ -34,19 +34,6 @@ class PlacePatch {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'branchCode': branchCode,
-      'description': description,
-      'name': name,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PlacePatch[branchCode=$branchCode, description=$description, name=$name, ]';
-  }
-
   static List<PlacePatch> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PlacePatch>()
@@ -60,5 +47,18 @@ class PlacePatch {
           (String key, dynamic value) => map[key] = PlacePatch.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'branchCode': branchCode,
+      'description': description,
+      'name': name,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PlacePatch[branchCode=$branchCode, description=$description, name=$name, ]';
   }
 }

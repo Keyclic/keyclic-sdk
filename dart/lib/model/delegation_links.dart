@@ -42,21 +42,6 @@ class DelegationLinks {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'createdBy': createdBy,
-      'from': from,
-      'report': report,
-      'self': self,
-      'to': to,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DelegationLinks[createdBy=$createdBy, from=$from, report=$report, self=$self, to=$to, ]';
-  }
-
   static List<DelegationLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DelegationLinks>()
@@ -70,5 +55,20 @@ class DelegationLinks {
           map[key] = DelegationLinks.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'createdBy': createdBy,
+      'from': from,
+      'report': report,
+      'self': self,
+      'to': to,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DelegationLinks[createdBy=$createdBy, from=$from, report=$report, self=$self, to=$to, ]';
   }
 }

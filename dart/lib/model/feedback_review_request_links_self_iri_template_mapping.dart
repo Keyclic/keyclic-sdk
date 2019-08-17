@@ -28,17 +28,6 @@ class FeedbackReviewRequestLinksSelfIriTemplateMapping {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'reviewRequest': reviewRequest,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackReviewRequestLinksSelfIriTemplateMapping[reviewRequest=$reviewRequest, ]';
-  }
-
   static List<FeedbackReviewRequestLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
@@ -58,5 +47,16 @@ class FeedbackReviewRequestLinksSelfIriTemplateMapping {
           FeedbackReviewRequestLinksSelfIriTemplateMapping.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'reviewRequest': reviewRequest,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackReviewRequestLinksSelfIriTemplateMapping[reviewRequest=$reviewRequest, ]';
   }
 }

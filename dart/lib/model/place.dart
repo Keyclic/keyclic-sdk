@@ -73,6 +73,21 @@ class Place {
   @override
   int get hashCode => 0 ^ geo.hashCode ^ name.hashCode;
 
+  static List<Place> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Place>()
+        : json.map((value) => Place.fromJson(value)).toList();
+  }
+
+  static Map<String, Place> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Place>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Place.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       '_links': links,
@@ -91,20 +106,5 @@ class Place {
   @override
   String toString() {
     return 'Place[links=$links, branchCode=$branchCode, createdAt=$createdAt, description=$description, geo=$geo, id=$id, name=$name, preferences=$preferences, type=$type, updatedAt=$updatedAt, ]';
-  }
-
-  static List<Place> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Place>()
-        : json.map((value) => Place.fromJson(value)).toList();
-  }
-
-  static Map<String, Place> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Place>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Place.fromJson(value));
-    }
-    return map;
   }
 }

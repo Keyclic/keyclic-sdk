@@ -30,18 +30,6 @@ class SignatureDataSigner {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'familyName': familyName,
-      'givenName': givenName,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'SignatureDataSigner[familyName=$familyName, givenName=$givenName, ]';
-  }
-
   static List<SignatureDataSigner> listFromJson(List<dynamic> json) {
     return json == null
         ? List<SignatureDataSigner>()
@@ -56,5 +44,17 @@ class SignatureDataSigner {
           map[key] = SignatureDataSigner.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'familyName': familyName,
+      'givenName': givenName,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'SignatureDataSigner[familyName=$familyName, givenName=$givenName, ]';
   }
 }

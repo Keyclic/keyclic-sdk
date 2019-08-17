@@ -32,8 +32,8 @@ class FeedbackData {
 
   String description;
 
+  /// enum visibilityEnum {  VISIBILITY_PRIVATE,  VISIBILITY_PUBLIC,  };
   String visibility;
-  //enum visibilityEnum {  VISIBILITY_PRIVATE,  VISIBILITY_PUBLIC,  };
 
   String businessActivity;
 
@@ -58,6 +58,21 @@ class FeedbackData {
   @override
   int get hashCode => 0 ^ geo.hashCode ^ visibility.hashCode;
 
+  static List<FeedbackData> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<FeedbackData>()
+        : json.map((value) => FeedbackData.fromJson(value)).toList();
+  }
+
+  static Map<String, FeedbackData> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, FeedbackData>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackData.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'category': category,
@@ -74,20 +89,5 @@ class FeedbackData {
   @override
   String toString() {
     return 'FeedbackData[category=$category, geo=$geo, description=$description, visibility=$visibility, businessActivity=$businessActivity, proMode=$proMode, metadata=$metadata, place=$place, ]';
-  }
-
-  static List<FeedbackData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeedbackData>()
-        : json.map((value) => FeedbackData.fromJson(value)).toList();
-  }
-
-  static Map<String, FeedbackData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, FeedbackData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackData.fromJson(value));
-    }
-    return map;
   }
 }

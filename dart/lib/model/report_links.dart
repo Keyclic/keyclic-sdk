@@ -58,6 +58,21 @@ class ReportLinks {
   @override
   int get hashCode => 0;
 
+  static List<ReportLinks> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<ReportLinks>()
+        : json.map((value) => ReportLinks.fromJson(value)).toList();
+  }
+
+  static Map<String, ReportLinks> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, ReportLinks>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = ReportLinks.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'category': category,
@@ -75,20 +90,5 @@ class ReportLinks {
   @override
   String toString() {
     return 'ReportLinks[category=$category, delegatedFrom=$delegatedFrom, delegatedTo=$delegatedTo, feedback=$feedback, operations=$operations, organization=$organization, place=$place, self=$self, tracking=$tracking, ]';
-  }
-
-  static List<ReportLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ReportLinks>()
-        : json.map((value) => ReportLinks.fromJson(value)).toList();
-  }
-
-  static Map<String, ReportLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ReportLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReportLinks.fromJson(value));
-    }
-    return map;
   }
 }

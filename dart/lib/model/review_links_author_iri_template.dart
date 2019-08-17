@@ -28,17 +28,6 @@ class ReviewLinksAuthorIriTemplate {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'mapping': mapping,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ReviewLinksAuthorIriTemplate[mapping=$mapping, ]';
-  }
-
   static List<ReviewLinksAuthorIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ReviewLinksAuthorIriTemplate>()
@@ -55,5 +44,16 @@ class ReviewLinksAuthorIriTemplate {
           map[key] = ReviewLinksAuthorIriTemplate.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'mapping': mapping,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ReviewLinksAuthorIriTemplate[mapping=$mapping, ]';
   }
 }

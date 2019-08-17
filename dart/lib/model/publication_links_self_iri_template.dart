@@ -27,17 +27,6 @@ class PublicationLinksSelfIriTemplate {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'mapping': mapping,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PublicationLinksSelfIriTemplate[mapping=$mapping, ]';
-  }
-
   static List<PublicationLinksSelfIriTemplate> listFromJson(
       List<dynamic> json) {
     return json == null
@@ -55,5 +44,16 @@ class PublicationLinksSelfIriTemplate {
           map[key] = PublicationLinksSelfIriTemplate.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'mapping': mapping,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PublicationLinksSelfIriTemplate[mapping=$mapping, ]';
   }
 }

@@ -38,19 +38,6 @@ class CategoryData {
   @override
   int get hashCode => 0 ^ name.hashCode ^ color.hashCode ^ icon.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'name': name,
-      'color': color,
-      'icon': icon,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'CategoryData[name=$name, color=$color, icon=$icon, ]';
-  }
-
   static List<CategoryData> listFromJson(List<dynamic> json) {
     return json == null
         ? List<CategoryData>()
@@ -64,5 +51,18 @@ class CategoryData {
           map[key] = CategoryData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'color': color,
+      'icon': icon,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'CategoryData[name=$name, color=$color, icon=$icon, ]';
   }
 }

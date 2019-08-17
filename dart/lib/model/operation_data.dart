@@ -48,6 +48,21 @@ class OperationData {
   @override
   int get hashCode => 0 ^ report.hashCode;
 
+  static List<OperationData> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<OperationData>()
+        : json.map((value) => OperationData.fromJson(value)).toList();
+  }
+
+  static Map<String, OperationData> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, OperationData>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = OperationData.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'description': description,
@@ -62,20 +77,5 @@ class OperationData {
   @override
   String toString() {
     return 'OperationData[description=$description, name=$name, identificationNumber=$identificationNumber, report=$report, organization=$organization, scheduledAt=$scheduledAt, ]';
-  }
-
-  static List<OperationData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OperationData>()
-        : json.map((value) => OperationData.fromJson(value)).toList();
-  }
-
-  static Map<String, OperationData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OperationData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationData.fromJson(value));
-    }
-    return map;
   }
 }

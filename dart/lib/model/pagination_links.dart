@@ -38,20 +38,6 @@ class PaginationLinks {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'first': first,
-      'last': last,
-      'next': next,
-      'self': self,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PaginationLinks[first=$first, last=$last, next=$next, self=$self, ]';
-  }
-
   static List<PaginationLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PaginationLinks>()
@@ -65,5 +51,19 @@ class PaginationLinks {
           map[key] = PaginationLinks.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'first': first,
+      'last': last,
+      'next': next,
+      'self': self,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PaginationLinks[first=$first, last=$last, next=$next, self=$self, ]';
   }
 }

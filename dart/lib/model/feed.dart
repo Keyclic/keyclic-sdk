@@ -34,19 +34,6 @@ class Feed {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'name': name,
-      'type': type,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'Feed[id=$id, name=$name, type=$type, ]';
-  }
-
   static List<Feed> listFromJson(List<dynamic> json) {
     return json == null
         ? List<Feed>()
@@ -60,5 +47,18 @@ class Feed {
           (String key, dynamic value) => map[key] = Feed.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'type': type,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'Feed[id=$id, name=$name, type=$type, ]';
   }
 }

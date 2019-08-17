@@ -42,21 +42,6 @@ class Condition {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'operator': operator_,
-      'path': path,
-      'type': type,
-      'value': value,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'Condition[id=$id, operator_=$operator_, path=$path, type=$type, value=$value, ]';
-  }
-
   static List<Condition> listFromJson(List<dynamic> json) {
     return json == null
         ? List<Condition>()
@@ -70,5 +55,20 @@ class Condition {
           (String key, dynamic value) => map[key] = Condition.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'operator': operator_,
+      'path': path,
+      'type': type,
+      'value': value,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'Condition[id=$id, operator_=$operator_, path=$path, type=$type, value=$value, ]';
   }
 }

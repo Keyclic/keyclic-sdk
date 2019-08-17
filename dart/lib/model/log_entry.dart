@@ -45,20 +45,6 @@ class LogEntry {
   @override
   int get hashCode => 0 ^ action.hashCode ^ loggedAt.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'action': action,
-      'actor': actor,
-      'data': data,
-      'loggedAt': loggedAt == null ? '' : loggedAt.toUtc().toIso8601String(),
-    };
-  }
-
-  @override
-  String toString() {
-    return 'LogEntry[action=$action, actor=$actor, data=$data, loggedAt=$loggedAt, ]';
-  }
-
   static List<LogEntry> listFromJson(List<dynamic> json) {
     return json == null
         ? List<LogEntry>()
@@ -72,5 +58,19 @@ class LogEntry {
           (String key, dynamic value) => map[key] = LogEntry.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'action': action,
+      'actor': actor,
+      'data': data,
+      'loggedAt': loggedAt == null ? '' : loggedAt.toUtc().toIso8601String(),
+    };
+  }
+
+  @override
+  String toString() {
+    return 'LogEntry[action=$action, actor=$actor, data=$data, loggedAt=$loggedAt, ]';
   }
 }

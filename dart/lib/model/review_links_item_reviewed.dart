@@ -32,18 +32,6 @@ class ReviewLinksItemReviewed {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ReviewLinksItemReviewed[href=$href, iriTemplate=$iriTemplate, ]';
-  }
-
   static List<ReviewLinksItemReviewed> listFromJson(List<dynamic> json) {
     return json == null
         ? List<ReviewLinksItemReviewed>()
@@ -58,5 +46,17 @@ class ReviewLinksItemReviewed {
           map[key] = ReviewLinksItemReviewed.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ReviewLinksItemReviewed[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

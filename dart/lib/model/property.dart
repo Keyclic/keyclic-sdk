@@ -70,6 +70,21 @@ class Property {
   @override
   int get hashCode => 0;
 
+  static List<Property> listFromJson(List<dynamic> json) {
+    return json == null
+        ? List<Property>()
+        : json.map((value) => Property.fromJson(value)).toList();
+  }
+
+  static Map<String, Property> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Property>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Property.fromJson(value));
+    }
+    return map;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'conditions': conditions,
@@ -90,20 +105,5 @@ class Property {
   @override
   String toString() {
     return 'Property[conditions=$conditions, default_=$default_, description=$description, enum_=$enum_, format=$format, id=$id, items=$items, maxItems=$maxItems, minItems=$minItems, propertyOrder=$propertyOrder, title=$title, type=$type, ]';
-  }
-
-  static List<Property> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Property>()
-        : json.map((value) => Property.fromJson(value)).toList();
-  }
-
-  static Map<String, Property> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Property>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Property.fromJson(value));
-    }
-    return map;
   }
 }

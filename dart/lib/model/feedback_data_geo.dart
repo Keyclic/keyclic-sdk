@@ -30,18 +30,6 @@ class FeedbackDataGeo {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'point': point,
-      'elevation': elevation,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackDataGeo[point=$point, elevation=$elevation, ]';
-  }
-
   static List<FeedbackDataGeo> listFromJson(List<dynamic> json) {
     return json == null
         ? List<FeedbackDataGeo>()
@@ -55,5 +43,17 @@ class FeedbackDataGeo {
           map[key] = FeedbackDataGeo.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'point': point,
+      'elevation': elevation,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackDataGeo[point=$point, elevation=$elevation, ]';
   }
 }

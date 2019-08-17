@@ -14,8 +14,8 @@ class FeatureGeometry {
     coordinates = (json['coordinates']);
   }
 
+  /// enum typeEnum {  Polygon,  Point,  };
   String type;
-  //enum typeEnum {  Polygon,  Point,  };
 
   List coordinates;
 
@@ -31,18 +31,6 @@ class FeatureGeometry {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'type': type,
-      'coordinates': coordinates,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeatureGeometry[type=$type, coordinates=$coordinates, ]';
-  }
-
   static List<FeatureGeometry> listFromJson(List<dynamic> json) {
     return json == null
         ? List<FeatureGeometry>()
@@ -56,5 +44,17 @@ class FeatureGeometry {
           map[key] = FeatureGeometry.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'type': type,
+      'coordinates': coordinates,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeatureGeometry[type=$type, coordinates=$coordinates, ]';
   }
 }

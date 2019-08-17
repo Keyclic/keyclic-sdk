@@ -33,18 +33,6 @@ class PlaceLinksContainedInPlace {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PlaceLinksContainedInPlace[href=$href, iriTemplate=$iriTemplate, ]';
-  }
-
   static List<PlaceLinksContainedInPlace> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PlaceLinksContainedInPlace>()
@@ -61,5 +49,17 @@ class PlaceLinksContainedInPlace {
           map[key] = PlaceLinksContainedInPlace.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PlaceLinksContainedInPlace[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

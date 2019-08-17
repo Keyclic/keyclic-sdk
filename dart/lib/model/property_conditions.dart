@@ -26,17 +26,6 @@ class PropertyConditions {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'allOf': allOf,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PropertyConditions[allOf=$allOf, ]';
-  }
-
   static List<PropertyConditions> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PropertyConditions>()
@@ -51,5 +40,16 @@ class PropertyConditions {
           map[key] = PropertyConditions.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'allOf': allOf,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PropertyConditions[allOf=$allOf, ]';
   }
 }

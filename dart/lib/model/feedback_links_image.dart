@@ -31,18 +31,6 @@ class FeedbackLinksImage {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackLinksImage[href=$href, iriTemplate=$iriTemplate, ]';
-  }
-
   static List<FeedbackLinksImage> listFromJson(List<dynamic> json) {
     return json == null
         ? List<FeedbackLinksImage>()
@@ -57,5 +45,17 @@ class FeedbackLinksImage {
           map[key] = FeedbackLinksImage.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackLinksImage[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

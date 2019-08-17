@@ -31,18 +31,6 @@ class OperationLinksSelf {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OperationLinksSelf[href=$href, iriTemplate=$iriTemplate, ]';
-  }
-
   static List<OperationLinksSelf> listFromJson(List<dynamic> json) {
     return json == null
         ? List<OperationLinksSelf>()
@@ -57,5 +45,17 @@ class OperationLinksSelf {
           map[key] = OperationLinksSelf.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OperationLinksSelf[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

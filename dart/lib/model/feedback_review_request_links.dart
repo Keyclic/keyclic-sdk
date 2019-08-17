@@ -45,21 +45,6 @@ class FeedbackReviewRequestLinks {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'itemToReview': itemToReview,
-      'organization': organization,
-      'review': review,
-      'reviewer': reviewer,
-      'self': self,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackReviewRequestLinks[itemToReview=$itemToReview, organization=$organization, review=$review, reviewer=$reviewer, self=$self, ]';
-  }
-
   static List<FeedbackReviewRequestLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? List<FeedbackReviewRequestLinks>()
@@ -76,5 +61,20 @@ class FeedbackReviewRequestLinks {
           map[key] = FeedbackReviewRequestLinks.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'itemToReview': itemToReview,
+      'organization': organization,
+      'review': review,
+      'reviewer': reviewer,
+      'self': self,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackReviewRequestLinks[itemToReview=$itemToReview, organization=$organization, review=$review, reviewer=$reviewer, self=$self, ]';
   }
 }

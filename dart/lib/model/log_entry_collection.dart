@@ -26,17 +26,6 @@ class LogEntryCollection {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'items': items,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'LogEntryCollection[items=$items, ]';
-  }
-
   static List<LogEntryCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? List<LogEntryCollection>()
@@ -51,5 +40,16 @@ class LogEntryCollection {
           map[key] = LogEntryCollection.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'items': items,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'LogEntryCollection[items=$items, ]';
   }
 }

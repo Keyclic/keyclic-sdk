@@ -1,27 +1,32 @@
 part of keyclic_sdk_api.api;
 
 class ImageApi {
-  final ApiClient apiClient;
-
   ImageApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
+  final ApiClient apiClient;
 
   /// Remove one Image resource.
   ///
   ///
-  Future deleteImageByOperationAndImage(
-      String xKeyclicApp, String operation, String image,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody;
-
+  Future<void> deleteImageByOperationAndImage(
+    String xKeyclicApp,
+    String operation,
+    String image, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (operation == null) {
-      throw ApiException(400, "Missing required param: operation");
+      throw ApiException(0, "Missing required param: operation");
     }
+
     if (image == null) {
-      throw ApiException(400, "Missing required param: image");
+      throw ApiException(0, "Missing required param: image");
     }
 
     // create path and map variables
@@ -32,8 +37,9 @@ class ImageApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -44,45 +50,49 @@ class ImageApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'DELETE', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return;
-    } else {
+    }
+
+    if (response.body == null) {
       return;
     }
+
+    return;
   }
 
   /// Retrieve one Image resource.
   ///
   ///
   Future<MultipartFile> getImageByBusinessActivityAndWidthAndHeight(
-      String xKeyclicApp, String businessActivity, String width, String height,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String businessActivity,
+    String width,
+    String height, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (businessActivity == null) {
-      throw ApiException(400, "Missing required param: businessActivity");
+      throw ApiException(0, "Missing required param: businessActivity");
     }
+
     if (width == null) {
-      throw ApiException(400, "Missing required param: width");
+      throw ApiException(0, "Missing required param: width");
     }
+
     if (height == null) {
-      throw ApiException(400, "Missing required param: height");
+      throw ApiException(0, "Missing required param: height");
     }
 
     // create path and map variables
@@ -96,8 +106,9 @@ class ImageApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -108,54 +119,55 @@ class ImageApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'MultipartFile')
-          as MultipartFile;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'MultipartFile')
+        as MultipartFile;
   }
 
   /// Retrieve one Image resource.
   ///
   ///
   Future<MultipartFile> getImageByFeedbackAndImageAndWidthAndHeight(
-      String xKeyclicApp,
-      String feedback,
-      String image,
-      String width,
-      String height,
-      {String acceptLanguage,
-      String xKeyclicAppVersion}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String feedback,
+    String image,
+    String width,
+    String height, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (feedback == null) {
-      throw ApiException(400, "Missing required param: feedback");
+      throw ApiException(0, "Missing required param: feedback");
     }
+
     if (image == null) {
-      throw ApiException(400, "Missing required param: image");
+      throw ApiException(0, "Missing required param: image");
     }
+
     if (width == null) {
-      throw ApiException(400, "Missing required param: width");
+      throw ApiException(0, "Missing required param: width");
     }
+
     if (height == null) {
-      throw ApiException(400, "Missing required param: height");
+      throw ApiException(0, "Missing required param: height");
     }
 
     // create path and map variables
@@ -168,8 +180,9 @@ class ImageApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -180,54 +193,55 @@ class ImageApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'MultipartFile')
-          as MultipartFile;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'MultipartFile')
+        as MultipartFile;
   }
 
   /// Retrieve one Image resource.
   ///
   ///
   Future<MultipartFile> getImageByOperationAndImageAndWidthAndHeight(
-      String xKeyclicApp,
-      String operation,
-      String image,
-      String width,
-      String height,
-      {String acceptLanguage,
-      String xKeyclicAppVersion}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String operation,
+    String image,
+    String width,
+    String height, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (operation == null) {
-      throw ApiException(400, "Missing required param: operation");
+      throw ApiException(0, "Missing required param: operation");
     }
+
     if (image == null) {
-      throw ApiException(400, "Missing required param: image");
+      throw ApiException(0, "Missing required param: image");
     }
+
     if (width == null) {
-      throw ApiException(400, "Missing required param: width");
+      throw ApiException(0, "Missing required param: width");
     }
+
     if (height == null) {
-      throw ApiException(400, "Missing required param: height");
+      throw ApiException(0, "Missing required param: height");
     }
 
     // create path and map variables
@@ -240,8 +254,9 @@ class ImageApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -252,46 +267,50 @@ class ImageApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'MultipartFile')
-          as MultipartFile;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'MultipartFile')
+        as MultipartFile;
   }
 
   /// Retrieve one Image resource.
   ///
   ///
   Future<MultipartFile> getImageByPersonAndWidthAndHeight(
-      String xKeyclicApp, String person, String width, String height,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody;
-
+    String xKeyclicApp,
+    String person,
+    String width,
+    String height, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (person == null) {
-      throw ApiException(400, "Missing required param: person");
+      throw ApiException(0, "Missing required param: person");
     }
+
     if (width == null) {
-      throw ApiException(400, "Missing required param: width");
+      throw ApiException(0, "Missing required param: width");
     }
+
     if (height == null) {
-      throw ApiException(400, "Missing required param: height");
+      throw ApiException(0, "Missing required param: height");
     }
 
     // create path and map variables
@@ -303,8 +322,9 @@ class ImageApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -315,43 +335,45 @@ class ImageApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody;
 
     var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, formParams, contentType, authNames);
+        headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'MultipartFile')
-          as MultipartFile;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'MultipartFile')
+        as MultipartFile;
   }
 
   /// Create one Image resource.
   ///
   ///
   Future<Feedback> postImageByFeedback(
-      String xKeyclicApp, ImageData imageData, String feedback,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody = imageData;
-
+    String xKeyclicApp,
+    ImageData imageData,
+    String feedback, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (imageData == null) {
-      throw ApiException(400, "Missing required param: imageData");
+      throw ApiException(0, "Missing required param: imageData");
     }
+
     if (feedback == null) {
-      throw ApiException(400, "Missing required param: feedback");
+      throw ApiException(0, "Missing required param: feedback");
     }
 
     // create path and map variables
@@ -361,8 +383,9 @@ class ImageApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -373,42 +396,44 @@ class ImageApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = imageData;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Feedback') as Feedback;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Feedback') as Feedback;
   }
 
   /// Create one Image resource.
   ///
   ///
   Future<Operation> postImageByOperation(
-      String xKeyclicApp, ImageData imageData, String operation,
-      {String acceptLanguage, String xKeyclicAppVersion}) async {
-    Object postBody = imageData;
-
+    String xKeyclicApp,
+    ImageData imageData,
+    String operation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
     // verify required params are set
+
     if (xKeyclicApp == null) {
-      throw ApiException(400, "Missing required param: xKeyclicApp");
+      throw ApiException(0, "Missing required param: xKeyclicApp");
     }
+
     if (imageData == null) {
-      throw ApiException(400, "Missing required param: imageData");
+      throw ApiException(0, "Missing required param: imageData");
     }
+
     if (operation == null) {
-      throw ApiException(400, "Missing required param: operation");
+      throw ApiException(0, "Missing required param: operation");
     }
 
     // create path and map variables
@@ -418,8 +443,9 @@ class ImageApi {
 
     // query params
     List<QueryParam> queryParams = [];
+
+    // header params
     Map<String, String> headerParams = {};
-    Map<String, String> formParams = {};
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -430,22 +456,19 @@ class ImageApi {
         contentTypes.isEmpty ? "application/json" : contentTypes[0];
     List<String> authNames = ["bearer"];
 
-    if (contentType.startsWith("multipart/form-data")) {
-      bool hasFields = false;
-      MultipartRequest mp = MultipartRequest(null, null);
-
-      if (hasFields) postBody = mp;
-    } else {}
+    Object postBody = imageData;
 
     var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, formParams, contentType, authNames);
+        postBody, headerParams, contentType, authNames);
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
-    } else if (response.body != null) {
-      return apiClient.deserialize(response.body, 'Operation') as Operation;
-    } else {
+    }
+
+    if (response.body == null) {
       return null;
     }
+
+    return apiClient.deserialize(response.body, 'Operation') as Operation;
   }
 }

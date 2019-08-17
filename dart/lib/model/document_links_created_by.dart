@@ -32,18 +32,6 @@ class DocumentLinksCreatedBy {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DocumentLinksCreatedBy[href=$href, iriTemplate=$iriTemplate, ]';
-  }
-
   static List<DocumentLinksCreatedBy> listFromJson(List<dynamic> json) {
     return json == null
         ? List<DocumentLinksCreatedBy>()
@@ -58,5 +46,17 @@ class DocumentLinksCreatedBy {
           map[key] = DocumentLinksCreatedBy.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DocumentLinksCreatedBy[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

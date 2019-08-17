@@ -26,17 +26,6 @@ class PlacePreferences {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'public': public,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PlacePreferences[public=$public, ]';
-  }
-
   static List<PlacePreferences> listFromJson(List<dynamic> json) {
     return json == null
         ? List<PlacePreferences>()
@@ -50,5 +39,16 @@ class PlacePreferences {
           map[key] = PlacePreferences.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'public': public,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PlacePreferences[public=$public, ]';
   }
 }

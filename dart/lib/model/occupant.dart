@@ -42,20 +42,6 @@ class Occupant {
   @override
   int get hashCode => 0;
 
-  Map<String, dynamic> toJson() {
-    return {
-      '_links': links,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'id': id,
-      'type': type,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'Occupant[links=$links, createdAt=$createdAt, id=$id, type=$type, ]';
-  }
-
   static List<Occupant> listFromJson(List<dynamic> json) {
     return json == null
         ? List<Occupant>()
@@ -69,5 +55,19 @@ class Occupant {
           (String key, dynamic value) => map[key] = Occupant.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
+      'id': id,
+      'type': type,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'Occupant[links=$links, createdAt=$createdAt, id=$id, type=$type, ]';
   }
 }
