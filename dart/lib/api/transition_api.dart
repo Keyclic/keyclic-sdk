@@ -9,6 +9,67 @@ class TransitionApi {
   /// Create one Transition resource.
   ///
   ///
+  Future<Delegation> postTransitionByDelegation(
+      String xKeyclicApp,
+      ReportWorkflowTransitionData reportWorkflowTransitionData,
+      String delegation,
+      {String acceptLanguage,
+      String xKeyclicAppVersion}) async {
+    Object postBody = reportWorkflowTransitionData;
+
+    // verify required params are set
+    if (xKeyclicApp == null) {
+      throw ApiException(400, "Missing required param: xKeyclicApp");
+    }
+    if (reportWorkflowTransitionData == null) {
+      throw ApiException(
+          400, "Missing required param: reportWorkflowTransitionData");
+    }
+    if (delegation == null) {
+      throw ApiException(400, "Missing required param: delegation");
+    }
+
+    // create path and map variables
+    String path = "/delegations/{delegation}/workflow/transition"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "delegation" + "}", delegation.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    headerParams["accept-language"] = acceptLanguage;
+    headerParams["x-keyclic-app"] = xKeyclicApp;
+    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+
+    List<String> contentTypes = ["application/json;charset=UTF-8"];
+
+    String contentType =
+        contentTypes.isEmpty ? "application/json" : contentTypes[0];
+    List<String> authNames = ["bearer"];
+
+    if (contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = MultipartRequest(null, null);
+
+      if (hasFields) postBody = mp;
+    } else {}
+
+    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
+        postBody, headerParams, formParams, contentType, authNames);
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    } else if (response.body != null) {
+      return apiClient.deserialize(response.body, 'Delegation') as Delegation;
+    } else {
+      return null;
+    }
+  }
+
+  /// Create one Transition resource.
+  ///
+  ///
   Future<Feedback> postTransitionByFeedback(
       String xKeyclicApp,
       FeedbackWorkflowTransitionData feedbackWorkflowTransitionData,

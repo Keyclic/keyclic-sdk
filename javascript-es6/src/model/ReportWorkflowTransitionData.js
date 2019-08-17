@@ -63,11 +63,11 @@ export default class ReportWorkflowTransitionData {
      */
     accept: "accept",
     /**
-     * value: "refuse"
+     * value: "close"
      * @const
      * @readonly
      */
-    refuse: "refuse",
+    close: "close",
     /**
      * value: "hold"
      * @const
@@ -81,10 +81,10 @@ export default class ReportWorkflowTransitionData {
      */
     progress: "progress",
     /**
-     * value: "close"
+     * value: "refuse"
      * @const
      * @readonly
      */
-    close: "close"
+    refuse: "refuse"
   };
 }

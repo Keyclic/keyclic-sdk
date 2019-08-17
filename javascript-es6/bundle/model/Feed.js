@@ -45,17 +45,13 @@ var Feed =
    * @alias module:model/Feed
    * @class
   
-   * @param name { String }
-  
-   * @param type { String }
-  
    */
-    function Feed(name, type) {
+    function Feed() {
       _classCallCheck(this, Feed);
 
-      this.name = name;
-      this.type = type;
       this.id = null;
+      this.name = null;
+      this.type = null;
     }
     /**
      * Constructs a "Feed" from a plain JavaScript object.
@@ -81,6 +77,10 @@ var Feed =
             object = new Feed();
           }
 
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
           if (data.hasOwnProperty("name")) {
             object.name = _ApiClient.default.convertToType(
               data["name"],
@@ -93,10 +93,6 @@ var Feed =
               data["type"],
               "String"
             );
-          }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
 
           return object;

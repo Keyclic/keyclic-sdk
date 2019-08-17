@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mapping** | [**BusinessActivityLinksSelfIriTemplateMapping**](BusinessActivityLinksSelfIriTemplateMapping.md) |  | [optional] 
+**mapping** | [**BusinessActivityLinksImageIriTemplateMapping**](BusinessActivityLinksImageIriTemplateMapping.md) |  | [optional] 
 
 

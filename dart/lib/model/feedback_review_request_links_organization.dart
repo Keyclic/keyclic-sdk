@@ -11,14 +11,14 @@ class FeedbackReviewRequestLinksOrganization {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = FeedbackReviewRequestLinksOrganizationIriTemplate.fromJson(
+        json['iriTemplate']);
   }
 
   /* The URI of the organization associated to the given feedbackreviewrequest. */
   String href;
 
-  CategoryLinksOrganizationIriTemplate iriTemplate;
+  FeedbackReviewRequestLinksOrganizationIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

@@ -2,21 +2,21 @@ part of keyclic_sdk_api.api;
 
 class ActivitySubject {
   ActivitySubject({
-    this.type,
     this.id,
+    this.type,
   });
 
   ActivitySubject.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    type = json['type'];
     id = json['id'];
+    type = json['type'];
   }
 
-  String type;
-
   String id;
+
+  String type;
 
   @override
   bool operator ==(dynamic other) {
@@ -32,14 +32,14 @@ class ActivitySubject {
 
   Map<String, dynamic> toJson() {
     return {
-      'type': type,
       'id': id,
+      'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'ActivitySubject[type=$type, id=$id, ]';
+    return 'ActivitySubject[id=$id, type=$type, ]';
   }
 
   static List<ActivitySubject> listFromJson(List<dynamic> json) {

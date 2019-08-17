@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _DocumentLinksSelfIriTemplateMapping = _interopRequireDefault(
-  require("./DocumentLinksSelfIriTemplateMapping")
+var _DocumentLinksFileIriTemplateMapping = _interopRequireDefault(
+  require("./DocumentLinksFileIriTemplateMapping")
 );
 
 function _interopRequireDefault(obj) {
@@ -54,7 +54,7 @@ var DocumentLinksSelfIriTemplate =
       _classCallCheck(this, DocumentLinksSelfIriTemplate);
 
       this.mapping = null;
-      this.mappingType = _DocumentLinksSelfIriTemplateMapping.default;
+      this.mappingType = _DocumentLinksFileIriTemplateMapping.default;
     }
     /**
      * Constructs a "DocumentLinksSelfIriTemplate" from a plain JavaScript object.

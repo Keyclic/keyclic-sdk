@@ -11,14 +11,13 @@ class ReviewLinksAuthor {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = ReviewLinksAuthorIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the author associated to the given review. */
   String href;
 
-  DelegationLinksCreatedByIriTemplate iriTemplate;
+  ReviewLinksAuthorIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

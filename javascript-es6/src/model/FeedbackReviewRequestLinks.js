@@ -29,17 +29,17 @@ export default class FeedbackReviewRequestLinks {
     
      */
   constructor() {
-    this.self = null;
     this.itemToReview = null;
     this.organization = null;
-    this.reviewer = null;
     this.review = null;
+    this.reviewer = null;
+    this.self = null;
 
-    this.selfType = FeedbackReviewRequestLinksSelf;
     this.itemToReviewType = FeedbackReviewRequestLinksItemToReview;
     this.organizationType = FeedbackReviewRequestLinksOrganization;
-    this.reviewerType = FeedbackReviewRequestLinksReviewer;
     this.reviewType = FeedbackReviewRequestLinksReview;
+    this.reviewerType = FeedbackReviewRequestLinksReviewer;
+    this.selfType = FeedbackReviewRequestLinksSelf;
   }
 
   /**
@@ -57,9 +57,6 @@ export default class FeedbackReviewRequestLinks {
       object = new FeedbackReviewRequestLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
-    }
     if (data.hasOwnProperty("itemToReview")) {
       object.itemToReview = ApiClient.convertToType(
         data["itemToReview"],
@@ -72,17 +69,20 @@ export default class FeedbackReviewRequestLinks {
         object.organizationType
       );
     }
+    if (data.hasOwnProperty("review")) {
+      object.review = ApiClient.convertToType(
+        data["review"],
+        object.reviewType
+      );
+    }
     if (data.hasOwnProperty("reviewer")) {
       object.reviewer = ApiClient.convertToType(
         data["reviewer"],
         object.reviewerType
       );
     }
-    if (data.hasOwnProperty("review")) {
-      object.review = ApiClient.convertToType(
-        data["review"],
-        object.reviewType
-      );
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
 
     return object;

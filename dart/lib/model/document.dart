@@ -2,41 +2,41 @@ part of keyclic_sdk_api.api;
 
 class Document {
   Document({
-    this.file,
-    this.permission,
-    this.id,
-    this.createdAt,
-    this.type,
     this.links,
+    this.createdAt,
+    this.file,
+    this.id,
+    this.permission,
+    this.type,
   });
 
   Document.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    file = DocumentFile.fromJson(json['file']);
-    permission = DocumentPermission.fromJson(json['permission']);
-    id = json['id'];
+    links = DocumentLinks.fromJson(json['_links']);
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
+    file = DocumentFile.fromJson(json['file']);
+    id = json['id'];
+    permission = DocumentPermission.fromJson(json['permission']);
     type = json['type'];
-    links = DocumentLinks.fromJson(json['_links']);
   }
 
-  DocumentFile file;
-
-  DocumentPermission permission;
-
-  String id;
+  DocumentLinks links;
 
   DateTime createdAt;
 
-  String type;
+  DocumentFile file;
 
-  DocumentLinks links;
+  String id;
+
+  DocumentPermission permission;
+
+  String type;
 
   @override
   bool operator ==(dynamic other) {
@@ -44,36 +44,26 @@ class Document {
       return true;
     }
 
-    return other is Document &&
-        runtimeType == other.runtimeType &&
-        file == other.file &&
-        permission == other.permission &&
-        id == other.id &&
-        createdAt == other.createdAt;
+    return other is Document && runtimeType == other.runtimeType;
   }
 
   @override
-  int get hashCode =>
-      0 ^
-      file.hashCode ^
-      permission.hashCode ^
-      id.hashCode ^
-      createdAt.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {
-      'file': file,
-      'permission': permission,
-      'id': id,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'type': type,
       '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
+      'file': file,
+      'id': id,
+      'permission': permission,
+      'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'Document[file=$file, permission=$permission, id=$id, createdAt=$createdAt, type=$type, links=$links, ]';
+    return 'Document[links=$links, createdAt=$createdAt, file=$file, id=$id, permission=$permission, type=$type, ]';
   }
 
   static List<Document> listFromJson(List<dynamic> json) {

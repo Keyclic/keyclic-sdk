@@ -25,8 +25,8 @@ export default class BusinessActivityMetadataSchema {
     
      */
   constructor() {
-    this.required = [];
     this.properties = [];
+    this.required = [];
 
     this.propertiesType = Property;
   }
@@ -46,13 +46,13 @@ export default class BusinessActivityMetadataSchema {
       object = new BusinessActivityMetadataSchema();
     }
 
-    if (data.hasOwnProperty("required")) {
-      object.required = ApiClient.convertToType(data["required"], "['String']");
-    }
     if (data.hasOwnProperty("properties")) {
       object.properties = ApiClient.convertToType(data["properties"], {
         String: object.propertiesType
       });
+    }
+    if (data.hasOwnProperty("required")) {
+      object.required = ApiClient.convertToType(data["required"], "['String']");
     }
 
     return object;

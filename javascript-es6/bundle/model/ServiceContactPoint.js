@@ -45,14 +45,14 @@ var ServiceContactPoint =
    * @alias module:model/ServiceContactPoint
    * @class
   
-   * @param telephone { String }
-  
    */
-    function ServiceContactPoint(telephone) {
+    function ServiceContactPoint() {
       _classCallCheck(this, ServiceContactPoint);
 
-      this.telephone = telephone;
+      this.email = null;
       this.isOpen = null;
+      this.name = null;
+      this.telephone = null;
     }
     /**
      * Constructs a "ServiceContactPoint" from a plain JavaScript object.
@@ -78,9 +78,9 @@ var ServiceContactPoint =
             object = new ServiceContactPoint();
           }
 
-          if (data.hasOwnProperty("telephone")) {
-            object.telephone = _ApiClient.default.convertToType(
-              data["telephone"],
+          if (data.hasOwnProperty("email")) {
+            object.email = _ApiClient.default.convertToType(
+              data["email"],
               "String"
             );
           }
@@ -89,6 +89,20 @@ var ServiceContactPoint =
             object.isOpen = _ApiClient.default.convertToType(
               data["isOpen"],
               "Boolean"
+            );
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("telephone")) {
+            object.telephone = _ApiClient.default.convertToType(
+              data["telephone"],
+              "String"
             );
           }
 

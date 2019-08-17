@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import CategoryLinksOrganizationIriTemplate from "./CategoryLinksOrganizationIriTemplate";
+import MemberLinksOrganizationIriTemplate from "./MemberLinksOrganizationIriTemplate";
 
 /**
  * The MemberLinksOrganization model module.
@@ -28,7 +28,7 @@ export default class MemberLinksOrganization {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = CategoryLinksOrganizationIriTemplate;
+    this.iriTemplateType = MemberLinksOrganizationIriTemplate;
   }
 
   /**

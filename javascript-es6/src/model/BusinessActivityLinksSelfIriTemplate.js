@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import BusinessActivityLinksSelfIriTemplateMapping from "./BusinessActivityLinksSelfIriTemplateMapping";
+import BusinessActivityLinksImageIriTemplateMapping from "./BusinessActivityLinksImageIriTemplateMapping";
 
 /**
  * The BusinessActivityLinksSelfIriTemplate model module.
@@ -27,7 +27,7 @@ export default class BusinessActivityLinksSelfIriTemplate {
   constructor() {
     this.mapping = null;
 
-    this.mappingType = BusinessActivityLinksSelfIriTemplateMapping;
+    this.mappingType = BusinessActivityLinksImageIriTemplateMapping;
   }
 
   /**

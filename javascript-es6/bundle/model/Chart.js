@@ -45,16 +45,12 @@ var Chart =
    * @alias module:model/Chart
    * @class
   
-   * @param labels { Array.<String> }
-  
-   * @param data { Array.<Number> }
-  
    */
-    function Chart(labels, data) {
+    function Chart() {
       _classCallCheck(this, Chart);
 
-      this.labels = labels;
-      this.data = data;
+      this.data = [];
+      this.labels = [];
     }
     /**
      * Constructs a "Chart" from a plain JavaScript object.
@@ -80,17 +76,17 @@ var Chart =
             object = new Chart();
           }
 
-          if (data.hasOwnProperty("labels")) {
-            object.labels = _ApiClient.default.convertToType(
-              data["labels"],
-              "['String']"
-            );
-          }
-
           if (data.hasOwnProperty("data")) {
             object.data = _ApiClient.default.convertToType(
               data["data"],
               "['Number']"
+            );
+          }
+
+          if (data.hasOwnProperty("labels")) {
+            object.labels = _ApiClient.default.convertToType(
+              data["labels"],
+              "['String']"
             );
           }
 

@@ -49,21 +49,14 @@ var LogEntry =
   
    * @param loggedAt { Date }
   
-   * @param objectId { String }
-  
-   * @param version { String }
-  
-   * @param data { Array.<String> }
-  
    */
-    function LogEntry(action, loggedAt, objectId, version, data) {
+    function LogEntry(action, loggedAt) {
       _classCallCheck(this, LogEntry);
 
       this.action = action;
+      this.actor = null;
+      this.data = [];
       this.loggedAt = loggedAt;
-      this.objectId = objectId;
-      this.version = version;
-      this.data = data;
     }
     /**
      * Constructs a "LogEntry" from a plain JavaScript object.
@@ -96,23 +89,9 @@ var LogEntry =
             );
           }
 
-          if (data.hasOwnProperty("loggedAt")) {
-            object.loggedAt = _ApiClient.default.convertToType(
-              data["loggedAt"],
-              "Date"
-            );
-          }
-
-          if (data.hasOwnProperty("objectId")) {
-            object.objectId = _ApiClient.default.convertToType(
-              data["objectId"],
-              "String"
-            );
-          }
-
-          if (data.hasOwnProperty("version")) {
-            object.version = _ApiClient.default.convertToType(
-              data["version"],
+          if (data.hasOwnProperty("actor")) {
+            object.actor = _ApiClient.default.convertToType(
+              data["actor"],
               "String"
             );
           }
@@ -121,6 +100,13 @@ var LogEntry =
             object.data = _ApiClient.default.convertToType(
               data["data"],
               "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("loggedAt")) {
+            object.loggedAt = _ApiClient.default.convertToType(
+              data["loggedAt"],
+              "Date"
             );
           }
 

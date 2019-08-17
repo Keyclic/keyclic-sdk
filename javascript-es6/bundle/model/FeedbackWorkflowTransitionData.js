@@ -135,18 +135,18 @@ _defineProperty(FeedbackWorkflowTransitionData, "TransitionEnum", {
   fail: "fail",
 
   /**
-   * value: "publish"
-   * @const
-   * @readonly
-   */
-  publish: "publish",
-
-  /**
    * value: "process"
    * @const
    * @readonly
    */
   process: "process",
+
+  /**
+   * value: "publish"
+   * @const
+   * @readonly
+   */
+  publish: "publish",
 
   /**
    * value: "success"

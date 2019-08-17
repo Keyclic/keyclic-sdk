@@ -28,15 +28,15 @@ export default class PlaceLinks {
     
      */
   constructor() {
-    this.self = null;
-    this.organization = null;
     this.containedInPlace = null;
     this.containsPlaces = null;
+    this.organization = null;
+    this.self = null;
 
-    this.selfType = PlaceLinksSelf;
-    this.organizationType = PlaceLinksOrganization;
     this.containedInPlaceType = PlaceLinksContainedInPlace;
     this.containsPlacesType = PlaceLinksContainsPlaces;
+    this.organizationType = PlaceLinksOrganization;
+    this.selfType = PlaceLinksSelf;
   }
 
   /**
@@ -54,15 +54,6 @@ export default class PlaceLinks {
       object = new PlaceLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
-    }
-    if (data.hasOwnProperty("organization")) {
-      object.organization = ApiClient.convertToType(
-        data["organization"],
-        object.organizationType
-      );
-    }
     if (data.hasOwnProperty("containedInPlace")) {
       object.containedInPlace = ApiClient.convertToType(
         data["containedInPlace"],
@@ -74,6 +65,15 @@ export default class PlaceLinks {
         data["containsPlaces"],
         object.containsPlacesType
       );
+    }
+    if (data.hasOwnProperty("organization")) {
+      object.organization = ApiClient.convertToType(
+        data["organization"],
+        object.organizationType
+      );
+    }
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
 
     return object;

@@ -23,20 +23,16 @@ export default class Delegation {
      * @alias module:model/Delegation
      * @class
     
-     * @param id { String }
-    
-     * @param createdAt { Date }
+     * @param state { Array.<String> }
     
      */
-  constructor(
-    id,
-
-    createdAt
-  ) {
-    this.id = id;
-    this.createdAt = createdAt;
-    this.type = null;
+  constructor(state) {
     this.links = null;
+    this.createdAt = null;
+    this.description = null;
+    this.id = null;
+    this.state = state;
+    this.type = null;
 
     this.linksType = DelegationLinks;
   }
@@ -56,17 +52,26 @@ export default class Delegation {
       object = new Delegation();
     }
 
-    if (data.hasOwnProperty("id")) {
-      object.id = ApiClient.convertToType(data["id"], "String");
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
     if (data.hasOwnProperty("createdAt")) {
       object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
     }
+    if (data.hasOwnProperty("description")) {
+      object.description = ApiClient.convertToType(
+        data["description"],
+        "String"
+      );
+    }
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
+    }
+    if (data.hasOwnProperty("state")) {
+      object.state = ApiClient.convertToType(data["state"], "['String']");
+    }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
-    }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
 
     return object;

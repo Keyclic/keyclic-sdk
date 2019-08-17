@@ -11,14 +11,14 @@ class FeedbackReviewRequestLinksReviewer {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = FeedbackReviewRequestLinksReviewerIriTemplate.fromJson(
+        json['iriTemplate']);
   }
 
   /* The URI of the reviewer associated to the given feedbackreviewrequest. */
   String href;
 
-  DelegationLinksCreatedByIriTemplate iriTemplate;
+  FeedbackReviewRequestLinksReviewerIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

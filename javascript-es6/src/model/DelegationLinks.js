@@ -29,17 +29,17 @@ export default class DelegationLinks {
     
      */
   constructor() {
-    this.self = null;
-    this.from = null;
-    this.to = null;
-    this.report = null;
     this.createdBy = null;
+    this.from = null;
+    this.report = null;
+    this.self = null;
+    this.to = null;
 
-    this.selfType = DelegationLinksSelf;
-    this.fromType = DelegationLinksFrom;
-    this.toType = DelegationLinksTo;
-    this.reportType = DelegationLinksReport;
     this.createdByType = DelegationLinksCreatedBy;
+    this.fromType = DelegationLinksFrom;
+    this.reportType = DelegationLinksReport;
+    this.selfType = DelegationLinksSelf;
+    this.toType = DelegationLinksTo;
   }
 
   /**
@@ -57,14 +57,14 @@ export default class DelegationLinks {
       object = new DelegationLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
+    if (data.hasOwnProperty("createdBy")) {
+      object.createdBy = ApiClient.convertToType(
+        data["createdBy"],
+        object.createdByType
+      );
     }
     if (data.hasOwnProperty("from")) {
       object.from = ApiClient.convertToType(data["from"], object.fromType);
-    }
-    if (data.hasOwnProperty("to")) {
-      object.to = ApiClient.convertToType(data["to"], object.toType);
     }
     if (data.hasOwnProperty("report")) {
       object.report = ApiClient.convertToType(
@@ -72,11 +72,11 @@ export default class DelegationLinks {
         object.reportType
       );
     }
-    if (data.hasOwnProperty("createdBy")) {
-      object.createdBy = ApiClient.convertToType(
-        data["createdBy"],
-        object.createdByType
-      );
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
+    }
+    if (data.hasOwnProperty("to")) {
+      object.to = ApiClient.convertToType(data["to"], object.toType);
     }
 
     return object;

@@ -53,8 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.PlaceGeo);
     });
 
-    it('should have the property polygon (base name: "polygon")', function() {
-      // uncomment below and update the code to test the property polygon
+    it('should have the property centroid (base name: "centroid")', function() {
+      // uncomment below and update the code to test the property centroid
       //var instane = new @KeyclicSdkJavascript.PlaceGeo();
       //expect(instance).to.be();
     });
@@ -65,8 +65,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property centroid (base name: "centroid")', function() {
-      // uncomment below and update the code to test the property centroid
+    it('should have the property polygon (base name: "polygon")', function() {
+      // uncomment below and update the code to test the property polygon
       //var instane = new @KeyclicSdkJavascript.PlaceGeo();
       //expect(instance).to.be();
     });

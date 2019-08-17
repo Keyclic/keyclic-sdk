@@ -11,14 +11,13 @@ class PersonLinksImage {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = PersonLinksImageIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the image associated to the given person. */
   String href;
 
-  DelegationLinksCreatedByIriTemplate iriTemplate;
+  PersonLinksImageIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

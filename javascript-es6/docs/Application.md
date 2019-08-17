@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**links** | [**ApplicationLinks**](ApplicationLinks.md) |  | [optional] 
+**id** | **String** |  | [optional] 
 **name** | **String** |  | 
 **token** | **String** |  | 
-**version** | **String** |  | [optional] 
-**id** | **String** |  | 
 **type** | **String** |  | [optional] 
-**links** | [**ApplicationLinks**](ApplicationLinks.md) |  | [optional] 
+**version** | **String** |  | [optional] 
 
 

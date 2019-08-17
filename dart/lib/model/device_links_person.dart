@@ -11,14 +11,13 @@ class DeviceLinksPerson {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = DeviceLinksPersonIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the person associated to the given device. */
   String href;
 
-  DelegationLinksCreatedByIriTemplate iriTemplate;
+  DeviceLinksPersonIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

@@ -19,10 +19,7 @@ class OperationApi {
       String query,
       String state,
       int page,
-      int limit,
-      String search_description_,
-      String search_name_,
-      String search_identificationNumber_}) async {
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -70,18 +67,6 @@ class OperationApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
-    if (search_description_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[description]", search_description_));
-    }
-    if (search_name_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[name]", search_name_));
-    }
-    if (search_identificationNumber_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[identificationNumber]", search_identificationNumber_));
-    }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -126,10 +111,7 @@ class OperationApi {
       String query,
       String state,
       int page,
-      int limit,
-      String search_description_,
-      String search_name_,
-      String search_identificationNumber_}) async {
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -181,18 +163,6 @@ class OperationApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
-    if (search_description_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[description]", search_description_));
-    }
-    if (search_name_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[name]", search_name_));
-    }
-    if (search_identificationNumber_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[identificationNumber]", search_identificationNumber_));
-    }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -237,10 +207,7 @@ class OperationApi {
       String query,
       String state,
       int page,
-      int limit,
-      String search_description_,
-      String search_name_,
-      String search_identificationNumber_}) async {
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -291,18 +258,6 @@ class OperationApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (search_description_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[description]", search_description_));
-    }
-    if (search_name_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[name]", search_name_));
-    }
-    if (search_identificationNumber_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[identificationNumber]", search_identificationNumber_));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;

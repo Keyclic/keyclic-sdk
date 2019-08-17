@@ -26,42 +26,24 @@ export default class Person {
     
      * @param optIn { Boolean }
     
-     * @param preferences { module:model/PersonPreferences }
-    
-     * @param id { String }
-    
-     * @param createdAt { Date }
-    
-     * @param updatedAt { Date }
-    
      */
-  constructor(
-    optIn,
-
-    preferences,
-
-    id,
-
-    createdAt,
-
-    updatedAt
-  ) {
+  constructor(optIn) {
+    this.links = null;
+    this.createdAt = null;
+    this.email = null;
     this.familyName = null;
     this.givenName = null;
+    this.id = null;
     this.jobTitle = null;
     this.optIn = optIn;
-    this.preferences = preferences;
+    this.preferences = null;
     this.telephone = null;
-    this.id = id;
-    this.username = null;
-    this.email = null;
-    this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
     this.type = null;
-    this.links = null;
+    this.updatedAt = null;
+    this.username = null;
 
-    this.preferencesType = PersonPreferences;
     this.linksType = PersonLinks;
+    this.preferencesType = PersonPreferences;
   }
 
   /**
@@ -79,11 +61,23 @@ export default class Person {
       object = new Person();
     }
 
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
+    if (data.hasOwnProperty("email")) {
+      object.email = ApiClient.convertToType(data["email"], "String");
+    }
     if (data.hasOwnProperty("familyName")) {
       object.familyName = ApiClient.convertToType(data["familyName"], "String");
     }
     if (data.hasOwnProperty("givenName")) {
       object.givenName = ApiClient.convertToType(data["givenName"], "String");
+    }
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
     }
     if (data.hasOwnProperty("jobTitle")) {
       object.jobTitle = ApiClient.convertToType(data["jobTitle"], "String");
@@ -100,26 +94,14 @@ export default class Person {
     if (data.hasOwnProperty("telephone")) {
       object.telephone = ApiClient.convertToType(data["telephone"], "String");
     }
-    if (data.hasOwnProperty("id")) {
-      object.id = ApiClient.convertToType(data["id"], "String");
-    }
-    if (data.hasOwnProperty("username")) {
-      object.username = ApiClient.convertToType(data["username"], "String");
-    }
-    if (data.hasOwnProperty("email")) {
-      object.email = ApiClient.convertToType(data["email"], "String");
-    }
-    if (data.hasOwnProperty("createdAt")) {
-      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    if (data.hasOwnProperty("type")) {
+      object.type = ApiClient.convertToType(data["type"], "String");
     }
     if (data.hasOwnProperty("updatedAt")) {
       object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
-    if (data.hasOwnProperty("type")) {
-      object.type = ApiClient.convertToType(data["type"], "String");
-    }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    if (data.hasOwnProperty("username")) {
+      object.username = ApiClient.convertToType(data["username"], "String");
     }
 
     return object;

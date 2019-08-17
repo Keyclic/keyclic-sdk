@@ -5,11 +5,11 @@ class Activity {
     this.actor,
     this.message,
     this.object,
-    this.verb,
     this.origin,
-    this.title,
     this.subject,
     this.time,
+    this.title,
+    this.verb,
   });
 
   Activity.fromJson(Map<String, dynamic> json) {
@@ -19,14 +19,14 @@ class Activity {
     actor = json['actor'];
     message = json['message'];
     object = json['object'];
-    verb = json['verb'];
     origin = json['origin'];
-    title = json['title'];
     subject = ActivitySubject.fromJson(json['subject']);
     time = json['time'] == null ? null : DateTime.parse(json['time']);
     if (time is DateTime && time.isUtc == false) {
       time = DateTime.parse('${time.toIso8601String()}Z');
     }
+    title = json['title'];
+    verb = json['verb'];
   }
 
   String actor;
@@ -35,15 +35,15 @@ class Activity {
 
   String object;
 
-  String verb;
-
   String origin;
-
-  String title;
 
   ActivitySubject subject;
 
   DateTime time;
+
+  String title;
+
+  String verb;
 
   @override
   bool operator ==(dynamic other) {
@@ -51,34 +51,28 @@ class Activity {
       return true;
     }
 
-    return other is Activity &&
-        runtimeType == other.runtimeType &&
-        actor == other.actor &&
-        message == other.message &&
-        object == other.object &&
-        verb == other.verb;
+    return other is Activity && runtimeType == other.runtimeType;
   }
 
   @override
-  int get hashCode =>
-      0 ^ actor.hashCode ^ message.hashCode ^ object.hashCode ^ verb.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {
       'actor': actor,
       'message': message,
       'object': object,
-      'verb': verb,
       'origin': origin,
-      'title': title,
       'subject': subject,
       'time': time == null ? '' : time.toUtc().toIso8601String(),
+      'title': title,
+      'verb': verb,
     };
   }
 
   @override
   String toString() {
-    return 'Activity[actor=$actor, message=$message, object=$object, verb=$verb, origin=$origin, title=$title, subject=$subject, time=$time, ]';
+    return 'Activity[actor=$actor, message=$message, object=$object, origin=$origin, subject=$subject, time=$time, title=$title, verb=$verb, ]';
   }
 
   static List<Activity> listFromJson(List<dynamic> json) {

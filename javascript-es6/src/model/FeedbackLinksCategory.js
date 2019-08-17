@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import CategoryLinksSelfIriTemplate from "./CategoryLinksSelfIriTemplate";
+import FeedbackLinksCategoryIriTemplate from "./FeedbackLinksCategoryIriTemplate";
 
 /**
  * The FeedbackLinksCategory model module.
@@ -28,7 +28,7 @@ export default class FeedbackLinksCategory {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = CategoryLinksSelfIriTemplate;
+    this.iriTemplateType = FeedbackLinksCategoryIriTemplate;
   }
 
   /**

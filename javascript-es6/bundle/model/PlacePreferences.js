@@ -45,13 +45,11 @@ var PlacePreferences =
    * @alias module:model/PlacePreferences
    * @class
   
-   * @param _public { Boolean }
-  
    */
-    function PlacePreferences(_public) {
+    function PlacePreferences() {
       _classCallCheck(this, PlacePreferences);
 
-      this._public = _public;
+      this._public = null;
     }
     /**
      * Constructs a "PlacePreferences" from a plain JavaScript object.

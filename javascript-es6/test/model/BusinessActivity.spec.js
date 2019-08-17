@@ -53,14 +53,14 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.BusinessActivity);
     });
 
-    it('should have the property alternateName (base name: "alternateName")', function() {
-      // uncomment below and update the code to test the property alternateName
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
       //var instane = new @KeyclicSdkJavascript.BusinessActivity();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property alternateName (base name: "alternateName")', function() {
+      // uncomment below and update the code to test the property alternateName
       //var instane = new @KeyclicSdkJavascript.BusinessActivity();
       //expect(instance).to.be();
     });
@@ -71,20 +71,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new @KeyclicSdkJavascript.BusinessActivity();
-      //expect(instance).to.be();
-    });
-
     it('should have the property metadataSchema (base name: "metadataSchema")', function() {
       // uncomment below and update the code to test the property metadataSchema
       //var instane = new @KeyclicSdkJavascript.BusinessActivity();
       //expect(instance).to.be();
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new @KeyclicSdkJavascript.BusinessActivity();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new @KeyclicSdkJavascript.BusinessActivity();
       //expect(instance).to.be();
     });

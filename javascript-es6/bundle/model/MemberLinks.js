@@ -57,12 +57,12 @@ var MemberLinks =
     function MemberLinks() {
       _classCallCheck(this, MemberLinks);
 
-      this.self = null;
-      this.person = null;
       this.organization = null;
-      this.selfType = _MemberLinksSelf.default;
-      this.personType = _MemberLinksPerson.default;
+      this.person = null;
+      this.self = null;
       this.organizationType = _MemberLinksOrganization.default;
+      this.personType = _MemberLinksPerson.default;
+      this.selfType = _MemberLinksSelf.default;
     }
     /**
      * Constructs a "MemberLinks" from a plain JavaScript object.
@@ -88,10 +88,10 @@ var MemberLinks =
             object = new MemberLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
+              object.organizationType
             );
           }
 
@@ -102,10 +102,10 @@ var MemberLinks =
             );
           }
 
-          if (data.hasOwnProperty("organization")) {
-            object.organization = _ApiClient.default.convertToType(
-              data["organization"],
-              object.organizationType
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 

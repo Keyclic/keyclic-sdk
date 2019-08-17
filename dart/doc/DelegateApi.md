@@ -28,7 +28,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = DelegateApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var delegateData = DelegateData(); // DelegateData | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **delegateData** | [**DelegateData**](DelegateData.md)|  | 
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

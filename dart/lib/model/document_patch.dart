@@ -11,12 +11,12 @@ class DocumentPatch {
       return;
     }
     file = DocumentPatchFile.fromJson(json['file']);
-    permission = DocumentPatchPermission.fromJson(json['permission']);
+    permission = DocumentPermission.fromJson(json['permission']);
   }
 
   DocumentPatchFile file;
 
-  DocumentPatchPermission permission;
+  DocumentPermission permission;
 
   @override
   bool operator ==(dynamic other) {

@@ -34,8 +34,8 @@ export default class ImageApi extends ApiClient {
   /**
    * Remove one Image resource.
    * @param { String } xKeyclicApp
-   * @param { String } operation The identifier of the resource formatted as GUID string.
-   * @param { String } image The identifier of the resource formatted as GUID string.
+   * @param { String } operation The identifier of the resource.
+   * @param { String } image The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -128,7 +128,7 @@ export default class ImageApi extends ApiClient {
   /**
    * Retrieve one Image resource.
    * @param { String } xKeyclicApp
-   * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+   * @param { String } businessActivity The identifier of the resource.
    * @param { String } width
    * @param { String } height
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
@@ -240,8 +240,8 @@ export default class ImageApi extends ApiClient {
   /**
    * Retrieve one Image resource.
    * @param { String } xKeyclicApp
-   * @param { String } feedback The identifier of the resource formatted as GUID string.
-   * @param { String } image The identifier of the resource formatted as GUID string.
+   * @param { String } feedback The identifier of the resource.
+   * @param { String } image The identifier of the resource.
    * @param { String } width
    * @param { String } height
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
@@ -362,8 +362,8 @@ export default class ImageApi extends ApiClient {
   /**
    * Retrieve one Image resource.
    * @param { String } xKeyclicApp
-   * @param { String } operation The identifier of the resource formatted as GUID string.
-   * @param { String } image The identifier of the resource formatted as GUID string.
+   * @param { String } operation The identifier of the resource.
+   * @param { String } image The identifier of the resource.
    * @param { String } width
    * @param { String } height
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
@@ -484,7 +484,7 @@ export default class ImageApi extends ApiClient {
   /**
    * Retrieve one Image resource.
    * @param { String } xKeyclicApp
-   * @param { String } person The identifier of the resource formatted as GUID string.
+   * @param { String } person The identifier of the resource.
    * @param { String } width
    * @param { String } height
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
@@ -593,7 +593,7 @@ export default class ImageApi extends ApiClient {
    * Create one Image resource.
    * @param { String } xKeyclicApp
    * @param { module:model/ImageData } imageData
-   * @param { String } feedback The identifier of the resource formatted as GUID string.
+   * @param { String } feedback The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -690,7 +690,7 @@ export default class ImageApi extends ApiClient {
    * Create one Image resource.
    * @param { String } xKeyclicApp
    * @param { module:model/ImageData } imageData
-   * @param { String } operation The identifier of the resource formatted as GUID string.
+   * @param { String } operation The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)

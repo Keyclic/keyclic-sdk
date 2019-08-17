@@ -24,8 +24,10 @@ export default class Condition {
     
      */
   constructor() {
+    this.id = null;
     this.operator = null;
     this.path = null;
+    this.type = null;
     this.value = [];
   }
 
@@ -44,11 +46,17 @@ export default class Condition {
       object = new Condition();
     }
 
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
+    }
     if (data.hasOwnProperty("operator")) {
       object.operator = ApiClient.convertToType(data["operator"], "String");
     }
     if (data.hasOwnProperty("path")) {
       object.path = ApiClient.convertToType(data["path"], "String");
+    }
+    if (data.hasOwnProperty("type")) {
+      object.type = ApiClient.convertToType(data["type"], "String");
     }
     if (data.hasOwnProperty("value")) {
       object.value = ApiClient.convertToType(data["value"], "['String']");

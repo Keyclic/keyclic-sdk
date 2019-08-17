@@ -2,21 +2,25 @@ part of keyclic_sdk_api.api;
 
 class ReviewLinks {
   ReviewLinks({
-    this.self,
     this.author,
+    this.itemReviewed,
+    this.self,
   });
 
   ReviewLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    self = ReviewLinksSelf.fromJson(json['self']);
     author = ReviewLinksAuthor.fromJson(json['author']);
+    itemReviewed = ReviewLinksItemReviewed.fromJson(json['itemReviewed']);
+    self = ReviewLinksSelf.fromJson(json['self']);
   }
 
-  ReviewLinksSelf self;
-
   ReviewLinksAuthor author;
+
+  ReviewLinksItemReviewed itemReviewed;
+
+  ReviewLinksSelf self;
 
   @override
   bool operator ==(dynamic other) {
@@ -32,14 +36,15 @@ class ReviewLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
       'author': author,
+      'itemReviewed': itemReviewed,
+      'self': self,
     };
   }
 
   @override
   String toString() {
-    return 'ReviewLinks[self=$self, author=$author, ]';
+    return 'ReviewLinks[author=$author, itemReviewed=$itemReviewed, self=$self, ]';
   }
 
   static List<ReviewLinks> listFromJson(List<dynamic> json) {

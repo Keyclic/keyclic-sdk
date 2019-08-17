@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import CategoryLinksOrganizationIriTemplate from "./CategoryLinksOrganizationIriTemplate";
+import PersonLinksMemberOfIriTemplate from "./PersonLinksMemberOfIriTemplate";
 
 /**
  * The PersonLinksMemberOf model module.
@@ -28,7 +28,7 @@ export default class PersonLinksMemberOf {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = CategoryLinksOrganizationIriTemplate;
+    this.iriTemplateType = PersonLinksMemberOfIriTemplate;
   }
 
   /**

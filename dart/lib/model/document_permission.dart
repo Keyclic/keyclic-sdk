@@ -20,13 +20,11 @@ class DocumentPermission {
       return true;
     }
 
-    return other is DocumentPermission &&
-        runtimeType == other.runtimeType &&
-        targetGroup == other.targetGroup;
+    return other is DocumentPermission && runtimeType == other.runtimeType;
   }
 
   @override
-  int get hashCode => 0 ^ targetGroup.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {

@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import DocumentLinksSelfIriTemplateMapping from "./DocumentLinksSelfIriTemplateMapping";
+import DocumentLinksFileIriTemplateMapping from "./DocumentLinksFileIriTemplateMapping";
 
 /**
  * The DocumentLinksSelfIriTemplate model module.
@@ -27,7 +27,7 @@ export default class DocumentLinksSelfIriTemplate {
   constructor() {
     this.mapping = null;
 
-    this.mappingType = DocumentLinksSelfIriTemplateMapping;
+    this.mappingType = DocumentLinksFileIriTemplateMapping;
   }
 
   /**

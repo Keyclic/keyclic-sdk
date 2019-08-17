@@ -71,20 +71,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property verb (base name: "verb")', function() {
-      // uncomment below and update the code to test the property verb
-      //var instane = new @KeyclicSdkJavascript.Activity();
-      //expect(instance).to.be();
-    });
-
     it('should have the property origin (base name: "origin")', function() {
       // uncomment below and update the code to test the property origin
-      //var instane = new @KeyclicSdkJavascript.Activity();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property title (base name: "title")', function() {
-      // uncomment below and update the code to test the property title
       //var instane = new @KeyclicSdkJavascript.Activity();
       //expect(instance).to.be();
     });
@@ -97,6 +85,18 @@
 
     it('should have the property time (base name: "time")', function() {
       // uncomment below and update the code to test the property time
+      //var instane = new @KeyclicSdkJavascript.Activity();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property title (base name: "title")', function() {
+      // uncomment below and update the code to test the property title
+      //var instane = new @KeyclicSdkJavascript.Activity();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property verb (base name: "verb")', function() {
+      // uncomment below and update the code to test the property verb
       //var instane = new @KeyclicSdkJavascript.Activity();
       //expect(instance).to.be();
     });

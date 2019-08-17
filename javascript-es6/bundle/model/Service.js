@@ -11,8 +11,6 @@ var _ServiceContactPoint = _interopRequireDefault(
   require("./ServiceContactPoint")
 );
 
-var _ServiceLinks = _interopRequireDefault(require("./ServiceLinks"));
-
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -51,24 +49,20 @@ var Service =
    * @alias module:model/Service
    * @class
   
-   * @param contactPoint { module:model/ServiceContactPoint }
-  
    * @param name { String }
   
-   * @param id { String }
-  
    */
-    function Service(contactPoint, name, id) {
+    function Service(name) {
       _classCallCheck(this, Service);
 
-      this.contactPoint = contactPoint;
+      this.contactPoint = null;
+      this.createdAt = null;
       this.description = null;
+      this.id = null;
       this.name = name;
-      this.id = id;
       this.type = null;
-      this.links = null;
+      this.updatedAt = null;
       this.contactPointType = _ServiceContactPoint.default;
-      this.linksType = _ServiceLinks.default;
     }
     /**
      * Constructs a "Service" from a plain JavaScript object.
@@ -101,11 +95,22 @@ var Service =
             );
           }
 
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
           if (data.hasOwnProperty("description")) {
             object.description = _ApiClient.default.convertToType(
               data["description"],
               "String"
             );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
 
           if (data.hasOwnProperty("name")) {
@@ -115,10 +120,6 @@ var Service =
             );
           }
 
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
-          }
-
           if (data.hasOwnProperty("type")) {
             object.type = _ApiClient.default.convertToType(
               data["type"],
@@ -126,10 +127,10 @@ var Service =
             );
           }
 
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

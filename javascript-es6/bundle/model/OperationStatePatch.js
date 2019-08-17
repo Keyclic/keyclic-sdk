@@ -114,11 +114,11 @@ exports.default = OperationStatePatch;
 
 _defineProperty(OperationStatePatch, "TransitionEnum", {
   /**
-   * value: "reset"
+   * value: "accept"
    * @const
    * @readonly
    */
-  reset: "reset",
+  accept: "accept",
 
   /**
    * value: "assign"
@@ -128,11 +128,11 @@ _defineProperty(OperationStatePatch, "TransitionEnum", {
   assign: "assign",
 
   /**
-   * value: "accept"
+   * value: "progress"
    * @const
    * @readonly
    */
-  accept: "accept",
+  progress: "progress",
 
   /**
    * value: "refuse"
@@ -142,11 +142,11 @@ _defineProperty(OperationStatePatch, "TransitionEnum", {
   refuse: "refuse",
 
   /**
-   * value: "progress"
+   * value: "reset"
    * @const
    * @readonly
    */
-  progress: "progress",
+  reset: "reset",
 
   /**
    * value: "resolve"

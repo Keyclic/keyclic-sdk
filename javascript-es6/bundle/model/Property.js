@@ -55,17 +55,18 @@ var Property =
     function Property() {
       _classCallCheck(this, Property);
 
-      this.type = null;
-      this._enum = [];
+      this.conditions = null;
+      this._default = null;
       this.description = null;
+      this._enum = [];
       this.format = null;
+      this.id = null;
+      this.items = null;
       this.maxItems = null;
       this.minItems = null;
-      this._default = null;
       this.propertyOrder = null;
       this.title = null;
-      this.conditions = null;
-      this.items = null;
+      this.type = null;
       this.conditionsType = _PropertyConditions.default;
       this.itemsType = _PropertyItems.default;
     }
@@ -93,9 +94,23 @@ var Property =
             object = new Property();
           }
 
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
+          if (data.hasOwnProperty("conditions")) {
+            object.conditions = _ApiClient.default.convertToType(
+              data["conditions"],
+              object.conditionsType
+            );
+          }
+
+          if (data.hasOwnProperty("default")) {
+            object._default = _ApiClient.default.convertToType(
+              data["default"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
               "String"
             );
           }
@@ -107,17 +122,21 @@ var Property =
             );
           }
 
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
-              "String"
-            );
-          }
-
           if (data.hasOwnProperty("format")) {
             object.format = _ApiClient.default.convertToType(
               data["format"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(
+              data["items"],
+              object.itemsType
             );
           }
 
@@ -135,13 +154,6 @@ var Property =
             );
           }
 
-          if (data.hasOwnProperty("default")) {
-            object._default = _ApiClient.default.convertToType(
-              data["default"],
-              "String"
-            );
-          }
-
           if (data.hasOwnProperty("propertyOrder")) {
             object.propertyOrder = _ApiClient.default.convertToType(
               data["propertyOrder"],
@@ -156,17 +168,10 @@ var Property =
             );
           }
 
-          if (data.hasOwnProperty("conditions")) {
-            object.conditions = _ApiClient.default.convertToType(
-              data["conditions"],
-              object.conditionsType
-            );
-          }
-
-          if (data.hasOwnProperty("items")) {
-            object.items = _ApiClient.default.convertToType(
-              data["items"],
-              object.itemsType
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
             );
           }
 

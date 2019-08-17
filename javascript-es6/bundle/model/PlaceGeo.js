@@ -51,17 +51,15 @@ var PlaceGeo =
   
    * @param polygon { module:model/PlaceGeoPolygon }
   
-   * @param elevation { Number }
-  
    */
-    function PlaceGeo(polygon, elevation) {
+    function PlaceGeo(polygon) {
       _classCallCheck(this, PlaceGeo);
 
-      this.polygon = polygon;
-      this.elevation = elevation;
       this.centroid = null;
-      this.polygonType = _PlaceGeoPolygon.default;
+      this.elevation = null;
+      this.polygon = polygon;
       this.centroidType = _PlaceGeoCentroid.default;
+      this.polygonType = _PlaceGeoPolygon.default;
     }
     /**
      * Constructs a "PlaceGeo" from a plain JavaScript object.
@@ -87,10 +85,10 @@ var PlaceGeo =
             object = new PlaceGeo();
           }
 
-          if (data.hasOwnProperty("polygon")) {
-            object.polygon = _ApiClient.default.convertToType(
-              data["polygon"],
-              object.polygonType
+          if (data.hasOwnProperty("centroid")) {
+            object.centroid = _ApiClient.default.convertToType(
+              data["centroid"],
+              object.centroidType
             );
           }
 
@@ -101,10 +99,10 @@ var PlaceGeo =
             );
           }
 
-          if (data.hasOwnProperty("centroid")) {
-            object.centroid = _ApiClient.default.convertToType(
-              data["centroid"],
-              object.centroidType
+          if (data.hasOwnProperty("polygon")) {
+            object.polygon = _ApiClient.default.convertToType(
+              data["polygon"],
+              object.polygonType
             );
           }
 

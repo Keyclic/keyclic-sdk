@@ -37,13 +37,13 @@ export default class FeedbackApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    * @param { String } state   (default to DELIVERED)
-   * @param { String } category The identifier of the resource formatted as GUID string.
+   * @param { String } category The identifier of the resource.
    * @param { module:model/Date } after
    * @param { module:model/Date } before
    * @param { String } geoHash
    * @param { module:model/String } geoNear One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
    * @param { module:model/String } order   (default to desc)
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
    * @param { module:model/String } visibility   (default to VISIBILITY_PUBLIC)
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
@@ -192,18 +192,18 @@ export default class FeedbackApi extends ApiClient {
   /**
    * Retrieve all Feedback resources.
    * @param { String } xKeyclicApp
-   * @param { String } person The identifier of the resource formatted as GUID string.
+   * @param { String } person The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { FeedbackPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { String } category The identifier of the resource formatted as GUID string.
+   * @param { String } category The identifier of the resource.
    * @param { module:model/Date } after
    * @param { module:model/Date } before
    * @param { String } geoHash
    * @param { module:model/String } geoNear One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
    * @param { module:model/String } order   (default to desc)
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
    * @param { String } state
    * @param { module:model/String } visibility   (default to VISIBILITY_PUBLIC)
    * @param { Number } page Page of the overview.  (default to 1)
@@ -369,7 +369,7 @@ export default class FeedbackApi extends ApiClient {
   /**
    * Retrieve one Feedback resource.
    * @param { String } xKeyclicApp
-   * @param { String } feedback The identifier of the resource formatted as GUID string.
+   * @param { String } feedback The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)

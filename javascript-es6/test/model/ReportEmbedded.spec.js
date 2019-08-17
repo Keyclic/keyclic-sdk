@@ -53,6 +53,12 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.ReportEmbedded);
     });
 
+    it('should have the property duration (base name: "duration")', function() {
+      // uncomment below and update the code to test the property duration
+      //var instane = new @KeyclicSdkJavascript.ReportEmbedded();
+      //expect(instance).to.be();
+    });
+
     it('should have the property stateTransitions (base name: "stateTransitions")', function() {
       // uncomment below and update the code to test the property stateTransitions
       //var instane = new @KeyclicSdkJavascript.ReportEmbedded();
@@ -67,12 +73,6 @@
 
     it('should have the property tracking (base name: "tracking")', function() {
       // uncomment below and update the code to test the property tracking
-      //var instane = new @KeyclicSdkJavascript.ReportEmbedded();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property duration (base name: "duration")', function() {
-      // uncomment below and update the code to test the property duration
       //var instane = new @KeyclicSdkJavascript.ReportEmbedded();
       //expect(instance).to.be();
     });

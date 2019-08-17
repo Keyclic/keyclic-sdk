@@ -53,26 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.Member);
     });
 
-    it('should have the property roles (base name: "roles")', function() {
-      // uncomment below and update the code to test the property roles
-      //var instane = new @KeyclicSdkJavascript.Member();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new @KeyclicSdkJavascript.Member();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createdAt (base name: "createdAt")', function() {
-      // uncomment below and update the code to test the property createdAt
-      //var instane = new @KeyclicSdkJavascript.Member();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
+    it('should have the property embedded (base name: "_embedded")', function() {
+      // uncomment below and update the code to test the property embedded
       //var instane = new @KeyclicSdkJavascript.Member();
       //expect(instance).to.be();
     });
@@ -83,8 +65,26 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property embedded (base name: "_embedded")', function() {
-      // uncomment below and update the code to test the property embedded
+    it('should have the property createdAt (base name: "createdAt")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instane = new @KeyclicSdkJavascript.Member();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new @KeyclicSdkJavascript.Member();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property roles (base name: "roles")', function() {
+      // uncomment below and update the code to test the property roles
+      //var instane = new @KeyclicSdkJavascript.Member();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new @KeyclicSdkJavascript.Member();
       //expect(instance).to.be();
     });

@@ -7,10 +7,6 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _FeedbackLinksImages = _interopRequireDefault(
-  require("./FeedbackLinksImages")
-);
-
 var _OperationLinksCreatedBy = _interopRequireDefault(
   require("./OperationLinksCreatedBy")
 );
@@ -21,6 +17,10 @@ var _OperationLinksFeedback = _interopRequireDefault(
 
 var _OperationLinksImage = _interopRequireDefault(
   require("./OperationLinksImage")
+);
+
+var _OperationLinksImages = _interopRequireDefault(
+  require("./OperationLinksImages")
 );
 
 var _OperationLinksOperator = _interopRequireDefault(
@@ -81,22 +81,22 @@ var OperationLinks =
     function OperationLinks() {
       _classCallCheck(this, OperationLinks);
 
-      this.self = null;
-      this.image = null;
-      this.feedback = null;
-      this.report = null;
-      this.operator = null;
       this.createdBy = null;
-      this.tracking = null;
+      this.feedback = null;
+      this.image = null;
       this.images = [];
-      this.selfType = _OperationLinksSelf.default;
-      this.imageType = _OperationLinksImage.default;
-      this.feedbackType = _OperationLinksFeedback.default;
-      this.reportType = _OperationLinksReport.default;
-      this.operatorType = _OperationLinksOperator.default;
+      this.operator = null;
+      this.report = null;
+      this.self = null;
+      this.tracking = null;
       this.createdByType = _OperationLinksCreatedBy.default;
+      this.feedbackType = _OperationLinksFeedback.default;
+      this.imageType = _OperationLinksImage.default;
+      this.imagesType = _OperationLinksImages.default;
+      this.operatorType = _OperationLinksOperator.default;
+      this.reportType = _OperationLinksReport.default;
+      this.selfType = _OperationLinksSelf.default;
       this.trackingType = _OperationLinksTracking.default;
-      this.imagesType = _FeedbackLinksImages.default;
     }
     /**
      * Constructs a "OperationLinks" from a plain JavaScript object.
@@ -122,17 +122,10 @@ var OperationLinks =
             object = new OperationLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
-          }
-
-          if (data.hasOwnProperty("image")) {
-            object.image = _ApiClient.default.convertToType(
-              data["image"],
-              object.imageType
+          if (data.hasOwnProperty("createdBy")) {
+            object.createdBy = _ApiClient.default.convertToType(
+              data["createdBy"],
+              object.createdByType
             );
           }
 
@@ -143,11 +136,17 @@ var OperationLinks =
             );
           }
 
-          if (data.hasOwnProperty("report")) {
-            object.report = _ApiClient.default.convertToType(
-              data["report"],
-              object.reportType
+          if (data.hasOwnProperty("image")) {
+            object.image = _ApiClient.default.convertToType(
+              data["image"],
+              object.imageType
             );
+          }
+
+          if (data.hasOwnProperty("images")) {
+            object.images = _ApiClient.default.convertToType(data["images"], [
+              object.imagesType
+            ]);
           }
 
           if (data.hasOwnProperty("operator")) {
@@ -157,10 +156,17 @@ var OperationLinks =
             );
           }
 
-          if (data.hasOwnProperty("createdBy")) {
-            object.createdBy = _ApiClient.default.convertToType(
-              data["createdBy"],
-              object.createdByType
+          if (data.hasOwnProperty("report")) {
+            object.report = _ApiClient.default.convertToType(
+              data["report"],
+              object.reportType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 
@@ -169,12 +175,6 @@ var OperationLinks =
               data["tracking"],
               object.trackingType
             );
-          }
-
-          if (data.hasOwnProperty("images")) {
-            object.images = _ApiClient.default.convertToType(data["images"], [
-              object.imagesType
-            ]);
           }
 
           return object;

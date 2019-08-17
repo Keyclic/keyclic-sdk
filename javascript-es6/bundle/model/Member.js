@@ -49,22 +49,18 @@ var Member =
    * @alias module:model/Member
    * @class
   
-   * @param id { String }
-  
-   * @param createdAt { Date }
-  
    */
-    function Member(id, createdAt) {
+    function Member() {
       _classCallCheck(this, Member);
 
-      this.roles = [];
-      this.id = id;
-      this.createdAt = createdAt;
-      this.type = null;
-      this.links = null;
       this.embedded = null;
-      this.linksType = _MemberLinks.default;
+      this.links = null;
+      this.createdAt = null;
+      this.id = null;
+      this.roles = [];
+      this.type = null;
       this.embeddedType = _MemberEmbedded.default;
+      this.linksType = _MemberLinks.default;
     }
     /**
      * Constructs a "Member" from a plain JavaScript object.
@@ -90,28 +86,10 @@ var Member =
             object = new Member();
           }
 
-          if (data.hasOwnProperty("roles")) {
-            object.roles = _ApiClient.default.convertToType(
-              data["roles"],
-              "['String']"
-            );
-          }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
-          }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
-          }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
             );
           }
 
@@ -122,10 +100,28 @@ var Member =
             );
           }
 
-          if (data.hasOwnProperty("_embedded")) {
-            object.embedded = _ApiClient.default.convertToType(
-              data["_embedded"],
-              object.embeddedType
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("roles")) {
+            object.roles = _ApiClient.default.convertToType(
+              data["roles"],
+              "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
             );
           }
 

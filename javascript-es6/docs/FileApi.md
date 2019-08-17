@@ -28,7 +28,7 @@ let apiInstance = new @KeyclicSdkJavascript.FileApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let document = "document_example"; // String | The identifier of the resource formatted as GUID string.
+let document = "document_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -49,7 +49,7 @@ apiInstance.getFileByDocument(xKeyclicApp, document, opts, (error, data, respons
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **document** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **document** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

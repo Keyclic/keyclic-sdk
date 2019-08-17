@@ -4,10 +4,73 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**postTransitionByDelegation**](TransitionApi.md#postTransitionByDelegation) | **POST** /delegations/{delegation}/workflow/transition | Create one Transition resource.
 [**postTransitionByFeedback**](TransitionApi.md#postTransitionByFeedback) | **POST** /feedbacks/{feedback}/workflow/transition | Create one Transition resource.
 [**postTransitionByOperation**](TransitionApi.md#postTransitionByOperation) | **POST** /operations/{operation}/workflow/transition | Create one Transition resource.
 [**postTransitionByReport**](TransitionApi.md#postTransitionByReport) | **POST** /reports/{report}/workflow/transition | Create one Transition resource.
 
+
+<a name="postTransitionByDelegation"></a>
+# **postTransitionByDelegation**
+> Delegation postTransitionByDelegation(xKeyclicApp, reportWorkflowTransitionData, delegation, opts)
+
+Create one Transition resource.
+
+### Example
+```javascript
+import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
+let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new @KeyclicSdkJavascript.TransitionApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let reportWorkflowTransitionData = new @KeyclicSdkJavascript.ReportWorkflowTransitionData(); // ReportWorkflowTransitionData | 
+
+let delegation = "delegation_example"; // String | The identifier of the resource.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+};
+
+apiInstance.postTransitionByDelegation(xKeyclicApp, reportWorkflowTransitionData, delegation, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **reportWorkflowTransitionData** | [**ReportWorkflowTransitionData**](ReportWorkflowTransitionData.md)|  | 
+ **delegation** | [**String**](.md)| The identifier of the resource. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+
+### Return type
+
+[**Delegation**](Delegation.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
 <a name="postTransitionByFeedback"></a>
 # **postTransitionByFeedback**
@@ -32,7 +95,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let feedbackWorkflowTransitionData = new @KeyclicSdkJavascript.FeedbackWorkflowTransitionData(); // FeedbackWorkflowTransitionData | 
 
-let feedback = "feedback_example"; // String | The identifier of the resource formatted as GUID string.
+let feedback = "feedback_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -54,7 +117,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feedbackWorkflowTransitionData** | [**FeedbackWorkflowTransitionData**](FeedbackWorkflowTransitionData.md)|  | 
- **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -94,7 +157,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let operationWorkflowTransitionData = new @KeyclicSdkJavascript.OperationWorkflowTransitionData(); // OperationWorkflowTransitionData | 
 
-let operation = "operation_example"; // String | The identifier of the resource formatted as GUID string.
+let operation = "operation_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -116,7 +179,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **operationWorkflowTransitionData** | [**OperationWorkflowTransitionData**](OperationWorkflowTransitionData.md)|  | 
- **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -156,7 +219,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let reportWorkflowTransitionData = new @KeyclicSdkJavascript.ReportWorkflowTransitionData(); // ReportWorkflowTransitionData | 
 
-let report = "report_example"; // String | The identifier of the resource formatted as GUID string.
+let report = "report_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -178,7 +241,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **reportWorkflowTransitionData** | [**ReportWorkflowTransitionData**](ReportWorkflowTransitionData.md)|  | 
- **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

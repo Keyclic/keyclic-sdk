@@ -28,15 +28,15 @@ export default class PublicationLinks {
     
      */
   constructor() {
-    this.self = null;
     this.author = null;
     this.organization = null;
     this.place = null;
+    this.self = null;
 
-    this.selfType = PublicationLinksSelf;
     this.authorType = PublicationLinksAuthor;
     this.organizationType = PublicationLinksOrganization;
     this.placeType = PublicationLinksPlace;
+    this.selfType = PublicationLinksSelf;
   }
 
   /**
@@ -54,9 +54,6 @@ export default class PublicationLinks {
       object = new PublicationLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
-    }
     if (data.hasOwnProperty("author")) {
       object.author = ApiClient.convertToType(
         data["author"],
@@ -71,6 +68,9 @@ export default class PublicationLinks {
     }
     if (data.hasOwnProperty("place")) {
       object.place = ApiClient.convertToType(data["place"], object.placeType);
+    }
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
 
     return object;

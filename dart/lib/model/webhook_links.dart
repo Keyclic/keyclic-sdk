@@ -2,21 +2,21 @@ part of keyclic_sdk_api.api;
 
 class WebhookLinks {
   WebhookLinks({
-    this.self,
     this.organization,
+    this.self,
   });
 
   WebhookLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    self = WebhookLinksSelf.fromJson(json['self']);
     organization = WebhookLinksOrganization.fromJson(json['organization']);
+    self = WebhookLinksSelf.fromJson(json['self']);
   }
 
-  WebhookLinksSelf self;
-
   WebhookLinksOrganization organization;
+
+  WebhookLinksSelf self;
 
   @override
   bool operator ==(dynamic other) {
@@ -32,14 +32,14 @@ class WebhookLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
       'organization': organization,
+      'self': self,
     };
   }
 
   @override
   String toString() {
-    return 'WebhookLinks[self=$self, organization=$organization, ]';
+    return 'WebhookLinks[organization=$organization, self=$self, ]';
   }
 
   static List<WebhookLinks> listFromJson(List<dynamic> json) {

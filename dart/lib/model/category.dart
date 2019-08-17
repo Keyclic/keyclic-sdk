@@ -2,49 +2,49 @@ part of keyclic_sdk_api.api;
 
 class Category {
   Category({
+    this.links,
     this.color,
+    this.createdAt,
     this.icon,
-    this.name,
     this.id,
     this.identificationNumber,
-    this.createdAt,
+    this.name,
     this.type,
-    this.links,
   });
 
   Category.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
+    links = CategoryLinks.fromJson(json['_links']);
     color = json['color'];
-    icon = json['icon'];
-    name = json['name'];
-    id = json['id'];
-    identificationNumber = json['identificationNumber'];
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
+    icon = json['icon'];
+    id = json['id'];
+    identificationNumber = json['identificationNumber'];
+    name = json['name'];
     type = json['type'];
-    links = CategoryLinks.fromJson(json['_links']);
   }
+
+  CategoryLinks links;
 
   String color;
 
-  String icon;
+  DateTime createdAt;
 
-  String name;
+  String icon;
 
   String id;
 
   String identificationNumber;
 
-  DateTime createdAt;
+  String name;
 
   String type;
-
-  CategoryLinks links;
 
   @override
   bool operator ==(dynamic other) {
@@ -54,32 +54,28 @@ class Category {
 
     return other is Category &&
         runtimeType == other.runtimeType &&
-        color == other.color &&
-        name == other.name &&
-        id == other.id &&
-        createdAt == other.createdAt;
+        name == other.name;
   }
 
   @override
-  int get hashCode =>
-      0 ^ color.hashCode ^ name.hashCode ^ id.hashCode ^ createdAt.hashCode;
+  int get hashCode => 0 ^ name.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
+      '_links': links,
       'color': color,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
       'icon': icon,
-      'name': name,
       'id': id,
       'identificationNumber': identificationNumber,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
+      'name': name,
       'type': type,
-      '_links': links,
     };
   }
 
   @override
   String toString() {
-    return 'Category[color=$color, icon=$icon, name=$name, id=$id, identificationNumber=$identificationNumber, createdAt=$createdAt, type=$type, links=$links, ]';
+    return 'Category[links=$links, color=$color, createdAt=$createdAt, icon=$icon, id=$id, identificationNumber=$identificationNumber, name=$name, type=$type, ]';
   }
 
   static List<Category> listFromJson(List<dynamic> json) {

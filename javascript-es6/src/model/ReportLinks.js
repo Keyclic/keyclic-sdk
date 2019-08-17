@@ -33,24 +33,24 @@ export default class ReportLinks {
     
      */
   constructor() {
-    this.self = null;
+    this.category = null;
+    this.delegatedFrom = null;
+    this.delegatedTo = null;
     this.feedback = null;
     this.operations = null;
     this.organization = null;
-    this.category = null;
-    this.delegatedTo = null;
-    this.delegatedFrom = null;
     this.place = null;
+    this.self = null;
     this.tracking = null;
 
-    this.selfType = ReportLinksSelf;
+    this.categoryType = ReportLinksCategory;
+    this.delegatedFromType = ReportLinksDelegatedFrom;
+    this.delegatedToType = ReportLinksDelegatedTo;
     this.feedbackType = ReportLinksFeedback;
     this.operationsType = ReportLinksOperations;
     this.organizationType = ReportLinksOrganization;
-    this.categoryType = ReportLinksCategory;
-    this.delegatedToType = ReportLinksDelegatedTo;
-    this.delegatedFromType = ReportLinksDelegatedFrom;
     this.placeType = ReportLinksPlace;
+    this.selfType = ReportLinksSelf;
     this.trackingType = ReportLinksTracking;
   }
 
@@ -69,8 +69,23 @@ export default class ReportLinks {
       object = new ReportLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
+    if (data.hasOwnProperty("category")) {
+      object.category = ApiClient.convertToType(
+        data["category"],
+        object.categoryType
+      );
+    }
+    if (data.hasOwnProperty("delegatedFrom")) {
+      object.delegatedFrom = ApiClient.convertToType(
+        data["delegatedFrom"],
+        object.delegatedFromType
+      );
+    }
+    if (data.hasOwnProperty("delegatedTo")) {
+      object.delegatedTo = ApiClient.convertToType(
+        data["delegatedTo"],
+        object.delegatedToType
+      );
     }
     if (data.hasOwnProperty("feedback")) {
       object.feedback = ApiClient.convertToType(
@@ -90,26 +105,11 @@ export default class ReportLinks {
         object.organizationType
       );
     }
-    if (data.hasOwnProperty("category")) {
-      object.category = ApiClient.convertToType(
-        data["category"],
-        object.categoryType
-      );
-    }
-    if (data.hasOwnProperty("delegatedTo")) {
-      object.delegatedTo = ApiClient.convertToType(
-        data["delegatedTo"],
-        object.delegatedToType
-      );
-    }
-    if (data.hasOwnProperty("delegatedFrom")) {
-      object.delegatedFrom = ApiClient.convertToType(
-        data["delegatedFrom"],
-        object.delegatedFromType
-      );
-    }
     if (data.hasOwnProperty("place")) {
       object.place = ApiClient.convertToType(data["place"], object.placeType);
+    }
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
     if (data.hasOwnProperty("tracking")) {
       object.tracking = ApiClient.convertToType(

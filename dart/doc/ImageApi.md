@@ -33,8 +33,8 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = ImageApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var operation = ; // String | The identifier of the resource formatted as GUID string.
-var image = ; // String | The identifier of the resource formatted as GUID string.
+var operation = ; // String | The identifier of the resource.
+var image = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -50,8 +50,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **image** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
+ **image** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -85,7 +85,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = ImageApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var businessActivity = ; // String | The identifier of the resource formatted as GUID string.
+var businessActivity = ; // String | The identifier of the resource.
 var width = width_example; // String | 
 var height = height_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
@@ -104,7 +104,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **businessActivity** | [**String**](.md)| The identifier of the resource. | 
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
@@ -140,8 +140,8 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = ImageApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var feedback = ; // String | The identifier of the resource formatted as GUID string.
-var image = ; // String | The identifier of the resource formatted as GUID string.
+var feedback = ; // String | The identifier of the resource.
+var image = ; // String | The identifier of the resource.
 var width = width_example; // String | 
 var height = height_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
@@ -160,8 +160,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **image** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource. | 
+ **image** | [**String**](.md)| The identifier of the resource. | 
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
@@ -197,8 +197,8 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = ImageApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var operation = ; // String | The identifier of the resource formatted as GUID string.
-var image = ; // String | The identifier of the resource formatted as GUID string.
+var operation = ; // String | The identifier of the resource.
+var image = ; // String | The identifier of the resource.
 var width = width_example; // String | 
 var height = height_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
@@ -217,8 +217,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **image** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
+ **image** | [**String**](.md)| The identifier of the resource. | 
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
@@ -254,7 +254,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = ImageApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var person = ; // String | The identifier of the resource formatted as GUID string.
+var person = ; // String | The identifier of the resource.
 var width = width_example; // String | 
 var height = height_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
@@ -273,7 +273,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource. | 
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
@@ -310,7 +310,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = ImageApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var imageData = ImageData(); // ImageData | 
-var feedback = ; // String | The identifier of the resource formatted as GUID string.
+var feedback = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **imageData** | [**ImageData**](ImageData.md)|  | 
- **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -363,7 +363,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = ImageApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var imageData = ImageData(); // ImageData | 
-var operation = ; // String | The identifier of the resource formatted as GUID string.
+var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **imageData** | [**ImageData**](ImageData.md)|  | 
- **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

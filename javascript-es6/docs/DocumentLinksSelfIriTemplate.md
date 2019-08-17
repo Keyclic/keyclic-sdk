@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mapping** | [**DocumentLinksSelfIriTemplateMapping**](DocumentLinksSelfIriTemplateMapping.md) |  | [optional] 
+**mapping** | [**DocumentLinksFileIriTemplateMapping**](DocumentLinksFileIriTemplateMapping.md) |  | [optional] 
 
 

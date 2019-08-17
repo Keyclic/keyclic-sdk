@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import OccupantLinksPlaceIriTemplate from "./OccupantLinksPlaceIriTemplate";
+import ReportLinksPlaceIriTemplate from "./ReportLinksPlaceIriTemplate";
 
 /**
  * The ReportLinksPlace model module.
@@ -28,7 +28,7 @@ export default class ReportLinksPlace {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = OccupantLinksPlaceIriTemplate;
+    this.iriTemplateType = ReportLinksPlaceIriTemplate;
   }
 
   /**

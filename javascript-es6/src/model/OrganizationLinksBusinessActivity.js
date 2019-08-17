@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import BusinessActivityLinksSelfIriTemplate from "./BusinessActivityLinksSelfIriTemplate";
+import OrganizationLinksBusinessActivityIriTemplate from "./OrganizationLinksBusinessActivityIriTemplate";
 
 /**
  * The OrganizationLinksBusinessActivity model module.
@@ -28,7 +28,7 @@ export default class OrganizationLinksBusinessActivity {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = BusinessActivityLinksSelfIriTemplate;
+    this.iriTemplateType = OrganizationLinksBusinessActivityIriTemplate;
   }
 
   /**

@@ -2,25 +2,25 @@ part of keyclic_sdk_api.api;
 
 class MemberLinks {
   MemberLinks({
-    this.self,
-    this.person,
     this.organization,
+    this.person,
+    this.self,
   });
 
   MemberLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    self = MemberLinksSelf.fromJson(json['self']);
-    person = MemberLinksPerson.fromJson(json['person']);
     organization = MemberLinksOrganization.fromJson(json['organization']);
+    person = MemberLinksPerson.fromJson(json['person']);
+    self = MemberLinksSelf.fromJson(json['self']);
   }
 
-  MemberLinksSelf self;
+  MemberLinksOrganization organization;
 
   MemberLinksPerson person;
 
-  MemberLinksOrganization organization;
+  MemberLinksSelf self;
 
   @override
   bool operator ==(dynamic other) {
@@ -36,15 +36,15 @@ class MemberLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
-      'person': person,
       'organization': organization,
+      'person': person,
+      'self': self,
     };
   }
 
   @override
   String toString() {
-    return 'MemberLinks[self=$self, person=$person, organization=$organization, ]';
+    return 'MemberLinks[organization=$organization, person=$person, self=$self, ]';
   }
 
   static List<MemberLinks> listFromJson(List<dynamic> json) {

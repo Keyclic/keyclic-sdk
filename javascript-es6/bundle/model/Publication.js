@@ -53,21 +53,17 @@ var Publication =
   
    * @param title { String }
   
-   * @param id { String }
-  
-   * @param createdAt { Date }
-  
    */
-    function Publication(message, read, title, id, createdAt) {
+    function Publication(message, read, title) {
       _classCallCheck(this, Publication);
 
+      this.links = null;
+      this.createdAt = null;
+      this.id = null;
       this.message = message;
       this.read = read;
       this.title = title;
-      this.id = id;
-      this.createdAt = createdAt;
       this.type = null;
-      this.links = null;
       this.linksType = _PublicationLinks.default;
     }
     /**
@@ -94,6 +90,24 @@ var Publication =
             object = new Publication();
           }
 
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
           if (data.hasOwnProperty("message")) {
             object.message = _ApiClient.default.convertToType(
               data["message"],
@@ -115,28 +129,10 @@ var Publication =
             );
           }
 
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
-          }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
-          }
-
           if (data.hasOwnProperty("type")) {
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
-            );
-          }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
             );
           }
 

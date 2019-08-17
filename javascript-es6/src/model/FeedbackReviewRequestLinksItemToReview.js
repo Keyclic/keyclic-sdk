@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import FeedbackLinksSelfIriTemplate from "./FeedbackLinksSelfIriTemplate";
+import FeedbackReviewRequestLinksItemToReviewIriTemplate from "./FeedbackReviewRequestLinksItemToReviewIriTemplate";
 
 /**
  * The FeedbackReviewRequestLinksItemToReview model module.
@@ -28,7 +28,7 @@ export default class FeedbackReviewRequestLinksItemToReview {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = FeedbackLinksSelfIriTemplate;
+    this.iriTemplateType = FeedbackReviewRequestLinksItemToReviewIriTemplate;
   }
 
   /**

@@ -26,29 +26,16 @@ export default class LogEntry {
     
      * @param loggedAt { Date }
     
-     * @param objectId { String }
-    
-     * @param version { String }
-    
-     * @param data { Array.<String> }
-    
      */
   constructor(
     action,
 
-    loggedAt,
-
-    objectId,
-
-    version,
-
-    data
+    loggedAt
   ) {
     this.action = action;
+    this.actor = null;
+    this.data = [];
     this.loggedAt = loggedAt;
-    this.objectId = objectId;
-    this.version = version;
-    this.data = data;
   }
 
   /**
@@ -69,17 +56,14 @@ export default class LogEntry {
     if (data.hasOwnProperty("action")) {
       object.action = ApiClient.convertToType(data["action"], "String");
     }
-    if (data.hasOwnProperty("loggedAt")) {
-      object.loggedAt = ApiClient.convertToType(data["loggedAt"], "Date");
-    }
-    if (data.hasOwnProperty("objectId")) {
-      object.objectId = ApiClient.convertToType(data["objectId"], "String");
-    }
-    if (data.hasOwnProperty("version")) {
-      object.version = ApiClient.convertToType(data["version"], "String");
+    if (data.hasOwnProperty("actor")) {
+      object.actor = ApiClient.convertToType(data["actor"], "String");
     }
     if (data.hasOwnProperty("data")) {
       object.data = ApiClient.convertToType(data["data"], "['String']");
+    }
+    if (data.hasOwnProperty("loggedAt")) {
+      object.loggedAt = ApiClient.convertToType(data["loggedAt"], "Date");
     }
 
     return object;

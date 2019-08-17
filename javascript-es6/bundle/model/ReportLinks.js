@@ -81,23 +81,23 @@ var ReportLinks =
     function ReportLinks() {
       _classCallCheck(this, ReportLinks);
 
-      this.self = null;
+      this.category = null;
+      this.delegatedFrom = null;
+      this.delegatedTo = null;
       this.feedback = null;
       this.operations = null;
       this.organization = null;
-      this.category = null;
-      this.delegatedTo = null;
-      this.delegatedFrom = null;
       this.place = null;
+      this.self = null;
       this.tracking = null;
-      this.selfType = _ReportLinksSelf.default;
+      this.categoryType = _ReportLinksCategory.default;
+      this.delegatedFromType = _ReportLinksDelegatedFrom.default;
+      this.delegatedToType = _ReportLinksDelegatedTo.default;
       this.feedbackType = _ReportLinksFeedback.default;
       this.operationsType = _ReportLinksOperations.default;
       this.organizationType = _ReportLinksOrganization.default;
-      this.categoryType = _ReportLinksCategory.default;
-      this.delegatedToType = _ReportLinksDelegatedTo.default;
-      this.delegatedFromType = _ReportLinksDelegatedFrom.default;
       this.placeType = _ReportLinksPlace.default;
+      this.selfType = _ReportLinksSelf.default;
       this.trackingType = _ReportLinksTracking.default;
     }
     /**
@@ -124,10 +124,24 @@ var ReportLinks =
             object = new ReportLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
+          if (data.hasOwnProperty("category")) {
+            object.category = _ApiClient.default.convertToType(
+              data["category"],
+              object.categoryType
+            );
+          }
+
+          if (data.hasOwnProperty("delegatedFrom")) {
+            object.delegatedFrom = _ApiClient.default.convertToType(
+              data["delegatedFrom"],
+              object.delegatedFromType
+            );
+          }
+
+          if (data.hasOwnProperty("delegatedTo")) {
+            object.delegatedTo = _ApiClient.default.convertToType(
+              data["delegatedTo"],
+              object.delegatedToType
             );
           }
 
@@ -152,31 +166,17 @@ var ReportLinks =
             );
           }
 
-          if (data.hasOwnProperty("category")) {
-            object.category = _ApiClient.default.convertToType(
-              data["category"],
-              object.categoryType
-            );
-          }
-
-          if (data.hasOwnProperty("delegatedTo")) {
-            object.delegatedTo = _ApiClient.default.convertToType(
-              data["delegatedTo"],
-              object.delegatedToType
-            );
-          }
-
-          if (data.hasOwnProperty("delegatedFrom")) {
-            object.delegatedFrom = _ApiClient.default.convertToType(
-              data["delegatedFrom"],
-              object.delegatedFromType
-            );
-          }
-
           if (data.hasOwnProperty("place")) {
             object.place = _ApiClient.default.convertToType(
               data["place"],
               object.placeType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 

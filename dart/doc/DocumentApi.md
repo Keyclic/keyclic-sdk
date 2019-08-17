@@ -31,7 +31,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = DocumentApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var report = ; // String | The identifier of the resource formatted as GUID string.
+var report = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -53,7 +53,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
@@ -92,7 +92,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = DocumentApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var document = ; // String | The identifier of the resource formatted as GUID string.
+var document = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -108,7 +108,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **document** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **document** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -142,7 +142,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = DocumentApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var document = ; // String | The identifier of the resource formatted as GUID string.
+var document = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -159,7 +159,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **document** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **document** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -194,7 +194,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = DocumentApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var documentPatch = DocumentPatch(); // DocumentPatch | 
-var document = ; // String | The identifier of the resource formatted as GUID string.
+var document = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **documentPatch** | [**DocumentPatch**](DocumentPatch.md)|  | 
- **document** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **document** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -247,7 +247,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = DocumentApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var documentData = DocumentData(); // DocumentData | 
-var report = ; // String | The identifier of the resource formatted as GUID string.
+var report = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **documentData** | [**DocumentData**](DocumentData.md)|  | 
- **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

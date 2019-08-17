@@ -28,13 +28,13 @@ let apiInstance = new @KeyclicSdkJavascript.LogApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let operation = "operation_example"; // String | The identifier of the resource formatted as GUID string.
+let operation = "operation_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetLogsByOperation(xKeyclicApp, operation, opts, (error, data, response) => {
@@ -51,7 +51,7 @@ apiInstance.cgetLogsByOperation(xKeyclicApp, operation, opts, (error, data, resp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]

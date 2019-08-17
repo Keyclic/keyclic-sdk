@@ -145,7 +145,7 @@ var WebhookApi =
     /**
      * Retrieve all Webhook resources.
      * @param { String } xKeyclicApp
-     * @param { String } organization The identifier of the resource formatted as GUID string.
+     * @param { String } organization The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { WebhookPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -268,7 +268,7 @@ var WebhookApi =
         /**
          * Retrieve one Webhook resource.
          * @param { String } xKeyclicApp
-         * @param { String } webhook The identifier of the resource formatted as GUID string.
+         * @param { String } webhook The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Webhook }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -355,7 +355,7 @@ var WebhookApi =
          * Edit one Webhook resource.
          * @param { String } xKeyclicApp
          * @param { module:model/WebhookPatch } webhookPatch
-         * @param { String } webhook The identifier of the resource formatted as GUID string.
+         * @param { String } webhook The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Webhook }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

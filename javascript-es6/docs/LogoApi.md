@@ -28,7 +28,7 @@ let apiInstance = new @KeyclicSdkJavascript.LogoApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+let organization = "organization_example"; // String | The identifier of the resource.
 
 let width = "width_example"; // String | 
 
@@ -53,7 +53,7 @@ apiInstance.getLogoByOrganizationAndWidthAndHeight(xKeyclicApp, organization, wi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]

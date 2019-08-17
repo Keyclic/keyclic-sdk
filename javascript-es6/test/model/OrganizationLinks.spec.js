@@ -53,8 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.OrganizationLinks);
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
+    it('should have the property application (base name: "application")', function() {
+      // uncomment below and update the code to test the property application
       //var instane = new @KeyclicSdkJavascript.OrganizationLinks();
       //expect(instance).to.be();
     });
@@ -67,6 +67,12 @@
 
     it('should have the property logo (base name: "logo")', function() {
       // uncomment below and update the code to test the property logo
+      //var instane = new @KeyclicSdkJavascript.OrganizationLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
       //var instane = new @KeyclicSdkJavascript.OrganizationLinks();
       //expect(instance).to.be();
     });

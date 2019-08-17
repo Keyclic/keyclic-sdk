@@ -27,8 +27,8 @@ export default class PlaceGeoPolygon {
     
      */
   constructor(type) {
-    this.type = type;
     this.features = [];
+    this.type = type;
 
     this.featuresType = Feature;
   }
@@ -48,13 +48,13 @@ export default class PlaceGeoPolygon {
       object = new PlaceGeoPolygon();
     }
 
-    if (data.hasOwnProperty("type")) {
-      object.type = ApiClient.convertToType(data["type"], "String");
-    }
     if (data.hasOwnProperty("features")) {
       object.features = ApiClient.convertToType(data["features"], [
         object.featuresType
       ]);
+    }
+    if (data.hasOwnProperty("type")) {
+      object.type = ApiClient.convertToType(data["type"], "String");
     }
 
     return object;

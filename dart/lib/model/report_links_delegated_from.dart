@@ -12,13 +12,13 @@ class ReportLinksDelegatedFrom {
     }
     href = json['href'];
     iriTemplate =
-        CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+        ReportLinksDelegatedFromIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the delegatedFrom associated to the given report. */
   String href;
 
-  CategoryLinksOrganizationIriTemplate iriTemplate;
+  ReportLinksDelegatedFromIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

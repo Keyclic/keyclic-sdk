@@ -12,13 +12,13 @@ Name | Type | Description | Notes
 
 * `accept` (value: `"accept"`)
 
-* `refuse` (value: `"refuse"`)
+* `close` (value: `"close"`)
 
 * `hold` (value: `"hold"`)
 
 * `progress` (value: `"progress"`)
 
-* `close` (value: `"close"`)
+* `refuse` (value: `"refuse"`)
 
 
 

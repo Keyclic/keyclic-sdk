@@ -141,7 +141,7 @@ var DeviceApi =
     /**
      * Remove one Device resource.
      * @param { String } xKeyclicApp
-     * @param { String } person The identifier of the resource formatted as GUID string.
+     * @param { String } person The identifier of the resource.
      * @param { String } device
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
@@ -233,7 +233,7 @@ var DeviceApi =
          * Create one Device resource.
          * @param { String } xKeyclicApp
          * @param { module:model/DeviceData } deviceData
-         * @param { String } person The identifier of the resource formatted as GUID string.
+         * @param { String } person The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Device }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

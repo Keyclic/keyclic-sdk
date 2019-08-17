@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _OrganizationLinksApplication = _interopRequireDefault(
+  require("./OrganizationLinksApplication")
+);
+
 var _OrganizationLinksBusinessActivity = _interopRequireDefault(
   require("./OrganizationLinksBusinessActivity")
 );
@@ -61,12 +65,14 @@ var OrganizationLinks =
     function OrganizationLinks() {
       _classCallCheck(this, OrganizationLinks);
 
-      this.self = null;
+      this.application = null;
       this.businessActivity = null;
       this.logo = null;
-      this.selfType = _OrganizationLinksSelf.default;
+      this.self = null;
+      this.applicationType = _OrganizationLinksApplication.default;
       this.businessActivityType = _OrganizationLinksBusinessActivity.default;
       this.logoType = _OrganizationLinksLogo.default;
+      this.selfType = _OrganizationLinksSelf.default;
     }
     /**
      * Constructs a "OrganizationLinks" from a plain JavaScript object.
@@ -92,10 +98,10 @@ var OrganizationLinks =
             object = new OrganizationLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
+          if (data.hasOwnProperty("application")) {
+            object.application = _ApiClient.default.convertToType(
+              data["application"],
+              object.applicationType
             );
           }
 
@@ -110,6 +116,13 @@ var OrganizationLinks =
             object.logo = _ApiClient.default.convertToType(
               data["logo"],
               object.logoType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 

@@ -23,13 +23,11 @@ export default class Device {
      * @alias module:model/Device
      * @class
     
-     * @param id { String }
-    
      */
-  constructor(id) {
-    this.id = id;
-    this.type = null;
+  constructor() {
     this.links = null;
+    this.id = null;
+    this.type = null;
 
     this.linksType = DeviceLinks;
   }
@@ -49,14 +47,14 @@ export default class Device {
       object = new Device();
     }
 
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
-    }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
 
     return object;

@@ -11,14 +11,13 @@ class PersonLinksMemberOf {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = PersonLinksMemberOfIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the memberOf associated to the given person. */
   String href;
 
-  CategoryLinksOrganizationIriTemplate iriTemplate;
+  PersonLinksMemberOfIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

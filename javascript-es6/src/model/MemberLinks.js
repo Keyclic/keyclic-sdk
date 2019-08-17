@@ -27,13 +27,13 @@ export default class MemberLinks {
     
      */
   constructor() {
-    this.self = null;
-    this.person = null;
     this.organization = null;
+    this.person = null;
+    this.self = null;
 
-    this.selfType = MemberLinksSelf;
-    this.personType = MemberLinksPerson;
     this.organizationType = MemberLinksOrganization;
+    this.personType = MemberLinksPerson;
+    this.selfType = MemberLinksSelf;
   }
 
   /**
@@ -51,8 +51,11 @@ export default class MemberLinks {
       object = new MemberLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
+    if (data.hasOwnProperty("organization")) {
+      object.organization = ApiClient.convertToType(
+        data["organization"],
+        object.organizationType
+      );
     }
     if (data.hasOwnProperty("person")) {
       object.person = ApiClient.convertToType(
@@ -60,11 +63,8 @@ export default class MemberLinks {
         object.personType
       );
     }
-    if (data.hasOwnProperty("organization")) {
-      object.organization = ApiClient.convertToType(
-        data["organization"],
-        object.organizationType
-      );
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
 
     return object;

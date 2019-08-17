@@ -27,16 +27,16 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'state': "DELIVERED", // String | 
-  'category': "category_example", // String | The identifier of the resource formatted as GUID string.
+  'category': "category_example", // String | The identifier of the resource.
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'geoHash': "geoHash_example", // String | 
   'geoNear': "geoNear_example", // String | One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
   'order': "desc", // String | 
-  'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
+  'organization': "organization_example", // String | The identifier of the resource.
   'visibility': "VISIBILITY_PUBLIC", // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetFeedback(xKeyclicApp, , opts, (error, data, response) => {
@@ -56,13 +56,13 @@ Name | Type | Description  | Notes
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **state** | **String**|  | [optional] [default to DELIVERED]
- **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **category** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
  **geoHash** | **String**|  | [optional] 
  **geoNear** | **String**| One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign. | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
  **visibility** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
@@ -101,22 +101,22 @@ let apiInstance = new @KeyclicSdkJavascript.FeedbackApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let person = "person_example"; // String | The identifier of the resource formatted as GUID string.
+let person = "person_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'category': "category_example", // String | The identifier of the resource formatted as GUID string.
+  'category': "category_example", // String | The identifier of the resource.
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'geoHash': "geoHash_example", // String | 
   'geoNear': "geoNear_example", // String | One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign.
   'order': "desc", // String | 
-  'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
+  'organization': "organization_example", // String | The identifier of the resource.
   'state': "state_example", // String | 
   'visibility': "VISIBILITY_PUBLIC", // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetFeedbackByPerson(xKeyclicApp, person, opts, (error, data, response) => {
@@ -133,16 +133,16 @@ apiInstance.cgetFeedbackByPerson(xKeyclicApp, person, opts, (error, data, respon
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **category** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
  **geoHash** | **String**|  | [optional] 
  **geoNear** | **String**| One latitude, one longitude and one radius (in meters) serialized and separated by a plus or a minus sign. | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
  **state** | **String**|  | [optional] 
  **visibility** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
@@ -182,7 +182,7 @@ let apiInstance = new @KeyclicSdkJavascript.FeedbackApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let feedback = "feedback_example"; // String | The identifier of the resource formatted as GUID string.
+let feedback = "feedback_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -203,7 +203,7 @@ apiInstance.getFeedback(xKeyclicApp, feedback, opts, (error, data, response) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

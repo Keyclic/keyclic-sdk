@@ -12,7 +12,6 @@
 
 import ApiClient from "../ApiClient";
 import ServiceContactPoint from "./ServiceContactPoint";
-import ServiceLinks from "./ServiceLinks";
 
 /**
  * The Service model module.
@@ -24,29 +23,19 @@ export default class Service {
      * @alias module:model/Service
      * @class
     
-     * @param contactPoint { module:model/ServiceContactPoint }
-    
      * @param name { String }
     
-     * @param id { String }
-    
      */
-  constructor(
-    contactPoint,
-
-    name,
-
-    id
-  ) {
-    this.contactPoint = contactPoint;
+  constructor(name) {
+    this.contactPoint = null;
+    this.createdAt = null;
     this.description = null;
+    this.id = null;
     this.name = name;
-    this.id = id;
     this.type = null;
-    this.links = null;
+    this.updatedAt = null;
 
     this.contactPointType = ServiceContactPoint;
-    this.linksType = ServiceLinks;
   }
 
   /**
@@ -70,23 +59,26 @@ export default class Service {
         object.contactPointType
       );
     }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
         data["description"],
         "String"
       );
     }
-    if (data.hasOwnProperty("name")) {
-      object.name = ApiClient.convertToType(data["name"], "String");
-    }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
+    }
+    if (data.hasOwnProperty("name")) {
+      object.name = ApiClient.convertToType(data["name"], "String");
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
     }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

@@ -25,21 +25,11 @@ export default class OrganizationPreferences {
     
      * @param _public { Boolean }
     
-     * @param reference { module:model/OrganizationPreferencesReference }
-    
-     * @param reviewEnabled { Boolean }
-    
      */
-  constructor(
-    _public,
-
-    reference,
-
-    reviewEnabled
-  ) {
+  constructor(_public) {
     this._public = _public;
-    this.reference = reference;
-    this.reviewEnabled = reviewEnabled;
+    this.reference = null;
+    this.reviewEnabled = null;
 
     this.referenceType = OrganizationPreferencesReference;
   }

@@ -59,12 +59,12 @@ var OccupantLinks =
     function OccupantLinks() {
       _classCallCheck(this, OccupantLinks);
 
-      this.self = null;
       this.person = null;
       this.place = null;
-      this.selfType = _OccupantLinksSelf.default;
+      this.self = null;
       this.personType = _OccupantLinksPerson.default;
       this.placeType = _OccupantLinksPlace.default;
+      this.selfType = _OccupantLinksSelf.default;
     }
     /**
      * Constructs a "OccupantLinks" from a plain JavaScript object.
@@ -90,13 +90,6 @@ var OccupantLinks =
             object = new OccupantLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
-          }
-
           if (data.hasOwnProperty("person")) {
             object.person = _ApiClient.default.convertToType(
               data["person"],
@@ -108,6 +101,13 @@ var OccupantLinks =
             object.place = _ApiClient.default.convertToType(
               data["place"],
               object.placeType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 

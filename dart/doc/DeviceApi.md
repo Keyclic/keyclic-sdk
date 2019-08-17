@@ -28,7 +28,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = DeviceApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var person = ; // String | The identifier of the resource formatted as GUID string.
+var person = ; // String | The identifier of the resource.
 var device = device_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
@@ -45,7 +45,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource. | 
  **device** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
@@ -81,7 +81,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = DeviceApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var deviceData = DeviceData(); // DeviceData | 
-var person = ; // String | The identifier of the resource formatted as GUID string.
+var person = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **deviceData** | [**DeviceData**](DeviceData.md)|  | 
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

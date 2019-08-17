@@ -27,13 +27,13 @@ export default class OccupantLinks {
     
      */
   constructor() {
-    this.self = null;
     this.person = null;
     this.place = null;
+    this.self = null;
 
-    this.selfType = OccupantLinksSelf;
     this.personType = OccupantLinksPerson;
     this.placeType = OccupantLinksPlace;
+    this.selfType = OccupantLinksSelf;
   }
 
   /**
@@ -51,9 +51,6 @@ export default class OccupantLinks {
       object = new OccupantLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
-    }
     if (data.hasOwnProperty("person")) {
       object.person = ApiClient.convertToType(
         data["person"],
@@ -62,6 +59,9 @@ export default class OccupantLinks {
     }
     if (data.hasOwnProperty("place")) {
       object.place = ApiClient.convertToType(data["place"], object.placeType);
+    }
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
 
     return object;

@@ -47,15 +47,13 @@ var Device =
    * @alias module:model/Device
    * @class
   
-   * @param id { String }
-  
    */
-    function Device(id) {
+    function Device() {
       _classCallCheck(this, Device);
 
-      this.id = id;
-      this.type = null;
       this.links = null;
+      this.id = null;
+      this.type = null;
       this.linksType = _DeviceLinks.default;
     }
     /**
@@ -82,6 +80,13 @@ var Device =
             object = new Device();
           }
 
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
           if (data.hasOwnProperty("id")) {
             object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
@@ -90,13 +95,6 @@ var Device =
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
-            );
-          }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
             );
           }
 

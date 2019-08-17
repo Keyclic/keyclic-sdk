@@ -12,13 +12,13 @@ class FeedbackLinksReporter {
     }
     href = json['href'];
     iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+        FeedbackLinksReporterIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the reporter associated to the given feedback. */
   String href;
 
-  DelegationLinksCreatedByIriTemplate iriTemplate;
+  FeedbackLinksReporterIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

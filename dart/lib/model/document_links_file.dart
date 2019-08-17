@@ -11,13 +11,13 @@ class DocumentLinksFile {
       return;
     }
     href = json['href'];
-    iriTemplate = DocumentLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = DocumentLinksFileIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the file associated to the given document. */
   String href;
 
-  DocumentLinksSelfIriTemplate iriTemplate;
+  DocumentLinksFileIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

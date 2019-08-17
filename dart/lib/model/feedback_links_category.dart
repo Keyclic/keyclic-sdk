@@ -11,13 +11,14 @@ class FeedbackLinksCategory {
       return;
     }
     href = json['href'];
-    iriTemplate = CategoryLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate =
+        FeedbackLinksCategoryIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the category associated to the given feedback. */
   String href;
 
-  CategoryLinksSelfIriTemplate iriTemplate;
+  FeedbackLinksCategoryIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

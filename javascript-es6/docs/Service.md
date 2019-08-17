@@ -3,11 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**contactPoint** | [**ServiceContactPoint**](ServiceContactPoint.md) |  | 
+**contactPoint** | [**ServiceContactPoint**](ServiceContactPoint.md) |  | [optional] 
+**createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
 **name** | **String** |  | 
-**id** | **String** |  | 
 **type** | **String** |  | [optional] 
-**links** | [**ServiceLinks**](ServiceLinks.md) |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 
 

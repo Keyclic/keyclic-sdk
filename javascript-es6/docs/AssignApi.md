@@ -30,7 +30,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let memberData = new @KeyclicSdkJavascript.MemberData(); // MemberData | 
 
-let operation = "operation_example"; // String | The identifier of the resource formatted as GUID string.
+let operation = "operation_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **memberData** | [**MemberData**](MemberData.md)|  | 
- **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

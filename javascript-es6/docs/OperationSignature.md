@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**signer** | [**OperationSignatureSigner**](OperationSignatureSigner.md) |  | 
-**signedAt** | **Date** |  | 
+**signedAt** | **Date** |  | [optional] 
+**signer** | [**OperationSignatureSigner**](OperationSignatureSigner.md) |  | [optional] 
 
 

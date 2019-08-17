@@ -22,10 +22,7 @@ class ReportApi {
       String query,
       String state,
       int page,
-      int limit,
-      String search_description_,
-      String search_reference_,
-      String search_identificationNumber_}) async {
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -88,18 +85,6 @@ class ReportApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (search_description_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[description]", search_description_));
-    }
-    if (search_reference_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[reference]", search_reference_));
-    }
-    if (search_identificationNumber_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[identificationNumber]", search_identificationNumber_));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;

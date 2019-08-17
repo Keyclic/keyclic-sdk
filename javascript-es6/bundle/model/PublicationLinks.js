@@ -65,14 +65,14 @@ var PublicationLinks =
     function PublicationLinks() {
       _classCallCheck(this, PublicationLinks);
 
-      this.self = null;
       this.author = null;
       this.organization = null;
       this.place = null;
-      this.selfType = _PublicationLinksSelf.default;
+      this.self = null;
       this.authorType = _PublicationLinksAuthor.default;
       this.organizationType = _PublicationLinksOrganization.default;
       this.placeType = _PublicationLinksPlace.default;
+      this.selfType = _PublicationLinksSelf.default;
     }
     /**
      * Constructs a "PublicationLinks" from a plain JavaScript object.
@@ -98,13 +98,6 @@ var PublicationLinks =
             object = new PublicationLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
-          }
-
           if (data.hasOwnProperty("author")) {
             object.author = _ApiClient.default.convertToType(
               data["author"],
@@ -123,6 +116,13 @@ var PublicationLinks =
             object.place = _ApiClient.default.convertToType(
               data["place"],
               object.placeType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 

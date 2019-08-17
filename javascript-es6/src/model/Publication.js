@@ -29,29 +29,21 @@ export default class Publication {
     
      * @param title { String }
     
-     * @param id { String }
-    
-     * @param createdAt { Date }
-    
      */
   constructor(
     message,
 
     read,
 
-    title,
-
-    id,
-
-    createdAt
+    title
   ) {
+    this.links = null;
+    this.createdAt = null;
+    this.id = null;
     this.message = message;
     this.read = read;
     this.title = title;
-    this.id = id;
-    this.createdAt = createdAt;
     this.type = null;
-    this.links = null;
 
     this.linksType = PublicationLinks;
   }
@@ -71,6 +63,15 @@ export default class Publication {
       object = new Publication();
     }
 
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
+    }
     if (data.hasOwnProperty("message")) {
       object.message = ApiClient.convertToType(data["message"], "String");
     }
@@ -80,17 +81,8 @@ export default class Publication {
     if (data.hasOwnProperty("title")) {
       object.title = ApiClient.convertToType(data["title"], "String");
     }
-    if (data.hasOwnProperty("id")) {
-      object.id = ApiClient.convertToType(data["id"], "String");
-    }
-    if (data.hasOwnProperty("createdAt")) {
-      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
-    }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
-    }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
 
     return object;

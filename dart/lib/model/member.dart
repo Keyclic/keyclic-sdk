@@ -2,41 +2,41 @@ part of keyclic_sdk_api.api;
 
 class Member {
   Member({
-    this.roles,
-    this.id,
-    this.createdAt,
-    this.type,
-    this.links,
     this.embedded,
+    this.links,
+    this.createdAt,
+    this.id,
+    this.roles,
+    this.type,
   });
 
   Member.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    roles = (json['roles'] as List)?.map((item) => item as String)?.toList();
-    id = json['id'];
+    embedded = MemberEmbedded.fromJson(json['_embedded']);
+    links = MemberLinks.fromJson(json['_links']);
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
+    id = json['id'];
+    roles = (json['roles'] as List)?.map((item) => item as String)?.toList();
     type = json['type'];
-    links = MemberLinks.fromJson(json['_links']);
-    embedded = MemberEmbedded.fromJson(json['_embedded']);
   }
 
-  List<String> roles;
-
-  String id;
-
-  DateTime createdAt;
-
-  String type;
+  MemberEmbedded embedded;
 
   MemberLinks links;
 
-  MemberEmbedded embedded;
+  DateTime createdAt;
+
+  String id;
+
+  List<String> roles;
+
+  String type;
 
   @override
   bool operator ==(dynamic other) {
@@ -44,29 +44,26 @@ class Member {
       return true;
     }
 
-    return other is Member &&
-        runtimeType == other.runtimeType &&
-        id == other.id &&
-        createdAt == other.createdAt;
+    return other is Member && runtimeType == other.runtimeType;
   }
 
   @override
-  int get hashCode => 0 ^ id.hashCode ^ createdAt.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {
-      'roles': roles,
-      'id': id,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'type': type,
-      '_links': links,
       '_embedded': embedded,
+      '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
+      'id': id,
+      'roles': roles,
+      'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'Member[roles=$roles, id=$id, createdAt=$createdAt, type=$type, links=$links, embedded=$embedded, ]';
+    return 'Member[embedded=$embedded, links=$links, createdAt=$createdAt, id=$id, roles=$roles, type=$type, ]';
   }
 
   static List<Member> listFromJson(List<dynamic> json) {

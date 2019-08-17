@@ -53,14 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.Choice);
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new @KeyclicSdkJavascript.Choice();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property _enum (base name: "enum")', function() {
-      // uncomment below and update the code to test the property _enum
+    it('should have the property _default (base name: "default")', function() {
+      // uncomment below and update the code to test the property _default
       //var instane = new @KeyclicSdkJavascript.Choice();
       //expect(instance).to.be();
     });
@@ -71,8 +65,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property _enum (base name: "enum")', function() {
+      // uncomment below and update the code to test the property _enum
+      //var instane = new @KeyclicSdkJavascript.Choice();
+      //expect(instance).to.be();
+    });
+
     it('should have the property format (base name: "format")', function() {
       // uncomment below and update the code to test the property format
+      //var instane = new @KeyclicSdkJavascript.Choice();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new @KeyclicSdkJavascript.Choice();
       //expect(instance).to.be();
     });
@@ -89,12 +95,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property _default (base name: "default")', function() {
-      // uncomment below and update the code to test the property _default
-      //var instane = new @KeyclicSdkJavascript.Choice();
-      //expect(instance).to.be();
-    });
-
     it('should have the property propertyOrder (base name: "propertyOrder")', function() {
       // uncomment below and update the code to test the property propertyOrder
       //var instane = new @KeyclicSdkJavascript.Choice();
@@ -103,6 +103,12 @@
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
+      //var instane = new @KeyclicSdkJavascript.Choice();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new @KeyclicSdkJavascript.Choice();
       //expect(instance).to.be();
     });

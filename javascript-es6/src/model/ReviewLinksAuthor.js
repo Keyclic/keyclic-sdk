@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import DelegationLinksCreatedByIriTemplate from "./DelegationLinksCreatedByIriTemplate";
+import ReviewLinksAuthorIriTemplate from "./ReviewLinksAuthorIriTemplate";
 
 /**
  * The ReviewLinksAuthor model module.
@@ -28,7 +28,7 @@ export default class ReviewLinksAuthor {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = DelegationLinksCreatedByIriTemplate;
+    this.iriTemplateType = ReviewLinksAuthorIriTemplate;
   }
 
   /**

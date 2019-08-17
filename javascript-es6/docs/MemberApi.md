@@ -32,7 +32,7 @@ let apiInstance = new @KeyclicSdkJavascript.MemberApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+let organization = "organization_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -44,13 +44,7 @@ let opts = {
   'role': "role_example", // String | 
   'roles': "roles_example", // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
-  'searchFamilyName': "searchFamilyName_example", // String | 
-  'searchGivenName': "searchGivenName_example", // String | 
-  'searchJobTitle': "searchJobTitle_example", // String | 
-  'searchTelephone': "searchTelephone_example", // String | 
-  'searchUsername': "searchUsername_example", // String | 
-  'searchEmail': "searchEmail_example" // String | 
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetMembersByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
@@ -67,7 +61,7 @@ apiInstance.cgetMembersByOrganization(xKeyclicApp, organization, opts, (error, d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 
@@ -78,12 +72,6 @@ Name | Type | Description  | Notes
  **roles** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **searchFamilyName** | **String**|  | [optional] 
- **searchGivenName** | **String**|  | [optional] 
- **searchJobTitle** | **String**|  | [optional] 
- **searchTelephone** | **String**|  | [optional] 
- **searchUsername** | **String**|  | [optional] 
- **searchEmail** | **String**|  | [optional] 
 
 ### Return type
 
@@ -119,9 +107,9 @@ let apiInstance = new @KeyclicSdkJavascript.MemberApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+let organization = "organization_example"; // String | The identifier of the resource.
 
-let member = "member_example"; // String | The identifier of the resource formatted as GUID string.
+let member = "member_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -142,8 +130,8 @@ apiInstance.deleteMemberByOrganizationAndMember(xKeyclicApp, organization, membe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **member** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
+ **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -181,9 +169,9 @@ let apiInstance = new @KeyclicSdkJavascript.MemberApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+let organization = "organization_example"; // String | The identifier of the resource.
 
-let member = "member_example"; // String | The identifier of the resource formatted as GUID string.
+let member = "member_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -204,8 +192,8 @@ apiInstance.getMemberByOrganizationAndMember(xKeyclicApp, organization, member, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **member** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
+ **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -245,9 +233,9 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let memberPatch = new @KeyclicSdkJavascript.MemberPatch(); // MemberPatch | 
 
-let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+let organization = "organization_example"; // String | The identifier of the resource.
 
-let member = "member_example"; // String | The identifier of the resource formatted as GUID string.
+let member = "member_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -269,8 +257,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **memberPatch** | [**MemberPatch**](MemberPatch.md)|  | 
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **member** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
+ **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -310,7 +298,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let personData = new @KeyclicSdkJavascript.PersonData(); // PersonData | 
 
-let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+let organization = "organization_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -332,7 +320,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **personData** | [**PersonData**](PersonData.md)|  | 
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

@@ -53,8 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.DocumentLinks);
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
+    it('should have the property createdBy (base name: "createdBy")', function() {
+      // uncomment below and update the code to test the property createdBy
       //var instane = new @KeyclicSdkJavascript.DocumentLinks();
       //expect(instance).to.be();
     });
@@ -65,8 +65,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property createdBy (base name: "createdBy")', function() {
-      // uncomment below and update the code to test the property createdBy
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
       //var instane = new @KeyclicSdkJavascript.DocumentLinks();
       //expect(instance).to.be();
     });

@@ -53,14 +53,14 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.OperationSignature);
     });
 
-    it('should have the property signer (base name: "signer")', function() {
-      // uncomment below and update the code to test the property signer
+    it('should have the property signedAt (base name: "signedAt")', function() {
+      // uncomment below and update the code to test the property signedAt
       //var instane = new @KeyclicSdkJavascript.OperationSignature();
       //expect(instance).to.be();
     });
 
-    it('should have the property signedAt (base name: "signedAt")', function() {
-      // uncomment below and update the code to test the property signedAt
+    it('should have the property signer (base name: "signer")', function() {
+      // uncomment below and update the code to test the property signer
       //var instane = new @KeyclicSdkJavascript.OperationSignature();
       //expect(instance).to.be();
     });

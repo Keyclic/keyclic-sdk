@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **cgetPeople**
-> PersonPagination cgetPeople(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, order, query, page, limit, search[familyName], search[givenName], search[jobTitle], search[telephone], search[username], search[email])
+> PersonPagination cgetPeople(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, order, query, page, limit)
 
 Retrieve all Person resources.
 
@@ -37,15 +37,9 @@ var order = order_example; // String |
 var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var search[familyName] = search[familyName]_example; // String | 
-var search[givenName] = search[givenName]_example; // String | 
-var search[jobTitle] = search[jobTitle]_example; // String | 
-var search[telephone] = search[telephone]_example; // String | 
-var search[username] = search[username]_example; // String | 
-var search[email] = search[email]_example; // String | 
 
 try { 
-    var result = api_instance.cgetPeople(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, order, query, page, limit, search[familyName], search[givenName], search[jobTitle], search[telephone], search[username], search[email]);
+    var result = api_instance.cgetPeople(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, order, query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetPeople: $e\n");
@@ -65,12 +59,6 @@ Name | Type | Description  | Notes
  **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **search[familyName]** | **String**|  | [optional] 
- **search[givenName]** | **String**|  | [optional] 
- **search[jobTitle]** | **String**|  | [optional] 
- **search[telephone]** | **String**|  | [optional] 
- **search[username]** | **String**|  | [optional] 
- **search[email]** | **String**|  | [optional] 
 
 ### Return type
 
@@ -102,7 +90,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = PersonApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var person = ; // String | The identifier of the resource formatted as GUID string.
+var person = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -119,7 +107,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -154,7 +142,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = PersonApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var personPatch = PersonPatch(); // PersonPatch | 
-var person = ; // String | The identifier of the resource formatted as GUID string.
+var person = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -172,7 +160,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **personPatch** | [**PersonPatch**](PersonPatch.md)|  | 
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

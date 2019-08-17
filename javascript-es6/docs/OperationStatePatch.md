@@ -10,15 +10,15 @@ Name | Type | Description | Notes
 ## Enum: TransitionEnum
 
 
-* `reset` (value: `"reset"`)
+* `accept` (value: `"accept"`)
 
 * `assign` (value: `"assign"`)
 
-* `accept` (value: `"accept"`)
+* `progress` (value: `"progress"`)
 
 * `refuse` (value: `"refuse"`)
 
-* `progress` (value: `"progress"`)
+* `reset` (value: `"reset"`)
 
 * `resolve` (value: `"resolve"`)
 

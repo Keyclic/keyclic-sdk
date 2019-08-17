@@ -2,21 +2,29 @@ part of keyclic_sdk_api.api;
 
 class ServiceContactPoint {
   ServiceContactPoint({
-    this.telephone,
+    this.email,
     this.isOpen,
+    this.name,
+    this.telephone,
   });
 
   ServiceContactPoint.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    telephone = json['telephone'];
+    email = json['email'];
     isOpen = json['isOpen'];
+    name = json['name'];
+    telephone = json['telephone'];
   }
 
-  String telephone;
+  String email;
 
   bool isOpen;
+
+  String name;
+
+  String telephone;
 
   @override
   bool operator ==(dynamic other) {
@@ -24,24 +32,24 @@ class ServiceContactPoint {
       return true;
     }
 
-    return other is ServiceContactPoint &&
-        runtimeType == other.runtimeType &&
-        telephone == other.telephone;
+    return other is ServiceContactPoint && runtimeType == other.runtimeType;
   }
 
   @override
-  int get hashCode => 0 ^ telephone.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {
-      'telephone': telephone,
+      'email': email,
       'isOpen': isOpen,
+      'name': name,
+      'telephone': telephone,
     };
   }
 
   @override
   String toString() {
-    return 'ServiceContactPoint[telephone=$telephone, isOpen=$isOpen, ]';
+    return 'ServiceContactPoint[email=$email, isOpen=$isOpen, name=$name, telephone=$telephone, ]';
   }
 
   static List<ServiceContactPoint> listFromJson(List<dynamic> json) {

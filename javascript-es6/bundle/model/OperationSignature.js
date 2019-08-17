@@ -49,16 +49,12 @@ var OperationSignature =
    * @alias module:model/OperationSignature
    * @class
   
-   * @param signer { module:model/OperationSignatureSigner }
-  
-   * @param signedAt { Date }
-  
    */
-    function OperationSignature(signer, signedAt) {
+    function OperationSignature() {
       _classCallCheck(this, OperationSignature);
 
-      this.signer = signer;
-      this.signedAt = signedAt;
+      this.signedAt = null;
+      this.signer = null;
       this.signerType = _OperationSignatureSigner.default;
     }
     /**
@@ -85,17 +81,17 @@ var OperationSignature =
             object = new OperationSignature();
           }
 
-          if (data.hasOwnProperty("signer")) {
-            object.signer = _ApiClient.default.convertToType(
-              data["signer"],
-              object.signerType
-            );
-          }
-
           if (data.hasOwnProperty("signedAt")) {
             object.signedAt = _ApiClient.default.convertToType(
               data["signedAt"],
               "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("signer")) {
+            object.signer = _ApiClient.default.convertToType(
+              data["signer"],
+              object.signerType
             );
           }
 

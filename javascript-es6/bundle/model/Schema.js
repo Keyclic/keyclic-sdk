@@ -47,13 +47,11 @@ var Schema =
    * @alias module:model/Schema
    * @class
   
-   * @param properties { Object.<String, module:model/Property> }
-  
    */
-    function Schema(properties) {
+    function Schema() {
       _classCallCheck(this, Schema);
 
-      this.properties = properties;
+      this.properties = [];
       this.required = [];
       this.propertiesType = _Property.default;
     }

@@ -33,7 +33,7 @@ class FeedbackData {
   String description;
 
   String visibility;
-  //enum visibilityEnum {  VISIBILITY_PUBLIC,  VISIBILITY_PRIVATE,  };
+  //enum visibilityEnum {  VISIBILITY_PRIVATE,  VISIBILITY_PUBLIC,  };
 
   String businessActivity;
 

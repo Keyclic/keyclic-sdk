@@ -2,53 +2,59 @@ part of keyclic_sdk_api.api;
 
 class Organization {
   Organization({
+    this.links,
     this.alternateName,
     this.billingEmailAddress,
+    this.createdAt,
     this.description,
+    this.enabled,
+    this.id,
     this.name,
     this.notificationEmailAddress,
     this.preferences,
-    this.id,
-    this.createdAt,
-    this.updatedAt,
     this.type,
-    this.isEnabled,
-    this.enabled,
-    this.links,
+    this.updatedAt,
   });
 
   Organization.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
+    links = OrganizationLinks.fromJson(json['_links']);
     alternateName = json['alternateName'];
     billingEmailAddress = json['billingEmailAddress'];
-    description = json['description'];
-    name = json['name'];
-    notificationEmailAddress = json['notificationEmailAddress'];
-    preferences = OrganizationPreferences.fromJson(json['preferences']);
-    id = json['id'];
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
+    description = json['description'];
+    enabled = json['enabled'];
+    id = json['id'];
+    name = json['name'];
+    notificationEmailAddress = json['notificationEmailAddress'];
+    preferences = OrganizationPreferences.fromJson(json['preferences']);
+    type = json['type'];
     updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
-    type = json['type'];
-    isEnabled = json['isEnabled'];
-    enabled = json['enabled'];
-    links = OrganizationLinks.fromJson(json['_links']);
   }
+
+  OrganizationLinks links;
 
   String alternateName;
 
   String billingEmailAddress;
 
+  DateTime createdAt;
+
   String description;
+
+  bool enabled;
+
+  String id;
 
   String name;
 
@@ -56,19 +62,9 @@ class Organization {
 
   OrganizationPreferences preferences;
 
-  String id;
-
-  DateTime createdAt;
-
-  DateTime updatedAt;
-
   String type;
 
-  bool isEnabled;
-
-  bool enabled;
-
-  OrganizationLinks links;
+  DateTime updatedAt;
 
   @override
   bool operator ==(dynamic other) {
@@ -78,41 +74,32 @@ class Organization {
 
     return other is Organization &&
         runtimeType == other.runtimeType &&
-        name == other.name &&
-        preferences == other.preferences &&
-        id == other.id &&
-        updatedAt == other.updatedAt;
+        name == other.name;
   }
 
   @override
-  int get hashCode =>
-      0 ^
-      name.hashCode ^
-      preferences.hashCode ^
-      id.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode => 0 ^ name.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
+      '_links': links,
       'alternateName': alternateName,
       'billingEmailAddress': billingEmailAddress,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
       'description': description,
+      'enabled': enabled,
+      'id': id,
       'name': name,
       'notificationEmailAddress': notificationEmailAddress,
       'preferences': preferences,
-      'id': id,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
       'type': type,
-      'isEnabled': isEnabled,
-      'enabled': enabled,
-      '_links': links,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'Organization[alternateName=$alternateName, billingEmailAddress=$billingEmailAddress, description=$description, name=$name, notificationEmailAddress=$notificationEmailAddress, preferences=$preferences, id=$id, createdAt=$createdAt, updatedAt=$updatedAt, type=$type, isEnabled=$isEnabled, enabled=$enabled, links=$links, ]';
+    return 'Organization[links=$links, alternateName=$alternateName, billingEmailAddress=$billingEmailAddress, createdAt=$createdAt, description=$description, enabled=$enabled, id=$id, name=$name, notificationEmailAddress=$notificationEmailAddress, preferences=$preferences, type=$type, updatedAt=$updatedAt, ]';
   }
 
   static List<Organization> listFromJson(List<dynamic> json) {

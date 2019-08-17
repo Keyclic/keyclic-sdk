@@ -11,14 +11,14 @@ class OrganizationLinksBusinessActivity {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = OrganizationLinksBusinessActivityIriTemplate.fromJson(
+        json['iriTemplate']);
   }
 
   /* The URI of the businessActivity associated to the given organization. */
   String href;
 
-  BusinessActivityLinksSelfIriTemplate iriTemplate;
+  OrganizationLinksBusinessActivityIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

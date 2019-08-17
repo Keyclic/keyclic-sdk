@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import CategoryLinksOrganizationIriTemplate from "./CategoryLinksOrganizationIriTemplate";
+import PublicationLinksOrganizationIriTemplate from "./PublicationLinksOrganizationIriTemplate";
 
 /**
  * The PublicationLinksOrganization model module.
@@ -28,7 +28,7 @@ export default class PublicationLinksOrganization {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = CategoryLinksOrganizationIriTemplate;
+    this.iriTemplateType = PublicationLinksOrganizationIriTemplate;
   }
 
   /**

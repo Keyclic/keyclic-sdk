@@ -2,45 +2,45 @@ part of keyclic_sdk_api.api;
 
 class OperationLinks {
   OperationLinks({
-    this.self,
-    this.image,
-    this.feedback,
-    this.report,
-    this.operator_,
     this.createdBy,
-    this.tracking,
+    this.feedback,
+    this.image,
     this.images,
+    this.operator_,
+    this.report,
+    this.self,
+    this.tracking,
   });
 
   OperationLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    self = OperationLinksSelf.fromJson(json['self']);
-    image = OperationLinksImage.fromJson(json['image']);
-    feedback = OperationLinksFeedback.fromJson(json['feedback']);
-    report = OperationLinksReport.fromJson(json['report']);
-    operator_ = OperationLinksOperator.fromJson(json['operator']);
     createdBy = OperationLinksCreatedBy.fromJson(json['createdBy']);
+    feedback = OperationLinksFeedback.fromJson(json['feedback']);
+    image = OperationLinksImage.fromJson(json['image']);
+    images = OperationLinksImages.listFromJson(json['images']);
+    operator_ = OperationLinksOperator.fromJson(json['operator']);
+    report = OperationLinksReport.fromJson(json['report']);
+    self = OperationLinksSelf.fromJson(json['self']);
     tracking = OperationLinksTracking.fromJson(json['tracking']);
-    images = FeedbackLinksImages.listFromJson(json['images']);
   }
-
-  OperationLinksSelf self;
-
-  OperationLinksImage image;
-
-  OperationLinksFeedback feedback;
-
-  OperationLinksReport report;
-
-  OperationLinksOperator operator_;
 
   OperationLinksCreatedBy createdBy;
 
-  OperationLinksTracking tracking;
+  OperationLinksFeedback feedback;
 
-  List<FeedbackLinksImages> images;
+  OperationLinksImage image;
+
+  List<OperationLinksImages> images;
+
+  OperationLinksOperator operator_;
+
+  OperationLinksReport report;
+
+  OperationLinksSelf self;
+
+  OperationLinksTracking tracking;
 
   @override
   bool operator ==(dynamic other) {
@@ -56,20 +56,20 @@ class OperationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
-      'image': image,
-      'feedback': feedback,
-      'report': report,
-      'operator': operator_,
       'createdBy': createdBy,
-      'tracking': tracking,
+      'feedback': feedback,
+      'image': image,
       'images': images,
+      'operator': operator_,
+      'report': report,
+      'self': self,
+      'tracking': tracking,
     };
   }
 
   @override
   String toString() {
-    return 'OperationLinks[self=$self, image=$image, feedback=$feedback, report=$report, operator_=$operator_, createdBy=$createdBy, tracking=$tracking, images=$images, ]';
+    return 'OperationLinks[createdBy=$createdBy, feedback=$feedback, image=$image, images=$images, operator_=$operator_, report=$report, self=$self, tracking=$tracking, ]';
   }
 
   static List<OperationLinks> listFromJson(List<dynamic> json) {

@@ -2,14 +2,14 @@ part of keyclic_sdk_api.api;
 
 class ReportLinks {
   ReportLinks({
-    this.self,
+    this.category,
+    this.delegatedFrom,
+    this.delegatedTo,
     this.feedback,
     this.operations,
     this.organization,
-    this.category,
-    this.delegatedTo,
-    this.delegatedFrom,
     this.place,
+    this.self,
     this.tracking,
   });
 
@@ -17,18 +17,22 @@ class ReportLinks {
     if (json == null) {
       return;
     }
-    self = ReportLinksSelf.fromJson(json['self']);
+    category = ReportLinksCategory.fromJson(json['category']);
+    delegatedFrom = ReportLinksDelegatedFrom.fromJson(json['delegatedFrom']);
+    delegatedTo = ReportLinksDelegatedTo.fromJson(json['delegatedTo']);
     feedback = ReportLinksFeedback.fromJson(json['feedback']);
     operations = ReportLinksOperations.fromJson(json['operations']);
     organization = ReportLinksOrganization.fromJson(json['organization']);
-    category = ReportLinksCategory.fromJson(json['category']);
-    delegatedTo = ReportLinksDelegatedTo.fromJson(json['delegatedTo']);
-    delegatedFrom = ReportLinksDelegatedFrom.fromJson(json['delegatedFrom']);
     place = ReportLinksPlace.fromJson(json['place']);
+    self = ReportLinksSelf.fromJson(json['self']);
     tracking = ReportLinksTracking.fromJson(json['tracking']);
   }
 
-  ReportLinksSelf self;
+  ReportLinksCategory category;
+
+  ReportLinksDelegatedFrom delegatedFrom;
+
+  ReportLinksDelegatedTo delegatedTo;
 
   ReportLinksFeedback feedback;
 
@@ -36,13 +40,9 @@ class ReportLinks {
 
   ReportLinksOrganization organization;
 
-  ReportLinksCategory category;
-
-  ReportLinksDelegatedTo delegatedTo;
-
-  ReportLinksDelegatedFrom delegatedFrom;
-
   ReportLinksPlace place;
+
+  ReportLinksSelf self;
 
   ReportLinksTracking tracking;
 
@@ -60,21 +60,21 @@ class ReportLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
+      'category': category,
+      'delegatedFrom': delegatedFrom,
+      'delegatedTo': delegatedTo,
       'feedback': feedback,
       'operations': operations,
       'organization': organization,
-      'category': category,
-      'delegatedTo': delegatedTo,
-      'delegatedFrom': delegatedFrom,
       'place': place,
+      'self': self,
       'tracking': tracking,
     };
   }
 
   @override
   String toString() {
-    return 'ReportLinks[self=$self, feedback=$feedback, operations=$operations, organization=$organization, category=$category, delegatedTo=$delegatedTo, delegatedFrom=$delegatedFrom, place=$place, tracking=$tracking, ]';
+    return 'ReportLinks[category=$category, delegatedFrom=$delegatedFrom, delegatedTo=$delegatedTo, feedback=$feedback, operations=$operations, organization=$organization, place=$place, self=$self, tracking=$tracking, ]';
   }
 
   static List<ReportLinks> listFromJson(List<dynamic> json) {

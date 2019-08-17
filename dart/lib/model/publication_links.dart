@@ -2,29 +2,29 @@ part of keyclic_sdk_api.api;
 
 class PublicationLinks {
   PublicationLinks({
-    this.self,
     this.author,
     this.organization,
     this.place,
+    this.self,
   });
 
   PublicationLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    self = PublicationLinksSelf.fromJson(json['self']);
     author = PublicationLinksAuthor.fromJson(json['author']);
     organization = PublicationLinksOrganization.fromJson(json['organization']);
     place = PublicationLinksPlace.fromJson(json['place']);
+    self = PublicationLinksSelf.fromJson(json['self']);
   }
-
-  PublicationLinksSelf self;
 
   PublicationLinksAuthor author;
 
   PublicationLinksOrganization organization;
 
   PublicationLinksPlace place;
+
+  PublicationLinksSelf self;
 
   @override
   bool operator ==(dynamic other) {
@@ -40,16 +40,16 @@ class PublicationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
       'author': author,
       'organization': organization,
       'place': place,
+      'self': self,
     };
   }
 
   @override
   String toString() {
-    return 'PublicationLinks[self=$self, author=$author, organization=$organization, place=$place, ]';
+    return 'PublicationLinks[author=$author, organization=$organization, place=$place, self=$self, ]';
   }
 
   static List<PublicationLinks> listFromJson(List<dynamic> json) {

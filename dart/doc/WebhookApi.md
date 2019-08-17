@@ -29,7 +29,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = WebhookApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -51,7 +51,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
@@ -90,7 +90,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = WebhookApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var webhook = ; // String | The identifier of the resource formatted as GUID string.
+var webhook = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -107,7 +107,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **webhook** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **webhook** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -142,7 +142,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = WebhookApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var webhookPatch = WebhookPatch(); // WebhookPatch | 
-var webhook = ; // String | The identifier of the resource formatted as GUID string.
+var webhook = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **webhookPatch** | [**WebhookPatch**](WebhookPatch.md)|  | 
- **webhook** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **webhook** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

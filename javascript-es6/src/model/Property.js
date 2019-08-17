@@ -26,17 +26,18 @@ export default class Property {
     
      */
   constructor() {
-    this.type = null;
-    this._enum = [];
+    this.conditions = null;
+    this._default = null;
     this.description = null;
+    this._enum = [];
     this.format = null;
+    this.id = null;
+    this.items = null;
     this.maxItems = null;
     this.minItems = null;
-    this._default = null;
     this.propertyOrder = null;
     this.title = null;
-    this.conditions = null;
-    this.items = null;
+    this.type = null;
 
     this.conditionsType = PropertyConditions;
     this.itemsType = PropertyItems;
@@ -57,11 +58,14 @@ export default class Property {
       object = new Property();
     }
 
-    if (data.hasOwnProperty("type")) {
-      object.type = ApiClient.convertToType(data["type"], "String");
+    if (data.hasOwnProperty("conditions")) {
+      object.conditions = ApiClient.convertToType(
+        data["conditions"],
+        object.conditionsType
+      );
     }
-    if (data.hasOwnProperty("enum")) {
-      object._enum = ApiClient.convertToType(data["enum"], "['String']");
+    if (data.hasOwnProperty("default")) {
+      object._default = ApiClient.convertToType(data["default"], "String");
     }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
@@ -69,17 +73,23 @@ export default class Property {
         "String"
       );
     }
+    if (data.hasOwnProperty("enum")) {
+      object._enum = ApiClient.convertToType(data["enum"], "['String']");
+    }
     if (data.hasOwnProperty("format")) {
       object.format = ApiClient.convertToType(data["format"], "String");
+    }
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
+    }
+    if (data.hasOwnProperty("items")) {
+      object.items = ApiClient.convertToType(data["items"], object.itemsType);
     }
     if (data.hasOwnProperty("maxItems")) {
       object.maxItems = ApiClient.convertToType(data["maxItems"], "Number");
     }
     if (data.hasOwnProperty("minItems")) {
       object.minItems = ApiClient.convertToType(data["minItems"], "Number");
-    }
-    if (data.hasOwnProperty("default")) {
-      object._default = ApiClient.convertToType(data["default"], "String");
     }
     if (data.hasOwnProperty("propertyOrder")) {
       object.propertyOrder = ApiClient.convertToType(
@@ -90,14 +100,8 @@ export default class Property {
     if (data.hasOwnProperty("title")) {
       object.title = ApiClient.convertToType(data["title"], "String");
     }
-    if (data.hasOwnProperty("conditions")) {
-      object.conditions = ApiClient.convertToType(
-        data["conditions"],
-        object.conditionsType
-      );
-    }
-    if (data.hasOwnProperty("items")) {
-      object.items = ApiClient.convertToType(data["items"], object.itemsType);
+    if (data.hasOwnProperty("type")) {
+      object.type = ApiClient.convertToType(data["type"], "String");
     }
 
     return object;

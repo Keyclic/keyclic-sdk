@@ -11,13 +11,14 @@ class OperationLinksTracking {
       return;
     }
     href = json['href'];
-    iriTemplate = OperationLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate =
+        OperationLinksTrackingIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the tracking associated to the given operation. */
   String href;
 
-  OperationLinksSelfIriTemplate iriTemplate;
+  OperationLinksTrackingIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

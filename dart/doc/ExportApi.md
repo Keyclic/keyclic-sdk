@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **cpostExportByOrganization**
-> Report cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, place, assignedTo, category, after, before, delegatedTo, order, query, state, page, limit, search[description], search[reference], search[identificationNumber])
+> Report cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, place, assignedTo, category, after, before, delegatedTo, order, query, state, page, limit)
 
 Retrieve all Export resources.
 
@@ -28,26 +28,23 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = ExportApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var place = ; // String | The identifier of the resource formatted as GUID string.
-var assignedTo = ; // String | The identifier of the resource formatted as GUID string.
-var category = ; // String | The identifier of the resource formatted as GUID string.
+var place = ; // String | The identifier of the resource.
+var assignedTo = ; // String | The identifier of the resource.
+var category = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
-var delegatedTo = ; // String | The identifier of the resource formatted as GUID string.
+var delegatedTo = ; // String | The identifier of the resource.
 var order = order_example; // String | 
 var query = query_example; // String | 
 var state = state_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var search[description] = search[description]_example; // String | 
-var search[reference] = search[reference]_example; // String | 
-var search[identificationNumber] = search[identificationNumber]_example; // String | 
 
 try { 
-    var result = api_instance.cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, place, assignedTo, category, after, before, delegatedTo, order, query, state, page, limit, search[description], search[reference], search[identificationNumber]);
+    var result = api_instance.cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, place, assignedTo, category, after, before, delegatedTo, order, query, state, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling ExportApi->cpostExportByOrganization: $e\n");
@@ -59,23 +56,20 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **assignedTo** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **place** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **category** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
- **delegatedTo** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **delegatedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **search[description]** | **String**|  | [optional] 
- **search[reference]** | **String**|  | [optional] 
- **search[identificationNumber]** | **String**|  | [optional] 
 
 ### Return type
 
@@ -103,7 +97,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = ExportApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
 var token = token_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
@@ -121,7 +115,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **token** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 

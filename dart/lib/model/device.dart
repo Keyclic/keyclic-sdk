@@ -2,25 +2,25 @@ part of keyclic_sdk_api.api;
 
 class Device {
   Device({
+    this.links,
     this.id,
     this.type,
-    this.links,
   });
 
   Device.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
+    links = DeviceLinks.fromJson(json['_links']);
     id = json['id'];
     type = json['type'];
-    links = DeviceLinks.fromJson(json['_links']);
   }
+
+  DeviceLinks links;
 
   String id;
 
   String type;
-
-  DeviceLinks links;
 
   @override
   bool operator ==(dynamic other) {
@@ -28,25 +28,23 @@ class Device {
       return true;
     }
 
-    return other is Device &&
-        runtimeType == other.runtimeType &&
-        id == other.id;
+    return other is Device && runtimeType == other.runtimeType;
   }
 
   @override
-  int get hashCode => 0 ^ id.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {
+      '_links': links,
       'id': id,
       'type': type,
-      '_links': links,
     };
   }
 
   @override
   String toString() {
-    return 'Device[id=$id, type=$type, links=$links, ]';
+    return 'Device[links=$links, id=$id, type=$type, ]';
   }
 
   static List<Device> listFromJson(List<dynamic> json) {

@@ -3,10 +3,9 @@ part of keyclic_sdk_api.api;
 class LogEntry {
   LogEntry({
     this.action,
-    this.loggedAt,
-    this.objectId,
-    this.version,
+    this.actor,
     this.data,
+    this.loggedAt,
   });
 
   LogEntry.fromJson(Map<String, dynamic> json) {
@@ -14,25 +13,22 @@ class LogEntry {
       return;
     }
     action = json['action'];
+    actor = json['actor'];
+    data = (json['data'] as List)?.map((item) => item as String)?.toList();
     loggedAt =
         json['loggedAt'] == null ? null : DateTime.parse(json['loggedAt']);
     if (loggedAt is DateTime && loggedAt.isUtc == false) {
       loggedAt = DateTime.parse('${loggedAt.toIso8601String()}Z');
     }
-    objectId = json['objectId'];
-    version = json['version'];
-    data = (json['data'] as List)?.map((item) => item as String)?.toList();
   }
 
   String action;
 
-  DateTime loggedAt;
-
-  String objectId;
-
-  String version;
+  String actor;
 
   List<String> data;
+
+  DateTime loggedAt;
 
   @override
   bool operator ==(dynamic other) {
@@ -43,33 +39,24 @@ class LogEntry {
     return other is LogEntry &&
         runtimeType == other.runtimeType &&
         action == other.action &&
-        loggedAt == other.loggedAt &&
-        objectId == other.objectId &&
-        version == other.version &&
-        DeepCollectionEquality.unordered().equals(data, other.data);
+        loggedAt == other.loggedAt;
   }
 
   @override
-  int get hashCode =>
-      0 ^
-      action.hashCode ^
-      loggedAt.hashCode ^
-      objectId.hashCode ^
-      version.hashCode;
+  int get hashCode => 0 ^ action.hashCode ^ loggedAt.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
       'action': action,
-      'loggedAt': loggedAt == null ? '' : loggedAt.toUtc().toIso8601String(),
-      'objectId': objectId,
-      'version': version,
+      'actor': actor,
       'data': data,
+      'loggedAt': loggedAt == null ? '' : loggedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'LogEntry[action=$action, loggedAt=$loggedAt, objectId=$objectId, version=$version, data=$data, ]';
+    return 'LogEntry[action=$action, actor=$actor, data=$data, loggedAt=$loggedAt, ]';
   }
 
   static List<LogEntry> listFromJson(List<dynamic> json) {

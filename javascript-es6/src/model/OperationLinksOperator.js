@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import DelegationLinksCreatedByIriTemplate from "./DelegationLinksCreatedByIriTemplate";
+import OperationLinksOperatorIriTemplate from "./OperationLinksOperatorIriTemplate";
 
 /**
  * The OperationLinksOperator model module.
@@ -28,7 +28,7 @@ export default class OperationLinksOperator {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = DelegationLinksCreatedByIriTemplate;
+    this.iriTemplateType = OperationLinksOperatorIriTemplate;
   }
 
   /**

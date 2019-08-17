@@ -12,13 +12,13 @@ class BusinessActivityLinksImage {
     }
     href = json['href'];
     iriTemplate =
-        BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+        BusinessActivityLinksImageIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the image associated to the given businessactivity. */
   String href;
 
-  BusinessActivityLinksSelfIriTemplate iriTemplate;
+  BusinessActivityLinksImageIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

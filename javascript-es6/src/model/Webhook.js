@@ -29,24 +29,20 @@ export default class Webhook {
     
      * @param payloadUrl { String }
     
-     * @param id { String }
-    
      */
   constructor(
     enabled,
 
     event,
 
-    payloadUrl,
-
-    id
+    payloadUrl
   ) {
+    this.links = null;
     this.enabled = enabled;
     this.event = event;
+    this.id = null;
     this.payloadUrl = payloadUrl;
-    this.id = id;
     this.type = null;
-    this.links = null;
 
     this.linksType = WebhookLinks;
   }
@@ -66,23 +62,23 @@ export default class Webhook {
       object = new Webhook();
     }
 
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
     if (data.hasOwnProperty("enabled")) {
       object.enabled = ApiClient.convertToType(data["enabled"], "Boolean");
     }
     if (data.hasOwnProperty("event")) {
       object.event = ApiClient.convertToType(data["event"], "String");
     }
-    if (data.hasOwnProperty("payloadUrl")) {
-      object.payloadUrl = ApiClient.convertToType(data["payloadUrl"], "String");
-    }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
     }
+    if (data.hasOwnProperty("payloadUrl")) {
+      object.payloadUrl = ApiClient.convertToType(data["payloadUrl"], "String");
+    }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
-    }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
 
     return object;

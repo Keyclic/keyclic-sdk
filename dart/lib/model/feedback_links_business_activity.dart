@@ -12,13 +12,13 @@ class FeedbackLinksBusinessActivity {
     }
     href = json['href'];
     iriTemplate =
-        BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+        FeedbackLinksBusinessActivityIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the businessActivity associated to the given feedback. */
   String href;
 
-  BusinessActivityLinksSelfIriTemplate iriTemplate;
+  FeedbackLinksBusinessActivityIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

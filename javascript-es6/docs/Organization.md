@@ -3,18 +3,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**links** | [**OrganizationLinks**](OrganizationLinks.md) |  | [optional] 
 **alternateName** | **String** |  | [optional] 
 **billingEmailAddress** | **String** |  | [optional] 
+**createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
+**enabled** | **Boolean** |  | [optional] 
+**id** | **String** |  | [optional] 
 **name** | **String** |  | 
 **notificationEmailAddress** | **String** |  | [optional] 
-**preferences** | [**OrganizationPreferences**](OrganizationPreferences.md) |  | 
-**id** | **String** |  | 
-**createdAt** | **Date** |  | [optional] 
-**updatedAt** | **Date** |  | 
+**preferences** | [**OrganizationPreferences**](OrganizationPreferences.md) |  | [optional] 
 **type** | **String** |  | [optional] 
-**isEnabled** | **Boolean** |  | [optional] 
-**enabled** | **Boolean** |  | [optional] 
-**links** | [**OrganizationLinks**](OrganizationLinks.md) |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 
 

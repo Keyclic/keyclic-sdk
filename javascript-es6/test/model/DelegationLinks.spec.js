@@ -53,8 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.DelegationLinks);
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
+    it('should have the property createdBy (base name: "createdBy")', function() {
+      // uncomment below and update the code to test the property createdBy
       //var instane = new @KeyclicSdkJavascript.DelegationLinks();
       //expect(instance).to.be();
     });
@@ -65,20 +65,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property to (base name: "to")', function() {
-      // uncomment below and update the code to test the property to
-      //var instane = new @KeyclicSdkJavascript.DelegationLinks();
-      //expect(instance).to.be();
-    });
-
     it('should have the property report (base name: "report")', function() {
       // uncomment below and update the code to test the property report
       //var instane = new @KeyclicSdkJavascript.DelegationLinks();
       //expect(instance).to.be();
     });
 
-    it('should have the property createdBy (base name: "createdBy")', function() {
-      // uncomment below and update the code to test the property createdBy
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
+      //var instane = new @KeyclicSdkJavascript.DelegationLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property to (base name: "to")', function() {
+      // uncomment below and update the code to test the property to
       //var instane = new @KeyclicSdkJavascript.DelegationLinks();
       //expect(instance).to.be();
     });

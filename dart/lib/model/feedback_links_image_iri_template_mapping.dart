@@ -2,21 +2,21 @@ part of keyclic_sdk_api.api;
 
 class FeedbackLinksImageIriTemplateMapping {
   FeedbackLinksImageIriTemplateMapping({
-    this.image,
     this.feedback,
+    this.image,
   });
 
   FeedbackLinksImageIriTemplateMapping.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    image = json['image'];
     feedback = json['feedback'];
+    image = json['image'];
   }
 
-  String image;
-
   String feedback;
+
+  String image;
 
   @override
   bool operator ==(dynamic other) {
@@ -33,14 +33,14 @@ class FeedbackLinksImageIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'image': image,
       'feedback': feedback,
+      'image': image,
     };
   }
 
   @override
   String toString() {
-    return 'FeedbackLinksImageIriTemplateMapping[image=$image, feedback=$feedback, ]';
+    return 'FeedbackLinksImageIriTemplateMapping[feedback=$feedback, image=$image, ]';
   }
 
   static List<FeedbackLinksImageIriTemplateMapping> listFromJson(

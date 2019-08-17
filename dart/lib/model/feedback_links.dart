@@ -2,42 +2,42 @@ part of keyclic_sdk_api.api;
 
 class FeedbackLinks {
   FeedbackLinks({
-    this.self,
-    this.category,
     this.businessActivity,
-    this.reporter,
+    this.category,
     this.image,
-    this.tracking,
     this.images,
+    this.reporter,
+    this.self,
+    this.tracking,
   });
 
   FeedbackLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    self = FeedbackLinksSelf.fromJson(json['self']);
-    category = FeedbackLinksCategory.fromJson(json['category']);
     businessActivity =
         FeedbackLinksBusinessActivity.fromJson(json['businessActivity']);
-    reporter = FeedbackLinksReporter.fromJson(json['reporter']);
+    category = FeedbackLinksCategory.fromJson(json['category']);
     image = FeedbackLinksImage.fromJson(json['image']);
-    tracking = FeedbackLinksTracking.fromJson(json['tracking']);
     images = FeedbackLinksImages.listFromJson(json['images']);
+    reporter = FeedbackLinksReporter.fromJson(json['reporter']);
+    self = FeedbackLinksSelf.fromJson(json['self']);
+    tracking = FeedbackLinksTracking.fromJson(json['tracking']);
   }
-
-  FeedbackLinksSelf self;
-
-  FeedbackLinksCategory category;
 
   FeedbackLinksBusinessActivity businessActivity;
 
-  FeedbackLinksReporter reporter;
+  FeedbackLinksCategory category;
 
   FeedbackLinksImage image;
 
-  FeedbackLinksTracking tracking;
-
   List<FeedbackLinksImages> images;
+
+  FeedbackLinksReporter reporter;
+
+  FeedbackLinksSelf self;
+
+  FeedbackLinksTracking tracking;
 
   @override
   bool operator ==(dynamic other) {
@@ -53,19 +53,19 @@ class FeedbackLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
-      'category': category,
       'businessActivity': businessActivity,
-      'reporter': reporter,
+      'category': category,
       'image': image,
-      'tracking': tracking,
       'images': images,
+      'reporter': reporter,
+      'self': self,
+      'tracking': tracking,
     };
   }
 
   @override
   String toString() {
-    return 'FeedbackLinks[self=$self, category=$category, businessActivity=$businessActivity, reporter=$reporter, image=$image, tracking=$tracking, images=$images, ]';
+    return 'FeedbackLinks[businessActivity=$businessActivity, category=$category, image=$image, images=$images, reporter=$reporter, self=$self, tracking=$tracking, ]';
   }
 
   static List<FeedbackLinks> listFromJson(List<dynamic> json) {

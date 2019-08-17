@@ -2,69 +2,69 @@ part of keyclic_sdk_api.api;
 
 class Report {
   Report({
+    this.embedded,
+    this.links,
+    this.createdAt,
     this.description,
-    this.priority,
-    this.reference,
-    this.tags,
     this.id,
     this.identificationNumber,
+    this.priority,
+    this.reference,
     this.state,
-    this.createdAt,
-    this.updatedAt,
+    this.tags,
     this.type,
-    this.links,
-    this.embedded,
+    this.updatedAt,
   });
 
   Report.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    description = json['description'];
-    priority = json['priority'];
-    reference = json['reference'];
-    tags = (json['tags'] as List)?.map((item) => item as String)?.toList();
-    id = json['id'];
-    identificationNumber = json['identificationNumber'];
-    state = (json['state'] as List)?.map((item) => item as String)?.toList();
+    embedded = ReportEmbedded.fromJson(json['_embedded']);
+    links = ReportLinks.fromJson(json['_links']);
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
+    description = json['description'];
+    id = json['id'];
+    identificationNumber = json['identificationNumber'];
+    priority = json['priority'];
+    reference = json['reference'];
+    state = (json['state'] as List)?.map((item) => item as String)?.toList();
+    tags = (json['tags'] as List)?.map((item) => item as String)?.toList();
+    type = json['type'];
     updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
-    type = json['type'];
-    links = ReportLinks.fromJson(json['_links']);
-    embedded = ReportEmbedded.fromJson(json['_embedded']);
   }
 
+  ReportEmbedded embedded;
+
+  ReportLinks links;
+
+  DateTime createdAt;
+
   String description;
-
-  int priority;
-
-  String reference;
-
-  List<String> tags;
 
   String id;
 
   String identificationNumber;
 
+  int priority;
+
+  String reference;
+
   List<String> state;
 
-  DateTime createdAt;
-
-  DateTime updatedAt;
+  List<String> tags;
 
   String type;
 
-  ReportLinks links;
-
-  ReportEmbedded embedded;
+  DateTime updatedAt;
 
   @override
   bool operator ==(dynamic other) {
@@ -75,40 +75,32 @@ class Report {
     return other is Report &&
         runtimeType == other.runtimeType &&
         priority == other.priority &&
-        reference == other.reference &&
-        id == other.id &&
-        DeepCollectionEquality.unordered().equals(state, other.state) &&
-        updatedAt == other.updatedAt;
+        DeepCollectionEquality.unordered().equals(state, other.state);
   }
 
   @override
-  int get hashCode =>
-      0 ^
-      priority.hashCode ^
-      reference.hashCode ^
-      id.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode => 0 ^ priority.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
+      '_embedded': embedded,
+      '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
       'description': description,
-      'priority': priority,
-      'reference': reference,
-      'tags': tags,
       'id': id,
       'identificationNumber': identificationNumber,
+      'priority': priority,
+      'reference': reference,
       'state': state,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
+      'tags': tags,
       'type': type,
-      '_links': links,
-      '_embedded': embedded,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'Report[description=$description, priority=$priority, reference=$reference, tags=$tags, id=$id, identificationNumber=$identificationNumber, state=$state, createdAt=$createdAt, updatedAt=$updatedAt, type=$type, links=$links, embedded=$embedded, ]';
+    return 'Report[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, id=$id, identificationNumber=$identificationNumber, priority=$priority, reference=$reference, state=$state, tags=$tags, type=$type, updatedAt=$updatedAt, ]';
   }
 
   static List<Report> listFromJson(List<dynamic> json) {

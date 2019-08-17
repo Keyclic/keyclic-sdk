@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **String** | The URI of the tracking associated to the given report. | [optional] 
-**iriTemplate** | [**DelegationLinksReportIriTemplate**](DelegationLinksReportIriTemplate.md) |  | [optional] 
+**iriTemplate** | [**ReportLinksTrackingIriTemplate**](ReportLinksTrackingIriTemplate.md) |  | [optional] 
 
 

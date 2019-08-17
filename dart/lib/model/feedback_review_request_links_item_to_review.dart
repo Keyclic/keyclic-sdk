@@ -11,13 +11,14 @@ class FeedbackReviewRequestLinksItemToReview {
       return;
     }
     href = json['href'];
-    iriTemplate = FeedbackLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = FeedbackReviewRequestLinksItemToReviewIriTemplate.fromJson(
+        json['iriTemplate']);
   }
 
   /* The URI of the itemToReview associated to the given feedbackreviewrequest. */
   String href;
 
-  FeedbackLinksSelfIriTemplate iriTemplate;
+  FeedbackReviewRequestLinksItemToReviewIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

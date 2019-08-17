@@ -26,10 +26,14 @@ import BusinessActivity from './model/BusinessActivity';
 import BusinessActivityCollection from './model/BusinessActivityCollection';
 import BusinessActivityLinks from './model/BusinessActivityLinks';
 import BusinessActivityLinksImage from './model/BusinessActivityLinksImage';
+import BusinessActivityLinksImageIriTemplate from './model/BusinessActivityLinksImageIriTemplate';
+import BusinessActivityLinksImageIriTemplateMapping from './model/BusinessActivityLinksImageIriTemplateMapping';
 import BusinessActivityLinksSchema from './model/BusinessActivityLinksSchema';
+import BusinessActivityLinksSchemaIriTemplate from './model/BusinessActivityLinksSchemaIriTemplate';
 import BusinessActivityLinksSelf from './model/BusinessActivityLinksSelf';
 import BusinessActivityLinksSelfIriTemplate from './model/BusinessActivityLinksSelfIriTemplate';
-import BusinessActivityLinksSelfIriTemplateMapping from './model/BusinessActivityLinksSelfIriTemplateMapping';
+import BusinessActivityLinksThumbnail from './model/BusinessActivityLinksThumbnail';
+import BusinessActivityLinksThumbnailIriTemplate from './model/BusinessActivityLinksThumbnailIriTemplate';
 import BusinessActivityMetadataSchema from './model/BusinessActivityMetadataSchema';
 import BusinessActivityPagination from './model/BusinessActivityPagination';
 import Category from './model/Category';
@@ -48,16 +52,19 @@ import Chart from './model/Chart';
 import Checkpoint from './model/Checkpoint';
 import CheckpointLinks from './model/CheckpointLinks';
 import CheckpointLinksOrganization from './model/CheckpointLinksOrganization';
+import CheckpointLinksOrganizationIriTemplate from './model/CheckpointLinksOrganizationIriTemplate';
 import Choice from './model/Choice';
 import CommentData from './model/CommentData';
 import Condition from './model/Condition';
 import DelegateData from './model/DelegateData';
 import Delegation from './model/Delegation';
+import DelegationCollection from './model/DelegationCollection';
 import DelegationLinks from './model/DelegationLinks';
 import DelegationLinksCreatedBy from './model/DelegationLinksCreatedBy';
 import DelegationLinksCreatedByIriTemplate from './model/DelegationLinksCreatedByIriTemplate';
 import DelegationLinksCreatedByIriTemplateMapping from './model/DelegationLinksCreatedByIriTemplateMapping';
 import DelegationLinksFrom from './model/DelegationLinksFrom';
+import DelegationLinksFromIriTemplate from './model/DelegationLinksFromIriTemplate';
 import DelegationLinksReport from './model/DelegationLinksReport';
 import DelegationLinksReportIriTemplate from './model/DelegationLinksReportIriTemplate';
 import DelegationLinksReportIriTemplateMapping from './model/DelegationLinksReportIriTemplateMapping';
@@ -65,10 +72,13 @@ import DelegationLinksSelf from './model/DelegationLinksSelf';
 import DelegationLinksSelfIriTemplate from './model/DelegationLinksSelfIriTemplate';
 import DelegationLinksSelfIriTemplateMapping from './model/DelegationLinksSelfIriTemplateMapping';
 import DelegationLinksTo from './model/DelegationLinksTo';
+import DelegationLinksToIriTemplate from './model/DelegationLinksToIriTemplate';
+import DelegationPagination from './model/DelegationPagination';
 import Device from './model/Device';
 import DeviceData from './model/DeviceData';
 import DeviceLinks from './model/DeviceLinks';
 import DeviceLinksPerson from './model/DeviceLinksPerson';
+import DeviceLinksPersonIriTemplate from './model/DeviceLinksPersonIriTemplate';
 import Document from './model/Document';
 import DocumentCollection from './model/DocumentCollection';
 import DocumentData from './model/DocumentData';
@@ -77,18 +87,20 @@ import DocumentDataPermission from './model/DocumentDataPermission';
 import DocumentFile from './model/DocumentFile';
 import DocumentLinks from './model/DocumentLinks';
 import DocumentLinksCreatedBy from './model/DocumentLinksCreatedBy';
+import DocumentLinksCreatedByIriTemplate from './model/DocumentLinksCreatedByIriTemplate';
 import DocumentLinksFile from './model/DocumentLinksFile';
+import DocumentLinksFileIriTemplate from './model/DocumentLinksFileIriTemplate';
+import DocumentLinksFileIriTemplateMapping from './model/DocumentLinksFileIriTemplateMapping';
 import DocumentLinksSelf from './model/DocumentLinksSelf';
 import DocumentLinksSelfIriTemplate from './model/DocumentLinksSelfIriTemplate';
-import DocumentLinksSelfIriTemplateMapping from './model/DocumentLinksSelfIriTemplateMapping';
 import DocumentPagination from './model/DocumentPagination';
 import DocumentPatch from './model/DocumentPatch';
 import DocumentPatchFile from './model/DocumentPatchFile';
-import DocumentPatchPermission from './model/DocumentPatchPermission';
 import DocumentPermission from './model/DocumentPermission';
 import EmailData from './model/EmailData';
 import Error from './model/Error';
 import ErrorEmbedded from './model/ErrorEmbedded';
+import ExternalServiceData from './model/ExternalServiceData';
 import FacebookConnectData from './model/FacebookConnectData';
 import Feature from './model/Feature';
 import FeatureGeometry from './model/FeatureGeometry';
@@ -105,24 +117,34 @@ import FeedbackGeoCoordinates from './model/FeedbackGeoCoordinates';
 import FeedbackGeoCoordinatesPoint from './model/FeedbackGeoCoordinatesPoint';
 import FeedbackLinks from './model/FeedbackLinks';
 import FeedbackLinksBusinessActivity from './model/FeedbackLinksBusinessActivity';
+import FeedbackLinksBusinessActivityIriTemplate from './model/FeedbackLinksBusinessActivityIriTemplate';
 import FeedbackLinksCategory from './model/FeedbackLinksCategory';
+import FeedbackLinksCategoryIriTemplate from './model/FeedbackLinksCategoryIriTemplate';
 import FeedbackLinksImage from './model/FeedbackLinksImage';
 import FeedbackLinksImageIriTemplate from './model/FeedbackLinksImageIriTemplate';
 import FeedbackLinksImageIriTemplateMapping from './model/FeedbackLinksImageIriTemplateMapping';
 import FeedbackLinksImages from './model/FeedbackLinksImages';
+import FeedbackLinksImagesIriTemplate from './model/FeedbackLinksImagesIriTemplate';
 import FeedbackLinksReporter from './model/FeedbackLinksReporter';
+import FeedbackLinksReporterIriTemplate from './model/FeedbackLinksReporterIriTemplate';
 import FeedbackLinksSelf from './model/FeedbackLinksSelf';
 import FeedbackLinksSelfIriTemplate from './model/FeedbackLinksSelfIriTemplate';
 import FeedbackLinksSelfIriTemplateMapping from './model/FeedbackLinksSelfIriTemplateMapping';
 import FeedbackLinksTracking from './model/FeedbackLinksTracking';
+import FeedbackLinksTrackingIriTemplate from './model/FeedbackLinksTrackingIriTemplate';
 import FeedbackPagination from './model/FeedbackPagination';
 import FeedbackReviewRequest from './model/FeedbackReviewRequest';
 import FeedbackReviewRequestCollection from './model/FeedbackReviewRequestCollection';
 import FeedbackReviewRequestLinks from './model/FeedbackReviewRequestLinks';
 import FeedbackReviewRequestLinksItemToReview from './model/FeedbackReviewRequestLinksItemToReview';
+import FeedbackReviewRequestLinksItemToReviewIriTemplate from './model/FeedbackReviewRequestLinksItemToReviewIriTemplate';
 import FeedbackReviewRequestLinksOrganization from './model/FeedbackReviewRequestLinksOrganization';
+import FeedbackReviewRequestLinksOrganizationIriTemplate from './model/FeedbackReviewRequestLinksOrganizationIriTemplate';
 import FeedbackReviewRequestLinksReview from './model/FeedbackReviewRequestLinksReview';
+import FeedbackReviewRequestLinksReviewIriTemplate from './model/FeedbackReviewRequestLinksReviewIriTemplate';
+import FeedbackReviewRequestLinksReviewIriTemplateMapping from './model/FeedbackReviewRequestLinksReviewIriTemplateMapping';
 import FeedbackReviewRequestLinksReviewer from './model/FeedbackReviewRequestLinksReviewer';
+import FeedbackReviewRequestLinksReviewerIriTemplate from './model/FeedbackReviewRequestLinksReviewerIriTemplate';
 import FeedbackReviewRequestLinksSelf from './model/FeedbackReviewRequestLinksSelf';
 import FeedbackReviewRequestLinksSelfIriTemplate from './model/FeedbackReviewRequestLinksSelfIriTemplate';
 import FeedbackReviewRequestLinksSelfIriTemplateMapping from './model/FeedbackReviewRequestLinksSelfIriTemplateMapping';
@@ -140,7 +162,9 @@ import MemberData from './model/MemberData';
 import MemberEmbedded from './model/MemberEmbedded';
 import MemberLinks from './model/MemberLinks';
 import MemberLinksOrganization from './model/MemberLinksOrganization';
+import MemberLinksOrganizationIriTemplate from './model/MemberLinksOrganizationIriTemplate';
 import MemberLinksPerson from './model/MemberLinksPerson';
+import MemberLinksPersonIriTemplate from './model/MemberLinksPersonIriTemplate';
 import MemberLinksSelf from './model/MemberLinksSelf';
 import MemberLinksSelfIriTemplate from './model/MemberLinksSelfIriTemplate';
 import MemberLinksSelfIriTemplateMapping from './model/MemberLinksSelfIriTemplateMapping';
@@ -150,6 +174,7 @@ import Occupant from './model/Occupant';
 import OccupantCollection from './model/OccupantCollection';
 import OccupantLinks from './model/OccupantLinks';
 import OccupantLinksPerson from './model/OccupantLinksPerson';
+import OccupantLinksPersonIriTemplate from './model/OccupantLinksPersonIriTemplate';
 import OccupantLinksPlace from './model/OccupantLinksPlace';
 import OccupantLinksPlaceIriTemplate from './model/OccupantLinksPlaceIriTemplate';
 import OccupantLinksPlaceIriTemplateMapping from './model/OccupantLinksPlaceIriTemplateMapping';
@@ -162,16 +187,24 @@ import OperationCollection from './model/OperationCollection';
 import OperationData from './model/OperationData';
 import OperationLinks from './model/OperationLinks';
 import OperationLinksCreatedBy from './model/OperationLinksCreatedBy';
+import OperationLinksCreatedByIriTemplate from './model/OperationLinksCreatedByIriTemplate';
 import OperationLinksFeedback from './model/OperationLinksFeedback';
+import OperationLinksFeedbackIriTemplate from './model/OperationLinksFeedbackIriTemplate';
 import OperationLinksImage from './model/OperationLinksImage';
 import OperationLinksImageIriTemplate from './model/OperationLinksImageIriTemplate';
 import OperationLinksImageIriTemplateMapping from './model/OperationLinksImageIriTemplateMapping';
+import OperationLinksImages from './model/OperationLinksImages';
+import OperationLinksImagesIriTemplate from './model/OperationLinksImagesIriTemplate';
+import OperationLinksImagesIriTemplateMapping from './model/OperationLinksImagesIriTemplateMapping';
 import OperationLinksOperator from './model/OperationLinksOperator';
+import OperationLinksOperatorIriTemplate from './model/OperationLinksOperatorIriTemplate';
 import OperationLinksReport from './model/OperationLinksReport';
+import OperationLinksReportIriTemplate from './model/OperationLinksReportIriTemplate';
 import OperationLinksSelf from './model/OperationLinksSelf';
 import OperationLinksSelfIriTemplate from './model/OperationLinksSelfIriTemplate';
 import OperationLinksSelfIriTemplateMapping from './model/OperationLinksSelfIriTemplateMapping';
 import OperationLinksTracking from './model/OperationLinksTracking';
+import OperationLinksTrackingIriTemplate from './model/OperationLinksTrackingIriTemplate';
 import OperationPagination from './model/OperationPagination';
 import OperationPatch from './model/OperationPatch';
 import OperationSignature from './model/OperationSignature';
@@ -182,9 +215,14 @@ import Organization from './model/Organization';
 import OrganizationCollection from './model/OrganizationCollection';
 import OrganizationData from './model/OrganizationData';
 import OrganizationLinks from './model/OrganizationLinks';
+import OrganizationLinksApplication from './model/OrganizationLinksApplication';
+import OrganizationLinksApplicationIriTemplate from './model/OrganizationLinksApplicationIriTemplate';
 import OrganizationLinksBusinessActivity from './model/OrganizationLinksBusinessActivity';
+import OrganizationLinksBusinessActivityIriTemplate from './model/OrganizationLinksBusinessActivityIriTemplate';
 import OrganizationLinksLogo from './model/OrganizationLinksLogo';
+import OrganizationLinksLogoIriTemplate from './model/OrganizationLinksLogoIriTemplate';
 import OrganizationLinksSelf from './model/OrganizationLinksSelf';
+import OrganizationLinksSelfIriTemplate from './model/OrganizationLinksSelfIriTemplate';
 import OrganizationPagination from './model/OrganizationPagination';
 import OrganizationPatch from './model/OrganizationPatch';
 import OrganizationPatchPreferences from './model/OrganizationPatchPreferences';
@@ -198,8 +236,11 @@ import PersonCollection from './model/PersonCollection';
 import PersonData from './model/PersonData';
 import PersonLinks from './model/PersonLinks';
 import PersonLinksImage from './model/PersonLinksImage';
+import PersonLinksImageIriTemplate from './model/PersonLinksImageIriTemplate';
 import PersonLinksMemberOf from './model/PersonLinksMemberOf';
+import PersonLinksMemberOfIriTemplate from './model/PersonLinksMemberOfIriTemplate';
 import PersonLinksSelf from './model/PersonLinksSelf';
+import PersonLinksSelfIriTemplate from './model/PersonLinksSelfIriTemplate';
 import PersonPagination from './model/PersonPagination';
 import PersonPatch from './model/PersonPatch';
 import PersonPatchPreferences from './model/PersonPatchPreferences';
@@ -212,11 +253,14 @@ import PlaceGeoCentroid from './model/PlaceGeoCentroid';
 import PlaceGeoPolygon from './model/PlaceGeoPolygon';
 import PlaceLinks from './model/PlaceLinks';
 import PlaceLinksContainedInPlace from './model/PlaceLinksContainedInPlace';
+import PlaceLinksContainedInPlaceIriTemplate from './model/PlaceLinksContainedInPlaceIriTemplate';
 import PlaceLinksContainsPlaces from './model/PlaceLinksContainsPlaces';
 import PlaceLinksContainsPlacesIriTemplate from './model/PlaceLinksContainsPlacesIriTemplate';
 import PlaceLinksContainsPlacesIriTemplateMapping from './model/PlaceLinksContainsPlacesIriTemplateMapping';
 import PlaceLinksOrganization from './model/PlaceLinksOrganization';
+import PlaceLinksOrganizationIriTemplate from './model/PlaceLinksOrganizationIriTemplate';
 import PlaceLinksSelf from './model/PlaceLinksSelf';
+import PlaceLinksSelfIriTemplate from './model/PlaceLinksSelfIriTemplate';
 import PlacePagination from './model/PlacePagination';
 import PlacePatch from './model/PlacePatch';
 import PlacePreferences from './model/PlacePreferences';
@@ -228,14 +272,16 @@ import PublicationCollection from './model/PublicationCollection';
 import PublicationData from './model/PublicationData';
 import PublicationLinks from './model/PublicationLinks';
 import PublicationLinksAuthor from './model/PublicationLinksAuthor';
+import PublicationLinksAuthorIriTemplate from './model/PublicationLinksAuthorIriTemplate';
 import PublicationLinksOrganization from './model/PublicationLinksOrganization';
+import PublicationLinksOrganizationIriTemplate from './model/PublicationLinksOrganizationIriTemplate';
 import PublicationLinksPlace from './model/PublicationLinksPlace';
+import PublicationLinksPlaceIriTemplate from './model/PublicationLinksPlaceIriTemplate';
 import PublicationLinksSelf from './model/PublicationLinksSelf';
 import PublicationLinksSelfIriTemplate from './model/PublicationLinksSelfIriTemplate';
 import PublicationLinksSelfIriTemplateMapping from './model/PublicationLinksSelfIriTemplateMapping';
 import PublicationPagination from './model/PublicationPagination';
 import RegisterData from './model/RegisterData';
-import RelationshipData from './model/RelationshipData';
 import Report from './model/Report';
 import ReportCollection from './model/ReportCollection';
 import ReportEmbedded from './model/ReportEmbedded';
@@ -243,14 +289,23 @@ import ReportEmbeddedDuration from './model/ReportEmbeddedDuration';
 import ReportEmbeddedTargetGroups from './model/ReportEmbeddedTargetGroups';
 import ReportLinks from './model/ReportLinks';
 import ReportLinksCategory from './model/ReportLinksCategory';
+import ReportLinksCategoryIriTemplate from './model/ReportLinksCategoryIriTemplate';
 import ReportLinksDelegatedFrom from './model/ReportLinksDelegatedFrom';
+import ReportLinksDelegatedFromIriTemplate from './model/ReportLinksDelegatedFromIriTemplate';
 import ReportLinksDelegatedTo from './model/ReportLinksDelegatedTo';
+import ReportLinksDelegatedToIriTemplate from './model/ReportLinksDelegatedToIriTemplate';
 import ReportLinksFeedback from './model/ReportLinksFeedback';
+import ReportLinksFeedbackIriTemplate from './model/ReportLinksFeedbackIriTemplate';
 import ReportLinksOperations from './model/ReportLinksOperations';
+import ReportLinksOperationsIriTemplate from './model/ReportLinksOperationsIriTemplate';
 import ReportLinksOrganization from './model/ReportLinksOrganization';
+import ReportLinksOrganizationIriTemplate from './model/ReportLinksOrganizationIriTemplate';
 import ReportLinksPlace from './model/ReportLinksPlace';
+import ReportLinksPlaceIriTemplate from './model/ReportLinksPlaceIriTemplate';
 import ReportLinksSelf from './model/ReportLinksSelf';
+import ReportLinksSelfIriTemplate from './model/ReportLinksSelfIriTemplate';
 import ReportLinksTracking from './model/ReportLinksTracking';
+import ReportLinksTrackingIriTemplate from './model/ReportLinksTrackingIriTemplate';
 import ReportPagination from './model/ReportPagination';
 import ReportPatch from './model/ReportPatch';
 import ReportStatePatch from './model/ReportStatePatch';
@@ -260,16 +315,16 @@ import ReviewCollection from './model/ReviewCollection';
 import ReviewData from './model/ReviewData';
 import ReviewLinks from './model/ReviewLinks';
 import ReviewLinksAuthor from './model/ReviewLinksAuthor';
+import ReviewLinksAuthorIriTemplate from './model/ReviewLinksAuthorIriTemplate';
+import ReviewLinksItemReviewed from './model/ReviewLinksItemReviewed';
+import ReviewLinksItemReviewedIriTemplate from './model/ReviewLinksItemReviewedIriTemplate';
 import ReviewLinksSelf from './model/ReviewLinksSelf';
 import ReviewLinksSelfIriTemplate from './model/ReviewLinksSelfIriTemplate';
-import ReviewLinksSelfIriTemplateMapping from './model/ReviewLinksSelfIriTemplateMapping';
 import ReviewPagination from './model/ReviewPagination';
 import Schema from './model/Schema';
 import Service from './model/Service';
 import ServiceCollection from './model/ServiceCollection';
 import ServiceContactPoint from './model/ServiceContactPoint';
-import ServiceLinks from './model/ServiceLinks';
-import ServiceLinksOrganization from './model/ServiceLinksOrganization';
 import ServicePagination from './model/ServicePagination';
 import SignatureData from './model/SignatureData';
 import SignatureDataSigner from './model/SignatureDataSigner';
@@ -284,6 +339,7 @@ import Webhook from './model/Webhook';
 import WebhookCollection from './model/WebhookCollection';
 import WebhookLinks from './model/WebhookLinks';
 import WebhookLinksOrganization from './model/WebhookLinksOrganization';
+import WebhookLinksOrganizationIriTemplate from './model/WebhookLinksOrganizationIriTemplate';
 import WebhookLinksSelf from './model/WebhookLinksSelf';
 import WebhookLinksSelfIriTemplate from './model/WebhookLinksSelfIriTemplate';
 import WebhookLinksSelfIriTemplateMapping from './model/WebhookLinksSelfIriTemplateMapping';
@@ -333,6 +389,7 @@ import SchemaApi from './api/SchemaApi';
 import ServiceApi from './api/ServiceApi';
 import SignApi from './api/SignApi';
 import StateApi from './api/StateApi';
+import ThumbnailApi from './api/ThumbnailApi';
 import TrackingApi from './api/TrackingApi';
 import TransitionApi from './api/TransitionApi';
 import UnfollowApi from './api/UnfollowApi';
@@ -438,10 +495,25 @@ export {
      */
     BusinessActivityLinksImage,
     /**
+     * The BusinessActivityLinksImageIriTemplate model constructor.
+     * @property { module:model/BusinessActivityLinksImageIriTemplate }
+     */
+    BusinessActivityLinksImageIriTemplate,
+    /**
+     * The BusinessActivityLinksImageIriTemplateMapping model constructor.
+     * @property { module:model/BusinessActivityLinksImageIriTemplateMapping }
+     */
+    BusinessActivityLinksImageIriTemplateMapping,
+    /**
      * The BusinessActivityLinksSchema model constructor.
      * @property { module:model/BusinessActivityLinksSchema }
      */
     BusinessActivityLinksSchema,
+    /**
+     * The BusinessActivityLinksSchemaIriTemplate model constructor.
+     * @property { module:model/BusinessActivityLinksSchemaIriTemplate }
+     */
+    BusinessActivityLinksSchemaIriTemplate,
     /**
      * The BusinessActivityLinksSelf model constructor.
      * @property { module:model/BusinessActivityLinksSelf }
@@ -453,10 +525,15 @@ export {
      */
     BusinessActivityLinksSelfIriTemplate,
     /**
-     * The BusinessActivityLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/BusinessActivityLinksSelfIriTemplateMapping }
+     * The BusinessActivityLinksThumbnail model constructor.
+     * @property { module:model/BusinessActivityLinksThumbnail }
      */
-    BusinessActivityLinksSelfIriTemplateMapping,
+    BusinessActivityLinksThumbnail,
+    /**
+     * The BusinessActivityLinksThumbnailIriTemplate model constructor.
+     * @property { module:model/BusinessActivityLinksThumbnailIriTemplate }
+     */
+    BusinessActivityLinksThumbnailIriTemplate,
     /**
      * The BusinessActivityMetadataSchema model constructor.
      * @property { module:model/BusinessActivityMetadataSchema }
@@ -548,6 +625,11 @@ export {
      */
     CheckpointLinksOrganization,
     /**
+     * The CheckpointLinksOrganizationIriTemplate model constructor.
+     * @property { module:model/CheckpointLinksOrganizationIriTemplate }
+     */
+    CheckpointLinksOrganizationIriTemplate,
+    /**
      * The Choice model constructor.
      * @property { module:model/Choice }
      */
@@ -573,6 +655,11 @@ export {
      */
     Delegation,
     /**
+     * The DelegationCollection model constructor.
+     * @property { module:model/DelegationCollection }
+     */
+    DelegationCollection,
+    /**
      * The DelegationLinks model constructor.
      * @property { module:model/DelegationLinks }
      */
@@ -597,6 +684,11 @@ export {
      * @property { module:model/DelegationLinksFrom }
      */
     DelegationLinksFrom,
+    /**
+     * The DelegationLinksFromIriTemplate model constructor.
+     * @property { module:model/DelegationLinksFromIriTemplate }
+     */
+    DelegationLinksFromIriTemplate,
     /**
      * The DelegationLinksReport model constructor.
      * @property { module:model/DelegationLinksReport }
@@ -633,6 +725,16 @@ export {
      */
     DelegationLinksTo,
     /**
+     * The DelegationLinksToIriTemplate model constructor.
+     * @property { module:model/DelegationLinksToIriTemplate }
+     */
+    DelegationLinksToIriTemplate,
+    /**
+     * The DelegationPagination model constructor.
+     * @property { module:model/DelegationPagination }
+     */
+    DelegationPagination,
+    /**
      * The Device model constructor.
      * @property { module:model/Device }
      */
@@ -652,6 +754,11 @@ export {
      * @property { module:model/DeviceLinksPerson }
      */
     DeviceLinksPerson,
+    /**
+     * The DeviceLinksPersonIriTemplate model constructor.
+     * @property { module:model/DeviceLinksPersonIriTemplate }
+     */
+    DeviceLinksPersonIriTemplate,
     /**
      * The Document model constructor.
      * @property { module:model/Document }
@@ -693,10 +800,25 @@ export {
      */
     DocumentLinksCreatedBy,
     /**
+     * The DocumentLinksCreatedByIriTemplate model constructor.
+     * @property { module:model/DocumentLinksCreatedByIriTemplate }
+     */
+    DocumentLinksCreatedByIriTemplate,
+    /**
      * The DocumentLinksFile model constructor.
      * @property { module:model/DocumentLinksFile }
      */
     DocumentLinksFile,
+    /**
+     * The DocumentLinksFileIriTemplate model constructor.
+     * @property { module:model/DocumentLinksFileIriTemplate }
+     */
+    DocumentLinksFileIriTemplate,
+    /**
+     * The DocumentLinksFileIriTemplateMapping model constructor.
+     * @property { module:model/DocumentLinksFileIriTemplateMapping }
+     */
+    DocumentLinksFileIriTemplateMapping,
     /**
      * The DocumentLinksSelf model constructor.
      * @property { module:model/DocumentLinksSelf }
@@ -707,11 +829,6 @@ export {
      * @property { module:model/DocumentLinksSelfIriTemplate }
      */
     DocumentLinksSelfIriTemplate,
-    /**
-     * The DocumentLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/DocumentLinksSelfIriTemplateMapping }
-     */
-    DocumentLinksSelfIriTemplateMapping,
     /**
      * The DocumentPagination model constructor.
      * @property { module:model/DocumentPagination }
@@ -727,11 +844,6 @@ export {
      * @property { module:model/DocumentPatchFile }
      */
     DocumentPatchFile,
-    /**
-     * The DocumentPatchPermission model constructor.
-     * @property { module:model/DocumentPatchPermission }
-     */
-    DocumentPatchPermission,
     /**
      * The DocumentPermission model constructor.
      * @property { module:model/DocumentPermission }
@@ -752,6 +864,11 @@ export {
      * @property { module:model/ErrorEmbedded }
      */
     ErrorEmbedded,
+    /**
+     * The ExternalServiceData model constructor.
+     * @property { module:model/ExternalServiceData }
+     */
+    ExternalServiceData,
     /**
      * The FacebookConnectData model constructor.
      * @property { module:model/FacebookConnectData }
@@ -833,10 +950,20 @@ export {
      */
     FeedbackLinksBusinessActivity,
     /**
+     * The FeedbackLinksBusinessActivityIriTemplate model constructor.
+     * @property { module:model/FeedbackLinksBusinessActivityIriTemplate }
+     */
+    FeedbackLinksBusinessActivityIriTemplate,
+    /**
      * The FeedbackLinksCategory model constructor.
      * @property { module:model/FeedbackLinksCategory }
      */
     FeedbackLinksCategory,
+    /**
+     * The FeedbackLinksCategoryIriTemplate model constructor.
+     * @property { module:model/FeedbackLinksCategoryIriTemplate }
+     */
+    FeedbackLinksCategoryIriTemplate,
     /**
      * The FeedbackLinksImage model constructor.
      * @property { module:model/FeedbackLinksImage }
@@ -858,10 +985,20 @@ export {
      */
     FeedbackLinksImages,
     /**
+     * The FeedbackLinksImagesIriTemplate model constructor.
+     * @property { module:model/FeedbackLinksImagesIriTemplate }
+     */
+    FeedbackLinksImagesIriTemplate,
+    /**
      * The FeedbackLinksReporter model constructor.
      * @property { module:model/FeedbackLinksReporter }
      */
     FeedbackLinksReporter,
+    /**
+     * The FeedbackLinksReporterIriTemplate model constructor.
+     * @property { module:model/FeedbackLinksReporterIriTemplate }
+     */
+    FeedbackLinksReporterIriTemplate,
     /**
      * The FeedbackLinksSelf model constructor.
      * @property { module:model/FeedbackLinksSelf }
@@ -882,6 +1019,11 @@ export {
      * @property { module:model/FeedbackLinksTracking }
      */
     FeedbackLinksTracking,
+    /**
+     * The FeedbackLinksTrackingIriTemplate model constructor.
+     * @property { module:model/FeedbackLinksTrackingIriTemplate }
+     */
+    FeedbackLinksTrackingIriTemplate,
     /**
      * The FeedbackPagination model constructor.
      * @property { module:model/FeedbackPagination }
@@ -908,20 +1050,45 @@ export {
      */
     FeedbackReviewRequestLinksItemToReview,
     /**
+     * The FeedbackReviewRequestLinksItemToReviewIriTemplate model constructor.
+     * @property { module:model/FeedbackReviewRequestLinksItemToReviewIriTemplate }
+     */
+    FeedbackReviewRequestLinksItemToReviewIriTemplate,
+    /**
      * The FeedbackReviewRequestLinksOrganization model constructor.
      * @property { module:model/FeedbackReviewRequestLinksOrganization }
      */
     FeedbackReviewRequestLinksOrganization,
+    /**
+     * The FeedbackReviewRequestLinksOrganizationIriTemplate model constructor.
+     * @property { module:model/FeedbackReviewRequestLinksOrganizationIriTemplate }
+     */
+    FeedbackReviewRequestLinksOrganizationIriTemplate,
     /**
      * The FeedbackReviewRequestLinksReview model constructor.
      * @property { module:model/FeedbackReviewRequestLinksReview }
      */
     FeedbackReviewRequestLinksReview,
     /**
+     * The FeedbackReviewRequestLinksReviewIriTemplate model constructor.
+     * @property { module:model/FeedbackReviewRequestLinksReviewIriTemplate }
+     */
+    FeedbackReviewRequestLinksReviewIriTemplate,
+    /**
+     * The FeedbackReviewRequestLinksReviewIriTemplateMapping model constructor.
+     * @property { module:model/FeedbackReviewRequestLinksReviewIriTemplateMapping }
+     */
+    FeedbackReviewRequestLinksReviewIriTemplateMapping,
+    /**
      * The FeedbackReviewRequestLinksReviewer model constructor.
      * @property { module:model/FeedbackReviewRequestLinksReviewer }
      */
     FeedbackReviewRequestLinksReviewer,
+    /**
+     * The FeedbackReviewRequestLinksReviewerIriTemplate model constructor.
+     * @property { module:model/FeedbackReviewRequestLinksReviewerIriTemplate }
+     */
+    FeedbackReviewRequestLinksReviewerIriTemplate,
     /**
      * The FeedbackReviewRequestLinksSelf model constructor.
      * @property { module:model/FeedbackReviewRequestLinksSelf }
@@ -1008,10 +1175,20 @@ export {
      */
     MemberLinksOrganization,
     /**
+     * The MemberLinksOrganizationIriTemplate model constructor.
+     * @property { module:model/MemberLinksOrganizationIriTemplate }
+     */
+    MemberLinksOrganizationIriTemplate,
+    /**
      * The MemberLinksPerson model constructor.
      * @property { module:model/MemberLinksPerson }
      */
     MemberLinksPerson,
+    /**
+     * The MemberLinksPersonIriTemplate model constructor.
+     * @property { module:model/MemberLinksPersonIriTemplate }
+     */
+    MemberLinksPersonIriTemplate,
     /**
      * The MemberLinksSelf model constructor.
      * @property { module:model/MemberLinksSelf }
@@ -1057,6 +1234,11 @@ export {
      * @property { module:model/OccupantLinksPerson }
      */
     OccupantLinksPerson,
+    /**
+     * The OccupantLinksPersonIriTemplate model constructor.
+     * @property { module:model/OccupantLinksPersonIriTemplate }
+     */
+    OccupantLinksPersonIriTemplate,
     /**
      * The OccupantLinksPlace model constructor.
      * @property { module:model/OccupantLinksPlace }
@@ -1118,10 +1300,20 @@ export {
      */
     OperationLinksCreatedBy,
     /**
+     * The OperationLinksCreatedByIriTemplate model constructor.
+     * @property { module:model/OperationLinksCreatedByIriTemplate }
+     */
+    OperationLinksCreatedByIriTemplate,
+    /**
      * The OperationLinksFeedback model constructor.
      * @property { module:model/OperationLinksFeedback }
      */
     OperationLinksFeedback,
+    /**
+     * The OperationLinksFeedbackIriTemplate model constructor.
+     * @property { module:model/OperationLinksFeedbackIriTemplate }
+     */
+    OperationLinksFeedbackIriTemplate,
     /**
      * The OperationLinksImage model constructor.
      * @property { module:model/OperationLinksImage }
@@ -1138,15 +1330,40 @@ export {
      */
     OperationLinksImageIriTemplateMapping,
     /**
+     * The OperationLinksImages model constructor.
+     * @property { module:model/OperationLinksImages }
+     */
+    OperationLinksImages,
+    /**
+     * The OperationLinksImagesIriTemplate model constructor.
+     * @property { module:model/OperationLinksImagesIriTemplate }
+     */
+    OperationLinksImagesIriTemplate,
+    /**
+     * The OperationLinksImagesIriTemplateMapping model constructor.
+     * @property { module:model/OperationLinksImagesIriTemplateMapping }
+     */
+    OperationLinksImagesIriTemplateMapping,
+    /**
      * The OperationLinksOperator model constructor.
      * @property { module:model/OperationLinksOperator }
      */
     OperationLinksOperator,
     /**
+     * The OperationLinksOperatorIriTemplate model constructor.
+     * @property { module:model/OperationLinksOperatorIriTemplate }
+     */
+    OperationLinksOperatorIriTemplate,
+    /**
      * The OperationLinksReport model constructor.
      * @property { module:model/OperationLinksReport }
      */
     OperationLinksReport,
+    /**
+     * The OperationLinksReportIriTemplate model constructor.
+     * @property { module:model/OperationLinksReportIriTemplate }
+     */
+    OperationLinksReportIriTemplate,
     /**
      * The OperationLinksSelf model constructor.
      * @property { module:model/OperationLinksSelf }
@@ -1167,6 +1384,11 @@ export {
      * @property { module:model/OperationLinksTracking }
      */
     OperationLinksTracking,
+    /**
+     * The OperationLinksTrackingIriTemplate model constructor.
+     * @property { module:model/OperationLinksTrackingIriTemplate }
+     */
+    OperationLinksTrackingIriTemplate,
     /**
      * The OperationPagination model constructor.
      * @property { module:model/OperationPagination }
@@ -1218,20 +1440,45 @@ export {
      */
     OrganizationLinks,
     /**
+     * The OrganizationLinksApplication model constructor.
+     * @property { module:model/OrganizationLinksApplication }
+     */
+    OrganizationLinksApplication,
+    /**
+     * The OrganizationLinksApplicationIriTemplate model constructor.
+     * @property { module:model/OrganizationLinksApplicationIriTemplate }
+     */
+    OrganizationLinksApplicationIriTemplate,
+    /**
      * The OrganizationLinksBusinessActivity model constructor.
      * @property { module:model/OrganizationLinksBusinessActivity }
      */
     OrganizationLinksBusinessActivity,
+    /**
+     * The OrganizationLinksBusinessActivityIriTemplate model constructor.
+     * @property { module:model/OrganizationLinksBusinessActivityIriTemplate }
+     */
+    OrganizationLinksBusinessActivityIriTemplate,
     /**
      * The OrganizationLinksLogo model constructor.
      * @property { module:model/OrganizationLinksLogo }
      */
     OrganizationLinksLogo,
     /**
+     * The OrganizationLinksLogoIriTemplate model constructor.
+     * @property { module:model/OrganizationLinksLogoIriTemplate }
+     */
+    OrganizationLinksLogoIriTemplate,
+    /**
      * The OrganizationLinksSelf model constructor.
      * @property { module:model/OrganizationLinksSelf }
      */
     OrganizationLinksSelf,
+    /**
+     * The OrganizationLinksSelfIriTemplate model constructor.
+     * @property { module:model/OrganizationLinksSelfIriTemplate }
+     */
+    OrganizationLinksSelfIriTemplate,
     /**
      * The OrganizationPagination model constructor.
      * @property { module:model/OrganizationPagination }
@@ -1298,15 +1545,30 @@ export {
      */
     PersonLinksImage,
     /**
+     * The PersonLinksImageIriTemplate model constructor.
+     * @property { module:model/PersonLinksImageIriTemplate }
+     */
+    PersonLinksImageIriTemplate,
+    /**
      * The PersonLinksMemberOf model constructor.
      * @property { module:model/PersonLinksMemberOf }
      */
     PersonLinksMemberOf,
     /**
+     * The PersonLinksMemberOfIriTemplate model constructor.
+     * @property { module:model/PersonLinksMemberOfIriTemplate }
+     */
+    PersonLinksMemberOfIriTemplate,
+    /**
      * The PersonLinksSelf model constructor.
      * @property { module:model/PersonLinksSelf }
      */
     PersonLinksSelf,
+    /**
+     * The PersonLinksSelfIriTemplate model constructor.
+     * @property { module:model/PersonLinksSelfIriTemplate }
+     */
+    PersonLinksSelfIriTemplate,
     /**
      * The PersonPagination model constructor.
      * @property { module:model/PersonPagination }
@@ -1368,6 +1630,11 @@ export {
      */
     PlaceLinksContainedInPlace,
     /**
+     * The PlaceLinksContainedInPlaceIriTemplate model constructor.
+     * @property { module:model/PlaceLinksContainedInPlaceIriTemplate }
+     */
+    PlaceLinksContainedInPlaceIriTemplate,
+    /**
      * The PlaceLinksContainsPlaces model constructor.
      * @property { module:model/PlaceLinksContainsPlaces }
      */
@@ -1388,10 +1655,20 @@ export {
      */
     PlaceLinksOrganization,
     /**
+     * The PlaceLinksOrganizationIriTemplate model constructor.
+     * @property { module:model/PlaceLinksOrganizationIriTemplate }
+     */
+    PlaceLinksOrganizationIriTemplate,
+    /**
      * The PlaceLinksSelf model constructor.
      * @property { module:model/PlaceLinksSelf }
      */
     PlaceLinksSelf,
+    /**
+     * The PlaceLinksSelfIriTemplate model constructor.
+     * @property { module:model/PlaceLinksSelfIriTemplate }
+     */
+    PlaceLinksSelfIriTemplate,
     /**
      * The PlacePagination model constructor.
      * @property { module:model/PlacePagination }
@@ -1448,15 +1725,30 @@ export {
      */
     PublicationLinksAuthor,
     /**
+     * The PublicationLinksAuthorIriTemplate model constructor.
+     * @property { module:model/PublicationLinksAuthorIriTemplate }
+     */
+    PublicationLinksAuthorIriTemplate,
+    /**
      * The PublicationLinksOrganization model constructor.
      * @property { module:model/PublicationLinksOrganization }
      */
     PublicationLinksOrganization,
     /**
+     * The PublicationLinksOrganizationIriTemplate model constructor.
+     * @property { module:model/PublicationLinksOrganizationIriTemplate }
+     */
+    PublicationLinksOrganizationIriTemplate,
+    /**
      * The PublicationLinksPlace model constructor.
      * @property { module:model/PublicationLinksPlace }
      */
     PublicationLinksPlace,
+    /**
+     * The PublicationLinksPlaceIriTemplate model constructor.
+     * @property { module:model/PublicationLinksPlaceIriTemplate }
+     */
+    PublicationLinksPlaceIriTemplate,
     /**
      * The PublicationLinksSelf model constructor.
      * @property { module:model/PublicationLinksSelf }
@@ -1482,11 +1774,6 @@ export {
      * @property { module:model/RegisterData }
      */
     RegisterData,
-    /**
-     * The RelationshipData model constructor.
-     * @property { module:model/RelationshipData }
-     */
-    RelationshipData,
     /**
      * The Report model constructor.
      * @property { module:model/Report }
@@ -1523,45 +1810,90 @@ export {
      */
     ReportLinksCategory,
     /**
+     * The ReportLinksCategoryIriTemplate model constructor.
+     * @property { module:model/ReportLinksCategoryIriTemplate }
+     */
+    ReportLinksCategoryIriTemplate,
+    /**
      * The ReportLinksDelegatedFrom model constructor.
      * @property { module:model/ReportLinksDelegatedFrom }
      */
     ReportLinksDelegatedFrom,
+    /**
+     * The ReportLinksDelegatedFromIriTemplate model constructor.
+     * @property { module:model/ReportLinksDelegatedFromIriTemplate }
+     */
+    ReportLinksDelegatedFromIriTemplate,
     /**
      * The ReportLinksDelegatedTo model constructor.
      * @property { module:model/ReportLinksDelegatedTo }
      */
     ReportLinksDelegatedTo,
     /**
+     * The ReportLinksDelegatedToIriTemplate model constructor.
+     * @property { module:model/ReportLinksDelegatedToIriTemplate }
+     */
+    ReportLinksDelegatedToIriTemplate,
+    /**
      * The ReportLinksFeedback model constructor.
      * @property { module:model/ReportLinksFeedback }
      */
     ReportLinksFeedback,
+    /**
+     * The ReportLinksFeedbackIriTemplate model constructor.
+     * @property { module:model/ReportLinksFeedbackIriTemplate }
+     */
+    ReportLinksFeedbackIriTemplate,
     /**
      * The ReportLinksOperations model constructor.
      * @property { module:model/ReportLinksOperations }
      */
     ReportLinksOperations,
     /**
+     * The ReportLinksOperationsIriTemplate model constructor.
+     * @property { module:model/ReportLinksOperationsIriTemplate }
+     */
+    ReportLinksOperationsIriTemplate,
+    /**
      * The ReportLinksOrganization model constructor.
      * @property { module:model/ReportLinksOrganization }
      */
     ReportLinksOrganization,
+    /**
+     * The ReportLinksOrganizationIriTemplate model constructor.
+     * @property { module:model/ReportLinksOrganizationIriTemplate }
+     */
+    ReportLinksOrganizationIriTemplate,
     /**
      * The ReportLinksPlace model constructor.
      * @property { module:model/ReportLinksPlace }
      */
     ReportLinksPlace,
     /**
+     * The ReportLinksPlaceIriTemplate model constructor.
+     * @property { module:model/ReportLinksPlaceIriTemplate }
+     */
+    ReportLinksPlaceIriTemplate,
+    /**
      * The ReportLinksSelf model constructor.
      * @property { module:model/ReportLinksSelf }
      */
     ReportLinksSelf,
     /**
+     * The ReportLinksSelfIriTemplate model constructor.
+     * @property { module:model/ReportLinksSelfIriTemplate }
+     */
+    ReportLinksSelfIriTemplate,
+    /**
      * The ReportLinksTracking model constructor.
      * @property { module:model/ReportLinksTracking }
      */
     ReportLinksTracking,
+    /**
+     * The ReportLinksTrackingIriTemplate model constructor.
+     * @property { module:model/ReportLinksTrackingIriTemplate }
+     */
+    ReportLinksTrackingIriTemplate,
     /**
      * The ReportPagination model constructor.
      * @property { module:model/ReportPagination }
@@ -1608,6 +1940,21 @@ export {
      */
     ReviewLinksAuthor,
     /**
+     * The ReviewLinksAuthorIriTemplate model constructor.
+     * @property { module:model/ReviewLinksAuthorIriTemplate }
+     */
+    ReviewLinksAuthorIriTemplate,
+    /**
+     * The ReviewLinksItemReviewed model constructor.
+     * @property { module:model/ReviewLinksItemReviewed }
+     */
+    ReviewLinksItemReviewed,
+    /**
+     * The ReviewLinksItemReviewedIriTemplate model constructor.
+     * @property { module:model/ReviewLinksItemReviewedIriTemplate }
+     */
+    ReviewLinksItemReviewedIriTemplate,
+    /**
      * The ReviewLinksSelf model constructor.
      * @property { module:model/ReviewLinksSelf }
      */
@@ -1617,11 +1964,6 @@ export {
      * @property { module:model/ReviewLinksSelfIriTemplate }
      */
     ReviewLinksSelfIriTemplate,
-    /**
-     * The ReviewLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/ReviewLinksSelfIriTemplateMapping }
-     */
-    ReviewLinksSelfIriTemplateMapping,
     /**
      * The ReviewPagination model constructor.
      * @property { module:model/ReviewPagination }
@@ -1647,16 +1989,6 @@ export {
      * @property { module:model/ServiceContactPoint }
      */
     ServiceContactPoint,
-    /**
-     * The ServiceLinks model constructor.
-     * @property { module:model/ServiceLinks }
-     */
-    ServiceLinks,
-    /**
-     * The ServiceLinksOrganization model constructor.
-     * @property { module:model/ServiceLinksOrganization }
-     */
-    ServiceLinksOrganization,
     /**
      * The ServicePagination model constructor.
      * @property { module:model/ServicePagination }
@@ -1727,6 +2059,11 @@ export {
      * @property { module:model/WebhookLinksOrganization }
      */
     WebhookLinksOrganization,
+    /**
+     * The WebhookLinksOrganizationIriTemplate model constructor.
+     * @property { module:model/WebhookLinksOrganizationIriTemplate }
+     */
+    WebhookLinksOrganizationIriTemplate,
     /**
      * The WebhookLinksSelf model constructor.
      * @property { module:model/WebhookLinksSelf }
@@ -1973,6 +2310,11 @@ export {
      * @property { module:api/StateApi }
      */
     StateApi,
+    /**
+     * The ThumbnailApi service constructor.
+     * @property { module:api/ThumbnailApi }
+     */
+    ThumbnailApi,
     /**
      * The TrackingApi service constructor.
      * @property { module:api/TrackingApi }

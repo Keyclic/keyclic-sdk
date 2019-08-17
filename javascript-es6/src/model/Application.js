@@ -27,22 +27,18 @@ export default class Application {
     
      * @param token { String }
     
-     * @param id { String }
-    
      */
   constructor(
     name,
 
-    token,
-
-    id
+    token
   ) {
+    this.links = null;
+    this.id = null;
     this.name = name;
     this.token = token;
-    this.version = null;
-    this.id = id;
     this.type = null;
-    this.links = null;
+    this.version = null;
 
     this.linksType = ApplicationLinks;
   }
@@ -62,23 +58,23 @@ export default class Application {
       object = new Application();
     }
 
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
+    }
     if (data.hasOwnProperty("name")) {
       object.name = ApiClient.convertToType(data["name"], "String");
     }
     if (data.hasOwnProperty("token")) {
       object.token = ApiClient.convertToType(data["token"], "String");
     }
-    if (data.hasOwnProperty("version")) {
-      object.version = ApiClient.convertToType(data["version"], "String");
-    }
-    if (data.hasOwnProperty("id")) {
-      object.id = ApiClient.convertToType(data["id"], "String");
-    }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
     }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    if (data.hasOwnProperty("version")) {
+      object.version = ApiClient.convertToType(data["version"], "String");
     }
 
     return object;

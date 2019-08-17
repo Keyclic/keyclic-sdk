@@ -2,38 +2,38 @@ part of keyclic_sdk_api.api;
 
 class BusinessActivity {
   BusinessActivity({
-    this.alternateName,
-    this.name,
-    this.id,
-    this.type,
-    this.metadataSchema,
     this.links,
+    this.alternateName,
+    this.id,
+    this.metadataSchema,
+    this.name,
+    this.type,
   });
 
   BusinessActivity.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
+    links = BusinessActivityLinks.fromJson(json['_links']);
     alternateName = json['alternateName'];
-    name = json['name'];
     id = json['id'];
-    type = json['type'];
     metadataSchema =
         BusinessActivityMetadataSchema.fromJson(json['metadataSchema']);
-    links = BusinessActivityLinks.fromJson(json['_links']);
+    name = json['name'];
+    type = json['type'];
   }
+
+  BusinessActivityLinks links;
 
   String alternateName;
 
-  String name;
-
   String id;
-
-  String type;
 
   BusinessActivityMetadataSchema metadataSchema;
 
-  BusinessActivityLinks links;
+  String name;
+
+  String type;
 
   @override
   bool operator ==(dynamic other) {
@@ -43,27 +43,26 @@ class BusinessActivity {
 
     return other is BusinessActivity &&
         runtimeType == other.runtimeType &&
-        name == other.name &&
-        id == other.id;
+        name == other.name;
   }
 
   @override
-  int get hashCode => 0 ^ name.hashCode ^ id.hashCode;
+  int get hashCode => 0 ^ name.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
-      'alternateName': alternateName,
-      'name': name,
-      'id': id,
-      'type': type,
-      'metadataSchema': metadataSchema,
       '_links': links,
+      'alternateName': alternateName,
+      'id': id,
+      'metadataSchema': metadataSchema,
+      'name': name,
+      'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'BusinessActivity[alternateName=$alternateName, name=$name, id=$id, type=$type, metadataSchema=$metadataSchema, links=$links, ]';
+    return 'BusinessActivity[links=$links, alternateName=$alternateName, id=$id, metadataSchema=$metadataSchema, name=$name, type=$type, ]';
   }
 
   static List<BusinessActivity> listFromJson(List<dynamic> json) {

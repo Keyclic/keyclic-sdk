@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
-**createdAt** | **Date** |  | 
-**type** | **String** |  | [optional] 
 **links** | [**OccupantLinks**](OccupantLinks.md) |  | [optional] 
+**createdAt** | **Date** |  | [optional] 
+**id** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
 
 

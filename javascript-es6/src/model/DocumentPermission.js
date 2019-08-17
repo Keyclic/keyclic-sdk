@@ -22,11 +22,9 @@ export default class DocumentPermission {
      * @alias module:model/DocumentPermission
      * @class
     
-     * @param targetGroup { String }
-    
      */
-  constructor(targetGroup) {
-    this.targetGroup = targetGroup;
+  constructor() {
+    this.targetGroup = null;
   }
 
   /**

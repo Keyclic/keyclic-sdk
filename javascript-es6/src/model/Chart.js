@@ -22,18 +22,10 @@ export default class Chart {
      * @alias module:model/Chart
      * @class
     
-     * @param labels { Array.<String> }
-    
-     * @param data { Array.<Number> }
-    
      */
-  constructor(
-    labels,
-
-    data
-  ) {
-    this.labels = labels;
-    this.data = data;
+  constructor() {
+    this.data = [];
+    this.labels = [];
   }
 
   /**
@@ -51,11 +43,11 @@ export default class Chart {
       object = new Chart();
     }
 
-    if (data.hasOwnProperty("labels")) {
-      object.labels = ApiClient.convertToType(data["labels"], "['String']");
-    }
     if (data.hasOwnProperty("data")) {
       object.data = ApiClient.convertToType(data["data"], "['Number']");
+    }
+    if (data.hasOwnProperty("labels")) {
+      object.labels = ApiClient.convertToType(data["labels"], "['String']");
     }
 
     return object;

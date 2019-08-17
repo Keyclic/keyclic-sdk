@@ -23,32 +23,16 @@ export default class Activity {
      * @alias module:model/Activity
      * @class
     
-     * @param actor { String }
-    
-     * @param message { String }
-    
-     * @param _object { String }
-    
-     * @param verb { String }
-    
      */
-  constructor(
-    actor,
-
-    message,
-
-    _object,
-
-    verb
-  ) {
-    this.actor = actor;
-    this.message = message;
-    this._object = _object;
-    this.verb = verb;
+  constructor() {
+    this.actor = null;
+    this.message = null;
+    this._object = null;
     this.origin = null;
-    this.title = null;
     this.subject = null;
     this.time = null;
+    this.title = null;
+    this.verb = null;
 
     this.subjectType = ActivitySubject;
   }
@@ -77,14 +61,8 @@ export default class Activity {
     if (data.hasOwnProperty("object")) {
       object._object = ApiClient.convertToType(data["object"], "String");
     }
-    if (data.hasOwnProperty("verb")) {
-      object.verb = ApiClient.convertToType(data["verb"], "String");
-    }
     if (data.hasOwnProperty("origin")) {
       object.origin = ApiClient.convertToType(data["origin"], "String");
-    }
-    if (data.hasOwnProperty("title")) {
-      object.title = ApiClient.convertToType(data["title"], "String");
     }
     if (data.hasOwnProperty("subject")) {
       object.subject = ApiClient.convertToType(
@@ -94,6 +72,12 @@ export default class Activity {
     }
     if (data.hasOwnProperty("time")) {
       object.time = ApiClient.convertToType(data["time"], "Date");
+    }
+    if (data.hasOwnProperty("title")) {
+      object.title = ApiClient.convertToType(data["title"], "String");
+    }
+    if (data.hasOwnProperty("verb")) {
+      object.verb = ApiClient.convertToType(data["verb"], "String");
     }
 
     return object;

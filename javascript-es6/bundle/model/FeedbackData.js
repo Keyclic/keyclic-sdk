@@ -175,16 +175,16 @@ exports.default = FeedbackData;
 
 _defineProperty(FeedbackData, "VisibilityEnum", {
   /**
-   * value: "VISIBILITY_PUBLIC"
-   * @const
-   * @readonly
-   */
-  PUBLIC: "VISIBILITY_PUBLIC",
-
-  /**
    * value: "VISIBILITY_PRIVATE"
    * @const
    * @readonly
    */
-  PRIVATE: "VISIBILITY_PRIVATE"
+  PRIVATE: "VISIBILITY_PRIVATE",
+
+  /**
+   * value: "VISIBILITY_PUBLIC"
+   * @const
+   * @readonly
+   */
+  PUBLIC: "VISIBILITY_PUBLIC"
 });

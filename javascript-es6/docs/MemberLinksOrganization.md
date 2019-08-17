@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **String** | The URI of the organization associated to the given member. | [optional] 
-**iriTemplate** | [**CategoryLinksOrganizationIriTemplate**](CategoryLinksOrganizationIriTemplate.md) |  | [optional] 
+**iriTemplate** | [**MemberLinksOrganizationIriTemplate**](MemberLinksOrganizationIriTemplate.md) |  | [optional] 
 
 

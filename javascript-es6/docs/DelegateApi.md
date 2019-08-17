@@ -30,7 +30,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let delegateData = new @KeyclicSdkJavascript.DelegateData(); // DelegateData | 
 
-let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+let organization = "organization_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **delegateData** | [**DelegateData**](DelegateData.md)|  | 
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

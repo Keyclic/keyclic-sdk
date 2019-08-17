@@ -47,14 +47,14 @@ var DelegateData =
   
    * @param report { String }
   
-   * @param organization { String }
-  
    */
-    function DelegateData(report, organization) {
+    function DelegateData(report) {
       _classCallCheck(this, DelegateData);
 
+      this.description = null;
+      this.organization = null;
       this.report = report;
-      this.organization = organization;
+      this.service = null;
     }
     /**
      * Constructs a "DelegateData" from a plain JavaScript object.
@@ -80,9 +80,9 @@ var DelegateData =
             object = new DelegateData();
           }
 
-          if (data.hasOwnProperty("report")) {
-            object.report = _ApiClient.default.convertToType(
-              data["report"],
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
               "String"
             );
           }
@@ -90,6 +90,20 @@ var DelegateData =
           if (data.hasOwnProperty("organization")) {
             object.organization = _ApiClient.default.convertToType(
               data["organization"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("report")) {
+            object.report = _ApiClient.default.convertToType(
+              data["report"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("service")) {
+            object.service = _ApiClient.default.convertToType(
+              data["service"],
               "String"
             );
           }

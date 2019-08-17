@@ -38,13 +38,7 @@ let opts = {
   'order': "desc", // String | 
   'query': "query_example", // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
-  'searchFamilyName': "searchFamilyName_example", // String | 
-  'searchGivenName': "searchGivenName_example", // String | 
-  'searchJobTitle': "searchJobTitle_example", // String | 
-  'searchTelephone': "searchTelephone_example", // String | 
-  'searchUsername': "searchUsername_example", // String | 
-  'searchEmail': "searchEmail_example" // String | 
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetPeople(xKeyclicApp, , opts, (error, data, response) => {
@@ -69,12 +63,6 @@ Name | Type | Description  | Notes
  **query** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **searchFamilyName** | **String**|  | [optional] 
- **searchGivenName** | **String**|  | [optional] 
- **searchJobTitle** | **String**|  | [optional] 
- **searchTelephone** | **String**|  | [optional] 
- **searchUsername** | **String**|  | [optional] 
- **searchEmail** | **String**|  | [optional] 
 
 ### Return type
 
@@ -110,7 +98,7 @@ let apiInstance = new @KeyclicSdkJavascript.PersonApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let person = "person_example"; // String | The identifier of the resource formatted as GUID string.
+let person = "person_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -131,7 +119,7 @@ apiInstance.getPerson(xKeyclicApp, person, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -171,7 +159,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let personPatch = new @KeyclicSdkJavascript.PersonPatch(); // PersonPatch | 
 
-let person = "person_example"; // String | The identifier of the resource formatted as GUID string.
+let person = "person_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -193,7 +181,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **personPatch** | [**PersonPatch**](PersonPatch.md)|  | 
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

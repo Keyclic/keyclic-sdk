@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _BusinessActivityLinksSelfIriTemplate = _interopRequireDefault(
-  require("./BusinessActivityLinksSelfIriTemplate")
+var _BusinessActivityLinksImageIriTemplate = _interopRequireDefault(
+  require("./BusinessActivityLinksImageIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var BusinessActivityLinksImage =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _BusinessActivityLinksSelfIriTemplate.default;
+      this.iriTemplateType = _BusinessActivityLinksImageIriTemplate.default;
     }
     /**
      * Constructs a "BusinessActivityLinksImage" from a plain JavaScript object.

@@ -67,6 +67,16 @@
         done();
       });
     });
+    describe('deleteCategory', function() {
+      it('should call deleteCategory successfully', function(done) {
+        //uncomment below and update the code to test deleteCategory
+        //instance.deleteCategory(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getCategory', function() {
       it('should call getCategory successfully', function(done) {
         //uncomment below and update the code to test getCategory

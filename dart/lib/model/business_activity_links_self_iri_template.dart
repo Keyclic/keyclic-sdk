@@ -10,10 +10,10 @@ class BusinessActivityLinksSelfIriTemplate {
       return;
     }
     mapping =
-        BusinessActivityLinksSelfIriTemplateMapping.fromJson(json['mapping']);
+        BusinessActivityLinksImageIriTemplateMapping.fromJson(json['mapping']);
   }
 
-  BusinessActivityLinksSelfIriTemplateMapping mapping;
+  BusinessActivityLinksImageIriTemplateMapping mapping;
 
   @override
   bool operator ==(dynamic other) {

@@ -32,25 +32,22 @@ export default class ExportApi extends ApiClient {
   /**
    * Retrieve all Export resources.
    * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { String } place The identifier of the resource formatted as GUID string.
-   * @param { String } assignedTo The identifier of the resource formatted as GUID string.
-   * @param { String } category The identifier of the resource formatted as GUID string.
+   * @param { String } place The identifier of the resource.
+   * @param { String } assignedTo The identifier of the resource.
+   * @param { String } category The identifier of the resource.
    * @param { module:model/Date } after
    * @param { module:model/Date } before
-   * @param { String } delegatedTo The identifier of the resource formatted as GUID string.
+   * @param { String } delegatedTo The identifier of the resource.
    * @param { module:model/String } order   (default to desc)
    * @param { String } query
    * @param { String } state
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { String } searchDescription
-   * @param { String } searchReference
-   * @param { String } searchIdentificationNumber
    */
   cpostExportByOrganization(returnType = null, options, credentials) {
     if (returnType === null) {
@@ -72,10 +69,7 @@ export default class ExportApi extends ApiClient {
       query,
       state,
       page,
-      limit,
-      searchDescription,
-      searchReference,
-      searchIdentificationNumber
+      limit
     } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -157,21 +151,6 @@ export default class ExportApi extends ApiClient {
       state = null;
     }
 
-    // verify the null value of parameter 'searchDescription'
-    if (typeof searchDescription === "undefined") {
-      searchDescription = null;
-    }
-
-    // verify the null value of parameter 'searchReference'
-    if (typeof searchReference === "undefined") {
-      searchReference = null;
-    }
-
-    // verify the null value of parameter 'searchIdentificationNumber'
-    if (typeof searchIdentificationNumber === "undefined") {
-      searchIdentificationNumber = null;
-    }
-
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
         'Missing the required parameter "credentials" when calling cpostExportByOrganization'
@@ -195,10 +174,7 @@ export default class ExportApi extends ApiClient {
       query: query,
       state: state,
       page: page,
-      limit: limit,
-      "search[description]": searchDescription,
-      "search[reference]": searchReference,
-      "search[identificationNumber]": searchIdentificationNumber
+      limit: limit
     };
 
     let headerParams = {
@@ -233,7 +209,7 @@ export default class ExportApi extends ApiClient {
   /**
    * Retrieve one Export resource.
    * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
    * @param { String } token
    * @param { File }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)

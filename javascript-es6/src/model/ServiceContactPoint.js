@@ -22,12 +22,12 @@ export default class ServiceContactPoint {
      * @alias module:model/ServiceContactPoint
      * @class
     
-     * @param telephone { String }
-    
      */
-  constructor(telephone) {
-    this.telephone = telephone;
+  constructor() {
+    this.email = null;
     this.isOpen = null;
+    this.name = null;
+    this.telephone = null;
   }
 
   /**
@@ -45,11 +45,17 @@ export default class ServiceContactPoint {
       object = new ServiceContactPoint();
     }
 
-    if (data.hasOwnProperty("telephone")) {
-      object.telephone = ApiClient.convertToType(data["telephone"], "String");
+    if (data.hasOwnProperty("email")) {
+      object.email = ApiClient.convertToType(data["email"], "String");
     }
     if (data.hasOwnProperty("isOpen")) {
       object.isOpen = ApiClient.convertToType(data["isOpen"], "Boolean");
+    }
+    if (data.hasOwnProperty("name")) {
+      object.name = ApiClient.convertToType(data["name"], "String");
+    }
+    if (data.hasOwnProperty("telephone")) {
+      object.telephone = ApiClient.convertToType(data["telephone"], "String");
     }
 
     return object;

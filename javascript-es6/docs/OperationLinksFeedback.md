@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **String** | The URI of the feedback associated to the given operation. | [optional] 
-**iriTemplate** | [**FeedbackLinksSelfIriTemplate**](FeedbackLinksSelfIriTemplate.md) |  | [optional] 
+**iriTemplate** | [**OperationLinksFeedbackIriTemplate**](OperationLinksFeedbackIriTemplate.md) |  | [optional] 
 
 

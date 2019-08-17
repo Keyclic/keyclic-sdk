@@ -31,7 +31,7 @@ export default class LogoApi extends ApiClient {
   /**
    * Retrieve one Logo resource.
    * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
    * @param { String } width
    * @param { String } height
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.

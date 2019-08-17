@@ -29,7 +29,7 @@ let apiInstance = new @KeyclicSdkJavascript.DeviceApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let person = "person_example"; // String | The identifier of the resource formatted as GUID string.
+let person = "person_example"; // String | The identifier of the resource.
 
 let device = "device_example"; // String | 
 
@@ -52,7 +52,7 @@ apiInstance.deleteDeviceByPersonAndDevice(xKeyclicApp, person, device, opts, (er
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource. | 
  **device** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
@@ -93,7 +93,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let deviceData = new @KeyclicSdkJavascript.DeviceData(); // DeviceData | 
 
-let person = "person_example"; // String | The identifier of the resource formatted as GUID string.
+let person = "person_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **deviceData** | [**DeviceData**](DeviceData.md)|  | 
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

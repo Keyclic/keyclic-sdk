@@ -17,9 +17,9 @@ Name | Type | Description | Notes
 ## Enum: VisibilityEnum
 
 
-* `PUBLIC` (value: `"VISIBILITY_PUBLIC"`)
-
 * `PRIVATE` (value: `"VISIBILITY_PRIVATE"`)
+
+* `PUBLIC` (value: `"VISIBILITY_PUBLIC"`)
 
 
 

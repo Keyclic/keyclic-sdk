@@ -149,7 +149,7 @@ var OperationApi =
     /**
      * Retrieve all Operation resources.
      * @param { String } xKeyclicApp
-     * @param { String } organization The identifier of the resource formatted as GUID string.
+     * @param { String } organization The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -161,9 +161,6 @@ var OperationApi =
      * @param { String } state
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { String } searchDescription
-     * @param { String } searchName
-     * @param { String } searchIdentificationNumber
      */
 
     _createClass(OperationApi, [
@@ -191,10 +188,7 @@ var OperationApi =
             query = options.query,
             state = options.state,
             page = options.page,
-            limit = options.limit,
-            searchDescription = options.searchDescription,
-            searchName = options.searchName,
-            searchIdentificationNumber = options.searchIdentificationNumber; // verify the required parameter 'xKeyclicApp' is set
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -245,18 +239,6 @@ var OperationApi =
 
           if (typeof state === "undefined") {
             state = null;
-          } // verify the null value of parameter 'searchDescription'
-
-          if (typeof searchDescription === "undefined") {
-            searchDescription = null;
-          } // verify the null value of parameter 'searchName'
-
-          if (typeof searchName === "undefined") {
-            searchName = null;
-          } // verify the null value of parameter 'searchIdentificationNumber'
-
-          if (typeof searchIdentificationNumber === "undefined") {
-            searchIdentificationNumber = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
@@ -276,10 +258,7 @@ var OperationApi =
             query: query,
             state: state,
             page: page,
-            limit: limit,
-            "search[description]": searchDescription,
-            "search[name]": searchName,
-            "search[identificationNumber]": searchIdentificationNumber
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,
@@ -307,7 +286,7 @@ var OperationApi =
         /**
          * Retrieve all Operation resources.
          * @param { String } xKeyclicApp
-         * @param { String } person The identifier of the resource formatted as GUID string.
+         * @param { String } person The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -315,14 +294,11 @@ var OperationApi =
          * @param { module:model/Date } after
          * @param { module:model/Date } before
          * @param { module:model/String } order   (default to desc)
-         * @param { String } organization The identifier of the resource formatted as GUID string.
+         * @param { String } organization The identifier of the resource.
          * @param { String } query
          * @param { String } state
          * @param { Number } page Page of the overview.  (default to 1)
          * @param { Number } limit Page of the overview.  (default to 10)
-         * @param { String } searchDescription
-         * @param { String } searchName
-         * @param { String } searchIdentificationNumber
          */
       },
       {
@@ -350,10 +326,7 @@ var OperationApi =
             query = options.query,
             state = options.state,
             page = options.page,
-            limit = options.limit,
-            searchDescription = options.searchDescription,
-            searchName = options.searchName,
-            searchIdentificationNumber = options.searchIdentificationNumber; // verify the required parameter 'xKeyclicApp' is set
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -408,18 +381,6 @@ var OperationApi =
 
           if (typeof state === "undefined") {
             state = null;
-          } // verify the null value of parameter 'searchDescription'
-
-          if (typeof searchDescription === "undefined") {
-            searchDescription = null;
-          } // verify the null value of parameter 'searchName'
-
-          if (typeof searchName === "undefined") {
-            searchName = null;
-          } // verify the null value of parameter 'searchIdentificationNumber'
-
-          if (typeof searchIdentificationNumber === "undefined") {
-            searchIdentificationNumber = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
@@ -440,10 +401,7 @@ var OperationApi =
             query: query,
             state: state,
             page: page,
-            limit: limit,
-            "search[description]": searchDescription,
-            "search[name]": searchName,
-            "search[identificationNumber]": searchIdentificationNumber
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,
@@ -471,7 +429,7 @@ var OperationApi =
         /**
          * Retrieve all Operation resources.
          * @param { String } xKeyclicApp
-         * @param { String } report The identifier of the resource formatted as GUID string.
+         * @param { String } report The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -479,14 +437,11 @@ var OperationApi =
          * @param { module:model/Date } after
          * @param { module:model/Date } before
          * @param { module:model/String } order   (default to desc)
-         * @param { String } organization The identifier of the resource formatted as GUID string.
+         * @param { String } organization The identifier of the resource.
          * @param { String } query
          * @param { String } state
          * @param { Number } page Page of the overview.  (default to 1)
          * @param { Number } limit Page of the overview.  (default to 10)
-         * @param { String } searchDescription
-         * @param { String } searchName
-         * @param { String } searchIdentificationNumber
          */
       },
       {
@@ -514,10 +469,7 @@ var OperationApi =
             query = options.query,
             state = options.state,
             page = options.page,
-            limit = options.limit,
-            searchDescription = options.searchDescription,
-            searchName = options.searchName,
-            searchIdentificationNumber = options.searchIdentificationNumber; // verify the required parameter 'xKeyclicApp' is set
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -572,18 +524,6 @@ var OperationApi =
 
           if (typeof state === "undefined") {
             state = null;
-          } // verify the null value of parameter 'searchDescription'
-
-          if (typeof searchDescription === "undefined") {
-            searchDescription = null;
-          } // verify the null value of parameter 'searchName'
-
-          if (typeof searchName === "undefined") {
-            searchName = null;
-          } // verify the null value of parameter 'searchIdentificationNumber'
-
-          if (typeof searchIdentificationNumber === "undefined") {
-            searchIdentificationNumber = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
@@ -604,10 +544,7 @@ var OperationApi =
             query: query,
             state: state,
             page: page,
-            limit: limit,
-            "search[description]": searchDescription,
-            "search[name]": searchName,
-            "search[identificationNumber]": searchIdentificationNumber
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,
@@ -635,7 +572,7 @@ var OperationApi =
         /**
          * Remove one Operation resource.
          * @param { String } xKeyclicApp
-         * @param { String } operation The identifier of the resource formatted as GUID string.
+         * @param { String } operation The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -716,7 +653,7 @@ var OperationApi =
         /**
          * Retrieve one Operation resource.
          * @param { String } xKeyclicApp
-         * @param { String } operation The identifier of the resource formatted as GUID string.
+         * @param { String } operation The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -803,7 +740,7 @@ var OperationApi =
          * Edit one Operation resource.
          * @param { String } xKeyclicApp
          * @param { module:model/OperationPatch } operationPatch
-         * @param { String } operation The identifier of the resource formatted as GUID string.
+         * @param { String } operation The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

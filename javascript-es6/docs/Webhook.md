@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**links** | [**WebhookLinks**](WebhookLinks.md) |  | [optional] 
 **enabled** | **Boolean** |  | 
 **event** | **String** |  | 
+**id** | **String** |  | [optional] 
 **payloadUrl** | **String** |  | 
-**id** | **String** |  | 
 **type** | **String** |  | [optional] 
-**links** | [**WebhookLinks**](WebhookLinks.md) |  | [optional] 
 
 

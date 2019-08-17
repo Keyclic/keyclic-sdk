@@ -53,12 +53,6 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.FeedbackReviewRequestLinks);
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
-      //var instane = new @KeyclicSdkJavascript.FeedbackReviewRequestLinks();
-      //expect(instance).to.be();
-    });
-
     it('should have the property itemToReview (base name: "itemToReview")', function() {
       // uncomment below and update the code to test the property itemToReview
       //var instane = new @KeyclicSdkJavascript.FeedbackReviewRequestLinks();
@@ -71,14 +65,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property review (base name: "review")', function() {
+      // uncomment below and update the code to test the property review
+      //var instane = new @KeyclicSdkJavascript.FeedbackReviewRequestLinks();
+      //expect(instance).to.be();
+    });
+
     it('should have the property reviewer (base name: "reviewer")', function() {
       // uncomment below and update the code to test the property reviewer
       //var instane = new @KeyclicSdkJavascript.FeedbackReviewRequestLinks();
       //expect(instance).to.be();
     });
 
-    it('should have the property review (base name: "review")', function() {
-      // uncomment below and update the code to test the property review
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
       //var instane = new @KeyclicSdkJavascript.FeedbackReviewRequestLinks();
       //expect(instance).to.be();
     });

@@ -53,14 +53,14 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.Chart);
     });
 
-    it('should have the property labels (base name: "labels")', function() {
-      // uncomment below and update the code to test the property labels
+    it('should have the property data (base name: "data")', function() {
+      // uncomment below and update the code to test the property data
       //var instane = new @KeyclicSdkJavascript.Chart();
       //expect(instance).to.be();
     });
 
-    it('should have the property data (base name: "data")', function() {
-      // uncomment below and update the code to test the property data
+    it('should have the property labels (base name: "labels")', function() {
+      // uncomment below and update the code to test the property labels
       //var instane = new @KeyclicSdkJavascript.Chart();
       //expect(instance).to.be();
     });

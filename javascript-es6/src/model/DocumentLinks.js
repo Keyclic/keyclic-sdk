@@ -27,13 +27,13 @@ export default class DocumentLinks {
     
      */
   constructor() {
-    this.self = null;
-    this.file = null;
     this.createdBy = null;
+    this.file = null;
+    this.self = null;
 
-    this.selfType = DocumentLinksSelf;
-    this.fileType = DocumentLinksFile;
     this.createdByType = DocumentLinksCreatedBy;
+    this.fileType = DocumentLinksFile;
+    this.selfType = DocumentLinksSelf;
   }
 
   /**
@@ -51,17 +51,17 @@ export default class DocumentLinks {
       object = new DocumentLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
-    }
-    if (data.hasOwnProperty("file")) {
-      object.file = ApiClient.convertToType(data["file"], object.fileType);
-    }
     if (data.hasOwnProperty("createdBy")) {
       object.createdBy = ApiClient.convertToType(
         data["createdBy"],
         object.createdByType
       );
+    }
+    if (data.hasOwnProperty("file")) {
+      object.file = ApiClient.convertToType(data["file"], object.fileType);
+    }
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
 
     return object;

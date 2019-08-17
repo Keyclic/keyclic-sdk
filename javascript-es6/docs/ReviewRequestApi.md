@@ -28,7 +28,7 @@ let apiInstance = new @KeyclicSdkJavascript.ReviewRequestApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let reviewRequest = "reviewRequest_example"; // String | The identifier of the resource formatted as GUID string.
+let reviewRequest = "reviewRequest_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -49,7 +49,7 @@ apiInstance.getReviewRequest(xKeyclicApp, reviewRequest, opts, (error, data, res
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **reviewRequest** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **reviewRequest** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

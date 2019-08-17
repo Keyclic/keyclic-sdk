@@ -11,13 +11,14 @@ class FeedbackLinksTracking {
       return;
     }
     href = json['href'];
-    iriTemplate = FeedbackLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate =
+        FeedbackLinksTrackingIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the tracking associated to the given feedback. */
   String href;
 
-  FeedbackLinksSelfIriTemplate iriTemplate;
+  FeedbackLinksTrackingIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

@@ -26,11 +26,11 @@ export default class WebhookLinks {
     
      */
   constructor() {
-    this.self = null;
     this.organization = null;
+    this.self = null;
 
-    this.selfType = WebhookLinksSelf;
     this.organizationType = WebhookLinksOrganization;
+    this.selfType = WebhookLinksSelf;
   }
 
   /**
@@ -48,14 +48,14 @@ export default class WebhookLinks {
       object = new WebhookLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
-    }
     if (data.hasOwnProperty("organization")) {
       object.organization = ApiClient.convertToType(
         data["organization"],
         object.organizationType
       );
+    }
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
 
     return object;

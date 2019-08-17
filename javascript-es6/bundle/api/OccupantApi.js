@@ -154,7 +154,7 @@ var OccupantApi =
      * @param { module:model/Date } after
      * @param { module:model/Date } before
      * @param { module:model/String } order   (default to desc)
-     * @param { String } person The identifier of the resource formatted as GUID string.
+     * @param { String } person The identifier of the resource.
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      */
@@ -267,7 +267,7 @@ var OccupantApi =
         /**
          * Retrieve all Occupant resources.
          * @param { String } xKeyclicApp
-         * @param { String } place The identifier of the resource formatted as GUID string.
+         * @param { String } place The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { OccupantPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -275,7 +275,7 @@ var OccupantApi =
          * @param { module:model/Date } after
          * @param { module:model/Date } before
          * @param { module:model/String } order   (default to desc)
-         * @param { String } person The identifier of the resource formatted as GUID string.
+         * @param { String } person The identifier of the resource.
          * @param { Number } page Page of the overview.  (default to 1)
          * @param { Number } limit Page of the overview.  (default to 10)
          */
@@ -396,8 +396,8 @@ var OccupantApi =
         /**
          * Remove one Occupant resource.
          * @param { String } xKeyclicApp
-         * @param { String } place The identifier of the resource formatted as GUID string.
-         * @param { String } occupant The identifier of the resource formatted as GUID string.
+         * @param { String } place The identifier of the resource.
+         * @param { String } occupant The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Organization }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -491,7 +491,7 @@ var OccupantApi =
         /**
          * Retrieve one Occupant resource.
          * @param { String } xKeyclicApp
-         * @param { String } occupant The identifier of the resource formatted as GUID string.
+         * @param { String } occupant The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Occupant }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -578,7 +578,7 @@ var OccupantApi =
          * Create one Occupant resource.
          * @param { String } xKeyclicApp
          * @param { module:model/PersonData } personData
-         * @param { String } place The identifier of the resource formatted as GUID string.
+         * @param { String } place The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Occupant }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

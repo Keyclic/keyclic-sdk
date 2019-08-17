@@ -2,17 +2,17 @@ part of keyclic_sdk_api.api;
 
 class ApplicationLinksSelfIriTemplateMapping {
   ApplicationLinksSelfIriTemplateMapping({
-    this.token,
+    this.application,
   });
 
   ApplicationLinksSelfIriTemplateMapping.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    token = json['token'];
+    application = json['application'];
   }
 
-  String token;
+  String application;
 
   @override
   bool operator ==(dynamic other) {
@@ -29,13 +29,13 @@ class ApplicationLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'token': token,
+      'application': application,
     };
   }
 
   @override
   String toString() {
-    return 'ApplicationLinksSelfIriTemplateMapping[token=$token, ]';
+    return 'ApplicationLinksSelfIriTemplateMapping[application=$application, ]';
   }
 
   static List<ApplicationLinksSelfIriTemplateMapping> listFromJson(

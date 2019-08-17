@@ -53,14 +53,26 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.ServiceContactPoint);
     });
 
-    it('should have the property telephone (base name: "telephone")', function() {
-      // uncomment below and update the code to test the property telephone
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
       //var instane = new @KeyclicSdkJavascript.ServiceContactPoint();
       //expect(instance).to.be();
     });
 
     it('should have the property isOpen (base name: "isOpen")', function() {
       // uncomment below and update the code to test the property isOpen
+      //var instane = new @KeyclicSdkJavascript.ServiceContactPoint();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new @KeyclicSdkJavascript.ServiceContactPoint();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property telephone (base name: "telephone")', function() {
+      // uncomment below and update the code to test the property telephone
       //var instane = new @KeyclicSdkJavascript.ServiceContactPoint();
       //expect(instance).to.be();
     });

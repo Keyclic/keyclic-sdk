@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _FeedbackLinksImagesIriTemplate = _interopRequireDefault(
+  require("./FeedbackLinksImagesIriTemplate")
+);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -50,6 +54,8 @@ var FeedbackLinksImages =
       _classCallCheck(this, FeedbackLinksImages);
 
       this.href = null;
+      this.iriTemplate = null;
+      this.iriTemplateType = _FeedbackLinksImagesIriTemplate.default;
     }
     /**
      * Constructs a "FeedbackLinksImages" from a plain JavaScript object.
@@ -79,6 +85,13 @@ var FeedbackLinksImages =
             object.href = _ApiClient.default.convertToType(
               data["href"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
             );
           }
 

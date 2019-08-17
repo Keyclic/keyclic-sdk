@@ -53,8 +53,8 @@ var PlaceGeoPolygon =
     function PlaceGeoPolygon(type) {
       _classCallCheck(this, PlaceGeoPolygon);
 
-      this.type = type;
       this.features = [];
+      this.type = type;
       this.featuresType = _Feature.default;
     }
     /**
@@ -81,17 +81,17 @@ var PlaceGeoPolygon =
             object = new PlaceGeoPolygon();
           }
 
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
-          }
-
           if (data.hasOwnProperty("features")) {
             object.features = _ApiClient.default.convertToType(
               data["features"],
               [object.featuresType]
+            );
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
             );
           }
 

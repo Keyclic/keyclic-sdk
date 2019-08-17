@@ -12,9 +12,8 @@
 
 import ApiClient from "../ApiClient";
 import Error from "../model/Error";
+import ExternalServiceData from "../model/ExternalServiceData";
 import Organization from "../model/Organization";
-import OrganizationPagination from "../model/OrganizationPagination";
-import RelationshipData from "../model/RelationshipData";
 
 /**
  * Relationship service.
@@ -32,225 +31,16 @@ export default class RelationshipApi extends ApiClient {
   }
 
   /**
-   * Retrieve all Relationship resources.
-   * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource formatted as GUID string.
-   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { OrganizationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-   * @param { module:model/String } acceptLanguage   (default to fr-FR)
-   * @param { String } xKeyclicAppVersion
-   * @param { String } businessActivity The identifier of the resource formatted as GUID string.
-   * @param { module:model/Date } after
-   * @param { module:model/Date } before
-   * @param { module:model/Date } disabledAt
-   * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
-   * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
-   * @param { module:model/String } order   (default to desc)
-   * @param { String } query
-   * @param { Number } page Page of the overview.  (default to 1)
-   * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { String } searchAlternateName
-   * @param { String } searchBillingEmailAddress
-   * @param { String } searchDescription
-   * @param { String } searchName
-   * @param { String } searchNotificationEmailAddress
-   */
-  cgetRelationshipsByOrganization(returnType = null, options, credentials) {
-    if (returnType === null) {
-      returnType = OrganizationPagination;
-    }
-
-    let {
-      xKeyclicApp,
-      organization,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      businessActivity,
-      after,
-      before,
-      disabledAt,
-      geoPoint,
-      geoCoordinates,
-      order,
-      query,
-      page,
-      limit,
-      searchAlternateName,
-      searchBillingEmailAddress,
-      searchDescription,
-      searchName,
-      searchNotificationEmailAddress
-    } = options;
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-      throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling cgetRelationshipsByOrganization'
-      );
-    }
-
-    // verify the required parameter 'organization' is set
-    if (typeof organization === "undefined" || organization === null) {
-      throw new window.Error(
-        'Missing the required parameter "organization" when calling cgetRelationshipsByOrganization'
-      );
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
-      acceptLanguage = "fr-FR";
-    }
-
-    // verify the default value of parameter 'order'
-    if (typeof order === "undefined" || order === null) {
-      order = "desc";
-    }
-
-    // verify the default value of parameter 'page'
-    if (typeof page === "undefined" || page === null) {
-      page = 1;
-    }
-
-    // verify the default value of parameter 'limit'
-    if (typeof limit === "undefined" || limit === null) {
-      limit = 10;
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === "undefined") {
-      xKeyclicAppVersion = null;
-    }
-
-    // verify the null value of parameter 'businessActivity'
-    if (typeof businessActivity === "undefined") {
-      businessActivity = null;
-    }
-
-    // verify the null value of parameter 'after'
-    if (typeof after === "undefined") {
-      after = null;
-    }
-
-    // verify the null value of parameter 'before'
-    if (typeof before === "undefined") {
-      before = null;
-    }
-
-    // verify the null value of parameter 'disabledAt'
-    if (typeof disabledAt === "undefined") {
-      disabledAt = null;
-    }
-
-    // verify the null value of parameter 'geoPoint'
-    if (typeof geoPoint === "undefined") {
-      geoPoint = null;
-    }
-
-    // verify the null value of parameter 'geoCoordinates'
-    if (typeof geoCoordinates === "undefined") {
-      geoCoordinates = null;
-    }
-
-    // verify the null value of parameter 'query'
-    if (typeof query === "undefined") {
-      query = null;
-    }
-
-    // verify the null value of parameter 'searchAlternateName'
-    if (typeof searchAlternateName === "undefined") {
-      searchAlternateName = null;
-    }
-
-    // verify the null value of parameter 'searchBillingEmailAddress'
-    if (typeof searchBillingEmailAddress === "undefined") {
-      searchBillingEmailAddress = null;
-    }
-
-    // verify the null value of parameter 'searchDescription'
-    if (typeof searchDescription === "undefined") {
-      searchDescription = null;
-    }
-
-    // verify the null value of parameter 'searchName'
-    if (typeof searchName === "undefined") {
-      searchName = null;
-    }
-
-    // verify the null value of parameter 'searchNotificationEmailAddress'
-    if (typeof searchNotificationEmailAddress === "undefined") {
-      searchNotificationEmailAddress = null;
-    }
-
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetRelationshipsByOrganization'
-      );
-    }
-
-    let pathParams = {
-      organization: organization
-    };
-
-    let bodyParam = null;
-
-    let queryParams = {
-      business_activity: businessActivity,
-      after: after,
-      before: before,
-      disabledAt: disabledAt,
-      geo_point: geoPoint,
-      geo_coordinates: geoCoordinates,
-      order: order,
-      query: query,
-      page: page,
-      limit: limit,
-      "search[alternateName]": searchAlternateName,
-      "search[billingEmailAddress]": searchBillingEmailAddress,
-      "search[description]": searchDescription,
-      "search[name]": searchName,
-      "search[notificationEmailAddress]": searchNotificationEmailAddress
-    };
-
-    let headerParams = {
-      "accept-language": acceptLanguage,
-      "x-keyclic-app": xKeyclicApp,
-      "x-keyclic-app-version": xKeyclicAppVersion
-    };
-
-    let credentialParams = credentials;
-
-    let authNames = ["bearer"];
-
-    let contentTypes = ["application/json;charset=UTF-8"];
-
-    let accepts = ["application/hal+json;charset=UTF-8"];
-
-    return this.callApi(
-      "/organizations/{organization}/relationships",
-      "GET",
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    );
-  }
-
-  /**
    * Remove one Relationship resource.
    * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource formatted as GUID string.
-   * @param { String } relationship The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
+   * @param { String } service The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Organization }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  deleteRelationshipByOrganizationAndRelationship(
+  deleteRelationshipByOrganizationAndService(
     returnType = null,
     options,
     credentials
@@ -262,7 +52,7 @@ export default class RelationshipApi extends ApiClient {
     let {
       xKeyclicApp,
       organization,
-      relationship,
+      service,
       acceptLanguage,
       xKeyclicAppVersion
     } = options;
@@ -270,21 +60,21 @@ export default class RelationshipApi extends ApiClient {
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling deleteRelationshipByOrganizationAndRelationship'
+        'Missing the required parameter "xKeyclicApp" when calling deleteRelationshipByOrganizationAndService'
       );
     }
 
     // verify the required parameter 'organization' is set
     if (typeof organization === "undefined" || organization === null) {
       throw new window.Error(
-        'Missing the required parameter "organization" when calling deleteRelationshipByOrganizationAndRelationship'
+        'Missing the required parameter "organization" when calling deleteRelationshipByOrganizationAndService'
       );
     }
 
-    // verify the required parameter 'relationship' is set
-    if (typeof relationship === "undefined" || relationship === null) {
+    // verify the required parameter 'service' is set
+    if (typeof service === "undefined" || service === null) {
       throw new window.Error(
-        'Missing the required parameter "relationship" when calling deleteRelationshipByOrganizationAndRelationship'
+        'Missing the required parameter "service" when calling deleteRelationshipByOrganizationAndService'
       );
     }
 
@@ -300,13 +90,13 @@ export default class RelationshipApi extends ApiClient {
 
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
-        'Missing the required parameter "credentials" when calling deleteRelationshipByOrganizationAndRelationship'
+        'Missing the required parameter "credentials" when calling deleteRelationshipByOrganizationAndService'
       );
     }
 
     let pathParams = {
       organization: organization,
-      relationship: relationship
+      service: service
     };
 
     let bodyParam = null;
@@ -328,7 +118,7 @@ export default class RelationshipApi extends ApiClient {
     let accepts = ["application/hal+json;charset=UTF-8"];
 
     return this.callApi(
-      "/organizations/{organization}/relationships/{relationship}",
+      "/organizations/{organization}/relationships/{service}",
       "DELETE",
       pathParams,
       queryParams,
@@ -345,8 +135,8 @@ export default class RelationshipApi extends ApiClient {
   /**
    * Create one Relationship resource.
    * @param { String } xKeyclicApp
-   * @param { module:model/RelationshipData } relationshipData
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { module:model/ExternalServiceData } externalServiceData
+   * @param { String } organization The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Organization }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -359,7 +149,7 @@ export default class RelationshipApi extends ApiClient {
 
     let {
       xKeyclicApp,
-      relationshipData,
+      externalServiceData,
       organization,
       acceptLanguage,
       xKeyclicAppVersion
@@ -372,10 +162,13 @@ export default class RelationshipApi extends ApiClient {
       );
     }
 
-    // verify the required parameter 'relationshipData' is set
-    if (typeof relationshipData === "undefined" || relationshipData === null) {
+    // verify the required parameter 'externalServiceData' is set
+    if (
+      typeof externalServiceData === "undefined" ||
+      externalServiceData === null
+    ) {
       throw new window.Error(
-        'Missing the required parameter "relationshipData" when calling postRelationshipByOrganization'
+        'Missing the required parameter "externalServiceData" when calling postRelationshipByOrganization'
       );
     }
 
@@ -406,7 +199,7 @@ export default class RelationshipApi extends ApiClient {
       organization: organization
     };
 
-    let bodyParam = relationshipData;
+    let bodyParam = externalServiceData;
 
     let queryParams = {};
 

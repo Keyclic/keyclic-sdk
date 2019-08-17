@@ -4,12 +4,12 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getApplicationByToken**](ApplicationApi.md#getApplicationByToken) | **GET** /applications/{token} | Retrieve one Application resource.
+[**getApplication**](ApplicationApi.md#getApplication) | **GET** /applications/{application} | Retrieve one Application resource.
 
 
-<a name="getApplicationByToken"></a>
-# **getApplicationByToken**
-> Application getApplicationByToken(xKeyclicApp, token, opts)
+<a name="getApplication"></a>
+# **getApplication**
+> Application getApplication(xKeyclicApp, application, opts)
 
 Retrieve one Application resource.
 
@@ -21,14 +21,14 @@ let apiInstance = new @KeyclicSdkJavascript.ApplicationApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let token = "token_example"; // String | 
+let application = "application_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.getApplicationByToken(xKeyclicApp, token, opts, (error, data, response) => {
+apiInstance.getApplication(xKeyclicApp, application, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -42,7 +42,7 @@ apiInstance.getApplicationByToken(xKeyclicApp, token, opts, (error, data, respon
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **token** | **String**|  | 
+ **application** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

@@ -29,7 +29,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = ReviewApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var feedback = ; // String | The identifier of the resource formatted as GUID string.
+var feedback = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -51,7 +51,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
@@ -90,7 +90,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = ReviewApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var review = ; // String | The identifier of the resource formatted as GUID string.
+var review = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -107,7 +107,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **review** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **review** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -142,7 +142,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = ReviewApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var reviewData = ReviewData(); // ReviewData | 
-var reviewRequest = ; // String | The identifier of the resource formatted as GUID string.
+var reviewRequest = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **reviewData** | [**ReviewData**](ReviewData.md)|  | 
- **reviewRequest** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **reviewRequest** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import DelegationLinksReportIriTemplate from "./DelegationLinksReportIriTemplate";
+import ReportLinksTrackingIriTemplate from "./ReportLinksTrackingIriTemplate";
 
 /**
  * The ReportLinksTracking model module.
@@ -28,7 +28,7 @@ export default class ReportLinksTracking {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = DelegationLinksReportIriTemplate;
+    this.iriTemplateType = ReportLinksTrackingIriTemplate;
   }
 
   /**

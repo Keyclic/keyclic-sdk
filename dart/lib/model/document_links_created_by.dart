@@ -12,13 +12,13 @@ class DocumentLinksCreatedBy {
     }
     href = json['href'];
     iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+        DocumentLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the createdBy associated to the given document. */
   String href;
 
-  DelegationLinksCreatedByIriTemplate iriTemplate;
+  DocumentLinksCreatedByIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

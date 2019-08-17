@@ -53,14 +53,14 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.ActivitySubject);
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new @KeyclicSdkJavascript.ActivitySubject();
       //expect(instance).to.be();
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new @KeyclicSdkJavascript.ActivitySubject();
       //expect(instance).to.be();
     });

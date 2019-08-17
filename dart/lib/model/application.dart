@@ -2,37 +2,37 @@ part of keyclic_sdk_api.api;
 
 class Application {
   Application({
+    this.links,
+    this.id,
     this.name,
     this.token,
-    this.version,
-    this.id,
     this.type,
-    this.links,
+    this.version,
   });
 
   Application.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
+    links = ApplicationLinks.fromJson(json['_links']);
+    id = json['id'];
     name = json['name'];
     token = json['token'];
-    version = json['version'];
-    id = json['id'];
     type = json['type'];
-    links = ApplicationLinks.fromJson(json['_links']);
+    version = json['version'];
   }
+
+  ApplicationLinks links;
+
+  String id;
 
   String name;
 
   String token;
 
-  String version;
-
-  String id;
-
   String type;
 
-  ApplicationLinks links;
+  String version;
 
   @override
   bool operator ==(dynamic other) {
@@ -43,27 +43,26 @@ class Application {
     return other is Application &&
         runtimeType == other.runtimeType &&
         name == other.name &&
-        token == other.token &&
-        id == other.id;
+        token == other.token;
   }
 
   @override
-  int get hashCode => 0 ^ name.hashCode ^ token.hashCode ^ id.hashCode;
+  int get hashCode => 0 ^ name.hashCode ^ token.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
+      '_links': links,
+      'id': id,
       'name': name,
       'token': token,
-      'version': version,
-      'id': id,
       'type': type,
-      '_links': links,
+      'version': version,
     };
   }
 
   @override
   String toString() {
-    return 'Application[name=$name, token=$token, version=$version, id=$id, type=$type, links=$links, ]';
+    return 'Application[links=$links, id=$id, name=$name, token=$token, type=$type, version=$version, ]';
   }
 
   static List<Application> listFromJson(List<dynamic> json) {

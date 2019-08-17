@@ -53,14 +53,14 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.FeedbackLinksImageIriTemplateMapping);
     });
 
-    it('should have the property image (base name: "image")', function() {
-      // uncomment below and update the code to test the property image
+    it('should have the property feedback (base name: "feedback")', function() {
+      // uncomment below and update the code to test the property feedback
       //var instane = new @KeyclicSdkJavascript.FeedbackLinksImageIriTemplateMapping();
       //expect(instance).to.be();
     });
 
-    it('should have the property feedback (base name: "feedback")', function() {
-      // uncomment below and update the code to test the property feedback
+    it('should have the property image (base name: "image")', function() {
+      // uncomment below and update the code to test the property image
       //var instane = new @KeyclicSdkJavascript.FeedbackLinksImageIriTemplateMapping();
       //expect(instance).to.be();
     });

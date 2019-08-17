@@ -24,8 +24,8 @@ export default class FeedbackLinksImageIriTemplateMapping {
     
      */
   constructor() {
-    this.image = null;
     this.feedback = null;
+    this.image = null;
   }
 
   /**
@@ -43,11 +43,11 @@ export default class FeedbackLinksImageIriTemplateMapping {
       object = new FeedbackLinksImageIriTemplateMapping();
     }
 
-    if (data.hasOwnProperty("image")) {
-      object.image = ApiClient.convertToType(data["image"], "String");
-    }
     if (data.hasOwnProperty("feedback")) {
       object.feedback = ApiClient.convertToType(data["feedback"], "String");
+    }
+    if (data.hasOwnProperty("image")) {
+      object.image = ApiClient.convertToType(data["image"], "String");
     }
 
     return object;

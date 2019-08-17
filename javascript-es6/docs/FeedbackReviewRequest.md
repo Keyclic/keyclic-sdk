@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
-**createdAt** | **Date** |  | 
-**updatedAt** | **Date** |  | 
-**type** | **String** |  | [optional] 
 **links** | [**FeedbackReviewRequestLinks**](FeedbackReviewRequestLinks.md) |  | [optional] 
+**createdAt** | **Date** |  | [optional] 
+**id** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 
 

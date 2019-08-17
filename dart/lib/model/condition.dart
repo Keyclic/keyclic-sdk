@@ -2,8 +2,10 @@ part of keyclic_sdk_api.api;
 
 class Condition {
   Condition({
+    this.id,
     this.operator_,
     this.path,
+    this.type,
     this.value,
   });
 
@@ -11,14 +13,20 @@ class Condition {
     if (json == null) {
       return;
     }
+    id = json['id'];
     operator_ = json['operator'];
     path = json['path'];
+    type = json['type'];
     value = (json['value'] as List)?.map((item) => item as String)?.toList();
   }
+
+  String id;
 
   String operator_;
 
   String path;
+
+  String type;
 
   List<String> value;
 
@@ -36,15 +44,17 @@ class Condition {
 
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'operator': operator_,
       'path': path,
+      'type': type,
       'value': value,
     };
   }
 
   @override
   String toString() {
-    return 'Condition[operator_=$operator_, path=$path, value=$value, ]';
+    return 'Condition[id=$id, operator_=$operator_, path=$path, type=$type, value=$value, ]';
   }
 
   static List<Condition> listFromJson(List<dynamic> json) {

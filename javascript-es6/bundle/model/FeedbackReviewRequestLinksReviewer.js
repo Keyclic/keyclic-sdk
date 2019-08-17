@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _DelegationLinksCreatedByIriTemplate = _interopRequireDefault(
-  require("./DelegationLinksCreatedByIriTemplate")
+var _FeedbackReviewRequestLinksReviewerIriTemplate = _interopRequireDefault(
+  require("./FeedbackReviewRequestLinksReviewerIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,8 @@ var FeedbackReviewRequestLinksReviewer =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _DelegationLinksCreatedByIriTemplate.default;
+      this.iriTemplateType =
+        _FeedbackReviewRequestLinksReviewerIriTemplate.default;
     }
     /**
      * Constructs a "FeedbackReviewRequestLinksReviewer" from a plain JavaScript object.

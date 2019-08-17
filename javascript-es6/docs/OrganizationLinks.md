@@ -3,8 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**self** | [**OrganizationLinksSelf**](OrganizationLinksSelf.md) |  | [optional] 
+**application** | [**OrganizationLinksApplication**](OrganizationLinksApplication.md) |  | [optional] 
 **businessActivity** | [**OrganizationLinksBusinessActivity**](OrganizationLinksBusinessActivity.md) |  | [optional] 
 **logo** | [**OrganizationLinksLogo**](OrganizationLinksLogo.md) |  | [optional] 
+**self** | [**OrganizationLinksSelf**](OrganizationLinksSelf.md) |  | [optional] 
 
 

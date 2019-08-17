@@ -9,6 +9,10 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _ReviewLinksAuthor = _interopRequireDefault(require("./ReviewLinksAuthor"));
 
+var _ReviewLinksItemReviewed = _interopRequireDefault(
+  require("./ReviewLinksItemReviewed")
+);
+
 var _ReviewLinksSelf = _interopRequireDefault(require("./ReviewLinksSelf"));
 
 function _interopRequireDefault(obj) {
@@ -53,10 +57,12 @@ var ReviewLinks =
     function ReviewLinks() {
       _classCallCheck(this, ReviewLinks);
 
-      this.self = null;
       this.author = null;
-      this.selfType = _ReviewLinksSelf.default;
+      this.itemReviewed = null;
+      this.self = null;
       this.authorType = _ReviewLinksAuthor.default;
+      this.itemReviewedType = _ReviewLinksItemReviewed.default;
+      this.selfType = _ReviewLinksSelf.default;
     }
     /**
      * Constructs a "ReviewLinks" from a plain JavaScript object.
@@ -82,17 +88,24 @@ var ReviewLinks =
             object = new ReviewLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
-          }
-
           if (data.hasOwnProperty("author")) {
             object.author = _ApiClient.default.convertToType(
               data["author"],
               object.authorType
+            );
+          }
+
+          if (data.hasOwnProperty("itemReviewed")) {
+            object.itemReviewed = _ApiClient.default.convertToType(
+              data["itemReviewed"],
+              object.itemReviewedType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 

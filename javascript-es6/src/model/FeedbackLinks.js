@@ -31,21 +31,21 @@ export default class FeedbackLinks {
     
      */
   constructor() {
-    this.self = null;
-    this.category = null;
     this.businessActivity = null;
-    this.reporter = null;
+    this.category = null;
     this.image = null;
-    this.tracking = null;
     this.images = [];
+    this.reporter = null;
+    this.self = null;
+    this.tracking = null;
 
-    this.selfType = FeedbackLinksSelf;
-    this.categoryType = FeedbackLinksCategory;
     this.businessActivityType = FeedbackLinksBusinessActivity;
-    this.reporterType = FeedbackLinksReporter;
+    this.categoryType = FeedbackLinksCategory;
     this.imageType = FeedbackLinksImage;
-    this.trackingType = FeedbackLinksTracking;
     this.imagesType = FeedbackLinksImages;
+    this.reporterType = FeedbackLinksReporter;
+    this.selfType = FeedbackLinksSelf;
+    this.trackingType = FeedbackLinksTracking;
   }
 
   /**
@@ -63,8 +63,11 @@ export default class FeedbackLinks {
       object = new FeedbackLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
+    if (data.hasOwnProperty("businessActivity")) {
+      object.businessActivity = ApiClient.convertToType(
+        data["businessActivity"],
+        object.businessActivityType
+      );
     }
     if (data.hasOwnProperty("category")) {
       object.category = ApiClient.convertToType(
@@ -72,11 +75,13 @@ export default class FeedbackLinks {
         object.categoryType
       );
     }
-    if (data.hasOwnProperty("businessActivity")) {
-      object.businessActivity = ApiClient.convertToType(
-        data["businessActivity"],
-        object.businessActivityType
-      );
+    if (data.hasOwnProperty("image")) {
+      object.image = ApiClient.convertToType(data["image"], object.imageType);
+    }
+    if (data.hasOwnProperty("images")) {
+      object.images = ApiClient.convertToType(data["images"], [
+        object.imagesType
+      ]);
     }
     if (data.hasOwnProperty("reporter")) {
       object.reporter = ApiClient.convertToType(
@@ -84,19 +89,14 @@ export default class FeedbackLinks {
         object.reporterType
       );
     }
-    if (data.hasOwnProperty("image")) {
-      object.image = ApiClient.convertToType(data["image"], object.imageType);
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
     if (data.hasOwnProperty("tracking")) {
       object.tracking = ApiClient.convertToType(
         data["tracking"],
         object.trackingType
       );
-    }
-    if (data.hasOwnProperty("images")) {
-      object.images = ApiClient.convertToType(data["images"], [
-        object.imagesType
-      ]);
     }
 
     return object;

@@ -23,18 +23,10 @@ export default class OperationSignature {
      * @alias module:model/OperationSignature
      * @class
     
-     * @param signer { module:model/OperationSignatureSigner }
-    
-     * @param signedAt { Date }
-    
      */
-  constructor(
-    signer,
-
-    signedAt
-  ) {
-    this.signer = signer;
-    this.signedAt = signedAt;
+  constructor() {
+    this.signedAt = null;
+    this.signer = null;
 
     this.signerType = OperationSignatureSigner;
   }
@@ -54,14 +46,14 @@ export default class OperationSignature {
       object = new OperationSignature();
     }
 
+    if (data.hasOwnProperty("signedAt")) {
+      object.signedAt = ApiClient.convertToType(data["signedAt"], "Date");
+    }
     if (data.hasOwnProperty("signer")) {
       object.signer = ApiClient.convertToType(
         data["signer"],
         object.signerType
       );
-    }
-    if (data.hasOwnProperty("signedAt")) {
-      object.signedAt = ApiClient.convertToType(data["signedAt"], "Date");
     }
 
     return object;

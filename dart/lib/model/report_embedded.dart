@@ -2,32 +2,32 @@ part of keyclic_sdk_api.api;
 
 class ReportEmbedded {
   ReportEmbedded({
+    this.duration,
     this.stateTransitions,
     this.targetGroups,
     this.tracking,
-    this.duration,
   });
 
   ReportEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
+    duration = ReportEmbeddedDuration.fromJson(json['duration']);
     stateTransitions = (json['stateTransitions'] as List)
         ?.map((item) => item as String)
         ?.toList();
     targetGroups =
         ReportEmbeddedTargetGroups.listFromJson(json['targetGroups']);
     tracking = json['tracking'];
-    duration = ReportEmbeddedDuration.fromJson(json['duration']);
   }
+
+  ReportEmbeddedDuration duration;
 
   List<String> stateTransitions;
 
   List<ReportEmbeddedTargetGroups> targetGroups;
 
   String tracking;
-
-  ReportEmbeddedDuration duration;
 
   @override
   bool operator ==(dynamic other) {
@@ -43,16 +43,16 @@ class ReportEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
+      'duration': duration,
       'stateTransitions': stateTransitions,
       'targetGroups': targetGroups,
       'tracking': tracking,
-      'duration': duration,
     };
   }
 
   @override
   String toString() {
-    return 'ReportEmbedded[stateTransitions=$stateTransitions, targetGroups=$targetGroups, tracking=$tracking, duration=$duration, ]';
+    return 'ReportEmbedded[duration=$duration, stateTransitions=$stateTransitions, targetGroups=$targetGroups, tracking=$tracking, ]';
   }
 
   static List<ReportEmbedded> listFromJson(List<dynamic> json) {

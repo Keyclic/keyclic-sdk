@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CategoryLinksSelfIriTemplate = _interopRequireDefault(
-  require("./CategoryLinksSelfIriTemplate")
+var _FeedbackLinksCategoryIriTemplate = _interopRequireDefault(
+  require("./FeedbackLinksCategoryIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var FeedbackLinksCategory =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _CategoryLinksSelfIriTemplate.default;
+      this.iriTemplateType = _FeedbackLinksCategoryIriTemplate.default;
     }
     /**
      * Constructs a "FeedbackLinksCategory" from a plain JavaScript object.

@@ -2,49 +2,50 @@ part of keyclic_sdk_api.api;
 
 class Review {
   Review({
+    this.links,
+    this.createdAt,
+    this.id,
     this.reviewBody,
     this.reviewRating,
-    this.id,
-    this.createdAt,
-    this.updatedAt,
     this.type,
-    this.links,
+    this.updatedAt,
   });
 
   Review.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    reviewBody = json['reviewBody'];
-    reviewRating = json['reviewRating'];
-    id = json['id'];
+    links = ReviewLinks.fromJson(json['_links']);
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
+    id = json['id'];
+    reviewBody = json['reviewBody'];
+    reviewRating = json['reviewRating'];
+    type = json['type'];
     updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
-    type = json['type'];
-    links = ReviewLinks.fromJson(json['_links']);
   }
+
+  ReviewLinks links;
+
+  DateTime createdAt;
+
+  String id;
 
   String reviewBody;
 
   int reviewRating;
-
-  String id;
-
-  DateTime createdAt;
-
-  DateTime updatedAt;
+  // range from 1 to 5//
 
   String type;
 
-  ReviewLinks links;
+  DateTime updatedAt;
 
   @override
   bool operator ==(dynamic other) {
@@ -52,31 +53,27 @@ class Review {
       return true;
     }
 
-    return other is Review &&
-        runtimeType == other.runtimeType &&
-        id == other.id &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+    return other is Review && runtimeType == other.runtimeType;
   }
 
   @override
-  int get hashCode => 0 ^ id.hashCode ^ createdAt.hashCode ^ updatedAt.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {
+      '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
+      'id': id,
       'reviewBody': reviewBody,
       'reviewRating': reviewRating,
-      'id': id,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
       'type': type,
-      '_links': links,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'Review[reviewBody=$reviewBody, reviewRating=$reviewRating, id=$id, createdAt=$createdAt, updatedAt=$updatedAt, type=$type, links=$links, ]';
+    return 'Review[links=$links, createdAt=$createdAt, id=$id, reviewBody=$reviewBody, reviewRating=$reviewRating, type=$type, updatedAt=$updatedAt, ]';
   }
 
   static List<Review> listFromJson(List<dynamic> json) {

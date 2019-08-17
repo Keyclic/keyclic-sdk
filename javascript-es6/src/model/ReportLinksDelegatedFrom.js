@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import CategoryLinksOrganizationIriTemplate from "./CategoryLinksOrganizationIriTemplate";
+import ReportLinksDelegatedFromIriTemplate from "./ReportLinksDelegatedFromIriTemplate";
 
 /**
  * The ReportLinksDelegatedFrom model module.
@@ -28,7 +28,7 @@ export default class ReportLinksDelegatedFrom {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = CategoryLinksOrganizationIriTemplate;
+    this.iriTemplateType = ReportLinksDelegatedFromIriTemplate;
   }
 
   /**

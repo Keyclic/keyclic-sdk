@@ -23,11 +23,9 @@ export default class Schema {
      * @alias module:model/Schema
      * @class
     
-     * @param properties { Object.<String, module:model/Property> }
-    
      */
-  constructor(properties) {
-    this.properties = properties;
+  constructor() {
+    this.properties = [];
     this.required = [];
 
     this.propertiesType = Property;

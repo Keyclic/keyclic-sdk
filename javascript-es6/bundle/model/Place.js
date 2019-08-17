@@ -55,31 +55,23 @@ var Place =
   
    * @param name { String }
   
-   * @param preferences { module:model/PlacePreferences }
-  
-   * @param id { String }
-  
-   * @param createdAt { Date }
-  
-   * @param updatedAt { Date }
-  
    */
-    function Place(geo, name, preferences, id, createdAt, updatedAt) {
+    function Place(geo, name) {
       _classCallCheck(this, Place);
 
+      this.links = null;
       this.branchCode = null;
+      this.createdAt = null;
       this.description = null;
       this.geo = geo;
+      this.id = null;
       this.name = name;
-      this.preferences = preferences;
-      this.id = id;
-      this.createdAt = createdAt;
-      this.updatedAt = updatedAt;
+      this.preferences = null;
       this.type = null;
-      this.links = null;
+      this.updatedAt = null;
+      this.linksType = _PlaceLinks.default;
       this.geoType = _PlaceGeo.default;
       this.preferencesType = _PlacePreferences.default;
-      this.linksType = _PlaceLinks.default;
     }
     /**
      * Constructs a "Place" from a plain JavaScript object.
@@ -105,10 +97,24 @@ var Place =
             object = new Place();
           }
 
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
           if (data.hasOwnProperty("branchCode")) {
             object.branchCode = _ApiClient.default.convertToType(
               data["branchCode"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
             );
           }
 
@@ -126,6 +132,10 @@ var Place =
             );
           }
 
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
           if (data.hasOwnProperty("name")) {
             object.name = _ApiClient.default.convertToType(
               data["name"],
@@ -140,24 +150,6 @@ var Place =
             );
           }
 
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
-          }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
-          }
-
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
-            );
-          }
-
           if (data.hasOwnProperty("type")) {
             object.type = _ApiClient.default.convertToType(
               data["type"],
@@ -165,10 +157,10 @@ var Place =
             );
           }
 
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

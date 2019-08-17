@@ -49,8 +49,8 @@ var FeedbackLinksImageIriTemplateMapping =
     function FeedbackLinksImageIriTemplateMapping() {
       _classCallCheck(this, FeedbackLinksImageIriTemplateMapping);
 
-      this.image = null;
       this.feedback = null;
+      this.image = null;
     }
     /**
      * Constructs a "FeedbackLinksImageIriTemplateMapping" from a plain JavaScript object.
@@ -76,16 +76,16 @@ var FeedbackLinksImageIriTemplateMapping =
             object = new FeedbackLinksImageIriTemplateMapping();
           }
 
-          if (data.hasOwnProperty("image")) {
-            object.image = _ApiClient.default.convertToType(
-              data["image"],
+          if (data.hasOwnProperty("feedback")) {
+            object.feedback = _ApiClient.default.convertToType(
+              data["feedback"],
               "String"
             );
           }
 
-          if (data.hasOwnProperty("feedback")) {
-            object.feedback = _ApiClient.default.convertToType(
-              data["feedback"],
+          if (data.hasOwnProperty("image")) {
+            object.image = _ApiClient.default.convertToType(
+              data["image"],
               "String"
             );
           }

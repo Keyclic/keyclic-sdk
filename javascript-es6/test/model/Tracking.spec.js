@@ -53,8 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.Tracking);
     });
 
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
+    it('should have the property checkpoints (base name: "checkpoints")', function() {
+      // uncomment below and update the code to test the property checkpoints
       //var instane = new @KeyclicSdkJavascript.Tracking();
       //expect(instance).to.be();
     });
@@ -65,14 +65,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property time (base name: "time")', function() {
-      // uncomment below and update the code to test the property time
+    it('should have the property state (base name: "state")', function() {
+      // uncomment below and update the code to test the property state
       //var instane = new @KeyclicSdkJavascript.Tracking();
       //expect(instance).to.be();
     });
 
-    it('should have the property checkpoints (base name: "checkpoints")', function() {
-      // uncomment below and update the code to test the property checkpoints
+    it('should have the property time (base name: "time")', function() {
+      // uncomment below and update the code to test the property time
       //var instane = new @KeyclicSdkJavascript.Tracking();
       //expect(instance).to.be();
     });

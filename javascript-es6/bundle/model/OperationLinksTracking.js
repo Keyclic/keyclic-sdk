@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _OperationLinksSelfIriTemplate = _interopRequireDefault(
-  require("./OperationLinksSelfIriTemplate")
+var _OperationLinksTrackingIriTemplate = _interopRequireDefault(
+  require("./OperationLinksTrackingIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var OperationLinksTracking =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _OperationLinksSelfIriTemplate.default;
+      this.iriTemplateType = _OperationLinksTrackingIriTemplate.default;
     }
     /**
      * Constructs a "OperationLinksTracking" from a plain JavaScript object.

@@ -11,13 +11,14 @@ class OperationLinksFeedback {
       return;
     }
     href = json['href'];
-    iriTemplate = FeedbackLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate =
+        OperationLinksFeedbackIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the feedback associated to the given operation. */
   String href;
 
-  FeedbackLinksSelfIriTemplate iriTemplate;
+  OperationLinksFeedbackIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

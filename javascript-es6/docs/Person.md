@@ -3,18 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**links** | [**PersonLinks**](PersonLinks.md) |  | [optional] 
+**createdAt** | **Date** |  | [optional] 
+**email** | **String** |  | [optional] 
 **familyName** | **String** |  | [optional] 
 **givenName** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
 **jobTitle** | **String** |  | [optional] 
 **optIn** | **Boolean** |  | 
-**preferences** | [**PersonPreferences**](PersonPreferences.md) |  | 
+**preferences** | [**PersonPreferences**](PersonPreferences.md) |  | [optional] 
 **telephone** | **String** |  | [optional] 
-**id** | **String** |  | 
-**username** | **String** |  | [optional] 
-**email** | **String** |  | [optional] 
-**createdAt** | **Date** |  | 
-**updatedAt** | **Date** |  | 
 **type** | **String** |  | [optional] 
-**links** | [**PersonLinks**](PersonLinks.md) |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
+**username** | **String** |  | [optional] 
 
 

@@ -151,20 +151,16 @@ var CategoryApi =
      * @param { CategoryPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+     * @param { String } businessActivity The identifier of the resource.
      * @param { module:model/Date } after
      * @param { module:model/Date } before
      * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { module:model/String } order   (default to desc)
-     * @param { String } organization The identifier of the resource formatted as GUID string.
+     * @param { String } organization The identifier of the resource.
      * @param { String } query
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { String } searchColor
-     * @param { String } searchIcon
-     * @param { String } searchName
-     * @param { String } searchIdentificationNumber
      */
 
     _createClass(CategoryApi, [
@@ -194,11 +190,7 @@ var CategoryApi =
             organization = options.organization,
             query = options.query,
             page = options.page,
-            limit = options.limit,
-            searchColor = options.searchColor,
-            searchIcon = options.searchIcon,
-            searchName = options.searchName,
-            searchIdentificationNumber = options.searchIdentificationNumber; // verify the required parameter 'xKeyclicApp' is set
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -255,22 +247,6 @@ var CategoryApi =
 
           if (typeof query === "undefined") {
             query = null;
-          } // verify the null value of parameter 'searchColor'
-
-          if (typeof searchColor === "undefined") {
-            searchColor = null;
-          } // verify the null value of parameter 'searchIcon'
-
-          if (typeof searchIcon === "undefined") {
-            searchIcon = null;
-          } // verify the null value of parameter 'searchName'
-
-          if (typeof searchName === "undefined") {
-            searchName = null;
-          } // verify the null value of parameter 'searchIdentificationNumber'
-
-          if (typeof searchIdentificationNumber === "undefined") {
-            searchIdentificationNumber = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
@@ -291,11 +267,7 @@ var CategoryApi =
             organization: organization,
             query: query,
             page: page,
-            limit: limit,
-            "search[color]": searchColor,
-            "search[icon]": searchIcon,
-            "search[name]": searchName,
-            "search[identificationNumber]": searchIdentificationNumber
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,
@@ -323,12 +295,12 @@ var CategoryApi =
         /**
          * Retrieve all Category resources.
          * @param { String } xKeyclicApp
-         * @param { String } organization The identifier of the resource formatted as GUID string.
+         * @param { String } organization The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { CategoryPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
          * @param { String } xKeyclicAppVersion
-         * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+         * @param { String } businessActivity The identifier of the resource.
          * @param { module:model/Date } after
          * @param { module:model/Date } before
          * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
@@ -337,10 +309,6 @@ var CategoryApi =
          * @param { String } query
          * @param { Number } page Page of the overview.  (default to 1)
          * @param { Number } limit Page of the overview.  (default to 10)
-         * @param { String } searchColor
-         * @param { String } searchIcon
-         * @param { String } searchName
-         * @param { String } searchIdentificationNumber
          */
       },
       {
@@ -369,11 +337,7 @@ var CategoryApi =
             order = options.order,
             query = options.query,
             page = options.page,
-            limit = options.limit,
-            searchColor = options.searchColor,
-            searchIcon = options.searchIcon,
-            searchName = options.searchName,
-            searchIdentificationNumber = options.searchIdentificationNumber; // verify the required parameter 'xKeyclicApp' is set
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -432,22 +396,6 @@ var CategoryApi =
 
           if (typeof query === "undefined") {
             query = null;
-          } // verify the null value of parameter 'searchColor'
-
-          if (typeof searchColor === "undefined") {
-            searchColor = null;
-          } // verify the null value of parameter 'searchIcon'
-
-          if (typeof searchIcon === "undefined") {
-            searchIcon = null;
-          } // verify the null value of parameter 'searchName'
-
-          if (typeof searchName === "undefined") {
-            searchName = null;
-          } // verify the null value of parameter 'searchIdentificationNumber'
-
-          if (typeof searchIdentificationNumber === "undefined") {
-            searchIdentificationNumber = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
@@ -469,11 +417,7 @@ var CategoryApi =
             order: order,
             query: query,
             page: page,
-            limit: limit,
-            "search[color]": searchColor,
-            "search[icon]": searchIcon,
-            "search[name]": searchName,
-            "search[identificationNumber]": searchIdentificationNumber
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,
@@ -499,9 +443,90 @@ var CategoryApi =
           );
         }
         /**
+         * Remove one Category resource.
+         * @param { String } xKeyclicApp
+         * @param { String } category The identifier of the resource.
+         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+         * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
+         * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { String } xKeyclicAppVersion
+         */
+      },
+      {
+        key: "deleteCategory",
+        value: function deleteCategory() {
+          var returnType =
+            arguments.length > 0 && arguments[0] !== undefined
+              ? arguments[0]
+              : null;
+          var options = arguments.length > 1 ? arguments[1] : undefined;
+          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var xKeyclicApp = options.xKeyclicApp,
+            category = options.category,
+            acceptLanguage = options.acceptLanguage,
+            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+            throw new window.Error(
+              'Missing the required parameter "xKeyclicApp" when calling deleteCategory'
+            );
+          } // verify the required parameter 'category' is set
+
+          if (typeof category === "undefined" || category === null) {
+            throw new window.Error(
+              'Missing the required parameter "category" when calling deleteCategory'
+            );
+          } // verify the default value of parameter 'acceptLanguage'
+
+          if (
+            typeof acceptLanguage === "undefined" ||
+            acceptLanguage === null
+          ) {
+            acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xKeyclicAppVersion'
+
+          if (typeof xKeyclicAppVersion === "undefined") {
+            xKeyclicAppVersion = null;
+          }
+
+          if (typeof credentials === "undefined" || credentials === null) {
+            throw new window.Error(
+              'Missing the required parameter "credentials" when calling deleteCategory'
+            );
+          }
+
+          var pathParams = {
+            category: category
+          };
+          var bodyParam = null;
+          var queryParams = {};
+          var headerParams = {
+            "accept-language": acceptLanguage,
+            "x-keyclic-app": xKeyclicApp,
+            "x-keyclic-app-version": xKeyclicAppVersion
+          };
+          var credentialParams = credentials;
+          var authNames = ["bearer"];
+          var contentTypes = ["application/json;charset=UTF-8"];
+          var accepts = ["application/hal+json;charset=UTF-8"];
+          return this.callApi(
+            "/categories/{category}",
+            "DELETE",
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+          );
+        }
+        /**
          * Retrieve one Category resource.
          * @param { String } xKeyclicApp
-         * @param { String } category The identifier of the resource formatted as GUID string.
+         * @param { String } category The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Category }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -588,7 +613,7 @@ var CategoryApi =
          * Edit one Category resource.
          * @param { String } xKeyclicApp
          * @param { module:model/CategoryPatch } categoryPatch
-         * @param { String } category The identifier of the resource formatted as GUID string.
+         * @param { String } category The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Category }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -682,7 +707,7 @@ var CategoryApi =
          * Create one Category resource.
          * @param { String } xKeyclicApp
          * @param { module:model/CategoryData } categoryData
-         * @param { String } organization The identifier of the resource formatted as GUID string.
+         * @param { String } organization The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Category }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

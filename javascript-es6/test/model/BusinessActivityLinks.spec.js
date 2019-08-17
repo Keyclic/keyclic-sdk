@@ -53,8 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.BusinessActivityLinks);
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
+    it('should have the property image (base name: "image")', function() {
+      // uncomment below and update the code to test the property image
       //var instane = new @KeyclicSdkJavascript.BusinessActivityLinks();
       //expect(instance).to.be();
     });
@@ -65,8 +65,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property image (base name: "image")', function() {
-      // uncomment below and update the code to test the property image
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
+      //var instane = new @KeyclicSdkJavascript.BusinessActivityLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property thumbnail (base name: "thumbnail")', function() {
+      // uncomment below and update the code to test the property thumbnail
       //var instane = new @KeyclicSdkJavascript.BusinessActivityLinks();
       //expect(instance).to.be();
     });

@@ -2,57 +2,57 @@ part of keyclic_sdk_api.api;
 
 class Feedback {
   Feedback({
+    this.embedded,
+    this.links,
+    this.createdAt,
     this.description,
     this.geoCoordinates,
-    this.metadata,
     this.id,
-    this.state,
-    this.createdAt,
-    this.type,
+    this.metadata,
     this.public,
-    this.links,
-    this.embedded,
+    this.state,
+    this.type,
   });
 
   Feedback.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    description = json['description'];
-    geoCoordinates = FeedbackGeoCoordinates.fromJson(json['geoCoordinates']);
-    metadata = json['metadata'];
-    id = json['id'];
-    state = (json['state'] as List)?.map((item) => item as String)?.toList();
+    embedded = FeedbackEmbedded.fromJson(json['_embedded']);
+    links = FeedbackLinks.fromJson(json['_links']);
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    type = json['type'];
+    description = json['description'];
+    geoCoordinates = FeedbackGeoCoordinates.fromJson(json['geoCoordinates']);
+    id = json['id'];
+    metadata = json['metadata'];
     public = json['public'];
-    links = FeedbackLinks.fromJson(json['_links']);
-    embedded = FeedbackEmbedded.fromJson(json['_embedded']);
+    state = (json['state'] as List)?.map((item) => item as String)?.toList();
+    type = json['type'];
   }
+
+  FeedbackEmbedded embedded;
+
+  FeedbackLinks links;
+
+  DateTime createdAt;
 
   String description;
 
   FeedbackGeoCoordinates geoCoordinates;
 
-  Map<String, dynamic> metadata;
-
   String id;
 
-  List<String> state;
-
-  DateTime createdAt;
-
-  String type;
+  Map<String, dynamic> metadata;
 
   bool public;
 
-  FeedbackLinks links;
+  List<String> state;
 
-  FeedbackEmbedded embedded;
+  String type;
 
   @override
   bool operator ==(dynamic other) {
@@ -63,31 +63,30 @@ class Feedback {
     return other is Feedback &&
         runtimeType == other.runtimeType &&
         geoCoordinates == other.geoCoordinates &&
-        id == other.id &&
         DeepCollectionEquality.unordered().equals(state, other.state);
   }
 
   @override
-  int get hashCode => 0 ^ geoCoordinates.hashCode ^ id.hashCode;
+  int get hashCode => 0 ^ geoCoordinates.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
+      '_embedded': embedded,
+      '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
       'description': description,
       'geoCoordinates': geoCoordinates,
-      'metadata': metadata,
       'id': id,
-      'state': state,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'type': type,
+      'metadata': metadata,
       'public': public,
-      '_links': links,
-      '_embedded': embedded,
+      'state': state,
+      'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'Feedback[description=$description, geoCoordinates=$geoCoordinates, metadata=$metadata, id=$id, state=$state, createdAt=$createdAt, type=$type, public=$public, links=$links, embedded=$embedded, ]';
+    return 'Feedback[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, geoCoordinates=$geoCoordinates, id=$id, metadata=$metadata, public=$public, state=$state, type=$type, ]';
   }
 
   static List<Feedback> listFromJson(List<dynamic> json) {

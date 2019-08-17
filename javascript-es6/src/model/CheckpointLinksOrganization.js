@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import CategoryLinksOrganizationIriTemplate from "./CategoryLinksOrganizationIriTemplate";
+import CheckpointLinksOrganizationIriTemplate from "./CheckpointLinksOrganizationIriTemplate";
 
 /**
  * The CheckpointLinksOrganization model module.
@@ -28,7 +28,7 @@ export default class CheckpointLinksOrganization {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = CategoryLinksOrganizationIriTemplate;
+    this.iriTemplateType = CheckpointLinksOrganizationIriTemplate;
   }
 
   /**

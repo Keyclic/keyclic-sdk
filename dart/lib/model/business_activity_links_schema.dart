@@ -12,13 +12,13 @@ class BusinessActivityLinksSchema {
     }
     href = json['href'];
     iriTemplate =
-        BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+        BusinessActivityLinksSchemaIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the schema associated to the given businessactivity. */
   String href;
 
-  BusinessActivityLinksSelfIriTemplate iriTemplate;
+  BusinessActivityLinksSchemaIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

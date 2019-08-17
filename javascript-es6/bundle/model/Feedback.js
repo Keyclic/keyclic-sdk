@@ -55,27 +55,25 @@ var Feedback =
   
    * @param geoCoordinates { module:model/FeedbackGeoCoordinates }
   
-   * @param id { String }
-  
    * @param state { Array.<String> }
   
    */
-    function Feedback(geoCoordinates, id, state) {
+    function Feedback(geoCoordinates, state) {
       _classCallCheck(this, Feedback);
 
+      this.embedded = null;
+      this.links = null;
+      this.createdAt = null;
       this.description = null;
       this.geoCoordinates = geoCoordinates;
+      this.id = null;
       this.metadata = [];
-      this.id = id;
-      this.state = state;
-      this.createdAt = null;
-      this.type = null;
       this._public = null;
-      this.links = null;
-      this.embedded = null;
-      this.geoCoordinatesType = _FeedbackGeoCoordinates.default;
-      this.linksType = _FeedbackLinks.default;
+      this.state = state;
+      this.type = null;
       this.embeddedType = _FeedbackEmbedded.default;
+      this.linksType = _FeedbackLinks.default;
+      this.geoCoordinatesType = _FeedbackGeoCoordinates.default;
     }
     /**
      * Constructs a "Feedback" from a plain JavaScript object.
@@ -101,6 +99,27 @@ var Feedback =
             object = new Feedback();
           }
 
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
           if (data.hasOwnProperty("description")) {
             object.description = _ApiClient.default.convertToType(
               data["description"],
@@ -115,35 +134,14 @@ var Feedback =
             );
           }
 
-          if (data.hasOwnProperty("metadata")) {
-            object.metadata = _ApiClient.default.convertToType(
-              data["metadata"],
-              "['String']"
-            );
-          }
-
           if (data.hasOwnProperty("id")) {
             object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
 
-          if (data.hasOwnProperty("state")) {
-            object.state = _ApiClient.default.convertToType(
-              data["state"],
+          if (data.hasOwnProperty("metadata")) {
+            object.metadata = _ApiClient.default.convertToType(
+              data["metadata"],
               "['String']"
-            );
-          }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
-          }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
             );
           }
 
@@ -154,17 +152,17 @@ var Feedback =
             );
           }
 
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
+          if (data.hasOwnProperty("state")) {
+            object.state = _ApiClient.default.convertToType(
+              data["state"],
+              "['String']"
             );
           }
 
-          if (data.hasOwnProperty("_embedded")) {
-            object.embedded = _ApiClient.default.convertToType(
-              data["_embedded"],
-              object.embeddedType
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
             );
           }
 

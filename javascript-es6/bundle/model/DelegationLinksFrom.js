@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CategoryLinksOrganizationIriTemplate = _interopRequireDefault(
-  require("./CategoryLinksOrganizationIriTemplate")
+var _DelegationLinksFromIriTemplate = _interopRequireDefault(
+  require("./DelegationLinksFromIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var DelegationLinksFrom =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _CategoryLinksOrganizationIriTemplate.default;
+      this.iriTemplateType = _DelegationLinksFromIriTemplate.default;
     }
     /**
      * Constructs a "DelegationLinksFrom" from a plain JavaScript object.

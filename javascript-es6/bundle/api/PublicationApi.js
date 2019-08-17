@@ -147,7 +147,7 @@ var PublicationApi =
     /**
      * Retrieve all Publication resources.
      * @param { String } xKeyclicApp
-     * @param { String } organization The identifier of the resource formatted as GUID string.
+     * @param { String } organization The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { PublicationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -155,7 +155,7 @@ var PublicationApi =
      * @param { module:model/Date } after
      * @param { module:model/Date } before
      * @param { module:model/String } order   (default to desc)
-     * @param { String } place The identifier of the resource formatted as GUID string.
+     * @param { String } place The identifier of the resource.
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      */
@@ -277,8 +277,8 @@ var PublicationApi =
         /**
          * Retrieve one Publication resource.
          * @param { String } xKeyclicApp
-         * @param { String } organization The identifier of the resource formatted as GUID string.
-         * @param { String } publication The identifier of the resource formatted as GUID string.
+         * @param { String } organization The identifier of the resource.
+         * @param { String } publication The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Publication }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -373,7 +373,7 @@ var PublicationApi =
          * Create one Publication resource.
          * @param { String } xKeyclicApp
          * @param { module:model/PublicationData } publicationData
-         * @param { String } organization The identifier of the resource formatted as GUID string.
+         * @param { String } organization The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Publication }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

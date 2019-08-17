@@ -11,13 +11,13 @@ class ReportLinksPlace {
       return;
     }
     href = json['href'];
-    iriTemplate = OccupantLinksPlaceIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = ReportLinksPlaceIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the place associated to the given report. */
   String href;
 
-  OccupantLinksPlaceIriTemplate iriTemplate;
+  ReportLinksPlaceIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

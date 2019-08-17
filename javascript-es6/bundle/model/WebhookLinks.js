@@ -55,10 +55,10 @@ var WebhookLinks =
     function WebhookLinks() {
       _classCallCheck(this, WebhookLinks);
 
-      this.self = null;
       this.organization = null;
-      this.selfType = _WebhookLinksSelf.default;
+      this.self = null;
       this.organizationType = _WebhookLinksOrganization.default;
+      this.selfType = _WebhookLinksSelf.default;
     }
     /**
      * Constructs a "WebhookLinks" from a plain JavaScript object.
@@ -84,17 +84,17 @@ var WebhookLinks =
             object = new WebhookLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
-          }
-
           if (data.hasOwnProperty("organization")) {
             object.organization = _ApiClient.default.convertToType(
               data["organization"],
               object.organizationType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 

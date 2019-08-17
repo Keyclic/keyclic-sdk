@@ -2,25 +2,25 @@ part of keyclic_sdk_api.api;
 
 class PlaceGeo {
   PlaceGeo({
-    this.polygon,
-    this.elevation,
     this.centroid,
+    this.elevation,
+    this.polygon,
   });
 
   PlaceGeo.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    polygon = PlaceGeoPolygon.fromJson(json['polygon']);
-    elevation = json['elevation']?.toDouble();
     centroid = PlaceGeoCentroid.fromJson(json['centroid']);
+    elevation = json['elevation']?.toDouble();
+    polygon = PlaceGeoPolygon.fromJson(json['polygon']);
   }
 
-  PlaceGeoPolygon polygon;
+  PlaceGeoCentroid centroid;
 
   double elevation;
 
-  PlaceGeoCentroid centroid;
+  PlaceGeoPolygon polygon;
 
   @override
   bool operator ==(dynamic other) {
@@ -30,24 +30,23 @@ class PlaceGeo {
 
     return other is PlaceGeo &&
         runtimeType == other.runtimeType &&
-        polygon == other.polygon &&
-        elevation == other.elevation;
+        polygon == other.polygon;
   }
 
   @override
-  int get hashCode => 0 ^ polygon.hashCode ^ elevation.hashCode;
+  int get hashCode => 0 ^ polygon.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
-      'polygon': polygon,
-      'elevation': elevation,
       'centroid': centroid,
+      'elevation': elevation,
+      'polygon': polygon,
     };
   }
 
   @override
   String toString() {
-    return 'PlaceGeo[polygon=$polygon, elevation=$elevation, centroid=$centroid, ]';
+    return 'PlaceGeo[centroid=$centroid, elevation=$elevation, polygon=$polygon, ]';
   }
 
   static List<PlaceGeo> listFromJson(List<dynamic> json) {

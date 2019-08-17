@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _FeedbackLinksSelfIriTemplate = _interopRequireDefault(
-  require("./FeedbackLinksSelfIriTemplate")
+var _FeedbackLinksTrackingIriTemplate = _interopRequireDefault(
+  require("./FeedbackLinksTrackingIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var FeedbackLinksTracking =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _FeedbackLinksSelfIriTemplate.default;
+      this.iriTemplateType = _FeedbackLinksTrackingIriTemplate.default;
     }
     /**
      * Constructs a "FeedbackLinksTracking" from a plain JavaScript object.

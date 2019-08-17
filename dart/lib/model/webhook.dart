@@ -2,37 +2,37 @@ part of keyclic_sdk_api.api;
 
 class Webhook {
   Webhook({
+    this.links,
     this.enabled,
     this.event,
-    this.payloadUrl,
     this.id,
+    this.payloadUrl,
     this.type,
-    this.links,
   });
 
   Webhook.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
+    links = WebhookLinks.fromJson(json['_links']);
     enabled = json['enabled'];
     event = json['event'];
-    payloadUrl = json['payloadUrl'];
     id = json['id'];
+    payloadUrl = json['payloadUrl'];
     type = json['type'];
-    links = WebhookLinks.fromJson(json['_links']);
   }
+
+  WebhookLinks links;
 
   bool enabled;
 
   String event;
 
-  String payloadUrl;
-
   String id;
 
-  String type;
+  String payloadUrl;
 
-  WebhookLinks links;
+  String type;
 
   @override
   bool operator ==(dynamic other) {
@@ -44,28 +44,27 @@ class Webhook {
         runtimeType == other.runtimeType &&
         enabled == other.enabled &&
         event == other.event &&
-        payloadUrl == other.payloadUrl &&
-        id == other.id;
+        payloadUrl == other.payloadUrl;
   }
 
   @override
   int get hashCode =>
-      0 ^ enabled.hashCode ^ event.hashCode ^ payloadUrl.hashCode ^ id.hashCode;
+      0 ^ enabled.hashCode ^ event.hashCode ^ payloadUrl.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
+      '_links': links,
       'enabled': enabled,
       'event': event,
-      'payloadUrl': payloadUrl,
       'id': id,
+      'payloadUrl': payloadUrl,
       'type': type,
-      '_links': links,
     };
   }
 
   @override
   String toString() {
-    return 'Webhook[enabled=$enabled, event=$event, payloadUrl=$payloadUrl, id=$id, type=$type, links=$links, ]';
+    return 'Webhook[links=$links, enabled=$enabled, event=$event, id=$id, payloadUrl=$payloadUrl, type=$type, ]';
   }
 
   static List<Webhook> listFromJson(List<dynamic> json) {

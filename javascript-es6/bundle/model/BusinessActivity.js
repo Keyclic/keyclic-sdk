@@ -55,20 +55,18 @@ var BusinessActivity =
   
    * @param name { String }
   
-   * @param id { String }
-  
    */
-    function BusinessActivity(name, id) {
+    function BusinessActivity(name) {
       _classCallCheck(this, BusinessActivity);
 
-      this.alternateName = null;
-      this.name = name;
-      this.id = id;
-      this.type = null;
-      this.metadataSchema = null;
       this.links = null;
-      this.metadataSchemaType = _BusinessActivityMetadataSchema.default;
+      this.alternateName = null;
+      this.id = null;
+      this.metadataSchema = null;
+      this.name = name;
+      this.type = null;
       this.linksType = _BusinessActivityLinks.default;
+      this.metadataSchemaType = _BusinessActivityMetadataSchema.default;
     }
     /**
      * Constructs a "BusinessActivity" from a plain JavaScript object.
@@ -94,10 +92,28 @@ var BusinessActivity =
             object = new BusinessActivity();
           }
 
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
           if (data.hasOwnProperty("alternateName")) {
             object.alternateName = _ApiClient.default.convertToType(
               data["alternateName"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("metadataSchema")) {
+            object.metadataSchema = _ApiClient.default.convertToType(
+              data["metadataSchema"],
+              object.metadataSchemaType
             );
           }
 
@@ -108,28 +124,10 @@ var BusinessActivity =
             );
           }
 
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
-          }
-
           if (data.hasOwnProperty("type")) {
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
-            );
-          }
-
-          if (data.hasOwnProperty("metadataSchema")) {
-            object.metadataSchema = _ApiClient.default.convertToType(
-              data["metadataSchema"],
-              object.metadataSchemaType
-            );
-          }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
             );
           }
 

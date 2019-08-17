@@ -47,26 +47,20 @@ var Category =
    * @alias module:model/Category
    * @class
   
-   * @param color { String }
-  
    * @param name { String }
   
-   * @param id { String }
-  
-   * @param createdAt { Date }
-  
    */
-    function Category(color, name, id, createdAt) {
+    function Category(name) {
       _classCallCheck(this, Category);
 
-      this.color = color;
-      this.icon = null;
-      this.name = name;
-      this.id = id;
-      this.identificationNumber = null;
-      this.createdAt = createdAt;
-      this.type = null;
       this.links = null;
+      this.color = null;
+      this.createdAt = null;
+      this.icon = null;
+      this.id = null;
+      this.identificationNumber = null;
+      this.name = name;
+      this.type = null;
       this.linksType = _CategoryLinks.default;
     }
     /**
@@ -93,6 +87,13 @@ var Category =
             object = new Category();
           }
 
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
           if (data.hasOwnProperty("color")) {
             object.color = _ApiClient.default.convertToType(
               data["color"],
@@ -100,16 +101,16 @@ var Category =
             );
           }
 
-          if (data.hasOwnProperty("icon")) {
-            object.icon = _ApiClient.default.convertToType(
-              data["icon"],
-              "String"
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
             );
           }
 
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
+          if (data.hasOwnProperty("icon")) {
+            object.icon = _ApiClient.default.convertToType(
+              data["icon"],
               "String"
             );
           }
@@ -125,10 +126,10 @@ var Category =
             );
           }
 
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
             );
           }
 
@@ -136,13 +137,6 @@ var Category =
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
-            );
-          }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
             );
           }
 

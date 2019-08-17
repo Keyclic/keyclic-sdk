@@ -53,14 +53,20 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.ReviewLinks);
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
+    it('should have the property author (base name: "author")', function() {
+      // uncomment below and update the code to test the property author
       //var instane = new @KeyclicSdkJavascript.ReviewLinks();
       //expect(instance).to.be();
     });
 
-    it('should have the property author (base name: "author")', function() {
-      // uncomment below and update the code to test the property author
+    it('should have the property itemReviewed (base name: "itemReviewed")', function() {
+      // uncomment below and update the code to test the property itemReviewed
+      //var instane = new @KeyclicSdkJavascript.ReviewLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
       //var instane = new @KeyclicSdkJavascript.ReviewLinks();
       //expect(instance).to.be();
     });

@@ -39,7 +39,7 @@ export default class PlaceApi extends ApiClient {
    * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+   * @param { String } businessActivity The identifier of the resource.
    * @param { module:model/Date } after
    * @param { module:model/Date } before
    * @param { String } geoElevation
@@ -47,15 +47,12 @@ export default class PlaceApi extends ApiClient {
    * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
    * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
    * @param { module:model/String } order   (default to desc)
-   * @param { String } organization The identifier of the resource formatted as GUID string.
-   * @param { String } parent The identifier of the resource formatted as GUID string.
-   * @param { String } parents The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
+   * @param { String } parent The identifier of the resource.
+   * @param { String } parents The identifier of the resource.
    * @param { String } query
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { String } searchBranchCode
-   * @param { String } searchDescription
-   * @param { String } searchName
    */
   cgetPlaces(returnType = null, options, credentials) {
     if (returnType === null) {
@@ -79,10 +76,7 @@ export default class PlaceApi extends ApiClient {
       parents,
       query,
       page,
-      limit,
-      searchBranchCode,
-      searchDescription,
-      searchName
+      limit
     } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -172,21 +166,6 @@ export default class PlaceApi extends ApiClient {
       query = null;
     }
 
-    // verify the null value of parameter 'searchBranchCode'
-    if (typeof searchBranchCode === "undefined") {
-      searchBranchCode = null;
-    }
-
-    // verify the null value of parameter 'searchDescription'
-    if (typeof searchDescription === "undefined") {
-      searchDescription = null;
-    }
-
-    // verify the null value of parameter 'searchName'
-    if (typeof searchName === "undefined") {
-      searchName = null;
-    }
-
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
         'Missing the required parameter "credentials" when calling cgetPlaces'
@@ -211,10 +190,7 @@ export default class PlaceApi extends ApiClient {
       "parents[]": parents,
       query: query,
       page: page,
-      limit: limit,
-      "search[branchCode]": searchBranchCode,
-      "search[description]": searchDescription,
-      "search[name]": searchName
+      limit: limit
     };
 
     let headerParams = {
@@ -249,12 +225,12 @@ export default class PlaceApi extends ApiClient {
   /**
    * Retrieve all Place resources.
    * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+   * @param { String } businessActivity The identifier of the resource.
    * @param { module:model/Date } after
    * @param { module:model/Date } before
    * @param { String } geoElevation
@@ -262,14 +238,11 @@ export default class PlaceApi extends ApiClient {
    * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
    * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
    * @param { module:model/String } order   (default to desc)
-   * @param { String } parent The identifier of the resource formatted as GUID string.
-   * @param { String } parents The identifier of the resource formatted as GUID string.
+   * @param { String } parent The identifier of the resource.
+   * @param { String } parents The identifier of the resource.
    * @param { String } query
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { String } searchBranchCode
-   * @param { String } searchDescription
-   * @param { String } searchName
    */
   cgetPlacesByOrganization(returnType = null, options, credentials) {
     if (returnType === null) {
@@ -293,10 +266,7 @@ export default class PlaceApi extends ApiClient {
       parents,
       query,
       page,
-      limit,
-      searchBranchCode,
-      searchDescription,
-      searchName
+      limit
     } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -388,21 +358,6 @@ export default class PlaceApi extends ApiClient {
       query = null;
     }
 
-    // verify the null value of parameter 'searchBranchCode'
-    if (typeof searchBranchCode === "undefined") {
-      searchBranchCode = null;
-    }
-
-    // verify the null value of parameter 'searchDescription'
-    if (typeof searchDescription === "undefined") {
-      searchDescription = null;
-    }
-
-    // verify the null value of parameter 'searchName'
-    if (typeof searchName === "undefined") {
-      searchName = null;
-    }
-
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
         'Missing the required parameter "credentials" when calling cgetPlacesByOrganization'
@@ -428,10 +383,7 @@ export default class PlaceApi extends ApiClient {
       "parents[]": parents,
       query: query,
       page: page,
-      limit: limit,
-      "search[branchCode]": searchBranchCode,
-      "search[description]": searchDescription,
-      "search[name]": searchName
+      limit: limit
     };
 
     let headerParams = {
@@ -466,7 +418,7 @@ export default class PlaceApi extends ApiClient {
   /**
    * Retrieve one Place resource.
    * @param { String } xKeyclicApp
-   * @param { String } place The identifier of the resource formatted as GUID string.
+   * @param { String } place The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Place }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -550,7 +502,7 @@ export default class PlaceApi extends ApiClient {
    * Edit one Place resource.
    * @param { String } xKeyclicApp
    * @param { module:model/PlacePatch } placePatch
-   * @param { String } place The identifier of the resource formatted as GUID string.
+   * @param { String } place The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Place }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -647,7 +599,7 @@ export default class PlaceApi extends ApiClient {
    * Create one Place resource.
    * @param { String } xKeyclicApp
    * @param { module:model/PlaceData } placeData
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Place }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)

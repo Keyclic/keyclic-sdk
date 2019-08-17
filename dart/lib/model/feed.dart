@@ -2,25 +2,25 @@ part of keyclic_sdk_api.api;
 
 class Feed {
   Feed({
+    this.id,
     this.name,
     this.type,
-    this.id,
   });
 
   Feed.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
+    id = json['id'];
     name = json['name'];
     type = json['type'];
-    id = json['id'];
   }
+
+  String id;
 
   String name;
 
   String type;
-
-  String id;
 
   @override
   bool operator ==(dynamic other) {
@@ -28,26 +28,23 @@ class Feed {
       return true;
     }
 
-    return other is Feed &&
-        runtimeType == other.runtimeType &&
-        name == other.name &&
-        type == other.type;
+    return other is Feed && runtimeType == other.runtimeType;
   }
 
   @override
-  int get hashCode => 0 ^ name.hashCode ^ type.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'name': name,
       'type': type,
-      'id': id,
     };
   }
 
   @override
   String toString() {
-    return 'Feed[name=$name, type=$type, id=$id, ]';
+    return 'Feed[id=$id, name=$name, type=$type, ]';
   }
 
   static List<Feed> listFromJson(List<dynamic> json) {

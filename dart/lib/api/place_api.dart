@@ -24,10 +24,7 @@ class PlaceApi {
       String parents__,
       String query,
       int page,
-      int limit,
-      String search_branchCode_,
-      String search_description_,
-      String search_name_}) async {
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -98,18 +95,6 @@ class PlaceApi {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
     }
-    if (search_branchCode_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[branchCode]", search_branchCode_));
-    }
-    if (search_description_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[description]", search_description_));
-    }
-    if (search_name_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[name]", search_name_));
-    }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;
     headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
@@ -159,10 +144,7 @@ class PlaceApi {
       String parents__,
       String query,
       int page,
-      int limit,
-      String search_branchCode_,
-      String search_description_,
-      String search_name_}) async {
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -233,18 +215,6 @@ class PlaceApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (search_branchCode_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[branchCode]", search_branchCode_));
-    }
-    if (search_description_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[description]", search_description_));
-    }
-    if (search_name_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[name]", search_name_));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;

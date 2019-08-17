@@ -2,31 +2,37 @@ part of keyclic_sdk_api.api;
 
 class Publication {
   Publication({
+    this.links,
+    this.createdAt,
+    this.id,
     this.message,
     this.read,
     this.title,
-    this.id,
-    this.createdAt,
     this.type,
-    this.links,
   });
 
   Publication.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    message = json['message'];
-    read = json['read'];
-    title = json['title'];
-    id = json['id'];
+    links = PublicationLinks.fromJson(json['_links']);
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
+    id = json['id'];
+    message = json['message'];
+    read = json['read'];
+    title = json['title'];
     type = json['type'];
-    links = PublicationLinks.fromJson(json['_links']);
   }
+
+  PublicationLinks links;
+
+  DateTime createdAt;
+
+  String id;
 
   String message;
 
@@ -34,13 +40,7 @@ class Publication {
 
   String title;
 
-  String id;
-
-  DateTime createdAt;
-
   String type;
-
-  PublicationLinks links;
 
   @override
   bool operator ==(dynamic other) {
@@ -52,35 +52,27 @@ class Publication {
         runtimeType == other.runtimeType &&
         message == other.message &&
         read == other.read &&
-        title == other.title &&
-        id == other.id &&
-        createdAt == other.createdAt;
+        title == other.title;
   }
 
   @override
-  int get hashCode =>
-      0 ^
-      message.hashCode ^
-      read.hashCode ^
-      title.hashCode ^
-      id.hashCode ^
-      createdAt.hashCode;
+  int get hashCode => 0 ^ message.hashCode ^ read.hashCode ^ title.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
+      '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
+      'id': id,
       'message': message,
       'read': read,
       'title': title,
-      'id': id,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
       'type': type,
-      '_links': links,
     };
   }
 
   @override
   String toString() {
-    return 'Publication[message=$message, read=$read, title=$title, id=$id, createdAt=$createdAt, type=$type, links=$links, ]';
+    return 'Publication[links=$links, createdAt=$createdAt, id=$id, message=$message, read=$read, title=$title, type=$type, ]';
   }
 
   static List<Publication> listFromJson(List<dynamic> json) {

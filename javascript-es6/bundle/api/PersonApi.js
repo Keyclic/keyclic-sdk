@@ -155,12 +155,6 @@ var PersonApi =
      * @param { String } query
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { String } searchFamilyName
-     * @param { String } searchGivenName
-     * @param { String } searchJobTitle
-     * @param { String } searchTelephone
-     * @param { String } searchUsername
-     * @param { String } searchEmail
      */
 
     _createClass(PersonApi, [
@@ -186,13 +180,7 @@ var PersonApi =
             order = options.order,
             query = options.query,
             page = options.page,
-            limit = options.limit,
-            searchFamilyName = options.searchFamilyName,
-            searchGivenName = options.searchGivenName,
-            searchJobTitle = options.searchJobTitle,
-            searchTelephone = options.searchTelephone,
-            searchUsername = options.searchUsername,
-            searchEmail = options.searchEmail; // verify the required parameter 'xKeyclicApp' is set
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -233,30 +221,6 @@ var PersonApi =
 
           if (typeof query === "undefined") {
             query = null;
-          } // verify the null value of parameter 'searchFamilyName'
-
-          if (typeof searchFamilyName === "undefined") {
-            searchFamilyName = null;
-          } // verify the null value of parameter 'searchGivenName'
-
-          if (typeof searchGivenName === "undefined") {
-            searchGivenName = null;
-          } // verify the null value of parameter 'searchJobTitle'
-
-          if (typeof searchJobTitle === "undefined") {
-            searchJobTitle = null;
-          } // verify the null value of parameter 'searchTelephone'
-
-          if (typeof searchTelephone === "undefined") {
-            searchTelephone = null;
-          } // verify the null value of parameter 'searchUsername'
-
-          if (typeof searchUsername === "undefined") {
-            searchUsername = null;
-          } // verify the null value of parameter 'searchEmail'
-
-          if (typeof searchEmail === "undefined") {
-            searchEmail = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
@@ -273,13 +237,7 @@ var PersonApi =
             order: order,
             query: query,
             page: page,
-            limit: limit,
-            "search[familyName]": searchFamilyName,
-            "search[givenName]": searchGivenName,
-            "search[jobTitle]": searchJobTitle,
-            "search[telephone]": searchTelephone,
-            "search[username]": searchUsername,
-            "search[email]": searchEmail
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,
@@ -307,7 +265,7 @@ var PersonApi =
         /**
          * Retrieve one Person resource.
          * @param { String } xKeyclicApp
-         * @param { String } person The identifier of the resource formatted as GUID string.
+         * @param { String } person The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -394,7 +352,7 @@ var PersonApi =
          * Edit one Person resource.
          * @param { String } xKeyclicApp
          * @param { module:model/PersonPatch } personPatch
-         * @param { String } person The identifier of the resource formatted as GUID string.
+         * @param { String } person The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

@@ -26,41 +26,29 @@ export default class Report {
     
      * @param priority { Number }
     
-     * @param reference { String }
-    
-     * @param id { String }
-    
      * @param state { Array.<String> }
-    
-     * @param updatedAt { Date }
     
      */
   constructor(
     priority,
 
-    reference,
-
-    id,
-
-    state,
-
-    updatedAt
+    state
   ) {
-    this.description = null;
-    this.priority = priority;
-    this.reference = reference;
-    this.tags = [];
-    this.id = id;
-    this.identificationNumber = null;
-    this.state = state;
-    this.createdAt = null;
-    this.updatedAt = updatedAt;
-    this.type = null;
-    this.links = null;
     this.embedded = null;
+    this.links = null;
+    this.createdAt = null;
+    this.description = null;
+    this.id = null;
+    this.identificationNumber = null;
+    this.priority = priority;
+    this.reference = null;
+    this.state = state;
+    this.tags = [];
+    this.type = null;
+    this.updatedAt = null;
 
-    this.linksType = ReportLinks;
     this.embeddedType = ReportEmbedded;
+    this.linksType = ReportLinks;
   }
 
   /**
@@ -78,20 +66,23 @@ export default class Report {
       object = new Report();
     }
 
+    if (data.hasOwnProperty("_embedded")) {
+      object.embedded = ApiClient.convertToType(
+        data["_embedded"],
+        object.embeddedType
+      );
+    }
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
         data["description"],
         "String"
       );
-    }
-    if (data.hasOwnProperty("priority")) {
-      object.priority = ApiClient.convertToType(data["priority"], "Number");
-    }
-    if (data.hasOwnProperty("reference")) {
-      object.reference = ApiClient.convertToType(data["reference"], "String");
-    }
-    if (data.hasOwnProperty("tags")) {
-      object.tags = ApiClient.convertToType(data["tags"], "['String']");
     }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
@@ -102,26 +93,23 @@ export default class Report {
         "String"
       );
     }
+    if (data.hasOwnProperty("priority")) {
+      object.priority = ApiClient.convertToType(data["priority"], "Number");
+    }
+    if (data.hasOwnProperty("reference")) {
+      object.reference = ApiClient.convertToType(data["reference"], "String");
+    }
     if (data.hasOwnProperty("state")) {
       object.state = ApiClient.convertToType(data["state"], "['String']");
     }
-    if (data.hasOwnProperty("createdAt")) {
-      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
-    }
-    if (data.hasOwnProperty("updatedAt")) {
-      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
+    if (data.hasOwnProperty("tags")) {
+      object.tags = ApiClient.convertToType(data["tags"], "['String']");
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
     }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
-    }
-    if (data.hasOwnProperty("_embedded")) {
-      object.embedded = ApiClient.convertToType(
-        data["_embedded"],
-        object.embeddedType
-      );
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

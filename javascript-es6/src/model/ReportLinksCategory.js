@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import CategoryLinksSelfIriTemplate from "./CategoryLinksSelfIriTemplate";
+import ReportLinksCategoryIriTemplate from "./ReportLinksCategoryIriTemplate";
 
 /**
  * The ReportLinksCategory model module.
@@ -28,7 +28,7 @@ export default class ReportLinksCategory {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = CategoryLinksSelfIriTemplate;
+    this.iriTemplateType = ReportLinksCategoryIriTemplate;
   }
 
   /**

@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**file** | [**DocumentFile**](DocumentFile.md) |  | 
-**permission** | [**DocumentPermission**](DocumentPermission.md) |  | 
-**id** | **String** |  | 
-**createdAt** | **Date** |  | 
-**type** | **String** |  | [optional] 
 **links** | [**DocumentLinks**](DocumentLinks.md) |  | [optional] 
+**createdAt** | **Date** |  | [optional] 
+**file** | [**DocumentFile**](DocumentFile.md) |  | [optional] 
+**id** | **String** |  | [optional] 
+**permission** | [**DocumentPermission**](DocumentPermission.md) |  | [optional] 
+**type** | **String** |  | [optional] 
 
 

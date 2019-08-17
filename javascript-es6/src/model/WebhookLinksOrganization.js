@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import CategoryLinksOrganizationIriTemplate from "./CategoryLinksOrganizationIriTemplate";
+import WebhookLinksOrganizationIriTemplate from "./WebhookLinksOrganizationIriTemplate";
 
 /**
  * The WebhookLinksOrganization model module.
@@ -28,7 +28,7 @@ export default class WebhookLinksOrganization {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = CategoryLinksOrganizationIriTemplate;
+    this.iriTemplateType = WebhookLinksOrganizationIriTemplate;
   }
 
   /**

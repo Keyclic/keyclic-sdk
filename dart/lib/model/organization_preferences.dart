@@ -30,14 +30,11 @@ class OrganizationPreferences {
 
     return other is OrganizationPreferences &&
         runtimeType == other.runtimeType &&
-        public == other.public &&
-        reference == other.reference &&
-        reviewEnabled == other.reviewEnabled;
+        public == other.public;
   }
 
   @override
-  int get hashCode =>
-      0 ^ public.hashCode ^ reference.hashCode ^ reviewEnabled.hashCode;
+  int get hashCode => 0 ^ public.hashCode;
 
   Map<String, dynamic> toJson() {
     return {

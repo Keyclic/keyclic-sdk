@@ -30,7 +30,7 @@ let apiInstance = new @KeyclicSdkJavascript.ReviewApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let feedback = "feedback_example"; // String | The identifier of the resource formatted as GUID string.
+let feedback = "feedback_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -39,7 +39,7 @@ let opts = {
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'order': "desc", // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetReviewsByFeedback(xKeyclicApp, feedback, opts, (error, data, response) => {
@@ -56,7 +56,7 @@ apiInstance.cgetReviewsByFeedback(xKeyclicApp, feedback, opts, (error, data, res
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 
@@ -99,7 +99,7 @@ let apiInstance = new @KeyclicSdkJavascript.ReviewApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let review = "review_example"; // String | The identifier of the resource formatted as GUID string.
+let review = "review_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -120,7 +120,7 @@ apiInstance.getReview(xKeyclicApp, review, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **review** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **review** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -160,7 +160,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let reviewData = new @KeyclicSdkJavascript.ReviewData(); // ReviewData | 
 
-let reviewRequest = "reviewRequest_example"; // String | The identifier of the resource formatted as GUID string.
+let reviewRequest = "reviewRequest_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **reviewData** | [**ReviewData**](ReviewData.md)|  | 
- **reviewRequest** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **reviewRequest** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _DelegationLinksCreatedByIriTemplate = _interopRequireDefault(
-  require("./DelegationLinksCreatedByIriTemplate")
+var _DeviceLinksPersonIriTemplate = _interopRequireDefault(
+  require("./DeviceLinksPersonIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var DeviceLinksPerson =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _DelegationLinksCreatedByIriTemplate.default;
+      this.iriTemplateType = _DeviceLinksPersonIriTemplate.default;
     }
     /**
      * Constructs a "DeviceLinksPerson" from a plain JavaScript object.

@@ -28,7 +28,7 @@ let apiInstance = new @KeyclicSdkJavascript.SchemaApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let businessActivity = "businessActivity_example"; // String | The identifier of the resource formatted as GUID string.
+let businessActivity = "businessActivity_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -49,7 +49,7 @@ apiInstance.getSchemaByBusinessActivity(xKeyclicApp, businessActivity, opts, (er
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **businessActivity** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

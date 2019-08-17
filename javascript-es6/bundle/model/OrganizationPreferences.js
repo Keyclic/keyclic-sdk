@@ -51,17 +51,13 @@ var OrganizationPreferences =
   
    * @param _public { Boolean }
   
-   * @param reference { module:model/OrganizationPreferencesReference }
-  
-   * @param reviewEnabled { Boolean }
-  
    */
-    function OrganizationPreferences(_public, reference, reviewEnabled) {
+    function OrganizationPreferences(_public) {
       _classCallCheck(this, OrganizationPreferences);
 
       this._public = _public;
-      this.reference = reference;
-      this.reviewEnabled = reviewEnabled;
+      this.reference = null;
+      this.reviewEnabled = null;
       this.referenceType = _OrganizationPreferencesReference.default;
     }
     /**

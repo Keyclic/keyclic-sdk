@@ -24,8 +24,8 @@ export default class ActivitySubject {
     
      */
   constructor() {
-    this.type = null;
     this.id = null;
+    this.type = null;
   }
 
   /**
@@ -43,11 +43,11 @@ export default class ActivitySubject {
       object = new ActivitySubject();
     }
 
-    if (data.hasOwnProperty("type")) {
-      object.type = ApiClient.convertToType(data["type"], "String");
-    }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
+    }
+    if (data.hasOwnProperty("type")) {
+      object.type = ApiClient.convertToType(data["type"], "String");
     }
 
     return object;

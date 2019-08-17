@@ -9,11 +9,11 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getApplicationByToken**](ApplicationApi.md#getApplicationByToken) | **GET** /applications/{token} | Retrieve one Application resource.
+[**getApplication**](ApplicationApi.md#getApplication) | **GET** /applications/{application} | Retrieve one Application resource.
 
 
-# **getApplicationByToken**
-> Application getApplicationByToken(xKeyclicApp, token, acceptLanguage, xKeyclicAppVersion)
+# **getApplication**
+> Application getApplication(xKeyclicApp, application, acceptLanguage, xKeyclicAppVersion)
 
 Retrieve one Application resource.
 
@@ -23,15 +23,15 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = ApplicationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var token = token_example; // String | 
+var application = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getApplicationByToken(xKeyclicApp, token, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getApplication(xKeyclicApp, application, acceptLanguage, xKeyclicAppVersion);
     print(result);
 } catch (e) {
-    print("Exception when calling ApplicationApi->getApplicationByToken: $e\n");
+    print("Exception when calling ApplicationApi->getApplication: $e\n");
 }
 ```
 
@@ -40,7 +40,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **token** | **String**|  | 
+ **application** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

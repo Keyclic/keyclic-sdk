@@ -155,7 +155,7 @@ var StateApi =
     /**
      * Edit one State resource.
      * @param { String } xKeyclicApp
-     * @param { String } feedback The identifier of the resource formatted as GUID string.
+     * @param { String } feedback The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -248,7 +248,7 @@ var StateApi =
         /**
          * Edit one State resource.
          * @param { String } xKeyclicApp
-         * @param { String } operation The identifier of the resource formatted as GUID string.
+         * @param { String } operation The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -340,7 +340,7 @@ var StateApi =
         /**
          * Edit one State resource.
          * @param { String } xKeyclicApp
-         * @param { String } report The identifier of the resource formatted as GUID string.
+         * @param { String } report The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

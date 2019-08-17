@@ -2,25 +2,25 @@ part of keyclic_sdk_api.api;
 
 class OperationSignature {
   OperationSignature({
-    this.signer,
     this.signedAt,
+    this.signer,
   });
 
   OperationSignature.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    signer = OperationSignatureSigner.fromJson(json['signer']);
     signedAt =
         json['signedAt'] == null ? null : DateTime.parse(json['signedAt']);
     if (signedAt is DateTime && signedAt.isUtc == false) {
       signedAt = DateTime.parse('${signedAt.toIso8601String()}Z');
     }
+    signer = OperationSignatureSigner.fromJson(json['signer']);
   }
 
-  OperationSignatureSigner signer;
-
   DateTime signedAt;
+
+  OperationSignatureSigner signer;
 
   @override
   bool operator ==(dynamic other) {
@@ -28,25 +28,22 @@ class OperationSignature {
       return true;
     }
 
-    return other is OperationSignature &&
-        runtimeType == other.runtimeType &&
-        signer == other.signer &&
-        signedAt == other.signedAt;
+    return other is OperationSignature && runtimeType == other.runtimeType;
   }
 
   @override
-  int get hashCode => 0 ^ signer.hashCode ^ signedAt.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {
-      'signer': signer,
       'signedAt': signedAt == null ? '' : signedAt.toUtc().toIso8601String(),
+      'signer': signer,
     };
   }
 
   @override
   String toString() {
-    return 'OperationSignature[signer=$signer, signedAt=$signedAt, ]';
+    return 'OperationSignature[signedAt=$signedAt, signer=$signer, ]';
   }
 
   static List<OperationSignature> listFromJson(List<dynamic> json) {

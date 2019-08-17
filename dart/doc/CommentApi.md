@@ -30,7 +30,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = CommentApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var feedback = ; // String | The identifier of the resource formatted as GUID string.
+var feedback = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var page = 56; // int | Page of the overview.
@@ -49,7 +49,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
@@ -85,7 +85,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = CommentApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var operation = ; // String | The identifier of the resource formatted as GUID string.
+var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var page = 56; // int | Page of the overview.
@@ -104,7 +104,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
@@ -141,7 +141,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = CommentApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var commentData = CommentData(); // CommentData | 
-var feedback = ; // String | The identifier of the resource formatted as GUID string.
+var feedback = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **commentData** | [**CommentData**](CommentData.md)|  | 
- **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -194,7 +194,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = CommentApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var commentData = CommentData(); // CommentData | 
-var operation = ; // String | The identifier of the resource formatted as GUID string.
+var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **commentData** | [**CommentData**](CommentData.md)|  | 
- **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

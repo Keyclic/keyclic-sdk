@@ -2,33 +2,41 @@ part of keyclic_sdk_api.api;
 
 class Delegation {
   Delegation({
-    this.id,
-    this.createdAt,
-    this.type,
     this.links,
+    this.createdAt,
+    this.description,
+    this.id,
+    this.state,
+    this.type,
   });
 
   Delegation.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    id = json['id'];
+    links = DelegationLinks.fromJson(json['_links']);
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
+    description = json['description'];
+    id = json['id'];
+    state = (json['state'] as List)?.map((item) => item as String)?.toList();
     type = json['type'];
-    links = DelegationLinks.fromJson(json['_links']);
   }
 
-  String id;
+  DelegationLinks links;
 
   DateTime createdAt;
 
-  String type;
+  String description;
 
-  DelegationLinks links;
+  String id;
+
+  List<String> state;
+
+  String type;
 
   @override
   bool operator ==(dynamic other) {
@@ -38,25 +46,26 @@ class Delegation {
 
     return other is Delegation &&
         runtimeType == other.runtimeType &&
-        id == other.id &&
-        createdAt == other.createdAt;
+        DeepCollectionEquality.unordered().equals(state, other.state);
   }
 
   @override
-  int get hashCode => 0 ^ id.hashCode ^ createdAt.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'type': type,
       '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
+      'description': description,
+      'id': id,
+      'state': state,
+      'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'Delegation[id=$id, createdAt=$createdAt, type=$type, links=$links, ]';
+    return 'Delegation[links=$links, createdAt=$createdAt, description=$description, id=$id, state=$state, type=$type, ]';
   }
 
   static List<Delegation> listFromJson(List<dynamic> json) {

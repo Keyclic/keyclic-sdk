@@ -24,16 +24,12 @@ export default class DelegateData {
     
      * @param report { String }
     
-     * @param organization { String }
-    
      */
-  constructor(
-    report,
-
-    organization
-  ) {
+  constructor(report) {
+    this.description = null;
+    this.organization = null;
     this.report = report;
-    this.organization = organization;
+    this.service = null;
   }
 
   /**
@@ -51,14 +47,23 @@ export default class DelegateData {
       object = new DelegateData();
     }
 
-    if (data.hasOwnProperty("report")) {
-      object.report = ApiClient.convertToType(data["report"], "String");
+    if (data.hasOwnProperty("description")) {
+      object.description = ApiClient.convertToType(
+        data["description"],
+        "String"
+      );
     }
     if (data.hasOwnProperty("organization")) {
       object.organization = ApiClient.convertToType(
         data["organization"],
         "String"
       );
+    }
+    if (data.hasOwnProperty("report")) {
+      object.report = ApiClient.convertToType(data["report"], "String");
+    }
+    if (data.hasOwnProperty("service")) {
+      object.service = ApiClient.convertToType(data["service"], "String");
     }
 
     return object;

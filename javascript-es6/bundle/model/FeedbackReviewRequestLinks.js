@@ -69,16 +69,16 @@ var FeedbackReviewRequestLinks =
     function FeedbackReviewRequestLinks() {
       _classCallCheck(this, FeedbackReviewRequestLinks);
 
-      this.self = null;
       this.itemToReview = null;
       this.organization = null;
-      this.reviewer = null;
       this.review = null;
-      this.selfType = _FeedbackReviewRequestLinksSelf.default;
+      this.reviewer = null;
+      this.self = null;
       this.itemToReviewType = _FeedbackReviewRequestLinksItemToReview.default;
       this.organizationType = _FeedbackReviewRequestLinksOrganization.default;
-      this.reviewerType = _FeedbackReviewRequestLinksReviewer.default;
       this.reviewType = _FeedbackReviewRequestLinksReview.default;
+      this.reviewerType = _FeedbackReviewRequestLinksReviewer.default;
+      this.selfType = _FeedbackReviewRequestLinksSelf.default;
     }
     /**
      * Constructs a "FeedbackReviewRequestLinks" from a plain JavaScript object.
@@ -104,13 +104,6 @@ var FeedbackReviewRequestLinks =
             object = new FeedbackReviewRequestLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
-          }
-
           if (data.hasOwnProperty("itemToReview")) {
             object.itemToReview = _ApiClient.default.convertToType(
               data["itemToReview"],
@@ -125,6 +118,13 @@ var FeedbackReviewRequestLinks =
             );
           }
 
+          if (data.hasOwnProperty("review")) {
+            object.review = _ApiClient.default.convertToType(
+              data["review"],
+              object.reviewType
+            );
+          }
+
           if (data.hasOwnProperty("reviewer")) {
             object.reviewer = _ApiClient.default.convertToType(
               data["reviewer"],
@@ -132,10 +132,10 @@ var FeedbackReviewRequestLinks =
             );
           }
 
-          if (data.hasOwnProperty("review")) {
-            object.review = _ApiClient.default.convertToType(
-              data["review"],
-              object.reviewType
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 

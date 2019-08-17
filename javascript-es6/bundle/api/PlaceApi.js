@@ -151,7 +151,7 @@ var PlaceApi =
      * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+     * @param { String } businessActivity The identifier of the resource.
      * @param { module:model/Date } after
      * @param { module:model/Date } before
      * @param { String } geoElevation
@@ -159,15 +159,12 @@ var PlaceApi =
      * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { module:model/String } order   (default to desc)
-     * @param { String } organization The identifier of the resource formatted as GUID string.
-     * @param { String } parent The identifier of the resource formatted as GUID string.
-     * @param { String } parents The identifier of the resource formatted as GUID string.
+     * @param { String } organization The identifier of the resource.
+     * @param { String } parent The identifier of the resource.
+     * @param { String } parents The identifier of the resource.
      * @param { String } query
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { String } searchBranchCode
-     * @param { String } searchDescription
-     * @param { String } searchName
      */
 
     _createClass(PlaceApi, [
@@ -201,10 +198,7 @@ var PlaceApi =
             parents = options.parents,
             query = options.query,
             page = options.page,
-            limit = options.limit,
-            searchBranchCode = options.searchBranchCode,
-            searchDescription = options.searchDescription,
-            searchName = options.searchName; // verify the required parameter 'xKeyclicApp' is set
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -277,18 +271,6 @@ var PlaceApi =
 
           if (typeof query === "undefined") {
             query = null;
-          } // verify the null value of parameter 'searchBranchCode'
-
-          if (typeof searchBranchCode === "undefined") {
-            searchBranchCode = null;
-          } // verify the null value of parameter 'searchDescription'
-
-          if (typeof searchDescription === "undefined") {
-            searchDescription = null;
-          } // verify the null value of parameter 'searchName'
-
-          if (typeof searchName === "undefined") {
-            searchName = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
@@ -313,10 +295,7 @@ var PlaceApi =
             "parents[]": parents,
             query: query,
             page: page,
-            limit: limit,
-            "search[branchCode]": searchBranchCode,
-            "search[description]": searchDescription,
-            "search[name]": searchName
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,
@@ -344,12 +323,12 @@ var PlaceApi =
         /**
          * Retrieve all Place resources.
          * @param { String } xKeyclicApp
-         * @param { String } organization The identifier of the resource formatted as GUID string.
+         * @param { String } organization The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
          * @param { String } xKeyclicAppVersion
-         * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+         * @param { String } businessActivity The identifier of the resource.
          * @param { module:model/Date } after
          * @param { module:model/Date } before
          * @param { String } geoElevation
@@ -357,14 +336,11 @@ var PlaceApi =
          * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
          * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
          * @param { module:model/String } order   (default to desc)
-         * @param { String } parent The identifier of the resource formatted as GUID string.
-         * @param { String } parents The identifier of the resource formatted as GUID string.
+         * @param { String } parent The identifier of the resource.
+         * @param { String } parents The identifier of the resource.
          * @param { String } query
          * @param { Number } page Page of the overview.  (default to 1)
          * @param { Number } limit Page of the overview.  (default to 10)
-         * @param { String } searchBranchCode
-         * @param { String } searchDescription
-         * @param { String } searchName
          */
       },
       {
@@ -397,10 +373,7 @@ var PlaceApi =
             parents = options.parents,
             query = options.query,
             page = options.page,
-            limit = options.limit,
-            searchBranchCode = options.searchBranchCode,
-            searchDescription = options.searchDescription,
-            searchName = options.searchName; // verify the required parameter 'xKeyclicApp' is set
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -475,18 +448,6 @@ var PlaceApi =
 
           if (typeof query === "undefined") {
             query = null;
-          } // verify the null value of parameter 'searchBranchCode'
-
-          if (typeof searchBranchCode === "undefined") {
-            searchBranchCode = null;
-          } // verify the null value of parameter 'searchDescription'
-
-          if (typeof searchDescription === "undefined") {
-            searchDescription = null;
-          } // verify the null value of parameter 'searchName'
-
-          if (typeof searchName === "undefined") {
-            searchName = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
@@ -512,10 +473,7 @@ var PlaceApi =
             "parents[]": parents,
             query: query,
             page: page,
-            limit: limit,
-            "search[branchCode]": searchBranchCode,
-            "search[description]": searchDescription,
-            "search[name]": searchName
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,
@@ -543,7 +501,7 @@ var PlaceApi =
         /**
          * Retrieve one Place resource.
          * @param { String } xKeyclicApp
-         * @param { String } place The identifier of the resource formatted as GUID string.
+         * @param { String } place The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Place }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -630,7 +588,7 @@ var PlaceApi =
          * Edit one Place resource.
          * @param { String } xKeyclicApp
          * @param { module:model/PlacePatch } placePatch
-         * @param { String } place The identifier of the resource formatted as GUID string.
+         * @param { String } place The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Place }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -724,7 +682,7 @@ var PlaceApi =
          * Create one Place resource.
          * @param { String } xKeyclicApp
          * @param { module:model/PlaceData } placeData
-         * @param { String } organization The identifier of the resource formatted as GUID string.
+         * @param { String } organization The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Place }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

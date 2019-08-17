@@ -47,10 +47,10 @@
   }
 
   describe('ApplicationApi', function() {
-    describe('getApplicationByToken', function() {
-      it('should call getApplicationByToken successfully', function(done) {
-        //uncomment below and update the code to test getApplicationByToken
-        //instance.getApplicationByToken(function(error) {
+    describe('getApplication', function() {
+      it('should call getApplication successfully', function(done) {
+        //uncomment below and update the code to test getApplication
+        //instance.getApplication(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

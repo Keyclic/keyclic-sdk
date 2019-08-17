@@ -2,51 +2,59 @@ part of keyclic_sdk_api.api;
 
 class Person {
   Person({
+    this.links,
+    this.createdAt,
+    this.email,
     this.familyName,
     this.givenName,
+    this.id,
     this.jobTitle,
     this.optIn,
     this.preferences,
     this.telephone,
-    this.id,
-    this.username,
-    this.email,
-    this.createdAt,
-    this.updatedAt,
     this.type,
-    this.links,
+    this.updatedAt,
+    this.username,
   });
 
   Person.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    familyName = json['familyName'];
-    givenName = json['givenName'];
-    jobTitle = json['jobTitle'];
-    optIn = json['optIn'];
-    preferences = PersonPreferences.fromJson(json['preferences']);
-    telephone = json['telephone'];
-    id = json['id'];
-    username = json['username'];
-    email = json['email'];
+    links = PersonLinks.fromJson(json['_links']);
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
+    email = json['email'];
+    familyName = json['familyName'];
+    givenName = json['givenName'];
+    id = json['id'];
+    jobTitle = json['jobTitle'];
+    optIn = json['optIn'];
+    preferences = PersonPreferences.fromJson(json['preferences']);
+    telephone = json['telephone'];
+    type = json['type'];
     updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
-    type = json['type'];
-    links = PersonLinks.fromJson(json['_links']);
+    username = json['username'];
   }
+
+  PersonLinks links;
+
+  DateTime createdAt;
+
+  String email;
 
   String familyName;
 
   String givenName;
+
+  String id;
 
   String jobTitle;
 
@@ -56,19 +64,11 @@ class Person {
 
   String telephone;
 
-  String id;
-
-  String username;
-
-  String email;
-
-  DateTime createdAt;
+  String type;
 
   DateTime updatedAt;
 
-  String type;
-
-  PersonLinks links;
+  String username;
 
   @override
   bool operator ==(dynamic other) {
@@ -78,43 +78,33 @@ class Person {
 
     return other is Person &&
         runtimeType == other.runtimeType &&
-        optIn == other.optIn &&
-        preferences == other.preferences &&
-        id == other.id &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        optIn == other.optIn;
   }
 
   @override
-  int get hashCode =>
-      0 ^
-      optIn.hashCode ^
-      preferences.hashCode ^
-      id.hashCode ^
-      createdAt.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode => 0 ^ optIn.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
+      '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
+      'email': email,
       'familyName': familyName,
       'givenName': givenName,
+      'id': id,
       'jobTitle': jobTitle,
       'optIn': optIn,
       'preferences': preferences,
       'telephone': telephone,
-      'id': id,
-      'username': username,
-      'email': email,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
       'type': type,
-      '_links': links,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
+      'username': username,
     };
   }
 
   @override
   String toString() {
-    return 'Person[familyName=$familyName, givenName=$givenName, jobTitle=$jobTitle, optIn=$optIn, preferences=$preferences, telephone=$telephone, id=$id, username=$username, email=$email, createdAt=$createdAt, updatedAt=$updatedAt, type=$type, links=$links, ]';
+    return 'Person[links=$links, createdAt=$createdAt, email=$email, familyName=$familyName, givenName=$givenName, id=$id, jobTitle=$jobTitle, optIn=$optIn, preferences=$preferences, telephone=$telephone, type=$type, updatedAt=$updatedAt, username=$username, ]';
   }
 
   static List<Person> listFromJson(List<dynamic> json) {

@@ -2,21 +2,21 @@ part of keyclic_sdk_api.api;
 
 class CategoryLinks {
   CategoryLinks({
-    this.self,
     this.organization,
+    this.self,
   });
 
   CategoryLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    self = CategoryLinksSelf.fromJson(json['self']);
     organization = CategoryLinksOrganization.fromJson(json['organization']);
+    self = CategoryLinksSelf.fromJson(json['self']);
   }
 
-  CategoryLinksSelf self;
-
   CategoryLinksOrganization organization;
+
+  CategoryLinksSelf self;
 
   @override
   bool operator ==(dynamic other) {
@@ -32,14 +32,14 @@ class CategoryLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
       'organization': organization,
+      'self': self,
     };
   }
 
   @override
   String toString() {
-    return 'CategoryLinks[self=$self, organization=$organization, ]';
+    return 'CategoryLinks[organization=$organization, self=$self, ]';
   }
 
   static List<CategoryLinks> listFromJson(List<dynamic> json) {

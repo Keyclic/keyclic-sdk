@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _ApiClient2 = _interopRequireDefault(require("../ApiClient"));
 
+var _Delegation = _interopRequireDefault(require("../model/Delegation"));
+
 var _Error = _interopRequireDefault(require("../model/Error"));
 
 var _Feedback = _interopRequireDefault(require("../model/Feedback"));
@@ -155,15 +157,112 @@ var TransitionApi =
     /**
      * Create one Transition resource.
      * @param { String } xKeyclicApp
-     * @param { module:model/FeedbackWorkflowTransitionData } feedbackWorkflowTransitionData
-     * @param { String } feedback The identifier of the resource formatted as GUID string.
+     * @param { module:model/ReportWorkflowTransitionData } reportWorkflowTransitionData
+     * @param { String } delegation The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+     * @param { Delegation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
      */
 
     _createClass(TransitionApi, [
+      {
+        key: "postTransitionByDelegation",
+        value: function postTransitionByDelegation() {
+          var returnType =
+            arguments.length > 0 && arguments[0] !== undefined
+              ? arguments[0]
+              : null;
+          var options = arguments.length > 1 ? arguments[1] : undefined;
+          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+
+          if (returnType === null) {
+            returnType = _Delegation.default;
+          }
+
+          var xKeyclicApp = options.xKeyclicApp,
+            reportWorkflowTransitionData = options.reportWorkflowTransitionData,
+            delegation = options.delegation,
+            acceptLanguage = options.acceptLanguage,
+            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+            throw new window.Error(
+              'Missing the required parameter "xKeyclicApp" when calling postTransitionByDelegation'
+            );
+          } // verify the required parameter 'reportWorkflowTransitionData' is set
+
+          if (
+            typeof reportWorkflowTransitionData === "undefined" ||
+            reportWorkflowTransitionData === null
+          ) {
+            throw new window.Error(
+              'Missing the required parameter "reportWorkflowTransitionData" when calling postTransitionByDelegation'
+            );
+          } // verify the required parameter 'delegation' is set
+
+          if (typeof delegation === "undefined" || delegation === null) {
+            throw new window.Error(
+              'Missing the required parameter "delegation" when calling postTransitionByDelegation'
+            );
+          } // verify the default value of parameter 'acceptLanguage'
+
+          if (
+            typeof acceptLanguage === "undefined" ||
+            acceptLanguage === null
+          ) {
+            acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xKeyclicAppVersion'
+
+          if (typeof xKeyclicAppVersion === "undefined") {
+            xKeyclicAppVersion = null;
+          }
+
+          if (typeof credentials === "undefined" || credentials === null) {
+            throw new window.Error(
+              'Missing the required parameter "credentials" when calling postTransitionByDelegation'
+            );
+          }
+
+          var pathParams = {
+            delegation: delegation
+          };
+          var bodyParam = reportWorkflowTransitionData;
+          var queryParams = {};
+          var headerParams = {
+            "accept-language": acceptLanguage,
+            "x-keyclic-app": xKeyclicApp,
+            "x-keyclic-app-version": xKeyclicAppVersion
+          };
+          var credentialParams = credentials;
+          var authNames = ["bearer"];
+          var contentTypes = ["application/json;charset=UTF-8"];
+          var accepts = ["application/hal+json;charset=UTF-8"];
+          return this.callApi(
+            "/delegations/{delegation}/workflow/transition",
+            "POST",
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+          );
+        }
+        /**
+         * Create one Transition resource.
+         * @param { String } xKeyclicApp
+         * @param { module:model/FeedbackWorkflowTransitionData } feedbackWorkflowTransitionData
+         * @param { String } feedback The identifier of the resource.
+         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+         * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+         * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { String } xKeyclicAppVersion
+         */
+      },
       {
         key: "postTransitionByFeedback",
         value: function postTransitionByFeedback() {
@@ -255,7 +354,7 @@ var TransitionApi =
          * Create one Transition resource.
          * @param { String } xKeyclicApp
          * @param { module:model/OperationWorkflowTransitionData } operationWorkflowTransitionData
-         * @param { String } operation The identifier of the resource formatted as GUID string.
+         * @param { String } operation The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -353,7 +452,7 @@ var TransitionApi =
          * Create one Transition resource.
          * @param { String } xKeyclicApp
          * @param { module:model/ReportWorkflowTransitionData } reportWorkflowTransitionData
-         * @param { String } report The identifier of the resource formatted as GUID string.
+         * @param { String } report The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

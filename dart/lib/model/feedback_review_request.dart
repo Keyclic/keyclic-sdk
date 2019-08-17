@@ -2,41 +2,41 @@ part of keyclic_sdk_api.api;
 
 class FeedbackReviewRequest {
   FeedbackReviewRequest({
-    this.id,
-    this.createdAt,
-    this.updatedAt,
-    this.type,
     this.links,
+    this.createdAt,
+    this.id,
+    this.type,
+    this.updatedAt,
   });
 
   FeedbackReviewRequest.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    id = json['id'];
+    links = FeedbackReviewRequestLinks.fromJson(json['_links']);
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
+    id = json['id'];
+    type = json['type'];
     updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
-    type = json['type'];
-    links = FeedbackReviewRequestLinks.fromJson(json['_links']);
   }
 
-  String id;
+  FeedbackReviewRequestLinks links;
 
   DateTime createdAt;
 
-  DateTime updatedAt;
+  String id;
 
   String type;
 
-  FeedbackReviewRequestLinks links;
+  DateTime updatedAt;
 
   @override
   bool operator ==(dynamic other) {
@@ -44,29 +44,25 @@ class FeedbackReviewRequest {
       return true;
     }
 
-    return other is FeedbackReviewRequest &&
-        runtimeType == other.runtimeType &&
-        id == other.id &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+    return other is FeedbackReviewRequest && runtimeType == other.runtimeType;
   }
 
   @override
-  int get hashCode => 0 ^ id.hashCode ^ createdAt.hashCode ^ updatedAt.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
-      'type': type,
       '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
+      'id': id,
+      'type': type,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'FeedbackReviewRequest[id=$id, createdAt=$createdAt, updatedAt=$updatedAt, type=$type, links=$links, ]';
+    return 'FeedbackReviewRequest[links=$links, createdAt=$createdAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
   }
 
   static List<FeedbackReviewRequest> listFromJson(List<dynamic> json) {

@@ -53,20 +53,26 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.Category);
     });
 
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
+      //var instane = new @KeyclicSdkJavascript.Category();
+      //expect(instance).to.be();
+    });
+
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
       //var instane = new @KeyclicSdkJavascript.Category();
       //expect(instance).to.be();
     });
 
-    it('should have the property icon (base name: "icon")', function() {
-      // uncomment below and update the code to test the property icon
+    it('should have the property createdAt (base name: "createdAt")', function() {
+      // uncomment below and update the code to test the property createdAt
       //var instane = new @KeyclicSdkJavascript.Category();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property icon (base name: "icon")', function() {
+      // uncomment below and update the code to test the property icon
       //var instane = new @KeyclicSdkJavascript.Category();
       //expect(instance).to.be();
     });
@@ -83,20 +89,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "createdAt")', function() {
-      // uncomment below and update the code to test the property createdAt
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
       //var instane = new @KeyclicSdkJavascript.Category();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new @KeyclicSdkJavascript.Category();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
       //var instane = new @KeyclicSdkJavascript.Category();
       //expect(instance).to.be();
     });

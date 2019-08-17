@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import OperationLinksSelfIriTemplate from "./OperationLinksSelfIriTemplate";
+import OperationLinksTrackingIriTemplate from "./OperationLinksTrackingIriTemplate";
 
 /**
  * The OperationLinksTracking model module.
@@ -28,7 +28,7 @@ export default class OperationLinksTracking {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = OperationLinksSelfIriTemplate;
+    this.iriTemplateType = OperationLinksTrackingIriTemplate;
   }
 
   /**

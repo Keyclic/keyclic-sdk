@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import FeedbackLinksImagesIriTemplate from "./FeedbackLinksImagesIriTemplate";
 
 /**
  * The FeedbackLinksImages model module.
@@ -25,6 +26,9 @@ export default class FeedbackLinksImages {
      */
   constructor() {
     this.href = null;
+    this.iriTemplate = null;
+
+    this.iriTemplateType = FeedbackLinksImagesIriTemplate;
   }
 
   /**
@@ -44,6 +48,12 @@ export default class FeedbackLinksImages {
 
     if (data.hasOwnProperty("href")) {
       object.href = ApiClient.convertToType(data["href"], "String");
+    }
+    if (data.hasOwnProperty("iriTemplate")) {
+      object.iriTemplate = ApiClient.convertToType(
+        data["iriTemplate"],
+        object.iriTemplateType
+      );
     }
 
     return object;

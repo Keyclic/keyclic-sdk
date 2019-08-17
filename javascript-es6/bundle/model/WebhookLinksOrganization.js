@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CategoryLinksOrganizationIriTemplate = _interopRequireDefault(
-  require("./CategoryLinksOrganizationIriTemplate")
+var _WebhookLinksOrganizationIriTemplate = _interopRequireDefault(
+  require("./WebhookLinksOrganizationIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var WebhookLinksOrganization =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _CategoryLinksOrganizationIriTemplate.default;
+      this.iriTemplateType = _WebhookLinksOrganizationIriTemplate.default;
     }
     /**
      * Constructs a "WebhookLinksOrganization" from a plain JavaScript object.

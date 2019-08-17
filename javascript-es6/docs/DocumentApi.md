@@ -32,7 +32,7 @@ let apiInstance = new @KeyclicSdkJavascript.DocumentApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let report = "report_example"; // String | The identifier of the resource formatted as GUID string.
+let report = "report_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -41,7 +41,7 @@ let opts = {
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'order': "desc", // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetDocumentsByReport(xKeyclicApp, report, opts, (error, data, response) => {
@@ -58,7 +58,7 @@ apiInstance.cgetDocumentsByReport(xKeyclicApp, report, opts, (error, data, respo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 
@@ -101,7 +101,7 @@ let apiInstance = new @KeyclicSdkJavascript.DocumentApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let document = "document_example"; // String | The identifier of the resource formatted as GUID string.
+let document = "document_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -122,7 +122,7 @@ apiInstance.deleteDocument(xKeyclicApp, document, opts, (error, data, response) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **document** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **document** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -160,7 +160,7 @@ let apiInstance = new @KeyclicSdkJavascript.DocumentApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let document = "document_example"; // String | The identifier of the resource formatted as GUID string.
+let document = "document_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -181,7 +181,7 @@ apiInstance.getDocument(xKeyclicApp, document, opts, (error, data, response) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **document** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **document** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -221,7 +221,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let documentPatch = new @KeyclicSdkJavascript.DocumentPatch(); // DocumentPatch | 
 
-let document = "document_example"; // String | The identifier of the resource formatted as GUID string.
+let document = "document_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **documentPatch** | [**DocumentPatch**](DocumentPatch.md)|  | 
- **document** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **document** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -283,7 +283,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let documentData = new @KeyclicSdkJavascript.DocumentData(); // DocumentData | 
 
-let report = "report_example"; // String | The identifier of the resource formatted as GUID string.
+let report = "report_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **documentData** | [**DocumentData**](DocumentData.md)|  | 
- **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

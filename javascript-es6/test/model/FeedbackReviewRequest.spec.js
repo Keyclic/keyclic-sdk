@@ -53,8 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.FeedbackReviewRequest);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
       //var instane = new @KeyclicSdkJavascript.FeedbackReviewRequest();
       //expect(instance).to.be();
     });
@@ -65,8 +65,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property updatedAt (base name: "updatedAt")', function() {
-      // uncomment below and update the code to test the property updatedAt
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new @KeyclicSdkJavascript.FeedbackReviewRequest();
       //expect(instance).to.be();
     });
@@ -77,8 +77,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property updatedAt (base name: "updatedAt")', function() {
+      // uncomment below and update the code to test the property updatedAt
       //var instane = new @KeyclicSdkJavascript.FeedbackReviewRequest();
       //expect(instance).to.be();
     });

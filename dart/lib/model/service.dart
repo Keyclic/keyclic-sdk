@@ -3,11 +3,12 @@ part of keyclic_sdk_api.api;
 class Service {
   Service({
     this.contactPoint,
+    this.createdAt,
     this.description,
-    this.name,
     this.id,
+    this.name,
     this.type,
-    this.links,
+    this.updatedAt,
   });
 
   Service.fromJson(Map<String, dynamic> json) {
@@ -15,24 +16,35 @@ class Service {
       return;
     }
     contactPoint = ServiceContactPoint.fromJson(json['contactPoint']);
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    if (createdAt is DateTime && createdAt.isUtc == false) {
+      createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
+    }
     description = json['description'];
-    name = json['name'];
     id = json['id'];
+    name = json['name'];
     type = json['type'];
-    links = ServiceLinks.fromJson(json['_links']);
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    if (updatedAt is DateTime && updatedAt.isUtc == false) {
+      updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
+    }
   }
 
   ServiceContactPoint contactPoint;
 
-  String description;
+  DateTime createdAt;
 
-  String name;
+  String description;
 
   String id;
 
+  String name;
+
   String type;
 
-  ServiceLinks links;
+  DateTime updatedAt;
 
   @override
   bool operator ==(dynamic other) {
@@ -42,28 +54,27 @@ class Service {
 
     return other is Service &&
         runtimeType == other.runtimeType &&
-        contactPoint == other.contactPoint &&
-        name == other.name &&
-        id == other.id;
+        name == other.name;
   }
 
   @override
-  int get hashCode => 0 ^ contactPoint.hashCode ^ name.hashCode ^ id.hashCode;
+  int get hashCode => 0 ^ name.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
       'contactPoint': contactPoint,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
       'description': description,
-      'name': name,
       'id': id,
+      'name': name,
       'type': type,
-      '_links': links,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'Service[contactPoint=$contactPoint, description=$description, name=$name, id=$id, type=$type, links=$links, ]';
+    return 'Service[contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
   }
 
   static List<Service> listFromJson(List<dynamic> json) {

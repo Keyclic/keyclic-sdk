@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import ReviewLinksSelfIriTemplateMapping from "./ReviewLinksSelfIriTemplateMapping";
+import FeedbackReviewRequestLinksReviewIriTemplateMapping from "./FeedbackReviewRequestLinksReviewIriTemplateMapping";
 
 /**
  * The ReviewLinksSelfIriTemplate model module.
@@ -27,7 +27,7 @@ export default class ReviewLinksSelfIriTemplate {
   constructor() {
     this.mapping = null;
 
-    this.mappingType = ReviewLinksSelfIriTemplateMapping;
+    this.mappingType = FeedbackReviewRequestLinksReviewIriTemplateMapping;
   }
 
   /**

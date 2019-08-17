@@ -28,13 +28,13 @@ let apiInstance = new @KeyclicSdkJavascript.AnalyticApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+let organization = "organization_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'category': "category_example", // String | The identifier of the resource formatted as GUID string.
-  'place': "place_example", // String | The identifier of the resource formatted as GUID string.
+  'category': "category_example", // String | The identifier of the resource.
+  'place': "place_example", // String | The identifier of the resource.
   'state': "state_example", // String | 
   'optionsProperty': "optionsProperty_example", // String | 
   'optionsSort': "optionsSort_example" // String | 
@@ -54,11 +54,11 @@ apiInstance.getAnalyticByOrganization(xKeyclicApp, organization, opts, (error, d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **category** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **place** | [**String**](.md)| The identifier of the resource. | [optional] 
  **state** | **String**|  | [optional] 
  **optionsProperty** | **String**|  | [optional] 
  **optionsSort** | **String**|  | [optional] 

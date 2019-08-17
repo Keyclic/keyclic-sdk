@@ -29,13 +29,13 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = PublicationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
-var place = ; // String | The identifier of the resource formatted as GUID string.
+var place = ; // String | The identifier of the resource.
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
@@ -52,13 +52,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **place** | [**String**](.md)| The identifier of the resource. | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
@@ -92,8 +92,8 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = PublicationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
-var publication = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
+var publication = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -110,8 +110,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **publication** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
+ **publication** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -146,7 +146,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = PublicationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var publicationData = PublicationData(); // PublicationData | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **publicationData** | [**PublicationData**](PublicationData.md)|  | 
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

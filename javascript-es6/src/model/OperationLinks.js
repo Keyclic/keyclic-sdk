@@ -11,10 +11,10 @@
  */
 
 import ApiClient from "../ApiClient";
-import FeedbackLinksImages from "./FeedbackLinksImages";
 import OperationLinksCreatedBy from "./OperationLinksCreatedBy";
 import OperationLinksFeedback from "./OperationLinksFeedback";
 import OperationLinksImage from "./OperationLinksImage";
+import OperationLinksImages from "./OperationLinksImages";
 import OperationLinksOperator from "./OperationLinksOperator";
 import OperationLinksReport from "./OperationLinksReport";
 import OperationLinksSelf from "./OperationLinksSelf";
@@ -32,23 +32,23 @@ export default class OperationLinks {
     
      */
   constructor() {
-    this.self = null;
-    this.image = null;
-    this.feedback = null;
-    this.report = null;
-    this.operator = null;
     this.createdBy = null;
-    this.tracking = null;
+    this.feedback = null;
+    this.image = null;
     this.images = [];
+    this.operator = null;
+    this.report = null;
+    this.self = null;
+    this.tracking = null;
 
-    this.selfType = OperationLinksSelf;
-    this.imageType = OperationLinksImage;
-    this.feedbackType = OperationLinksFeedback;
-    this.reportType = OperationLinksReport;
-    this.operatorType = OperationLinksOperator;
     this.createdByType = OperationLinksCreatedBy;
+    this.feedbackType = OperationLinksFeedback;
+    this.imageType = OperationLinksImage;
+    this.imagesType = OperationLinksImages;
+    this.operatorType = OperationLinksOperator;
+    this.reportType = OperationLinksReport;
+    this.selfType = OperationLinksSelf;
     this.trackingType = OperationLinksTracking;
-    this.imagesType = FeedbackLinksImages;
   }
 
   /**
@@ -66,16 +66,30 @@ export default class OperationLinks {
       object = new OperationLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
-    }
-    if (data.hasOwnProperty("image")) {
-      object.image = ApiClient.convertToType(data["image"], object.imageType);
+    if (data.hasOwnProperty("createdBy")) {
+      object.createdBy = ApiClient.convertToType(
+        data["createdBy"],
+        object.createdByType
+      );
     }
     if (data.hasOwnProperty("feedback")) {
       object.feedback = ApiClient.convertToType(
         data["feedback"],
         object.feedbackType
+      );
+    }
+    if (data.hasOwnProperty("image")) {
+      object.image = ApiClient.convertToType(data["image"], object.imageType);
+    }
+    if (data.hasOwnProperty("images")) {
+      object.images = ApiClient.convertToType(data["images"], [
+        object.imagesType
+      ]);
+    }
+    if (data.hasOwnProperty("operator")) {
+      object.operator = ApiClient.convertToType(
+        data["operator"],
+        object.operatorType
       );
     }
     if (data.hasOwnProperty("report")) {
@@ -84,28 +98,14 @@ export default class OperationLinks {
         object.reportType
       );
     }
-    if (data.hasOwnProperty("operator")) {
-      object.operator = ApiClient.convertToType(
-        data["operator"],
-        object.operatorType
-      );
-    }
-    if (data.hasOwnProperty("createdBy")) {
-      object.createdBy = ApiClient.convertToType(
-        data["createdBy"],
-        object.createdByType
-      );
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
     if (data.hasOwnProperty("tracking")) {
       object.tracking = ApiClient.convertToType(
         data["tracking"],
         object.trackingType
       );
-    }
-    if (data.hasOwnProperty("images")) {
-      object.images = ApiClient.convertToType(data["images"], [
-        object.imagesType
-      ]);
     }
 
     return object;

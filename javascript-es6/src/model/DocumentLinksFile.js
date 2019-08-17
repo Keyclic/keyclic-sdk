@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import DocumentLinksSelfIriTemplate from "./DocumentLinksSelfIriTemplate";
+import DocumentLinksFileIriTemplate from "./DocumentLinksFileIriTemplate";
 
 /**
  * The DocumentLinksFile model module.
@@ -28,7 +28,7 @@ export default class DocumentLinksFile {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = DocumentLinksSelfIriTemplate;
+    this.iriTemplateType = DocumentLinksFileIriTemplate;
   }
 
   /**

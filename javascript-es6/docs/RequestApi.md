@@ -28,7 +28,7 @@ let apiInstance = new @KeyclicSdkJavascript.RequestApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let person = "person_example"; // String | The identifier of the resource formatted as GUID string.
+let person = "person_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -37,7 +37,7 @@ let opts = {
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'order': "desc", // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetRequestsByPerson(xKeyclicApp, person, opts, (error, data, response) => {
@@ -54,7 +54,7 @@ apiInstance.cgetRequestsByPerson(xKeyclicApp, person, opts, (error, data, respon
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 

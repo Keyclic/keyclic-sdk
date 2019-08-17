@@ -159,7 +159,7 @@ var BusinessActivityApi =
      * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { module:model/String } order   (default to desc)
-     * @param { String } organization The identifier of the resource formatted as GUID string.
+     * @param { String } organization The identifier of the resource.
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      */
@@ -284,7 +284,7 @@ var BusinessActivityApi =
         /**
          * Retrieve one BusinessActivity resource.
          * @param { String } xKeyclicApp
-         * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+         * @param { String } businessActivity The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { BusinessActivity }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

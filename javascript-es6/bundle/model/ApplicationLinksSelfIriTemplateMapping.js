@@ -49,7 +49,7 @@ var ApplicationLinksSelfIriTemplateMapping =
     function ApplicationLinksSelfIriTemplateMapping() {
       _classCallCheck(this, ApplicationLinksSelfIriTemplateMapping);
 
-      this.token = null;
+      this.application = null;
     }
     /**
      * Constructs a "ApplicationLinksSelfIriTemplateMapping" from a plain JavaScript object.
@@ -75,9 +75,9 @@ var ApplicationLinksSelfIriTemplateMapping =
             object = new ApplicationLinksSelfIriTemplateMapping();
           }
 
-          if (data.hasOwnProperty("token")) {
-            object.token = _ApiClient.default.convertToType(
-              data["token"],
+          if (data.hasOwnProperty("application")) {
+            object.application = _ApiClient.default.convertToType(
+              data["application"],
               "String"
             );
           }

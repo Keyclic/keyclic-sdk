@@ -9,7 +9,7 @@ class ApplicationApi {
   /// Retrieve one Application resource.
   ///
   ///
-  Future<Application> getApplicationByToken(String xKeyclicApp, String token,
+  Future<Application> getApplication(String xKeyclicApp, String application,
       {String acceptLanguage, String xKeyclicAppVersion}) async {
     Object postBody;
 
@@ -17,14 +17,14 @@ class ApplicationApi {
     if (xKeyclicApp == null) {
       throw ApiException(400, "Missing required param: xKeyclicApp");
     }
-    if (token == null) {
-      throw ApiException(400, "Missing required param: token");
+    if (application == null) {
+      throw ApiException(400, "Missing required param: application");
     }
 
     // create path and map variables
-    String path = "/applications/{token}"
+    String path = "/applications/{application}"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "token" + "}", token.toString());
+        .replaceAll("{" + "application" + "}", application.toString());
 
     // query params
     List<QueryParam> queryParams = [];

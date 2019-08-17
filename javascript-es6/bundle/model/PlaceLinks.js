@@ -63,14 +63,14 @@ var PlaceLinks =
     function PlaceLinks() {
       _classCallCheck(this, PlaceLinks);
 
-      this.self = null;
-      this.organization = null;
       this.containedInPlace = null;
       this.containsPlaces = null;
-      this.selfType = _PlaceLinksSelf.default;
-      this.organizationType = _PlaceLinksOrganization.default;
+      this.organization = null;
+      this.self = null;
       this.containedInPlaceType = _PlaceLinksContainedInPlace.default;
       this.containsPlacesType = _PlaceLinksContainsPlaces.default;
+      this.organizationType = _PlaceLinksOrganization.default;
+      this.selfType = _PlaceLinksSelf.default;
     }
     /**
      * Constructs a "PlaceLinks" from a plain JavaScript object.
@@ -96,20 +96,6 @@ var PlaceLinks =
             object = new PlaceLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
-          }
-
-          if (data.hasOwnProperty("organization")) {
-            object.organization = _ApiClient.default.convertToType(
-              data["organization"],
-              object.organizationType
-            );
-          }
-
           if (data.hasOwnProperty("containedInPlace")) {
             object.containedInPlace = _ApiClient.default.convertToType(
               data["containedInPlace"],
@@ -121,6 +107,20 @@ var PlaceLinks =
             object.containsPlaces = _ApiClient.default.convertToType(
               data["containsPlaces"],
               object.containsPlacesType
+            );
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
+              object.organizationType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 

@@ -2,33 +2,33 @@ part of keyclic_sdk_api.api;
 
 class Occupant {
   Occupant({
-    this.id,
-    this.createdAt,
-    this.type,
     this.links,
+    this.createdAt,
+    this.id,
+    this.type,
   });
 
   Occupant.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    id = json['id'];
+    links = OccupantLinks.fromJson(json['_links']);
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
+    id = json['id'];
     type = json['type'];
-    links = OccupantLinks.fromJson(json['_links']);
   }
 
-  String id;
+  OccupantLinks links;
 
   DateTime createdAt;
 
-  String type;
+  String id;
 
-  OccupantLinks links;
+  String type;
 
   @override
   bool operator ==(dynamic other) {
@@ -36,27 +36,24 @@ class Occupant {
       return true;
     }
 
-    return other is Occupant &&
-        runtimeType == other.runtimeType &&
-        id == other.id &&
-        createdAt == other.createdAt;
+    return other is Occupant && runtimeType == other.runtimeType;
   }
 
   @override
-  int get hashCode => 0 ^ id.hashCode ^ createdAt.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'type': type,
       '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
+      'id': id,
+      'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'Occupant[id=$id, createdAt=$createdAt, type=$type, links=$links, ]';
+    return 'Occupant[links=$links, createdAt=$createdAt, id=$id, type=$type, ]';
   }
 
   static List<Occupant> listFromJson(List<dynamic> json) {

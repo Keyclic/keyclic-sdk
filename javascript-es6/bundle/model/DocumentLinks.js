@@ -57,12 +57,12 @@ var DocumentLinks =
     function DocumentLinks() {
       _classCallCheck(this, DocumentLinks);
 
-      this.self = null;
-      this.file = null;
       this.createdBy = null;
-      this.selfType = _DocumentLinksSelf.default;
-      this.fileType = _DocumentLinksFile.default;
+      this.file = null;
+      this.self = null;
       this.createdByType = _DocumentLinksCreatedBy.default;
+      this.fileType = _DocumentLinksFile.default;
+      this.selfType = _DocumentLinksSelf.default;
     }
     /**
      * Constructs a "DocumentLinks" from a plain JavaScript object.
@@ -88,10 +88,10 @@ var DocumentLinks =
             object = new DocumentLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
+          if (data.hasOwnProperty("createdBy")) {
+            object.createdBy = _ApiClient.default.convertToType(
+              data["createdBy"],
+              object.createdByType
             );
           }
 
@@ -102,10 +102,10 @@ var DocumentLinks =
             );
           }
 
-          if (data.hasOwnProperty("createdBy")) {
-            object.createdBy = _ApiClient.default.convertToType(
-              data["createdBy"],
-              object.createdByType
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 

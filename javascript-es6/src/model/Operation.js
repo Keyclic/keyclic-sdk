@@ -25,44 +25,26 @@ export default class Operation {
      * @alias module:model/Operation
      * @class
     
-     * @param signature { module:model/OperationSignature }
-    
-     * @param id { String }
-    
      * @param state { Array.<String> }
     
-     * @param createdAt { Date }
-    
-     * @param updatedAt { Date }
-    
      */
-  constructor(
-    signature,
-
-    id,
-
-    state,
-
-    createdAt,
-
-    updatedAt
-  ) {
+  constructor(state) {
+    this.embedded = null;
+    this.links = null;
+    this.createdAt = null;
     this.description = null;
+    this.id = null;
+    this.identificationNumber = null;
     this.name = null;
     this.scheduledAt = null;
-    this.signature = signature;
-    this.id = id;
-    this.identificationNumber = null;
+    this.signature = null;
     this.state = state;
-    this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
     this.type = null;
-    this.links = null;
-    this.embedded = null;
+    this.updatedAt = null;
 
-    this.signatureType = OperationSignature;
-    this.linksType = OperationLinks;
     this.embeddedType = FeedbackEmbedded;
+    this.linksType = OperationLinks;
+    this.signatureType = OperationSignature;
   }
 
   /**
@@ -80,9 +62,30 @@ export default class Operation {
       object = new Operation();
     }
 
+    if (data.hasOwnProperty("_embedded")) {
+      object.embedded = ApiClient.convertToType(
+        data["_embedded"],
+        object.embeddedType
+      );
+    }
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
         data["description"],
+        "String"
+      );
+    }
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
+    }
+    if (data.hasOwnProperty("identificationNumber")) {
+      object.identificationNumber = ApiClient.convertToType(
+        data["identificationNumber"],
         "String"
       );
     }
@@ -98,35 +101,14 @@ export default class Operation {
         object.signatureType
       );
     }
-    if (data.hasOwnProperty("id")) {
-      object.id = ApiClient.convertToType(data["id"], "String");
-    }
-    if (data.hasOwnProperty("identificationNumber")) {
-      object.identificationNumber = ApiClient.convertToType(
-        data["identificationNumber"],
-        "String"
-      );
-    }
     if (data.hasOwnProperty("state")) {
       object.state = ApiClient.convertToType(data["state"], "['String']");
-    }
-    if (data.hasOwnProperty("createdAt")) {
-      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
-    }
-    if (data.hasOwnProperty("updatedAt")) {
-      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
     }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
-    }
-    if (data.hasOwnProperty("_embedded")) {
-      object.embedded = ApiClient.convertToType(
-        data["_embedded"],
-        object.embeddedType
-      );
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

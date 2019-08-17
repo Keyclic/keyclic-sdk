@@ -34,9 +34,9 @@ let apiInstance = new @KeyclicSdkJavascript.ImageApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let operation = "operation_example"; // String | The identifier of the resource formatted as GUID string.
+let operation = "operation_example"; // String | The identifier of the resource.
 
-let image = "image_example"; // String | The identifier of the resource formatted as GUID string.
+let image = "image_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -57,8 +57,8 @@ apiInstance.deleteImageByOperationAndImage(xKeyclicApp, operation, image, opts, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **image** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
+ **image** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -96,7 +96,7 @@ let apiInstance = new @KeyclicSdkJavascript.ImageApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let businessActivity = "businessActivity_example"; // String | The identifier of the resource formatted as GUID string.
+let businessActivity = "businessActivity_example"; // String | The identifier of the resource.
 
 let width = "width_example"; // String | 
 
@@ -121,7 +121,7 @@ apiInstance.getImageByBusinessActivityAndWidthAndHeight(xKeyclicApp, businessAct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **businessActivity** | [**String**](.md)| The identifier of the resource. | 
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
@@ -161,9 +161,9 @@ let apiInstance = new @KeyclicSdkJavascript.ImageApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let feedback = "feedback_example"; // String | The identifier of the resource formatted as GUID string.
+let feedback = "feedback_example"; // String | The identifier of the resource.
 
-let image = "image_example"; // String | The identifier of the resource formatted as GUID string.
+let image = "image_example"; // String | The identifier of the resource.
 
 let width = "width_example"; // String | 
 
@@ -188,8 +188,8 @@ apiInstance.getImageByFeedbackAndImageAndWidthAndHeight(xKeyclicApp, feedback, i
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **image** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource. | 
+ **image** | [**String**](.md)| The identifier of the resource. | 
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
@@ -229,9 +229,9 @@ let apiInstance = new @KeyclicSdkJavascript.ImageApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let operation = "operation_example"; // String | The identifier of the resource formatted as GUID string.
+let operation = "operation_example"; // String | The identifier of the resource.
 
-let image = "image_example"; // String | The identifier of the resource formatted as GUID string.
+let image = "image_example"; // String | The identifier of the resource.
 
 let width = "width_example"; // String | 
 
@@ -256,8 +256,8 @@ apiInstance.getImageByOperationAndImageAndWidthAndHeight(xKeyclicApp, operation,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **image** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
+ **image** | [**String**](.md)| The identifier of the resource. | 
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
@@ -297,7 +297,7 @@ let apiInstance = new @KeyclicSdkJavascript.ImageApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let person = "person_example"; // String | The identifier of the resource formatted as GUID string.
+let person = "person_example"; // String | The identifier of the resource.
 
 let width = "width_example"; // String | 
 
@@ -322,7 +322,7 @@ apiInstance.getImageByPersonAndWidthAndHeight(xKeyclicApp, person, width, height
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource. | 
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
@@ -364,7 +364,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let imageData = new @KeyclicSdkJavascript.ImageData(); // ImageData | 
 
-let feedback = "feedback_example"; // String | The identifier of the resource formatted as GUID string.
+let feedback = "feedback_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **imageData** | [**ImageData**](ImageData.md)|  | 
- **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -426,7 +426,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let imageData = new @KeyclicSdkJavascript.ImageData(); // ImageData | 
 
-let operation = "operation_example"; // String | The identifier of the resource formatted as GUID string.
+let operation = "operation_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **imageData** | [**ImageData**](ImageData.md)|  | 
- **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

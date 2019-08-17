@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**links** | [**ReviewLinks**](ReviewLinks.md) |  | [optional] 
+**createdAt** | **Date** |  | [optional] 
+**id** | **String** |  | [optional] 
 **reviewBody** | **String** |  | [optional] 
 **reviewRating** | **Number** |  | [optional] 
-**id** | **String** |  | 
-**createdAt** | **Date** |  | 
-**updatedAt** | **Date** |  | 
 **type** | **String** |  | [optional] 
-**links** | [**ReviewLinks**](ReviewLinks.md) |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 
 

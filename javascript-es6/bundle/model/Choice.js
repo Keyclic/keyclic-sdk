@@ -49,15 +49,16 @@ var Choice =
     function Choice() {
       _classCallCheck(this, Choice);
 
-      this.type = null;
-      this._enum = [];
+      this._default = null;
       this.description = null;
+      this._enum = [];
       this.format = null;
+      this.id = null;
       this.maxItems = null;
       this.minItems = null;
-      this._default = null;
       this.propertyOrder = null;
       this.title = null;
+      this.type = null;
     }
     /**
      * Constructs a "Choice" from a plain JavaScript object.
@@ -83,9 +84,16 @@ var Choice =
             object = new Choice();
           }
 
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
+          if (data.hasOwnProperty("default")) {
+            object._default = _ApiClient.default.convertToType(
+              data["default"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
               "String"
             );
           }
@@ -97,18 +105,15 @@ var Choice =
             );
           }
 
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
-              "String"
-            );
-          }
-
           if (data.hasOwnProperty("format")) {
             object.format = _ApiClient.default.convertToType(
               data["format"],
               "String"
             );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
 
           if (data.hasOwnProperty("maxItems")) {
@@ -125,13 +130,6 @@ var Choice =
             );
           }
 
-          if (data.hasOwnProperty("default")) {
-            object._default = _ApiClient.default.convertToType(
-              data["default"],
-              "String"
-            );
-          }
-
           if (data.hasOwnProperty("propertyOrder")) {
             object.propertyOrder = _ApiClient.default.convertToType(
               data["propertyOrder"],
@@ -142,6 +140,13 @@ var Choice =
           if (data.hasOwnProperty("title")) {
             object.title = _ApiClient.default.convertToType(
               data["title"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
               "String"
             );
           }

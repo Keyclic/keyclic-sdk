@@ -53,14 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.OperationLinks);
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
-      //var instane = new @KeyclicSdkJavascript.OperationLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property image (base name: "image")', function() {
-      // uncomment below and update the code to test the property image
+    it('should have the property createdBy (base name: "createdBy")', function() {
+      // uncomment below and update the code to test the property createdBy
       //var instane = new @KeyclicSdkJavascript.OperationLinks();
       //expect(instance).to.be();
     });
@@ -71,8 +65,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property report (base name: "report")', function() {
-      // uncomment below and update the code to test the property report
+    it('should have the property image (base name: "image")', function() {
+      // uncomment below and update the code to test the property image
+      //var instane = new @KeyclicSdkJavascript.OperationLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property images (base name: "images")', function() {
+      // uncomment below and update the code to test the property images
       //var instane = new @KeyclicSdkJavascript.OperationLinks();
       //expect(instance).to.be();
     });
@@ -83,20 +83,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property createdBy (base name: "createdBy")', function() {
-      // uncomment below and update the code to test the property createdBy
+    it('should have the property report (base name: "report")', function() {
+      // uncomment below and update the code to test the property report
+      //var instane = new @KeyclicSdkJavascript.OperationLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
       //var instane = new @KeyclicSdkJavascript.OperationLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property tracking (base name: "tracking")', function() {
       // uncomment below and update the code to test the property tracking
-      //var instane = new @KeyclicSdkJavascript.OperationLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property images (base name: "images")', function() {
-      // uncomment below and update the code to test the property images
       //var instane = new @KeyclicSdkJavascript.OperationLinks();
       //expect(instance).to.be();
     });

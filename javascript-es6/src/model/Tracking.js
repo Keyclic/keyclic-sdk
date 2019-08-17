@@ -24,23 +24,15 @@ export default class Tracking {
      * @alias module:model/Tracking
      * @class
     
-     * @param state { String }
-    
-     * @param progression { module:model/TrackingProgression }
-    
      */
-  constructor(
-    state,
-
-    progression
-  ) {
-    this.state = state;
-    this.progression = progression;
-    this.time = null;
+  constructor() {
     this.checkpoints = [];
+    this.progression = null;
+    this.state = null;
+    this.time = null;
 
-    this.progressionType = TrackingProgression;
     this.checkpointsType = Checkpoint;
+    this.progressionType = TrackingProgression;
   }
 
   /**
@@ -58,8 +50,10 @@ export default class Tracking {
       object = new Tracking();
     }
 
-    if (data.hasOwnProperty("state")) {
-      object.state = ApiClient.convertToType(data["state"], "String");
+    if (data.hasOwnProperty("checkpoints")) {
+      object.checkpoints = ApiClient.convertToType(data["checkpoints"], [
+        object.checkpointsType
+      ]);
     }
     if (data.hasOwnProperty("progression")) {
       object.progression = ApiClient.convertToType(
@@ -67,13 +61,11 @@ export default class Tracking {
         object.progressionType
       );
     }
+    if (data.hasOwnProperty("state")) {
+      object.state = ApiClient.convertToType(data["state"], "String");
+    }
     if (data.hasOwnProperty("time")) {
       object.time = ApiClient.convertToType(data["time"], "Number");
-    }
-    if (data.hasOwnProperty("checkpoints")) {
-      object.checkpoints = ApiClient.convertToType(data["checkpoints"], [
-        object.checkpointsType
-      ]);
     }
 
     return object;

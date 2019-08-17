@@ -3,15 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**links** | [**PlaceLinks**](PlaceLinks.md) |  | [optional] 
 **branchCode** | **String** |  | [optional] 
+**createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
 **geo** | [**PlaceGeo**](PlaceGeo.md) |  | 
+**id** | **String** |  | [optional] 
 **name** | **String** |  | 
-**preferences** | [**PlacePreferences**](PlacePreferences.md) |  | 
-**id** | **String** |  | 
-**createdAt** | **Date** |  | 
-**updatedAt** | **Date** |  | 
+**preferences** | [**PlacePreferences**](PlacePreferences.md) |  | [optional] 
 **type** | **String** |  | [optional] 
-**links** | [**PlaceLinks**](PlaceLinks.md) |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 
 

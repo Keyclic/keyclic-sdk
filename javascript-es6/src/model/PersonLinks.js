@@ -27,13 +27,13 @@ export default class PersonLinks {
     
      */
   constructor() {
-    this.self = null;
     this.image = null;
     this.memberOf = null;
+    this.self = null;
 
-    this.selfType = PersonLinksSelf;
     this.imageType = PersonLinksImage;
     this.memberOfType = PersonLinksMemberOf;
+    this.selfType = PersonLinksSelf;
   }
 
   /**
@@ -51,9 +51,6 @@ export default class PersonLinks {
       object = new PersonLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
-    }
     if (data.hasOwnProperty("image")) {
       object.image = ApiClient.convertToType(data["image"], object.imageType);
     }
@@ -62,6 +59,9 @@ export default class PersonLinks {
         data["memberOf"],
         object.memberOfType
       );
+    }
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
 
     return object;

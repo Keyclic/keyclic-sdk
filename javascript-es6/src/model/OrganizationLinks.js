@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import OrganizationLinksApplication from "./OrganizationLinksApplication";
 import OrganizationLinksBusinessActivity from "./OrganizationLinksBusinessActivity";
 import OrganizationLinksLogo from "./OrganizationLinksLogo";
 import OrganizationLinksSelf from "./OrganizationLinksSelf";
@@ -27,13 +28,15 @@ export default class OrganizationLinks {
     
      */
   constructor() {
-    this.self = null;
+    this.application = null;
     this.businessActivity = null;
     this.logo = null;
+    this.self = null;
 
-    this.selfType = OrganizationLinksSelf;
+    this.applicationType = OrganizationLinksApplication;
     this.businessActivityType = OrganizationLinksBusinessActivity;
     this.logoType = OrganizationLinksLogo;
+    this.selfType = OrganizationLinksSelf;
   }
 
   /**
@@ -51,8 +54,11 @@ export default class OrganizationLinks {
       object = new OrganizationLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
+    if (data.hasOwnProperty("application")) {
+      object.application = ApiClient.convertToType(
+        data["application"],
+        object.applicationType
+      );
     }
     if (data.hasOwnProperty("businessActivity")) {
       object.businessActivity = ApiClient.convertToType(
@@ -62,6 +68,9 @@ export default class OrganizationLinks {
     }
     if (data.hasOwnProperty("logo")) {
       object.logo = ApiClient.convertToType(data["logo"], object.logoType);
+    }
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
 
     return object;

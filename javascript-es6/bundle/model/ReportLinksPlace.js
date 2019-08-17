@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _OccupantLinksPlaceIriTemplate = _interopRequireDefault(
-  require("./OccupantLinksPlaceIriTemplate")
+var _ReportLinksPlaceIriTemplate = _interopRequireDefault(
+  require("./ReportLinksPlaceIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var ReportLinksPlace =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _OccupantLinksPlaceIriTemplate.default;
+      this.iriTemplateType = _ReportLinksPlaceIriTemplate.default;
     }
     /**
      * Constructs a "ReportLinksPlace" from a plain JavaScript object.

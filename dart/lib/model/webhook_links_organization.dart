@@ -12,13 +12,13 @@ class WebhookLinksOrganization {
     }
     href = json['href'];
     iriTemplate =
-        CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+        WebhookLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the organization associated to the given webhook. */
   String href;
 
-  CategoryLinksOrganizationIriTemplate iriTemplate;
+  WebhookLinksOrganizationIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

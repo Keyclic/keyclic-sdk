@@ -32,7 +32,7 @@ export default class ReviewRequestApi extends ApiClient {
   /**
    * Retrieve one ReviewRequest resource.
    * @param { String } xKeyclicApp
-   * @param { String } reviewRequest The identifier of the resource formatted as GUID string.
+   * @param { String } reviewRequest The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { FeedbackReviewRequest }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)

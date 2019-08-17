@@ -27,7 +27,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = LogoApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
 var width = width_example; // String | 
 var height = height_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
@@ -46,7 +46,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **width** | **String**|  | 
  **height** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]

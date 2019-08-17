@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
-**type** | **String** |  | [optional] 
 **links** | [**DeviceLinks**](DeviceLinks.md) |  | [optional] 
+**id** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
 
 

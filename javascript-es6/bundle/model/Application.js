@@ -51,18 +51,16 @@ var Application =
   
    * @param token { String }
   
-   * @param id { String }
-  
    */
-    function Application(name, token, id) {
+    function Application(name, token) {
       _classCallCheck(this, Application);
 
+      this.links = null;
+      this.id = null;
       this.name = name;
       this.token = token;
-      this.version = null;
-      this.id = id;
       this.type = null;
-      this.links = null;
+      this.version = null;
       this.linksType = _ApplicationLinks.default;
     }
     /**
@@ -89,6 +87,17 @@ var Application =
             object = new Application();
           }
 
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
           if (data.hasOwnProperty("name")) {
             object.name = _ApiClient.default.convertToType(
               data["name"],
@@ -103,17 +112,6 @@ var Application =
             );
           }
 
-          if (data.hasOwnProperty("version")) {
-            object.version = _ApiClient.default.convertToType(
-              data["version"],
-              "String"
-            );
-          }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
-          }
-
           if (data.hasOwnProperty("type")) {
             object.type = _ApiClient.default.convertToType(
               data["type"],
@@ -121,10 +119,10 @@ var Application =
             );
           }
 
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
+          if (data.hasOwnProperty("version")) {
+            object.version = _ApiClient.default.convertToType(
+              data["version"],
+              "String"
             );
           }
 

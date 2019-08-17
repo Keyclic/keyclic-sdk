@@ -53,14 +53,14 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.PlaceGeoPolygon);
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
+    it('should have the property features (base name: "features")', function() {
+      // uncomment below and update the code to test the property features
       //var instane = new @KeyclicSdkJavascript.PlaceGeoPolygon();
       //expect(instance).to.be();
     });
 
-    it('should have the property features (base name: "features")', function() {
-      // uncomment below and update the code to test the property features
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new @KeyclicSdkJavascript.PlaceGeoPolygon();
       //expect(instance).to.be();
     });

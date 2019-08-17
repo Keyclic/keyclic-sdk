@@ -9,10 +9,11 @@ class ReviewLinksSelfIriTemplate {
     if (json == null) {
       return;
     }
-    mapping = ReviewLinksSelfIriTemplateMapping.fromJson(json['mapping']);
+    mapping = FeedbackReviewRequestLinksReviewIriTemplateMapping.fromJson(
+        json['mapping']);
   }
 
-  ReviewLinksSelfIriTemplateMapping mapping;
+  FeedbackReviewRequestLinksReviewIriTemplateMapping mapping;
 
   @override
   bool operator ==(dynamic other) {

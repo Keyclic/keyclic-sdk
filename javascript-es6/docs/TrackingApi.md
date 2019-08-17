@@ -30,7 +30,7 @@ let apiInstance = new @KeyclicSdkJavascript.TrackingApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let feedback = "feedback_example"; // String | The identifier of the resource formatted as GUID string.
+let feedback = "feedback_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -51,7 +51,7 @@ apiInstance.getTrackingByFeedback(xKeyclicApp, feedback, opts, (error, data, res
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -89,7 +89,7 @@ let apiInstance = new @KeyclicSdkJavascript.TrackingApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let operation = "operation_example"; // String | The identifier of the resource formatted as GUID string.
+let operation = "operation_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -110,7 +110,7 @@ apiInstance.getTrackingByOperation(xKeyclicApp, operation, opts, (error, data, r
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -148,7 +148,7 @@ let apiInstance = new @KeyclicSdkJavascript.TrackingApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let report = "report_example"; // String | The identifier of the resource formatted as GUID string.
+let report = "report_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -169,7 +169,7 @@ apiInstance.getTrackingByReport(xKeyclicApp, report, opts, (error, data, respons
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

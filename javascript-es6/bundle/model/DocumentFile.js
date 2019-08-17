@@ -33,6 +33,20 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+
 /**
  * The DocumentFile model module.
  * @module model/DocumentFile
@@ -45,14 +59,14 @@ var DocumentFile =
    * @alias module:model/DocumentFile
    * @class
   
-   * @param name { String }
+   * @param contentType { module:model/DocumentFile.ContentTypeEnum }
   
    */
-    function DocumentFile(name) {
+    function DocumentFile(contentType) {
       _classCallCheck(this, DocumentFile);
 
-      this.contentType = null;
-      this.name = name;
+      this.contentType = contentType;
+      this.name = null;
     }
     /**
      * Constructs a "DocumentFile" from a plain JavaScript object.
@@ -94,6 +108,10 @@ var DocumentFile =
 
           return object;
         }
+        /**
+         * Allowed values for the "contentType" property.
+         * @enum { String }
+         */
       }
     ]);
 
@@ -101,3 +119,84 @@ var DocumentFile =
   })();
 
 exports.default = DocumentFile;
+
+_defineProperty(DocumentFile, "ContentTypeEnum", {
+  /**
+   * value: "text/csv"
+   * @const
+   * @readonly
+   */
+  "text/csv": "text/csv",
+
+  /**
+   * value: "application/msword"
+   * @const
+   * @readonly
+   */
+  "application/msword": "application/msword",
+
+  /**
+   * value: "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+   * @const
+   * @readonly
+   */
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+
+  /**
+   * value: "image/jpeg"
+   * @const
+   * @readonly
+   */
+  "image/jpeg": "image/jpeg",
+
+  /**
+   * value: "image/jpg"
+   * @const
+   * @readonly
+   */
+  "image/jpg": "image/jpg",
+
+  /**
+   * value: "application/pdf"
+   * @const
+   * @readonly
+   */
+  "application/pdf": "application/pdf",
+
+  /**
+   * value: "image/png"
+   * @const
+   * @readonly
+   */
+  "image/png": "image/png",
+
+  /**
+   * value: "text/plain"
+   * @const
+   * @readonly
+   */
+  "text/plain": "text/plain",
+
+  /**
+   * value: "application/vnd.ms-excel"
+   * @const
+   * @readonly
+   */
+  "application/vnd.ms-excel": "application/vnd.ms-excel",
+
+  /**
+   * value: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+   * @const
+   * @readonly
+   */
+  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+
+  /**
+   * value: "application/zip"
+   * @const
+   * @readonly
+   */
+  "application/zip": "application/zip"
+});

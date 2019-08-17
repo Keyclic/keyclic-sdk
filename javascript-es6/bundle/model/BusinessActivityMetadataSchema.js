@@ -51,8 +51,8 @@ var BusinessActivityMetadataSchema =
     function BusinessActivityMetadataSchema() {
       _classCallCheck(this, BusinessActivityMetadataSchema);
 
-      this.required = [];
       this.properties = [];
+      this.required = [];
       this.propertiesType = _Property.default;
     }
     /**
@@ -79,19 +79,19 @@ var BusinessActivityMetadataSchema =
             object = new BusinessActivityMetadataSchema();
           }
 
-          if (data.hasOwnProperty("required")) {
-            object.required = _ApiClient.default.convertToType(
-              data["required"],
-              "['String']"
-            );
-          }
-
           if (data.hasOwnProperty("properties")) {
             object.properties = _ApiClient.default.convertToType(
               data["properties"],
               {
                 String: object.propertiesType
               }
+            );
+          }
+
+          if (data.hasOwnProperty("required")) {
+            object.required = _ApiClient.default.convertToType(
+              data["required"],
+              "['String']"
             );
           }
 

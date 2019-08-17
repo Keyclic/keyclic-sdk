@@ -45,13 +45,11 @@ var DocumentPermission =
    * @alias module:model/DocumentPermission
    * @class
   
-   * @param targetGroup { String }
-  
    */
-    function DocumentPermission(targetGroup) {
+    function DocumentPermission() {
       _classCallCheck(this, DocumentPermission);
 
-      this.targetGroup = targetGroup;
+      this.targetGroup = null;
     }
     /**
      * Constructs a "DocumentPermission" from a plain JavaScript object.

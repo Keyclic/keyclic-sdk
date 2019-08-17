@@ -11,14 +11,13 @@ class PersonLinksSelf {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = PersonLinksSelfIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the self associated to the given person. */
   String href;
 
-  DelegationLinksCreatedByIriTemplate iriTemplate;
+  PersonLinksSelfIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

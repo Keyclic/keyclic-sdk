@@ -13,7 +13,7 @@ class FeedbackWorkflowTransitionData {
   }
 
   String transition;
-  //enum transitionEnum {  deliver,  dispatch,  fail,  publish,  process,  success,  };
+  //enum transitionEnum {  deliver,  dispatch,  fail,  process,  publish,  success,  };
 
   @override
   bool operator ==(dynamic other) {

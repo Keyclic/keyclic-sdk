@@ -15,6 +15,7 @@ class DocumentFile {
   }
 
   String contentType;
+  //enum contentTypeEnum {  text/csv,  application/msword,  application/vnd.openxmlformats-officedocument.wordprocessingml.document,  image/jpeg,  image/jpg,  application/pdf,  image/png,  text/plain,  application/vnd.ms-excel,  application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,  application/zip,  };
 
   String name;
 
@@ -26,11 +27,11 @@ class DocumentFile {
 
     return other is DocumentFile &&
         runtimeType == other.runtimeType &&
-        name == other.name;
+        contentType == other.contentType;
   }
 
   @override
-  int get hashCode => 0 ^ name.hashCode;
+  int get hashCode => 0 ^ contentType.hashCode;
 
   Map<String, dynamic> toJson() {
     return {

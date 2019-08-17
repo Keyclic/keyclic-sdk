@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mapping** | [**ReviewLinksSelfIriTemplateMapping**](ReviewLinksSelfIriTemplateMapping.md) |  | [optional] 
+**mapping** | [**FeedbackReviewRequestLinksReviewIriTemplateMapping**](FeedbackReviewRequestLinksReviewIriTemplateMapping.md) |  | [optional] 
 
 

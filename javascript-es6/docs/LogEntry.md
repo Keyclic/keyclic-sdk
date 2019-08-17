@@ -4,9 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **action** | **String** |  | 
+**actor** | **String** |  | [optional] 
+**data** | **[String]** |  | [optional] 
 **loggedAt** | **Date** |  | 
-**objectId** | **String** |  | 
-**version** | **String** |  | 
-**data** | **[String]** |  | 
 
 

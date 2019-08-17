@@ -11,14 +11,13 @@ class ReportLinksSelf {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        DelegationLinksReportIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = ReportLinksSelfIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the self associated to the given report. */
   String href;
 
-  DelegationLinksReportIriTemplate iriTemplate;
+  ReportLinksSelfIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CategoryLinksSelfIriTemplate = _interopRequireDefault(
-  require("./CategoryLinksSelfIriTemplate")
+var _ReportLinksCategoryIriTemplate = _interopRequireDefault(
+  require("./ReportLinksCategoryIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var ReportLinksCategory =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _CategoryLinksSelfIriTemplate.default;
+      this.iriTemplateType = _ReportLinksCategoryIriTemplate.default;
     }
     /**
      * Constructs a "ReportLinksCategory" from a plain JavaScript object.

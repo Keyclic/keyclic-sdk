@@ -26,20 +26,14 @@ export default class PlaceGeo {
     
      * @param polygon { module:model/PlaceGeoPolygon }
     
-     * @param elevation { Number }
-    
      */
-  constructor(
-    polygon,
-
-    elevation
-  ) {
-    this.polygon = polygon;
-    this.elevation = elevation;
+  constructor(polygon) {
     this.centroid = null;
+    this.elevation = null;
+    this.polygon = polygon;
 
-    this.polygonType = PlaceGeoPolygon;
     this.centroidType = PlaceGeoCentroid;
+    this.polygonType = PlaceGeoPolygon;
   }
 
   /**
@@ -57,19 +51,19 @@ export default class PlaceGeo {
       object = new PlaceGeo();
     }
 
-    if (data.hasOwnProperty("polygon")) {
-      object.polygon = ApiClient.convertToType(
-        data["polygon"],
-        object.polygonType
+    if (data.hasOwnProperty("centroid")) {
+      object.centroid = ApiClient.convertToType(
+        data["centroid"],
+        object.centroidType
       );
     }
     if (data.hasOwnProperty("elevation")) {
       object.elevation = ApiClient.convertToType(data["elevation"], "Number");
     }
-    if (data.hasOwnProperty("centroid")) {
-      object.centroid = ApiClient.convertToType(
-        data["centroid"],
-        object.centroidType
+    if (data.hasOwnProperty("polygon")) {
+      object.polygon = ApiClient.convertToType(
+        data["polygon"],
+        object.polygonType
       );
     }
 

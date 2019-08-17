@@ -19,6 +19,10 @@ var _BusinessActivityLinksSelf = _interopRequireDefault(
   require("./BusinessActivityLinksSelf")
 );
 
+var _BusinessActivityLinksThumbnail = _interopRequireDefault(
+  require("./BusinessActivityLinksThumbnail")
+);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -61,12 +65,14 @@ var BusinessActivityLinks =
     function BusinessActivityLinks() {
       _classCallCheck(this, BusinessActivityLinks);
 
-      this.self = null;
-      this.schema = null;
       this.image = null;
-      this.selfType = _BusinessActivityLinksSelf.default;
-      this.schemaType = _BusinessActivityLinksSchema.default;
+      this.schema = null;
+      this.self = null;
+      this.thumbnail = null;
       this.imageType = _BusinessActivityLinksImage.default;
+      this.schemaType = _BusinessActivityLinksSchema.default;
+      this.selfType = _BusinessActivityLinksSelf.default;
+      this.thumbnailType = _BusinessActivityLinksThumbnail.default;
     }
     /**
      * Constructs a "BusinessActivityLinks" from a plain JavaScript object.
@@ -92,10 +98,10 @@ var BusinessActivityLinks =
             object = new BusinessActivityLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
+          if (data.hasOwnProperty("image")) {
+            object.image = _ApiClient.default.convertToType(
+              data["image"],
+              object.imageType
             );
           }
 
@@ -106,10 +112,17 @@ var BusinessActivityLinks =
             );
           }
 
-          if (data.hasOwnProperty("image")) {
-            object.image = _ApiClient.default.convertToType(
-              data["image"],
-              object.imageType
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          if (data.hasOwnProperty("thumbnail")) {
+            object.thumbnail = _ApiClient.default.convertToType(
+              data["thumbnail"],
+              object.thumbnailType
             );
           }
 

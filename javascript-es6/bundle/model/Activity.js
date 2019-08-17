@@ -47,26 +47,18 @@ var Activity =
    * @alias module:model/Activity
    * @class
   
-   * @param actor { String }
-  
-   * @param message { String }
-  
-   * @param _object { String }
-  
-   * @param verb { String }
-  
    */
-    function Activity(actor, message, _object, verb) {
+    function Activity() {
       _classCallCheck(this, Activity);
 
-      this.actor = actor;
-      this.message = message;
-      this._object = _object;
-      this.verb = verb;
+      this.actor = null;
+      this.message = null;
+      this._object = null;
       this.origin = null;
-      this.title = null;
       this.subject = null;
       this.time = null;
+      this.title = null;
+      this.verb = null;
       this.subjectType = _ActivitySubject.default;
     }
     /**
@@ -114,23 +106,9 @@ var Activity =
             );
           }
 
-          if (data.hasOwnProperty("verb")) {
-            object.verb = _ApiClient.default.convertToType(
-              data["verb"],
-              "String"
-            );
-          }
-
           if (data.hasOwnProperty("origin")) {
             object.origin = _ApiClient.default.convertToType(
               data["origin"],
-              "String"
-            );
-          }
-
-          if (data.hasOwnProperty("title")) {
-            object.title = _ApiClient.default.convertToType(
-              data["title"],
               "String"
             );
           }
@@ -146,6 +124,20 @@ var Activity =
             object.time = _ApiClient.default.convertToType(
               data["time"],
               "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("title")) {
+            object.title = _ApiClient.default.convertToType(
+              data["title"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("verb")) {
+            object.verb = _ApiClient.default.convertToType(
+              data["verb"],
+              "String"
             );
           }
 

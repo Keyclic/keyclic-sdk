@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 
 * `fail` (value: `"fail"`)
 
-* `publish` (value: `"publish"`)
-
 * `process` (value: `"process"`)
+
+* `publish` (value: `"publish"`)
 
 * `success` (value: `"success"`)
 

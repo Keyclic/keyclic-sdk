@@ -59,26 +59,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property loggedAt (base name: "loggedAt")', function() {
-      // uncomment below and update the code to test the property loggedAt
-      //var instane = new @KeyclicSdkJavascript.LogEntry();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property objectId (base name: "objectId")', function() {
-      // uncomment below and update the code to test the property objectId
-      //var instane = new @KeyclicSdkJavascript.LogEntry();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property version (base name: "version")', function() {
-      // uncomment below and update the code to test the property version
+    it('should have the property actor (base name: "actor")', function() {
+      // uncomment below and update the code to test the property actor
       //var instane = new @KeyclicSdkJavascript.LogEntry();
       //expect(instance).to.be();
     });
 
     it('should have the property data (base name: "data")', function() {
       // uncomment below and update the code to test the property data
+      //var instane = new @KeyclicSdkJavascript.LogEntry();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property loggedAt (base name: "loggedAt")', function() {
+      // uncomment below and update the code to test the property loggedAt
       //var instane = new @KeyclicSdkJavascript.LogEntry();
       //expect(instance).to.be();
     });

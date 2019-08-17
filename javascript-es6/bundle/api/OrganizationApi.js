@@ -155,22 +155,17 @@ var OrganizationApi =
      * @param { OrganizationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+     * @param { String } businessActivity The identifier of the resource.
      * @param { module:model/Date } after
      * @param { module:model/Date } before
      * @param { module:model/Date } disabledAt
      * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
      * @param { module:model/String } order   (default to desc)
-     * @param { String } organization The identifier of the resource formatted as GUID string.
+     * @param { String } organization The identifier of the resource.
      * @param { String } query
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
-     * @param { String } searchAlternateName
-     * @param { String } searchBillingEmailAddress
-     * @param { String } searchDescription
-     * @param { String } searchName
-     * @param { String } searchNotificationEmailAddress
      */
 
     _createClass(OrganizationApi, [
@@ -201,13 +196,7 @@ var OrganizationApi =
             organization = options.organization,
             query = options.query,
             page = options.page,
-            limit = options.limit,
-            searchAlternateName = options.searchAlternateName,
-            searchBillingEmailAddress = options.searchBillingEmailAddress,
-            searchDescription = options.searchDescription,
-            searchName = options.searchName,
-            searchNotificationEmailAddress =
-              options.searchNotificationEmailAddress; // verify the required parameter 'xKeyclicApp' is set
+            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
@@ -268,26 +257,6 @@ var OrganizationApi =
 
           if (typeof query === "undefined") {
             query = null;
-          } // verify the null value of parameter 'searchAlternateName'
-
-          if (typeof searchAlternateName === "undefined") {
-            searchAlternateName = null;
-          } // verify the null value of parameter 'searchBillingEmailAddress'
-
-          if (typeof searchBillingEmailAddress === "undefined") {
-            searchBillingEmailAddress = null;
-          } // verify the null value of parameter 'searchDescription'
-
-          if (typeof searchDescription === "undefined") {
-            searchDescription = null;
-          } // verify the null value of parameter 'searchName'
-
-          if (typeof searchName === "undefined") {
-            searchName = null;
-          } // verify the null value of parameter 'searchNotificationEmailAddress'
-
-          if (typeof searchNotificationEmailAddress === "undefined") {
-            searchNotificationEmailAddress = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
@@ -309,12 +278,7 @@ var OrganizationApi =
             organization: organization,
             query: query,
             page: page,
-            limit: limit,
-            "search[alternateName]": searchAlternateName,
-            "search[billingEmailAddress]": searchBillingEmailAddress,
-            "search[description]": searchDescription,
-            "search[name]": searchName,
-            "search[notificationEmailAddress]": searchNotificationEmailAddress
+            limit: limit
           };
           var headerParams = {
             "accept-language": acceptLanguage,
@@ -342,7 +306,7 @@ var OrganizationApi =
         /**
          * Retrieve one Organization resource.
          * @param { String } xKeyclicApp
-         * @param { String } organization The identifier of the resource formatted as GUID string.
+         * @param { String } organization The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Organization }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -429,7 +393,7 @@ var OrganizationApi =
          * Edit one Organization resource.
          * @param { String } xKeyclicApp
          * @param { module:model/OrganizationPatch } organizationPatch
-         * @param { String } organization The identifier of the resource formatted as GUID string.
+         * @param { String } organization The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Organization }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

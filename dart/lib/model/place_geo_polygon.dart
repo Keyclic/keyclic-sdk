@@ -2,21 +2,21 @@ part of keyclic_sdk_api.api;
 
 class PlaceGeoPolygon {
   PlaceGeoPolygon({
-    this.type,
     this.features,
+    this.type,
   });
 
   PlaceGeoPolygon.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    type = json['type'];
     features = Feature.listFromJson(json['features']);
+    type = json['type'];
   }
 
-  String type;
-
   List<Feature> features;
+
+  String type;
 
   @override
   bool operator ==(dynamic other) {
@@ -34,14 +34,14 @@ class PlaceGeoPolygon {
 
   Map<String, dynamic> toJson() {
     return {
-      'type': type,
       'features': features,
+      'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'PlaceGeoPolygon[type=$type, features=$features, ]';
+    return 'PlaceGeoPolygon[features=$features, type=$type, ]';
   }
 
   static List<PlaceGeoPolygon> listFromJson(List<dynamic> json) {

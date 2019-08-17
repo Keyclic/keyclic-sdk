@@ -11,13 +11,13 @@ class ReportLinksCategory {
       return;
     }
     href = json['href'];
-    iriTemplate = CategoryLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = ReportLinksCategoryIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the category associated to the given report. */
   String href;
 
-  CategoryLinksSelfIriTemplate iriTemplate;
+  ReportLinksCategoryIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

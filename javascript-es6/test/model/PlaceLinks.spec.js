@@ -53,8 +53,14 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.PlaceLinks);
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
+    it('should have the property containedInPlace (base name: "containedInPlace")', function() {
+      // uncomment below and update the code to test the property containedInPlace
+      //var instane = new @KeyclicSdkJavascript.PlaceLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property containsPlaces (base name: "containsPlaces")', function() {
+      // uncomment below and update the code to test the property containsPlaces
       //var instane = new @KeyclicSdkJavascript.PlaceLinks();
       //expect(instance).to.be();
     });
@@ -65,14 +71,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property containedInPlace (base name: "containedInPlace")', function() {
-      // uncomment below and update the code to test the property containedInPlace
-      //var instane = new @KeyclicSdkJavascript.PlaceLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property containsPlaces (base name: "containsPlaces")', function() {
-      // uncomment below and update the code to test the property containsPlaces
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
       //var instane = new @KeyclicSdkJavascript.PlaceLinks();
       //expect(instance).to.be();
     });

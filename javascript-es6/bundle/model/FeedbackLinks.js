@@ -75,20 +75,20 @@ var FeedbackLinks =
     function FeedbackLinks() {
       _classCallCheck(this, FeedbackLinks);
 
-      this.self = null;
-      this.category = null;
       this.businessActivity = null;
-      this.reporter = null;
+      this.category = null;
       this.image = null;
-      this.tracking = null;
       this.images = [];
-      this.selfType = _FeedbackLinksSelf.default;
-      this.categoryType = _FeedbackLinksCategory.default;
+      this.reporter = null;
+      this.self = null;
+      this.tracking = null;
       this.businessActivityType = _FeedbackLinksBusinessActivity.default;
-      this.reporterType = _FeedbackLinksReporter.default;
+      this.categoryType = _FeedbackLinksCategory.default;
       this.imageType = _FeedbackLinksImage.default;
-      this.trackingType = _FeedbackLinksTracking.default;
       this.imagesType = _FeedbackLinksImages.default;
+      this.reporterType = _FeedbackLinksReporter.default;
+      this.selfType = _FeedbackLinksSelf.default;
+      this.trackingType = _FeedbackLinksTracking.default;
     }
     /**
      * Constructs a "FeedbackLinks" from a plain JavaScript object.
@@ -114,10 +114,10 @@ var FeedbackLinks =
             object = new FeedbackLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
+          if (data.hasOwnProperty("businessActivity")) {
+            object.businessActivity = _ApiClient.default.convertToType(
+              data["businessActivity"],
+              object.businessActivityType
             );
           }
 
@@ -128,11 +128,17 @@ var FeedbackLinks =
             );
           }
 
-          if (data.hasOwnProperty("businessActivity")) {
-            object.businessActivity = _ApiClient.default.convertToType(
-              data["businessActivity"],
-              object.businessActivityType
+          if (data.hasOwnProperty("image")) {
+            object.image = _ApiClient.default.convertToType(
+              data["image"],
+              object.imageType
             );
+          }
+
+          if (data.hasOwnProperty("images")) {
+            object.images = _ApiClient.default.convertToType(data["images"], [
+              object.imagesType
+            ]);
           }
 
           if (data.hasOwnProperty("reporter")) {
@@ -142,10 +148,10 @@ var FeedbackLinks =
             );
           }
 
-          if (data.hasOwnProperty("image")) {
-            object.image = _ApiClient.default.convertToType(
-              data["image"],
-              object.imageType
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 
@@ -154,12 +160,6 @@ var FeedbackLinks =
               data["tracking"],
               object.trackingType
             );
-          }
-
-          if (data.hasOwnProperty("images")) {
-            object.images = _ApiClient.default.convertToType(data["images"], [
-              object.imagesType
-            ]);
           }
 
           return object;

@@ -26,13 +26,13 @@ export default class ReportEmbedded {
     
      */
   constructor() {
+    this.duration = null;
     this.stateTransitions = [];
     this.targetGroups = [];
     this.tracking = null;
-    this.duration = null;
 
-    this.targetGroupsType = ReportEmbeddedTargetGroups;
     this.durationType = ReportEmbeddedDuration;
+    this.targetGroupsType = ReportEmbeddedTargetGroups;
   }
 
   /**
@@ -50,6 +50,12 @@ export default class ReportEmbedded {
       object = new ReportEmbedded();
     }
 
+    if (data.hasOwnProperty("duration")) {
+      object.duration = ApiClient.convertToType(
+        data["duration"],
+        object.durationType
+      );
+    }
     if (data.hasOwnProperty("stateTransitions")) {
       object.stateTransitions = ApiClient.convertToType(
         data["stateTransitions"],
@@ -63,12 +69,6 @@ export default class ReportEmbedded {
     }
     if (data.hasOwnProperty("tracking")) {
       object.tracking = ApiClient.convertToType(data["tracking"], "String");
-    }
-    if (data.hasOwnProperty("duration")) {
-      object.duration = ApiClient.convertToType(
-        data["duration"],
-        object.durationType
-      );
     }
 
     return object;

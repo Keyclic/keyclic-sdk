@@ -38,9 +38,9 @@ let opts = {
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'order': "desc", // String | 
-  'person': "person_example", // String | The identifier of the resource formatted as GUID string.
+  'person': "person_example", // String | The identifier of the resource.
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetOccupants(xKeyclicApp, , opts, (error, data, response) => {
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **person** | [**String**](.md)| The identifier of the resource. | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
 
@@ -100,7 +100,7 @@ let apiInstance = new @KeyclicSdkJavascript.OccupantApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let place = "place_example"; // String | The identifier of the resource formatted as GUID string.
+let place = "place_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -108,9 +108,9 @@ let opts = {
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'order': "desc", // String | 
-  'person': "person_example", // String | The identifier of the resource formatted as GUID string.
+  'person': "person_example", // String | The identifier of the resource.
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetOccupantsByPlace(xKeyclicApp, place, opts, (error, data, response) => {
@@ -127,13 +127,13 @@ apiInstance.cgetOccupantsByPlace(xKeyclicApp, place, opts, (error, data, respons
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **place** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **person** | [**String**](.md)| The identifier of the resource. | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
 
@@ -171,9 +171,9 @@ let apiInstance = new @KeyclicSdkJavascript.OccupantApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let place = "place_example"; // String | The identifier of the resource formatted as GUID string.
+let place = "place_example"; // String | The identifier of the resource.
 
-let occupant = "occupant_example"; // String | The identifier of the resource formatted as GUID string.
+let occupant = "occupant_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -194,8 +194,8 @@ apiInstance.deleteOccupantByPlaceAndOccupant(xKeyclicApp, place, occupant, opts,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **occupant** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **place** | [**String**](.md)| The identifier of the resource. | 
+ **occupant** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -233,7 +233,7 @@ let apiInstance = new @KeyclicSdkJavascript.OccupantApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let occupant = "occupant_example"; // String | The identifier of the resource formatted as GUID string.
+let occupant = "occupant_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -254,7 +254,7 @@ apiInstance.getOccupant(xKeyclicApp, occupant, opts, (error, data, response) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **occupant** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **occupant** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -294,7 +294,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let personData = new @KeyclicSdkJavascript.PersonData(); // PersonData | 
 
-let place = "place_example"; // String | The identifier of the resource formatted as GUID string.
+let place = "place_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **personData** | [**PersonData**](PersonData.md)|  | 
- **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **place** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

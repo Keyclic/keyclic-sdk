@@ -2,29 +2,29 @@ part of keyclic_sdk_api.api;
 
 class Tracking {
   Tracking({
-    this.state,
-    this.progression,
-    this.time,
     this.checkpoints,
+    this.progression,
+    this.state,
+    this.time,
   });
 
   Tracking.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    state = json['state'];
-    progression = TrackingProgression.fromJson(json['progression']);
-    time = json['time'];
     checkpoints = Checkpoint.listFromJson(json['checkpoints']);
+    progression = TrackingProgression.fromJson(json['progression']);
+    state = json['state'];
+    time = json['time'];
   }
 
-  String state;
+  List<Checkpoint> checkpoints;
 
   TrackingProgression progression;
 
-  int time;
+  String state;
 
-  List<Checkpoint> checkpoints;
+  int time;
 
   @override
   bool operator ==(dynamic other) {
@@ -32,27 +32,24 @@ class Tracking {
       return true;
     }
 
-    return other is Tracking &&
-        runtimeType == other.runtimeType &&
-        state == other.state &&
-        progression == other.progression;
+    return other is Tracking && runtimeType == other.runtimeType;
   }
 
   @override
-  int get hashCode => 0 ^ state.hashCode ^ progression.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {
-      'state': state,
-      'progression': progression,
-      'time': time,
       'checkpoints': checkpoints,
+      'progression': progression,
+      'state': state,
+      'time': time,
     };
   }
 
   @override
   String toString() {
-    return 'Tracking[state=$state, progression=$progression, time=$time, checkpoints=$checkpoints, ]';
+    return 'Tracking[checkpoints=$checkpoints, progression=$progression, state=$state, time=$time, ]';
   }
 
   static List<Tracking> listFromJson(List<dynamic> json) {

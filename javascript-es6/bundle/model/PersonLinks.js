@@ -57,12 +57,12 @@ var PersonLinks =
     function PersonLinks() {
       _classCallCheck(this, PersonLinks);
 
-      this.self = null;
       this.image = null;
       this.memberOf = null;
-      this.selfType = _PersonLinksSelf.default;
+      this.self = null;
       this.imageType = _PersonLinksImage.default;
       this.memberOfType = _PersonLinksMemberOf.default;
+      this.selfType = _PersonLinksSelf.default;
     }
     /**
      * Constructs a "PersonLinks" from a plain JavaScript object.
@@ -88,13 +88,6 @@ var PersonLinks =
             object = new PersonLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
-          }
-
           if (data.hasOwnProperty("image")) {
             object.image = _ApiClient.default.convertToType(
               data["image"],
@@ -106,6 +99,13 @@ var PersonLinks =
             object.memberOf = _ApiClient.default.convertToType(
               data["memberOf"],
               object.memberOfType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 

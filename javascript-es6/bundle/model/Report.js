@@ -51,32 +51,26 @@ var Report =
   
    * @param priority { Number }
   
-   * @param reference { String }
-  
-   * @param id { String }
-  
    * @param state { Array.<String> }
   
-   * @param updatedAt { Date }
-  
    */
-    function Report(priority, reference, id, state, updatedAt) {
+    function Report(priority, state) {
       _classCallCheck(this, Report);
 
-      this.description = null;
-      this.priority = priority;
-      this.reference = reference;
-      this.tags = [];
-      this.id = id;
-      this.identificationNumber = null;
-      this.state = state;
-      this.createdAt = null;
-      this.updatedAt = updatedAt;
-      this.type = null;
-      this.links = null;
       this.embedded = null;
-      this.linksType = _ReportLinks.default;
+      this.links = null;
+      this.createdAt = null;
+      this.description = null;
+      this.id = null;
+      this.identificationNumber = null;
+      this.priority = priority;
+      this.reference = null;
+      this.state = state;
+      this.tags = [];
+      this.type = null;
+      this.updatedAt = null;
       this.embeddedType = _ReportEmbedded.default;
+      this.linksType = _ReportLinks.default;
     }
     /**
      * Constructs a "Report" from a plain JavaScript object.
@@ -102,9 +96,41 @@ var Report =
             object = new Report();
           }
 
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
           if (data.hasOwnProperty("description")) {
             object.description = _ApiClient.default.convertToType(
               data["description"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("identificationNumber")) {
+            object.identificationNumber = _ApiClient.default.convertToType(
+              data["identificationNumber"],
               "String"
             );
           }
@@ -123,24 +149,6 @@ var Report =
             );
           }
 
-          if (data.hasOwnProperty("tags")) {
-            object.tags = _ApiClient.default.convertToType(
-              data["tags"],
-              "['String']"
-            );
-          }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
-          }
-
-          if (data.hasOwnProperty("identificationNumber")) {
-            object.identificationNumber = _ApiClient.default.convertToType(
-              data["identificationNumber"],
-              "String"
-            );
-          }
-
           if (data.hasOwnProperty("state")) {
             object.state = _ApiClient.default.convertToType(
               data["state"],
@@ -148,17 +156,10 @@ var Report =
             );
           }
 
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
-          }
-
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
+          if (data.hasOwnProperty("tags")) {
+            object.tags = _ApiClient.default.convertToType(
+              data["tags"],
+              "['String']"
             );
           }
 
@@ -169,17 +170,10 @@ var Report =
             );
           }
 
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
-            );
-          }
-
-          if (data.hasOwnProperty("_embedded")) {
-            object.embedded = _ApiClient.default.convertToType(
-              data["_embedded"],
-              object.embeddedType
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

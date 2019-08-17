@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **String** | The URI of the image associated to the given person. | [optional] 
-**iriTemplate** | [**DelegationLinksCreatedByIriTemplate**](DelegationLinksCreatedByIriTemplate.md) |  | [optional] 
+**iriTemplate** | [**PersonLinksImageIriTemplate**](PersonLinksImageIriTemplate.md) |  | [optional] 
 
 

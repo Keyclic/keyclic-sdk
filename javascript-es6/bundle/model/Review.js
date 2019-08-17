@@ -47,23 +47,17 @@ var Review =
    * @alias module:model/Review
    * @class
   
-   * @param id { String }
-  
-   * @param createdAt { Date }
-  
-   * @param updatedAt { Date }
-  
    */
-    function Review(id, createdAt, updatedAt) {
+    function Review() {
       _classCallCheck(this, Review);
 
+      this.links = null;
+      this.createdAt = null;
+      this.id = null;
       this.reviewBody = null;
       this.reviewRating = null;
-      this.id = id;
-      this.createdAt = createdAt;
-      this.updatedAt = updatedAt;
       this.type = null;
-      this.links = null;
+      this.updatedAt = null;
       this.linksType = _ReviewLinks.default;
     }
     /**
@@ -90,6 +84,24 @@ var Review =
             object = new Review();
           }
 
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
           if (data.hasOwnProperty("reviewBody")) {
             object.reviewBody = _ApiClient.default.convertToType(
               data["reviewBody"],
@@ -104,24 +116,6 @@ var Review =
             );
           }
 
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
-          }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
-          }
-
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
-            );
-          }
-
           if (data.hasOwnProperty("type")) {
             object.type = _ApiClient.default.convertToType(
               data["type"],
@@ -129,10 +123,10 @@ var Review =
             );
           }
 
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

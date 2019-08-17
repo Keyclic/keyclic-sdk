@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**self** | [**ReviewLinksSelf**](ReviewLinksSelf.md) |  | [optional] 
 **author** | [**ReviewLinksAuthor**](ReviewLinksAuthor.md) |  | [optional] 
+**itemReviewed** | [**ReviewLinksItemReviewed**](ReviewLinksItemReviewed.md) |  | [optional] 
+**self** | [**ReviewLinksSelf**](ReviewLinksSelf.md) |  | [optional] 
 
 

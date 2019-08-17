@@ -13,7 +13,7 @@ class ReportWorkflowTransitionData {
   }
 
   String transition;
-  //enum transitionEnum {  accept,  refuse,  hold,  progress,  close,  };
+  //enum transitionEnum {  accept,  close,  hold,  progress,  refuse,  };
 
   @override
   bool operator ==(dynamic other) {

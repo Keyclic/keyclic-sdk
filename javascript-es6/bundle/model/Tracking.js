@@ -51,20 +51,16 @@ var Tracking =
    * @alias module:model/Tracking
    * @class
   
-   * @param state { String }
-  
-   * @param progression { module:model/TrackingProgression }
-  
    */
-    function Tracking(state, progression) {
+    function Tracking() {
       _classCallCheck(this, Tracking);
 
-      this.state = state;
-      this.progression = progression;
-      this.time = null;
       this.checkpoints = [];
-      this.progressionType = _TrackingProgression.default;
+      this.progression = null;
+      this.state = null;
+      this.time = null;
       this.checkpointsType = _Checkpoint.default;
+      this.progressionType = _TrackingProgression.default;
     }
     /**
      * Constructs a "Tracking" from a plain JavaScript object.
@@ -90,10 +86,10 @@ var Tracking =
             object = new Tracking();
           }
 
-          if (data.hasOwnProperty("state")) {
-            object.state = _ApiClient.default.convertToType(
-              data["state"],
-              "String"
+          if (data.hasOwnProperty("checkpoints")) {
+            object.checkpoints = _ApiClient.default.convertToType(
+              data["checkpoints"],
+              [object.checkpointsType]
             );
           }
 
@@ -104,17 +100,17 @@ var Tracking =
             );
           }
 
+          if (data.hasOwnProperty("state")) {
+            object.state = _ApiClient.default.convertToType(
+              data["state"],
+              "String"
+            );
+          }
+
           if (data.hasOwnProperty("time")) {
             object.time = _ApiClient.default.convertToType(
               data["time"],
               "Number"
-            );
-          }
-
-          if (data.hasOwnProperty("checkpoints")) {
-            object.checkpoints = _ApiClient.default.convertToType(
-              data["checkpoints"],
-              [object.checkpointsType]
             );
           }
 

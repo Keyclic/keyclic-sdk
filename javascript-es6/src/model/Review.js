@@ -23,27 +23,15 @@ export default class Review {
      * @alias module:model/Review
      * @class
     
-     * @param id { String }
-    
-     * @param createdAt { Date }
-    
-     * @param updatedAt { Date }
-    
      */
-  constructor(
-    id,
-
-    createdAt,
-
-    updatedAt
-  ) {
+  constructor() {
+    this.links = null;
+    this.createdAt = null;
+    this.id = null;
     this.reviewBody = null;
     this.reviewRating = null;
-    this.id = id;
-    this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
     this.type = null;
-    this.links = null;
+    this.updatedAt = null;
 
     this.linksType = ReviewLinks;
   }
@@ -63,6 +51,15 @@ export default class Review {
       object = new Review();
     }
 
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
+    }
     if (data.hasOwnProperty("reviewBody")) {
       object.reviewBody = ApiClient.convertToType(data["reviewBody"], "String");
     }
@@ -72,20 +69,11 @@ export default class Review {
         "Number"
       );
     }
-    if (data.hasOwnProperty("id")) {
-      object.id = ApiClient.convertToType(data["id"], "String");
-    }
-    if (data.hasOwnProperty("createdAt")) {
-      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
-    }
-    if (data.hasOwnProperty("updatedAt")) {
-      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
-    }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
     }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

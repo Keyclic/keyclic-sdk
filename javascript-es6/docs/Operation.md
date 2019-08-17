@@ -3,17 +3,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**embedded** | [**FeedbackEmbedded**](FeedbackEmbedded.md) |  | [optional] 
+**links** | [**OperationLinks**](OperationLinks.md) |  | [optional] 
+**createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
+**identificationNumber** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **scheduledAt** | **Date** |  | [optional] 
-**signature** | [**OperationSignature**](OperationSignature.md) |  | 
-**id** | **String** |  | 
-**identificationNumber** | **String** |  | [optional] 
+**signature** | [**OperationSignature**](OperationSignature.md) |  | [optional] 
 **state** | **[String]** |  | 
-**createdAt** | **Date** |  | 
-**updatedAt** | **Date** |  | 
 **type** | **String** |  | [optional] 
-**links** | [**OperationLinks**](OperationLinks.md) |  | [optional] 
-**embedded** | [**FeedbackEmbedded**](FeedbackEmbedded.md) |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 
 

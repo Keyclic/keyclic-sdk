@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import FeedbackLinksSelfIriTemplate from "./FeedbackLinksSelfIriTemplate";
+import ReportLinksFeedbackIriTemplate from "./ReportLinksFeedbackIriTemplate";
 
 /**
  * The ReportLinksFeedback model module.
@@ -28,7 +28,7 @@ export default class ReportLinksFeedback {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = FeedbackLinksSelfIriTemplate;
+    this.iriTemplateType = ReportLinksFeedbackIriTemplate;
   }
 
   /**

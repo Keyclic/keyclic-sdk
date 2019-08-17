@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CategoryLinksOrganizationIriTemplate = _interopRequireDefault(
-  require("./CategoryLinksOrganizationIriTemplate")
+var _OrganizationLinksLogoIriTemplate = _interopRequireDefault(
+  require("./OrganizationLinksLogoIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var OrganizationLinksLogo =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _CategoryLinksOrganizationIriTemplate.default;
+      this.iriTemplateType = _OrganizationLinksLogoIriTemplate.default;
     }
     /**
      * Constructs a "OrganizationLinksLogo" from a plain JavaScript object.

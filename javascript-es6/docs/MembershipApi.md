@@ -28,7 +28,7 @@ let apiInstance = new @KeyclicSdkJavascript.MembershipApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let person = "person_example"; // String | The identifier of the resource formatted as GUID string.
+let person = "person_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -40,13 +40,7 @@ let opts = {
   'role': "role_example", // String | 
   'roles': "roles_example", // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
-  'searchFamilyName': "searchFamilyName_example", // String | 
-  'searchGivenName': "searchGivenName_example", // String | 
-  'searchJobTitle': "searchJobTitle_example", // String | 
-  'searchTelephone': "searchTelephone_example", // String | 
-  'searchUsername': "searchUsername_example", // String | 
-  'searchEmail': "searchEmail_example" // String | 
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetMembershipsByPerson(xKeyclicApp, person, opts, (error, data, response) => {
@@ -63,7 +57,7 @@ apiInstance.cgetMembershipsByPerson(xKeyclicApp, person, opts, (error, data, res
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 
@@ -74,12 +68,6 @@ Name | Type | Description  | Notes
  **roles** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **searchFamilyName** | **String**|  | [optional] 
- **searchGivenName** | **String**|  | [optional] 
- **searchJobTitle** | **String**|  | [optional] 
- **searchTelephone** | **String**|  | [optional] 
- **searchUsername** | **String**|  | [optional] 
- **searchEmail** | **String**|  | [optional] 
 
 ### Return type
 

@@ -2,35 +2,35 @@ part of keyclic_sdk_api.api;
 
 class FeedbackReviewRequestLinks {
   FeedbackReviewRequestLinks({
-    this.self,
     this.itemToReview,
     this.organization,
-    this.reviewer,
     this.review,
+    this.reviewer,
+    this.self,
   });
 
   FeedbackReviewRequestLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    self = FeedbackReviewRequestLinksSelf.fromJson(json['self']);
     itemToReview =
         FeedbackReviewRequestLinksItemToReview.fromJson(json['itemToReview']);
     organization =
         FeedbackReviewRequestLinksOrganization.fromJson(json['organization']);
-    reviewer = FeedbackReviewRequestLinksReviewer.fromJson(json['reviewer']);
     review = FeedbackReviewRequestLinksReview.fromJson(json['review']);
+    reviewer = FeedbackReviewRequestLinksReviewer.fromJson(json['reviewer']);
+    self = FeedbackReviewRequestLinksSelf.fromJson(json['self']);
   }
-
-  FeedbackReviewRequestLinksSelf self;
 
   FeedbackReviewRequestLinksItemToReview itemToReview;
 
   FeedbackReviewRequestLinksOrganization organization;
 
+  FeedbackReviewRequestLinksReview review;
+
   FeedbackReviewRequestLinksReviewer reviewer;
 
-  FeedbackReviewRequestLinksReview review;
+  FeedbackReviewRequestLinksSelf self;
 
   @override
   bool operator ==(dynamic other) {
@@ -47,17 +47,17 @@ class FeedbackReviewRequestLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
       'itemToReview': itemToReview,
       'organization': organization,
-      'reviewer': reviewer,
       'review': review,
+      'reviewer': reviewer,
+      'self': self,
     };
   }
 
   @override
   String toString() {
-    return 'FeedbackReviewRequestLinks[self=$self, itemToReview=$itemToReview, organization=$organization, reviewer=$reviewer, review=$review, ]';
+    return 'FeedbackReviewRequestLinks[itemToReview=$itemToReview, organization=$organization, review=$review, reviewer=$reviewer, self=$self, ]';
   }
 
   static List<FeedbackReviewRequestLinks> listFromJson(List<dynamic> json) {

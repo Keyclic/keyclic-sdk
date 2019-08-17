@@ -47,6 +47,16 @@
   }
 
   describe('DelegationApi', function() {
+    describe('cgetDelegationsByOrganization', function() {
+      it('should call cgetDelegationsByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cgetDelegationsByOrganization
+        //instance.cgetDelegationsByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getDelegation', function() {
       it('should call getDelegation successfully', function(done) {
         //uncomment below and update the code to test getDelegation

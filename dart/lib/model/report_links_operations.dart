@@ -12,13 +12,13 @@ class ReportLinksOperations {
     }
     href = json['href'];
     iriTemplate =
-        DelegationLinksReportIriTemplate.fromJson(json['iriTemplate']);
+        ReportLinksOperationsIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the operations associated to the given report. */
   String href;
 
-  DelegationLinksReportIriTemplate iriTemplate;
+  ReportLinksOperationsIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

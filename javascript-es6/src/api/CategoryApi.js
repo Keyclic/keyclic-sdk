@@ -39,20 +39,16 @@ export default class CategoryApi extends ApiClient {
    * @param { CategoryPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+   * @param { String } businessActivity The identifier of the resource.
    * @param { module:model/Date } after
    * @param { module:model/Date } before
    * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
    * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
    * @param { module:model/String } order   (default to desc)
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
    * @param { String } query
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { String } searchColor
-   * @param { String } searchIcon
-   * @param { String } searchName
-   * @param { String } searchIdentificationNumber
    */
   cgetCategories(returnType = null, options, credentials) {
     if (returnType === null) {
@@ -72,11 +68,7 @@ export default class CategoryApi extends ApiClient {
       organization,
       query,
       page,
-      limit,
-      searchColor,
-      searchIcon,
-      searchName,
-      searchIdentificationNumber
+      limit
     } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -146,26 +138,6 @@ export default class CategoryApi extends ApiClient {
       query = null;
     }
 
-    // verify the null value of parameter 'searchColor'
-    if (typeof searchColor === "undefined") {
-      searchColor = null;
-    }
-
-    // verify the null value of parameter 'searchIcon'
-    if (typeof searchIcon === "undefined") {
-      searchIcon = null;
-    }
-
-    // verify the null value of parameter 'searchName'
-    if (typeof searchName === "undefined") {
-      searchName = null;
-    }
-
-    // verify the null value of parameter 'searchIdentificationNumber'
-    if (typeof searchIdentificationNumber === "undefined") {
-      searchIdentificationNumber = null;
-    }
-
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
         'Missing the required parameter "credentials" when calling cgetCategories'
@@ -186,11 +158,7 @@ export default class CategoryApi extends ApiClient {
       organization: organization,
       query: query,
       page: page,
-      limit: limit,
-      "search[color]": searchColor,
-      "search[icon]": searchIcon,
-      "search[name]": searchName,
-      "search[identificationNumber]": searchIdentificationNumber
+      limit: limit
     };
 
     let headerParams = {
@@ -225,12 +193,12 @@ export default class CategoryApi extends ApiClient {
   /**
    * Retrieve all Category resources.
    * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { CategoryPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { String } businessActivity The identifier of the resource formatted as GUID string.
+   * @param { String } businessActivity The identifier of the resource.
    * @param { module:model/Date } after
    * @param { module:model/Date } before
    * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
@@ -239,10 +207,6 @@ export default class CategoryApi extends ApiClient {
    * @param { String } query
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { String } searchColor
-   * @param { String } searchIcon
-   * @param { String } searchName
-   * @param { String } searchIdentificationNumber
    */
   cgetCategoriesByOrganization(returnType = null, options, credentials) {
     if (returnType === null) {
@@ -262,11 +226,7 @@ export default class CategoryApi extends ApiClient {
       order,
       query,
       page,
-      limit,
-      searchColor,
-      searchIcon,
-      searchName,
-      searchIdentificationNumber
+      limit
     } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -338,26 +298,6 @@ export default class CategoryApi extends ApiClient {
       query = null;
     }
 
-    // verify the null value of parameter 'searchColor'
-    if (typeof searchColor === "undefined") {
-      searchColor = null;
-    }
-
-    // verify the null value of parameter 'searchIcon'
-    if (typeof searchIcon === "undefined") {
-      searchIcon = null;
-    }
-
-    // verify the null value of parameter 'searchName'
-    if (typeof searchName === "undefined") {
-      searchName = null;
-    }
-
-    // verify the null value of parameter 'searchIdentificationNumber'
-    if (typeof searchIdentificationNumber === "undefined") {
-      searchIdentificationNumber = null;
-    }
-
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
         'Missing the required parameter "credentials" when calling cgetCategoriesByOrganization'
@@ -379,11 +319,7 @@ export default class CategoryApi extends ApiClient {
       order: order,
       query: query,
       page: page,
-      limit: limit,
-      "search[color]": searchColor,
-      "search[icon]": searchIcon,
-      "search[name]": searchName,
-      "search[identificationNumber]": searchIdentificationNumber
+      limit: limit
     };
 
     let headerParams = {
@@ -416,9 +352,88 @@ export default class CategoryApi extends ApiClient {
   }
 
   /**
+   * Remove one Category resource.
+   * @param { String } xKeyclicApp
+   * @param { String } category The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  deleteCategory(returnType = null, options, credentials) {
+    let { xKeyclicApp, category, acceptLanguage, xKeyclicAppVersion } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling deleteCategory'
+      );
+    }
+
+    // verify the required parameter 'category' is set
+    if (typeof category === "undefined" || category === null) {
+      throw new window.Error(
+        'Missing the required parameter "category" when calling deleteCategory'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling deleteCategory'
+      );
+    }
+
+    let pathParams = {
+      category: category
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/categories/{category}",
+      "DELETE",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
    * Retrieve one Category resource.
    * @param { String } xKeyclicApp
-   * @param { String } category The identifier of the resource formatted as GUID string.
+   * @param { String } category The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Category }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -502,7 +517,7 @@ export default class CategoryApi extends ApiClient {
    * Edit one Category resource.
    * @param { String } xKeyclicApp
    * @param { module:model/CategoryPatch } categoryPatch
-   * @param { String } category The identifier of the resource formatted as GUID string.
+   * @param { String } category The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Category }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -599,7 +614,7 @@ export default class CategoryApi extends ApiClient {
    * Create one Category resource.
    * @param { String } xKeyclicApp
    * @param { module:model/CategoryData } categoryData
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Category }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)

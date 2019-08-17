@@ -57,6 +57,16 @@
         done();
       });
     });
+    describe('cgetServicesByOrganization_0', function() {
+      it('should call cgetServicesByOrganization_0 successfully', function(done) {
+        //uncomment below and update the code to test cgetServicesByOrganization_0
+        //instance.cgetServicesByOrganization_0(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

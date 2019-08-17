@@ -26,11 +26,11 @@ export default class CategoryLinks {
     
      */
   constructor() {
-    this.self = null;
     this.organization = null;
+    this.self = null;
 
-    this.selfType = CategoryLinksSelf;
     this.organizationType = CategoryLinksOrganization;
+    this.selfType = CategoryLinksSelf;
   }
 
   /**
@@ -48,14 +48,14 @@ export default class CategoryLinks {
       object = new CategoryLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
-    }
     if (data.hasOwnProperty("organization")) {
       object.organization = ApiClient.convertToType(
         data["organization"],
         object.organizationType
       );
+    }
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
 
     return object;

@@ -32,29 +32,34 @@ export default class ApplicationApi extends ApiClient {
   /**
    * Retrieve one Application resource.
    * @param { String } xKeyclicApp
-   * @param { String } token
+   * @param { String } application The identifier of the resource.
    * @param { Application }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getApplicationByToken(returnType = null, options) {
+  getApplication(returnType = null, options) {
     if (returnType === null) {
       returnType = Application;
     }
 
-    let { xKeyclicApp, token, acceptLanguage, xKeyclicAppVersion } = options;
+    let {
+      xKeyclicApp,
+      application,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling getApplicationByToken'
+        'Missing the required parameter "xKeyclicApp" when calling getApplication'
       );
     }
 
-    // verify the required parameter 'token' is set
-    if (typeof token === "undefined" || token === null) {
+    // verify the required parameter 'application' is set
+    if (typeof application === "undefined" || application === null) {
       throw new window.Error(
-        'Missing the required parameter "token" when calling getApplicationByToken'
+        'Missing the required parameter "application" when calling getApplication'
       );
     }
 
@@ -69,7 +74,7 @@ export default class ApplicationApi extends ApiClient {
     }
 
     let pathParams = {
-      token: token
+      application: application
     };
 
     let bodyParam = null;
@@ -91,7 +96,7 @@ export default class ApplicationApi extends ApiClient {
     let accepts = ["application/hal+json;charset=UTF-8"];
 
     return this.callApi(
-      "/applications/{token}",
+      "/applications/{application}",
       "GET",
       pathParams,
       queryParams,

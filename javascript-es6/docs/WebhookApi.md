@@ -30,7 +30,7 @@ let apiInstance = new @KeyclicSdkJavascript.WebhookApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+let organization = "organization_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -39,7 +39,7 @@ let opts = {
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'order': "desc", // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetWebhooksByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
@@ -56,7 +56,7 @@ apiInstance.cgetWebhooksByOrganization(xKeyclicApp, organization, opts, (error, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 
@@ -99,7 +99,7 @@ let apiInstance = new @KeyclicSdkJavascript.WebhookApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let webhook = "webhook_example"; // String | The identifier of the resource formatted as GUID string.
+let webhook = "webhook_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -120,7 +120,7 @@ apiInstance.getWebhook(xKeyclicApp, webhook, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **webhook** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **webhook** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -160,7 +160,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let webhookPatch = new @KeyclicSdkJavascript.WebhookPatch(); // WebhookPatch | 
 
-let webhook = "webhook_example"; // String | The identifier of the resource formatted as GUID string.
+let webhook = "webhook_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **webhookPatch** | [**WebhookPatch**](WebhookPatch.md)|  | 
- **webhook** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **webhook** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

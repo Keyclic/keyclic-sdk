@@ -27,32 +27,28 @@ export default class Feedback {
     
      * @param geoCoordinates { module:model/FeedbackGeoCoordinates }
     
-     * @param id { String }
-    
      * @param state { Array.<String> }
     
      */
   constructor(
     geoCoordinates,
 
-    id,
-
     state
   ) {
+    this.embedded = null;
+    this.links = null;
+    this.createdAt = null;
     this.description = null;
     this.geoCoordinates = geoCoordinates;
+    this.id = null;
     this.metadata = [];
-    this.id = id;
-    this.state = state;
-    this.createdAt = null;
-    this.type = null;
     this._public = null;
-    this.links = null;
-    this.embedded = null;
+    this.state = state;
+    this.type = null;
 
-    this.geoCoordinatesType = FeedbackGeoCoordinates;
-    this.linksType = FeedbackLinks;
     this.embeddedType = FeedbackEmbedded;
+    this.linksType = FeedbackLinks;
+    this.geoCoordinatesType = FeedbackGeoCoordinates;
   }
 
   /**
@@ -70,6 +66,18 @@ export default class Feedback {
       object = new Feedback();
     }
 
+    if (data.hasOwnProperty("_embedded")) {
+      object.embedded = ApiClient.convertToType(
+        data["_embedded"],
+        object.embeddedType
+      );
+    }
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
         data["description"],
@@ -82,32 +90,20 @@ export default class Feedback {
         object.geoCoordinatesType
       );
     }
-    if (data.hasOwnProperty("metadata")) {
-      object.metadata = ApiClient.convertToType(data["metadata"], "['String']");
-    }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
     }
-    if (data.hasOwnProperty("state")) {
-      object.state = ApiClient.convertToType(data["state"], "['String']");
-    }
-    if (data.hasOwnProperty("createdAt")) {
-      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
-    }
-    if (data.hasOwnProperty("type")) {
-      object.type = ApiClient.convertToType(data["type"], "String");
+    if (data.hasOwnProperty("metadata")) {
+      object.metadata = ApiClient.convertToType(data["metadata"], "['String']");
     }
     if (data.hasOwnProperty("public")) {
       object._public = ApiClient.convertToType(data["public"], "Boolean");
     }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    if (data.hasOwnProperty("state")) {
+      object.state = ApiClient.convertToType(data["state"], "['String']");
     }
-    if (data.hasOwnProperty("_embedded")) {
-      object.embedded = ApiClient.convertToType(
-        data["_embedded"],
-        object.embeddedType
-      );
+    if (data.hasOwnProperty("type")) {
+      object.type = ApiClient.convertToType(data["type"], "String");
     }
 
     return object;

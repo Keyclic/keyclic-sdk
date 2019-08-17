@@ -47,20 +47,10 @@
   }
 
   describe('RelationshipApi', function() {
-    describe('cgetRelationshipsByOrganization', function() {
-      it('should call cgetRelationshipsByOrganization successfully', function(done) {
-        //uncomment below and update the code to test cgetRelationshipsByOrganization
-        //instance.cgetRelationshipsByOrganization(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteRelationshipByOrganizationAndRelationship', function() {
-      it('should call deleteRelationshipByOrganizationAndRelationship successfully', function(done) {
-        //uncomment below and update the code to test deleteRelationshipByOrganizationAndRelationship
-        //instance.deleteRelationshipByOrganizationAndRelationship(function(error) {
+    describe('deleteRelationshipByOrganizationAndService', function() {
+      it('should call deleteRelationshipByOrganizationAndService successfully', function(done) {
+        //uncomment below and update the code to test deleteRelationshipByOrganizationAndService
+        //instance.deleteRelationshipByOrganizationAndService(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -20,13 +20,11 @@ class PlacePreferences {
       return true;
     }
 
-    return other is PlacePreferences &&
-        runtimeType == other.runtimeType &&
-        public == other.public;
+    return other is PlacePreferences && runtimeType == other.runtimeType;
   }
 
   @override
-  int get hashCode => 0 ^ public.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {

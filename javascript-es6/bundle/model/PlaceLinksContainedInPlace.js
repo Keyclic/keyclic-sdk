@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _OccupantLinksPlaceIriTemplate = _interopRequireDefault(
-  require("./OccupantLinksPlaceIriTemplate")
+var _PlaceLinksContainedInPlaceIriTemplate = _interopRequireDefault(
+  require("./PlaceLinksContainedInPlaceIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var PlaceLinksContainedInPlace =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _OccupantLinksPlaceIriTemplate.default;
+      this.iriTemplateType = _PlaceLinksContainedInPlaceIriTemplate.default;
     }
     /**
      * Constructs a "PlaceLinksContainedInPlace" from a plain JavaScript object.

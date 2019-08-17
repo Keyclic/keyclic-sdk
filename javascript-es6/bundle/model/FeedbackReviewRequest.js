@@ -49,21 +49,15 @@ var FeedbackReviewRequest =
    * @alias module:model/FeedbackReviewRequest
    * @class
   
-   * @param id { String }
-  
-   * @param createdAt { Date }
-  
-   * @param updatedAt { Date }
-  
    */
-    function FeedbackReviewRequest(id, createdAt, updatedAt) {
+    function FeedbackReviewRequest() {
       _classCallCheck(this, FeedbackReviewRequest);
 
-      this.id = id;
-      this.createdAt = createdAt;
-      this.updatedAt = updatedAt;
-      this.type = null;
       this.links = null;
+      this.createdAt = null;
+      this.id = null;
+      this.type = null;
+      this.updatedAt = null;
       this.linksType = _FeedbackReviewRequestLinks.default;
     }
     /**
@@ -90,8 +84,11 @@ var FeedbackReviewRequest =
             object = new FeedbackReviewRequest();
           }
 
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
           }
 
           if (data.hasOwnProperty("createdAt")) {
@@ -101,11 +98,8 @@ var FeedbackReviewRequest =
             );
           }
 
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
-            );
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
 
           if (data.hasOwnProperty("type")) {
@@ -115,10 +109,10 @@ var FeedbackReviewRequest =
             );
           }
 
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

@@ -53,8 +53,20 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.ReportLinks);
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
+    it('should have the property category (base name: "category")', function() {
+      // uncomment below and update the code to test the property category
+      //var instane = new @KeyclicSdkJavascript.ReportLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property delegatedFrom (base name: "delegatedFrom")', function() {
+      // uncomment below and update the code to test the property delegatedFrom
+      //var instane = new @KeyclicSdkJavascript.ReportLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property delegatedTo (base name: "delegatedTo")', function() {
+      // uncomment below and update the code to test the property delegatedTo
       //var instane = new @KeyclicSdkJavascript.ReportLinks();
       //expect(instance).to.be();
     });
@@ -77,26 +89,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property category (base name: "category")', function() {
-      // uncomment below and update the code to test the property category
-      //var instane = new @KeyclicSdkJavascript.ReportLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property delegatedTo (base name: "delegatedTo")', function() {
-      // uncomment below and update the code to test the property delegatedTo
-      //var instane = new @KeyclicSdkJavascript.ReportLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property delegatedFrom (base name: "delegatedFrom")', function() {
-      // uncomment below and update the code to test the property delegatedFrom
-      //var instane = new @KeyclicSdkJavascript.ReportLinks();
-      //expect(instance).to.be();
-    });
-
     it('should have the property place (base name: "place")', function() {
       // uncomment below and update the code to test the property place
+      //var instane = new @KeyclicSdkJavascript.ReportLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
       //var instane = new @KeyclicSdkJavascript.ReportLinks();
       //expect(instance).to.be();
     });

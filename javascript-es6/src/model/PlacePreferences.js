@@ -22,11 +22,9 @@ export default class PlacePreferences {
      * @alias module:model/PlacePreferences
      * @class
     
-     * @param _public { Boolean }
-    
      */
-  constructor(_public) {
-    this._public = _public;
+  constructor() {
+    this._public = null;
   }
 
   /**

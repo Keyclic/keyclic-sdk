@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _DelegationLinksCreatedByIriTemplate = _interopRequireDefault(
-  require("./DelegationLinksCreatedByIriTemplate")
+var _OperationLinksOperatorIriTemplate = _interopRequireDefault(
+  require("./OperationLinksOperatorIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var OperationLinksOperator =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _DelegationLinksCreatedByIriTemplate.default;
+      this.iriTemplateType = _OperationLinksOperatorIriTemplate.default;
     }
     /**
      * Constructs a "OperationLinksOperator" from a plain JavaScript object.

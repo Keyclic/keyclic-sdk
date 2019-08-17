@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _DelegationLinksCreatedByIriTemplate = _interopRequireDefault(
-  require("./DelegationLinksCreatedByIriTemplate")
+var _DocumentLinksCreatedByIriTemplate = _interopRequireDefault(
+  require("./DocumentLinksCreatedByIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var DocumentLinksCreatedBy =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _DelegationLinksCreatedByIriTemplate.default;
+      this.iriTemplateType = _DocumentLinksCreatedByIriTemplate.default;
     }
     /**
      * Constructs a "DocumentLinksCreatedBy" from a plain JavaScript object.

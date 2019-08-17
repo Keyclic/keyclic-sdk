@@ -53,8 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.FeedbackLinks);
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
+    it('should have the property businessActivity (base name: "businessActivity")', function() {
+      // uncomment below and update the code to test the property businessActivity
       //var instane = new @KeyclicSdkJavascript.FeedbackLinks();
       //expect(instance).to.be();
     });
@@ -65,8 +65,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property businessActivity (base name: "businessActivity")', function() {
-      // uncomment below and update the code to test the property businessActivity
+    it('should have the property image (base name: "image")', function() {
+      // uncomment below and update the code to test the property image
+      //var instane = new @KeyclicSdkJavascript.FeedbackLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property images (base name: "images")', function() {
+      // uncomment below and update the code to test the property images
       //var instane = new @KeyclicSdkJavascript.FeedbackLinks();
       //expect(instance).to.be();
     });
@@ -77,20 +83,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property image (base name: "image")', function() {
-      // uncomment below and update the code to test the property image
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
       //var instane = new @KeyclicSdkJavascript.FeedbackLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property tracking (base name: "tracking")', function() {
       // uncomment below and update the code to test the property tracking
-      //var instane = new @KeyclicSdkJavascript.FeedbackLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property images (base name: "images")', function() {
-      // uncomment below and update the code to test the property images
       //var instane = new @KeyclicSdkJavascript.FeedbackLinks();
       //expect(instance).to.be();
     });

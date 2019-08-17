@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import CategoryLinksOrganizationIriTemplate from "./CategoryLinksOrganizationIriTemplate";
+import PlaceLinksOrganizationIriTemplate from "./PlaceLinksOrganizationIriTemplate";
 
 /**
  * The PlaceLinksOrganization model module.
@@ -28,7 +28,7 @@ export default class PlaceLinksOrganization {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = CategoryLinksOrganizationIriTemplate;
+    this.iriTemplateType = PlaceLinksOrganizationIriTemplate;
   }
 
   /**

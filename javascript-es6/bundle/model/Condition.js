@@ -49,8 +49,10 @@ var Condition =
     function Condition() {
       _classCallCheck(this, Condition);
 
+      this.id = null;
       this.operator = null;
       this.path = null;
+      this.type = null;
       this.value = [];
     }
     /**
@@ -77,6 +79,10 @@ var Condition =
             object = new Condition();
           }
 
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
           if (data.hasOwnProperty("operator")) {
             object.operator = _ApiClient.default.convertToType(
               data["operator"],
@@ -87,6 +93,13 @@ var Condition =
           if (data.hasOwnProperty("path")) {
             object.path = _ApiClient.default.convertToType(
               data["path"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
               "String"
             );
           }

@@ -121,11 +121,11 @@ _defineProperty(ReportWorkflowTransitionData, "TransitionEnum", {
   accept: "accept",
 
   /**
-   * value: "refuse"
+   * value: "close"
    * @const
    * @readonly
    */
-  refuse: "refuse",
+  close: "close",
 
   /**
    * value: "hold"
@@ -142,9 +142,9 @@ _defineProperty(ReportWorkflowTransitionData, "TransitionEnum", {
   progress: "progress",
 
   /**
-   * value: "close"
+   * value: "refuse"
    * @const
    * @readonly
    */
-  close: "close"
+  refuse: "refuse"
 });

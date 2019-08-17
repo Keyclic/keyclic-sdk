@@ -35,7 +35,7 @@ export default class OperationApi extends ApiClient {
   /**
    * Retrieve all Operation resources.
    * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -47,9 +47,6 @@ export default class OperationApi extends ApiClient {
    * @param { String } state
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { String } searchDescription
-   * @param { String } searchName
-   * @param { String } searchIdentificationNumber
    */
   cgetOperationsByOrganization(returnType = null, options, credentials) {
     if (returnType === null) {
@@ -67,10 +64,7 @@ export default class OperationApi extends ApiClient {
       query,
       state,
       page,
-      limit,
-      searchDescription,
-      searchName,
-      searchIdentificationNumber
+      limit
     } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -132,21 +126,6 @@ export default class OperationApi extends ApiClient {
       state = null;
     }
 
-    // verify the null value of parameter 'searchDescription'
-    if (typeof searchDescription === "undefined") {
-      searchDescription = null;
-    }
-
-    // verify the null value of parameter 'searchName'
-    if (typeof searchName === "undefined") {
-      searchName = null;
-    }
-
-    // verify the null value of parameter 'searchIdentificationNumber'
-    if (typeof searchIdentificationNumber === "undefined") {
-      searchIdentificationNumber = null;
-    }
-
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
         'Missing the required parameter "credentials" when calling cgetOperationsByOrganization'
@@ -166,10 +145,7 @@ export default class OperationApi extends ApiClient {
       query: query,
       state: state,
       page: page,
-      limit: limit,
-      "search[description]": searchDescription,
-      "search[name]": searchName,
-      "search[identificationNumber]": searchIdentificationNumber
+      limit: limit
     };
 
     let headerParams = {
@@ -204,7 +180,7 @@ export default class OperationApi extends ApiClient {
   /**
    * Retrieve all Operation resources.
    * @param { String } xKeyclicApp
-   * @param { String } person The identifier of the resource formatted as GUID string.
+   * @param { String } person The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -212,14 +188,11 @@ export default class OperationApi extends ApiClient {
    * @param { module:model/Date } after
    * @param { module:model/Date } before
    * @param { module:model/String } order   (default to desc)
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
    * @param { String } query
    * @param { String } state
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { String } searchDescription
-   * @param { String } searchName
-   * @param { String } searchIdentificationNumber
    */
   cgetOperationsByPerson(returnType = null, options, credentials) {
     if (returnType === null) {
@@ -238,10 +211,7 @@ export default class OperationApi extends ApiClient {
       query,
       state,
       page,
-      limit,
-      searchDescription,
-      searchName,
-      searchIdentificationNumber
+      limit
     } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -308,21 +278,6 @@ export default class OperationApi extends ApiClient {
       state = null;
     }
 
-    // verify the null value of parameter 'searchDescription'
-    if (typeof searchDescription === "undefined") {
-      searchDescription = null;
-    }
-
-    // verify the null value of parameter 'searchName'
-    if (typeof searchName === "undefined") {
-      searchName = null;
-    }
-
-    // verify the null value of parameter 'searchIdentificationNumber'
-    if (typeof searchIdentificationNumber === "undefined") {
-      searchIdentificationNumber = null;
-    }
-
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
         'Missing the required parameter "credentials" when calling cgetOperationsByPerson'
@@ -343,10 +298,7 @@ export default class OperationApi extends ApiClient {
       query: query,
       state: state,
       page: page,
-      limit: limit,
-      "search[description]": searchDescription,
-      "search[name]": searchName,
-      "search[identificationNumber]": searchIdentificationNumber
+      limit: limit
     };
 
     let headerParams = {
@@ -381,7 +333,7 @@ export default class OperationApi extends ApiClient {
   /**
    * Retrieve all Operation resources.
    * @param { String } xKeyclicApp
-   * @param { String } report The identifier of the resource formatted as GUID string.
+   * @param { String } report The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -389,14 +341,11 @@ export default class OperationApi extends ApiClient {
    * @param { module:model/Date } after
    * @param { module:model/Date } before
    * @param { module:model/String } order   (default to desc)
-   * @param { String } organization The identifier of the resource formatted as GUID string.
+   * @param { String } organization The identifier of the resource.
    * @param { String } query
    * @param { String } state
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
-   * @param { String } searchDescription
-   * @param { String } searchName
-   * @param { String } searchIdentificationNumber
    */
   cgetOperationsByReport(returnType = null, options, credentials) {
     if (returnType === null) {
@@ -415,10 +364,7 @@ export default class OperationApi extends ApiClient {
       query,
       state,
       page,
-      limit,
-      searchDescription,
-      searchName,
-      searchIdentificationNumber
+      limit
     } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -485,21 +431,6 @@ export default class OperationApi extends ApiClient {
       state = null;
     }
 
-    // verify the null value of parameter 'searchDescription'
-    if (typeof searchDescription === "undefined") {
-      searchDescription = null;
-    }
-
-    // verify the null value of parameter 'searchName'
-    if (typeof searchName === "undefined") {
-      searchName = null;
-    }
-
-    // verify the null value of parameter 'searchIdentificationNumber'
-    if (typeof searchIdentificationNumber === "undefined") {
-      searchIdentificationNumber = null;
-    }
-
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
         'Missing the required parameter "credentials" when calling cgetOperationsByReport'
@@ -520,10 +451,7 @@ export default class OperationApi extends ApiClient {
       query: query,
       state: state,
       page: page,
-      limit: limit,
-      "search[description]": searchDescription,
-      "search[name]": searchName,
-      "search[identificationNumber]": searchIdentificationNumber
+      limit: limit
     };
 
     let headerParams = {
@@ -558,7 +486,7 @@ export default class OperationApi extends ApiClient {
   /**
    * Remove one Operation resource.
    * @param { String } xKeyclicApp
-   * @param { String } operation The identifier of the resource formatted as GUID string.
+   * @param { String } operation The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -642,7 +570,7 @@ export default class OperationApi extends ApiClient {
   /**
    * Retrieve one Operation resource.
    * @param { String } xKeyclicApp
-   * @param { String } operation The identifier of the resource formatted as GUID string.
+   * @param { String } operation The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -731,7 +659,7 @@ export default class OperationApi extends ApiClient {
    * Edit one Operation resource.
    * @param { String } xKeyclicApp
    * @param { module:model/OperationPatch } operationPatch
-   * @param { String } operation The identifier of the resource formatted as GUID string.
+   * @param { String } operation The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)

@@ -22,12 +22,7 @@ class OrganizationApi {
       String organization,
       String query,
       int page,
-      int limit,
-      String search_alternateName_,
-      String search_billingEmailAddress_,
-      String search_description_,
-      String search_name_,
-      String search_notificationEmailAddress_}) async {
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -85,28 +80,6 @@ class OrganizationApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (search_alternateName_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[alternateName]", search_alternateName_));
-    }
-    if (search_billingEmailAddress_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[billingEmailAddress]", search_billingEmailAddress_));
-    }
-    if (search_description_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[description]", search_description_));
-    }
-    if (search_name_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[name]", search_name_));
-    }
-    if (search_notificationEmailAddress_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "",
-          "search[notificationEmailAddress]",
-          search_notificationEmailAddress_));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;

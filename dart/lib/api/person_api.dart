@@ -16,13 +16,7 @@ class PersonApi {
       String order,
       String query,
       int page,
-      int limit,
-      String search_familyName_,
-      String search_givenName_,
-      String search_jobTitle_,
-      String search_telephone_,
-      String search_username_,
-      String search_email_}) async {
+      int limit}) async {
     Object postBody;
 
     // verify required params are set
@@ -60,30 +54,6 @@ class PersonApi {
     if (limit != null) {
       queryParams
           .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
-    if (search_familyName_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[familyName]", search_familyName_));
-    }
-    if (search_givenName_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[givenName]", search_givenName_));
-    }
-    if (search_jobTitle_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[jobTitle]", search_jobTitle_));
-    }
-    if (search_telephone_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[telephone]", search_telephone_));
-    }
-    if (search_username_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[username]", search_username_));
-    }
-    if (search_email_ != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "search[email]", search_email_));
     }
     headerParams["accept-language"] = acceptLanguage;
     headerParams["x-keyclic-app"] = xKeyclicApp;

@@ -12,13 +12,13 @@ class PlaceLinksOrganization {
     }
     href = json['href'];
     iriTemplate =
-        CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+        PlaceLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the organization associated to the given place. */
   String href;
 
-  CategoryLinksOrganizationIriTemplate iriTemplate;
+  PlaceLinksOrganizationIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

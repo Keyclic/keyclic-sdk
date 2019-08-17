@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**color** | **String** |  | 
-**icon** | **String** |  | [optional] 
-**name** | **String** |  | 
-**id** | **String** |  | 
-**identificationNumber** | **String** |  | [optional] 
-**createdAt** | **Date** |  | 
-**type** | **String** |  | [optional] 
 **links** | [**CategoryLinks**](CategoryLinks.md) |  | [optional] 
+**color** | **String** |  | [optional] 
+**createdAt** | **Date** |  | [optional] 
+**icon** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
+**identificationNumber** | **String** |  | [optional] 
+**name** | **String** |  | 
+**type** | **String** |  | [optional] 
 
 

@@ -59,6 +59,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iriTemplate (base name: "iriTemplate")', function() {
+      // uncomment below and update the code to test the property iriTemplate
+      //var instane = new @KeyclicSdkJavascript.FeedbackLinksImages();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

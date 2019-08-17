@@ -53,31 +53,24 @@ var Organization =
   
    * @param name { String }
   
-   * @param preferences { module:model/OrganizationPreferences }
-  
-   * @param id { String }
-  
-   * @param updatedAt { Date }
-  
    */
-    function Organization(name, preferences, id, updatedAt) {
+    function Organization(name) {
       _classCallCheck(this, Organization);
 
+      this.links = null;
       this.alternateName = null;
       this.billingEmailAddress = null;
+      this.createdAt = null;
       this.description = null;
+      this.enabled = null;
+      this.id = null;
       this.name = name;
       this.notificationEmailAddress = null;
-      this.preferences = preferences;
-      this.id = id;
-      this.createdAt = null;
-      this.updatedAt = updatedAt;
+      this.preferences = null;
       this.type = null;
-      this.isEnabled = null;
-      this.enabled = null;
-      this.links = null;
-      this.preferencesType = _OrganizationPreferences.default;
+      this.updatedAt = null;
       this.linksType = _OrganizationLinks.default;
+      this.preferencesType = _OrganizationPreferences.default;
     }
     /**
      * Constructs a "Organization" from a plain JavaScript object.
@@ -103,6 +96,13 @@ var Organization =
             object = new Organization();
           }
 
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
           if (data.hasOwnProperty("alternateName")) {
             object.alternateName = _ApiClient.default.convertToType(
               data["alternateName"],
@@ -117,11 +117,29 @@ var Organization =
             );
           }
 
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
           if (data.hasOwnProperty("description")) {
             object.description = _ApiClient.default.convertToType(
               data["description"],
               "String"
             );
+          }
+
+          if (data.hasOwnProperty("enabled")) {
+            object.enabled = _ApiClient.default.convertToType(
+              data["enabled"],
+              "Boolean"
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
 
           if (data.hasOwnProperty("name")) {
@@ -145,24 +163,6 @@ var Organization =
             );
           }
 
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
-          }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
-          }
-
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
-            );
-          }
-
           if (data.hasOwnProperty("type")) {
             object.type = _ApiClient.default.convertToType(
               data["type"],
@@ -170,24 +170,10 @@ var Organization =
             );
           }
 
-          if (data.hasOwnProperty("isEnabled")) {
-            object.isEnabled = _ApiClient.default.convertToType(
-              data["isEnabled"],
-              "Boolean"
-            );
-          }
-
-          if (data.hasOwnProperty("enabled")) {
-            object.enabled = _ApiClient.default.convertToType(
-              data["enabled"],
-              "Boolean"
-            );
-          }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

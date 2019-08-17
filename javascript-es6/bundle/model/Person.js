@@ -51,33 +51,25 @@ var Person =
   
    * @param optIn { Boolean }
   
-   * @param preferences { module:model/PersonPreferences }
-  
-   * @param id { String }
-  
-   * @param createdAt { Date }
-  
-   * @param updatedAt { Date }
-  
    */
-    function Person(optIn, preferences, id, createdAt, updatedAt) {
+    function Person(optIn) {
       _classCallCheck(this, Person);
 
+      this.links = null;
+      this.createdAt = null;
+      this.email = null;
       this.familyName = null;
       this.givenName = null;
+      this.id = null;
       this.jobTitle = null;
       this.optIn = optIn;
-      this.preferences = preferences;
+      this.preferences = null;
       this.telephone = null;
-      this.id = id;
-      this.username = null;
-      this.email = null;
-      this.createdAt = createdAt;
-      this.updatedAt = updatedAt;
       this.type = null;
-      this.links = null;
-      this.preferencesType = _PersonPreferences.default;
+      this.updatedAt = null;
+      this.username = null;
       this.linksType = _PersonLinks.default;
+      this.preferencesType = _PersonPreferences.default;
     }
     /**
      * Constructs a "Person" from a plain JavaScript object.
@@ -103,6 +95,27 @@ var Person =
             object = new Person();
           }
 
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("email")) {
+            object.email = _ApiClient.default.convertToType(
+              data["email"],
+              "String"
+            );
+          }
+
           if (data.hasOwnProperty("familyName")) {
             object.familyName = _ApiClient.default.convertToType(
               data["familyName"],
@@ -115,6 +128,10 @@ var Person =
               data["givenName"],
               "String"
             );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
 
           if (data.hasOwnProperty("jobTitle")) {
@@ -145,28 +162,10 @@ var Person =
             );
           }
 
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
-          }
-
-          if (data.hasOwnProperty("username")) {
-            object.username = _ApiClient.default.convertToType(
-              data["username"],
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
               "String"
-            );
-          }
-
-          if (data.hasOwnProperty("email")) {
-            object.email = _ApiClient.default.convertToType(
-              data["email"],
-              "String"
-            );
-          }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
             );
           }
 
@@ -177,17 +176,10 @@ var Person =
             );
           }
 
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
+          if (data.hasOwnProperty("username")) {
+            object.username = _ApiClient.default.convertToType(
+              data["username"],
               "String"
-            );
-          }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
             );
           }
 

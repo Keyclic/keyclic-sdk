@@ -53,20 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.Document);
     });
 
-    it('should have the property file (base name: "file")', function() {
-      // uncomment below and update the code to test the property file
-      //var instane = new @KeyclicSdkJavascript.Document();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property permission (base name: "permission")', function() {
-      // uncomment below and update the code to test the property permission
-      //var instane = new @KeyclicSdkJavascript.Document();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
       //var instane = new @KeyclicSdkJavascript.Document();
       //expect(instance).to.be();
     });
@@ -77,14 +65,26 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
+    it('should have the property file (base name: "file")', function() {
+      // uncomment below and update the code to test the property file
       //var instane = new @KeyclicSdkJavascript.Document();
       //expect(instance).to.be();
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new @KeyclicSdkJavascript.Document();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property permission (base name: "permission")', function() {
+      // uncomment below and update the code to test the property permission
+      //var instane = new @KeyclicSdkJavascript.Document();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new @KeyclicSdkJavascript.Document();
       //expect(instance).to.be();
     });

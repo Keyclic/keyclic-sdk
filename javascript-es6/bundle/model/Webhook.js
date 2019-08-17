@@ -53,18 +53,16 @@ var Webhook =
   
    * @param payloadUrl { String }
   
-   * @param id { String }
-  
    */
-    function Webhook(enabled, event, payloadUrl, id) {
+    function Webhook(enabled, event, payloadUrl) {
       _classCallCheck(this, Webhook);
 
+      this.links = null;
       this.enabled = enabled;
       this.event = event;
+      this.id = null;
       this.payloadUrl = payloadUrl;
-      this.id = id;
       this.type = null;
-      this.links = null;
       this.linksType = _WebhookLinks.default;
     }
     /**
@@ -91,6 +89,13 @@ var Webhook =
             object = new Webhook();
           }
 
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
           if (data.hasOwnProperty("enabled")) {
             object.enabled = _ApiClient.default.convertToType(
               data["enabled"],
@@ -105,6 +110,10 @@ var Webhook =
             );
           }
 
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
           if (data.hasOwnProperty("payloadUrl")) {
             object.payloadUrl = _ApiClient.default.convertToType(
               data["payloadUrl"],
@@ -112,21 +121,10 @@ var Webhook =
             );
           }
 
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
-          }
-
           if (data.hasOwnProperty("type")) {
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
-            );
-          }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
             );
           }
 

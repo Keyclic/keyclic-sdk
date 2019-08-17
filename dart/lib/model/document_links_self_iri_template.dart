@@ -9,10 +9,10 @@ class DocumentLinksSelfIriTemplate {
     if (json == null) {
       return;
     }
-    mapping = DocumentLinksSelfIriTemplateMapping.fromJson(json['mapping']);
+    mapping = DocumentLinksFileIriTemplateMapping.fromJson(json['mapping']);
   }
 
-  DocumentLinksSelfIriTemplateMapping mapping;
+  DocumentLinksFileIriTemplateMapping mapping;
 
   @override
   bool operator ==(dynamic other) {

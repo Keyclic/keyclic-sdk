@@ -53,35 +53,27 @@ var Operation =
    * @alias module:model/Operation
    * @class
   
-   * @param signature { module:model/OperationSignature }
-  
-   * @param id { String }
-  
    * @param state { Array.<String> }
   
-   * @param createdAt { Date }
-  
-   * @param updatedAt { Date }
-  
    */
-    function Operation(signature, id, state, createdAt, updatedAt) {
+    function Operation(state) {
       _classCallCheck(this, Operation);
 
+      this.embedded = null;
+      this.links = null;
+      this.createdAt = null;
       this.description = null;
+      this.id = null;
+      this.identificationNumber = null;
       this.name = null;
       this.scheduledAt = null;
-      this.signature = signature;
-      this.id = id;
-      this.identificationNumber = null;
+      this.signature = null;
       this.state = state;
-      this.createdAt = createdAt;
-      this.updatedAt = updatedAt;
       this.type = null;
-      this.links = null;
-      this.embedded = null;
-      this.signatureType = _OperationSignature.default;
-      this.linksType = _OperationLinks.default;
+      this.updatedAt = null;
       this.embeddedType = _FeedbackEmbedded.default;
+      this.linksType = _OperationLinks.default;
+      this.signatureType = _OperationSignature.default;
     }
     /**
      * Constructs a "Operation" from a plain JavaScript object.
@@ -107,9 +99,41 @@ var Operation =
             object = new Operation();
           }
 
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
           if (data.hasOwnProperty("description")) {
             object.description = _ApiClient.default.convertToType(
               data["description"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("identificationNumber")) {
+            object.identificationNumber = _ApiClient.default.convertToType(
+              data["identificationNumber"],
               "String"
             );
           }
@@ -135,35 +159,10 @@ var Operation =
             );
           }
 
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
-          }
-
-          if (data.hasOwnProperty("identificationNumber")) {
-            object.identificationNumber = _ApiClient.default.convertToType(
-              data["identificationNumber"],
-              "String"
-            );
-          }
-
           if (data.hasOwnProperty("state")) {
             object.state = _ApiClient.default.convertToType(
               data["state"],
               "['String']"
-            );
-          }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
-          }
-
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
             );
           }
 
@@ -174,17 +173,10 @@ var Operation =
             );
           }
 
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
-            );
-          }
-
-          if (data.hasOwnProperty("_embedded")) {
-            object.embedded = _ApiClient.default.convertToType(
-              data["_embedded"],
-              object.embeddedType
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

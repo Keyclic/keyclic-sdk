@@ -12,13 +12,13 @@ class PublicationLinksAuthor {
     }
     href = json['href'];
     iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+        PublicationLinksAuthorIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the author associated to the given publication. */
   String href;
 
-  DelegationLinksCreatedByIriTemplate iriTemplate;
+  PublicationLinksAuthorIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

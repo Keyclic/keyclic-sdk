@@ -53,6 +53,24 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.Feedback);
     });
 
+    it('should have the property embedded (base name: "_embedded")', function() {
+      // uncomment below and update the code to test the property embedded
+      //var instane = new @KeyclicSdkJavascript.Feedback();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
+      //var instane = new @KeyclicSdkJavascript.Feedback();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdAt (base name: "createdAt")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instane = new @KeyclicSdkJavascript.Feedback();
+      //expect(instance).to.be();
+    });
+
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
       //var instane = new @KeyclicSdkJavascript.Feedback();
@@ -65,32 +83,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property metadata (base name: "metadata")', function() {
-      // uncomment below and update the code to test the property metadata
-      //var instane = new @KeyclicSdkJavascript.Feedback();
-      //expect(instance).to.be();
-    });
-
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new @KeyclicSdkJavascript.Feedback();
       //expect(instance).to.be();
     });
 
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
-      //var instane = new @KeyclicSdkJavascript.Feedback();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createdAt (base name: "createdAt")', function() {
-      // uncomment below and update the code to test the property createdAt
-      //var instane = new @KeyclicSdkJavascript.Feedback();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
+    it('should have the property metadata (base name: "metadata")', function() {
+      // uncomment below and update the code to test the property metadata
       //var instane = new @KeyclicSdkJavascript.Feedback();
       //expect(instance).to.be();
     });
@@ -101,14 +101,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property state (base name: "state")', function() {
+      // uncomment below and update the code to test the property state
       //var instane = new @KeyclicSdkJavascript.Feedback();
       //expect(instance).to.be();
     });
 
-    it('should have the property embedded (base name: "_embedded")', function() {
-      // uncomment below and update the code to test the property embedded
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new @KeyclicSdkJavascript.Feedback();
       //expect(instance).to.be();
     });

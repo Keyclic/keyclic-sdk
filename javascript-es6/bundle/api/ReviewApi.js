@@ -145,7 +145,7 @@ var ReviewApi =
     /**
      * Retrieve all Review resources.
      * @param { String } xKeyclicApp
-     * @param { String } feedback The identifier of the resource formatted as GUID string.
+     * @param { String } feedback The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { ReviewPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -268,7 +268,7 @@ var ReviewApi =
         /**
          * Retrieve one Review resource.
          * @param { String } xKeyclicApp
-         * @param { String } review The identifier of the resource formatted as GUID string.
+         * @param { String } review The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Review }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -355,7 +355,7 @@ var ReviewApi =
          * Create one Review resource.
          * @param { String } xKeyclicApp
          * @param { module:model/ReviewData } reviewData
-         * @param { String } reviewRequest The identifier of the resource formatted as GUID string.
+         * @param { String } reviewRequest The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Review }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

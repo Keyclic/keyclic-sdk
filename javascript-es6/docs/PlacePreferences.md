@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_public** | **Boolean** |  | 
+**_public** | **Boolean** |  | [optional] 
 
 

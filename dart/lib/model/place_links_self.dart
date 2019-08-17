@@ -11,13 +11,13 @@ class PlaceLinksSelf {
       return;
     }
     href = json['href'];
-    iriTemplate = OccupantLinksPlaceIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = PlaceLinksSelfIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the self associated to the given place. */
   String href;
 
-  OccupantLinksPlaceIriTemplate iriTemplate;
+  PlaceLinksSelfIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

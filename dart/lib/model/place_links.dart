@@ -2,30 +2,30 @@ part of keyclic_sdk_api.api;
 
 class PlaceLinks {
   PlaceLinks({
-    this.self,
-    this.organization,
     this.containedInPlace,
     this.containsPlaces,
+    this.organization,
+    this.self,
   });
 
   PlaceLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    self = PlaceLinksSelf.fromJson(json['self']);
-    organization = PlaceLinksOrganization.fromJson(json['organization']);
     containedInPlace =
         PlaceLinksContainedInPlace.fromJson(json['containedInPlace']);
     containsPlaces = PlaceLinksContainsPlaces.fromJson(json['containsPlaces']);
+    organization = PlaceLinksOrganization.fromJson(json['organization']);
+    self = PlaceLinksSelf.fromJson(json['self']);
   }
-
-  PlaceLinksSelf self;
-
-  PlaceLinksOrganization organization;
 
   PlaceLinksContainedInPlace containedInPlace;
 
   PlaceLinksContainsPlaces containsPlaces;
+
+  PlaceLinksOrganization organization;
+
+  PlaceLinksSelf self;
 
   @override
   bool operator ==(dynamic other) {
@@ -41,16 +41,16 @@ class PlaceLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
-      'organization': organization,
       'containedInPlace': containedInPlace,
       'containsPlaces': containsPlaces,
+      'organization': organization,
+      'self': self,
     };
   }
 
   @override
   String toString() {
-    return 'PlaceLinks[self=$self, organization=$organization, containedInPlace=$containedInPlace, containsPlaces=$containsPlaces, ]';
+    return 'PlaceLinks[containedInPlace=$containedInPlace, containsPlaces=$containsPlaces, organization=$organization, self=$self, ]';
   }
 
   static List<PlaceLinks> listFromJson(List<dynamic> json) {

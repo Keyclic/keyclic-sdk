@@ -25,9 +25,7 @@ class Schema {
       return true;
     }
 
-    return other is Schema &&
-        runtimeType == other.runtimeType &&
-        DeepCollectionEquality.unordered().equals(properties, other.properties);
+    return other is Schema && runtimeType == other.runtimeType;
   }
 
   @override

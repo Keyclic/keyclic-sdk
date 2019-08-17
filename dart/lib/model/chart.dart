@@ -2,21 +2,21 @@ part of keyclic_sdk_api.api;
 
 class Chart {
   Chart({
-    this.labels,
     this.data,
+    this.labels,
   });
 
   Chart.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    labels = (json['labels'] as List)?.map((item) => item as String)?.toList();
     data = (json['data'] as List)?.map((item) => item as int)?.toList();
+    labels = (json['labels'] as List)?.map((item) => item as String)?.toList();
   }
 
-  List<String> labels;
-
   List<int> data;
+
+  List<String> labels;
 
   @override
   bool operator ==(dynamic other) {
@@ -24,10 +24,7 @@ class Chart {
       return true;
     }
 
-    return other is Chart &&
-        runtimeType == other.runtimeType &&
-        DeepCollectionEquality.unordered().equals(labels, other.labels) &&
-        DeepCollectionEquality.unordered().equals(data, other.data);
+    return other is Chart && runtimeType == other.runtimeType;
   }
 
   @override
@@ -35,14 +32,14 @@ class Chart {
 
   Map<String, dynamic> toJson() {
     return {
-      'labels': labels,
       'data': data,
+      'labels': labels,
     };
   }
 
   @override
   String toString() {
-    return 'Chart[labels=$labels, data=$data, ]';
+    return 'Chart[data=$data, labels=$labels, ]';
   }
 
   static List<Chart> listFromJson(List<dynamic> json) {

@@ -11,14 +11,13 @@ class OccupantLinksPerson {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = OccupantLinksPersonIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the person associated to the given occupant. */
   String href;
 
-  DelegationLinksCreatedByIriTemplate iriTemplate;
+  OccupantLinksPersonIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

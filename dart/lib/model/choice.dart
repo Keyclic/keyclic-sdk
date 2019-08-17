@@ -2,49 +2,53 @@ part of keyclic_sdk_api.api;
 
 class Choice {
   Choice({
-    this.type,
-    this.enum_,
+    this.default_,
     this.description,
+    this.enum_,
     this.format,
+    this.id,
     this.maxItems,
     this.minItems,
-    this.default_,
     this.propertyOrder,
     this.title,
+    this.type,
   });
 
   Choice.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    type = json['type'];
-    enum_ = (json['enum'] as List)?.map((item) => item as String)?.toList();
+    default_ = json['default'];
     description = json['description'];
+    enum_ = (json['enum'] as List)?.map((item) => item as String)?.toList();
     format = json['format'];
+    id = json['id'];
     maxItems = json['maxItems'];
     minItems = json['minItems'];
-    default_ = json['default'];
     propertyOrder = json['propertyOrder'];
     title = json['title'];
+    type = json['type'];
   }
 
-  String type;
-
-  List<String> enum_;
+  String default_;
 
   String description;
 
+  List<String> enum_;
+
   String format;
+
+  String id;
 
   int maxItems;
 
   int minItems;
 
-  String default_;
-
   int propertyOrder;
 
   String title;
+
+  String type;
 
   @override
   bool operator ==(dynamic other) {
@@ -60,21 +64,22 @@ class Choice {
 
   Map<String, dynamic> toJson() {
     return {
-      'type': type,
-      'enum': enum_,
+      'default': default_,
       'description': description,
+      'enum': enum_,
       'format': format,
+      'id': id,
       'maxItems': maxItems,
       'minItems': minItems,
-      'default': default_,
       'propertyOrder': propertyOrder,
       'title': title,
+      'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'Choice[type=$type, enum_=$enum_, description=$description, format=$format, maxItems=$maxItems, minItems=$minItems, default_=$default_, propertyOrder=$propertyOrder, title=$title, ]';
+    return 'Choice[default_=$default_, description=$description, enum_=$enum_, format=$format, id=$id, maxItems=$maxItems, minItems=$minItems, propertyOrder=$propertyOrder, title=$title, type=$type, ]';
   }
 
   static List<Choice> listFromJson(List<dynamic> json) {

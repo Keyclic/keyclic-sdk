@@ -55,10 +55,10 @@ var CategoryLinks =
     function CategoryLinks() {
       _classCallCheck(this, CategoryLinks);
 
-      this.self = null;
       this.organization = null;
-      this.selfType = _CategoryLinksSelf.default;
+      this.self = null;
       this.organizationType = _CategoryLinksOrganization.default;
+      this.selfType = _CategoryLinksSelf.default;
     }
     /**
      * Constructs a "CategoryLinks" from a plain JavaScript object.
@@ -84,17 +84,17 @@ var CategoryLinks =
             object = new CategoryLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
-          }
-
           if (data.hasOwnProperty("organization")) {
             object.organization = _ApiClient.default.convertToType(
               data["organization"],
               object.organizationType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 

@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import DelegationLinksReportIriTemplate from "./DelegationLinksReportIriTemplate";
+import ReportLinksSelfIriTemplate from "./ReportLinksSelfIriTemplate";
 
 /**
  * The ReportLinksSelf model module.
@@ -28,7 +28,7 @@ export default class ReportLinksSelf {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = DelegationLinksReportIriTemplate;
+    this.iriTemplateType = ReportLinksSelfIriTemplate;
   }
 
   /**

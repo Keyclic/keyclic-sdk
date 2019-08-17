@@ -53,26 +53,26 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.Report);
     });
 
+    it('should have the property embedded (base name: "_embedded")', function() {
+      // uncomment below and update the code to test the property embedded
+      //var instane = new @KeyclicSdkJavascript.Report();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
+      //var instane = new @KeyclicSdkJavascript.Report();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdAt (base name: "createdAt")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instane = new @KeyclicSdkJavascript.Report();
+      //expect(instance).to.be();
+    });
+
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new @KeyclicSdkJavascript.Report();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property priority (base name: "priority")', function() {
-      // uncomment below and update the code to test the property priority
-      //var instane = new @KeyclicSdkJavascript.Report();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property reference (base name: "reference")', function() {
-      // uncomment below and update the code to test the property reference
-      //var instane = new @KeyclicSdkJavascript.Report();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property tags (base name: "tags")', function() {
-      // uncomment below and update the code to test the property tags
       //var instane = new @KeyclicSdkJavascript.Report();
       //expect(instance).to.be();
     });
@@ -89,20 +89,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property priority (base name: "priority")', function() {
+      // uncomment below and update the code to test the property priority
+      //var instane = new @KeyclicSdkJavascript.Report();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reference (base name: "reference")', function() {
+      // uncomment below and update the code to test the property reference
+      //var instane = new @KeyclicSdkJavascript.Report();
+      //expect(instance).to.be();
+    });
+
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
       //var instane = new @KeyclicSdkJavascript.Report();
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "createdAt")', function() {
-      // uncomment below and update the code to test the property createdAt
-      //var instane = new @KeyclicSdkJavascript.Report();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property updatedAt (base name: "updatedAt")', function() {
-      // uncomment below and update the code to test the property updatedAt
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
       //var instane = new @KeyclicSdkJavascript.Report();
       //expect(instance).to.be();
     });
@@ -113,14 +119,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
-      //var instane = new @KeyclicSdkJavascript.Report();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property embedded (base name: "_embedded")', function() {
-      // uncomment below and update the code to test the property embedded
+    it('should have the property updatedAt (base name: "updatedAt")', function() {
+      // uncomment below and update the code to test the property updatedAt
       //var instane = new @KeyclicSdkJavascript.Report();
       //expect(instance).to.be();
     });

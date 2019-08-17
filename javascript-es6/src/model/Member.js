@@ -24,25 +24,17 @@ export default class Member {
      * @alias module:model/Member
      * @class
     
-     * @param id { String }
-    
-     * @param createdAt { Date }
-    
      */
-  constructor(
-    id,
-
-    createdAt
-  ) {
-    this.roles = [];
-    this.id = id;
-    this.createdAt = createdAt;
-    this.type = null;
-    this.links = null;
+  constructor() {
     this.embedded = null;
+    this.links = null;
+    this.createdAt = null;
+    this.id = null;
+    this.roles = [];
+    this.type = null;
 
-    this.linksType = MemberLinks;
     this.embeddedType = MemberEmbedded;
+    this.linksType = MemberLinks;
   }
 
   /**
@@ -60,26 +52,26 @@ export default class Member {
       object = new Member();
     }
 
-    if (data.hasOwnProperty("roles")) {
-      object.roles = ApiClient.convertToType(data["roles"], "['String']");
-    }
-    if (data.hasOwnProperty("id")) {
-      object.id = ApiClient.convertToType(data["id"], "String");
-    }
-    if (data.hasOwnProperty("createdAt")) {
-      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
-    }
-    if (data.hasOwnProperty("type")) {
-      object.type = ApiClient.convertToType(data["type"], "String");
-    }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
-    }
     if (data.hasOwnProperty("_embedded")) {
       object.embedded = ApiClient.convertToType(
         data["_embedded"],
         object.embeddedType
       );
+    }
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
+    }
+    if (data.hasOwnProperty("roles")) {
+      object.roles = ApiClient.convertToType(data["roles"], "['String']");
+    }
+    if (data.hasOwnProperty("type")) {
+      object.type = ApiClient.convertToType(data["type"], "String");
     }
 
     return object;

@@ -57,12 +57,12 @@ var ReportEmbedded =
     function ReportEmbedded() {
       _classCallCheck(this, ReportEmbedded);
 
+      this.duration = null;
       this.stateTransitions = [];
       this.targetGroups = [];
       this.tracking = null;
-      this.duration = null;
-      this.targetGroupsType = _ReportEmbeddedTargetGroups.default;
       this.durationType = _ReportEmbeddedDuration.default;
+      this.targetGroupsType = _ReportEmbeddedTargetGroups.default;
     }
     /**
      * Constructs a "ReportEmbedded" from a plain JavaScript object.
@@ -88,6 +88,13 @@ var ReportEmbedded =
             object = new ReportEmbedded();
           }
 
+          if (data.hasOwnProperty("duration")) {
+            object.duration = _ApiClient.default.convertToType(
+              data["duration"],
+              object.durationType
+            );
+          }
+
           if (data.hasOwnProperty("stateTransitions")) {
             object.stateTransitions = _ApiClient.default.convertToType(
               data["stateTransitions"],
@@ -106,13 +113,6 @@ var ReportEmbedded =
             object.tracking = _ApiClient.default.convertToType(
               data["tracking"],
               "String"
-            );
-          }
-
-          if (data.hasOwnProperty("duration")) {
-            object.duration = _ApiClient.default.convertToType(
-              data["duration"],
-              object.durationType
             );
           }
 

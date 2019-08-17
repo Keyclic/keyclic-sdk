@@ -2,25 +2,29 @@ part of keyclic_sdk_api.api;
 
 class BusinessActivityLinks {
   BusinessActivityLinks({
-    this.self,
-    this.schema,
     this.image,
+    this.schema,
+    this.self,
+    this.thumbnail,
   });
 
   BusinessActivityLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    self = BusinessActivityLinksSelf.fromJson(json['self']);
-    schema = BusinessActivityLinksSchema.fromJson(json['schema']);
     image = BusinessActivityLinksImage.fromJson(json['image']);
+    schema = BusinessActivityLinksSchema.fromJson(json['schema']);
+    self = BusinessActivityLinksSelf.fromJson(json['self']);
+    thumbnail = BusinessActivityLinksThumbnail.fromJson(json['thumbnail']);
   }
 
-  BusinessActivityLinksSelf self;
+  BusinessActivityLinksImage image;
 
   BusinessActivityLinksSchema schema;
 
-  BusinessActivityLinksImage image;
+  BusinessActivityLinksSelf self;
+
+  BusinessActivityLinksThumbnail thumbnail;
 
   @override
   bool operator ==(dynamic other) {
@@ -36,15 +40,16 @@ class BusinessActivityLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
-      'schema': schema,
       'image': image,
+      'schema': schema,
+      'self': self,
+      'thumbnail': thumbnail,
     };
   }
 
   @override
   String toString() {
-    return 'BusinessActivityLinks[self=$self, schema=$schema, image=$image, ]';
+    return 'BusinessActivityLinks[image=$image, schema=$schema, self=$self, thumbnail=$thumbnail, ]';
   }
 
   static List<BusinessActivityLinks> listFromJson(List<dynamic> json) {

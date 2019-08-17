@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cgetCategories**](CategoryApi.md#cgetCategories) | **GET** /categories | Retrieve all Category resources.
 [**cgetCategoriesByOrganization**](CategoryApi.md#cgetCategoriesByOrganization) | **GET** /organizations/{organization}/categories | Retrieve all Category resources.
+[**deleteCategory**](CategoryApi.md#deleteCategory) | **DELETE** /categories/{category} | Remove one Category resource.
 [**getCategory**](CategoryApi.md#getCategory) | **GET** /categories/{category} | Retrieve one Category resource.
 [**patchCategory**](CategoryApi.md#patchCategory) | **PATCH** /categories/{category} | Edit one Category resource.
 [**postCategoryByOrganization**](CategoryApi.md#postCategoryByOrganization) | **POST** /organizations/{organization}/categories | Create one Category resource.
@@ -35,20 +36,16 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'businessActivity': "businessActivity_example", // String | The identifier of the resource formatted as GUID string.
+  'businessActivity': "businessActivity_example", // String | The identifier of the resource.
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'geoPoint': "geoPoint_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
   'geoCoordinates': "geoCoordinates_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
   'order': "desc", // String | 
-  'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
+  'organization': "organization_example", // String | The identifier of the resource.
   'query': "query_example", // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
-  'searchColor': "searchColor_example", // String | 
-  'searchIcon': "searchIcon_example", // String | 
-  'searchName': "searchName_example", // String | 
-  'searchIdentificationNumber': "searchIdentificationNumber_example" // String | 
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetCategories(xKeyclicApp, , opts, (error, data, response) => {
@@ -67,20 +64,16 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
  **query** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **searchColor** | **String**|  | [optional] 
- **searchIcon** | **String**|  | [optional] 
- **searchName** | **String**|  | [optional] 
- **searchIdentificationNumber** | **String**|  | [optional] 
 
 ### Return type
 
@@ -116,12 +109,12 @@ let apiInstance = new @KeyclicSdkJavascript.CategoryApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+let organization = "organization_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'businessActivity': "businessActivity_example", // String | The identifier of the resource formatted as GUID string.
+  'businessActivity': "businessActivity_example", // String | The identifier of the resource.
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'geoPoint': "geoPoint_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
@@ -129,11 +122,7 @@ let opts = {
   'order': "desc", // String | 
   'query': "query_example", // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
-  'searchColor': "searchColor_example", // String | 
-  'searchIcon': "searchIcon_example", // String | 
-  'searchName': "searchName_example", // String | 
-  'searchIdentificationNumber': "searchIdentificationNumber_example" // String | 
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetCategoriesByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
@@ -150,10 +139,10 @@ apiInstance.cgetCategoriesByOrganization(xKeyclicApp, organization, opts, (error
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
@@ -162,14 +151,69 @@ Name | Type | Description  | Notes
  **query** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **searchColor** | **String**|  | [optional] 
- **searchIcon** | **String**|  | [optional] 
- **searchName** | **String**|  | [optional] 
- **searchIdentificationNumber** | **String**|  | [optional] 
 
 ### Return type
 
 [**CategoryPagination**](CategoryPagination.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
+<a name="deleteCategory"></a>
+# **deleteCategory**
+> deleteCategory(xKeyclicApp, category, opts)
+
+Remove one Category resource.
+
+### Example
+```javascript
+import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
+let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new @KeyclicSdkJavascript.CategoryApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let category = "category_example"; // String | The identifier of the resource.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+};
+
+apiInstance.deleteCategory(xKeyclicApp, category, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **category** | [**String**](.md)| The identifier of the resource. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 
@@ -201,7 +245,7 @@ let apiInstance = new @KeyclicSdkJavascript.CategoryApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let category = "category_example"; // String | The identifier of the resource formatted as GUID string.
+let category = "category_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -222,7 +266,7 @@ apiInstance.getCategory(xKeyclicApp, category, opts, (error, data, response) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **category** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -262,7 +306,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let categoryPatch = new @KeyclicSdkJavascript.CategoryPatch(); // CategoryPatch | 
 
-let category = "category_example"; // String | The identifier of the resource formatted as GUID string.
+let category = "category_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -284,7 +328,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **categoryPatch** | [**CategoryPatch**](CategoryPatch.md)|  | 
- **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **category** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -324,7 +368,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let categoryData = new @KeyclicSdkJavascript.CategoryData(); // CategoryData | 
 
-let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+let organization = "organization_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -346,7 +390,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **categoryData** | [**CategoryData**](CategoryData.md)|  | 
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

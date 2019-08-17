@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ReviewLinksSelfIriTemplateMapping = _interopRequireDefault(
-  require("./ReviewLinksSelfIriTemplateMapping")
+var _FeedbackReviewRequestLinksReviewIriTemplateMapping = _interopRequireDefault(
+  require("./FeedbackReviewRequestLinksReviewIriTemplateMapping")
 );
 
 function _interopRequireDefault(obj) {
@@ -54,7 +54,8 @@ var ReviewLinksSelfIriTemplate =
       _classCallCheck(this, ReviewLinksSelfIriTemplate);
 
       this.mapping = null;
-      this.mappingType = _ReviewLinksSelfIriTemplateMapping.default;
+      this.mappingType =
+        _FeedbackReviewRequestLinksReviewIriTemplateMapping.default;
     }
     /**
      * Constructs a "ReviewLinksSelfIriTemplate" from a plain JavaScript object.

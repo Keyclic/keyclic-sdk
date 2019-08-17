@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import DelegationLinksCreatedByIriTemplate from "./DelegationLinksCreatedByIriTemplate";
+import MemberLinksPersonIriTemplate from "./MemberLinksPersonIriTemplate";
 
 /**
  * The MemberLinksPerson model module.
@@ -28,7 +28,7 @@ export default class MemberLinksPerson {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = DelegationLinksCreatedByIriTemplate;
+    this.iriTemplateType = MemberLinksPersonIriTemplate;
   }
 
   /**

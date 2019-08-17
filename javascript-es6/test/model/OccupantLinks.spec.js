@@ -53,12 +53,6 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.OccupantLinks);
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
-      //var instane = new @KeyclicSdkJavascript.OccupantLinks();
-      //expect(instance).to.be();
-    });
-
     it('should have the property person (base name: "person")', function() {
       // uncomment below and update the code to test the property person
       //var instane = new @KeyclicSdkJavascript.OccupantLinks();
@@ -67,6 +61,12 @@
 
     it('should have the property place (base name: "place")', function() {
       // uncomment below and update the code to test the property place
+      //var instane = new @KeyclicSdkJavascript.OccupantLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
       //var instane = new @KeyclicSdkJavascript.OccupantLinks();
       //expect(instance).to.be();
     });

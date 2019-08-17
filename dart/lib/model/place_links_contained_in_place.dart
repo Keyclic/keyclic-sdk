@@ -11,13 +11,14 @@ class PlaceLinksContainedInPlace {
       return;
     }
     href = json['href'];
-    iriTemplate = OccupantLinksPlaceIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate =
+        PlaceLinksContainedInPlaceIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the containedInPlace associated to the given place. */
   String href;
 
-  OccupantLinksPlaceIriTemplate iriTemplate;
+  PlaceLinksContainedInPlaceIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

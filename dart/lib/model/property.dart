@@ -2,57 +2,61 @@ part of keyclic_sdk_api.api;
 
 class Property {
   Property({
-    this.type,
-    this.enum_,
+    this.conditions,
+    this.default_,
     this.description,
+    this.enum_,
     this.format,
+    this.id,
+    this.items,
     this.maxItems,
     this.minItems,
-    this.default_,
     this.propertyOrder,
     this.title,
-    this.conditions,
-    this.items,
+    this.type,
   });
 
   Property.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    type = json['type'];
-    enum_ = (json['enum'] as List)?.map((item) => item as String)?.toList();
+    conditions = PropertyConditions.fromJson(json['conditions']);
+    default_ = json['default'];
     description = json['description'];
+    enum_ = (json['enum'] as List)?.map((item) => item as String)?.toList();
     format = json['format'];
+    id = json['id'];
+    items = PropertyItems.fromJson(json['items']);
     maxItems = json['maxItems'];
     minItems = json['minItems'];
-    default_ = json['default'];
     propertyOrder = json['propertyOrder'];
     title = json['title'];
-    conditions = PropertyConditions.fromJson(json['conditions']);
-    items = PropertyItems.fromJson(json['items']);
+    type = json['type'];
   }
 
-  String type;
+  PropertyConditions conditions;
 
-  List<String> enum_;
+  String default_;
 
   String description;
 
+  List<String> enum_;
+
   String format;
+
+  String id;
+
+  PropertyItems items;
 
   int maxItems;
 
   int minItems;
 
-  String default_;
-
   int propertyOrder;
 
   String title;
 
-  PropertyConditions conditions;
-
-  PropertyItems items;
+  String type;
 
   @override
   bool operator ==(dynamic other) {
@@ -68,23 +72,24 @@ class Property {
 
   Map<String, dynamic> toJson() {
     return {
-      'type': type,
-      'enum': enum_,
+      'conditions': conditions,
+      'default': default_,
       'description': description,
+      'enum': enum_,
       'format': format,
+      'id': id,
+      'items': items,
       'maxItems': maxItems,
       'minItems': minItems,
-      'default': default_,
       'propertyOrder': propertyOrder,
       'title': title,
-      'conditions': conditions,
-      'items': items,
+      'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'Property[type=$type, enum_=$enum_, description=$description, format=$format, maxItems=$maxItems, minItems=$minItems, default_=$default_, propertyOrder=$propertyOrder, title=$title, conditions=$conditions, items=$items, ]';
+    return 'Property[conditions=$conditions, default_=$default_, description=$description, enum_=$enum_, format=$format, id=$id, items=$items, maxItems=$maxItems, minItems=$minItems, propertyOrder=$propertyOrder, title=$title, type=$type, ]';
   }
 
   static List<Property> listFromJson(List<dynamic> json) {

@@ -14,6 +14,7 @@ import ApiClient from "../ApiClient";
 import BusinessActivityLinksImage from "./BusinessActivityLinksImage";
 import BusinessActivityLinksSchema from "./BusinessActivityLinksSchema";
 import BusinessActivityLinksSelf from "./BusinessActivityLinksSelf";
+import BusinessActivityLinksThumbnail from "./BusinessActivityLinksThumbnail";
 
 /**
  * The BusinessActivityLinks model module.
@@ -27,13 +28,15 @@ export default class BusinessActivityLinks {
     
      */
   constructor() {
-    this.self = null;
-    this.schema = null;
     this.image = null;
+    this.schema = null;
+    this.self = null;
+    this.thumbnail = null;
 
-    this.selfType = BusinessActivityLinksSelf;
-    this.schemaType = BusinessActivityLinksSchema;
     this.imageType = BusinessActivityLinksImage;
+    this.schemaType = BusinessActivityLinksSchema;
+    this.selfType = BusinessActivityLinksSelf;
+    this.thumbnailType = BusinessActivityLinksThumbnail;
   }
 
   /**
@@ -51,8 +54,8 @@ export default class BusinessActivityLinks {
       object = new BusinessActivityLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
+    if (data.hasOwnProperty("image")) {
+      object.image = ApiClient.convertToType(data["image"], object.imageType);
     }
     if (data.hasOwnProperty("schema")) {
       object.schema = ApiClient.convertToType(
@@ -60,8 +63,14 @@ export default class BusinessActivityLinks {
         object.schemaType
       );
     }
-    if (data.hasOwnProperty("image")) {
-      object.image = ApiClient.convertToType(data["image"], object.imageType);
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
+    }
+    if (data.hasOwnProperty("thumbnail")) {
+      object.thumbnail = ApiClient.convertToType(
+        data["thumbnail"],
+        object.thumbnailType
+      );
     }
 
     return object;

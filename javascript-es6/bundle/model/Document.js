@@ -53,27 +53,19 @@ var Document =
    * @alias module:model/Document
    * @class
   
-   * @param file { module:model/DocumentFile }
-  
-   * @param permission { module:model/DocumentPermission }
-  
-   * @param id { String }
-  
-   * @param createdAt { Date }
-  
    */
-    function Document(file, permission, id, createdAt) {
+    function Document() {
       _classCallCheck(this, Document);
 
-      this.file = file;
-      this.permission = permission;
-      this.id = id;
-      this.createdAt = createdAt;
-      this.type = null;
       this.links = null;
+      this.createdAt = null;
+      this.file = null;
+      this.id = null;
+      this.permission = null;
+      this.type = null;
+      this.linksType = _DocumentLinks.default;
       this.fileType = _DocumentFile.default;
       this.permissionType = _DocumentPermission.default;
-      this.linksType = _DocumentLinks.default;
     }
     /**
      * Constructs a "Document" from a plain JavaScript object.
@@ -99,22 +91,11 @@ var Document =
             object = new Document();
           }
 
-          if (data.hasOwnProperty("file")) {
-            object.file = _ApiClient.default.convertToType(
-              data["file"],
-              object.fileType
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
             );
-          }
-
-          if (data.hasOwnProperty("permission")) {
-            object.permission = _ApiClient.default.convertToType(
-              data["permission"],
-              object.permissionType
-            );
-          }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
 
           if (data.hasOwnProperty("createdAt")) {
@@ -124,17 +105,28 @@ var Document =
             );
           }
 
+          if (data.hasOwnProperty("file")) {
+            object.file = _ApiClient.default.convertToType(
+              data["file"],
+              object.fileType
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("permission")) {
+            object.permission = _ApiClient.default.convertToType(
+              data["permission"],
+              object.permissionType
+            );
+          }
+
           if (data.hasOwnProperty("type")) {
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
-            );
-          }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
             );
           }
 

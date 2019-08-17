@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**polygon** | [**PlaceGeoPolygon**](PlaceGeoPolygon.md) |  | 
-**elevation** | **Number** |  | 
 **centroid** | [**PlaceGeoCentroid**](PlaceGeoCentroid.md) |  | [optional] 
+**elevation** | **Number** |  | [optional] 
+**polygon** | [**PlaceGeoPolygon**](PlaceGeoPolygon.md) |  | 
 
 

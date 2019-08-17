@@ -29,7 +29,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = StateApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var feedback = ; // String | The identifier of the resource formatted as GUID string.
+var feedback = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var feedbackStatePatch = FeedbackStatePatch(); // FeedbackStatePatch | 
@@ -47,7 +47,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **feedback** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **feedbackStatePatch** | [**FeedbackStatePatch**](FeedbackStatePatch.md)|  | [optional] 
@@ -82,7 +82,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = StateApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var operation = ; // String | The identifier of the resource formatted as GUID string.
+var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var operationStatePatch = OperationStatePatch(); // OperationStatePatch | 
@@ -100,7 +100,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operation** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **operationStatePatch** | [**OperationStatePatch**](OperationStatePatch.md)|  | [optional] 
@@ -135,7 +135,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = StateApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var report = ; // String | The identifier of the resource formatted as GUID string.
+var report = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var reportStatePatch = ReportStatePatch(); // ReportStatePatch | 
@@ -153,7 +153,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **report** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **reportStatePatch** | [**ReportStatePatch**](ReportStatePatch.md)|  | [optional] 

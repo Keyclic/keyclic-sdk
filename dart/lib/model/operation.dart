@@ -2,25 +2,34 @@ part of keyclic_sdk_api.api;
 
 class Operation {
   Operation({
+    this.embedded,
+    this.links,
+    this.createdAt,
     this.description,
+    this.id,
+    this.identificationNumber,
     this.name,
     this.scheduledAt,
     this.signature,
-    this.id,
-    this.identificationNumber,
     this.state,
-    this.createdAt,
-    this.updatedAt,
     this.type,
-    this.links,
-    this.embedded,
+    this.updatedAt,
   });
 
   Operation.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
+    embedded = FeedbackEmbedded.fromJson(json['_embedded']);
+    links = OperationLinks.fromJson(json['_links']);
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    if (createdAt is DateTime && createdAt.isUtc == false) {
+      createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
+    }
     description = json['description'];
+    id = json['id'];
+    identificationNumber = json['identificationNumber'];
     name = json['name'];
     scheduledAt = json['scheduledAt'] == null
         ? null
@@ -29,25 +38,26 @@ class Operation {
       scheduledAt = DateTime.parse('${scheduledAt.toIso8601String()}Z');
     }
     signature = OperationSignature.fromJson(json['signature']);
-    id = json['id'];
-    identificationNumber = json['identificationNumber'];
     state = (json['state'] as List)?.map((item) => item as String)?.toList();
-    createdAt =
-        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
-    if (createdAt is DateTime && createdAt.isUtc == false) {
-      createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
-    }
+    type = json['type'];
     updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
-    type = json['type'];
-    links = OperationLinks.fromJson(json['_links']);
-    embedded = FeedbackEmbedded.fromJson(json['_embedded']);
   }
 
+  FeedbackEmbedded embedded;
+
+  OperationLinks links;
+
+  DateTime createdAt;
+
   String description;
+
+  String id;
+
+  String identificationNumber;
 
   String name;
 
@@ -55,21 +65,11 @@ class Operation {
 
   OperationSignature signature;
 
-  String id;
-
-  String identificationNumber;
-
   List<String> state;
-
-  DateTime createdAt;
-
-  DateTime updatedAt;
 
   String type;
 
-  OperationLinks links;
-
-  FeedbackEmbedded embedded;
+  DateTime updatedAt;
 
   @override
   bool operator ==(dynamic other) {
@@ -79,42 +79,33 @@ class Operation {
 
     return other is Operation &&
         runtimeType == other.runtimeType &&
-        signature == other.signature &&
-        id == other.id &&
-        DeepCollectionEquality.unordered().equals(state, other.state) &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        DeepCollectionEquality.unordered().equals(state, other.state);
   }
 
   @override
-  int get hashCode =>
-      0 ^
-      signature.hashCode ^
-      id.hashCode ^
-      createdAt.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode => 0;
 
   Map<String, dynamic> toJson() {
     return {
+      '_embedded': embedded,
+      '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
       'description': description,
+      'id': id,
+      'identificationNumber': identificationNumber,
       'name': name,
       'scheduledAt':
           scheduledAt == null ? '' : scheduledAt.toUtc().toIso8601String(),
       'signature': signature,
-      'id': id,
-      'identificationNumber': identificationNumber,
       'state': state,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
       'type': type,
-      '_links': links,
-      '_embedded': embedded,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'Operation[description=$description, name=$name, scheduledAt=$scheduledAt, signature=$signature, id=$id, identificationNumber=$identificationNumber, state=$state, createdAt=$createdAt, updatedAt=$updatedAt, type=$type, links=$links, embedded=$embedded, ]';
+    return 'Operation[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, id=$id, identificationNumber=$identificationNumber, name=$name, scheduledAt=$scheduledAt, signature=$signature, state=$state, type=$type, updatedAt=$updatedAt, ]';
   }
 
   static List<Operation> listFromJson(List<dynamic> json) {

@@ -67,16 +67,16 @@ var DelegationLinks =
     function DelegationLinks() {
       _classCallCheck(this, DelegationLinks);
 
-      this.self = null;
-      this.from = null;
-      this.to = null;
-      this.report = null;
       this.createdBy = null;
-      this.selfType = _DelegationLinksSelf.default;
-      this.fromType = _DelegationLinksFrom.default;
-      this.toType = _DelegationLinksTo.default;
-      this.reportType = _DelegationLinksReport.default;
+      this.from = null;
+      this.report = null;
+      this.self = null;
+      this.to = null;
       this.createdByType = _DelegationLinksCreatedBy.default;
+      this.fromType = _DelegationLinksFrom.default;
+      this.reportType = _DelegationLinksReport.default;
+      this.selfType = _DelegationLinksSelf.default;
+      this.toType = _DelegationLinksTo.default;
     }
     /**
      * Constructs a "DelegationLinks" from a plain JavaScript object.
@@ -102,10 +102,10 @@ var DelegationLinks =
             object = new DelegationLinks();
           }
 
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
+          if (data.hasOwnProperty("createdBy")) {
+            object.createdBy = _ApiClient.default.convertToType(
+              data["createdBy"],
+              object.createdByType
             );
           }
 
@@ -116,13 +116,6 @@ var DelegationLinks =
             );
           }
 
-          if (data.hasOwnProperty("to")) {
-            object.to = _ApiClient.default.convertToType(
-              data["to"],
-              object.toType
-            );
-          }
-
           if (data.hasOwnProperty("report")) {
             object.report = _ApiClient.default.convertToType(
               data["report"],
@@ -130,10 +123,17 @@ var DelegationLinks =
             );
           }
 
-          if (data.hasOwnProperty("createdBy")) {
-            object.createdBy = _ApiClient.default.convertToType(
-              data["createdBy"],
-              object.createdByType
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          if (data.hasOwnProperty("to")) {
+            object.to = _ApiClient.default.convertToType(
+              data["to"],
+              object.toType
             );
           }
 

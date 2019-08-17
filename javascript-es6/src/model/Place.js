@@ -29,42 +29,26 @@ export default class Place {
     
      * @param name { String }
     
-     * @param preferences { module:model/PlacePreferences }
-    
-     * @param id { String }
-    
-     * @param createdAt { Date }
-    
-     * @param updatedAt { Date }
-    
      */
   constructor(
     geo,
 
-    name,
-
-    preferences,
-
-    id,
-
-    createdAt,
-
-    updatedAt
+    name
   ) {
+    this.links = null;
     this.branchCode = null;
+    this.createdAt = null;
     this.description = null;
     this.geo = geo;
+    this.id = null;
     this.name = name;
-    this.preferences = preferences;
-    this.id = id;
-    this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
+    this.preferences = null;
     this.type = null;
-    this.links = null;
+    this.updatedAt = null;
 
+    this.linksType = PlaceLinks;
     this.geoType = PlaceGeo;
     this.preferencesType = PlacePreferences;
-    this.linksType = PlaceLinks;
   }
 
   /**
@@ -82,8 +66,14 @@ export default class Place {
       object = new Place();
     }
 
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
     if (data.hasOwnProperty("branchCode")) {
       object.branchCode = ApiClient.convertToType(data["branchCode"], "String");
+    }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
     }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
@@ -94,6 +84,9 @@ export default class Place {
     if (data.hasOwnProperty("geo")) {
       object.geo = ApiClient.convertToType(data["geo"], object.geoType);
     }
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
+    }
     if (data.hasOwnProperty("name")) {
       object.name = ApiClient.convertToType(data["name"], "String");
     }
@@ -103,20 +96,11 @@ export default class Place {
         object.preferencesType
       );
     }
-    if (data.hasOwnProperty("id")) {
-      object.id = ApiClient.convertToType(data["id"], "String");
-    }
-    if (data.hasOwnProperty("createdAt")) {
-      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
-    }
-    if (data.hasOwnProperty("updatedAt")) {
-      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
-    }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
     }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

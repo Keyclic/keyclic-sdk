@@ -47,6 +47,16 @@
   }
 
   describe('TransitionApi', function() {
+    describe('postTransitionByDelegation', function() {
+      it('should call postTransitionByDelegation successfully', function(done) {
+        //uncomment below and update the code to test postTransitionByDelegation
+        //instance.postTransitionByDelegation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('postTransitionByFeedback', function() {
       it('should call postTransitionByFeedback successfully', function(done) {
         //uncomment below and update the code to test postTransitionByFeedback

@@ -26,23 +26,17 @@ export default class BusinessActivity {
     
      * @param name { String }
     
-     * @param id { String }
-    
      */
-  constructor(
-    name,
-
-    id
-  ) {
-    this.alternateName = null;
-    this.name = name;
-    this.id = id;
-    this.type = null;
-    this.metadataSchema = null;
+  constructor(name) {
     this.links = null;
+    this.alternateName = null;
+    this.id = null;
+    this.metadataSchema = null;
+    this.name = name;
+    this.type = null;
 
-    this.metadataSchemaType = BusinessActivityMetadataSchema;
     this.linksType = BusinessActivityLinks;
+    this.metadataSchemaType = BusinessActivityMetadataSchema;
   }
 
   /**
@@ -60,20 +54,17 @@ export default class BusinessActivity {
       object = new BusinessActivity();
     }
 
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
     if (data.hasOwnProperty("alternateName")) {
       object.alternateName = ApiClient.convertToType(
         data["alternateName"],
         "String"
       );
     }
-    if (data.hasOwnProperty("name")) {
-      object.name = ApiClient.convertToType(data["name"], "String");
-    }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
-    }
-    if (data.hasOwnProperty("type")) {
-      object.type = ApiClient.convertToType(data["type"], "String");
     }
     if (data.hasOwnProperty("metadataSchema")) {
       object.metadataSchema = ApiClient.convertToType(
@@ -81,8 +72,11 @@ export default class BusinessActivity {
         object.metadataSchemaType
       );
     }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    if (data.hasOwnProperty("name")) {
+      object.name = ApiClient.convertToType(data["name"], "String");
+    }
+    if (data.hasOwnProperty("type")) {
+      object.type = ApiClient.convertToType(data["type"], "String");
     }
 
     return object;

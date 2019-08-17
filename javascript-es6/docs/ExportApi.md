@@ -29,25 +29,22 @@ let apiInstance = new @KeyclicSdkJavascript.ExportApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+let organization = "organization_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'place': "place_example", // String | The identifier of the resource formatted as GUID string.
-  'assignedTo': "assignedTo_example", // String | The identifier of the resource formatted as GUID string.
-  'category': "category_example", // String | The identifier of the resource formatted as GUID string.
+  'place': "place_example", // String | The identifier of the resource.
+  'assignedTo': "assignedTo_example", // String | The identifier of the resource.
+  'category': "category_example", // String | The identifier of the resource.
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'delegatedTo': "delegatedTo_example", // String | The identifier of the resource formatted as GUID string.
+  'delegatedTo': "delegatedTo_example", // String | The identifier of the resource.
   'order': "desc", // String | 
   'query': "query_example", // String | 
   'state': "state_example", // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
-  'searchDescription': "searchDescription_example", // String | 
-  'searchReference': "searchReference_example", // String | 
-  'searchIdentificationNumber': "searchIdentificationNumber_example" // String | 
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cpostExportByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
@@ -64,23 +61,20 @@ apiInstance.cpostExportByOrganization(xKeyclicApp, organization, opts, (error, d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **assignedTo** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **place** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **category** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
- **delegatedTo** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **delegatedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
- **searchDescription** | **String**|  | [optional] 
- **searchReference** | **String**|  | [optional] 
- **searchIdentificationNumber** | **String**|  | [optional] 
 
 ### Return type
 
@@ -109,7 +103,7 @@ let apiInstance = new @KeyclicSdkJavascript.ExportApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let organization = "organization_example"; // String | The identifier of the resource formatted as GUID string.
+let organization = "organization_example"; // String | The identifier of the resource.
 
 let token = "token_example"; // String | 
 
@@ -132,7 +126,7 @@ apiInstance.getExportByOrganizationAndToken(xKeyclicApp, organization, token, op
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **token** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 

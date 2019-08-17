@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class FeedbackLinksImages {
   FeedbackLinksImages({
     this.href,
+    this.iriTemplate,
   });
 
   FeedbackLinksImages.fromJson(Map<String, dynamic> json) {
@@ -10,9 +11,13 @@ class FeedbackLinksImages {
       return;
     }
     href = json['href'];
+    iriTemplate = FeedbackLinksImagesIriTemplate.fromJson(json['iriTemplate']);
   }
 
+  /* The URI of the images associated to the given feedback. */
   String href;
+
+  FeedbackLinksImagesIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {
@@ -29,12 +34,13 @@ class FeedbackLinksImages {
   Map<String, dynamic> toJson() {
     return {
       'href': href,
+      'iriTemplate': iriTemplate,
     };
   }
 
   @override
   String toString() {
-    return 'FeedbackLinksImages[href=$href, ]';
+    return 'FeedbackLinksImages[href=$href, iriTemplate=$iriTemplate, ]';
   }
 
   static List<FeedbackLinksImages> listFromJson(List<dynamic> json) {

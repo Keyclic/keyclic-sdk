@@ -23,32 +23,18 @@ export default class Category {
      * @alias module:model/Category
      * @class
     
-     * @param color { String }
-    
      * @param name { String }
     
-     * @param id { String }
-    
-     * @param createdAt { Date }
-    
      */
-  constructor(
-    color,
-
-    name,
-
-    id,
-
-    createdAt
-  ) {
-    this.color = color;
-    this.icon = null;
-    this.name = name;
-    this.id = id;
-    this.identificationNumber = null;
-    this.createdAt = createdAt;
-    this.type = null;
+  constructor(name) {
     this.links = null;
+    this.color = null;
+    this.createdAt = null;
+    this.icon = null;
+    this.id = null;
+    this.identificationNumber = null;
+    this.name = name;
+    this.type = null;
 
     this.linksType = CategoryLinks;
   }
@@ -68,14 +54,17 @@ export default class Category {
       object = new Category();
     }
 
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
     if (data.hasOwnProperty("color")) {
       object.color = ApiClient.convertToType(data["color"], "String");
     }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
     if (data.hasOwnProperty("icon")) {
       object.icon = ApiClient.convertToType(data["icon"], "String");
-    }
-    if (data.hasOwnProperty("name")) {
-      object.name = ApiClient.convertToType(data["name"], "String");
     }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
@@ -86,14 +75,11 @@ export default class Category {
         "String"
       );
     }
-    if (data.hasOwnProperty("createdAt")) {
-      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    if (data.hasOwnProperty("name")) {
+      object.name = ApiClient.convertToType(data["name"], "String");
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
-    }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
 
     return object;

@@ -12,13 +12,13 @@ class CheckpointLinksOrganization {
     }
     href = json['href'];
     iriTemplate =
-        CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+        CheckpointLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the organization associated to the given checkpoint. */
   String href;
 
-  CategoryLinksOrganizationIriTemplate iriTemplate;
+  CheckpointLinksOrganizationIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

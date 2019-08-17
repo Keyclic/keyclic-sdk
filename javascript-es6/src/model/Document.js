@@ -25,34 +25,18 @@ export default class Document {
      * @alias module:model/Document
      * @class
     
-     * @param file { module:model/DocumentFile }
-    
-     * @param permission { module:model/DocumentPermission }
-    
-     * @param id { String }
-    
-     * @param createdAt { Date }
-    
      */
-  constructor(
-    file,
-
-    permission,
-
-    id,
-
-    createdAt
-  ) {
-    this.file = file;
-    this.permission = permission;
-    this.id = id;
-    this.createdAt = createdAt;
-    this.type = null;
+  constructor() {
     this.links = null;
+    this.createdAt = null;
+    this.file = null;
+    this.id = null;
+    this.permission = null;
+    this.type = null;
 
+    this.linksType = DocumentLinks;
     this.fileType = DocumentFile;
     this.permissionType = DocumentPermission;
-    this.linksType = DocumentLinks;
   }
 
   /**
@@ -70,8 +54,17 @@ export default class Document {
       object = new Document();
     }
 
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
     if (data.hasOwnProperty("file")) {
       object.file = ApiClient.convertToType(data["file"], object.fileType);
+    }
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
     }
     if (data.hasOwnProperty("permission")) {
       object.permission = ApiClient.convertToType(
@@ -79,17 +72,8 @@ export default class Document {
         object.permissionType
       );
     }
-    if (data.hasOwnProperty("id")) {
-      object.id = ApiClient.convertToType(data["id"], "String");
-    }
-    if (data.hasOwnProperty("createdAt")) {
-      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
-    }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
-    }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
 
     return object;

@@ -53,14 +53,14 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.BusinessActivityMetadataSchema);
     });
 
-    it('should have the property required (base name: "required")', function() {
-      // uncomment below and update the code to test the property required
+    it('should have the property properties (base name: "properties")', function() {
+      // uncomment below and update the code to test the property properties
       //var instane = new @KeyclicSdkJavascript.BusinessActivityMetadataSchema();
       //expect(instance).to.be();
     });
 
-    it('should have the property properties (base name: "properties")', function() {
-      // uncomment below and update the code to test the property properties
+    it('should have the property required (base name: "required")', function() {
+      // uncomment below and update the code to test the property required
       //var instane = new @KeyclicSdkJavascript.BusinessActivityMetadataSchema();
       //expect(instance).to.be();
     });

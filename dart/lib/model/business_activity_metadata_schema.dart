@@ -2,22 +2,22 @@ part of keyclic_sdk_api.api;
 
 class BusinessActivityMetadataSchema {
   BusinessActivityMetadataSchema({
-    this.required,
     this.properties,
+    this.required,
   });
 
   BusinessActivityMetadataSchema.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
+    properties = Property.mapFromJson(json['properties']);
     required =
         (json['required'] as List)?.map((item) => item as String)?.toList();
-    properties = Property.mapFromJson(json['properties']);
   }
 
-  List<String> required;
-
   Map<String, Property> properties;
+
+  List<String> required;
 
   @override
   bool operator ==(dynamic other) {
@@ -34,14 +34,14 @@ class BusinessActivityMetadataSchema {
 
   Map<String, dynamic> toJson() {
     return {
-      'required': required,
       'properties': properties,
+      'required': required,
     };
   }
 
   @override
   String toString() {
-    return 'BusinessActivityMetadataSchema[required=$required, properties=$properties, ]';
+    return 'BusinessActivityMetadataSchema[properties=$properties, required=$required, ]';
   }
 
   static List<BusinessActivityMetadataSchema> listFromJson(List<dynamic> json) {

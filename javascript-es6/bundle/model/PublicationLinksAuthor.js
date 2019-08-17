@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _DelegationLinksCreatedByIriTemplate = _interopRequireDefault(
-  require("./DelegationLinksCreatedByIriTemplate")
+var _PublicationLinksAuthorIriTemplate = _interopRequireDefault(
+  require("./PublicationLinksAuthorIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var PublicationLinksAuthor =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _DelegationLinksCreatedByIriTemplate.default;
+      this.iriTemplateType = _PublicationLinksAuthorIriTemplate.default;
     }
     /**
      * Constructs a "PublicationLinksAuthor" from a plain JavaScript object.

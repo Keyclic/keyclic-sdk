@@ -12,6 +12,7 @@
 
 import ApiClient from "../ApiClient";
 import ReviewLinksAuthor from "./ReviewLinksAuthor";
+import ReviewLinksItemReviewed from "./ReviewLinksItemReviewed";
 import ReviewLinksSelf from "./ReviewLinksSelf";
 
 /**
@@ -26,11 +27,13 @@ export default class ReviewLinks {
     
      */
   constructor() {
-    this.self = null;
     this.author = null;
+    this.itemReviewed = null;
+    this.self = null;
 
-    this.selfType = ReviewLinksSelf;
     this.authorType = ReviewLinksAuthor;
+    this.itemReviewedType = ReviewLinksItemReviewed;
+    this.selfType = ReviewLinksSelf;
   }
 
   /**
@@ -48,14 +51,20 @@ export default class ReviewLinks {
       object = new ReviewLinks();
     }
 
-    if (data.hasOwnProperty("self")) {
-      object.self = ApiClient.convertToType(data["self"], object.selfType);
-    }
     if (data.hasOwnProperty("author")) {
       object.author = ApiClient.convertToType(
         data["author"],
         object.authorType
       );
+    }
+    if (data.hasOwnProperty("itemReviewed")) {
+      object.itemReviewed = ApiClient.convertToType(
+        data["itemReviewed"],
+        object.itemReviewedType
+      );
+    }
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
 
     return object;

@@ -2,21 +2,29 @@ part of keyclic_sdk_api.api;
 
 class DelegateData {
   DelegateData({
-    this.report,
+    this.description,
     this.organization,
+    this.report,
+    this.service,
   });
 
   DelegateData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    report = json['report'];
+    description = json['description'];
     organization = json['organization'];
+    report = json['report'];
+    service = json['service'];
   }
+
+  String description;
+
+  String organization;
 
   String report;
 
-  String organization;
+  String service;
 
   @override
   bool operator ==(dynamic other) {
@@ -26,23 +34,24 @@ class DelegateData {
 
     return other is DelegateData &&
         runtimeType == other.runtimeType &&
-        report == other.report &&
-        organization == other.organization;
+        report == other.report;
   }
 
   @override
-  int get hashCode => 0 ^ report.hashCode ^ organization.hashCode;
+  int get hashCode => 0 ^ report.hashCode;
 
   Map<String, dynamic> toJson() {
     return {
-      'report': report,
+      'description': description,
       'organization': organization,
+      'report': report,
+      'service': service,
     };
   }
 
   @override
   String toString() {
-    return 'DelegateData[report=$report, organization=$organization, ]';
+    return 'DelegateData[description=$description, organization=$organization, report=$report, service=$service, ]';
   }
 
   static List<DelegateData> listFromJson(List<dynamic> json) {

@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CategoryLinksOrganizationIriTemplate = _interopRequireDefault(
-  require("./CategoryLinksOrganizationIriTemplate")
+var _PlaceLinksOrganizationIriTemplate = _interopRequireDefault(
+  require("./PlaceLinksOrganizationIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var PlaceLinksOrganization =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _CategoryLinksOrganizationIriTemplate.default;
+      this.iriTemplateType = _PlaceLinksOrganizationIriTemplate.default;
     }
     /**
      * Constructs a "PlaceLinksOrganization" from a plain JavaScript object.

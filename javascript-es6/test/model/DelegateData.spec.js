@@ -53,14 +53,26 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.DelegateData);
     });
 
-    it('should have the property report (base name: "report")', function() {
-      // uncomment below and update the code to test the property report
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
       //var instane = new @KeyclicSdkJavascript.DelegateData();
       //expect(instance).to.be();
     });
 
     it('should have the property organization (base name: "organization")', function() {
       // uncomment below and update the code to test the property organization
+      //var instane = new @KeyclicSdkJavascript.DelegateData();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property report (base name: "report")', function() {
+      // uncomment below and update the code to test the property report
+      //var instane = new @KeyclicSdkJavascript.DelegateData();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property service (base name: "service")', function() {
+      // uncomment below and update the code to test the property service
       //var instane = new @KeyclicSdkJavascript.DelegateData();
       //expect(instance).to.be();
     });

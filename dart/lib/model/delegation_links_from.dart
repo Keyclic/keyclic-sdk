@@ -11,14 +11,13 @@ class DelegationLinksFrom {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = DelegationLinksFromIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the from associated to the given delegation. */
   String href;
 
-  CategoryLinksOrganizationIriTemplate iriTemplate;
+  DelegationLinksFromIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import DelegationLinksCreatedByIriTemplate from "./DelegationLinksCreatedByIriTemplate";
+import FeedbackReviewRequestLinksReviewerIriTemplate from "./FeedbackReviewRequestLinksReviewerIriTemplate";
 
 /**
  * The FeedbackReviewRequestLinksReviewer model module.
@@ -28,7 +28,7 @@ export default class FeedbackReviewRequestLinksReviewer {
     this.href = null;
     this.iriTemplate = null;
 
-    this.iriTemplateType = DelegationLinksCreatedByIriTemplate;
+    this.iriTemplateType = FeedbackReviewRequestLinksReviewerIriTemplate;
   }
 
   /**

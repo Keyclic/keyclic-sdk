@@ -3,7 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**telephone** | **String** |  | 
+**email** | **String** |  | [optional] 
 **isOpen** | **Boolean** |  | [optional] 
+**name** | **String** |  | [optional] 
+**telephone** | **String** |  | [optional] 
 
 

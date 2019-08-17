@@ -47,18 +47,18 @@ var Delegation =
    * @alias module:model/Delegation
    * @class
   
-   * @param id { String }
-  
-   * @param createdAt { Date }
+   * @param state { Array.<String> }
   
    */
-    function Delegation(id, createdAt) {
+    function Delegation(state) {
       _classCallCheck(this, Delegation);
 
-      this.id = id;
-      this.createdAt = createdAt;
-      this.type = null;
       this.links = null;
+      this.createdAt = null;
+      this.description = null;
+      this.id = null;
+      this.state = state;
+      this.type = null;
       this.linksType = _DelegationLinks.default;
     }
     /**
@@ -85,8 +85,11 @@ var Delegation =
             object = new Delegation();
           }
 
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
           }
 
           if (data.hasOwnProperty("createdAt")) {
@@ -96,17 +99,28 @@ var Delegation =
             );
           }
 
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
               "String"
             );
           }
 
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("state")) {
+            object.state = _ApiClient.default.convertToType(
+              data["state"],
+              "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
             );
           }
 

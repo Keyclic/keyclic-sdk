@@ -12,13 +12,13 @@ class OrganizationLinksSelf {
     }
     href = json['href'];
     iriTemplate =
-        CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+        OrganizationLinksSelfIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the self associated to the given organization. */
   String href;
 
-  CategoryLinksOrganizationIriTemplate iriTemplate;
+  OrganizationLinksSelfIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

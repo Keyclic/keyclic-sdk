@@ -27,11 +27,11 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = AnalyticApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var category = ; // String | The identifier of the resource formatted as GUID string.
-var place = ; // String | The identifier of the resource formatted as GUID string.
+var category = ; // String | The identifier of the resource.
+var place = ; // String | The identifier of the resource.
 var state = state_example; // String | 
 var options[property] = options[property]_example; // String | 
 var options[sort] = options[sort]_example; // String | 
@@ -49,11 +49,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **category** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
- **place** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **category** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **place** | [**String**](.md)| The identifier of the resource. | [optional] 
  **state** | **String**|  | [optional] 
  **options[property]** | **String**|  | [optional] 
  **options[sort]** | **String**|  | [optional] 

@@ -37,9 +37,9 @@ let opts = {
   'geoPoint': "geoPoint_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
   'geoCoordinates': "geoCoordinates_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
   'order': "desc", // String | 
-  'organization': "organization_example", // String | The identifier of the resource formatted as GUID string.
+  'organization': "organization_example", // String | The identifier of the resource.
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetBusinessActivities(xKeyclicApp, , opts, (error, data, response) => {
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | [optional] 
+ **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
 
@@ -101,7 +101,7 @@ let apiInstance = new @KeyclicSdkJavascript.BusinessActivityApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let businessActivity = "businessActivity_example"; // String | The identifier of the resource formatted as GUID string.
+let businessActivity = "businessActivity_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
@@ -122,7 +122,7 @@ apiInstance.getBusinessActivity(xKeyclicApp, businessActivity, opts, (error, dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **businessActivity** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **businessActivity** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

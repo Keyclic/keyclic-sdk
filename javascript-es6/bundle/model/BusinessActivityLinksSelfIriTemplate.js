@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _BusinessActivityLinksSelfIriTemplateMapping = _interopRequireDefault(
-  require("./BusinessActivityLinksSelfIriTemplateMapping")
+var _BusinessActivityLinksImageIriTemplateMapping = _interopRequireDefault(
+  require("./BusinessActivityLinksImageIriTemplateMapping")
 );
 
 function _interopRequireDefault(obj) {
@@ -54,7 +54,7 @@ var BusinessActivityLinksSelfIriTemplate =
       _classCallCheck(this, BusinessActivityLinksSelfIriTemplate);
 
       this.mapping = null;
-      this.mappingType = _BusinessActivityLinksSelfIriTemplateMapping.default;
+      this.mappingType = _BusinessActivityLinksImageIriTemplateMapping.default;
     }
     /**
      * Constructs a "BusinessActivityLinksSelfIriTemplate" from a plain JavaScript object.

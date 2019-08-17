@@ -12,13 +12,13 @@ class OrganizationLinksLogo {
     }
     href = json['href'];
     iriTemplate =
-        CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+        OrganizationLinksLogoIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the logo associated to the given organization. */
   String href;
 
-  CategoryLinksOrganizationIriTemplate iriTemplate;
+  OrganizationLinksLogoIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

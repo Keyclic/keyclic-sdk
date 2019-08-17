@@ -34,7 +34,7 @@ let opts = {
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'page': 1, // Number | Page of the overview.
-  'limit': 10, // Number | Page of the overview.
+  'limit': 10 // Number | Page of the overview.
 };
 
 apiInstance.cgetFollowingsByFeed(xKeyclicApp, feed, opts, (error, data, response) => {

@@ -53,6 +53,12 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.Webhook);
     });
 
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
+      //var instane = new @KeyclicSdkJavascript.Webhook();
+      //expect(instance).to.be();
+    });
+
     it('should have the property enabled (base name: "enabled")', function() {
       // uncomment below and update the code to test the property enabled
       //var instane = new @KeyclicSdkJavascript.Webhook();
@@ -65,26 +71,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property payloadUrl (base name: "payloadUrl")', function() {
-      // uncomment below and update the code to test the property payloadUrl
-      //var instane = new @KeyclicSdkJavascript.Webhook();
-      //expect(instance).to.be();
-    });
-
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new @KeyclicSdkJavascript.Webhook();
       //expect(instance).to.be();
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
+    it('should have the property payloadUrl (base name: "payloadUrl")', function() {
+      // uncomment below and update the code to test the property payloadUrl
       //var instane = new @KeyclicSdkJavascript.Webhook();
       //expect(instance).to.be();
     });
 
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new @KeyclicSdkJavascript.Webhook();
       //expect(instance).to.be();
     });

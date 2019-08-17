@@ -147,7 +147,7 @@ var DocumentApi =
     /**
      * Retrieve all Document resources.
      * @param { String } xKeyclicApp
-     * @param { String } report The identifier of the resource formatted as GUID string.
+     * @param { String } report The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { DocumentPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -270,7 +270,7 @@ var DocumentApi =
         /**
          * Remove one Document resource.
          * @param { String } xKeyclicApp
-         * @param { String } document The identifier of the resource formatted as GUID string.
+         * @param { String } document The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -351,7 +351,7 @@ var DocumentApi =
         /**
          * Retrieve one Document resource.
          * @param { String } xKeyclicApp
-         * @param { String } document The identifier of the resource formatted as GUID string.
+         * @param { String } document The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Document }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -438,7 +438,7 @@ var DocumentApi =
          * Edit one Document resource.
          * @param { String } xKeyclicApp
          * @param { module:model/DocumentPatch } documentPatch
-         * @param { String } document The identifier of the resource formatted as GUID string.
+         * @param { String } document The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Document }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -532,7 +532,7 @@ var DocumentApi =
          * Create one Document resource.
          * @param { String } xKeyclicApp
          * @param { module:model/DocumentData } documentData
-         * @param { String } report The identifier of the resource formatted as GUID string.
+         * @param { String } report The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Document }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)

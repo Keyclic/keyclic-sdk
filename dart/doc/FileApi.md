@@ -27,7 +27,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = FileApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var document = ; // String | The identifier of the resource formatted as GUID string.
+var document = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -44,7 +44,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **document** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **document** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

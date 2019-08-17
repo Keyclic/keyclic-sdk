@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _DocumentLinksSelfIriTemplate = _interopRequireDefault(
-  require("./DocumentLinksSelfIriTemplate")
+var _DocumentLinksFileIriTemplate = _interopRequireDefault(
+  require("./DocumentLinksFileIriTemplate")
 );
 
 function _interopRequireDefault(obj) {
@@ -55,7 +55,7 @@ var DocumentLinksFile =
 
       this.href = null;
       this.iriTemplate = null;
-      this.iriTemplateType = _DocumentLinksSelfIriTemplate.default;
+      this.iriTemplateType = _DocumentLinksFileIriTemplate.default;
     }
     /**
      * Constructs a "DocumentLinksFile" from a plain JavaScript object.

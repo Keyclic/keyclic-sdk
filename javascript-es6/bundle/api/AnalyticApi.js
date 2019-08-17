@@ -139,13 +139,13 @@ var AnalyticApi =
     /**
      * Retrieve one Analytic resource.
      * @param { String } xKeyclicApp
-     * @param { String } organization The identifier of the resource formatted as GUID string.
+     * @param { String } organization The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Chart }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { String } category The identifier of the resource formatted as GUID string.
-     * @param { String } place The identifier of the resource formatted as GUID string.
+     * @param { String } category The identifier of the resource.
+     * @param { String } place The identifier of the resource.
      * @param { String } state
      * @param { String } optionsProperty
      * @param { module:model/String } optionsSort

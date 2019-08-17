@@ -12,13 +12,13 @@ class OperationLinksOperator {
     }
     href = json['href'];
     iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+        OperationLinksOperatorIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the operator associated to the given operation. */
   String href;
 
-  DelegationLinksCreatedByIriTemplate iriTemplate;
+  OperationLinksOperatorIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

@@ -2,33 +2,33 @@ part of keyclic_sdk_api.api;
 
 class DelegationLinks {
   DelegationLinks({
-    this.self,
-    this.from,
-    this.to,
-    this.report,
     this.createdBy,
+    this.from,
+    this.report,
+    this.self,
+    this.to,
   });
 
   DelegationLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    self = DelegationLinksSelf.fromJson(json['self']);
-    from = DelegationLinksFrom.fromJson(json['from']);
-    to = DelegationLinksTo.fromJson(json['to']);
-    report = DelegationLinksReport.fromJson(json['report']);
     createdBy = DelegationLinksCreatedBy.fromJson(json['createdBy']);
+    from = DelegationLinksFrom.fromJson(json['from']);
+    report = DelegationLinksReport.fromJson(json['report']);
+    self = DelegationLinksSelf.fromJson(json['self']);
+    to = DelegationLinksTo.fromJson(json['to']);
   }
 
-  DelegationLinksSelf self;
+  DelegationLinksCreatedBy createdBy;
 
   DelegationLinksFrom from;
 
-  DelegationLinksTo to;
-
   DelegationLinksReport report;
 
-  DelegationLinksCreatedBy createdBy;
+  DelegationLinksSelf self;
+
+  DelegationLinksTo to;
 
   @override
   bool operator ==(dynamic other) {
@@ -44,17 +44,17 @@ class DelegationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
-      'from': from,
-      'to': to,
-      'report': report,
       'createdBy': createdBy,
+      'from': from,
+      'report': report,
+      'self': self,
+      'to': to,
     };
   }
 
   @override
   String toString() {
-    return 'DelegationLinks[self=$self, from=$from, to=$to, report=$report, createdBy=$createdBy, ]';
+    return 'DelegationLinks[createdBy=$createdBy, from=$from, report=$report, self=$self, to=$to, ]';
   }
 
   static List<DelegationLinks> listFromJson(List<dynamic> json) {

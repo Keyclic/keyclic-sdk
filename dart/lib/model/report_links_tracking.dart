@@ -11,14 +11,13 @@ class ReportLinksTracking {
       return;
     }
     href = json['href'];
-    iriTemplate =
-        DelegationLinksReportIriTemplate.fromJson(json['iriTemplate']);
+    iriTemplate = ReportLinksTrackingIriTemplate.fromJson(json['iriTemplate']);
   }
 
   /* The URI of the tracking associated to the given report. */
   String href;
 
-  DelegationLinksReportIriTemplate iriTemplate;
+  ReportLinksTrackingIriTemplate iriTemplate;
 
   @override
   bool operator ==(dynamic other) {

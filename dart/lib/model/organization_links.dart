@@ -2,26 +2,30 @@ part of keyclic_sdk_api.api;
 
 class OrganizationLinks {
   OrganizationLinks({
-    this.self,
+    this.application,
     this.businessActivity,
     this.logo,
+    this.self,
   });
 
   OrganizationLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    self = OrganizationLinksSelf.fromJson(json['self']);
+    application = OrganizationLinksApplication.fromJson(json['application']);
     businessActivity =
         OrganizationLinksBusinessActivity.fromJson(json['businessActivity']);
     logo = OrganizationLinksLogo.fromJson(json['logo']);
+    self = OrganizationLinksSelf.fromJson(json['self']);
   }
 
-  OrganizationLinksSelf self;
+  OrganizationLinksApplication application;
 
   OrganizationLinksBusinessActivity businessActivity;
 
   OrganizationLinksLogo logo;
+
+  OrganizationLinksSelf self;
 
   @override
   bool operator ==(dynamic other) {
@@ -37,15 +41,16 @@ class OrganizationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
+      'application': application,
       'businessActivity': businessActivity,
       'logo': logo,
+      'self': self,
     };
   }
 
   @override
   String toString() {
-    return 'OrganizationLinks[self=$self, businessActivity=$businessActivity, logo=$logo, ]';
+    return 'OrganizationLinks[application=$application, businessActivity=$businessActivity, logo=$logo, self=$self, ]';
   }
 
   static List<OrganizationLinks> listFromJson(List<dynamic> json) {

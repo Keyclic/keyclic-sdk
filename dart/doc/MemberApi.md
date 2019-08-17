@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **cgetMembersByOrganization**
-> MemberPagination cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, after, before, order, query, role, roles, page, limit, search[familyName], search[givenName], search[jobTitle], search[telephone], search[username], search[email])
+> MemberPagination cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, after, before, order, query, role, roles, page, limit)
 
 Retrieve all Member resources.
 
@@ -31,7 +31,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = MemberApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -42,15 +42,9 @@ var role = role_example; // String |
 var roles = roles_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
-var search[familyName] = search[familyName]_example; // String | 
-var search[givenName] = search[givenName]_example; // String | 
-var search[jobTitle] = search[jobTitle]_example; // String | 
-var search[telephone] = search[telephone]_example; // String | 
-var search[username] = search[username]_example; // String | 
-var search[email] = search[email]_example; // String | 
 
 try { 
-    var result = api_instance.cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, after, before, order, query, role, roles, page, limit, search[familyName], search[givenName], search[jobTitle], search[telephone], search[username], search[email]);
+    var result = api_instance.cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, after, before, order, query, role, roles, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling MemberApi->cgetMembersByOrganization: $e\n");
@@ -62,7 +56,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
@@ -73,12 +67,6 @@ Name | Type | Description  | Notes
  **roles** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
- **search[familyName]** | **String**|  | [optional] 
- **search[givenName]** | **String**|  | [optional] 
- **search[jobTitle]** | **String**|  | [optional] 
- **search[telephone]** | **String**|  | [optional] 
- **search[username]** | **String**|  | [optional] 
- **search[email]** | **String**|  | [optional] 
 
 ### Return type
 
@@ -110,8 +98,8 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = MemberApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
-var member = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
+var member = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -128,8 +116,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **member** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
+ **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -163,8 +151,8 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = MemberApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
-var member = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
+var member = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -181,8 +169,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **member** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
+ **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -217,8 +205,8 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = MemberApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var memberPatch = MemberPatch(); // MemberPatch | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
-var member = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
+var member = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -236,8 +224,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **memberPatch** | [**MemberPatch**](MemberPatch.md)|  | 
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
- **member** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
+ **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
@@ -272,7 +260,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = MemberApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var personData = PersonData(); // PersonData | 
-var organization = ; // String | The identifier of the resource formatted as GUID string.
+var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
@@ -290,7 +278,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **personData** | [**PersonData**](PersonData.md)|  | 
- **organization** | [**String**](.md)| The identifier of the resource formatted as GUID string. | 
+ **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

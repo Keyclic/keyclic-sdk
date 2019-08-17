@@ -13,7 +13,7 @@ class OperationStatePatch {
   }
 
   String transition;
-  //enum transitionEnum {  reset,  assign,  accept,  refuse,  progress,  resolve,  };
+  //enum transitionEnum {  accept,  assign,  progress,  refuse,  reset,  resolve,  };
 
   @override
   bool operator ==(dynamic other) {
