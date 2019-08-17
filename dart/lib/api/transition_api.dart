@@ -32,29 +32,40 @@ class TransitionApi {
     }
 
     // create path and map variables
-    String path = "/delegations/{delegation}/workflow/transition"
+    final String path = "/delegations/{delegation}/workflow/transition"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "delegation" + "}", delegation.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody = reportWorkflowTransitionData;
+    final ReportWorkflowTransitionData postBody = reportWorkflowTransitionData;
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -93,29 +104,41 @@ class TransitionApi {
     }
 
     // create path and map variables
-    String path = "/feedbacks/{feedback}/workflow/transition"
+    final String path = "/feedbacks/{feedback}/workflow/transition"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "feedback" + "}", feedback.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody = feedbackWorkflowTransitionData;
+    final FeedbackWorkflowTransitionData postBody =
+        feedbackWorkflowTransitionData;
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -154,29 +177,41 @@ class TransitionApi {
     }
 
     // create path and map variables
-    String path = "/operations/{operation}/workflow/transition"
+    final String path = "/operations/{operation}/workflow/transition"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "operation" + "}", operation.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody = operationWorkflowTransitionData;
+    final OperationWorkflowTransitionData postBody =
+        operationWorkflowTransitionData;
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -215,29 +250,40 @@ class TransitionApi {
     }
 
     // create path and map variables
-    String path = "/reports/{report}/workflow/transition"
+    final String path = "/reports/{report}/workflow/transition"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "report" + "}", report.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody = reportWorkflowTransitionData;
+    final ReportWorkflowTransitionData postBody = reportWorkflowTransitionData;
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

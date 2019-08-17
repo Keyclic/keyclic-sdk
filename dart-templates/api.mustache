@@ -24,40 +24,48 @@ class {{classname}} {
     {{/required}}{{/allParams}}
 
     // create path and map variables
-    String path = "{{{path}}}".replaceAll("{format}","json"){{#pathParams}}.replaceAll("{" + "{{baseName}}" + "}", {{{paramName}}}.toString()){{/pathParams}};
+    final String path = "{{{path}}}".replaceAll("{format}","json"){{#pathParams}}.replaceAll("{" + "{{baseName}}" + "}", {{{paramName}}}.toString()){{/pathParams}};
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [
     {{#queryParams}}
-    {{^required}}
-    if ({{paramName}} != null) {
-    {{/required}}
-      queryParams.addAll(_convertParametersForCollectionFormat("{{collectionFormat}}", "{{baseName}}", {{paramName}}));
-    {{^required}}
-    }
-    {{/required}}
-    {{/queryParams}}
+      {{^required}}
+      if ({{paramName}} != null)
+      {{/required}}
+        ..._convertParametersForCollectionFormat("{{baseName}}", {{paramName}}{{#collectionFormat}}, collectionFormat: "{{collectionFormat}}"{{/collectionFormat}}),
+      {{/queryParams}}
+    ];
 
     // header params
-    Map<String, String> headerParams = {};
-    {{#headerParams}}
-    headerParams["{{baseName}}"] = {{paramName}};
-    {{/headerParams}}
+    final Map<String, String> headerParams = {
+      {{#headerParams}}"{{baseName}}": {{paramName}},{{/headerParams}}
+    };
 
-    List<String> contentTypes = [{{#consumes}}"{{{mediaType}}}"{{#hasMore}},{{/hasMore}}{{/consumes}}];
+    final List<String> contentTypes = [
+      {{#consumes}}"{{{mediaType}}}",{{/consumes}}
+      "application/json",
+    ];
 
-    String contentType = contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = [{{#authMethods}}"{{name}}"{{#hasMore}}, {{/hasMore}}{{/authMethods}}];
+    final List<String> authNames = [
+      {{#authMethods}}"{{name}}", {{/authMethods}}
+    ];
 
-    Object postBody{{#bodyParam}} = {{paramName}}{{/bodyParam}};
+    {{#bodyParam}}
+    final {{{dataType}}} postBody = {{paramName}};
+    {{/bodyParam}}
+    {{^bodyParam}}
+    final Object postBody = null;
+    {{/bodyParam}}
 
-    var response = await apiClient.invokeAPI(path,
-                                             '{{httpMethod}}',
-                                             queryParams,
-                                             postBody,
-                                             headerParams,
-                                             contentType,
-                                             authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      '{{httpMethod}}',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

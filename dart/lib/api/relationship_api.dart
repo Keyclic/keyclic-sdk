@@ -31,30 +31,41 @@ class RelationshipApi {
     }
 
     // create path and map variables
-    String path = "/organizations/{organization}/relationships/{service}"
+    final String path = "/organizations/{organization}/relationships/{service}"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "organization" + "}", organization.toString())
         .replaceAll("{" + "service" + "}", service.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody;
+    final Object postBody = null;
 
-    var response = await apiClient.invokeAPI(path, 'DELETE', queryParams,
-        postBody, headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'DELETE',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -92,29 +103,40 @@ class RelationshipApi {
     }
 
     // create path and map variables
-    String path = "/organizations/{organization}/relationships"
+    final String path = "/organizations/{organization}/relationships"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "organization" + "}", organization.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody = externalServiceData;
+    final ExternalServiceData postBody = externalServiceData;
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

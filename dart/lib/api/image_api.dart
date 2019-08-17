@@ -30,30 +30,41 @@ class ImageApi {
     }
 
     // create path and map variables
-    String path = "/operations/{operation}/images/{image}"
+    final String path = "/operations/{operation}/images/{image}"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "operation" + "}", operation.toString())
         .replaceAll("{" + "image" + "}", image.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody;
+    final Object postBody = null;
 
-    var response = await apiClient.invokeAPI(path, 'DELETE', queryParams,
-        postBody, headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'DELETE',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -96,7 +107,7 @@ class ImageApi {
     }
 
     // create path and map variables
-    String path =
+    final String path =
         "/businessactivities/{businessActivity}/image/{width}/{height}"
             .replaceAll("{format}", "json")
             .replaceAll(
@@ -105,24 +116,35 @@ class ImageApi {
             .replaceAll("{" + "height" + "}", height.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody;
+    final Object postBody = null;
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -171,7 +193,7 @@ class ImageApi {
     }
 
     // create path and map variables
-    String path = "/feedbacks/{feedback}/images/{image}/{width}/{height}"
+    final String path = "/feedbacks/{feedback}/images/{image}/{width}/{height}"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "feedback" + "}", feedback.toString())
         .replaceAll("{" + "image" + "}", image.toString())
@@ -179,24 +201,35 @@ class ImageApi {
         .replaceAll("{" + "height" + "}", height.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody;
+    final Object postBody = null;
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -245,32 +278,44 @@ class ImageApi {
     }
 
     // create path and map variables
-    String path = "/operations/{operation}/images/{image}/{width}/{height}"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "operation" + "}", operation.toString())
-        .replaceAll("{" + "image" + "}", image.toString())
-        .replaceAll("{" + "width" + "}", width.toString())
-        .replaceAll("{" + "height" + "}", height.toString());
+    final String path =
+        "/operations/{operation}/images/{image}/{width}/{height}"
+            .replaceAll("{format}", "json")
+            .replaceAll("{" + "operation" + "}", operation.toString())
+            .replaceAll("{" + "image" + "}", image.toString())
+            .replaceAll("{" + "width" + "}", width.toString())
+            .replaceAll("{" + "height" + "}", height.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody;
+    final Object postBody = null;
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -314,31 +359,42 @@ class ImageApi {
     }
 
     // create path and map variables
-    String path = "/people/{person}/image/{width}/{height}"
+    final String path = "/people/{person}/image/{width}/{height}"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "person" + "}", person.toString())
         .replaceAll("{" + "width" + "}", width.toString())
         .replaceAll("{" + "height" + "}", height.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody;
+    final Object postBody = null;
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -377,29 +433,40 @@ class ImageApi {
     }
 
     // create path and map variables
-    String path = "/feedbacks/{feedback}/images"
+    final String path = "/feedbacks/{feedback}/images"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "feedback" + "}", feedback.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody = imageData;
+    final ImageData postBody = imageData;
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -437,29 +504,40 @@ class ImageApi {
     }
 
     // create path and map variables
-    String path = "/operations/{operation}/images"
+    final String path = "/operations/{operation}/images"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "operation" + "}", operation.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody = imageData;
+    final ImageData postBody = imageData;
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

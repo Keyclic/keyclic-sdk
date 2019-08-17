@@ -31,67 +31,60 @@ class CategoryApi {
     }
 
     // create path and map variables
-    String path = "/categories".replaceAll("{format}", "json");
+    final String path = "/categories".replaceAll("{format}", "json");
 
     // query params
-    List<QueryParam> queryParams = [];
-    if (businessActivity != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "business_activity", businessActivity));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
-    }
-    if (geoPoint != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "geo_point", geoPoint));
-    }
-    if (geoCoordinates != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "geo_coordinates", geoCoordinates));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (organization != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "organization", organization));
-    }
-    if (query != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "query", query));
-    }
-    if (page != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "page", page));
-    }
-    if (limit != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
+    final List<QueryParam> queryParams = [
+      if (businessActivity != null)
+        ..._convertParametersForCollectionFormat(
+            "business_activity", businessActivity),
+      if (after != null)
+        ..._convertParametersForCollectionFormat("after", after),
+      if (before != null)
+        ..._convertParametersForCollectionFormat("before", before),
+      if (geoPoint != null)
+        ..._convertParametersForCollectionFormat("geo_point", geoPoint),
+      if (geoCoordinates != null)
+        ..._convertParametersForCollectionFormat(
+            "geo_coordinates", geoCoordinates),
+      if (order != null)
+        ..._convertParametersForCollectionFormat("order", order),
+      if (organization != null)
+        ..._convertParametersForCollectionFormat("organization", organization),
+      if (query != null)
+        ..._convertParametersForCollectionFormat("query", query),
+      if (page != null) ..._convertParametersForCollectionFormat("page", page),
+      if (limit != null)
+        ..._convertParametersForCollectionFormat("limit", limit),
+    ];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody;
+    final Object postBody = null;
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -134,65 +127,60 @@ class CategoryApi {
     }
 
     // create path and map variables
-    String path = "/organizations/{organization}/categories"
+    final String path = "/organizations/{organization}/categories"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "organization" + "}", organization.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
-    if (businessActivity != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "business_activity", businessActivity));
-    }
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
-    }
-    if (geoPoint != null) {
-      queryParams.addAll(
-          _convertParametersForCollectionFormat("", "geo_point", geoPoint));
-    }
-    if (geoCoordinates != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat(
-          "", "geo_coordinates", geoCoordinates));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (query != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "query", query));
-    }
-    if (page != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "page", page));
-    }
-    if (limit != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
+    final List<QueryParam> queryParams = [
+      if (businessActivity != null)
+        ..._convertParametersForCollectionFormat(
+            "business_activity", businessActivity),
+      if (after != null)
+        ..._convertParametersForCollectionFormat("after", after),
+      if (before != null)
+        ..._convertParametersForCollectionFormat("before", before),
+      if (geoPoint != null)
+        ..._convertParametersForCollectionFormat("geo_point", geoPoint),
+      if (geoCoordinates != null)
+        ..._convertParametersForCollectionFormat(
+            "geo_coordinates", geoCoordinates),
+      if (order != null)
+        ..._convertParametersForCollectionFormat("order", order),
+      if (query != null)
+        ..._convertParametersForCollectionFormat("query", query),
+      if (page != null) ..._convertParametersForCollectionFormat("page", page),
+      if (limit != null)
+        ..._convertParametersForCollectionFormat("limit", limit),
+    ];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody;
+    final Object postBody = null;
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -226,29 +214,40 @@ class CategoryApi {
     }
 
     // create path and map variables
-    String path = "/categories/{category}"
+    final String path = "/categories/{category}"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "category" + "}", category.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody;
+    final Object postBody = null;
 
-    var response = await apiClient.invokeAPI(path, 'DELETE', queryParams,
-        postBody, headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'DELETE',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -281,29 +280,40 @@ class CategoryApi {
     }
 
     // create path and map variables
-    String path = "/categories/{category}"
+    final String path = "/categories/{category}"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "category" + "}", category.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody;
+    final Object postBody = null;
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -341,29 +351,40 @@ class CategoryApi {
     }
 
     // create path and map variables
-    String path = "/categories/{category}"
+    final String path = "/categories/{category}"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "category" + "}", category.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody = categoryPatch;
+    final CategoryPatch postBody = categoryPatch;
 
-    var response = await apiClient.invokeAPI(path, 'PATCH', queryParams,
-        postBody, headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'PATCH',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
@@ -401,29 +422,40 @@ class CategoryApi {
     }
 
     // create path and map variables
-    String path = "/organizations/{organization}/categories"
+    final String path = "/organizations/{organization}/categories"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "organization" + "}", organization.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = [];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody = categoryData;
+    final CategoryData postBody = categoryData;
 
-    var response = await apiClient.invokeAPI(path, 'POST', queryParams,
-        postBody, headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);

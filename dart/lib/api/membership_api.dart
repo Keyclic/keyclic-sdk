@@ -34,61 +34,55 @@ class MembershipApi {
     }
 
     // create path and map variables
-    String path = "/people/{person}/memberships"
+    final String path = "/people/{person}/memberships"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "person" + "}", person.toString());
 
     // query params
-    List<QueryParam> queryParams = [];
-    if (after != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "after", after));
-    }
-    if (before != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "before", before));
-    }
-    if (order != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "order", order));
-    }
-    if (query != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "query", query));
-    }
-    if (role != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "role", role));
-    }
-    if (roles != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "roles", roles));
-    }
-    if (page != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "page", page));
-    }
-    if (limit != null) {
-      queryParams
-          .addAll(_convertParametersForCollectionFormat("", "limit", limit));
-    }
+    final List<QueryParam> queryParams = [
+      if (after != null)
+        ..._convertParametersForCollectionFormat("after", after),
+      if (before != null)
+        ..._convertParametersForCollectionFormat("before", before),
+      if (order != null)
+        ..._convertParametersForCollectionFormat("order", order),
+      if (query != null)
+        ..._convertParametersForCollectionFormat("query", query),
+      if (role != null) ..._convertParametersForCollectionFormat("role", role),
+      if (roles != null)
+        ..._convertParametersForCollectionFormat("roles", roles),
+      if (page != null) ..._convertParametersForCollectionFormat("page", page),
+      if (limit != null)
+        ..._convertParametersForCollectionFormat("limit", limit),
+    ];
 
     // header params
-    Map<String, String> headerParams = {};
-    headerParams["accept-language"] = acceptLanguage;
-    headerParams["x-keyclic-app"] = xKeyclicApp;
-    headerParams["x-keyclic-app-version"] = xKeyclicAppVersion;
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
 
-    List<String> contentTypes = ["application/json;charset=UTF-8"];
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
 
-    String contentType =
-        contentTypes.isEmpty ? "application/json" : contentTypes[0];
-    List<String> authNames = ["bearer"];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
-    Object postBody;
+    final Object postBody = null;
 
-    var response = await apiClient.invokeAPI(path, 'GET', queryParams, postBody,
-        headerParams, contentType, authNames);
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
 
     if (response.statusCode >= 400) {
       throw ApiException(response.statusCode, response.body);
