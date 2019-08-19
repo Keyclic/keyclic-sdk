@@ -10,7 +10,7 @@ class TrackingProgression {
     if (json == null) {
       return;
     }
-    resolved = json['resolved'];
+    resolved = json['resolved']?.toDouble();
     total = json['total'];
   }
 

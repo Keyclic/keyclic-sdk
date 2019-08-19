@@ -10,8 +10,8 @@ class PlaceGeoCentroid {
     if (json == null) {
       return;
     }
-    latitude = json['latitude'];
-    longitude = json['longitude'];
+    latitude = json['latitude']?.toDouble();
+    longitude = json['longitude']?.toDouble();
   }
 
   double latitude;

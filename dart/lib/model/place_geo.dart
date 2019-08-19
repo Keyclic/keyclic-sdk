@@ -12,7 +12,7 @@ class PlaceGeo {
       return;
     }
     centroid = PlaceGeoCentroid.fromJson(json['centroid']);
-    elevation = json['elevation'];
+    elevation = json['elevation']?.toDouble();
     polygon = PlaceGeoPolygon.fromJson(json['polygon']);
   }
 

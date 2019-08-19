@@ -33,7 +33,13 @@ class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
             {{name}} = (json['{{baseName}}'] as List)?.map((item) => item as {{items.datatype}})?.toList();
           {{/isListContainer}}
           {{^isListContainer}}
-            {{name}} = json['{{baseName}}'];
+            {{! Double type in dart must have a point separator (0 must be cast in 0.0) }}
+            {{#isFloat}}
+              {{name}} = json['{{baseName}}']?.toDouble();
+            {{/isFloat}}
+            {{^isFloat}}
+              {{name}} = json['{{baseName}}'];
+            {{/isFloat}}
           {{/isListContainer}}
         {{/complexType}}
       {{/isDateTime}}
