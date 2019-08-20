@@ -8,24 +8,39 @@ class QueryParam {
 }
 
 class ApiClient {
-  ApiClient({this.basePath = "{{{basePath}}}"}) {
-    // Setup authentications (key: authentication name, value: authentication).{{#authMethods}}{{#isBasic}}
-    //_authentications['{{name}}'] = HttpBasicAuth();{{/isBasic}}{{#isApiKey}}
-    //_authentications['{{name}}'] = ApiKeyAuth({{#isKeyInHeader}}"header"{{/isKeyInHeader}}{{^isKeyInHeader}}"query"{{/isKeyInHeader}}, "{{keyParamName}}");{{/isApiKey}}{{#isOAuth}}
-    //_authentications['{{name}}'] = OAuth();{{/isOAuth}}{{/authMethods}}
-    {{! override _authentications['bearer'] time to change API }}
-    {{! TODO: change API to use OAuth2 method in security definition }}
-    {{#authMethods}}_authentications['{{name}}'] = OAuth();{{/authMethods}}
-  }
+  ApiClient({
+    this.basePath = "{{{basePath}}}",
+  });
 
+  final Map<String, Authentication> _authentications = {
+    // Setup authentications (key: authentication name, value: authentication).
+    {{=<< >>=}}
+    <<!
+    {{#authMethods}}{{#isBasic}}
+    //'{{name}}': = HttpBasicAuth(),
+    {{/isBasic}}{{#isApiKey}}
+    {{#isKeyInHeader}}
+    //'{{name}}': ApiKeyAuth("header", "{{keyParamName}}"),
+    {{/isKeyInHeader}}
+    {{^isKeyInHeader}}
+    //'{{name}}': ApiKeyAuth("query", "{{keyParamName}}"),
+    {{/isKeyInHeader}}
+    {{/isApiKey}}{{#isOAuth}}
+    //'{{name}}': OAuth(),
+    {{/isOAuth}}{{/authMethods}}
+    >>
+    <<={{ }}=>>
+    {{! TODO: change API to use OAuth2 method in security definition }}
+    {{! Override _authentications['bearer'] }}
+    {{#authMethods}}'{{name}}': OAuth(),{{/authMethods}}
+  };
   final _regList = RegExp(r'^List<(.*)>$');
   final _regMap = RegExp(r'^Map<String,(.*)>$');
 
-  final Client client = Client();
   final String basePath;
+  final Client client = Client();
 
   Map<String, String> _defaultHeaderMap = {};
-  Map<String, Authentication> _authentications = {};
 
   void addDefaultHeader(String key, String value) {
     _defaultHeaderMap[key] = value;
