@@ -21,19 +21,24 @@ class ApplicationLinksSelf {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ApplicationLinksSelf && runtimeType == other.runtimeType;
+    return other is ApplicationLinksSelf &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<ApplicationLinksSelf> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ApplicationLinksSelf>()
+        ? <ApplicationLinksSelf>[]
         : json.map((value) => ApplicationLinksSelf.fromJson(value)).toList();
   }
 

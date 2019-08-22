@@ -16,19 +16,26 @@ class PropertyItems {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PropertyItems && runtimeType == other.runtimeType;
+    return other is PropertyItems &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(oneOf, other.oneOf);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      oneOf.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<PropertyItems> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PropertyItems>()
+        ? <PropertyItems>[]
         : json.map((value) => PropertyItems.fromJson(value)).toList();
   }
 

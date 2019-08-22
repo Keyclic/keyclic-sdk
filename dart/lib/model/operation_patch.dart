@@ -33,19 +33,31 @@ class OperationPatch {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is OperationPatch && runtimeType == other.runtimeType;
+    return other is OperationPatch &&
+        runtimeType == other.runtimeType &&
+        description == other.description &&
+        identificationNumber == other.identificationNumber &&
+        name == other.name &&
+        scheduledAt == other.scheduledAt;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      description.hashCode ^
+      identificationNumber.hashCode ^
+      name.hashCode ^
+      scheduledAt.hashCode;
 
   static List<OperationPatch> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<OperationPatch>()
+        ? <OperationPatch>[]
         : json.map((value) => OperationPatch.fromJson(value)).toList();
   }
 

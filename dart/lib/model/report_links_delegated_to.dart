@@ -22,19 +22,24 @@ class ReportLinksDelegatedTo {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ReportLinksDelegatedTo && runtimeType == other.runtimeType;
+    return other is ReportLinksDelegatedTo &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<ReportLinksDelegatedTo> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ReportLinksDelegatedTo>()
+        ? <ReportLinksDelegatedTo>[]
         : json.map((value) => ReportLinksDelegatedTo.fromJson(value)).toList();
   }
 

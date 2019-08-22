@@ -16,19 +16,23 @@ class PaginationLink {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PaginationLink && runtimeType == other.runtimeType;
+    return other is PaginationLink &&
+        runtimeType == other.runtimeType &&
+        href == other.href;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ href.hashCode;
 
   static List<PaginationLink> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PaginationLink>()
+        ? <PaginationLink>[]
         : json.map((value) => PaginationLink.fromJson(value)).toList();
   }
 

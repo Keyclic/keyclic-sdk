@@ -16,21 +16,27 @@ class FeedbackReviewRequestCollection {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is FeedbackReviewRequestCollection &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(items, other.items);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      items.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<FeedbackReviewRequestCollection> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<FeedbackReviewRequestCollection>()
+        ? <FeedbackReviewRequestCollection>[]
         : json
             .map((value) => FeedbackReviewRequestCollection.fromJson(value))
             .toList();

@@ -24,19 +24,26 @@ class FeedbackDataGeoPoint {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is FeedbackDataGeoPoint && runtimeType == other.runtimeType;
+    return other is FeedbackDataGeoPoint &&
+        runtimeType == other.runtimeType &&
+        latitude == other.latitude &&
+        longitude == other.longitude &&
+        srid == other.srid;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ latitude.hashCode ^ longitude.hashCode ^ srid.hashCode;
 
   static List<FeedbackDataGeoPoint> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackDataGeoPoint>()
+        ? <FeedbackDataGeoPoint>[]
         : json.map((value) => FeedbackDataGeoPoint.fromJson(value)).toList();
   }
 

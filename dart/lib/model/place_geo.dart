@@ -24,21 +24,26 @@ class PlaceGeo {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is PlaceGeo &&
         runtimeType == other.runtimeType &&
+        centroid == other.centroid &&
+        elevation == other.elevation &&
         polygon == other.polygon;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ polygon.hashCode;
+  int get hashCode =>
+      0 ^ centroid.hashCode ^ elevation.hashCode ^ polygon.hashCode;
 
   static List<PlaceGeo> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PlaceGeo>()
+        ? <PlaceGeo>[]
         : json.map((value) => PlaceGeo.fromJson(value)).toList();
   }
 

@@ -20,6 +20,7 @@ class PersonPreferences {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -30,13 +31,14 @@ class PersonPreferences {
         messagePushEnabled == other.messagePushEnabled;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode =>
       0 ^ messageEmailEnabled.hashCode ^ messagePushEnabled.hashCode;
 
   static List<PersonPreferences> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PersonPreferences>()
+        ? <PersonPreferences>[]
         : json.map((value) => PersonPreferences.fromJson(value)).toList();
   }
 

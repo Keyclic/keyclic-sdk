@@ -45,22 +45,42 @@ class FeedbackData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is FeedbackData &&
         runtimeType == other.runtimeType &&
+        category == other.category &&
         geo == other.geo &&
-        visibility == other.visibility;
+        description == other.description &&
+        visibility == other.visibility &&
+        businessActivity == other.businessActivity &&
+        proMode == other.proMode &&
+        DeepCollectionEquality.unordered().equals(metadata, other.metadata) &&
+        place == other.place;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ geo.hashCode ^ visibility.hashCode;
+  int get hashCode =>
+      0 ^
+      category.hashCode ^
+      geo.hashCode ^
+      description.hashCode ^
+      visibility.hashCode ^
+      businessActivity.hashCode ^
+      proMode.hashCode ^
+      metadata.keys.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      metadata.values.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      place.hashCode;
 
   static List<FeedbackData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackData>()
+        ? <FeedbackData>[]
         : json.map((value) => FeedbackData.fromJson(value)).toList();
   }
 

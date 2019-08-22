@@ -16,19 +16,26 @@ class PlaceCollection {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PlaceCollection && runtimeType == other.runtimeType;
+    return other is PlaceCollection &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(items, other.items);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      items.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<PlaceCollection> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PlaceCollection>()
+        ? <PlaceCollection>[]
         : json.map((value) => PlaceCollection.fromJson(value)).toList();
   }
 

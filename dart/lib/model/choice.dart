@@ -52,19 +52,44 @@ class Choice {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Choice && runtimeType == other.runtimeType;
+    return other is Choice &&
+        runtimeType == other.runtimeType &&
+        default_ == other.default_ &&
+        description == other.description &&
+        DeepCollectionEquality.unordered().equals(enum_, other.enum_) &&
+        format == other.format &&
+        id == other.id &&
+        maxItems == other.maxItems &&
+        minItems == other.minItems &&
+        propertyOrder == other.propertyOrder &&
+        title == other.title &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      default_.hashCode ^
+      description.hashCode ^
+      enum_.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      format.hashCode ^
+      id.hashCode ^
+      maxItems.hashCode ^
+      minItems.hashCode ^
+      propertyOrder.hashCode ^
+      title.hashCode ^
+      type.hashCode;
 
   static List<Choice> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Choice>()
+        ? <Choice>[]
         : json.map((value) => Choice.fromJson(value)).toList();
   }
 

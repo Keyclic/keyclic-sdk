@@ -28,19 +28,31 @@ class CategoryPatch {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is CategoryPatch && runtimeType == other.runtimeType;
+    return other is CategoryPatch &&
+        runtimeType == other.runtimeType &&
+        color == other.color &&
+        icon == other.icon &&
+        identificationNumber == other.identificationNumber &&
+        name == other.name;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      color.hashCode ^
+      icon.hashCode ^
+      identificationNumber.hashCode ^
+      name.hashCode;
 
   static List<CategoryPatch> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<CategoryPatch>()
+        ? <CategoryPatch>[]
         : json.map((value) => CategoryPatch.fromJson(value)).toList();
   }
 

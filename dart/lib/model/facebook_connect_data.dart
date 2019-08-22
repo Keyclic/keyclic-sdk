@@ -16,6 +16,7 @@ class FacebookConnectData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -25,12 +26,13 @@ class FacebookConnectData {
         accessToken == other.accessToken;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ accessToken.hashCode;
 
   static List<FacebookConnectData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FacebookConnectData>()
+        ? <FacebookConnectData>[]
         : json.map((value) => FacebookConnectData.fromJson(value)).toList();
   }
 

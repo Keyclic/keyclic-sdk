@@ -16,6 +16,7 @@ class EmailData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -25,12 +26,13 @@ class EmailData {
         email == other.email;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ email.hashCode;
 
   static List<EmailData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<EmailData>()
+        ? <EmailData>[]
         : json.map((value) => EmailData.fromJson(value)).toList();
   }
 

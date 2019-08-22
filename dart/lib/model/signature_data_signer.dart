@@ -20,19 +20,24 @@ class SignatureDataSigner {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is SignatureDataSigner && runtimeType == other.runtimeType;
+    return other is SignatureDataSigner &&
+        runtimeType == other.runtimeType &&
+        familyName == other.familyName &&
+        givenName == other.givenName;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ familyName.hashCode ^ givenName.hashCode;
 
   static List<SignatureDataSigner> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<SignatureDataSigner>()
+        ? <SignatureDataSigner>[]
         : json.map((value) => SignatureDataSigner.fromJson(value)).toList();
   }
 

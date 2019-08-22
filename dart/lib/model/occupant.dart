@@ -32,19 +32,27 @@ class Occupant {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Occupant && runtimeType == other.runtimeType;
+    return other is Occupant &&
+        runtimeType == other.runtimeType &&
+        links == other.links &&
+        createdAt == other.createdAt &&
+        id == other.id &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ links.hashCode ^ createdAt.hashCode ^ id.hashCode ^ type.hashCode;
 
   static List<Occupant> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Occupant>()
+        ? <Occupant>[]
         : json.map((value) => Occupant.fromJson(value)).toList();
   }
 

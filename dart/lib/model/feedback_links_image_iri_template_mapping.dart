@@ -20,21 +20,25 @@ class FeedbackLinksImageIriTemplateMapping {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is FeedbackLinksImageIriTemplateMapping &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        feedback == other.feedback &&
+        image == other.image;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ feedback.hashCode ^ image.hashCode;
 
   static List<FeedbackLinksImageIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<FeedbackLinksImageIriTemplateMapping>()
+        ? <FeedbackLinksImageIriTemplateMapping>[]
         : json
             .map(
                 (value) => FeedbackLinksImageIriTemplateMapping.fromJson(value))

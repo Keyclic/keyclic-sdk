@@ -20,6 +20,7 @@ class PlaceGeoCentroid {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -30,12 +31,13 @@ class PlaceGeoCentroid {
         longitude == other.longitude;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ latitude.hashCode ^ longitude.hashCode;
 
   static List<PlaceGeoCentroid> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PlaceGeoCentroid>()
+        ? <PlaceGeoCentroid>[]
         : json.map((value) => PlaceGeoCentroid.fromJson(value)).toList();
   }
 

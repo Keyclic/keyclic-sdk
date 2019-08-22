@@ -20,21 +20,24 @@ class ExternalServiceData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is ExternalServiceData &&
         runtimeType == other.runtimeType &&
-        organization == other.organization;
+        organization == other.organization &&
+        name == other.name;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ organization.hashCode;
+  int get hashCode => 0 ^ organization.hashCode ^ name.hashCode;
 
   static List<ExternalServiceData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ExternalServiceData>()
+        ? <ExternalServiceData>[]
         : json.map((value) => ExternalServiceData.fromJson(value)).toList();
   }
 

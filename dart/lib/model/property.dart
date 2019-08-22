@@ -60,19 +60,48 @@ class Property {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Property && runtimeType == other.runtimeType;
+    return other is Property &&
+        runtimeType == other.runtimeType &&
+        conditions == other.conditions &&
+        default_ == other.default_ &&
+        description == other.description &&
+        DeepCollectionEquality.unordered().equals(enum_, other.enum_) &&
+        format == other.format &&
+        id == other.id &&
+        items == other.items &&
+        maxItems == other.maxItems &&
+        minItems == other.minItems &&
+        propertyOrder == other.propertyOrder &&
+        title == other.title &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      conditions.hashCode ^
+      default_.hashCode ^
+      description.hashCode ^
+      enum_.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      format.hashCode ^
+      id.hashCode ^
+      items.hashCode ^
+      maxItems.hashCode ^
+      minItems.hashCode ^
+      propertyOrder.hashCode ^
+      title.hashCode ^
+      type.hashCode;
 
   static List<Property> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Property>()
+        ? <Property>[]
         : json.map((value) => Property.fromJson(value)).toList();
   }
 

@@ -28,19 +28,27 @@ class BusinessActivityLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is BusinessActivityLinks && runtimeType == other.runtimeType;
+    return other is BusinessActivityLinks &&
+        runtimeType == other.runtimeType &&
+        image == other.image &&
+        schema == other.schema &&
+        self == other.self &&
+        thumbnail == other.thumbnail;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ image.hashCode ^ schema.hashCode ^ self.hashCode ^ thumbnail.hashCode;
 
   static List<BusinessActivityLinks> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<BusinessActivityLinks>()
+        ? <BusinessActivityLinks>[]
         : json.map((value) => BusinessActivityLinks.fromJson(value)).toList();
   }
 

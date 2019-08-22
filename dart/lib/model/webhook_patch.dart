@@ -20,19 +20,24 @@ class WebhookPatch {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is WebhookPatch && runtimeType == other.runtimeType;
+    return other is WebhookPatch &&
+        runtimeType == other.runtimeType &&
+        event == other.event &&
+        payloadUrl == other.payloadUrl;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ event.hashCode ^ payloadUrl.hashCode;
 
   static List<WebhookPatch> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<WebhookPatch>()
+        ? <WebhookPatch>[]
         : json.map((value) => WebhookPatch.fromJson(value)).toList();
   }
 

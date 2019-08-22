@@ -16,19 +16,23 @@ class ReportEmbeddedDuration {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ReportEmbeddedDuration && runtimeType == other.runtimeType;
+    return other is ReportEmbeddedDuration &&
+        runtimeType == other.runtimeType &&
+        seconds == other.seconds;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ seconds.hashCode;
 
   static List<ReportEmbeddedDuration> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ReportEmbeddedDuration>()
+        ? <ReportEmbeddedDuration>[]
         : json.map((value) => ReportEmbeddedDuration.fromJson(value)).toList();
   }
 

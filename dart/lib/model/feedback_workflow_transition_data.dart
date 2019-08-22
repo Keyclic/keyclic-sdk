@@ -17,6 +17,7 @@ class FeedbackWorkflowTransitionData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -26,12 +27,13 @@ class FeedbackWorkflowTransitionData {
         transition == other.transition;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ transition.hashCode;
 
   static List<FeedbackWorkflowTransitionData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackWorkflowTransitionData>()
+        ? <FeedbackWorkflowTransitionData>[]
         : json
             .map((value) => FeedbackWorkflowTransitionData.fromJson(value))
             .toList();

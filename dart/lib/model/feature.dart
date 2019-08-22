@@ -25,19 +25,30 @@ class Feature {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Feature && runtimeType == other.runtimeType;
+    return other is Feature &&
+        runtimeType == other.runtimeType &&
+        type == other.type &&
+        geometry == other.geometry &&
+        DeepCollectionEquality.unordered().equals(properties, other.properties);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      type.hashCode ^
+      geometry.hashCode ^
+      properties.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<Feature> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Feature>()
+        ? <Feature>[]
         : json.map((value) => Feature.fromJson(value)).toList();
   }
 

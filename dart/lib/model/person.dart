@@ -72,21 +72,49 @@ class Person {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Person &&
         runtimeType == other.runtimeType &&
-        optIn == other.optIn;
+        links == other.links &&
+        createdAt == other.createdAt &&
+        email == other.email &&
+        familyName == other.familyName &&
+        givenName == other.givenName &&
+        id == other.id &&
+        jobTitle == other.jobTitle &&
+        optIn == other.optIn &&
+        preferences == other.preferences &&
+        telephone == other.telephone &&
+        type == other.type &&
+        updatedAt == other.updatedAt &&
+        username == other.username;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ optIn.hashCode;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      createdAt.hashCode ^
+      email.hashCode ^
+      familyName.hashCode ^
+      givenName.hashCode ^
+      id.hashCode ^
+      jobTitle.hashCode ^
+      optIn.hashCode ^
+      preferences.hashCode ^
+      telephone.hashCode ^
+      type.hashCode ^
+      updatedAt.hashCode ^
+      username.hashCode;
 
   static List<Person> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Person>()
+        ? <Person>[]
         : json.map((value) => Person.fromJson(value)).toList();
   }
 

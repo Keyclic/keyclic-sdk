@@ -32,6 +32,7 @@ class LogEntry {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -39,15 +40,24 @@ class LogEntry {
     return other is LogEntry &&
         runtimeType == other.runtimeType &&
         action == other.action &&
+        actor == other.actor &&
+        DeepCollectionEquality.unordered().equals(data, other.data) &&
         loggedAt == other.loggedAt;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ action.hashCode ^ loggedAt.hashCode;
+  int get hashCode =>
+      0 ^
+      action.hashCode ^
+      actor.hashCode ^
+      data.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      loggedAt.hashCode;
 
   static List<LogEntry> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<LogEntry>()
+        ? <LogEntry>[]
         : json.map((value) => LogEntry.fromJson(value)).toList();
   }
 

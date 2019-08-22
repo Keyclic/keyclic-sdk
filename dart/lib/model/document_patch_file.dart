@@ -16,19 +16,23 @@ class DocumentPatchFile {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is DocumentPatchFile && runtimeType == other.runtimeType;
+    return other is DocumentPatchFile &&
+        runtimeType == other.runtimeType &&
+        name == other.name;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ name.hashCode;
 
   static List<DocumentPatchFile> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<DocumentPatchFile>()
+        ? <DocumentPatchFile>[]
         : json.map((value) => DocumentPatchFile.fromJson(value)).toList();
   }
 

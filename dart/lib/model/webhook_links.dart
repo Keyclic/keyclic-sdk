@@ -20,19 +20,24 @@ class WebhookLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is WebhookLinks && runtimeType == other.runtimeType;
+    return other is WebhookLinks &&
+        runtimeType == other.runtimeType &&
+        organization == other.organization &&
+        self == other.self;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ organization.hashCode ^ self.hashCode;
 
   static List<WebhookLinks> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<WebhookLinks>()
+        ? <WebhookLinks>[]
         : json.map((value) => WebhookLinks.fromJson(value)).toList();
   }
 

@@ -17,21 +17,24 @@ class CategoryLinksOrganizationIriTemplateMapping {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is CategoryLinksOrganizationIriTemplateMapping &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        organization == other.organization;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ organization.hashCode;
 
   static List<CategoryLinksOrganizationIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<CategoryLinksOrganizationIriTemplateMapping>()
+        ? <CategoryLinksOrganizationIriTemplateMapping>[]
         : json
             .map((value) =>
                 CategoryLinksOrganizationIriTemplateMapping.fromJson(value))

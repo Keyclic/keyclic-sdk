@@ -28,19 +28,27 @@ class ServiceContactPoint {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ServiceContactPoint && runtimeType == other.runtimeType;
+    return other is ServiceContactPoint &&
+        runtimeType == other.runtimeType &&
+        email == other.email &&
+        isOpen == other.isOpen &&
+        name == other.name &&
+        telephone == other.telephone;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ email.hashCode ^ isOpen.hashCode ^ name.hashCode ^ telephone.hashCode;
 
   static List<ServiceContactPoint> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ServiceContactPoint>()
+        ? <ServiceContactPoint>[]
         : json.map((value) => ServiceContactPoint.fromJson(value)).toList();
   }
 

@@ -31,19 +31,35 @@ class ReportEmbedded {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ReportEmbedded && runtimeType == other.runtimeType;
+    return other is ReportEmbedded &&
+        runtimeType == other.runtimeType &&
+        duration == other.duration &&
+        DeepCollectionEquality.unordered()
+            .equals(stateTransitions, other.stateTransitions) &&
+        DeepCollectionEquality.unordered()
+            .equals(targetGroups, other.targetGroups) &&
+        tracking == other.tracking;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      duration.hashCode ^
+      stateTransitions.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      targetGroups.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      tracking.hashCode;
 
   static List<ReportEmbedded> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ReportEmbedded>()
+        ? <ReportEmbedded>[]
         : json.map((value) => ReportEmbedded.fromJson(value)).toList();
   }
 

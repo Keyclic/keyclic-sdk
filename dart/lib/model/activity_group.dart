@@ -60,19 +60,45 @@ class ActivityGroup {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ActivityGroup && runtimeType == other.runtimeType;
+    return other is ActivityGroup &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered()
+            .equals(activities, other.activities) &&
+        activityCount == other.activityCount &&
+        actorCount == other.actorCount &&
+        createdAt == other.createdAt &&
+        group == other.group &&
+        id == other.id &&
+        updatedAt == other.updatedAt &&
+        verb == other.verb &&
+        isRead == other.isRead &&
+        isSeen == other.isSeen;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      activities.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      activityCount.hashCode ^
+      actorCount.hashCode ^
+      createdAt.hashCode ^
+      group.hashCode ^
+      id.hashCode ^
+      updatedAt.hashCode ^
+      verb.hashCode ^
+      isRead.hashCode ^
+      isSeen.hashCode;
 
   static List<ActivityGroup> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ActivityGroup>()
+        ? <ActivityGroup>[]
         : json.map((value) => ActivityGroup.fromJson(value)).toList();
   }
 

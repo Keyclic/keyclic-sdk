@@ -22,19 +22,24 @@ class OperationLinksTracking {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is OperationLinksTracking && runtimeType == other.runtimeType;
+    return other is OperationLinksTracking &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<OperationLinksTracking> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<OperationLinksTracking>()
+        ? <OperationLinksTracking>[]
         : json.map((value) => OperationLinksTracking.fromJson(value)).toList();
   }
 

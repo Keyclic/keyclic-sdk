@@ -24,19 +24,24 @@ class OperationSignature {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is OperationSignature && runtimeType == other.runtimeType;
+    return other is OperationSignature &&
+        runtimeType == other.runtimeType &&
+        signedAt == other.signedAt &&
+        signer == other.signer;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ signedAt.hashCode ^ signer.hashCode;
 
   static List<OperationSignature> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<OperationSignature>()
+        ? <OperationSignature>[]
         : json.map((value) => OperationSignature.fromJson(value)).toList();
   }
 

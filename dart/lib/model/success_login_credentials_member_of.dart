@@ -25,21 +25,31 @@ class SuccessLoginCredentialsMemberOf {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is SuccessLoginCredentialsMemberOf &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        id == other.id &&
+        organization == other.organization &&
+        DeepCollectionEquality.unordered().equals(roles, other.roles);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      id.hashCode ^
+      organization.hashCode ^
+      roles.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<SuccessLoginCredentialsMemberOf> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<SuccessLoginCredentialsMemberOf>()
+        ? <SuccessLoginCredentialsMemberOf>[]
         : json
             .map((value) => SuccessLoginCredentialsMemberOf.fromJson(value))
             .toList();

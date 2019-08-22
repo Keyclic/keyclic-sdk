@@ -17,21 +17,24 @@ class FeedbackReviewRequestLinksSelfIriTemplateMapping {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is FeedbackReviewRequestLinksSelfIriTemplateMapping &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        reviewRequest == other.reviewRequest;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ reviewRequest.hashCode;
 
   static List<FeedbackReviewRequestLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<FeedbackReviewRequestLinksSelfIriTemplateMapping>()
+        ? <FeedbackReviewRequestLinksSelfIriTemplateMapping>[]
         : json
             .map((value) =>
                 FeedbackReviewRequestLinksSelfIriTemplateMapping.fromJson(

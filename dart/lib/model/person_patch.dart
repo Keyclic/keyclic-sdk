@@ -44,19 +44,39 @@ class PersonPatch {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PersonPatch && runtimeType == other.runtimeType;
+    return other is PersonPatch &&
+        runtimeType == other.runtimeType &&
+        givenName == other.givenName &&
+        familyName == other.familyName &&
+        email == other.email &&
+        jobTitle == other.jobTitle &&
+        image == other.image &&
+        optIn == other.optIn &&
+        preferences == other.preferences &&
+        telephone == other.telephone;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      givenName.hashCode ^
+      familyName.hashCode ^
+      email.hashCode ^
+      jobTitle.hashCode ^
+      image.hashCode ^
+      optIn.hashCode ^
+      preferences.hashCode ^
+      telephone.hashCode;
 
   static List<PersonPatch> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PersonPatch>()
+        ? <PersonPatch>[]
         : json.map((value) => PersonPatch.fromJson(value)).toList();
   }
 

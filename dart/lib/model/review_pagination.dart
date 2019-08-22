@@ -36,19 +36,35 @@ class ReviewPagination {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ReviewPagination && runtimeType == other.runtimeType;
+    return other is ReviewPagination &&
+        runtimeType == other.runtimeType &&
+        limit == other.limit &&
+        page == other.page &&
+        pages == other.pages &&
+        total == other.total &&
+        embedded == other.embedded &&
+        links == other.links;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      limit.hashCode ^
+      page.hashCode ^
+      pages.hashCode ^
+      total.hashCode ^
+      embedded.hashCode ^
+      links.hashCode;
 
   static List<ReviewPagination> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ReviewPagination>()
+        ? <ReviewPagination>[]
         : json.map((value) => ReviewPagination.fromJson(value)).toList();
   }
 

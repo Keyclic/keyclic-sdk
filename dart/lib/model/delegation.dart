@@ -40,21 +40,36 @@ class Delegation {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Delegation &&
         runtimeType == other.runtimeType &&
-        DeepCollectionEquality.unordered().equals(state, other.state);
+        links == other.links &&
+        createdAt == other.createdAt &&
+        description == other.description &&
+        id == other.id &&
+        DeepCollectionEquality.unordered().equals(state, other.state) &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      createdAt.hashCode ^
+      description.hashCode ^
+      id.hashCode ^
+      state.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      type.hashCode;
 
   static List<Delegation> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Delegation>()
+        ? <Delegation>[]
         : json.map((value) => Delegation.fromJson(value)).toList();
   }
 

@@ -37,21 +37,35 @@ class BusinessActivity {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is BusinessActivity &&
         runtimeType == other.runtimeType &&
-        name == other.name;
+        links == other.links &&
+        alternateName == other.alternateName &&
+        id == other.id &&
+        metadataSchema == other.metadataSchema &&
+        name == other.name &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ name.hashCode;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      alternateName.hashCode ^
+      id.hashCode ^
+      metadataSchema.hashCode ^
+      name.hashCode ^
+      type.hashCode;
 
   static List<BusinessActivity> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<BusinessActivity>()
+        ? <BusinessActivity>[]
         : json.map((value) => BusinessActivity.fromJson(value)).toList();
   }
 

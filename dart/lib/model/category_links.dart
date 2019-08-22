@@ -20,19 +20,24 @@ class CategoryLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is CategoryLinks && runtimeType == other.runtimeType;
+    return other is CategoryLinks &&
+        runtimeType == other.runtimeType &&
+        organization == other.organization &&
+        self == other.self;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ organization.hashCode ^ self.hashCode;
 
   static List<CategoryLinks> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<CategoryLinks>()
+        ? <CategoryLinks>[]
         : json.map((value) => CategoryLinks.fromJson(value)).toList();
   }
 

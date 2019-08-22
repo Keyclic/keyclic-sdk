@@ -24,19 +24,25 @@ class Feed {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Feed && runtimeType == other.runtimeType;
+    return other is Feed &&
+        runtimeType == other.runtimeType &&
+        id == other.id &&
+        name == other.name &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ id.hashCode ^ name.hashCode ^ type.hashCode;
 
   static List<Feed> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Feed>()
+        ? <Feed>[]
         : json.map((value) => Feed.fromJson(value)).toList();
   }
 

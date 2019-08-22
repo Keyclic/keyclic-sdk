@@ -60,22 +60,43 @@ class Place {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Place &&
         runtimeType == other.runtimeType &&
+        links == other.links &&
+        branchCode == other.branchCode &&
+        createdAt == other.createdAt &&
+        description == other.description &&
         geo == other.geo &&
-        name == other.name;
+        id == other.id &&
+        name == other.name &&
+        preferences == other.preferences &&
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ geo.hashCode ^ name.hashCode;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      branchCode.hashCode ^
+      createdAt.hashCode ^
+      description.hashCode ^
+      geo.hashCode ^
+      id.hashCode ^
+      name.hashCode ^
+      preferences.hashCode ^
+      type.hashCode ^
+      updatedAt.hashCode;
 
   static List<Place> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Place>()
+        ? <Place>[]
         : json.map((value) => Place.fromJson(value)).toList();
   }
 

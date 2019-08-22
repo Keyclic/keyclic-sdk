@@ -24,21 +24,26 @@ class OrganizationPreferences {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is OrganizationPreferences &&
         runtimeType == other.runtimeType &&
-        public == other.public;
+        public == other.public &&
+        reference == other.reference &&
+        reviewEnabled == other.reviewEnabled;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ public.hashCode;
+  int get hashCode =>
+      0 ^ public.hashCode ^ reference.hashCode ^ reviewEnabled.hashCode;
 
   static List<OrganizationPreferences> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<OrganizationPreferences>()
+        ? <OrganizationPreferences>[]
         : json.map((value) => OrganizationPreferences.fromJson(value)).toList();
   }
 

@@ -20,19 +20,24 @@ class ActivitySubject {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ActivitySubject && runtimeType == other.runtimeType;
+    return other is ActivitySubject &&
+        runtimeType == other.runtimeType &&
+        id == other.id &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ id.hashCode ^ type.hashCode;
 
   static List<ActivitySubject> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ActivitySubject>()
+        ? <ActivitySubject>[]
         : json.map((value) => ActivitySubject.fromJson(value)).toList();
   }
 

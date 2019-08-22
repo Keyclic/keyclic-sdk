@@ -73,21 +73,48 @@ class Operation {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Operation &&
         runtimeType == other.runtimeType &&
-        DeepCollectionEquality.unordered().equals(state, other.state);
+        embedded == other.embedded &&
+        links == other.links &&
+        createdAt == other.createdAt &&
+        description == other.description &&
+        id == other.id &&
+        identificationNumber == other.identificationNumber &&
+        name == other.name &&
+        scheduledAt == other.scheduledAt &&
+        signature == other.signature &&
+        DeepCollectionEquality.unordered().equals(state, other.state) &&
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      embedded.hashCode ^
+      links.hashCode ^
+      createdAt.hashCode ^
+      description.hashCode ^
+      id.hashCode ^
+      identificationNumber.hashCode ^
+      name.hashCode ^
+      scheduledAt.hashCode ^
+      signature.hashCode ^
+      state.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      type.hashCode ^
+      updatedAt.hashCode;
 
   static List<Operation> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Operation>()
+        ? <Operation>[]
         : json.map((value) => Operation.fromJson(value)).toList();
   }
 

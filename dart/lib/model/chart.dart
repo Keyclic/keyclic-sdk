@@ -20,19 +20,29 @@ class Chart {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Chart && runtimeType == other.runtimeType;
+    return other is Chart &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(data, other.data) &&
+        DeepCollectionEquality.unordered().equals(labels, other.labels);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      data.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      labels.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<Chart> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Chart>()
+        ? <Chart>[]
         : json.map((value) => Chart.fromJson(value)).toList();
   }
 

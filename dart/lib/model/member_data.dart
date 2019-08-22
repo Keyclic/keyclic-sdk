@@ -16,6 +16,7 @@ class MemberData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -25,12 +26,13 @@ class MemberData {
         member == other.member;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ member.hashCode;
 
   static List<MemberData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<MemberData>()
+        ? <MemberData>[]
         : json.map((value) => MemberData.fromJson(value)).toList();
   }
 

@@ -24,19 +24,25 @@ class Device {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Device && runtimeType == other.runtimeType;
+    return other is Device &&
+        runtimeType == other.runtimeType &&
+        links == other.links &&
+        id == other.id &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ links.hashCode ^ id.hashCode ^ type.hashCode;
 
   static List<Device> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Device>()
+        ? <Device>[]
         : json.map((value) => Device.fromJson(value)).toList();
   }
 

@@ -24,19 +24,25 @@ class Error {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Error && runtimeType == other.runtimeType;
+    return other is Error &&
+        runtimeType == other.runtimeType &&
+        message == other.message &&
+        total == other.total &&
+        embedded == other.embedded;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ message.hashCode ^ total.hashCode ^ embedded.hashCode;
 
   static List<Error> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Error>()
+        ? <Error>[]
         : json.map((value) => Error.fromJson(value)).toList();
   }
 

@@ -21,19 +21,32 @@ class Schema {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Schema && runtimeType == other.runtimeType;
+    return other is Schema &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered()
+            .equals(properties, other.properties) &&
+        DeepCollectionEquality.unordered().equals(required, other.required);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      properties.keys.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      properties.values.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      required.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<Schema> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Schema>()
+        ? <Schema>[]
         : json.map((value) => Schema.fromJson(value)).toList();
   }
 

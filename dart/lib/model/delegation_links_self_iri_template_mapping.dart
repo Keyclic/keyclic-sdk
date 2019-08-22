@@ -16,21 +16,24 @@ class DelegationLinksSelfIriTemplateMapping {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is DelegationLinksSelfIriTemplateMapping &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        delegation == other.delegation;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ delegation.hashCode;
 
   static List<DelegationLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<DelegationLinksSelfIriTemplateMapping>()
+        ? <DelegationLinksSelfIriTemplateMapping>[]
         : json
             .map((value) =>
                 DelegationLinksSelfIriTemplateMapping.fromJson(value))

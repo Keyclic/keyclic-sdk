@@ -50,19 +50,37 @@ class Review {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Review && runtimeType == other.runtimeType;
+    return other is Review &&
+        runtimeType == other.runtimeType &&
+        links == other.links &&
+        createdAt == other.createdAt &&
+        id == other.id &&
+        reviewBody == other.reviewBody &&
+        reviewRating == other.reviewRating &&
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      createdAt.hashCode ^
+      id.hashCode ^
+      reviewBody.hashCode ^
+      reviewRating.hashCode ^
+      type.hashCode ^
+      updatedAt.hashCode;
 
   static List<Review> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Review>()
+        ? <Review>[]
         : json.map((value) => Review.fromJson(value)).toList();
   }
 

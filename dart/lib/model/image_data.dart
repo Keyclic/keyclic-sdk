@@ -16,6 +16,7 @@ class ImageData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -25,12 +26,13 @@ class ImageData {
         image == other.image;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ image.hashCode;
 
   static List<ImageData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ImageData>()
+        ? <ImageData>[]
         : json.map((value) => ImageData.fromJson(value)).toList();
   }
 

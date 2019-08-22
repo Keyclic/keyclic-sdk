@@ -32,19 +32,34 @@ class Condition {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Condition && runtimeType == other.runtimeType;
+    return other is Condition &&
+        runtimeType == other.runtimeType &&
+        id == other.id &&
+        operator_ == other.operator_ &&
+        path == other.path &&
+        type == other.type &&
+        DeepCollectionEquality.unordered().equals(value, other.value);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      id.hashCode ^
+      operator_.hashCode ^
+      path.hashCode ^
+      type.hashCode ^
+      value.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<Condition> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Condition>()
+        ? <Condition>[]
         : json.map((value) => Condition.fromJson(value)).toList();
   }
 

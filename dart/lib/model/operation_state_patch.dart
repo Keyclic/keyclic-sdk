@@ -17,6 +17,7 @@ class OperationStatePatch {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -26,12 +27,13 @@ class OperationStatePatch {
         transition == other.transition;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ transition.hashCode;
 
   static List<OperationStatePatch> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<OperationStatePatch>()
+        ? <OperationStatePatch>[]
         : json.map((value) => OperationStatePatch.fromJson(value)).toList();
   }
 

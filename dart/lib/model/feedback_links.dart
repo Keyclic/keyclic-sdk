@@ -41,19 +41,38 @@ class FeedbackLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is FeedbackLinks && runtimeType == other.runtimeType;
+    return other is FeedbackLinks &&
+        runtimeType == other.runtimeType &&
+        businessActivity == other.businessActivity &&
+        category == other.category &&
+        image == other.image &&
+        DeepCollectionEquality.unordered().equals(images, other.images) &&
+        reporter == other.reporter &&
+        self == other.self &&
+        tracking == other.tracking;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      businessActivity.hashCode ^
+      category.hashCode ^
+      image.hashCode ^
+      images.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      reporter.hashCode ^
+      self.hashCode ^
+      tracking.hashCode;
 
   static List<FeedbackLinks> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackLinks>()
+        ? <FeedbackLinks>[]
         : json.map((value) => FeedbackLinks.fromJson(value)).toList();
   }
 

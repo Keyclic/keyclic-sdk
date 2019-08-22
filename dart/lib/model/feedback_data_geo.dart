@@ -20,19 +20,24 @@ class FeedbackDataGeo {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is FeedbackDataGeo && runtimeType == other.runtimeType;
+    return other is FeedbackDataGeo &&
+        runtimeType == other.runtimeType &&
+        point == other.point &&
+        elevation == other.elevation;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ point.hashCode ^ elevation.hashCode;
 
   static List<FeedbackDataGeo> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackDataGeo>()
+        ? <FeedbackDataGeo>[]
         : json.map((value) => FeedbackDataGeo.fromJson(value)).toList();
   }
 

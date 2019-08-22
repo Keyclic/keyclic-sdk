@@ -40,19 +40,37 @@ class OrganizationPatch {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is OrganizationPatch && runtimeType == other.runtimeType;
+    return other is OrganizationPatch &&
+        runtimeType == other.runtimeType &&
+        name == other.name &&
+        alternateName == other.alternateName &&
+        description == other.description &&
+        logo == other.logo &&
+        billingEmailAddress == other.billingEmailAddress &&
+        notificationEmailAddress == other.notificationEmailAddress &&
+        preferences == other.preferences;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      name.hashCode ^
+      alternateName.hashCode ^
+      description.hashCode ^
+      logo.hashCode ^
+      billingEmailAddress.hashCode ^
+      notificationEmailAddress.hashCode ^
+      preferences.hashCode;
 
   static List<OrganizationPatch> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<OrganizationPatch>()
+        ? <OrganizationPatch>[]
         : json.map((value) => OrganizationPatch.fromJson(value)).toList();
   }
 

@@ -16,19 +16,26 @@ class MemberPatch {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is MemberPatch && runtimeType == other.runtimeType;
+    return other is MemberPatch &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(roles, other.roles);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      roles.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<MemberPatch> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<MemberPatch>()
+        ? <MemberPatch>[]
         : json.map((value) => MemberPatch.fromJson(value)).toList();
   }
 

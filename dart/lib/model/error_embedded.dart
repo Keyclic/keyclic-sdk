@@ -16,19 +16,26 @@ class ErrorEmbedded {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ErrorEmbedded && runtimeType == other.runtimeType;
+    return other is ErrorEmbedded &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(errors, other.errors);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      errors.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<ErrorEmbedded> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ErrorEmbedded>()
+        ? <ErrorEmbedded>[]
         : json.map((value) => ErrorEmbedded.fromJson(value)).toList();
   }
 

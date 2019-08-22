@@ -16,21 +16,24 @@ class OperationLinksSelfIriTemplateMapping {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is OperationLinksSelfIriTemplateMapping &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        operation == other.operation;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ operation.hashCode;
 
   static List<OperationLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<OperationLinksSelfIriTemplateMapping>()
+        ? <OperationLinksSelfIriTemplateMapping>[]
         : json
             .map(
                 (value) => OperationLinksSelfIriTemplateMapping.fromJson(value))

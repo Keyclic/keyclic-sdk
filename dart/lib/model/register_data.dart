@@ -20,6 +20,7 @@ class RegisterData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -30,12 +31,13 @@ class RegisterData {
         password == other.password;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ email.hashCode ^ password.hashCode;
 
   static List<RegisterData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<RegisterData>()
+        ? <RegisterData>[]
         : json.map((value) => RegisterData.fromJson(value)).toList();
   }
 

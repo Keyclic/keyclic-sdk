@@ -16,21 +16,24 @@ class WebhookLinksSelfIriTemplateMapping {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is WebhookLinksSelfIriTemplateMapping &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        webhook == other.webhook;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ webhook.hashCode;
 
   static List<WebhookLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<WebhookLinksSelfIriTemplateMapping>()
+        ? <WebhookLinksSelfIriTemplateMapping>[]
         : json
             .map((value) => WebhookLinksSelfIriTemplateMapping.fromJson(value))
             .toList();

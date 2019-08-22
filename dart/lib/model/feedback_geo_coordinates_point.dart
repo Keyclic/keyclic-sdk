@@ -24,6 +24,7 @@ class FeedbackGeoCoordinatesPoint {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -35,13 +36,14 @@ class FeedbackGeoCoordinatesPoint {
         srid == other.srid;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode =>
       0 ^ latitude.hashCode ^ longitude.hashCode ^ srid.hashCode;
 
   static List<FeedbackGeoCoordinatesPoint> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackGeoCoordinatesPoint>()
+        ? <FeedbackGeoCoordinatesPoint>[]
         : json
             .map((value) => FeedbackGeoCoordinatesPoint.fromJson(value))
             .toList();

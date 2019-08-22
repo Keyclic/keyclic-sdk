@@ -24,6 +24,7 @@ class OrganizationData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -31,15 +32,18 @@ class OrganizationData {
     return other is OrganizationData &&
         runtimeType == other.runtimeType &&
         name == other.name &&
-        businessActivity == other.businessActivity;
+        businessActivity == other.businessActivity &&
+        logo == other.logo;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ name.hashCode ^ businessActivity.hashCode;
+  int get hashCode =>
+      0 ^ name.hashCode ^ businessActivity.hashCode ^ logo.hashCode;
 
   static List<OrganizationData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<OrganizationData>()
+        ? <OrganizationData>[]
         : json.map((value) => OrganizationData.fromJson(value)).toList();
   }
 

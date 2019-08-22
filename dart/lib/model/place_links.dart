@@ -29,19 +29,31 @@ class PlaceLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PlaceLinks && runtimeType == other.runtimeType;
+    return other is PlaceLinks &&
+        runtimeType == other.runtimeType &&
+        containedInPlace == other.containedInPlace &&
+        containsPlaces == other.containsPlaces &&
+        organization == other.organization &&
+        self == other.self;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      containedInPlace.hashCode ^
+      containsPlaces.hashCode ^
+      organization.hashCode ^
+      self.hashCode;
 
   static List<PlaceLinks> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PlaceLinks>()
+        ? <PlaceLinks>[]
         : json.map((value) => PlaceLinks.fromJson(value)).toList();
   }
 

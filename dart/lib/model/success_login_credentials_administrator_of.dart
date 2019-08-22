@@ -24,21 +24,26 @@ class SuccessLoginCredentialsAdministratorOf {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is SuccessLoginCredentialsAdministratorOf &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        id == other.id &&
+        token == other.token &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ id.hashCode ^ token.hashCode ^ type.hashCode;
 
   static List<SuccessLoginCredentialsAdministratorOf> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<SuccessLoginCredentialsAdministratorOf>()
+        ? <SuccessLoginCredentialsAdministratorOf>[]
         : json
             .map((value) =>
                 SuccessLoginCredentialsAdministratorOf.fromJson(value))

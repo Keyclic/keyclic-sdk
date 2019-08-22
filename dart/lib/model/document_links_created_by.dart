@@ -22,19 +22,24 @@ class DocumentLinksCreatedBy {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is DocumentLinksCreatedBy && runtimeType == other.runtimeType;
+    return other is DocumentLinksCreatedBy &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<DocumentLinksCreatedBy> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<DocumentLinksCreatedBy>()
+        ? <DocumentLinksCreatedBy>[]
         : json.map((value) => DocumentLinksCreatedBy.fromJson(value)).toList();
   }
 

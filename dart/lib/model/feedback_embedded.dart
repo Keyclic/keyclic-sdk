@@ -22,19 +22,29 @@ class FeedbackEmbedded {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is FeedbackEmbedded && runtimeType == other.runtimeType;
+    return other is FeedbackEmbedded &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered()
+            .equals(stateTransitions, other.stateTransitions) &&
+        tracking == other.tracking;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      stateTransitions.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      tracking.hashCode;
 
   static List<FeedbackEmbedded> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackEmbedded>()
+        ? <FeedbackEmbedded>[]
         : json.map((value) => FeedbackEmbedded.fromJson(value)).toList();
   }
 

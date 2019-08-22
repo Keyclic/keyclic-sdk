@@ -20,19 +20,25 @@ class PersonPatchPreferences {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PersonPatchPreferences && runtimeType == other.runtimeType;
+    return other is PersonPatchPreferences &&
+        runtimeType == other.runtimeType &&
+        messageEmailEnabled == other.messageEmailEnabled &&
+        messagePushEnabled == other.messagePushEnabled;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ messageEmailEnabled.hashCode ^ messagePushEnabled.hashCode;
 
   static List<PersonPatchPreferences> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PersonPatchPreferences>()
+        ? <PersonPatchPreferences>[]
         : json.map((value) => PersonPatchPreferences.fromJson(value)).toList();
   }
 

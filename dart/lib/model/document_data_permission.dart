@@ -16,19 +16,23 @@ class DocumentDataPermission {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is DocumentDataPermission && runtimeType == other.runtimeType;
+    return other is DocumentDataPermission &&
+        runtimeType == other.runtimeType &&
+        targetGroup == other.targetGroup;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ targetGroup.hashCode;
 
   static List<DocumentDataPermission> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<DocumentDataPermission>()
+        ? <DocumentDataPermission>[]
         : json.map((value) => DocumentDataPermission.fromJson(value)).toList();
   }
 

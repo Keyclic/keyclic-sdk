@@ -17,20 +17,23 @@ class DelegationLinksFromIriTemplate {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is DelegationLinksFromIriTemplate &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        mapping == other.mapping;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ mapping.hashCode;
 
   static List<DelegationLinksFromIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<DelegationLinksFromIriTemplate>()
+        ? <DelegationLinksFromIriTemplate>[]
         : json
             .map((value) => DelegationLinksFromIriTemplate.fromJson(value))
             .toList();

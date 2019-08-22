@@ -16,19 +16,26 @@ class MemberCollection {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is MemberCollection && runtimeType == other.runtimeType;
+    return other is MemberCollection &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(items, other.items);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      items.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<MemberCollection> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<MemberCollection>()
+        ? <MemberCollection>[]
         : json.map((value) => MemberCollection.fromJson(value)).toList();
   }
 

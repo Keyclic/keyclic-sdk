@@ -48,21 +48,37 @@ class Service {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Service &&
         runtimeType == other.runtimeType &&
-        name == other.name;
+        contactPoint == other.contactPoint &&
+        createdAt == other.createdAt &&
+        description == other.description &&
+        id == other.id &&
+        name == other.name &&
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ name.hashCode;
+  int get hashCode =>
+      0 ^
+      contactPoint.hashCode ^
+      createdAt.hashCode ^
+      description.hashCode ^
+      id.hashCode ^
+      name.hashCode ^
+      type.hashCode ^
+      updatedAt.hashCode;
 
   static List<Service> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Service>()
+        ? <Service>[]
         : json.map((value) => Service.fromJson(value)).toList();
   }
 

@@ -21,19 +21,29 @@ class FeatureGeometry {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is FeatureGeometry && runtimeType == other.runtimeType;
+    return other is FeatureGeometry &&
+        runtimeType == other.runtimeType &&
+        type == other.type &&
+        DeepCollectionEquality.unordered()
+            .equals(coordinates, other.coordinates);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      type.hashCode ^
+      coordinates.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<FeatureGeometry> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeatureGeometry>()
+        ? <FeatureGeometry>[]
         : json.map((value) => FeatureGeometry.fromJson(value)).toList();
   }
 

@@ -21,19 +21,24 @@ class DeviceLinksPerson {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is DeviceLinksPerson && runtimeType == other.runtimeType;
+    return other is DeviceLinksPerson &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<DeviceLinksPerson> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<DeviceLinksPerson>()
+        ? <DeviceLinksPerson>[]
         : json.map((value) => DeviceLinksPerson.fromJson(value)).toList();
   }
 

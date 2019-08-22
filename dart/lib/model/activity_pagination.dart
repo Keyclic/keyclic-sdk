@@ -32,19 +32,34 @@ class ActivityPagination {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ActivityPagination && runtimeType == other.runtimeType;
+    return other is ActivityPagination &&
+        runtimeType == other.runtimeType &&
+        duration == other.duration &&
+        next == other.next &&
+        unseen == other.unseen &&
+        unread == other.unread &&
+        DeepCollectionEquality.unordered().equals(results, other.results);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      duration.hashCode ^
+      next.hashCode ^
+      unseen.hashCode ^
+      unread.hashCode ^
+      results.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<ActivityPagination> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ActivityPagination>()
+        ? <ActivityPagination>[]
         : json.map((value) => ActivityPagination.fromJson(value)).toList();
   }
 

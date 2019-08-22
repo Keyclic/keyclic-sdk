@@ -24,19 +24,25 @@ class DocumentLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is DocumentLinks && runtimeType == other.runtimeType;
+    return other is DocumentLinks &&
+        runtimeType == other.runtimeType &&
+        createdBy == other.createdBy &&
+        file == other.file &&
+        self == other.self;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ createdBy.hashCode ^ file.hashCode ^ self.hashCode;
 
   static List<DocumentLinks> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<DocumentLinks>()
+        ? <DocumentLinks>[]
         : json.map((value) => DocumentLinks.fromJson(value)).toList();
   }
 

@@ -24,19 +24,26 @@ class DocumentDataFile {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is DocumentDataFile && runtimeType == other.runtimeType;
+    return other is DocumentDataFile &&
+        runtimeType == other.runtimeType &&
+        content == other.content &&
+        contentType == other.contentType &&
+        name == other.name;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ content.hashCode ^ contentType.hashCode ^ name.hashCode;
 
   static List<DocumentDataFile> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<DocumentDataFile>()
+        ? <DocumentDataFile>[]
         : json.map((value) => DocumentDataFile.fromJson(value)).toList();
   }
 

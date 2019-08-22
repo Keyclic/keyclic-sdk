@@ -16,19 +16,23 @@ class PlacePreferences {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PlacePreferences && runtimeType == other.runtimeType;
+    return other is PlacePreferences &&
+        runtimeType == other.runtimeType &&
+        public == other.public;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ public.hashCode;
 
   static List<PlacePreferences> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PlacePreferences>()
+        ? <PlacePreferences>[]
         : json.map((value) => PlacePreferences.fromJson(value)).toList();
   }
 

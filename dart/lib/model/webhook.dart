@@ -36,24 +36,35 @@ class Webhook {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Webhook &&
         runtimeType == other.runtimeType &&
+        links == other.links &&
         enabled == other.enabled &&
         event == other.event &&
-        payloadUrl == other.payloadUrl;
+        id == other.id &&
+        payloadUrl == other.payloadUrl &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode =>
-      0 ^ enabled.hashCode ^ event.hashCode ^ payloadUrl.hashCode;
+      0 ^
+      links.hashCode ^
+      enabled.hashCode ^
+      event.hashCode ^
+      id.hashCode ^
+      payloadUrl.hashCode ^
+      type.hashCode;
 
   static List<Webhook> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Webhook>()
+        ? <Webhook>[]
         : json.map((value) => Webhook.fromJson(value)).toList();
   }
 

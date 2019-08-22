@@ -24,6 +24,7 @@ class PublicationData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -35,12 +36,13 @@ class PublicationData {
         title == other.title;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ message.hashCode ^ place.hashCode ^ title.hashCode;
 
   static List<PublicationData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PublicationData>()
+        ? <PublicationData>[]
         : json.map((value) => PublicationData.fromJson(value)).toList();
   }
 

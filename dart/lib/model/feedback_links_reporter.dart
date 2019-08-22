@@ -22,19 +22,24 @@ class FeedbackLinksReporter {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is FeedbackLinksReporter && runtimeType == other.runtimeType;
+    return other is FeedbackLinksReporter &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<FeedbackLinksReporter> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackLinksReporter>()
+        ? <FeedbackLinksReporter>[]
         : json.map((value) => FeedbackLinksReporter.fromJson(value)).toList();
   }
 

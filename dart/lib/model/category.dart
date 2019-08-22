@@ -48,21 +48,39 @@ class Category {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Category &&
         runtimeType == other.runtimeType &&
-        name == other.name;
+        links == other.links &&
+        color == other.color &&
+        createdAt == other.createdAt &&
+        icon == other.icon &&
+        id == other.id &&
+        identificationNumber == other.identificationNumber &&
+        name == other.name &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ name.hashCode;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      color.hashCode ^
+      createdAt.hashCode ^
+      icon.hashCode ^
+      id.hashCode ^
+      identificationNumber.hashCode ^
+      name.hashCode ^
+      type.hashCode;
 
   static List<Category> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Category>()
+        ? <Category>[]
         : json.map((value) => Category.fromJson(value)).toList();
   }
 

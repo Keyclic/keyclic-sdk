@@ -16,21 +16,24 @@ class PublicationLinksSelfIriTemplate {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is PublicationLinksSelfIriTemplate &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        mapping == other.mapping;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ mapping.hashCode;
 
   static List<PublicationLinksSelfIriTemplate> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<PublicationLinksSelfIriTemplate>()
+        ? <PublicationLinksSelfIriTemplate>[]
         : json
             .map((value) => PublicationLinksSelfIriTemplate.fromJson(value))
             .toList();

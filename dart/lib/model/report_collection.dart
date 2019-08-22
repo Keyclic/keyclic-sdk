@@ -16,19 +16,26 @@ class ReportCollection {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ReportCollection && runtimeType == other.runtimeType;
+    return other is ReportCollection &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(items, other.items);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      items.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<ReportCollection> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ReportCollection>()
+        ? <ReportCollection>[]
         : json.map((value) => ReportCollection.fromJson(value)).toList();
   }
 

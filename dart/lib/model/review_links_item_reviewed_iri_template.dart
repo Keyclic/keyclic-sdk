@@ -16,21 +16,24 @@ class ReviewLinksItemReviewedIriTemplate {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is ReviewLinksItemReviewedIriTemplate &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        mapping == other.mapping;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ mapping.hashCode;
 
   static List<ReviewLinksItemReviewedIriTemplate> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<ReviewLinksItemReviewedIriTemplate>()
+        ? <ReviewLinksItemReviewedIriTemplate>[]
         : json
             .map((value) => ReviewLinksItemReviewedIriTemplate.fromJson(value))
             .toList();

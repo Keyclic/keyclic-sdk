@@ -36,22 +36,35 @@ class Application {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Application &&
         runtimeType == other.runtimeType &&
+        links == other.links &&
+        id == other.id &&
         name == other.name &&
-        token == other.token;
+        token == other.token &&
+        type == other.type &&
+        version == other.version;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ name.hashCode ^ token.hashCode;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      id.hashCode ^
+      name.hashCode ^
+      token.hashCode ^
+      type.hashCode ^
+      version.hashCode;
 
   static List<Application> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<Application>()
+        ? <Application>[]
         : json.map((value) => Application.fromJson(value)).toList();
   }
 

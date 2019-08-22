@@ -28,21 +28,31 @@ class DelegateData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is DelegateData &&
         runtimeType == other.runtimeType &&
-        report == other.report;
+        description == other.description &&
+        organization == other.organization &&
+        report == other.report &&
+        service == other.service;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ report.hashCode;
+  int get hashCode =>
+      0 ^
+      description.hashCode ^
+      organization.hashCode ^
+      report.hashCode ^
+      service.hashCode;
 
   static List<DelegateData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<DelegateData>()
+        ? <DelegateData>[]
         : json.map((value) => DelegateData.fromJson(value)).toList();
   }
 

@@ -16,20 +16,23 @@ class ReportLinksSelfIriTemplate {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is ReportLinksSelfIriTemplate &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        mapping == other.mapping;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ mapping.hashCode;
 
   static List<ReportLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ReportLinksSelfIriTemplate>()
+        ? <ReportLinksSelfIriTemplate>[]
         : json
             .map((value) => ReportLinksSelfIriTemplate.fromJson(value))
             .toList();

@@ -28,19 +28,27 @@ class PaginationLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PaginationLinks && runtimeType == other.runtimeType;
+    return other is PaginationLinks &&
+        runtimeType == other.runtimeType &&
+        first == other.first &&
+        last == other.last &&
+        next == other.next &&
+        self == other.self;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ first.hashCode ^ last.hashCode ^ next.hashCode ^ self.hashCode;
 
   static List<PaginationLinks> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PaginationLinks>()
+        ? <PaginationLinks>[]
         : json.map((value) => PaginationLinks.fromJson(value)).toList();
   }
 

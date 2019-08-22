@@ -24,19 +24,26 @@ class SuccessLogin {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is SuccessLogin && runtimeType == other.runtimeType;
+    return other is SuccessLogin &&
+        runtimeType == other.runtimeType &&
+        accessToken == other.accessToken &&
+        credentials == other.credentials &&
+        tokenType == other.tokenType;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ accessToken.hashCode ^ credentials.hashCode ^ tokenType.hashCode;
 
   static List<SuccessLogin> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<SuccessLogin>()
+        ? <SuccessLogin>[]
         : json.map((value) => SuccessLogin.fromJson(value)).toList();
   }
 

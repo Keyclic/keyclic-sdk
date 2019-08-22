@@ -20,6 +20,7 @@ class DocumentData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -30,12 +31,13 @@ class DocumentData {
         permission == other.permission;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ file.hashCode ^ permission.hashCode;
 
   static List<DocumentData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<DocumentData>()
+        ? <DocumentData>[]
         : json.map((value) => DocumentData.fromJson(value)).toList();
   }
 

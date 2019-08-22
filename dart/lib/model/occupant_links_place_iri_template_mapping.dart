@@ -16,21 +16,24 @@ class OccupantLinksPlaceIriTemplateMapping {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is OccupantLinksPlaceIriTemplateMapping &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        place == other.place;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ place.hashCode;
 
   static List<OccupantLinksPlaceIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<OccupantLinksPlaceIriTemplateMapping>()
+        ? <OccupantLinksPlaceIriTemplateMapping>[]
         : json
             .map(
                 (value) => OccupantLinksPlaceIriTemplateMapping.fromJson(value))

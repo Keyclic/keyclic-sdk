@@ -24,19 +24,26 @@ class PlacePatch {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PlacePatch && runtimeType == other.runtimeType;
+    return other is PlacePatch &&
+        runtimeType == other.runtimeType &&
+        branchCode == other.branchCode &&
+        description == other.description &&
+        name == other.name;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ branchCode.hashCode ^ description.hashCode ^ name.hashCode;
 
   static List<PlacePatch> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PlacePatch>()
+        ? <PlacePatch>[]
         : json.map((value) => PlacePatch.fromJson(value)).toList();
   }
 

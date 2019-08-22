@@ -17,6 +17,7 @@ class FeedbackStatePatch {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -26,12 +27,13 @@ class FeedbackStatePatch {
         transition == other.transition;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ transition.hashCode;
 
   static List<FeedbackStatePatch> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackStatePatch>()
+        ? <FeedbackStatePatch>[]
         : json.map((value) => FeedbackStatePatch.fromJson(value)).toList();
   }
 

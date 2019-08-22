@@ -40,19 +40,33 @@ class FeedbackReviewRequest {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is FeedbackReviewRequest && runtimeType == other.runtimeType;
+    return other is FeedbackReviewRequest &&
+        runtimeType == other.runtimeType &&
+        links == other.links &&
+        createdAt == other.createdAt &&
+        id == other.id &&
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      createdAt.hashCode ^
+      id.hashCode ^
+      type.hashCode ^
+      updatedAt.hashCode;
 
   static List<FeedbackReviewRequest> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackReviewRequest>()
+        ? <FeedbackReviewRequest>[]
         : json.map((value) => FeedbackReviewRequest.fromJson(value)).toList();
   }
 

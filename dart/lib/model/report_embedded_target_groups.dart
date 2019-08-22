@@ -24,20 +24,25 @@ class ReportEmbeddedTargetGroups {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is ReportEmbeddedTargetGroups &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        id == other.id &&
+        name == other.name &&
+        description == other.description;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ id.hashCode ^ name.hashCode ^ description.hashCode;
 
   static List<ReportEmbeddedTargetGroups> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ReportEmbeddedTargetGroups>()
+        ? <ReportEmbeddedTargetGroups>[]
         : json
             .map((value) => ReportEmbeddedTargetGroups.fromJson(value))
             .toList();
