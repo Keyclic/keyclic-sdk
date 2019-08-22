@@ -26,7 +26,7 @@ Iterable<QueryParam> _convertParametersForCollectionFormat(
   }
 
   // get the delimiter (default: csv delimiter)
-  final String delimiter = collectionFormat.isNotEmpty ? _delimiters[collectionFormat] : ',';
+  final String delimiter = _delimiters[collectionFormat] ?? ',';
 
   final String joinedParameters = values.map((v) => _parameterToString(v)).join(delimiter);
 
