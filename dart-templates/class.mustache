@@ -57,26 +57,44 @@ class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
 
   @override
   bool operator==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is {{classname}} && runtimeType == other.runtimeType
-    {{#requiredVars}}
-      {{#isContainer}}
-         && DeepCollectionEquality.unordered().equals({{name}}, other.{{name}})
-      {{/isContainer}}
-      {{^isContainer}}
-         && {{name}} == other.{{name}}
-      {{/isContainer}}
-    {{/requiredVars}};
+      {{#vars}}
+        {{#isContainer}}
+          && DeepCollectionEquality.unordered().equals({{name}}, other.{{name}})
+        {{/isContainer}}
+        {{^isContainer}}
+          && {{name}} == other.{{name}}
+        {{/isContainer}}
+      {{/vars}}
+    ;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0{{#requiredVars}}{{^isContainer}} ^ {{name}}.hashCode{{/isContainer}}{{/requiredVars}};
+  int get hashCode => 0
+    {{#vars}}
+      {{#isListContainer}}
+        ^ {{name}}.map((dynamic element) => element.hashCode).fold(0, (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode)
+      {{/isListContainer}}
+      {{^isListContainer}}
+        {{#isMapContainer}}
+          ^ {{name}}.keys.map((dynamic element) => element.hashCode).fold(0, (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode)
+          ^ {{name}}.values.map((dynamic element) => element.hashCode).fold(0, (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode)
+        {{/isMapContainer}}
+        {{^isMapContainer}}
+          ^ {{name}}.hashCode
+        {{/isMapContainer}}
+      {{/isListContainer}}
+    {{/vars}}
+  ;
 
   static List<{{classname}}> listFromJson(List<dynamic> json) {
-    return json == null ? List<{{classname}}>() : json.map((value) => {{classname}}.fromJson(value)).toList();
+    return json == null ? <{{classname}}>[] : json.map((value) => {{classname}}.fromJson(value)).toList();
   }
 
   static Map<String, {{classname}}> mapFromJson(Map<String, dynamic> json) {
@@ -91,12 +109,12 @@ class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
     return {
       {{#vars}}
         {{#isDateTime}}
-            '{{{baseName}}}': {{name}} == null ? '' : {{name}}.toUtc().toIso8601String(),
+          '{{{baseName}}}': {{name}} == null ? '' : {{name}}.toUtc().toIso8601String(),
         {{/isDateTime}}
         {{^isDateTime}}
-            '{{{baseName}}}': {{name}},
+          '{{{baseName}}}': {{name}},
         {{/isDateTime}}
-    {{/vars}}
+      {{/vars}}
     };
   }
 
