@@ -56,18 +56,58 @@ class Feedback {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Feedback &&
         runtimeType == other.runtimeType &&
+        embedded == other.embedded &&
+        links == other.links &&
+        createdAt == other.createdAt &&
+        description == other.description &&
         geoCoordinates == other.geoCoordinates &&
-        DeepCollectionEquality.unordered().equals(state, other.state);
+        id == other.id &&
+        DeepCollectionEquality.unordered().equals(metadata, other.metadata) &&
+        public == other.public &&
+        DeepCollectionEquality.unordered().equals(state, other.state) &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ geoCoordinates.hashCode;
+  int get hashCode =>
+      0 ^
+      embedded.hashCode ^
+      links.hashCode ^
+      createdAt.hashCode ^
+      description.hashCode ^
+      geoCoordinates.hashCode ^
+      id.hashCode ^
+      metadata.keys.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      metadata.values.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      public.hashCode ^
+      state.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      type.hashCode;
+
+  static List<Feedback> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Feedback>[]
+        : json.map((value) => Feedback.fromJson(value)).toList();
+  }
+
+  static Map<String, Feedback> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Feedback>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Feedback.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -87,20 +127,5 @@ class Feedback {
   @override
   String toString() {
     return 'Feedback[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, geoCoordinates=$geoCoordinates, id=$id, metadata=$metadata, public=$public, state=$state, type=$type, ]';
-  }
-
-  static List<Feedback> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Feedback>()
-        : json.map((value) => Feedback.fromJson(value)).toList();
-  }
-
-  static Map<String, Feedback> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Feedback>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Feedback.fromJson(value));
-    }
-    return map;
   }
 }

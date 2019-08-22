@@ -16,30 +16,26 @@ class OccupantCollection {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is OccupantCollection && runtimeType == other.runtimeType;
+    return other is OccupantCollection &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(items, other.items);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'items': items,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OccupantCollection[items=$items, ]';
-  }
+  int get hashCode =>
+      0 ^
+      items.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<OccupantCollection> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<OccupantCollection>()
+        ? <OccupantCollection>[]
         : json.map((value) => OccupantCollection.fromJson(value)).toList();
   }
 
@@ -51,5 +47,16 @@ class OccupantCollection {
           map[key] = OccupantCollection.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'items': items,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OccupantCollection[items=$items, ]';
   }
 }

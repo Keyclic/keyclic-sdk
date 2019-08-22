@@ -20,31 +20,24 @@ class TrackingProgression {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is TrackingProgression && runtimeType == other.runtimeType;
+    return other is TrackingProgression &&
+        runtimeType == other.runtimeType &&
+        resolved == other.resolved &&
+        total == other.total;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'resolved': resolved,
-      'total': total,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'TrackingProgression[resolved=$resolved, total=$total, ]';
-  }
+  int get hashCode => 0 ^ resolved.hashCode ^ total.hashCode;
 
   static List<TrackingProgression> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<TrackingProgression>()
+        ? <TrackingProgression>[]
         : json.map((value) => TrackingProgression.fromJson(value)).toList();
   }
 
@@ -56,5 +49,17 @@ class TrackingProgression {
           map[key] = TrackingProgression.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'resolved': resolved,
+      'total': total,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'TrackingProgression[resolved=$resolved, total=$total, ]';
   }
 }

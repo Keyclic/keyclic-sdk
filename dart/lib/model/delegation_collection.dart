@@ -16,30 +16,26 @@ class DelegationCollection {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is DelegationCollection && runtimeType == other.runtimeType;
+    return other is DelegationCollection &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(items, other.items);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'items': items,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DelegationCollection[items=$items, ]';
-  }
+  int get hashCode =>
+      0 ^
+      items.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<DelegationCollection> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<DelegationCollection>()
+        ? <DelegationCollection>[]
         : json.map((value) => DelegationCollection.fromJson(value)).toList();
   }
 
@@ -51,5 +47,16 @@ class DelegationCollection {
           map[key] = DelegationCollection.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'items': items,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DelegationCollection[items=$items, ]';
   }
 }

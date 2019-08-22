@@ -21,15 +21,35 @@ class DocumentLinksFile {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is DocumentLinksFile && runtimeType == other.runtimeType;
+    return other is DocumentLinksFile &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
+
+  static List<DocumentLinksFile> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <DocumentLinksFile>[]
+        : json.map((value) => DocumentLinksFile.fromJson(value)).toList();
+  }
+
+  static Map<String, DocumentLinksFile> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, DocumentLinksFile>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = DocumentLinksFile.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -41,20 +61,5 @@ class DocumentLinksFile {
   @override
   String toString() {
     return 'DocumentLinksFile[href=$href, iriTemplate=$iriTemplate, ]';
-  }
-
-  static List<DocumentLinksFile> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<DocumentLinksFile>()
-        : json.map((value) => DocumentLinksFile.fromJson(value)).toList();
-  }
-
-  static Map<String, DocumentLinksFile> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, DocumentLinksFile>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentLinksFile.fromJson(value));
-    }
-    return map;
   }
 }

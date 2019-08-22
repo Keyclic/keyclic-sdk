@@ -33,15 +33,42 @@ class OperationPatch {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is OperationPatch && runtimeType == other.runtimeType;
+    return other is OperationPatch &&
+        runtimeType == other.runtimeType &&
+        description == other.description &&
+        identificationNumber == other.identificationNumber &&
+        name == other.name &&
+        scheduledAt == other.scheduledAt;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      description.hashCode ^
+      identificationNumber.hashCode ^
+      name.hashCode ^
+      scheduledAt.hashCode;
+
+  static List<OperationPatch> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <OperationPatch>[]
+        : json.map((value) => OperationPatch.fromJson(value)).toList();
+  }
+
+  static Map<String, OperationPatch> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, OperationPatch>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = OperationPatch.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -56,20 +83,5 @@ class OperationPatch {
   @override
   String toString() {
     return 'OperationPatch[description=$description, identificationNumber=$identificationNumber, name=$name, scheduledAt=$scheduledAt, ]';
-  }
-
-  static List<OperationPatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OperationPatch>()
-        : json.map((value) => OperationPatch.fromJson(value)).toList();
-  }
-
-  static Map<String, OperationPatch> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OperationPatch>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationPatch.fromJson(value));
-    }
-    return map;
   }
 }

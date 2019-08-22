@@ -16,31 +16,23 @@ class CategoryLinksSelfIriTemplate {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is CategoryLinksSelfIriTemplate &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        mapping == other.mapping;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'mapping': mapping,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'CategoryLinksSelfIriTemplate[mapping=$mapping, ]';
-  }
+  int get hashCode => 0 ^ mapping.hashCode;
 
   static List<CategoryLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<CategoryLinksSelfIriTemplate>()
+        ? <CategoryLinksSelfIriTemplate>[]
         : json
             .map((value) => CategoryLinksSelfIriTemplate.fromJson(value))
             .toList();
@@ -54,5 +46,16 @@ class CategoryLinksSelfIriTemplate {
           map[key] = CategoryLinksSelfIriTemplate.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'mapping': mapping,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'CategoryLinksSelfIriTemplate[mapping=$mapping, ]';
   }
 }

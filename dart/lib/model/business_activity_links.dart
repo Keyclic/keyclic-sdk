@@ -28,15 +28,39 @@ class BusinessActivityLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is BusinessActivityLinks && runtimeType == other.runtimeType;
+    return other is BusinessActivityLinks &&
+        runtimeType == other.runtimeType &&
+        image == other.image &&
+        schema == other.schema &&
+        self == other.self &&
+        thumbnail == other.thumbnail;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ image.hashCode ^ schema.hashCode ^ self.hashCode ^ thumbnail.hashCode;
+
+  static List<BusinessActivityLinks> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <BusinessActivityLinks>[]
+        : json.map((value) => BusinessActivityLinks.fromJson(value)).toList();
+  }
+
+  static Map<String, BusinessActivityLinks> mapFromJson(
+      Map<String, dynamic> json) {
+    var map = Map<String, BusinessActivityLinks>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = BusinessActivityLinks.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -50,21 +74,5 @@ class BusinessActivityLinks {
   @override
   String toString() {
     return 'BusinessActivityLinks[image=$image, schema=$schema, self=$self, thumbnail=$thumbnail, ]';
-  }
-
-  static List<BusinessActivityLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<BusinessActivityLinks>()
-        : json.map((value) => BusinessActivityLinks.fromJson(value)).toList();
-  }
-
-  static Map<String, BusinessActivityLinks> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, BusinessActivityLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = BusinessActivityLinks.fromJson(value));
-    }
-    return map;
   }
 }

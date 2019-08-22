@@ -20,6 +20,7 @@ class PlaceGeoCentroid {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -30,8 +31,24 @@ class PlaceGeoCentroid {
         longitude == other.longitude;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ latitude.hashCode ^ longitude.hashCode;
+
+  static List<PlaceGeoCentroid> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <PlaceGeoCentroid>[]
+        : json.map((value) => PlaceGeoCentroid.fromJson(value)).toList();
+  }
+
+  static Map<String, PlaceGeoCentroid> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, PlaceGeoCentroid>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = PlaceGeoCentroid.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -43,20 +60,5 @@ class PlaceGeoCentroid {
   @override
   String toString() {
     return 'PlaceGeoCentroid[latitude=$latitude, longitude=$longitude, ]';
-  }
-
-  static List<PlaceGeoCentroid> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PlaceGeoCentroid>()
-        : json.map((value) => PlaceGeoCentroid.fromJson(value)).toList();
-  }
-
-  static Map<String, PlaceGeoCentroid> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PlaceGeoCentroid>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PlaceGeoCentroid.fromJson(value));
-    }
-    return map;
   }
 }

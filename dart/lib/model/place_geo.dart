@@ -24,17 +24,37 @@ class PlaceGeo {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is PlaceGeo &&
         runtimeType == other.runtimeType &&
+        centroid == other.centroid &&
+        elevation == other.elevation &&
         polygon == other.polygon;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ polygon.hashCode;
+  int get hashCode =>
+      0 ^ centroid.hashCode ^ elevation.hashCode ^ polygon.hashCode;
+
+  static List<PlaceGeo> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <PlaceGeo>[]
+        : json.map((value) => PlaceGeo.fromJson(value)).toList();
+  }
+
+  static Map<String, PlaceGeo> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, PlaceGeo>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = PlaceGeo.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -47,20 +67,5 @@ class PlaceGeo {
   @override
   String toString() {
     return 'PlaceGeo[centroid=$centroid, elevation=$elevation, polygon=$polygon, ]';
-  }
-
-  static List<PlaceGeo> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PlaceGeo>()
-        : json.map((value) => PlaceGeo.fromJson(value)).toList();
-  }
-
-  static Map<String, PlaceGeo> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PlaceGeo>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = PlaceGeo.fromJson(value));
-    }
-    return map;
   }
 }

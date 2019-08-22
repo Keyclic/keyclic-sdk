@@ -48,17 +48,50 @@ class Category {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Category &&
         runtimeType == other.runtimeType &&
-        name == other.name;
+        links == other.links &&
+        color == other.color &&
+        createdAt == other.createdAt &&
+        icon == other.icon &&
+        id == other.id &&
+        identificationNumber == other.identificationNumber &&
+        name == other.name &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ name.hashCode;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      color.hashCode ^
+      createdAt.hashCode ^
+      icon.hashCode ^
+      id.hashCode ^
+      identificationNumber.hashCode ^
+      name.hashCode ^
+      type.hashCode;
+
+  static List<Category> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Category>[]
+        : json.map((value) => Category.fromJson(value)).toList();
+  }
+
+  static Map<String, Category> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Category>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Category.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -76,20 +109,5 @@ class Category {
   @override
   String toString() {
     return 'Category[links=$links, color=$color, createdAt=$createdAt, icon=$icon, id=$id, identificationNumber=$identificationNumber, name=$name, type=$type, ]';
-  }
-
-  static List<Category> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Category>()
-        : json.map((value) => Category.fromJson(value)).toList();
-  }
-
-  static Map<String, Category> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Category>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Category.fromJson(value));
-    }
-    return map;
   }
 }

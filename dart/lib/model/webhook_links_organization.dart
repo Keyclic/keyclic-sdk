@@ -22,32 +22,24 @@ class WebhookLinksOrganization {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is WebhookLinksOrganization &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'WebhookLinksOrganization[href=$href, iriTemplate=$iriTemplate, ]';
-  }
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<WebhookLinksOrganization> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<WebhookLinksOrganization>()
+        ? <WebhookLinksOrganization>[]
         : json
             .map((value) => WebhookLinksOrganization.fromJson(value))
             .toList();
@@ -61,5 +53,17 @@ class WebhookLinksOrganization {
           map[key] = WebhookLinksOrganization.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'WebhookLinksOrganization[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

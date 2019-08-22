@@ -20,6 +20,7 @@ class DocumentData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -30,8 +31,24 @@ class DocumentData {
         permission == other.permission;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ file.hashCode ^ permission.hashCode;
+
+  static List<DocumentData> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <DocumentData>[]
+        : json.map((value) => DocumentData.fromJson(value)).toList();
+  }
+
+  static Map<String, DocumentData> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, DocumentData>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = DocumentData.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -43,20 +60,5 @@ class DocumentData {
   @override
   String toString() {
     return 'DocumentData[file=$file, permission=$permission, ]';
-  }
-
-  static List<DocumentData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<DocumentData>()
-        : json.map((value) => DocumentData.fromJson(value)).toList();
-  }
-
-  static Map<String, DocumentData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, DocumentData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentData.fromJson(value));
-    }
-    return map;
   }
 }

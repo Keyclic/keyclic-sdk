@@ -68,17 +68,58 @@ class Organization {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Organization &&
         runtimeType == other.runtimeType &&
-        name == other.name;
+        links == other.links &&
+        alternateName == other.alternateName &&
+        billingEmailAddress == other.billingEmailAddress &&
+        createdAt == other.createdAt &&
+        description == other.description &&
+        enabled == other.enabled &&
+        id == other.id &&
+        name == other.name &&
+        notificationEmailAddress == other.notificationEmailAddress &&
+        preferences == other.preferences &&
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ name.hashCode;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      alternateName.hashCode ^
+      billingEmailAddress.hashCode ^
+      createdAt.hashCode ^
+      description.hashCode ^
+      enabled.hashCode ^
+      id.hashCode ^
+      name.hashCode ^
+      notificationEmailAddress.hashCode ^
+      preferences.hashCode ^
+      type.hashCode ^
+      updatedAt.hashCode;
+
+  static List<Organization> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Organization>[]
+        : json.map((value) => Organization.fromJson(value)).toList();
+  }
+
+  static Map<String, Organization> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Organization>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = Organization.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -100,20 +141,5 @@ class Organization {
   @override
   String toString() {
     return 'Organization[links=$links, alternateName=$alternateName, billingEmailAddress=$billingEmailAddress, createdAt=$createdAt, description=$description, enabled=$enabled, id=$id, name=$name, notificationEmailAddress=$notificationEmailAddress, preferences=$preferences, type=$type, updatedAt=$updatedAt, ]';
-  }
-
-  static List<Organization> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Organization>()
-        : json.map((value) => Organization.fromJson(value)).toList();
-  }
-
-  static Map<String, Organization> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Organization>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = Organization.fromJson(value));
-    }
-    return map;
   }
 }

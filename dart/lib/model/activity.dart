@@ -47,15 +47,50 @@ class Activity {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Activity && runtimeType == other.runtimeType;
+    return other is Activity &&
+        runtimeType == other.runtimeType &&
+        actor == other.actor &&
+        message == other.message &&
+        object == other.object &&
+        origin == other.origin &&
+        subject == other.subject &&
+        time == other.time &&
+        title == other.title &&
+        verb == other.verb;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      actor.hashCode ^
+      message.hashCode ^
+      object.hashCode ^
+      origin.hashCode ^
+      subject.hashCode ^
+      time.hashCode ^
+      title.hashCode ^
+      verb.hashCode;
+
+  static List<Activity> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Activity>[]
+        : json.map((value) => Activity.fromJson(value)).toList();
+  }
+
+  static Map<String, Activity> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Activity>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Activity.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -73,20 +108,5 @@ class Activity {
   @override
   String toString() {
     return 'Activity[actor=$actor, message=$message, object=$object, origin=$origin, subject=$subject, time=$time, title=$title, verb=$verb, ]';
-  }
-
-  static List<Activity> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Activity>()
-        : json.map((value) => Activity.fromJson(value)).toList();
-  }
-
-  static Map<String, Activity> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Activity>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Activity.fromJson(value));
-    }
-    return map;
   }
 }

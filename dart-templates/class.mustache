@@ -9,86 +9,92 @@ class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
       {{#isDateTime}}
         {{name}} = json['{{baseName}}'] == null ? null : DateTime.parse(json['{{baseName}}']);
         if ({{name}} is DateTime && {{name}}.isUtc == false) {
-          {{=<% %>=}}
-            <%name%> = DateTime.parse('${<%name%>.toIso8601String()}Z');
-          <%={{ }}=%>
+          {{=<< >>=}}
+            <<name>> = DateTime.parse('${<<name>>.toIso8601String()}Z');
+          <<={{ }}=>>
         }
       {{/isDateTime}}
       {{^isDateTime}}
-        {{name}} =
         {{#complexType}}
           {{#isListContainer}}
-            {{complexType}}.listFromJson(json['{{baseName}}'])
+            {{name}} = {{complexType}}.listFromJson(json['{{baseName}}']);
           {{/isListContainer}}
           {{^isListContainer}}
-            {{#isMapContainer}}{{complexType}}.mapFromJson(json['{{baseName}}']){{/isMapContainer}}
-            {{^isMapContainer}}{{complexType}}.fromJson(json['{{baseName}}']){{/isMapContainer}}
+            {{#isMapContainer}}
+              {{name}} = {{complexType}}.mapFromJson(json['{{baseName}}']);
+            {{/isMapContainer}}
+            {{^isMapContainer}}
+              {{name}} = {{complexType}}.fromJson(json['{{baseName}}']);
+            {{/isMapContainer}}
           {{/isListContainer}}
         {{/complexType}}
         {{^complexType}}
           {{#isListContainer}}
-            (json['{{baseName}}'] as List)?.map((item) => item as {{items.datatype}})?.toList()
+            {{name}} = (json['{{baseName}}'] as List)?.map((item) => item as {{items.datatype}})?.toList();
           {{/isListContainer}}
           {{^isListContainer}}
-          {{! Double type in dart must have a point separator (0 must be cast in 0.0) }}
+            {{! Double type in dart must have a point separator (0 must be cast in 0.0) }}
             {{#isFloat}}
-              json['{{baseName}}']?.toDouble()
+              {{name}} = json['{{baseName}}']?.toDouble();
             {{/isFloat}}
             {{^isFloat}}
-              json['{{baseName}}']
+              {{name}} = json['{{baseName}}'];
             {{/isFloat}}
           {{/isListContainer}}
-        {{/complexType}};
+        {{/complexType}}
       {{/isDateTime}}
     {{/vars}}
   }
 
   {{#vars}}
     {{#description}}/* {{{description}}} */{{/description}}
+    {{#allowableValues}}
+      {{#min}}/// range from {{min}} to {{max}}{{/min}}
+      {{^min}}/// enum {{name}}Enum { {{#values}} {{.}}, {{/values}} };{{/min}}
+    {{/allowableValues}}
     {{{datatype}}} {{name}};
-    {{#allowableValues}}{{#min}} // range from {{min}} to {{max}}{{/min}}//{{^min}}enum {{name}}Enum { {{#values}} {{.}}, {{/values}} };{{/min}}{{/allowableValues}}
   {{/vars}}
 
   @override
   bool operator==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is {{classname}} && runtimeType == other.runtimeType
-    {{#requiredVars}}
-      {{#isContainer}}
-         && DeepCollectionEquality.unordered().equals({{name}}, other.{{name}})
-      {{/isContainer}}
-      {{^isContainer}}
-         && {{name}} == other.{{name}}
-      {{/isContainer}}
-    {{/requiredVars}};
+      {{#vars}}
+        {{#isContainer}}
+          && DeepCollectionEquality.unordered().equals({{name}}, other.{{name}})
+        {{/isContainer}}
+        {{^isContainer}}
+          && {{name}} == other.{{name}}
+        {{/isContainer}}
+      {{/vars}}
+    ;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0{{#requiredVars}}{{^isContainer}} ^ {{name}}.hashCode{{/isContainer}}{{/requiredVars}};
-
-  Map<String, dynamic> toJson() {
-    return {
+  int get hashCode => 0
     {{#vars}}
-      {{#isDateTime}}
-        '{{{baseName}}}': {{name}} == null ? '' : {{name}}.toUtc().toIso8601String(),
-      {{/isDateTime}}
-      {{^isDateTime}}
-        '{{{baseName}}}': {{name}},
-      {{/isDateTime}}
+      {{#isListContainer}}
+        ^ {{name}}.map((dynamic element) => element.hashCode).fold(0, (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode)
+      {{/isListContainer}}
+      {{^isListContainer}}
+        {{#isMapContainer}}
+          ^ {{name}}.keys.map((dynamic element) => element.hashCode).fold(0, (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode)
+          ^ {{name}}.values.map((dynamic element) => element.hashCode).fold(0, (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode)
+        {{/isMapContainer}}
+        {{^isMapContainer}}
+          ^ {{name}}.hashCode
+        {{/isMapContainer}}
+      {{/isListContainer}}
     {{/vars}}
-     };
-  }
-
-  @override
-  String toString() {
-    return '{{classname}}[{{#vars}}{{name}}=${{name}}, {{/vars}}]';
-  }
+  ;
 
   static List<{{classname}}> listFromJson(List<dynamic> json) {
-    return json == null ? List<{{classname}}>() : json.map((value) => {{classname}}.fromJson(value)).toList();
+    return json == null ? <{{classname}}>[] : json.map((value) => {{classname}}.fromJson(value)).toList();
   }
 
   static Map<String, {{classname}}> mapFromJson(Map<String, dynamic> json) {
@@ -97,5 +103,23 @@ class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
       json.forEach((String key, dynamic value) => map[key] = {{classname}}.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      {{#vars}}
+        {{#isDateTime}}
+          '{{{baseName}}}': {{name}} == null ? '' : {{name}}.toUtc().toIso8601String(),
+        {{/isDateTime}}
+        {{^isDateTime}}
+          '{{{baseName}}}': {{name}},
+        {{/isDateTime}}
+      {{/vars}}
+    };
+  }
+
+  @override
+  String toString() {
+    return '{{classname}}[{{#vars}}{{name}}=${{name}}, {{/vars}}]';
   }
 }

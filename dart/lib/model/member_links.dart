@@ -24,15 +24,37 @@ class MemberLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is MemberLinks && runtimeType == other.runtimeType;
+    return other is MemberLinks &&
+        runtimeType == other.runtimeType &&
+        organization == other.organization &&
+        person == other.person &&
+        self == other.self;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ organization.hashCode ^ person.hashCode ^ self.hashCode;
+
+  static List<MemberLinks> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <MemberLinks>[]
+        : json.map((value) => MemberLinks.fromJson(value)).toList();
+  }
+
+  static Map<String, MemberLinks> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, MemberLinks>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = MemberLinks.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -45,20 +67,5 @@ class MemberLinks {
   @override
   String toString() {
     return 'MemberLinks[organization=$organization, person=$person, self=$self, ]';
-  }
-
-  static List<MemberLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<MemberLinks>()
-        : json.map((value) => MemberLinks.fromJson(value)).toList();
-  }
-
-  static Map<String, MemberLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, MemberLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MemberLinks.fromJson(value));
-    }
-    return map;
   }
 }

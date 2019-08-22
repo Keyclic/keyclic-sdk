@@ -20,6 +20,7 @@ class LoginData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -30,8 +31,24 @@ class LoginData {
         password == other.password;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ login.hashCode ^ password.hashCode;
+
+  static List<LoginData> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <LoginData>[]
+        : json.map((value) => LoginData.fromJson(value)).toList();
+  }
+
+  static Map<String, LoginData> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, LoginData>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = LoginData.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -43,20 +60,5 @@ class LoginData {
   @override
   String toString() {
     return 'LoginData[login=$login, password=$password, ]';
-  }
-
-  static List<LoginData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<LoginData>()
-        : json.map((value) => LoginData.fromJson(value)).toList();
-  }
-
-  static Map<String, LoginData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, LoginData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = LoginData.fromJson(value));
-    }
-    return map;
   }
 }

@@ -28,15 +28,42 @@ class CategoryPatch {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is CategoryPatch && runtimeType == other.runtimeType;
+    return other is CategoryPatch &&
+        runtimeType == other.runtimeType &&
+        color == other.color &&
+        icon == other.icon &&
+        identificationNumber == other.identificationNumber &&
+        name == other.name;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      color.hashCode ^
+      icon.hashCode ^
+      identificationNumber.hashCode ^
+      name.hashCode;
+
+  static List<CategoryPatch> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <CategoryPatch>[]
+        : json.map((value) => CategoryPatch.fromJson(value)).toList();
+  }
+
+  static Map<String, CategoryPatch> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, CategoryPatch>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = CategoryPatch.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -50,20 +77,5 @@ class CategoryPatch {
   @override
   String toString() {
     return 'CategoryPatch[color=$color, icon=$icon, identificationNumber=$identificationNumber, name=$name, ]';
-  }
-
-  static List<CategoryPatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<CategoryPatch>()
-        : json.map((value) => CategoryPatch.fromJson(value)).toList();
-  }
-
-  static Map<String, CategoryPatch> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, CategoryPatch>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = CategoryPatch.fromJson(value));
-    }
-    return map;
   }
 }

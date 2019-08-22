@@ -16,32 +16,24 @@ class DocumentLinksFileIriTemplateMapping {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is DocumentLinksFileIriTemplateMapping &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        document == other.document;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'document': document,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DocumentLinksFileIriTemplateMapping[document=$document, ]';
-  }
+  int get hashCode => 0 ^ document.hashCode;
 
   static List<DocumentLinksFileIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<DocumentLinksFileIriTemplateMapping>()
+        ? <DocumentLinksFileIriTemplateMapping>[]
         : json
             .map((value) => DocumentLinksFileIriTemplateMapping.fromJson(value))
             .toList();
@@ -55,5 +47,16 @@ class DocumentLinksFileIriTemplateMapping {
           map[key] = DocumentLinksFileIriTemplateMapping.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'document': document,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DocumentLinksFileIriTemplateMapping[document=$document, ]';
   }
 }

@@ -22,31 +22,24 @@ class FeedbackLinksReporter {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is FeedbackLinksReporter && runtimeType == other.runtimeType;
+    return other is FeedbackLinksReporter &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackLinksReporter[href=$href, iriTemplate=$iriTemplate, ]';
-  }
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<FeedbackLinksReporter> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackLinksReporter>()
+        ? <FeedbackLinksReporter>[]
         : json.map((value) => FeedbackLinksReporter.fromJson(value)).toList();
   }
 
@@ -58,5 +51,17 @@ class FeedbackLinksReporter {
           map[key] = FeedbackLinksReporter.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackLinksReporter[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

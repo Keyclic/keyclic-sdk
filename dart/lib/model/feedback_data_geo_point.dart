@@ -24,15 +24,38 @@ class FeedbackDataGeoPoint {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is FeedbackDataGeoPoint && runtimeType == other.runtimeType;
+    return other is FeedbackDataGeoPoint &&
+        runtimeType == other.runtimeType &&
+        latitude == other.latitude &&
+        longitude == other.longitude &&
+        srid == other.srid;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ latitude.hashCode ^ longitude.hashCode ^ srid.hashCode;
+
+  static List<FeedbackDataGeoPoint> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <FeedbackDataGeoPoint>[]
+        : json.map((value) => FeedbackDataGeoPoint.fromJson(value)).toList();
+  }
+
+  static Map<String, FeedbackDataGeoPoint> mapFromJson(
+      Map<String, dynamic> json) {
+    var map = Map<String, FeedbackDataGeoPoint>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackDataGeoPoint.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -45,21 +68,5 @@ class FeedbackDataGeoPoint {
   @override
   String toString() {
     return 'FeedbackDataGeoPoint[latitude=$latitude, longitude=$longitude, srid=$srid, ]';
-  }
-
-  static List<FeedbackDataGeoPoint> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeedbackDataGeoPoint>()
-        : json.map((value) => FeedbackDataGeoPoint.fromJson(value)).toList();
-  }
-
-  static Map<String, FeedbackDataGeoPoint> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, FeedbackDataGeoPoint>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackDataGeoPoint.fromJson(value));
-    }
-    return map;
   }
 }

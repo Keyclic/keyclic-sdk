@@ -37,17 +37,46 @@ class BusinessActivity {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is BusinessActivity &&
         runtimeType == other.runtimeType &&
-        name == other.name;
+        links == other.links &&
+        alternateName == other.alternateName &&
+        id == other.id &&
+        metadataSchema == other.metadataSchema &&
+        name == other.name &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ name.hashCode;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      alternateName.hashCode ^
+      id.hashCode ^
+      metadataSchema.hashCode ^
+      name.hashCode ^
+      type.hashCode;
+
+  static List<BusinessActivity> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <BusinessActivity>[]
+        : json.map((value) => BusinessActivity.fromJson(value)).toList();
+  }
+
+  static Map<String, BusinessActivity> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, BusinessActivity>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = BusinessActivity.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -63,20 +92,5 @@ class BusinessActivity {
   @override
   String toString() {
     return 'BusinessActivity[links=$links, alternateName=$alternateName, id=$id, metadataSchema=$metadataSchema, name=$name, type=$type, ]';
-  }
-
-  static List<BusinessActivity> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<BusinessActivity>()
-        : json.map((value) => BusinessActivity.fromJson(value)).toList();
-  }
-
-  static Map<String, BusinessActivity> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, BusinessActivity>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = BusinessActivity.fromJson(value));
-    }
-    return map;
   }
 }

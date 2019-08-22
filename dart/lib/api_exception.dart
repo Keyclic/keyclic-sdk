@@ -1,15 +1,15 @@
 part of keyclic_sdk_api.api;
 
 class ApiException implements Exception {
-  int code = 0;
-  String message;
-  Exception innerException;
-  StackTrace stackTrace;
-
   ApiException(this.code, this.message);
 
   ApiException.withInner(
       this.code, this.message, this.innerException, this.stackTrace);
+
+  int code = 0;
+  String message;
+  Exception innerException;
+  StackTrace stackTrace;
 
   String toString() {
     if (message == null) {

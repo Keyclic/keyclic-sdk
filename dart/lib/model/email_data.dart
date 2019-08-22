@@ -16,6 +16,7 @@ class EmailData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -25,23 +26,13 @@ class EmailData {
         email == other.email;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ email.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'email': email,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'EmailData[email=$email, ]';
-  }
-
   static List<EmailData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<EmailData>()
+        ? <EmailData>[]
         : json.map((value) => EmailData.fromJson(value)).toList();
   }
 
@@ -52,5 +43,16 @@ class EmailData {
           (String key, dynamic value) => map[key] = EmailData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'email': email,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'EmailData[email=$email, ]';
   }
 }

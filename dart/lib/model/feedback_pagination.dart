@@ -36,15 +36,47 @@ class FeedbackPagination {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is FeedbackPagination && runtimeType == other.runtimeType;
+    return other is FeedbackPagination &&
+        runtimeType == other.runtimeType &&
+        limit == other.limit &&
+        page == other.page &&
+        pages == other.pages &&
+        total == other.total &&
+        embedded == other.embedded &&
+        links == other.links;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      limit.hashCode ^
+      page.hashCode ^
+      pages.hashCode ^
+      total.hashCode ^
+      embedded.hashCode ^
+      links.hashCode;
+
+  static List<FeedbackPagination> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <FeedbackPagination>[]
+        : json.map((value) => FeedbackPagination.fromJson(value)).toList();
+  }
+
+  static Map<String, FeedbackPagination> mapFromJson(
+      Map<String, dynamic> json) {
+    var map = Map<String, FeedbackPagination>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackPagination.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -60,21 +92,5 @@ class FeedbackPagination {
   @override
   String toString() {
     return 'FeedbackPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
-  }
-
-  static List<FeedbackPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeedbackPagination>()
-        : json.map((value) => FeedbackPagination.fromJson(value)).toList();
-  }
-
-  static Map<String, FeedbackPagination> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, FeedbackPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackPagination.fromJson(value));
-    }
-    return map;
   }
 }

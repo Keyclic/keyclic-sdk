@@ -16,30 +16,23 @@ class CheckpointLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is CheckpointLinks && runtimeType == other.runtimeType;
+    return other is CheckpointLinks &&
+        runtimeType == other.runtimeType &&
+        organization == other.organization;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'organization': organization,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'CheckpointLinks[organization=$organization, ]';
-  }
+  int get hashCode => 0 ^ organization.hashCode;
 
   static List<CheckpointLinks> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<CheckpointLinks>()
+        ? <CheckpointLinks>[]
         : json.map((value) => CheckpointLinks.fromJson(value)).toList();
   }
 
@@ -50,5 +43,16 @@ class CheckpointLinks {
           map[key] = CheckpointLinks.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'organization': organization,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'CheckpointLinks[organization=$organization, ]';
   }
 }

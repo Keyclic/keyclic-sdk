@@ -17,32 +17,24 @@ class BusinessActivityLinksImageIriTemplateMapping {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is BusinessActivityLinksImageIriTemplateMapping &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        businessActivity == other.businessActivity;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'businessActivity': businessActivity,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'BusinessActivityLinksImageIriTemplateMapping[businessActivity=$businessActivity, ]';
-  }
+  int get hashCode => 0 ^ businessActivity.hashCode;
 
   static List<BusinessActivityLinksImageIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<BusinessActivityLinksImageIriTemplateMapping>()
+        ? <BusinessActivityLinksImageIriTemplateMapping>[]
         : json
             .map((value) =>
                 BusinessActivityLinksImageIriTemplateMapping.fromJson(value))
@@ -57,5 +49,16 @@ class BusinessActivityLinksImageIriTemplateMapping {
           BusinessActivityLinksImageIriTemplateMapping.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'businessActivity': businessActivity,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'BusinessActivityLinksImageIriTemplateMapping[businessActivity=$businessActivity, ]';
   }
 }

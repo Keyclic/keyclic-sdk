@@ -36,17 +36,46 @@ class OperationData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is OperationData &&
         runtimeType == other.runtimeType &&
-        report == other.report;
+        description == other.description &&
+        name == other.name &&
+        identificationNumber == other.identificationNumber &&
+        report == other.report &&
+        organization == other.organization &&
+        scheduledAt == other.scheduledAt;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ report.hashCode;
+  int get hashCode =>
+      0 ^
+      description.hashCode ^
+      name.hashCode ^
+      identificationNumber.hashCode ^
+      report.hashCode ^
+      organization.hashCode ^
+      scheduledAt.hashCode;
+
+  static List<OperationData> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <OperationData>[]
+        : json.map((value) => OperationData.fromJson(value)).toList();
+  }
+
+  static Map<String, OperationData> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, OperationData>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = OperationData.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -62,20 +91,5 @@ class OperationData {
   @override
   String toString() {
     return 'OperationData[description=$description, name=$name, identificationNumber=$identificationNumber, report=$report, organization=$organization, scheduledAt=$scheduledAt, ]';
-  }
-
-  static List<OperationData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OperationData>()
-        : json.map((value) => OperationData.fromJson(value)).toList();
-  }
-
-  static Map<String, OperationData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OperationData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationData.fromJson(value));
-    }
-    return map;
   }
 }

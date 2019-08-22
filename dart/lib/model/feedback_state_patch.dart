@@ -12,11 +12,12 @@ class FeedbackStatePatch {
     transition = json['transition'];
   }
 
+  /// enum transitionEnum {  deliver,  dispatch,  fail,  process,  publish,  success,  };
   String transition;
-  //enum transitionEnum {  deliver,  dispatch,  fail,  process,  publish,  success,  };
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -26,23 +27,13 @@ class FeedbackStatePatch {
         transition == other.transition;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ transition.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'transition': transition,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackStatePatch[transition=$transition, ]';
-  }
-
   static List<FeedbackStatePatch> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackStatePatch>()
+        ? <FeedbackStatePatch>[]
         : json.map((value) => FeedbackStatePatch.fromJson(value)).toList();
   }
 
@@ -54,5 +45,16 @@ class FeedbackStatePatch {
           map[key] = FeedbackStatePatch.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'transition': transition,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackStatePatch[transition=$transition, ]';
   }
 }

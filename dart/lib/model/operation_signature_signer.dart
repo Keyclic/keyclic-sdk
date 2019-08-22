@@ -20,32 +20,24 @@ class OperationSignatureSigner {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is OperationSignatureSigner &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        familyName == other.familyName &&
+        givenName == other.givenName;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'familyName': familyName,
-      'givenName': givenName,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OperationSignatureSigner[familyName=$familyName, givenName=$givenName, ]';
-  }
+  int get hashCode => 0 ^ familyName.hashCode ^ givenName.hashCode;
 
   static List<OperationSignatureSigner> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<OperationSignatureSigner>()
+        ? <OperationSignatureSigner>[]
         : json
             .map((value) => OperationSignatureSigner.fromJson(value))
             .toList();
@@ -59,5 +51,17 @@ class OperationSignatureSigner {
           map[key] = OperationSignatureSigner.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'familyName': familyName,
+      'givenName': givenName,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OperationSignatureSigner[familyName=$familyName, givenName=$givenName, ]';
   }
 }

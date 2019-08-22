@@ -20,15 +20,35 @@ class FeedbackDataGeo {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is FeedbackDataGeo && runtimeType == other.runtimeType;
+    return other is FeedbackDataGeo &&
+        runtimeType == other.runtimeType &&
+        point == other.point &&
+        elevation == other.elevation;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ point.hashCode ^ elevation.hashCode;
+
+  static List<FeedbackDataGeo> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <FeedbackDataGeo>[]
+        : json.map((value) => FeedbackDataGeo.fromJson(value)).toList();
+  }
+
+  static Map<String, FeedbackDataGeo> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, FeedbackDataGeo>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackDataGeo.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -40,20 +60,5 @@ class FeedbackDataGeo {
   @override
   String toString() {
     return 'FeedbackDataGeo[point=$point, elevation=$elevation, ]';
-  }
-
-  static List<FeedbackDataGeo> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<FeedbackDataGeo>()
-        : json.map((value) => FeedbackDataGeo.fromJson(value)).toList();
-  }
-
-  static Map<String, FeedbackDataGeo> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, FeedbackDataGeo>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackDataGeo.fromJson(value));
-    }
-    return map;
   }
 }

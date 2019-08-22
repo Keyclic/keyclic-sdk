@@ -40,15 +40,46 @@ class Document {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Document && runtimeType == other.runtimeType;
+    return other is Document &&
+        runtimeType == other.runtimeType &&
+        links == other.links &&
+        createdAt == other.createdAt &&
+        file == other.file &&
+        id == other.id &&
+        permission == other.permission &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      createdAt.hashCode ^
+      file.hashCode ^
+      id.hashCode ^
+      permission.hashCode ^
+      type.hashCode;
+
+  static List<Document> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Document>[]
+        : json.map((value) => Document.fromJson(value)).toList();
+  }
+
+  static Map<String, Document> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Document>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Document.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -64,20 +95,5 @@ class Document {
   @override
   String toString() {
     return 'Document[links=$links, createdAt=$createdAt, file=$file, id=$id, permission=$permission, type=$type, ]';
-  }
-
-  static List<Document> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Document>()
-        : json.map((value) => Document.fromJson(value)).toList();
-  }
-
-  static Map<String, Document> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Document>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Document.fromJson(value));
-    }
-    return map;
   }
 }

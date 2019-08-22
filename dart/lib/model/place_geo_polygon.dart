@@ -20,17 +20,39 @@ class PlaceGeoPolygon {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is PlaceGeoPolygon &&
         runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(features, other.features) &&
         type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ type.hashCode;
+  int get hashCode =>
+      0 ^
+      features.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      type.hashCode;
+
+  static List<PlaceGeoPolygon> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <PlaceGeoPolygon>[]
+        : json.map((value) => PlaceGeoPolygon.fromJson(value)).toList();
+  }
+
+  static Map<String, PlaceGeoPolygon> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, PlaceGeoPolygon>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = PlaceGeoPolygon.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -42,20 +64,5 @@ class PlaceGeoPolygon {
   @override
   String toString() {
     return 'PlaceGeoPolygon[features=$features, type=$type, ]';
-  }
-
-  static List<PlaceGeoPolygon> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PlaceGeoPolygon>()
-        : json.map((value) => PlaceGeoPolygon.fromJson(value)).toList();
-  }
-
-  static Map<String, PlaceGeoPolygon> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PlaceGeoPolygon>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PlaceGeoPolygon.fromJson(value));
-    }
-    return map;
   }
 }

@@ -72,17 +72,60 @@ class Person {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Person &&
         runtimeType == other.runtimeType &&
-        optIn == other.optIn;
+        links == other.links &&
+        createdAt == other.createdAt &&
+        email == other.email &&
+        familyName == other.familyName &&
+        givenName == other.givenName &&
+        id == other.id &&
+        jobTitle == other.jobTitle &&
+        optIn == other.optIn &&
+        preferences == other.preferences &&
+        telephone == other.telephone &&
+        type == other.type &&
+        updatedAt == other.updatedAt &&
+        username == other.username;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ optIn.hashCode;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      createdAt.hashCode ^
+      email.hashCode ^
+      familyName.hashCode ^
+      givenName.hashCode ^
+      id.hashCode ^
+      jobTitle.hashCode ^
+      optIn.hashCode ^
+      preferences.hashCode ^
+      telephone.hashCode ^
+      type.hashCode ^
+      updatedAt.hashCode ^
+      username.hashCode;
+
+  static List<Person> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Person>[]
+        : json.map((value) => Person.fromJson(value)).toList();
+  }
+
+  static Map<String, Person> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Person>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Person.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -105,20 +148,5 @@ class Person {
   @override
   String toString() {
     return 'Person[links=$links, createdAt=$createdAt, email=$email, familyName=$familyName, givenName=$givenName, id=$id, jobTitle=$jobTitle, optIn=$optIn, preferences=$preferences, telephone=$telephone, type=$type, updatedAt=$updatedAt, username=$username, ]';
-  }
-
-  static List<Person> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Person>()
-        : json.map((value) => Person.fromJson(value)).toList();
-  }
-
-  static Map<String, Person> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Person>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Person.fromJson(value));
-    }
-    return map;
   }
 }

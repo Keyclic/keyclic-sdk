@@ -22,31 +22,24 @@ class PublicationLinksAuthor {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PublicationLinksAuthor && runtimeType == other.runtimeType;
+    return other is PublicationLinksAuthor &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PublicationLinksAuthor[href=$href, iriTemplate=$iriTemplate, ]';
-  }
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<PublicationLinksAuthor> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PublicationLinksAuthor>()
+        ? <PublicationLinksAuthor>[]
         : json.map((value) => PublicationLinksAuthor.fromJson(value)).toList();
   }
 
@@ -58,5 +51,17 @@ class PublicationLinksAuthor {
           map[key] = PublicationLinksAuthor.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PublicationLinksAuthor[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

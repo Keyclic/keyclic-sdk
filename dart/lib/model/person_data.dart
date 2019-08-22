@@ -16,6 +16,7 @@ class PersonData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -25,23 +26,13 @@ class PersonData {
         person == other.person;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ person.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'person': person,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PersonData[person=$person, ]';
-  }
-
   static List<PersonData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PersonData>()
+        ? <PersonData>[]
         : json.map((value) => PersonData.fromJson(value)).toList();
   }
 
@@ -52,5 +43,16 @@ class PersonData {
           (String key, dynamic value) => map[key] = PersonData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'person': person,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PersonData[person=$person, ]';
   }
 }

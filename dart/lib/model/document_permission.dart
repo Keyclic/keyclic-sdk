@@ -16,30 +16,23 @@ class DocumentPermission {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is DocumentPermission && runtimeType == other.runtimeType;
+    return other is DocumentPermission &&
+        runtimeType == other.runtimeType &&
+        targetGroup == other.targetGroup;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'targetGroup': targetGroup,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DocumentPermission[targetGroup=$targetGroup, ]';
-  }
+  int get hashCode => 0 ^ targetGroup.hashCode;
 
   static List<DocumentPermission> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<DocumentPermission>()
+        ? <DocumentPermission>[]
         : json.map((value) => DocumentPermission.fromJson(value)).toList();
   }
 
@@ -51,5 +44,16 @@ class DocumentPermission {
           map[key] = DocumentPermission.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'targetGroup': targetGroup,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DocumentPermission[targetGroup=$targetGroup, ]';
   }
 }

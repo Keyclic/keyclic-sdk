@@ -1,28 +1,27 @@
 class {{classname}} {
-  /// The underlying value of this enum member.
-  {{dataType}} value;
+  {{classname}}.fromJson(dynamic data) {
+    switch (data) {
+      {{#allowableValues}}{{#enumVars}}
+      case {{{value}}}:
+        value = data;
+        break;
+      {{/enumVars}}{{/allowableValues}}
+      default:
+        throw('Unknown enum value to decode: $data');
+    }
+  }
 
   {{classname}}._internal(this.value);
 
-  {{#allowableValues}}
-    {{#enumVars}}
-      {{#description}}
-  /// {{description}}
-      {{/description}}
-  static {{classname}} {{name}} = {{classname}}._internal({{{value}}});
-    {{/enumVars}}
-  {{/allowableValues}}
+  /// The underlying value of this enum member.
+  {{dataType}} value;
 
-  {{classname}}.fromJson(dynamic data) {
-    switch (data) {
-    {{#allowableValues}}
-      {{#enumVars}}
-          case {{{value}}}: value = data; break;
-      {{/enumVars}}
-    {{/allowableValues}}
-    default: throw('Unknown enum value to decode: $data');
-    }
-  }
+  {{#allowableValues}}{{#enumVars}}
+    {{#description}}
+  /// {{description}}
+    {{/description}}
+  static {{classname}} {{name}} = {{classname}}._internal({{{value}}});
+  {{/enumVars}}{{/allowableValues}}
 
   static dynamic encode({{classname}} data) {
     return data.value;

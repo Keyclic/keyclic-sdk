@@ -20,33 +20,25 @@ class SuccessLoginCredentialsOrganization {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is SuccessLoginCredentialsOrganization &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        type == other.type &&
+        id == other.id;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'type': type,
-      'id': id,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'SuccessLoginCredentialsOrganization[type=$type, id=$id, ]';
-  }
+  int get hashCode => 0 ^ type.hashCode ^ id.hashCode;
 
   static List<SuccessLoginCredentialsOrganization> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<SuccessLoginCredentialsOrganization>()
+        ? <SuccessLoginCredentialsOrganization>[]
         : json
             .map((value) => SuccessLoginCredentialsOrganization.fromJson(value))
             .toList();
@@ -60,5 +52,17 @@ class SuccessLoginCredentialsOrganization {
           map[key] = SuccessLoginCredentialsOrganization.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'type': type,
+      'id': id,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'SuccessLoginCredentialsOrganization[type=$type, id=$id, ]';
   }
 }

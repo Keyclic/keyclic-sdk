@@ -22,33 +22,25 @@ class FeedbackReviewRequestLinksItemToReview {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is FeedbackReviewRequestLinksItemToReview &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackReviewRequestLinksItemToReview[href=$href, iriTemplate=$iriTemplate, ]';
-  }
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<FeedbackReviewRequestLinksItemToReview> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<FeedbackReviewRequestLinksItemToReview>()
+        ? <FeedbackReviewRequestLinksItemToReview>[]
         : json
             .map((value) =>
                 FeedbackReviewRequestLinksItemToReview.fromJson(value))
@@ -63,5 +55,17 @@ class FeedbackReviewRequestLinksItemToReview {
           map[key] = FeedbackReviewRequestLinksItemToReview.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackReviewRequestLinksItemToReview[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

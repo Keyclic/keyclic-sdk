@@ -16,6 +16,7 @@ class PasswordData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -25,23 +26,13 @@ class PasswordData {
         password == other.password;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ password.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'password': password,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PasswordData[password=$password, ]';
-  }
-
   static List<PasswordData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PasswordData>()
+        ? <PasswordData>[]
         : json.map((value) => PasswordData.fromJson(value)).toList();
   }
 
@@ -52,5 +43,16 @@ class PasswordData {
           map[key] = PasswordData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'password': password,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PasswordData[password=$password, ]';
   }
 }

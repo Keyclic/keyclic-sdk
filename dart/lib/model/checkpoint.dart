@@ -28,15 +28,41 @@ class Checkpoint {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Checkpoint && runtimeType == other.runtimeType;
+    return other is Checkpoint &&
+        runtimeType == other.runtimeType &&
+        createdAt == other.createdAt &&
+        DeepCollectionEquality.unordered().equals(state, other.state) &&
+        links == other.links;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      createdAt.hashCode ^
+      state.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      links.hashCode;
+
+  static List<Checkpoint> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Checkpoint>[]
+        : json.map((value) => Checkpoint.fromJson(value)).toList();
+  }
+
+  static Map<String, Checkpoint> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Checkpoint>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Checkpoint.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -49,20 +75,5 @@ class Checkpoint {
   @override
   String toString() {
     return 'Checkpoint[createdAt=$createdAt, state=$state, links=$links, ]';
-  }
-
-  static List<Checkpoint> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Checkpoint>()
-        : json.map((value) => Checkpoint.fromJson(value)).toList();
-  }
-
-  static Map<String, Checkpoint> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Checkpoint>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Checkpoint.fromJson(value));
-    }
-    return map;
   }
 }

@@ -21,31 +21,24 @@ class ApplicationLinksSelf {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ApplicationLinksSelf && runtimeType == other.runtimeType;
+    return other is ApplicationLinksSelf &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ApplicationLinksSelf[href=$href, iriTemplate=$iriTemplate, ]';
-  }
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<ApplicationLinksSelf> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ApplicationLinksSelf>()
+        ? <ApplicationLinksSelf>[]
         : json.map((value) => ApplicationLinksSelf.fromJson(value)).toList();
   }
 
@@ -57,5 +50,17 @@ class ApplicationLinksSelf {
           map[key] = ApplicationLinksSelf.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ApplicationLinksSelf[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

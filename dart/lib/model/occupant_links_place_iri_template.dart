@@ -16,31 +16,23 @@ class OccupantLinksPlaceIriTemplate {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is OccupantLinksPlaceIriTemplate &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        mapping == other.mapping;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'mapping': mapping,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OccupantLinksPlaceIriTemplate[mapping=$mapping, ]';
-  }
+  int get hashCode => 0 ^ mapping.hashCode;
 
   static List<OccupantLinksPlaceIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<OccupantLinksPlaceIriTemplate>()
+        ? <OccupantLinksPlaceIriTemplate>[]
         : json
             .map((value) => OccupantLinksPlaceIriTemplate.fromJson(value))
             .toList();
@@ -54,5 +46,16 @@ class OccupantLinksPlaceIriTemplate {
           map[key] = OccupantLinksPlaceIriTemplate.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'mapping': mapping,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OccupantLinksPlaceIriTemplate[mapping=$mapping, ]';
   }
 }

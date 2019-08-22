@@ -16,6 +16,7 @@ class CommentData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -25,23 +26,13 @@ class CommentData {
         text == other.text;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ text.hashCode;
 
-  Map<String, dynamic> toJson() {
-    return {
-      'text': text,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'CommentData[text=$text, ]';
-  }
-
   static List<CommentData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<CommentData>()
+        ? <CommentData>[]
         : json.map((value) => CommentData.fromJson(value)).toList();
   }
 
@@ -52,5 +43,16 @@ class CommentData {
           map[key] = CommentData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'text': text,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'CommentData[text=$text, ]';
   }
 }

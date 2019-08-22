@@ -16,30 +16,26 @@ class WebhookCollection {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is WebhookCollection && runtimeType == other.runtimeType;
+    return other is WebhookCollection &&
+        runtimeType == other.runtimeType &&
+        DeepCollectionEquality.unordered().equals(items, other.items);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'items': items,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'WebhookCollection[items=$items, ]';
-  }
+  int get hashCode =>
+      0 ^
+      items.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
 
   static List<WebhookCollection> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<WebhookCollection>()
+        ? <WebhookCollection>[]
         : json.map((value) => WebhookCollection.fromJson(value)).toList();
   }
 
@@ -50,5 +46,16 @@ class WebhookCollection {
           map[key] = WebhookCollection.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'items': items,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'WebhookCollection[items=$items, ]';
   }
 }

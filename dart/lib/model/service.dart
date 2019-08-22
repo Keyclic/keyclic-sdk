@@ -48,17 +48,48 @@ class Service {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Service &&
         runtimeType == other.runtimeType &&
-        name == other.name;
+        contactPoint == other.contactPoint &&
+        createdAt == other.createdAt &&
+        description == other.description &&
+        id == other.id &&
+        name == other.name &&
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ name.hashCode;
+  int get hashCode =>
+      0 ^
+      contactPoint.hashCode ^
+      createdAt.hashCode ^
+      description.hashCode ^
+      id.hashCode ^
+      name.hashCode ^
+      type.hashCode ^
+      updatedAt.hashCode;
+
+  static List<Service> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Service>[]
+        : json.map((value) => Service.fromJson(value)).toList();
+  }
+
+  static Map<String, Service> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Service>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Service.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -75,20 +106,5 @@ class Service {
   @override
   String toString() {
     return 'Service[contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
-  }
-
-  static List<Service> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Service>()
-        : json.map((value) => Service.fromJson(value)).toList();
-  }
-
-  static Map<String, Service> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Service>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Service.fromJson(value));
-    }
-    return map;
   }
 }

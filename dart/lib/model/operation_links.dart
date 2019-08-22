@@ -44,15 +44,51 @@ class OperationLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is OperationLinks && runtimeType == other.runtimeType;
+    return other is OperationLinks &&
+        runtimeType == other.runtimeType &&
+        createdBy == other.createdBy &&
+        feedback == other.feedback &&
+        image == other.image &&
+        DeepCollectionEquality.unordered().equals(images, other.images) &&
+        operator_ == other.operator_ &&
+        report == other.report &&
+        self == other.self &&
+        tracking == other.tracking;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      createdBy.hashCode ^
+      feedback.hashCode ^
+      image.hashCode ^
+      images.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      operator_.hashCode ^
+      report.hashCode ^
+      self.hashCode ^
+      tracking.hashCode;
+
+  static List<OperationLinks> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <OperationLinks>[]
+        : json.map((value) => OperationLinks.fromJson(value)).toList();
+  }
+
+  static Map<String, OperationLinks> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, OperationLinks>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = OperationLinks.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -70,20 +106,5 @@ class OperationLinks {
   @override
   String toString() {
     return 'OperationLinks[createdBy=$createdBy, feedback=$feedback, image=$image, images=$images, operator_=$operator_, report=$report, self=$self, tracking=$tracking, ]';
-  }
-
-  static List<OperationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OperationLinks>()
-        : json.map((value) => OperationLinks.fromJson(value)).toList();
-  }
-
-  static Map<String, OperationLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OperationLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationLinks.fromJson(value));
-    }
-    return map;
   }
 }

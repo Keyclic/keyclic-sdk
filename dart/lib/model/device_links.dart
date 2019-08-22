@@ -16,30 +16,23 @@ class DeviceLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is DeviceLinks && runtimeType == other.runtimeType;
+    return other is DeviceLinks &&
+        runtimeType == other.runtimeType &&
+        person == other.person;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'person': person,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'DeviceLinks[person=$person, ]';
-  }
+  int get hashCode => 0 ^ person.hashCode;
 
   static List<DeviceLinks> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<DeviceLinks>()
+        ? <DeviceLinks>[]
         : json.map((value) => DeviceLinks.fromJson(value)).toList();
   }
 
@@ -50,5 +43,16 @@ class DeviceLinks {
           map[key] = DeviceLinks.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'person': person,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'DeviceLinks[person=$person, ]';
   }
 }

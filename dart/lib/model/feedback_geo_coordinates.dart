@@ -14,40 +14,32 @@ class FeedbackGeoCoordinates {
     point = FeedbackGeoCoordinatesPoint.fromJson(json['point']);
   }
 
+  /// range from -10000 to 8000
+
   double elevation;
-  // range from -10000 to 8000//
 
   FeedbackGeoCoordinatesPoint point;
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is FeedbackGeoCoordinates &&
         runtimeType == other.runtimeType &&
+        elevation == other.elevation &&
         point == other.point;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ point.hashCode;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'elevation': elevation,
-      'point': point,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackGeoCoordinates[elevation=$elevation, point=$point, ]';
-  }
+  int get hashCode => 0 ^ elevation.hashCode ^ point.hashCode;
 
   static List<FeedbackGeoCoordinates> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackGeoCoordinates>()
+        ? <FeedbackGeoCoordinates>[]
         : json.map((value) => FeedbackGeoCoordinates.fromJson(value)).toList();
   }
 
@@ -59,5 +51,17 @@ class FeedbackGeoCoordinates {
           map[key] = FeedbackGeoCoordinates.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'elevation': elevation,
+      'point': point,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackGeoCoordinates[elevation=$elevation, point=$point, ]';
   }
 }

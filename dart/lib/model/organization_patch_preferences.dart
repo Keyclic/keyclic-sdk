@@ -16,31 +16,23 @@ class OrganizationPatchPreferences {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is OrganizationPatchPreferences &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        reference == other.reference;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'reference': reference,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OrganizationPatchPreferences[reference=$reference, ]';
-  }
+  int get hashCode => 0 ^ reference.hashCode;
 
   static List<OrganizationPatchPreferences> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<OrganizationPatchPreferences>()
+        ? <OrganizationPatchPreferences>[]
         : json
             .map((value) => OrganizationPatchPreferences.fromJson(value))
             .toList();
@@ -54,5 +46,16 @@ class OrganizationPatchPreferences {
           map[key] = OrganizationPatchPreferences.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'reference': reference,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OrganizationPatchPreferences[reference=$reference, ]';
   }
 }

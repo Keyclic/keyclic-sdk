@@ -52,15 +52,55 @@ class Choice {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Choice && runtimeType == other.runtimeType;
+    return other is Choice &&
+        runtimeType == other.runtimeType &&
+        default_ == other.default_ &&
+        description == other.description &&
+        DeepCollectionEquality.unordered().equals(enum_, other.enum_) &&
+        format == other.format &&
+        id == other.id &&
+        maxItems == other.maxItems &&
+        minItems == other.minItems &&
+        propertyOrder == other.propertyOrder &&
+        title == other.title &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      default_.hashCode ^
+      description.hashCode ^
+      enum_.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      format.hashCode ^
+      id.hashCode ^
+      maxItems.hashCode ^
+      minItems.hashCode ^
+      propertyOrder.hashCode ^
+      title.hashCode ^
+      type.hashCode;
+
+  static List<Choice> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Choice>[]
+        : json.map((value) => Choice.fromJson(value)).toList();
+  }
+
+  static Map<String, Choice> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Choice>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Choice.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -80,20 +120,5 @@ class Choice {
   @override
   String toString() {
     return 'Choice[default_=$default_, description=$description, enum_=$enum_, format=$format, id=$id, maxItems=$maxItems, minItems=$minItems, propertyOrder=$propertyOrder, title=$title, type=$type, ]';
-  }
-
-  static List<Choice> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Choice>()
-        : json.map((value) => Choice.fromJson(value)).toList();
-  }
-
-  static Map<String, Choice> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Choice>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Choice.fromJson(value));
-    }
-    return map;
   }
 }

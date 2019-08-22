@@ -21,15 +21,35 @@ class DelegationLinksTo {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is DelegationLinksTo && runtimeType == other.runtimeType;
+    return other is DelegationLinksTo &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
+
+  static List<DelegationLinksTo> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <DelegationLinksTo>[]
+        : json.map((value) => DelegationLinksTo.fromJson(value)).toList();
+  }
+
+  static Map<String, DelegationLinksTo> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, DelegationLinksTo>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = DelegationLinksTo.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -41,20 +61,5 @@ class DelegationLinksTo {
   @override
   String toString() {
     return 'DelegationLinksTo[href=$href, iriTemplate=$iriTemplate, ]';
-  }
-
-  static List<DelegationLinksTo> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<DelegationLinksTo>()
-        : json.map((value) => DelegationLinksTo.fromJson(value)).toList();
-  }
-
-  static Map<String, DelegationLinksTo> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, DelegationLinksTo>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DelegationLinksTo.fromJson(value));
-    }
-    return map;
   }
 }

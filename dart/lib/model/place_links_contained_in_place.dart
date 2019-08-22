@@ -22,32 +22,24 @@ class PlaceLinksContainedInPlace {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is PlaceLinksContainedInPlace &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PlaceLinksContainedInPlace[href=$href, iriTemplate=$iriTemplate, ]';
-  }
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<PlaceLinksContainedInPlace> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PlaceLinksContainedInPlace>()
+        ? <PlaceLinksContainedInPlace>[]
         : json
             .map((value) => PlaceLinksContainedInPlace.fromJson(value))
             .toList();
@@ -61,5 +53,17 @@ class PlaceLinksContainedInPlace {
           map[key] = PlaceLinksContainedInPlace.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PlaceLinksContainedInPlace[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

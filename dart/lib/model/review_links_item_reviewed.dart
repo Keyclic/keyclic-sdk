@@ -22,31 +22,24 @@ class ReviewLinksItemReviewed {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ReviewLinksItemReviewed && runtimeType == other.runtimeType;
+    return other is ReviewLinksItemReviewed &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ReviewLinksItemReviewed[href=$href, iriTemplate=$iriTemplate, ]';
-  }
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<ReviewLinksItemReviewed> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ReviewLinksItemReviewed>()
+        ? <ReviewLinksItemReviewed>[]
         : json.map((value) => ReviewLinksItemReviewed.fromJson(value)).toList();
   }
 
@@ -58,5 +51,17 @@ class ReviewLinksItemReviewed {
           map[key] = ReviewLinksItemReviewed.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ReviewLinksItemReviewed[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

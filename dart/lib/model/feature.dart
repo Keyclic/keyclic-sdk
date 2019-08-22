@@ -25,15 +25,41 @@ class Feature {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Feature && runtimeType == other.runtimeType;
+    return other is Feature &&
+        runtimeType == other.runtimeType &&
+        type == other.type &&
+        geometry == other.geometry &&
+        DeepCollectionEquality.unordered().equals(properties, other.properties);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      type.hashCode ^
+      geometry.hashCode ^
+      properties.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+
+  static List<Feature> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Feature>[]
+        : json.map((value) => Feature.fromJson(value)).toList();
+  }
+
+  static Map<String, Feature> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Feature>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Feature.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -46,20 +72,5 @@ class Feature {
   @override
   String toString() {
     return 'Feature[type=$type, geometry=$geometry, properties=$properties, ]';
-  }
-
-  static List<Feature> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Feature>()
-        : json.map((value) => Feature.fromJson(value)).toList();
-  }
-
-  static Map<String, Feature> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Feature>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Feature.fromJson(value));
-    }
-    return map;
   }
 }

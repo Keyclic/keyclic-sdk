@@ -20,6 +20,7 @@ class PersonPreferences {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -30,9 +31,25 @@ class PersonPreferences {
         messagePushEnabled == other.messagePushEnabled;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode =>
       0 ^ messageEmailEnabled.hashCode ^ messagePushEnabled.hashCode;
+
+  static List<PersonPreferences> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <PersonPreferences>[]
+        : json.map((value) => PersonPreferences.fromJson(value)).toList();
+  }
+
+  static Map<String, PersonPreferences> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, PersonPreferences>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = PersonPreferences.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -44,20 +61,5 @@ class PersonPreferences {
   @override
   String toString() {
     return 'PersonPreferences[messageEmailEnabled=$messageEmailEnabled, messagePushEnabled=$messagePushEnabled, ]';
-  }
-
-  static List<PersonPreferences> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PersonPreferences>()
-        : json.map((value) => PersonPreferences.fromJson(value)).toList();
-  }
-
-  static Map<String, PersonPreferences> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PersonPreferences>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PersonPreferences.fromJson(value));
-    }
-    return map;
   }
 }

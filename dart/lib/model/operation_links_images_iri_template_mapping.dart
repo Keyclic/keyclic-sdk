@@ -20,33 +20,25 @@ class OperationLinksImagesIriTemplateMapping {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is OperationLinksImagesIriTemplateMapping &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        operation == other.operation &&
+        image == other.image;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'operation': operation,
-      'image': image,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OperationLinksImagesIriTemplateMapping[operation=$operation, image=$image, ]';
-  }
+  int get hashCode => 0 ^ operation.hashCode ^ image.hashCode;
 
   static List<OperationLinksImagesIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<OperationLinksImagesIriTemplateMapping>()
+        ? <OperationLinksImagesIriTemplateMapping>[]
         : json
             .map((value) =>
                 OperationLinksImagesIriTemplateMapping.fromJson(value))
@@ -61,5 +53,17 @@ class OperationLinksImagesIriTemplateMapping {
           map[key] = OperationLinksImagesIriTemplateMapping.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'operation': operation,
+      'image': image,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OperationLinksImagesIriTemplateMapping[operation=$operation, image=$image, ]';
   }
 }

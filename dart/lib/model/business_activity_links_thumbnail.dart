@@ -22,32 +22,24 @@ class BusinessActivityLinksThumbnail {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is BusinessActivityLinksThumbnail &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'BusinessActivityLinksThumbnail[href=$href, iriTemplate=$iriTemplate, ]';
-  }
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<BusinessActivityLinksThumbnail> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<BusinessActivityLinksThumbnail>()
+        ? <BusinessActivityLinksThumbnail>[]
         : json
             .map((value) => BusinessActivityLinksThumbnail.fromJson(value))
             .toList();
@@ -61,5 +53,17 @@ class BusinessActivityLinksThumbnail {
           map[key] = BusinessActivityLinksThumbnail.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'BusinessActivityLinksThumbnail[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

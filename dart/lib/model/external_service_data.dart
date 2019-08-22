@@ -20,33 +20,24 @@ class ExternalServiceData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is ExternalServiceData &&
         runtimeType == other.runtimeType &&
-        organization == other.organization;
+        organization == other.organization &&
+        name == other.name;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ organization.hashCode;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'organization': organization,
-      'name': name,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ExternalServiceData[organization=$organization, name=$name, ]';
-  }
+  int get hashCode => 0 ^ organization.hashCode ^ name.hashCode;
 
   static List<ExternalServiceData> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ExternalServiceData>()
+        ? <ExternalServiceData>[]
         : json.map((value) => ExternalServiceData.fromJson(value)).toList();
   }
 
@@ -58,5 +49,17 @@ class ExternalServiceData {
           map[key] = ExternalServiceData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'organization': organization,
+      'name': name,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ExternalServiceData[organization=$organization, name=$name, ]';
   }
 }

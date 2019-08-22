@@ -4,44 +4,44 @@ const _delimiters = {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
 
 // port from Java version
 Iterable<QueryParam> _convertParametersForCollectionFormat(
-    String collectionFormat, String name, dynamic value) {
-  var params = <QueryParam>[];
-
+  String name,
+  dynamic value, {
+  String collectionFormat = 'csv',
+}) {
   // preconditions
   if (name == null || name.isEmpty || value == null) {
-    return params;
+    throw ApiException(0, "Missing required params");
   }
 
   if (value is! List) {
-    params.add(QueryParam(name, parameterToString(value)));
-    return params;
+    return <QueryParam>[
+      QueryParam(name, _parameterToString(value)),
+    ];
   }
 
   List values = value as List;
 
-  // get the collection format
-  collectionFormat = (collectionFormat == null || collectionFormat.isEmpty)
-      ? "csv"
-      : collectionFormat; // default: csv
-
-  if (collectionFormat == "multi") {
-    return values.map((v) => QueryParam(name, parameterToString(v)));
+  if (collectionFormat == 'multi') {
+    return values.map((v) => QueryParam(name, _parameterToString(v)));
   }
 
-  String delimiter = _delimiters[collectionFormat] ?? ",";
+  // get the delimiter (default: csv delimiter)
+  final String delimiter =
+      collectionFormat.isNotEmpty ? _delimiters[collectionFormat] : ',';
 
-  params.add(QueryParam(
-      name, values.map((v) => parameterToString(v)).join(delimiter)));
-  return params;
+  final String joinedParameters =
+      values.map((v) => _parameterToString(v)).join(delimiter);
+
+  return <QueryParam>[
+    QueryParam(name, joinedParameters),
+  ];
 }
 
 /// Format the given parameter object into string.
-String parameterToString(dynamic value) {
-  if (value == null) {
-    return '';
-  } else if (value is DateTime) {
+String _parameterToString(dynamic value) {
+  if (value is DateTime) {
     return value.toUtc().toIso8601String();
-  } else {
-    return value.toString();
   }
+
+  return value.toString();
 }

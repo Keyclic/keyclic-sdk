@@ -36,16 +36,50 @@ class FeedbackReviewRequestPagination {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is FeedbackReviewRequestPagination &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        limit == other.limit &&
+        page == other.page &&
+        pages == other.pages &&
+        total == other.total &&
+        embedded == other.embedded &&
+        links == other.links;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      limit.hashCode ^
+      page.hashCode ^
+      pages.hashCode ^
+      total.hashCode ^
+      embedded.hashCode ^
+      links.hashCode;
+
+  static List<FeedbackReviewRequestPagination> listFromJson(
+      List<dynamic> json) {
+    return json == null
+        ? <FeedbackReviewRequestPagination>[]
+        : json
+            .map((value) => FeedbackReviewRequestPagination.fromJson(value))
+            .toList();
+  }
+
+  static Map<String, FeedbackReviewRequestPagination> mapFromJson(
+      Map<String, dynamic> json) {
+    var map = Map<String, FeedbackReviewRequestPagination>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = FeedbackReviewRequestPagination.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -61,24 +95,5 @@ class FeedbackReviewRequestPagination {
   @override
   String toString() {
     return 'FeedbackReviewRequestPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
-  }
-
-  static List<FeedbackReviewRequestPagination> listFromJson(
-      List<dynamic> json) {
-    return json == null
-        ? List<FeedbackReviewRequestPagination>()
-        : json
-            .map((value) => FeedbackReviewRequestPagination.fromJson(value))
-            .toList();
-  }
-
-  static Map<String, FeedbackReviewRequestPagination> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, FeedbackReviewRequestPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackReviewRequestPagination.fromJson(value));
-    }
-    return map;
   }
 }

@@ -28,15 +28,38 @@ class PaginationLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PaginationLinks && runtimeType == other.runtimeType;
+    return other is PaginationLinks &&
+        runtimeType == other.runtimeType &&
+        first == other.first &&
+        last == other.last &&
+        next == other.next &&
+        self == other.self;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ first.hashCode ^ last.hashCode ^ next.hashCode ^ self.hashCode;
+
+  static List<PaginationLinks> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <PaginationLinks>[]
+        : json.map((value) => PaginationLinks.fromJson(value)).toList();
+  }
+
+  static Map<String, PaginationLinks> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, PaginationLinks>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = PaginationLinks.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -50,20 +73,5 @@ class PaginationLinks {
   @override
   String toString() {
     return 'PaginationLinks[first=$first, last=$last, next=$next, self=$self, ]';
-  }
-
-  static List<PaginationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PaginationLinks>()
-        : json.map((value) => PaginationLinks.fromJson(value)).toList();
-  }
-
-  static Map<String, PaginationLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PaginationLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PaginationLinks.fromJson(value));
-    }
-    return map;
   }
 }

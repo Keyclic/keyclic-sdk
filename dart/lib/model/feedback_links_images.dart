@@ -21,31 +21,24 @@ class FeedbackLinksImages {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is FeedbackLinksImages && runtimeType == other.runtimeType;
+    return other is FeedbackLinksImages &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'FeedbackLinksImages[href=$href, iriTemplate=$iriTemplate, ]';
-  }
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<FeedbackLinksImages> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<FeedbackLinksImages>()
+        ? <FeedbackLinksImages>[]
         : json.map((value) => FeedbackLinksImages.fromJson(value)).toList();
   }
 
@@ -57,5 +50,17 @@ class FeedbackLinksImages {
           map[key] = FeedbackLinksImages.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'FeedbackLinksImages[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

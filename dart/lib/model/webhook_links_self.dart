@@ -21,15 +21,35 @@ class WebhookLinksSelf {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is WebhookLinksSelf && runtimeType == other.runtimeType;
+    return other is WebhookLinksSelf &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
+
+  static List<WebhookLinksSelf> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <WebhookLinksSelf>[]
+        : json.map((value) => WebhookLinksSelf.fromJson(value)).toList();
+  }
+
+  static Map<String, WebhookLinksSelf> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, WebhookLinksSelf>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = WebhookLinksSelf.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -41,20 +61,5 @@ class WebhookLinksSelf {
   @override
   String toString() {
     return 'WebhookLinksSelf[href=$href, iriTemplate=$iriTemplate, ]';
-  }
-
-  static List<WebhookLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<WebhookLinksSelf>()
-        : json.map((value) => WebhookLinksSelf.fromJson(value)).toList();
-  }
-
-  static Map<String, WebhookLinksSelf> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WebhookLinksSelf>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WebhookLinksSelf.fromJson(value));
-    }
-    return map;
   }
 }

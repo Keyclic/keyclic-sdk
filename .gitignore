@@ -5,8 +5,6 @@ javascript-es6/.swagger-codegen/
 javascript-es6/node_modules/
 javascript-es6/.swagger-codegen-ignore
 
-!.codegen.*.log
-
 ######################### Common configuration #########################
 ### Dev configurations
 .rules/
@@ -39,3 +37,5 @@ $RECYCLE.BIN/
 Desktop.ini
 Thumbs.db
 UserInterfaceState.xcuserstate
+
+!.codegen.*.log

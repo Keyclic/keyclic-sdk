@@ -20,17 +20,35 @@ class SignatureData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is SignatureData &&
         runtimeType == other.runtimeType &&
+        signer == other.signer &&
         image == other.image;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ image.hashCode;
+  int get hashCode => 0 ^ signer.hashCode ^ image.hashCode;
+
+  static List<SignatureData> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <SignatureData>[]
+        : json.map((value) => SignatureData.fromJson(value)).toList();
+  }
+
+  static Map<String, SignatureData> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, SignatureData>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = SignatureData.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -42,20 +60,5 @@ class SignatureData {
   @override
   String toString() {
     return 'SignatureData[signer=$signer, image=$image, ]';
-  }
-
-  static List<SignatureData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<SignatureData>()
-        : json.map((value) => SignatureData.fromJson(value)).toList();
-  }
-
-  static Map<String, SignatureData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, SignatureData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = SignatureData.fromJson(value));
-    }
-    return map;
   }
 }

@@ -22,31 +22,24 @@ class PlaceLinksOrganization {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PlaceLinksOrganization && runtimeType == other.runtimeType;
+    return other is PlaceLinksOrganization &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'href': href,
-      'iriTemplate': iriTemplate,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PlaceLinksOrganization[href=$href, iriTemplate=$iriTemplate, ]';
-  }
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
 
   static List<PlaceLinksOrganization> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PlaceLinksOrganization>()
+        ? <PlaceLinksOrganization>[]
         : json.map((value) => PlaceLinksOrganization.fromJson(value)).toList();
   }
 
@@ -58,5 +51,17 @@ class PlaceLinksOrganization {
           map[key] = PlaceLinksOrganization.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'href': href,
+      'iriTemplate': iriTemplate,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PlaceLinksOrganization[href=$href, iriTemplate=$iriTemplate, ]';
   }
 }

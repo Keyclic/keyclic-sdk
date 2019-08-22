@@ -40,17 +40,47 @@ class Delegation {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is Delegation &&
         runtimeType == other.runtimeType &&
-        DeepCollectionEquality.unordered().equals(state, other.state);
+        links == other.links &&
+        createdAt == other.createdAt &&
+        description == other.description &&
+        id == other.id &&
+        DeepCollectionEquality.unordered().equals(state, other.state) &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      links.hashCode ^
+      createdAt.hashCode ^
+      description.hashCode ^
+      id.hashCode ^
+      state.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      type.hashCode;
+
+  static List<Delegation> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Delegation>[]
+        : json.map((value) => Delegation.fromJson(value)).toList();
+  }
+
+  static Map<String, Delegation> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Delegation>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Delegation.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -66,20 +96,5 @@ class Delegation {
   @override
   String toString() {
     return 'Delegation[links=$links, createdAt=$createdAt, description=$description, id=$id, state=$state, type=$type, ]';
-  }
-
-  static List<Delegation> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Delegation>()
-        : json.map((value) => Delegation.fromJson(value)).toList();
-  }
-
-  static Map<String, Delegation> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Delegation>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Delegation.fromJson(value));
-    }
-    return map;
   }
 }

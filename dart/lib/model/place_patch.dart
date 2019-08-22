@@ -24,15 +24,37 @@ class PlacePatch {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PlacePatch && runtimeType == other.runtimeType;
+    return other is PlacePatch &&
+        runtimeType == other.runtimeType &&
+        branchCode == other.branchCode &&
+        description == other.description &&
+        name == other.name;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ branchCode.hashCode ^ description.hashCode ^ name.hashCode;
+
+  static List<PlacePatch> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <PlacePatch>[]
+        : json.map((value) => PlacePatch.fromJson(value)).toList();
+  }
+
+  static Map<String, PlacePatch> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, PlacePatch>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = PlacePatch.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -45,20 +67,5 @@ class PlacePatch {
   @override
   String toString() {
     return 'PlacePatch[branchCode=$branchCode, description=$description, name=$name, ]';
-  }
-
-  static List<PlacePatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PlacePatch>()
-        : json.map((value) => PlacePatch.fromJson(value)).toList();
-  }
-
-  static Map<String, PlacePatch> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PlacePatch>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = PlacePatch.fromJson(value));
-    }
-    return map;
   }
 }

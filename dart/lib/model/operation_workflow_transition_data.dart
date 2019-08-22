@@ -12,11 +12,12 @@ class OperationWorkflowTransitionData {
     transition = json['transition'];
   }
 
+  /// enum transitionEnum {  accept,  assign,  progress,  refuse,  reset,  resolve,  };
   String transition;
-  //enum transitionEnum {  accept,  assign,  progress,  refuse,  reset,  resolve,  };
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -26,24 +27,14 @@ class OperationWorkflowTransitionData {
         transition == other.transition;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ transition.hashCode;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'transition': transition,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'OperationWorkflowTransitionData[transition=$transition, ]';
-  }
 
   static List<OperationWorkflowTransitionData> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<OperationWorkflowTransitionData>()
+        ? <OperationWorkflowTransitionData>[]
         : json
             .map((value) => OperationWorkflowTransitionData.fromJson(value))
             .toList();
@@ -57,5 +48,16 @@ class OperationWorkflowTransitionData {
           map[key] = OperationWorkflowTransitionData.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'transition': transition,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'OperationWorkflowTransitionData[transition=$transition, ]';
   }
 }

@@ -40,15 +40,47 @@ class Member {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Member && runtimeType == other.runtimeType;
+    return other is Member &&
+        runtimeType == other.runtimeType &&
+        embedded == other.embedded &&
+        links == other.links &&
+        createdAt == other.createdAt &&
+        id == other.id &&
+        DeepCollectionEquality.unordered().equals(roles, other.roles) &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      embedded.hashCode ^
+      links.hashCode ^
+      createdAt.hashCode ^
+      id.hashCode ^
+      roles.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
+      type.hashCode;
+
+  static List<Member> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Member>[]
+        : json.map((value) => Member.fromJson(value)).toList();
+  }
+
+  static Map<String, Member> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Member>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Member.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -64,20 +96,5 @@ class Member {
   @override
   String toString() {
     return 'Member[embedded=$embedded, links=$links, createdAt=$createdAt, id=$id, roles=$roles, type=$type, ]';
-  }
-
-  static List<Member> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Member>()
-        : json.map((value) => Member.fromJson(value)).toList();
-  }
-
-  static Map<String, Member> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Member>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Member.fromJson(value));
-    }
-    return map;
   }
 }

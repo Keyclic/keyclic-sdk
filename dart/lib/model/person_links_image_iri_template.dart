@@ -17,31 +17,23 @@ class PersonLinksImageIriTemplate {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is PersonLinksImageIriTemplate &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        mapping == other.mapping;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'mapping': mapping,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PersonLinksImageIriTemplate[mapping=$mapping, ]';
-  }
+  int get hashCode => 0 ^ mapping.hashCode;
 
   static List<PersonLinksImageIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PersonLinksImageIriTemplate>()
+        ? <PersonLinksImageIriTemplate>[]
         : json
             .map((value) => PersonLinksImageIriTemplate.fromJson(value))
             .toList();
@@ -55,5 +47,16 @@ class PersonLinksImageIriTemplate {
           map[key] = PersonLinksImageIriTemplate.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'mapping': mapping,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PersonLinksImageIriTemplate[mapping=$mapping, ]';
   }
 }

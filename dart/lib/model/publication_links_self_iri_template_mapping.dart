@@ -20,33 +20,25 @@ class PublicationLinksSelfIriTemplateMapping {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is PublicationLinksSelfIriTemplateMapping &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        organization == other.organization &&
+        publication == other.publication;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'organization': organization,
-      'publication': publication,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PublicationLinksSelfIriTemplateMapping[organization=$organization, publication=$publication, ]';
-  }
+  int get hashCode => 0 ^ organization.hashCode ^ publication.hashCode;
 
   static List<PublicationLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
-        ? List<PublicationLinksSelfIriTemplateMapping>()
+        ? <PublicationLinksSelfIriTemplateMapping>[]
         : json
             .map((value) =>
                 PublicationLinksSelfIriTemplateMapping.fromJson(value))
@@ -61,5 +53,17 @@ class PublicationLinksSelfIriTemplateMapping {
           map[key] = PublicationLinksSelfIriTemplateMapping.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'organization': organization,
+      'publication': publication,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PublicationLinksSelfIriTemplateMapping[organization=$organization, publication=$publication, ]';
   }
 }

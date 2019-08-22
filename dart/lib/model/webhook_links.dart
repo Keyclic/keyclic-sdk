@@ -20,15 +20,35 @@ class WebhookLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is WebhookLinks && runtimeType == other.runtimeType;
+    return other is WebhookLinks &&
+        runtimeType == other.runtimeType &&
+        organization == other.organization &&
+        self == other.self;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ organization.hashCode ^ self.hashCode;
+
+  static List<WebhookLinks> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <WebhookLinks>[]
+        : json.map((value) => WebhookLinks.fromJson(value)).toList();
+  }
+
+  static Map<String, WebhookLinks> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, WebhookLinks>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = WebhookLinks.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -40,20 +60,5 @@ class WebhookLinks {
   @override
   String toString() {
     return 'WebhookLinks[organization=$organization, self=$self, ]';
-  }
-
-  static List<WebhookLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<WebhookLinks>()
-        : json.map((value) => WebhookLinks.fromJson(value)).toList();
-  }
-
-  static Map<String, WebhookLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WebhookLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WebhookLinks.fromJson(value));
-    }
-    return map;
   }
 }

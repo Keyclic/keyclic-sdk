@@ -20,31 +20,25 @@ class PersonPatchPreferences {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is PersonPatchPreferences && runtimeType == other.runtimeType;
+    return other is PersonPatchPreferences &&
+        runtimeType == other.runtimeType &&
+        messageEmailEnabled == other.messageEmailEnabled &&
+        messagePushEnabled == other.messagePushEnabled;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'messageEmailEnabled': messageEmailEnabled,
-      'messagePushEnabled': messagePushEnabled,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'PersonPatchPreferences[messageEmailEnabled=$messageEmailEnabled, messagePushEnabled=$messagePushEnabled, ]';
-  }
+  int get hashCode =>
+      0 ^ messageEmailEnabled.hashCode ^ messagePushEnabled.hashCode;
 
   static List<PersonPatchPreferences> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<PersonPatchPreferences>()
+        ? <PersonPatchPreferences>[]
         : json.map((value) => PersonPatchPreferences.fromJson(value)).toList();
   }
 
@@ -56,5 +50,17 @@ class PersonPatchPreferences {
           map[key] = PersonPatchPreferences.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'messageEmailEnabled': messageEmailEnabled,
+      'messagePushEnabled': messagePushEnabled,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'PersonPatchPreferences[messageEmailEnabled=$messageEmailEnabled, messagePushEnabled=$messagePushEnabled, ]';
   }
 }

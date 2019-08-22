@@ -32,15 +32,38 @@ class Occupant {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Occupant && runtimeType == other.runtimeType;
+    return other is Occupant &&
+        runtimeType == other.runtimeType &&
+        links == other.links &&
+        createdAt == other.createdAt &&
+        id == other.id &&
+        type == other.type;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^ links.hashCode ^ createdAt.hashCode ^ id.hashCode ^ type.hashCode;
+
+  static List<Occupant> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Occupant>[]
+        : json.map((value) => Occupant.fromJson(value)).toList();
+  }
+
+  static Map<String, Occupant> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Occupant>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Occupant.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -54,20 +77,5 @@ class Occupant {
   @override
   String toString() {
     return 'Occupant[links=$links, createdAt=$createdAt, id=$id, type=$type, ]';
-  }
-
-  static List<Occupant> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Occupant>()
-        : json.map((value) => Occupant.fromJson(value)).toList();
-  }
-
-  static Map<String, Occupant> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Occupant>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Occupant.fromJson(value));
-    }
-    return map;
   }
 }

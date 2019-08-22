@@ -32,15 +32,45 @@ class Condition {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is Condition && runtimeType == other.runtimeType;
+    return other is Condition &&
+        runtimeType == other.runtimeType &&
+        id == other.id &&
+        operator_ == other.operator_ &&
+        path == other.path &&
+        type == other.type &&
+        DeepCollectionEquality.unordered().equals(value, other.value);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      id.hashCode ^
+      operator_.hashCode ^
+      path.hashCode ^
+      type.hashCode ^
+      value.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+
+  static List<Condition> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <Condition>[]
+        : json.map((value) => Condition.fromJson(value)).toList();
+  }
+
+  static Map<String, Condition> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, Condition>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach(
+          (String key, dynamic value) => map[key] = Condition.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -55,20 +85,5 @@ class Condition {
   @override
   String toString() {
     return 'Condition[id=$id, operator_=$operator_, path=$path, type=$type, value=$value, ]';
-  }
-
-  static List<Condition> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<Condition>()
-        : json.map((value) => Condition.fromJson(value)).toList();
-  }
-
-  static Map<String, Condition> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Condition>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Condition.fromJson(value));
-    }
-    return map;
   }
 }

@@ -24,6 +24,7 @@ class PublicationData {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
@@ -35,8 +36,24 @@ class PublicationData {
         title == other.title;
   }
 
+  /// By default hashCode return reference
   @override
   int get hashCode => 0 ^ message.hashCode ^ place.hashCode ^ title.hashCode;
+
+  static List<PublicationData> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <PublicationData>[]
+        : json.map((value) => PublicationData.fromJson(value)).toList();
+  }
+
+  static Map<String, PublicationData> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, PublicationData>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = PublicationData.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -49,20 +66,5 @@ class PublicationData {
   @override
   String toString() {
     return 'PublicationData[message=$message, place=$place, title=$title, ]';
-  }
-
-  static List<PublicationData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<PublicationData>()
-        : json.map((value) => PublicationData.fromJson(value)).toList();
-  }
-
-  static Map<String, PublicationData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PublicationData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PublicationData.fromJson(value));
-    }
-    return map;
   }
 }

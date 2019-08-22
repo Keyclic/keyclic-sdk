@@ -32,16 +32,48 @@ class ActivityAggregatedPagination {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is ActivityAggregatedPagination &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        duration == other.duration &&
+        next == other.next &&
+        unseen == other.unseen &&
+        unread == other.unread &&
+        DeepCollectionEquality.unordered().equals(results, other.results);
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      duration.hashCode ^
+      next.hashCode ^
+      unseen.hashCode ^
+      unread.hashCode ^
+      results.map((dynamic element) => element.hashCode).fold(0,
+          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+
+  static List<ActivityAggregatedPagination> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <ActivityAggregatedPagination>[]
+        : json
+            .map((value) => ActivityAggregatedPagination.fromJson(value))
+            .toList();
+  }
+
+  static Map<String, ActivityAggregatedPagination> mapFromJson(
+      Map<String, dynamic> json) {
+    var map = Map<String, ActivityAggregatedPagination>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = ActivityAggregatedPagination.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -56,23 +88,5 @@ class ActivityAggregatedPagination {
   @override
   String toString() {
     return 'ActivityAggregatedPagination[duration=$duration, next=$next, unseen=$unseen, unread=$unread, results=$results, ]';
-  }
-
-  static List<ActivityAggregatedPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ActivityAggregatedPagination>()
-        : json
-            .map((value) => ActivityAggregatedPagination.fromJson(value))
-            .toList();
-  }
-
-  static Map<String, ActivityAggregatedPagination> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, ActivityAggregatedPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ActivityAggregatedPagination.fromJson(value));
-    }
-    return map;
   }
 }

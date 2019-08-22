@@ -48,15 +48,52 @@ class ReportLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ReportLinks && runtimeType == other.runtimeType;
+    return other is ReportLinks &&
+        runtimeType == other.runtimeType &&
+        category == other.category &&
+        delegatedFrom == other.delegatedFrom &&
+        delegatedTo == other.delegatedTo &&
+        feedback == other.feedback &&
+        operations == other.operations &&
+        organization == other.organization &&
+        place == other.place &&
+        self == other.self &&
+        tracking == other.tracking;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      category.hashCode ^
+      delegatedFrom.hashCode ^
+      delegatedTo.hashCode ^
+      feedback.hashCode ^
+      operations.hashCode ^
+      organization.hashCode ^
+      place.hashCode ^
+      self.hashCode ^
+      tracking.hashCode;
+
+  static List<ReportLinks> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <ReportLinks>[]
+        : json.map((value) => ReportLinks.fromJson(value)).toList();
+  }
+
+  static Map<String, ReportLinks> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, ReportLinks>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = ReportLinks.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -75,20 +112,5 @@ class ReportLinks {
   @override
   String toString() {
     return 'ReportLinks[category=$category, delegatedFrom=$delegatedFrom, delegatedTo=$delegatedTo, feedback=$feedback, operations=$operations, organization=$organization, place=$place, self=$self, tracking=$tracking, ]';
-  }
-
-  static List<ReportLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ReportLinks>()
-        : json.map((value) => ReportLinks.fromJson(value)).toList();
-  }
-
-  static Map<String, ReportLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ReportLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReportLinks.fromJson(value));
-    }
-    return map;
   }
 }

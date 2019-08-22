@@ -16,30 +16,23 @@ class ApplicationLinks {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ApplicationLinks && runtimeType == other.runtimeType;
+    return other is ApplicationLinks &&
+        runtimeType == other.runtimeType &&
+        self == other.self;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'self': self,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ApplicationLinks[self=$self, ]';
-  }
+  int get hashCode => 0 ^ self.hashCode;
 
   static List<ApplicationLinks> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ApplicationLinks>()
+        ? <ApplicationLinks>[]
         : json.map((value) => ApplicationLinks.fromJson(value)).toList();
   }
 
@@ -50,5 +43,16 @@ class ApplicationLinks {
           map[key] = ApplicationLinks.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'self': self,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ApplicationLinks[self=$self, ]';
   }
 }

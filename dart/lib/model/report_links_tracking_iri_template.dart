@@ -16,31 +16,23 @@ class ReportLinksTrackingIriTemplate {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is ReportLinksTrackingIriTemplate &&
-        runtimeType == other.runtimeType;
+        runtimeType == other.runtimeType &&
+        mapping == other.mapping;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'mapping': mapping,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'ReportLinksTrackingIriTemplate[mapping=$mapping, ]';
-  }
+  int get hashCode => 0 ^ mapping.hashCode;
 
   static List<ReportLinksTrackingIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
-        ? List<ReportLinksTrackingIriTemplate>()
+        ? <ReportLinksTrackingIriTemplate>[]
         : json
             .map((value) => ReportLinksTrackingIriTemplate.fromJson(value))
             .toList();
@@ -54,5 +46,16 @@ class ReportLinksTrackingIriTemplate {
           map[key] = ReportLinksTrackingIriTemplate.fromJson(value));
     }
     return map;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'mapping': mapping,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'ReportLinksTrackingIriTemplate[mapping=$mapping, ]';
   }
 }

@@ -21,15 +21,35 @@ class ReviewLinksSelf {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is ReviewLinksSelf && runtimeType == other.runtimeType;
+    return other is ReviewLinksSelf &&
+        runtimeType == other.runtimeType &&
+        href == other.href &&
+        iriTemplate == other.iriTemplate;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
+
+  static List<ReviewLinksSelf> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <ReviewLinksSelf>[]
+        : json.map((value) => ReviewLinksSelf.fromJson(value)).toList();
+  }
+
+  static Map<String, ReviewLinksSelf> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, ReviewLinksSelf>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = ReviewLinksSelf.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -41,20 +61,5 @@ class ReviewLinksSelf {
   @override
   String toString() {
     return 'ReviewLinksSelf[href=$href, iriTemplate=$iriTemplate, ]';
-  }
-
-  static List<ReviewLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<ReviewLinksSelf>()
-        : json.map((value) => ReviewLinksSelf.fromJson(value)).toList();
-  }
-
-  static Map<String, ReviewLinksSelf> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ReviewLinksSelf>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReviewLinksSelf.fromJson(value));
-    }
-    return map;
   }
 }

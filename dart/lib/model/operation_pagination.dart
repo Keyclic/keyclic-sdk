@@ -36,15 +36,47 @@ class OperationPagination {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is OperationPagination && runtimeType == other.runtimeType;
+    return other is OperationPagination &&
+        runtimeType == other.runtimeType &&
+        limit == other.limit &&
+        page == other.page &&
+        pages == other.pages &&
+        total == other.total &&
+        embedded == other.embedded &&
+        links == other.links;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      limit.hashCode ^
+      page.hashCode ^
+      pages.hashCode ^
+      total.hashCode ^
+      embedded.hashCode ^
+      links.hashCode;
+
+  static List<OperationPagination> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <OperationPagination>[]
+        : json.map((value) => OperationPagination.fromJson(value)).toList();
+  }
+
+  static Map<String, OperationPagination> mapFromJson(
+      Map<String, dynamic> json) {
+    var map = Map<String, OperationPagination>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = OperationPagination.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -60,21 +92,5 @@ class OperationPagination {
   @override
   String toString() {
     return 'OperationPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
-  }
-
-  static List<OperationPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OperationPagination>()
-        : json.map((value) => OperationPagination.fromJson(value)).toList();
-  }
-
-  static Map<String, OperationPagination> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, OperationPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationPagination.fromJson(value));
-    }
-    return map;
   }
 }

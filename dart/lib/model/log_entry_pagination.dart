@@ -36,15 +36,47 @@ class LogEntryPagination {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
-    return other is LogEntryPagination && runtimeType == other.runtimeType;
+    return other is LogEntryPagination &&
+        runtimeType == other.runtimeType &&
+        limit == other.limit &&
+        page == other.page &&
+        pages == other.pages &&
+        total == other.total &&
+        embedded == other.embedded &&
+        links == other.links;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0;
+  int get hashCode =>
+      0 ^
+      limit.hashCode ^
+      page.hashCode ^
+      pages.hashCode ^
+      total.hashCode ^
+      embedded.hashCode ^
+      links.hashCode;
+
+  static List<LogEntryPagination> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <LogEntryPagination>[]
+        : json.map((value) => LogEntryPagination.fromJson(value)).toList();
+  }
+
+  static Map<String, LogEntryPagination> mapFromJson(
+      Map<String, dynamic> json) {
+    var map = Map<String, LogEntryPagination>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = LogEntryPagination.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -60,21 +92,5 @@ class LogEntryPagination {
   @override
   String toString() {
     return 'LogEntryPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
-  }
-
-  static List<LogEntryPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<LogEntryPagination>()
-        : json.map((value) => LogEntryPagination.fromJson(value)).toList();
-  }
-
-  static Map<String, LogEntryPagination> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, LogEntryPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = LogEntryPagination.fromJson(value));
-    }
-    return map;
   }
 }

@@ -24,17 +24,38 @@ class OrganizationPreferences {
 
   @override
   bool operator ==(dynamic other) {
+    // Same reference
     if (identical(this, other)) {
       return true;
     }
 
     return other is OrganizationPreferences &&
         runtimeType == other.runtimeType &&
-        public == other.public;
+        public == other.public &&
+        reference == other.reference &&
+        reviewEnabled == other.reviewEnabled;
   }
 
+  /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ public.hashCode;
+  int get hashCode =>
+      0 ^ public.hashCode ^ reference.hashCode ^ reviewEnabled.hashCode;
+
+  static List<OrganizationPreferences> listFromJson(List<dynamic> json) {
+    return json == null
+        ? <OrganizationPreferences>[]
+        : json.map((value) => OrganizationPreferences.fromJson(value)).toList();
+  }
+
+  static Map<String, OrganizationPreferences> mapFromJson(
+      Map<String, dynamic> json) {
+    var map = Map<String, OrganizationPreferences>();
+    if (json != null && json.isNotEmpty) {
+      json.forEach((String key, dynamic value) =>
+          map[key] = OrganizationPreferences.fromJson(value));
+    }
+    return map;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -47,21 +68,5 @@ class OrganizationPreferences {
   @override
   String toString() {
     return 'OrganizationPreferences[public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
-  }
-
-  static List<OrganizationPreferences> listFromJson(List<dynamic> json) {
-    return json == null
-        ? List<OrganizationPreferences>()
-        : json.map((value) => OrganizationPreferences.fromJson(value)).toList();
-  }
-
-  static Map<String, OrganizationPreferences> mapFromJson(
-      Map<String, dynamic> json) {
-    var map = Map<String, OrganizationPreferences>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OrganizationPreferences.fromJson(value));
-    }
-    return map;
   }
 }
