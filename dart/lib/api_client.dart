@@ -8,20 +8,21 @@ class QueryParam {
 }
 
 class ApiClient {
-  ApiClient({this.basePath = "https://api.keyclic.com"}) {
-    // Setup authentications (key: authentication name, value: authentication).
-    //_authentications['bearer'] = ApiKeyAuth("header", "Authorization");
-    _authentications['bearer'] = OAuth();
-  }
+  ApiClient({
+    this.basePath = "https://api.keyclic.com",
+  });
 
+  final Map<String, Authentication> _authentications = {
+    // Setup authentications (key: authentication name, value: authentication).
+    'bearer': OAuth(),
+  };
   final _regList = RegExp(r'^List<(.*)>$');
   final _regMap = RegExp(r'^Map<String,(.*)>$');
 
-  final Client client = Client();
   final String basePath;
+  final Client client = Client();
 
   Map<String, String> _defaultHeaderMap = {};
-  Map<String, Authentication> _authentications = {};
 
   void addDefaultHeader(String key, String value) {
     _defaultHeaderMap[key] = value;
@@ -89,9 +90,7 @@ class ApiClient {
 
   void setAccessToken(String accessToken) {
     _authentications.forEach((key, auth) {
-      if (auth is OAuth) {
-        auth.setAccessToken(accessToken);
-      }
+      auth.setAccessToken(accessToken);
     });
   }
 
