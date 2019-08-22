@@ -8,17 +8,15 @@ Iterable<QueryParam> _convertParametersForCollectionFormat(
   dynamic value, {
   String collectionFormat = 'csv',
 }) {
-  var params = <QueryParam>[];
-
   // preconditions
   if (name == null || name.isEmpty || value == null) {
-    return params;
+    throw ApiException(0, "Missing required params");
   }
 
   if (value is! List) {
-    params.add(QueryParam(name, _parameterToString(value)));
-
-    return params;
+    return <QueryParam>[
+      QueryParam(name, _parameterToString(value)),
+    ];
   }
 
   List values = value as List;
@@ -31,10 +29,12 @@ Iterable<QueryParam> _convertParametersForCollectionFormat(
   final String delimiter =
       collectionFormat.isNotEmpty ? _delimiters[collectionFormat] : ',';
 
-  params.add(QueryParam(
-      name, values.map((v) => _parameterToString(v)).join(delimiter)));
+  final String joinedParameters =
+      values.map((v) => _parameterToString(v)).join(delimiter);
 
-  return params;
+  return <QueryParam>[
+    QueryParam(name, joinedParameters),
+  ];
 }
 
 /// Format the given parameter object into string.
