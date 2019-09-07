@@ -91,7 +91,7 @@ main() {
         exit 0
     fi
 
-    if [[ ! ${1} =~ ^deploy-dart|deploy-js|generate$ ]]; then
+    if [[ ! ${1} =~ ^deploy-dart$|^deploy-js$|^generate$ ]]; then
         echo "${1} is not a supported command."
         exit 1
     fi
