@@ -61,10 +61,12 @@ var BusinessActivity =
 
       this.links = null;
       this.alternateName = null;
+      this.createdAt = null;
       this.id = null;
       this.metadataSchema = null;
       this.name = name;
       this.type = null;
+      this.updatedAt = null;
       this.linksType = _BusinessActivityLinks.default;
       this.metadataSchemaType = _BusinessActivityMetadataSchema.default;
     }
@@ -106,6 +108,13 @@ var BusinessActivity =
             );
           }
 
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
           if (data.hasOwnProperty("id")) {
             object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
@@ -128,6 +137,13 @@ var BusinessActivity =
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

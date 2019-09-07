@@ -47,16 +47,6 @@
   }
 
   describe('ReviewApi', function() {
-    describe('cgetReviewsByFeedback', function() {
-      it('should call cgetReviewsByFeedback successfully', function(done) {
-        //uncomment below and update the code to test cgetReviewsByFeedback
-        //instance.cgetReviewsByFeedback(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getReview', function() {
       it('should call getReview successfully', function(done) {
         //uncomment below and update the code to test getReview
@@ -67,10 +57,10 @@
         done();
       });
     });
-    describe('postReviewByReviewRequest', function() {
-      it('should call postReviewByReviewRequest successfully', function(done) {
-        //uncomment below and update the code to test postReviewByReviewRequest
-        //instance.postReviewByReviewRequest(function(error) {
+    describe('postReview', function() {
+      it('should call postReview successfully', function(done) {
+        //uncomment below and update the code to test postReview
+        //instance.postReview(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

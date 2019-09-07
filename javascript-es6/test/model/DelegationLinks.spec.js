@@ -59,12 +59,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property from (base name: "from")', function() {
-      // uncomment below and update the code to test the property from
-      //var instane = new @KeyclicSdkJavascript.DelegationLinks();
-      //expect(instance).to.be();
-    });
-
     it('should have the property report (base name: "report")', function() {
       // uncomment below and update the code to test the property report
       //var instane = new @KeyclicSdkJavascript.DelegationLinks();
@@ -77,8 +71,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property to (base name: "to")', function() {
-      // uncomment below and update the code to test the property to
+    it('should have the property service (base name: "service")', function() {
+      // uncomment below and update the code to test the property service
       //var instane = new @KeyclicSdkJavascript.DelegationLinks();
       //expect(instance).to.be();
     });

@@ -59,14 +59,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property organization (base name: "organization")', function() {
-      // uncomment below and update the code to test the property organization
+    it('should have the property feed (base name: "feed")', function() {
+      // uncomment below and update the code to test the property feed
       //var instane = new @KeyclicSdkJavascript.PublicationLinks();
       //expect(instance).to.be();
     });
 
-    it('should have the property place (base name: "place")', function() {
-      // uncomment below and update the code to test the property place
+    it('should have the property organization (base name: "organization")', function() {
+      // uncomment below and update the code to test the property organization
       //var instane = new @KeyclicSdkJavascript.PublicationLinks();
       //expect(instance).to.be();
     });

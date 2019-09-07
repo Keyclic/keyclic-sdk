@@ -3,8 +3,8 @@ part of keyclic_sdk_api.api;
 class PublicationLinks {
   PublicationLinks({
     this.author,
+    this.feed,
     this.organization,
-    this.place,
     this.self,
   });
 
@@ -13,16 +13,16 @@ class PublicationLinks {
       return;
     }
     author = PublicationLinksAuthor.fromJson(json['author']);
+    feed = PublicationLinksFeed.fromJson(json['feed']);
     organization = PublicationLinksOrganization.fromJson(json['organization']);
-    place = PublicationLinksPlace.fromJson(json['place']);
     self = PublicationLinksSelf.fromJson(json['self']);
   }
 
   PublicationLinksAuthor author;
 
-  PublicationLinksOrganization organization;
+  PublicationLinksFeed feed;
 
-  PublicationLinksPlace place;
+  PublicationLinksOrganization organization;
 
   PublicationLinksSelf self;
 
@@ -36,8 +36,8 @@ class PublicationLinks {
     return other is PublicationLinks &&
         runtimeType == other.runtimeType &&
         author == other.author &&
+        feed == other.feed &&
         organization == other.organization &&
-        place == other.place &&
         self == other.self;
   }
 
@@ -46,8 +46,8 @@ class PublicationLinks {
   int get hashCode =>
       0 ^
       author.hashCode ^
+      feed.hashCode ^
       organization.hashCode ^
-      place.hashCode ^
       self.hashCode;
 
   static List<PublicationLinks> listFromJson(List<dynamic> json) {
@@ -68,14 +68,14 @@ class PublicationLinks {
   Map<String, dynamic> toJson() {
     return {
       'author': author,
+      'feed': feed,
       'organization': organization,
-      'place': place,
       'self': self,
     };
   }
 
   @override
   String toString() {
-    return 'PublicationLinks[author=$author, organization=$organization, place=$place, self=$self, ]';
+    return 'PublicationLinks[author=$author, feed=$feed, organization=$organization, self=$self, ]';
   }
 }

@@ -26,8 +26,10 @@ export default class Device {
      */
   constructor() {
     this.links = null;
+    this.createdAt = null;
     this.id = null;
     this.type = null;
+    this.updatedAt = null;
 
     this.linksType = DeviceLinks;
   }
@@ -50,11 +52,17 @@ export default class Device {
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

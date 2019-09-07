@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 1.42.2
-- Package version: 1.41.9
+- API version: 2.0.3
+- Package version: 2.0.3
 
 ## Getting started
 
@@ -28,121 +28,122 @@ All URIs are relative to *https://api.keyclic.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*@KeyclicSdkJavascript.AnalyticApi* | [**getAnalyticByOrganization**](docs/AnalyticApi.md#getAnalyticByOrganization) | **GET** /organizations/{organization}/analytics | Retrieve one Analytic resource.
 *@KeyclicSdkJavascript.ApplicationApi* | [**getApplication**](docs/ApplicationApi.md#getApplication) | **GET** /applications/{application} | Retrieve one Application resource.
-*@KeyclicSdkJavascript.AssignApi* | [**postAssignByOperation**](docs/AssignApi.md#postAssignByOperation) | **POST** /operations/{operation}/assign | Create one Assign resource.
-*@KeyclicSdkJavascript.BusinessActivityApi* | [**cgetBusinessActivities**](docs/BusinessActivityApi.md#cgetBusinessActivities) | **GET** /businessactivities | Retrieve all BusinessActivity resources.
-*@KeyclicSdkJavascript.BusinessActivityApi* | [**getBusinessActivity**](docs/BusinessActivityApi.md#getBusinessActivity) | **GET** /businessactivities/{businessActivity} | Retrieve one BusinessActivity resource.
+*@KeyclicSdkJavascript.BusinessActivityApi* | [**cgetBusinessActivities**](docs/BusinessActivityApi.md#cgetBusinessActivities) | **GET** /business-activities | Retrieve all BusinessActivity resources.
+*@KeyclicSdkJavascript.BusinessActivityApi* | [**getBusinessActivity**](docs/BusinessActivityApi.md#getBusinessActivity) | **GET** /business-activities/{businessActivity} | Retrieve one BusinessActivity resource.
+*@KeyclicSdkJavascript.BusinessActivityApi* | [**getSchemaByBusinessActivity**](docs/BusinessActivityApi.md#getSchemaByBusinessActivity) | **GET** /businessactivities/{businessActivity}/schema | Retrieve one Schema resource.
 *@KeyclicSdkJavascript.CategoryApi* | [**cgetCategories**](docs/CategoryApi.md#cgetCategories) | **GET** /categories | Retrieve all Category resources.
-*@KeyclicSdkJavascript.CategoryApi* | [**cgetCategoriesByOrganization**](docs/CategoryApi.md#cgetCategoriesByOrganization) | **GET** /organizations/{organization}/categories | Retrieve all Category resources.
 *@KeyclicSdkJavascript.CategoryApi* | [**deleteCategory**](docs/CategoryApi.md#deleteCategory) | **DELETE** /categories/{category} | Remove one Category resource.
 *@KeyclicSdkJavascript.CategoryApi* | [**getCategory**](docs/CategoryApi.md#getCategory) | **GET** /categories/{category} | Retrieve one Category resource.
 *@KeyclicSdkJavascript.CategoryApi* | [**patchCategory**](docs/CategoryApi.md#patchCategory) | **PATCH** /categories/{category} | Edit one Category resource.
-*@KeyclicSdkJavascript.CategoryApi* | [**postCategoryByOrganization**](docs/CategoryApi.md#postCategoryByOrganization) | **POST** /organizations/{organization}/categories | Create one Category resource.
-*@KeyclicSdkJavascript.ChangeApi* | [**postChangeByToken**](docs/ChangeApi.md#postChangeByToken) | **POST** /security/password/change/{token} | Create one Change resource.
-*@KeyclicSdkJavascript.CommentApi* | [**cgetCommentsByFeedback**](docs/CommentApi.md#cgetCommentsByFeedback) | **GET** /feedbacks/{feedback}/comments | Retrieve all Comment resources.
-*@KeyclicSdkJavascript.CommentApi* | [**cgetCommentsByOperation**](docs/CommentApi.md#cgetCommentsByOperation) | **GET** /operations/{operation}/comments | Retrieve all Comment resources.
-*@KeyclicSdkJavascript.CommentApi* | [**postCommentByFeedback**](docs/CommentApi.md#postCommentByFeedback) | **POST** /feedbacks/{feedback}/comments | Create one Comment resource.
-*@KeyclicSdkJavascript.CommentApi* | [**postCommentByOperation**](docs/CommentApi.md#postCommentByOperation) | **POST** /operations/{operation}/comments | Create one Comment resource.
-*@KeyclicSdkJavascript.ContributionApi* | [**cgetContributionsByFeedback**](docs/ContributionApi.md#cgetContributionsByFeedback) | **GET** /feedbacks/{feedback}/contributions | Retrieve all Contribution resources.
-*@KeyclicSdkJavascript.ContributionApi* | [**postContributionByFeedback**](docs/ContributionApi.md#postContributionByFeedback) | **POST** /feedbacks/{feedback}/contributions | Create one Contribution resource.
-*@KeyclicSdkJavascript.DelegateApi* | [**postDelegateByOrganization**](docs/DelegateApi.md#postDelegateByOrganization) | **POST** /organizations/{organization}/delegates | Create one Delegate resource.
-*@KeyclicSdkJavascript.DelegationApi* | [**cgetDelegationsByOrganization**](docs/DelegationApi.md#cgetDelegationsByOrganization) | **GET** /organizations/{organization}/delegations | Retrieve all Delegation resources.
+*@KeyclicSdkJavascript.CategoryApi* | [**postCategory**](docs/CategoryApi.md#postCategory) | **POST** /categories | Create one Category resource.
+*@KeyclicSdkJavascript.ContributionApi* | [**cgetContributions**](docs/ContributionApi.md#cgetContributions) | **GET** /contributions | Retrieve all Contribution resources.
+*@KeyclicSdkJavascript.ContributionApi* | [**getContribution**](docs/ContributionApi.md#getContribution) | **GET** /contributions/{contribution} | Retrieve one Contribution resource.
+*@KeyclicSdkJavascript.ContributionApi* | [**postContribution**](docs/ContributionApi.md#postContribution) | **POST** /contributions | Create one Contribution resource.
 *@KeyclicSdkJavascript.DelegationApi* | [**getDelegation**](docs/DelegationApi.md#getDelegation) | **GET** /delegations/{delegation} | Retrieve one Delegation resource.
-*@KeyclicSdkJavascript.DeviceApi* | [**deleteDeviceByPersonAndDevice**](docs/DeviceApi.md#deleteDeviceByPersonAndDevice) | **DELETE** /people/{person}/devices/{device} | Remove one Device resource.
-*@KeyclicSdkJavascript.DeviceApi* | [**postDeviceByPerson**](docs/DeviceApi.md#postDeviceByPerson) | **POST** /people/{person}/devices | Create one Device resource.
-*@KeyclicSdkJavascript.DocumentApi* | [**cgetDocumentsByReport**](docs/DocumentApi.md#cgetDocumentsByReport) | **GET** /reports/{report}/documents | Retrieve all Document resources.
+*@KeyclicSdkJavascript.DelegationApi* | [**postDelegation**](docs/DelegationApi.md#postDelegation) | **POST** /delegations | Create one Delegation resource.
+*@KeyclicSdkJavascript.DelegationApi* | [**postWorkflowByDelegation**](docs/DelegationApi.md#postWorkflowByDelegation) | **POST** /delegations/{delegation}/workflow | Create one Workflow resource.
+*@KeyclicSdkJavascript.DeviceApi* | [**deleteDevice**](docs/DeviceApi.md#deleteDevice) | **DELETE** /devices/{device} | Remove one Device resource.
+*@KeyclicSdkJavascript.DeviceApi* | [**getDevice**](docs/DeviceApi.md#getDevice) | **GET** /devices/{device} | Retrieve one Device resource.
+*@KeyclicSdkJavascript.DeviceApi* | [**postDevice**](docs/DeviceApi.md#postDevice) | **POST** /devices | Create one Device resource.
 *@KeyclicSdkJavascript.DocumentApi* | [**deleteDocument**](docs/DocumentApi.md#deleteDocument) | **DELETE** /documents/{document} | Remove one Document resource.
 *@KeyclicSdkJavascript.DocumentApi* | [**getDocument**](docs/DocumentApi.md#getDocument) | **GET** /documents/{document} | Retrieve one Document resource.
 *@KeyclicSdkJavascript.DocumentApi* | [**patchDocument**](docs/DocumentApi.md#patchDocument) | **PATCH** /documents/{document} | Edit one Document resource.
-*@KeyclicSdkJavascript.DocumentApi* | [**postDocumentByReport**](docs/DocumentApi.md#postDocumentByReport) | **POST** /reports/{report}/documents | Create one Document resource.
-*@KeyclicSdkJavascript.ExportApi* | [**cpostExportByOrganization**](docs/ExportApi.md#cpostExportByOrganization) | **POST** /organizations/{organization}/reports/exports | Retrieve all Export resources.
-*@KeyclicSdkJavascript.ExportApi* | [**getExportByOrganizationAndToken**](docs/ExportApi.md#getExportByOrganizationAndToken) | **GET** /organizations/{organization}/exports/{token} | Retrieve one Export resource.
-*@KeyclicSdkJavascript.FacebookApi* | [**postFacebook**](docs/FacebookApi.md#postFacebook) | **POST** /security/connect/facebook | Create one Facebook resource.
+*@KeyclicSdkJavascript.ExternalServiceApi* | [**deleteExternalService**](docs/ExternalServiceApi.md#deleteExternalService) | **DELETE** /external-services/{externalService} | Remove one ExternalService resource.
+*@KeyclicSdkJavascript.ExternalServiceApi* | [**getExternalService**](docs/ExternalServiceApi.md#getExternalService) | **GET** /external-services/{externalService} | Retrieve one ExternalService resource.
+*@KeyclicSdkJavascript.ExternalServiceApi* | [**patchExternalService**](docs/ExternalServiceApi.md#patchExternalService) | **PATCH** /external-services/{externalService} | Edit one ExternalService resource.
+*@KeyclicSdkJavascript.ExternalServiceApi* | [**postExternalService**](docs/ExternalServiceApi.md#postExternalService) | **POST** /external-services | Create one ExternalService resource.
 *@KeyclicSdkJavascript.FeedApi* | [**cgetFeeds**](docs/FeedApi.md#cgetFeeds) | **GET** /feeds | Retrieve all Feed resources.
 *@KeyclicSdkJavascript.FeedApi* | [**cgetFeedsByFeed**](docs/FeedApi.md#cgetFeedsByFeed) | **GET** /feeds/{feed} | Retrieve all Feed resources.
+*@KeyclicSdkJavascript.FeedApi* | [**cgetFollowingsByFeed**](docs/FeedApi.md#cgetFollowingsByFeed) | **GET** /feeds/{feed}/following | Retrieve all Following resources.
+*@KeyclicSdkJavascript.FeedApi* | [**postFollowByFeed**](docs/FeedApi.md#postFollowByFeed) | **POST** /feeds/{feed}/follow | Create one Follow resource.
+*@KeyclicSdkJavascript.FeedApi* | [**postReadByFeedAndGroup**](docs/FeedApi.md#postReadByFeedAndGroup) | **POST** /feeds/{feed}/read/{group} | Create one Read resource.
+*@KeyclicSdkJavascript.FeedApi* | [**postUnfollowByFeed**](docs/FeedApi.md#postUnfollowByFeed) | **POST** /feeds/{feed}/unfollow | Create one Unfollow resource.
+*@KeyclicSdkJavascript.FeedbackApi* | [**cgetCommentsByFeedback**](docs/FeedbackApi.md#cgetCommentsByFeedback) | **GET** /feedbacks/{feedback}/comments | Retrieve all Comment resources.
 *@KeyclicSdkJavascript.FeedbackApi* | [**cgetFeedback**](docs/FeedbackApi.md#cgetFeedback) | **GET** /feedbacks | Retrieve all Feedback resources.
-*@KeyclicSdkJavascript.FeedbackApi* | [**cgetFeedbackByPerson**](docs/FeedbackApi.md#cgetFeedbackByPerson) | **GET** /people/{person}/feedbacks | Retrieve all Feedback resources.
+*@KeyclicSdkJavascript.FeedbackApi* | [**cgetReviewsByFeedback**](docs/FeedbackApi.md#cgetReviewsByFeedback) | **GET** /feedbacks/{feedback}/reviews | Retrieve all Review resources.
 *@KeyclicSdkJavascript.FeedbackApi* | [**getFeedback**](docs/FeedbackApi.md#getFeedback) | **GET** /feedbacks/{feedback} | Retrieve one Feedback resource.
-*@KeyclicSdkJavascript.FileApi* | [**getFileByDocument**](docs/FileApi.md#getFileByDocument) | **GET** /documents/{document}/file | Retrieve one File resource.
-*@KeyclicSdkJavascript.FollowApi* | [**postFollowByFeed**](docs/FollowApi.md#postFollowByFeed) | **POST** /feeds/{feed}/follow | Create one Follow resource.
-*@KeyclicSdkJavascript.FollowingApi* | [**cgetFollowingsByFeed**](docs/FollowingApi.md#cgetFollowingsByFeed) | **GET** /feeds/{feed}/following | Retrieve all Following resources.
-*@KeyclicSdkJavascript.ImageApi* | [**deleteImageByOperationAndImage**](docs/ImageApi.md#deleteImageByOperationAndImage) | **DELETE** /operations/{operation}/images/{image} | Remove one Image resource.
-*@KeyclicSdkJavascript.ImageApi* | [**getImageByBusinessActivityAndWidthAndHeight**](docs/ImageApi.md#getImageByBusinessActivityAndWidthAndHeight) | **GET** /businessactivities/{businessActivity}/image/{width}/{height} | Retrieve one Image resource.
-*@KeyclicSdkJavascript.ImageApi* | [**getImageByFeedbackAndImageAndWidthAndHeight**](docs/ImageApi.md#getImageByFeedbackAndImageAndWidthAndHeight) | **GET** /feedbacks/{feedback}/images/{image}/{width}/{height} | Retrieve one Image resource.
-*@KeyclicSdkJavascript.ImageApi* | [**getImageByOperationAndImageAndWidthAndHeight**](docs/ImageApi.md#getImageByOperationAndImageAndWidthAndHeight) | **GET** /operations/{operation}/images/{image}/{width}/{height} | Retrieve one Image resource.
-*@KeyclicSdkJavascript.ImageApi* | [**getImageByPersonAndWidthAndHeight**](docs/ImageApi.md#getImageByPersonAndWidthAndHeight) | **GET** /people/{person}/image/{width}/{height} | Retrieve one Image resource.
-*@KeyclicSdkJavascript.ImageApi* | [**postImageByFeedback**](docs/ImageApi.md#postImageByFeedback) | **POST** /feedbacks/{feedback}/images | Create one Image resource.
-*@KeyclicSdkJavascript.ImageApi* | [**postImageByOperation**](docs/ImageApi.md#postImageByOperation) | **POST** /operations/{operation}/images | Create one Image resource.
-*@KeyclicSdkJavascript.IssueApi* | [**postIssue**](docs/IssueApi.md#postIssue) | **POST** /feedbacks/issues | Create one Issue resource.
-*@KeyclicSdkJavascript.LogApi* | [**cgetLogsByOperation**](docs/LogApi.md#cgetLogsByOperation) | **GET** /operations/{operation}/logs | Retrieve all Log resources.
-*@KeyclicSdkJavascript.LoginApi* | [**postLogin**](docs/LoginApi.md#postLogin) | **POST** /security/login | Create one Login resource.
-*@KeyclicSdkJavascript.LogoApi* | [**getLogoByOrganizationAndWidthAndHeight**](docs/LogoApi.md#getLogoByOrganizationAndWidthAndHeight) | **GET** /organizations/{organization}/logo/{width}/{height} | Retrieve one Logo resource.
-*@KeyclicSdkJavascript.MemberApi* | [**cgetMembersByOrganization**](docs/MemberApi.md#cgetMembersByOrganization) | **GET** /organizations/{organization}/members | Retrieve all Member resources.
-*@KeyclicSdkJavascript.MemberApi* | [**deleteMemberByOrganizationAndMember**](docs/MemberApi.md#deleteMemberByOrganizationAndMember) | **DELETE** /organizations/{organization}/members/{member} | Remove one Member resource.
-*@KeyclicSdkJavascript.MemberApi* | [**getMemberByOrganizationAndMember**](docs/MemberApi.md#getMemberByOrganizationAndMember) | **GET** /organizations/{organization}/members/{member} | Retrieve one Member resource.
-*@KeyclicSdkJavascript.MemberApi* | [**patchMemberByOrganizationAndMember**](docs/MemberApi.md#patchMemberByOrganizationAndMember) | **PATCH** /organizations/{organization}/members/{member} | Edit one Member resource.
-*@KeyclicSdkJavascript.MemberApi* | [**postMemberByOrganization**](docs/MemberApi.md#postMemberByOrganization) | **POST** /organizations/{organization}/members | Create one Member resource.
-*@KeyclicSdkJavascript.MembershipApi* | [**cgetMembershipsByPerson**](docs/MembershipApi.md#cgetMembershipsByPerson) | **GET** /people/{person}/memberships | Retrieve all Membership resources.
-*@KeyclicSdkJavascript.OccupantApi* | [**cgetOccupants**](docs/OccupantApi.md#cgetOccupants) | **GET** /occupants | Retrieve all Occupant resources.
-*@KeyclicSdkJavascript.OccupantApi* | [**cgetOccupantsByPlace**](docs/OccupantApi.md#cgetOccupantsByPlace) | **GET** /places/{place}/occupants | Retrieve all Occupant resources.
-*@KeyclicSdkJavascript.OccupantApi* | [**deleteOccupantByPlaceAndOccupant**](docs/OccupantApi.md#deleteOccupantByPlaceAndOccupant) | **DELETE** /places/{place}/occupants/{occupant} | Remove one Occupant resource.
+*@KeyclicSdkJavascript.FeedbackApi* | [**getTrackingByFeedback**](docs/FeedbackApi.md#getTrackingByFeedback) | **GET** /feedbacks/{feedback}/tracking | Retrieve one Tracking resource.
+*@KeyclicSdkJavascript.FeedbackApi* | [**postCommentByFeedback**](docs/FeedbackApi.md#postCommentByFeedback) | **POST** /feedbacks/{feedback}/comments | Create one Comment resource.
+*@KeyclicSdkJavascript.FeedbackApi* | [**postImageByFeedback**](docs/FeedbackApi.md#postImageByFeedback) | **POST** /feedbacks/{feedback}/images | Create one Image resource.
+*@KeyclicSdkJavascript.FeedbackApi* | [**postIssue**](docs/FeedbackApi.md#postIssue) | **POST** /feedbacks/issues | Create one Issue resource.
+*@KeyclicSdkJavascript.FeedbackApi* | [**postWorkflowByFeedback**](docs/FeedbackApi.md#postWorkflowByFeedback) | **POST** /feedbacks/{feedback}/workflow | Create one Workflow resource.
+*@KeyclicSdkJavascript.InternalServiceApi* | [**deleteInternalService**](docs/InternalServiceApi.md#deleteInternalService) | **DELETE** /internal-services/{internalService} | Remove one InternalService resource.
+*@KeyclicSdkJavascript.InternalServiceApi* | [**getInternalService**](docs/InternalServiceApi.md#getInternalService) | **GET** /internal-services/{internalService} | Retrieve one InternalService resource.
+*@KeyclicSdkJavascript.InternalServiceApi* | [**patchInternalService**](docs/InternalServiceApi.md#patchInternalService) | **PATCH** /internal-services/{internalService} | Edit one InternalService resource.
+*@KeyclicSdkJavascript.InternalServiceApi* | [**postInternalService**](docs/InternalServiceApi.md#postInternalService) | **POST** /internal-services | Create one InternalService resource.
+*@KeyclicSdkJavascript.MemberApi* | [**deleteMember**](docs/MemberApi.md#deleteMember) | **DELETE** /members/{member} | Remove one Member resource.
+*@KeyclicSdkJavascript.MemberApi* | [**getMember**](docs/MemberApi.md#getMember) | **GET** /members/{member} | Retrieve one Member resource.
+*@KeyclicSdkJavascript.MemberApi* | [**patchMember**](docs/MemberApi.md#patchMember) | **PATCH** /members/{member} | Edit one Member resource.
+*@KeyclicSdkJavascript.MemberApi* | [**postMember**](docs/MemberApi.md#postMember) | **POST** /members | Create one Member resource.
+*@KeyclicSdkJavascript.OccupantApi* | [**deleteOccupant**](docs/OccupantApi.md#deleteOccupant) | **DELETE** /occupants/{occupant} | Remove one Occupant resource.
 *@KeyclicSdkJavascript.OccupantApi* | [**getOccupant**](docs/OccupantApi.md#getOccupant) | **GET** /occupants/{occupant} | Retrieve one Occupant resource.
-*@KeyclicSdkJavascript.OccupantApi* | [**postOccupantByPlace**](docs/OccupantApi.md#postOccupantByPlace) | **POST** /places/{place}/occupants | Create one Occupant resource.
-*@KeyclicSdkJavascript.OperationApi* | [**cgetOperationsByOrganization**](docs/OperationApi.md#cgetOperationsByOrganization) | **GET** /organizations/{organization}/operations | Retrieve all Operation resources.
-*@KeyclicSdkJavascript.OperationApi* | [**cgetOperationsByPerson**](docs/OperationApi.md#cgetOperationsByPerson) | **GET** /people/{person}/operations | Retrieve all Operation resources.
-*@KeyclicSdkJavascript.OperationApi* | [**cgetOperationsByReport**](docs/OperationApi.md#cgetOperationsByReport) | **GET** /reports/{report}/operations | Retrieve all Operation resources.
+*@KeyclicSdkJavascript.OccupantApi* | [**postOccupant**](docs/OccupantApi.md#postOccupant) | **POST** /occupants | Create one Occupant resource.
+*@KeyclicSdkJavascript.OperationApi* | [**cgetCommentsByOperation**](docs/OperationApi.md#cgetCommentsByOperation) | **GET** /operations/{operation}/comments | Retrieve all Comment resources.
+*@KeyclicSdkJavascript.OperationApi* | [**deleteImageByOperationAndImage**](docs/OperationApi.md#deleteImageByOperationAndImage) | **DELETE** /operations/{operation}/images/{image} | Remove one Image resource.
 *@KeyclicSdkJavascript.OperationApi* | [**deleteOperation**](docs/OperationApi.md#deleteOperation) | **DELETE** /operations/{operation} | Remove one Operation resource.
 *@KeyclicSdkJavascript.OperationApi* | [**getOperation**](docs/OperationApi.md#getOperation) | **GET** /operations/{operation} | Retrieve one Operation resource.
+*@KeyclicSdkJavascript.OperationApi* | [**getTrackingByOperation**](docs/OperationApi.md#getTrackingByOperation) | **GET** /operations/{operation}/tracking | Retrieve one Tracking resource.
 *@KeyclicSdkJavascript.OperationApi* | [**patchOperation**](docs/OperationApi.md#patchOperation) | **PATCH** /operations/{operation} | Edit one Operation resource.
+*@KeyclicSdkJavascript.OperationApi* | [**postAssignByOperation**](docs/OperationApi.md#postAssignByOperation) | **POST** /operations/{operation}/assign | Create one Assign resource.
+*@KeyclicSdkJavascript.OperationApi* | [**postCommentByOperation**](docs/OperationApi.md#postCommentByOperation) | **POST** /operations/{operation}/comments | Create one Comment resource.
+*@KeyclicSdkJavascript.OperationApi* | [**postImageByOperation**](docs/OperationApi.md#postImageByOperation) | **POST** /operations/{operation}/images | Create one Image resource.
 *@KeyclicSdkJavascript.OperationApi* | [**postOperation**](docs/OperationApi.md#postOperation) | **POST** /operations | Create one Operation resource.
+*@KeyclicSdkJavascript.OperationApi* | [**postSignByOperation**](docs/OperationApi.md#postSignByOperation) | **POST** /operations/{operation}/sign | Create one Sign resource.
+*@KeyclicSdkJavascript.OperationApi* | [**postWorkflowByOperation**](docs/OperationApi.md#postWorkflowByOperation) | **POST** /operations/{operation}/workflow | Create one Workflow resource.
+*@KeyclicSdkJavascript.OrganizationApi* | [**cgetCategoriesByOrganization**](docs/OrganizationApi.md#cgetCategoriesByOrganization) | **GET** /organizations/{organization}/categories | Retrieve all Category resources.
+*@KeyclicSdkJavascript.OrganizationApi* | [**cgetDelegationsByOrganization**](docs/OrganizationApi.md#cgetDelegationsByOrganization) | **GET** /organizations/{organization}/delegations | Retrieve all Delegation resources.
+*@KeyclicSdkJavascript.OrganizationApi* | [**cgetExternalServicesByOrganization**](docs/OrganizationApi.md#cgetExternalServicesByOrganization) | **GET** /organizations/{organization}/external-services | Retrieve all ExternalService resources.
+*@KeyclicSdkJavascript.OrganizationApi* | [**cgetInternalServicesByOrganization**](docs/OrganizationApi.md#cgetInternalServicesByOrganization) | **GET** /organizations/{organization}/internal-services | Retrieve all InternalService resources.
+*@KeyclicSdkJavascript.OrganizationApi* | [**cgetMembersByOrganization**](docs/OrganizationApi.md#cgetMembersByOrganization) | **GET** /organizations/{organization}/members | Retrieve all Member resources.
+*@KeyclicSdkJavascript.OrganizationApi* | [**cgetOperationsByOrganization**](docs/OrganizationApi.md#cgetOperationsByOrganization) | **GET** /organizations/{organization}/operations | Retrieve all Operation resources.
 *@KeyclicSdkJavascript.OrganizationApi* | [**cgetOrganizations**](docs/OrganizationApi.md#cgetOrganizations) | **GET** /organizations | Retrieve all Organization resources.
+*@KeyclicSdkJavascript.OrganizationApi* | [**cgetPlacesByOrganization**](docs/OrganizationApi.md#cgetPlacesByOrganization) | **GET** /organizations/{organization}/places | Retrieve all Place resources.
+*@KeyclicSdkJavascript.OrganizationApi* | [**cgetPublicationsByOrganization**](docs/OrganizationApi.md#cgetPublicationsByOrganization) | **GET** /organizations/{organization}/publications | Retrieve all Publication resources.
+*@KeyclicSdkJavascript.OrganizationApi* | [**cgetReportsByOrganization**](docs/OrganizationApi.md#cgetReportsByOrganization) | **GET** /organizations/{organization}/reports | Retrieve all Report resources.
+*@KeyclicSdkJavascript.OrganizationApi* | [**cgetWebhooksByOrganization**](docs/OrganizationApi.md#cgetWebhooksByOrganization) | **GET** /organizations/{organization}/webhooks | Retrieve all Webhook resources.
+*@KeyclicSdkJavascript.OrganizationApi* | [**cpostExportByOrganization**](docs/OrganizationApi.md#cpostExportByOrganization) | **POST** /organizations/{organization}/exports | Retrieve all Export resources.
+*@KeyclicSdkJavascript.OrganizationApi* | [**getAnalyticByOrganization**](docs/OrganizationApi.md#getAnalyticByOrganization) | **GET** /organizations/{organization}/analytics | Retrieve one Analytic resource.
+*@KeyclicSdkJavascript.OrganizationApi* | [**getFormByOrganization**](docs/OrganizationApi.md#getFormByOrganization) | **GET** /organizations/{organization}/form | Retrieve one Form resource.
 *@KeyclicSdkJavascript.OrganizationApi* | [**getOrganization**](docs/OrganizationApi.md#getOrganization) | **GET** /organizations/{organization} | Retrieve one Organization resource.
 *@KeyclicSdkJavascript.OrganizationApi* | [**patchOrganization**](docs/OrganizationApi.md#patchOrganization) | **PATCH** /organizations/{organization} | Edit one Organization resource.
 *@KeyclicSdkJavascript.OrganizationApi* | [**postOrganization**](docs/OrganizationApi.md#postOrganization) | **POST** /organizations | Create one Organization resource.
+*@KeyclicSdkJavascript.PersonApi* | [**cgetFeedbackByPerson**](docs/PersonApi.md#cgetFeedbackByPerson) | **GET** /people/{person}/feedbacks | Retrieve all Feedback resources.
+*@KeyclicSdkJavascript.PersonApi* | [**cgetMembershipsByPerson**](docs/PersonApi.md#cgetMembershipsByPerson) | **GET** /people/{person}/memberships | Retrieve all Membership resources.
+*@KeyclicSdkJavascript.PersonApi* | [**cgetOccupantsByPerson**](docs/PersonApi.md#cgetOccupantsByPerson) | **GET** /people/{person}/occupants | Retrieve all Occupant resources.
+*@KeyclicSdkJavascript.PersonApi* | [**cgetOperationsByPerson**](docs/PersonApi.md#cgetOperationsByPerson) | **GET** /people/{person}/operations | Retrieve all Operation resources.
 *@KeyclicSdkJavascript.PersonApi* | [**cgetPeople**](docs/PersonApi.md#cgetPeople) | **GET** /people | Retrieve all Person resources.
+*@KeyclicSdkJavascript.PersonApi* | [**cgetReportsByPerson**](docs/PersonApi.md#cgetReportsByPerson) | **GET** /people/{person}/reports | Retrieve all Report resources.
+*@KeyclicSdkJavascript.PersonApi* | [**cgetReviewRequestsByPerson**](docs/PersonApi.md#cgetReviewRequestsByPerson) | **GET** /people/{person}/review-requests | Retrieve all ReviewRequest resources.
 *@KeyclicSdkJavascript.PersonApi* | [**getPerson**](docs/PersonApi.md#getPerson) | **GET** /people/{person} | Retrieve one Person resource.
 *@KeyclicSdkJavascript.PersonApi* | [**patchPerson**](docs/PersonApi.md#patchPerson) | **PATCH** /people/{person} | Edit one Person resource.
+*@KeyclicSdkJavascript.PlaceApi* | [**cgetOccupantsByPlace**](docs/PlaceApi.md#cgetOccupantsByPlace) | **GET** /places/{place}/occupants | Retrieve all Occupant resources.
 *@KeyclicSdkJavascript.PlaceApi* | [**cgetPlaces**](docs/PlaceApi.md#cgetPlaces) | **GET** /places | Retrieve all Place resources.
-*@KeyclicSdkJavascript.PlaceApi* | [**cgetPlacesByOrganization**](docs/PlaceApi.md#cgetPlacesByOrganization) | **GET** /organizations/{organization}/places | Retrieve all Place resources.
 *@KeyclicSdkJavascript.PlaceApi* | [**getPlace**](docs/PlaceApi.md#getPlace) | **GET** /places/{place} | Retrieve one Place resource.
 *@KeyclicSdkJavascript.PlaceApi* | [**patchPlace**](docs/PlaceApi.md#patchPlace) | **PATCH** /places/{place} | Edit one Place resource.
-*@KeyclicSdkJavascript.PlaceApi* | [**postPlaceByOrganization**](docs/PlaceApi.md#postPlaceByOrganization) | **POST** /organizations/{organization}/places | Create one Place resource.
-*@KeyclicSdkJavascript.PublicationApi* | [**cgetPublicationsByOrganization**](docs/PublicationApi.md#cgetPublicationsByOrganization) | **GET** /organizations/{organization}/publications | Retrieve all Publication resources.
-*@KeyclicSdkJavascript.PublicationApi* | [**getPublicationByOrganizationAndPublication**](docs/PublicationApi.md#getPublicationByOrganizationAndPublication) | **GET** /organizations/{organization}/publications/{publication} | Retrieve one Publication resource.
-*@KeyclicSdkJavascript.PublicationApi* | [**postPublicationByOrganization**](docs/PublicationApi.md#postPublicationByOrganization) | **POST** /organizations/{organization}/publications | Create one Publication resource.
-*@KeyclicSdkJavascript.ReadApi* | [**postReadByFeedAndGroup**](docs/ReadApi.md#postReadByFeedAndGroup) | **POST** /feeds/{feed}/read/{group} | Create one Read resource.
-*@KeyclicSdkJavascript.RegisterApi* | [**postRegister**](docs/RegisterApi.md#postRegister) | **POST** /security/register | Create one Register resource.
-*@KeyclicSdkJavascript.RelationshipApi* | [**deleteRelationshipByOrganizationAndService**](docs/RelationshipApi.md#deleteRelationshipByOrganizationAndService) | **DELETE** /organizations/{organization}/relationships/{service} | Remove one Relationship resource.
-*@KeyclicSdkJavascript.RelationshipApi* | [**postRelationshipByOrganization**](docs/RelationshipApi.md#postRelationshipByOrganization) | **POST** /organizations/{organization}/relationships | Create one Relationship resource.
-*@KeyclicSdkJavascript.ReportApi* | [**cgetReportsByOrganization**](docs/ReportApi.md#cgetReportsByOrganization) | **GET** /organizations/{organization}/reports | Retrieve all Report resources.
+*@KeyclicSdkJavascript.PlaceApi* | [**postPlace**](docs/PlaceApi.md#postPlace) | **POST** /places | Create one Place resource.
+*@KeyclicSdkJavascript.PublicationApi* | [**deletePublication**](docs/PublicationApi.md#deletePublication) | **DELETE** /publications/{publication} | Remove one Publication resource.
+*@KeyclicSdkJavascript.PublicationApi* | [**getPublication**](docs/PublicationApi.md#getPublication) | **GET** /publications/{publication} | Retrieve one Publication resource.
+*@KeyclicSdkJavascript.PublicationApi* | [**postPublication**](docs/PublicationApi.md#postPublication) | **POST** /publications | Create one Publication resource.
+*@KeyclicSdkJavascript.ReportApi* | [**cgetDocumentsByReport**](docs/ReportApi.md#cgetDocumentsByReport) | **GET** /reports/{report}/documents | Retrieve all Document resources.
+*@KeyclicSdkJavascript.ReportApi* | [**cgetOperationsByReport**](docs/ReportApi.md#cgetOperationsByReport) | **GET** /reports/{report}/operations | Retrieve all Operation resources.
 *@KeyclicSdkJavascript.ReportApi* | [**getReport**](docs/ReportApi.md#getReport) | **GET** /reports/{report} | Retrieve one Report resource.
+*@KeyclicSdkJavascript.ReportApi* | [**getTrackingByReport**](docs/ReportApi.md#getTrackingByReport) | **GET** /reports/{report}/tracking | Retrieve one Tracking resource.
 *@KeyclicSdkJavascript.ReportApi* | [**patchReport**](docs/ReportApi.md#patchReport) | **PATCH** /reports/{report} | Edit one Report resource.
-*@KeyclicSdkJavascript.RequestApi* | [**cgetRequestsByPerson**](docs/RequestApi.md#cgetRequestsByPerson) | **GET** /people/{person}/review-requests | Retrieve all Request resources.
-*@KeyclicSdkJavascript.ResetApi* | [**postReset**](docs/ResetApi.md#postReset) | **POST** /security/password/change-request | Create one Reset resource.
-*@KeyclicSdkJavascript.ReviewApi* | [**cgetReviewsByFeedback**](docs/ReviewApi.md#cgetReviewsByFeedback) | **GET** /feedbacks/{feedback}/reviews | Retrieve all Review resources.
+*@KeyclicSdkJavascript.ReportApi* | [**postDocumentByReport**](docs/ReportApi.md#postDocumentByReport) | **POST** /reports/{report}/documents | Create one Document resource.
+*@KeyclicSdkJavascript.ReportApi* | [**postWorkflowByReport**](docs/ReportApi.md#postWorkflowByReport) | **POST** /reports/{report}/workflow | Create one Workflow resource.
 *@KeyclicSdkJavascript.ReviewApi* | [**getReview**](docs/ReviewApi.md#getReview) | **GET** /reviews/{review} | Retrieve one Review resource.
-*@KeyclicSdkJavascript.ReviewApi* | [**postReviewByReviewRequest**](docs/ReviewApi.md#postReviewByReviewRequest) | **POST** /review-requests/{reviewRequest}/reviews | Create one Review resource.
+*@KeyclicSdkJavascript.ReviewApi* | [**postReview**](docs/ReviewApi.md#postReview) | **POST** /reviews | Create one Review resource.
 *@KeyclicSdkJavascript.ReviewRequestApi* | [**getReviewRequest**](docs/ReviewRequestApi.md#getReviewRequest) | **GET** /review-requests/{reviewRequest} | Retrieve one ReviewRequest resource.
-*@KeyclicSdkJavascript.SchemaApi* | [**getSchemaByBusinessActivity**](docs/SchemaApi.md#getSchemaByBusinessActivity) | **GET** /businessactivities/{businessActivity}/schema | Retrieve one Schema resource.
-*@KeyclicSdkJavascript.ServiceApi* | [**cgetServicesByOrganization**](docs/ServiceApi.md#cgetServicesByOrganization) | **GET** /organizations/{organization}/relationships | Retrieve all Service resources.
-*@KeyclicSdkJavascript.ServiceApi* | [**cgetServicesByOrganization_0**](docs/ServiceApi.md#cgetServicesByOrganization_0) | **GET** /organizations/{organization}/services | Retrieve all Service resources.
-*@KeyclicSdkJavascript.SignApi* | [**postSignByOperation**](docs/SignApi.md#postSignByOperation) | **POST** /operations/{operation}/sign | Create one Sign resource.
-*@KeyclicSdkJavascript.StateApi* | [**patchStateByFeedback**](docs/StateApi.md#patchStateByFeedback) | **PATCH** /feedbacks/{feedback}/state | Edit one State resource.
-*@KeyclicSdkJavascript.StateApi* | [**patchStateByOperation**](docs/StateApi.md#patchStateByOperation) | **PATCH** /operations/{operation}/state | Edit one State resource.
-*@KeyclicSdkJavascript.StateApi* | [**patchStateByReport**](docs/StateApi.md#patchStateByReport) | **PATCH** /reports/{report}/state | Edit one State resource.
-*@KeyclicSdkJavascript.ThumbnailApi* | [**getThumbnailByBusinessActivityAndWidthAndHeight**](docs/ThumbnailApi.md#getThumbnailByBusinessActivityAndWidthAndHeight) | **GET** /businessactivities/{businessActivity}/thumbnail/{width}/{height} | Retrieve one Thumbnail resource.
-*@KeyclicSdkJavascript.TrackingApi* | [**getTrackingByFeedback**](docs/TrackingApi.md#getTrackingByFeedback) | **GET** /feedbacks/{feedback}/tracking | Retrieve one Tracking resource.
-*@KeyclicSdkJavascript.TrackingApi* | [**getTrackingByOperation**](docs/TrackingApi.md#getTrackingByOperation) | **GET** /operations/{operation}/tracking | Retrieve one Tracking resource.
-*@KeyclicSdkJavascript.TrackingApi* | [**getTrackingByReport**](docs/TrackingApi.md#getTrackingByReport) | **GET** /reports/{report}/tracking | Retrieve one Tracking resource.
-*@KeyclicSdkJavascript.TransitionApi* | [**postTransitionByDelegation**](docs/TransitionApi.md#postTransitionByDelegation) | **POST** /delegations/{delegation}/workflow/transition | Create one Transition resource.
-*@KeyclicSdkJavascript.TransitionApi* | [**postTransitionByFeedback**](docs/TransitionApi.md#postTransitionByFeedback) | **POST** /feedbacks/{feedback}/workflow/transition | Create one Transition resource.
-*@KeyclicSdkJavascript.TransitionApi* | [**postTransitionByOperation**](docs/TransitionApi.md#postTransitionByOperation) | **POST** /operations/{operation}/workflow/transition | Create one Transition resource.
-*@KeyclicSdkJavascript.TransitionApi* | [**postTransitionByReport**](docs/TransitionApi.md#postTransitionByReport) | **POST** /reports/{report}/workflow/transition | Create one Transition resource.
-*@KeyclicSdkJavascript.UnfollowApi* | [**postUnfollowByFeed**](docs/UnfollowApi.md#postUnfollowByFeed) | **POST** /feeds/{feed}/unfollow | Create one Unfollow resource.
-*@KeyclicSdkJavascript.WebhookApi* | [**cgetWebhooksByOrganization**](docs/WebhookApi.md#cgetWebhooksByOrganization) | **GET** /organizations/{organization}/webhooks | Retrieve all Webhook resources.
+*@KeyclicSdkJavascript.SecurityApi* | [**postConnectFacebook**](docs/SecurityApi.md#postConnectFacebook) | **POST** /security/connect/facebook | Create one ConnectFacebook resource.
+*@KeyclicSdkJavascript.SecurityApi* | [**postLogin**](docs/SecurityApi.md#postLogin) | **POST** /security/login | Create one Login resource.
+*@KeyclicSdkJavascript.SecurityApi* | [**postPasswordChangeByToken**](docs/SecurityApi.md#postPasswordChangeByToken) | **POST** /security/password/change/{token} | Create one PasswordChange resource.
+*@KeyclicSdkJavascript.SecurityApi* | [**postPasswordReset**](docs/SecurityApi.md#postPasswordReset) | **POST** /security/password/change-request | Create one PasswordReset resource.
+*@KeyclicSdkJavascript.SecurityApi* | [**postRegister**](docs/SecurityApi.md#postRegister) | **POST** /security/register | Create one Register resource.
+*@KeyclicSdkJavascript.WebhookApi* | [**deleteWebhook**](docs/WebhookApi.md#deleteWebhook) | **DELETE** /webhooks/{webhook} | Remove one Webhook resource.
 *@KeyclicSdkJavascript.WebhookApi* | [**getWebhook**](docs/WebhookApi.md#getWebhook) | **GET** /webhooks/{webhook} | Retrieve one Webhook resource.
 *@KeyclicSdkJavascript.WebhookApi* | [**patchWebhook**](docs/WebhookApi.md#patchWebhook) | **PATCH** /webhooks/{webhook} | Edit one Webhook resource.
+*@KeyclicSdkJavascript.WebhookApi* | [**postWebhook**](docs/WebhookApi.md#postWebhook) | **POST** /webhooks | Create one Webhook resource.
 
 
 ## Documentation for Models
@@ -157,6 +158,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ApplicationLinksSelf](docs/ApplicationLinksSelf.md)
 - [@KeyclicSdkJavascript.ApplicationLinksSelfIriTemplate](docs/ApplicationLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.ApplicationLinksSelfIriTemplateMapping](docs/ApplicationLinksSelfIriTemplateMapping.md)
+- [@KeyclicSdkJavascript.AssignData](docs/AssignData.md)
 - [@KeyclicSdkJavascript.BusinessActivity](docs/BusinessActivity.md)
 - [@KeyclicSdkJavascript.BusinessActivityCollection](docs/BusinessActivityCollection.md)
 - [@KeyclicSdkJavascript.BusinessActivityLinks](docs/BusinessActivityLinks.md)
@@ -170,7 +172,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.BusinessActivityLinksThumbnail](docs/BusinessActivityLinksThumbnail.md)
 - [@KeyclicSdkJavascript.BusinessActivityLinksThumbnailIriTemplate](docs/BusinessActivityLinksThumbnailIriTemplate.md)
 - [@KeyclicSdkJavascript.BusinessActivityMetadataSchema](docs/BusinessActivityMetadataSchema.md)
-- [@KeyclicSdkJavascript.BusinessActivityPagination](docs/BusinessActivityPagination.md)
 - [@KeyclicSdkJavascript.Category](docs/Category.md)
 - [@KeyclicSdkJavascript.CategoryCollection](docs/CategoryCollection.md)
 - [@KeyclicSdkJavascript.CategoryData](docs/CategoryData.md)
@@ -181,7 +182,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.CategoryLinksSelf](docs/CategoryLinksSelf.md)
 - [@KeyclicSdkJavascript.CategoryLinksSelfIriTemplate](docs/CategoryLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.CategoryLinksSelfIriTemplateMapping](docs/CategoryLinksSelfIriTemplateMapping.md)
-- [@KeyclicSdkJavascript.CategoryPagination](docs/CategoryPagination.md)
 - [@KeyclicSdkJavascript.CategoryPatch](docs/CategoryPatch.md)
 - [@KeyclicSdkJavascript.Chart](docs/Chart.md)
 - [@KeyclicSdkJavascript.Checkpoint](docs/Checkpoint.md)
@@ -191,29 +191,40 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.Choice](docs/Choice.md)
 - [@KeyclicSdkJavascript.CommentData](docs/CommentData.md)
 - [@KeyclicSdkJavascript.Condition](docs/Condition.md)
-- [@KeyclicSdkJavascript.DelegateData](docs/DelegateData.md)
+- [@KeyclicSdkJavascript.Contribution](docs/Contribution.md)
+- [@KeyclicSdkJavascript.ContributionCollection](docs/ContributionCollection.md)
+- [@KeyclicSdkJavascript.ContributionLinks](docs/ContributionLinks.md)
+- [@KeyclicSdkJavascript.ContributionLinksContributor](docs/ContributionLinksContributor.md)
+- [@KeyclicSdkJavascript.ContributionLinksContributorIriTemplate](docs/ContributionLinksContributorIriTemplate.md)
+- [@KeyclicSdkJavascript.ContributionLinksContributorIriTemplateMapping](docs/ContributionLinksContributorIriTemplateMapping.md)
+- [@KeyclicSdkJavascript.ContributionLinksFeedback](docs/ContributionLinksFeedback.md)
+- [@KeyclicSdkJavascript.ContributionLinksFeedbackIriTemplate](docs/ContributionLinksFeedbackIriTemplate.md)
+- [@KeyclicSdkJavascript.ContributionLinksFeedbackIriTemplateMapping](docs/ContributionLinksFeedbackIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.Delegation](docs/Delegation.md)
 - [@KeyclicSdkJavascript.DelegationCollection](docs/DelegationCollection.md)
+- [@KeyclicSdkJavascript.DelegationData](docs/DelegationData.md)
+- [@KeyclicSdkJavascript.DelegationEmbedded](docs/DelegationEmbedded.md)
 - [@KeyclicSdkJavascript.DelegationLinks](docs/DelegationLinks.md)
 - [@KeyclicSdkJavascript.DelegationLinksCreatedBy](docs/DelegationLinksCreatedBy.md)
 - [@KeyclicSdkJavascript.DelegationLinksCreatedByIriTemplate](docs/DelegationLinksCreatedByIriTemplate.md)
-- [@KeyclicSdkJavascript.DelegationLinksCreatedByIriTemplateMapping](docs/DelegationLinksCreatedByIriTemplateMapping.md)
-- [@KeyclicSdkJavascript.DelegationLinksFrom](docs/DelegationLinksFrom.md)
-- [@KeyclicSdkJavascript.DelegationLinksFromIriTemplate](docs/DelegationLinksFromIriTemplate.md)
 - [@KeyclicSdkJavascript.DelegationLinksReport](docs/DelegationLinksReport.md)
 - [@KeyclicSdkJavascript.DelegationLinksReportIriTemplate](docs/DelegationLinksReportIriTemplate.md)
 - [@KeyclicSdkJavascript.DelegationLinksReportIriTemplateMapping](docs/DelegationLinksReportIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.DelegationLinksSelf](docs/DelegationLinksSelf.md)
 - [@KeyclicSdkJavascript.DelegationLinksSelfIriTemplate](docs/DelegationLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.DelegationLinksSelfIriTemplateMapping](docs/DelegationLinksSelfIriTemplateMapping.md)
-- [@KeyclicSdkJavascript.DelegationLinksTo](docs/DelegationLinksTo.md)
-- [@KeyclicSdkJavascript.DelegationLinksToIriTemplate](docs/DelegationLinksToIriTemplate.md)
-- [@KeyclicSdkJavascript.DelegationPagination](docs/DelegationPagination.md)
+- [@KeyclicSdkJavascript.DelegationLinksService](docs/DelegationLinksService.md)
+- [@KeyclicSdkJavascript.DelegationLinksServiceIriTemplate](docs/DelegationLinksServiceIriTemplate.md)
+- [@KeyclicSdkJavascript.DelegationLinksServiceIriTemplateMapping](docs/DelegationLinksServiceIriTemplateMapping.md)
+- [@KeyclicSdkJavascript.DelegationWorkflowTransitionData](docs/DelegationWorkflowTransitionData.md)
 - [@KeyclicSdkJavascript.Device](docs/Device.md)
 - [@KeyclicSdkJavascript.DeviceData](docs/DeviceData.md)
 - [@KeyclicSdkJavascript.DeviceLinks](docs/DeviceLinks.md)
 - [@KeyclicSdkJavascript.DeviceLinksPerson](docs/DeviceLinksPerson.md)
 - [@KeyclicSdkJavascript.DeviceLinksPersonIriTemplate](docs/DeviceLinksPersonIriTemplate.md)
+- [@KeyclicSdkJavascript.DeviceLinksSelf](docs/DeviceLinksSelf.md)
+- [@KeyclicSdkJavascript.DeviceLinksSelfIriTemplate](docs/DeviceLinksSelfIriTemplate.md)
+- [@KeyclicSdkJavascript.DeviceLinksSelfIriTemplateMapping](docs/DeviceLinksSelfIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.Document](docs/Document.md)
 - [@KeyclicSdkJavascript.DocumentCollection](docs/DocumentCollection.md)
 - [@KeyclicSdkJavascript.DocumentData](docs/DocumentData.md)
@@ -228,20 +239,26 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.DocumentLinksFileIriTemplateMapping](docs/DocumentLinksFileIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.DocumentLinksSelf](docs/DocumentLinksSelf.md)
 - [@KeyclicSdkJavascript.DocumentLinksSelfIriTemplate](docs/DocumentLinksSelfIriTemplate.md)
-- [@KeyclicSdkJavascript.DocumentPagination](docs/DocumentPagination.md)
 - [@KeyclicSdkJavascript.DocumentPatch](docs/DocumentPatch.md)
 - [@KeyclicSdkJavascript.DocumentPatchFile](docs/DocumentPatchFile.md)
 - [@KeyclicSdkJavascript.DocumentPermission](docs/DocumentPermission.md)
-- [@KeyclicSdkJavascript.EmailData](docs/EmailData.md)
 - [@KeyclicSdkJavascript.Error](docs/Error.md)
 - [@KeyclicSdkJavascript.ErrorEmbedded](docs/ErrorEmbedded.md)
+- [@KeyclicSdkJavascript.ExternalService](docs/ExternalService.md)
+- [@KeyclicSdkJavascript.ExternalServiceCollection](docs/ExternalServiceCollection.md)
+- [@KeyclicSdkJavascript.ExternalServiceContactPoint](docs/ExternalServiceContactPoint.md)
 - [@KeyclicSdkJavascript.ExternalServiceData](docs/ExternalServiceData.md)
+- [@KeyclicSdkJavascript.ExternalServiceLinks](docs/ExternalServiceLinks.md)
+- [@KeyclicSdkJavascript.ExternalServiceLinksProvider](docs/ExternalServiceLinksProvider.md)
+- [@KeyclicSdkJavascript.ExternalServiceLinksProviderIriTemplate](docs/ExternalServiceLinksProviderIriTemplate.md)
+- [@KeyclicSdkJavascript.ExternalServiceLinksSelf](docs/ExternalServiceLinksSelf.md)
+- [@KeyclicSdkJavascript.ExternalServiceLinksSelfIriTemplate](docs/ExternalServiceLinksSelfIriTemplate.md)
+- [@KeyclicSdkJavascript.ExternalServicePatch](docs/ExternalServicePatch.md)
 - [@KeyclicSdkJavascript.FacebookConnectData](docs/FacebookConnectData.md)
 - [@KeyclicSdkJavascript.Feature](docs/Feature.md)
 - [@KeyclicSdkJavascript.FeatureGeometry](docs/FeatureGeometry.md)
 - [@KeyclicSdkJavascript.Feed](docs/Feed.md)
 - [@KeyclicSdkJavascript.FeedCollection](docs/FeedCollection.md)
-- [@KeyclicSdkJavascript.FeedPagination](docs/FeedPagination.md)
 - [@KeyclicSdkJavascript.Feedback](docs/Feedback.md)
 - [@KeyclicSdkJavascript.FeedbackCollection](docs/FeedbackCollection.md)
 - [@KeyclicSdkJavascript.FeedbackData](docs/FeedbackData.md)
@@ -264,10 +281,8 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.FeedbackLinksReporterIriTemplate](docs/FeedbackLinksReporterIriTemplate.md)
 - [@KeyclicSdkJavascript.FeedbackLinksSelf](docs/FeedbackLinksSelf.md)
 - [@KeyclicSdkJavascript.FeedbackLinksSelfIriTemplate](docs/FeedbackLinksSelfIriTemplate.md)
-- [@KeyclicSdkJavascript.FeedbackLinksSelfIriTemplateMapping](docs/FeedbackLinksSelfIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.FeedbackLinksTracking](docs/FeedbackLinksTracking.md)
 - [@KeyclicSdkJavascript.FeedbackLinksTrackingIriTemplate](docs/FeedbackLinksTrackingIriTemplate.md)
-- [@KeyclicSdkJavascript.FeedbackPagination](docs/FeedbackPagination.md)
 - [@KeyclicSdkJavascript.FeedbackReviewRequest](docs/FeedbackReviewRequest.md)
 - [@KeyclicSdkJavascript.FeedbackReviewRequestCollection](docs/FeedbackReviewRequestCollection.md)
 - [@KeyclicSdkJavascript.FeedbackReviewRequestLinks](docs/FeedbackReviewRequestLinks.md)
@@ -283,13 +298,18 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.FeedbackReviewRequestLinksSelf](docs/FeedbackReviewRequestLinksSelf.md)
 - [@KeyclicSdkJavascript.FeedbackReviewRequestLinksSelfIriTemplate](docs/FeedbackReviewRequestLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.FeedbackReviewRequestLinksSelfIriTemplateMapping](docs/FeedbackReviewRequestLinksSelfIriTemplateMapping.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestPagination](docs/FeedbackReviewRequestPagination.md)
-- [@KeyclicSdkJavascript.FeedbackStatePatch](docs/FeedbackStatePatch.md)
 - [@KeyclicSdkJavascript.FeedbackWorkflowTransitionData](docs/FeedbackWorkflowTransitionData.md)
 - [@KeyclicSdkJavascript.ImageData](docs/ImageData.md)
-- [@KeyclicSdkJavascript.LogEntry](docs/LogEntry.md)
-- [@KeyclicSdkJavascript.LogEntryCollection](docs/LogEntryCollection.md)
-- [@KeyclicSdkJavascript.LogEntryPagination](docs/LogEntryPagination.md)
+- [@KeyclicSdkJavascript.InternalService](docs/InternalService.md)
+- [@KeyclicSdkJavascript.InternalServiceCollection](docs/InternalServiceCollection.md)
+- [@KeyclicSdkJavascript.InternalServiceData](docs/InternalServiceData.md)
+- [@KeyclicSdkJavascript.InternalServiceLinks](docs/InternalServiceLinks.md)
+- [@KeyclicSdkJavascript.InternalServiceLinksOrganization](docs/InternalServiceLinksOrganization.md)
+- [@KeyclicSdkJavascript.InternalServiceLinksOrganizationIriTemplate](docs/InternalServiceLinksOrganizationIriTemplate.md)
+- [@KeyclicSdkJavascript.InternalServiceLinksSelf](docs/InternalServiceLinksSelf.md)
+- [@KeyclicSdkJavascript.InternalServiceLinksSelfIriTemplate](docs/InternalServiceLinksSelfIriTemplate.md)
+- [@KeyclicSdkJavascript.InternalServiceLinksSelfIriTemplateMapping](docs/InternalServiceLinksSelfIriTemplateMapping.md)
+- [@KeyclicSdkJavascript.InternalServicePatch](docs/InternalServicePatch.md)
 - [@KeyclicSdkJavascript.LoginData](docs/LoginData.md)
 - [@KeyclicSdkJavascript.Member](docs/Member.md)
 - [@KeyclicSdkJavascript.MemberCollection](docs/MemberCollection.md)
@@ -303,10 +323,13 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.MemberLinksSelf](docs/MemberLinksSelf.md)
 - [@KeyclicSdkJavascript.MemberLinksSelfIriTemplate](docs/MemberLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.MemberLinksSelfIriTemplateMapping](docs/MemberLinksSelfIriTemplateMapping.md)
-- [@KeyclicSdkJavascript.MemberPagination](docs/MemberPagination.md)
 - [@KeyclicSdkJavascript.MemberPatch](docs/MemberPatch.md)
+- [@KeyclicSdkJavascript.Node](docs/Node.md)
+- [@KeyclicSdkJavascript.NodeEmbedded](docs/NodeEmbedded.md)
+- [@KeyclicSdkJavascript.NodePath](docs/NodePath.md)
 - [@KeyclicSdkJavascript.Occupant](docs/Occupant.md)
 - [@KeyclicSdkJavascript.OccupantCollection](docs/OccupantCollection.md)
+- [@KeyclicSdkJavascript.OccupantData](docs/OccupantData.md)
 - [@KeyclicSdkJavascript.OccupantLinks](docs/OccupantLinks.md)
 - [@KeyclicSdkJavascript.OccupantLinksPerson](docs/OccupantLinksPerson.md)
 - [@KeyclicSdkJavascript.OccupantLinksPersonIriTemplate](docs/OccupantLinksPersonIriTemplate.md)
@@ -316,7 +339,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.OccupantLinksSelf](docs/OccupantLinksSelf.md)
 - [@KeyclicSdkJavascript.OccupantLinksSelfIriTemplate](docs/OccupantLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.OccupantLinksSelfIriTemplateMapping](docs/OccupantLinksSelfIriTemplateMapping.md)
-- [@KeyclicSdkJavascript.OccupantPagination](docs/OccupantPagination.md)
 - [@KeyclicSdkJavascript.Operation](docs/Operation.md)
 - [@KeyclicSdkJavascript.OperationCollection](docs/OperationCollection.md)
 - [@KeyclicSdkJavascript.OperationData](docs/OperationData.md)
@@ -340,11 +362,9 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.OperationLinksSelfIriTemplateMapping](docs/OperationLinksSelfIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.OperationLinksTracking](docs/OperationLinksTracking.md)
 - [@KeyclicSdkJavascript.OperationLinksTrackingIriTemplate](docs/OperationLinksTrackingIriTemplate.md)
-- [@KeyclicSdkJavascript.OperationPagination](docs/OperationPagination.md)
 - [@KeyclicSdkJavascript.OperationPatch](docs/OperationPatch.md)
 - [@KeyclicSdkJavascript.OperationSignature](docs/OperationSignature.md)
 - [@KeyclicSdkJavascript.OperationSignatureSigner](docs/OperationSignatureSigner.md)
-- [@KeyclicSdkJavascript.OperationStatePatch](docs/OperationStatePatch.md)
 - [@KeyclicSdkJavascript.OperationWorkflowTransitionData](docs/OperationWorkflowTransitionData.md)
 - [@KeyclicSdkJavascript.Organization](docs/Organization.md)
 - [@KeyclicSdkJavascript.OrganizationCollection](docs/OrganizationCollection.md)
@@ -358,31 +378,28 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.OrganizationLinksLogoIriTemplate](docs/OrganizationLinksLogoIriTemplate.md)
 - [@KeyclicSdkJavascript.OrganizationLinksSelf](docs/OrganizationLinksSelf.md)
 - [@KeyclicSdkJavascript.OrganizationLinksSelfIriTemplate](docs/OrganizationLinksSelfIriTemplate.md)
-- [@KeyclicSdkJavascript.OrganizationPagination](docs/OrganizationPagination.md)
 - [@KeyclicSdkJavascript.OrganizationPatch](docs/OrganizationPatch.md)
 - [@KeyclicSdkJavascript.OrganizationPatchPreferences](docs/OrganizationPatchPreferences.md)
 - [@KeyclicSdkJavascript.OrganizationPreferences](docs/OrganizationPreferences.md)
 - [@KeyclicSdkJavascript.OrganizationPreferencesReference](docs/OrganizationPreferencesReference.md)
+- [@KeyclicSdkJavascript.Pagination](docs/Pagination.md)
 - [@KeyclicSdkJavascript.PaginationLink](docs/PaginationLink.md)
 - [@KeyclicSdkJavascript.PaginationLinks](docs/PaginationLinks.md)
-- [@KeyclicSdkJavascript.PasswordData](docs/PasswordData.md)
+- [@KeyclicSdkJavascript.PasswordChangeData](docs/PasswordChangeData.md)
 - [@KeyclicSdkJavascript.Person](docs/Person.md)
 - [@KeyclicSdkJavascript.PersonCollection](docs/PersonCollection.md)
-- [@KeyclicSdkJavascript.PersonData](docs/PersonData.md)
 - [@KeyclicSdkJavascript.PersonLinks](docs/PersonLinks.md)
 - [@KeyclicSdkJavascript.PersonLinksImage](docs/PersonLinksImage.md)
 - [@KeyclicSdkJavascript.PersonLinksImageIriTemplate](docs/PersonLinksImageIriTemplate.md)
-- [@KeyclicSdkJavascript.PersonLinksMemberOf](docs/PersonLinksMemberOf.md)
-- [@KeyclicSdkJavascript.PersonLinksMemberOfIriTemplate](docs/PersonLinksMemberOfIriTemplate.md)
 - [@KeyclicSdkJavascript.PersonLinksSelf](docs/PersonLinksSelf.md)
 - [@KeyclicSdkJavascript.PersonLinksSelfIriTemplate](docs/PersonLinksSelfIriTemplate.md)
-- [@KeyclicSdkJavascript.PersonPagination](docs/PersonPagination.md)
 - [@KeyclicSdkJavascript.PersonPatch](docs/PersonPatch.md)
 - [@KeyclicSdkJavascript.PersonPatchPreferences](docs/PersonPatchPreferences.md)
 - [@KeyclicSdkJavascript.PersonPreferences](docs/PersonPreferences.md)
 - [@KeyclicSdkJavascript.Place](docs/Place.md)
 - [@KeyclicSdkJavascript.PlaceCollection](docs/PlaceCollection.md)
 - [@KeyclicSdkJavascript.PlaceData](docs/PlaceData.md)
+- [@KeyclicSdkJavascript.PlaceEmbedded](docs/PlaceEmbedded.md)
 - [@KeyclicSdkJavascript.PlaceGeo](docs/PlaceGeo.md)
 - [@KeyclicSdkJavascript.PlaceGeoCentroid](docs/PlaceGeoCentroid.md)
 - [@KeyclicSdkJavascript.PlaceGeoPolygon](docs/PlaceGeoPolygon.md)
@@ -396,7 +413,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.PlaceLinksOrganizationIriTemplate](docs/PlaceLinksOrganizationIriTemplate.md)
 - [@KeyclicSdkJavascript.PlaceLinksSelf](docs/PlaceLinksSelf.md)
 - [@KeyclicSdkJavascript.PlaceLinksSelfIriTemplate](docs/PlaceLinksSelfIriTemplate.md)
-- [@KeyclicSdkJavascript.PlacePagination](docs/PlacePagination.md)
 - [@KeyclicSdkJavascript.PlacePatch](docs/PlacePatch.md)
 - [@KeyclicSdkJavascript.PlacePreferences](docs/PlacePreferences.md)
 - [@KeyclicSdkJavascript.Property](docs/Property.md)
@@ -408,14 +424,13 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.PublicationLinks](docs/PublicationLinks.md)
 - [@KeyclicSdkJavascript.PublicationLinksAuthor](docs/PublicationLinksAuthor.md)
 - [@KeyclicSdkJavascript.PublicationLinksAuthorIriTemplate](docs/PublicationLinksAuthorIriTemplate.md)
+- [@KeyclicSdkJavascript.PublicationLinksFeed](docs/PublicationLinksFeed.md)
+- [@KeyclicSdkJavascript.PublicationLinksFeedIriTemplate](docs/PublicationLinksFeedIriTemplate.md)
 - [@KeyclicSdkJavascript.PublicationLinksOrganization](docs/PublicationLinksOrganization.md)
 - [@KeyclicSdkJavascript.PublicationLinksOrganizationIriTemplate](docs/PublicationLinksOrganizationIriTemplate.md)
-- [@KeyclicSdkJavascript.PublicationLinksPlace](docs/PublicationLinksPlace.md)
-- [@KeyclicSdkJavascript.PublicationLinksPlaceIriTemplate](docs/PublicationLinksPlaceIriTemplate.md)
 - [@KeyclicSdkJavascript.PublicationLinksSelf](docs/PublicationLinksSelf.md)
 - [@KeyclicSdkJavascript.PublicationLinksSelfIriTemplate](docs/PublicationLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.PublicationLinksSelfIriTemplateMapping](docs/PublicationLinksSelfIriTemplateMapping.md)
-- [@KeyclicSdkJavascript.PublicationPagination](docs/PublicationPagination.md)
 - [@KeyclicSdkJavascript.RegisterData](docs/RegisterData.md)
 - [@KeyclicSdkJavascript.Report](docs/Report.md)
 - [@KeyclicSdkJavascript.ReportCollection](docs/ReportCollection.md)
@@ -441,10 +456,9 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ReportLinksSelfIriTemplate](docs/ReportLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.ReportLinksTracking](docs/ReportLinksTracking.md)
 - [@KeyclicSdkJavascript.ReportLinksTrackingIriTemplate](docs/ReportLinksTrackingIriTemplate.md)
-- [@KeyclicSdkJavascript.ReportPagination](docs/ReportPagination.md)
 - [@KeyclicSdkJavascript.ReportPatch](docs/ReportPatch.md)
-- [@KeyclicSdkJavascript.ReportStatePatch](docs/ReportStatePatch.md)
 - [@KeyclicSdkJavascript.ReportWorkflowTransitionData](docs/ReportWorkflowTransitionData.md)
+- [@KeyclicSdkJavascript.ResetPasswordData](docs/ResetPasswordData.md)
 - [@KeyclicSdkJavascript.Review](docs/Review.md)
 - [@KeyclicSdkJavascript.ReviewCollection](docs/ReviewCollection.md)
 - [@KeyclicSdkJavascript.ReviewData](docs/ReviewData.md)
@@ -455,12 +469,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ReviewLinksItemReviewedIriTemplate](docs/ReviewLinksItemReviewedIriTemplate.md)
 - [@KeyclicSdkJavascript.ReviewLinksSelf](docs/ReviewLinksSelf.md)
 - [@KeyclicSdkJavascript.ReviewLinksSelfIriTemplate](docs/ReviewLinksSelfIriTemplate.md)
-- [@KeyclicSdkJavascript.ReviewPagination](docs/ReviewPagination.md)
 - [@KeyclicSdkJavascript.Schema](docs/Schema.md)
-- [@KeyclicSdkJavascript.Service](docs/Service.md)
-- [@KeyclicSdkJavascript.ServiceCollection](docs/ServiceCollection.md)
-- [@KeyclicSdkJavascript.ServiceContactPoint](docs/ServiceContactPoint.md)
-- [@KeyclicSdkJavascript.ServicePagination](docs/ServicePagination.md)
 - [@KeyclicSdkJavascript.SignatureData](docs/SignatureData.md)
 - [@KeyclicSdkJavascript.SignatureDataSigner](docs/SignatureDataSigner.md)
 - [@KeyclicSdkJavascript.SuccessLogin](docs/SuccessLogin.md)
@@ -472,14 +481,34 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.TrackingProgression](docs/TrackingProgression.md)
 - [@KeyclicSdkJavascript.Webhook](docs/Webhook.md)
 - [@KeyclicSdkJavascript.WebhookCollection](docs/WebhookCollection.md)
+- [@KeyclicSdkJavascript.WebhookData](docs/WebhookData.md)
 - [@KeyclicSdkJavascript.WebhookLinks](docs/WebhookLinks.md)
 - [@KeyclicSdkJavascript.WebhookLinksOrganization](docs/WebhookLinksOrganization.md)
 - [@KeyclicSdkJavascript.WebhookLinksOrganizationIriTemplate](docs/WebhookLinksOrganizationIriTemplate.md)
 - [@KeyclicSdkJavascript.WebhookLinksSelf](docs/WebhookLinksSelf.md)
 - [@KeyclicSdkJavascript.WebhookLinksSelfIriTemplate](docs/WebhookLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.WebhookLinksSelfIriTemplateMapping](docs/WebhookLinksSelfIriTemplateMapping.md)
-- [@KeyclicSdkJavascript.WebhookPagination](docs/WebhookPagination.md)
 - [@KeyclicSdkJavascript.WebhookPatch](docs/WebhookPatch.md)
+- [@KeyclicSdkJavascript.BusinessActivityPagination](docs/BusinessActivityPagination.md)
+- [@KeyclicSdkJavascript.CategoryPagination](docs/CategoryPagination.md)
+- [@KeyclicSdkJavascript.ContributionPagination](docs/ContributionPagination.md)
+- [@KeyclicSdkJavascript.DelegationPagination](docs/DelegationPagination.md)
+- [@KeyclicSdkJavascript.DocumentPagination](docs/DocumentPagination.md)
+- [@KeyclicSdkJavascript.ExternalServicePagination](docs/ExternalServicePagination.md)
+- [@KeyclicSdkJavascript.FeedPagination](docs/FeedPagination.md)
+- [@KeyclicSdkJavascript.FeedbackPagination](docs/FeedbackPagination.md)
+- [@KeyclicSdkJavascript.FeedbackReviewRequestPagination](docs/FeedbackReviewRequestPagination.md)
+- [@KeyclicSdkJavascript.InternalServicePagination](docs/InternalServicePagination.md)
+- [@KeyclicSdkJavascript.MemberPagination](docs/MemberPagination.md)
+- [@KeyclicSdkJavascript.OccupantPagination](docs/OccupantPagination.md)
+- [@KeyclicSdkJavascript.OperationPagination](docs/OperationPagination.md)
+- [@KeyclicSdkJavascript.OrganizationPagination](docs/OrganizationPagination.md)
+- [@KeyclicSdkJavascript.PersonPagination](docs/PersonPagination.md)
+- [@KeyclicSdkJavascript.PlacePagination](docs/PlacePagination.md)
+- [@KeyclicSdkJavascript.PublicationPagination](docs/PublicationPagination.md)
+- [@KeyclicSdkJavascript.ReportPagination](docs/ReportPagination.md)
+- [@KeyclicSdkJavascript.ReviewPagination](docs/ReviewPagination.md)
+- [@KeyclicSdkJavascript.WebhookPagination](docs/WebhookPagination.md)
 
 ## Documentation for Authorization
 

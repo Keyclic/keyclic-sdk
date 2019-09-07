@@ -10,6 +10,7 @@ class Category {
     this.identificationNumber,
     this.name,
     this.type,
+    this.updatedAt,
   });
 
   Category.fromJson(Map<String, dynamic> json) {
@@ -28,6 +29,11 @@ class Category {
     identificationNumber = json['identificationNumber'];
     name = json['name'];
     type = json['type'];
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    if (updatedAt is DateTime && updatedAt.isUtc == false) {
+      updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
+    }
   }
 
   CategoryLinks links;
@@ -46,6 +52,8 @@ class Category {
 
   String type;
 
+  DateTime updatedAt;
+
   @override
   bool operator ==(dynamic other) {
     // Same reference
@@ -62,7 +70,8 @@ class Category {
         id == other.id &&
         identificationNumber == other.identificationNumber &&
         name == other.name &&
-        type == other.type;
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
   /// By default hashCode return reference
@@ -76,7 +85,8 @@ class Category {
       id.hashCode ^
       identificationNumber.hashCode ^
       name.hashCode ^
-      type.hashCode;
+      type.hashCode ^
+      updatedAt.hashCode;
 
   static List<Category> listFromJson(List<dynamic> json) {
     return json == null
@@ -103,11 +113,12 @@ class Category {
       'identificationNumber': identificationNumber,
       'name': name,
       'type': type,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'Category[links=$links, color=$color, createdAt=$createdAt, icon=$icon, id=$id, identificationNumber=$identificationNumber, name=$name, type=$type, ]';
+    return 'Category[links=$links, color=$color, createdAt=$createdAt, icon=$icon, id=$id, identificationNumber=$identificationNumber, name=$name, type=$type, updatedAt=$updatedAt, ]';
   }
 }

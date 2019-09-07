@@ -228,4 +228,361 @@ export default class FeedApi extends ApiClient {
       returnType
     );
   }
+
+  /**
+   * Retrieve all Following resources.
+   * @param { String } xKeyclicApp
+   * @param { String } feed
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { FeedPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
+  cgetFollowingsByFeed(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = FeedPagination;
+    }
+
+    let {
+      xKeyclicApp,
+      feed,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      page,
+      limit
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling cgetFollowingsByFeed'
+      );
+    }
+
+    // verify the required parameter 'feed' is set
+    if (typeof feed === "undefined" || feed === null) {
+      throw new window.Error(
+        'Missing the required parameter "feed" when calling cgetFollowingsByFeed'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === "undefined" || page === null) {
+      page = 1;
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === "undefined" || limit === null) {
+      limit = 10;
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cgetFollowingsByFeed'
+      );
+    }
+
+    let pathParams = {
+      feed: feed
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      page: page,
+      limit: limit
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/feeds/{feed}/following",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Create one Follow resource.
+   * @param { String } xKeyclicApp
+   * @param { String } feed
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  postFollowByFeed(returnType = null, options, credentials) {
+    let { xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling postFollowByFeed'
+      );
+    }
+
+    // verify the required parameter 'feed' is set
+    if (typeof feed === "undefined" || feed === null) {
+      throw new window.Error(
+        'Missing the required parameter "feed" when calling postFollowByFeed'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling postFollowByFeed'
+      );
+    }
+
+    let pathParams = {
+      feed: feed
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/feeds/{feed}/follow",
+      "POST",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Create one Read resource.
+   * @param { String } xKeyclicApp
+   * @param { String } feed
+   * @param { String } group
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  postReadByFeedAndGroup(returnType = null, options, credentials) {
+    let {
+      xKeyclicApp,
+      feed,
+      group,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling postReadByFeedAndGroup'
+      );
+    }
+
+    // verify the required parameter 'feed' is set
+    if (typeof feed === "undefined" || feed === null) {
+      throw new window.Error(
+        'Missing the required parameter "feed" when calling postReadByFeedAndGroup'
+      );
+    }
+
+    // verify the required parameter 'group' is set
+    if (typeof group === "undefined" || group === null) {
+      throw new window.Error(
+        'Missing the required parameter "group" when calling postReadByFeedAndGroup'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling postReadByFeedAndGroup'
+      );
+    }
+
+    let pathParams = {
+      feed: feed,
+      group: group
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/feeds/{feed}/read/{group}",
+      "POST",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Create one Unfollow resource.
+   * @param { String } xKeyclicApp
+   * @param { String } feed
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  postUnfollowByFeed(returnType = null, options, credentials) {
+    let { xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling postUnfollowByFeed'
+      );
+    }
+
+    // verify the required parameter 'feed' is set
+    if (typeof feed === "undefined" || feed === null) {
+      throw new window.Error(
+        'Missing the required parameter "feed" when calling postUnfollowByFeed'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling postUnfollowByFeed'
+      );
+    }
+
+    let pathParams = {
+      feed: feed
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/feeds/{feed}/unfollow",
+      "POST",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
 }

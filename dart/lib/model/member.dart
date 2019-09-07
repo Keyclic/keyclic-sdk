@@ -8,6 +8,7 @@ class Member {
     this.id,
     this.roles,
     this.type,
+    this.updatedAt,
   });
 
   Member.fromJson(Map<String, dynamic> json) {
@@ -24,6 +25,11 @@ class Member {
     id = json['id'];
     roles = (json['roles'] as List)?.map((item) => item as String)?.toList();
     type = json['type'];
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    if (updatedAt is DateTime && updatedAt.isUtc == false) {
+      updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
+    }
   }
 
   MemberEmbedded embedded;
@@ -37,6 +43,8 @@ class Member {
   List<String> roles;
 
   String type;
+
+  DateTime updatedAt;
 
   @override
   bool operator ==(dynamic other) {
@@ -52,7 +60,8 @@ class Member {
         createdAt == other.createdAt &&
         id == other.id &&
         DeepCollectionEquality.unordered().equals(roles, other.roles) &&
-        type == other.type;
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
   /// By default hashCode return reference
@@ -65,7 +74,8 @@ class Member {
       id.hashCode ^
       roles.map((dynamic element) => element.hashCode).fold(0,
           (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      type.hashCode;
+      type.hashCode ^
+      updatedAt.hashCode;
 
   static List<Member> listFromJson(List<dynamic> json) {
     return json == null
@@ -90,11 +100,12 @@ class Member {
       'id': id,
       'roles': roles,
       'type': type,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'Member[embedded=$embedded, links=$links, createdAt=$createdAt, id=$id, roles=$roles, type=$type, ]';
+    return 'Member[embedded=$embedded, links=$links, createdAt=$createdAt, id=$id, roles=$roles, type=$type, updatedAt=$updatedAt, ]';
   }
 }

@@ -12,6 +12,7 @@ class Feedback {
     this.public,
     this.state,
     this.type,
+    this.updatedAt,
   });
 
   Feedback.fromJson(Map<String, dynamic> json) {
@@ -32,6 +33,11 @@ class Feedback {
     public = json['public'];
     state = (json['state'] as List)?.map((item) => item as String)?.toList();
     type = json['type'];
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    if (updatedAt is DateTime && updatedAt.isUtc == false) {
+      updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
+    }
   }
 
   FeedbackEmbedded embedded;
@@ -54,6 +60,8 @@ class Feedback {
 
   String type;
 
+  DateTime updatedAt;
+
   @override
   bool operator ==(dynamic other) {
     // Same reference
@@ -72,7 +80,8 @@ class Feedback {
         DeepCollectionEquality.unordered().equals(metadata, other.metadata) &&
         public == other.public &&
         DeepCollectionEquality.unordered().equals(state, other.state) &&
-        type == other.type;
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
   /// By default hashCode return reference
@@ -92,7 +101,8 @@ class Feedback {
       public.hashCode ^
       state.map((dynamic element) => element.hashCode).fold(0,
           (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      type.hashCode;
+      type.hashCode ^
+      updatedAt.hashCode;
 
   static List<Feedback> listFromJson(List<dynamic> json) {
     return json == null
@@ -121,11 +131,12 @@ class Feedback {
       'public': public,
       'state': state,
       'type': type,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'Feedback[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, geoCoordinates=$geoCoordinates, id=$id, metadata=$metadata, public=$public, state=$state, type=$type, ]';
+    return 'Feedback[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, geoCoordinates=$geoCoordinates, id=$id, metadata=$metadata, public=$public, state=$state, type=$type, updatedAt=$updatedAt, ]';
   }
 }

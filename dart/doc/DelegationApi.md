@@ -9,72 +9,10 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cgetDelegationsByOrganization**](DelegationApi.md#cgetDelegationsByOrganization) | **GET** /organizations/{organization}/delegations | Retrieve all Delegation resources.
 [**getDelegation**](DelegationApi.md#getDelegation) | **GET** /delegations/{delegation} | Retrieve one Delegation resource.
+[**postDelegation**](DelegationApi.md#postDelegation) | **POST** /delegations | Create one Delegation resource.
+[**postWorkflowByDelegation**](DelegationApi.md#postWorkflowByDelegation) | **POST** /delegations/{delegation}/workflow | Create one Workflow resource.
 
-
-# **cgetDelegationsByOrganization**
-> DelegationPagination cgetDelegationsByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, after, before, order, state, page, limit)
-
-Retrieve all Delegation resources.
-
-### Example 
-```dart
-import 'package:keyclic_sdk_api/api.dart';
-// TODO Configure API key authorization: bearer
-//keyclic_sdk_api.api.Configuration.apiKey{'Authorization'} = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//keyclic_sdk_api.api.Configuration.apiKeyPrefix{'Authorization'} = "Bearer";
-
-var api_instance = DelegationApi();
-var xKeyclicApp = xKeyclicApp_example; // String | 
-var organization = ; // String | The identifier of the resource.
-var acceptLanguage = acceptLanguage_example; // String | 
-var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
-var order = order_example; // String | 
-var state = state_example; // String | 
-var page = 56; // int | Page of the overview.
-var limit = 56; // int | Page of the overview.
-
-try { 
-    var result = api_instance.cgetDelegationsByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, after, before, order, state, page, limit);
-    print(result);
-} catch (e) {
-    print("Exception when calling DelegationApi->cgetDelegationsByOrganization: $e\n");
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource. | 
- **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
- **xKeyclicAppVersion** | **String**|  | [optional] 
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
- **order** | **String**|  | [optional] [default to desc]
- **state** | **String**|  | [optional] 
- **page** | **int**| Page of the overview. | [optional] [default to 1]
- **limit** | **int**| Page of the overview. | [optional] [default to 10]
-
-### Return type
-
-[**DelegationPagination**](DelegationPagination.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=UTF-8
- - **Accept**: application/hal+json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDelegation**
 > Delegation getDelegation(xKeyclicApp, delegation, acceptLanguage, xKeyclicAppVersion)
@@ -108,6 +46,110 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **delegation** | [**String**](.md)| The identifier of the resource. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+
+### Return type
+
+[**Delegation**](Delegation.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postDelegation**
+> Delegation postDelegation(xKeyclicApp, delegationData, acceptLanguage, xKeyclicAppVersion)
+
+Create one Delegation resource.
+
+### Example 
+```dart
+import 'package:keyclic_sdk_api/api.dart';
+// TODO Configure API key authorization: bearer
+//keyclic_sdk_api.api.Configuration.apiKey{'Authorization'} = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//keyclic_sdk_api.api.Configuration.apiKeyPrefix{'Authorization'} = "Bearer";
+
+var api_instance = DelegationApi();
+var xKeyclicApp = xKeyclicApp_example; // String | 
+var delegationData = DelegationData(); // DelegationData | 
+var acceptLanguage = acceptLanguage_example; // String | 
+var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
+
+try { 
+    var result = api_instance.postDelegation(xKeyclicApp, delegationData, acceptLanguage, xKeyclicAppVersion);
+    print(result);
+} catch (e) {
+    print("Exception when calling DelegationApi->postDelegation: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **delegationData** | [**DelegationData**](DelegationData.md)|  | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+
+### Return type
+
+[**Delegation**](Delegation.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postWorkflowByDelegation**
+> Delegation postWorkflowByDelegation(xKeyclicApp, delegationWorkflowTransitionData, delegation, acceptLanguage, xKeyclicAppVersion)
+
+Create one Workflow resource.
+
+### Example 
+```dart
+import 'package:keyclic_sdk_api/api.dart';
+// TODO Configure API key authorization: bearer
+//keyclic_sdk_api.api.Configuration.apiKey{'Authorization'} = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//keyclic_sdk_api.api.Configuration.apiKeyPrefix{'Authorization'} = "Bearer";
+
+var api_instance = DelegationApi();
+var xKeyclicApp = xKeyclicApp_example; // String | 
+var delegationWorkflowTransitionData = DelegationWorkflowTransitionData(); // DelegationWorkflowTransitionData | 
+var delegation = ; // String | The identifier of the resource.
+var acceptLanguage = acceptLanguage_example; // String | 
+var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
+
+try { 
+    var result = api_instance.postWorkflowByDelegation(xKeyclicApp, delegationWorkflowTransitionData, delegation, acceptLanguage, xKeyclicAppVersion);
+    print(result);
+} catch (e) {
+    print("Exception when calling DelegationApi->postWorkflowByDelegation: $e\n");
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **delegationWorkflowTransitionData** | [**DelegationWorkflowTransitionData**](DelegationWorkflowTransitionData.md)|  | 
  **delegation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 

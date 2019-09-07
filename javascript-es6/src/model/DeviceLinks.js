@@ -12,6 +12,7 @@
 
 import ApiClient from "../ApiClient";
 import DeviceLinksPerson from "./DeviceLinksPerson";
+import DeviceLinksSelf from "./DeviceLinksSelf";
 
 /**
  * The DeviceLinks model module.
@@ -26,8 +27,10 @@ export default class DeviceLinks {
      */
   constructor() {
     this.person = null;
+    this.self = null;
 
     this.personType = DeviceLinksPerson;
+    this.selfType = DeviceLinksSelf;
   }
 
   /**
@@ -50,6 +53,9 @@ export default class DeviceLinks {
         data["person"],
         object.personType
       );
+    }
+    if (data.hasOwnProperty("self")) {
+      object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
 
     return object;

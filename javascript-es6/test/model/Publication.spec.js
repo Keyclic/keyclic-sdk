@@ -95,6 +95,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property updatedAt (base name: "updatedAt")', function() {
+      // uncomment below and update the code to test the property updatedAt
+      //var instane = new @KeyclicSdkJavascript.Publication();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

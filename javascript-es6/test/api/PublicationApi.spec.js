@@ -47,30 +47,30 @@
   }
 
   describe('PublicationApi', function() {
-    describe('cgetPublicationsByOrganization', function() {
-      it('should call cgetPublicationsByOrganization successfully', function(done) {
-        //uncomment below and update the code to test cgetPublicationsByOrganization
-        //instance.cgetPublicationsByOrganization(function(error) {
+    describe('deletePublication', function() {
+      it('should call deletePublication successfully', function(done) {
+        //uncomment below and update the code to test deletePublication
+        //instance.deletePublication(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getPublicationByOrganizationAndPublication', function() {
-      it('should call getPublicationByOrganizationAndPublication successfully', function(done) {
-        //uncomment below and update the code to test getPublicationByOrganizationAndPublication
-        //instance.getPublicationByOrganizationAndPublication(function(error) {
+    describe('getPublication', function() {
+      it('should call getPublication successfully', function(done) {
+        //uncomment below and update the code to test getPublication
+        //instance.getPublication(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postPublicationByOrganization', function() {
-      it('should call postPublicationByOrganization successfully', function(done) {
-        //uncomment below and update the code to test postPublicationByOrganization
-        //instance.postPublicationByOrganization(function(error) {
+    describe('postPublication', function() {
+      it('should call postPublication successfully', function(done) {
+        //uncomment below and update the code to test postPublication
+        //instance.postPublication(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

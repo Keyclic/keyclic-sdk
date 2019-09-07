@@ -114,27 +114,6 @@ exports.default = FeedbackWorkflowTransitionData;
 
 _defineProperty(FeedbackWorkflowTransitionData, "TransitionEnum", {
   /**
-   * value: "deliver"
-   * @const
-   * @readonly
-   */
-  deliver: "deliver",
-
-  /**
-   * value: "dispatch"
-   * @const
-   * @readonly
-   */
-  dispatch: "dispatch",
-
-  /**
-   * value: "fail"
-   * @const
-   * @readonly
-   */
-  fail: "fail",
-
-  /**
    * value: "process"
    * @const
    * @readonly
@@ -146,12 +125,5 @@ _defineProperty(FeedbackWorkflowTransitionData, "TransitionEnum", {
    * @const
    * @readonly
    */
-  publish: "publish",
-
-  /**
-   * value: "success"
-   * @const
-   * @readonly
-   */
-  success: "success"
+  publish: "publish"
 });

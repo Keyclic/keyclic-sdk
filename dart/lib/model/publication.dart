@@ -9,6 +9,7 @@ class Publication {
     this.read,
     this.title,
     this.type,
+    this.updatedAt,
   });
 
   Publication.fromJson(Map<String, dynamic> json) {
@@ -26,6 +27,11 @@ class Publication {
     read = json['read'];
     title = json['title'];
     type = json['type'];
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    if (updatedAt is DateTime && updatedAt.isUtc == false) {
+      updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
+    }
   }
 
   PublicationLinks links;
@@ -42,6 +48,8 @@ class Publication {
 
   String type;
 
+  DateTime updatedAt;
+
   @override
   bool operator ==(dynamic other) {
     // Same reference
@@ -57,7 +65,8 @@ class Publication {
         message == other.message &&
         read == other.read &&
         title == other.title &&
-        type == other.type;
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
   /// By default hashCode return reference
@@ -70,7 +79,8 @@ class Publication {
       message.hashCode ^
       read.hashCode ^
       title.hashCode ^
-      type.hashCode;
+      type.hashCode ^
+      updatedAt.hashCode;
 
   static List<Publication> listFromJson(List<dynamic> json) {
     return json == null
@@ -96,11 +106,12 @@ class Publication {
       'read': read,
       'title': title,
       'type': type,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'Publication[links=$links, createdAt=$createdAt, id=$id, message=$message, read=$read, title=$title, type=$type, ]';
+    return 'Publication[links=$links, createdAt=$createdAt, id=$id, message=$message, read=$read, title=$title, type=$type, updatedAt=$updatedAt, ]';
   }
 }

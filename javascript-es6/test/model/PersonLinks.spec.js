@@ -59,12 +59,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property memberOf (base name: "memberOf")', function() {
-      // uncomment below and update the code to test the property memberOf
-      //var instane = new @KeyclicSdkJavascript.PersonLinks();
-      //expect(instance).to.be();
-    });
-
     it('should have the property self (base name: "self")', function() {
       // uncomment below and update the code to test the property self
       //var instane = new @KeyclicSdkJavascript.PersonLinks();

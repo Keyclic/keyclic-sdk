@@ -9,15 +9,15 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cgetPublicationsByOrganization**](PublicationApi.md#cgetPublicationsByOrganization) | **GET** /organizations/{organization}/publications | Retrieve all Publication resources.
-[**getPublicationByOrganizationAndPublication**](PublicationApi.md#getPublicationByOrganizationAndPublication) | **GET** /organizations/{organization}/publications/{publication} | Retrieve one Publication resource.
-[**postPublicationByOrganization**](PublicationApi.md#postPublicationByOrganization) | **POST** /organizations/{organization}/publications | Create one Publication resource.
+[**deletePublication**](PublicationApi.md#deletePublication) | **DELETE** /publications/{publication} | Remove one Publication resource.
+[**getPublication**](PublicationApi.md#getPublication) | **GET** /publications/{publication} | Retrieve one Publication resource.
+[**postPublication**](PublicationApi.md#postPublication) | **POST** /publications | Create one Publication resource.
 
 
-# **cgetPublicationsByOrganization**
-> PublicationPagination cgetPublicationsByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, after, before, order, place, page, limit)
+# **deletePublication**
+> deletePublication(xKeyclicApp, publication, acceptLanguage, xKeyclicAppVersion)
 
-Retrieve all Publication resources.
+Remove one Publication resource.
 
 ### Example 
 ```dart
@@ -29,21 +29,14 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = PublicationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var organization = ; // String | The identifier of the resource.
+var publication = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
-var order = order_example; // String | 
-var place = ; // String | The identifier of the resource.
-var page = 56; // int | Page of the overview.
-var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetPublicationsByOrganization(xKeyclicApp, organization, acceptLanguage, xKeyclicAppVersion, after, before, order, place, page, limit);
-    print(result);
+    api_instance.deletePublication(xKeyclicApp, publication, acceptLanguage, xKeyclicAppVersion);
 } catch (e) {
-    print("Exception when calling PublicationApi->cgetPublicationsByOrganization: $e\n");
+    print("Exception when calling PublicationApi->deletePublication: $e\n");
 }
 ```
 
@@ -52,19 +45,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource. | 
+ **publication** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
- **order** | **String**|  | [optional] [default to desc]
- **place** | [**String**](.md)| The identifier of the resource. | [optional] 
- **page** | **int**| Page of the overview. | [optional] [default to 1]
- **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
 ### Return type
 
-[**PublicationPagination**](PublicationPagination.md)
+void (empty response body)
 
 ### Authorization
 
@@ -77,8 +64,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getPublicationByOrganizationAndPublication**
-> Publication getPublicationByOrganizationAndPublication(xKeyclicApp, organization, publication, acceptLanguage, xKeyclicAppVersion)
+# **getPublication**
+> Publication getPublication(xKeyclicApp, publication, acceptLanguage, xKeyclicAppVersion)
 
 Retrieve one Publication resource.
 
@@ -92,16 +79,15 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = PublicationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var organization = ; // String | The identifier of the resource.
 var publication = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getPublicationByOrganizationAndPublication(xKeyclicApp, organization, publication, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getPublication(xKeyclicApp, publication, acceptLanguage, xKeyclicAppVersion);
     print(result);
 } catch (e) {
-    print("Exception when calling PublicationApi->getPublicationByOrganizationAndPublication: $e\n");
+    print("Exception when calling PublicationApi->getPublication: $e\n");
 }
 ```
 
@@ -110,7 +96,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource. | 
  **publication** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
@@ -130,8 +115,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **postPublicationByOrganization**
-> Publication postPublicationByOrganization(xKeyclicApp, publicationData, organization, acceptLanguage, xKeyclicAppVersion)
+# **postPublication**
+> Publication postPublication(xKeyclicApp, publicationData, acceptLanguage, xKeyclicAppVersion)
 
 Create one Publication resource.
 
@@ -146,15 +131,14 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = PublicationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var publicationData = PublicationData(); // PublicationData | 
-var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postPublicationByOrganization(xKeyclicApp, publicationData, organization, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postPublication(xKeyclicApp, publicationData, acceptLanguage, xKeyclicAppVersion);
     print(result);
 } catch (e) {
-    print("Exception when calling PublicationApi->postPublicationByOrganization: $e\n");
+    print("Exception when calling PublicationApi->postPublication: $e\n");
 }
 ```
 
@@ -164,7 +148,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **publicationData** | [**PublicationData**](PublicationData.md)|  | 
- **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

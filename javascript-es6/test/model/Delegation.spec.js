@@ -53,6 +53,12 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.Delegation);
     });
 
+    it('should have the property embedded (base name: "_embedded")', function() {
+      // uncomment below and update the code to test the property embedded
+      //var instane = new @KeyclicSdkJavascript.Delegation();
+      //expect(instance).to.be();
+    });
+
     it('should have the property links (base name: "_links")', function() {
       // uncomment below and update the code to test the property links
       //var instane = new @KeyclicSdkJavascript.Delegation();
@@ -85,6 +91,12 @@
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
+      //var instane = new @KeyclicSdkJavascript.Delegation();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property updatedAt (base name: "updatedAt")', function() {
+      // uncomment below and update the code to test the property updatedAt
       //var instane = new @KeyclicSdkJavascript.Delegation();
       //expect(instance).to.be();
     });

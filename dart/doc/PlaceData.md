@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [default to null]
 **branchCode** | **String** |  | [optional] [default to null]
 **polygon** | **String** |  | [default to null]
+**organization** | **String** |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

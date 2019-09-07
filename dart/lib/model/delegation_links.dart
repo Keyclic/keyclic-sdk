@@ -3,10 +3,9 @@ part of keyclic_sdk_api.api;
 class DelegationLinks {
   DelegationLinks({
     this.createdBy,
-    this.from,
     this.report,
     this.self,
-    this.to,
+    this.service,
   });
 
   DelegationLinks.fromJson(Map<String, dynamic> json) {
@@ -14,21 +13,18 @@ class DelegationLinks {
       return;
     }
     createdBy = DelegationLinksCreatedBy.fromJson(json['createdBy']);
-    from = DelegationLinksFrom.fromJson(json['from']);
     report = DelegationLinksReport.fromJson(json['report']);
     self = DelegationLinksSelf.fromJson(json['self']);
-    to = DelegationLinksTo.fromJson(json['to']);
+    service = DelegationLinksService.fromJson(json['service']);
   }
 
   DelegationLinksCreatedBy createdBy;
-
-  DelegationLinksFrom from;
 
   DelegationLinksReport report;
 
   DelegationLinksSelf self;
 
-  DelegationLinksTo to;
+  DelegationLinksService service;
 
   @override
   bool operator ==(dynamic other) {
@@ -40,10 +36,9 @@ class DelegationLinks {
     return other is DelegationLinks &&
         runtimeType == other.runtimeType &&
         createdBy == other.createdBy &&
-        from == other.from &&
         report == other.report &&
         self == other.self &&
-        to == other.to;
+        service == other.service;
   }
 
   /// By default hashCode return reference
@@ -51,10 +46,9 @@ class DelegationLinks {
   int get hashCode =>
       0 ^
       createdBy.hashCode ^
-      from.hashCode ^
       report.hashCode ^
       self.hashCode ^
-      to.hashCode;
+      service.hashCode;
 
   static List<DelegationLinks> listFromJson(List<dynamic> json) {
     return json == null
@@ -74,15 +68,14 @@ class DelegationLinks {
   Map<String, dynamic> toJson() {
     return {
       'createdBy': createdBy,
-      'from': from,
       'report': report,
       'self': self,
-      'to': to,
+      'service': service,
     };
   }
 
   @override
   String toString() {
-    return 'DelegationLinks[createdBy=$createdBy, from=$from, report=$report, self=$self, to=$to, ]';
+    return 'DelegationLinks[createdBy=$createdBy, report=$report, self=$self, service=$service, ]';
   }
 }

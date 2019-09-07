@@ -1,13 +1,13 @@
 part of keyclic_sdk_api.api;
 
-class FeedPagination {
+class FeedPagination extends Pagination {
   FeedPagination({
     this.limit,
     this.page,
     this.pages,
     this.total,
-    this.embedded,
     this.links,
+    this.embedded,
   });
 
   FeedPagination.fromJson(Map<String, dynamic> json) {
@@ -18,8 +18,8 @@ class FeedPagination {
     page = json['page'];
     pages = json['pages'];
     total = json['total'];
-    embedded = FeedCollection.fromJson(json['_embedded']);
     links = PaginationLinks.fromJson(json['_links']);
+    embedded = FeedCollection.fromJson(json['_embedded']);
   }
 
   int limit;
@@ -30,9 +30,9 @@ class FeedPagination {
 
   int total;
 
-  FeedCollection embedded;
-
   PaginationLinks links;
+
+  FeedCollection embedded;
 
   @override
   bool operator ==(dynamic other) {
@@ -47,8 +47,8 @@ class FeedPagination {
         page == other.page &&
         pages == other.pages &&
         total == other.total &&
-        embedded == other.embedded &&
-        links == other.links;
+        links == other.links &&
+        embedded == other.embedded;
   }
 
   /// By default hashCode return reference
@@ -59,8 +59,8 @@ class FeedPagination {
       page.hashCode ^
       pages.hashCode ^
       total.hashCode ^
-      embedded.hashCode ^
-      links.hashCode;
+      links.hashCode ^
+      embedded.hashCode;
 
   static List<FeedPagination> listFromJson(List<dynamic> json) {
     return json == null
@@ -83,13 +83,13 @@ class FeedPagination {
       'page': page,
       'pages': pages,
       'total': total,
-      '_embedded': embedded,
       '_links': links,
+      '_embedded': embedded,
     };
   }
 
   @override
   String toString() {
-    return 'FeedPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
+    return 'FeedPagination[limit=$limit, page=$page, pages=$pages, total=$total, links=$links, embedded=$embedded, ]';
   }
 }

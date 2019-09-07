@@ -44,6 +44,7 @@ export default class Publication {
     this.read = read;
     this.title = title;
     this.type = null;
+    this.updatedAt = null;
 
     this.linksType = PublicationLinks;
   }
@@ -83,6 +84,9 @@ export default class Publication {
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

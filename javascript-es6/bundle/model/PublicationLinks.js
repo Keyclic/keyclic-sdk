@@ -11,12 +11,12 @@ var _PublicationLinksAuthor = _interopRequireDefault(
   require("./PublicationLinksAuthor")
 );
 
-var _PublicationLinksOrganization = _interopRequireDefault(
-  require("./PublicationLinksOrganization")
+var _PublicationLinksFeed = _interopRequireDefault(
+  require("./PublicationLinksFeed")
 );
 
-var _PublicationLinksPlace = _interopRequireDefault(
-  require("./PublicationLinksPlace")
+var _PublicationLinksOrganization = _interopRequireDefault(
+  require("./PublicationLinksOrganization")
 );
 
 var _PublicationLinksSelf = _interopRequireDefault(
@@ -66,12 +66,12 @@ var PublicationLinks =
       _classCallCheck(this, PublicationLinks);
 
       this.author = null;
+      this.feed = null;
       this.organization = null;
-      this.place = null;
       this.self = null;
       this.authorType = _PublicationLinksAuthor.default;
+      this.feedType = _PublicationLinksFeed.default;
       this.organizationType = _PublicationLinksOrganization.default;
-      this.placeType = _PublicationLinksPlace.default;
       this.selfType = _PublicationLinksSelf.default;
     }
     /**
@@ -105,17 +105,17 @@ var PublicationLinks =
             );
           }
 
+          if (data.hasOwnProperty("feed")) {
+            object.feed = _ApiClient.default.convertToType(
+              data["feed"],
+              object.feedType
+            );
+          }
+
           if (data.hasOwnProperty("organization")) {
             object.organization = _ApiClient.default.convertToType(
               data["organization"],
               object.organizationType
-            );
-          }
-
-          if (data.hasOwnProperty("place")) {
-            object.place = _ApiClient.default.convertToType(
-              data["place"],
-              object.placeType
             );
           }
 

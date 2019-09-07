@@ -67,6 +67,46 @@
         done();
       });
     });
+    describe('cgetFollowingsByFeed', function() {
+      it('should call cgetFollowingsByFeed successfully', function(done) {
+        //uncomment below and update the code to test cgetFollowingsByFeed
+        //instance.cgetFollowingsByFeed(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postFollowByFeed', function() {
+      it('should call postFollowByFeed successfully', function(done) {
+        //uncomment below and update the code to test postFollowByFeed
+        //instance.postFollowByFeed(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postReadByFeedAndGroup', function() {
+      it('should call postReadByFeedAndGroup successfully', function(done) {
+        //uncomment below and update the code to test postReadByFeedAndGroup
+        //instance.postReadByFeedAndGroup(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postUnfollowByFeed', function() {
+      it('should call postUnfollowByFeed successfully', function(done) {
+        //uncomment below and update the code to test postUnfollowByFeed
+        //instance.postUnfollowByFeed(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

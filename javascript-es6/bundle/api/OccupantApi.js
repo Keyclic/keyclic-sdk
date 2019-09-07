@@ -11,13 +11,7 @@ var _Error = _interopRequireDefault(require("../model/Error"));
 
 var _Occupant = _interopRequireDefault(require("../model/Occupant"));
 
-var _OccupantPagination = _interopRequireDefault(
-  require("../model/OccupantPagination")
-);
-
-var _Organization = _interopRequireDefault(require("../model/Organization"));
-
-var _PersonData = _interopRequireDefault(require("../model/PersonData"));
+var _OccupantData = _interopRequireDefault(require("../model/OccupantData"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -145,300 +139,39 @@ var OccupantApi =
       );
     }
     /**
-     * Retrieve all Occupant resources.
+     * Remove one Occupant resource.
      * @param { String } xKeyclicApp
+     * @param { String } occupant The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { OccupantPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+     * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { module:model/Date } after
-     * @param { module:model/Date } before
-     * @param { module:model/String } order   (default to desc)
-     * @param { String } person The identifier of the resource.
-     * @param { Number } page Page of the overview.  (default to 1)
-     * @param { Number } limit Page of the overview.  (default to 10)
      */
 
     _createClass(OccupantApi, [
       {
-        key: "cgetOccupants",
-        value: function cgetOccupants() {
+        key: "deleteOccupant",
+        value: function deleteOccupant() {
           var returnType =
             arguments.length > 0 && arguments[0] !== undefined
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
           var credentials = arguments.length > 2 ? arguments[2] : undefined;
-
-          if (returnType === null) {
-            returnType = _OccupantPagination.default;
-          }
-
           var xKeyclicApp = options.xKeyclicApp,
-            acceptLanguage = options.acceptLanguage,
-            xKeyclicAppVersion = options.xKeyclicAppVersion,
-            after = options.after,
-            before = options.before,
-            order = options.order,
-            person = options.person,
-            page = options.page,
-            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling cgetOccupants'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
-          } // verify the default value of parameter 'page'
-
-          if (typeof page === "undefined" || page === null) {
-            page = 1;
-          } // verify the default value of parameter 'limit'
-
-          if (typeof limit === "undefined" || limit === null) {
-            limit = 10;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'after'
-
-          if (typeof after === "undefined") {
-            after = null;
-          } // verify the null value of parameter 'before'
-
-          if (typeof before === "undefined") {
-            before = null;
-          } // verify the null value of parameter 'person'
-
-          if (typeof person === "undefined") {
-            person = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetOccupants'
-            );
-          }
-
-          var pathParams = {};
-          var bodyParam = null;
-          var queryParams = {
-            after: after,
-            before: before,
-            order: order,
-            person: person,
-            page: page,
-            limit: limit
-          };
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/occupants",
-            "GET",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-          );
-        }
-        /**
-         * Retrieve all Occupant resources.
-         * @param { String } xKeyclicApp
-         * @param { String } place The identifier of the resource.
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { OccupantPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { String } xKeyclicAppVersion
-         * @param { module:model/Date } after
-         * @param { module:model/Date } before
-         * @param { module:model/String } order   (default to desc)
-         * @param { String } person The identifier of the resource.
-         * @param { Number } page Page of the overview.  (default to 1)
-         * @param { Number } limit Page of the overview.  (default to 10)
-         */
-      },
-      {
-        key: "cgetOccupantsByPlace",
-        value: function cgetOccupantsByPlace() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
-
-          if (returnType === null) {
-            returnType = _OccupantPagination.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            place = options.place,
-            acceptLanguage = options.acceptLanguage,
-            xKeyclicAppVersion = options.xKeyclicAppVersion,
-            after = options.after,
-            before = options.before,
-            order = options.order,
-            person = options.person,
-            page = options.page,
-            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling cgetOccupantsByPlace'
-            );
-          } // verify the required parameter 'place' is set
-
-          if (typeof place === "undefined" || place === null) {
-            throw new window.Error(
-              'Missing the required parameter "place" when calling cgetOccupantsByPlace'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
-          } // verify the default value of parameter 'page'
-
-          if (typeof page === "undefined" || page === null) {
-            page = 1;
-          } // verify the default value of parameter 'limit'
-
-          if (typeof limit === "undefined" || limit === null) {
-            limit = 10;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'after'
-
-          if (typeof after === "undefined") {
-            after = null;
-          } // verify the null value of parameter 'before'
-
-          if (typeof before === "undefined") {
-            before = null;
-          } // verify the null value of parameter 'person'
-
-          if (typeof person === "undefined") {
-            person = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetOccupantsByPlace'
-            );
-          }
-
-          var pathParams = {
-            place: place
-          };
-          var bodyParam = null;
-          var queryParams = {
-            after: after,
-            before: before,
-            order: order,
-            person: person,
-            page: page,
-            limit: limit
-          };
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/places/{place}/occupants",
-            "GET",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-          );
-        }
-        /**
-         * Remove one Occupant resource.
-         * @param { String } xKeyclicApp
-         * @param { String } place The identifier of the resource.
-         * @param { String } occupant The identifier of the resource.
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { Organization }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { String } xKeyclicAppVersion
-         */
-      },
-      {
-        key: "deleteOccupantByPlaceAndOccupant",
-        value: function deleteOccupantByPlaceAndOccupant() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
-
-          if (returnType === null) {
-            returnType = _Organization.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            place = options.place,
             occupant = options.occupant,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling deleteOccupantByPlaceAndOccupant'
-            );
-          } // verify the required parameter 'place' is set
-
-          if (typeof place === "undefined" || place === null) {
-            throw new window.Error(
-              'Missing the required parameter "place" when calling deleteOccupantByPlaceAndOccupant'
+              'Missing the required parameter "xKeyclicApp" when calling deleteOccupant'
             );
           } // verify the required parameter 'occupant' is set
 
           if (typeof occupant === "undefined" || occupant === null) {
             throw new window.Error(
-              'Missing the required parameter "occupant" when calling deleteOccupantByPlaceAndOccupant'
+              'Missing the required parameter "occupant" when calling deleteOccupant'
             );
           } // verify the default value of parameter 'acceptLanguage'
 
@@ -455,12 +188,11 @@ var OccupantApi =
 
           if (typeof credentials === "undefined" || credentials === null) {
             throw new window.Error(
-              'Missing the required parameter "credentials" when calling deleteOccupantByPlaceAndOccupant'
+              'Missing the required parameter "credentials" when calling deleteOccupant'
             );
           }
 
           var pathParams = {
-            place: place,
             occupant: occupant
           };
           var bodyParam = null;
@@ -475,7 +207,7 @@ var OccupantApi =
           var contentTypes = ["application/json;charset=UTF-8"];
           var accepts = ["application/hal+json;charset=UTF-8"];
           return this.callApi(
-            "/places/{place}/occupants/{occupant}",
+            "/occupants/{occupant}",
             "DELETE",
             pathParams,
             queryParams,
@@ -577,8 +309,7 @@ var OccupantApi =
         /**
          * Create one Occupant resource.
          * @param { String } xKeyclicApp
-         * @param { module:model/PersonData } personData
-         * @param { String } place The identifier of the resource.
+         * @param { module:model/OccupantData } occupantData
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Occupant }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -586,8 +317,8 @@ var OccupantApi =
          */
       },
       {
-        key: "postOccupantByPlace",
-        value: function postOccupantByPlace() {
+        key: "postOccupant",
+        value: function postOccupant() {
           var returnType =
             arguments.length > 0 && arguments[0] !== undefined
               ? arguments[0]
@@ -600,26 +331,19 @@ var OccupantApi =
           }
 
           var xKeyclicApp = options.xKeyclicApp,
-            personData = options.personData,
-            place = options.place,
+            occupantData = options.occupantData,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling postOccupantByPlace'
+              'Missing the required parameter "xKeyclicApp" when calling postOccupant'
             );
-          } // verify the required parameter 'personData' is set
+          } // verify the required parameter 'occupantData' is set
 
-          if (typeof personData === "undefined" || personData === null) {
+          if (typeof occupantData === "undefined" || occupantData === null) {
             throw new window.Error(
-              'Missing the required parameter "personData" when calling postOccupantByPlace'
-            );
-          } // verify the required parameter 'place' is set
-
-          if (typeof place === "undefined" || place === null) {
-            throw new window.Error(
-              'Missing the required parameter "place" when calling postOccupantByPlace'
+              'Missing the required parameter "occupantData" when calling postOccupant'
             );
           } // verify the default value of parameter 'acceptLanguage'
 
@@ -636,14 +360,12 @@ var OccupantApi =
 
           if (typeof credentials === "undefined" || credentials === null) {
             throw new window.Error(
-              'Missing the required parameter "credentials" when calling postOccupantByPlace'
+              'Missing the required parameter "credentials" when calling postOccupant'
             );
           }
 
-          var pathParams = {
-            place: place
-          };
-          var bodyParam = personData;
+          var pathParams = {};
+          var bodyParam = occupantData;
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
@@ -655,7 +377,7 @@ var OccupantApi =
           var contentTypes = ["application/json;charset=UTF-8"];
           var accepts = ["application/hal+json;charset=UTF-8"];
           return this.callApi(
-            "/places/{place}/occupants",
+            "/occupants",
             "POST",
             pathParams,
             queryParams,

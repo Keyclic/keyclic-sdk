@@ -3,7 +3,6 @@ part of keyclic_sdk_api.api;
 class PersonLinks {
   PersonLinks({
     this.image,
-    this.memberOf,
     this.self,
   });
 
@@ -12,13 +11,10 @@ class PersonLinks {
       return;
     }
     image = PersonLinksImage.fromJson(json['image']);
-    memberOf = PersonLinksMemberOf.fromJson(json['memberOf']);
     self = PersonLinksSelf.fromJson(json['self']);
   }
 
   PersonLinksImage image;
-
-  PersonLinksMemberOf memberOf;
 
   PersonLinksSelf self;
 
@@ -32,13 +28,12 @@ class PersonLinks {
     return other is PersonLinks &&
         runtimeType == other.runtimeType &&
         image == other.image &&
-        memberOf == other.memberOf &&
         self == other.self;
   }
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ image.hashCode ^ memberOf.hashCode ^ self.hashCode;
+  int get hashCode => 0 ^ image.hashCode ^ self.hashCode;
 
   static List<PersonLinks> listFromJson(List<dynamic> json) {
     return json == null
@@ -58,13 +53,12 @@ class PersonLinks {
   Map<String, dynamic> toJson() {
     return {
       'image': image,
-      'memberOf': memberOf,
       'self': self,
     };
   }
 
   @override
   String toString() {
-    return 'PersonLinks[image=$image, memberOf=$memberOf, self=$self, ]';
+    return 'PersonLinks[image=$image, self=$self, ]';
   }
 }

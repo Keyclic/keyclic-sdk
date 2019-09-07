@@ -47,30 +47,10 @@
   }
 
   describe('OccupantApi', function() {
-    describe('cgetOccupants', function() {
-      it('should call cgetOccupants successfully', function(done) {
-        //uncomment below and update the code to test cgetOccupants
-        //instance.cgetOccupants(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('cgetOccupantsByPlace', function() {
-      it('should call cgetOccupantsByPlace successfully', function(done) {
-        //uncomment below and update the code to test cgetOccupantsByPlace
-        //instance.cgetOccupantsByPlace(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteOccupantByPlaceAndOccupant', function() {
-      it('should call deleteOccupantByPlaceAndOccupant successfully', function(done) {
-        //uncomment below and update the code to test deleteOccupantByPlaceAndOccupant
-        //instance.deleteOccupantByPlaceAndOccupant(function(error) {
+    describe('deleteOccupant', function() {
+      it('should call deleteOccupant successfully', function(done) {
+        //uncomment below and update the code to test deleteOccupant
+        //instance.deleteOccupant(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -87,10 +67,10 @@
         done();
       });
     });
-    describe('postOccupantByPlace', function() {
-      it('should call postOccupantByPlace successfully', function(done) {
-        //uncomment below and update the code to test postOccupantByPlace
-        //instance.postOccupantByPlace(function(error) {
+    describe('postOccupant', function() {
+      it('should call postOccupant successfully', function(done) {
+        //uncomment below and update the code to test postOccupant
+        //instance.postOccupant(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

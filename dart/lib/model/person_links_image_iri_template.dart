@@ -9,11 +9,11 @@ class PersonLinksImageIriTemplate {
     if (json == null) {
       return;
     }
-    mapping =
-        DelegationLinksCreatedByIriTemplateMapping.fromJson(json['mapping']);
+    mapping = ContributionLinksContributorIriTemplateMapping.fromJson(
+        json['mapping']);
   }
 
-  DelegationLinksCreatedByIriTemplateMapping mapping;
+  ContributionLinksContributorIriTemplateMapping mapping;
 
   @override
   bool operator ==(dynamic other) {

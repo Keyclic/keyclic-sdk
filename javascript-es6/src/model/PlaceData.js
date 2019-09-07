@@ -26,15 +26,20 @@ export default class PlaceData {
     
      * @param polygon { String }
     
+     * @param organization { String }
+    
      */
   constructor(
     name,
 
-    polygon
+    polygon,
+
+    organization
   ) {
     this.name = name;
     this.branchCode = null;
     this.polygon = polygon;
+    this.organization = organization;
   }
 
   /**
@@ -60,6 +65,12 @@ export default class PlaceData {
     }
     if (data.hasOwnProperty("polygon")) {
       object.polygon = ApiClient.convertToType(data["polygon"], "String");
+    }
+    if (data.hasOwnProperty("organization")) {
+      object.organization = ApiClient.convertToType(
+        data["organization"],
+        "String"
+      );
     }
 
     return object;

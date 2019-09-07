@@ -9,7 +9,8 @@ import 'package:keyclic_sdk_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **token** | **String** |  | [default to null]
-**platform** | **String** |  | [optional] [default to null]
+**platform** | **String** |  | [default to null]
+**person** | **String** |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

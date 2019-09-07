@@ -47,30 +47,20 @@
   }
 
   describe('OperationApi', function() {
-    describe('cgetOperationsByOrganization', function() {
-      it('should call cgetOperationsByOrganization successfully', function(done) {
-        //uncomment below and update the code to test cgetOperationsByOrganization
-        //instance.cgetOperationsByOrganization(function(error) {
+    describe('cgetCommentsByOperation', function() {
+      it('should call cgetCommentsByOperation successfully', function(done) {
+        //uncomment below and update the code to test cgetCommentsByOperation
+        //instance.cgetCommentsByOperation(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('cgetOperationsByPerson', function() {
-      it('should call cgetOperationsByPerson successfully', function(done) {
-        //uncomment below and update the code to test cgetOperationsByPerson
-        //instance.cgetOperationsByPerson(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('cgetOperationsByReport', function() {
-      it('should call cgetOperationsByReport successfully', function(done) {
-        //uncomment below and update the code to test cgetOperationsByReport
-        //instance.cgetOperationsByReport(function(error) {
+    describe('deleteImageByOperationAndImage', function() {
+      it('should call deleteImageByOperationAndImage successfully', function(done) {
+        //uncomment below and update the code to test deleteImageByOperationAndImage
+        //instance.deleteImageByOperationAndImage(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -97,6 +87,16 @@
         done();
       });
     });
+    describe('getTrackingByOperation', function() {
+      it('should call getTrackingByOperation successfully', function(done) {
+        //uncomment below and update the code to test getTrackingByOperation
+        //instance.getTrackingByOperation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('patchOperation', function() {
       it('should call patchOperation successfully', function(done) {
         //uncomment below and update the code to test patchOperation
@@ -107,10 +107,60 @@
         done();
       });
     });
+    describe('postAssignByOperation', function() {
+      it('should call postAssignByOperation successfully', function(done) {
+        //uncomment below and update the code to test postAssignByOperation
+        //instance.postAssignByOperation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postCommentByOperation', function() {
+      it('should call postCommentByOperation successfully', function(done) {
+        //uncomment below and update the code to test postCommentByOperation
+        //instance.postCommentByOperation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postImageByOperation', function() {
+      it('should call postImageByOperation successfully', function(done) {
+        //uncomment below and update the code to test postImageByOperation
+        //instance.postImageByOperation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('postOperation', function() {
       it('should call postOperation successfully', function(done) {
         //uncomment below and update the code to test postOperation
         //instance.postOperation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postSignByOperation', function() {
+      it('should call postSignByOperation successfully', function(done) {
+        //uncomment below and update the code to test postSignByOperation
+        //instance.postSignByOperation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postWorkflowByOperation', function() {
+      it('should call postWorkflowByOperation successfully', function(done) {
+        //uncomment below and update the code to test postWorkflowByOperation
+        //instance.postWorkflowByOperation(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

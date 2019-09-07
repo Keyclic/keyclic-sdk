@@ -114,13 +114,6 @@ exports.default = OperationWorkflowTransitionData;
 
 _defineProperty(OperationWorkflowTransitionData, "TransitionEnum", {
   /**
-   * value: "accept"
-   * @const
-   * @readonly
-   */
-  accept: "accept",
-
-  /**
    * value: "assign"
    * @const
    * @readonly
@@ -133,20 +126,6 @@ _defineProperty(OperationWorkflowTransitionData, "TransitionEnum", {
    * @readonly
    */
   progress: "progress",
-
-  /**
-   * value: "refuse"
-   * @const
-   * @readonly
-   */
-  refuse: "refuse",
-
-  /**
-   * value: "reset"
-   * @const
-   * @readonly
-   */
-  reset: "reset",
 
   /**
    * value: "resolve"

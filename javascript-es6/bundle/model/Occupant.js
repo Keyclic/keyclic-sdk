@@ -55,6 +55,7 @@ var Occupant =
       this.createdAt = null;
       this.id = null;
       this.type = null;
+      this.updatedAt = null;
       this.linksType = _OccupantLinks.default;
     }
     /**
@@ -103,6 +104,13 @@ var Occupant =
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

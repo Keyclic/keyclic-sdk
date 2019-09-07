@@ -47,10 +47,140 @@
   }
 
   describe('OrganizationApi', function() {
+    describe('cgetCategoriesByOrganization', function() {
+      it('should call cgetCategoriesByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cgetCategoriesByOrganization
+        //instance.cgetCategoriesByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetDelegationsByOrganization', function() {
+      it('should call cgetDelegationsByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cgetDelegationsByOrganization
+        //instance.cgetDelegationsByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetExternalServicesByOrganization', function() {
+      it('should call cgetExternalServicesByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cgetExternalServicesByOrganization
+        //instance.cgetExternalServicesByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetInternalServicesByOrganization', function() {
+      it('should call cgetInternalServicesByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cgetInternalServicesByOrganization
+        //instance.cgetInternalServicesByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetMembersByOrganization', function() {
+      it('should call cgetMembersByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cgetMembersByOrganization
+        //instance.cgetMembersByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetOperationsByOrganization', function() {
+      it('should call cgetOperationsByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cgetOperationsByOrganization
+        //instance.cgetOperationsByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('cgetOrganizations', function() {
       it('should call cgetOrganizations successfully', function(done) {
         //uncomment below and update the code to test cgetOrganizations
         //instance.cgetOrganizations(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetPlacesByOrganization', function() {
+      it('should call cgetPlacesByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cgetPlacesByOrganization
+        //instance.cgetPlacesByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetPublicationsByOrganization', function() {
+      it('should call cgetPublicationsByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cgetPublicationsByOrganization
+        //instance.cgetPublicationsByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetReportsByOrganization', function() {
+      it('should call cgetReportsByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cgetReportsByOrganization
+        //instance.cgetReportsByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetWebhooksByOrganization', function() {
+      it('should call cgetWebhooksByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cgetWebhooksByOrganization
+        //instance.cgetWebhooksByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cpostExportByOrganization', function() {
+      it('should call cpostExportByOrganization successfully', function(done) {
+        //uncomment below and update the code to test cpostExportByOrganization
+        //instance.cpostExportByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAnalyticByOrganization', function() {
+      it('should call getAnalyticByOrganization successfully', function(done) {
+        //uncomment below and update the code to test getAnalyticByOrganization
+        //instance.getAnalyticByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getFormByOrganization', function() {
+      it('should call getFormByOrganization successfully', function(done) {
+        //uncomment below and update the code to test getFormByOrganization
+        //instance.getFormByOrganization(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

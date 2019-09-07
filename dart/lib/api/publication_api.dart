@@ -6,20 +6,14 @@ class PublicationApi {
 
   final ApiClient apiClient;
 
-  /// Retrieve all Publication resources.
+  /// Remove one Publication resource.
   ///
   ///
-  Future<PublicationPagination> cgetPublicationsByOrganization(
+  Future<void> deletePublication(
     String xKeyclicApp,
-    String organization, {
+    String publication, {
     String acceptLanguage,
     String xKeyclicAppVersion,
-    DateTime after,
-    DateTime before,
-    String order,
-    String place,
-    int page,
-    int limit,
   }) async {
     // verify required params are set
 
@@ -27,29 +21,17 @@ class PublicationApi {
       throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
-    if (organization == null) {
-      throw ApiException(0, "Missing required param: organization");
+    if (publication == null) {
+      throw ApiException(0, "Missing required param: publication");
     }
 
     // create path and map variables
-    final String path = "/organizations/{organization}/publications"
+    final String path = "/publications/{publication}"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "organization" + "}", organization.toString());
+        .replaceAll("{" + "publication" + "}", publication.toString());
 
     // query params
-    final List<QueryParam> queryParams = [
-      if (after != null)
-        ..._convertParametersForCollectionFormat("after", after),
-      if (before != null)
-        ..._convertParametersForCollectionFormat("before", before),
-      if (order != null)
-        ..._convertParametersForCollectionFormat("order", order),
-      if (place != null)
-        ..._convertParametersForCollectionFormat("place", place),
-      if (page != null) ..._convertParametersForCollectionFormat("page", page),
-      if (limit != null)
-        ..._convertParametersForCollectionFormat("limit", limit),
-    ];
+    final List<QueryParam> queryParams = [];
 
     // header params
     final Map<String, String> headerParams = {
@@ -71,7 +53,7 @@ class PublicationApi {
 
     final Response response = await apiClient.invokeAPI(
       path,
-      'GET',
+      'DELETE',
       queryParams,
       postBody,
       headerParams,
@@ -84,19 +66,17 @@ class PublicationApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
-    return apiClient.deserialize(response.body, 'PublicationPagination')
-        as PublicationPagination;
+    return;
   }
 
   /// Retrieve one Publication resource.
   ///
   ///
-  Future<Publication> getPublicationByOrganizationAndPublication(
+  Future<Publication> getPublication(
     String xKeyclicApp,
-    String organization,
     String publication, {
     String acceptLanguage,
     String xKeyclicAppVersion,
@@ -107,20 +87,14 @@ class PublicationApi {
       throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
-    if (organization == null) {
-      throw ApiException(0, "Missing required param: organization");
-    }
-
     if (publication == null) {
       throw ApiException(0, "Missing required param: publication");
     }
 
     // create path and map variables
-    final String path =
-        "/organizations/{organization}/publications/{publication}"
-            .replaceAll("{format}", "json")
-            .replaceAll("{" + "organization" + "}", organization.toString())
-            .replaceAll("{" + "publication" + "}", publication.toString());
+    final String path = "/publications/{publication}"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "publication" + "}", publication.toString());
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -167,10 +141,9 @@ class PublicationApi {
   /// Create one Publication resource.
   ///
   ///
-  Future<Publication> postPublicationByOrganization(
+  Future<Publication> postPublication(
     String xKeyclicApp,
-    PublicationData publicationData,
-    String organization, {
+    PublicationData publicationData, {
     String acceptLanguage,
     String xKeyclicAppVersion,
   }) async {
@@ -184,14 +157,8 @@ class PublicationApi {
       throw ApiException(0, "Missing required param: publicationData");
     }
 
-    if (organization == null) {
-      throw ApiException(0, "Missing required param: organization");
-    }
-
     // create path and map variables
-    final String path = "/organizations/{organization}/publications"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "organization" + "}", organization.toString());
+    final String path = "/publications".replaceAll("{format}", "json");
 
     // query params
     final List<QueryParam> queryParams = [];

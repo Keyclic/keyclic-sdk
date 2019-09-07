@@ -1,13 +1,13 @@
 part of keyclic_sdk_api.api;
 
-class PublicationPagination {
+class PublicationPagination extends Pagination {
   PublicationPagination({
     this.limit,
     this.page,
     this.pages,
     this.total,
-    this.embedded,
     this.links,
+    this.embedded,
   });
 
   PublicationPagination.fromJson(Map<String, dynamic> json) {
@@ -18,8 +18,8 @@ class PublicationPagination {
     page = json['page'];
     pages = json['pages'];
     total = json['total'];
-    embedded = PublicationCollection.fromJson(json['_embedded']);
     links = PaginationLinks.fromJson(json['_links']);
+    embedded = PublicationCollection.fromJson(json['_embedded']);
   }
 
   int limit;
@@ -30,9 +30,9 @@ class PublicationPagination {
 
   int total;
 
-  PublicationCollection embedded;
-
   PaginationLinks links;
+
+  PublicationCollection embedded;
 
   @override
   bool operator ==(dynamic other) {
@@ -47,8 +47,8 @@ class PublicationPagination {
         page == other.page &&
         pages == other.pages &&
         total == other.total &&
-        embedded == other.embedded &&
-        links == other.links;
+        links == other.links &&
+        embedded == other.embedded;
   }
 
   /// By default hashCode return reference
@@ -59,8 +59,8 @@ class PublicationPagination {
       page.hashCode ^
       pages.hashCode ^
       total.hashCode ^
-      embedded.hashCode ^
-      links.hashCode;
+      links.hashCode ^
+      embedded.hashCode;
 
   static List<PublicationPagination> listFromJson(List<dynamic> json) {
     return json == null
@@ -84,13 +84,13 @@ class PublicationPagination {
       'page': page,
       'pages': pages,
       'total': total,
-      '_embedded': embedded,
       '_links': links,
+      '_embedded': embedded,
     };
   }
 
   @override
   String toString() {
-    return 'PublicationPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
+    return 'PublicationPagination[limit=$limit, page=$page, pages=$pages, total=$total, links=$links, embedded=$embedded, ]';
   }
 }

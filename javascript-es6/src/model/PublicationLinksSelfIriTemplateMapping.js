@@ -24,7 +24,6 @@ export default class PublicationLinksSelfIriTemplateMapping {
     
      */
   constructor() {
-    this.organization = null;
     this.publication = null;
   }
 
@@ -43,12 +42,6 @@ export default class PublicationLinksSelfIriTemplateMapping {
       object = new PublicationLinksSelfIriTemplateMapping();
     }
 
-    if (data.hasOwnProperty("organization")) {
-      object.organization = ApiClient.convertToType(
-        data["organization"],
-        "String"
-      );
-    }
     if (data.hasOwnProperty("publication")) {
       object.publication = ApiClient.convertToType(
         data["publication"],

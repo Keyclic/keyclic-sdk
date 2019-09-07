@@ -53,38 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.DocumentPagination);
     });
 
-    it('should have the property limit (base name: "limit")', function() {
-      // uncomment below and update the code to test the property limit
-      //var instane = new @KeyclicSdkJavascript.DocumentPagination();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property page (base name: "page")', function() {
-      // uncomment below and update the code to test the property page
-      //var instane = new @KeyclicSdkJavascript.DocumentPagination();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property pages (base name: "pages")', function() {
-      // uncomment below and update the code to test the property pages
-      //var instane = new @KeyclicSdkJavascript.DocumentPagination();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property total (base name: "total")', function() {
-      // uncomment below and update the code to test the property total
-      //var instane = new @KeyclicSdkJavascript.DocumentPagination();
-      //expect(instance).to.be();
-    });
-
     it('should have the property embedded (base name: "_embedded")', function() {
       // uncomment below and update the code to test the property embedded
-      //var instane = new @KeyclicSdkJavascript.DocumentPagination();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property links (base name: "_links")', function() {
-      // uncomment below and update the code to test the property links
       //var instane = new @KeyclicSdkJavascript.DocumentPagination();
       //expect(instance).to.be();
     });

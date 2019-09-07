@@ -64,6 +64,7 @@ var Publication =
       this.read = read;
       this.title = title;
       this.type = null;
+      this.updatedAt = null;
       this.linksType = _PublicationLinks.default;
     }
     /**
@@ -133,6 +134,13 @@ var Publication =
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

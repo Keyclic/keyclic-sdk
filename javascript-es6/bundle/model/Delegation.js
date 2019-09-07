@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _DelegationEmbedded = _interopRequireDefault(
+  require("./DelegationEmbedded")
+);
+
 var _DelegationLinks = _interopRequireDefault(require("./DelegationLinks"));
 
 function _interopRequireDefault(obj) {
@@ -53,12 +57,15 @@ var Delegation =
     function Delegation(state) {
       _classCallCheck(this, Delegation);
 
+      this.embedded = null;
       this.links = null;
       this.createdAt = null;
       this.description = null;
       this.id = null;
       this.state = state;
       this.type = null;
+      this.updatedAt = null;
+      this.embeddedType = _DelegationEmbedded.default;
       this.linksType = _DelegationLinks.default;
     }
     /**
@@ -83,6 +90,13 @@ var Delegation =
 
           if (object === null) {
             object = new Delegation();
+          }
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
           }
 
           if (data.hasOwnProperty("_links")) {
@@ -121,6 +135,13 @@ var Delegation =
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

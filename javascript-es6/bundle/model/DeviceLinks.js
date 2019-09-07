@@ -9,6 +9,8 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _DeviceLinksPerson = _interopRequireDefault(require("./DeviceLinksPerson"));
 
+var _DeviceLinksSelf = _interopRequireDefault(require("./DeviceLinksSelf"));
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -52,7 +54,9 @@ var DeviceLinks =
       _classCallCheck(this, DeviceLinks);
 
       this.person = null;
+      this.self = null;
       this.personType = _DeviceLinksPerson.default;
+      this.selfType = _DeviceLinksSelf.default;
     }
     /**
      * Constructs a "DeviceLinks" from a plain JavaScript object.
@@ -82,6 +86,13 @@ var DeviceLinks =
             object.person = _ApiClient.default.convertToType(
               data["person"],
               object.personType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
             );
           }
 

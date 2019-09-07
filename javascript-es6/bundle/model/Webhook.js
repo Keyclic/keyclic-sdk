@@ -58,11 +58,13 @@ var Webhook =
       _classCallCheck(this, Webhook);
 
       this.links = null;
+      this.createdAt = null;
       this.enabled = enabled;
       this.event = event;
       this.id = null;
       this.payloadUrl = payloadUrl;
       this.type = null;
+      this.updatedAt = null;
       this.linksType = _WebhookLinks.default;
     }
     /**
@@ -96,6 +98,13 @@ var Webhook =
             );
           }
 
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
           if (data.hasOwnProperty("enabled")) {
             object.enabled = _ApiClient.default.convertToType(
               data["enabled"],
@@ -125,6 +134,13 @@ var Webhook =
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

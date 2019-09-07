@@ -5,6 +5,7 @@ class PlaceData {
     this.name,
     this.branchCode,
     this.polygon,
+    this.organization,
   });
 
   PlaceData.fromJson(Map<String, dynamic> json) {
@@ -14,6 +15,7 @@ class PlaceData {
     name = json['name'];
     branchCode = json['branchCode'];
     polygon = json['polygon'];
+    organization = json['organization'];
   }
 
   String name;
@@ -21,6 +23,8 @@ class PlaceData {
   String branchCode;
 
   String polygon;
+
+  String organization;
 
   @override
   bool operator ==(dynamic other) {
@@ -33,13 +37,18 @@ class PlaceData {
         runtimeType == other.runtimeType &&
         name == other.name &&
         branchCode == other.branchCode &&
-        polygon == other.polygon;
+        polygon == other.polygon &&
+        organization == other.organization;
   }
 
   /// By default hashCode return reference
   @override
   int get hashCode =>
-      0 ^ name.hashCode ^ branchCode.hashCode ^ polygon.hashCode;
+      0 ^
+      name.hashCode ^
+      branchCode.hashCode ^
+      polygon.hashCode ^
+      organization.hashCode;
 
   static List<PlaceData> listFromJson(List<dynamic> json) {
     return json == null
@@ -61,11 +70,12 @@ class PlaceData {
       'name': name,
       'branchCode': branchCode,
       'polygon': polygon,
+      'organization': organization,
     };
   }
 
   @override
   String toString() {
-    return 'PlaceData[name=$name, branchCode=$branchCode, polygon=$polygon, ]';
+    return 'PlaceData[name=$name, branchCode=$branchCode, polygon=$polygon, organization=$organization, ]';
   }
 }

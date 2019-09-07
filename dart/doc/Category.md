@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **identificationNumber** | **String** |  | [optional] [default to null]
 **name** | **String** |  | [default to null]
 **type** | **String** |  | [optional] [default to null]
+**updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

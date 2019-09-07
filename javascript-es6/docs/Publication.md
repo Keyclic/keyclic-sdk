@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **read** | **Number** |  | 
 **title** | **String** |  | 
 **type** | **String** |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 
 

@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _FeedbackLinksSelfIriTemplateMapping = _interopRequireDefault(
-  require("./FeedbackLinksSelfIriTemplateMapping")
+var _ContributionLinksFeedbackIriTemplateMapping = _interopRequireDefault(
+  require("./ContributionLinksFeedbackIriTemplateMapping")
 );
 
 function _interopRequireDefault(obj) {
@@ -54,7 +54,7 @@ var FeedbackLinksTrackingIriTemplate =
       _classCallCheck(this, FeedbackLinksTrackingIriTemplate);
 
       this.mapping = null;
-      this.mappingType = _FeedbackLinksSelfIriTemplateMapping.default;
+      this.mappingType = _ContributionLinksFeedbackIriTemplateMapping.default;
     }
     /**
      * Constructs a "FeedbackLinksTrackingIriTemplate" from a plain JavaScript object.

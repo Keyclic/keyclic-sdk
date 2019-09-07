@@ -11,11 +11,17 @@
  */
 
 import ApiClient from "../ApiClient";
+import ActivityPagination from "../model/ActivityPagination";
+import AssignData from "../model/AssignData";
+import CommentData from "../model/CommentData";
 import Error from "../model/Error";
+import ImageData from "../model/ImageData";
 import Operation from "../model/Operation";
 import OperationData from "../model/OperationData";
-import OperationPagination from "../model/OperationPagination";
 import OperationPatch from "../model/OperationPatch";
+import OperationWorkflowTransitionData from "../model/OperationWorkflowTransitionData";
+import SignatureData from "../model/SignatureData";
+import Tracking from "../model/Tracking";
 
 /**
  * Operation service.
@@ -33,36 +39,26 @@ export default class OperationApi extends ApiClient {
   }
 
   /**
-   * Retrieve all Operation resources.
+   * Retrieve all Comment resources.
    * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource.
+   * @param { String } operation The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { ActivityPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { module:model/Date } after
-   * @param { module:model/Date } before
-   * @param { module:model/String } order   (default to desc)
-   * @param { String } query
-   * @param { String } state
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetOperationsByOrganization(returnType = null, options, credentials) {
+  cgetCommentsByOperation(returnType = null, options, credentials) {
     if (returnType === null) {
-      returnType = OperationPagination;
+      returnType = ActivityPagination;
     }
 
     let {
       xKeyclicApp,
-      organization,
+      operation,
       acceptLanguage,
       xKeyclicAppVersion,
-      after,
-      before,
-      order,
-      query,
-      state,
       page,
       limit
     } = options;
@@ -70,25 +66,20 @@ export default class OperationApi extends ApiClient {
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling cgetOperationsByOrganization'
+        'Missing the required parameter "xKeyclicApp" when calling cgetCommentsByOperation'
       );
     }
 
-    // verify the required parameter 'organization' is set
-    if (typeof organization === "undefined" || organization === null) {
+    // verify the required parameter 'operation' is set
+    if (typeof operation === "undefined" || operation === null) {
       throw new window.Error(
-        'Missing the required parameter "organization" when calling cgetOperationsByOrganization'
+        'Missing the required parameter "operation" when calling cgetCommentsByOperation'
       );
     }
 
     // verify the default value of parameter 'acceptLanguage'
     if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
       acceptLanguage = "fr-FR";
-    }
-
-    // verify the default value of parameter 'order'
-    if (typeof order === "undefined" || order === null) {
-      order = "desc";
     }
 
     // verify the default value of parameter 'page'
@@ -106,44 +97,19 @@ export default class OperationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    // verify the null value of parameter 'after'
-    if (typeof after === "undefined") {
-      after = null;
-    }
-
-    // verify the null value of parameter 'before'
-    if (typeof before === "undefined") {
-      before = null;
-    }
-
-    // verify the null value of parameter 'query'
-    if (typeof query === "undefined") {
-      query = null;
-    }
-
-    // verify the null value of parameter 'state'
-    if (typeof state === "undefined") {
-      state = null;
-    }
-
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetOperationsByOrganization'
+        'Missing the required parameter "credentials" when calling cgetCommentsByOperation'
       );
     }
 
     let pathParams = {
-      organization: organization
+      operation: operation
     };
 
     let bodyParam = null;
 
     let queryParams = {
-      after: after,
-      before: before,
-      order: order,
-      query: query,
-      state: state,
       page: page,
       limit: limit
     };
@@ -163,7 +129,7 @@ export default class OperationApi extends ApiClient {
     let accepts = ["application/hal+json;charset=UTF-8"];
 
     return this.callApi(
-      "/organizations/{organization}/operations",
+      "/operations/{operation}/comments",
       "GET",
       pathParams,
       queryParams,
@@ -178,53 +144,42 @@ export default class OperationApi extends ApiClient {
   }
 
   /**
-   * Retrieve all Operation resources.
+   * Remove one Image resource.
    * @param { String } xKeyclicApp
-   * @param { String } person The identifier of the resource.
+   * @param { String } operation The identifier of the resource.
+   * @param { String } image The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { module:model/Date } after
-   * @param { module:model/Date } before
-   * @param { module:model/String } order   (default to desc)
-   * @param { String } organization The identifier of the resource.
-   * @param { String } query
-   * @param { String } state
-   * @param { Number } page Page of the overview.  (default to 1)
-   * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetOperationsByPerson(returnType = null, options, credentials) {
-    if (returnType === null) {
-      returnType = OperationPagination;
-    }
-
+  deleteImageByOperationAndImage(returnType = null, options, credentials) {
     let {
       xKeyclicApp,
-      person,
+      operation,
+      image,
       acceptLanguage,
-      xKeyclicAppVersion,
-      after,
-      before,
-      order,
-      organization,
-      query,
-      state,
-      page,
-      limit
+      xKeyclicAppVersion
     } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling cgetOperationsByPerson'
+        'Missing the required parameter "xKeyclicApp" when calling deleteImageByOperationAndImage'
       );
     }
 
-    // verify the required parameter 'person' is set
-    if (typeof person === "undefined" || person === null) {
+    // verify the required parameter 'operation' is set
+    if (typeof operation === "undefined" || operation === null) {
       throw new window.Error(
-        'Missing the required parameter "person" when calling cgetOperationsByPerson'
+        'Missing the required parameter "operation" when calling deleteImageByOperationAndImage'
+      );
+    }
+
+    // verify the required parameter 'image' is set
+    if (typeof image === "undefined" || image === null) {
+      throw new window.Error(
+        'Missing the required parameter "image" when calling deleteImageByOperationAndImage'
       );
     }
 
@@ -233,73 +188,25 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
-    // verify the default value of parameter 'order'
-    if (typeof order === "undefined" || order === null) {
-      order = "desc";
-    }
-
-    // verify the default value of parameter 'page'
-    if (typeof page === "undefined" || page === null) {
-      page = 1;
-    }
-
-    // verify the default value of parameter 'limit'
-    if (typeof limit === "undefined" || limit === null) {
-      limit = 10;
-    }
-
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
     }
 
-    // verify the null value of parameter 'after'
-    if (typeof after === "undefined") {
-      after = null;
-    }
-
-    // verify the null value of parameter 'before'
-    if (typeof before === "undefined") {
-      before = null;
-    }
-
-    // verify the null value of parameter 'organization'
-    if (typeof organization === "undefined") {
-      organization = null;
-    }
-
-    // verify the null value of parameter 'query'
-    if (typeof query === "undefined") {
-      query = null;
-    }
-
-    // verify the null value of parameter 'state'
-    if (typeof state === "undefined") {
-      state = null;
-    }
-
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetOperationsByPerson'
+        'Missing the required parameter "credentials" when calling deleteImageByOperationAndImage'
       );
     }
 
     let pathParams = {
-      person: person
+      operation: operation,
+      image: image
     };
 
     let bodyParam = null;
 
-    let queryParams = {
-      after: after,
-      before: before,
-      order: order,
-      organization: organization,
-      query: query,
-      state: state,
-      page: page,
-      limit: limit
-    };
+    let queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -316,161 +223,8 @@ export default class OperationApi extends ApiClient {
     let accepts = ["application/hal+json;charset=UTF-8"];
 
     return this.callApi(
-      "/people/{person}/operations",
-      "GET",
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    );
-  }
-
-  /**
-   * Retrieve all Operation resources.
-   * @param { String } xKeyclicApp
-   * @param { String } report The identifier of the resource.
-   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-   * @param { module:model/String } acceptLanguage   (default to fr-FR)
-   * @param { String } xKeyclicAppVersion
-   * @param { module:model/Date } after
-   * @param { module:model/Date } before
-   * @param { module:model/String } order   (default to desc)
-   * @param { String } organization The identifier of the resource.
-   * @param { String } query
-   * @param { String } state
-   * @param { Number } page Page of the overview.  (default to 1)
-   * @param { Number } limit Page of the overview.  (default to 10)
-   */
-  cgetOperationsByReport(returnType = null, options, credentials) {
-    if (returnType === null) {
-      returnType = OperationPagination;
-    }
-
-    let {
-      xKeyclicApp,
-      report,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      after,
-      before,
-      order,
-      organization,
-      query,
-      state,
-      page,
-      limit
-    } = options;
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-      throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling cgetOperationsByReport'
-      );
-    }
-
-    // verify the required parameter 'report' is set
-    if (typeof report === "undefined" || report === null) {
-      throw new window.Error(
-        'Missing the required parameter "report" when calling cgetOperationsByReport'
-      );
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
-      acceptLanguage = "fr-FR";
-    }
-
-    // verify the default value of parameter 'order'
-    if (typeof order === "undefined" || order === null) {
-      order = "desc";
-    }
-
-    // verify the default value of parameter 'page'
-    if (typeof page === "undefined" || page === null) {
-      page = 1;
-    }
-
-    // verify the default value of parameter 'limit'
-    if (typeof limit === "undefined" || limit === null) {
-      limit = 10;
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === "undefined") {
-      xKeyclicAppVersion = null;
-    }
-
-    // verify the null value of parameter 'after'
-    if (typeof after === "undefined") {
-      after = null;
-    }
-
-    // verify the null value of parameter 'before'
-    if (typeof before === "undefined") {
-      before = null;
-    }
-
-    // verify the null value of parameter 'organization'
-    if (typeof organization === "undefined") {
-      organization = null;
-    }
-
-    // verify the null value of parameter 'query'
-    if (typeof query === "undefined") {
-      query = null;
-    }
-
-    // verify the null value of parameter 'state'
-    if (typeof state === "undefined") {
-      state = null;
-    }
-
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetOperationsByReport'
-      );
-    }
-
-    let pathParams = {
-      report: report
-    };
-
-    let bodyParam = null;
-
-    let queryParams = {
-      after: after,
-      before: before,
-      order: order,
-      organization: organization,
-      query: query,
-      state: state,
-      page: page,
-      limit: limit
-    };
-
-    let headerParams = {
-      "accept-language": acceptLanguage,
-      "x-keyclic-app": xKeyclicApp,
-      "x-keyclic-app-version": xKeyclicAppVersion
-    };
-
-    let credentialParams = credentials;
-
-    let authNames = ["bearer"];
-
-    let contentTypes = ["application/json;charset=UTF-8"];
-
-    let accepts = ["application/hal+json;charset=UTF-8"];
-
-    return this.callApi(
-      "/reports/{report}/operations",
-      "GET",
+      "/operations/{operation}/images/{image}",
+      "DELETE",
       pathParams,
       queryParams,
       headerParams,
@@ -656,6 +410,94 @@ export default class OperationApi extends ApiClient {
   }
 
   /**
+   * Retrieve one Tracking resource.
+   * @param { String } xKeyclicApp
+   * @param { String } operation The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Tracking }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  getTrackingByOperation(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Tracking;
+    }
+
+    let {
+      xKeyclicApp,
+      operation,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling getTrackingByOperation'
+      );
+    }
+
+    // verify the required parameter 'operation' is set
+    if (typeof operation === "undefined" || operation === null) {
+      throw new window.Error(
+        'Missing the required parameter "operation" when calling getTrackingByOperation'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling getTrackingByOperation'
+      );
+    }
+
+    let pathParams = {
+      operation: operation
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/operations/{operation}/tracking",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
    * Edit one Operation resource.
    * @param { String } xKeyclicApp
    * @param { module:model/OperationPatch } operationPatch
@@ -753,6 +595,297 @@ export default class OperationApi extends ApiClient {
   }
 
   /**
+   * Create one Assign resource.
+   * @param { String } xKeyclicApp
+   * @param { module:model/AssignData } assignData
+   * @param { String } operation The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  postAssignByOperation(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Operation;
+    }
+
+    let {
+      xKeyclicApp,
+      assignData,
+      operation,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling postAssignByOperation'
+      );
+    }
+
+    // verify the required parameter 'assignData' is set
+    if (typeof assignData === "undefined" || assignData === null) {
+      throw new window.Error(
+        'Missing the required parameter "assignData" when calling postAssignByOperation'
+      );
+    }
+
+    // verify the required parameter 'operation' is set
+    if (typeof operation === "undefined" || operation === null) {
+      throw new window.Error(
+        'Missing the required parameter "operation" when calling postAssignByOperation'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling postAssignByOperation'
+      );
+    }
+
+    let pathParams = {
+      operation: operation
+    };
+
+    let bodyParam = assignData;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/operations/{operation}/assign",
+      "POST",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Create one Comment resource.
+   * @param { String } xKeyclicApp
+   * @param { module:model/CommentData } commentData
+   * @param { String } operation The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  postCommentByOperation(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Operation;
+    }
+
+    let {
+      xKeyclicApp,
+      commentData,
+      operation,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling postCommentByOperation'
+      );
+    }
+
+    // verify the required parameter 'commentData' is set
+    if (typeof commentData === "undefined" || commentData === null) {
+      throw new window.Error(
+        'Missing the required parameter "commentData" when calling postCommentByOperation'
+      );
+    }
+
+    // verify the required parameter 'operation' is set
+    if (typeof operation === "undefined" || operation === null) {
+      throw new window.Error(
+        'Missing the required parameter "operation" when calling postCommentByOperation'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling postCommentByOperation'
+      );
+    }
+
+    let pathParams = {
+      operation: operation
+    };
+
+    let bodyParam = commentData;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/operations/{operation}/comments",
+      "POST",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Create one Image resource.
+   * @param { String } xKeyclicApp
+   * @param { module:model/ImageData } imageData
+   * @param { String } operation The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  postImageByOperation(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Operation;
+    }
+
+    let {
+      xKeyclicApp,
+      imageData,
+      operation,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling postImageByOperation'
+      );
+    }
+
+    // verify the required parameter 'imageData' is set
+    if (typeof imageData === "undefined" || imageData === null) {
+      throw new window.Error(
+        'Missing the required parameter "imageData" when calling postImageByOperation'
+      );
+    }
+
+    // verify the required parameter 'operation' is set
+    if (typeof operation === "undefined" || operation === null) {
+      throw new window.Error(
+        'Missing the required parameter "operation" when calling postImageByOperation'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling postImageByOperation'
+      );
+    }
+
+    let pathParams = {
+      operation: operation
+    };
+
+    let bodyParam = imageData;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/operations/{operation}/images",
+      "POST",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
    * Create one Operation resource.
    * @param { String } xKeyclicApp
    * @param { module:model/OperationData } operationData
@@ -825,6 +958,203 @@ export default class OperationApi extends ApiClient {
 
     return this.callApi(
       "/operations",
+      "POST",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Create one Sign resource.
+   * @param { String } xKeyclicApp
+   * @param { module:model/SignatureData } signatureData
+   * @param { String } operation The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  postSignByOperation(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Operation;
+    }
+
+    let {
+      xKeyclicApp,
+      signatureData,
+      operation,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling postSignByOperation'
+      );
+    }
+
+    // verify the required parameter 'signatureData' is set
+    if (typeof signatureData === "undefined" || signatureData === null) {
+      throw new window.Error(
+        'Missing the required parameter "signatureData" when calling postSignByOperation'
+      );
+    }
+
+    // verify the required parameter 'operation' is set
+    if (typeof operation === "undefined" || operation === null) {
+      throw new window.Error(
+        'Missing the required parameter "operation" when calling postSignByOperation'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling postSignByOperation'
+      );
+    }
+
+    let pathParams = {
+      operation: operation
+    };
+
+    let bodyParam = signatureData;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/operations/{operation}/sign",
+      "POST",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Create one Workflow resource.
+   * @param { String } xKeyclicApp
+   * @param { module:model/OperationWorkflowTransitionData } operationWorkflowTransitionData
+   * @param { String } operation The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  postWorkflowByOperation(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Operation;
+    }
+
+    let {
+      xKeyclicApp,
+      operationWorkflowTransitionData,
+      operation,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling postWorkflowByOperation'
+      );
+    }
+
+    // verify the required parameter 'operationWorkflowTransitionData' is set
+    if (
+      typeof operationWorkflowTransitionData === "undefined" ||
+      operationWorkflowTransitionData === null
+    ) {
+      throw new window.Error(
+        'Missing the required parameter "operationWorkflowTransitionData" when calling postWorkflowByOperation'
+      );
+    }
+
+    // verify the required parameter 'operation' is set
+    if (typeof operation === "undefined" || operation === null) {
+      throw new window.Error(
+        'Missing the required parameter "operation" when calling postWorkflowByOperation'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling postWorkflowByOperation'
+      );
+    }
+
+    let pathParams = {
+      operation: operation
+    };
+
+    let bodyParam = operationWorkflowTransitionData;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/operations/{operation}/workflow",
       "POST",
       pathParams,
       queryParams,

@@ -4,6 +4,7 @@ class ReviewData {
   ReviewData({
     this.reviewBody,
     this.reviewRating,
+    this.reviewRequest,
   });
 
   ReviewData.fromJson(Map<String, dynamic> json) {
@@ -12,11 +13,14 @@ class ReviewData {
     }
     reviewBody = json['reviewBody'];
     reviewRating = json['reviewRating'];
+    reviewRequest = json['reviewRequest'];
   }
 
   String reviewBody;
 
   num reviewRating;
+
+  String reviewRequest;
 
   @override
   bool operator ==(dynamic other) {
@@ -28,12 +32,14 @@ class ReviewData {
     return other is ReviewData &&
         runtimeType == other.runtimeType &&
         reviewBody == other.reviewBody &&
-        reviewRating == other.reviewRating;
+        reviewRating == other.reviewRating &&
+        reviewRequest == other.reviewRequest;
   }
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ reviewBody.hashCode ^ reviewRating.hashCode;
+  int get hashCode =>
+      0 ^ reviewBody.hashCode ^ reviewRating.hashCode ^ reviewRequest.hashCode;
 
   static List<ReviewData> listFromJson(List<dynamic> json) {
     return json == null
@@ -54,11 +60,12 @@ class ReviewData {
     return {
       'reviewBody': reviewBody,
       'reviewRating': reviewRating,
+      'reviewRequest': reviewRequest,
     };
   }
 
   @override
   String toString() {
-    return 'ReviewData[reviewBody=$reviewBody, reviewRating=$reviewRating, ]';
+    return 'ReviewData[reviewBody=$reviewBody, reviewRating=$reviewRating, reviewRequest=$reviewRequest, ]';
   }
 }

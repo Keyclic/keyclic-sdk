@@ -11,15 +11,9 @@ var _Error = _interopRequireDefault(require("../model/Error"));
 
 var _Member = _interopRequireDefault(require("../model/Member"));
 
-var _MemberPagination = _interopRequireDefault(
-  require("../model/MemberPagination")
-);
+var _MemberData = _interopRequireDefault(require("../model/MemberData"));
 
 var _MemberPatch = _interopRequireDefault(require("../model/MemberPatch"));
-
-var _Organization = _interopRequireDefault(require("../model/Organization"));
-
-var _PersonData = _interopRequireDefault(require("../model/PersonData"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -147,195 +141,39 @@ var MemberApi =
       );
     }
     /**
-     * Retrieve all Member resources.
+     * Remove one Member resource.
      * @param { String } xKeyclicApp
-     * @param { String } organization The identifier of the resource.
+     * @param { String } member The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { MemberPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+     * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { module:model/Date } after
-     * @param { module:model/Date } before
-     * @param { module:model/String } order   (default to desc)
-     * @param { String } query
-     * @param { String } role
-     * @param { String } roles
-     * @param { Number } page Page of the overview.  (default to 1)
-     * @param { Number } limit Page of the overview.  (default to 10)
      */
 
     _createClass(MemberApi, [
       {
-        key: "cgetMembersByOrganization",
-        value: function cgetMembersByOrganization() {
+        key: "deleteMember",
+        value: function deleteMember() {
           var returnType =
             arguments.length > 0 && arguments[0] !== undefined
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
           var credentials = arguments.length > 2 ? arguments[2] : undefined;
-
-          if (returnType === null) {
-            returnType = _MemberPagination.default;
-          }
-
           var xKeyclicApp = options.xKeyclicApp,
-            organization = options.organization,
-            acceptLanguage = options.acceptLanguage,
-            xKeyclicAppVersion = options.xKeyclicAppVersion,
-            after = options.after,
-            before = options.before,
-            order = options.order,
-            query = options.query,
-            role = options.role,
-            roles = options.roles,
-            page = options.page,
-            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling cgetMembersByOrganization'
-            );
-          } // verify the required parameter 'organization' is set
-
-          if (typeof organization === "undefined" || organization === null) {
-            throw new window.Error(
-              'Missing the required parameter "organization" when calling cgetMembersByOrganization'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
-          } // verify the default value of parameter 'page'
-
-          if (typeof page === "undefined" || page === null) {
-            page = 1;
-          } // verify the default value of parameter 'limit'
-
-          if (typeof limit === "undefined" || limit === null) {
-            limit = 10;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'after'
-
-          if (typeof after === "undefined") {
-            after = null;
-          } // verify the null value of parameter 'before'
-
-          if (typeof before === "undefined") {
-            before = null;
-          } // verify the null value of parameter 'query'
-
-          if (typeof query === "undefined") {
-            query = null;
-          } // verify the null value of parameter 'role'
-
-          if (typeof role === "undefined") {
-            role = null;
-          } // verify the null value of parameter 'roles'
-
-          if (typeof roles === "undefined") {
-            roles = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetMembersByOrganization'
-            );
-          }
-
-          var pathParams = {
-            organization: organization
-          };
-          var bodyParam = null;
-          var queryParams = {
-            after: after,
-            before: before,
-            order: order,
-            query: query,
-            role: role,
-            roles: roles,
-            page: page,
-            limit: limit
-          };
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/organizations/{organization}/members",
-            "GET",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-          );
-        }
-        /**
-         * Remove one Member resource.
-         * @param { String } xKeyclicApp
-         * @param { String } organization The identifier of the resource.
-         * @param { String } member The identifier of the resource.
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { Organization }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { String } xKeyclicAppVersion
-         */
-      },
-      {
-        key: "deleteMemberByOrganizationAndMember",
-        value: function deleteMemberByOrganizationAndMember() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
-
-          if (returnType === null) {
-            returnType = _Organization.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            organization = options.organization,
             member = options.member,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling deleteMemberByOrganizationAndMember'
-            );
-          } // verify the required parameter 'organization' is set
-
-          if (typeof organization === "undefined" || organization === null) {
-            throw new window.Error(
-              'Missing the required parameter "organization" when calling deleteMemberByOrganizationAndMember'
+              'Missing the required parameter "xKeyclicApp" when calling deleteMember'
             );
           } // verify the required parameter 'member' is set
 
           if (typeof member === "undefined" || member === null) {
             throw new window.Error(
-              'Missing the required parameter "member" when calling deleteMemberByOrganizationAndMember'
+              'Missing the required parameter "member" when calling deleteMember'
             );
           } // verify the default value of parameter 'acceptLanguage'
 
@@ -352,12 +190,11 @@ var MemberApi =
 
           if (typeof credentials === "undefined" || credentials === null) {
             throw new window.Error(
-              'Missing the required parameter "credentials" when calling deleteMemberByOrganizationAndMember'
+              'Missing the required parameter "credentials" when calling deleteMember'
             );
           }
 
           var pathParams = {
-            organization: organization,
             member: member
           };
           var bodyParam = null;
@@ -372,7 +209,7 @@ var MemberApi =
           var contentTypes = ["application/json;charset=UTF-8"];
           var accepts = ["application/hal+json;charset=UTF-8"];
           return this.callApi(
-            "/organizations/{organization}/members/{member}",
+            "/members/{member}",
             "DELETE",
             pathParams,
             queryParams,
@@ -388,7 +225,6 @@ var MemberApi =
         /**
          * Retrieve one Member resource.
          * @param { String } xKeyclicApp
-         * @param { String } organization The identifier of the resource.
          * @param { String } member The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Member }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
@@ -397,8 +233,8 @@ var MemberApi =
          */
       },
       {
-        key: "getMemberByOrganizationAndMember",
-        value: function getMemberByOrganizationAndMember() {
+        key: "getMember",
+        value: function getMember() {
           var returnType =
             arguments.length > 0 && arguments[0] !== undefined
               ? arguments[0]
@@ -411,26 +247,19 @@ var MemberApi =
           }
 
           var xKeyclicApp = options.xKeyclicApp,
-            organization = options.organization,
             member = options.member,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling getMemberByOrganizationAndMember'
-            );
-          } // verify the required parameter 'organization' is set
-
-          if (typeof organization === "undefined" || organization === null) {
-            throw new window.Error(
-              'Missing the required parameter "organization" when calling getMemberByOrganizationAndMember'
+              'Missing the required parameter "xKeyclicApp" when calling getMember'
             );
           } // verify the required parameter 'member' is set
 
           if (typeof member === "undefined" || member === null) {
             throw new window.Error(
-              'Missing the required parameter "member" when calling getMemberByOrganizationAndMember'
+              'Missing the required parameter "member" when calling getMember'
             );
           } // verify the default value of parameter 'acceptLanguage'
 
@@ -447,12 +276,11 @@ var MemberApi =
 
           if (typeof credentials === "undefined" || credentials === null) {
             throw new window.Error(
-              'Missing the required parameter "credentials" when calling getMemberByOrganizationAndMember'
+              'Missing the required parameter "credentials" when calling getMember'
             );
           }
 
           var pathParams = {
-            organization: organization,
             member: member
           };
           var bodyParam = null;
@@ -467,7 +295,7 @@ var MemberApi =
           var contentTypes = ["application/json;charset=UTF-8"];
           var accepts = ["application/hal+json;charset=UTF-8"];
           return this.callApi(
-            "/organizations/{organization}/members/{member}",
+            "/members/{member}",
             "GET",
             pathParams,
             queryParams,
@@ -484,7 +312,6 @@ var MemberApi =
          * Edit one Member resource.
          * @param { String } xKeyclicApp
          * @param { module:model/MemberPatch } memberPatch
-         * @param { String } organization The identifier of the resource.
          * @param { String } member The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Member }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
@@ -493,8 +320,8 @@ var MemberApi =
          */
       },
       {
-        key: "patchMemberByOrganizationAndMember",
-        value: function patchMemberByOrganizationAndMember() {
+        key: "patchMember",
+        value: function patchMember() {
           var returnType =
             arguments.length > 0 && arguments[0] !== undefined
               ? arguments[0]
@@ -508,32 +335,25 @@ var MemberApi =
 
           var xKeyclicApp = options.xKeyclicApp,
             memberPatch = options.memberPatch,
-            organization = options.organization,
             member = options.member,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling patchMemberByOrganizationAndMember'
+              'Missing the required parameter "xKeyclicApp" when calling patchMember'
             );
           } // verify the required parameter 'memberPatch' is set
 
           if (typeof memberPatch === "undefined" || memberPatch === null) {
             throw new window.Error(
-              'Missing the required parameter "memberPatch" when calling patchMemberByOrganizationAndMember'
-            );
-          } // verify the required parameter 'organization' is set
-
-          if (typeof organization === "undefined" || organization === null) {
-            throw new window.Error(
-              'Missing the required parameter "organization" when calling patchMemberByOrganizationAndMember'
+              'Missing the required parameter "memberPatch" when calling patchMember'
             );
           } // verify the required parameter 'member' is set
 
           if (typeof member === "undefined" || member === null) {
             throw new window.Error(
-              'Missing the required parameter "member" when calling patchMemberByOrganizationAndMember'
+              'Missing the required parameter "member" when calling patchMember'
             );
           } // verify the default value of parameter 'acceptLanguage'
 
@@ -550,12 +370,11 @@ var MemberApi =
 
           if (typeof credentials === "undefined" || credentials === null) {
             throw new window.Error(
-              'Missing the required parameter "credentials" when calling patchMemberByOrganizationAndMember'
+              'Missing the required parameter "credentials" when calling patchMember'
             );
           }
 
           var pathParams = {
-            organization: organization,
             member: member
           };
           var bodyParam = memberPatch;
@@ -570,7 +389,7 @@ var MemberApi =
           var contentTypes = ["application/json;charset=UTF-8"];
           var accepts = ["application/hal+json;charset=UTF-8"];
           return this.callApi(
-            "/organizations/{organization}/members/{member}",
+            "/members/{member}",
             "PATCH",
             pathParams,
             queryParams,
@@ -586,8 +405,7 @@ var MemberApi =
         /**
          * Create one Member resource.
          * @param { String } xKeyclicApp
-         * @param { module:model/PersonData } personData
-         * @param { String } organization The identifier of the resource.
+         * @param { module:model/MemberData } memberData
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Member }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -595,8 +413,8 @@ var MemberApi =
          */
       },
       {
-        key: "postMemberByOrganization",
-        value: function postMemberByOrganization() {
+        key: "postMember",
+        value: function postMember() {
           var returnType =
             arguments.length > 0 && arguments[0] !== undefined
               ? arguments[0]
@@ -609,26 +427,19 @@ var MemberApi =
           }
 
           var xKeyclicApp = options.xKeyclicApp,
-            personData = options.personData,
-            organization = options.organization,
+            memberData = options.memberData,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling postMemberByOrganization'
+              'Missing the required parameter "xKeyclicApp" when calling postMember'
             );
-          } // verify the required parameter 'personData' is set
+          } // verify the required parameter 'memberData' is set
 
-          if (typeof personData === "undefined" || personData === null) {
+          if (typeof memberData === "undefined" || memberData === null) {
             throw new window.Error(
-              'Missing the required parameter "personData" when calling postMemberByOrganization'
-            );
-          } // verify the required parameter 'organization' is set
-
-          if (typeof organization === "undefined" || organization === null) {
-            throw new window.Error(
-              'Missing the required parameter "organization" when calling postMemberByOrganization'
+              'Missing the required parameter "memberData" when calling postMember'
             );
           } // verify the default value of parameter 'acceptLanguage'
 
@@ -645,14 +456,12 @@ var MemberApi =
 
           if (typeof credentials === "undefined" || credentials === null) {
             throw new window.Error(
-              'Missing the required parameter "credentials" when calling postMemberByOrganization'
+              'Missing the required parameter "credentials" when calling postMember'
             );
           }
 
-          var pathParams = {
-            organization: organization
-          };
-          var bodyParam = personData;
+          var pathParams = {};
+          var bodyParam = memberData;
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
@@ -664,7 +473,7 @@ var MemberApi =
           var contentTypes = ["application/json;charset=UTF-8"];
           var accepts = ["application/hal+json;charset=UTF-8"];
           return this.callApi(
-            "/organizations/{organization}/members",
+            "/members",
             "POST",
             pathParams,
             queryParams,

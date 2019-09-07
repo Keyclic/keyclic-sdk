@@ -29,6 +29,7 @@ export default class Occupant {
     this.createdAt = null;
     this.id = null;
     this.type = null;
+    this.updatedAt = null;
 
     this.linksType = OccupantLinks;
   }
@@ -59,6 +60,9 @@ export default class Occupant {
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

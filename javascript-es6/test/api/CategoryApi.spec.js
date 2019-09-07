@@ -57,16 +57,6 @@
         done();
       });
     });
-    describe('cgetCategoriesByOrganization', function() {
-      it('should call cgetCategoriesByOrganization successfully', function(done) {
-        //uncomment below and update the code to test cgetCategoriesByOrganization
-        //instance.cgetCategoriesByOrganization(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('deleteCategory', function() {
       it('should call deleteCategory successfully', function(done) {
         //uncomment below and update the code to test deleteCategory
@@ -97,10 +87,10 @@
         done();
       });
     });
-    describe('postCategoryByOrganization', function() {
-      it('should call postCategoryByOrganization successfully', function(done) {
-        //uncomment below and update the code to test postCategoryByOrganization
-        //instance.postCategoryByOrganization(function(error) {
+    describe('postCategory', function() {
+      it('should call postCategory successfully', function(done) {
+        //uncomment below and update the code to test postCategory
+        //instance.postCategory(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -52,8 +52,10 @@ var Device =
       _classCallCheck(this, Device);
 
       this.links = null;
+      this.createdAt = null;
       this.id = null;
       this.type = null;
+      this.updatedAt = null;
       this.linksType = _DeviceLinks.default;
     }
     /**
@@ -87,6 +89,13 @@ var Device =
             );
           }
 
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
           if (data.hasOwnProperty("id")) {
             object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
@@ -95,6 +104,13 @@ var Device =
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

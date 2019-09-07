@@ -59,6 +59,7 @@ var Member =
       this.id = null;
       this.roles = [];
       this.type = null;
+      this.updatedAt = null;
       this.embeddedType = _MemberEmbedded.default;
       this.linksType = _MemberLinks.default;
     }
@@ -122,6 +123,13 @@ var Member =
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

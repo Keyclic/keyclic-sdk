@@ -3,10 +3,12 @@ part of keyclic_sdk_api.api;
 class Application {
   Application({
     this.links,
+    this.createdAt,
     this.id,
     this.name,
     this.token,
     this.type,
+    this.updatedAt,
     this.version,
   });
 
@@ -15,14 +17,26 @@ class Application {
       return;
     }
     links = ApplicationLinks.fromJson(json['_links']);
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    if (createdAt is DateTime && createdAt.isUtc == false) {
+      createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
+    }
     id = json['id'];
     name = json['name'];
     token = json['token'];
     type = json['type'];
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    if (updatedAt is DateTime && updatedAt.isUtc == false) {
+      updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
+    }
     version = json['version'];
   }
 
   ApplicationLinks links;
+
+  DateTime createdAt;
 
   String id;
 
@@ -31,6 +45,8 @@ class Application {
   String token;
 
   String type;
+
+  DateTime updatedAt;
 
   String version;
 
@@ -44,10 +60,12 @@ class Application {
     return other is Application &&
         runtimeType == other.runtimeType &&
         links == other.links &&
+        createdAt == other.createdAt &&
         id == other.id &&
         name == other.name &&
         token == other.token &&
         type == other.type &&
+        updatedAt == other.updatedAt &&
         version == other.version;
   }
 
@@ -56,10 +74,12 @@ class Application {
   int get hashCode =>
       0 ^
       links.hashCode ^
+      createdAt.hashCode ^
       id.hashCode ^
       name.hashCode ^
       token.hashCode ^
       type.hashCode ^
+      updatedAt.hashCode ^
       version.hashCode;
 
   static List<Application> listFromJson(List<dynamic> json) {
@@ -80,16 +100,18 @@ class Application {
   Map<String, dynamic> toJson() {
     return {
       '_links': links,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
       'id': id,
       'name': name,
       'token': token,
       'type': type,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
       'version': version,
     };
   }
 
   @override
   String toString() {
-    return 'Application[links=$links, id=$id, name=$name, token=$token, type=$type, version=$version, ]';
+    return 'Application[links=$links, createdAt=$createdAt, id=$id, name=$name, token=$token, type=$type, updatedAt=$updatedAt, version=$version, ]';
   }
 }

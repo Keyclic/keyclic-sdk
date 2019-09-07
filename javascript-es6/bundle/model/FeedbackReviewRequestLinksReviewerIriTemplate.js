@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _DelegationLinksCreatedByIriTemplateMapping = _interopRequireDefault(
-  require("./DelegationLinksCreatedByIriTemplateMapping")
+var _ContributionLinksContributorIriTemplateMapping = _interopRequireDefault(
+  require("./ContributionLinksContributorIriTemplateMapping")
 );
 
 function _interopRequireDefault(obj) {
@@ -54,7 +54,8 @@ var FeedbackReviewRequestLinksReviewerIriTemplate =
       _classCallCheck(this, FeedbackReviewRequestLinksReviewerIriTemplate);
 
       this.mapping = null;
-      this.mappingType = _DelegationLinksCreatedByIriTemplateMapping.default;
+      this.mappingType =
+        _ContributionLinksContributorIriTemplateMapping.default;
     }
     /**
      * Constructs a "FeedbackReviewRequestLinksReviewerIriTemplate" from a plain JavaScript object.

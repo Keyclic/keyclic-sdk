@@ -57,12 +57,6 @@ export default class OperationWorkflowTransitionData {
    */
   static TransitionEnum = {
     /**
-     * value: "accept"
-     * @const
-     * @readonly
-     */
-    accept: "accept",
-    /**
      * value: "assign"
      * @const
      * @readonly
@@ -74,18 +68,6 @@ export default class OperationWorkflowTransitionData {
      * @readonly
      */
     progress: "progress",
-    /**
-     * value: "refuse"
-     * @const
-     * @readonly
-     */
-    refuse: "refuse",
-    /**
-     * value: "reset"
-     * @const
-     * @readonly
-     */
-    reset: "reset",
     /**
      * value: "resolve"
      * @const

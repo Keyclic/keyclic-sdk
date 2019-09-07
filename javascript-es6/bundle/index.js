@@ -69,6 +69,12 @@ Object.defineProperty(exports, "ApplicationLinksSelfIriTemplateMapping", {
     return _ApplicationLinksSelfIriTemplateMapping.default;
   }
 });
+Object.defineProperty(exports, "AssignData", {
+  enumerable: true,
+  get: function get() {
+    return _AssignData.default;
+  }
+});
 Object.defineProperty(exports, "BusinessActivity", {
   enumerable: true,
   get: function get() {
@@ -147,12 +153,6 @@ Object.defineProperty(exports, "BusinessActivityMetadataSchema", {
     return _BusinessActivityMetadataSchema.default;
   }
 });
-Object.defineProperty(exports, "BusinessActivityPagination", {
-  enumerable: true,
-  get: function get() {
-    return _BusinessActivityPagination.default;
-  }
-});
 Object.defineProperty(exports, "Category", {
   enumerable: true,
   get: function get() {
@@ -213,12 +213,6 @@ Object.defineProperty(exports, "CategoryLinksSelfIriTemplateMapping", {
     return _CategoryLinksSelfIriTemplateMapping.default;
   }
 });
-Object.defineProperty(exports, "CategoryPagination", {
-  enumerable: true,
-  get: function get() {
-    return _CategoryPagination.default;
-  }
-});
 Object.defineProperty(exports, "CategoryPatch", {
   enumerable: true,
   get: function get() {
@@ -273,10 +267,58 @@ Object.defineProperty(exports, "Condition", {
     return _Condition.default;
   }
 });
-Object.defineProperty(exports, "DelegateData", {
+Object.defineProperty(exports, "Contribution", {
   enumerable: true,
   get: function get() {
-    return _DelegateData.default;
+    return _Contribution.default;
+  }
+});
+Object.defineProperty(exports, "ContributionCollection", {
+  enumerable: true,
+  get: function get() {
+    return _ContributionCollection.default;
+  }
+});
+Object.defineProperty(exports, "ContributionLinks", {
+  enumerable: true,
+  get: function get() {
+    return _ContributionLinks.default;
+  }
+});
+Object.defineProperty(exports, "ContributionLinksContributor", {
+  enumerable: true,
+  get: function get() {
+    return _ContributionLinksContributor.default;
+  }
+});
+Object.defineProperty(exports, "ContributionLinksContributorIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _ContributionLinksContributorIriTemplate.default;
+  }
+});
+Object.defineProperty(exports, "ContributionLinksContributorIriTemplateMapping", {
+  enumerable: true,
+  get: function get() {
+    return _ContributionLinksContributorIriTemplateMapping.default;
+  }
+});
+Object.defineProperty(exports, "ContributionLinksFeedback", {
+  enumerable: true,
+  get: function get() {
+    return _ContributionLinksFeedback.default;
+  }
+});
+Object.defineProperty(exports, "ContributionLinksFeedbackIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _ContributionLinksFeedbackIriTemplate.default;
+  }
+});
+Object.defineProperty(exports, "ContributionLinksFeedbackIriTemplateMapping", {
+  enumerable: true,
+  get: function get() {
+    return _ContributionLinksFeedbackIriTemplateMapping.default;
   }
 });
 Object.defineProperty(exports, "Delegation", {
@@ -289,6 +331,18 @@ Object.defineProperty(exports, "DelegationCollection", {
   enumerable: true,
   get: function get() {
     return _DelegationCollection.default;
+  }
+});
+Object.defineProperty(exports, "DelegationData", {
+  enumerable: true,
+  get: function get() {
+    return _DelegationData.default;
+  }
+});
+Object.defineProperty(exports, "DelegationEmbedded", {
+  enumerable: true,
+  get: function get() {
+    return _DelegationEmbedded.default;
   }
 });
 Object.defineProperty(exports, "DelegationLinks", {
@@ -307,24 +361,6 @@ Object.defineProperty(exports, "DelegationLinksCreatedByIriTemplate", {
   enumerable: true,
   get: function get() {
     return _DelegationLinksCreatedByIriTemplate.default;
-  }
-});
-Object.defineProperty(exports, "DelegationLinksCreatedByIriTemplateMapping", {
-  enumerable: true,
-  get: function get() {
-    return _DelegationLinksCreatedByIriTemplateMapping.default;
-  }
-});
-Object.defineProperty(exports, "DelegationLinksFrom", {
-  enumerable: true,
-  get: function get() {
-    return _DelegationLinksFrom.default;
-  }
-});
-Object.defineProperty(exports, "DelegationLinksFromIriTemplate", {
-  enumerable: true,
-  get: function get() {
-    return _DelegationLinksFromIriTemplate.default;
   }
 });
 Object.defineProperty(exports, "DelegationLinksReport", {
@@ -363,22 +399,28 @@ Object.defineProperty(exports, "DelegationLinksSelfIriTemplateMapping", {
     return _DelegationLinksSelfIriTemplateMapping.default;
   }
 });
-Object.defineProperty(exports, "DelegationLinksTo", {
+Object.defineProperty(exports, "DelegationLinksService", {
   enumerable: true,
   get: function get() {
-    return _DelegationLinksTo.default;
+    return _DelegationLinksService.default;
   }
 });
-Object.defineProperty(exports, "DelegationLinksToIriTemplate", {
+Object.defineProperty(exports, "DelegationLinksServiceIriTemplate", {
   enumerable: true,
   get: function get() {
-    return _DelegationLinksToIriTemplate.default;
+    return _DelegationLinksServiceIriTemplate.default;
   }
 });
-Object.defineProperty(exports, "DelegationPagination", {
+Object.defineProperty(exports, "DelegationLinksServiceIriTemplateMapping", {
   enumerable: true,
   get: function get() {
-    return _DelegationPagination.default;
+    return _DelegationLinksServiceIriTemplateMapping.default;
+  }
+});
+Object.defineProperty(exports, "DelegationWorkflowTransitionData", {
+  enumerable: true,
+  get: function get() {
+    return _DelegationWorkflowTransitionData.default;
   }
 });
 Object.defineProperty(exports, "Device", {
@@ -409,6 +451,24 @@ Object.defineProperty(exports, "DeviceLinksPersonIriTemplate", {
   enumerable: true,
   get: function get() {
     return _DeviceLinksPersonIriTemplate.default;
+  }
+});
+Object.defineProperty(exports, "DeviceLinksSelf", {
+  enumerable: true,
+  get: function get() {
+    return _DeviceLinksSelf.default;
+  }
+});
+Object.defineProperty(exports, "DeviceLinksSelfIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _DeviceLinksSelfIriTemplate.default;
+  }
+});
+Object.defineProperty(exports, "DeviceLinksSelfIriTemplateMapping", {
+  enumerable: true,
+  get: function get() {
+    return _DeviceLinksSelfIriTemplateMapping.default;
   }
 });
 Object.defineProperty(exports, "Document", {
@@ -495,12 +555,6 @@ Object.defineProperty(exports, "DocumentLinksSelfIriTemplate", {
     return _DocumentLinksSelfIriTemplate.default;
   }
 });
-Object.defineProperty(exports, "DocumentPagination", {
-  enumerable: true,
-  get: function get() {
-    return _DocumentPagination.default;
-  }
-});
 Object.defineProperty(exports, "DocumentPatch", {
   enumerable: true,
   get: function get() {
@@ -519,12 +573,6 @@ Object.defineProperty(exports, "DocumentPermission", {
     return _DocumentPermission.default;
   }
 });
-Object.defineProperty(exports, "EmailData", {
-  enumerable: true,
-  get: function get() {
-    return _EmailData.default;
-  }
-});
 Object.defineProperty(exports, "Error", {
   enumerable: true,
   get: function get() {
@@ -537,10 +585,64 @@ Object.defineProperty(exports, "ErrorEmbedded", {
     return _ErrorEmbedded.default;
   }
 });
+Object.defineProperty(exports, "ExternalService", {
+  enumerable: true,
+  get: function get() {
+    return _ExternalService.default;
+  }
+});
+Object.defineProperty(exports, "ExternalServiceCollection", {
+  enumerable: true,
+  get: function get() {
+    return _ExternalServiceCollection.default;
+  }
+});
+Object.defineProperty(exports, "ExternalServiceContactPoint", {
+  enumerable: true,
+  get: function get() {
+    return _ExternalServiceContactPoint.default;
+  }
+});
 Object.defineProperty(exports, "ExternalServiceData", {
   enumerable: true,
   get: function get() {
     return _ExternalServiceData.default;
+  }
+});
+Object.defineProperty(exports, "ExternalServiceLinks", {
+  enumerable: true,
+  get: function get() {
+    return _ExternalServiceLinks.default;
+  }
+});
+Object.defineProperty(exports, "ExternalServiceLinksProvider", {
+  enumerable: true,
+  get: function get() {
+    return _ExternalServiceLinksProvider.default;
+  }
+});
+Object.defineProperty(exports, "ExternalServiceLinksProviderIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _ExternalServiceLinksProviderIriTemplate.default;
+  }
+});
+Object.defineProperty(exports, "ExternalServiceLinksSelf", {
+  enumerable: true,
+  get: function get() {
+    return _ExternalServiceLinksSelf.default;
+  }
+});
+Object.defineProperty(exports, "ExternalServiceLinksSelfIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _ExternalServiceLinksSelfIriTemplate.default;
+  }
+});
+Object.defineProperty(exports, "ExternalServicePatch", {
+  enumerable: true,
+  get: function get() {
+    return _ExternalServicePatch.default;
   }
 });
 Object.defineProperty(exports, "FacebookConnectData", {
@@ -571,12 +673,6 @@ Object.defineProperty(exports, "FeedCollection", {
   enumerable: true,
   get: function get() {
     return _FeedCollection.default;
-  }
-});
-Object.defineProperty(exports, "FeedPagination", {
-  enumerable: true,
-  get: function get() {
-    return _FeedPagination.default;
   }
 });
 Object.defineProperty(exports, "Feedback", {
@@ -711,12 +807,6 @@ Object.defineProperty(exports, "FeedbackLinksSelfIriTemplate", {
     return _FeedbackLinksSelfIriTemplate.default;
   }
 });
-Object.defineProperty(exports, "FeedbackLinksSelfIriTemplateMapping", {
-  enumerable: true,
-  get: function get() {
-    return _FeedbackLinksSelfIriTemplateMapping.default;
-  }
-});
 Object.defineProperty(exports, "FeedbackLinksTracking", {
   enumerable: true,
   get: function get() {
@@ -727,12 +817,6 @@ Object.defineProperty(exports, "FeedbackLinksTrackingIriTemplate", {
   enumerable: true,
   get: function get() {
     return _FeedbackLinksTrackingIriTemplate.default;
-  }
-});
-Object.defineProperty(exports, "FeedbackPagination", {
-  enumerable: true,
-  get: function get() {
-    return _FeedbackPagination.default;
   }
 });
 Object.defineProperty(exports, "FeedbackReviewRequest", {
@@ -825,18 +909,6 @@ Object.defineProperty(exports, "FeedbackReviewRequestLinksSelfIriTemplateMapping
     return _FeedbackReviewRequestLinksSelfIriTemplateMapping.default;
   }
 });
-Object.defineProperty(exports, "FeedbackReviewRequestPagination", {
-  enumerable: true,
-  get: function get() {
-    return _FeedbackReviewRequestPagination.default;
-  }
-});
-Object.defineProperty(exports, "FeedbackStatePatch", {
-  enumerable: true,
-  get: function get() {
-    return _FeedbackStatePatch.default;
-  }
-});
 Object.defineProperty(exports, "FeedbackWorkflowTransitionData", {
   enumerable: true,
   get: function get() {
@@ -849,22 +921,64 @@ Object.defineProperty(exports, "ImageData", {
     return _ImageData.default;
   }
 });
-Object.defineProperty(exports, "LogEntry", {
+Object.defineProperty(exports, "InternalService", {
   enumerable: true,
   get: function get() {
-    return _LogEntry.default;
+    return _InternalService.default;
   }
 });
-Object.defineProperty(exports, "LogEntryCollection", {
+Object.defineProperty(exports, "InternalServiceCollection", {
   enumerable: true,
   get: function get() {
-    return _LogEntryCollection.default;
+    return _InternalServiceCollection.default;
   }
 });
-Object.defineProperty(exports, "LogEntryPagination", {
+Object.defineProperty(exports, "InternalServiceData", {
   enumerable: true,
   get: function get() {
-    return _LogEntryPagination.default;
+    return _InternalServiceData.default;
+  }
+});
+Object.defineProperty(exports, "InternalServiceLinks", {
+  enumerable: true,
+  get: function get() {
+    return _InternalServiceLinks.default;
+  }
+});
+Object.defineProperty(exports, "InternalServiceLinksOrganization", {
+  enumerable: true,
+  get: function get() {
+    return _InternalServiceLinksOrganization.default;
+  }
+});
+Object.defineProperty(exports, "InternalServiceLinksOrganizationIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _InternalServiceLinksOrganizationIriTemplate.default;
+  }
+});
+Object.defineProperty(exports, "InternalServiceLinksSelf", {
+  enumerable: true,
+  get: function get() {
+    return _InternalServiceLinksSelf.default;
+  }
+});
+Object.defineProperty(exports, "InternalServiceLinksSelfIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _InternalServiceLinksSelfIriTemplate.default;
+  }
+});
+Object.defineProperty(exports, "InternalServiceLinksSelfIriTemplateMapping", {
+  enumerable: true,
+  get: function get() {
+    return _InternalServiceLinksSelfIriTemplateMapping.default;
+  }
+});
+Object.defineProperty(exports, "InternalServicePatch", {
+  enumerable: true,
+  get: function get() {
+    return _InternalServicePatch.default;
   }
 });
 Object.defineProperty(exports, "LoginData", {
@@ -945,16 +1059,28 @@ Object.defineProperty(exports, "MemberLinksSelfIriTemplateMapping", {
     return _MemberLinksSelfIriTemplateMapping.default;
   }
 });
-Object.defineProperty(exports, "MemberPagination", {
-  enumerable: true,
-  get: function get() {
-    return _MemberPagination.default;
-  }
-});
 Object.defineProperty(exports, "MemberPatch", {
   enumerable: true,
   get: function get() {
     return _MemberPatch.default;
+  }
+});
+Object.defineProperty(exports, "Node", {
+  enumerable: true,
+  get: function get() {
+    return _Node.default;
+  }
+});
+Object.defineProperty(exports, "NodeEmbedded", {
+  enumerable: true,
+  get: function get() {
+    return _NodeEmbedded.default;
+  }
+});
+Object.defineProperty(exports, "NodePath", {
+  enumerable: true,
+  get: function get() {
+    return _NodePath.default;
   }
 });
 Object.defineProperty(exports, "Occupant", {
@@ -967,6 +1093,12 @@ Object.defineProperty(exports, "OccupantCollection", {
   enumerable: true,
   get: function get() {
     return _OccupantCollection.default;
+  }
+});
+Object.defineProperty(exports, "OccupantData", {
+  enumerable: true,
+  get: function get() {
+    return _OccupantData.default;
   }
 });
 Object.defineProperty(exports, "OccupantLinks", {
@@ -1021,12 +1153,6 @@ Object.defineProperty(exports, "OccupantLinksSelfIriTemplateMapping", {
   enumerable: true,
   get: function get() {
     return _OccupantLinksSelfIriTemplateMapping.default;
-  }
-});
-Object.defineProperty(exports, "OccupantPagination", {
-  enumerable: true,
-  get: function get() {
-    return _OccupantPagination.default;
   }
 });
 Object.defineProperty(exports, "Operation", {
@@ -1167,12 +1293,6 @@ Object.defineProperty(exports, "OperationLinksTrackingIriTemplate", {
     return _OperationLinksTrackingIriTemplate.default;
   }
 });
-Object.defineProperty(exports, "OperationPagination", {
-  enumerable: true,
-  get: function get() {
-    return _OperationPagination.default;
-  }
-});
 Object.defineProperty(exports, "OperationPatch", {
   enumerable: true,
   get: function get() {
@@ -1189,12 +1309,6 @@ Object.defineProperty(exports, "OperationSignatureSigner", {
   enumerable: true,
   get: function get() {
     return _OperationSignatureSigner.default;
-  }
-});
-Object.defineProperty(exports, "OperationStatePatch", {
-  enumerable: true,
-  get: function get() {
-    return _OperationStatePatch.default;
   }
 });
 Object.defineProperty(exports, "OperationWorkflowTransitionData", {
@@ -1275,12 +1389,6 @@ Object.defineProperty(exports, "OrganizationLinksSelfIriTemplate", {
     return _OrganizationLinksSelfIriTemplate.default;
   }
 });
-Object.defineProperty(exports, "OrganizationPagination", {
-  enumerable: true,
-  get: function get() {
-    return _OrganizationPagination.default;
-  }
-});
 Object.defineProperty(exports, "OrganizationPatch", {
   enumerable: true,
   get: function get() {
@@ -1305,6 +1413,12 @@ Object.defineProperty(exports, "OrganizationPreferencesReference", {
     return _OrganizationPreferencesReference.default;
   }
 });
+Object.defineProperty(exports, "Pagination", {
+  enumerable: true,
+  get: function get() {
+    return _Pagination.default;
+  }
+});
 Object.defineProperty(exports, "PaginationLink", {
   enumerable: true,
   get: function get() {
@@ -1317,10 +1431,10 @@ Object.defineProperty(exports, "PaginationLinks", {
     return _PaginationLinks.default;
   }
 });
-Object.defineProperty(exports, "PasswordData", {
+Object.defineProperty(exports, "PasswordChangeData", {
   enumerable: true,
   get: function get() {
-    return _PasswordData.default;
+    return _PasswordChangeData.default;
   }
 });
 Object.defineProperty(exports, "Person", {
@@ -1333,12 +1447,6 @@ Object.defineProperty(exports, "PersonCollection", {
   enumerable: true,
   get: function get() {
     return _PersonCollection.default;
-  }
-});
-Object.defineProperty(exports, "PersonData", {
-  enumerable: true,
-  get: function get() {
-    return _PersonData.default;
   }
 });
 Object.defineProperty(exports, "PersonLinks", {
@@ -1359,18 +1467,6 @@ Object.defineProperty(exports, "PersonLinksImageIriTemplate", {
     return _PersonLinksImageIriTemplate.default;
   }
 });
-Object.defineProperty(exports, "PersonLinksMemberOf", {
-  enumerable: true,
-  get: function get() {
-    return _PersonLinksMemberOf.default;
-  }
-});
-Object.defineProperty(exports, "PersonLinksMemberOfIriTemplate", {
-  enumerable: true,
-  get: function get() {
-    return _PersonLinksMemberOfIriTemplate.default;
-  }
-});
 Object.defineProperty(exports, "PersonLinksSelf", {
   enumerable: true,
   get: function get() {
@@ -1381,12 +1477,6 @@ Object.defineProperty(exports, "PersonLinksSelfIriTemplate", {
   enumerable: true,
   get: function get() {
     return _PersonLinksSelfIriTemplate.default;
-  }
-});
-Object.defineProperty(exports, "PersonPagination", {
-  enumerable: true,
-  get: function get() {
-    return _PersonPagination.default;
   }
 });
 Object.defineProperty(exports, "PersonPatch", {
@@ -1423,6 +1513,12 @@ Object.defineProperty(exports, "PlaceData", {
   enumerable: true,
   get: function get() {
     return _PlaceData.default;
+  }
+});
+Object.defineProperty(exports, "PlaceEmbedded", {
+  enumerable: true,
+  get: function get() {
+    return _PlaceEmbedded.default;
   }
 });
 Object.defineProperty(exports, "PlaceGeo", {
@@ -1503,12 +1599,6 @@ Object.defineProperty(exports, "PlaceLinksSelfIriTemplate", {
     return _PlaceLinksSelfIriTemplate.default;
   }
 });
-Object.defineProperty(exports, "PlacePagination", {
-  enumerable: true,
-  get: function get() {
-    return _PlacePagination.default;
-  }
-});
 Object.defineProperty(exports, "PlacePatch", {
   enumerable: true,
   get: function get() {
@@ -1575,6 +1665,18 @@ Object.defineProperty(exports, "PublicationLinksAuthorIriTemplate", {
     return _PublicationLinksAuthorIriTemplate.default;
   }
 });
+Object.defineProperty(exports, "PublicationLinksFeed", {
+  enumerable: true,
+  get: function get() {
+    return _PublicationLinksFeed.default;
+  }
+});
+Object.defineProperty(exports, "PublicationLinksFeedIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _PublicationLinksFeedIriTemplate.default;
+  }
+});
 Object.defineProperty(exports, "PublicationLinksOrganization", {
   enumerable: true,
   get: function get() {
@@ -1585,18 +1687,6 @@ Object.defineProperty(exports, "PublicationLinksOrganizationIriTemplate", {
   enumerable: true,
   get: function get() {
     return _PublicationLinksOrganizationIriTemplate.default;
-  }
-});
-Object.defineProperty(exports, "PublicationLinksPlace", {
-  enumerable: true,
-  get: function get() {
-    return _PublicationLinksPlace.default;
-  }
-});
-Object.defineProperty(exports, "PublicationLinksPlaceIriTemplate", {
-  enumerable: true,
-  get: function get() {
-    return _PublicationLinksPlaceIriTemplate.default;
   }
 });
 Object.defineProperty(exports, "PublicationLinksSelf", {
@@ -1615,12 +1705,6 @@ Object.defineProperty(exports, "PublicationLinksSelfIriTemplateMapping", {
   enumerable: true,
   get: function get() {
     return _PublicationLinksSelfIriTemplateMapping.default;
-  }
-});
-Object.defineProperty(exports, "PublicationPagination", {
-  enumerable: true,
-  get: function get() {
-    return _PublicationPagination.default;
   }
 });
 Object.defineProperty(exports, "RegisterData", {
@@ -1773,28 +1857,22 @@ Object.defineProperty(exports, "ReportLinksTrackingIriTemplate", {
     return _ReportLinksTrackingIriTemplate.default;
   }
 });
-Object.defineProperty(exports, "ReportPagination", {
-  enumerable: true,
-  get: function get() {
-    return _ReportPagination.default;
-  }
-});
 Object.defineProperty(exports, "ReportPatch", {
   enumerable: true,
   get: function get() {
     return _ReportPatch.default;
   }
 });
-Object.defineProperty(exports, "ReportStatePatch", {
-  enumerable: true,
-  get: function get() {
-    return _ReportStatePatch.default;
-  }
-});
 Object.defineProperty(exports, "ReportWorkflowTransitionData", {
   enumerable: true,
   get: function get() {
     return _ReportWorkflowTransitionData.default;
+  }
+});
+Object.defineProperty(exports, "ResetPasswordData", {
+  enumerable: true,
+  get: function get() {
+    return _ResetPasswordData.default;
   }
 });
 Object.defineProperty(exports, "Review", {
@@ -1857,40 +1935,10 @@ Object.defineProperty(exports, "ReviewLinksSelfIriTemplate", {
     return _ReviewLinksSelfIriTemplate.default;
   }
 });
-Object.defineProperty(exports, "ReviewPagination", {
-  enumerable: true,
-  get: function get() {
-    return _ReviewPagination.default;
-  }
-});
 Object.defineProperty(exports, "Schema", {
   enumerable: true,
   get: function get() {
     return _Schema.default;
-  }
-});
-Object.defineProperty(exports, "Service", {
-  enumerable: true,
-  get: function get() {
-    return _Service.default;
-  }
-});
-Object.defineProperty(exports, "ServiceCollection", {
-  enumerable: true,
-  get: function get() {
-    return _ServiceCollection.default;
-  }
-});
-Object.defineProperty(exports, "ServiceContactPoint", {
-  enumerable: true,
-  get: function get() {
-    return _ServiceContactPoint.default;
-  }
-});
-Object.defineProperty(exports, "ServicePagination", {
-  enumerable: true,
-  get: function get() {
-    return _ServicePagination.default;
   }
 });
 Object.defineProperty(exports, "SignatureData", {
@@ -1959,6 +2007,12 @@ Object.defineProperty(exports, "WebhookCollection", {
     return _WebhookCollection.default;
   }
 });
+Object.defineProperty(exports, "WebhookData", {
+  enumerable: true,
+  get: function get() {
+    return _WebhookData.default;
+  }
+});
 Object.defineProperty(exports, "WebhookLinks", {
   enumerable: true,
   get: function get() {
@@ -1995,34 +2049,136 @@ Object.defineProperty(exports, "WebhookLinksSelfIriTemplateMapping", {
     return _WebhookLinksSelfIriTemplateMapping.default;
   }
 });
-Object.defineProperty(exports, "WebhookPagination", {
-  enumerable: true,
-  get: function get() {
-    return _WebhookPagination.default;
-  }
-});
 Object.defineProperty(exports, "WebhookPatch", {
   enumerable: true,
   get: function get() {
     return _WebhookPatch.default;
   }
 });
-Object.defineProperty(exports, "AnalyticApi", {
+Object.defineProperty(exports, "BusinessActivityPagination", {
   enumerable: true,
   get: function get() {
-    return _AnalyticApi.default;
+    return _BusinessActivityPagination.default;
+  }
+});
+Object.defineProperty(exports, "CategoryPagination", {
+  enumerable: true,
+  get: function get() {
+    return _CategoryPagination.default;
+  }
+});
+Object.defineProperty(exports, "ContributionPagination", {
+  enumerable: true,
+  get: function get() {
+    return _ContributionPagination.default;
+  }
+});
+Object.defineProperty(exports, "DelegationPagination", {
+  enumerable: true,
+  get: function get() {
+    return _DelegationPagination.default;
+  }
+});
+Object.defineProperty(exports, "DocumentPagination", {
+  enumerable: true,
+  get: function get() {
+    return _DocumentPagination.default;
+  }
+});
+Object.defineProperty(exports, "ExternalServicePagination", {
+  enumerable: true,
+  get: function get() {
+    return _ExternalServicePagination.default;
+  }
+});
+Object.defineProperty(exports, "FeedPagination", {
+  enumerable: true,
+  get: function get() {
+    return _FeedPagination.default;
+  }
+});
+Object.defineProperty(exports, "FeedbackPagination", {
+  enumerable: true,
+  get: function get() {
+    return _FeedbackPagination.default;
+  }
+});
+Object.defineProperty(exports, "FeedbackReviewRequestPagination", {
+  enumerable: true,
+  get: function get() {
+    return _FeedbackReviewRequestPagination.default;
+  }
+});
+Object.defineProperty(exports, "InternalServicePagination", {
+  enumerable: true,
+  get: function get() {
+    return _InternalServicePagination.default;
+  }
+});
+Object.defineProperty(exports, "MemberPagination", {
+  enumerable: true,
+  get: function get() {
+    return _MemberPagination.default;
+  }
+});
+Object.defineProperty(exports, "OccupantPagination", {
+  enumerable: true,
+  get: function get() {
+    return _OccupantPagination.default;
+  }
+});
+Object.defineProperty(exports, "OperationPagination", {
+  enumerable: true,
+  get: function get() {
+    return _OperationPagination.default;
+  }
+});
+Object.defineProperty(exports, "OrganizationPagination", {
+  enumerable: true,
+  get: function get() {
+    return _OrganizationPagination.default;
+  }
+});
+Object.defineProperty(exports, "PersonPagination", {
+  enumerable: true,
+  get: function get() {
+    return _PersonPagination.default;
+  }
+});
+Object.defineProperty(exports, "PlacePagination", {
+  enumerable: true,
+  get: function get() {
+    return _PlacePagination.default;
+  }
+});
+Object.defineProperty(exports, "PublicationPagination", {
+  enumerable: true,
+  get: function get() {
+    return _PublicationPagination.default;
+  }
+});
+Object.defineProperty(exports, "ReportPagination", {
+  enumerable: true,
+  get: function get() {
+    return _ReportPagination.default;
+  }
+});
+Object.defineProperty(exports, "ReviewPagination", {
+  enumerable: true,
+  get: function get() {
+    return _ReviewPagination.default;
+  }
+});
+Object.defineProperty(exports, "WebhookPagination", {
+  enumerable: true,
+  get: function get() {
+    return _WebhookPagination.default;
   }
 });
 Object.defineProperty(exports, "ApplicationApi", {
   enumerable: true,
   get: function get() {
     return _ApplicationApi.default;
-  }
-});
-Object.defineProperty(exports, "AssignApi", {
-  enumerable: true,
-  get: function get() {
-    return _AssignApi.default;
   }
 });
 Object.defineProperty(exports, "BusinessActivityApi", {
@@ -2037,28 +2193,10 @@ Object.defineProperty(exports, "CategoryApi", {
     return _CategoryApi.default;
   }
 });
-Object.defineProperty(exports, "ChangeApi", {
-  enumerable: true,
-  get: function get() {
-    return _ChangeApi.default;
-  }
-});
-Object.defineProperty(exports, "CommentApi", {
-  enumerable: true,
-  get: function get() {
-    return _CommentApi.default;
-  }
-});
 Object.defineProperty(exports, "ContributionApi", {
   enumerable: true,
   get: function get() {
     return _ContributionApi.default;
-  }
-});
-Object.defineProperty(exports, "DelegateApi", {
-  enumerable: true,
-  get: function get() {
-    return _DelegateApi.default;
   }
 });
 Object.defineProperty(exports, "DelegationApi", {
@@ -2079,16 +2217,10 @@ Object.defineProperty(exports, "DocumentApi", {
     return _DocumentApi.default;
   }
 });
-Object.defineProperty(exports, "ExportApi", {
+Object.defineProperty(exports, "ExternalServiceApi", {
   enumerable: true,
   get: function get() {
-    return _ExportApi.default;
-  }
-});
-Object.defineProperty(exports, "FacebookApi", {
-  enumerable: true,
-  get: function get() {
-    return _FacebookApi.default;
+    return _ExternalServiceApi.default;
   }
 });
 Object.defineProperty(exports, "FeedApi", {
@@ -2103,64 +2235,16 @@ Object.defineProperty(exports, "FeedbackApi", {
     return _FeedbackApi.default;
   }
 });
-Object.defineProperty(exports, "FileApi", {
+Object.defineProperty(exports, "InternalServiceApi", {
   enumerable: true,
   get: function get() {
-    return _FileApi.default;
-  }
-});
-Object.defineProperty(exports, "FollowApi", {
-  enumerable: true,
-  get: function get() {
-    return _FollowApi.default;
-  }
-});
-Object.defineProperty(exports, "FollowingApi", {
-  enumerable: true,
-  get: function get() {
-    return _FollowingApi.default;
-  }
-});
-Object.defineProperty(exports, "ImageApi", {
-  enumerable: true,
-  get: function get() {
-    return _ImageApi.default;
-  }
-});
-Object.defineProperty(exports, "IssueApi", {
-  enumerable: true,
-  get: function get() {
-    return _IssueApi.default;
-  }
-});
-Object.defineProperty(exports, "LogApi", {
-  enumerable: true,
-  get: function get() {
-    return _LogApi.default;
-  }
-});
-Object.defineProperty(exports, "LoginApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoginApi.default;
-  }
-});
-Object.defineProperty(exports, "LogoApi", {
-  enumerable: true,
-  get: function get() {
-    return _LogoApi.default;
+    return _InternalServiceApi.default;
   }
 });
 Object.defineProperty(exports, "MemberApi", {
   enumerable: true,
   get: function get() {
     return _MemberApi.default;
-  }
-});
-Object.defineProperty(exports, "MembershipApi", {
-  enumerable: true,
-  get: function get() {
-    return _MembershipApi.default;
   }
 });
 Object.defineProperty(exports, "OccupantApi", {
@@ -2199,40 +2283,10 @@ Object.defineProperty(exports, "PublicationApi", {
     return _PublicationApi.default;
   }
 });
-Object.defineProperty(exports, "ReadApi", {
-  enumerable: true,
-  get: function get() {
-    return _ReadApi.default;
-  }
-});
-Object.defineProperty(exports, "RegisterApi", {
-  enumerable: true,
-  get: function get() {
-    return _RegisterApi.default;
-  }
-});
-Object.defineProperty(exports, "RelationshipApi", {
-  enumerable: true,
-  get: function get() {
-    return _RelationshipApi.default;
-  }
-});
 Object.defineProperty(exports, "ReportApi", {
   enumerable: true,
   get: function get() {
     return _ReportApi.default;
-  }
-});
-Object.defineProperty(exports, "RequestApi", {
-  enumerable: true,
-  get: function get() {
-    return _RequestApi.default;
-  }
-});
-Object.defineProperty(exports, "ResetApi", {
-  enumerable: true,
-  get: function get() {
-    return _ResetApi.default;
   }
 });
 Object.defineProperty(exports, "ReviewApi", {
@@ -2247,52 +2301,10 @@ Object.defineProperty(exports, "ReviewRequestApi", {
     return _ReviewRequestApi.default;
   }
 });
-Object.defineProperty(exports, "SchemaApi", {
+Object.defineProperty(exports, "SecurityApi", {
   enumerable: true,
   get: function get() {
-    return _SchemaApi.default;
-  }
-});
-Object.defineProperty(exports, "ServiceApi", {
-  enumerable: true,
-  get: function get() {
-    return _ServiceApi.default;
-  }
-});
-Object.defineProperty(exports, "SignApi", {
-  enumerable: true,
-  get: function get() {
-    return _SignApi.default;
-  }
-});
-Object.defineProperty(exports, "StateApi", {
-  enumerable: true,
-  get: function get() {
-    return _StateApi.default;
-  }
-});
-Object.defineProperty(exports, "ThumbnailApi", {
-  enumerable: true,
-  get: function get() {
-    return _ThumbnailApi.default;
-  }
-});
-Object.defineProperty(exports, "TrackingApi", {
-  enumerable: true,
-  get: function get() {
-    return _TrackingApi.default;
-  }
-});
-Object.defineProperty(exports, "TransitionApi", {
-  enumerable: true,
-  get: function get() {
-    return _TransitionApi.default;
-  }
-});
-Object.defineProperty(exports, "UnfollowApi", {
-  enumerable: true,
-  get: function get() {
-    return _UnfollowApi.default;
+    return _SecurityApi.default;
   }
 });
 Object.defineProperty(exports, "WebhookApi", {
@@ -2324,6 +2336,8 @@ var _ApplicationLinksSelfIriTemplate = _interopRequireDefault(require("./model/A
 
 var _ApplicationLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/ApplicationLinksSelfIriTemplateMapping"));
 
+var _AssignData = _interopRequireDefault(require("./model/AssignData"));
+
 var _BusinessActivity = _interopRequireDefault(require("./model/BusinessActivity"));
 
 var _BusinessActivityCollection = _interopRequireDefault(require("./model/BusinessActivityCollection"));
@@ -2350,8 +2364,6 @@ var _BusinessActivityLinksThumbnailIriTemplate = _interopRequireDefault(require(
 
 var _BusinessActivityMetadataSchema = _interopRequireDefault(require("./model/BusinessActivityMetadataSchema"));
 
-var _BusinessActivityPagination = _interopRequireDefault(require("./model/BusinessActivityPagination"));
-
 var _Category = _interopRequireDefault(require("./model/Category"));
 
 var _CategoryCollection = _interopRequireDefault(require("./model/CategoryCollection"));
@@ -2372,8 +2384,6 @@ var _CategoryLinksSelfIriTemplate = _interopRequireDefault(require("./model/Cate
 
 var _CategoryLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/CategoryLinksSelfIriTemplateMapping"));
 
-var _CategoryPagination = _interopRequireDefault(require("./model/CategoryPagination"));
-
 var _CategoryPatch = _interopRequireDefault(require("./model/CategoryPatch"));
 
 var _Chart = _interopRequireDefault(require("./model/Chart"));
@@ -2392,23 +2402,37 @@ var _CommentData = _interopRequireDefault(require("./model/CommentData"));
 
 var _Condition = _interopRequireDefault(require("./model/Condition"));
 
-var _DelegateData = _interopRequireDefault(require("./model/DelegateData"));
+var _Contribution = _interopRequireDefault(require("./model/Contribution"));
+
+var _ContributionCollection = _interopRequireDefault(require("./model/ContributionCollection"));
+
+var _ContributionLinks = _interopRequireDefault(require("./model/ContributionLinks"));
+
+var _ContributionLinksContributor = _interopRequireDefault(require("./model/ContributionLinksContributor"));
+
+var _ContributionLinksContributorIriTemplate = _interopRequireDefault(require("./model/ContributionLinksContributorIriTemplate"));
+
+var _ContributionLinksContributorIriTemplateMapping = _interopRequireDefault(require("./model/ContributionLinksContributorIriTemplateMapping"));
+
+var _ContributionLinksFeedback = _interopRequireDefault(require("./model/ContributionLinksFeedback"));
+
+var _ContributionLinksFeedbackIriTemplate = _interopRequireDefault(require("./model/ContributionLinksFeedbackIriTemplate"));
+
+var _ContributionLinksFeedbackIriTemplateMapping = _interopRequireDefault(require("./model/ContributionLinksFeedbackIriTemplateMapping"));
 
 var _Delegation = _interopRequireDefault(require("./model/Delegation"));
 
 var _DelegationCollection = _interopRequireDefault(require("./model/DelegationCollection"));
+
+var _DelegationData = _interopRequireDefault(require("./model/DelegationData"));
+
+var _DelegationEmbedded = _interopRequireDefault(require("./model/DelegationEmbedded"));
 
 var _DelegationLinks = _interopRequireDefault(require("./model/DelegationLinks"));
 
 var _DelegationLinksCreatedBy = _interopRequireDefault(require("./model/DelegationLinksCreatedBy"));
 
 var _DelegationLinksCreatedByIriTemplate = _interopRequireDefault(require("./model/DelegationLinksCreatedByIriTemplate"));
-
-var _DelegationLinksCreatedByIriTemplateMapping = _interopRequireDefault(require("./model/DelegationLinksCreatedByIriTemplateMapping"));
-
-var _DelegationLinksFrom = _interopRequireDefault(require("./model/DelegationLinksFrom"));
-
-var _DelegationLinksFromIriTemplate = _interopRequireDefault(require("./model/DelegationLinksFromIriTemplate"));
 
 var _DelegationLinksReport = _interopRequireDefault(require("./model/DelegationLinksReport"));
 
@@ -2422,11 +2446,13 @@ var _DelegationLinksSelfIriTemplate = _interopRequireDefault(require("./model/De
 
 var _DelegationLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/DelegationLinksSelfIriTemplateMapping"));
 
-var _DelegationLinksTo = _interopRequireDefault(require("./model/DelegationLinksTo"));
+var _DelegationLinksService = _interopRequireDefault(require("./model/DelegationLinksService"));
 
-var _DelegationLinksToIriTemplate = _interopRequireDefault(require("./model/DelegationLinksToIriTemplate"));
+var _DelegationLinksServiceIriTemplate = _interopRequireDefault(require("./model/DelegationLinksServiceIriTemplate"));
 
-var _DelegationPagination = _interopRequireDefault(require("./model/DelegationPagination"));
+var _DelegationLinksServiceIriTemplateMapping = _interopRequireDefault(require("./model/DelegationLinksServiceIriTemplateMapping"));
+
+var _DelegationWorkflowTransitionData = _interopRequireDefault(require("./model/DelegationWorkflowTransitionData"));
 
 var _Device = _interopRequireDefault(require("./model/Device"));
 
@@ -2437,6 +2463,12 @@ var _DeviceLinks = _interopRequireDefault(require("./model/DeviceLinks"));
 var _DeviceLinksPerson = _interopRequireDefault(require("./model/DeviceLinksPerson"));
 
 var _DeviceLinksPersonIriTemplate = _interopRequireDefault(require("./model/DeviceLinksPersonIriTemplate"));
+
+var _DeviceLinksSelf = _interopRequireDefault(require("./model/DeviceLinksSelf"));
+
+var _DeviceLinksSelfIriTemplate = _interopRequireDefault(require("./model/DeviceLinksSelfIriTemplate"));
+
+var _DeviceLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/DeviceLinksSelfIriTemplateMapping"));
 
 var _Document = _interopRequireDefault(require("./model/Document"));
 
@@ -2466,21 +2498,35 @@ var _DocumentLinksSelf = _interopRequireDefault(require("./model/DocumentLinksSe
 
 var _DocumentLinksSelfIriTemplate = _interopRequireDefault(require("./model/DocumentLinksSelfIriTemplate"));
 
-var _DocumentPagination = _interopRequireDefault(require("./model/DocumentPagination"));
-
 var _DocumentPatch = _interopRequireDefault(require("./model/DocumentPatch"));
 
 var _DocumentPatchFile = _interopRequireDefault(require("./model/DocumentPatchFile"));
 
 var _DocumentPermission = _interopRequireDefault(require("./model/DocumentPermission"));
 
-var _EmailData = _interopRequireDefault(require("./model/EmailData"));
-
 var _Error = _interopRequireDefault(require("./model/Error"));
 
 var _ErrorEmbedded = _interopRequireDefault(require("./model/ErrorEmbedded"));
 
+var _ExternalService = _interopRequireDefault(require("./model/ExternalService"));
+
+var _ExternalServiceCollection = _interopRequireDefault(require("./model/ExternalServiceCollection"));
+
+var _ExternalServiceContactPoint = _interopRequireDefault(require("./model/ExternalServiceContactPoint"));
+
 var _ExternalServiceData = _interopRequireDefault(require("./model/ExternalServiceData"));
+
+var _ExternalServiceLinks = _interopRequireDefault(require("./model/ExternalServiceLinks"));
+
+var _ExternalServiceLinksProvider = _interopRequireDefault(require("./model/ExternalServiceLinksProvider"));
+
+var _ExternalServiceLinksProviderIriTemplate = _interopRequireDefault(require("./model/ExternalServiceLinksProviderIriTemplate"));
+
+var _ExternalServiceLinksSelf = _interopRequireDefault(require("./model/ExternalServiceLinksSelf"));
+
+var _ExternalServiceLinksSelfIriTemplate = _interopRequireDefault(require("./model/ExternalServiceLinksSelfIriTemplate"));
+
+var _ExternalServicePatch = _interopRequireDefault(require("./model/ExternalServicePatch"));
 
 var _FacebookConnectData = _interopRequireDefault(require("./model/FacebookConnectData"));
 
@@ -2491,8 +2537,6 @@ var _FeatureGeometry = _interopRequireDefault(require("./model/FeatureGeometry")
 var _Feed = _interopRequireDefault(require("./model/Feed"));
 
 var _FeedCollection = _interopRequireDefault(require("./model/FeedCollection"));
-
-var _FeedPagination = _interopRequireDefault(require("./model/FeedPagination"));
 
 var _Feedback = _interopRequireDefault(require("./model/Feedback"));
 
@@ -2538,13 +2582,9 @@ var _FeedbackLinksSelf = _interopRequireDefault(require("./model/FeedbackLinksSe
 
 var _FeedbackLinksSelfIriTemplate = _interopRequireDefault(require("./model/FeedbackLinksSelfIriTemplate"));
 
-var _FeedbackLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/FeedbackLinksSelfIriTemplateMapping"));
-
 var _FeedbackLinksTracking = _interopRequireDefault(require("./model/FeedbackLinksTracking"));
 
 var _FeedbackLinksTrackingIriTemplate = _interopRequireDefault(require("./model/FeedbackLinksTrackingIriTemplate"));
-
-var _FeedbackPagination = _interopRequireDefault(require("./model/FeedbackPagination"));
 
 var _FeedbackReviewRequest = _interopRequireDefault(require("./model/FeedbackReviewRequest"));
 
@@ -2576,19 +2616,29 @@ var _FeedbackReviewRequestLinksSelfIriTemplate = _interopRequireDefault(require(
 
 var _FeedbackReviewRequestLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/FeedbackReviewRequestLinksSelfIriTemplateMapping"));
 
-var _FeedbackReviewRequestPagination = _interopRequireDefault(require("./model/FeedbackReviewRequestPagination"));
-
-var _FeedbackStatePatch = _interopRequireDefault(require("./model/FeedbackStatePatch"));
-
 var _FeedbackWorkflowTransitionData = _interopRequireDefault(require("./model/FeedbackWorkflowTransitionData"));
 
 var _ImageData = _interopRequireDefault(require("./model/ImageData"));
 
-var _LogEntry = _interopRequireDefault(require("./model/LogEntry"));
+var _InternalService = _interopRequireDefault(require("./model/InternalService"));
 
-var _LogEntryCollection = _interopRequireDefault(require("./model/LogEntryCollection"));
+var _InternalServiceCollection = _interopRequireDefault(require("./model/InternalServiceCollection"));
 
-var _LogEntryPagination = _interopRequireDefault(require("./model/LogEntryPagination"));
+var _InternalServiceData = _interopRequireDefault(require("./model/InternalServiceData"));
+
+var _InternalServiceLinks = _interopRequireDefault(require("./model/InternalServiceLinks"));
+
+var _InternalServiceLinksOrganization = _interopRequireDefault(require("./model/InternalServiceLinksOrganization"));
+
+var _InternalServiceLinksOrganizationIriTemplate = _interopRequireDefault(require("./model/InternalServiceLinksOrganizationIriTemplate"));
+
+var _InternalServiceLinksSelf = _interopRequireDefault(require("./model/InternalServiceLinksSelf"));
+
+var _InternalServiceLinksSelfIriTemplate = _interopRequireDefault(require("./model/InternalServiceLinksSelfIriTemplate"));
+
+var _InternalServiceLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/InternalServiceLinksSelfIriTemplateMapping"));
+
+var _InternalServicePatch = _interopRequireDefault(require("./model/InternalServicePatch"));
 
 var _LoginData = _interopRequireDefault(require("./model/LoginData"));
 
@@ -2616,13 +2666,19 @@ var _MemberLinksSelfIriTemplate = _interopRequireDefault(require("./model/Member
 
 var _MemberLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/MemberLinksSelfIriTemplateMapping"));
 
-var _MemberPagination = _interopRequireDefault(require("./model/MemberPagination"));
-
 var _MemberPatch = _interopRequireDefault(require("./model/MemberPatch"));
+
+var _Node = _interopRequireDefault(require("./model/Node"));
+
+var _NodeEmbedded = _interopRequireDefault(require("./model/NodeEmbedded"));
+
+var _NodePath = _interopRequireDefault(require("./model/NodePath"));
 
 var _Occupant = _interopRequireDefault(require("./model/Occupant"));
 
 var _OccupantCollection = _interopRequireDefault(require("./model/OccupantCollection"));
+
+var _OccupantData = _interopRequireDefault(require("./model/OccupantData"));
 
 var _OccupantLinks = _interopRequireDefault(require("./model/OccupantLinks"));
 
@@ -2641,8 +2697,6 @@ var _OccupantLinksSelf = _interopRequireDefault(require("./model/OccupantLinksSe
 var _OccupantLinksSelfIriTemplate = _interopRequireDefault(require("./model/OccupantLinksSelfIriTemplate"));
 
 var _OccupantLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/OccupantLinksSelfIriTemplateMapping"));
-
-var _OccupantPagination = _interopRequireDefault(require("./model/OccupantPagination"));
 
 var _Operation = _interopRequireDefault(require("./model/Operation"));
 
@@ -2690,15 +2744,11 @@ var _OperationLinksTracking = _interopRequireDefault(require("./model/OperationL
 
 var _OperationLinksTrackingIriTemplate = _interopRequireDefault(require("./model/OperationLinksTrackingIriTemplate"));
 
-var _OperationPagination = _interopRequireDefault(require("./model/OperationPagination"));
-
 var _OperationPatch = _interopRequireDefault(require("./model/OperationPatch"));
 
 var _OperationSignature = _interopRequireDefault(require("./model/OperationSignature"));
 
 var _OperationSignatureSigner = _interopRequireDefault(require("./model/OperationSignatureSigner"));
-
-var _OperationStatePatch = _interopRequireDefault(require("./model/OperationStatePatch"));
 
 var _OperationWorkflowTransitionData = _interopRequireDefault(require("./model/OperationWorkflowTransitionData"));
 
@@ -2726,8 +2776,6 @@ var _OrganizationLinksSelf = _interopRequireDefault(require("./model/Organizatio
 
 var _OrganizationLinksSelfIriTemplate = _interopRequireDefault(require("./model/OrganizationLinksSelfIriTemplate"));
 
-var _OrganizationPagination = _interopRequireDefault(require("./model/OrganizationPagination"));
-
 var _OrganizationPatch = _interopRequireDefault(require("./model/OrganizationPatch"));
 
 var _OrganizationPatchPreferences = _interopRequireDefault(require("./model/OrganizationPatchPreferences"));
@@ -2736,17 +2784,17 @@ var _OrganizationPreferences = _interopRequireDefault(require("./model/Organizat
 
 var _OrganizationPreferencesReference = _interopRequireDefault(require("./model/OrganizationPreferencesReference"));
 
+var _Pagination = _interopRequireDefault(require("./model/Pagination"));
+
 var _PaginationLink = _interopRequireDefault(require("./model/PaginationLink"));
 
 var _PaginationLinks = _interopRequireDefault(require("./model/PaginationLinks"));
 
-var _PasswordData = _interopRequireDefault(require("./model/PasswordData"));
+var _PasswordChangeData = _interopRequireDefault(require("./model/PasswordChangeData"));
 
 var _Person = _interopRequireDefault(require("./model/Person"));
 
 var _PersonCollection = _interopRequireDefault(require("./model/PersonCollection"));
-
-var _PersonData = _interopRequireDefault(require("./model/PersonData"));
 
 var _PersonLinks = _interopRequireDefault(require("./model/PersonLinks"));
 
@@ -2754,15 +2802,9 @@ var _PersonLinksImage = _interopRequireDefault(require("./model/PersonLinksImage
 
 var _PersonLinksImageIriTemplate = _interopRequireDefault(require("./model/PersonLinksImageIriTemplate"));
 
-var _PersonLinksMemberOf = _interopRequireDefault(require("./model/PersonLinksMemberOf"));
-
-var _PersonLinksMemberOfIriTemplate = _interopRequireDefault(require("./model/PersonLinksMemberOfIriTemplate"));
-
 var _PersonLinksSelf = _interopRequireDefault(require("./model/PersonLinksSelf"));
 
 var _PersonLinksSelfIriTemplate = _interopRequireDefault(require("./model/PersonLinksSelfIriTemplate"));
-
-var _PersonPagination = _interopRequireDefault(require("./model/PersonPagination"));
 
 var _PersonPatch = _interopRequireDefault(require("./model/PersonPatch"));
 
@@ -2775,6 +2817,8 @@ var _Place = _interopRequireDefault(require("./model/Place"));
 var _PlaceCollection = _interopRequireDefault(require("./model/PlaceCollection"));
 
 var _PlaceData = _interopRequireDefault(require("./model/PlaceData"));
+
+var _PlaceEmbedded = _interopRequireDefault(require("./model/PlaceEmbedded"));
 
 var _PlaceGeo = _interopRequireDefault(require("./model/PlaceGeo"));
 
@@ -2802,8 +2846,6 @@ var _PlaceLinksSelf = _interopRequireDefault(require("./model/PlaceLinksSelf"));
 
 var _PlaceLinksSelfIriTemplate = _interopRequireDefault(require("./model/PlaceLinksSelfIriTemplate"));
 
-var _PlacePagination = _interopRequireDefault(require("./model/PlacePagination"));
-
 var _PlacePatch = _interopRequireDefault(require("./model/PlacePatch"));
 
 var _PlacePreferences = _interopRequireDefault(require("./model/PlacePreferences"));
@@ -2826,21 +2868,19 @@ var _PublicationLinksAuthor = _interopRequireDefault(require("./model/Publicatio
 
 var _PublicationLinksAuthorIriTemplate = _interopRequireDefault(require("./model/PublicationLinksAuthorIriTemplate"));
 
+var _PublicationLinksFeed = _interopRequireDefault(require("./model/PublicationLinksFeed"));
+
+var _PublicationLinksFeedIriTemplate = _interopRequireDefault(require("./model/PublicationLinksFeedIriTemplate"));
+
 var _PublicationLinksOrganization = _interopRequireDefault(require("./model/PublicationLinksOrganization"));
 
 var _PublicationLinksOrganizationIriTemplate = _interopRequireDefault(require("./model/PublicationLinksOrganizationIriTemplate"));
-
-var _PublicationLinksPlace = _interopRequireDefault(require("./model/PublicationLinksPlace"));
-
-var _PublicationLinksPlaceIriTemplate = _interopRequireDefault(require("./model/PublicationLinksPlaceIriTemplate"));
 
 var _PublicationLinksSelf = _interopRequireDefault(require("./model/PublicationLinksSelf"));
 
 var _PublicationLinksSelfIriTemplate = _interopRequireDefault(require("./model/PublicationLinksSelfIriTemplate"));
 
 var _PublicationLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/PublicationLinksSelfIriTemplateMapping"));
-
-var _PublicationPagination = _interopRequireDefault(require("./model/PublicationPagination"));
 
 var _RegisterData = _interopRequireDefault(require("./model/RegisterData"));
 
@@ -2892,13 +2932,11 @@ var _ReportLinksTracking = _interopRequireDefault(require("./model/ReportLinksTr
 
 var _ReportLinksTrackingIriTemplate = _interopRequireDefault(require("./model/ReportLinksTrackingIriTemplate"));
 
-var _ReportPagination = _interopRequireDefault(require("./model/ReportPagination"));
-
 var _ReportPatch = _interopRequireDefault(require("./model/ReportPatch"));
 
-var _ReportStatePatch = _interopRequireDefault(require("./model/ReportStatePatch"));
-
 var _ReportWorkflowTransitionData = _interopRequireDefault(require("./model/ReportWorkflowTransitionData"));
+
+var _ResetPasswordData = _interopRequireDefault(require("./model/ResetPasswordData"));
 
 var _Review = _interopRequireDefault(require("./model/Review"));
 
@@ -2920,17 +2958,7 @@ var _ReviewLinksSelf = _interopRequireDefault(require("./model/ReviewLinksSelf")
 
 var _ReviewLinksSelfIriTemplate = _interopRequireDefault(require("./model/ReviewLinksSelfIriTemplate"));
 
-var _ReviewPagination = _interopRequireDefault(require("./model/ReviewPagination"));
-
 var _Schema = _interopRequireDefault(require("./model/Schema"));
-
-var _Service = _interopRequireDefault(require("./model/Service"));
-
-var _ServiceCollection = _interopRequireDefault(require("./model/ServiceCollection"));
-
-var _ServiceContactPoint = _interopRequireDefault(require("./model/ServiceContactPoint"));
-
-var _ServicePagination = _interopRequireDefault(require("./model/ServicePagination"));
 
 var _SignatureData = _interopRequireDefault(require("./model/SignatureData"));
 
@@ -2954,6 +2982,8 @@ var _Webhook = _interopRequireDefault(require("./model/Webhook"));
 
 var _WebhookCollection = _interopRequireDefault(require("./model/WebhookCollection"));
 
+var _WebhookData = _interopRequireDefault(require("./model/WebhookData"));
+
 var _WebhookLinks = _interopRequireDefault(require("./model/WebhookLinks"));
 
 var _WebhookLinksOrganization = _interopRequireDefault(require("./model/WebhookLinksOrganization"));
@@ -2966,27 +2996,55 @@ var _WebhookLinksSelfIriTemplate = _interopRequireDefault(require("./model/Webho
 
 var _WebhookLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/WebhookLinksSelfIriTemplateMapping"));
 
-var _WebhookPagination = _interopRequireDefault(require("./model/WebhookPagination"));
-
 var _WebhookPatch = _interopRequireDefault(require("./model/WebhookPatch"));
 
-var _AnalyticApi = _interopRequireDefault(require("./api/AnalyticApi"));
+var _BusinessActivityPagination = _interopRequireDefault(require("./model/BusinessActivityPagination"));
+
+var _CategoryPagination = _interopRequireDefault(require("./model/CategoryPagination"));
+
+var _ContributionPagination = _interopRequireDefault(require("./model/ContributionPagination"));
+
+var _DelegationPagination = _interopRequireDefault(require("./model/DelegationPagination"));
+
+var _DocumentPagination = _interopRequireDefault(require("./model/DocumentPagination"));
+
+var _ExternalServicePagination = _interopRequireDefault(require("./model/ExternalServicePagination"));
+
+var _FeedPagination = _interopRequireDefault(require("./model/FeedPagination"));
+
+var _FeedbackPagination = _interopRequireDefault(require("./model/FeedbackPagination"));
+
+var _FeedbackReviewRequestPagination = _interopRequireDefault(require("./model/FeedbackReviewRequestPagination"));
+
+var _InternalServicePagination = _interopRequireDefault(require("./model/InternalServicePagination"));
+
+var _MemberPagination = _interopRequireDefault(require("./model/MemberPagination"));
+
+var _OccupantPagination = _interopRequireDefault(require("./model/OccupantPagination"));
+
+var _OperationPagination = _interopRequireDefault(require("./model/OperationPagination"));
+
+var _OrganizationPagination = _interopRequireDefault(require("./model/OrganizationPagination"));
+
+var _PersonPagination = _interopRequireDefault(require("./model/PersonPagination"));
+
+var _PlacePagination = _interopRequireDefault(require("./model/PlacePagination"));
+
+var _PublicationPagination = _interopRequireDefault(require("./model/PublicationPagination"));
+
+var _ReportPagination = _interopRequireDefault(require("./model/ReportPagination"));
+
+var _ReviewPagination = _interopRequireDefault(require("./model/ReviewPagination"));
+
+var _WebhookPagination = _interopRequireDefault(require("./model/WebhookPagination"));
 
 var _ApplicationApi = _interopRequireDefault(require("./api/ApplicationApi"));
-
-var _AssignApi = _interopRequireDefault(require("./api/AssignApi"));
 
 var _BusinessActivityApi = _interopRequireDefault(require("./api/BusinessActivityApi"));
 
 var _CategoryApi = _interopRequireDefault(require("./api/CategoryApi"));
 
-var _ChangeApi = _interopRequireDefault(require("./api/ChangeApi"));
-
-var _CommentApi = _interopRequireDefault(require("./api/CommentApi"));
-
 var _ContributionApi = _interopRequireDefault(require("./api/ContributionApi"));
-
-var _DelegateApi = _interopRequireDefault(require("./api/DelegateApi"));
 
 var _DelegationApi = _interopRequireDefault(require("./api/DelegationApi"));
 
@@ -2994,33 +3052,15 @@ var _DeviceApi = _interopRequireDefault(require("./api/DeviceApi"));
 
 var _DocumentApi = _interopRequireDefault(require("./api/DocumentApi"));
 
-var _ExportApi = _interopRequireDefault(require("./api/ExportApi"));
-
-var _FacebookApi = _interopRequireDefault(require("./api/FacebookApi"));
+var _ExternalServiceApi = _interopRequireDefault(require("./api/ExternalServiceApi"));
 
 var _FeedApi = _interopRequireDefault(require("./api/FeedApi"));
 
 var _FeedbackApi = _interopRequireDefault(require("./api/FeedbackApi"));
 
-var _FileApi = _interopRequireDefault(require("./api/FileApi"));
-
-var _FollowApi = _interopRequireDefault(require("./api/FollowApi"));
-
-var _FollowingApi = _interopRequireDefault(require("./api/FollowingApi"));
-
-var _ImageApi = _interopRequireDefault(require("./api/ImageApi"));
-
-var _IssueApi = _interopRequireDefault(require("./api/IssueApi"));
-
-var _LogApi = _interopRequireDefault(require("./api/LogApi"));
-
-var _LoginApi = _interopRequireDefault(require("./api/LoginApi"));
-
-var _LogoApi = _interopRequireDefault(require("./api/LogoApi"));
+var _InternalServiceApi = _interopRequireDefault(require("./api/InternalServiceApi"));
 
 var _MemberApi = _interopRequireDefault(require("./api/MemberApi"));
-
-var _MembershipApi = _interopRequireDefault(require("./api/MembershipApi"));
 
 var _OccupantApi = _interopRequireDefault(require("./api/OccupantApi"));
 
@@ -3034,37 +3074,13 @@ var _PlaceApi = _interopRequireDefault(require("./api/PlaceApi"));
 
 var _PublicationApi = _interopRequireDefault(require("./api/PublicationApi"));
 
-var _ReadApi = _interopRequireDefault(require("./api/ReadApi"));
-
-var _RegisterApi = _interopRequireDefault(require("./api/RegisterApi"));
-
-var _RelationshipApi = _interopRequireDefault(require("./api/RelationshipApi"));
-
 var _ReportApi = _interopRequireDefault(require("./api/ReportApi"));
-
-var _RequestApi = _interopRequireDefault(require("./api/RequestApi"));
-
-var _ResetApi = _interopRequireDefault(require("./api/ResetApi"));
 
 var _ReviewApi = _interopRequireDefault(require("./api/ReviewApi"));
 
 var _ReviewRequestApi = _interopRequireDefault(require("./api/ReviewRequestApi"));
 
-var _SchemaApi = _interopRequireDefault(require("./api/SchemaApi"));
-
-var _ServiceApi = _interopRequireDefault(require("./api/ServiceApi"));
-
-var _SignApi = _interopRequireDefault(require("./api/SignApi"));
-
-var _StateApi = _interopRequireDefault(require("./api/StateApi"));
-
-var _ThumbnailApi = _interopRequireDefault(require("./api/ThumbnailApi"));
-
-var _TrackingApi = _interopRequireDefault(require("./api/TrackingApi"));
-
-var _TransitionApi = _interopRequireDefault(require("./api/TransitionApi"));
-
-var _UnfollowApi = _interopRequireDefault(require("./api/UnfollowApi"));
+var _SecurityApi = _interopRequireDefault(require("./api/SecurityApi"));
 
 var _WebhookApi = _interopRequireDefault(require("./api/WebhookApi"));
 

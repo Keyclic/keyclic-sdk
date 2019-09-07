@@ -65,6 +65,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property reviewRequest (base name: "reviewRequest")', function() {
+      // uncomment below and update the code to test the property reviewRequest
+      //var instane = new @KeyclicSdkJavascript.ReviewData();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

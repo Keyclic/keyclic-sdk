@@ -1,13 +1,13 @@
 part of keyclic_sdk_api.api;
 
-class OrganizationPagination {
+class OrganizationPagination extends Pagination {
   OrganizationPagination({
     this.limit,
     this.page,
     this.pages,
     this.total,
-    this.embedded,
     this.links,
+    this.embedded,
   });
 
   OrganizationPagination.fromJson(Map<String, dynamic> json) {
@@ -18,8 +18,8 @@ class OrganizationPagination {
     page = json['page'];
     pages = json['pages'];
     total = json['total'];
-    embedded = OrganizationCollection.fromJson(json['_embedded']);
     links = PaginationLinks.fromJson(json['_links']);
+    embedded = OrganizationCollection.fromJson(json['_embedded']);
   }
 
   int limit;
@@ -30,9 +30,9 @@ class OrganizationPagination {
 
   int total;
 
-  OrganizationCollection embedded;
-
   PaginationLinks links;
+
+  OrganizationCollection embedded;
 
   @override
   bool operator ==(dynamic other) {
@@ -47,8 +47,8 @@ class OrganizationPagination {
         page == other.page &&
         pages == other.pages &&
         total == other.total &&
-        embedded == other.embedded &&
-        links == other.links;
+        links == other.links &&
+        embedded == other.embedded;
   }
 
   /// By default hashCode return reference
@@ -59,8 +59,8 @@ class OrganizationPagination {
       page.hashCode ^
       pages.hashCode ^
       total.hashCode ^
-      embedded.hashCode ^
-      links.hashCode;
+      links.hashCode ^
+      embedded.hashCode;
 
   static List<OrganizationPagination> listFromJson(List<dynamic> json) {
     return json == null
@@ -84,13 +84,13 @@ class OrganizationPagination {
       'page': page,
       'pages': pages,
       'total': total,
-      '_embedded': embedded,
       '_links': links,
+      '_embedded': embedded,
     };
   }
 
   @override
   String toString() {
-    return 'OrganizationPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
+    return 'OrganizationPagination[limit=$limit, page=$page, pages=$pages, total=$total, links=$links, embedded=$embedded, ]';
   }
 }

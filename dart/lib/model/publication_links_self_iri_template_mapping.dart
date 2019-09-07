@@ -2,7 +2,6 @@ part of keyclic_sdk_api.api;
 
 class PublicationLinksSelfIriTemplateMapping {
   PublicationLinksSelfIriTemplateMapping({
-    this.organization,
     this.publication,
   });
 
@@ -10,11 +9,8 @@ class PublicationLinksSelfIriTemplateMapping {
     if (json == null) {
       return;
     }
-    organization = json['organization'];
     publication = json['publication'];
   }
-
-  String organization;
 
   String publication;
 
@@ -27,13 +23,12 @@ class PublicationLinksSelfIriTemplateMapping {
 
     return other is PublicationLinksSelfIriTemplateMapping &&
         runtimeType == other.runtimeType &&
-        organization == other.organization &&
         publication == other.publication;
   }
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ organization.hashCode ^ publication.hashCode;
+  int get hashCode => 0 ^ publication.hashCode;
 
   static List<PublicationLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
@@ -57,13 +52,12 @@ class PublicationLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'organization': organization,
       'publication': publication,
     };
   }
 
   @override
   String toString() {
-    return 'PublicationLinksSelfIriTemplateMapping[organization=$organization, publication=$publication, ]';
+    return 'PublicationLinksSelfIriTemplateMapping[publication=$publication, ]';
   }
 }

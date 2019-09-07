@@ -47,12 +47,18 @@ var ExternalServiceData =
   
    * @param organization { String }
   
+   * @param name { String }
+  
+   * @param provider { String }
+  
    */
-    function ExternalServiceData(organization) {
+    function ExternalServiceData(organization, name, provider) {
       _classCallCheck(this, ExternalServiceData);
 
       this.organization = organization;
-      this.name = null;
+      this.name = name;
+      this.description = null;
+      this.provider = provider;
     }
     /**
      * Constructs a "ExternalServiceData" from a plain JavaScript object.
@@ -88,6 +94,20 @@ var ExternalServiceData =
           if (data.hasOwnProperty("name")) {
             object.name = _ApiClient.default.convertToType(
               data["name"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("provider")) {
+            object.provider = _ApiClient.default.convertToType(
+              data["provider"],
               "String"
             );
           }

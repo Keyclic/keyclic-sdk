@@ -57,24 +57,6 @@ export default class FeedbackWorkflowTransitionData {
    */
   static TransitionEnum = {
     /**
-     * value: "deliver"
-     * @const
-     * @readonly
-     */
-    deliver: "deliver",
-    /**
-     * value: "dispatch"
-     * @const
-     * @readonly
-     */
-    dispatch: "dispatch",
-    /**
-     * value: "fail"
-     * @const
-     * @readonly
-     */
-    fail: "fail",
-    /**
      * value: "process"
      * @const
      * @readonly
@@ -85,12 +67,6 @@ export default class FeedbackWorkflowTransitionData {
      * @const
      * @readonly
      */
-    publish: "publish",
-    /**
-     * value: "success"
-     * @const
-     * @readonly
-     */
-    success: "success"
+    publish: "publish"
   };
 }

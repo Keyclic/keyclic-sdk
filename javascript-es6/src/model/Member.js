@@ -32,6 +32,7 @@ export default class Member {
     this.id = null;
     this.roles = [];
     this.type = null;
+    this.updatedAt = null;
 
     this.embeddedType = MemberEmbedded;
     this.linksType = MemberLinks;
@@ -72,6 +73,9 @@ export default class Member {
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

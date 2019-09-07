@@ -1,13 +1,13 @@
 part of keyclic_sdk_api.api;
 
-class DelegationPagination {
+class DelegationPagination extends Pagination {
   DelegationPagination({
     this.limit,
     this.page,
     this.pages,
     this.total,
-    this.embedded,
     this.links,
+    this.embedded,
   });
 
   DelegationPagination.fromJson(Map<String, dynamic> json) {
@@ -18,8 +18,8 @@ class DelegationPagination {
     page = json['page'];
     pages = json['pages'];
     total = json['total'];
-    embedded = DelegationCollection.fromJson(json['_embedded']);
     links = PaginationLinks.fromJson(json['_links']);
+    embedded = DelegationCollection.fromJson(json['_embedded']);
   }
 
   int limit;
@@ -30,9 +30,9 @@ class DelegationPagination {
 
   int total;
 
-  DelegationCollection embedded;
-
   PaginationLinks links;
+
+  DelegationCollection embedded;
 
   @override
   bool operator ==(dynamic other) {
@@ -47,8 +47,8 @@ class DelegationPagination {
         page == other.page &&
         pages == other.pages &&
         total == other.total &&
-        embedded == other.embedded &&
-        links == other.links;
+        links == other.links &&
+        embedded == other.embedded;
   }
 
   /// By default hashCode return reference
@@ -59,8 +59,8 @@ class DelegationPagination {
       page.hashCode ^
       pages.hashCode ^
       total.hashCode ^
-      embedded.hashCode ^
-      links.hashCode;
+      links.hashCode ^
+      embedded.hashCode;
 
   static List<DelegationPagination> listFromJson(List<dynamic> json) {
     return json == null
@@ -84,13 +84,13 @@ class DelegationPagination {
       'page': page,
       'pages': pages,
       'total': total,
-      '_embedded': embedded,
       '_links': links,
+      '_embedded': embedded,
     };
   }
 
   @override
   String toString() {
-    return 'DelegationPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
+    return 'DelegationPagination[limit=$limit, page=$page, pages=$pages, total=$total, links=$links, embedded=$embedded, ]';
   }
 }

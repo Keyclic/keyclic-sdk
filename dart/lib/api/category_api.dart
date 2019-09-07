@@ -98,102 +98,6 @@ class CategoryApi {
         as CategoryPagination;
   }
 
-  /// Retrieve all Category resources.
-  ///
-  ///
-  Future<CategoryPagination> cgetCategoriesByOrganization(
-    String xKeyclicApp,
-    String organization, {
-    String acceptLanguage,
-    String xKeyclicAppVersion,
-    String businessActivity,
-    DateTime after,
-    DateTime before,
-    String geoPoint,
-    String geoCoordinates,
-    String order,
-    String query,
-    int page,
-    int limit,
-  }) async {
-    // verify required params are set
-
-    if (xKeyclicApp == null) {
-      throw ApiException(0, "Missing required param: xKeyclicApp");
-    }
-
-    if (organization == null) {
-      throw ApiException(0, "Missing required param: organization");
-    }
-
-    // create path and map variables
-    final String path = "/organizations/{organization}/categories"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "organization" + "}", organization.toString());
-
-    // query params
-    final List<QueryParam> queryParams = [
-      if (businessActivity != null)
-        ..._convertParametersForCollectionFormat(
-            "business_activity", businessActivity),
-      if (after != null)
-        ..._convertParametersForCollectionFormat("after", after),
-      if (before != null)
-        ..._convertParametersForCollectionFormat("before", before),
-      if (geoPoint != null)
-        ..._convertParametersForCollectionFormat("geo_point", geoPoint),
-      if (geoCoordinates != null)
-        ..._convertParametersForCollectionFormat(
-            "geo_coordinates", geoCoordinates),
-      if (order != null)
-        ..._convertParametersForCollectionFormat("order", order),
-      if (query != null)
-        ..._convertParametersForCollectionFormat("query", query),
-      if (page != null) ..._convertParametersForCollectionFormat("page", page),
-      if (limit != null)
-        ..._convertParametersForCollectionFormat("limit", limit),
-    ];
-
-    // header params
-    final Map<String, String> headerParams = {
-      "accept-language": acceptLanguage,
-      "x-keyclic-app": xKeyclicApp,
-      "x-keyclic-app-version": xKeyclicAppVersion,
-    };
-
-    final List<String> contentTypes = [
-      "application/json;charset=UTF-8",
-      "application/json",
-    ];
-
-    final List<String> authNames = [
-      "bearer",
-    ];
-
-    final Object postBody = null;
-
-    final Response response = await apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
-    );
-
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, response.body);
-    }
-
-    if (response.body == null) {
-      return null;
-    }
-
-    return apiClient.deserialize(response.body, 'CategoryPagination')
-        as CategoryPagination;
-  }
-
   /// Remove one Category resource.
   ///
   ///
@@ -400,10 +304,9 @@ class CategoryApi {
   /// Create one Category resource.
   ///
   ///
-  Future<Category> postCategoryByOrganization(
+  Future<Category> postCategory(
     String xKeyclicApp,
-    CategoryData categoryData,
-    String organization, {
+    CategoryData categoryData, {
     String acceptLanguage,
     String xKeyclicAppVersion,
   }) async {
@@ -417,14 +320,8 @@ class CategoryApi {
       throw ApiException(0, "Missing required param: categoryData");
     }
 
-    if (organization == null) {
-      throw ApiException(0, "Missing required param: organization");
-    }
-
     // create path and map variables
-    final String path = "/organizations/{organization}/categories"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "organization" + "}", organization.toString());
+    final String path = "/categories".replaceAll("{format}", "json");
 
     // query params
     final List<QueryParam> queryParams = [];

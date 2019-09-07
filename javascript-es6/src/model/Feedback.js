@@ -45,6 +45,7 @@ export default class Feedback {
     this._public = null;
     this.state = state;
     this.type = null;
+    this.updatedAt = null;
 
     this.embeddedType = FeedbackEmbedded;
     this.linksType = FeedbackLinks;
@@ -104,6 +105,9 @@ export default class Feedback {
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

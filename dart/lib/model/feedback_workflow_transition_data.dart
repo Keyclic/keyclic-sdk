@@ -12,7 +12,7 @@ class FeedbackWorkflowTransitionData {
     transition = json['transition'];
   }
 
-  /// enum transitionEnum {  deliver,  dispatch,  fail,  process,  publish,  success,  };
+  /// enum transitionEnum {  process,  publish,  };
   String transition;
 
   @override

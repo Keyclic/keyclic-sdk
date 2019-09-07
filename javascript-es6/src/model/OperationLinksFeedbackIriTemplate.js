@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import FeedbackLinksSelfIriTemplateMapping from "./FeedbackLinksSelfIriTemplateMapping";
+import ContributionLinksFeedbackIriTemplateMapping from "./ContributionLinksFeedbackIriTemplateMapping";
 
 /**
  * The OperationLinksFeedbackIriTemplate model module.
@@ -27,7 +27,7 @@ export default class OperationLinksFeedbackIriTemplate {
   constructor() {
     this.mapping = null;
 
-    this.mappingType = FeedbackLinksSelfIriTemplateMapping;
+    this.mappingType = ContributionLinksFeedbackIriTemplateMapping;
   }
 
   /**

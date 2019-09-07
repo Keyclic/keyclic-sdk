@@ -49,13 +49,16 @@ var PlaceData =
   
    * @param polygon { String }
   
+   * @param organization { String }
+  
    */
-    function PlaceData(name, polygon) {
+    function PlaceData(name, polygon, organization) {
       _classCallCheck(this, PlaceData);
 
       this.name = name;
       this.branchCode = null;
       this.polygon = polygon;
+      this.organization = organization;
     }
     /**
      * Constructs a "PlaceData" from a plain JavaScript object.
@@ -98,6 +101,13 @@ var PlaceData =
           if (data.hasOwnProperty("polygon")) {
             object.polygon = _ApiClient.default.convertToType(
               data["polygon"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
               "String"
             );
           }

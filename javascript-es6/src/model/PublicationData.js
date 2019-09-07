@@ -24,21 +24,26 @@ export default class PublicationData {
     
      * @param message { String }
     
-     * @param place { String }
+     * @param feed { String }
     
      * @param title { String }
+    
+     * @param organization { String }
     
      */
   constructor(
     message,
 
-    place,
+    feed,
 
-    title
+    title,
+
+    organization
   ) {
     this.message = message;
-    this.place = place;
+    this.feed = feed;
     this.title = title;
+    this.organization = organization;
   }
 
   /**
@@ -59,11 +64,17 @@ export default class PublicationData {
     if (data.hasOwnProperty("message")) {
       object.message = ApiClient.convertToType(data["message"], "String");
     }
-    if (data.hasOwnProperty("place")) {
-      object.place = ApiClient.convertToType(data["place"], "String");
+    if (data.hasOwnProperty("feed")) {
+      object.feed = ApiClient.convertToType(data["feed"], "String");
     }
     if (data.hasOwnProperty("title")) {
       object.title = ApiClient.convertToType(data["title"], "String");
+    }
+    if (data.hasOwnProperty("organization")) {
+      object.organization = ApiClient.convertToType(
+        data["organization"],
+        "String"
+      );
     }
 
     return object;

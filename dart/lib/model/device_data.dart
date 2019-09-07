@@ -4,6 +4,7 @@ class DeviceData {
   DeviceData({
     this.token,
     this.platform,
+    this.person,
   });
 
   DeviceData.fromJson(Map<String, dynamic> json) {
@@ -12,11 +13,14 @@ class DeviceData {
     }
     token = json['token'];
     platform = json['platform'];
+    person = json['person'];
   }
 
   String token;
 
   String platform;
+
+  String person;
 
   @override
   bool operator ==(dynamic other) {
@@ -28,12 +32,13 @@ class DeviceData {
     return other is DeviceData &&
         runtimeType == other.runtimeType &&
         token == other.token &&
-        platform == other.platform;
+        platform == other.platform &&
+        person == other.person;
   }
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ token.hashCode ^ platform.hashCode;
+  int get hashCode => 0 ^ token.hashCode ^ platform.hashCode ^ person.hashCode;
 
   static List<DeviceData> listFromJson(List<dynamic> json) {
     return json == null
@@ -54,11 +59,12 @@ class DeviceData {
     return {
       'token': token,
       'platform': platform,
+      'person': person,
     };
   }
 
   @override
   String toString() {
-    return 'DeviceData[token=$token, platform=$platform, ]';
+    return 'DeviceData[token=$token, platform=$platform, person=$person, ]';
   }
 }

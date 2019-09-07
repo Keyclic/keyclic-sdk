@@ -4,12 +4,83 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**cgetOccupantsByPlace**](PlaceApi.md#cgetOccupantsByPlace) | **GET** /places/{place}/occupants | Retrieve all Occupant resources.
 [**cgetPlaces**](PlaceApi.md#cgetPlaces) | **GET** /places | Retrieve all Place resources.
-[**cgetPlacesByOrganization**](PlaceApi.md#cgetPlacesByOrganization) | **GET** /organizations/{organization}/places | Retrieve all Place resources.
 [**getPlace**](PlaceApi.md#getPlace) | **GET** /places/{place} | Retrieve one Place resource.
 [**patchPlace**](PlaceApi.md#patchPlace) | **PATCH** /places/{place} | Edit one Place resource.
-[**postPlaceByOrganization**](PlaceApi.md#postPlaceByOrganization) | **POST** /organizations/{organization}/places | Create one Place resource.
+[**postPlace**](PlaceApi.md#postPlace) | **POST** /places | Create one Place resource.
 
+
+<a name="cgetOccupantsByPlace"></a>
+# **cgetOccupantsByPlace**
+> OccupantPagination cgetOccupantsByPlace(xKeyclicApp, place, opts)
+
+Retrieve all Occupant resources.
+
+### Example
+```javascript
+import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
+let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new @KeyclicSdkJavascript.PlaceApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let place = "place_example"; // String | The identifier of the resource.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
+  'order': "desc", // String | 
+  'person': "person_example", // String | The identifier of the resource.
+  'page': 1, // Number | Page of the overview.
+  'limit': 10 // Number | Page of the overview.
+};
+
+apiInstance.cgetOccupantsByPlace(xKeyclicApp, place, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **place** | [**String**](.md)| The identifier of the resource. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+ **after** | **Date**|  | [optional] 
+ **before** | **Date**|  | [optional] 
+ **order** | **String**|  | [optional] [default to desc]
+ **person** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **page** | **Number**| Page of the overview. | [optional] [default to 1]
+ **limit** | **Number**| Page of the overview. | [optional] [default to 10]
+
+### Return type
+
+[**OccupantPagination**](OccupantPagination.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
 
 <a name="cgetPlaces"></a>
 # **cgetPlaces**
@@ -39,13 +110,13 @@ let opts = {
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'geoElevation': "geoElevation_example", // String | 
-  'geoHash': "geoHash_example", // String | 
+  'geoHash': ["geoHash_example"], // [String] | 
   'geoPoint': "geoPoint_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
   'geoCoordinates': "geoCoordinates_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
   'order': "desc", // String | 
   'organization': "organization_example", // String | The identifier of the resource.
   'parent': "parent_example", // String | The identifier of the resource.
-  'parents': "parents_example", // String | The identifier of the resource.
+  'parents': ["parents_example"], // [String] | The identifier of the resource.
   'query': "query_example", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10 // Number | Page of the overview.
@@ -71,98 +142,13 @@ Name | Type | Description  | Notes
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
  **geoElevation** | **String**|  | [optional] 
- **geoHash** | **String**|  | [optional] 
+ **geoHash** | [**[String]**](String.md)|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
  **parent** | [**String**](.md)| The identifier of the resource. | [optional] 
- **parents** | [**String**](.md)| The identifier of the resource. | [optional] 
- **query** | **String**|  | [optional] 
- **page** | **Number**| Page of the overview. | [optional] [default to 1]
- **limit** | **Number**| Page of the overview. | [optional] [default to 10]
-
-### Return type
-
-[**PlacePagination**](PlacePagination.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=UTF-8
- - **Accept**: application/hal+json;charset=UTF-8
-
-<a name="cgetPlacesByOrganization"></a>
-# **cgetPlacesByOrganization**
-> PlacePagination cgetPlacesByOrganization(xKeyclicApp, organization, opts)
-
-Retrieve all Place resources.
-
-### Example
-```javascript
-import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
-let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
-
-// Configure API key authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//bearer.apiKeyPrefix = 'Token';
-
-let apiInstance = new @KeyclicSdkJavascript.PlaceApi();
-
-let xKeyclicApp = "com.keyclic.app"; // String | 
-
-let organization = "organization_example"; // String | The identifier of the resource.
-
-let opts = { 
-  'acceptLanguage': "fr-FR", // String | 
-  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'businessActivity': "businessActivity_example", // String | The identifier of the resource.
-  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'geoElevation': "geoElevation_example", // String | 
-  'geoHash': "geoHash_example", // String | 
-  'geoPoint': "geoPoint_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
-  'geoCoordinates': "geoCoordinates_example", // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
-  'order': "desc", // String | 
-  'parent': "parent_example", // String | The identifier of the resource.
-  'parents': "parents_example", // String | The identifier of the resource.
-  'query': "query_example", // String | 
-  'page': 1, // Number | Page of the overview.
-  'limit': 10 // Number | Page of the overview.
-};
-
-apiInstance.cgetPlacesByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource. | 
- **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
- **xKeyclicAppVersion** | **String**|  | [optional] 
- **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
- **after** | **Date**|  | [optional] 
- **before** | **Date**|  | [optional] 
- **geoElevation** | **String**|  | [optional] 
- **geoHash** | **String**|  | [optional] 
- **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
- **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
- **order** | **String**|  | [optional] [default to desc]
- **parent** | [**String**](.md)| The identifier of the resource. | [optional] 
- **parents** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **parents** | [**[String]**](String.md)| The identifier of the resource. | [optional] 
  **query** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
@@ -301,9 +287,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json;charset=UTF-8
  - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="postPlaceByOrganization"></a>
-# **postPlaceByOrganization**
-> Place postPlaceByOrganization(xKeyclicApp, placeData, organization, opts)
+<a name="postPlace"></a>
+# **postPlace**
+> Place postPlace(xKeyclicApp, placeData, opts)
 
 Create one Place resource.
 
@@ -324,14 +310,12 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let placeData = new @KeyclicSdkJavascript.PlaceData(); // PlaceData | 
 
-let organization = "organization_example"; // String | The identifier of the resource.
-
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.postPlaceByOrganization(xKeyclicApp, placeData, organization, opts, (error, data, response) => {
+apiInstance.postPlace(xKeyclicApp, placeData, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -346,7 +330,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **placeData** | [**PlaceData**](PlaceData.md)|  | 
- **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

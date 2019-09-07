@@ -34,10 +34,12 @@ export default class Application {
     token
   ) {
     this.links = null;
+    this.createdAt = null;
     this.id = null;
     this.name = name;
     this.token = token;
     this.type = null;
+    this.updatedAt = null;
     this.version = null;
 
     this.linksType = ApplicationLinks;
@@ -61,6 +63,9 @@ export default class Application {
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
     }
@@ -72,6 +77,9 @@ export default class Application {
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
     if (data.hasOwnProperty("version")) {
       object.version = ApiClient.convertToType(data["version"], "String");

@@ -9,11 +9,14 @@ class ContributionApi {
   /// Retrieve all Contribution resources.
   ///
   ///
-  Future<ActivityAggregatedPagination> cgetContributionsByFeedback(
-    String xKeyclicApp,
-    String feedback, {
+  Future<ContributionPagination> cgetContributions(
+    String xKeyclicApp, {
     String acceptLanguage,
     String xKeyclicAppVersion,
+    DateTime after,
+    DateTime before,
+    String feedback,
+    String order,
     int page,
     int limit,
   }) async {
@@ -23,17 +26,19 @@ class ContributionApi {
       throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
-    if (feedback == null) {
-      throw ApiException(0, "Missing required param: feedback");
-    }
-
     // create path and map variables
-    final String path = "/feedbacks/{feedback}/contributions"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "feedback" + "}", feedback.toString());
+    final String path = "/contributions".replaceAll("{format}", "json");
 
     // query params
     final List<QueryParam> queryParams = [
+      if (after != null)
+        ..._convertParametersForCollectionFormat("after", after),
+      if (before != null)
+        ..._convertParametersForCollectionFormat("before", before),
+      if (feedback != null)
+        ..._convertParametersForCollectionFormat("feedback", feedback),
+      if (order != null)
+        ..._convertParametersForCollectionFormat("order", order),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),
@@ -75,16 +80,16 @@ class ContributionApi {
       return null;
     }
 
-    return apiClient.deserialize(response.body, 'ActivityAggregatedPagination')
-        as ActivityAggregatedPagination;
+    return apiClient.deserialize(response.body, 'ContributionPagination')
+        as ContributionPagination;
   }
 
-  /// Create one Contribution resource.
+  /// Retrieve one Contribution resource.
   ///
   ///
-  Future<Operation> postContributionByFeedback(
+  Future<Contribution> getContribution(
     String xKeyclicApp,
-    String feedback, {
+    String contribution, {
     String acceptLanguage,
     String xKeyclicAppVersion,
   }) async {
@@ -94,14 +99,73 @@ class ContributionApi {
       throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
-    if (feedback == null) {
-      throw ApiException(0, "Missing required param: feedback");
+    if (contribution == null) {
+      throw ApiException(0, "Missing required param: contribution");
     }
 
     // create path and map variables
-    final String path = "/feedbacks/{feedback}/contributions"
+    final String path = "/contributions/{contribution}"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "feedback" + "}", feedback.toString());
+        .replaceAll("{" + "contribution" + "}", contribution.toString());
+
+    // query params
+    final List<QueryParam> queryParams = [];
+
+    // header params
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
+
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
+
+    final List<String> authNames = [
+      "bearer",
+    ];
+
+    final Object postBody = null;
+
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    }
+
+    if (response.body == null) {
+      return null;
+    }
+
+    return apiClient.deserialize(response.body, 'Contribution') as Contribution;
+  }
+
+  /// Create one Contribution resource.
+  ///
+  ///
+  Future<Contribution> postContribution(
+    String xKeyclicApp, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
+    // verify required params are set
+
+    if (xKeyclicApp == null) {
+      throw ApiException(0, "Missing required param: xKeyclicApp");
+    }
+
+    // create path and map variables
+    final String path = "/contributions".replaceAll("{format}", "json");
 
     // query params
     final List<QueryParam> queryParams = [];
@@ -142,6 +206,6 @@ class ContributionApi {
       return null;
     }
 
-    return apiClient.deserialize(response.body, 'Operation') as Operation;
+    return apiClient.deserialize(response.body, 'Contribution') as Contribution;
   }
 }

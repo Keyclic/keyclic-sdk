@@ -4,13 +4,14 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteDeviceByPersonAndDevice**](DeviceApi.md#deleteDeviceByPersonAndDevice) | **DELETE** /people/{person}/devices/{device} | Remove one Device resource.
-[**postDeviceByPerson**](DeviceApi.md#postDeviceByPerson) | **POST** /people/{person}/devices | Create one Device resource.
+[**deleteDevice**](DeviceApi.md#deleteDevice) | **DELETE** /devices/{device} | Remove one Device resource.
+[**getDevice**](DeviceApi.md#getDevice) | **GET** /devices/{device} | Retrieve one Device resource.
+[**postDevice**](DeviceApi.md#postDevice) | **POST** /devices | Create one Device resource.
 
 
-<a name="deleteDeviceByPersonAndDevice"></a>
-# **deleteDeviceByPersonAndDevice**
-> deleteDeviceByPersonAndDevice(xKeyclicApp, person, device, opts)
+<a name="deleteDevice"></a>
+# **deleteDevice**
+> deleteDevice(xKeyclicApp, device, opts)
 
 Remove one Device resource.
 
@@ -29,8 +30,6 @@ let apiInstance = new @KeyclicSdkJavascript.DeviceApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let person = "person_example"; // String | The identifier of the resource.
-
 let device = "device_example"; // String | 
 
 let opts = { 
@@ -38,7 +37,7 @@ let opts = {
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.deleteDeviceByPersonAndDevice(xKeyclicApp, person, device, opts, (error, data, response) => {
+apiInstance.deleteDevice(xKeyclicApp, device, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -52,7 +51,6 @@ apiInstance.deleteDeviceByPersonAndDevice(xKeyclicApp, person, device, opts, (er
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | [**String**](.md)| The identifier of the resource. | 
  **device** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
@@ -70,9 +68,68 @@ null (empty response body)
  - **Content-Type**: application/json;charset=UTF-8
  - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="postDeviceByPerson"></a>
-# **postDeviceByPerson**
-> Device postDeviceByPerson(xKeyclicApp, deviceData, person, opts)
+<a name="getDevice"></a>
+# **getDevice**
+> getDevice(xKeyclicApp, device, opts)
+
+Retrieve one Device resource.
+
+### Example
+```javascript
+import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
+let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new @KeyclicSdkJavascript.DeviceApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let device = "device_example"; // String | 
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+};
+
+apiInstance.getDevice(xKeyclicApp, device, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **device** | **String**|  | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
+<a name="postDevice"></a>
+# **postDevice**
+> Device postDevice(xKeyclicApp, deviceData, opts)
 
 Create one Device resource.
 
@@ -93,14 +150,12 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let deviceData = new @KeyclicSdkJavascript.DeviceData(); // DeviceData | 
 
-let person = "person_example"; // String | The identifier of the resource.
-
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.postDeviceByPerson(xKeyclicApp, deviceData, person, opts, (error, data, response) => {
+apiInstance.postDevice(xKeyclicApp, deviceData, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -115,7 +170,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **deviceData** | [**DeviceData**](DeviceData.md)|  | 
- **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

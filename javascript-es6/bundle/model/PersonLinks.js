@@ -9,10 +9,6 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _PersonLinksImage = _interopRequireDefault(require("./PersonLinksImage"));
 
-var _PersonLinksMemberOf = _interopRequireDefault(
-  require("./PersonLinksMemberOf")
-);
-
 var _PersonLinksSelf = _interopRequireDefault(require("./PersonLinksSelf"));
 
 function _interopRequireDefault(obj) {
@@ -58,10 +54,8 @@ var PersonLinks =
       _classCallCheck(this, PersonLinks);
 
       this.image = null;
-      this.memberOf = null;
       this.self = null;
       this.imageType = _PersonLinksImage.default;
-      this.memberOfType = _PersonLinksMemberOf.default;
       this.selfType = _PersonLinksSelf.default;
     }
     /**
@@ -92,13 +86,6 @@ var PersonLinks =
             object.image = _ApiClient.default.convertToType(
               data["image"],
               object.imageType
-            );
-          }
-
-          if (data.hasOwnProperty("memberOf")) {
-            object.memberOf = _ApiClient.default.convertToType(
-              data["memberOf"],
-              object.memberOfType
             );
           }
 

@@ -4,20 +4,25 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cgetOperationsByOrganization**](OperationApi.md#cgetOperationsByOrganization) | **GET** /organizations/{organization}/operations | Retrieve all Operation resources.
-[**cgetOperationsByPerson**](OperationApi.md#cgetOperationsByPerson) | **GET** /people/{person}/operations | Retrieve all Operation resources.
-[**cgetOperationsByReport**](OperationApi.md#cgetOperationsByReport) | **GET** /reports/{report}/operations | Retrieve all Operation resources.
+[**cgetCommentsByOperation**](OperationApi.md#cgetCommentsByOperation) | **GET** /operations/{operation}/comments | Retrieve all Comment resources.
+[**deleteImageByOperationAndImage**](OperationApi.md#deleteImageByOperationAndImage) | **DELETE** /operations/{operation}/images/{image} | Remove one Image resource.
 [**deleteOperation**](OperationApi.md#deleteOperation) | **DELETE** /operations/{operation} | Remove one Operation resource.
 [**getOperation**](OperationApi.md#getOperation) | **GET** /operations/{operation} | Retrieve one Operation resource.
+[**getTrackingByOperation**](OperationApi.md#getTrackingByOperation) | **GET** /operations/{operation}/tracking | Retrieve one Tracking resource.
 [**patchOperation**](OperationApi.md#patchOperation) | **PATCH** /operations/{operation} | Edit one Operation resource.
+[**postAssignByOperation**](OperationApi.md#postAssignByOperation) | **POST** /operations/{operation}/assign | Create one Assign resource.
+[**postCommentByOperation**](OperationApi.md#postCommentByOperation) | **POST** /operations/{operation}/comments | Create one Comment resource.
+[**postImageByOperation**](OperationApi.md#postImageByOperation) | **POST** /operations/{operation}/images | Create one Image resource.
 [**postOperation**](OperationApi.md#postOperation) | **POST** /operations | Create one Operation resource.
+[**postSignByOperation**](OperationApi.md#postSignByOperation) | **POST** /operations/{operation}/sign | Create one Sign resource.
+[**postWorkflowByOperation**](OperationApi.md#postWorkflowByOperation) | **POST** /operations/{operation}/workflow | Create one Workflow resource.
 
 
-<a name="cgetOperationsByOrganization"></a>
-# **cgetOperationsByOrganization**
-> OperationPagination cgetOperationsByOrganization(xKeyclicApp, organization, opts)
+<a name="cgetCommentsByOperation"></a>
+# **cgetCommentsByOperation**
+> ActivityPagination cgetCommentsByOperation(xKeyclicApp, operation, opts)
 
-Retrieve all Operation resources.
+Retrieve all Comment resources.
 
 ### Example
 ```javascript
@@ -34,21 +39,16 @@ let apiInstance = new @KeyclicSdkJavascript.OperationApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let organization = "organization_example"; // String | The identifier of the resource.
+let operation = "operation_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'order': "desc", // String | 
-  'query': "query_example", // String | 
-  'state': "state_example", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10 // Number | Page of the overview.
 };
 
-apiInstance.cgetOperationsByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+apiInstance.cgetCommentsByOperation(xKeyclicApp, operation, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -62,20 +62,15 @@ apiInstance.cgetOperationsByOrganization(xKeyclicApp, organization, opts, (error
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **after** | **Date**|  | [optional] 
- **before** | **Date**|  | [optional] 
- **order** | **String**|  | [optional] [default to desc]
- **query** | **String**|  | [optional] 
- **state** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
 
 ### Return type
 
-[**OperationPagination**](OperationPagination.md)
+[**ActivityPagination**](ActivityPagination.md)
 
 ### Authorization
 
@@ -86,86 +81,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json;charset=UTF-8
  - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="cgetOperationsByPerson"></a>
-# **cgetOperationsByPerson**
-> OperationPagination cgetOperationsByPerson(xKeyclicApp, person, opts)
+<a name="deleteImageByOperationAndImage"></a>
+# **deleteImageByOperationAndImage**
+> deleteImageByOperationAndImage(xKeyclicApp, operation, image, opts)
 
-Retrieve all Operation resources.
-
-### Example
-```javascript
-import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
-let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
-
-// Configure API key authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//bearer.apiKeyPrefix = 'Token';
-
-let apiInstance = new @KeyclicSdkJavascript.OperationApi();
-
-let xKeyclicApp = "com.keyclic.app"; // String | 
-
-let person = "person_example"; // String | The identifier of the resource.
-
-let opts = { 
-  'acceptLanguage': "fr-FR", // String | 
-  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'order': "desc", // String | 
-  'organization': "organization_example", // String | The identifier of the resource.
-  'query': "query_example", // String | 
-  'state': "state_example", // String | 
-  'page': 1, // Number | Page of the overview.
-  'limit': 10 // Number | Page of the overview.
-};
-
-apiInstance.cgetOperationsByPerson(xKeyclicApp, person, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **person** | [**String**](.md)| The identifier of the resource. | 
- **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
- **xKeyclicAppVersion** | **String**|  | [optional] 
- **after** | **Date**|  | [optional] 
- **before** | **Date**|  | [optional] 
- **order** | **String**|  | [optional] [default to desc]
- **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
- **query** | **String**|  | [optional] 
- **state** | **String**|  | [optional] 
- **page** | **Number**| Page of the overview. | [optional] [default to 1]
- **limit** | **Number**| Page of the overview. | [optional] [default to 10]
-
-### Return type
-
-[**OperationPagination**](OperationPagination.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=UTF-8
- - **Accept**: application/hal+json;charset=UTF-8
-
-<a name="cgetOperationsByReport"></a>
-# **cgetOperationsByReport**
-> OperationPagination cgetOperationsByReport(xKeyclicApp, report, opts)
-
-Retrieve all Operation resources.
+Remove one Image resource.
 
 ### Example
 ```javascript
@@ -182,26 +102,20 @@ let apiInstance = new @KeyclicSdkJavascript.OperationApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let report = "report_example"; // String | The identifier of the resource.
+let operation = "operation_example"; // String | The identifier of the resource.
+
+let image = "image_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'order': "desc", // String | 
-  'organization': "organization_example", // String | The identifier of the resource.
-  'query': "query_example", // String | 
-  'state': "state_example", // String | 
-  'page': 1, // Number | Page of the overview.
-  'limit': 10 // Number | Page of the overview.
 };
 
-apiInstance.cgetOperationsByReport(xKeyclicApp, report, opts, (error, data, response) => {
+apiInstance.deleteImageByOperationAndImage(xKeyclicApp, operation, image, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -211,21 +125,14 @@ apiInstance.cgetOperationsByReport(xKeyclicApp, report, opts, (error, data, resp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **report** | [**String**](.md)| The identifier of the resource. | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
+ **image** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **after** | **Date**|  | [optional] 
- **before** | **Date**|  | [optional] 
- **order** | **String**|  | [optional] [default to desc]
- **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
- **query** | **String**|  | [optional] 
- **state** | **String**|  | [optional] 
- **page** | **Number**| Page of the overview. | [optional] [default to 1]
- **limit** | **Number**| Page of the overview. | [optional] [default to 10]
 
 ### Return type
 
-[**OperationPagination**](OperationPagination.md)
+null (empty response body)
 
 ### Authorization
 
@@ -354,6 +261,65 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json;charset=UTF-8
  - **Accept**: application/hal+json;charset=UTF-8
 
+<a name="getTrackingByOperation"></a>
+# **getTrackingByOperation**
+> Tracking getTrackingByOperation(xKeyclicApp, operation, opts)
+
+Retrieve one Tracking resource.
+
+### Example
+```javascript
+import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
+let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new @KeyclicSdkJavascript.OperationApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let operation = "operation_example"; // String | The identifier of the resource.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+};
+
+apiInstance.getTrackingByOperation(xKeyclicApp, operation, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **operation** | [**String**](.md)| The identifier of the resource. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+
+### Return type
+
+[**Tracking**](Tracking.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
 <a name="patchOperation"></a>
 # **patchOperation**
 > Operation patchOperation(xKeyclicApp, operationPatch, operation, opts)
@@ -416,6 +382,192 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json;charset=UTF-8
  - **Accept**: application/hal+json;charset=UTF-8
 
+<a name="postAssignByOperation"></a>
+# **postAssignByOperation**
+> Operation postAssignByOperation(xKeyclicApp, assignData, operation, opts)
+
+Create one Assign resource.
+
+### Example
+```javascript
+import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
+let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new @KeyclicSdkJavascript.OperationApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let assignData = new @KeyclicSdkJavascript.AssignData(); // AssignData | 
+
+let operation = "operation_example"; // String | The identifier of the resource.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+};
+
+apiInstance.postAssignByOperation(xKeyclicApp, assignData, operation, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **assignData** | [**AssignData**](AssignData.md)|  | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+
+### Return type
+
+[**Operation**](Operation.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
+<a name="postCommentByOperation"></a>
+# **postCommentByOperation**
+> Operation postCommentByOperation(xKeyclicApp, commentData, operation, opts)
+
+Create one Comment resource.
+
+### Example
+```javascript
+import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
+let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new @KeyclicSdkJavascript.OperationApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let commentData = new @KeyclicSdkJavascript.CommentData(); // CommentData | 
+
+let operation = "operation_example"; // String | The identifier of the resource.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+};
+
+apiInstance.postCommentByOperation(xKeyclicApp, commentData, operation, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **commentData** | [**CommentData**](CommentData.md)|  | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+
+### Return type
+
+[**Operation**](Operation.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
+<a name="postImageByOperation"></a>
+# **postImageByOperation**
+> Operation postImageByOperation(xKeyclicApp, imageData, operation, opts)
+
+Create one Image resource.
+
+### Example
+```javascript
+import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
+let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new @KeyclicSdkJavascript.OperationApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let imageData = new @KeyclicSdkJavascript.ImageData(); // ImageData | 
+
+let operation = "operation_example"; // String | The identifier of the resource.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+};
+
+apiInstance.postImageByOperation(xKeyclicApp, imageData, operation, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **imageData** | [**ImageData**](ImageData.md)|  | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+
+### Return type
+
+[**Operation**](Operation.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
 <a name="postOperation"></a>
 # **postOperation**
 > Operation postOperation(xKeyclicApp, operationData, opts)
@@ -459,6 +611,130 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **operationData** | [**OperationData**](OperationData.md)|  | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+
+### Return type
+
+[**Operation**](Operation.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
+<a name="postSignByOperation"></a>
+# **postSignByOperation**
+> Operation postSignByOperation(xKeyclicApp, signatureData, operation, opts)
+
+Create one Sign resource.
+
+### Example
+```javascript
+import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
+let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new @KeyclicSdkJavascript.OperationApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let signatureData = new @KeyclicSdkJavascript.SignatureData(); // SignatureData | 
+
+let operation = "operation_example"; // String | The identifier of the resource.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+};
+
+apiInstance.postSignByOperation(xKeyclicApp, signatureData, operation, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **signatureData** | [**SignatureData**](SignatureData.md)|  | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+
+### Return type
+
+[**Operation**](Operation.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
+<a name="postWorkflowByOperation"></a>
+# **postWorkflowByOperation**
+> Operation postWorkflowByOperation(xKeyclicApp, operationWorkflowTransitionData, operation, opts)
+
+Create one Workflow resource.
+
+### Example
+```javascript
+import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
+let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new @KeyclicSdkJavascript.OperationApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let operationWorkflowTransitionData = new @KeyclicSdkJavascript.OperationWorkflowTransitionData(); // OperationWorkflowTransitionData | 
+
+let operation = "operation_example"; // String | The identifier of the resource.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+};
+
+apiInstance.postWorkflowByOperation(xKeyclicApp, operationWorkflowTransitionData, operation, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **operationWorkflowTransitionData** | [**OperationWorkflowTransitionData**](OperationWorkflowTransitionData.md)|  | 
+ **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

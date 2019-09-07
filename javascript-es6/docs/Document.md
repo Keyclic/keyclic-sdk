@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **permission** | [**DocumentPermission**](DocumentPermission.md) |  | [optional] 
 **type** | **String** |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 
 

@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import DelegationLinksCreatedByIriTemplateMapping from "./DelegationLinksCreatedByIriTemplateMapping";
+import ContributionLinksContributorIriTemplateMapping from "./ContributionLinksContributorIriTemplateMapping";
 
 /**
  * The DocumentLinksCreatedByIriTemplate model module.
@@ -27,7 +27,7 @@ export default class DocumentLinksCreatedByIriTemplate {
   constructor() {
     this.mapping = null;
 
-    this.mappingType = DelegationLinksCreatedByIriTemplateMapping;
+    this.mappingType = ContributionLinksContributorIriTemplateMapping;
   }
 
   /**

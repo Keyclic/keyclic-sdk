@@ -38,11 +38,13 @@ export default class Webhook {
     payloadUrl
   ) {
     this.links = null;
+    this.createdAt = null;
     this.enabled = enabled;
     this.event = event;
     this.id = null;
     this.payloadUrl = payloadUrl;
     this.type = null;
+    this.updatedAt = null;
 
     this.linksType = WebhookLinks;
   }
@@ -65,6 +67,9 @@ export default class Webhook {
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
     if (data.hasOwnProperty("enabled")) {
       object.enabled = ApiClient.convertToType(data["enabled"], "Boolean");
     }
@@ -79,6 +84,9 @@ export default class Webhook {
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

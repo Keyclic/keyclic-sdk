@@ -14,7 +14,6 @@ import ApiClient from "../ApiClient";
 import Error from "../model/Error";
 import Publication from "../model/Publication";
 import PublicationData from "../model/PublicationData";
-import PublicationPagination from "../model/PublicationPagination";
 
 /**
  * Publication service.
@@ -32,164 +31,17 @@ export default class PublicationApi extends ApiClient {
   }
 
   /**
-   * Retrieve all Publication resources.
+   * Remove one Publication resource.
    * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource.
-   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { PublicationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-   * @param { module:model/String } acceptLanguage   (default to fr-FR)
-   * @param { String } xKeyclicAppVersion
-   * @param { module:model/Date } after
-   * @param { module:model/Date } before
-   * @param { module:model/String } order   (default to desc)
-   * @param { String } place The identifier of the resource.
-   * @param { Number } page Page of the overview.  (default to 1)
-   * @param { Number } limit Page of the overview.  (default to 10)
-   */
-  cgetPublicationsByOrganization(returnType = null, options, credentials) {
-    if (returnType === null) {
-      returnType = PublicationPagination;
-    }
-
-    let {
-      xKeyclicApp,
-      organization,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      after,
-      before,
-      order,
-      place,
-      page,
-      limit
-    } = options;
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-      throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling cgetPublicationsByOrganization'
-      );
-    }
-
-    // verify the required parameter 'organization' is set
-    if (typeof organization === "undefined" || organization === null) {
-      throw new window.Error(
-        'Missing the required parameter "organization" when calling cgetPublicationsByOrganization'
-      );
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
-      acceptLanguage = "fr-FR";
-    }
-
-    // verify the default value of parameter 'order'
-    if (typeof order === "undefined" || order === null) {
-      order = "desc";
-    }
-
-    // verify the default value of parameter 'page'
-    if (typeof page === "undefined" || page === null) {
-      page = 1;
-    }
-
-    // verify the default value of parameter 'limit'
-    if (typeof limit === "undefined" || limit === null) {
-      limit = 10;
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === "undefined") {
-      xKeyclicAppVersion = null;
-    }
-
-    // verify the null value of parameter 'after'
-    if (typeof after === "undefined") {
-      after = null;
-    }
-
-    // verify the null value of parameter 'before'
-    if (typeof before === "undefined") {
-      before = null;
-    }
-
-    // verify the null value of parameter 'place'
-    if (typeof place === "undefined") {
-      place = null;
-    }
-
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetPublicationsByOrganization'
-      );
-    }
-
-    let pathParams = {
-      organization: organization
-    };
-
-    let bodyParam = null;
-
-    let queryParams = {
-      after: after,
-      before: before,
-      order: order,
-      place: place,
-      page: page,
-      limit: limit
-    };
-
-    let headerParams = {
-      "accept-language": acceptLanguage,
-      "x-keyclic-app": xKeyclicApp,
-      "x-keyclic-app-version": xKeyclicAppVersion
-    };
-
-    let credentialParams = credentials;
-
-    let authNames = ["bearer"];
-
-    let contentTypes = ["application/json;charset=UTF-8"];
-
-    let accepts = ["application/hal+json;charset=UTF-8"];
-
-    return this.callApi(
-      "/organizations/{organization}/publications",
-      "GET",
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    );
-  }
-
-  /**
-   * Retrieve one Publication resource.
-   * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource.
    * @param { String } publication The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { Publication }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getPublicationByOrganizationAndPublication(
-    returnType = null,
-    options,
-    credentials
-  ) {
-    if (returnType === null) {
-      returnType = Publication;
-    }
-
+  deletePublication(returnType = null, options, credentials) {
     let {
       xKeyclicApp,
-      organization,
       publication,
       acceptLanguage,
       xKeyclicAppVersion
@@ -198,21 +50,14 @@ export default class PublicationApi extends ApiClient {
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling getPublicationByOrganizationAndPublication'
-      );
-    }
-
-    // verify the required parameter 'organization' is set
-    if (typeof organization === "undefined" || organization === null) {
-      throw new window.Error(
-        'Missing the required parameter "organization" when calling getPublicationByOrganizationAndPublication'
+        'Missing the required parameter "xKeyclicApp" when calling deletePublication'
       );
     }
 
     // verify the required parameter 'publication' is set
     if (typeof publication === "undefined" || publication === null) {
       throw new window.Error(
-        'Missing the required parameter "publication" when calling getPublicationByOrganizationAndPublication'
+        'Missing the required parameter "publication" when calling deletePublication'
       );
     }
 
@@ -228,12 +73,11 @@ export default class PublicationApi extends ApiClient {
 
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
-        'Missing the required parameter "credentials" when calling getPublicationByOrganizationAndPublication'
+        'Missing the required parameter "credentials" when calling deletePublication'
       );
     }
 
     let pathParams = {
-      organization: organization,
       publication: publication
     };
 
@@ -256,7 +100,95 @@ export default class PublicationApi extends ApiClient {
     let accepts = ["application/hal+json;charset=UTF-8"];
 
     return this.callApi(
-      "/organizations/{organization}/publications/{publication}",
+      "/publications/{publication}",
+      "DELETE",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve one Publication resource.
+   * @param { String } xKeyclicApp
+   * @param { String } publication The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Publication }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  getPublication(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Publication;
+    }
+
+    let {
+      xKeyclicApp,
+      publication,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling getPublication'
+      );
+    }
+
+    // verify the required parameter 'publication' is set
+    if (typeof publication === "undefined" || publication === null) {
+      throw new window.Error(
+        'Missing the required parameter "publication" when calling getPublication'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling getPublication'
+      );
+    }
+
+    let pathParams = {
+      publication: publication
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/publications/{publication}",
       "GET",
       pathParams,
       queryParams,
@@ -274,13 +206,12 @@ export default class PublicationApi extends ApiClient {
    * Create one Publication resource.
    * @param { String } xKeyclicApp
    * @param { module:model/PublicationData } publicationData
-   * @param { String } organization The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Publication }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postPublicationByOrganization(returnType = null, options, credentials) {
+  postPublication(returnType = null, options, credentials) {
     if (returnType === null) {
       returnType = Publication;
     }
@@ -288,7 +219,6 @@ export default class PublicationApi extends ApiClient {
     let {
       xKeyclicApp,
       publicationData,
-      organization,
       acceptLanguage,
       xKeyclicAppVersion
     } = options;
@@ -296,21 +226,14 @@ export default class PublicationApi extends ApiClient {
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling postPublicationByOrganization'
+        'Missing the required parameter "xKeyclicApp" when calling postPublication'
       );
     }
 
     // verify the required parameter 'publicationData' is set
     if (typeof publicationData === "undefined" || publicationData === null) {
       throw new window.Error(
-        'Missing the required parameter "publicationData" when calling postPublicationByOrganization'
-      );
-    }
-
-    // verify the required parameter 'organization' is set
-    if (typeof organization === "undefined" || organization === null) {
-      throw new window.Error(
-        'Missing the required parameter "organization" when calling postPublicationByOrganization'
+        'Missing the required parameter "publicationData" when calling postPublication'
       );
     }
 
@@ -326,13 +249,11 @@ export default class PublicationApi extends ApiClient {
 
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
-        'Missing the required parameter "credentials" when calling postPublicationByOrganization'
+        'Missing the required parameter "credentials" when calling postPublication'
       );
     }
 
-    let pathParams = {
-      organization: organization
-    };
+    let pathParams = {};
 
     let bodyParam = publicationData;
 
@@ -353,7 +274,7 @@ export default class PublicationApi extends ApiClient {
     let accepts = ["application/hal+json;charset=UTF-8"];
 
     return this.callApi(
-      "/organizations/{organization}/publications",
+      "/publications",
       "POST",
       pathParams,
       queryParams,

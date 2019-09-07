@@ -47,10 +47,10 @@
   }
 
   describe('WebhookApi', function() {
-    describe('cgetWebhooksByOrganization', function() {
-      it('should call cgetWebhooksByOrganization successfully', function(done) {
-        //uncomment below and update the code to test cgetWebhooksByOrganization
-        //instance.cgetWebhooksByOrganization(function(error) {
+    describe('deleteWebhook', function() {
+      it('should call deleteWebhook successfully', function(done) {
+        //uncomment below and update the code to test deleteWebhook
+        //instance.deleteWebhook(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -71,6 +71,16 @@
       it('should call patchWebhook successfully', function(done) {
         //uncomment below and update the code to test patchWebhook
         //instance.patchWebhook(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postWebhook', function() {
+      it('should call postWebhook successfully', function(done) {
+        //uncomment below and update the code to test postWebhook
+        //instance.postWebhook(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

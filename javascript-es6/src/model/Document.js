@@ -33,6 +33,7 @@ export default class Document {
     this.id = null;
     this.permission = null;
     this.type = null;
+    this.updatedAt = null;
 
     this.linksType = DocumentLinks;
     this.fileType = DocumentFile;
@@ -74,6 +75,9 @@ export default class Document {
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

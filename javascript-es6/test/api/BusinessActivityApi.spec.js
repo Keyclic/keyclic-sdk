@@ -67,6 +67,16 @@
         done();
       });
     });
+    describe('getSchemaByBusinessActivity', function() {
+      it('should call getSchemaByBusinessActivity successfully', function(done) {
+        //uncomment below and update the code to test getSchemaByBusinessActivity
+        //instance.getSchemaByBusinessActivity(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));
