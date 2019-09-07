@@ -1,9 +1,9 @@
 name: keyclic_sdk_api
-version: 2.0.3
+version: 2.0.3+1
 description: The keyclic_sdk_api package is an implementation of the Keyclic API.
 dependencies:
   http: '^0.12.0'
-  collection: '^1.14.12'
+  collection: '^1.14.11'
 author: Keyclic techies team <techies@keyclic.com>
 environment:
   sdk: ">=2.2.2 <3.0.0"
