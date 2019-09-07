@@ -6,6 +6,7 @@ class Occupant {
     this.createdAt,
     this.id,
     this.type,
+    this.updatedAt,
   });
 
   Occupant.fromJson(Map<String, dynamic> json) {
@@ -20,6 +21,11 @@ class Occupant {
     }
     id = json['id'];
     type = json['type'];
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    if (updatedAt is DateTime && updatedAt.isUtc == false) {
+      updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
+    }
   }
 
   OccupantLinks links;
@@ -29,6 +35,8 @@ class Occupant {
   String id;
 
   String type;
+
+  DateTime updatedAt;
 
   @override
   bool operator ==(dynamic other) {
@@ -42,13 +50,19 @@ class Occupant {
         links == other.links &&
         createdAt == other.createdAt &&
         id == other.id &&
-        type == other.type;
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
   /// By default hashCode return reference
   @override
   int get hashCode =>
-      0 ^ links.hashCode ^ createdAt.hashCode ^ id.hashCode ^ type.hashCode;
+      0 ^
+      links.hashCode ^
+      createdAt.hashCode ^
+      id.hashCode ^
+      type.hashCode ^
+      updatedAt.hashCode;
 
   static List<Occupant> listFromJson(List<dynamic> json) {
     return json == null
@@ -71,11 +85,12 @@ class Occupant {
       'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
       'id': id,
       'type': type,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'Occupant[links=$links, createdAt=$createdAt, id=$id, type=$type, ]';
+    return 'Occupant[links=$links, createdAt=$createdAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
   }
 }

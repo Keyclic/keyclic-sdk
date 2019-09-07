@@ -2,7 +2,6 @@ part of keyclic_sdk_api.api;
 
 class MemberLinksSelfIriTemplateMapping {
   MemberLinksSelfIriTemplateMapping({
-    this.organization,
     this.member,
   });
 
@@ -10,11 +9,8 @@ class MemberLinksSelfIriTemplateMapping {
     if (json == null) {
       return;
     }
-    organization = json['organization'];
     member = json['member'];
   }
-
-  String organization;
 
   String member;
 
@@ -27,13 +23,12 @@ class MemberLinksSelfIriTemplateMapping {
 
     return other is MemberLinksSelfIriTemplateMapping &&
         runtimeType == other.runtimeType &&
-        organization == other.organization &&
         member == other.member;
   }
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ organization.hashCode ^ member.hashCode;
+  int get hashCode => 0 ^ member.hashCode;
 
   static List<MemberLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
@@ -56,13 +51,12 @@ class MemberLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'organization': organization,
       'member': member,
     };
   }
 
   @override
   String toString() {
-    return 'MemberLinksSelfIriTemplateMapping[organization=$organization, member=$member, ]';
+    return 'MemberLinksSelfIriTemplateMapping[member=$member, ]';
   }
 }

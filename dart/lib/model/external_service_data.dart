@@ -4,6 +4,8 @@ class ExternalServiceData {
   ExternalServiceData({
     this.organization,
     this.name,
+    this.description,
+    this.provider,
   });
 
   ExternalServiceData.fromJson(Map<String, dynamic> json) {
@@ -12,11 +14,17 @@ class ExternalServiceData {
     }
     organization = json['organization'];
     name = json['name'];
+    description = json['description'];
+    provider = json['provider'];
   }
 
   String organization;
 
   String name;
+
+  String description;
+
+  String provider;
 
   @override
   bool operator ==(dynamic other) {
@@ -28,12 +36,19 @@ class ExternalServiceData {
     return other is ExternalServiceData &&
         runtimeType == other.runtimeType &&
         organization == other.organization &&
-        name == other.name;
+        name == other.name &&
+        description == other.description &&
+        provider == other.provider;
   }
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ organization.hashCode ^ name.hashCode;
+  int get hashCode =>
+      0 ^
+      organization.hashCode ^
+      name.hashCode ^
+      description.hashCode ^
+      provider.hashCode;
 
   static List<ExternalServiceData> listFromJson(List<dynamic> json) {
     return json == null
@@ -55,11 +70,13 @@ class ExternalServiceData {
     return {
       'organization': organization,
       'name': name,
+      'description': description,
+      'provider': provider,
     };
   }
 
   @override
   String toString() {
-    return 'ExternalServiceData[organization=$organization, name=$name, ]';
+    return 'ExternalServiceData[organization=$organization, name=$name, description=$description, provider=$provider, ]';
   }
 }

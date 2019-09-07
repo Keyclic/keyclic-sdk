@@ -13,7 +13,7 @@
 import ApiClient from "../ApiClient";
 import Error from "../model/Error";
 import Webhook from "../model/Webhook";
-import WebhookPagination from "../model/WebhookPagination";
+import WebhookData from "../model/WebhookData";
 import WebhookPatch from "../model/WebhookPatch";
 
 /**
@@ -32,47 +32,28 @@ export default class WebhookApi extends ApiClient {
   }
 
   /**
-   * Retrieve all Webhook resources.
+   * Remove one Webhook resource.
    * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource.
+   * @param { String } webhook The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { WebhookPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { module:model/Date } after
-   * @param { module:model/Date } before
-   * @param { module:model/String } order   (default to desc)
-   * @param { Number } page Page of the overview.  (default to 1)
-   * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetWebhooksByOrganization(returnType = null, options, credentials) {
-    if (returnType === null) {
-      returnType = WebhookPagination;
-    }
-
-    let {
-      xKeyclicApp,
-      organization,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      after,
-      before,
-      order,
-      page,
-      limit
-    } = options;
+  deleteWebhook(returnType = null, options, credentials) {
+    let { xKeyclicApp, webhook, acceptLanguage, xKeyclicAppVersion } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling cgetWebhooksByOrganization'
+        'Missing the required parameter "xKeyclicApp" when calling deleteWebhook'
       );
     }
 
-    // verify the required parameter 'organization' is set
-    if (typeof organization === "undefined" || organization === null) {
+    // verify the required parameter 'webhook' is set
+    if (typeof webhook === "undefined" || webhook === null) {
       throw new window.Error(
-        'Missing the required parameter "organization" when calling cgetWebhooksByOrganization'
+        'Missing the required parameter "webhook" when calling deleteWebhook'
       );
     }
 
@@ -81,55 +62,24 @@ export default class WebhookApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
-    // verify the default value of parameter 'order'
-    if (typeof order === "undefined" || order === null) {
-      order = "desc";
-    }
-
-    // verify the default value of parameter 'page'
-    if (typeof page === "undefined" || page === null) {
-      page = 1;
-    }
-
-    // verify the default value of parameter 'limit'
-    if (typeof limit === "undefined" || limit === null) {
-      limit = 10;
-    }
-
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
     }
 
-    // verify the null value of parameter 'after'
-    if (typeof after === "undefined") {
-      after = null;
-    }
-
-    // verify the null value of parameter 'before'
-    if (typeof before === "undefined") {
-      before = null;
-    }
-
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetWebhooksByOrganization'
+        'Missing the required parameter "credentials" when calling deleteWebhook'
       );
     }
 
     let pathParams = {
-      organization: organization
+      webhook: webhook
     };
 
     let bodyParam = null;
 
-    let queryParams = {
-      after: after,
-      before: before,
-      order: order,
-      page: page,
-      limit: limit
-    };
+    let queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -146,8 +96,8 @@ export default class WebhookApi extends ApiClient {
     let accepts = ["application/hal+json;charset=UTF-8"];
 
     return this.callApi(
-      "/organizations/{organization}/webhooks",
-      "GET",
+      "/webhooks/{webhook}",
+      "DELETE",
       pathParams,
       queryParams,
       headerParams,
@@ -328,6 +278,92 @@ export default class WebhookApi extends ApiClient {
     return this.callApi(
       "/webhooks/{webhook}",
       "PATCH",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Create one Webhook resource.
+   * @param { String } xKeyclicApp
+   * @param { module:model/WebhookData } webhookData
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Webhook }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  postWebhook(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Webhook;
+    }
+
+    let {
+      xKeyclicApp,
+      webhookData,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling postWebhook'
+      );
+    }
+
+    // verify the required parameter 'webhookData' is set
+    if (typeof webhookData === "undefined" || webhookData === null) {
+      throw new window.Error(
+        'Missing the required parameter "webhookData" when calling postWebhook'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling postWebhook'
+      );
+    }
+
+    let pathParams = {};
+
+    let bodyParam = webhookData;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/webhooks",
+      "POST",
       pathParams,
       queryParams,
       headerParams,

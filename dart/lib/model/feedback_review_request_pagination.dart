@@ -1,13 +1,13 @@
 part of keyclic_sdk_api.api;
 
-class FeedbackReviewRequestPagination {
+class FeedbackReviewRequestPagination extends Pagination {
   FeedbackReviewRequestPagination({
     this.limit,
     this.page,
     this.pages,
     this.total,
-    this.embedded,
     this.links,
+    this.embedded,
   });
 
   FeedbackReviewRequestPagination.fromJson(Map<String, dynamic> json) {
@@ -18,8 +18,8 @@ class FeedbackReviewRequestPagination {
     page = json['page'];
     pages = json['pages'];
     total = json['total'];
-    embedded = FeedbackReviewRequestCollection.fromJson(json['_embedded']);
     links = PaginationLinks.fromJson(json['_links']);
+    embedded = FeedbackReviewRequestCollection.fromJson(json['_embedded']);
   }
 
   int limit;
@@ -30,9 +30,9 @@ class FeedbackReviewRequestPagination {
 
   int total;
 
-  FeedbackReviewRequestCollection embedded;
-
   PaginationLinks links;
+
+  FeedbackReviewRequestCollection embedded;
 
   @override
   bool operator ==(dynamic other) {
@@ -47,8 +47,8 @@ class FeedbackReviewRequestPagination {
         page == other.page &&
         pages == other.pages &&
         total == other.total &&
-        embedded == other.embedded &&
-        links == other.links;
+        links == other.links &&
+        embedded == other.embedded;
   }
 
   /// By default hashCode return reference
@@ -59,8 +59,8 @@ class FeedbackReviewRequestPagination {
       page.hashCode ^
       pages.hashCode ^
       total.hashCode ^
-      embedded.hashCode ^
-      links.hashCode;
+      links.hashCode ^
+      embedded.hashCode;
 
   static List<FeedbackReviewRequestPagination> listFromJson(
       List<dynamic> json) {
@@ -87,13 +87,13 @@ class FeedbackReviewRequestPagination {
       'page': page,
       'pages': pages,
       'total': total,
-      '_embedded': embedded,
       '_links': links,
+      '_embedded': embedded,
     };
   }
 
   @override
   String toString() {
-    return 'FeedbackReviewRequestPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
+    return 'FeedbackReviewRequestPagination[limit=$limit, page=$page, pages=$pages, total=$total, links=$links, embedded=$embedded, ]';
   }
 }

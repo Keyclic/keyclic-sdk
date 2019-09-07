@@ -24,10 +24,21 @@ export default class DeviceData {
     
      * @param token { String }
     
+     * @param platform { String }
+    
+     * @param person { String }
+    
      */
-  constructor(token) {
+  constructor(
+    token,
+
+    platform,
+
+    person
+  ) {
     this.token = token;
-    this.platform = null;
+    this.platform = platform;
+    this.person = person;
   }
 
   /**
@@ -50,6 +61,9 @@ export default class DeviceData {
     }
     if (data.hasOwnProperty("platform")) {
       object.platform = ApiClient.convertToType(data["platform"], "String");
+    }
+    if (data.hasOwnProperty("person")) {
+      object.person = ApiClient.convertToType(data["person"], "String");
     }
 
     return object;

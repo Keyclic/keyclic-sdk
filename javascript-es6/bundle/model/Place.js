@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _PlaceEmbedded = _interopRequireDefault(require("./PlaceEmbedded"));
+
 var _PlaceGeo = _interopRequireDefault(require("./PlaceGeo"));
 
 var _PlaceLinks = _interopRequireDefault(require("./PlaceLinks"));
@@ -59,6 +61,7 @@ var Place =
     function Place(geo, name) {
       _classCallCheck(this, Place);
 
+      this.embedded = null;
       this.links = null;
       this.branchCode = null;
       this.createdAt = null;
@@ -69,6 +72,7 @@ var Place =
       this.preferences = null;
       this.type = null;
       this.updatedAt = null;
+      this.embeddedType = _PlaceEmbedded.default;
       this.linksType = _PlaceLinks.default;
       this.geoType = _PlaceGeo.default;
       this.preferencesType = _PlacePreferences.default;
@@ -95,6 +99,13 @@ var Place =
 
           if (object === null) {
             object = new Place();
+          }
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
           }
 
           if (data.hasOwnProperty("_links")) {

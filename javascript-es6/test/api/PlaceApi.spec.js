@@ -47,20 +47,20 @@
   }
 
   describe('PlaceApi', function() {
-    describe('cgetPlaces', function() {
-      it('should call cgetPlaces successfully', function(done) {
-        //uncomment below and update the code to test cgetPlaces
-        //instance.cgetPlaces(function(error) {
+    describe('cgetOccupantsByPlace', function() {
+      it('should call cgetOccupantsByPlace successfully', function(done) {
+        //uncomment below and update the code to test cgetOccupantsByPlace
+        //instance.cgetOccupantsByPlace(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('cgetPlacesByOrganization', function() {
-      it('should call cgetPlacesByOrganization successfully', function(done) {
-        //uncomment below and update the code to test cgetPlacesByOrganization
-        //instance.cgetPlacesByOrganization(function(error) {
+    describe('cgetPlaces', function() {
+      it('should call cgetPlaces successfully', function(done) {
+        //uncomment below and update the code to test cgetPlaces
+        //instance.cgetPlaces(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -87,10 +87,10 @@
         done();
       });
     });
-    describe('postPlaceByOrganization', function() {
-      it('should call postPlaceByOrganization successfully', function(done) {
-        //uncomment below and update the code to test postPlaceByOrganization
-        //instance.postPlaceByOrganization(function(error) {
+    describe('postPlace', function() {
+      it('should call postPlace successfully', function(done) {
+        //uncomment below and update the code to test postPlace
+        //instance.postPlace(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

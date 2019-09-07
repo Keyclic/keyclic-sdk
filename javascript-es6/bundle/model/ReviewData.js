@@ -45,12 +45,17 @@ var ReviewData =
    * @alias module:model/ReviewData
    * @class
   
+   * @param reviewRating { Number }
+  
+   * @param reviewRequest { String }
+  
    */
-    function ReviewData() {
+    function ReviewData(reviewRating, reviewRequest) {
       _classCallCheck(this, ReviewData);
 
       this.reviewBody = null;
-      this.reviewRating = null;
+      this.reviewRating = reviewRating;
+      this.reviewRequest = reviewRequest;
     }
     /**
      * Constructs a "ReviewData" from a plain JavaScript object.
@@ -87,6 +92,13 @@ var ReviewData =
             object.reviewRating = _ApiClient.default.convertToType(
               data["reviewRating"],
               "Number"
+            );
+          }
+
+          if (data.hasOwnProperty("reviewRequest")) {
+            object.reviewRequest = _ApiClient.default.convertToType(
+              data["reviewRequest"],
+              "String"
             );
           }
 

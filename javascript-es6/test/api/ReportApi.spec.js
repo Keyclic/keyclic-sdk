@@ -47,10 +47,20 @@
   }
 
   describe('ReportApi', function() {
-    describe('cgetReportsByOrganization', function() {
-      it('should call cgetReportsByOrganization successfully', function(done) {
-        //uncomment below and update the code to test cgetReportsByOrganization
-        //instance.cgetReportsByOrganization(function(error) {
+    describe('cgetDocumentsByReport', function() {
+      it('should call cgetDocumentsByReport successfully', function(done) {
+        //uncomment below and update the code to test cgetDocumentsByReport
+        //instance.cgetDocumentsByReport(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetOperationsByReport', function() {
+      it('should call cgetOperationsByReport successfully', function(done) {
+        //uncomment below and update the code to test cgetOperationsByReport
+        //instance.cgetOperationsByReport(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -67,10 +77,40 @@
         done();
       });
     });
+    describe('getTrackingByReport', function() {
+      it('should call getTrackingByReport successfully', function(done) {
+        //uncomment below and update the code to test getTrackingByReport
+        //instance.getTrackingByReport(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('patchReport', function() {
       it('should call patchReport successfully', function(done) {
         //uncomment below and update the code to test patchReport
         //instance.patchReport(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postDocumentByReport', function() {
+      it('should call postDocumentByReport successfully', function(done) {
+        //uncomment below and update the code to test postDocumentByReport
+        //instance.postDocumentByReport(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postWorkflowByReport', function() {
+      it('should call postWorkflowByReport successfully', function(done) {
+        //uncomment below and update the code to test postWorkflowByReport
+        //instance.postWorkflowByReport(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

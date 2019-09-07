@@ -71,6 +71,7 @@ var Feedback =
       this._public = null;
       this.state = state;
       this.type = null;
+      this.updatedAt = null;
       this.embeddedType = _FeedbackEmbedded.default;
       this.linksType = _FeedbackLinks.default;
       this.geoCoordinatesType = _FeedbackGeoCoordinates.default;
@@ -163,6 +164,13 @@ var Feedback =
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

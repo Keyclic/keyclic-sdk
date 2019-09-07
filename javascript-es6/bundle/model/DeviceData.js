@@ -47,12 +47,17 @@ var DeviceData =
   
    * @param token { String }
   
+   * @param platform { String }
+  
+   * @param person { String }
+  
    */
-    function DeviceData(token) {
+    function DeviceData(token, platform, person) {
       _classCallCheck(this, DeviceData);
 
       this.token = token;
-      this.platform = null;
+      this.platform = platform;
+      this.person = person;
     }
     /**
      * Constructs a "DeviceData" from a plain JavaScript object.
@@ -88,6 +93,13 @@ var DeviceData =
           if (data.hasOwnProperty("platform")) {
             object.platform = _ApiClient.default.convertToType(
               data["platform"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("person")) {
+            object.person = _ApiClient.default.convertToType(
+              data["person"],
               "String"
             );
           }

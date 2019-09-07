@@ -3,8 +3,9 @@ part of keyclic_sdk_api.api;
 class PublicationData {
   PublicationData({
     this.message,
-    this.place,
+    this.feed,
     this.title,
+    this.organization,
   });
 
   PublicationData.fromJson(Map<String, dynamic> json) {
@@ -12,15 +13,18 @@ class PublicationData {
       return;
     }
     message = json['message'];
-    place = json['place'];
+    feed = json['feed'];
     title = json['title'];
+    organization = json['organization'];
   }
 
   String message;
 
-  String place;
+  String feed;
 
   String title;
+
+  String organization;
 
   @override
   bool operator ==(dynamic other) {
@@ -32,13 +36,19 @@ class PublicationData {
     return other is PublicationData &&
         runtimeType == other.runtimeType &&
         message == other.message &&
-        place == other.place &&
-        title == other.title;
+        feed == other.feed &&
+        title == other.title &&
+        organization == other.organization;
   }
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ message.hashCode ^ place.hashCode ^ title.hashCode;
+  int get hashCode =>
+      0 ^
+      message.hashCode ^
+      feed.hashCode ^
+      title.hashCode ^
+      organization.hashCode;
 
   static List<PublicationData> listFromJson(List<dynamic> json) {
     return json == null
@@ -58,13 +68,14 @@ class PublicationData {
   Map<String, dynamic> toJson() {
     return {
       'message': message,
-      'place': place,
+      'feed': feed,
       'title': title,
+      'organization': organization,
     };
   }
 
   @override
   String toString() {
-    return 'PublicationData[message=$message, place=$place, title=$title, ]';
+    return 'PublicationData[message=$message, feed=$feed, title=$title, organization=$organization, ]';
   }
 }

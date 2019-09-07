@@ -22,10 +22,19 @@ export default class ReviewData {
      * @alias module:model/ReviewData
      * @class
     
+     * @param reviewRating { Number }
+    
+     * @param reviewRequest { String }
+    
      */
-  constructor() {
+  constructor(
+    reviewRating,
+
+    reviewRequest
+  ) {
     this.reviewBody = null;
-    this.reviewRating = null;
+    this.reviewRating = reviewRating;
+    this.reviewRequest = reviewRequest;
   }
 
   /**
@@ -50,6 +59,12 @@ export default class ReviewData {
       object.reviewRating = ApiClient.convertToType(
         data["reviewRating"],
         "Number"
+      );
+    }
+    if (data.hasOwnProperty("reviewRequest")) {
+      object.reviewRequest = ApiClient.convertToType(
+        data["reviewRequest"],
+        "String"
       );
     }
 

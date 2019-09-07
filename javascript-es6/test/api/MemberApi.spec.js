@@ -47,50 +47,40 @@
   }
 
   describe('MemberApi', function() {
-    describe('cgetMembersByOrganization', function() {
-      it('should call cgetMembersByOrganization successfully', function(done) {
-        //uncomment below and update the code to test cgetMembersByOrganization
-        //instance.cgetMembersByOrganization(function(error) {
+    describe('deleteMember', function() {
+      it('should call deleteMember successfully', function(done) {
+        //uncomment below and update the code to test deleteMember
+        //instance.deleteMember(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteMemberByOrganizationAndMember', function() {
-      it('should call deleteMemberByOrganizationAndMember successfully', function(done) {
-        //uncomment below and update the code to test deleteMemberByOrganizationAndMember
-        //instance.deleteMemberByOrganizationAndMember(function(error) {
+    describe('getMember', function() {
+      it('should call getMember successfully', function(done) {
+        //uncomment below and update the code to test getMember
+        //instance.getMember(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getMemberByOrganizationAndMember', function() {
-      it('should call getMemberByOrganizationAndMember successfully', function(done) {
-        //uncomment below and update the code to test getMemberByOrganizationAndMember
-        //instance.getMemberByOrganizationAndMember(function(error) {
+    describe('patchMember', function() {
+      it('should call patchMember successfully', function(done) {
+        //uncomment below and update the code to test patchMember
+        //instance.patchMember(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('patchMemberByOrganizationAndMember', function() {
-      it('should call patchMemberByOrganizationAndMember successfully', function(done) {
-        //uncomment below and update the code to test patchMemberByOrganizationAndMember
-        //instance.patchMemberByOrganizationAndMember(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('postMemberByOrganization', function() {
-      it('should call postMemberByOrganization successfully', function(done) {
-        //uncomment below and update the code to test postMemberByOrganization
-        //instance.postMemberByOrganization(function(error) {
+    describe('postMember', function() {
+      it('should call postMember successfully', function(done) {
+        //uncomment below and update the code to test postMember
+        //instance.postMember(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

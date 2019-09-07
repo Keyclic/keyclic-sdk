@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **reviewBody** | **String** |  | [optional] 
-**reviewRating** | **Number** |  | [optional] 
+**reviewRating** | **Number** |  | 
+**reviewRequest** | **String** |  | 
 
 

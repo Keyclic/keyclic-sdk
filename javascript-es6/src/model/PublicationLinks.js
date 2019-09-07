@@ -12,8 +12,8 @@
 
 import ApiClient from "../ApiClient";
 import PublicationLinksAuthor from "./PublicationLinksAuthor";
+import PublicationLinksFeed from "./PublicationLinksFeed";
 import PublicationLinksOrganization from "./PublicationLinksOrganization";
-import PublicationLinksPlace from "./PublicationLinksPlace";
 import PublicationLinksSelf from "./PublicationLinksSelf";
 
 /**
@@ -29,13 +29,13 @@ export default class PublicationLinks {
      */
   constructor() {
     this.author = null;
+    this.feed = null;
     this.organization = null;
-    this.place = null;
     this.self = null;
 
     this.authorType = PublicationLinksAuthor;
+    this.feedType = PublicationLinksFeed;
     this.organizationType = PublicationLinksOrganization;
-    this.placeType = PublicationLinksPlace;
     this.selfType = PublicationLinksSelf;
   }
 
@@ -60,14 +60,14 @@ export default class PublicationLinks {
         object.authorType
       );
     }
+    if (data.hasOwnProperty("feed")) {
+      object.feed = ApiClient.convertToType(data["feed"], object.feedType);
+    }
     if (data.hasOwnProperty("organization")) {
       object.organization = ApiClient.convertToType(
         data["organization"],
         object.organizationType
       );
-    }
-    if (data.hasOwnProperty("place")) {
-      object.place = ApiClient.convertToType(data["place"], object.placeType);
     }
     if (data.hasOwnProperty("self")) {
       object.self = ApiClient.convertToType(data["self"], object.selfType);

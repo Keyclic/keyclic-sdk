@@ -47,20 +47,30 @@
   }
 
   describe('DeviceApi', function() {
-    describe('deleteDeviceByPersonAndDevice', function() {
-      it('should call deleteDeviceByPersonAndDevice successfully', function(done) {
-        //uncomment below and update the code to test deleteDeviceByPersonAndDevice
-        //instance.deleteDeviceByPersonAndDevice(function(error) {
+    describe('deleteDevice', function() {
+      it('should call deleteDevice successfully', function(done) {
+        //uncomment below and update the code to test deleteDevice
+        //instance.deleteDevice(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postDeviceByPerson', function() {
-      it('should call postDeviceByPerson successfully', function(done) {
-        //uncomment below and update the code to test postDeviceByPerson
-        //instance.postDeviceByPerson(function(error) {
+    describe('getDevice', function() {
+      it('should call getDevice successfully', function(done) {
+        //uncomment below and update the code to test getDevice
+        //instance.getDevice(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postDevice', function() {
+      it('should call postDevice successfully', function(done) {
+        //uncomment below and update the code to test postDevice
+        //instance.postDevice(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

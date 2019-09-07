@@ -47,6 +47,16 @@
   }
 
   describe('FeedbackApi', function() {
+    describe('cgetCommentsByFeedback', function() {
+      it('should call cgetCommentsByFeedback successfully', function(done) {
+        //uncomment below and update the code to test cgetCommentsByFeedback
+        //instance.cgetCommentsByFeedback(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('cgetFeedback', function() {
       it('should call cgetFeedback successfully', function(done) {
         //uncomment below and update the code to test cgetFeedback
@@ -57,10 +67,10 @@
         done();
       });
     });
-    describe('cgetFeedbackByPerson', function() {
-      it('should call cgetFeedbackByPerson successfully', function(done) {
-        //uncomment below and update the code to test cgetFeedbackByPerson
-        //instance.cgetFeedbackByPerson(function(error) {
+    describe('cgetReviewsByFeedback', function() {
+      it('should call cgetReviewsByFeedback successfully', function(done) {
+        //uncomment below and update the code to test cgetReviewsByFeedback
+        //instance.cgetReviewsByFeedback(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -71,6 +81,56 @@
       it('should call getFeedback successfully', function(done) {
         //uncomment below and update the code to test getFeedback
         //instance.getFeedback(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getTrackingByFeedback', function() {
+      it('should call getTrackingByFeedback successfully', function(done) {
+        //uncomment below and update the code to test getTrackingByFeedback
+        //instance.getTrackingByFeedback(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postCommentByFeedback', function() {
+      it('should call postCommentByFeedback successfully', function(done) {
+        //uncomment below and update the code to test postCommentByFeedback
+        //instance.postCommentByFeedback(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postImageByFeedback', function() {
+      it('should call postImageByFeedback successfully', function(done) {
+        //uncomment below and update the code to test postImageByFeedback
+        //instance.postImageByFeedback(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postIssue', function() {
+      it('should call postIssue successfully', function(done) {
+        //uncomment below and update the code to test postIssue
+        //instance.postIssue(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postWorkflowByFeedback', function() {
+      it('should call postWorkflowByFeedback successfully', function(done) {
+        //uncomment below and update the code to test postWorkflowByFeedback
+        //instance.postWorkflowByFeedback(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

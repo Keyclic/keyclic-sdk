@@ -4,6 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **organization** | **String** |  | 
-**name** | **String** |  | [optional] 
+**name** | **String** |  | 
+**description** | **String** |  | [optional] 
+**provider** | **String** |  | 
 
 

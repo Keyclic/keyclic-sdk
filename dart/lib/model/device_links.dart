@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class DeviceLinks {
   DeviceLinks({
     this.person,
+    this.self,
   });
 
   DeviceLinks.fromJson(Map<String, dynamic> json) {
@@ -10,9 +11,12 @@ class DeviceLinks {
       return;
     }
     person = DeviceLinksPerson.fromJson(json['person']);
+    self = DeviceLinksSelf.fromJson(json['self']);
   }
 
   DeviceLinksPerson person;
+
+  DeviceLinksSelf self;
 
   @override
   bool operator ==(dynamic other) {
@@ -23,12 +27,13 @@ class DeviceLinks {
 
     return other is DeviceLinks &&
         runtimeType == other.runtimeType &&
-        person == other.person;
+        person == other.person &&
+        self == other.self;
   }
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ person.hashCode;
+  int get hashCode => 0 ^ person.hashCode ^ self.hashCode;
 
   static List<DeviceLinks> listFromJson(List<dynamic> json) {
     return json == null
@@ -48,11 +53,12 @@ class DeviceLinks {
   Map<String, dynamic> toJson() {
     return {
       'person': person,
+      'self': self,
     };
   }
 
   @override
   String toString() {
-    return 'DeviceLinks[person=$person, ]';
+    return 'DeviceLinks[person=$person, self=$self, ]';
   }
 }

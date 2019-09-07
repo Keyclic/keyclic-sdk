@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **_public** | **Boolean** |  | [optional] 
 **state** | **[String]** |  | 
 **type** | **String** |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 
 

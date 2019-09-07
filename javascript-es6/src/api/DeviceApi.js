@@ -33,40 +33,26 @@ export default class DeviceApi extends ApiClient {
   /**
    * Remove one Device resource.
    * @param { String } xKeyclicApp
-   * @param { String } person The identifier of the resource.
    * @param { String } device
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  deleteDeviceByPersonAndDevice(returnType = null, options, credentials) {
-    let {
-      xKeyclicApp,
-      person,
-      device,
-      acceptLanguage,
-      xKeyclicAppVersion
-    } = options;
+  deleteDevice(returnType = null, options, credentials) {
+    let { xKeyclicApp, device, acceptLanguage, xKeyclicAppVersion } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling deleteDeviceByPersonAndDevice'
-      );
-    }
-
-    // verify the required parameter 'person' is set
-    if (typeof person === "undefined" || person === null) {
-      throw new window.Error(
-        'Missing the required parameter "person" when calling deleteDeviceByPersonAndDevice'
+        'Missing the required parameter "xKeyclicApp" when calling deleteDevice'
       );
     }
 
     // verify the required parameter 'device' is set
     if (typeof device === "undefined" || device === null) {
       throw new window.Error(
-        'Missing the required parameter "device" when calling deleteDeviceByPersonAndDevice'
+        'Missing the required parameter "device" when calling deleteDevice'
       );
     }
 
@@ -82,12 +68,11 @@ export default class DeviceApi extends ApiClient {
 
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
-        'Missing the required parameter "credentials" when calling deleteDeviceByPersonAndDevice'
+        'Missing the required parameter "credentials" when calling deleteDevice'
       );
     }
 
     let pathParams = {
-      person: person,
       device: device
     };
 
@@ -110,8 +95,87 @@ export default class DeviceApi extends ApiClient {
     let accepts = ["application/hal+json;charset=UTF-8"];
 
     return this.callApi(
-      "/people/{person}/devices/{device}",
+      "/devices/{device}",
       "DELETE",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve one Device resource.
+   * @param { String } xKeyclicApp
+   * @param { String } device
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  getDevice(returnType = null, options, credentials) {
+    let { xKeyclicApp, device, acceptLanguage, xKeyclicAppVersion } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling getDevice'
+      );
+    }
+
+    // verify the required parameter 'device' is set
+    if (typeof device === "undefined" || device === null) {
+      throw new window.Error(
+        'Missing the required parameter "device" when calling getDevice'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling getDevice'
+      );
+    }
+
+    let pathParams = {
+      device: device
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/devices/{device}",
+      "GET",
       pathParams,
       queryParams,
       headerParams,
@@ -128,13 +192,12 @@ export default class DeviceApi extends ApiClient {
    * Create one Device resource.
    * @param { String } xKeyclicApp
    * @param { module:model/DeviceData } deviceData
-   * @param { String } person The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Device }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postDeviceByPerson(returnType = null, options, credentials) {
+  postDevice(returnType = null, options, credentials) {
     if (returnType === null) {
       returnType = Device;
     }
@@ -142,7 +205,6 @@ export default class DeviceApi extends ApiClient {
     let {
       xKeyclicApp,
       deviceData,
-      person,
       acceptLanguage,
       xKeyclicAppVersion
     } = options;
@@ -150,21 +212,14 @@ export default class DeviceApi extends ApiClient {
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling postDeviceByPerson'
+        'Missing the required parameter "xKeyclicApp" when calling postDevice'
       );
     }
 
     // verify the required parameter 'deviceData' is set
     if (typeof deviceData === "undefined" || deviceData === null) {
       throw new window.Error(
-        'Missing the required parameter "deviceData" when calling postDeviceByPerson'
-      );
-    }
-
-    // verify the required parameter 'person' is set
-    if (typeof person === "undefined" || person === null) {
-      throw new window.Error(
-        'Missing the required parameter "person" when calling postDeviceByPerson'
+        'Missing the required parameter "deviceData" when calling postDevice'
       );
     }
 
@@ -180,13 +235,11 @@ export default class DeviceApi extends ApiClient {
 
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
-        'Missing the required parameter "credentials" when calling postDeviceByPerson'
+        'Missing the required parameter "credentials" when calling postDevice'
       );
     }
 
-    let pathParams = {
-      person: person
-    };
+    let pathParams = {};
 
     let bodyParam = deviceData;
 
@@ -207,7 +260,7 @@ export default class DeviceApi extends ApiClient {
     let accepts = ["application/hal+json;charset=UTF-8"];
 
     return this.callApi(
-      "/people/{person}/devices",
+      "/devices",
       "POST",
       pathParams,
       queryParams,

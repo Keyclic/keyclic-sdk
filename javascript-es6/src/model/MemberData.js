@@ -22,11 +22,18 @@ export default class MemberData {
      * @alias module:model/MemberData
      * @class
     
-     * @param member { String }
+     * @param person { String }
+    
+     * @param organization { String }
     
      */
-  constructor(member) {
-    this.member = member;
+  constructor(
+    person,
+
+    organization
+  ) {
+    this.person = person;
+    this.organization = organization;
   }
 
   /**
@@ -44,8 +51,14 @@ export default class MemberData {
       object = new MemberData();
     }
 
-    if (data.hasOwnProperty("member")) {
-      object.member = ApiClient.convertToType(data["member"], "String");
+    if (data.hasOwnProperty("person")) {
+      object.person = ApiClient.convertToType(data["person"], "String");
+    }
+    if (data.hasOwnProperty("organization")) {
+      object.organization = ApiClient.convertToType(
+        data["organization"],
+        "String"
+      );
     }
 
     return object;

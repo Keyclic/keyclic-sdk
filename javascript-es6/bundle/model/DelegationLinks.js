@@ -11,10 +11,6 @@ var _DelegationLinksCreatedBy = _interopRequireDefault(
   require("./DelegationLinksCreatedBy")
 );
 
-var _DelegationLinksFrom = _interopRequireDefault(
-  require("./DelegationLinksFrom")
-);
-
 var _DelegationLinksReport = _interopRequireDefault(
   require("./DelegationLinksReport")
 );
@@ -23,7 +19,9 @@ var _DelegationLinksSelf = _interopRequireDefault(
   require("./DelegationLinksSelf")
 );
 
-var _DelegationLinksTo = _interopRequireDefault(require("./DelegationLinksTo"));
+var _DelegationLinksService = _interopRequireDefault(
+  require("./DelegationLinksService")
+);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -68,15 +66,13 @@ var DelegationLinks =
       _classCallCheck(this, DelegationLinks);
 
       this.createdBy = null;
-      this.from = null;
       this.report = null;
       this.self = null;
-      this.to = null;
+      this.service = null;
       this.createdByType = _DelegationLinksCreatedBy.default;
-      this.fromType = _DelegationLinksFrom.default;
       this.reportType = _DelegationLinksReport.default;
       this.selfType = _DelegationLinksSelf.default;
-      this.toType = _DelegationLinksTo.default;
+      this.serviceType = _DelegationLinksService.default;
     }
     /**
      * Constructs a "DelegationLinks" from a plain JavaScript object.
@@ -109,13 +105,6 @@ var DelegationLinks =
             );
           }
 
-          if (data.hasOwnProperty("from")) {
-            object.from = _ApiClient.default.convertToType(
-              data["from"],
-              object.fromType
-            );
-          }
-
           if (data.hasOwnProperty("report")) {
             object.report = _ApiClient.default.convertToType(
               data["report"],
@@ -130,10 +119,10 @@ var DelegationLinks =
             );
           }
 
-          if (data.hasOwnProperty("to")) {
-            object.to = _ApiClient.default.convertToType(
-              data["to"],
-              object.toType
+          if (data.hasOwnProperty("service")) {
+            object.service = _ApiClient.default.convertToType(
+              data["service"],
+              object.serviceType
             );
           }
 

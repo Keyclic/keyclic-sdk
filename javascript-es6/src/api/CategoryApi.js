@@ -191,167 +191,6 @@ export default class CategoryApi extends ApiClient {
   }
 
   /**
-   * Retrieve all Category resources.
-   * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource.
-   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { CategoryPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-   * @param { module:model/String } acceptLanguage   (default to fr-FR)
-   * @param { String } xKeyclicAppVersion
-   * @param { String } businessActivity The identifier of the resource.
-   * @param { module:model/Date } after
-   * @param { module:model/Date } before
-   * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
-   * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
-   * @param { module:model/String } order   (default to desc)
-   * @param { String } query
-   * @param { Number } page Page of the overview.  (default to 1)
-   * @param { Number } limit Page of the overview.  (default to 10)
-   */
-  cgetCategoriesByOrganization(returnType = null, options, credentials) {
-    if (returnType === null) {
-      returnType = CategoryPagination;
-    }
-
-    let {
-      xKeyclicApp,
-      organization,
-      acceptLanguage,
-      xKeyclicAppVersion,
-      businessActivity,
-      after,
-      before,
-      geoPoint,
-      geoCoordinates,
-      order,
-      query,
-      page,
-      limit
-    } = options;
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-      throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling cgetCategoriesByOrganization'
-      );
-    }
-
-    // verify the required parameter 'organization' is set
-    if (typeof organization === "undefined" || organization === null) {
-      throw new window.Error(
-        'Missing the required parameter "organization" when calling cgetCategoriesByOrganization'
-      );
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
-      acceptLanguage = "fr-FR";
-    }
-
-    // verify the default value of parameter 'order'
-    if (typeof order === "undefined" || order === null) {
-      order = "desc";
-    }
-
-    // verify the default value of parameter 'page'
-    if (typeof page === "undefined" || page === null) {
-      page = 1;
-    }
-
-    // verify the default value of parameter 'limit'
-    if (typeof limit === "undefined" || limit === null) {
-      limit = 10;
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === "undefined") {
-      xKeyclicAppVersion = null;
-    }
-
-    // verify the null value of parameter 'businessActivity'
-    if (typeof businessActivity === "undefined") {
-      businessActivity = null;
-    }
-
-    // verify the null value of parameter 'after'
-    if (typeof after === "undefined") {
-      after = null;
-    }
-
-    // verify the null value of parameter 'before'
-    if (typeof before === "undefined") {
-      before = null;
-    }
-
-    // verify the null value of parameter 'geoPoint'
-    if (typeof geoPoint === "undefined") {
-      geoPoint = null;
-    }
-
-    // verify the null value of parameter 'geoCoordinates'
-    if (typeof geoCoordinates === "undefined") {
-      geoCoordinates = null;
-    }
-
-    // verify the null value of parameter 'query'
-    if (typeof query === "undefined") {
-      query = null;
-    }
-
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetCategoriesByOrganization'
-      );
-    }
-
-    let pathParams = {
-      organization: organization
-    };
-
-    let bodyParam = null;
-
-    let queryParams = {
-      business_activity: businessActivity,
-      after: after,
-      before: before,
-      geo_point: geoPoint,
-      geo_coordinates: geoCoordinates,
-      order: order,
-      query: query,
-      page: page,
-      limit: limit
-    };
-
-    let headerParams = {
-      "accept-language": acceptLanguage,
-      "x-keyclic-app": xKeyclicApp,
-      "x-keyclic-app-version": xKeyclicAppVersion
-    };
-
-    let credentialParams = credentials;
-
-    let authNames = ["bearer"];
-
-    let contentTypes = ["application/json;charset=UTF-8"];
-
-    let accepts = ["application/hal+json;charset=UTF-8"];
-
-    return this.callApi(
-      "/organizations/{organization}/categories",
-      "GET",
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    );
-  }
-
-  /**
    * Remove one Category resource.
    * @param { String } xKeyclicApp
    * @param { String } category The identifier of the resource.
@@ -614,13 +453,12 @@ export default class CategoryApi extends ApiClient {
    * Create one Category resource.
    * @param { String } xKeyclicApp
    * @param { module:model/CategoryData } categoryData
-   * @param { String } organization The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Category }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postCategoryByOrganization(returnType = null, options, credentials) {
+  postCategory(returnType = null, options, credentials) {
     if (returnType === null) {
       returnType = Category;
     }
@@ -628,7 +466,6 @@ export default class CategoryApi extends ApiClient {
     let {
       xKeyclicApp,
       categoryData,
-      organization,
       acceptLanguage,
       xKeyclicAppVersion
     } = options;
@@ -636,21 +473,14 @@ export default class CategoryApi extends ApiClient {
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling postCategoryByOrganization'
+        'Missing the required parameter "xKeyclicApp" when calling postCategory'
       );
     }
 
     // verify the required parameter 'categoryData' is set
     if (typeof categoryData === "undefined" || categoryData === null) {
       throw new window.Error(
-        'Missing the required parameter "categoryData" when calling postCategoryByOrganization'
-      );
-    }
-
-    // verify the required parameter 'organization' is set
-    if (typeof organization === "undefined" || organization === null) {
-      throw new window.Error(
-        'Missing the required parameter "organization" when calling postCategoryByOrganization'
+        'Missing the required parameter "categoryData" when calling postCategory'
       );
     }
 
@@ -666,13 +496,11 @@ export default class CategoryApi extends ApiClient {
 
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
-        'Missing the required parameter "credentials" when calling postCategoryByOrganization'
+        'Missing the required parameter "credentials" when calling postCategory'
       );
     }
 
-    let pathParams = {
-      organization: organization
-    };
+    let pathParams = {};
 
     let bodyParam = categoryData;
 
@@ -693,7 +521,7 @@ export default class CategoryApi extends ApiClient {
     let accepts = ["application/hal+json;charset=UTF-8"];
 
     return this.callApi(
-      "/organizations/{organization}/categories",
+      "/categories",
       "POST",
       pathParams,
       queryParams,

@@ -10,10 +10,11 @@ class FeedbackReviewRequestLinksItemToReviewIriTemplate {
     if (json == null) {
       return;
     }
-    mapping = FeedbackLinksSelfIriTemplateMapping.fromJson(json['mapping']);
+    mapping =
+        ContributionLinksFeedbackIriTemplateMapping.fromJson(json['mapping']);
   }
 
-  FeedbackLinksSelfIriTemplateMapping mapping;
+  ContributionLinksFeedbackIriTemplateMapping mapping;
 
   @override
   bool operator ==(dynamic other) {

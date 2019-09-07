@@ -9,12 +9,6 @@ var _ApiClient2 = _interopRequireDefault(require("../ApiClient"));
 
 var _Document = _interopRequireDefault(require("../model/Document"));
 
-var _DocumentData = _interopRequireDefault(require("../model/DocumentData"));
-
-var _DocumentPagination = _interopRequireDefault(
-  require("../model/DocumentPagination")
-);
-
 var _DocumentPatch = _interopRequireDefault(require("../model/DocumentPatch"));
 
 var _Error = _interopRequireDefault(require("../model/Error"));
@@ -145,138 +139,16 @@ var DocumentApi =
       );
     }
     /**
-     * Retrieve all Document resources.
+     * Remove one Document resource.
      * @param { String } xKeyclicApp
-     * @param { String } report The identifier of the resource.
+     * @param { String } document The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { DocumentPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+     * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { module:model/Date } after
-     * @param { module:model/Date } before
-     * @param { module:model/String } order   (default to desc)
-     * @param { Number } page Page of the overview.  (default to 1)
-     * @param { Number } limit Page of the overview.  (default to 10)
      */
 
     _createClass(DocumentApi, [
-      {
-        key: "cgetDocumentsByReport",
-        value: function cgetDocumentsByReport() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
-
-          if (returnType === null) {
-            returnType = _DocumentPagination.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            report = options.report,
-            acceptLanguage = options.acceptLanguage,
-            xKeyclicAppVersion = options.xKeyclicAppVersion,
-            after = options.after,
-            before = options.before,
-            order = options.order,
-            page = options.page,
-            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling cgetDocumentsByReport'
-            );
-          } // verify the required parameter 'report' is set
-
-          if (typeof report === "undefined" || report === null) {
-            throw new window.Error(
-              'Missing the required parameter "report" when calling cgetDocumentsByReport'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
-          } // verify the default value of parameter 'page'
-
-          if (typeof page === "undefined" || page === null) {
-            page = 1;
-          } // verify the default value of parameter 'limit'
-
-          if (typeof limit === "undefined" || limit === null) {
-            limit = 10;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'after'
-
-          if (typeof after === "undefined") {
-            after = null;
-          } // verify the null value of parameter 'before'
-
-          if (typeof before === "undefined") {
-            before = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetDocumentsByReport'
-            );
-          }
-
-          var pathParams = {
-            report: report
-          };
-          var bodyParam = null;
-          var queryParams = {
-            after: after,
-            before: before,
-            order: order,
-            page: page,
-            limit: limit
-          };
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/reports/{report}/documents",
-            "GET",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-          );
-        }
-        /**
-         * Remove one Document resource.
-         * @param { String } xKeyclicApp
-         * @param { String } document The identifier of the resource.
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { String } xKeyclicAppVersion
-         */
-      },
       {
         key: "deleteDocument",
         value: function deleteDocument() {
@@ -517,100 +389,6 @@ var DocumentApi =
           return this.callApi(
             "/documents/{document}",
             "PATCH",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-          );
-        }
-        /**
-         * Create one Document resource.
-         * @param { String } xKeyclicApp
-         * @param { module:model/DocumentData } documentData
-         * @param { String } report The identifier of the resource.
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { Document }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { String } xKeyclicAppVersion
-         */
-      },
-      {
-        key: "postDocumentByReport",
-        value: function postDocumentByReport() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
-
-          if (returnType === null) {
-            returnType = _Document.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            documentData = options.documentData,
-            report = options.report,
-            acceptLanguage = options.acceptLanguage,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling postDocumentByReport'
-            );
-          } // verify the required parameter 'documentData' is set
-
-          if (typeof documentData === "undefined" || documentData === null) {
-            throw new window.Error(
-              'Missing the required parameter "documentData" when calling postDocumentByReport'
-            );
-          } // verify the required parameter 'report' is set
-
-          if (typeof report === "undefined" || report === null) {
-            throw new window.Error(
-              'Missing the required parameter "report" when calling postDocumentByReport'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling postDocumentByReport'
-            );
-          }
-
-          var pathParams = {
-            report: report
-          };
-          var bodyParam = documentData;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/reports/{report}/documents",
-            "POST",
             pathParams,
             queryParams,
             headerParams,

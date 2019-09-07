@@ -4,10 +4,12 @@ class BusinessActivity {
   BusinessActivity({
     this.links,
     this.alternateName,
+    this.createdAt,
     this.id,
     this.metadataSchema,
     this.name,
     this.type,
+    this.updatedAt,
   });
 
   BusinessActivity.fromJson(Map<String, dynamic> json) {
@@ -16,16 +18,28 @@ class BusinessActivity {
     }
     links = BusinessActivityLinks.fromJson(json['_links']);
     alternateName = json['alternateName'];
+    createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    if (createdAt is DateTime && createdAt.isUtc == false) {
+      createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
+    }
     id = json['id'];
     metadataSchema =
         BusinessActivityMetadataSchema.fromJson(json['metadataSchema']);
     name = json['name'];
     type = json['type'];
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    if (updatedAt is DateTime && updatedAt.isUtc == false) {
+      updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
+    }
   }
 
   BusinessActivityLinks links;
 
   String alternateName;
+
+  DateTime createdAt;
 
   String id;
 
@@ -34,6 +48,8 @@ class BusinessActivity {
   String name;
 
   String type;
+
+  DateTime updatedAt;
 
   @override
   bool operator ==(dynamic other) {
@@ -46,10 +62,12 @@ class BusinessActivity {
         runtimeType == other.runtimeType &&
         links == other.links &&
         alternateName == other.alternateName &&
+        createdAt == other.createdAt &&
         id == other.id &&
         metadataSchema == other.metadataSchema &&
         name == other.name &&
-        type == other.type;
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
   /// By default hashCode return reference
@@ -58,10 +76,12 @@ class BusinessActivity {
       0 ^
       links.hashCode ^
       alternateName.hashCode ^
+      createdAt.hashCode ^
       id.hashCode ^
       metadataSchema.hashCode ^
       name.hashCode ^
-      type.hashCode;
+      type.hashCode ^
+      updatedAt.hashCode;
 
   static List<BusinessActivity> listFromJson(List<dynamic> json) {
     return json == null
@@ -82,15 +102,17 @@ class BusinessActivity {
     return {
       '_links': links,
       'alternateName': alternateName,
+      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
       'id': id,
       'metadataSchema': metadataSchema,
       'name': name,
       'type': type,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'BusinessActivity[links=$links, alternateName=$alternateName, id=$id, metadataSchema=$metadataSchema, name=$name, type=$type, ]';
+    return 'BusinessActivity[links=$links, alternateName=$alternateName, createdAt=$createdAt, id=$id, metadataSchema=$metadataSchema, name=$name, type=$type, updatedAt=$updatedAt, ]';
   }
 }

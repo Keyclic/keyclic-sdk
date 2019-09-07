@@ -11,10 +11,15 @@
  */
 
 import ApiClient from "../ApiClient";
+import Document from "../model/Document";
+import DocumentData from "../model/DocumentData";
+import DocumentPagination from "../model/DocumentPagination";
 import Error from "../model/Error";
+import OperationPagination from "../model/OperationPagination";
 import Report from "../model/Report";
-import ReportPagination from "../model/ReportPagination";
 import ReportPatch from "../model/ReportPatch";
+import ReportWorkflowTransitionData from "../model/ReportWorkflowTransitionData";
+import Tracking from "../model/Tracking";
 
 /**
  * Report service.
@@ -32,44 +37,32 @@ export default class ReportApi extends ApiClient {
   }
 
   /**
-   * Retrieve all Report resources.
+   * Retrieve all Document resources.
    * @param { String } xKeyclicApp
-   * @param { String } organization The identifier of the resource.
+   * @param { String } report The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { ReportPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { DocumentPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
-   * @param { String } assignedTo The identifier of the resource.
-   * @param { String } category The identifier of the resource.
    * @param { module:model/Date } after
    * @param { module:model/Date } before
-   * @param { String } delegatedTo The identifier of the resource.
    * @param { module:model/String } order   (default to desc)
-   * @param { String } place The identifier of the resource.
-   * @param { String } query
-   * @param { String } state
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetReportsByOrganization(returnType = null, options, credentials) {
+  cgetDocumentsByReport(returnType = null, options, credentials) {
     if (returnType === null) {
-      returnType = ReportPagination;
+      returnType = DocumentPagination;
     }
 
     let {
       xKeyclicApp,
-      organization,
+      report,
       acceptLanguage,
       xKeyclicAppVersion,
-      assignedTo,
-      category,
       after,
       before,
-      delegatedTo,
       order,
-      place,
-      query,
-      state,
       page,
       limit
     } = options;
@@ -77,14 +70,14 @@ export default class ReportApi extends ApiClient {
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling cgetReportsByOrganization'
+        'Missing the required parameter "xKeyclicApp" when calling cgetDocumentsByReport'
       );
     }
 
-    // verify the required parameter 'organization' is set
-    if (typeof organization === "undefined" || organization === null) {
+    // verify the required parameter 'report' is set
+    if (typeof report === "undefined" || report === null) {
       throw new window.Error(
-        'Missing the required parameter "organization" when calling cgetReportsByOrganization'
+        'Missing the required parameter "report" when calling cgetDocumentsByReport'
       );
     }
 
@@ -113,14 +106,139 @@ export default class ReportApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    // verify the null value of parameter 'assignedTo'
-    if (typeof assignedTo === "undefined") {
-      assignedTo = null;
+    // verify the null value of parameter 'after'
+    if (typeof after === "undefined") {
+      after = null;
     }
 
-    // verify the null value of parameter 'category'
-    if (typeof category === "undefined") {
-      category = null;
+    // verify the null value of parameter 'before'
+    if (typeof before === "undefined") {
+      before = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cgetDocumentsByReport'
+      );
+    }
+
+    let pathParams = {
+      report: report
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      after: after,
+      before: before,
+      order: order,
+      page: page,
+      limit: limit
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/reports/{report}/documents",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve all Operation resources.
+   * @param { String } xKeyclicApp
+   * @param { String } report The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } organization The identifier of the resource.
+   * @param { String } query
+   * @param { String } state
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
+  cgetOperationsByReport(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = OperationPagination;
+    }
+
+    let {
+      xKeyclicApp,
+      report,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      after,
+      before,
+      order,
+      organization,
+      query,
+      state,
+      page,
+      limit
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling cgetOperationsByReport'
+      );
+    }
+
+    // verify the required parameter 'report' is set
+    if (typeof report === "undefined" || report === null) {
+      throw new window.Error(
+        'Missing the required parameter "report" when calling cgetOperationsByReport'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === "undefined" || page === null) {
+      page = 1;
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === "undefined" || limit === null) {
+      limit = 10;
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
     }
 
     // verify the null value of parameter 'after'
@@ -133,14 +251,9 @@ export default class ReportApi extends ApiClient {
       before = null;
     }
 
-    // verify the null value of parameter 'delegatedTo'
-    if (typeof delegatedTo === "undefined") {
-      delegatedTo = null;
-    }
-
-    // verify the null value of parameter 'place'
-    if (typeof place === "undefined") {
-      place = null;
+    // verify the null value of parameter 'organization'
+    if (typeof organization === "undefined") {
+      organization = null;
     }
 
     // verify the null value of parameter 'query'
@@ -155,24 +268,21 @@ export default class ReportApi extends ApiClient {
 
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetReportsByOrganization'
+        'Missing the required parameter "credentials" when calling cgetOperationsByReport'
       );
     }
 
     let pathParams = {
-      organization: organization
+      report: report
     };
 
     let bodyParam = null;
 
     let queryParams = {
-      assigned_to: assignedTo,
-      category: category,
       after: after,
       before: before,
-      delegated_to: delegatedTo,
       order: order,
-      place: place,
+      organization: organization,
       query: query,
       state: state,
       page: page,
@@ -194,7 +304,7 @@ export default class ReportApi extends ApiClient {
     let accepts = ["application/hal+json;charset=UTF-8"];
 
     return this.callApi(
-      "/organizations/{organization}/reports",
+      "/reports/{report}/operations",
       "GET",
       pathParams,
       queryParams,
@@ -278,6 +388,89 @@ export default class ReportApi extends ApiClient {
 
     return this.callApi(
       "/reports/{report}",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve one Tracking resource.
+   * @param { String } xKeyclicApp
+   * @param { String } report The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Tracking }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  getTrackingByReport(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Tracking;
+    }
+
+    let { xKeyclicApp, report, acceptLanguage, xKeyclicAppVersion } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling getTrackingByReport'
+      );
+    }
+
+    // verify the required parameter 'report' is set
+    if (typeof report === "undefined" || report === null) {
+      throw new window.Error(
+        'Missing the required parameter "report" when calling getTrackingByReport'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling getTrackingByReport'
+      );
+    }
+
+    let pathParams = {
+      report: report
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/reports/{report}/tracking",
       "GET",
       pathParams,
       queryParams,
@@ -376,6 +569,203 @@ export default class ReportApi extends ApiClient {
     return this.callApi(
       "/reports/{report}",
       "PATCH",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Create one Document resource.
+   * @param { String } xKeyclicApp
+   * @param { module:model/DocumentData } documentData
+   * @param { String } report The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Document }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  postDocumentByReport(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Document;
+    }
+
+    let {
+      xKeyclicApp,
+      documentData,
+      report,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling postDocumentByReport'
+      );
+    }
+
+    // verify the required parameter 'documentData' is set
+    if (typeof documentData === "undefined" || documentData === null) {
+      throw new window.Error(
+        'Missing the required parameter "documentData" when calling postDocumentByReport'
+      );
+    }
+
+    // verify the required parameter 'report' is set
+    if (typeof report === "undefined" || report === null) {
+      throw new window.Error(
+        'Missing the required parameter "report" when calling postDocumentByReport'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling postDocumentByReport'
+      );
+    }
+
+    let pathParams = {
+      report: report
+    };
+
+    let bodyParam = documentData;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/reports/{report}/documents",
+      "POST",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Create one Workflow resource.
+   * @param { String } xKeyclicApp
+   * @param { module:model/ReportWorkflowTransitionData } reportWorkflowTransitionData
+   * @param { String } report The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  postWorkflowByReport(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Report;
+    }
+
+    let {
+      xKeyclicApp,
+      reportWorkflowTransitionData,
+      report,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling postWorkflowByReport'
+      );
+    }
+
+    // verify the required parameter 'reportWorkflowTransitionData' is set
+    if (
+      typeof reportWorkflowTransitionData === "undefined" ||
+      reportWorkflowTransitionData === null
+    ) {
+      throw new window.Error(
+        'Missing the required parameter "reportWorkflowTransitionData" when calling postWorkflowByReport'
+      );
+    }
+
+    // verify the required parameter 'report' is set
+    if (typeof report === "undefined" || report === null) {
+      throw new window.Error(
+        'Missing the required parameter "report" when calling postWorkflowByReport'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling postWorkflowByReport'
+      );
+    }
+
+    let pathParams = {
+      report: report
+    };
+
+    let bodyParam = reportWorkflowTransitionData;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/reports/{report}/workflow",
+      "POST",
       pathParams,
       queryParams,
       headerParams,

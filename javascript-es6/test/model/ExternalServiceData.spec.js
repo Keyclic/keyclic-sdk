@@ -65,6 +65,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new @KeyclicSdkJavascript.ExternalServiceData();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property provider (base name: "provider")', function() {
+      // uncomment below and update the code to test the property provider
+      //var instane = new @KeyclicSdkJavascript.ExternalServiceData();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

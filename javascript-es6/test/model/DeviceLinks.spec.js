@@ -59,6 +59,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
+      //var instane = new @KeyclicSdkJavascript.DeviceLinks();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

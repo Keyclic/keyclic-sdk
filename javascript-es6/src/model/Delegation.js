@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import DelegationEmbedded from "./DelegationEmbedded";
 import DelegationLinks from "./DelegationLinks";
 
 /**
@@ -27,13 +28,16 @@ export default class Delegation {
     
      */
   constructor(state) {
+    this.embedded = null;
     this.links = null;
     this.createdAt = null;
     this.description = null;
     this.id = null;
     this.state = state;
     this.type = null;
+    this.updatedAt = null;
 
+    this.embeddedType = DelegationEmbedded;
     this.linksType = DelegationLinks;
   }
 
@@ -52,6 +56,12 @@ export default class Delegation {
       object = new Delegation();
     }
 
+    if (data.hasOwnProperty("_embedded")) {
+      object.embedded = ApiClient.convertToType(
+        data["_embedded"],
+        object.embeddedType
+      );
+    }
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
@@ -72,6 +82,9 @@ export default class Delegation {
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

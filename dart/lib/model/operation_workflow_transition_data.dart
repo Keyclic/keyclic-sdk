@@ -12,7 +12,7 @@ class OperationWorkflowTransitionData {
     transition = json['transition'];
   }
 
-  /// enum transitionEnum {  accept,  assign,  progress,  refuse,  reset,  resolve,  };
+  /// enum transitionEnum {  assign,  progress,  resolve,  };
   String transition;
 
   @override

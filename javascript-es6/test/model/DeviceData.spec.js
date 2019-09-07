@@ -65,6 +65,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property person (base name: "person")', function() {
+      // uncomment below and update the code to test the property person
+      //var instane = new @KeyclicSdkJavascript.DeviceData();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -63,6 +63,7 @@ var Document =
       this.id = null;
       this.permission = null;
       this.type = null;
+      this.updatedAt = null;
       this.linksType = _DocumentLinks.default;
       this.fileType = _DocumentFile.default;
       this.permissionType = _DocumentPermission.default;
@@ -127,6 +128,13 @@ var Document =
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

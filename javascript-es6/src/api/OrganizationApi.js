@@ -11,11 +11,24 @@
  */
 
 import ApiClient from "../ApiClient";
+import CategoryPagination from "../model/CategoryPagination";
+import Chart from "../model/Chart";
+import DelegationPagination from "../model/DelegationPagination";
 import Error from "../model/Error";
+import ExternalServicePagination from "../model/ExternalServicePagination";
+import InternalServicePagination from "../model/InternalServicePagination";
+import MemberPagination from "../model/MemberPagination";
+import OperationPagination from "../model/OperationPagination";
 import Organization from "../model/Organization";
 import OrganizationData from "../model/OrganizationData";
 import OrganizationPagination from "../model/OrganizationPagination";
 import OrganizationPatch from "../model/OrganizationPatch";
+import PlacePagination from "../model/PlacePagination";
+import PublicationPagination from "../model/PublicationPagination";
+import Report from "../model/Report";
+import ReportPagination from "../model/ReportPagination";
+import Schema from "../model/Schema";
+import WebhookPagination from "../model/WebhookPagination";
 
 /**
  * Organization service.
@@ -30,6 +43,876 @@ export default class OrganizationApi extends ApiClient {
    */
   constructor(basePath = null, headers = null, timeout = null) {
     super(basePath, headers, timeout);
+  }
+
+  /**
+   * Retrieve all Category resources.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { CategoryPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { String } businessActivity The identifier of the resource.
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
+   * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } query
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
+  cgetCategoriesByOrganization(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = CategoryPagination;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      businessActivity,
+      after,
+      before,
+      geoPoint,
+      geoCoordinates,
+      order,
+      query,
+      page,
+      limit
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling cgetCategoriesByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling cgetCategoriesByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === "undefined" || page === null) {
+      page = 1;
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === "undefined" || limit === null) {
+      limit = 10;
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    // verify the null value of parameter 'businessActivity'
+    if (typeof businessActivity === "undefined") {
+      businessActivity = null;
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === "undefined") {
+      after = null;
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === "undefined") {
+      before = null;
+    }
+
+    // verify the null value of parameter 'geoPoint'
+    if (typeof geoPoint === "undefined") {
+      geoPoint = null;
+    }
+
+    // verify the null value of parameter 'geoCoordinates'
+    if (typeof geoCoordinates === "undefined") {
+      geoCoordinates = null;
+    }
+
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cgetCategoriesByOrganization'
+      );
+    }
+
+    let pathParams = {
+      organization: organization
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      business_activity: businessActivity,
+      after: after,
+      before: before,
+      geo_point: geoPoint,
+      geo_coordinates: geoCoordinates,
+      order: order,
+      query: query,
+      page: page,
+      limit: limit
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/categories",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve all Delegation resources.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { DelegationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } state
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
+  cgetDelegationsByOrganization(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = DelegationPagination;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      after,
+      before,
+      order,
+      state,
+      page,
+      limit
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling cgetDelegationsByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling cgetDelegationsByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === "undefined" || page === null) {
+      page = 1;
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === "undefined" || limit === null) {
+      limit = 10;
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === "undefined") {
+      after = null;
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === "undefined") {
+      before = null;
+    }
+
+    // verify the null value of parameter 'state'
+    if (typeof state === "undefined") {
+      state = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cgetDelegationsByOrganization'
+      );
+    }
+
+    let pathParams = {
+      organization: organization
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      after: after,
+      before: before,
+      order: order,
+      state: state,
+      page: page,
+      limit: limit
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/delegations",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve all ExternalService resources.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { ExternalServicePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } query
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
+  cgetExternalServicesByOrganization(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = ExternalServicePagination;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      after,
+      before,
+      order,
+      query,
+      page,
+      limit
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling cgetExternalServicesByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling cgetExternalServicesByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === "undefined" || page === null) {
+      page = 1;
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === "undefined" || limit === null) {
+      limit = 10;
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === "undefined") {
+      after = null;
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === "undefined") {
+      before = null;
+    }
+
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cgetExternalServicesByOrganization'
+      );
+    }
+
+    let pathParams = {
+      organization: organization
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      after: after,
+      before: before,
+      order: order,
+      query: query,
+      page: page,
+      limit: limit
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/external-services",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve all InternalService resources.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { InternalServicePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } query
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
+  cgetInternalServicesByOrganization(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = InternalServicePagination;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      after,
+      before,
+      order,
+      query,
+      page,
+      limit
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling cgetInternalServicesByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling cgetInternalServicesByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === "undefined" || page === null) {
+      page = 1;
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === "undefined" || limit === null) {
+      limit = 10;
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === "undefined") {
+      after = null;
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === "undefined") {
+      before = null;
+    }
+
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cgetInternalServicesByOrganization'
+      );
+    }
+
+    let pathParams = {
+      organization: organization
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      after: after,
+      before: before,
+      order: order,
+      query: query,
+      page: page,
+      limit: limit
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/internal-services",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve all Member resources.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { MemberPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } query
+   * @param { String } role
+   * @param { Array.<String> } roles
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
+  cgetMembersByOrganization(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = MemberPagination;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      after,
+      before,
+      order,
+      query,
+      role,
+      roles,
+      page,
+      limit
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling cgetMembersByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling cgetMembersByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === "undefined" || page === null) {
+      page = 1;
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === "undefined" || limit === null) {
+      limit = 10;
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === "undefined") {
+      after = null;
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === "undefined") {
+      before = null;
+    }
+
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
+    }
+
+    // verify the null value of parameter 'role'
+    if (typeof role === "undefined") {
+      role = null;
+    }
+
+    // verify the null value of parameter 'roles'
+    if (typeof roles === "undefined") {
+      roles = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cgetMembersByOrganization'
+      );
+    }
+
+    let pathParams = {
+      organization: organization
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      after: after,
+      before: before,
+      order: order,
+      query: query,
+      role: role,
+      "roles[]": roles,
+      page: page,
+      limit: limit
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/members",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve all Operation resources.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } query
+   * @param { String } state
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
+  cgetOperationsByOrganization(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = OperationPagination;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      after,
+      before,
+      order,
+      query,
+      state,
+      page,
+      limit
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling cgetOperationsByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling cgetOperationsByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === "undefined" || page === null) {
+      page = 1;
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === "undefined" || limit === null) {
+      limit = 10;
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === "undefined") {
+      after = null;
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === "undefined") {
+      before = null;
+    }
+
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
+    }
+
+    // verify the null value of parameter 'state'
+    if (typeof state === "undefined") {
+      state = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cgetOperationsByOrganization'
+      );
+    }
+
+    let pathParams = {
+      organization: organization
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      after: after,
+      before: before,
+      order: order,
+      query: query,
+      state: state,
+      page: page,
+      limit: limit
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/operations",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
   }
 
   /**
@@ -185,6 +1068,1036 @@ export default class OrganizationApi extends ApiClient {
 
     return this.callApi(
       "/organizations",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve all Place resources.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { PlacePagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { String } businessActivity The identifier of the resource.
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { String } geoElevation
+   * @param { Array.<String> } geoHash
+   * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
+   * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } parent The identifier of the resource.
+   * @param { Array.<String> } parents The identifier of the resource.
+   * @param { String } query
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
+  cgetPlacesByOrganization(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = PlacePagination;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      businessActivity,
+      after,
+      before,
+      geoElevation,
+      geoHash,
+      geoPoint,
+      geoCoordinates,
+      order,
+      parent,
+      parents,
+      query,
+      page,
+      limit
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling cgetPlacesByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling cgetPlacesByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === "undefined" || page === null) {
+      page = 1;
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === "undefined" || limit === null) {
+      limit = 10;
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    // verify the null value of parameter 'businessActivity'
+    if (typeof businessActivity === "undefined") {
+      businessActivity = null;
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === "undefined") {
+      after = null;
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === "undefined") {
+      before = null;
+    }
+
+    // verify the null value of parameter 'geoElevation'
+    if (typeof geoElevation === "undefined") {
+      geoElevation = null;
+    }
+
+    // verify the null value of parameter 'geoHash'
+    if (typeof geoHash === "undefined") {
+      geoHash = null;
+    }
+
+    // verify the null value of parameter 'geoPoint'
+    if (typeof geoPoint === "undefined") {
+      geoPoint = null;
+    }
+
+    // verify the null value of parameter 'geoCoordinates'
+    if (typeof geoCoordinates === "undefined") {
+      geoCoordinates = null;
+    }
+
+    // verify the null value of parameter 'parent'
+    if (typeof parent === "undefined") {
+      parent = null;
+    }
+
+    // verify the null value of parameter 'parents'
+    if (typeof parents === "undefined") {
+      parents = null;
+    }
+
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cgetPlacesByOrganization'
+      );
+    }
+
+    let pathParams = {
+      organization: organization
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      business_activity: businessActivity,
+      after: after,
+      before: before,
+      geo_elevation: geoElevation,
+      "geo_hash[]": geoHash,
+      geo_point: geoPoint,
+      geo_coordinates: geoCoordinates,
+      order: order,
+      parent: parent,
+      "parents[]": parents,
+      query: query,
+      page: page,
+      limit: limit
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/places",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve all Publication resources.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { PublicationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } place The identifier of the resource.
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
+  cgetPublicationsByOrganization(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = PublicationPagination;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      after,
+      before,
+      order,
+      place,
+      page,
+      limit
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling cgetPublicationsByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling cgetPublicationsByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === "undefined" || page === null) {
+      page = 1;
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === "undefined" || limit === null) {
+      limit = 10;
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === "undefined") {
+      after = null;
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === "undefined") {
+      before = null;
+    }
+
+    // verify the null value of parameter 'place'
+    if (typeof place === "undefined") {
+      place = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cgetPublicationsByOrganization'
+      );
+    }
+
+    let pathParams = {
+      organization: organization
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      after: after,
+      before: before,
+      order: order,
+      place: place,
+      page: page,
+      limit: limit
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/publications",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve all Report resources.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { ReportPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { String } assignedTo The identifier of the resource.
+   * @param { String } category The identifier of the resource.
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { String } delegatedTo The identifier of the resource.
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } place The identifier of the resource.
+   * @param { String } query
+   * @param { String } state
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
+  cgetReportsByOrganization(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = ReportPagination;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      assignedTo,
+      category,
+      after,
+      before,
+      delegatedTo,
+      order,
+      place,
+      query,
+      state,
+      page,
+      limit
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling cgetReportsByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling cgetReportsByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === "undefined" || page === null) {
+      page = 1;
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === "undefined" || limit === null) {
+      limit = 10;
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    // verify the null value of parameter 'assignedTo'
+    if (typeof assignedTo === "undefined") {
+      assignedTo = null;
+    }
+
+    // verify the null value of parameter 'category'
+    if (typeof category === "undefined") {
+      category = null;
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === "undefined") {
+      after = null;
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === "undefined") {
+      before = null;
+    }
+
+    // verify the null value of parameter 'delegatedTo'
+    if (typeof delegatedTo === "undefined") {
+      delegatedTo = null;
+    }
+
+    // verify the null value of parameter 'place'
+    if (typeof place === "undefined") {
+      place = null;
+    }
+
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
+    }
+
+    // verify the null value of parameter 'state'
+    if (typeof state === "undefined") {
+      state = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cgetReportsByOrganization'
+      );
+    }
+
+    let pathParams = {
+      organization: organization
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      assigned_to: assignedTo,
+      category: category,
+      after: after,
+      before: before,
+      delegated_to: delegatedTo,
+      order: order,
+      place: place,
+      query: query,
+      state: state,
+      page: page,
+      limit: limit
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/reports",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve all Webhook resources.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { WebhookPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { module:model/String } order   (default to desc)
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
+  cgetWebhooksByOrganization(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = WebhookPagination;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      after,
+      before,
+      order,
+      page,
+      limit
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling cgetWebhooksByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling cgetWebhooksByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === "undefined" || page === null) {
+      page = 1;
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === "undefined" || limit === null) {
+      limit = 10;
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === "undefined") {
+      after = null;
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === "undefined") {
+      before = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cgetWebhooksByOrganization'
+      );
+    }
+
+    let pathParams = {
+      organization: organization
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      after: after,
+      before: before,
+      order: order,
+      page: page,
+      limit: limit
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/webhooks",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve all Export resources.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { String } assignedTo The identifier of the resource.
+   * @param { String } category The identifier of the resource.
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { String } delegatedTo The identifier of the resource.
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } place The identifier of the resource.
+   * @param { String } query
+   * @param { String } state
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
+  cpostExportByOrganization(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Report;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      assignedTo,
+      category,
+      after,
+      before,
+      delegatedTo,
+      order,
+      place,
+      query,
+      state,
+      page,
+      limit
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling cpostExportByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling cpostExportByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
+    }
+
+    // verify the default value of parameter 'page'
+    if (typeof page === "undefined" || page === null) {
+      page = 1;
+    }
+
+    // verify the default value of parameter 'limit'
+    if (typeof limit === "undefined" || limit === null) {
+      limit = 10;
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    // verify the null value of parameter 'assignedTo'
+    if (typeof assignedTo === "undefined") {
+      assignedTo = null;
+    }
+
+    // verify the null value of parameter 'category'
+    if (typeof category === "undefined") {
+      category = null;
+    }
+
+    // verify the null value of parameter 'after'
+    if (typeof after === "undefined") {
+      after = null;
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === "undefined") {
+      before = null;
+    }
+
+    // verify the null value of parameter 'delegatedTo'
+    if (typeof delegatedTo === "undefined") {
+      delegatedTo = null;
+    }
+
+    // verify the null value of parameter 'place'
+    if (typeof place === "undefined") {
+      place = null;
+    }
+
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
+    }
+
+    // verify the null value of parameter 'state'
+    if (typeof state === "undefined") {
+      state = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling cpostExportByOrganization'
+      );
+    }
+
+    let pathParams = {
+      organization: organization
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      assigned_to: assignedTo,
+      category: category,
+      after: after,
+      before: before,
+      delegated_to: delegatedTo,
+      order: order,
+      place: place,
+      query: query,
+      state: state,
+      page: page,
+      limit: limit
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/exports",
+      "POST",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve one Analytic resource.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Chart }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   * @param { String } category The identifier of the resource.
+   * @param { String } place The identifier of the resource.
+   * @param { String } state
+   * @param { String } optionsProperty
+   * @param { module:model/String } optionsSort
+   */
+  getAnalyticByOrganization(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Chart;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion,
+      category,
+      place,
+      state,
+      optionsProperty,
+      optionsSort
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling getAnalyticByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling getAnalyticByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    // verify the null value of parameter 'category'
+    if (typeof category === "undefined") {
+      category = null;
+    }
+
+    // verify the null value of parameter 'place'
+    if (typeof place === "undefined") {
+      place = null;
+    }
+
+    // verify the null value of parameter 'state'
+    if (typeof state === "undefined") {
+      state = null;
+    }
+
+    // verify the null value of parameter 'optionsProperty'
+    if (typeof optionsProperty === "undefined") {
+      optionsProperty = null;
+    }
+
+    // verify the null value of parameter 'optionsSort'
+    if (typeof optionsSort === "undefined") {
+      optionsSort = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling getAnalyticByOrganization'
+      );
+    }
+
+    let pathParams = {
+      organization: organization
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {
+      category: category,
+      place: place,
+      state: state,
+      "options[property]": optionsProperty,
+      "options[sort]": optionsSort
+    };
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/analytics",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Retrieve one Form resource.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Schema }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  getFormByOrganization(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Schema;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling getFormByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling getFormByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling getFormByOrganization'
+      );
+    }
+
+    let pathParams = {
+      organization: organization
+    };
+
+    let bodyParam = null;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/form",
       "GET",
       pathParams,
       queryParams,

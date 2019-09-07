@@ -53,8 +53,14 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.MemberData);
     });
 
-    it('should have the property member (base name: "member")', function() {
-      // uncomment below and update the code to test the property member
+    it('should have the property person (base name: "person")', function() {
+      // uncomment below and update the code to test the property person
+      //var instane = new @KeyclicSdkJavascript.MemberData();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property organization (base name: "organization")', function() {
+      // uncomment below and update the code to test the property organization
       //var instane = new @KeyclicSdkJavascript.MemberData();
       //expect(instance).to.be();
     });

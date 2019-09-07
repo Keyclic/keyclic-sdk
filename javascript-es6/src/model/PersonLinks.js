@@ -12,7 +12,6 @@
 
 import ApiClient from "../ApiClient";
 import PersonLinksImage from "./PersonLinksImage";
-import PersonLinksMemberOf from "./PersonLinksMemberOf";
 import PersonLinksSelf from "./PersonLinksSelf";
 
 /**
@@ -28,11 +27,9 @@ export default class PersonLinks {
      */
   constructor() {
     this.image = null;
-    this.memberOf = null;
     this.self = null;
 
     this.imageType = PersonLinksImage;
-    this.memberOfType = PersonLinksMemberOf;
     this.selfType = PersonLinksSelf;
   }
 
@@ -53,12 +50,6 @@ export default class PersonLinks {
 
     if (data.hasOwnProperty("image")) {
       object.image = ApiClient.convertToType(data["image"], object.imageType);
-    }
-    if (data.hasOwnProperty("memberOf")) {
-      object.memberOf = ApiClient.convertToType(
-        data["memberOf"],
-        object.memberOfType
-      );
     }
     if (data.hasOwnProperty("self")) {
       object.self = ApiClient.convertToType(data["self"], object.selfType);

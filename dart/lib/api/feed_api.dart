@@ -143,4 +143,281 @@ class FeedApi {
     return apiClient.deserialize(response.body, 'ActivityAggregatedPagination')
         as ActivityAggregatedPagination;
   }
+
+  /// Retrieve all Following resources.
+  ///
+  ///
+  Future<FeedPagination> cgetFollowingsByFeed(
+    String xKeyclicApp,
+    String feed, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+    int page,
+    int limit,
+  }) async {
+    // verify required params are set
+
+    if (xKeyclicApp == null) {
+      throw ApiException(0, "Missing required param: xKeyclicApp");
+    }
+
+    if (feed == null) {
+      throw ApiException(0, "Missing required param: feed");
+    }
+
+    // create path and map variables
+    final String path = "/feeds/{feed}/following"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "feed" + "}", feed.toString());
+
+    // query params
+    final List<QueryParam> queryParams = [
+      if (page != null) ..._convertParametersForCollectionFormat("page", page),
+      if (limit != null)
+        ..._convertParametersForCollectionFormat("limit", limit),
+    ];
+
+    // header params
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
+
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
+
+    final List<String> authNames = [
+      "bearer",
+    ];
+
+    final Object postBody = null;
+
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    }
+
+    if (response.body == null) {
+      return null;
+    }
+
+    return apiClient.deserialize(response.body, 'FeedPagination')
+        as FeedPagination;
+  }
+
+  /// Create one Follow resource.
+  ///
+  ///
+  Future<void> postFollowByFeed(
+    String xKeyclicApp,
+    String feed, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
+    // verify required params are set
+
+    if (xKeyclicApp == null) {
+      throw ApiException(0, "Missing required param: xKeyclicApp");
+    }
+
+    if (feed == null) {
+      throw ApiException(0, "Missing required param: feed");
+    }
+
+    // create path and map variables
+    final String path = "/feeds/{feed}/follow"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "feed" + "}", feed.toString());
+
+    // query params
+    final List<QueryParam> queryParams = [];
+
+    // header params
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
+
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
+
+    final List<String> authNames = [
+      "bearer",
+    ];
+
+    final Object postBody = null;
+
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    }
+
+    if (response.body == null) {
+      return;
+    }
+
+    return;
+  }
+
+  /// Create one Read resource.
+  ///
+  ///
+  Future<void> postReadByFeedAndGroup(
+    String xKeyclicApp,
+    String feed,
+    String group, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
+    // verify required params are set
+
+    if (xKeyclicApp == null) {
+      throw ApiException(0, "Missing required param: xKeyclicApp");
+    }
+
+    if (feed == null) {
+      throw ApiException(0, "Missing required param: feed");
+    }
+
+    if (group == null) {
+      throw ApiException(0, "Missing required param: group");
+    }
+
+    // create path and map variables
+    final String path = "/feeds/{feed}/read/{group}"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "feed" + "}", feed.toString())
+        .replaceAll("{" + "group" + "}", group.toString());
+
+    // query params
+    final List<QueryParam> queryParams = [];
+
+    // header params
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
+
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
+
+    final List<String> authNames = [
+      "bearer",
+    ];
+
+    final Object postBody = null;
+
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    }
+
+    if (response.body == null) {
+      return;
+    }
+
+    return;
+  }
+
+  /// Create one Unfollow resource.
+  ///
+  ///
+  Future<void> postUnfollowByFeed(
+    String xKeyclicApp,
+    String feed, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
+    // verify required params are set
+
+    if (xKeyclicApp == null) {
+      throw ApiException(0, "Missing required param: xKeyclicApp");
+    }
+
+    if (feed == null) {
+      throw ApiException(0, "Missing required param: feed");
+    }
+
+    // create path and map variables
+    final String path = "/feeds/{feed}/unfollow"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "feed" + "}", feed.toString());
+
+    // query params
+    final List<QueryParam> queryParams = [];
+
+    // header params
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
+
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
+
+    final List<String> authNames = [
+      "bearer",
+    ];
+
+    final Object postBody = null;
+
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    }
+
+    if (response.body == null) {
+      return;
+    }
+
+    return;
+  }
 }

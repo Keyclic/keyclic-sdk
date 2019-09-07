@@ -5,25 +5,18 @@ class PlaceApi {
 
   final ApiClient apiClient;
 
-  /// Retrieve all Place resources.
+  /// Retrieve all Occupant resources.
   ///
   ///
-  Future<PlacePagination> cgetPlaces(
-    String xKeyclicApp, {
+  Future<OccupantPagination> cgetOccupantsByPlace(
+    String xKeyclicApp,
+    String place, {
     String acceptLanguage,
     String xKeyclicAppVersion,
-    String businessActivity,
     DateTime after,
     DateTime before,
-    String geoElevation,
-    String geoHash__,
-    String geoPoint,
-    String geoCoordinates,
     String order,
-    String organization,
-    String parent,
-    String parents__,
-    String query,
+    String person,
     int page,
     int limit,
   }) async {
@@ -33,37 +26,25 @@ class PlaceApi {
       throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
+    if (place == null) {
+      throw ApiException(0, "Missing required param: place");
+    }
+
     // create path and map variables
-    final String path = "/places".replaceAll("{format}", "json");
+    final String path = "/places/{place}/occupants"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "place" + "}", place.toString());
 
     // query params
     final List<QueryParam> queryParams = [
-      if (businessActivity != null)
-        ..._convertParametersForCollectionFormat(
-            "business_activity", businessActivity),
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
         ..._convertParametersForCollectionFormat("before", before),
-      if (geoElevation != null)
-        ..._convertParametersForCollectionFormat("geo_elevation", geoElevation),
-      if (geoHash__ != null)
-        ..._convertParametersForCollectionFormat("geo_hash[]", geoHash__),
-      if (geoPoint != null)
-        ..._convertParametersForCollectionFormat("geo_point", geoPoint),
-      if (geoCoordinates != null)
-        ..._convertParametersForCollectionFormat(
-            "geo_coordinates", geoCoordinates),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
-      if (organization != null)
-        ..._convertParametersForCollectionFormat("organization", organization),
-      if (parent != null)
-        ..._convertParametersForCollectionFormat("parent", parent),
-      if (parents__ != null)
-        ..._convertParametersForCollectionFormat("parents[]", parents__),
-      if (query != null)
-        ..._convertParametersForCollectionFormat("query", query),
+      if (person != null)
+        ..._convertParametersForCollectionFormat("person", person),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),
@@ -105,28 +86,28 @@ class PlaceApi {
       return null;
     }
 
-    return apiClient.deserialize(response.body, 'PlacePagination')
-        as PlacePagination;
+    return apiClient.deserialize(response.body, 'OccupantPagination')
+        as OccupantPagination;
   }
 
   /// Retrieve all Place resources.
   ///
   ///
-  Future<PlacePagination> cgetPlacesByOrganization(
-    String xKeyclicApp,
-    String organization, {
+  Future<PlacePagination> cgetPlaces(
+    String xKeyclicApp, {
     String acceptLanguage,
     String xKeyclicAppVersion,
     String businessActivity,
     DateTime after,
     DateTime before,
     String geoElevation,
-    String geoHash__,
+    List<String> geoHash__,
     String geoPoint,
     String geoCoordinates,
     String order,
+    String organization,
     String parent,
-    String parents__,
+    List<String> parents__,
     String query,
     int page,
     int limit,
@@ -137,14 +118,8 @@ class PlaceApi {
       throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
-    if (organization == null) {
-      throw ApiException(0, "Missing required param: organization");
-    }
-
     // create path and map variables
-    final String path = "/organizations/{organization}/places"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "organization" + "}", organization.toString());
+    final String path = "/places".replaceAll("{format}", "json");
 
     // query params
     final List<QueryParam> queryParams = [
@@ -158,7 +133,8 @@ class PlaceApi {
       if (geoElevation != null)
         ..._convertParametersForCollectionFormat("geo_elevation", geoElevation),
       if (geoHash__ != null)
-        ..._convertParametersForCollectionFormat("geo_hash[]", geoHash__),
+        ..._convertParametersForCollectionFormat("geo_hash[]", geoHash__,
+            collectionFormat: "multi"),
       if (geoPoint != null)
         ..._convertParametersForCollectionFormat("geo_point", geoPoint),
       if (geoCoordinates != null)
@@ -166,10 +142,13 @@ class PlaceApi {
             "geo_coordinates", geoCoordinates),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
+      if (organization != null)
+        ..._convertParametersForCollectionFormat("organization", organization),
       if (parent != null)
         ..._convertParametersForCollectionFormat("parent", parent),
       if (parents__ != null)
-        ..._convertParametersForCollectionFormat("parents[]", parents__),
+        ..._convertParametersForCollectionFormat("parents[]", parents__,
+            collectionFormat: "multi"),
       if (query != null)
         ..._convertParametersForCollectionFormat("query", query),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
@@ -357,10 +336,9 @@ class PlaceApi {
   /// Create one Place resource.
   ///
   ///
-  Future<Place> postPlaceByOrganization(
+  Future<Place> postPlace(
     String xKeyclicApp,
-    PlaceData placeData,
-    String organization, {
+    PlaceData placeData, {
     String acceptLanguage,
     String xKeyclicAppVersion,
   }) async {
@@ -374,14 +352,8 @@ class PlaceApi {
       throw ApiException(0, "Missing required param: placeData");
     }
 
-    if (organization == null) {
-      throw ApiException(0, "Missing required param: organization");
-    }
-
     // create path and map variables
-    final String path = "/organizations/{organization}/places"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "organization" + "}", organization.toString());
+    final String path = "/places".replaceAll("{format}", "json");
 
     // query params
     final List<QueryParam> queryParams = [];

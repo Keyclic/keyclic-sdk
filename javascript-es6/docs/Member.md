@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **roles** | **[String]** |  | [optional] 
 **type** | **String** |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 
 

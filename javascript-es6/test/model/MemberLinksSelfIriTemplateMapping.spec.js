@@ -53,12 +53,6 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.MemberLinksSelfIriTemplateMapping);
     });
 
-    it('should have the property organization (base name: "organization")', function() {
-      // uncomment below and update the code to test the property organization
-      //var instane = new @KeyclicSdkJavascript.MemberLinksSelfIriTemplateMapping();
-      //expect(instance).to.be();
-    });
-
     it('should have the property member (base name: "member")', function() {
       // uncomment below and update the code to test the property member
       //var instane = new @KeyclicSdkJavascript.MemberLinksSelfIriTemplateMapping();

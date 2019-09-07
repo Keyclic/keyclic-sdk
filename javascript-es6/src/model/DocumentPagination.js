@@ -12,13 +12,14 @@
 
 import ApiClient from "../ApiClient";
 import DocumentCollection from "./DocumentCollection";
+import Pagination from "./Pagination";
 import PaginationLinks from "./PaginationLinks";
 
 /**
  * The DocumentPagination model module.
  * @module model/DocumentPagination
  */
-export default class DocumentPagination {
+export default class DocumentPagination extends Pagination {
   /**
      * Constructs a new "DocumentPagination".
      * @alias module:model/DocumentPagination
@@ -26,15 +27,11 @@ export default class DocumentPagination {
     
      */
   constructor() {
-    this.limit = null;
-    this.page = null;
-    this.pages = null;
-    this.total = null;
+    super();
+
     this.embedded = null;
-    this.links = null;
 
     this.embeddedType = DocumentCollection;
-    this.linksType = PaginationLinks;
   }
 
   /**
@@ -52,26 +49,13 @@ export default class DocumentPagination {
       object = new DocumentPagination();
     }
 
-    if (data.hasOwnProperty("limit")) {
-      object.limit = ApiClient.convertToType(data["limit"], "Number");
-    }
-    if (data.hasOwnProperty("page")) {
-      object.page = ApiClient.convertToType(data["page"], "Number");
-    }
-    if (data.hasOwnProperty("pages")) {
-      object.pages = ApiClient.convertToType(data["pages"], "Number");
-    }
-    if (data.hasOwnProperty("total")) {
-      object.total = ApiClient.convertToType(data["total"], "Number");
-    }
+    object = super.constructFromData(data, object);
+
     if (data.hasOwnProperty("_embedded")) {
       object.embedded = ApiClient.convertToType(
         data["_embedded"],
         object.embeddedType
       );
-    }
-    if (data.hasOwnProperty("_links")) {
-      object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
 
     return object;

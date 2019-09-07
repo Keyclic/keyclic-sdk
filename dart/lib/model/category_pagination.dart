@@ -1,13 +1,13 @@
 part of keyclic_sdk_api.api;
 
-class CategoryPagination {
+class CategoryPagination extends Pagination {
   CategoryPagination({
     this.limit,
     this.page,
     this.pages,
     this.total,
-    this.embedded,
     this.links,
+    this.embedded,
   });
 
   CategoryPagination.fromJson(Map<String, dynamic> json) {
@@ -18,8 +18,8 @@ class CategoryPagination {
     page = json['page'];
     pages = json['pages'];
     total = json['total'];
-    embedded = CategoryCollection.fromJson(json['_embedded']);
     links = PaginationLinks.fromJson(json['_links']);
+    embedded = CategoryCollection.fromJson(json['_embedded']);
   }
 
   int limit;
@@ -30,9 +30,9 @@ class CategoryPagination {
 
   int total;
 
-  CategoryCollection embedded;
-
   PaginationLinks links;
+
+  CategoryCollection embedded;
 
   @override
   bool operator ==(dynamic other) {
@@ -47,8 +47,8 @@ class CategoryPagination {
         page == other.page &&
         pages == other.pages &&
         total == other.total &&
-        embedded == other.embedded &&
-        links == other.links;
+        links == other.links &&
+        embedded == other.embedded;
   }
 
   /// By default hashCode return reference
@@ -59,8 +59,8 @@ class CategoryPagination {
       page.hashCode ^
       pages.hashCode ^
       total.hashCode ^
-      embedded.hashCode ^
-      links.hashCode;
+      links.hashCode ^
+      embedded.hashCode;
 
   static List<CategoryPagination> listFromJson(List<dynamic> json) {
     return json == null
@@ -84,13 +84,13 @@ class CategoryPagination {
       'page': page,
       'pages': pages,
       'total': total,
-      '_embedded': embedded,
       '_links': links,
+      '_embedded': embedded,
     };
   }
 
   @override
   String toString() {
-    return 'CategoryPagination[limit=$limit, page=$page, pages=$pages, total=$total, embedded=$embedded, links=$links, ]';
+    return 'CategoryPagination[limit=$limit, page=$page, pages=$pages, total=$total, links=$links, embedded=$embedded, ]';
   }
 }

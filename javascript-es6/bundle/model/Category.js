@@ -61,6 +61,7 @@ var Category =
       this.identificationNumber = null;
       this.name = name;
       this.type = null;
+      this.updatedAt = null;
       this.linksType = _CategoryLinks.default;
     }
     /**
@@ -137,6 +138,13 @@ var Category =
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

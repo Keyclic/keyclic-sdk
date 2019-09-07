@@ -17,6 +17,8 @@ var _BusinessActivityPagination = _interopRequireDefault(
 
 var _Error = _interopRequireDefault(require("../model/Error"));
 
+var _Schema = _interopRequireDefault(require("../model/Schema"));
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -268,7 +270,7 @@ var BusinessActivityApi =
           var contentTypes = ["application/json;charset=UTF-8"];
           var accepts = ["application/hal+json;charset=UTF-8"];
           return this.callApi(
-            "/businessactivities",
+            "/business-activities",
             "GET",
             pathParams,
             queryParams,
@@ -357,7 +359,96 @@ var BusinessActivityApi =
           var contentTypes = ["application/json;charset=UTF-8"];
           var accepts = ["application/hal+json;charset=UTF-8"];
           return this.callApi(
-            "/businessactivities/{businessActivity}",
+            "/business-activities/{businessActivity}",
+            "GET",
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+          );
+        }
+        /**
+         * Retrieve one Schema resource.
+         * @param { String } xKeyclicApp
+         * @param { String } businessActivity The identifier of the resource.
+         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+         * @param { Schema }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+         * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { String } xKeyclicAppVersion
+         */
+      },
+      {
+        key: "getSchemaByBusinessActivity",
+        value: function getSchemaByBusinessActivity() {
+          var returnType =
+            arguments.length > 0 && arguments[0] !== undefined
+              ? arguments[0]
+              : null;
+          var options = arguments.length > 1 ? arguments[1] : undefined;
+          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+
+          if (returnType === null) {
+            returnType = _Schema.default;
+          }
+
+          var xKeyclicApp = options.xKeyclicApp,
+            businessActivity = options.businessActivity,
+            acceptLanguage = options.acceptLanguage,
+            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+            throw new window.Error(
+              'Missing the required parameter "xKeyclicApp" when calling getSchemaByBusinessActivity'
+            );
+          } // verify the required parameter 'businessActivity' is set
+
+          if (
+            typeof businessActivity === "undefined" ||
+            businessActivity === null
+          ) {
+            throw new window.Error(
+              'Missing the required parameter "businessActivity" when calling getSchemaByBusinessActivity'
+            );
+          } // verify the default value of parameter 'acceptLanguage'
+
+          if (
+            typeof acceptLanguage === "undefined" ||
+            acceptLanguage === null
+          ) {
+            acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xKeyclicAppVersion'
+
+          if (typeof xKeyclicAppVersion === "undefined") {
+            xKeyclicAppVersion = null;
+          }
+
+          if (typeof credentials === "undefined" || credentials === null) {
+            throw new window.Error(
+              'Missing the required parameter "credentials" when calling getSchemaByBusinessActivity'
+            );
+          }
+
+          var pathParams = {
+            businessActivity: businessActivity
+          };
+          var bodyParam = null;
+          var queryParams = {};
+          var headerParams = {
+            "accept-language": acceptLanguage,
+            "x-keyclic-app": xKeyclicApp,
+            "x-keyclic-app-version": xKeyclicAppVersion
+          };
+          var credentialParams = credentials;
+          var authNames = ["bearer"];
+          var contentTypes = ["application/json;charset=UTF-8"];
+          var accepts = ["application/hal+json;charset=UTF-8"];
+          return this.callApi(
+            "/businessactivities/{businessActivity}/schema",
             "GET",
             pathParams,
             queryParams,

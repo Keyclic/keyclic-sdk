@@ -6,5 +6,6 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **color** | **String** |  | 
 **icon** | **String** |  | 
+**organization** | **String** |  | 
 
 

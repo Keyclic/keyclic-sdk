@@ -47,17 +47,20 @@ var PublicationData =
   
    * @param message { String }
   
-   * @param place { String }
+   * @param feed { String }
   
    * @param title { String }
   
+   * @param organization { String }
+  
    */
-    function PublicationData(message, place, title) {
+    function PublicationData(message, feed, title, organization) {
       _classCallCheck(this, PublicationData);
 
       this.message = message;
-      this.place = place;
+      this.feed = feed;
       this.title = title;
+      this.organization = organization;
     }
     /**
      * Constructs a "PublicationData" from a plain JavaScript object.
@@ -90,9 +93,9 @@ var PublicationData =
             );
           }
 
-          if (data.hasOwnProperty("place")) {
-            object.place = _ApiClient.default.convertToType(
-              data["place"],
+          if (data.hasOwnProperty("feed")) {
+            object.feed = _ApiClient.default.convertToType(
+              data["feed"],
               "String"
             );
           }
@@ -100,6 +103,13 @@ var PublicationData =
           if (data.hasOwnProperty("title")) {
             object.title = _ApiClient.default.convertToType(
               data["title"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
               "String"
             );
           }

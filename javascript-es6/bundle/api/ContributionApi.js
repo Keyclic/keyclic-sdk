@@ -7,13 +7,13 @@ exports.default = void 0;
 
 var _ApiClient2 = _interopRequireDefault(require("../ApiClient"));
 
-var _ActivityAggregatedPagination = _interopRequireDefault(
-  require("../model/ActivityAggregatedPagination")
+var _Contribution = _interopRequireDefault(require("../model/Contribution"));
+
+var _ContributionPagination = _interopRequireDefault(
+  require("../model/ContributionPagination")
 );
 
 var _Error = _interopRequireDefault(require("../model/Error"));
-
-var _Operation = _interopRequireDefault(require("../model/Operation"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -143,19 +143,22 @@ var ContributionApi =
     /**
      * Retrieve all Contribution resources.
      * @param { String } xKeyclicApp
-     * @param { String } feedback The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { ActivityAggregatedPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+     * @param { ContributionPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
+     * @param { module:model/Date } after
+     * @param { module:model/Date } before
+     * @param { String } feedback The identifier of the resource.
+     * @param { module:model/String } order   (default to desc)
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
      */
 
     _createClass(ContributionApi, [
       {
-        key: "cgetContributionsByFeedback",
-        value: function cgetContributionsByFeedback() {
+        key: "cgetContributions",
+        value: function cgetContributions() {
           var returnType =
             arguments.length > 0 && arguments[0] !== undefined
               ? arguments[0]
@@ -164,25 +167,22 @@ var ContributionApi =
           var credentials = arguments.length > 2 ? arguments[2] : undefined;
 
           if (returnType === null) {
-            returnType = _ActivityAggregatedPagination.default;
+            returnType = _ContributionPagination.default;
           }
 
           var xKeyclicApp = options.xKeyclicApp,
-            feedback = options.feedback,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
+            after = options.after,
+            before = options.before,
+            feedback = options.feedback,
+            order = options.order,
             page = options.page,
             limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling cgetContributionsByFeedback'
-            );
-          } // verify the required parameter 'feedback' is set
-
-          if (typeof feedback === "undefined" || feedback === null) {
-            throw new window.Error(
-              'Missing the required parameter "feedback" when calling cgetContributionsByFeedback'
+              'Missing the required parameter "xKeyclicApp" when calling cgetContributions'
             );
           } // verify the default value of parameter 'acceptLanguage'
 
@@ -191,6 +191,10 @@ var ContributionApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the default value of parameter 'order'
+
+          if (typeof order === "undefined" || order === null) {
+            order = "desc";
           } // verify the default value of parameter 'page'
 
           if (typeof page === "undefined" || page === null) {
@@ -203,19 +207,33 @@ var ContributionApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
+          } // verify the null value of parameter 'after'
+
+          if (typeof after === "undefined") {
+            after = null;
+          } // verify the null value of parameter 'before'
+
+          if (typeof before === "undefined") {
+            before = null;
+          } // verify the null value of parameter 'feedback'
+
+          if (typeof feedback === "undefined") {
+            feedback = null;
           }
 
           if (typeof credentials === "undefined" || credentials === null) {
             throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetContributionsByFeedback'
+              'Missing the required parameter "credentials" when calling cgetContributions'
             );
           }
 
-          var pathParams = {
-            feedback: feedback
-          };
+          var pathParams = {};
           var bodyParam = null;
           var queryParams = {
+            after: after,
+            before: before,
+            feedback: feedback,
+            order: order,
             page: page,
             limit: limit
           };
@@ -229,7 +247,93 @@ var ContributionApi =
           var contentTypes = ["application/json;charset=UTF-8"];
           var accepts = ["application/hal+json;charset=UTF-8"];
           return this.callApi(
-            "/feedbacks/{feedback}/contributions",
+            "/contributions",
+            "GET",
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+          );
+        }
+        /**
+         * Retrieve one Contribution resource.
+         * @param { String } xKeyclicApp
+         * @param { String } contribution The identifier of the resource.
+         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+         * @param { Contribution }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+         * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { String } xKeyclicAppVersion
+         */
+      },
+      {
+        key: "getContribution",
+        value: function getContribution() {
+          var returnType =
+            arguments.length > 0 && arguments[0] !== undefined
+              ? arguments[0]
+              : null;
+          var options = arguments.length > 1 ? arguments[1] : undefined;
+          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+
+          if (returnType === null) {
+            returnType = _Contribution.default;
+          }
+
+          var xKeyclicApp = options.xKeyclicApp,
+            contribution = options.contribution,
+            acceptLanguage = options.acceptLanguage,
+            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+            throw new window.Error(
+              'Missing the required parameter "xKeyclicApp" when calling getContribution'
+            );
+          } // verify the required parameter 'contribution' is set
+
+          if (typeof contribution === "undefined" || contribution === null) {
+            throw new window.Error(
+              'Missing the required parameter "contribution" when calling getContribution'
+            );
+          } // verify the default value of parameter 'acceptLanguage'
+
+          if (
+            typeof acceptLanguage === "undefined" ||
+            acceptLanguage === null
+          ) {
+            acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xKeyclicAppVersion'
+
+          if (typeof xKeyclicAppVersion === "undefined") {
+            xKeyclicAppVersion = null;
+          }
+
+          if (typeof credentials === "undefined" || credentials === null) {
+            throw new window.Error(
+              'Missing the required parameter "credentials" when calling getContribution'
+            );
+          }
+
+          var pathParams = {
+            contribution: contribution
+          };
+          var bodyParam = null;
+          var queryParams = {};
+          var headerParams = {
+            "accept-language": acceptLanguage,
+            "x-keyclic-app": xKeyclicApp,
+            "x-keyclic-app-version": xKeyclicAppVersion
+          };
+          var credentialParams = credentials;
+          var authNames = ["bearer"];
+          var contentTypes = ["application/json;charset=UTF-8"];
+          var accepts = ["application/hal+json;charset=UTF-8"];
+          return this.callApi(
+            "/contributions/{contribution}",
             "GET",
             pathParams,
             queryParams,
@@ -245,16 +349,15 @@ var ContributionApi =
         /**
          * Create one Contribution resource.
          * @param { String } xKeyclicApp
-         * @param { String } feedback The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+         * @param { Contribution }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
          * @param { String } xKeyclicAppVersion
          */
       },
       {
-        key: "postContributionByFeedback",
-        value: function postContributionByFeedback() {
+        key: "postContribution",
+        value: function postContribution() {
           var returnType =
             arguments.length > 0 && arguments[0] !== undefined
               ? arguments[0]
@@ -263,23 +366,16 @@ var ContributionApi =
           var credentials = arguments.length > 2 ? arguments[2] : undefined;
 
           if (returnType === null) {
-            returnType = _Operation.default;
+            returnType = _Contribution.default;
           }
 
           var xKeyclicApp = options.xKeyclicApp,
-            feedback = options.feedback,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling postContributionByFeedback'
-            );
-          } // verify the required parameter 'feedback' is set
-
-          if (typeof feedback === "undefined" || feedback === null) {
-            throw new window.Error(
-              'Missing the required parameter "feedback" when calling postContributionByFeedback'
+              'Missing the required parameter "xKeyclicApp" when calling postContribution'
             );
           } // verify the default value of parameter 'acceptLanguage'
 
@@ -296,13 +392,11 @@ var ContributionApi =
 
           if (typeof credentials === "undefined" || credentials === null) {
             throw new window.Error(
-              'Missing the required parameter "credentials" when calling postContributionByFeedback'
+              'Missing the required parameter "credentials" when calling postContribution'
             );
           }
 
-          var pathParams = {
-            feedback: feedback
-          };
+          var pathParams = {};
           var bodyParam = null;
           var queryParams = {};
           var headerParams = {
@@ -315,7 +409,7 @@ var ContributionApi =
           var contentTypes = ["application/json;charset=UTF-8"];
           var accepts = ["application/hal+json;charset=UTF-8"];
           return this.callApi(
-            "/feedbacks/{feedback}/contributions",
+            "/contributions",
             "POST",
             pathParams,
             queryParams,

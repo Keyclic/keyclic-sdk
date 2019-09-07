@@ -4,155 +4,14 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cgetOccupants**](OccupantApi.md#cgetOccupants) | **GET** /occupants | Retrieve all Occupant resources.
-[**cgetOccupantsByPlace**](OccupantApi.md#cgetOccupantsByPlace) | **GET** /places/{place}/occupants | Retrieve all Occupant resources.
-[**deleteOccupantByPlaceAndOccupant**](OccupantApi.md#deleteOccupantByPlaceAndOccupant) | **DELETE** /places/{place}/occupants/{occupant} | Remove one Occupant resource.
+[**deleteOccupant**](OccupantApi.md#deleteOccupant) | **DELETE** /occupants/{occupant} | Remove one Occupant resource.
 [**getOccupant**](OccupantApi.md#getOccupant) | **GET** /occupants/{occupant} | Retrieve one Occupant resource.
-[**postOccupantByPlace**](OccupantApi.md#postOccupantByPlace) | **POST** /places/{place}/occupants | Create one Occupant resource.
+[**postOccupant**](OccupantApi.md#postOccupant) | **POST** /occupants | Create one Occupant resource.
 
 
-<a name="cgetOccupants"></a>
-# **cgetOccupants**
-> OccupantPagination cgetOccupants(xKeyclicApp, , opts)
-
-Retrieve all Occupant resources.
-
-### Example
-```javascript
-import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
-let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
-
-// Configure API key authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//bearer.apiKeyPrefix = 'Token';
-
-let apiInstance = new @KeyclicSdkJavascript.OccupantApi();
-
-let xKeyclicApp = "com.keyclic.app"; // String | 
-
-let opts = { 
-  'acceptLanguage': "fr-FR", // String | 
-  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'order': "desc", // String | 
-  'person': "person_example", // String | The identifier of the resource.
-  'page': 1, // Number | Page of the overview.
-  'limit': 10 // Number | Page of the overview.
-};
-
-apiInstance.cgetOccupants(xKeyclicApp, , opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
- **xKeyclicAppVersion** | **String**|  | [optional] 
- **after** | **Date**|  | [optional] 
- **before** | **Date**|  | [optional] 
- **order** | **String**|  | [optional] [default to desc]
- **person** | [**String**](.md)| The identifier of the resource. | [optional] 
- **page** | **Number**| Page of the overview. | [optional] [default to 1]
- **limit** | **Number**| Page of the overview. | [optional] [default to 10]
-
-### Return type
-
-[**OccupantPagination**](OccupantPagination.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=UTF-8
- - **Accept**: application/hal+json;charset=UTF-8
-
-<a name="cgetOccupantsByPlace"></a>
-# **cgetOccupantsByPlace**
-> OccupantPagination cgetOccupantsByPlace(xKeyclicApp, place, opts)
-
-Retrieve all Occupant resources.
-
-### Example
-```javascript
-import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
-let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
-
-// Configure API key authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//bearer.apiKeyPrefix = 'Token';
-
-let apiInstance = new @KeyclicSdkJavascript.OccupantApi();
-
-let xKeyclicApp = "com.keyclic.app"; // String | 
-
-let place = "place_example"; // String | The identifier of the resource.
-
-let opts = { 
-  'acceptLanguage': "fr-FR", // String | 
-  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'order': "desc", // String | 
-  'person': "person_example", // String | The identifier of the resource.
-  'page': 1, // Number | Page of the overview.
-  'limit': 10 // Number | Page of the overview.
-};
-
-apiInstance.cgetOccupantsByPlace(xKeyclicApp, place, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **place** | [**String**](.md)| The identifier of the resource. | 
- **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
- **xKeyclicAppVersion** | **String**|  | [optional] 
- **after** | **Date**|  | [optional] 
- **before** | **Date**|  | [optional] 
- **order** | **String**|  | [optional] [default to desc]
- **person** | [**String**](.md)| The identifier of the resource. | [optional] 
- **page** | **Number**| Page of the overview. | [optional] [default to 1]
- **limit** | **Number**| Page of the overview. | [optional] [default to 10]
-
-### Return type
-
-[**OccupantPagination**](OccupantPagination.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=UTF-8
- - **Accept**: application/hal+json;charset=UTF-8
-
-<a name="deleteOccupantByPlaceAndOccupant"></a>
-# **deleteOccupantByPlaceAndOccupant**
-> Organization deleteOccupantByPlaceAndOccupant(xKeyclicApp, place, occupant, opts)
+<a name="deleteOccupant"></a>
+# **deleteOccupant**
+> deleteOccupant(xKeyclicApp, occupant, opts)
 
 Remove one Occupant resource.
 
@@ -171,8 +30,6 @@ let apiInstance = new @KeyclicSdkJavascript.OccupantApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let place = "place_example"; // String | The identifier of the resource.
-
 let occupant = "occupant_example"; // String | The identifier of the resource.
 
 let opts = { 
@@ -180,11 +37,11 @@ let opts = {
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.deleteOccupantByPlaceAndOccupant(xKeyclicApp, place, occupant, opts, (error, data, response) => {
+apiInstance.deleteOccupant(xKeyclicApp, occupant, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -194,14 +51,13 @@ apiInstance.deleteOccupantByPlaceAndOccupant(xKeyclicApp, place, occupant, opts,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **place** | [**String**](.md)| The identifier of the resource. | 
  **occupant** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 
-[**Organization**](Organization.md)
+null (empty response body)
 
 ### Authorization
 
@@ -271,9 +127,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json;charset=UTF-8
  - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="postOccupantByPlace"></a>
-# **postOccupantByPlace**
-> Occupant postOccupantByPlace(xKeyclicApp, personData, place, opts)
+<a name="postOccupant"></a>
+# **postOccupant**
+> Occupant postOccupant(xKeyclicApp, occupantData, opts)
 
 Create one Occupant resource.
 
@@ -292,16 +148,14 @@ let apiInstance = new @KeyclicSdkJavascript.OccupantApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let personData = new @KeyclicSdkJavascript.PersonData(); // PersonData | 
-
-let place = "place_example"; // String | The identifier of the resource.
+let occupantData = new @KeyclicSdkJavascript.OccupantData(); // OccupantData | 
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.postOccupantByPlace(xKeyclicApp, personData, place, opts, (error, data, response) => {
+apiInstance.postOccupant(xKeyclicApp, occupantData, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -315,8 +169,7 @@ apiInstance.postOccupantByPlace(xKeyclicApp, personData, place, opts, (error, da
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **personData** | [**PersonData**](PersonData.md)|  | 
- **place** | [**String**](.md)| The identifier of the resource. | 
+ **occupantData** | [**OccupantData**](OccupantData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

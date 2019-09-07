@@ -49,7 +49,6 @@ var MemberLinksSelfIriTemplateMapping =
     function MemberLinksSelfIriTemplateMapping() {
       _classCallCheck(this, MemberLinksSelfIriTemplateMapping);
 
-      this.organization = null;
       this.member = null;
     }
     /**
@@ -74,13 +73,6 @@ var MemberLinksSelfIriTemplateMapping =
 
           if (object === null) {
             object = new MemberLinksSelfIriTemplateMapping();
-          }
-
-          if (data.hasOwnProperty("organization")) {
-            object.organization = _ApiClient.default.convertToType(
-              data["organization"],
-              "String"
-            );
           }
 
           if (data.hasOwnProperty("member")) {

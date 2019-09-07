@@ -35,6 +35,7 @@ export default class Category {
     this.identificationNumber = null;
     this.name = name;
     this.type = null;
+    this.updatedAt = null;
 
     this.linksType = CategoryLinks;
   }
@@ -80,6 +81,9 @@ export default class Category {
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

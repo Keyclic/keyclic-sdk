@@ -10,17 +10,9 @@ Name | Type | Description | Notes
 ## Enum: TransitionEnum
 
 
-* `deliver` (value: `"deliver"`)
-
-* `dispatch` (value: `"dispatch"`)
-
-* `fail` (value: `"fail"`)
-
 * `process` (value: `"process"`)
 
 * `publish` (value: `"publish"`)
-
-* `success` (value: `"success"`)
 
 
 

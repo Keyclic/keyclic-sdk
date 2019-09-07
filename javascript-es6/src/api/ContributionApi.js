@@ -11,9 +11,9 @@
  */
 
 import ApiClient from "../ApiClient";
-import ActivityAggregatedPagination from "../model/ActivityAggregatedPagination";
+import Contribution from "../model/Contribution";
+import ContributionPagination from "../model/ContributionPagination";
 import Error from "../model/Error";
-import Operation from "../model/Operation";
 
 /**
  * Contribution service.
@@ -33,24 +33,30 @@ export default class ContributionApi extends ApiClient {
   /**
    * Retrieve all Contribution resources.
    * @param { String } xKeyclicApp
-   * @param { String } feedback The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { ActivityAggregatedPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { ContributionPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { String } feedback The identifier of the resource.
+   * @param { module:model/String } order   (default to desc)
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetContributionsByFeedback(returnType = null, options, credentials) {
+  cgetContributions(returnType = null, options, credentials) {
     if (returnType === null) {
-      returnType = ActivityAggregatedPagination;
+      returnType = ContributionPagination;
     }
 
     let {
       xKeyclicApp,
-      feedback,
       acceptLanguage,
       xKeyclicAppVersion,
+      after,
+      before,
+      feedback,
+      order,
       page,
       limit
     } = options;
@@ -58,20 +64,18 @@ export default class ContributionApi extends ApiClient {
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling cgetContributionsByFeedback'
-      );
-    }
-
-    // verify the required parameter 'feedback' is set
-    if (typeof feedback === "undefined" || feedback === null) {
-      throw new window.Error(
-        'Missing the required parameter "feedback" when calling cgetContributionsByFeedback'
+        'Missing the required parameter "xKeyclicApp" when calling cgetContributions'
       );
     }
 
     // verify the default value of parameter 'acceptLanguage'
     if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
       acceptLanguage = "fr-FR";
+    }
+
+    // verify the default value of parameter 'order'
+    if (typeof order === "undefined" || order === null) {
+      order = "desc";
     }
 
     // verify the default value of parameter 'page'
@@ -89,19 +93,36 @@ export default class ContributionApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
+    // verify the null value of parameter 'after'
+    if (typeof after === "undefined") {
+      after = null;
+    }
+
+    // verify the null value of parameter 'before'
+    if (typeof before === "undefined") {
+      before = null;
+    }
+
+    // verify the null value of parameter 'feedback'
+    if (typeof feedback === "undefined") {
+      feedback = null;
+    }
+
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetContributionsByFeedback'
+        'Missing the required parameter "credentials" when calling cgetContributions'
       );
     }
 
-    let pathParams = {
-      feedback: feedback
-    };
+    let pathParams = {};
 
     let bodyParam = null;
 
     let queryParams = {
+      after: after,
+      before: before,
+      feedback: feedback,
+      order: order,
       page: page,
       limit: limit
     };
@@ -121,7 +142,7 @@ export default class ContributionApi extends ApiClient {
     let accepts = ["application/hal+json;charset=UTF-8"];
 
     return this.callApi(
-      "/feedbacks/{feedback}/contributions",
+      "/contributions",
       "GET",
       pathParams,
       queryParams,
@@ -136,32 +157,37 @@ export default class ContributionApi extends ApiClient {
   }
 
   /**
-   * Create one Contribution resource.
+   * Retrieve one Contribution resource.
    * @param { String } xKeyclicApp
-   * @param { String } feedback The identifier of the resource.
+   * @param { String } contribution The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { Contribution }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postContributionByFeedback(returnType = null, options, credentials) {
+  getContribution(returnType = null, options, credentials) {
     if (returnType === null) {
-      returnType = Operation;
+      returnType = Contribution;
     }
 
-    let { xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion } = options;
+    let {
+      xKeyclicApp,
+      contribution,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling postContributionByFeedback'
+        'Missing the required parameter "xKeyclicApp" when calling getContribution'
       );
     }
 
-    // verify the required parameter 'feedback' is set
-    if (typeof feedback === "undefined" || feedback === null) {
+    // verify the required parameter 'contribution' is set
+    if (typeof contribution === "undefined" || contribution === null) {
       throw new window.Error(
-        'Missing the required parameter "feedback" when calling postContributionByFeedback'
+        'Missing the required parameter "contribution" when calling getContribution'
       );
     }
 
@@ -177,12 +203,12 @@ export default class ContributionApi extends ApiClient {
 
     if (typeof credentials === "undefined" || credentials === null) {
       throw new window.Error(
-        'Missing the required parameter "credentials" when calling postContributionByFeedback'
+        'Missing the required parameter "credentials" when calling getContribution'
       );
     }
 
     let pathParams = {
-      feedback: feedback
+      contribution: contribution
     };
 
     let bodyParam = null;
@@ -204,7 +230,80 @@ export default class ContributionApi extends ApiClient {
     let accepts = ["application/hal+json;charset=UTF-8"];
 
     return this.callApi(
-      "/feedbacks/{feedback}/contributions",
+      "/contributions/{contribution}",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
+   * Create one Contribution resource.
+   * @param { String } xKeyclicApp
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Contribution }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  postContribution(returnType = null, options, credentials) {
+    if (returnType === null) {
+      returnType = Contribution;
+    }
+
+    let { xKeyclicApp, acceptLanguage, xKeyclicAppVersion } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling postContribution'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    if (typeof credentials === "undefined" || credentials === null) {
+      throw new window.Error(
+        'Missing the required parameter "credentials" when calling postContribution'
+      );
+    }
+
+    let pathParams = {};
+
+    let bodyParam = null;
+
+    let queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    let credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/contributions",
       "POST",
       pathParams,
       queryParams,

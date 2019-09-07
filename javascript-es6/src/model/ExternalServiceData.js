@@ -24,10 +24,22 @@ export default class ExternalServiceData {
     
      * @param organization { String }
     
+     * @param name { String }
+    
+     * @param provider { String }
+    
      */
-  constructor(organization) {
+  constructor(
+    organization,
+
+    name,
+
+    provider
+  ) {
     this.organization = organization;
-    this.name = null;
+    this.name = name;
+    this.description = null;
+    this.provider = provider;
   }
 
   /**
@@ -53,6 +65,15 @@ export default class ExternalServiceData {
     }
     if (data.hasOwnProperty("name")) {
       object.name = ApiClient.convertToType(data["name"], "String");
+    }
+    if (data.hasOwnProperty("description")) {
+      object.description = ApiClient.convertToType(
+        data["description"],
+        "String"
+      );
+    }
+    if (data.hasOwnProperty("provider")) {
+      object.provider = ApiClient.convertToType(data["provider"], "String");
     }
 
     return object;

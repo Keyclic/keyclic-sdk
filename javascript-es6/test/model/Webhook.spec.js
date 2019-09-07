@@ -59,6 +59,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property createdAt (base name: "createdAt")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instane = new @KeyclicSdkJavascript.Webhook();
+      //expect(instance).to.be();
+    });
+
     it('should have the property enabled (base name: "enabled")', function() {
       // uncomment below and update the code to test the property enabled
       //var instane = new @KeyclicSdkJavascript.Webhook();
@@ -85,6 +91,12 @@
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
+      //var instane = new @KeyclicSdkJavascript.Webhook();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property updatedAt (base name: "updatedAt")', function() {
+      // uncomment below and update the code to test the property updatedAt
       //var instane = new @KeyclicSdkJavascript.Webhook();
       //expect(instance).to.be();
     });

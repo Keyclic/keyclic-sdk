@@ -47,20 +47,30 @@
   }
 
   describe('ContributionApi', function() {
-    describe('cgetContributionsByFeedback', function() {
-      it('should call cgetContributionsByFeedback successfully', function(done) {
-        //uncomment below and update the code to test cgetContributionsByFeedback
-        //instance.cgetContributionsByFeedback(function(error) {
+    describe('cgetContributions', function() {
+      it('should call cgetContributions successfully', function(done) {
+        //uncomment below and update the code to test cgetContributions
+        //instance.cgetContributions(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postContributionByFeedback', function() {
-      it('should call postContributionByFeedback successfully', function(done) {
-        //uncomment below and update the code to test postContributionByFeedback
-        //instance.postContributionByFeedback(function(error) {
+    describe('getContribution', function() {
+      it('should call getContribution successfully', function(done) {
+        //uncomment below and update the code to test getContribution
+        //instance.getContribution(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postContribution', function() {
+      it('should call postContribution successfully', function(done) {
+        //uncomment below and update the code to test postContribution
+        //instance.postContribution(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

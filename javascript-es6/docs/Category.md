@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **identificationNumber** | **String** |  | [optional] 
 **name** | **String** |  | 
 **type** | **String** |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 
 

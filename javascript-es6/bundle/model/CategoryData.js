@@ -51,13 +51,16 @@ var CategoryData =
   
    * @param icon { String }
   
+   * @param organization { String }
+  
    */
-    function CategoryData(name, color, icon) {
+    function CategoryData(name, color, icon, organization) {
       _classCallCheck(this, CategoryData);
 
       this.name = name;
       this.color = color;
       this.icon = icon;
+      this.organization = organization;
     }
     /**
      * Constructs a "CategoryData" from a plain JavaScript object.
@@ -100,6 +103,13 @@ var CategoryData =
           if (data.hasOwnProperty("icon")) {
             object.icon = _ApiClient.default.convertToType(
               data["icon"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
               "String"
             );
           }

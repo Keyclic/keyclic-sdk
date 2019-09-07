@@ -47,10 +47,70 @@
   }
 
   describe('PersonApi', function() {
+    describe('cgetFeedbackByPerson', function() {
+      it('should call cgetFeedbackByPerson successfully', function(done) {
+        //uncomment below and update the code to test cgetFeedbackByPerson
+        //instance.cgetFeedbackByPerson(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetMembershipsByPerson', function() {
+      it('should call cgetMembershipsByPerson successfully', function(done) {
+        //uncomment below and update the code to test cgetMembershipsByPerson
+        //instance.cgetMembershipsByPerson(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetOccupantsByPerson', function() {
+      it('should call cgetOccupantsByPerson successfully', function(done) {
+        //uncomment below and update the code to test cgetOccupantsByPerson
+        //instance.cgetOccupantsByPerson(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetOperationsByPerson', function() {
+      it('should call cgetOperationsByPerson successfully', function(done) {
+        //uncomment below and update the code to test cgetOperationsByPerson
+        //instance.cgetOperationsByPerson(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('cgetPeople', function() {
       it('should call cgetPeople successfully', function(done) {
         //uncomment below and update the code to test cgetPeople
         //instance.cgetPeople(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetReportsByPerson', function() {
+      it('should call cgetReportsByPerson successfully', function(done) {
+        //uncomment below and update the code to test cgetReportsByPerson
+        //instance.cgetReportsByPerson(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('cgetReviewRequestsByPerson', function() {
+      it('should call cgetReviewRequestsByPerson successfully', function(done) {
+        //uncomment below and update the code to test cgetReviewRequestsByPerson
+        //instance.cgetReviewRequestsByPerson(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

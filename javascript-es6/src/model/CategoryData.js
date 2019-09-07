@@ -28,17 +28,22 @@ export default class CategoryData {
     
      * @param icon { String }
     
+     * @param organization { String }
+    
      */
   constructor(
     name,
 
     color,
 
-    icon
+    icon,
+
+    organization
   ) {
     this.name = name;
     this.color = color;
     this.icon = icon;
+    this.organization = organization;
   }
 
   /**
@@ -64,6 +69,12 @@ export default class CategoryData {
     }
     if (data.hasOwnProperty("icon")) {
       object.icon = ApiClient.convertToType(data["icon"], "String");
+    }
+    if (data.hasOwnProperty("organization")) {
+      object.organization = ApiClient.convertToType(
+        data["organization"],
+        "String"
+      );
     }
 
     return object;

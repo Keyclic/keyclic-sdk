@@ -45,13 +45,16 @@ var MemberData =
    * @alias module:model/MemberData
    * @class
   
-   * @param member { String }
+   * @param person { String }
+  
+   * @param organization { String }
   
    */
-    function MemberData(member) {
+    function MemberData(person, organization) {
       _classCallCheck(this, MemberData);
 
-      this.member = member;
+      this.person = person;
+      this.organization = organization;
     }
     /**
      * Constructs a "MemberData" from a plain JavaScript object.
@@ -77,9 +80,16 @@ var MemberData =
             object = new MemberData();
           }
 
-          if (data.hasOwnProperty("member")) {
-            object.member = _ApiClient.default.convertToType(
-              data["member"],
+          if (data.hasOwnProperty("person")) {
+            object.person = _ApiClient.default.convertToType(
+              data["person"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
               "String"
             );
           }

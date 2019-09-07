@@ -5,6 +5,7 @@ class CategoryData {
     this.name,
     this.color,
     this.icon,
+    this.organization,
   });
 
   CategoryData.fromJson(Map<String, dynamic> json) {
@@ -14,6 +15,7 @@ class CategoryData {
     name = json['name'];
     color = json['color'];
     icon = json['icon'];
+    organization = json['organization'];
   }
 
   String name;
@@ -21,6 +23,8 @@ class CategoryData {
   String color;
 
   String icon;
+
+  String organization;
 
   @override
   bool operator ==(dynamic other) {
@@ -33,12 +37,18 @@ class CategoryData {
         runtimeType == other.runtimeType &&
         name == other.name &&
         color == other.color &&
-        icon == other.icon;
+        icon == other.icon &&
+        organization == other.organization;
   }
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ name.hashCode ^ color.hashCode ^ icon.hashCode;
+  int get hashCode =>
+      0 ^
+      name.hashCode ^
+      color.hashCode ^
+      icon.hashCode ^
+      organization.hashCode;
 
   static List<CategoryData> listFromJson(List<dynamic> json) {
     return json == null
@@ -60,11 +70,12 @@ class CategoryData {
       'name': name,
       'color': color,
       'icon': icon,
+      'organization': organization,
     };
   }
 
   @override
   String toString() {
-    return 'CategoryData[name=$name, color=$color, icon=$icon, ]';
+    return 'CategoryData[name=$name, color=$color, icon=$icon, organization=$organization, ]';
   }
 }

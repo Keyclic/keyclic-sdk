@@ -8,6 +8,7 @@ class Document {
     this.id,
     this.permission,
     this.type,
+    this.updatedAt,
   });
 
   Document.fromJson(Map<String, dynamic> json) {
@@ -24,6 +25,11 @@ class Document {
     id = json['id'];
     permission = DocumentPermission.fromJson(json['permission']);
     type = json['type'];
+    updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    if (updatedAt is DateTime && updatedAt.isUtc == false) {
+      updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
+    }
   }
 
   DocumentLinks links;
@@ -37,6 +43,8 @@ class Document {
   DocumentPermission permission;
 
   String type;
+
+  DateTime updatedAt;
 
   @override
   bool operator ==(dynamic other) {
@@ -52,7 +60,8 @@ class Document {
         file == other.file &&
         id == other.id &&
         permission == other.permission &&
-        type == other.type;
+        type == other.type &&
+        updatedAt == other.updatedAt;
   }
 
   /// By default hashCode return reference
@@ -64,7 +73,8 @@ class Document {
       file.hashCode ^
       id.hashCode ^
       permission.hashCode ^
-      type.hashCode;
+      type.hashCode ^
+      updatedAt.hashCode;
 
   static List<Document> listFromJson(List<dynamic> json) {
     return json == null
@@ -89,11 +99,12 @@ class Document {
       'id': id,
       'permission': permission,
       'type': type,
+      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'Document[links=$links, createdAt=$createdAt, file=$file, id=$id, permission=$permission, type=$type, ]';
+    return 'Document[links=$links, createdAt=$createdAt, file=$file, id=$id, permission=$permission, type=$type, updatedAt=$updatedAt, ]';
   }
 }

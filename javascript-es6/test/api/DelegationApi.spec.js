@@ -47,20 +47,30 @@
   }
 
   describe('DelegationApi', function() {
-    describe('cgetDelegationsByOrganization', function() {
-      it('should call cgetDelegationsByOrganization successfully', function(done) {
-        //uncomment below and update the code to test cgetDelegationsByOrganization
-        //instance.cgetDelegationsByOrganization(function(error) {
+    describe('getDelegation', function() {
+      it('should call getDelegation successfully', function(done) {
+        //uncomment below and update the code to test getDelegation
+        //instance.getDelegation(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getDelegation', function() {
-      it('should call getDelegation successfully', function(done) {
-        //uncomment below and update the code to test getDelegation
-        //instance.getDelegation(function(error) {
+    describe('postDelegation', function() {
+      it('should call postDelegation successfully', function(done) {
+        //uncomment below and update the code to test postDelegation
+        //instance.postDelegation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postWorkflowByDelegation', function() {
+      it('should call postWorkflowByDelegation successfully', function(done) {
+        //uncomment below and update the code to test postWorkflowByDelegation
+        //instance.postWorkflowByDelegation(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

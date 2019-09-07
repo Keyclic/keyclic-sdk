@@ -6,19 +6,14 @@ class OperationApi {
 
   final ApiClient apiClient;
 
-  /// Retrieve all Operation resources.
+  /// Retrieve all Comment resources.
   ///
   ///
-  Future<OperationPagination> cgetOperationsByOrganization(
+  Future<ActivityPagination> cgetCommentsByOperation(
     String xKeyclicApp,
-    String organization, {
+    String operation, {
     String acceptLanguage,
     String xKeyclicAppVersion,
-    DateTime after,
-    DateTime before,
-    String order,
-    String query,
-    String state,
     int page,
     int limit,
   }) async {
@@ -28,27 +23,17 @@ class OperationApi {
       throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
-    if (organization == null) {
-      throw ApiException(0, "Missing required param: organization");
+    if (operation == null) {
+      throw ApiException(0, "Missing required param: operation");
     }
 
     // create path and map variables
-    final String path = "/organizations/{organization}/operations"
+    final String path = "/operations/{operation}/comments"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "organization" + "}", organization.toString());
+        .replaceAll("{" + "operation" + "}", operation.toString());
 
     // query params
     final List<QueryParam> queryParams = [
-      if (after != null)
-        ..._convertParametersForCollectionFormat("after", after),
-      if (before != null)
-        ..._convertParametersForCollectionFormat("before", before),
-      if (order != null)
-        ..._convertParametersForCollectionFormat("order", order),
-      if (query != null)
-        ..._convertParametersForCollectionFormat("query", query),
-      if (state != null)
-        ..._convertParametersForCollectionFormat("state", state),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),
@@ -90,26 +75,19 @@ class OperationApi {
       return null;
     }
 
-    return apiClient.deserialize(response.body, 'OperationPagination')
-        as OperationPagination;
+    return apiClient.deserialize(response.body, 'ActivityPagination')
+        as ActivityPagination;
   }
 
-  /// Retrieve all Operation resources.
+  /// Remove one Image resource.
   ///
   ///
-  Future<OperationPagination> cgetOperationsByPerson(
+  Future<void> deleteImageByOperationAndImage(
     String xKeyclicApp,
-    String person, {
+    String operation,
+    String image, {
     String acceptLanguage,
     String xKeyclicAppVersion,
-    DateTime after,
-    DateTime before,
-    String order,
-    String organization,
-    String query,
-    String state,
-    int page,
-    int limit,
   }) async {
     // verify required params are set
 
@@ -117,33 +95,22 @@ class OperationApi {
       throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
-    if (person == null) {
-      throw ApiException(0, "Missing required param: person");
+    if (operation == null) {
+      throw ApiException(0, "Missing required param: operation");
+    }
+
+    if (image == null) {
+      throw ApiException(0, "Missing required param: image");
     }
 
     // create path and map variables
-    final String path = "/people/{person}/operations"
+    final String path = "/operations/{operation}/images/{image}"
         .replaceAll("{format}", "json")
-        .replaceAll("{" + "person" + "}", person.toString());
+        .replaceAll("{" + "operation" + "}", operation.toString())
+        .replaceAll("{" + "image" + "}", image.toString());
 
     // query params
-    final List<QueryParam> queryParams = [
-      if (after != null)
-        ..._convertParametersForCollectionFormat("after", after),
-      if (before != null)
-        ..._convertParametersForCollectionFormat("before", before),
-      if (order != null)
-        ..._convertParametersForCollectionFormat("order", order),
-      if (organization != null)
-        ..._convertParametersForCollectionFormat("organization", organization),
-      if (query != null)
-        ..._convertParametersForCollectionFormat("query", query),
-      if (state != null)
-        ..._convertParametersForCollectionFormat("state", state),
-      if (page != null) ..._convertParametersForCollectionFormat("page", page),
-      if (limit != null)
-        ..._convertParametersForCollectionFormat("limit", limit),
-    ];
+    final List<QueryParam> queryParams = [];
 
     // header params
     final Map<String, String> headerParams = {
@@ -165,7 +132,7 @@ class OperationApi {
 
     final Response response = await apiClient.invokeAPI(
       path,
-      'GET',
+      'DELETE',
       queryParams,
       postBody,
       headerParams,
@@ -178,102 +145,10 @@ class OperationApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
-    return apiClient.deserialize(response.body, 'OperationPagination')
-        as OperationPagination;
-  }
-
-  /// Retrieve all Operation resources.
-  ///
-  ///
-  Future<OperationPagination> cgetOperationsByReport(
-    String xKeyclicApp,
-    String report, {
-    String acceptLanguage,
-    String xKeyclicAppVersion,
-    DateTime after,
-    DateTime before,
-    String order,
-    String organization,
-    String query,
-    String state,
-    int page,
-    int limit,
-  }) async {
-    // verify required params are set
-
-    if (xKeyclicApp == null) {
-      throw ApiException(0, "Missing required param: xKeyclicApp");
-    }
-
-    if (report == null) {
-      throw ApiException(0, "Missing required param: report");
-    }
-
-    // create path and map variables
-    final String path = "/reports/{report}/operations"
-        .replaceAll("{format}", "json")
-        .replaceAll("{" + "report" + "}", report.toString());
-
-    // query params
-    final List<QueryParam> queryParams = [
-      if (after != null)
-        ..._convertParametersForCollectionFormat("after", after),
-      if (before != null)
-        ..._convertParametersForCollectionFormat("before", before),
-      if (order != null)
-        ..._convertParametersForCollectionFormat("order", order),
-      if (organization != null)
-        ..._convertParametersForCollectionFormat("organization", organization),
-      if (query != null)
-        ..._convertParametersForCollectionFormat("query", query),
-      if (state != null)
-        ..._convertParametersForCollectionFormat("state", state),
-      if (page != null) ..._convertParametersForCollectionFormat("page", page),
-      if (limit != null)
-        ..._convertParametersForCollectionFormat("limit", limit),
-    ];
-
-    // header params
-    final Map<String, String> headerParams = {
-      "accept-language": acceptLanguage,
-      "x-keyclic-app": xKeyclicApp,
-      "x-keyclic-app-version": xKeyclicAppVersion,
-    };
-
-    final List<String> contentTypes = [
-      "application/json;charset=UTF-8",
-      "application/json",
-    ];
-
-    final List<String> authNames = [
-      "bearer",
-    ];
-
-    final Object postBody = null;
-
-    final Response response = await apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
-    );
-
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, response.body);
-    }
-
-    if (response.body == null) {
-      return null;
-    }
-
-    return apiClient.deserialize(response.body, 'OperationPagination')
-        as OperationPagination;
+    return;
   }
 
   /// Remove one Operation resource.
@@ -408,6 +283,72 @@ class OperationApi {
     return apiClient.deserialize(response.body, 'Operation') as Operation;
   }
 
+  /// Retrieve one Tracking resource.
+  ///
+  ///
+  Future<Tracking> getTrackingByOperation(
+    String xKeyclicApp,
+    String operation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
+    // verify required params are set
+
+    if (xKeyclicApp == null) {
+      throw ApiException(0, "Missing required param: xKeyclicApp");
+    }
+
+    if (operation == null) {
+      throw ApiException(0, "Missing required param: operation");
+    }
+
+    // create path and map variables
+    final String path = "/operations/{operation}/tracking"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "operation" + "}", operation.toString());
+
+    // query params
+    final List<QueryParam> queryParams = [];
+
+    // header params
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
+
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
+
+    final List<String> authNames = [
+      "bearer",
+    ];
+
+    final Object postBody = null;
+
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    }
+
+    if (response.body == null) {
+      return null;
+    }
+
+    return apiClient.deserialize(response.body, 'Tracking') as Tracking;
+  }
+
   /// Edit one Operation resource.
   ///
   ///
@@ -479,6 +420,219 @@ class OperationApi {
     return apiClient.deserialize(response.body, 'Operation') as Operation;
   }
 
+  /// Create one Assign resource.
+  ///
+  ///
+  Future<Operation> postAssignByOperation(
+    String xKeyclicApp,
+    AssignData assignData,
+    String operation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
+    // verify required params are set
+
+    if (xKeyclicApp == null) {
+      throw ApiException(0, "Missing required param: xKeyclicApp");
+    }
+
+    if (assignData == null) {
+      throw ApiException(0, "Missing required param: assignData");
+    }
+
+    if (operation == null) {
+      throw ApiException(0, "Missing required param: operation");
+    }
+
+    // create path and map variables
+    final String path = "/operations/{operation}/assign"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "operation" + "}", operation.toString());
+
+    // query params
+    final List<QueryParam> queryParams = [];
+
+    // header params
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
+
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
+
+    final List<String> authNames = [
+      "bearer",
+    ];
+
+    final AssignData postBody = assignData;
+
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    }
+
+    if (response.body == null) {
+      return null;
+    }
+
+    return apiClient.deserialize(response.body, 'Operation') as Operation;
+  }
+
+  /// Create one Comment resource.
+  ///
+  ///
+  Future<Operation> postCommentByOperation(
+    String xKeyclicApp,
+    CommentData commentData,
+    String operation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
+    // verify required params are set
+
+    if (xKeyclicApp == null) {
+      throw ApiException(0, "Missing required param: xKeyclicApp");
+    }
+
+    if (commentData == null) {
+      throw ApiException(0, "Missing required param: commentData");
+    }
+
+    if (operation == null) {
+      throw ApiException(0, "Missing required param: operation");
+    }
+
+    // create path and map variables
+    final String path = "/operations/{operation}/comments"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "operation" + "}", operation.toString());
+
+    // query params
+    final List<QueryParam> queryParams = [];
+
+    // header params
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
+
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
+
+    final List<String> authNames = [
+      "bearer",
+    ];
+
+    final CommentData postBody = commentData;
+
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    }
+
+    if (response.body == null) {
+      return null;
+    }
+
+    return apiClient.deserialize(response.body, 'Operation') as Operation;
+  }
+
+  /// Create one Image resource.
+  ///
+  ///
+  Future<Operation> postImageByOperation(
+    String xKeyclicApp,
+    ImageData imageData,
+    String operation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
+    // verify required params are set
+
+    if (xKeyclicApp == null) {
+      throw ApiException(0, "Missing required param: xKeyclicApp");
+    }
+
+    if (imageData == null) {
+      throw ApiException(0, "Missing required param: imageData");
+    }
+
+    if (operation == null) {
+      throw ApiException(0, "Missing required param: operation");
+    }
+
+    // create path and map variables
+    final String path = "/operations/{operation}/images"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "operation" + "}", operation.toString());
+
+    // query params
+    final List<QueryParam> queryParams = [];
+
+    // header params
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
+
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
+
+    final List<String> authNames = [
+      "bearer",
+    ];
+
+    final ImageData postBody = imageData;
+
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    }
+
+    if (response.body == null) {
+      return null;
+    }
+
+    return apiClient.deserialize(response.body, 'Operation') as Operation;
+  }
+
   /// Create one Operation resource.
   ///
   ///
@@ -521,6 +675,150 @@ class OperationApi {
     ];
 
     final OperationData postBody = operationData;
+
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    }
+
+    if (response.body == null) {
+      return null;
+    }
+
+    return apiClient.deserialize(response.body, 'Operation') as Operation;
+  }
+
+  /// Create one Sign resource.
+  ///
+  ///
+  Future<Operation> postSignByOperation(
+    String xKeyclicApp,
+    SignatureData signatureData,
+    String operation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
+    // verify required params are set
+
+    if (xKeyclicApp == null) {
+      throw ApiException(0, "Missing required param: xKeyclicApp");
+    }
+
+    if (signatureData == null) {
+      throw ApiException(0, "Missing required param: signatureData");
+    }
+
+    if (operation == null) {
+      throw ApiException(0, "Missing required param: operation");
+    }
+
+    // create path and map variables
+    final String path = "/operations/{operation}/sign"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "operation" + "}", operation.toString());
+
+    // query params
+    final List<QueryParam> queryParams = [];
+
+    // header params
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
+
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
+
+    final List<String> authNames = [
+      "bearer",
+    ];
+
+    final SignatureData postBody = signatureData;
+
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    }
+
+    if (response.body == null) {
+      return null;
+    }
+
+    return apiClient.deserialize(response.body, 'Operation') as Operation;
+  }
+
+  /// Create one Workflow resource.
+  ///
+  ///
+  Future<Operation> postWorkflowByOperation(
+    String xKeyclicApp,
+    OperationWorkflowTransitionData operationWorkflowTransitionData,
+    String operation, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
+    // verify required params are set
+
+    if (xKeyclicApp == null) {
+      throw ApiException(0, "Missing required param: xKeyclicApp");
+    }
+
+    if (operationWorkflowTransitionData == null) {
+      throw ApiException(
+          0, "Missing required param: operationWorkflowTransitionData");
+    }
+
+    if (operation == null) {
+      throw ApiException(0, "Missing required param: operation");
+    }
+
+    // create path and map variables
+    final String path = "/operations/{operation}/workflow"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "operation" + "}", operation.toString());
+
+    // query params
+    final List<QueryParam> queryParams = [];
+
+    // header params
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
+
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
+
+    final List<String> authNames = [
+      "bearer",
+    ];
+
+    final OperationWorkflowTransitionData postBody =
+        operationWorkflowTransitionData;
 
     final Response response = await apiClient.invokeAPI(
       path,

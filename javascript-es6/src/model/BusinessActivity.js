@@ -30,10 +30,12 @@ export default class BusinessActivity {
   constructor(name) {
     this.links = null;
     this.alternateName = null;
+    this.createdAt = null;
     this.id = null;
     this.metadataSchema = null;
     this.name = name;
     this.type = null;
+    this.updatedAt = null;
 
     this.linksType = BusinessActivityLinks;
     this.metadataSchemaType = BusinessActivityMetadataSchema;
@@ -63,6 +65,9 @@ export default class BusinessActivity {
         "String"
       );
     }
+    if (data.hasOwnProperty("createdAt")) {
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
     }
@@ -77,6 +82,9 @@ export default class BusinessActivity {
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("updatedAt")) {
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;

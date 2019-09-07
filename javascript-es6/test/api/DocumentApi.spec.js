@@ -47,16 +47,6 @@
   }
 
   describe('DocumentApi', function() {
-    describe('cgetDocumentsByReport', function() {
-      it('should call cgetDocumentsByReport successfully', function(done) {
-        //uncomment below and update the code to test cgetDocumentsByReport
-        //instance.cgetDocumentsByReport(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('deleteDocument', function() {
       it('should call deleteDocument successfully', function(done) {
         //uncomment below and update the code to test deleteDocument
@@ -81,16 +71,6 @@
       it('should call patchDocument successfully', function(done) {
         //uncomment below and update the code to test patchDocument
         //instance.patchDocument(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('postDocumentByReport', function() {
-      it('should call postDocumentByReport successfully', function(done) {
-        //uncomment below and update the code to test postDocumentByReport
-        //instance.postDocumentByReport(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

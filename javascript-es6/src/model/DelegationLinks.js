@@ -12,10 +12,9 @@
 
 import ApiClient from "../ApiClient";
 import DelegationLinksCreatedBy from "./DelegationLinksCreatedBy";
-import DelegationLinksFrom from "./DelegationLinksFrom";
 import DelegationLinksReport from "./DelegationLinksReport";
 import DelegationLinksSelf from "./DelegationLinksSelf";
-import DelegationLinksTo from "./DelegationLinksTo";
+import DelegationLinksService from "./DelegationLinksService";
 
 /**
  * The DelegationLinks model module.
@@ -30,16 +29,14 @@ export default class DelegationLinks {
      */
   constructor() {
     this.createdBy = null;
-    this.from = null;
     this.report = null;
     this.self = null;
-    this.to = null;
+    this.service = null;
 
     this.createdByType = DelegationLinksCreatedBy;
-    this.fromType = DelegationLinksFrom;
     this.reportType = DelegationLinksReport;
     this.selfType = DelegationLinksSelf;
-    this.toType = DelegationLinksTo;
+    this.serviceType = DelegationLinksService;
   }
 
   /**
@@ -63,9 +60,6 @@ export default class DelegationLinks {
         object.createdByType
       );
     }
-    if (data.hasOwnProperty("from")) {
-      object.from = ApiClient.convertToType(data["from"], object.fromType);
-    }
     if (data.hasOwnProperty("report")) {
       object.report = ApiClient.convertToType(
         data["report"],
@@ -75,8 +69,11 @@ export default class DelegationLinks {
     if (data.hasOwnProperty("self")) {
       object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
-    if (data.hasOwnProperty("to")) {
-      object.to = ApiClient.convertToType(data["to"], object.toType);
+    if (data.hasOwnProperty("service")) {
+      object.service = ApiClient.convertToType(
+        data["service"],
+        object.serviceType
+      );
     }
 
     return object;

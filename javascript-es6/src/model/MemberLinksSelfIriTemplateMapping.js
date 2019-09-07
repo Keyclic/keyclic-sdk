@@ -24,7 +24,6 @@ export default class MemberLinksSelfIriTemplateMapping {
     
      */
   constructor() {
-    this.organization = null;
     this.member = null;
   }
 
@@ -43,12 +42,6 @@ export default class MemberLinksSelfIriTemplateMapping {
       object = new MemberLinksSelfIriTemplateMapping();
     }
 
-    if (data.hasOwnProperty("organization")) {
-      object.organization = ApiClient.convertToType(
-        data["organization"],
-        "String"
-      );
-    }
     if (data.hasOwnProperty("member")) {
       object.member = ApiClient.convertToType(data["member"], "String");
     }

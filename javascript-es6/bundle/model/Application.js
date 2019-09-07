@@ -56,10 +56,12 @@ var Application =
       _classCallCheck(this, Application);
 
       this.links = null;
+      this.createdAt = null;
       this.id = null;
       this.name = name;
       this.token = token;
       this.type = null;
+      this.updatedAt = null;
       this.version = null;
       this.linksType = _ApplicationLinks.default;
     }
@@ -94,6 +96,13 @@ var Application =
             );
           }
 
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
           if (data.hasOwnProperty("id")) {
             object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
@@ -116,6 +125,13 @@ var Application =
             object.type = _ApiClient.default.convertToType(
               data["type"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
             );
           }
 

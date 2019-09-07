@@ -4,91 +4,15 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cgetMembersByOrganization**](MemberApi.md#cgetMembersByOrganization) | **GET** /organizations/{organization}/members | Retrieve all Member resources.
-[**deleteMemberByOrganizationAndMember**](MemberApi.md#deleteMemberByOrganizationAndMember) | **DELETE** /organizations/{organization}/members/{member} | Remove one Member resource.
-[**getMemberByOrganizationAndMember**](MemberApi.md#getMemberByOrganizationAndMember) | **GET** /organizations/{organization}/members/{member} | Retrieve one Member resource.
-[**patchMemberByOrganizationAndMember**](MemberApi.md#patchMemberByOrganizationAndMember) | **PATCH** /organizations/{organization}/members/{member} | Edit one Member resource.
-[**postMemberByOrganization**](MemberApi.md#postMemberByOrganization) | **POST** /organizations/{organization}/members | Create one Member resource.
+[**deleteMember**](MemberApi.md#deleteMember) | **DELETE** /members/{member} | Remove one Member resource.
+[**getMember**](MemberApi.md#getMember) | **GET** /members/{member} | Retrieve one Member resource.
+[**patchMember**](MemberApi.md#patchMember) | **PATCH** /members/{member} | Edit one Member resource.
+[**postMember**](MemberApi.md#postMember) | **POST** /members | Create one Member resource.
 
 
-<a name="cgetMembersByOrganization"></a>
-# **cgetMembersByOrganization**
-> MemberPagination cgetMembersByOrganization(xKeyclicApp, organization, opts)
-
-Retrieve all Member resources.
-
-### Example
-```javascript
-import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
-let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
-
-// Configure API key authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//bearer.apiKeyPrefix = 'Token';
-
-let apiInstance = new @KeyclicSdkJavascript.MemberApi();
-
-let xKeyclicApp = "com.keyclic.app"; // String | 
-
-let organization = "organization_example"; // String | The identifier of the resource.
-
-let opts = { 
-  'acceptLanguage': "fr-FR", // String | 
-  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-  'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
-  'order': "desc", // String | 
-  'query': "query_example", // String | 
-  'role': "role_example", // String | 
-  'roles': "roles_example", // String | 
-  'page': 1, // Number | Page of the overview.
-  'limit': 10 // Number | Page of the overview.
-};
-
-apiInstance.cgetMembersByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource. | 
- **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
- **xKeyclicAppVersion** | **String**|  | [optional] 
- **after** | **Date**|  | [optional] 
- **before** | **Date**|  | [optional] 
- **order** | **String**|  | [optional] [default to desc]
- **query** | **String**|  | [optional] 
- **role** | **String**|  | [optional] 
- **roles** | **String**|  | [optional] 
- **page** | **Number**| Page of the overview. | [optional] [default to 1]
- **limit** | **Number**| Page of the overview. | [optional] [default to 10]
-
-### Return type
-
-[**MemberPagination**](MemberPagination.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=UTF-8
- - **Accept**: application/hal+json;charset=UTF-8
-
-<a name="deleteMemberByOrganizationAndMember"></a>
-# **deleteMemberByOrganizationAndMember**
-> Organization deleteMemberByOrganizationAndMember(xKeyclicApp, organization, member, opts)
+<a name="deleteMember"></a>
+# **deleteMember**
+> deleteMember(xKeyclicApp, member, opts)
 
 Remove one Member resource.
 
@@ -107,8 +31,6 @@ let apiInstance = new @KeyclicSdkJavascript.MemberApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let organization = "organization_example"; // String | The identifier of the resource.
-
 let member = "member_example"; // String | The identifier of the resource.
 
 let opts = { 
@@ -116,11 +38,11 @@ let opts = {
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.deleteMemberByOrganizationAndMember(xKeyclicApp, organization, member, opts, (error, data, response) => {
+apiInstance.deleteMember(xKeyclicApp, member, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -130,14 +52,13 @@ apiInstance.deleteMemberByOrganizationAndMember(xKeyclicApp, organization, membe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource. | 
  **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
 
-[**Organization**](Organization.md)
+null (empty response body)
 
 ### Authorization
 
@@ -148,9 +69,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json;charset=UTF-8
  - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="getMemberByOrganizationAndMember"></a>
-# **getMemberByOrganizationAndMember**
-> Member getMemberByOrganizationAndMember(xKeyclicApp, organization, member, opts)
+<a name="getMember"></a>
+# **getMember**
+> Member getMember(xKeyclicApp, member, opts)
 
 Retrieve one Member resource.
 
@@ -169,8 +90,6 @@ let apiInstance = new @KeyclicSdkJavascript.MemberApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let organization = "organization_example"; // String | The identifier of the resource.
-
 let member = "member_example"; // String | The identifier of the resource.
 
 let opts = { 
@@ -178,7 +97,7 @@ let opts = {
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.getMemberByOrganizationAndMember(xKeyclicApp, organization, member, opts, (error, data, response) => {
+apiInstance.getMember(xKeyclicApp, member, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -192,7 +111,6 @@ apiInstance.getMemberByOrganizationAndMember(xKeyclicApp, organization, member, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organization** | [**String**](.md)| The identifier of the resource. | 
  **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
@@ -210,9 +128,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json;charset=UTF-8
  - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="patchMemberByOrganizationAndMember"></a>
-# **patchMemberByOrganizationAndMember**
-> Member patchMemberByOrganizationAndMember(xKeyclicApp, memberPatch, organization, member, opts)
+<a name="patchMember"></a>
+# **patchMember**
+> Member patchMember(xKeyclicApp, memberPatch, member, opts)
 
 Edit one Member resource.
 
@@ -233,8 +151,6 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let memberPatch = new @KeyclicSdkJavascript.MemberPatch(); // MemberPatch | 
 
-let organization = "organization_example"; // String | The identifier of the resource.
-
 let member = "member_example"; // String | The identifier of the resource.
 
 let opts = { 
@@ -242,7 +158,7 @@ let opts = {
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.patchMemberByOrganizationAndMember(xKeyclicApp, memberPatch, organization, member, opts, (error, data, response) => {
+apiInstance.patchMember(xKeyclicApp, memberPatch, member, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -257,7 +173,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **memberPatch** | [**MemberPatch**](MemberPatch.md)|  | 
- **organization** | [**String**](.md)| The identifier of the resource. | 
  **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
@@ -275,9 +190,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json;charset=UTF-8
  - **Accept**: application/hal+json;charset=UTF-8
 
-<a name="postMemberByOrganization"></a>
-# **postMemberByOrganization**
-> Member postMemberByOrganization(xKeyclicApp, personData, organization, opts)
+<a name="postMember"></a>
+# **postMember**
+> Member postMember(xKeyclicApp, memberData, opts)
 
 Create one Member resource.
 
@@ -296,16 +211,14 @@ let apiInstance = new @KeyclicSdkJavascript.MemberApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let personData = new @KeyclicSdkJavascript.PersonData(); // PersonData | 
-
-let organization = "organization_example"; // String | The identifier of the resource.
+let memberData = new @KeyclicSdkJavascript.MemberData(); // MemberData | 
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.postMemberByOrganization(xKeyclicApp, personData, organization, opts, (error, data, response) => {
+apiInstance.postMember(xKeyclicApp, memberData, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -319,8 +232,7 @@ apiInstance.postMemberByOrganization(xKeyclicApp, personData, organization, opts
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **personData** | [**PersonData**](PersonData.md)|  | 
- **organization** | [**String**](.md)| The identifier of the resource. | 
+ **memberData** | [**MemberData**](MemberData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

@@ -4,7 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message** | **String** |  | 
-**place** | **String** |  | 
+**feed** | **String** |  | 
 **title** | **String** |  | 
+**organization** | **String** |  | 
 
 

@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class Place {
   Place({
+    this.embedded,
     this.links,
     this.branchCode,
     this.createdAt,
@@ -18,6 +19,7 @@ class Place {
     if (json == null) {
       return;
     }
+    embedded = PlaceEmbedded.fromJson(json['_embedded']);
     links = PlaceLinks.fromJson(json['_links']);
     branchCode = json['branchCode'];
     createdAt =
@@ -37,6 +39,8 @@ class Place {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
   }
+
+  PlaceEmbedded embedded;
 
   PlaceLinks links;
 
@@ -67,6 +71,7 @@ class Place {
 
     return other is Place &&
         runtimeType == other.runtimeType &&
+        embedded == other.embedded &&
         links == other.links &&
         branchCode == other.branchCode &&
         createdAt == other.createdAt &&
@@ -83,6 +88,7 @@ class Place {
   @override
   int get hashCode =>
       0 ^
+      embedded.hashCode ^
       links.hashCode ^
       branchCode.hashCode ^
       createdAt.hashCode ^
@@ -111,6 +117,7 @@ class Place {
 
   Map<String, dynamic> toJson() {
     return {
+      '_embedded': embedded,
       '_links': links,
       'branchCode': branchCode,
       'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
@@ -126,6 +133,6 @@ class Place {
 
   @override
   String toString() {
-    return 'Place[links=$links, branchCode=$branchCode, createdAt=$createdAt, description=$description, geo=$geo, id=$id, name=$name, preferences=$preferences, type=$type, updatedAt=$updatedAt, ]';
+    return 'Place[embedded=$embedded, links=$links, branchCode=$branchCode, createdAt=$createdAt, description=$description, geo=$geo, id=$id, name=$name, preferences=$preferences, type=$type, updatedAt=$updatedAt, ]';
   }
 }

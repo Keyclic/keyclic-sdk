@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **page** | **int** |  | [optional] [default to null]
 **pages** | **int** |  | [optional] [default to null]
 **total** | **int** |  | [optional] [default to null]
-**embedded** | [**FeedbackCollection**](FeedbackCollection.md) |  | [optional] [default to null]
 **links** | [**PaginationLinks**](PaginationLinks.md) |  | [optional] [default to null]
+**embedded** | [**FeedbackCollection**](FeedbackCollection.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

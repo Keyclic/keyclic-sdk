@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import PlaceEmbedded from "./PlaceEmbedded";
 import PlaceGeo from "./PlaceGeo";
 import PlaceLinks from "./PlaceLinks";
 import PlacePreferences from "./PlacePreferences";
@@ -35,6 +36,7 @@ export default class Place {
 
     name
   ) {
+    this.embedded = null;
     this.links = null;
     this.branchCode = null;
     this.createdAt = null;
@@ -46,6 +48,7 @@ export default class Place {
     this.type = null;
     this.updatedAt = null;
 
+    this.embeddedType = PlaceEmbedded;
     this.linksType = PlaceLinks;
     this.geoType = PlaceGeo;
     this.preferencesType = PlacePreferences;
@@ -66,6 +69,12 @@ export default class Place {
       object = new Place();
     }
 
+    if (data.hasOwnProperty("_embedded")) {
+      object.embedded = ApiClient.convertToType(
+        data["_embedded"],
+        object.embeddedType
+      );
+    }
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }

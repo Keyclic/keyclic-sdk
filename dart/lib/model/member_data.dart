@@ -2,17 +2,21 @@ part of keyclic_sdk_api.api;
 
 class MemberData {
   MemberData({
-    this.member,
+    this.person,
+    this.organization,
   });
 
   MemberData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    member = json['member'];
+    person = json['person'];
+    organization = json['organization'];
   }
 
-  String member;
+  String person;
+
+  String organization;
 
   @override
   bool operator ==(dynamic other) {
@@ -23,12 +27,13 @@ class MemberData {
 
     return other is MemberData &&
         runtimeType == other.runtimeType &&
-        member == other.member;
+        person == other.person &&
+        organization == other.organization;
   }
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ member.hashCode;
+  int get hashCode => 0 ^ person.hashCode ^ organization.hashCode;
 
   static List<MemberData> listFromJson(List<dynamic> json) {
     return json == null
@@ -47,12 +52,13 @@ class MemberData {
 
   Map<String, dynamic> toJson() {
     return {
-      'member': member,
+      'person': person,
+      'organization': organization,
     };
   }
 
   @override
   String toString() {
-    return 'MemberData[member=$member, ]';
+    return 'MemberData[person=$person, organization=$organization, ]';
   }
 }

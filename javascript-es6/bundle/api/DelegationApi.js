@@ -9,8 +9,12 @@ var _ApiClient2 = _interopRequireDefault(require("../ApiClient"));
 
 var _Delegation = _interopRequireDefault(require("../model/Delegation"));
 
-var _DelegationPagination = _interopRequireDefault(
-  require("../model/DelegationPagination")
+var _DelegationData = _interopRequireDefault(
+  require("../model/DelegationData")
+);
+
+var _DelegationWorkflowTransitionData = _interopRequireDefault(
+  require("../model/DelegationWorkflowTransitionData")
 );
 
 var _Error = _interopRequireDefault(require("../model/Error"));
@@ -141,145 +145,16 @@ var DelegationApi =
       );
     }
     /**
-     * Retrieve all Delegation resources.
+     * Retrieve one Delegation resource.
      * @param { String } xKeyclicApp
-     * @param { String } organization The identifier of the resource.
+     * @param { String } delegation The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { DelegationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+     * @param { Delegation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
-     * @param { module:model/Date } after
-     * @param { module:model/Date } before
-     * @param { module:model/String } order   (default to desc)
-     * @param { String } state
-     * @param { Number } page Page of the overview.  (default to 1)
-     * @param { Number } limit Page of the overview.  (default to 10)
      */
 
     _createClass(DelegationApi, [
-      {
-        key: "cgetDelegationsByOrganization",
-        value: function cgetDelegationsByOrganization() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
-
-          if (returnType === null) {
-            returnType = _DelegationPagination.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            organization = options.organization,
-            acceptLanguage = options.acceptLanguage,
-            xKeyclicAppVersion = options.xKeyclicAppVersion,
-            after = options.after,
-            before = options.before,
-            order = options.order,
-            state = options.state,
-            page = options.page,
-            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling cgetDelegationsByOrganization'
-            );
-          } // verify the required parameter 'organization' is set
-
-          if (typeof organization === "undefined" || organization === null) {
-            throw new window.Error(
-              'Missing the required parameter "organization" when calling cgetDelegationsByOrganization'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
-          } // verify the default value of parameter 'page'
-
-          if (typeof page === "undefined" || page === null) {
-            page = 1;
-          } // verify the default value of parameter 'limit'
-
-          if (typeof limit === "undefined" || limit === null) {
-            limit = 10;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'after'
-
-          if (typeof after === "undefined") {
-            after = null;
-          } // verify the null value of parameter 'before'
-
-          if (typeof before === "undefined") {
-            before = null;
-          } // verify the null value of parameter 'state'
-
-          if (typeof state === "undefined") {
-            state = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetDelegationsByOrganization'
-            );
-          }
-
-          var pathParams = {
-            organization: organization
-          };
-          var bodyParam = null;
-          var queryParams = {
-            after: after,
-            before: before,
-            order: order,
-            state: state,
-            page: page,
-            limit: limit
-          };
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/organizations/{organization}/delegations",
-            "GET",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-          );
-        }
-        /**
-         * Retrieve one Delegation resource.
-         * @param { String } xKeyclicApp
-         * @param { String } delegation The identifier of the resource.
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { Delegation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { String } xKeyclicAppVersion
-         */
-      },
       {
         key: "getDelegation",
         value: function getDelegation() {
@@ -345,6 +220,191 @@ var DelegationApi =
           return this.callApi(
             "/delegations/{delegation}",
             "GET",
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+          );
+        }
+        /**
+         * Create one Delegation resource.
+         * @param { String } xKeyclicApp
+         * @param { module:model/DelegationData } delegationData
+         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+         * @param { Delegation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+         * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { String } xKeyclicAppVersion
+         */
+      },
+      {
+        key: "postDelegation",
+        value: function postDelegation() {
+          var returnType =
+            arguments.length > 0 && arguments[0] !== undefined
+              ? arguments[0]
+              : null;
+          var options = arguments.length > 1 ? arguments[1] : undefined;
+          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+
+          if (returnType === null) {
+            returnType = _Delegation.default;
+          }
+
+          var xKeyclicApp = options.xKeyclicApp,
+            delegationData = options.delegationData,
+            acceptLanguage = options.acceptLanguage,
+            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+            throw new window.Error(
+              'Missing the required parameter "xKeyclicApp" when calling postDelegation'
+            );
+          } // verify the required parameter 'delegationData' is set
+
+          if (
+            typeof delegationData === "undefined" ||
+            delegationData === null
+          ) {
+            throw new window.Error(
+              'Missing the required parameter "delegationData" when calling postDelegation'
+            );
+          } // verify the default value of parameter 'acceptLanguage'
+
+          if (
+            typeof acceptLanguage === "undefined" ||
+            acceptLanguage === null
+          ) {
+            acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xKeyclicAppVersion'
+
+          if (typeof xKeyclicAppVersion === "undefined") {
+            xKeyclicAppVersion = null;
+          }
+
+          if (typeof credentials === "undefined" || credentials === null) {
+            throw new window.Error(
+              'Missing the required parameter "credentials" when calling postDelegation'
+            );
+          }
+
+          var pathParams = {};
+          var bodyParam = delegationData;
+          var queryParams = {};
+          var headerParams = {
+            "accept-language": acceptLanguage,
+            "x-keyclic-app": xKeyclicApp,
+            "x-keyclic-app-version": xKeyclicAppVersion
+          };
+          var credentialParams = credentials;
+          var authNames = ["bearer"];
+          var contentTypes = ["application/json;charset=UTF-8"];
+          var accepts = ["application/hal+json;charset=UTF-8"];
+          return this.callApi(
+            "/delegations",
+            "POST",
+            pathParams,
+            queryParams,
+            headerParams,
+            bodyParam,
+            authNames,
+            credentialParams,
+            contentTypes,
+            accepts,
+            returnType
+          );
+        }
+        /**
+         * Create one Workflow resource.
+         * @param { String } xKeyclicApp
+         * @param { module:model/DelegationWorkflowTransitionData } delegationWorkflowTransitionData
+         * @param { String } delegation The identifier of the resource.
+         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+         * @param { Delegation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+         * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { String } xKeyclicAppVersion
+         */
+      },
+      {
+        key: "postWorkflowByDelegation",
+        value: function postWorkflowByDelegation() {
+          var returnType =
+            arguments.length > 0 && arguments[0] !== undefined
+              ? arguments[0]
+              : null;
+          var options = arguments.length > 1 ? arguments[1] : undefined;
+          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+
+          if (returnType === null) {
+            returnType = _Delegation.default;
+          }
+
+          var xKeyclicApp = options.xKeyclicApp,
+            delegationWorkflowTransitionData =
+              options.delegationWorkflowTransitionData,
+            delegation = options.delegation,
+            acceptLanguage = options.acceptLanguage,
+            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+            throw new window.Error(
+              'Missing the required parameter "xKeyclicApp" when calling postWorkflowByDelegation'
+            );
+          } // verify the required parameter 'delegationWorkflowTransitionData' is set
+
+          if (
+            typeof delegationWorkflowTransitionData === "undefined" ||
+            delegationWorkflowTransitionData === null
+          ) {
+            throw new window.Error(
+              'Missing the required parameter "delegationWorkflowTransitionData" when calling postWorkflowByDelegation'
+            );
+          } // verify the required parameter 'delegation' is set
+
+          if (typeof delegation === "undefined" || delegation === null) {
+            throw new window.Error(
+              'Missing the required parameter "delegation" when calling postWorkflowByDelegation'
+            );
+          } // verify the default value of parameter 'acceptLanguage'
+
+          if (
+            typeof acceptLanguage === "undefined" ||
+            acceptLanguage === null
+          ) {
+            acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xKeyclicAppVersion'
+
+          if (typeof xKeyclicAppVersion === "undefined") {
+            xKeyclicAppVersion = null;
+          }
+
+          if (typeof credentials === "undefined" || credentials === null) {
+            throw new window.Error(
+              'Missing the required parameter "credentials" when calling postWorkflowByDelegation'
+            );
+          }
+
+          var pathParams = {
+            delegation: delegation
+          };
+          var bodyParam = delegationWorkflowTransitionData;
+          var queryParams = {};
+          var headerParams = {
+            "accept-language": acceptLanguage,
+            "x-keyclic-app": xKeyclicApp,
+            "x-keyclic-app-version": xKeyclicAppVersion
+          };
+          var credentialParams = credentials;
+          var authNames = ["bearer"];
+          var contentTypes = ["application/json;charset=UTF-8"];
+          var accepts = ["application/hal+json;charset=UTF-8"];
+          return this.callApi(
+            "/delegations/{delegation}/workflow",
+            "POST",
             pathParams,
             queryParams,
             headerParams,

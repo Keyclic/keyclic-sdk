@@ -7,12 +7,32 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _Pagination2 = _interopRequireDefault(require("./Pagination"));
+
 var _PaginationLinks = _interopRequireDefault(require("./PaginationLinks"));
 
 var _WebhookCollection = _interopRequireDefault(require("./WebhookCollection"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj &&
+        typeof Symbol === "function" &&
+        obj.constructor === Symbol &&
+        obj !== Symbol.prototype
+        ? "symbol"
+        : typeof obj;
+    };
+  }
+  return _typeof(obj);
 }
 
 function _classCallCheck(instance, Constructor) {
@@ -37,13 +57,85 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+  return _assertThisInitialized(self);
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError(
+      "this hasn't been initialised - super() hasn't been called"
+    );
+  }
+  return self;
+}
+
+function _get(target, property, receiver) {
+  if (typeof Reflect !== "undefined" && Reflect.get) {
+    _get = Reflect.get;
+  } else {
+    _get = function _get(target, property, receiver) {
+      var base = _superPropBase(target, property);
+      if (!base) return;
+      var desc = Object.getOwnPropertyDescriptor(base, property);
+      if (desc.get) {
+        return desc.get.call(receiver);
+      }
+      return desc.value;
+    };
+  }
+  return _get(target, property, receiver || target);
+}
+
+function _superPropBase(object, property) {
+  while (!Object.prototype.hasOwnProperty.call(object, property)) {
+    object = _getPrototypeOf(object);
+    if (object === null) break;
+  }
+  return object;
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf
+    ? Object.getPrototypeOf
+    : function _getPrototypeOf(o) {
+        return o.__proto__ || Object.getPrototypeOf(o);
+      };
+  return _getPrototypeOf(o);
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: { value: subClass, writable: true, configurable: true }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf =
+    Object.setPrototypeOf ||
+    function _setPrototypeOf(o, p) {
+      o.__proto__ = p;
+      return o;
+    };
+  return _setPrototypeOf(o, p);
+}
+
 /**
  * The WebhookPagination model module.
  * @module model/WebhookPagination
  */
 var WebhookPagination =
   /*#__PURE__*/
-  (function() {
+  (function(_Pagination) {
+    _inherits(WebhookPagination, _Pagination);
+
     /**
    * Constructs a new "WebhookPagination".
    * @alias module:model/WebhookPagination
@@ -51,16 +143,17 @@ var WebhookPagination =
   
    */
     function WebhookPagination() {
+      var _this;
+
       _classCallCheck(this, WebhookPagination);
 
-      this.limit = null;
-      this.page = null;
-      this.pages = null;
-      this.total = null;
-      this.embedded = null;
-      this.links = null;
-      this.embeddedType = _WebhookCollection.default;
-      this.linksType = _PaginationLinks.default;
+      _this = _possibleConstructorReturn(
+        this,
+        _getPrototypeOf(WebhookPagination).call(this)
+      );
+      _this.embedded = null;
+      _this.embeddedType = _WebhookCollection.default;
+      return _this;
     }
     /**
      * Constructs a "WebhookPagination" from a plain JavaScript object.
@@ -86,45 +179,16 @@ var WebhookPagination =
             object = new WebhookPagination();
           }
 
-          if (data.hasOwnProperty("limit")) {
-            object.limit = _ApiClient.default.convertToType(
-              data["limit"],
-              "Number"
-            );
-          }
-
-          if (data.hasOwnProperty("page")) {
-            object.page = _ApiClient.default.convertToType(
-              data["page"],
-              "Number"
-            );
-          }
-
-          if (data.hasOwnProperty("pages")) {
-            object.pages = _ApiClient.default.convertToType(
-              data["pages"],
-              "Number"
-            );
-          }
-
-          if (data.hasOwnProperty("total")) {
-            object.total = _ApiClient.default.convertToType(
-              data["total"],
-              "Number"
-            );
-          }
+          object = _get(
+            _getPrototypeOf(WebhookPagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
 
           if (data.hasOwnProperty("_embedded")) {
             object.embedded = _ApiClient.default.convertToType(
               data["_embedded"],
               object.embeddedType
-            );
-          }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
             );
           }
 
@@ -134,6 +198,6 @@ var WebhookPagination =
     ]);
 
     return WebhookPagination;
-  })();
+  })(_Pagination2.default);
 
 exports.default = WebhookPagination;
