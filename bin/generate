@@ -5,6 +5,7 @@
 # This script generates Swagger codegen client
 # then it generates app-sdk from templates and swagger.json file
 # then it fixes src and test files.
+
 CURRENT_DIR=$(pwd)
 
 cleanup() {
@@ -19,13 +20,15 @@ fi
 echo "Use file ${SWAGGER_FILE} as definition API."
 echo
 
-### Generation of @keyclic/sdk-javascript ###
+### Javascript generation of @keyclic/sdk-javascript ###
+echo "Javasript es6 generation."
 rm -rf ${CURRENT_DIR}/javascript-es6 2>&1
+mkdir ${CURRENT_DIR}/javascript-es6
 docker run \
     --rm \
     --volume ${PWD}:/local \
     --user "$(id -u)":"$(id -g)" \
-    swaggerapi/swagger-codegen-cli:unstable \
+    swaggerapi/swagger-codegen-cli:2.4.8 \
     generate \
     --config /local/options.javascript-es6.json \
     --input-spec ${SWAGGER_FILE} \
@@ -33,13 +36,14 @@ docker run \
     --output /local/javascript-es6 \
     --template-dir /local/javascript-es6-templates
 
-### Generation of keyclic_sdk_api ###
+#### Dart generation of keyclic_sdk_api ###
+echo "Dart generation."
 rm -rf ${CURRENT_DIR}/dart 2>&1
 docker run \
     --rm \
     --volume ${PWD}:/local \
     --user "$(id -u)":"$(id -g)" \
-    swaggerapi/swagger-codegen-cli:unstable \
+    swaggerapi/swagger-codegen-cli:2.4.8 \
     generate \
     --config /local/options.dart.json \
     --input-spec ${SWAGGER_FILE} \
@@ -71,12 +75,6 @@ sed -i 's/Map<String, String> metadata/Map<String, dynamic> metadata/g' lib/mode
 sed -i 's/List<List<num>>/List/g' lib/model/feature_geometry.dart
 # remove List.listFromJson
 sed -i 's/List.listFromJson//g' lib/model/*
-
-# add some requirements in pubspec.yaml
-grep -q "author:" pubspec.yaml || echo "author: Keyclic techies team <techies@keyclic.com>" >> pubspec.yaml
-grep -q "environment:" pubspec.yaml || echo "environment:" >> pubspec.yaml
-grep -q "sdk:" pubspec.yaml || echo "  sdk: \">=2.2.2 <3.0.0\"" >> pubspec.yaml
-grep -q "homepage:" pubspec.yaml || echo "homepage: https://keyclic.com" >> pubspec.yaml
 
 # change some files to match requirements of pubspec.yaml specifications
 cp ../LICENSE .
