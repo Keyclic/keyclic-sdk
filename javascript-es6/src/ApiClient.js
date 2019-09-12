@@ -19,7 +19,7 @@ import * as url from 'url';
 
 /**
 * @module ApiClient
-* @version 2.0.3
+* @version 2.0.6
 */
 
 /**
