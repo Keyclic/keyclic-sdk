@@ -9,7 +9,7 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.0.3
+- API version: 2.0.6
 - Package version: 2.0.3
 
 ## Getting started
@@ -193,6 +193,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.Condition](docs/Condition.md)
 - [@KeyclicSdkJavascript.Contribution](docs/Contribution.md)
 - [@KeyclicSdkJavascript.ContributionCollection](docs/ContributionCollection.md)
+- [@KeyclicSdkJavascript.ContributionData](docs/ContributionData.md)
 - [@KeyclicSdkJavascript.ContributionLinks](docs/ContributionLinks.md)
 - [@KeyclicSdkJavascript.ContributionLinksContributor](docs/ContributionLinksContributor.md)
 - [@KeyclicSdkJavascript.ContributionLinksContributorIriTemplate](docs/ContributionLinksContributorIriTemplate.md)
@@ -342,6 +343,8 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.Operation](docs/Operation.md)
 - [@KeyclicSdkJavascript.OperationCollection](docs/OperationCollection.md)
 - [@KeyclicSdkJavascript.OperationData](docs/OperationData.md)
+- [@KeyclicSdkJavascript.OperationEmbedded](docs/OperationEmbedded.md)
+- [@KeyclicSdkJavascript.OperationEmbeddedDuration](docs/OperationEmbeddedDuration.md)
 - [@KeyclicSdkJavascript.OperationLinks](docs/OperationLinks.md)
 - [@KeyclicSdkJavascript.OperationLinksCreatedBy](docs/OperationLinksCreatedBy.md)
 - [@KeyclicSdkJavascript.OperationLinksCreatedByIriTemplate](docs/OperationLinksCreatedByIriTemplate.md)
@@ -435,7 +438,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.Report](docs/Report.md)
 - [@KeyclicSdkJavascript.ReportCollection](docs/ReportCollection.md)
 - [@KeyclicSdkJavascript.ReportEmbedded](docs/ReportEmbedded.md)
-- [@KeyclicSdkJavascript.ReportEmbeddedDuration](docs/ReportEmbeddedDuration.md)
 - [@KeyclicSdkJavascript.ReportEmbeddedTargetGroups](docs/ReportEmbeddedTargetGroups.md)
 - [@KeyclicSdkJavascript.ReportLinks](docs/ReportLinks.md)
 - [@KeyclicSdkJavascript.ReportLinksCategory](docs/ReportLinksCategory.md)

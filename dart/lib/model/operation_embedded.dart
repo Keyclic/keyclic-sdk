@@ -1,14 +1,13 @@
 part of keyclic_sdk_api.api;
 
-class ReportEmbedded {
-  ReportEmbedded({
+class OperationEmbedded {
+  OperationEmbedded({
     this.duration,
     this.stateTransitions,
-    this.targetGroups,
     this.tracking,
   });
 
-  ReportEmbedded.fromJson(Map<String, dynamic> json) {
+  OperationEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
@@ -16,16 +15,12 @@ class ReportEmbedded {
     if (json['stateTransitions'] is List) {
       stateTransitions = List<String>.from(json['stateTransitions']);
     }
-    targetGroups =
-        ReportEmbeddedTargetGroups.listFromJson(json['targetGroups']);
     tracking = json['tracking'];
   }
 
   OperationEmbeddedDuration duration;
 
   List<String> stateTransitions;
-
-  List<ReportEmbeddedTargetGroups> targetGroups;
 
   String tracking;
 
@@ -36,13 +31,11 @@ class ReportEmbedded {
       return true;
     }
 
-    return other is ReportEmbedded &&
+    return other is OperationEmbedded &&
         runtimeType == other.runtimeType &&
         duration == other.duration &&
         DeepCollectionEquality.unordered()
             .equals(stateTransitions, other.stateTransitions) &&
-        DeepCollectionEquality.unordered()
-            .equals(targetGroups, other.targetGroups) &&
         tracking == other.tracking;
   }
 
@@ -56,11 +49,6 @@ class ReportEmbedded {
           .map((String element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
-    if (targetGroups is List && targetGroups.isNotEmpty) {
-      hashCode ^= targetGroups
-          .map((ReportEmbeddedTargetGroups element) => element.hashCode)
-          .reduce((int value, int cursor) => value ^ cursor);
-    }
 
     hashCode ^= (duration?.hashCode ?? 0);
     hashCode ^= (tracking?.hashCode ?? 0);
@@ -68,17 +56,19 @@ class ReportEmbedded {
     return hashCode;
   }
 
-  static List<ReportEmbedded> listFromJson(List<dynamic> json) {
+  static List<OperationEmbedded> listFromJson(List<dynamic> json) {
     return json == null
-        ? <ReportEmbedded>[]
-        : json.map((dynamic value) => ReportEmbedded.fromJson(value)).toList();
+        ? <OperationEmbedded>[]
+        : json
+            .map((dynamic value) => OperationEmbedded.fromJson(value))
+            .toList();
   }
 
-  static Map<String, ReportEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ReportEmbedded>();
+  static Map<String, OperationEmbedded> mapFromJson(Map<String, dynamic> json) {
+    var map = Map<String, OperationEmbedded>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) =>
-          map[key] = ReportEmbedded.fromJson(value));
+          map[key] = OperationEmbedded.fromJson(value));
     }
 
     return map;
@@ -88,13 +78,12 @@ class ReportEmbedded {
     return {
       'duration': duration,
       'stateTransitions': stateTransitions,
-      'targetGroups': targetGroups,
       'tracking': tracking,
     };
   }
 
   @override
   String toString() {
-    return 'ReportEmbedded[duration=$duration, stateTransitions=$stateTransitions, targetGroups=$targetGroups, tracking=$tracking, ]';
+    return 'OperationEmbedded[duration=$duration, stateTransitions=$stateTransitions, tracking=$tracking, ]';
   }
 }

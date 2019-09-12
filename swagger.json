@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.0.3"
+    "version": "2.0.6"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -883,6 +883,9 @@
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app-version"
+          },
+          {
+            "$ref": "#\/parameters\/ContributionData"
           }
         ],
         "responses": {
@@ -10895,6 +10898,17 @@
         }
       }
     },
+    "ContributionData": {
+      "type": "object",
+      "properties": {
+        "feedback": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "feedback"
+      ]
+    },
     "ContributionLinksContributor": {
       "type": "object",
       "properties": {
@@ -11047,9 +11061,6 @@
       "type": "object",
       "properties": {
         "description": {
-          "type": "string"
-        },
-        "organization": {
           "type": "string"
         },
         "report": {
@@ -13082,6 +13093,15 @@
         "_embedded": {
           "type": "object",
           "properties": {
+            "duration": {
+              "type": "object",
+              "properties": {
+                "seconds": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            },
             "stateTransitions": {
               "type": "array",
               "items": {
@@ -15811,6 +15831,14 @@
       "in": "query",
       "name": "feedback",
       "type": "string"
+    },
+    "ContributionData": {
+      "name": "ContributionData",
+      "in": "body",
+      "schema": {
+        "$ref": "#\/definitions\/ContributionData"
+      },
+      "required": true
     },
     "DelegationData": {
       "name": "DelegationData",

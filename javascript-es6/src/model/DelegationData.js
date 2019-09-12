@@ -27,7 +27,6 @@ export default class DelegationData {
      */
   constructor(report) {
     this.description = null;
-    this.organization = null;
     this.report = report;
     this.service = null;
   }
@@ -50,12 +49,6 @@ export default class DelegationData {
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
         data["description"],
-        "String"
-      );
-    }
-    if (data.hasOwnProperty("organization")) {
-      object.organization = ApiClient.convertToType(
-        data["organization"],
         "String"
       );
     }

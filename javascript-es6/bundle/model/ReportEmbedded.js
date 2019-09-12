@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ReportEmbeddedDuration = _interopRequireDefault(
-  require("./ReportEmbeddedDuration")
+var _OperationEmbeddedDuration = _interopRequireDefault(
+  require("./OperationEmbeddedDuration")
 );
 
 var _ReportEmbeddedTargetGroups = _interopRequireDefault(
@@ -61,7 +61,7 @@ var ReportEmbedded =
       this.stateTransitions = [];
       this.targetGroups = [];
       this.tracking = null;
-      this.durationType = _ReportEmbeddedDuration.default;
+      this.durationType = _OperationEmbeddedDuration.default;
       this.targetGroupsType = _ReportEmbeddedTargetGroups.default;
     }
     /**

@@ -198,6 +198,8 @@ class ApiClient {
           return Contribution.fromJson(value);
         case 'ContributionCollection':
           return ContributionCollection.fromJson(value);
+        case 'ContributionData':
+          return ContributionData.fromJson(value);
         case 'ContributionLinks':
           return ContributionLinks.fromJson(value);
         case 'ContributionLinksContributor':
@@ -500,6 +502,10 @@ class ApiClient {
           return OperationCollection.fromJson(value);
         case 'OperationData':
           return OperationData.fromJson(value);
+        case 'OperationEmbedded':
+          return OperationEmbedded.fromJson(value);
+        case 'OperationEmbeddedDuration':
+          return OperationEmbeddedDuration.fromJson(value);
         case 'OperationLinks':
           return OperationLinks.fromJson(value);
         case 'OperationLinksCreatedBy':
@@ -686,8 +692,6 @@ class ApiClient {
           return ReportCollection.fromJson(value);
         case 'ReportEmbedded':
           return ReportEmbedded.fromJson(value);
-        case 'ReportEmbeddedDuration':
-          return ReportEmbeddedDuration.fromJson(value);
         case 'ReportEmbeddedTargetGroups':
           return ReportEmbeddedTargetGroups.fromJson(value);
         case 'ReportLinks':

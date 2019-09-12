@@ -1,11 +1,11 @@
 part of keyclic_sdk_api.api;
 
-class ReportEmbeddedDuration {
-  ReportEmbeddedDuration({
+class OperationEmbeddedDuration {
+  OperationEmbeddedDuration({
     this.seconds,
   });
 
-  ReportEmbeddedDuration.fromJson(Map<String, dynamic> json) {
+  OperationEmbeddedDuration.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
@@ -21,7 +21,7 @@ class ReportEmbeddedDuration {
       return true;
     }
 
-    return other is ReportEmbeddedDuration &&
+    return other is OperationEmbeddedDuration &&
         runtimeType == other.runtimeType &&
         seconds == other.seconds;
   }
@@ -36,20 +36,20 @@ class ReportEmbeddedDuration {
     return hashCode;
   }
 
-  static List<ReportEmbeddedDuration> listFromJson(List<dynamic> json) {
+  static List<OperationEmbeddedDuration> listFromJson(List<dynamic> json) {
     return json == null
-        ? <ReportEmbeddedDuration>[]
+        ? <OperationEmbeddedDuration>[]
         : json
-            .map((dynamic value) => ReportEmbeddedDuration.fromJson(value))
+            .map((dynamic value) => OperationEmbeddedDuration.fromJson(value))
             .toList();
   }
 
-  static Map<String, ReportEmbeddedDuration> mapFromJson(
+  static Map<String, OperationEmbeddedDuration> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ReportEmbeddedDuration>();
+    var map = Map<String, OperationEmbeddedDuration>();
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic value) =>
-          map[key] = ReportEmbeddedDuration.fromJson(value));
+          map[key] = OperationEmbeddedDuration.fromJson(value));
     }
 
     return map;
@@ -63,6 +63,6 @@ class ReportEmbeddedDuration {
 
   @override
   String toString() {
-    return 'ReportEmbeddedDuration[seconds=$seconds, ]';
+    return 'OperationEmbeddedDuration[seconds=$seconds, ]';
   }
 }

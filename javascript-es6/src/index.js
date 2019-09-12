@@ -57,6 +57,7 @@ import CommentData from './model/CommentData';
 import Condition from './model/Condition';
 import Contribution from './model/Contribution';
 import ContributionCollection from './model/ContributionCollection';
+import ContributionData from './model/ContributionData';
 import ContributionLinks from './model/ContributionLinks';
 import ContributionLinksContributor from './model/ContributionLinksContributor';
 import ContributionLinksContributorIriTemplate from './model/ContributionLinksContributorIriTemplate';
@@ -206,6 +207,8 @@ import OccupantLinksSelfIriTemplateMapping from './model/OccupantLinksSelfIriTem
 import Operation from './model/Operation';
 import OperationCollection from './model/OperationCollection';
 import OperationData from './model/OperationData';
+import OperationEmbedded from './model/OperationEmbedded';
+import OperationEmbeddedDuration from './model/OperationEmbeddedDuration';
 import OperationLinks from './model/OperationLinks';
 import OperationLinksCreatedBy from './model/OperationLinksCreatedBy';
 import OperationLinksCreatedByIriTemplate from './model/OperationLinksCreatedByIriTemplate';
@@ -299,7 +302,6 @@ import RegisterData from './model/RegisterData';
 import Report from './model/Report';
 import ReportCollection from './model/ReportCollection';
 import ReportEmbedded from './model/ReportEmbedded';
-import ReportEmbeddedDuration from './model/ReportEmbeddedDuration';
 import ReportEmbeddedTargetGroups from './model/ReportEmbeddedTargetGroups';
 import ReportLinks from './model/ReportLinks';
 import ReportLinksCategory from './model/ReportLinksCategory';
@@ -651,6 +653,11 @@ export {
      * @property { module:model/ContributionCollection }
      */
     ContributionCollection,
+    /**
+     * The ContributionData model constructor.
+     * @property { module:model/ContributionData }
+     */
+    ContributionData,
     /**
      * The ContributionLinks model constructor.
      * @property { module:model/ContributionLinks }
@@ -1397,6 +1404,16 @@ export {
      */
     OperationData,
     /**
+     * The OperationEmbedded model constructor.
+     * @property { module:model/OperationEmbedded }
+     */
+    OperationEmbedded,
+    /**
+     * The OperationEmbeddedDuration model constructor.
+     * @property { module:model/OperationEmbeddedDuration }
+     */
+    OperationEmbeddedDuration,
+    /**
      * The OperationLinks model constructor.
      * @property { module:model/OperationLinks }
      */
@@ -1861,11 +1878,6 @@ export {
      * @property { module:model/ReportEmbedded }
      */
     ReportEmbedded,
-    /**
-     * The ReportEmbeddedDuration model constructor.
-     * @property { module:model/ReportEmbeddedDuration }
-     */
-    ReportEmbeddedDuration,
     /**
      * The ReportEmbeddedTargetGroups model constructor.
      * @property { module:model/ReportEmbeddedTargetGroups }

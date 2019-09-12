@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _FeedbackEmbedded = _interopRequireDefault(require("./FeedbackEmbedded"));
+var _OperationEmbedded = _interopRequireDefault(require("./OperationEmbedded"));
 
 var _OperationLinks = _interopRequireDefault(require("./OperationLinks"));
 
@@ -71,7 +71,7 @@ var Operation =
       this.state = state;
       this.type = null;
       this.updatedAt = null;
-      this.embeddedType = _FeedbackEmbedded.default;
+      this.embeddedType = _OperationEmbedded.default;
       this.linksType = _OperationLinks.default;
       this.signatureType = _OperationSignature.default;
     }

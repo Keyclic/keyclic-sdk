@@ -9,6 +9,10 @@ var _ApiClient2 = _interopRequireDefault(require("../ApiClient"));
 
 var _Contribution = _interopRequireDefault(require("../model/Contribution"));
 
+var _ContributionData = _interopRequireDefault(
+  require("../model/ContributionData")
+);
+
 var _ContributionPagination = _interopRequireDefault(
   require("../model/ContributionPagination")
 );
@@ -349,6 +353,7 @@ var ContributionApi =
         /**
          * Create one Contribution resource.
          * @param { String } xKeyclicApp
+         * @param { module:model/ContributionData } contributionData
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Contribution }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -370,12 +375,22 @@ var ContributionApi =
           }
 
           var xKeyclicApp = options.xKeyclicApp,
+            contributionData = options.contributionData,
             acceptLanguage = options.acceptLanguage,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
             throw new window.Error(
               'Missing the required parameter "xKeyclicApp" when calling postContribution'
+            );
+          } // verify the required parameter 'contributionData' is set
+
+          if (
+            typeof contributionData === "undefined" ||
+            contributionData === null
+          ) {
+            throw new window.Error(
+              'Missing the required parameter "contributionData" when calling postContribution'
             );
           } // verify the default value of parameter 'acceptLanguage'
 
@@ -397,7 +412,7 @@ var ContributionApi =
           }
 
           var pathParams = {};
-          var bodyParam = null;
+          var bodyParam = contributionData;
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,

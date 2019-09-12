@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.ReportEmbeddedDuration();
+    instance = new @KeyclicSdkJavascript.OperationEmbedded();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,16 +46,28 @@
       object[property] = value;
   }
 
-  describe('ReportEmbeddedDuration', function() {
-    it('should create an instance of ReportEmbeddedDuration', function() {
-      // uncomment below and update the code to test ReportEmbeddedDuration
-      //var instane = new @KeyclicSdkJavascript.ReportEmbeddedDuration();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.ReportEmbeddedDuration);
+  describe('OperationEmbedded', function() {
+    it('should create an instance of OperationEmbedded', function() {
+      // uncomment below and update the code to test OperationEmbedded
+      //var instane = new @KeyclicSdkJavascript.OperationEmbedded();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.OperationEmbedded);
     });
 
-    it('should have the property seconds (base name: "seconds")', function() {
-      // uncomment below and update the code to test the property seconds
-      //var instane = new @KeyclicSdkJavascript.ReportEmbeddedDuration();
+    it('should have the property duration (base name: "duration")', function() {
+      // uncomment below and update the code to test the property duration
+      //var instane = new @KeyclicSdkJavascript.OperationEmbedded();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property stateTransitions (base name: "stateTransitions")', function() {
+      // uncomment below and update the code to test the property stateTransitions
+      //var instane = new @KeyclicSdkJavascript.OperationEmbedded();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tracking (base name: "tracking")', function() {
+      // uncomment below and update the code to test the property tracking
+      //var instane = new @KeyclicSdkJavascript.OperationEmbedded();
       //expect(instance).to.be();
     });
 

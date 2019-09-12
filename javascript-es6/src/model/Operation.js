@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import FeedbackEmbedded from "./FeedbackEmbedded";
+import OperationEmbedded from "./OperationEmbedded";
 import OperationLinks from "./OperationLinks";
 import OperationSignature from "./OperationSignature";
 
@@ -42,7 +42,7 @@ export default class Operation {
     this.type = null;
     this.updatedAt = null;
 
-    this.embeddedType = FeedbackEmbedded;
+    this.embeddedType = OperationEmbedded;
     this.linksType = OperationLinks;
     this.signatureType = OperationSignature;
   }

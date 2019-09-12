@@ -34,35 +34,33 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 /**
- * The DelegationData model module.
- * @module model/DelegationData
+ * The ContributionData model module.
+ * @module model/ContributionData
  */
-var DelegationData =
+var ContributionData =
   /*#__PURE__*/
   (function() {
     /**
-   * Constructs a new "DelegationData".
-   * @alias module:model/DelegationData
+   * Constructs a new "ContributionData".
+   * @alias module:model/ContributionData
    * @class
   
-   * @param report { String }
+   * @param feedback { String }
   
    */
-    function DelegationData(report) {
-      _classCallCheck(this, DelegationData);
+    function ContributionData(feedback) {
+      _classCallCheck(this, ContributionData);
 
-      this.description = null;
-      this.report = report;
-      this.service = null;
+      this.feedback = feedback;
     }
     /**
-     * Constructs a "DelegationData" from a plain JavaScript object.
+     * Constructs a "ContributionData" from a plain JavaScript object.
      * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DelegationData } object Optional instance to populate.
-     * @return { module:model/DelegationData } The populated "DelegationData" instance.
+     * @param { module:model/ContributionData } object Optional instance to populate.
+     * @return { module:model/ContributionData } The populated "ContributionData" instance.
      */
 
-    _createClass(DelegationData, null, [
+    _createClass(ContributionData, null, [
       {
         key: "constructFromData",
         value: function constructFromData(data) {
@@ -76,26 +74,12 @@ var DelegationData =
           }
 
           if (object === null) {
-            object = new DelegationData();
+            object = new ContributionData();
           }
 
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
-              "String"
-            );
-          }
-
-          if (data.hasOwnProperty("report")) {
-            object.report = _ApiClient.default.convertToType(
-              data["report"],
-              "String"
-            );
-          }
-
-          if (data.hasOwnProperty("service")) {
-            object.service = _ApiClient.default.convertToType(
-              data["service"],
+          if (data.hasOwnProperty("feedback")) {
+            object.feedback = _ApiClient.default.convertToType(
+              data["feedback"],
               "String"
             );
           }
@@ -105,7 +89,7 @@ var DelegationData =
       }
     ]);
 
-    return DelegationData;
+    return ContributionData;
   })();
 
-exports.default = DelegationData;
+exports.default = ContributionData;

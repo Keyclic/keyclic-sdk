@@ -8,7 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**duration** | [**ReportEmbeddedDuration**](ReportEmbeddedDuration.md) |  | [optional] [default to null]
+**duration** | [**OperationEmbeddedDuration**](OperationEmbeddedDuration.md) |  | [optional] [default to null]
 **stateTransitions** | **List&lt;String&gt;** |  | [optional] [default to []]
 **targetGroups** | [**List&lt;ReportEmbeddedTargetGroups&gt;**](ReportEmbeddedTargetGroups.md) |  | [optional] [default to []]
 **tracking** | **String** |  | [optional] [default to null]

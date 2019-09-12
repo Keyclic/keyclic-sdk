@@ -154,7 +154,8 @@ class ContributionApi {
   ///
   ///
   Future<Contribution> postContribution(
-    String xKeyclicApp, {
+    String xKeyclicApp,
+    ContributionData contributionData, {
     String acceptLanguage,
     String xKeyclicAppVersion,
   }) async {
@@ -162,6 +163,10 @@ class ContributionApi {
 
     if (xKeyclicApp == null) {
       throw ApiException(0, "Missing required param: xKeyclicApp");
+    }
+
+    if (contributionData == null) {
+      throw ApiException(0, "Missing required param: contributionData");
     }
 
     // create path and map variables
@@ -186,7 +191,7 @@ class ContributionApi {
       "bearer",
     ];
 
-    final Object postBody = null;
+    final ContributionData postBody = contributionData;
 
     final Response response = await apiClient.invokeAPI(
       path,

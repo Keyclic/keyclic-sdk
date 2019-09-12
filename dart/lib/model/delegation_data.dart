@@ -3,7 +3,6 @@ part of keyclic_sdk_api.api;
 class DelegationData {
   DelegationData({
     this.description,
-    this.organization,
     this.report,
     this.service,
   });
@@ -13,14 +12,11 @@ class DelegationData {
       return;
     }
     description = json['description'];
-    organization = json['organization'];
     report = json['report'];
     service = json['service'];
   }
 
   String description;
-
-  String organization;
 
   String report;
 
@@ -36,7 +32,6 @@ class DelegationData {
     return other is DelegationData &&
         runtimeType == other.runtimeType &&
         description == other.description &&
-        organization == other.organization &&
         report == other.report &&
         service == other.service;
   }
@@ -47,7 +42,6 @@ class DelegationData {
     int hashCode = 0;
 
     hashCode ^= (description?.hashCode ?? 0);
-    hashCode ^= (organization?.hashCode ?? 0);
     hashCode ^= (report?.hashCode ?? 0);
     hashCode ^= (service?.hashCode ?? 0);
 
@@ -73,7 +67,6 @@ class DelegationData {
   Map<String, dynamic> toJson() {
     return {
       'description': description,
-      'organization': organization,
       'report': report,
       'service': service,
     };
@@ -81,6 +74,6 @@ class DelegationData {
 
   @override
   String toString() {
-    return 'DelegationData[description=$description, organization=$organization, report=$report, service=$service, ]';
+    return 'DelegationData[description=$description, report=$report, service=$service, ]';
   }
 }

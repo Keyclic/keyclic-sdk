@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postContribution**
-> Contribution postContribution(xKeyclicApp, acceptLanguage, xKeyclicAppVersion)
+> Contribution postContribution(xKeyclicApp, contributionData, acceptLanguage, xKeyclicAppVersion)
 
 Create one Contribution resource.
 
@@ -141,11 +141,12 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = ContributionApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
+var contributionData = ContributionData(); // ContributionData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postContribution(xKeyclicApp, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postContribution(xKeyclicApp, contributionData, acceptLanguage, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ContributionApi->postContribution: $e\n");
@@ -157,6 +158,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **contributionData** | [**ContributionData**](ContributionData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

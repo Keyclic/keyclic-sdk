@@ -13,13 +13,13 @@
 import ApiClient from "../ApiClient";
 
 /**
- * The ReportEmbeddedDuration model module.
- * @module model/ReportEmbeddedDuration
+ * The OperationEmbeddedDuration model module.
+ * @module model/OperationEmbeddedDuration
  */
-export default class ReportEmbeddedDuration {
+export default class OperationEmbeddedDuration {
   /**
-     * Constructs a new "ReportEmbeddedDuration".
-     * @alias module:model/ReportEmbeddedDuration
+     * Constructs a new "OperationEmbeddedDuration".
+     * @alias module:model/OperationEmbeddedDuration
      * @class
     
      */
@@ -28,10 +28,10 @@ export default class ReportEmbeddedDuration {
   }
 
   /**
-   * Constructs a "ReportEmbeddedDuration" from a plain JavaScript object.
+   * Constructs a "OperationEmbeddedDuration" from a plain JavaScript object.
    * @param { object } data The plain JavaScript object bearing properties of interest.
-   * @param { module:model/ReportEmbeddedDuration } object Optional instance to populate.
-   * @return { module:model/ReportEmbeddedDuration } The populated "ReportEmbeddedDuration" instance.
+   * @param { module:model/OperationEmbeddedDuration } object Optional instance to populate.
+   * @return { module:model/OperationEmbeddedDuration } The populated "OperationEmbeddedDuration" instance.
    */
   static constructFromData(data, object = null) {
     if (data === null) {
@@ -39,7 +39,7 @@ export default class ReportEmbeddedDuration {
     }
 
     if (object === null) {
-      object = new ReportEmbeddedDuration();
+      object = new OperationEmbeddedDuration();
     }
 
     if (data.hasOwnProperty("seconds")) {

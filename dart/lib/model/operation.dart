@@ -20,7 +20,7 @@ class Operation {
     if (json == null) {
       return;
     }
-    embedded = FeedbackEmbedded.fromJson(json['_embedded']);
+    embedded = OperationEmbedded.fromJson(json['_embedded']);
     links = OperationLinks.fromJson(json['_links']);
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
@@ -49,7 +49,7 @@ class Operation {
     }
   }
 
-  FeedbackEmbedded embedded;
+  OperationEmbedded embedded;
 
   OperationLinks links;
 

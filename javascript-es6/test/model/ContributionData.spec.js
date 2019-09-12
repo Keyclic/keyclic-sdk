@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.DelegationData();
+    instance = new @KeyclicSdkJavascript.ContributionData();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,28 +46,16 @@
       object[property] = value;
   }
 
-  describe('DelegationData', function() {
-    it('should create an instance of DelegationData', function() {
-      // uncomment below and update the code to test DelegationData
-      //var instane = new @KeyclicSdkJavascript.DelegationData();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.DelegationData);
+  describe('ContributionData', function() {
+    it('should create an instance of ContributionData', function() {
+      // uncomment below and update the code to test ContributionData
+      //var instane = new @KeyclicSdkJavascript.ContributionData();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.ContributionData);
     });
 
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
-      //var instane = new @KeyclicSdkJavascript.DelegationData();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property report (base name: "report")', function() {
-      // uncomment below and update the code to test the property report
-      //var instane = new @KeyclicSdkJavascript.DelegationData();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property service (base name: "service")', function() {
-      // uncomment below and update the code to test the property service
-      //var instane = new @KeyclicSdkJavascript.DelegationData();
+    it('should have the property feedback (base name: "feedback")', function() {
+      // uncomment below and update the code to test the property feedback
+      //var instane = new @KeyclicSdkJavascript.ContributionData();
       //expect(instance).to.be();
     });
 

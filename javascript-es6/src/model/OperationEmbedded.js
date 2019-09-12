@@ -12,34 +12,31 @@
 
 import ApiClient from "../ApiClient";
 import OperationEmbeddedDuration from "./OperationEmbeddedDuration";
-import ReportEmbeddedTargetGroups from "./ReportEmbeddedTargetGroups";
 
 /**
- * The ReportEmbedded model module.
- * @module model/ReportEmbedded
+ * The OperationEmbedded model module.
+ * @module model/OperationEmbedded
  */
-export default class ReportEmbedded {
+export default class OperationEmbedded {
   /**
-     * Constructs a new "ReportEmbedded".
-     * @alias module:model/ReportEmbedded
+     * Constructs a new "OperationEmbedded".
+     * @alias module:model/OperationEmbedded
      * @class
     
      */
   constructor() {
     this.duration = null;
     this.stateTransitions = [];
-    this.targetGroups = [];
     this.tracking = null;
 
     this.durationType = OperationEmbeddedDuration;
-    this.targetGroupsType = ReportEmbeddedTargetGroups;
   }
 
   /**
-   * Constructs a "ReportEmbedded" from a plain JavaScript object.
+   * Constructs a "OperationEmbedded" from a plain JavaScript object.
    * @param { object } data The plain JavaScript object bearing properties of interest.
-   * @param { module:model/ReportEmbedded } object Optional instance to populate.
-   * @return { module:model/ReportEmbedded } The populated "ReportEmbedded" instance.
+   * @param { module:model/OperationEmbedded } object Optional instance to populate.
+   * @return { module:model/OperationEmbedded } The populated "OperationEmbedded" instance.
    */
   static constructFromData(data, object = null) {
     if (data === null) {
@@ -47,7 +44,7 @@ export default class ReportEmbedded {
     }
 
     if (object === null) {
-      object = new ReportEmbedded();
+      object = new OperationEmbedded();
     }
 
     if (data.hasOwnProperty("duration")) {
@@ -61,11 +58,6 @@ export default class ReportEmbedded {
         data["stateTransitions"],
         "['String']"
       );
-    }
-    if (data.hasOwnProperty("targetGroups")) {
-      object.targetGroups = ApiClient.convertToType(data["targetGroups"], [
-        object.targetGroupsType
-      ]);
     }
     if (data.hasOwnProperty("tracking")) {
       object.tracking = ApiClient.convertToType(data["tracking"], "String");

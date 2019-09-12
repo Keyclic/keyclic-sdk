@@ -279,6 +279,12 @@ Object.defineProperty(exports, "ContributionCollection", {
     return _ContributionCollection.default;
   }
 });
+Object.defineProperty(exports, "ContributionData", {
+  enumerable: true,
+  get: function get() {
+    return _ContributionData.default;
+  }
+});
 Object.defineProperty(exports, "ContributionLinks", {
   enumerable: true,
   get: function get() {
@@ -1173,6 +1179,18 @@ Object.defineProperty(exports, "OperationData", {
     return _OperationData.default;
   }
 });
+Object.defineProperty(exports, "OperationEmbedded", {
+  enumerable: true,
+  get: function get() {
+    return _OperationEmbedded.default;
+  }
+});
+Object.defineProperty(exports, "OperationEmbeddedDuration", {
+  enumerable: true,
+  get: function get() {
+    return _OperationEmbeddedDuration.default;
+  }
+});
 Object.defineProperty(exports, "OperationLinks", {
   enumerable: true,
   get: function get() {
@@ -1729,12 +1747,6 @@ Object.defineProperty(exports, "ReportEmbedded", {
   enumerable: true,
   get: function get() {
     return _ReportEmbedded.default;
-  }
-});
-Object.defineProperty(exports, "ReportEmbeddedDuration", {
-  enumerable: true,
-  get: function get() {
-    return _ReportEmbeddedDuration.default;
   }
 });
 Object.defineProperty(exports, "ReportEmbeddedTargetGroups", {
@@ -2406,6 +2418,8 @@ var _Contribution = _interopRequireDefault(require("./model/Contribution"));
 
 var _ContributionCollection = _interopRequireDefault(require("./model/ContributionCollection"));
 
+var _ContributionData = _interopRequireDefault(require("./model/ContributionData"));
+
 var _ContributionLinks = _interopRequireDefault(require("./model/ContributionLinks"));
 
 var _ContributionLinksContributor = _interopRequireDefault(require("./model/ContributionLinksContributor"));
@@ -2704,6 +2718,10 @@ var _OperationCollection = _interopRequireDefault(require("./model/OperationColl
 
 var _OperationData = _interopRequireDefault(require("./model/OperationData"));
 
+var _OperationEmbedded = _interopRequireDefault(require("./model/OperationEmbedded"));
+
+var _OperationEmbeddedDuration = _interopRequireDefault(require("./model/OperationEmbeddedDuration"));
+
 var _OperationLinks = _interopRequireDefault(require("./model/OperationLinks"));
 
 var _OperationLinksCreatedBy = _interopRequireDefault(require("./model/OperationLinksCreatedBy"));
@@ -2889,8 +2907,6 @@ var _Report = _interopRequireDefault(require("./model/Report"));
 var _ReportCollection = _interopRequireDefault(require("./model/ReportCollection"));
 
 var _ReportEmbedded = _interopRequireDefault(require("./model/ReportEmbedded"));
-
-var _ReportEmbeddedDuration = _interopRequireDefault(require("./model/ReportEmbeddedDuration"));
 
 var _ReportEmbeddedTargetGroups = _interopRequireDefault(require("./model/ReportEmbeddedTargetGroups"));
 

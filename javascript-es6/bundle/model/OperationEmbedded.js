@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _OperationEmbeddedDuration = _interopRequireDefault(
+  require("./OperationEmbeddedDuration")
+);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -34,31 +38,34 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 /**
- * The ReportEmbeddedDuration model module.
- * @module model/ReportEmbeddedDuration
+ * The OperationEmbedded model module.
+ * @module model/OperationEmbedded
  */
-var ReportEmbeddedDuration =
+var OperationEmbedded =
   /*#__PURE__*/
   (function() {
     /**
-   * Constructs a new "ReportEmbeddedDuration".
-   * @alias module:model/ReportEmbeddedDuration
+   * Constructs a new "OperationEmbedded".
+   * @alias module:model/OperationEmbedded
    * @class
   
    */
-    function ReportEmbeddedDuration() {
-      _classCallCheck(this, ReportEmbeddedDuration);
+    function OperationEmbedded() {
+      _classCallCheck(this, OperationEmbedded);
 
-      this.seconds = null;
+      this.duration = null;
+      this.stateTransitions = [];
+      this.tracking = null;
+      this.durationType = _OperationEmbeddedDuration.default;
     }
     /**
-     * Constructs a "ReportEmbeddedDuration" from a plain JavaScript object.
+     * Constructs a "OperationEmbedded" from a plain JavaScript object.
      * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReportEmbeddedDuration } object Optional instance to populate.
-     * @return { module:model/ReportEmbeddedDuration } The populated "ReportEmbeddedDuration" instance.
+     * @param { module:model/OperationEmbedded } object Optional instance to populate.
+     * @return { module:model/OperationEmbedded } The populated "OperationEmbedded" instance.
      */
 
-    _createClass(ReportEmbeddedDuration, null, [
+    _createClass(OperationEmbedded, null, [
       {
         key: "constructFromData",
         value: function constructFromData(data) {
@@ -72,13 +79,27 @@ var ReportEmbeddedDuration =
           }
 
           if (object === null) {
-            object = new ReportEmbeddedDuration();
+            object = new OperationEmbedded();
           }
 
-          if (data.hasOwnProperty("seconds")) {
-            object.seconds = _ApiClient.default.convertToType(
-              data["seconds"],
-              "Number"
+          if (data.hasOwnProperty("duration")) {
+            object.duration = _ApiClient.default.convertToType(
+              data["duration"],
+              object.durationType
+            );
+          }
+
+          if (data.hasOwnProperty("stateTransitions")) {
+            object.stateTransitions = _ApiClient.default.convertToType(
+              data["stateTransitions"],
+              "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("tracking")) {
+            object.tracking = _ApiClient.default.convertToType(
+              data["tracking"],
+              "String"
             );
           }
 
@@ -87,7 +108,7 @@ var ReportEmbeddedDuration =
       }
     ]);
 
-    return ReportEmbeddedDuration;
+    return OperationEmbedded;
   })();
 
-exports.default = ReportEmbeddedDuration;
+exports.default = OperationEmbedded;

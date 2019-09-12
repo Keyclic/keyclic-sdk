@@ -1,8 +1,8 @@
-# @KeyclicSdkJavascript.ReportEmbeddedDuration
+# @KeyclicSdkJavascript.ContributionData
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**seconds** | **Number** |  | [optional] 
+**feedback** | **String** |  | 
 
 

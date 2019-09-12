@@ -12,6 +12,7 @@
 
 import ApiClient from "../ApiClient";
 import Contribution from "../model/Contribution";
+import ContributionData from "../model/ContributionData";
 import ContributionPagination from "../model/ContributionPagination";
 import Error from "../model/Error";
 
@@ -247,6 +248,7 @@ export default class ContributionApi extends ApiClient {
   /**
    * Create one Contribution resource.
    * @param { String } xKeyclicApp
+   * @param { module:model/ContributionData } contributionData
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Contribution }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
@@ -257,12 +259,24 @@ export default class ContributionApi extends ApiClient {
       returnType = Contribution;
     }
 
-    let { xKeyclicApp, acceptLanguage, xKeyclicAppVersion } = options;
+    let {
+      xKeyclicApp,
+      contributionData,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
       throw new window.Error(
         'Missing the required parameter "xKeyclicApp" when calling postContribution'
+      );
+    }
+
+    // verify the required parameter 'contributionData' is set
+    if (typeof contributionData === "undefined" || contributionData === null) {
+      throw new window.Error(
+        'Missing the required parameter "contributionData" when calling postContribution'
       );
     }
 
@@ -284,7 +298,7 @@ export default class ContributionApi extends ApiClient {
 
     let pathParams = {};
 
-    let bodyParam = null;
+    let bodyParam = contributionData;
 
     let queryParams = {};
 

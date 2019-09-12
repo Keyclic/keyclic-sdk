@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**embedded** | [**FeedbackEmbedded**](FeedbackEmbedded.md) |  | [optional] 
+**embedded** | [**OperationEmbedded**](OperationEmbedded.md) |  | [optional] 
 **links** | [**OperationLinks**](OperationLinks.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
