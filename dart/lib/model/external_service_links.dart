@@ -33,12 +33,21 @@ class ExternalServiceLinks {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ provider.hashCode ^ self.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (provider?.hashCode ?? 0);
+    hashCode ^= (self?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ExternalServiceLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? <ExternalServiceLinks>[]
-        : json.map((value) => ExternalServiceLinks.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => ExternalServiceLinks.fromJson(value))
+            .toList();
   }
 
   static Map<String, ExternalServiceLinks> mapFromJson(
@@ -48,6 +57,7 @@ class ExternalServiceLinks {
       json.forEach((String key, dynamic value) =>
           map[key] = ExternalServiceLinks.fromJson(value));
     }
+
     return map;
   }
 

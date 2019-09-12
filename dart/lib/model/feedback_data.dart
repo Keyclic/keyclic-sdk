@@ -1,5 +1,10 @@
 part of keyclic_sdk_api.api;
 
+class FeedbackDataVisibilityEnum {
+  static const String pRIVATE_ = "VISIBILITY_PRIVATE";
+  static const String pUBLIC_ = "VISIBILITY_PUBLIC";
+}
+
 class FeedbackData {
   FeedbackData({
     this.category,
@@ -32,7 +37,7 @@ class FeedbackData {
 
   String description;
 
-  /// enum visibilityEnum {  VISIBILITY_PRIVATE,  VISIBILITY_PUBLIC,  };
+  /// use FeedbackDataVisibilityEnum
   String visibility;
 
   String businessActivity;
@@ -64,24 +69,33 @@ class FeedbackData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      category.hashCode ^
-      geo.hashCode ^
-      description.hashCode ^
-      visibility.hashCode ^
-      businessActivity.hashCode ^
-      proMode.hashCode ^
-      metadata.keys.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      metadata.values.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      place.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (metadata is Map && metadata.isNotEmpty) {
+      hashCode ^= metadata.keys
+          .map((dynamic element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+      hashCode ^= metadata.values
+          .map((dynamic element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (category?.hashCode ?? 0);
+    hashCode ^= (geo?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (visibility?.hashCode ?? 0);
+    hashCode ^= (businessActivity?.hashCode ?? 0);
+    hashCode ^= (proMode?.hashCode ?? 0);
+    hashCode ^= (place?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<FeedbackData> listFromJson(List<dynamic> json) {
     return json == null
         ? <FeedbackData>[]
-        : json.map((value) => FeedbackData.fromJson(value)).toList();
+        : json.map((dynamic value) => FeedbackData.fromJson(value)).toList();
   }
 
   static Map<String, FeedbackData> mapFromJson(Map<String, dynamic> json) {
@@ -90,6 +104,7 @@ class FeedbackData {
       json.forEach((String key, dynamic value) =>
           map[key] = FeedbackData.fromJson(value));
     }
+
     return map;
   }
 

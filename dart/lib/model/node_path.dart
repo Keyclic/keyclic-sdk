@@ -33,12 +33,19 @@ class NodePath {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ id.hashCode ^ name.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<NodePath> listFromJson(List<dynamic> json) {
     return json == null
         ? <NodePath>[]
-        : json.map((value) => NodePath.fromJson(value)).toList();
+        : json.map((dynamic value) => NodePath.fromJson(value)).toList();
   }
 
   static Map<String, NodePath> mapFromJson(Map<String, dynamic> json) {
@@ -47,6 +54,7 @@ class NodePath {
       json.forEach(
           (String key, dynamic value) => map[key] = NodePath.fromJson(value));
     }
+
     return map;
   }
 

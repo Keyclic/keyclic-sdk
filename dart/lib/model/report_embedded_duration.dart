@@ -28,12 +28,20 @@ class ReportEmbeddedDuration {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ seconds.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (seconds?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ReportEmbeddedDuration> listFromJson(List<dynamic> json) {
     return json == null
         ? <ReportEmbeddedDuration>[]
-        : json.map((value) => ReportEmbeddedDuration.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => ReportEmbeddedDuration.fromJson(value))
+            .toList();
   }
 
   static Map<String, ReportEmbeddedDuration> mapFromJson(
@@ -43,6 +51,7 @@ class ReportEmbeddedDuration {
       json.forEach((String key, dynamic value) =>
           map[key] = ReportEmbeddedDuration.fromJson(value));
     }
+
     return map;
   }
 

@@ -28,15 +28,24 @@ class PersonCollection {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      items.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (items is List && items.isNotEmpty) {
+      hashCode ^= items
+          .map((Person element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<PersonCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? <PersonCollection>[]
-        : json.map((value) => PersonCollection.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => PersonCollection.fromJson(value))
+            .toList();
   }
 
   static Map<String, PersonCollection> mapFromJson(Map<String, dynamic> json) {
@@ -45,6 +54,7 @@ class PersonCollection {
       json.forEach((String key, dynamic value) =>
           map[key] = PersonCollection.fromJson(value));
     }
+
     return map;
   }
 

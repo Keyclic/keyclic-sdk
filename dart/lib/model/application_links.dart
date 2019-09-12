@@ -28,12 +28,20 @@ class ApplicationLinks {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ self.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (self?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ApplicationLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? <ApplicationLinks>[]
-        : json.map((value) => ApplicationLinks.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => ApplicationLinks.fromJson(value))
+            .toList();
   }
 
   static Map<String, ApplicationLinks> mapFromJson(Map<String, dynamic> json) {
@@ -42,6 +50,7 @@ class ApplicationLinks {
       json.forEach((String key, dynamic value) =>
           map[key] = ApplicationLinks.fromJson(value));
     }
+
     return map;
   }
 

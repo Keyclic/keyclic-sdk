@@ -1,5 +1,23 @@
 part of keyclic_sdk_api.api;
 
+class DocumentFileContentTypeEnum {
+  static const String textCsv_ = "text/csv";
+  static const String applicationMsword_ = "application/msword";
+  static const String
+      applicationVndOpenxmlformatsOfficedocumentWordprocessingmlDocument_ =
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+  static const String imageJpeg_ = "image/jpeg";
+  static const String imageJpg_ = "image/jpg";
+  static const String applicationPdf_ = "application/pdf";
+  static const String imagePng_ = "image/png";
+  static const String textPlain_ = "text/plain";
+  static const String applicationVndMsExcel_ = "application/vnd.ms-excel";
+  static const String
+      applicationVndOpenxmlformatsOfficedocumentSpreadsheetmlSheet_ =
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+  static const String applicationZip_ = "application/zip";
+}
+
 class DocumentFile {
   DocumentFile({
     this.contentType,
@@ -14,7 +32,7 @@ class DocumentFile {
     name = json['name'];
   }
 
-  /// enum contentTypeEnum {  text/csv,  application/msword,  application/vnd.openxmlformats-officedocument.wordprocessingml.document,  image/jpeg,  image/jpg,  application/pdf,  image/png,  text/plain,  application/vnd.ms-excel,  application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,  application/zip,  };
+  /// use DocumentFileContentTypeEnum
   String contentType;
 
   String name;
@@ -34,12 +52,19 @@ class DocumentFile {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ contentType.hashCode ^ name.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (contentType?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DocumentFile> listFromJson(List<dynamic> json) {
     return json == null
         ? <DocumentFile>[]
-        : json.map((value) => DocumentFile.fromJson(value)).toList();
+        : json.map((dynamic value) => DocumentFile.fromJson(value)).toList();
   }
 
   static Map<String, DocumentFile> mapFromJson(Map<String, dynamic> json) {
@@ -48,6 +73,7 @@ class DocumentFile {
       json.forEach((String key, dynamic value) =>
           map[key] = DocumentFile.fromJson(value));
     }
+
     return map;
   }
 

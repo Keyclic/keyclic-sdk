@@ -38,7 +38,9 @@ class Operation {
       scheduledAt = DateTime.parse('${scheduledAt.toIso8601String()}Z');
     }
     signature = OperationSignature.fromJson(json['signature']);
-    state = (json['state'] as List)?.map((item) => item as String)?.toList();
+    if (json['state'] is List) {
+      state = List<String>.from(json['state']);
+    }
     type = json['type'];
     updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
@@ -96,26 +98,34 @@ class Operation {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      embedded.hashCode ^
-      links.hashCode ^
-      createdAt.hashCode ^
-      description.hashCode ^
-      id.hashCode ^
-      identificationNumber.hashCode ^
-      name.hashCode ^
-      scheduledAt.hashCode ^
-      signature.hashCode ^
-      state.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (state is List && state.isNotEmpty) {
+      hashCode ^= state
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (embedded?.hashCode ?? 0);
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (identificationNumber?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= (scheduledAt?.hashCode ?? 0);
+    hashCode ^= (signature?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Operation> listFromJson(List<dynamic> json) {
     return json == null
         ? <Operation>[]
-        : json.map((value) => Operation.fromJson(value)).toList();
+        : json.map((dynamic value) => Operation.fromJson(value)).toList();
   }
 
   static Map<String, Operation> mapFromJson(Map<String, dynamic> json) {
@@ -124,6 +134,7 @@ class Operation {
       json.forEach(
           (String key, dynamic value) => map[key] = Operation.fromJson(value));
     }
+
     return map;
   }
 

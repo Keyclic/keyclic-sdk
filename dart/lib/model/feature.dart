@@ -13,8 +13,9 @@ class Feature {
     }
     type = json['type'];
     geometry = FeatureGeometry.fromJson(json['geometry']);
-    properties =
-        (json['properties'] as List)?.map((item) => item as String)?.toList();
+    if (json['properties'] is List) {
+      properties = List<String>.from(json['properties']);
+    }
   }
 
   String type;
@@ -39,17 +40,25 @@ class Feature {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      type.hashCode ^
-      geometry.hashCode ^
-      properties.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (properties is List && properties.isNotEmpty) {
+      hashCode ^= properties
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (geometry?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Feature> listFromJson(List<dynamic> json) {
     return json == null
         ? <Feature>[]
-        : json.map((value) => Feature.fromJson(value)).toList();
+        : json.map((dynamic value) => Feature.fromJson(value)).toList();
   }
 
   static Map<String, Feature> mapFromJson(Map<String, dynamic> json) {
@@ -58,6 +67,7 @@ class Feature {
       json.forEach(
           (String key, dynamic value) => map[key] = Feature.fromJson(value));
     }
+
     return map;
   }
 

@@ -96,26 +96,30 @@ class Person {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      links.hashCode ^
-      createdAt.hashCode ^
-      email.hashCode ^
-      familyName.hashCode ^
-      givenName.hashCode ^
-      id.hashCode ^
-      jobTitle.hashCode ^
-      optIn.hashCode ^
-      preferences.hashCode ^
-      telephone.hashCode ^
-      type.hashCode ^
-      updatedAt.hashCode ^
-      username.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (email?.hashCode ?? 0);
+    hashCode ^= (familyName?.hashCode ?? 0);
+    hashCode ^= (givenName?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (jobTitle?.hashCode ?? 0);
+    hashCode ^= (optIn?.hashCode ?? 0);
+    hashCode ^= (preferences?.hashCode ?? 0);
+    hashCode ^= (telephone?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+    hashCode ^= (username?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Person> listFromJson(List<dynamic> json) {
     return json == null
         ? <Person>[]
-        : json.map((value) => Person.fromJson(value)).toList();
+        : json.map((dynamic value) => Person.fromJson(value)).toList();
   }
 
   static Map<String, Person> mapFromJson(Map<String, dynamic> json) {
@@ -124,6 +128,7 @@ class Person {
       json.forEach(
           (String key, dynamic value) => map[key] = Person.fromJson(value));
     }
+
     return map;
   }
 

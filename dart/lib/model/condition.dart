@@ -17,7 +17,9 @@ class Condition {
     operator_ = json['operator'];
     path = json['path'];
     type = json['type'];
-    value = (json['value'] as List)?.map((item) => item as String)?.toList();
+    if (json['value'] is List) {
+      value = List<String>.from(json['value']);
+    }
   }
 
   String id;
@@ -48,19 +50,27 @@ class Condition {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      id.hashCode ^
-      operator_.hashCode ^
-      path.hashCode ^
-      type.hashCode ^
-      value.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (value is List && value.isNotEmpty) {
+      hashCode ^= value
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (operator_?.hashCode ?? 0);
+    hashCode ^= (path?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Condition> listFromJson(List<dynamic> json) {
     return json == null
         ? <Condition>[]
-        : json.map((value) => Condition.fromJson(value)).toList();
+        : json.map((dynamic value) => Condition.fromJson(value)).toList();
   }
 
   static Map<String, Condition> mapFromJson(Map<String, dynamic> json) {
@@ -69,6 +79,7 @@ class Condition {
       json.forEach(
           (String key, dynamic value) => map[key] = Condition.fromJson(value));
     }
+
     return map;
   }
 

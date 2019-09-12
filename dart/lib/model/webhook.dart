@@ -71,21 +71,25 @@ class Webhook {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      links.hashCode ^
-      createdAt.hashCode ^
-      enabled.hashCode ^
-      event.hashCode ^
-      id.hashCode ^
-      payloadUrl.hashCode ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (enabled?.hashCode ?? 0);
+    hashCode ^= (event?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (payloadUrl?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Webhook> listFromJson(List<dynamic> json) {
     return json == null
         ? <Webhook>[]
-        : json.map((value) => Webhook.fromJson(value)).toList();
+        : json.map((dynamic value) => Webhook.fromJson(value)).toList();
   }
 
   static Map<String, Webhook> mapFromJson(Map<String, dynamic> json) {
@@ -94,6 +98,7 @@ class Webhook {
       json.forEach(
           (String key, dynamic value) => map[key] = Webhook.fromJson(value));
     }
+
     return map;
   }
 

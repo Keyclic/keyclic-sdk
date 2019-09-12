@@ -38,12 +38,20 @@ class DocumentLinks {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ createdBy.hashCode ^ file.hashCode ^ self.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (createdBy?.hashCode ?? 0);
+    hashCode ^= (file?.hashCode ?? 0);
+    hashCode ^= (self?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DocumentLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? <DocumentLinks>[]
-        : json.map((value) => DocumentLinks.fromJson(value)).toList();
+        : json.map((dynamic value) => DocumentLinks.fromJson(value)).toList();
   }
 
   static Map<String, DocumentLinks> mapFromJson(Map<String, dynamic> json) {
@@ -52,6 +60,7 @@ class DocumentLinks {
       json.forEach((String key, dynamic value) =>
           map[key] = DocumentLinks.fromJson(value));
     }
+
     return map;
   }
 

@@ -33,17 +33,27 @@ class NodeEmbedded {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      path.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      children.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (path is List && path.isNotEmpty) {
+      hashCode ^= path
+          .map((NodePath element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+    if (children is List && children.isNotEmpty) {
+      hashCode ^= children
+          .map((Node element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<NodeEmbedded> listFromJson(List<dynamic> json) {
     return json == null
         ? <NodeEmbedded>[]
-        : json.map((value) => NodeEmbedded.fromJson(value)).toList();
+        : json.map((dynamic value) => NodeEmbedded.fromJson(value)).toList();
   }
 
   static Map<String, NodeEmbedded> mapFromJson(Map<String, dynamic> json) {
@@ -52,6 +62,7 @@ class NodeEmbedded {
       json.forEach((String key, dynamic value) =>
           map[key] = NodeEmbedded.fromJson(value));
     }
+
     return map;
   }
 

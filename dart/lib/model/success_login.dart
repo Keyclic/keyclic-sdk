@@ -38,13 +38,20 @@ class SuccessLogin {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^ accessToken.hashCode ^ credentials.hashCode ^ tokenType.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (accessToken?.hashCode ?? 0);
+    hashCode ^= (credentials?.hashCode ?? 0);
+    hashCode ^= (tokenType?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<SuccessLogin> listFromJson(List<dynamic> json) {
     return json == null
         ? <SuccessLogin>[]
-        : json.map((value) => SuccessLogin.fromJson(value)).toList();
+        : json.map((dynamic value) => SuccessLogin.fromJson(value)).toList();
   }
 
   static Map<String, SuccessLogin> mapFromJson(Map<String, dynamic> json) {
@@ -53,6 +60,7 @@ class SuccessLogin {
       json.forEach((String key, dynamic value) =>
           map[key] = SuccessLogin.fromJson(value));
     }
+
     return map;
   }
 

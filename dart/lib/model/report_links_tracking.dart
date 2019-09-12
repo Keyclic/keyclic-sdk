@@ -34,12 +34,21 @@ class ReportLinksTracking {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (href?.hashCode ?? 0);
+    hashCode ^= (iriTemplate?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ReportLinksTracking> listFromJson(List<dynamic> json) {
     return json == null
         ? <ReportLinksTracking>[]
-        : json.map((value) => ReportLinksTracking.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => ReportLinksTracking.fromJson(value))
+            .toList();
   }
 
   static Map<String, ReportLinksTracking> mapFromJson(
@@ -49,6 +58,7 @@ class ReportLinksTracking {
       json.forEach((String key, dynamic value) =>
           map[key] = ReportLinksTracking.fromJson(value));
     }
+
     return map;
   }
 

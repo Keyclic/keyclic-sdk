@@ -1,5 +1,10 @@
 part of keyclic_sdk_api.api;
 
+class DelegationWorkflowTransitionDataTransitionEnum {
+  static const String accept_ = "accept";
+  static const String refuse_ = "refuse";
+}
+
 class DelegationWorkflowTransitionData {
   DelegationWorkflowTransitionData({
     this.transition,
@@ -12,7 +17,7 @@ class DelegationWorkflowTransitionData {
     transition = json['transition'];
   }
 
-  /// enum transitionEnum {  accept,  refuse,  };
+  /// use DelegationWorkflowTransitionDataTransitionEnum
   String transition;
 
   @override
@@ -29,14 +34,21 @@ class DelegationWorkflowTransitionData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ transition.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (transition?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DelegationWorkflowTransitionData> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <DelegationWorkflowTransitionData>[]
         : json
-            .map((value) => DelegationWorkflowTransitionData.fromJson(value))
+            .map((dynamic value) =>
+                DelegationWorkflowTransitionData.fromJson(value))
             .toList();
   }
 
@@ -47,6 +59,7 @@ class DelegationWorkflowTransitionData {
       json.forEach((String key, dynamic value) =>
           map[key] = DelegationWorkflowTransitionData.fromJson(value));
     }
+
     return map;
   }
 

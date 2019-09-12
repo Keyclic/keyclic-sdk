@@ -34,12 +34,21 @@ class FeedbackLinksImages {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (href?.hashCode ?? 0);
+    hashCode ^= (iriTemplate?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<FeedbackLinksImages> listFromJson(List<dynamic> json) {
     return json == null
         ? <FeedbackLinksImages>[]
-        : json.map((value) => FeedbackLinksImages.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => FeedbackLinksImages.fromJson(value))
+            .toList();
   }
 
   static Map<String, FeedbackLinksImages> mapFromJson(
@@ -49,6 +58,7 @@ class FeedbackLinksImages {
       json.forEach((String key, dynamic value) =>
           map[key] = FeedbackLinksImages.fromJson(value));
     }
+
     return map;
   }
 

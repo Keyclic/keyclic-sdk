@@ -9,9 +9,9 @@ class MemberEmbedded {
     if (json == null) {
       return;
     }
-    availableRoles = (json['availableRoles'] as List)
-        ?.map((item) => item as String)
-        ?.toList();
+    if (json['availableRoles'] is List) {
+      availableRoles = List<String>.from(json['availableRoles']);
+    }
   }
 
   List<String> availableRoles;
@@ -31,15 +31,22 @@ class MemberEmbedded {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      availableRoles.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (availableRoles is List && availableRoles.isNotEmpty) {
+      hashCode ^= availableRoles
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<MemberEmbedded> listFromJson(List<dynamic> json) {
     return json == null
         ? <MemberEmbedded>[]
-        : json.map((value) => MemberEmbedded.fromJson(value)).toList();
+        : json.map((dynamic value) => MemberEmbedded.fromJson(value)).toList();
   }
 
   static Map<String, MemberEmbedded> mapFromJson(Map<String, dynamic> json) {
@@ -48,6 +55,7 @@ class MemberEmbedded {
       json.forEach((String key, dynamic value) =>
           map[key] = MemberEmbedded.fromJson(value));
     }
+
     return map;
   }
 

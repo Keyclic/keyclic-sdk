@@ -53,19 +53,25 @@ class ReviewPagination extends Pagination {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      limit.hashCode ^
-      page.hashCode ^
-      pages.hashCode ^
-      total.hashCode ^
-      links.hashCode ^
-      embedded.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (limit?.hashCode ?? 0);
+    hashCode ^= (page?.hashCode ?? 0);
+    hashCode ^= (pages?.hashCode ?? 0);
+    hashCode ^= (total?.hashCode ?? 0);
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (embedded?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ReviewPagination> listFromJson(List<dynamic> json) {
     return json == null
         ? <ReviewPagination>[]
-        : json.map((value) => ReviewPagination.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => ReviewPagination.fromJson(value))
+            .toList();
   }
 
   static Map<String, ReviewPagination> mapFromJson(Map<String, dynamic> json) {
@@ -74,6 +80,7 @@ class ReviewPagination extends Pagination {
       json.forEach((String key, dynamic value) =>
           map[key] = ReviewPagination.fromJson(value));
     }
+
     return map;
   }
 

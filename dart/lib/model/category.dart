@@ -76,22 +76,26 @@ class Category {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      links.hashCode ^
-      color.hashCode ^
-      createdAt.hashCode ^
-      icon.hashCode ^
-      id.hashCode ^
-      identificationNumber.hashCode ^
-      name.hashCode ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (color?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (icon?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (identificationNumber?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Category> listFromJson(List<dynamic> json) {
     return json == null
         ? <Category>[]
-        : json.map((value) => Category.fromJson(value)).toList();
+        : json.map((dynamic value) => Category.fromJson(value)).toList();
   }
 
   static Map<String, Category> mapFromJson(Map<String, dynamic> json) {
@@ -100,6 +104,7 @@ class Category {
       json.forEach(
           (String key, dynamic value) => map[key] = Category.fromJson(value));
     }
+
     return map;
   }
 

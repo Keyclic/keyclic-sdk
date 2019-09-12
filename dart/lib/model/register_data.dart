@@ -33,12 +33,19 @@ class RegisterData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ email.hashCode ^ password.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (email?.hashCode ?? 0);
+    hashCode ^= (password?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<RegisterData> listFromJson(List<dynamic> json) {
     return json == null
         ? <RegisterData>[]
-        : json.map((value) => RegisterData.fromJson(value)).toList();
+        : json.map((dynamic value) => RegisterData.fromJson(value)).toList();
   }
 
   static Map<String, RegisterData> mapFromJson(Map<String, dynamic> json) {
@@ -47,6 +54,7 @@ class RegisterData {
       json.forEach((String key, dynamic value) =>
           map[key] = RegisterData.fromJson(value));
     }
+
     return map;
   }
 

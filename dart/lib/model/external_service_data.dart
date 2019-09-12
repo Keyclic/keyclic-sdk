@@ -43,17 +43,23 @@ class ExternalServiceData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      organization.hashCode ^
-      name.hashCode ^
-      description.hashCode ^
-      provider.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (organization?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (provider?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ExternalServiceData> listFromJson(List<dynamic> json) {
     return json == null
         ? <ExternalServiceData>[]
-        : json.map((value) => ExternalServiceData.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => ExternalServiceData.fromJson(value))
+            .toList();
   }
 
   static Map<String, ExternalServiceData> mapFromJson(
@@ -63,6 +69,7 @@ class ExternalServiceData {
       json.forEach((String key, dynamic value) =>
           map[key] = ExternalServiceData.fromJson(value));
     }
+
     return map;
   }
 

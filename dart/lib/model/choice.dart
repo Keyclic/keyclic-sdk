@@ -20,7 +20,9 @@ class Choice {
     }
     default_ = json['default'];
     description = json['description'];
-    enum_ = (json['enum'] as List)?.map((item) => item as String)?.toList();
+    if (json['enum'] is List) {
+      enum_ = List<String>.from(json['enum']);
+    }
     format = json['format'];
     id = json['id'];
     maxItems = json['maxItems'];
@@ -73,24 +75,32 @@ class Choice {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      default_.hashCode ^
-      description.hashCode ^
-      enum_.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      format.hashCode ^
-      id.hashCode ^
-      maxItems.hashCode ^
-      minItems.hashCode ^
-      propertyOrder.hashCode ^
-      title.hashCode ^
-      type.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (enum_ is List && enum_.isNotEmpty) {
+      hashCode ^= enum_
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (default_?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (format?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (maxItems?.hashCode ?? 0);
+    hashCode ^= (minItems?.hashCode ?? 0);
+    hashCode ^= (propertyOrder?.hashCode ?? 0);
+    hashCode ^= (title?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Choice> listFromJson(List<dynamic> json) {
     return json == null
         ? <Choice>[]
-        : json.map((value) => Choice.fromJson(value)).toList();
+        : json.map((dynamic value) => Choice.fromJson(value)).toList();
   }
 
   static Map<String, Choice> mapFromJson(Map<String, dynamic> json) {
@@ -99,6 +109,7 @@ class Choice {
       json.forEach(
           (String key, dynamic value) => map[key] = Choice.fromJson(value));
     }
+
     return map;
   }
 

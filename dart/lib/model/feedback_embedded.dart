@@ -10,9 +10,9 @@ class FeedbackEmbedded {
     if (json == null) {
       return;
     }
-    stateTransitions = (json['stateTransitions'] as List)
-        ?.map((item) => item as String)
-        ?.toList();
+    if (json['stateTransitions'] is List) {
+      stateTransitions = List<String>.from(json['stateTransitions']);
+    }
     tracking = json['tracking'];
   }
 
@@ -36,16 +36,26 @@ class FeedbackEmbedded {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      stateTransitions.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      tracking.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (stateTransitions is List && stateTransitions.isNotEmpty) {
+      hashCode ^= stateTransitions
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (tracking?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<FeedbackEmbedded> listFromJson(List<dynamic> json) {
     return json == null
         ? <FeedbackEmbedded>[]
-        : json.map((value) => FeedbackEmbedded.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => FeedbackEmbedded.fromJson(value))
+            .toList();
   }
 
   static Map<String, FeedbackEmbedded> mapFromJson(Map<String, dynamic> json) {
@@ -54,6 +64,7 @@ class FeedbackEmbedded {
       json.forEach((String key, dynamic value) =>
           map[key] = FeedbackEmbedded.fromJson(value));
     }
+
     return map;
   }
 

@@ -10,8 +10,12 @@ class Chart {
     if (json == null) {
       return;
     }
-    data = (json['data'] as List)?.map((item) => item as int)?.toList();
-    labels = (json['labels'] as List)?.map((item) => item as String)?.toList();
+    if (json['data'] is List) {
+      data = List<int>.from(json['data']);
+    }
+    if (json['labels'] is List) {
+      labels = List<String>.from(json['labels']);
+    }
   }
 
   List<int> data;
@@ -33,17 +37,27 @@ class Chart {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      data.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      labels.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (data is List && data.isNotEmpty) {
+      hashCode ^= data
+          .map((int element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+    if (labels is List && labels.isNotEmpty) {
+      hashCode ^= labels
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<Chart> listFromJson(List<dynamic> json) {
     return json == null
         ? <Chart>[]
-        : json.map((value) => Chart.fromJson(value)).toList();
+        : json.map((dynamic value) => Chart.fromJson(value)).toList();
   }
 
   static Map<String, Chart> mapFromJson(Map<String, dynamic> json) {
@@ -52,6 +66,7 @@ class Chart {
       json.forEach(
           (String key, dynamic value) => map[key] = Chart.fromJson(value));
     }
+
     return map;
   }
 

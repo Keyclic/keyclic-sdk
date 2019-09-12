@@ -33,12 +33,19 @@ class MemberData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ person.hashCode ^ organization.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (person?.hashCode ?? 0);
+    hashCode ^= (organization?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<MemberData> listFromJson(List<dynamic> json) {
     return json == null
         ? <MemberData>[]
-        : json.map((value) => MemberData.fromJson(value)).toList();
+        : json.map((dynamic value) => MemberData.fromJson(value)).toList();
   }
 
   static Map<String, MemberData> mapFromJson(Map<String, dynamic> json) {
@@ -47,6 +54,7 @@ class MemberData {
       json.forEach(
           (String key, dynamic value) => map[key] = MemberData.fromJson(value));
     }
+
     return map;
   }
 

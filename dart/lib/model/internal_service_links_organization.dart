@@ -35,14 +35,22 @@ class InternalServiceLinksOrganization {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (href?.hashCode ?? 0);
+    hashCode ^= (iriTemplate?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<InternalServiceLinksOrganization> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <InternalServiceLinksOrganization>[]
         : json
-            .map((value) => InternalServiceLinksOrganization.fromJson(value))
+            .map((dynamic value) =>
+                InternalServiceLinksOrganization.fromJson(value))
             .toList();
   }
 
@@ -53,6 +61,7 @@ class InternalServiceLinksOrganization {
       json.forEach((String key, dynamic value) =>
           map[key] = InternalServiceLinksOrganization.fromJson(value));
     }
+
     return map;
   }
 

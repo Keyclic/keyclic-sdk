@@ -43,17 +43,21 @@ class CategoryPatch {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      color.hashCode ^
-      icon.hashCode ^
-      identificationNumber.hashCode ^
-      name.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (color?.hashCode ?? 0);
+    hashCode ^= (icon?.hashCode ?? 0);
+    hashCode ^= (identificationNumber?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<CategoryPatch> listFromJson(List<dynamic> json) {
     return json == null
         ? <CategoryPatch>[]
-        : json.map((value) => CategoryPatch.fromJson(value)).toList();
+        : json.map((dynamic value) => CategoryPatch.fromJson(value)).toList();
   }
 
   static Map<String, CategoryPatch> mapFromJson(Map<String, dynamic> json) {
@@ -62,6 +66,7 @@ class CategoryPatch {
       json.forEach((String key, dynamic value) =>
           map[key] = CategoryPatch.fromJson(value));
     }
+
     return map;
   }
 

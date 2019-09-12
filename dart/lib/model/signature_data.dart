@@ -33,12 +33,19 @@ class SignatureData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ signer.hashCode ^ image.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (signer?.hashCode ?? 0);
+    hashCode ^= (image?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<SignatureData> listFromJson(List<dynamic> json) {
     return json == null
         ? <SignatureData>[]
-        : json.map((value) => SignatureData.fromJson(value)).toList();
+        : json.map((dynamic value) => SignatureData.fromJson(value)).toList();
   }
 
   static Map<String, SignatureData> mapFromJson(Map<String, dynamic> json) {
@@ -47,6 +54,7 @@ class SignatureData {
       json.forEach((String key, dynamic value) =>
           map[key] = SignatureData.fromJson(value));
     }
+
     return map;
   }
 

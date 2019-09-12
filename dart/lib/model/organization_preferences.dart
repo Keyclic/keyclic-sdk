@@ -38,13 +38,22 @@ class OrganizationPreferences {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^ public.hashCode ^ reference.hashCode ^ reviewEnabled.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (public?.hashCode ?? 0);
+    hashCode ^= (reference?.hashCode ?? 0);
+    hashCode ^= (reviewEnabled?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<OrganizationPreferences> listFromJson(List<dynamic> json) {
     return json == null
         ? <OrganizationPreferences>[]
-        : json.map((value) => OrganizationPreferences.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => OrganizationPreferences.fromJson(value))
+            .toList();
   }
 
   static Map<String, OrganizationPreferences> mapFromJson(
@@ -54,6 +63,7 @@ class OrganizationPreferences {
       json.forEach((String key, dynamic value) =>
           map[key] = OrganizationPreferences.fromJson(value));
     }
+
     return map;
   }
 

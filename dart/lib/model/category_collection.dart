@@ -28,15 +28,24 @@ class CategoryCollection {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      items.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (items is List && items.isNotEmpty) {
+      hashCode ^= items
+          .map((Category element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<CategoryCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? <CategoryCollection>[]
-        : json.map((value) => CategoryCollection.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => CategoryCollection.fromJson(value))
+            .toList();
   }
 
   static Map<String, CategoryCollection> mapFromJson(
@@ -46,6 +55,7 @@ class CategoryCollection {
       json.forEach((String key, dynamic value) =>
           map[key] = CategoryCollection.fromJson(value));
     }
+
     return map;
   }
 

@@ -33,12 +33,19 @@ class DeviceLinks {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ person.hashCode ^ self.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (person?.hashCode ?? 0);
+    hashCode ^= (self?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DeviceLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? <DeviceLinks>[]
-        : json.map((value) => DeviceLinks.fromJson(value)).toList();
+        : json.map((dynamic value) => DeviceLinks.fromJson(value)).toList();
   }
 
   static Map<String, DeviceLinks> mapFromJson(Map<String, dynamic> json) {
@@ -47,6 +54,7 @@ class DeviceLinks {
       json.forEach((String key, dynamic value) =>
           map[key] = DeviceLinks.fromJson(value));
     }
+
     return map;
   }
 

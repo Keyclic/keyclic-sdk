@@ -66,21 +66,25 @@ class Activity {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      actor.hashCode ^
-      message.hashCode ^
-      object.hashCode ^
-      origin.hashCode ^
-      subject.hashCode ^
-      time.hashCode ^
-      title.hashCode ^
-      verb.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (actor?.hashCode ?? 0);
+    hashCode ^= (message?.hashCode ?? 0);
+    hashCode ^= (object?.hashCode ?? 0);
+    hashCode ^= (origin?.hashCode ?? 0);
+    hashCode ^= (subject?.hashCode ?? 0);
+    hashCode ^= (time?.hashCode ?? 0);
+    hashCode ^= (title?.hashCode ?? 0);
+    hashCode ^= (verb?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Activity> listFromJson(List<dynamic> json) {
     return json == null
         ? <Activity>[]
-        : json.map((value) => Activity.fromJson(value)).toList();
+        : json.map((dynamic value) => Activity.fromJson(value)).toList();
   }
 
   static Map<String, Activity> mapFromJson(Map<String, dynamic> json) {
@@ -89,6 +93,7 @@ class Activity {
       json.forEach(
           (String key, dynamic value) => map[key] = Activity.fromJson(value));
     }
+
     return map;
   }
 

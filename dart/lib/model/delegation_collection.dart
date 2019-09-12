@@ -28,15 +28,24 @@ class DelegationCollection {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      items.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (items is List && items.isNotEmpty) {
+      hashCode ^= items
+          .map((Delegation element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<DelegationCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? <DelegationCollection>[]
-        : json.map((value) => DelegationCollection.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => DelegationCollection.fromJson(value))
+            .toList();
   }
 
   static Map<String, DelegationCollection> mapFromJson(
@@ -46,6 +55,7 @@ class DelegationCollection {
       json.forEach((String key, dynamic value) =>
           map[key] = DelegationCollection.fromJson(value));
     }
+
     return map;
   }
 

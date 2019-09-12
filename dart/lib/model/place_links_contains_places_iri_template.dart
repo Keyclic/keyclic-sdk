@@ -29,14 +29,21 @@ class PlaceLinksContainsPlacesIriTemplate {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ mapping.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (mapping?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<PlaceLinksContainsPlacesIriTemplate> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <PlaceLinksContainsPlacesIriTemplate>[]
         : json
-            .map((value) => PlaceLinksContainsPlacesIriTemplate.fromJson(value))
+            .map((dynamic value) =>
+                PlaceLinksContainsPlacesIriTemplate.fromJson(value))
             .toList();
   }
 
@@ -47,6 +54,7 @@ class PlaceLinksContainsPlacesIriTemplate {
       json.forEach((String key, dynamic value) =>
           map[key] = PlaceLinksContainsPlacesIriTemplate.fromJson(value));
     }
+
     return map;
   }
 

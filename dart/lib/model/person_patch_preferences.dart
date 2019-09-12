@@ -33,13 +33,21 @@ class PersonPatchPreferences {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^ messageEmailEnabled.hashCode ^ messagePushEnabled.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (messageEmailEnabled?.hashCode ?? 0);
+    hashCode ^= (messagePushEnabled?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<PersonPatchPreferences> listFromJson(List<dynamic> json) {
     return json == null
         ? <PersonPatchPreferences>[]
-        : json.map((value) => PersonPatchPreferences.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => PersonPatchPreferences.fromJson(value))
+            .toList();
   }
 
   static Map<String, PersonPatchPreferences> mapFromJson(
@@ -49,6 +57,7 @@ class PersonPatchPreferences {
       json.forEach((String key, dynamic value) =>
           map[key] = PersonPatchPreferences.fromJson(value));
     }
+
     return map;
   }
 

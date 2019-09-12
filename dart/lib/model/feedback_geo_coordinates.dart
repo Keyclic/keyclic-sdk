@@ -15,7 +15,6 @@ class FeedbackGeoCoordinates {
   }
 
   /// range from -10000 to 8000
-
   double elevation;
 
   FeedbackGeoCoordinatesPoint point;
@@ -35,12 +34,21 @@ class FeedbackGeoCoordinates {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ elevation.hashCode ^ point.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (elevation?.hashCode ?? 0);
+    hashCode ^= (point?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<FeedbackGeoCoordinates> listFromJson(List<dynamic> json) {
     return json == null
         ? <FeedbackGeoCoordinates>[]
-        : json.map((value) => FeedbackGeoCoordinates.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => FeedbackGeoCoordinates.fromJson(value))
+            .toList();
   }
 
   static Map<String, FeedbackGeoCoordinates> mapFromJson(
@@ -50,6 +58,7 @@ class FeedbackGeoCoordinates {
       json.forEach((String key, dynamic value) =>
           map[key] = FeedbackGeoCoordinates.fromJson(value));
     }
+
     return map;
   }
 

@@ -44,17 +44,21 @@ class PlaceLinks {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      containedInPlace.hashCode ^
-      containsPlaces.hashCode ^
-      organization.hashCode ^
-      self.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (containedInPlace?.hashCode ?? 0);
+    hashCode ^= (containsPlaces?.hashCode ?? 0);
+    hashCode ^= (organization?.hashCode ?? 0);
+    hashCode ^= (self?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<PlaceLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? <PlaceLinks>[]
-        : json.map((value) => PlaceLinks.fromJson(value)).toList();
+        : json.map((dynamic value) => PlaceLinks.fromJson(value)).toList();
   }
 
   static Map<String, PlaceLinks> mapFromJson(Map<String, dynamic> json) {
@@ -63,6 +67,7 @@ class PlaceLinks {
       json.forEach(
           (String key, dynamic value) => map[key] = PlaceLinks.fromJson(value));
     }
+
     return map;
   }
 

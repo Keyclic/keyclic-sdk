@@ -31,7 +31,9 @@ class Feedback {
     id = json['id'];
     metadata = json['metadata'];
     public = json['public'];
-    state = (json['state'] as List)?.map((item) => item as String)?.toList();
+    if (json['state'] is List) {
+      state = List<String>.from(json['state']);
+    }
     type = json['type'];
     updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
@@ -86,28 +88,41 @@ class Feedback {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      embedded.hashCode ^
-      links.hashCode ^
-      createdAt.hashCode ^
-      description.hashCode ^
-      geoCoordinates.hashCode ^
-      id.hashCode ^
-      metadata.keys.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      metadata.values.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      public.hashCode ^
-      state.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (state is List && state.isNotEmpty) {
+      hashCode ^= state
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    if (metadata is Map && metadata.isNotEmpty) {
+      hashCode ^= metadata.keys
+          .map((dynamic element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+      hashCode ^= metadata.values
+          .map((dynamic element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (embedded?.hashCode ?? 0);
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (geoCoordinates?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (public?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Feedback> listFromJson(List<dynamic> json) {
     return json == null
         ? <Feedback>[]
-        : json.map((value) => Feedback.fromJson(value)).toList();
+        : json.map((dynamic value) => Feedback.fromJson(value)).toList();
   }
 
   static Map<String, Feedback> mapFromJson(Map<String, dynamic> json) {
@@ -116,6 +131,7 @@ class Feedback {
       json.forEach(
           (String key, dynamic value) => map[key] = Feedback.fromJson(value));
     }
+
     return map;
   }
 

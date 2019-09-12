@@ -29,14 +29,21 @@ class WebhookLinksOrganizationIriTemplate {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ mapping.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (mapping?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<WebhookLinksOrganizationIriTemplate> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <WebhookLinksOrganizationIriTemplate>[]
         : json
-            .map((value) => WebhookLinksOrganizationIriTemplate.fromJson(value))
+            .map((dynamic value) =>
+                WebhookLinksOrganizationIriTemplate.fromJson(value))
             .toList();
   }
 
@@ -47,6 +54,7 @@ class WebhookLinksOrganizationIriTemplate {
       json.forEach((String key, dynamic value) =>
           map[key] = WebhookLinksOrganizationIriTemplate.fromJson(value));
     }
+
     return map;
   }
 

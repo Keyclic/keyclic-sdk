@@ -28,15 +28,22 @@ class FeedCollection {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      items.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (items is List && items.isNotEmpty) {
+      hashCode ^= items
+          .map((Feed element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<FeedCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? <FeedCollection>[]
-        : json.map((value) => FeedCollection.fromJson(value)).toList();
+        : json.map((dynamic value) => FeedCollection.fromJson(value)).toList();
   }
 
   static Map<String, FeedCollection> mapFromJson(Map<String, dynamic> json) {
@@ -45,6 +52,7 @@ class FeedCollection {
       json.forEach((String key, dynamic value) =>
           map[key] = FeedCollection.fromJson(value));
     }
+
     return map;
   }
 

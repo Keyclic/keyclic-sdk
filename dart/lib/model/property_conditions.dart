@@ -28,15 +28,24 @@ class PropertyConditions {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      allOf.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (allOf is List && allOf.isNotEmpty) {
+      hashCode ^= allOf
+          .map((Condition element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<PropertyConditions> listFromJson(List<dynamic> json) {
     return json == null
         ? <PropertyConditions>[]
-        : json.map((value) => PropertyConditions.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => PropertyConditions.fromJson(value))
+            .toList();
   }
 
   static Map<String, PropertyConditions> mapFromJson(
@@ -46,6 +55,7 @@ class PropertyConditions {
       json.forEach((String key, dynamic value) =>
           map[key] = PropertyConditions.fromJson(value));
     }
+
     return map;
   }
 

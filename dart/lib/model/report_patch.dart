@@ -17,7 +17,9 @@ class ReportPatch {
     description = json['description'];
     identificationNumber = json['identificationNumber'];
     priority = json['priority'];
-    tags = (json['tags'] as List)?.map((item) => item as String)?.toList();
+    if (json['tags'] is List) {
+      tags = List<String>.from(json['tags']);
+    }
   }
 
   String category;
@@ -48,19 +50,27 @@ class ReportPatch {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      category.hashCode ^
-      description.hashCode ^
-      identificationNumber.hashCode ^
-      priority.hashCode ^
-      tags.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (tags is List && tags.isNotEmpty) {
+      hashCode ^= tags
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (category?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (identificationNumber?.hashCode ?? 0);
+    hashCode ^= (priority?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ReportPatch> listFromJson(List<dynamic> json) {
     return json == null
         ? <ReportPatch>[]
-        : json.map((value) => ReportPatch.fromJson(value)).toList();
+        : json.map((dynamic value) => ReportPatch.fromJson(value)).toList();
   }
 
   static Map<String, ReportPatch> mapFromJson(Map<String, dynamic> json) {
@@ -69,6 +79,7 @@ class ReportPatch {
       json.forEach((String key, dynamic value) =>
           map[key] = ReportPatch.fromJson(value));
     }
+
     return map;
   }
 

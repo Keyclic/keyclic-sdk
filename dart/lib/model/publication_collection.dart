@@ -28,15 +28,24 @@ class PublicationCollection {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      items.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (items is List && items.isNotEmpty) {
+      hashCode ^= items
+          .map((Publication element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<PublicationCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? <PublicationCollection>[]
-        : json.map((value) => PublicationCollection.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => PublicationCollection.fromJson(value))
+            .toList();
   }
 
   static Map<String, PublicationCollection> mapFromJson(
@@ -46,6 +55,7 @@ class PublicationCollection {
       json.forEach((String key, dynamic value) =>
           map[key] = PublicationCollection.fromJson(value));
     }
+
     return map;
   }
 

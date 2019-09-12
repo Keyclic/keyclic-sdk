@@ -11,8 +11,9 @@ class BusinessActivityMetadataSchema {
       return;
     }
     properties = Property.mapFromJson(json['properties']);
-    required =
-        (json['required'] as List)?.map((item) => item as String)?.toList();
+    if (json['required'] is List) {
+      required = List<String>.from(json['required']);
+    }
   }
 
   Map<String, Property> properties;
@@ -35,20 +36,33 @@ class BusinessActivityMetadataSchema {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      properties.keys.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      properties.values.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      required.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (required is List && required.isNotEmpty) {
+      hashCode ^= required
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    if (properties is Map && properties.isNotEmpty) {
+      hashCode ^= properties.keys
+          .map((dynamic element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+      hashCode ^= properties.values
+          .map((dynamic element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<BusinessActivityMetadataSchema> listFromJson(List<dynamic> json) {
     return json == null
         ? <BusinessActivityMetadataSchema>[]
         : json
-            .map((value) => BusinessActivityMetadataSchema.fromJson(value))
+            .map((dynamic value) =>
+                BusinessActivityMetadataSchema.fromJson(value))
             .toList();
   }
 
@@ -59,6 +73,7 @@ class BusinessActivityMetadataSchema {
       json.forEach((String key, dynamic value) =>
           map[key] = BusinessActivityMetadataSchema.fromJson(value));
     }
+
     return map;
   }
 

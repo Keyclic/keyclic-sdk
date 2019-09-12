@@ -23,7 +23,9 @@ class Property {
     conditions = PropertyConditions.fromJson(json['conditions']);
     default_ = json['default'];
     description = json['description'];
-    enum_ = (json['enum'] as List)?.map((item) => item as String)?.toList();
+    if (json['enum'] is List) {
+      enum_ = List<String>.from(json['enum']);
+    }
     format = json['format'];
     id = json['id'];
     items = PropertyItems.fromJson(json['items']);
@@ -83,26 +85,34 @@ class Property {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      conditions.hashCode ^
-      default_.hashCode ^
-      description.hashCode ^
-      enum_.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      format.hashCode ^
-      id.hashCode ^
-      items.hashCode ^
-      maxItems.hashCode ^
-      minItems.hashCode ^
-      propertyOrder.hashCode ^
-      title.hashCode ^
-      type.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (enum_ is List && enum_.isNotEmpty) {
+      hashCode ^= enum_
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (conditions?.hashCode ?? 0);
+    hashCode ^= (default_?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (format?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (items?.hashCode ?? 0);
+    hashCode ^= (maxItems?.hashCode ?? 0);
+    hashCode ^= (minItems?.hashCode ?? 0);
+    hashCode ^= (propertyOrder?.hashCode ?? 0);
+    hashCode ^= (title?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Property> listFromJson(List<dynamic> json) {
     return json == null
         ? <Property>[]
-        : json.map((value) => Property.fromJson(value)).toList();
+        : json.map((dynamic value) => Property.fromJson(value)).toList();
   }
 
   static Map<String, Property> mapFromJson(Map<String, dynamic> json) {
@@ -111,6 +121,7 @@ class Property {
       json.forEach(
           (String key, dynamic value) => map[key] = Property.fromJson(value));
     }
+
     return map;
   }
 

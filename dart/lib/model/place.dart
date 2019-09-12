@@ -86,24 +86,28 @@ class Place {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      embedded.hashCode ^
-      links.hashCode ^
-      branchCode.hashCode ^
-      createdAt.hashCode ^
-      description.hashCode ^
-      geo.hashCode ^
-      id.hashCode ^
-      name.hashCode ^
-      preferences.hashCode ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (embedded?.hashCode ?? 0);
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (branchCode?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (geo?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= (preferences?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Place> listFromJson(List<dynamic> json) {
     return json == null
         ? <Place>[]
-        : json.map((value) => Place.fromJson(value)).toList();
+        : json.map((dynamic value) => Place.fromJson(value)).toList();
   }
 
   static Map<String, Place> mapFromJson(Map<String, dynamic> json) {
@@ -112,6 +116,7 @@ class Place {
       json.forEach(
           (String key, dynamic value) => map[key] = Place.fromJson(value));
     }
+
     return map;
   }
 

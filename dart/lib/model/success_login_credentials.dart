@@ -15,7 +15,9 @@ class SuccessLoginCredentials {
     }
     id = json['id'];
     login = json['login'];
-    roles = (json['roles'] as List)?.map((item) => item as String)?.toList();
+    if (json['roles'] is List) {
+      roles = List<String>.from(json['roles']);
+    }
     administratorOf = SuccessLoginCredentialsAdministratorOf.listFromJson(
         json['administratorOf']);
     memberOf = SuccessLoginCredentialsMemberOf.listFromJson(json['memberOf']);
@@ -50,21 +52,38 @@ class SuccessLoginCredentials {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      id.hashCode ^
-      login.hashCode ^
-      roles.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      administratorOf.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      memberOf.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (roles is List && roles.isNotEmpty) {
+      hashCode ^= roles
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+    if (administratorOf is List && administratorOf.isNotEmpty) {
+      hashCode ^= administratorOf
+          .map((SuccessLoginCredentialsAdministratorOf element) =>
+              element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+    if (memberOf is List && memberOf.isNotEmpty) {
+      hashCode ^= memberOf
+          .map((SuccessLoginCredentialsMemberOf element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (login?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<SuccessLoginCredentials> listFromJson(List<dynamic> json) {
     return json == null
         ? <SuccessLoginCredentials>[]
-        : json.map((value) => SuccessLoginCredentials.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => SuccessLoginCredentials.fromJson(value))
+            .toList();
   }
 
   static Map<String, SuccessLoginCredentials> mapFromJson(
@@ -74,6 +93,7 @@ class SuccessLoginCredentials {
       json.forEach((String key, dynamic value) =>
           map[key] = SuccessLoginCredentials.fromJson(value));
     }
+
     return map;
   }
 

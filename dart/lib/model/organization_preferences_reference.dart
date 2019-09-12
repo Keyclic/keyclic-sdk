@@ -28,14 +28,21 @@ class OrganizationPreferencesReference {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ prefix.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (prefix?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<OrganizationPreferencesReference> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <OrganizationPreferencesReference>[]
         : json
-            .map((value) => OrganizationPreferencesReference.fromJson(value))
+            .map((dynamic value) =>
+                OrganizationPreferencesReference.fromJson(value))
             .toList();
   }
 
@@ -46,6 +53,7 @@ class OrganizationPreferencesReference {
       json.forEach((String key, dynamic value) =>
           map[key] = OrganizationPreferencesReference.fromJson(value));
     }
+
     return map;
   }
 

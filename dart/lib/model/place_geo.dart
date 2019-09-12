@@ -38,13 +38,20 @@ class PlaceGeo {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^ centroid.hashCode ^ elevation.hashCode ^ polygon.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (centroid?.hashCode ?? 0);
+    hashCode ^= (elevation?.hashCode ?? 0);
+    hashCode ^= (polygon?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<PlaceGeo> listFromJson(List<dynamic> json) {
     return json == null
         ? <PlaceGeo>[]
-        : json.map((value) => PlaceGeo.fromJson(value)).toList();
+        : json.map((dynamic value) => PlaceGeo.fromJson(value)).toList();
   }
 
   static Map<String, PlaceGeo> mapFromJson(Map<String, dynamic> json) {
@@ -53,6 +60,7 @@ class PlaceGeo {
       json.forEach(
           (String key, dynamic value) => map[key] = PlaceGeo.fromJson(value));
     }
+
     return map;
   }
 

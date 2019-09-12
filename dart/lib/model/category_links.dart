@@ -33,12 +33,19 @@ class CategoryLinks {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ organization.hashCode ^ self.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (organization?.hashCode ?? 0);
+    hashCode ^= (self?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<CategoryLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? <CategoryLinks>[]
-        : json.map((value) => CategoryLinks.fromJson(value)).toList();
+        : json.map((dynamic value) => CategoryLinks.fromJson(value)).toList();
   }
 
   static Map<String, CategoryLinks> mapFromJson(Map<String, dynamic> json) {
@@ -47,6 +54,7 @@ class CategoryLinks {
       json.forEach((String key, dynamic value) =>
           map[key] = CategoryLinks.fromJson(value));
     }
+
     return map;
   }
 

@@ -33,12 +33,19 @@ class WebhookPatch {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ event.hashCode ^ payloadUrl.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (event?.hashCode ?? 0);
+    hashCode ^= (payloadUrl?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<WebhookPatch> listFromJson(List<dynamic> json) {
     return json == null
         ? <WebhookPatch>[]
-        : json.map((value) => WebhookPatch.fromJson(value)).toList();
+        : json.map((dynamic value) => WebhookPatch.fromJson(value)).toList();
   }
 
   static Map<String, WebhookPatch> mapFromJson(Map<String, dynamic> json) {
@@ -47,6 +54,7 @@ class WebhookPatch {
       json.forEach((String key, dynamic value) =>
           map[key] = WebhookPatch.fromJson(value));
     }
+
     return map;
   }
 

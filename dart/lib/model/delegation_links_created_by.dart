@@ -35,13 +35,20 @@ class DelegationLinksCreatedBy {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (href?.hashCode ?? 0);
+    hashCode ^= (iriTemplate?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DelegationLinksCreatedBy> listFromJson(List<dynamic> json) {
     return json == null
         ? <DelegationLinksCreatedBy>[]
         : json
-            .map((value) => DelegationLinksCreatedBy.fromJson(value))
+            .map((dynamic value) => DelegationLinksCreatedBy.fromJson(value))
             .toList();
   }
 
@@ -52,6 +59,7 @@ class DelegationLinksCreatedBy {
       json.forEach((String key, dynamic value) =>
           map[key] = DelegationLinksCreatedBy.fromJson(value));
     }
+
     return map;
   }
 

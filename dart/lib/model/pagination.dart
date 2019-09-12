@@ -48,18 +48,22 @@ class Pagination {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      limit.hashCode ^
-      page.hashCode ^
-      pages.hashCode ^
-      total.hashCode ^
-      links.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (limit?.hashCode ?? 0);
+    hashCode ^= (page?.hashCode ?? 0);
+    hashCode ^= (pages?.hashCode ?? 0);
+    hashCode ^= (total?.hashCode ?? 0);
+    hashCode ^= (links?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Pagination> listFromJson(List<dynamic> json) {
     return json == null
         ? <Pagination>[]
-        : json.map((value) => Pagination.fromJson(value)).toList();
+        : json.map((dynamic value) => Pagination.fromJson(value)).toList();
   }
 
   static Map<String, Pagination> mapFromJson(Map<String, dynamic> json) {
@@ -68,6 +72,7 @@ class Pagination {
       json.forEach(
           (String key, dynamic value) => map[key] = Pagination.fromJson(value));
     }
+
     return map;
   }
 

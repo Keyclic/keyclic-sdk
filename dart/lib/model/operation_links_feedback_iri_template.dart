@@ -29,14 +29,21 @@ class OperationLinksFeedbackIriTemplate {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ mapping.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (mapping?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<OperationLinksFeedbackIriTemplate> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <OperationLinksFeedbackIriTemplate>[]
         : json
-            .map((value) => OperationLinksFeedbackIriTemplate.fromJson(value))
+            .map((dynamic value) =>
+                OperationLinksFeedbackIriTemplate.fromJson(value))
             .toList();
   }
 
@@ -47,6 +54,7 @@ class OperationLinksFeedbackIriTemplate {
       json.forEach((String key, dynamic value) =>
           map[key] = OperationLinksFeedbackIriTemplate.fromJson(value));
     }
+
     return map;
   }
 

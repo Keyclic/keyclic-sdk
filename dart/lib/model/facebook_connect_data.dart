@@ -28,12 +28,20 @@ class FacebookConnectData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ accessToken.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (accessToken?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<FacebookConnectData> listFromJson(List<dynamic> json) {
     return json == null
         ? <FacebookConnectData>[]
-        : json.map((value) => FacebookConnectData.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => FacebookConnectData.fromJson(value))
+            .toList();
   }
 
   static Map<String, FacebookConnectData> mapFromJson(
@@ -43,6 +51,7 @@ class FacebookConnectData {
       json.forEach((String key, dynamic value) =>
           map[key] = FacebookConnectData.fromJson(value));
     }
+
     return map;
   }
 

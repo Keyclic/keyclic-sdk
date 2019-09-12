@@ -28,14 +28,20 @@ class DelegationLinksSelfIriTemplateMapping {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ delegation.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (delegation?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DelegationLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <DelegationLinksSelfIriTemplateMapping>[]
         : json
-            .map((value) =>
+            .map((dynamic value) =>
                 DelegationLinksSelfIriTemplateMapping.fromJson(value))
             .toList();
   }
@@ -47,6 +53,7 @@ class DelegationLinksSelfIriTemplateMapping {
       json.forEach((String key, dynamic value) =>
           map[key] = DelegationLinksSelfIriTemplateMapping.fromJson(value));
     }
+
     return map;
   }
 

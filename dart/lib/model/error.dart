@@ -38,12 +38,20 @@ class Error {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ message.hashCode ^ total.hashCode ^ embedded.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (message?.hashCode ?? 0);
+    hashCode ^= (total?.hashCode ?? 0);
+    hashCode ^= (embedded?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Error> listFromJson(List<dynamic> json) {
     return json == null
         ? <Error>[]
-        : json.map((value) => Error.fromJson(value)).toList();
+        : json.map((dynamic value) => Error.fromJson(value)).toList();
   }
 
   static Map<String, Error> mapFromJson(Map<String, dynamic> json) {
@@ -52,6 +60,7 @@ class Error {
       json.forEach(
           (String key, dynamic value) => map[key] = Error.fromJson(value));
     }
+
     return map;
   }
 

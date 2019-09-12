@@ -1,5 +1,13 @@
 part of keyclic_sdk_api.api;
 
+class ReportWorkflowTransitionDataTransitionEnum {
+  static const String accept_ = "accept";
+  static const String close_ = "close";
+  static const String hold_ = "hold";
+  static const String progress_ = "progress";
+  static const String refuse_ = "refuse";
+}
+
 class ReportWorkflowTransitionData {
   ReportWorkflowTransitionData({
     this.transition,
@@ -12,7 +20,7 @@ class ReportWorkflowTransitionData {
     transition = json['transition'];
   }
 
-  /// enum transitionEnum {  accept,  close,  hold,  progress,  refuse,  };
+  /// use ReportWorkflowTransitionDataTransitionEnum
   String transition;
 
   @override
@@ -29,13 +37,20 @@ class ReportWorkflowTransitionData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ transition.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (transition?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ReportWorkflowTransitionData> listFromJson(List<dynamic> json) {
     return json == null
         ? <ReportWorkflowTransitionData>[]
         : json
-            .map((value) => ReportWorkflowTransitionData.fromJson(value))
+            .map(
+                (dynamic value) => ReportWorkflowTransitionData.fromJson(value))
             .toList();
   }
 
@@ -46,6 +61,7 @@ class ReportWorkflowTransitionData {
       json.forEach((String key, dynamic value) =>
           map[key] = ReportWorkflowTransitionData.fromJson(value));
     }
+
     return map;
   }
 

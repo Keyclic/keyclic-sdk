@@ -35,12 +35,21 @@ class PlaceLinksOrganization {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (href?.hashCode ?? 0);
+    hashCode ^= (iriTemplate?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<PlaceLinksOrganization> listFromJson(List<dynamic> json) {
     return json == null
         ? <PlaceLinksOrganization>[]
-        : json.map((value) => PlaceLinksOrganization.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => PlaceLinksOrganization.fromJson(value))
+            .toList();
   }
 
   static Map<String, PlaceLinksOrganization> mapFromJson(
@@ -50,6 +59,7 @@ class PlaceLinksOrganization {
       json.forEach((String key, dynamic value) =>
           map[key] = PlaceLinksOrganization.fromJson(value));
     }
+
     return map;
   }
 

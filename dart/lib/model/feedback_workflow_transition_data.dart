@@ -1,5 +1,10 @@
 part of keyclic_sdk_api.api;
 
+class FeedbackWorkflowTransitionDataTransitionEnum {
+  static const String process_ = "process";
+  static const String publish_ = "publish";
+}
+
 class FeedbackWorkflowTransitionData {
   FeedbackWorkflowTransitionData({
     this.transition,
@@ -12,7 +17,7 @@ class FeedbackWorkflowTransitionData {
     transition = json['transition'];
   }
 
-  /// enum transitionEnum {  process,  publish,  };
+  /// use FeedbackWorkflowTransitionDataTransitionEnum
   String transition;
 
   @override
@@ -29,13 +34,20 @@ class FeedbackWorkflowTransitionData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ transition.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (transition?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<FeedbackWorkflowTransitionData> listFromJson(List<dynamic> json) {
     return json == null
         ? <FeedbackWorkflowTransitionData>[]
         : json
-            .map((value) => FeedbackWorkflowTransitionData.fromJson(value))
+            .map((dynamic value) =>
+                FeedbackWorkflowTransitionData.fromJson(value))
             .toList();
   }
 
@@ -46,6 +58,7 @@ class FeedbackWorkflowTransitionData {
       json.forEach((String key, dynamic value) =>
           map[key] = FeedbackWorkflowTransitionData.fromJson(value));
     }
+
     return map;
   }
 

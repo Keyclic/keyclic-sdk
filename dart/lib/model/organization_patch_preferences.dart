@@ -28,13 +28,20 @@ class OrganizationPatchPreferences {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ reference.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (reference?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<OrganizationPatchPreferences> listFromJson(List<dynamic> json) {
     return json == null
         ? <OrganizationPatchPreferences>[]
         : json
-            .map((value) => OrganizationPatchPreferences.fromJson(value))
+            .map(
+                (dynamic value) => OrganizationPatchPreferences.fromJson(value))
             .toList();
   }
 
@@ -45,6 +52,7 @@ class OrganizationPatchPreferences {
       json.forEach((String key, dynamic value) =>
           map[key] = OrganizationPatchPreferences.fromJson(value));
     }
+
     return map;
   }
 

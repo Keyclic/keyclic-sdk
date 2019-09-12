@@ -58,20 +58,26 @@ class OrganizationPatch {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      name.hashCode ^
-      alternateName.hashCode ^
-      description.hashCode ^
-      logo.hashCode ^
-      billingEmailAddress.hashCode ^
-      notificationEmailAddress.hashCode ^
-      preferences.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= (alternateName?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (logo?.hashCode ?? 0);
+    hashCode ^= (billingEmailAddress?.hashCode ?? 0);
+    hashCode ^= (notificationEmailAddress?.hashCode ?? 0);
+    hashCode ^= (preferences?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<OrganizationPatch> listFromJson(List<dynamic> json) {
     return json == null
         ? <OrganizationPatch>[]
-        : json.map((value) => OrganizationPatch.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => OrganizationPatch.fromJson(value))
+            .toList();
   }
 
   static Map<String, OrganizationPatch> mapFromJson(Map<String, dynamic> json) {
@@ -80,6 +86,7 @@ class OrganizationPatch {
       json.forEach((String key, dynamic value) =>
           map[key] = OrganizationPatch.fromJson(value));
     }
+
     return map;
   }
 

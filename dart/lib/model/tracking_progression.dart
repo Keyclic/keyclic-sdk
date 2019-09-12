@@ -33,12 +33,21 @@ class TrackingProgression {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ resolved.hashCode ^ total.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (resolved?.hashCode ?? 0);
+    hashCode ^= (total?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<TrackingProgression> listFromJson(List<dynamic> json) {
     return json == null
         ? <TrackingProgression>[]
-        : json.map((value) => TrackingProgression.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => TrackingProgression.fromJson(value))
+            .toList();
   }
 
   static Map<String, TrackingProgression> mapFromJson(
@@ -48,6 +57,7 @@ class TrackingProgression {
       json.forEach((String key, dynamic value) =>
           map[key] = TrackingProgression.fromJson(value));
     }
+
     return map;
   }
 

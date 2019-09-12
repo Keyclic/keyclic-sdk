@@ -33,12 +33,21 @@ class SignatureDataSigner {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ familyName.hashCode ^ givenName.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (familyName?.hashCode ?? 0);
+    hashCode ^= (givenName?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<SignatureDataSigner> listFromJson(List<dynamic> json) {
     return json == null
         ? <SignatureDataSigner>[]
-        : json.map((value) => SignatureDataSigner.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => SignatureDataSigner.fromJson(value))
+            .toList();
   }
 
   static Map<String, SignatureDataSigner> mapFromJson(
@@ -48,6 +57,7 @@ class SignatureDataSigner {
       json.forEach((String key, dynamic value) =>
           map[key] = SignatureDataSigner.fromJson(value));
     }
+
     return map;
   }
 

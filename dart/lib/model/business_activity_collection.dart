@@ -28,16 +28,23 @@ class BusinessActivityCollection {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      items.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (items is List && items.isNotEmpty) {
+      hashCode ^= items
+          .map((BusinessActivity element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<BusinessActivityCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? <BusinessActivityCollection>[]
         : json
-            .map((value) => BusinessActivityCollection.fromJson(value))
+            .map((dynamic value) => BusinessActivityCollection.fromJson(value))
             .toList();
   }
 
@@ -48,6 +55,7 @@ class BusinessActivityCollection {
       json.forEach((String key, dynamic value) =>
           map[key] = BusinessActivityCollection.fromJson(value));
     }
+
     return map;
   }
 

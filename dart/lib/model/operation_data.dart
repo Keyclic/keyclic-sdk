@@ -53,19 +53,23 @@ class OperationData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      description.hashCode ^
-      name.hashCode ^
-      identificationNumber.hashCode ^
-      report.hashCode ^
-      organization.hashCode ^
-      scheduledAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= (identificationNumber?.hashCode ?? 0);
+    hashCode ^= (report?.hashCode ?? 0);
+    hashCode ^= (organization?.hashCode ?? 0);
+    hashCode ^= (scheduledAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<OperationData> listFromJson(List<dynamic> json) {
     return json == null
         ? <OperationData>[]
-        : json.map((value) => OperationData.fromJson(value)).toList();
+        : json.map((dynamic value) => OperationData.fromJson(value)).toList();
   }
 
   static Map<String, OperationData> mapFromJson(Map<String, dynamic> json) {
@@ -74,6 +78,7 @@ class OperationData {
       json.forEach((String key, dynamic value) =>
           map[key] = OperationData.fromJson(value));
     }
+
     return map;
   }
 

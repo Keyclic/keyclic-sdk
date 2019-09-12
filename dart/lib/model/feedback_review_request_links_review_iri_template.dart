@@ -30,14 +30,20 @@ class FeedbackReviewRequestLinksReviewIriTemplate {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ mapping.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (mapping?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<FeedbackReviewRequestLinksReviewIriTemplate> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <FeedbackReviewRequestLinksReviewIriTemplate>[]
         : json
-            .map((value) =>
+            .map((dynamic value) =>
                 FeedbackReviewRequestLinksReviewIriTemplate.fromJson(value))
             .toList();
   }
@@ -49,6 +55,7 @@ class FeedbackReviewRequestLinksReviewIriTemplate {
       json.forEach((String key, dynamic value) => map[key] =
           FeedbackReviewRequestLinksReviewIriTemplate.fromJson(value));
     }
+
     return map;
   }
 

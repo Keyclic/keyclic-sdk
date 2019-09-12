@@ -1,5 +1,13 @@
 part of keyclic_sdk_api.api;
 
+class WebhookDataEventEnum {
+  static const String operationCreated_ = "operationCreated";
+  static const String operationRemoved_ = "operationRemoved";
+  static const String operationStateChanged_ = "operationStateChanged";
+  static const String reportCreated_ = "reportCreated";
+  static const String reportStateChanged_ = "reportStateChanged";
+}
+
 class WebhookData {
   WebhookData({
     this.event,
@@ -16,7 +24,7 @@ class WebhookData {
     payloadUrl = json['payloadUrl'];
   }
 
-  /// enum eventEnum {  operationCreated,  operationRemoved,  operationStateChanged,  reportCreated,  reportStateChanged,  };
+  /// use WebhookDataEventEnum
   String event;
 
   String organization;
@@ -39,13 +47,20 @@ class WebhookData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^ event.hashCode ^ organization.hashCode ^ payloadUrl.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (event?.hashCode ?? 0);
+    hashCode ^= (organization?.hashCode ?? 0);
+    hashCode ^= (payloadUrl?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<WebhookData> listFromJson(List<dynamic> json) {
     return json == null
         ? <WebhookData>[]
-        : json.map((value) => WebhookData.fromJson(value)).toList();
+        : json.map((dynamic value) => WebhookData.fromJson(value)).toList();
   }
 
   static Map<String, WebhookData> mapFromJson(Map<String, dynamic> json) {
@@ -54,6 +69,7 @@ class WebhookData {
       json.forEach((String key, dynamic value) =>
           map[key] = WebhookData.fromJson(value));
     }
+
     return map;
   }
 

@@ -33,12 +33,19 @@ class WebhookLinks {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ organization.hashCode ^ self.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (organization?.hashCode ?? 0);
+    hashCode ^= (self?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<WebhookLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? <WebhookLinks>[]
-        : json.map((value) => WebhookLinks.fromJson(value)).toList();
+        : json.map((dynamic value) => WebhookLinks.fromJson(value)).toList();
   }
 
   static Map<String, WebhookLinks> mapFromJson(Map<String, dynamic> json) {
@@ -47,6 +54,7 @@ class WebhookLinks {
       json.forEach((String key, dynamic value) =>
           map[key] = WebhookLinks.fromJson(value));
     }
+
     return map;
   }
 

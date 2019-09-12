@@ -35,13 +35,20 @@ class CheckpointLinksOrganization {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (href?.hashCode ?? 0);
+    hashCode ^= (iriTemplate?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<CheckpointLinksOrganization> listFromJson(List<dynamic> json) {
     return json == null
         ? <CheckpointLinksOrganization>[]
         : json
-            .map((value) => CheckpointLinksOrganization.fromJson(value))
+            .map((dynamic value) => CheckpointLinksOrganization.fromJson(value))
             .toList();
   }
 
@@ -52,6 +59,7 @@ class CheckpointLinksOrganization {
       json.forEach((String key, dynamic value) =>
           map[key] = CheckpointLinksOrganization.fromJson(value));
     }
+
     return map;
   }
 

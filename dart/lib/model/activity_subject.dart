@@ -33,12 +33,19 @@ class ActivitySubject {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ id.hashCode ^ type.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ActivitySubject> listFromJson(List<dynamic> json) {
     return json == null
         ? <ActivitySubject>[]
-        : json.map((value) => ActivitySubject.fromJson(value)).toList();
+        : json.map((dynamic value) => ActivitySubject.fromJson(value)).toList();
   }
 
   static Map<String, ActivitySubject> mapFromJson(Map<String, dynamic> json) {
@@ -47,6 +54,7 @@ class ActivitySubject {
       json.forEach((String key, dynamic value) =>
           map[key] = ActivitySubject.fromJson(value));
     }
+
     return map;
   }
 

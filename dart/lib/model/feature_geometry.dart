@@ -1,5 +1,10 @@
 part of keyclic_sdk_api.api;
 
+class FeatureGeometryTypeEnum {
+  static const String polygon_ = "Polygon";
+  static const String point_ = "Point";
+}
+
 class FeatureGeometry {
   FeatureGeometry({
     this.type,
@@ -14,7 +19,7 @@ class FeatureGeometry {
     coordinates = (json['coordinates']);
   }
 
-  /// enum typeEnum {  Polygon,  Point,  };
+  /// use FeatureGeometryTypeEnum
   String type;
 
   List coordinates;
@@ -35,16 +40,24 @@ class FeatureGeometry {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      type.hashCode ^
-      coordinates.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (coordinates is List && coordinates.isNotEmpty) {
+      hashCode ^= coordinates
+          .map((dynamic element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (type?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<FeatureGeometry> listFromJson(List<dynamic> json) {
     return json == null
         ? <FeatureGeometry>[]
-        : json.map((value) => FeatureGeometry.fromJson(value)).toList();
+        : json.map((dynamic value) => FeatureGeometry.fromJson(value)).toList();
   }
 
   static Map<String, FeatureGeometry> mapFromJson(Map<String, dynamic> json) {
@@ -53,6 +66,7 @@ class FeatureGeometry {
       json.forEach((String key, dynamic value) =>
           map[key] = FeatureGeometry.fromJson(value));
     }
+
     return map;
   }
 

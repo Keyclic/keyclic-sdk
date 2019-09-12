@@ -38,12 +38,20 @@ class DeviceData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ token.hashCode ^ platform.hashCode ^ person.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (token?.hashCode ?? 0);
+    hashCode ^= (platform?.hashCode ?? 0);
+    hashCode ^= (person?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DeviceData> listFromJson(List<dynamic> json) {
     return json == null
         ? <DeviceData>[]
-        : json.map((value) => DeviceData.fromJson(value)).toList();
+        : json.map((dynamic value) => DeviceData.fromJson(value)).toList();
   }
 
   static Map<String, DeviceData> mapFromJson(Map<String, dynamic> json) {
@@ -52,6 +60,7 @@ class DeviceData {
       json.forEach(
           (String key, dynamic value) => map[key] = DeviceData.fromJson(value));
     }
+
     return map;
   }
 

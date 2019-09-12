@@ -28,15 +28,22 @@ class ErrorEmbedded {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      errors.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (errors is List && errors.isNotEmpty) {
+      hashCode ^= errors
+          .map((Error element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<ErrorEmbedded> listFromJson(List<dynamic> json) {
     return json == null
         ? <ErrorEmbedded>[]
-        : json.map((value) => ErrorEmbedded.fromJson(value)).toList();
+        : json.map((dynamic value) => ErrorEmbedded.fromJson(value)).toList();
   }
 
   static Map<String, ErrorEmbedded> mapFromJson(Map<String, dynamic> json) {
@@ -45,6 +52,7 @@ class ErrorEmbedded {
       json.forEach((String key, dynamic value) =>
           map[key] = ErrorEmbedded.fromJson(value));
     }
+
     return map;
   }
 

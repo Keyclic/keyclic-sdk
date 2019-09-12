@@ -28,12 +28,18 @@ class ImageData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ image.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (image?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ImageData> listFromJson(List<dynamic> json) {
     return json == null
         ? <ImageData>[]
-        : json.map((value) => ImageData.fromJson(value)).toList();
+        : json.map((dynamic value) => ImageData.fromJson(value)).toList();
   }
 
   static Map<String, ImageData> mapFromJson(Map<String, dynamic> json) {
@@ -42,6 +48,7 @@ class ImageData {
       json.forEach(
           (String key, dynamic value) => map[key] = ImageData.fromJson(value));
     }
+
     return map;
   }
 

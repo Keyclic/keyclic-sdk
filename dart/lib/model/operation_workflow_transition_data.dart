@@ -1,5 +1,11 @@
 part of keyclic_sdk_api.api;
 
+class OperationWorkflowTransitionDataTransitionEnum {
+  static const String assign_ = "assign";
+  static const String progress_ = "progress";
+  static const String resolve_ = "resolve";
+}
+
 class OperationWorkflowTransitionData {
   OperationWorkflowTransitionData({
     this.transition,
@@ -12,7 +18,7 @@ class OperationWorkflowTransitionData {
     transition = json['transition'];
   }
 
-  /// enum transitionEnum {  assign,  progress,  resolve,  };
+  /// use OperationWorkflowTransitionDataTransitionEnum
   String transition;
 
   @override
@@ -29,14 +35,21 @@ class OperationWorkflowTransitionData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ transition.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (transition?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<OperationWorkflowTransitionData> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <OperationWorkflowTransitionData>[]
         : json
-            .map((value) => OperationWorkflowTransitionData.fromJson(value))
+            .map((dynamic value) =>
+                OperationWorkflowTransitionData.fromJson(value))
             .toList();
   }
 
@@ -47,6 +60,7 @@ class OperationWorkflowTransitionData {
       json.forEach((String key, dynamic value) =>
           map[key] = OperationWorkflowTransitionData.fromJson(value));
     }
+
     return map;
   }
 

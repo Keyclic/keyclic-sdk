@@ -66,20 +66,24 @@ class Document {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      links.hashCode ^
-      createdAt.hashCode ^
-      file.hashCode ^
-      id.hashCode ^
-      permission.hashCode ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (file?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (permission?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Document> listFromJson(List<dynamic> json) {
     return json == null
         ? <Document>[]
-        : json.map((value) => Document.fromJson(value)).toList();
+        : json.map((dynamic value) => Document.fromJson(value)).toList();
   }
 
   static Map<String, Document> mapFromJson(Map<String, dynamic> json) {
@@ -88,6 +92,7 @@ class Document {
       json.forEach(
           (String key, dynamic value) => map[key] = Document.fromJson(value));
     }
+
     return map;
   }
 

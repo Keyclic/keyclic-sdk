@@ -43,13 +43,23 @@ class BusinessActivityLinks {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^ image.hashCode ^ schema.hashCode ^ self.hashCode ^ thumbnail.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (image?.hashCode ?? 0);
+    hashCode ^= (schema?.hashCode ?? 0);
+    hashCode ^= (self?.hashCode ?? 0);
+    hashCode ^= (thumbnail?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<BusinessActivityLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? <BusinessActivityLinks>[]
-        : json.map((value) => BusinessActivityLinks.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => BusinessActivityLinks.fromJson(value))
+            .toList();
   }
 
   static Map<String, BusinessActivityLinks> mapFromJson(
@@ -59,6 +69,7 @@ class BusinessActivityLinks {
       json.forEach((String key, dynamic value) =>
           map[key] = BusinessActivityLinks.fromJson(value));
     }
+
     return map;
   }
 

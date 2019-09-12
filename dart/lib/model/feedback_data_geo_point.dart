@@ -38,13 +38,22 @@ class FeedbackDataGeoPoint {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^ latitude.hashCode ^ longitude.hashCode ^ srid.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (latitude?.hashCode ?? 0);
+    hashCode ^= (longitude?.hashCode ?? 0);
+    hashCode ^= (srid?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<FeedbackDataGeoPoint> listFromJson(List<dynamic> json) {
     return json == null
         ? <FeedbackDataGeoPoint>[]
-        : json.map((value) => FeedbackDataGeoPoint.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => FeedbackDataGeoPoint.fromJson(value))
+            .toList();
   }
 
   static Map<String, FeedbackDataGeoPoint> mapFromJson(
@@ -54,6 +63,7 @@ class FeedbackDataGeoPoint {
       json.forEach((String key, dynamic value) =>
           map[key] = FeedbackDataGeoPoint.fromJson(value));
     }
+
     return map;
   }
 

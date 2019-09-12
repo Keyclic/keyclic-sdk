@@ -25,7 +25,9 @@ class Delegation {
     }
     description = json['description'];
     id = json['id'];
-    state = (json['state'] as List)?.map((item) => item as String)?.toList();
+    if (json['state'] is List) {
+      state = List<String>.from(json['state']);
+    }
     type = json['type'];
     updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
@@ -71,22 +73,30 @@ class Delegation {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      embedded.hashCode ^
-      links.hashCode ^
-      createdAt.hashCode ^
-      description.hashCode ^
-      id.hashCode ^
-      state.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (state is List && state.isNotEmpty) {
+      hashCode ^= state
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (embedded?.hashCode ?? 0);
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Delegation> listFromJson(List<dynamic> json) {
     return json == null
         ? <Delegation>[]
-        : json.map((value) => Delegation.fromJson(value)).toList();
+        : json.map((dynamic value) => Delegation.fromJson(value)).toList();
   }
 
   static Map<String, Delegation> mapFromJson(Map<String, dynamic> json) {
@@ -95,6 +105,7 @@ class Delegation {
       json.forEach(
           (String key, dynamic value) => map[key] = Delegation.fromJson(value));
     }
+
     return map;
   }
 

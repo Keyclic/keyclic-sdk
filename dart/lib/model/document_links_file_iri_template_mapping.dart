@@ -28,14 +28,21 @@ class DocumentLinksFileIriTemplateMapping {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ document.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (document?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DocumentLinksFileIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <DocumentLinksFileIriTemplateMapping>[]
         : json
-            .map((value) => DocumentLinksFileIriTemplateMapping.fromJson(value))
+            .map((dynamic value) =>
+                DocumentLinksFileIriTemplateMapping.fromJson(value))
             .toList();
   }
 
@@ -46,6 +53,7 @@ class DocumentLinksFileIriTemplateMapping {
       json.forEach((String key, dynamic value) =>
           map[key] = DocumentLinksFileIriTemplateMapping.fromJson(value));
     }
+
     return map;
   }
 

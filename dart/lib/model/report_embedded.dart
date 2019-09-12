@@ -13,9 +13,9 @@ class ReportEmbedded {
       return;
     }
     duration = ReportEmbeddedDuration.fromJson(json['duration']);
-    stateTransitions = (json['stateTransitions'] as List)
-        ?.map((item) => item as String)
-        ?.toList();
+    if (json['stateTransitions'] is List) {
+      stateTransitions = List<String>.from(json['stateTransitions']);
+    }
     targetGroups =
         ReportEmbeddedTargetGroups.listFromJson(json['targetGroups']);
     tracking = json['tracking'];
@@ -48,19 +48,30 @@ class ReportEmbedded {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      duration.hashCode ^
-      stateTransitions.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      targetGroups.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      tracking.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (stateTransitions is List && stateTransitions.isNotEmpty) {
+      hashCode ^= stateTransitions
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+    if (targetGroups is List && targetGroups.isNotEmpty) {
+      hashCode ^= targetGroups
+          .map((ReportEmbeddedTargetGroups element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (duration?.hashCode ?? 0);
+    hashCode ^= (tracking?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ReportEmbedded> listFromJson(List<dynamic> json) {
     return json == null
         ? <ReportEmbedded>[]
-        : json.map((value) => ReportEmbedded.fromJson(value)).toList();
+        : json.map((dynamic value) => ReportEmbedded.fromJson(value)).toList();
   }
 
   static Map<String, ReportEmbedded> mapFromJson(Map<String, dynamic> json) {
@@ -69,6 +80,7 @@ class ReportEmbedded {
       json.forEach((String key, dynamic value) =>
           map[key] = ReportEmbedded.fromJson(value));
     }
+
     return map;
   }
 

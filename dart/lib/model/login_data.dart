@@ -33,12 +33,19 @@ class LoginData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ login.hashCode ^ password.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (login?.hashCode ?? 0);
+    hashCode ^= (password?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<LoginData> listFromJson(List<dynamic> json) {
     return json == null
         ? <LoginData>[]
-        : json.map((value) => LoginData.fromJson(value)).toList();
+        : json.map((dynamic value) => LoginData.fromJson(value)).toList();
   }
 
   static Map<String, LoginData> mapFromJson(Map<String, dynamic> json) {
@@ -47,6 +54,7 @@ class LoginData {
       json.forEach(
           (String key, dynamic value) => map[key] = LoginData.fromJson(value));
     }
+
     return map;
   }
 

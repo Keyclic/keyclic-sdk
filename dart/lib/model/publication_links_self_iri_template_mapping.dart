@@ -28,14 +28,20 @@ class PublicationLinksSelfIriTemplateMapping {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ publication.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (publication?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<PublicationLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <PublicationLinksSelfIriTemplateMapping>[]
         : json
-            .map((value) =>
+            .map((dynamic value) =>
                 PublicationLinksSelfIriTemplateMapping.fromJson(value))
             .toList();
   }
@@ -47,6 +53,7 @@ class PublicationLinksSelfIriTemplateMapping {
       json.forEach((String key, dynamic value) =>
           map[key] = PublicationLinksSelfIriTemplateMapping.fromJson(value));
     }
+
     return map;
   }
 

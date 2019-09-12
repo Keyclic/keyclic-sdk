@@ -44,18 +44,26 @@ class Tracking {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      checkpoints.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      progression.hashCode ^
-      state.hashCode ^
-      time.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (checkpoints is List && checkpoints.isNotEmpty) {
+      hashCode ^= checkpoints
+          .map((Checkpoint element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (progression?.hashCode ?? 0);
+    hashCode ^= (state?.hashCode ?? 0);
+    hashCode ^= (time?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Tracking> listFromJson(List<dynamic> json) {
     return json == null
         ? <Tracking>[]
-        : json.map((value) => Tracking.fromJson(value)).toList();
+        : json.map((dynamic value) => Tracking.fromJson(value)).toList();
   }
 
   static Map<String, Tracking> mapFromJson(Map<String, dynamic> json) {
@@ -64,6 +72,7 @@ class Tracking {
       json.forEach(
           (String key, dynamic value) => map[key] = Tracking.fromJson(value));
     }
+
     return map;
   }
 

@@ -72,21 +72,27 @@ class BusinessActivity {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      links.hashCode ^
-      alternateName.hashCode ^
-      createdAt.hashCode ^
-      id.hashCode ^
-      metadataSchema.hashCode ^
-      name.hashCode ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (alternateName?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (metadataSchema?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<BusinessActivity> listFromJson(List<dynamic> json) {
     return json == null
         ? <BusinessActivity>[]
-        : json.map((value) => BusinessActivity.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => BusinessActivity.fromJson(value))
+            .toList();
   }
 
   static Map<String, BusinessActivity> mapFromJson(Map<String, dynamic> json) {
@@ -95,6 +101,7 @@ class BusinessActivity {
       json.forEach((String key, dynamic value) =>
           map[key] = BusinessActivity.fromJson(value));
     }
+
     return map;
   }
 

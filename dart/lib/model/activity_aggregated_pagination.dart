@@ -48,20 +48,29 @@ class ActivityAggregatedPagination {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      duration.hashCode ^
-      next.hashCode ^
-      unseen.hashCode ^
-      unread.hashCode ^
-      results.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (results is List && results.isNotEmpty) {
+      hashCode ^= results
+          .map((ActivityGroup element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (duration?.hashCode ?? 0);
+    hashCode ^= (next?.hashCode ?? 0);
+    hashCode ^= (unseen?.hashCode ?? 0);
+    hashCode ^= (unread?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ActivityAggregatedPagination> listFromJson(List<dynamic> json) {
     return json == null
         ? <ActivityAggregatedPagination>[]
         : json
-            .map((value) => ActivityAggregatedPagination.fromJson(value))
+            .map(
+                (dynamic value) => ActivityAggregatedPagination.fromJson(value))
             .toList();
   }
 
@@ -72,6 +81,7 @@ class ActivityAggregatedPagination {
       json.forEach((String key, dynamic value) =>
           map[key] = ActivityAggregatedPagination.fromJson(value));
     }
+
     return map;
   }
 

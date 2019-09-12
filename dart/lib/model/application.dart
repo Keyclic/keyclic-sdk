@@ -71,21 +71,25 @@ class Application {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      links.hashCode ^
-      createdAt.hashCode ^
-      id.hashCode ^
-      name.hashCode ^
-      token.hashCode ^
-      type.hashCode ^
-      updatedAt.hashCode ^
-      version.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= (token?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+    hashCode ^= (version?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Application> listFromJson(List<dynamic> json) {
     return json == null
         ? <Application>[]
-        : json.map((value) => Application.fromJson(value)).toList();
+        : json.map((dynamic value) => Application.fromJson(value)).toList();
   }
 
   static Map<String, Application> mapFromJson(Map<String, dynamic> json) {
@@ -94,6 +98,7 @@ class Application {
       json.forEach((String key, dynamic value) =>
           map[key] = Application.fromJson(value));
     }
+
     return map;
   }
 

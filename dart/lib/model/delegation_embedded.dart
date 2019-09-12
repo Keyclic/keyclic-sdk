@@ -9,9 +9,9 @@ class DelegationEmbedded {
     if (json == null) {
       return;
     }
-    stateTransitions = (json['stateTransitions'] as List)
-        ?.map((item) => item as String)
-        ?.toList();
+    if (json['stateTransitions'] is List) {
+      stateTransitions = List<String>.from(json['stateTransitions']);
+    }
   }
 
   List<String> stateTransitions;
@@ -31,15 +31,24 @@ class DelegationEmbedded {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      stateTransitions.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (stateTransitions is List && stateTransitions.isNotEmpty) {
+      hashCode ^= stateTransitions
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<DelegationEmbedded> listFromJson(List<dynamic> json) {
     return json == null
         ? <DelegationEmbedded>[]
-        : json.map((value) => DelegationEmbedded.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => DelegationEmbedded.fromJson(value))
+            .toList();
   }
 
   static Map<String, DelegationEmbedded> mapFromJson(
@@ -49,6 +58,7 @@ class DelegationEmbedded {
       json.forEach((String key, dynamic value) =>
           map[key] = DelegationEmbedded.fromJson(value));
     }
+
     return map;
   }
 

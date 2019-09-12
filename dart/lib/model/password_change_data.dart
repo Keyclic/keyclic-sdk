@@ -28,12 +28,20 @@ class PasswordChangeData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ password.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (password?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<PasswordChangeData> listFromJson(List<dynamic> json) {
     return json == null
         ? <PasswordChangeData>[]
-        : json.map((value) => PasswordChangeData.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => PasswordChangeData.fromJson(value))
+            .toList();
   }
 
   static Map<String, PasswordChangeData> mapFromJson(
@@ -43,6 +51,7 @@ class PasswordChangeData {
       json.forEach((String key, dynamic value) =>
           map[key] = PasswordChangeData.fromJson(value));
     }
+
     return map;
   }
 

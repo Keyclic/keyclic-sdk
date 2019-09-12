@@ -28,13 +28,19 @@ class PlaceLinksSelfIriTemplate {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ mapping.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (mapping?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<PlaceLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
         ? <PlaceLinksSelfIriTemplate>[]
         : json
-            .map((value) => PlaceLinksSelfIriTemplate.fromJson(value))
+            .map((dynamic value) => PlaceLinksSelfIriTemplate.fromJson(value))
             .toList();
   }
 
@@ -45,6 +51,7 @@ class PlaceLinksSelfIriTemplate {
       json.forEach((String key, dynamic value) =>
           map[key] = PlaceLinksSelfIriTemplate.fromJson(value));
     }
+
     return map;
   }
 

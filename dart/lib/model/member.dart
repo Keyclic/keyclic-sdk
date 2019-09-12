@@ -23,7 +23,9 @@ class Member {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
     id = json['id'];
-    roles = (json['roles'] as List)?.map((item) => item as String)?.toList();
+    if (json['roles'] is List) {
+      roles = List<String>.from(json['roles']);
+    }
     type = json['type'];
     updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
@@ -66,21 +68,29 @@ class Member {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      embedded.hashCode ^
-      links.hashCode ^
-      createdAt.hashCode ^
-      id.hashCode ^
-      roles.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (roles is List && roles.isNotEmpty) {
+      hashCode ^= roles
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (embedded?.hashCode ?? 0);
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Member> listFromJson(List<dynamic> json) {
     return json == null
         ? <Member>[]
-        : json.map((value) => Member.fromJson(value)).toList();
+        : json.map((dynamic value) => Member.fromJson(value)).toList();
   }
 
   static Map<String, Member> mapFromJson(Map<String, dynamic> json) {
@@ -89,6 +99,7 @@ class Member {
       json.forEach(
           (String key, dynamic value) => map[key] = Member.fromJson(value));
     }
+
     return map;
   }
 

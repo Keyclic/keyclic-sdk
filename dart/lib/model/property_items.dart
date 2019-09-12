@@ -28,15 +28,22 @@ class PropertyItems {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      oneOf.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (oneOf is List && oneOf.isNotEmpty) {
+      hashCode ^= oneOf
+          .map((Choice element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<PropertyItems> listFromJson(List<dynamic> json) {
     return json == null
         ? <PropertyItems>[]
-        : json.map((value) => PropertyItems.fromJson(value)).toList();
+        : json.map((dynamic value) => PropertyItems.fromJson(value)).toList();
   }
 
   static Map<String, PropertyItems> mapFromJson(Map<String, dynamic> json) {
@@ -45,6 +52,7 @@ class PropertyItems {
       json.forEach((String key, dynamic value) =>
           map[key] = PropertyItems.fromJson(value));
     }
+
     return map;
   }
 

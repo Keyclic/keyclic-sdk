@@ -28,13 +28,20 @@ class OccupantLinksPlaceIriTemplate {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ mapping.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (mapping?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<OccupantLinksPlaceIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
         ? <OccupantLinksPlaceIriTemplate>[]
         : json
-            .map((value) => OccupantLinksPlaceIriTemplate.fromJson(value))
+            .map((dynamic value) =>
+                OccupantLinksPlaceIriTemplate.fromJson(value))
             .toList();
   }
 
@@ -45,6 +52,7 @@ class OccupantLinksPlaceIriTemplate {
       json.forEach((String key, dynamic value) =>
           map[key] = OccupantLinksPlaceIriTemplate.fromJson(value));
     }
+
     return map;
   }
 

@@ -28,15 +28,21 @@ class OperationLinksSelfIriTemplateMapping {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ operation.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (operation?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<OperationLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <OperationLinksSelfIriTemplateMapping>[]
         : json
-            .map(
-                (value) => OperationLinksSelfIriTemplateMapping.fromJson(value))
+            .map((dynamic value) =>
+                OperationLinksSelfIriTemplateMapping.fromJson(value))
             .toList();
   }
 
@@ -47,6 +53,7 @@ class OperationLinksSelfIriTemplateMapping {
       json.forEach((String key, dynamic value) =>
           map[key] = OperationLinksSelfIriTemplateMapping.fromJson(value));
     }
+
     return map;
   }
 

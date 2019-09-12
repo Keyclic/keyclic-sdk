@@ -38,12 +38,20 @@ class OccupantLinks {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ person.hashCode ^ place.hashCode ^ self.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (person?.hashCode ?? 0);
+    hashCode ^= (place?.hashCode ?? 0);
+    hashCode ^= (self?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<OccupantLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? <OccupantLinks>[]
-        : json.map((value) => OccupantLinks.fromJson(value)).toList();
+        : json.map((dynamic value) => OccupantLinks.fromJson(value)).toList();
   }
 
   static Map<String, OccupantLinks> mapFromJson(Map<String, dynamic> json) {
@@ -52,6 +60,7 @@ class OccupantLinks {
       json.forEach((String key, dynamic value) =>
           map[key] = OccupantLinks.fromJson(value));
     }
+
     return map;
   }
 

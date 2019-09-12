@@ -29,14 +29,20 @@ class ContributionLinksFeedbackIriTemplateMapping {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ feedback.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (feedback?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ContributionLinksFeedbackIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <ContributionLinksFeedbackIriTemplateMapping>[]
         : json
-            .map((value) =>
+            .map((dynamic value) =>
                 ContributionLinksFeedbackIriTemplateMapping.fromJson(value))
             .toList();
   }
@@ -48,6 +54,7 @@ class ContributionLinksFeedbackIriTemplateMapping {
       json.forEach((String key, dynamic value) => map[key] =
           ContributionLinksFeedbackIriTemplateMapping.fromJson(value));
     }
+
     return map;
   }
 

@@ -28,15 +28,24 @@ class WebhookCollection {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      items.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (items is List && items.isNotEmpty) {
+      hashCode ^= items
+          .map((Webhook element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<WebhookCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? <WebhookCollection>[]
-        : json.map((value) => WebhookCollection.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => WebhookCollection.fromJson(value))
+            .toList();
   }
 
   static Map<String, WebhookCollection> mapFromJson(Map<String, dynamic> json) {
@@ -45,6 +54,7 @@ class WebhookCollection {
       json.forEach((String key, dynamic value) =>
           map[key] = WebhookCollection.fromJson(value));
     }
+
     return map;
   }
 

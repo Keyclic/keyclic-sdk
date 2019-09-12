@@ -28,13 +28,19 @@ class MemberLinksSelfIriTemplate {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ mapping.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (mapping?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<MemberLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
         ? <MemberLinksSelfIriTemplate>[]
         : json
-            .map((value) => MemberLinksSelfIriTemplate.fromJson(value))
+            .map((dynamic value) => MemberLinksSelfIriTemplate.fromJson(value))
             .toList();
   }
 
@@ -45,6 +51,7 @@ class MemberLinksSelfIriTemplate {
       json.forEach((String key, dynamic value) =>
           map[key] = MemberLinksSelfIriTemplate.fromJson(value));
     }
+
     return map;
   }
 

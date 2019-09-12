@@ -38,13 +38,21 @@ class ReportEmbeddedTargetGroups {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ id.hashCode ^ name.hashCode ^ description.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ReportEmbeddedTargetGroups> listFromJson(List<dynamic> json) {
     return json == null
         ? <ReportEmbeddedTargetGroups>[]
         : json
-            .map((value) => ReportEmbeddedTargetGroups.fromJson(value))
+            .map((dynamic value) => ReportEmbeddedTargetGroups.fromJson(value))
             .toList();
   }
 
@@ -55,6 +63,7 @@ class ReportEmbeddedTargetGroups {
       json.forEach((String key, dynamic value) =>
           map[key] = ReportEmbeddedTargetGroups.fromJson(value));
     }
+
     return map;
   }
 

@@ -43,17 +43,21 @@ class DelegationData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      description.hashCode ^
-      organization.hashCode ^
-      report.hashCode ^
-      service.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (organization?.hashCode ?? 0);
+    hashCode ^= (report?.hashCode ?? 0);
+    hashCode ^= (service?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DelegationData> listFromJson(List<dynamic> json) {
     return json == null
         ? <DelegationData>[]
-        : json.map((value) => DelegationData.fromJson(value)).toList();
+        : json.map((dynamic value) => DelegationData.fromJson(value)).toList();
   }
 
   static Map<String, DelegationData> mapFromJson(Map<String, dynamic> json) {
@@ -62,6 +66,7 @@ class DelegationData {
       json.forEach((String key, dynamic value) =>
           map[key] = DelegationData.fromJson(value));
     }
+
     return map;
   }
 

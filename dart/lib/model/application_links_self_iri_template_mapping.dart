@@ -28,14 +28,20 @@ class ApplicationLinksSelfIriTemplateMapping {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ application.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (application?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ApplicationLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <ApplicationLinksSelfIriTemplateMapping>[]
         : json
-            .map((value) =>
+            .map((dynamic value) =>
                 ApplicationLinksSelfIriTemplateMapping.fromJson(value))
             .toList();
   }
@@ -47,6 +53,7 @@ class ApplicationLinksSelfIriTemplateMapping {
       json.forEach((String key, dynamic value) =>
           map[key] = ApplicationLinksSelfIriTemplateMapping.fromJson(value));
     }
+
     return map;
   }
 

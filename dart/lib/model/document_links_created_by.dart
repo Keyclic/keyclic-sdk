@@ -35,12 +35,21 @@ class DocumentLinksCreatedBy {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (href?.hashCode ?? 0);
+    hashCode ^= (iriTemplate?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DocumentLinksCreatedBy> listFromJson(List<dynamic> json) {
     return json == null
         ? <DocumentLinksCreatedBy>[]
-        : json.map((value) => DocumentLinksCreatedBy.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => DocumentLinksCreatedBy.fromJson(value))
+            .toList();
   }
 
   static Map<String, DocumentLinksCreatedBy> mapFromJson(
@@ -50,6 +59,7 @@ class DocumentLinksCreatedBy {
       json.forEach((String key, dynamic value) =>
           map[key] = DocumentLinksCreatedBy.fromJson(value));
     }
+
     return map;
   }
 

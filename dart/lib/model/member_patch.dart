@@ -9,7 +9,9 @@ class MemberPatch {
     if (json == null) {
       return;
     }
-    roles = (json['roles'] as List)?.map((item) => item as String)?.toList();
+    if (json['roles'] is List) {
+      roles = List<String>.from(json['roles']);
+    }
   }
 
   List<String> roles;
@@ -28,15 +30,22 @@ class MemberPatch {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      roles.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (roles is List && roles.isNotEmpty) {
+      hashCode ^= roles
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<MemberPatch> listFromJson(List<dynamic> json) {
     return json == null
         ? <MemberPatch>[]
-        : json.map((value) => MemberPatch.fromJson(value)).toList();
+        : json.map((dynamic value) => MemberPatch.fromJson(value)).toList();
   }
 
   static Map<String, MemberPatch> mapFromJson(Map<String, dynamic> json) {
@@ -45,6 +54,7 @@ class MemberPatch {
       json.forEach((String key, dynamic value) =>
           map[key] = MemberPatch.fromJson(value));
     }
+
     return map;
   }
 

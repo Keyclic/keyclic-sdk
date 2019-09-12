@@ -32,8 +32,12 @@ class Report {
     identificationNumber = json['identificationNumber'];
     priority = json['priority'];
     reference = json['reference'];
-    state = (json['state'] as List)?.map((item) => item as String)?.toList();
-    tags = (json['tags'] as List)?.map((item) => item as String)?.toList();
+    if (json['state'] is List) {
+      state = List<String>.from(json['state']);
+    }
+    if (json['tags'] is List) {
+      tags = List<String>.from(json['tags']);
+    }
     type = json['type'];
     updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
@@ -91,27 +95,38 @@ class Report {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      embedded.hashCode ^
-      links.hashCode ^
-      createdAt.hashCode ^
-      description.hashCode ^
-      id.hashCode ^
-      identificationNumber.hashCode ^
-      priority.hashCode ^
-      reference.hashCode ^
-      state.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      tags.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (state is List && state.isNotEmpty) {
+      hashCode ^= state
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+    if (tags is List && tags.isNotEmpty) {
+      hashCode ^= tags
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (embedded?.hashCode ?? 0);
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (identificationNumber?.hashCode ?? 0);
+    hashCode ^= (priority?.hashCode ?? 0);
+    hashCode ^= (reference?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Report> listFromJson(List<dynamic> json) {
     return json == null
         ? <Report>[]
-        : json.map((value) => Report.fromJson(value)).toList();
+        : json.map((dynamic value) => Report.fromJson(value)).toList();
   }
 
   static Map<String, Report> mapFromJson(Map<String, dynamic> json) {
@@ -120,6 +135,7 @@ class Report {
       json.forEach(
           (String key, dynamic value) => map[key] = Report.fromJson(value));
     }
+
     return map;
   }
 

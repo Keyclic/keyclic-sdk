@@ -71,21 +71,25 @@ class InternalService {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      links.hashCode ^
-      contactPoint.hashCode ^
-      createdAt.hashCode ^
-      description.hashCode ^
-      id.hashCode ^
-      name.hashCode ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (contactPoint?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<InternalService> listFromJson(List<dynamic> json) {
     return json == null
         ? <InternalService>[]
-        : json.map((value) => InternalService.fromJson(value)).toList();
+        : json.map((dynamic value) => InternalService.fromJson(value)).toList();
   }
 
   static Map<String, InternalService> mapFromJson(Map<String, dynamic> json) {
@@ -94,6 +98,7 @@ class InternalService {
       json.forEach((String key, dynamic value) =>
           map[key] = InternalService.fromJson(value));
     }
+
     return map;
   }
 

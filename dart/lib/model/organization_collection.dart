@@ -28,15 +28,24 @@ class OrganizationCollection {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      items.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (items is List && items.isNotEmpty) {
+      hashCode ^= items
+          .map((Organization element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<OrganizationCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? <OrganizationCollection>[]
-        : json.map((value) => OrganizationCollection.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => OrganizationCollection.fromJson(value))
+            .toList();
   }
 
   static Map<String, OrganizationCollection> mapFromJson(
@@ -46,6 +55,7 @@ class OrganizationCollection {
       json.forEach((String key, dynamic value) =>
           map[key] = OrganizationCollection.fromJson(value));
     }
+
     return map;
   }
 

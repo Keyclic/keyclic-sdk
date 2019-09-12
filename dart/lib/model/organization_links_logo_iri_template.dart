@@ -29,14 +29,21 @@ class OrganizationLinksLogoIriTemplate {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ mapping.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (mapping?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<OrganizationLinksLogoIriTemplate> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <OrganizationLinksLogoIriTemplate>[]
         : json
-            .map((value) => OrganizationLinksLogoIriTemplate.fromJson(value))
+            .map((dynamic value) =>
+                OrganizationLinksLogoIriTemplate.fromJson(value))
             .toList();
   }
 
@@ -47,6 +54,7 @@ class OrganizationLinksLogoIriTemplate {
       json.forEach((String key, dynamic value) =>
           map[key] = OrganizationLinksLogoIriTemplate.fromJson(value));
     }
+
     return map;
   }
 

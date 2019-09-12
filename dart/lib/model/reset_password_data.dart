@@ -28,12 +28,20 @@ class ResetPasswordData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ email.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (email?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ResetPasswordData> listFromJson(List<dynamic> json) {
     return json == null
         ? <ResetPasswordData>[]
-        : json.map((value) => ResetPasswordData.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => ResetPasswordData.fromJson(value))
+            .toList();
   }
 
   static Map<String, ResetPasswordData> mapFromJson(Map<String, dynamic> json) {
@@ -42,6 +50,7 @@ class ResetPasswordData {
       json.forEach((String key, dynamic value) =>
           map[key] = ResetPasswordData.fromJson(value));
     }
+
     return map;
   }
 

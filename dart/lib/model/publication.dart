@@ -71,21 +71,25 @@ class Publication {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      links.hashCode ^
-      createdAt.hashCode ^
-      id.hashCode ^
-      message.hashCode ^
-      read.hashCode ^
-      title.hashCode ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (message?.hashCode ?? 0);
+    hashCode ^= (read?.hashCode ?? 0);
+    hashCode ^= (title?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Publication> listFromJson(List<dynamic> json) {
     return json == null
         ? <Publication>[]
-        : json.map((value) => Publication.fromJson(value)).toList();
+        : json.map((dynamic value) => Publication.fromJson(value)).toList();
   }
 
   static Map<String, Publication> mapFromJson(Map<String, dynamic> json) {
@@ -94,6 +98,7 @@ class Publication {
       json.forEach((String key, dynamic value) =>
           map[key] = Publication.fromJson(value));
     }
+
     return map;
   }
 

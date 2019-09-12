@@ -29,13 +29,20 @@ class ReviewLinksAuthorIriTemplate {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ mapping.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (mapping?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ReviewLinksAuthorIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
         ? <ReviewLinksAuthorIriTemplate>[]
         : json
-            .map((value) => ReviewLinksAuthorIriTemplate.fromJson(value))
+            .map(
+                (dynamic value) => ReviewLinksAuthorIriTemplate.fromJson(value))
             .toList();
   }
 
@@ -46,6 +53,7 @@ class ReviewLinksAuthorIriTemplate {
       json.forEach((String key, dynamic value) =>
           map[key] = ReviewLinksAuthorIriTemplate.fromJson(value));
     }
+
     return map;
   }
 

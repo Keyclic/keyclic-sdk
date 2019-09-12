@@ -28,15 +28,24 @@ class OccupantCollection {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      items.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (items is List && items.isNotEmpty) {
+      hashCode ^= items
+          .map((Occupant element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<OccupantCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? <OccupantCollection>[]
-        : json.map((value) => OccupantCollection.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => OccupantCollection.fromJson(value))
+            .toList();
   }
 
   static Map<String, OccupantCollection> mapFromJson(
@@ -46,6 +55,7 @@ class OccupantCollection {
       json.forEach((String key, dynamic value) =>
           map[key] = OccupantCollection.fromJson(value));
     }
+
     return map;
   }
 

@@ -28,15 +28,24 @@ class MemberCollection {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      items.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (items is List && items.isNotEmpty) {
+      hashCode ^= items
+          .map((Member element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<MemberCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? <MemberCollection>[]
-        : json.map((value) => MemberCollection.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => MemberCollection.fromJson(value))
+            .toList();
   }
 
   static Map<String, MemberCollection> mapFromJson(Map<String, dynamic> json) {
@@ -45,6 +54,7 @@ class MemberCollection {
       json.forEach((String key, dynamic value) =>
           map[key] = MemberCollection.fromJson(value));
     }
+
     return map;
   }
 

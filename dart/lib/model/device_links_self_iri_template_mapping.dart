@@ -28,14 +28,21 @@ class DeviceLinksSelfIriTemplateMapping {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ device.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (device?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DeviceLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <DeviceLinksSelfIriTemplateMapping>[]
         : json
-            .map((value) => DeviceLinksSelfIriTemplateMapping.fromJson(value))
+            .map((dynamic value) =>
+                DeviceLinksSelfIriTemplateMapping.fromJson(value))
             .toList();
   }
 
@@ -46,6 +53,7 @@ class DeviceLinksSelfIriTemplateMapping {
       json.forEach((String key, dynamic value) =>
           map[key] = DeviceLinksSelfIriTemplateMapping.fromJson(value));
     }
+
     return map;
   }
 

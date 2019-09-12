@@ -37,12 +37,21 @@ class OperationSignature {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ signedAt.hashCode ^ signer.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (signedAt?.hashCode ?? 0);
+    hashCode ^= (signer?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<OperationSignature> listFromJson(List<dynamic> json) {
     return json == null
         ? <OperationSignature>[]
-        : json.map((value) => OperationSignature.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => OperationSignature.fromJson(value))
+            .toList();
   }
 
   static Map<String, OperationSignature> mapFromJson(
@@ -52,6 +61,7 @@ class OperationSignature {
       json.forEach((String key, dynamic value) =>
           map[key] = OperationSignature.fromJson(value));
     }
+
     return map;
   }
 

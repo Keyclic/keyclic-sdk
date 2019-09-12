@@ -35,13 +35,20 @@ class CategoryLinksOrganization {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ href.hashCode ^ iriTemplate.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (href?.hashCode ?? 0);
+    hashCode ^= (iriTemplate?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<CategoryLinksOrganization> listFromJson(List<dynamic> json) {
     return json == null
         ? <CategoryLinksOrganization>[]
         : json
-            .map((value) => CategoryLinksOrganization.fromJson(value))
+            .map((dynamic value) => CategoryLinksOrganization.fromJson(value))
             .toList();
   }
 
@@ -52,6 +59,7 @@ class CategoryLinksOrganization {
       json.forEach((String key, dynamic value) =>
           map[key] = CategoryLinksOrganization.fromJson(value));
     }
+
     return map;
   }
 

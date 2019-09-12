@@ -28,13 +28,20 @@ class DocumentLinksSelfIriTemplate {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ mapping.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (mapping?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DocumentLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
         ? <DocumentLinksSelfIriTemplate>[]
         : json
-            .map((value) => DocumentLinksSelfIriTemplate.fromJson(value))
+            .map(
+                (dynamic value) => DocumentLinksSelfIriTemplate.fromJson(value))
             .toList();
   }
 
@@ -45,6 +52,7 @@ class DocumentLinksSelfIriTemplate {
       json.forEach((String key, dynamic value) =>
           map[key] = DocumentLinksSelfIriTemplate.fromJson(value));
     }
+
     return map;
   }
 

@@ -19,17 +19,18 @@ Iterable<QueryParam> _convertParametersForCollectionFormat(
     ];
   }
 
-  List values = value as List;
+  final List<dynamic> values = List<dynamic>.from(value);
 
   if (collectionFormat == 'multi') {
-    return values.map((v) => QueryParam(name, _parameterToString(v)));
+    return values
+        .map((dynamic value) => QueryParam(name, _parameterToString(value)));
   }
 
   // get the delimiter (default: csv delimiter)
   final String delimiter = _delimiters[collectionFormat] ?? ',';
 
   final String joinedParameters =
-      values.map((v) => _parameterToString(v)).join(delimiter);
+      values.map((dynamic value) => _parameterToString(value)).join(delimiter);
 
   return <QueryParam>[
     QueryParam(name, joinedParameters),

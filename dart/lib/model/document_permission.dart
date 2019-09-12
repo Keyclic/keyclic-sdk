@@ -28,12 +28,20 @@ class DocumentPermission {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ targetGroup.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (targetGroup?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DocumentPermission> listFromJson(List<dynamic> json) {
     return json == null
         ? <DocumentPermission>[]
-        : json.map((value) => DocumentPermission.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => DocumentPermission.fromJson(value))
+            .toList();
   }
 
   static Map<String, DocumentPermission> mapFromJson(
@@ -43,6 +51,7 @@ class DocumentPermission {
       json.forEach((String key, dynamic value) =>
           map[key] = DocumentPermission.fromJson(value));
     }
+
     return map;
   }
 

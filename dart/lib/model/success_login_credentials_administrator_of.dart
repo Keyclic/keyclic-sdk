@@ -38,14 +38,22 @@ class SuccessLoginCredentialsAdministratorOf {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ id.hashCode ^ token.hashCode ^ type.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (token?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<SuccessLoginCredentialsAdministratorOf> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <SuccessLoginCredentialsAdministratorOf>[]
         : json
-            .map((value) =>
+            .map((dynamic value) =>
                 SuccessLoginCredentialsAdministratorOf.fromJson(value))
             .toList();
   }
@@ -57,6 +65,7 @@ class SuccessLoginCredentialsAdministratorOf {
       json.forEach((String key, dynamic value) =>
           map[key] = SuccessLoginCredentialsAdministratorOf.fromJson(value));
     }
+
     return map;
   }
 

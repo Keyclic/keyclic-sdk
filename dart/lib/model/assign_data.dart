@@ -28,12 +28,18 @@ class AssignData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ member.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (member?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<AssignData> listFromJson(List<dynamic> json) {
     return json == null
         ? <AssignData>[]
-        : json.map((value) => AssignData.fromJson(value)).toList();
+        : json.map((dynamic value) => AssignData.fromJson(value)).toList();
   }
 
   static Map<String, AssignData> mapFromJson(Map<String, dynamic> json) {
@@ -42,6 +48,7 @@ class AssignData {
       json.forEach(
           (String key, dynamic value) => map[key] = AssignData.fromJson(value));
     }
+
     return map;
   }
 

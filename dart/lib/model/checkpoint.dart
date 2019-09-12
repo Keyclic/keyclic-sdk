@@ -16,7 +16,9 @@ class Checkpoint {
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    state = (json['state'] as List)?.map((item) => item as String)?.toList();
+    if (json['state'] is List) {
+      state = List<String>.from(json['state']);
+    }
     links = CheckpointLinks.fromJson(json['_links']);
   }
 
@@ -42,17 +44,25 @@ class Checkpoint {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      createdAt.hashCode ^
-      state.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      links.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (state is List && state.isNotEmpty) {
+      hashCode ^= state
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (links?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Checkpoint> listFromJson(List<dynamic> json) {
     return json == null
         ? <Checkpoint>[]
-        : json.map((value) => Checkpoint.fromJson(value)).toList();
+        : json.map((dynamic value) => Checkpoint.fromJson(value)).toList();
   }
 
   static Map<String, Checkpoint> mapFromJson(Map<String, dynamic> json) {
@@ -61,6 +71,7 @@ class Checkpoint {
       json.forEach(
           (String key, dynamic value) => map[key] = Checkpoint.fromJson(value));
     }
+
     return map;
   }
 

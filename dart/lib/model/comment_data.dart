@@ -28,12 +28,18 @@ class CommentData {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ text.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (text?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<CommentData> listFromJson(List<dynamic> json) {
     return json == null
         ? <CommentData>[]
-        : json.map((value) => CommentData.fromJson(value)).toList();
+        : json.map((dynamic value) => CommentData.fromJson(value)).toList();
   }
 
   static Map<String, CommentData> mapFromJson(Map<String, dynamic> json) {
@@ -42,6 +48,7 @@ class CommentData {
       json.forEach((String key, dynamic value) =>
           map[key] = CommentData.fromJson(value));
     }
+
     return map;
   }
 

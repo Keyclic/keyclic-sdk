@@ -33,14 +33,22 @@ class SuccessLoginCredentialsOrganization {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ type.hashCode ^ id.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<SuccessLoginCredentialsOrganization> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <SuccessLoginCredentialsOrganization>[]
         : json
-            .map((value) => SuccessLoginCredentialsOrganization.fromJson(value))
+            .map((dynamic value) =>
+                SuccessLoginCredentialsOrganization.fromJson(value))
             .toList();
   }
 
@@ -51,6 +59,7 @@ class SuccessLoginCredentialsOrganization {
       json.forEach((String key, dynamic value) =>
           map[key] = SuccessLoginCredentialsOrganization.fromJson(value));
     }
+
     return map;
   }
 

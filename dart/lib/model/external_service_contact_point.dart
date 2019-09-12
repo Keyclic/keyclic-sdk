@@ -43,14 +43,22 @@ class ExternalServiceContactPoint {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^ email.hashCode ^ isOpen.hashCode ^ name.hashCode ^ telephone.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (email?.hashCode ?? 0);
+    hashCode ^= (isOpen?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= (telephone?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ExternalServiceContactPoint> listFromJson(List<dynamic> json) {
     return json == null
         ? <ExternalServiceContactPoint>[]
         : json
-            .map((value) => ExternalServiceContactPoint.fromJson(value))
+            .map((dynamic value) => ExternalServiceContactPoint.fromJson(value))
             .toList();
   }
 
@@ -61,6 +69,7 @@ class ExternalServiceContactPoint {
       json.forEach((String key, dynamic value) =>
           map[key] = ExternalServiceContactPoint.fromJson(value));
     }
+
     return map;
   }
 

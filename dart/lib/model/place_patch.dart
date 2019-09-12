@@ -38,13 +38,20 @@ class PlacePatch {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^ branchCode.hashCode ^ description.hashCode ^ name.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (branchCode?.hashCode ?? 0);
+    hashCode ^= (description?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<PlacePatch> listFromJson(List<dynamic> json) {
     return json == null
         ? <PlacePatch>[]
-        : json.map((value) => PlacePatch.fromJson(value)).toList();
+        : json.map((dynamic value) => PlacePatch.fromJson(value)).toList();
   }
 
   static Map<String, PlacePatch> mapFromJson(Map<String, dynamic> json) {
@@ -53,6 +60,7 @@ class PlacePatch {
       json.forEach(
           (String key, dynamic value) => map[key] = PlacePatch.fromJson(value));
     }
+
     return map;
   }
 

@@ -33,12 +33,21 @@ class PlaceGeoCentroid {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ latitude.hashCode ^ longitude.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (latitude?.hashCode ?? 0);
+    hashCode ^= (longitude?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<PlaceGeoCentroid> listFromJson(List<dynamic> json) {
     return json == null
         ? <PlaceGeoCentroid>[]
-        : json.map((value) => PlaceGeoCentroid.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => PlaceGeoCentroid.fromJson(value))
+            .toList();
   }
 
   static Map<String, PlaceGeoCentroid> mapFromJson(Map<String, dynamic> json) {
@@ -47,6 +56,7 @@ class PlaceGeoCentroid {
       json.forEach((String key, dynamic value) =>
           map[key] = PlaceGeoCentroid.fromJson(value));
     }
+
     return map;
   }
 

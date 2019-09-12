@@ -28,15 +28,24 @@ class OperationCollection {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      items.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode);
+  int get hashCode {
+    int hashCode = 0;
+
+    if (items is List && items.isNotEmpty) {
+      hashCode ^= items
+          .map((Operation element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    return hashCode;
+  }
 
   static List<OperationCollection> listFromJson(List<dynamic> json) {
     return json == null
         ? <OperationCollection>[]
-        : json.map((value) => OperationCollection.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => OperationCollection.fromJson(value))
+            .toList();
   }
 
   static Map<String, OperationCollection> mapFromJson(
@@ -46,6 +55,7 @@ class OperationCollection {
       json.forEach((String key, dynamic value) =>
           map[key] = OperationCollection.fromJson(value));
     }
+
     return map;
   }
 

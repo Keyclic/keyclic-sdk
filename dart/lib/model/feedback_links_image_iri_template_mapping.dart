@@ -33,15 +33,22 @@ class FeedbackLinksImageIriTemplateMapping {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ feedback.hashCode ^ image.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (feedback?.hashCode ?? 0);
+    hashCode ^= (image?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<FeedbackLinksImageIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <FeedbackLinksImageIriTemplateMapping>[]
         : json
-            .map(
-                (value) => FeedbackLinksImageIriTemplateMapping.fromJson(value))
+            .map((dynamic value) =>
+                FeedbackLinksImageIriTemplateMapping.fromJson(value))
             .toList();
   }
 
@@ -52,6 +59,7 @@ class FeedbackLinksImageIriTemplateMapping {
       json.forEach((String key, dynamic value) =>
           map[key] = FeedbackLinksImageIriTemplateMapping.fromJson(value));
     }
+
     return map;
   }
 

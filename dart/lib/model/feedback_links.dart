@@ -59,21 +59,29 @@ class FeedbackLinks {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      businessActivity.hashCode ^
-      category.hashCode ^
-      image.hashCode ^
-      images.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      reporter.hashCode ^
-      self.hashCode ^
-      tracking.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (images is List && images.isNotEmpty) {
+      hashCode ^= images
+          .map((FeedbackLinksImages element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (businessActivity?.hashCode ?? 0);
+    hashCode ^= (category?.hashCode ?? 0);
+    hashCode ^= (image?.hashCode ?? 0);
+    hashCode ^= (reporter?.hashCode ?? 0);
+    hashCode ^= (self?.hashCode ?? 0);
+    hashCode ^= (tracking?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<FeedbackLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? <FeedbackLinks>[]
-        : json.map((value) => FeedbackLinks.fromJson(value)).toList();
+        : json.map((dynamic value) => FeedbackLinks.fromJson(value)).toList();
   }
 
   static Map<String, FeedbackLinks> mapFromJson(Map<String, dynamic> json) {
@@ -82,6 +90,7 @@ class FeedbackLinks {
       json.forEach((String key, dynamic value) =>
           map[key] = FeedbackLinks.fromJson(value));
     }
+
     return map;
   }
 

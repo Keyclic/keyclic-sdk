@@ -53,19 +53,25 @@ class ReportPagination extends Pagination {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      limit.hashCode ^
-      page.hashCode ^
-      pages.hashCode ^
-      total.hashCode ^
-      links.hashCode ^
-      embedded.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (limit?.hashCode ?? 0);
+    hashCode ^= (page?.hashCode ?? 0);
+    hashCode ^= (pages?.hashCode ?? 0);
+    hashCode ^= (total?.hashCode ?? 0);
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (embedded?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ReportPagination> listFromJson(List<dynamic> json) {
     return json == null
         ? <ReportPagination>[]
-        : json.map((value) => ReportPagination.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => ReportPagination.fromJson(value))
+            .toList();
   }
 
   static Map<String, ReportPagination> mapFromJson(Map<String, dynamic> json) {
@@ -74,6 +80,7 @@ class ReportPagination extends Pagination {
       json.forEach((String key, dynamic value) =>
           map[key] = ReportPagination.fromJson(value));
     }
+
     return map;
   }
 

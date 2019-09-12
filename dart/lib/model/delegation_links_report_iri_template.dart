@@ -28,14 +28,21 @@ class DelegationLinksReportIriTemplate {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ mapping.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (mapping?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DelegationLinksReportIriTemplate> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <DelegationLinksReportIriTemplate>[]
         : json
-            .map((value) => DelegationLinksReportIriTemplate.fromJson(value))
+            .map((dynamic value) =>
+                DelegationLinksReportIriTemplate.fromJson(value))
             .toList();
   }
 
@@ -46,6 +53,7 @@ class DelegationLinksReportIriTemplate {
       json.forEach((String key, dynamic value) =>
           map[key] = DelegationLinksReportIriTemplate.fromJson(value));
     }
+
     return map;
   }
 

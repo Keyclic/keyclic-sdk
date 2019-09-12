@@ -82,24 +82,32 @@ class ActivityGroup {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      activities.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      activityCount.hashCode ^
-      actorCount.hashCode ^
-      createdAt.hashCode ^
-      group.hashCode ^
-      id.hashCode ^
-      updatedAt.hashCode ^
-      verb.hashCode ^
-      isRead.hashCode ^
-      isSeen.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (activities is List && activities.isNotEmpty) {
+      hashCode ^= activities
+          .map((Activity element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (activityCount?.hashCode ?? 0);
+    hashCode ^= (actorCount?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (group?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+    hashCode ^= (verb?.hashCode ?? 0);
+    hashCode ^= (isRead?.hashCode ?? 0);
+    hashCode ^= (isSeen?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ActivityGroup> listFromJson(List<dynamic> json) {
     return json == null
         ? <ActivityGroup>[]
-        : json.map((value) => ActivityGroup.fromJson(value)).toList();
+        : json.map((dynamic value) => ActivityGroup.fromJson(value)).toList();
   }
 
   static Map<String, ActivityGroup> mapFromJson(Map<String, dynamic> json) {
@@ -108,6 +116,7 @@ class ActivityGroup {
       json.forEach((String key, dynamic value) =>
           map[key] = ActivityGroup.fromJson(value));
     }
+
     return map;
   }
 

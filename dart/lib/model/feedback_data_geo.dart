@@ -33,12 +33,19 @@ class FeedbackDataGeo {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ point.hashCode ^ elevation.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (point?.hashCode ?? 0);
+    hashCode ^= (elevation?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<FeedbackDataGeo> listFromJson(List<dynamic> json) {
     return json == null
         ? <FeedbackDataGeo>[]
-        : json.map((value) => FeedbackDataGeo.fromJson(value)).toList();
+        : json.map((dynamic value) => FeedbackDataGeo.fromJson(value)).toList();
   }
 
   static Map<String, FeedbackDataGeo> mapFromJson(Map<String, dynamic> json) {
@@ -47,6 +54,7 @@ class FeedbackDataGeo {
       json.forEach((String key, dynamic value) =>
           map[key] = FeedbackDataGeo.fromJson(value));
     }
+
     return map;
   }
 

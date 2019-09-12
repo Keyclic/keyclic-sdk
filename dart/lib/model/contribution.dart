@@ -56,18 +56,22 @@ class Contribution {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      links.hashCode ^
-      createdAt.hashCode ^
-      id.hashCode ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Contribution> listFromJson(List<dynamic> json) {
     return json == null
         ? <Contribution>[]
-        : json.map((value) => Contribution.fromJson(value)).toList();
+        : json.map((dynamic value) => Contribution.fromJson(value)).toList();
   }
 
   static Map<String, Contribution> mapFromJson(Map<String, dynamic> json) {
@@ -76,6 +80,7 @@ class Contribution {
       json.forEach((String key, dynamic value) =>
           map[key] = Contribution.fromJson(value));
     }
+
     return map;
   }
 

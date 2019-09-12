@@ -28,12 +28,20 @@ class PlacePreferences {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ public.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (public?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<PlacePreferences> listFromJson(List<dynamic> json) {
     return json == null
         ? <PlacePreferences>[]
-        : json.map((value) => PlacePreferences.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => PlacePreferences.fromJson(value))
+            .toList();
   }
 
   static Map<String, PlacePreferences> mapFromJson(Map<String, dynamic> json) {
@@ -42,6 +50,7 @@ class PlacePreferences {
       json.forEach((String key, dynamic value) =>
           map[key] = PlacePreferences.fromJson(value));
     }
+
     return map;
   }
 

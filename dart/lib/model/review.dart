@@ -41,7 +41,6 @@ class Review {
   String reviewBody;
 
   /// range from 1 to 5
-
   int reviewRating;
 
   String type;
@@ -68,20 +67,24 @@ class Review {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      links.hashCode ^
-      createdAt.hashCode ^
-      id.hashCode ^
-      reviewBody.hashCode ^
-      reviewRating.hashCode ^
-      type.hashCode ^
-      updatedAt.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= (createdAt?.hashCode ?? 0);
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (reviewBody?.hashCode ?? 0);
+    hashCode ^= (reviewRating?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (updatedAt?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Review> listFromJson(List<dynamic> json) {
     return json == null
         ? <Review>[]
-        : json.map((value) => Review.fromJson(value)).toList();
+        : json.map((dynamic value) => Review.fromJson(value)).toList();
   }
 
   static Map<String, Review> mapFromJson(Map<String, dynamic> json) {
@@ -90,6 +93,7 @@ class Review {
       json.forEach(
           (String key, dynamic value) => map[key] = Review.fromJson(value));
     }
+
     return map;
   }
 

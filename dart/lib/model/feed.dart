@@ -38,12 +38,20 @@ class Feed {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ id.hashCode ^ name.hashCode ^ type.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Feed> listFromJson(List<dynamic> json) {
     return json == null
         ? <Feed>[]
-        : json.map((value) => Feed.fromJson(value)).toList();
+        : json.map((dynamic value) => Feed.fromJson(value)).toList();
   }
 
   static Map<String, Feed> mapFromJson(Map<String, dynamic> json) {
@@ -52,6 +60,7 @@ class Feed {
       json.forEach(
           (String key, dynamic value) => map[key] = Feed.fromJson(value));
     }
+
     return map;
   }
 

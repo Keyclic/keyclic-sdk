@@ -43,13 +43,21 @@ class Node {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^ id.hashCode ^ type.hashCode ^ name.hashCode ^ embedded.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (id?.hashCode ?? 0);
+    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= (embedded?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<Node> listFromJson(List<dynamic> json) {
     return json == null
         ? <Node>[]
-        : json.map((value) => Node.fromJson(value)).toList();
+        : json.map((dynamic value) => Node.fromJson(value)).toList();
   }
 
   static Map<String, Node> mapFromJson(Map<String, dynamic> json) {
@@ -58,6 +66,7 @@ class Node {
       json.forEach(
           (String key, dynamic value) => map[key] = Node.fromJson(value));
     }
+
     return map;
   }
 

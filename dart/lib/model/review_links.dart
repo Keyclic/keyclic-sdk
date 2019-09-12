@@ -38,13 +38,20 @@ class ReviewLinks {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^ author.hashCode ^ itemReviewed.hashCode ^ self.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (author?.hashCode ?? 0);
+    hashCode ^= (itemReviewed?.hashCode ?? 0);
+    hashCode ^= (self?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<ReviewLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? <ReviewLinks>[]
-        : json.map((value) => ReviewLinks.fromJson(value)).toList();
+        : json.map((dynamic value) => ReviewLinks.fromJson(value)).toList();
   }
 
   static Map<String, ReviewLinks> mapFromJson(Map<String, dynamic> json) {
@@ -53,6 +60,7 @@ class ReviewLinks {
       json.forEach((String key, dynamic value) =>
           map[key] = ReviewLinks.fromJson(value));
     }
+
     return map;
   }
 

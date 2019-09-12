@@ -33,16 +33,24 @@ class PlaceGeoPolygon {
 
   /// By default hashCode return reference
   @override
-  int get hashCode =>
-      0 ^
-      features.map((dynamic element) => element.hashCode).fold(0,
-          (dynamic value, dynamic cursor) => value.hashCode ^ cursor.hashCode) ^
-      type.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    if (features is List && features.isNotEmpty) {
+      hashCode ^= features
+          .map((Feature element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
+    hashCode ^= (type?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<PlaceGeoPolygon> listFromJson(List<dynamic> json) {
     return json == null
         ? <PlaceGeoPolygon>[]
-        : json.map((value) => PlaceGeoPolygon.fromJson(value)).toList();
+        : json.map((dynamic value) => PlaceGeoPolygon.fromJson(value)).toList();
   }
 
   static Map<String, PlaceGeoPolygon> mapFromJson(Map<String, dynamic> json) {
@@ -51,6 +59,7 @@ class PlaceGeoPolygon {
       json.forEach((String key, dynamic value) =>
           map[key] = PlaceGeoPolygon.fromJson(value));
     }
+
     return map;
   }
 

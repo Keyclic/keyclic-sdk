@@ -29,14 +29,20 @@ class CheckpointLinksOrganizationIriTemplate {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ mapping.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (mapping?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<CheckpointLinksOrganizationIriTemplate> listFromJson(
       List<dynamic> json) {
     return json == null
         ? <CheckpointLinksOrganizationIriTemplate>[]
         : json
-            .map((value) =>
+            .map((dynamic value) =>
                 CheckpointLinksOrganizationIriTemplate.fromJson(value))
             .toList();
   }
@@ -48,6 +54,7 @@ class CheckpointLinksOrganizationIriTemplate {
       json.forEach((String key, dynamic value) =>
           map[key] = CheckpointLinksOrganizationIriTemplate.fromJson(value));
     }
+
     return map;
   }
 

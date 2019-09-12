@@ -28,12 +28,18 @@ class CheckpointLinks {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ organization.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (organization?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<CheckpointLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? <CheckpointLinks>[]
-        : json.map((value) => CheckpointLinks.fromJson(value)).toList();
+        : json.map((dynamic value) => CheckpointLinks.fromJson(value)).toList();
   }
 
   static Map<String, CheckpointLinks> mapFromJson(Map<String, dynamic> json) {
@@ -42,6 +48,7 @@ class CheckpointLinks {
       json.forEach((String key, dynamic value) =>
           map[key] = CheckpointLinks.fromJson(value));
     }
+
     return map;
   }
 

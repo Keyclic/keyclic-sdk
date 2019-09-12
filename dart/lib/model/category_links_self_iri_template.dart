@@ -28,13 +28,20 @@ class CategoryLinksSelfIriTemplate {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ mapping.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (mapping?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<CategoryLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
     return json == null
         ? <CategoryLinksSelfIriTemplate>[]
         : json
-            .map((value) => CategoryLinksSelfIriTemplate.fromJson(value))
+            .map(
+                (dynamic value) => CategoryLinksSelfIriTemplate.fromJson(value))
             .toList();
   }
 
@@ -45,6 +52,7 @@ class CategoryLinksSelfIriTemplate {
       json.forEach((String key, dynamic value) =>
           map[key] = CategoryLinksSelfIriTemplate.fromJson(value));
     }
+
     return map;
   }
 

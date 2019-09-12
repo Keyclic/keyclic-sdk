@@ -28,12 +28,20 @@ class DocumentPatchFile {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ name.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (name?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<DocumentPatchFile> listFromJson(List<dynamic> json) {
     return json == null
         ? <DocumentPatchFile>[]
-        : json.map((value) => DocumentPatchFile.fromJson(value)).toList();
+        : json
+            .map((dynamic value) => DocumentPatchFile.fromJson(value))
+            .toList();
   }
 
   static Map<String, DocumentPatchFile> mapFromJson(Map<String, dynamic> json) {
@@ -42,6 +50,7 @@ class DocumentPatchFile {
       json.forEach((String key, dynamic value) =>
           map[key] = DocumentPatchFile.fromJson(value));
     }
+
     return map;
   }
 

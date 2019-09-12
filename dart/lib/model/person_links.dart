@@ -33,12 +33,19 @@ class PersonLinks {
 
   /// By default hashCode return reference
   @override
-  int get hashCode => 0 ^ image.hashCode ^ self.hashCode;
+  int get hashCode {
+    int hashCode = 0;
+
+    hashCode ^= (image?.hashCode ?? 0);
+    hashCode ^= (self?.hashCode ?? 0);
+
+    return hashCode;
+  }
 
   static List<PersonLinks> listFromJson(List<dynamic> json) {
     return json == null
         ? <PersonLinks>[]
-        : json.map((value) => PersonLinks.fromJson(value)).toList();
+        : json.map((dynamic value) => PersonLinks.fromJson(value)).toList();
   }
 
   static Map<String, PersonLinks> mapFromJson(Map<String, dynamic> json) {
@@ -47,6 +54,7 @@ class PersonLinks {
       json.forEach((String key, dynamic value) =>
           map[key] = PersonLinks.fromJson(value));
     }
+
     return map;
   }
 
