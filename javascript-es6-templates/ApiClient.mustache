@@ -136,31 +136,45 @@ export default class ApiClient {
      * @param {Object} pathParams The parameter values to append.
      * @returns {String} The encoded path with parameter values substituted.
      */
-    buildUri(path, pathParams) {
+    buildPath(path, pathParams) {
         if (path.length > 0 && path.match(/^\//) === false) {
             path = '/' + path;
         }
 
-        let uri = this.basePath + path;
-        uri = uri.replace(/\{([\w-]+)\}/g, (fullMatch, key) => {
+        path = path.replace(/\{([\w-]+)\}/g, (fullMatch, key) => {
             let value = fullMatch;
             if (pathParams.hasOwnProperty(key)) {
                 value = ApiClientUtils.paramToString(pathParams[key]);
             }
 
-            return encodeURIComponent(value);
+            return value;
         });
 
-        return uri;
+        return path;
     }
 
-    appendQueryParams(uri, queryParams = {}) {
+    buildQueryParams(url, queryParams = {}) {
         queryParams = ApiClientUtils.normalizeParams(queryParams);
 
-        let urlObj = url.parse(uri, true);
-        urlObj.query = Object.assign({}, urlObj.query, queryParams);
+        let params = new URLSearchParams(url.search.slice(1));
 
-        return url.format(urlObj);
+        let separator = '?';
+        // find if query params were already set
+        for (let p of params.keys()) {
+            if (separator === '&') {
+               break;
+           }
+           separator = '&';
+        }
+
+        for (let queryParam in queryParams) {
+            if (queryParams.hasOwnProperty(queryParam) === false) {
+                continue;
+            }
+            params.append(queryParam, queryParams[queryParam]);
+        }
+
+        return `${separator}${params}`;
     }
 
     /**
@@ -236,9 +250,12 @@ export default class ApiClient {
         let contentType = ApiClientUtils.jsonPreferredMime(contentTypes);
         let accept = ApiClientUtils.jsonPreferredMime(accepts);
 
-        let apiUri = this.buildUri(path, pathParams);
+        const builtPath = this.buildPath(path, pathParams);
 
-        let apiUrl = this.appendQueryParams(apiUri, queryParams);
+        const url = new URL(builtPath, this.basePath);
+        const builtQueryParams = this.buildQueryParams(url, queryParams);
+
+        const apiUrl = `${url}${builtQueryParams}`;
 
         let headers = this.buildHeaders(headerParams, contentType, accept);
 
