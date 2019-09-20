@@ -21,15 +21,13 @@ export default class {{{classname}}} {{#interfaceModels}}extends {{{classname}}}
         {{name}},
     {{/required}}{{/vars}}
     ) {
-        {{#useInheritance}}
-            {{#interfaceModels}}
+        {{#interfaceModels}}
         super(
-                {{#vars}}{{#required}}
+          {{#vars}}{{#required}}
             {{name}},
-                {{/required}}{{/vars}}
+          {{/required}}{{/vars}}
         );
-            {{/interfaceModels}}
-        {{/useInheritance}}
+        {{/interfaceModels}}
 
         {{#vars}}
             {{#required}}
@@ -79,16 +77,6 @@ export default class {{{classname}}} {{#interfaceModels}}extends {{{classname}}}
         object = super.constructFromData(data, object);
         {{/interfaceModels}}
 
-{{=// \\=}}
-//!
-        {{#vars}}
-        if (data.hasOwnProperty('{{baseName}}')) {
-            object['{{baseName}}']{{{defaultValueWithParam}}}
-        }
-        {{/vars}}
-\\
-//={{ }}=\\
-
         {{#vars}}
             if (data.hasOwnProperty('{{&baseName}}')) {
             {{#complexType}}
@@ -116,35 +104,35 @@ export default class {{{classname}}} {{#interfaceModels}}extends {{{classname}}}
         return object;
     }
 
-    {{#emitModelMethods}}{{#vars}}
-    /**
-        {{#description}}
-     * Returns {{&description}}
-        {{/description}}
-        {{#minimum}}
-     * minimum: {{minimum}}
-        {{/minimum}}
-        {{#maximum}}
-     * maximum: {{maximum}}
-        {{/maximum}}
-     * @return { {{&vendorExtensions.x-jsdoc-type}} }
-     */
-    {{getter}}() {
-        return this.{{name}};
-    }
+    {{#vars}}
+      /**
+      {{#description}}
+       * Gets {{&description}}
+      {{/description}}
+      {{#minimum}}
+       * minimum: {{minimum}}
+      {{/minimum}}
+      {{#maximum}}
+       * maximum: {{maximum}}
+      {{/maximum}}
+       * @return { {{&vendorExtensions.x-jsdoc-type}} }
+       */
+      {{getter}}() {
+          return this.{{name}};
+      }
 
-        {{#isReadOnly}}
-    /**
-            {{#description}}
-     * Sets {{&description}}
-            {{/description}}
-     * @param { {{&vendorExtensions.x-jsdoc-type}} } {{name}}{{#description}} {{&description}}{{/description}}
-     */
-    {{setter}}({{name}}) {
-        this.{{name}} = {{name}};
-    }
-        {{/isReadOnly}}
-    {{/vars}}{{/emitModelMethods}}
+      {{^isReadOnly}}
+      /**
+      {{#description}}
+       * Sets {{&description}}
+      {{/description}}
+       * @param { {{&vendorExtensions.x-jsdoc-type}} } {{name}}{{#description}} {{&description}}{{/description}}
+       */
+      {{setter}}({{name}}) {
+          this.{{name}} = {{name}};
+      }
+      {{/isReadOnly}}
+    {{/vars}}
 
     {{#vars}}
         {{#isEnum}}
