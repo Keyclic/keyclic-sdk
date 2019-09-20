@@ -19,7 +19,7 @@
     },
     "scripts": {
         "build": "babel src --out-dir bundle",
-        "prettier": "prettier --write bundle/**/*.js src/**/*.js",
+        "prettier": "prettier --write bundle/*.js bundle/**/*.js src/*.js src/**/*.js",
         "test": "mocha --compilers js:@babel/core/register --recursive"
     },
     "babel": {
