@@ -59,4 +59,38 @@ export default class Checkpoint {
 
     return object;
   }
+
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { Array.<String> }
+   */
+  getState() {
+    return this.state;
+  }
+
+  /**
+   * @param { Array.<String> } state
+   */
+  setState(state) {
+    this.state = state;
+  }
+  /**
+   * @return { module:model/CheckpointLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/CheckpointLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
 }

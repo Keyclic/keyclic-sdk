@@ -51,4 +51,18 @@ export default class PropertyItems {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Choice> }
+   */
+  getOneOf() {
+    return this.oneOf;
+  }
+
+  /**
+   * @param { Array.<module:model/Choice> } oneOf
+   */
+  setOneOf(oneOf) {
+    this.oneOf = oneOf;
+  }
 }

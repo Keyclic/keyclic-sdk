@@ -73,48 +73,108 @@ var OccupantLinks =
      * @return { module:model/OccupantLinks } The populated "OccupantLinks" instance.
      */
 
-    _createClass(OccupantLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OccupantLinks,
+      [
+        {
+          key: "getPerson",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/OccupantLinksPerson }
+           */
+          value: function getPerson() {
+            return this.person;
           }
-
-          if (object === null) {
-            object = new OccupantLinks();
+          /**
+           * @param { module:model/OccupantLinksPerson } person
+           */
+        },
+        {
+          key: "setPerson",
+          value: function setPerson(person) {
+            this.person = person;
           }
-
-          if (data.hasOwnProperty("person")) {
-            object.person = _ApiClient.default.convertToType(
-              data["person"],
-              object.personType
-            );
+          /**
+           * @return { module:model/OccupantLinksPlace }
+           */
+        },
+        {
+          key: "getPlace",
+          value: function getPlace() {
+            return this.place;
           }
-
-          if (data.hasOwnProperty("place")) {
-            object.place = _ApiClient.default.convertToType(
-              data["place"],
-              object.placeType
-            );
+          /**
+           * @param { module:model/OccupantLinksPlace } place
+           */
+        },
+        {
+          key: "setPlace",
+          value: function setPlace(place) {
+            this.place = place;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @return { module:model/OccupantLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
           }
-
-          return object;
+          /**
+           * @param { module:model/OccupantLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OccupantLinks();
+            }
+
+            if (data.hasOwnProperty("person")) {
+              object.person = _ApiClient.default.convertToType(
+                data["person"],
+                object.personType
+              );
+            }
+
+            if (data.hasOwnProperty("place")) {
+              object.place = _ApiClient.default.convertToType(
+                data["place"],
+                object.placeType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OccupantLinks;
   })();

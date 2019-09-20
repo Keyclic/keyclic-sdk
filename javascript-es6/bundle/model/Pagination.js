@@ -65,62 +65,158 @@ var Pagination =
      * @return { module:model/Pagination } The populated "Pagination" instance.
      */
 
-    _createClass(Pagination, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Pagination,
+      [
+        {
+          key: "getLimit",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Number }
+           */
+          value: function getLimit() {
+            return this.limit;
           }
-
-          if (object === null) {
-            object = new Pagination();
+          /**
+           * @param { Number } limit
+           */
+        },
+        {
+          key: "setLimit",
+          value: function setLimit(limit) {
+            this.limit = limit;
           }
-
-          if (data.hasOwnProperty("limit")) {
-            object.limit = _ApiClient.default.convertToType(
-              data["limit"],
-              "Number"
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getPage",
+          value: function getPage() {
+            return this.page;
           }
-
-          if (data.hasOwnProperty("page")) {
-            object.page = _ApiClient.default.convertToType(
-              data["page"],
-              "Number"
-            );
+          /**
+           * @param { Number } page
+           */
+        },
+        {
+          key: "setPage",
+          value: function setPage(page) {
+            this.page = page;
           }
-
-          if (data.hasOwnProperty("pages")) {
-            object.pages = _ApiClient.default.convertToType(
-              data["pages"],
-              "Number"
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getPages",
+          value: function getPages() {
+            return this.pages;
           }
-
-          if (data.hasOwnProperty("total")) {
-            object.total = _ApiClient.default.convertToType(
-              data["total"],
-              "Number"
-            );
+          /**
+           * @param { Number } pages
+           */
+        },
+        {
+          key: "setPages",
+          value: function setPages(pages) {
+            this.pages = pages;
           }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getTotal",
+          value: function getTotal() {
+            return this.total;
           }
-
-          return object;
+          /**
+           * @param { Number } total
+           */
+        },
+        {
+          key: "setTotal",
+          value: function setTotal(total) {
+            this.total = total;
+          }
+          /**
+           * @return { module:model/PaginationLinks }
+           */
+        },
+        {
+          key: "getLinks",
+          value: function getLinks() {
+            return this.links;
+          }
+          /**
+           * @param { module:model/PaginationLinks } links
+           */
+        },
+        {
+          key: "setLinks",
+          value: function setLinks(links) {
+            this.links = links;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Pagination();
+            }
+
+            if (data.hasOwnProperty("limit")) {
+              object.limit = _ApiClient.default.convertToType(
+                data["limit"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("page")) {
+              object.page = _ApiClient.default.convertToType(
+                data["page"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("pages")) {
+              object.pages = _ApiClient.default.convertToType(
+                data["pages"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("total")) {
+              object.total = _ApiClient.default.convertToType(
+                data["total"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("_links")) {
+              object.links = _ApiClient.default.convertToType(
+                data["_links"],
+                object.linksType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Pagination;
   })();

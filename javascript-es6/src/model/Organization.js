@@ -114,4 +114,136 @@ export default class Organization {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OrganizationLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/OrganizationLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { String }
+   */
+  getAlternateName() {
+    return this.alternateName;
+  }
+
+  /**
+   * @param { String } alternateName
+   */
+  setAlternateName(alternateName) {
+    this.alternateName = alternateName;
+  }
+  /**
+   * @return { String }
+   */
+  getBillingEmailAddress() {
+    return this.billingEmailAddress;
+  }
+
+  /**
+   * @param { String } billingEmailAddress
+   */
+  setBillingEmailAddress(billingEmailAddress) {
+    this.billingEmailAddress = billingEmailAddress;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getEnabled() {
+    return this.enabled;
+  }
+
+  /**
+   * @param { Boolean } enabled
+   */
+  setEnabled(enabled) {
+    this.enabled = enabled;
+  }
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { String }
+   */
+  getNotificationEmailAddress() {
+    return this.notificationEmailAddress;
+  }
+
+  /**
+   * @param { String } notificationEmailAddress
+   */
+  setNotificationEmailAddress(notificationEmailAddress) {
+    this.notificationEmailAddress = notificationEmailAddress;
+  }
+  /**
+   * @return { module:model/OrganizationPreferences }
+   */
+  getPreferences() {
+    return this.preferences;
+  }
+
+  /**
+   * @param { module:model/OrganizationPreferences } preferences
+   */
+  setPreferences(preferences) {
+    this.preferences = preferences;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
 }

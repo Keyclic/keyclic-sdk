@@ -69,55 +69,133 @@ var Tracking =
      * @return { module:model/Tracking } The populated "Tracking" instance.
      */
 
-    _createClass(Tracking, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Tracking,
+      [
+        {
+          key: "getCheckpoints",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<module:model/Checkpoint> }
+           */
+          value: function getCheckpoints() {
+            return this.checkpoints;
           }
-
-          if (object === null) {
-            object = new Tracking();
+          /**
+           * @param { Array.<module:model/Checkpoint> } checkpoints
+           */
+        },
+        {
+          key: "setCheckpoints",
+          value: function setCheckpoints(checkpoints) {
+            this.checkpoints = checkpoints;
           }
-
-          if (data.hasOwnProperty("checkpoints")) {
-            object.checkpoints = _ApiClient.default.convertToType(
-              data["checkpoints"],
-              [object.checkpointsType]
-            );
+          /**
+           * @return { module:model/TrackingProgression }
+           */
+        },
+        {
+          key: "getProgression",
+          value: function getProgression() {
+            return this.progression;
           }
-
-          if (data.hasOwnProperty("progression")) {
-            object.progression = _ApiClient.default.convertToType(
-              data["progression"],
-              object.progressionType
-            );
+          /**
+           * @param { module:model/TrackingProgression } progression
+           */
+        },
+        {
+          key: "setProgression",
+          value: function setProgression(progression) {
+            this.progression = progression;
           }
-
-          if (data.hasOwnProperty("state")) {
-            object.state = _ApiClient.default.convertToType(
-              data["state"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getState",
+          value: function getState() {
+            return this.state;
           }
-
-          if (data.hasOwnProperty("time")) {
-            object.time = _ApiClient.default.convertToType(
-              data["time"],
-              "Number"
-            );
+          /**
+           * @param { String } state
+           */
+        },
+        {
+          key: "setState",
+          value: function setState(state) {
+            this.state = state;
           }
-
-          return object;
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getTime",
+          value: function getTime() {
+            return this.time;
+          }
+          /**
+           * @param { Number } time
+           */
+        },
+        {
+          key: "setTime",
+          value: function setTime(time) {
+            this.time = time;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Tracking();
+            }
+
+            if (data.hasOwnProperty("checkpoints")) {
+              object.checkpoints = _ApiClient.default.convertToType(
+                data["checkpoints"],
+                [object.checkpointsType]
+              );
+            }
+
+            if (data.hasOwnProperty("progression")) {
+              object.progression = _ApiClient.default.convertToType(
+                data["progression"],
+                object.progressionType
+              );
+            }
+
+            if (data.hasOwnProperty("state")) {
+              object.state = _ApiClient.default.convertToType(
+                data["state"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("time")) {
+              object.time = _ApiClient.default.convertToType(
+                data["time"],
+                "Number"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Tracking;
   })();

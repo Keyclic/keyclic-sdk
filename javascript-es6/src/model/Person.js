@@ -106,4 +106,150 @@ export default class Person {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PersonLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/PersonLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { String }
+   */
+  getEmail() {
+    return this.email;
+  }
+
+  /**
+   * @param { String } email
+   */
+  setEmail(email) {
+    this.email = email;
+  }
+  /**
+   * @return { String }
+   */
+  getFamilyName() {
+    return this.familyName;
+  }
+
+  /**
+   * @param { String } familyName
+   */
+  setFamilyName(familyName) {
+    this.familyName = familyName;
+  }
+  /**
+   * @return { String }
+   */
+  getGivenName() {
+    return this.givenName;
+  }
+
+  /**
+   * @param { String } givenName
+   */
+  setGivenName(givenName) {
+    this.givenName = givenName;
+  }
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { String }
+   */
+  getJobTitle() {
+    return this.jobTitle;
+  }
+
+  /**
+   * @param { String } jobTitle
+   */
+  setJobTitle(jobTitle) {
+    this.jobTitle = jobTitle;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getOptIn() {
+    return this.optIn;
+  }
+
+  /**
+   * @param { Boolean } optIn
+   */
+  setOptIn(optIn) {
+    this.optIn = optIn;
+  }
+  /**
+   * @return { module:model/PersonPreferences }
+   */
+  getPreferences() {
+    return this.preferences;
+  }
+
+  /**
+   * @param { module:model/PersonPreferences } preferences
+   */
+  setPreferences(preferences) {
+    this.preferences = preferences;
+  }
+  /**
+   * @return { String }
+   */
+  getTelephone() {
+    return this.telephone;
+  }
+
+  /**
+   * @param { String } telephone
+   */
+  setTelephone(telephone) {
+    this.telephone = telephone;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
+
+  /**
+   * @return { String }
+   */
+  getUsername() {
+    return this.username;
+  }
+
+  /**
+   * @param { String } username
+   */
+  setUsername(username) {
+    this.username = username;
+  }
 }

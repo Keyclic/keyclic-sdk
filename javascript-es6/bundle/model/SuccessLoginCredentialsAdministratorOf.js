@@ -60,45 +60,108 @@ var SuccessLoginCredentialsAdministratorOf =
      * @return { module:model/SuccessLoginCredentialsAdministratorOf } The populated "SuccessLoginCredentialsAdministratorOf" instance.
      */
 
-    _createClass(SuccessLoginCredentialsAdministratorOf, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      SuccessLoginCredentialsAdministratorOf,
+      [
+        {
+          key: "getId",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getId() {
+            return this.id;
           }
-
-          if (object === null) {
-            object = new SuccessLoginCredentialsAdministratorOf();
+          /**
+           * @param { String } id
+           */
+        },
+        {
+          key: "setId",
+          value: function setId(id) {
+            this.id = id;
           }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getToken",
+          value: function getToken() {
+            return this.token;
           }
-
-          if (data.hasOwnProperty("token")) {
-            object.token = _ApiClient.default.convertToType(
-              data["token"],
-              "String"
-            );
+          /**
+           * @param { String } token
+           */
+        },
+        {
+          key: "setToken",
+          value: function setToken(token) {
+            this.token = token;
           }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
           }
-
-          return object;
+          /**
+           * @param { String } type
+           */
+        },
+        {
+          key: "setType",
+          value: function setType(type) {
+            this.type = type;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new SuccessLoginCredentialsAdministratorOf();
+            }
+
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("token")) {
+              object.token = _ApiClient.default.convertToType(
+                data["token"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return SuccessLoginCredentialsAdministratorOf;
   })();

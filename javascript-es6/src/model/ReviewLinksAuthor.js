@@ -58,4 +58,33 @@ export default class ReviewLinksAuthor {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the author associated to the given review.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the author associated to the given review.
+   * @param { String } href The URI of the author associated to the given review.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/ReviewLinksAuthorIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/ReviewLinksAuthorIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

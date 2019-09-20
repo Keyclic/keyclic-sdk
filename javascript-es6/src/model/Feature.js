@@ -65,4 +65,44 @@ export default class Feature {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @param { String } type
+   */
+  setType(type) {
+    this.type = type;
+  }
+  /**
+   * @return { module:model/FeatureGeometry }
+   */
+  getGeometry() {
+    return this.geometry;
+  }
+
+  /**
+   * @param { module:model/FeatureGeometry } geometry
+   */
+  setGeometry(geometry) {
+    this.geometry = geometry;
+  }
+  /**
+   * @return { Array.<String> }
+   */
+  getProperties() {
+    return this.properties;
+  }
+
+  /**
+   * @param { Array.<String> } properties
+   */
+  setProperties(properties) {
+    this.properties = properties;
+  }
 }

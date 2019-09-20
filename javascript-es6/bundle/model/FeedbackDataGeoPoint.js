@@ -60,48 +60,108 @@ var FeedbackDataGeoPoint =
      * @return { module:model/FeedbackDataGeoPoint } The populated "FeedbackDataGeoPoint" instance.
      */
 
-    _createClass(FeedbackDataGeoPoint, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FeedbackDataGeoPoint,
+      [
+        {
+          key: "getLatitude",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Number }
+           */
+          value: function getLatitude() {
+            return this.latitude;
           }
-
-          if (object === null) {
-            object = new FeedbackDataGeoPoint();
+          /**
+           * @param { Number } latitude
+           */
+        },
+        {
+          key: "setLatitude",
+          value: function setLatitude(latitude) {
+            this.latitude = latitude;
           }
-
-          if (data.hasOwnProperty("latitude")) {
-            object.latitude = _ApiClient.default.convertToType(
-              data["latitude"],
-              "Number"
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getLongitude",
+          value: function getLongitude() {
+            return this.longitude;
           }
-
-          if (data.hasOwnProperty("longitude")) {
-            object.longitude = _ApiClient.default.convertToType(
-              data["longitude"],
-              "Number"
-            );
+          /**
+           * @param { Number } longitude
+           */
+        },
+        {
+          key: "setLongitude",
+          value: function setLongitude(longitude) {
+            this.longitude = longitude;
           }
-
-          if (data.hasOwnProperty("srid")) {
-            object.srid = _ApiClient.default.convertToType(
-              data["srid"],
-              "Number"
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getSrid",
+          value: function getSrid() {
+            return this.srid;
           }
-
-          return object;
+          /**
+           * @param { Number } srid
+           */
+        },
+        {
+          key: "setSrid",
+          value: function setSrid(srid) {
+            this.srid = srid;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FeedbackDataGeoPoint();
+            }
+
+            if (data.hasOwnProperty("latitude")) {
+              object.latitude = _ApiClient.default.convertToType(
+                data["latitude"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("longitude")) {
+              object.longitude = _ApiClient.default.convertToType(
+                data["longitude"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("srid")) {
+              object.srid = _ApiClient.default.convertToType(
+                data["srid"],
+                "Number"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FeedbackDataGeoPoint;
   })();

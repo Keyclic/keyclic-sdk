@@ -67,41 +67,83 @@ var CategoryLinks =
      * @return { module:model/CategoryLinks } The populated "CategoryLinks" instance.
      */
 
-    _createClass(CategoryLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      CategoryLinks,
+      [
+        {
+          key: "getOrganization",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/CategoryLinksOrganization }
+           */
+          value: function getOrganization() {
+            return this.organization;
           }
-
-          if (object === null) {
-            object = new CategoryLinks();
+          /**
+           * @param { module:model/CategoryLinksOrganization } organization
+           */
+        },
+        {
+          key: "setOrganization",
+          value: function setOrganization(organization) {
+            this.organization = organization;
           }
-
-          if (data.hasOwnProperty("organization")) {
-            object.organization = _ApiClient.default.convertToType(
-              data["organization"],
-              object.organizationType
-            );
+          /**
+           * @return { module:model/CategoryLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @param { module:model/CategoryLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new CategoryLinks();
+            }
+
+            if (data.hasOwnProperty("organization")) {
+              object.organization = _ApiClient.default.convertToType(
+                data["organization"],
+                object.organizationType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return CategoryLinks;
   })();

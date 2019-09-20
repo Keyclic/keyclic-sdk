@@ -58,34 +58,58 @@ var DeviceLinksSelfIriTemplateMapping =
      * @return { module:model/DeviceLinksSelfIriTemplateMapping } The populated "DeviceLinksSelfIriTemplateMapping" instance.
      */
 
-    _createClass(DeviceLinksSelfIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DeviceLinksSelfIriTemplateMapping,
+      [
+        {
+          key: "getDevice",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getDevice() {
+            return this.device;
           }
-
-          if (object === null) {
-            object = new DeviceLinksSelfIriTemplateMapping();
+          /**
+           * @param { String } device
+           */
+        },
+        {
+          key: "setDevice",
+          value: function setDevice(device) {
+            this.device = device;
           }
-
-          if (data.hasOwnProperty("device")) {
-            object.device = _ApiClient.default.convertToType(
-              data["device"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DeviceLinksSelfIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("device")) {
+              object.device = _ApiClient.default.convertToType(
+                data["device"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DeviceLinksSelfIriTemplateMapping;
   })();

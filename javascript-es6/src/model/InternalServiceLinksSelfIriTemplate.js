@@ -54,4 +54,18 @@ export default class InternalServiceLinksSelfIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/InternalServiceLinksSelfIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/InternalServiceLinksSelfIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

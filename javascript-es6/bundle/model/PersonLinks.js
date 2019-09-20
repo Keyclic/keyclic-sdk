@@ -65,41 +65,83 @@ var PersonLinks =
      * @return { module:model/PersonLinks } The populated "PersonLinks" instance.
      */
 
-    _createClass(PersonLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PersonLinks,
+      [
+        {
+          key: "getImage",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/PersonLinksImage }
+           */
+          value: function getImage() {
+            return this.image;
           }
-
-          if (object === null) {
-            object = new PersonLinks();
+          /**
+           * @param { module:model/PersonLinksImage } image
+           */
+        },
+        {
+          key: "setImage",
+          value: function setImage(image) {
+            this.image = image;
           }
-
-          if (data.hasOwnProperty("image")) {
-            object.image = _ApiClient.default.convertToType(
-              data["image"],
-              object.imageType
-            );
+          /**
+           * @return { module:model/PersonLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @param { module:model/PersonLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PersonLinks();
+            }
+
+            if (data.hasOwnProperty("image")) {
+              object.image = _ApiClient.default.convertToType(
+                data["image"],
+                object.imageType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PersonLinks;
   })();

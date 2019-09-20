@@ -63,4 +63,31 @@ export default class MemberData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getPerson() {
+    return this.person;
+  }
+
+  /**
+   * @param { String } person
+   */
+  setPerson(person) {
+    this.person = person;
+  }
+  /**
+   * @return { String }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { String } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
 }

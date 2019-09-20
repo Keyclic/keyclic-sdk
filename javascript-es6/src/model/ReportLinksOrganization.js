@@ -58,4 +58,33 @@ export default class ReportLinksOrganization {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the organization associated to the given report.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the organization associated to the given report.
+   * @param { String } href The URI of the organization associated to the given report.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/ReportLinksOrganizationIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/ReportLinksOrganizationIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

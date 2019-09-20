@@ -48,4 +48,18 @@ export default class MemberLinksSelfIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getMember() {
+    return this.member;
+  }
+
+  /**
+   * @param { String } member
+   */
+  setMember(member) {
+    this.member = member;
+  }
 }

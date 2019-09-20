@@ -51,4 +51,18 @@ export default class DelegationEmbedded {
 
     return object;
   }
+
+  /**
+   * @return { Array.<String> }
+   */
+  getStateTransitions() {
+    return this.stateTransitions;
+  }
+
+  /**
+   * @param { Array.<String> } stateTransitions
+   */
+  setStateTransitions(stateTransitions) {
+    this.stateTransitions = stateTransitions;
+  }
 }

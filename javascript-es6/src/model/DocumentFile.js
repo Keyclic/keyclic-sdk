@@ -59,6 +59,33 @@ export default class DocumentFile {
   }
 
   /**
+   * @return { module:model/DocumentFile.ContentTypeEnum }
+   */
+  getContentType() {
+    return this.contentType;
+  }
+
+  /**
+   * @param { module:model/DocumentFile.ContentTypeEnum } contentType
+   */
+  setContentType(contentType) {
+    this.contentType = contentType;
+  }
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+
+  /**
    * Allowed values for the "contentType" property.
    * @enum { String }
    */

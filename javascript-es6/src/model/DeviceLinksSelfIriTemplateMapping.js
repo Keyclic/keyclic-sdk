@@ -48,4 +48,18 @@ export default class DeviceLinksSelfIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getDevice() {
+    return this.device;
+  }
+
+  /**
+   * @param { String } device
+   */
+  setDevice(device) {
+    this.device = device;
+  }
 }

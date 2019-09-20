@@ -60,4 +60,18 @@ export default class PublicationPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PublicationCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/PublicationCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

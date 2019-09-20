@@ -60,4 +60,18 @@ export default class DocumentPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/DocumentCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/DocumentCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

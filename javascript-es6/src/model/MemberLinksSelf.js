@@ -58,4 +58,33 @@ export default class MemberLinksSelf {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the self associated to the given member.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the self associated to the given member.
+   * @param { String } href The URI of the self associated to the given member.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/MemberLinksSelfIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/MemberLinksSelfIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

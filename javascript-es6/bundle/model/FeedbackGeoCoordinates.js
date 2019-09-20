@@ -66,41 +66,85 @@ var FeedbackGeoCoordinates =
      * @return { module:model/FeedbackGeoCoordinates } The populated "FeedbackGeoCoordinates" instance.
      */
 
-    _createClass(FeedbackGeoCoordinates, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FeedbackGeoCoordinates,
+      [
+        {
+          key: "getElevation",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * minimum: -10000
+           * maximum: 8000
+           * @return { Number }
+           */
+          value: function getElevation() {
+            return this.elevation;
           }
-
-          if (object === null) {
-            object = new FeedbackGeoCoordinates();
+          /**
+           * @param { Number } elevation
+           */
+        },
+        {
+          key: "setElevation",
+          value: function setElevation(elevation) {
+            this.elevation = elevation;
           }
-
-          if (data.hasOwnProperty("elevation")) {
-            object.elevation = _ApiClient.default.convertToType(
-              data["elevation"],
-              "Number"
-            );
+          /**
+           * @return { module:model/FeedbackGeoCoordinatesPoint }
+           */
+        },
+        {
+          key: "getPoint",
+          value: function getPoint() {
+            return this.point;
           }
-
-          if (data.hasOwnProperty("point")) {
-            object.point = _ApiClient.default.convertToType(
-              data["point"],
-              object.pointType
-            );
+          /**
+           * @param { module:model/FeedbackGeoCoordinatesPoint } point
+           */
+        },
+        {
+          key: "setPoint",
+          value: function setPoint(point) {
+            this.point = point;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FeedbackGeoCoordinates();
+            }
+
+            if (data.hasOwnProperty("elevation")) {
+              object.elevation = _ApiClient.default.convertToType(
+                data["elevation"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("point")) {
+              object.point = _ApiClient.default.convertToType(
+                data["point"],
+                object.pointType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FeedbackGeoCoordinates;
   })();

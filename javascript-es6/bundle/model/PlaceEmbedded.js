@@ -65,40 +65,82 @@ var PlaceEmbedded =
      * @return { module:model/PlaceEmbedded } The populated "PlaceEmbedded" instance.
      */
 
-    _createClass(PlaceEmbedded, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PlaceEmbedded,
+      [
+        {
+          key: "getChildren",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<module:model/Node> }
+           */
+          value: function getChildren() {
+            return this.children;
           }
-
-          if (object === null) {
-            object = new PlaceEmbedded();
+          /**
+           * @param { Array.<module:model/Node> } children
+           */
+        },
+        {
+          key: "setChildren",
+          value: function setChildren(children) {
+            this.children = children;
           }
-
-          if (data.hasOwnProperty("children")) {
-            object.children = _ApiClient.default.convertToType(
-              data["children"],
-              [object.childrenType]
-            );
+          /**
+           * @return { Array.<module:model/NodePath> }
+           */
+        },
+        {
+          key: "getPath",
+          value: function getPath() {
+            return this.path;
           }
-
-          if (data.hasOwnProperty("path")) {
-            object.path = _ApiClient.default.convertToType(data["path"], [
-              object.pathType
-            ]);
+          /**
+           * @param { Array.<module:model/NodePath> } path
+           */
+        },
+        {
+          key: "setPath",
+          value: function setPath(path) {
+            this.path = path;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PlaceEmbedded();
+            }
+
+            if (data.hasOwnProperty("children")) {
+              object.children = _ApiClient.default.convertToType(
+                data["children"],
+                [object.childrenType]
+              );
+            }
+
+            if (data.hasOwnProperty("path")) {
+              object.path = _ApiClient.default.convertToType(data["path"], [
+                object.pathType
+              ]);
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PlaceEmbedded;
   })();

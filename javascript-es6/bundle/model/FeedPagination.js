@@ -162,40 +162,64 @@ var FeedPagination =
      * @return { module:model/FeedPagination } The populated "FeedPagination" instance.
      */
 
-    _createClass(FeedPagination, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FeedPagination,
+      [
+        {
+          key: "getEmbedded",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/FeedCollection }
+           */
+          value: function getEmbedded() {
+            return this.embedded;
           }
-
-          if (object === null) {
-            object = new FeedPagination();
+          /**
+           * @param { module:model/FeedCollection } embedded
+           */
+        },
+        {
+          key: "setEmbedded",
+          value: function setEmbedded(embedded) {
+            this.embedded = embedded;
           }
-
-          object = _get(
-            _getPrototypeOf(FeedPagination),
-            "constructFromData",
-            this
-          ).call(this, data, object);
-
-          if (data.hasOwnProperty("_embedded")) {
-            object.embedded = _ApiClient.default.convertToType(
-              data["_embedded"],
-              object.embeddedType
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FeedPagination();
+            }
+
+            object = _get(
+              _getPrototypeOf(FeedPagination),
+              "constructFromData",
+              this
+            ).call(this, data, object);
+
+            if (data.hasOwnProperty("_embedded")) {
+              object.embedded = _ApiClient.default.convertToType(
+                data["_embedded"],
+                object.embeddedType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FeedPagination;
   })(_Pagination2.default);

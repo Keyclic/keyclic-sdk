@@ -62,62 +62,158 @@ var ReportPatch =
      * @return { module:model/ReportPatch } The populated "ReportPatch" instance.
      */
 
-    _createClass(ReportPatch, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ReportPatch,
+      [
+        {
+          key: "getCategory",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getCategory() {
+            return this.category;
           }
-
-          if (object === null) {
-            object = new ReportPatch();
+          /**
+           * @param { String } category
+           */
+        },
+        {
+          key: "setCategory",
+          value: function setCategory(category) {
+            this.category = category;
           }
-
-          if (data.hasOwnProperty("category")) {
-            object.category = _ApiClient.default.convertToType(
-              data["category"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getDescription",
+          value: function getDescription() {
+            return this.description;
           }
-
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
-              "String"
-            );
+          /**
+           * @param { String } description
+           */
+        },
+        {
+          key: "setDescription",
+          value: function setDescription(description) {
+            this.description = description;
           }
-
-          if (data.hasOwnProperty("identificationNumber")) {
-            object.identificationNumber = _ApiClient.default.convertToType(
-              data["identificationNumber"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getIdentificationNumber",
+          value: function getIdentificationNumber() {
+            return this.identificationNumber;
           }
-
-          if (data.hasOwnProperty("priority")) {
-            object.priority = _ApiClient.default.convertToType(
-              data["priority"],
-              "Number"
-            );
+          /**
+           * @param { String } identificationNumber
+           */
+        },
+        {
+          key: "setIdentificationNumber",
+          value: function setIdentificationNumber(identificationNumber) {
+            this.identificationNumber = identificationNumber;
           }
-
-          if (data.hasOwnProperty("tags")) {
-            object.tags = _ApiClient.default.convertToType(
-              data["tags"],
-              "['String']"
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getPriority",
+          value: function getPriority() {
+            return this.priority;
           }
-
-          return object;
+          /**
+           * @param { Number } priority
+           */
+        },
+        {
+          key: "setPriority",
+          value: function setPriority(priority) {
+            this.priority = priority;
+          }
+          /**
+           * @return { Array.<String> }
+           */
+        },
+        {
+          key: "getTags",
+          value: function getTags() {
+            return this.tags;
+          }
+          /**
+           * @param { Array.<String> } tags
+           */
+        },
+        {
+          key: "setTags",
+          value: function setTags(tags) {
+            this.tags = tags;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ReportPatch();
+            }
+
+            if (data.hasOwnProperty("category")) {
+              object.category = _ApiClient.default.convertToType(
+                data["category"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("description")) {
+              object.description = _ApiClient.default.convertToType(
+                data["description"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("identificationNumber")) {
+              object.identificationNumber = _ApiClient.default.convertToType(
+                data["identificationNumber"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("priority")) {
+              object.priority = _ApiClient.default.convertToType(
+                data["priority"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("tags")) {
+              object.tags = _ApiClient.default.convertToType(
+                data["tags"],
+                "['String']"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ReportPatch;
   })();

@@ -58,4 +58,33 @@ export default class DelegationLinksReport {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the report associated to the given delegation.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the report associated to the given delegation.
+   * @param { String } href The URI of the report associated to the given delegation.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/DelegationLinksReportIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/DelegationLinksReportIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

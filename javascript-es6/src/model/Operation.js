@@ -113,4 +113,136 @@ export default class Operation {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OperationEmbedded }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/OperationEmbedded } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
+  /**
+   * @return { module:model/OperationLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/OperationLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { String }
+   */
+  getIdentificationNumber() {
+    return this.identificationNumber;
+  }
+
+  /**
+   * @param { String } identificationNumber
+   */
+  setIdentificationNumber(identificationNumber) {
+    this.identificationNumber = identificationNumber;
+  }
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { Date }
+   */
+  getScheduledAt() {
+    return this.scheduledAt;
+  }
+
+  /**
+   * @param { Date } scheduledAt
+   */
+  setScheduledAt(scheduledAt) {
+    this.scheduledAt = scheduledAt;
+  }
+  /**
+   * @return { module:model/OperationSignature }
+   */
+  getSignature() {
+    return this.signature;
+  }
+
+  /**
+   * @param { module:model/OperationSignature } signature
+   */
+  setSignature(signature) {
+    this.signature = signature;
+  }
+  /**
+   * @return { Array.<String> }
+   */
+  getState() {
+    return this.state;
+  }
+
+  /**
+   * @param { Array.<String> } state
+   */
+  setState(state) {
+    this.state = state;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
 }

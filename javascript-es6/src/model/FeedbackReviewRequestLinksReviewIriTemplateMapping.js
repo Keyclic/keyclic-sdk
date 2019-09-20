@@ -48,4 +48,18 @@ export default class FeedbackReviewRequestLinksReviewIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getReview() {
+    return this.review;
+  }
+
+  /**
+   * @param { String } review
+   */
+  setReview(review) {
+    this.review = review;
+  }
 }

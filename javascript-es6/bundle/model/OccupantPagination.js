@@ -164,40 +164,64 @@ var OccupantPagination =
      * @return { module:model/OccupantPagination } The populated "OccupantPagination" instance.
      */
 
-    _createClass(OccupantPagination, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OccupantPagination,
+      [
+        {
+          key: "getEmbedded",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/OccupantCollection }
+           */
+          value: function getEmbedded() {
+            return this.embedded;
           }
-
-          if (object === null) {
-            object = new OccupantPagination();
+          /**
+           * @param { module:model/OccupantCollection } embedded
+           */
+        },
+        {
+          key: "setEmbedded",
+          value: function setEmbedded(embedded) {
+            this.embedded = embedded;
           }
-
-          object = _get(
-            _getPrototypeOf(OccupantPagination),
-            "constructFromData",
-            this
-          ).call(this, data, object);
-
-          if (data.hasOwnProperty("_embedded")) {
-            object.embedded = _ApiClient.default.convertToType(
-              data["_embedded"],
-              object.embeddedType
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OccupantPagination();
+            }
+
+            object = _get(
+              _getPrototypeOf(OccupantPagination),
+              "constructFromData",
+              this
+            ).call(this, data, object);
+
+            if (data.hasOwnProperty("_embedded")) {
+              object.embedded = _ApiClient.default.convertToType(
+                data["_embedded"],
+                object.embeddedType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OccupantPagination;
   })(_Pagination2.default);

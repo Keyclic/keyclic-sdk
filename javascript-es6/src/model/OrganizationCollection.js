@@ -51,4 +51,18 @@ export default class OrganizationCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Organization> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Organization> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

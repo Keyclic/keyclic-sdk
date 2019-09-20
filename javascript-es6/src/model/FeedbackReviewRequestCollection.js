@@ -51,4 +51,18 @@ export default class FeedbackReviewRequestCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/FeedbackReviewRequest> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/FeedbackReviewRequest> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

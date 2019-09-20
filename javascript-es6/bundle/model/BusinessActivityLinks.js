@@ -81,55 +81,133 @@ var BusinessActivityLinks =
      * @return { module:model/BusinessActivityLinks } The populated "BusinessActivityLinks" instance.
      */
 
-    _createClass(BusinessActivityLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      BusinessActivityLinks,
+      [
+        {
+          key: "getImage",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/BusinessActivityLinksImage }
+           */
+          value: function getImage() {
+            return this.image;
           }
-
-          if (object === null) {
-            object = new BusinessActivityLinks();
+          /**
+           * @param { module:model/BusinessActivityLinksImage } image
+           */
+        },
+        {
+          key: "setImage",
+          value: function setImage(image) {
+            this.image = image;
           }
-
-          if (data.hasOwnProperty("image")) {
-            object.image = _ApiClient.default.convertToType(
-              data["image"],
-              object.imageType
-            );
+          /**
+           * @return { module:model/BusinessActivityLinksSchema }
+           */
+        },
+        {
+          key: "getSchema",
+          value: function getSchema() {
+            return this.schema;
           }
-
-          if (data.hasOwnProperty("schema")) {
-            object.schema = _ApiClient.default.convertToType(
-              data["schema"],
-              object.schemaType
-            );
+          /**
+           * @param { module:model/BusinessActivityLinksSchema } schema
+           */
+        },
+        {
+          key: "setSchema",
+          value: function setSchema(schema) {
+            this.schema = schema;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @return { module:model/BusinessActivityLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
           }
-
-          if (data.hasOwnProperty("thumbnail")) {
-            object.thumbnail = _ApiClient.default.convertToType(
-              data["thumbnail"],
-              object.thumbnailType
-            );
+          /**
+           * @param { module:model/BusinessActivityLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
           }
-
-          return object;
+          /**
+           * @return { module:model/BusinessActivityLinksThumbnail }
+           */
+        },
+        {
+          key: "getThumbnail",
+          value: function getThumbnail() {
+            return this.thumbnail;
+          }
+          /**
+           * @param { module:model/BusinessActivityLinksThumbnail } thumbnail
+           */
+        },
+        {
+          key: "setThumbnail",
+          value: function setThumbnail(thumbnail) {
+            this.thumbnail = thumbnail;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new BusinessActivityLinks();
+            }
+
+            if (data.hasOwnProperty("image")) {
+              object.image = _ApiClient.default.convertToType(
+                data["image"],
+                object.imageType
+              );
+            }
+
+            if (data.hasOwnProperty("schema")) {
+              object.schema = _ApiClient.default.convertToType(
+                data["schema"],
+                object.schemaType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            if (data.hasOwnProperty("thumbnail")) {
+              object.thumbnail = _ApiClient.default.convertToType(
+                data["thumbnail"],
+                object.thumbnailType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return BusinessActivityLinks;
   })();

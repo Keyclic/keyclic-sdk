@@ -48,4 +48,18 @@ export default class OccupantLinksPlaceIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getPlace() {
+    return this.place;
+  }
+
+  /**
+   * @param { String } place
+   */
+  setPlace(place) {
+    this.place = place;
+  }
 }

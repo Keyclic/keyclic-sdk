@@ -58,34 +58,58 @@ var DelegationLinksSelfIriTemplateMapping =
      * @return { module:model/DelegationLinksSelfIriTemplateMapping } The populated "DelegationLinksSelfIriTemplateMapping" instance.
      */
 
-    _createClass(DelegationLinksSelfIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DelegationLinksSelfIriTemplateMapping,
+      [
+        {
+          key: "getDelegation",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getDelegation() {
+            return this.delegation;
           }
-
-          if (object === null) {
-            object = new DelegationLinksSelfIriTemplateMapping();
+          /**
+           * @param { String } delegation
+           */
+        },
+        {
+          key: "setDelegation",
+          value: function setDelegation(delegation) {
+            this.delegation = delegation;
           }
-
-          if (data.hasOwnProperty("delegation")) {
-            object.delegation = _ApiClient.default.convertToType(
-              data["delegation"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DelegationLinksSelfIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("delegation")) {
+              object.delegation = _ApiClient.default.convertToType(
+                data["delegation"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DelegationLinksSelfIriTemplateMapping;
   })();

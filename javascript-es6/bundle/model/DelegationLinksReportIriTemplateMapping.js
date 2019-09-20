@@ -58,34 +58,58 @@ var DelegationLinksReportIriTemplateMapping =
      * @return { module:model/DelegationLinksReportIriTemplateMapping } The populated "DelegationLinksReportIriTemplateMapping" instance.
      */
 
-    _createClass(DelegationLinksReportIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DelegationLinksReportIriTemplateMapping,
+      [
+        {
+          key: "getReport",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getReport() {
+            return this.report;
           }
-
-          if (object === null) {
-            object = new DelegationLinksReportIriTemplateMapping();
+          /**
+           * @param { String } report
+           */
+        },
+        {
+          key: "setReport",
+          value: function setReport(report) {
+            this.report = report;
           }
-
-          if (data.hasOwnProperty("report")) {
-            object.report = _ApiClient.default.convertToType(
-              data["report"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DelegationLinksReportIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("report")) {
+              object.report = _ApiClient.default.convertToType(
+                data["report"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DelegationLinksReportIriTemplateMapping;
   })();

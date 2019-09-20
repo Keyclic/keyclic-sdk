@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class InternalServicePatch {
   InternalServicePatch({
+    this.contactPoint,
     this.description,
     this.name,
   });
@@ -10,9 +11,13 @@ class InternalServicePatch {
     if (json == null) {
       return;
     }
+    contactPoint =
+        ExternalServicePatchContactPoint.fromJson(json['contactPoint']);
     description = json['description'];
     name = json['name'];
   }
+
+  ExternalServicePatchContactPoint contactPoint;
 
   String description;
 
@@ -27,6 +32,7 @@ class InternalServicePatch {
 
     return other is InternalServicePatch &&
         runtimeType == other.runtimeType &&
+        contactPoint == other.contactPoint &&
         description == other.description &&
         name == other.name;
   }
@@ -36,6 +42,7 @@ class InternalServicePatch {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= (contactPoint?.hashCode ?? 0);
     hashCode ^= (description?.hashCode ?? 0);
     hashCode ^= (name?.hashCode ?? 0);
 
@@ -63,6 +70,7 @@ class InternalServicePatch {
 
   Map<String, dynamic> toJson() {
     return {
+      'contactPoint': contactPoint,
       'description': description,
       'name': name,
     };
@@ -70,6 +78,6 @@ class InternalServicePatch {
 
   @override
   String toString() {
-    return 'InternalServicePatch[description=$description, name=$name, ]';
+    return 'InternalServicePatch[contactPoint=$contactPoint, description=$description, name=$name, ]';
   }
 }

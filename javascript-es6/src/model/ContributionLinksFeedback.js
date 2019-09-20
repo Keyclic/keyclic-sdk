@@ -58,4 +58,33 @@ export default class ContributionLinksFeedback {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the feedback associated to the given contribution.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the feedback associated to the given contribution.
+   * @param { String } href The URI of the feedback associated to the given contribution.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/ContributionLinksFeedbackIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/ContributionLinksFeedbackIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

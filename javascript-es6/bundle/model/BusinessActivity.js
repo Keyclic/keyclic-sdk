@@ -77,80 +77,197 @@ var BusinessActivity =
      * @return { module:model/BusinessActivity } The populated "BusinessActivity" instance.
      */
 
-    _createClass(BusinessActivity, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      BusinessActivity,
+      [
+        {
+          key: "getLinks",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/BusinessActivityLinks }
+           */
+          value: function getLinks() {
+            return this.links;
           }
-
-          if (object === null) {
-            object = new BusinessActivity();
+          /**
+           * @param { module:model/BusinessActivityLinks } links
+           */
+        },
+        {
+          key: "setLinks",
+          value: function setLinks(links) {
+            this.links = links;
           }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getAlternateName",
+          value: function getAlternateName() {
+            return this.alternateName;
           }
-
-          if (data.hasOwnProperty("alternateName")) {
-            object.alternateName = _ApiClient.default.convertToType(
-              data["alternateName"],
-              "String"
-            );
+          /**
+           * @param { String } alternateName
+           */
+        },
+        {
+          key: "setAlternateName",
+          value: function setAlternateName(alternateName) {
+            this.alternateName = alternateName;
           }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getCreatedAt",
+          value: function getCreatedAt() {
+            return this.createdAt;
           }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getId",
+          value: function getId() {
+            return this.id;
           }
-
-          if (data.hasOwnProperty("metadataSchema")) {
-            object.metadataSchema = _ApiClient.default.convertToType(
-              data["metadataSchema"],
-              object.metadataSchemaType
-            );
+          /**
+           * @return { module:model/BusinessActivityMetadataSchema }
+           */
+        },
+        {
+          key: "getMetadataSchema",
+          value: function getMetadataSchema() {
+            return this.metadataSchema;
           }
-
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
-              "String"
-            );
+          /**
+           * @param { module:model/BusinessActivityMetadataSchema } metadataSchema
+           */
+        },
+        {
+          key: "setMetadataSchema",
+          value: function setMetadataSchema(metadataSchema) {
+            this.metadataSchema = metadataSchema;
           }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getName",
+          value: function getName() {
+            return this.name;
           }
-
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
-            );
+          /**
+           * @param { String } name
+           */
+        },
+        {
+          key: "setName",
+          value: function setName(name) {
+            this.name = name;
           }
-
-          return object;
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
+          }
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getUpdatedAt",
+          value: function getUpdatedAt() {
+            return this.updatedAt;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new BusinessActivity();
+            }
+
+            if (data.hasOwnProperty("_links")) {
+              object.links = _ApiClient.default.convertToType(
+                data["_links"],
+                object.linksType
+              );
+            }
+
+            if (data.hasOwnProperty("alternateName")) {
+              object.alternateName = _ApiClient.default.convertToType(
+                data["alternateName"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("createdAt")) {
+              object.createdAt = _ApiClient.default.convertToType(
+                data["createdAt"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("metadataSchema")) {
+              object.metadataSchema = _ApiClient.default.convertToType(
+                data["metadataSchema"],
+                object.metadataSchemaType
+              );
+            }
+
+            if (data.hasOwnProperty("name")) {
+              object.name = _ApiClient.default.convertToType(
+                data["name"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("updatedAt")) {
+              object.updatedAt = _ApiClient.default.convertToType(
+                data["updatedAt"],
+                "Date"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return BusinessActivity;
   })();

@@ -54,4 +54,18 @@ export default class PlaceLinksContainsPlacesIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PlaceLinksContainsPlacesIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/PlaceLinksContainsPlacesIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

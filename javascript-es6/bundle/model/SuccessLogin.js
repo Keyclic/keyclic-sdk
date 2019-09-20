@@ -65,48 +65,108 @@ var SuccessLogin =
      * @return { module:model/SuccessLogin } The populated "SuccessLogin" instance.
      */
 
-    _createClass(SuccessLogin, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      SuccessLogin,
+      [
+        {
+          key: "getAccessToken",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getAccessToken() {
+            return this.accessToken;
           }
-
-          if (object === null) {
-            object = new SuccessLogin();
+          /**
+           * @param { String } accessToken
+           */
+        },
+        {
+          key: "setAccessToken",
+          value: function setAccessToken(accessToken) {
+            this.accessToken = accessToken;
           }
-
-          if (data.hasOwnProperty("accessToken")) {
-            object.accessToken = _ApiClient.default.convertToType(
-              data["accessToken"],
-              "String"
-            );
+          /**
+           * @return { module:model/SuccessLoginCredentials }
+           */
+        },
+        {
+          key: "getCredentials",
+          value: function getCredentials() {
+            return this.credentials;
           }
-
-          if (data.hasOwnProperty("credentials")) {
-            object.credentials = _ApiClient.default.convertToType(
-              data["credentials"],
-              object.credentialsType
-            );
+          /**
+           * @param { module:model/SuccessLoginCredentials } credentials
+           */
+        },
+        {
+          key: "setCredentials",
+          value: function setCredentials(credentials) {
+            this.credentials = credentials;
           }
-
-          if (data.hasOwnProperty("tokenType")) {
-            object.tokenType = _ApiClient.default.convertToType(
-              data["tokenType"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getTokenType",
+          value: function getTokenType() {
+            return this.tokenType;
           }
-
-          return object;
+          /**
+           * @param { String } tokenType
+           */
+        },
+        {
+          key: "setTokenType",
+          value: function setTokenType(tokenType) {
+            this.tokenType = tokenType;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new SuccessLogin();
+            }
+
+            if (data.hasOwnProperty("accessToken")) {
+              object.accessToken = _ApiClient.default.convertToType(
+                data["accessToken"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("credentials")) {
+              object.credentials = _ApiClient.default.convertToType(
+                data["credentials"],
+                object.credentialsType
+              );
+            }
+
+            if (data.hasOwnProperty("tokenType")) {
+              object.tokenType = _ApiClient.default.convertToType(
+                data["tokenType"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return SuccessLogin;
   })();

@@ -73,4 +73,57 @@ export default class ReportEmbedded {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OperationEmbeddedDuration }
+   */
+  getDuration() {
+    return this.duration;
+  }
+
+  /**
+   * @param { module:model/OperationEmbeddedDuration } duration
+   */
+  setDuration(duration) {
+    this.duration = duration;
+  }
+  /**
+   * @return { Array.<String> }
+   */
+  getStateTransitions() {
+    return this.stateTransitions;
+  }
+
+  /**
+   * @param { Array.<String> } stateTransitions
+   */
+  setStateTransitions(stateTransitions) {
+    this.stateTransitions = stateTransitions;
+  }
+  /**
+   * @return { Array.<module:model/ReportEmbeddedTargetGroups> }
+   */
+  getTargetGroups() {
+    return this.targetGroups;
+  }
+
+  /**
+   * @param { Array.<module:model/ReportEmbeddedTargetGroups> } targetGroups
+   */
+  setTargetGroups(targetGroups) {
+    this.targetGroups = targetGroups;
+  }
+  /**
+   * @return { String }
+   */
+  getTracking() {
+    return this.tracking;
+  }
+
+  /**
+   * @param { String } tracking
+   */
+  setTracking(tracking) {
+    this.tracking = tracking;
+  }
 }

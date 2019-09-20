@@ -50,4 +50,18 @@ export default class ImageData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getImage() {
+    return this.image;
+  }
+
+  /**
+   * @param { String } image
+   */
+  setImage(image) {
+    this.image = image;
+  }
 }

@@ -66,48 +66,108 @@ var DeviceData =
      * @return { module:model/DeviceData } The populated "DeviceData" instance.
      */
 
-    _createClass(DeviceData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DeviceData,
+      [
+        {
+          key: "getToken",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getToken() {
+            return this.token;
           }
-
-          if (object === null) {
-            object = new DeviceData();
+          /**
+           * @param { String } token
+           */
+        },
+        {
+          key: "setToken",
+          value: function setToken(token) {
+            this.token = token;
           }
-
-          if (data.hasOwnProperty("token")) {
-            object.token = _ApiClient.default.convertToType(
-              data["token"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getPlatform",
+          value: function getPlatform() {
+            return this.platform;
           }
-
-          if (data.hasOwnProperty("platform")) {
-            object.platform = _ApiClient.default.convertToType(
-              data["platform"],
-              "String"
-            );
+          /**
+           * @param { String } platform
+           */
+        },
+        {
+          key: "setPlatform",
+          value: function setPlatform(platform) {
+            this.platform = platform;
           }
-
-          if (data.hasOwnProperty("person")) {
-            object.person = _ApiClient.default.convertToType(
-              data["person"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getPerson",
+          value: function getPerson() {
+            return this.person;
           }
-
-          return object;
+          /**
+           * @param { String } person
+           */
+        },
+        {
+          key: "setPerson",
+          value: function setPerson(person) {
+            this.person = person;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DeviceData();
+            }
+
+            if (data.hasOwnProperty("token")) {
+              object.token = _ApiClient.default.convertToType(
+                data["token"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("platform")) {
+              object.platform = _ApiClient.default.convertToType(
+                data["platform"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("person")) {
+              object.person = _ApiClient.default.convertToType(
+                data["person"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DeviceData;
   })();

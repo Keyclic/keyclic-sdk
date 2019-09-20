@@ -71,48 +71,108 @@ var DocumentLinks =
      * @return { module:model/DocumentLinks } The populated "DocumentLinks" instance.
      */
 
-    _createClass(DocumentLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DocumentLinks,
+      [
+        {
+          key: "getCreatedBy",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/DocumentLinksCreatedBy }
+           */
+          value: function getCreatedBy() {
+            return this.createdBy;
           }
-
-          if (object === null) {
-            object = new DocumentLinks();
+          /**
+           * @param { module:model/DocumentLinksCreatedBy } createdBy
+           */
+        },
+        {
+          key: "setCreatedBy",
+          value: function setCreatedBy(createdBy) {
+            this.createdBy = createdBy;
           }
-
-          if (data.hasOwnProperty("createdBy")) {
-            object.createdBy = _ApiClient.default.convertToType(
-              data["createdBy"],
-              object.createdByType
-            );
+          /**
+           * @return { module:model/DocumentLinksFile }
+           */
+        },
+        {
+          key: "getFile",
+          value: function getFile() {
+            return this.file;
           }
-
-          if (data.hasOwnProperty("file")) {
-            object.file = _ApiClient.default.convertToType(
-              data["file"],
-              object.fileType
-            );
+          /**
+           * @param { module:model/DocumentLinksFile } file
+           */
+        },
+        {
+          key: "setFile",
+          value: function setFile(file) {
+            this.file = file;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @return { module:model/DocumentLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
           }
-
-          return object;
+          /**
+           * @param { module:model/DocumentLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DocumentLinks();
+            }
+
+            if (data.hasOwnProperty("createdBy")) {
+              object.createdBy = _ApiClient.default.convertToType(
+                data["createdBy"],
+                object.createdByType
+              );
+            }
+
+            if (data.hasOwnProperty("file")) {
+              object.file = _ApiClient.default.convertToType(
+                data["file"],
+                object.fileType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DocumentLinks;
   })();

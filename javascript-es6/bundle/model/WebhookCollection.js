@@ -61,33 +61,57 @@ var WebhookCollection =
      * @return { module:model/WebhookCollection } The populated "WebhookCollection" instance.
      */
 
-    _createClass(WebhookCollection, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      WebhookCollection,
+      [
+        {
+          key: "getItems",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<module:model/Webhook> }
+           */
+          value: function getItems() {
+            return this.items;
           }
-
-          if (object === null) {
-            object = new WebhookCollection();
+          /**
+           * @param { Array.<module:model/Webhook> } items
+           */
+        },
+        {
+          key: "setItems",
+          value: function setItems(items) {
+            this.items = items;
           }
-
-          if (data.hasOwnProperty("items")) {
-            object.items = _ApiClient.default.convertToType(data["items"], [
-              object.itemsType
-            ]);
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new WebhookCollection();
+            }
+
+            if (data.hasOwnProperty("items")) {
+              object.items = _ApiClient.default.convertToType(data["items"], [
+                object.itemsType
+              ]);
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return WebhookCollection;
   })();

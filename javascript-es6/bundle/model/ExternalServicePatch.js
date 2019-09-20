@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ExternalServicePatchContactPoint = _interopRequireDefault(
+  require("./ExternalServicePatchContactPoint")
+);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -49,8 +53,10 @@ var ExternalServicePatch =
     function ExternalServicePatch() {
       _classCallCheck(this, ExternalServicePatch);
 
+      this.contactPoint = null;
       this.description = null;
       this.name = null;
+      this.contactPointType = _ExternalServicePatchContactPoint.default;
     }
     /**
      * Constructs a "ExternalServicePatch" from a plain JavaScript object.
@@ -59,41 +65,108 @@ var ExternalServicePatch =
      * @return { module:model/ExternalServicePatch } The populated "ExternalServicePatch" instance.
      */
 
-    _createClass(ExternalServicePatch, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ExternalServicePatch,
+      [
+        {
+          key: "getContactPoint",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/ExternalServicePatchContactPoint }
+           */
+          value: function getContactPoint() {
+            return this.contactPoint;
           }
-
-          if (object === null) {
-            object = new ExternalServicePatch();
+          /**
+           * @param { module:model/ExternalServicePatchContactPoint } contactPoint
+           */
+        },
+        {
+          key: "setContactPoint",
+          value: function setContactPoint(contactPoint) {
+            this.contactPoint = contactPoint;
           }
-
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getDescription",
+          value: function getDescription() {
+            return this.description;
           }
-
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
-              "String"
-            );
+          /**
+           * @param { String } description
+           */
+        },
+        {
+          key: "setDescription",
+          value: function setDescription(description) {
+            this.description = description;
           }
-
-          return object;
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getName",
+          value: function getName() {
+            return this.name;
+          }
+          /**
+           * @param { String } name
+           */
+        },
+        {
+          key: "setName",
+          value: function setName(name) {
+            this.name = name;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ExternalServicePatch();
+            }
+
+            if (data.hasOwnProperty("contactPoint")) {
+              object.contactPoint = _ApiClient.default.convertToType(
+                data["contactPoint"],
+                object.contactPointType
+              );
+            }
+
+            if (data.hasOwnProperty("description")) {
+              object.description = _ApiClient.default.convertToType(
+                data["description"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("name")) {
+              object.name = _ApiClient.default.convertToType(
+                data["name"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ExternalServicePatch;
   })();

@@ -58,4 +58,33 @@ export default class OrganizationLinksBusinessActivity {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the businessActivity associated to the given organization.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the businessActivity associated to the given organization.
+   * @param { String } href The URI of the businessActivity associated to the given organization.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/OrganizationLinksBusinessActivityIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/OrganizationLinksBusinessActivityIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

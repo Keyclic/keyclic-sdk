@@ -58,4 +58,33 @@ export default class BusinessActivityLinksSelf {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the self associated to the given businessactivity.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the self associated to the given businessactivity.
+   * @param { String } href The URI of the self associated to the given businessactivity.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/BusinessActivityLinksSelfIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/BusinessActivityLinksSelfIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

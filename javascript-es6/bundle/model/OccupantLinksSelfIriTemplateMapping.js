@@ -58,34 +58,58 @@ var OccupantLinksSelfIriTemplateMapping =
      * @return { module:model/OccupantLinksSelfIriTemplateMapping } The populated "OccupantLinksSelfIriTemplateMapping" instance.
      */
 
-    _createClass(OccupantLinksSelfIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OccupantLinksSelfIriTemplateMapping,
+      [
+        {
+          key: "getOccupant",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getOccupant() {
+            return this.occupant;
           }
-
-          if (object === null) {
-            object = new OccupantLinksSelfIriTemplateMapping();
+          /**
+           * @param { String } occupant
+           */
+        },
+        {
+          key: "setOccupant",
+          value: function setOccupant(occupant) {
+            this.occupant = occupant;
           }
-
-          if (data.hasOwnProperty("occupant")) {
-            object.occupant = _ApiClient.default.convertToType(
-              data["occupant"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OccupantLinksSelfIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("occupant")) {
+              object.occupant = _ApiClient.default.convertToType(
+                data["occupant"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OccupantLinksSelfIriTemplateMapping;
   })();

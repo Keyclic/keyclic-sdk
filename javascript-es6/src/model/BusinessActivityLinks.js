@@ -75,4 +75,57 @@ export default class BusinessActivityLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/BusinessActivityLinksImage }
+   */
+  getImage() {
+    return this.image;
+  }
+
+  /**
+   * @param { module:model/BusinessActivityLinksImage } image
+   */
+  setImage(image) {
+    this.image = image;
+  }
+  /**
+   * @return { module:model/BusinessActivityLinksSchema }
+   */
+  getSchema() {
+    return this.schema;
+  }
+
+  /**
+   * @param { module:model/BusinessActivityLinksSchema } schema
+   */
+  setSchema(schema) {
+    this.schema = schema;
+  }
+  /**
+   * @return { module:model/BusinessActivityLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/BusinessActivityLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
+  /**
+   * @return { module:model/BusinessActivityLinksThumbnail }
+   */
+  getThumbnail() {
+    return this.thumbnail;
+  }
+
+  /**
+   * @param { module:model/BusinessActivityLinksThumbnail } thumbnail
+   */
+  setThumbnail(thumbnail) {
+    this.thumbnail = thumbnail;
+  }
 }

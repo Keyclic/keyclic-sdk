@@ -51,4 +51,18 @@ export default class MemberEmbedded {
 
     return object;
   }
+
+  /**
+   * @return { Array.<String> }
+   */
+  getAvailableRoles() {
+    return this.availableRoles;
+  }
+
+  /**
+   * @param { Array.<String> } availableRoles
+   */
+  setAvailableRoles(availableRoles) {
+    this.availableRoles = availableRoles;
+  }
 }

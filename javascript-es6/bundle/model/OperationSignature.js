@@ -64,41 +64,83 @@ var OperationSignature =
      * @return { module:model/OperationSignature } The populated "OperationSignature" instance.
      */
 
-    _createClass(OperationSignature, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OperationSignature,
+      [
+        {
+          key: "getSignedAt",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Date }
+           */
+          value: function getSignedAt() {
+            return this.signedAt;
           }
-
-          if (object === null) {
-            object = new OperationSignature();
+          /**
+           * @param { Date } signedAt
+           */
+        },
+        {
+          key: "setSignedAt",
+          value: function setSignedAt(signedAt) {
+            this.signedAt = signedAt;
           }
-
-          if (data.hasOwnProperty("signedAt")) {
-            object.signedAt = _ApiClient.default.convertToType(
-              data["signedAt"],
-              "Date"
-            );
+          /**
+           * @return { module:model/OperationSignatureSigner }
+           */
+        },
+        {
+          key: "getSigner",
+          value: function getSigner() {
+            return this.signer;
           }
-
-          if (data.hasOwnProperty("signer")) {
-            object.signer = _ApiClient.default.convertToType(
-              data["signer"],
-              object.signerType
-            );
+          /**
+           * @param { module:model/OperationSignatureSigner } signer
+           */
+        },
+        {
+          key: "setSigner",
+          value: function setSigner(signer) {
+            this.signer = signer;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OperationSignature();
+            }
+
+            if (data.hasOwnProperty("signedAt")) {
+              object.signedAt = _ApiClient.default.convertToType(
+                data["signedAt"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("signer")) {
+              object.signer = _ApiClient.default.convertToType(
+                data["signer"],
+                object.signerType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OperationSignature;
   })();

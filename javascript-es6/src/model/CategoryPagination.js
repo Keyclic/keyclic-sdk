@@ -60,4 +60,18 @@ export default class CategoryPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/CategoryCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/CategoryCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

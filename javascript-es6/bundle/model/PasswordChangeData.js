@@ -60,34 +60,58 @@ var PasswordChangeData =
      * @return { module:model/PasswordChangeData } The populated "PasswordChangeData" instance.
      */
 
-    _createClass(PasswordChangeData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PasswordChangeData,
+      [
+        {
+          key: "getPassword",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getPassword() {
+            return this.password;
           }
-
-          if (object === null) {
-            object = new PasswordChangeData();
+          /**
+           * @param { String } password
+           */
+        },
+        {
+          key: "setPassword",
+          value: function setPassword(password) {
+            this.password = password;
           }
-
-          if (data.hasOwnProperty("password")) {
-            object.password = _ApiClient.default.convertToType(
-              data["password"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PasswordChangeData();
+            }
+
+            if (data.hasOwnProperty("password")) {
+              object.password = _ApiClient.default.convertToType(
+                data["password"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PasswordChangeData;
   })();

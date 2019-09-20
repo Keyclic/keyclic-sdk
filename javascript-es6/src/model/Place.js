@@ -114,4 +114,123 @@ export default class Place {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PlaceEmbedded }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/PlaceEmbedded } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
+  /**
+   * @return { module:model/PlaceLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/PlaceLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { String }
+   */
+  getBranchCode() {
+    return this.branchCode;
+  }
+
+  /**
+   * @param { String } branchCode
+   */
+  setBranchCode(branchCode) {
+    this.branchCode = branchCode;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { module:model/PlaceGeo }
+   */
+  getGeo() {
+    return this.geo;
+  }
+
+  /**
+   * @param { module:model/PlaceGeo } geo
+   */
+  setGeo(geo) {
+    this.geo = geo;
+  }
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { module:model/PlacePreferences }
+   */
+  getPreferences() {
+    return this.preferences;
+  }
+
+  /**
+   * @param { module:model/PlacePreferences } preferences
+   */
+  setPreferences(preferences) {
+    this.preferences = preferences;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
 }

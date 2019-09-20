@@ -54,4 +54,18 @@ export default class ReviewLinksSelfIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/FeedbackReviewRequestLinksReviewIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/FeedbackReviewRequestLinksReviewIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

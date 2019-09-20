@@ -48,4 +48,18 @@ export default class OperationEmbeddedDuration {
 
     return object;
   }
+
+  /**
+   * @return { Number }
+   */
+  getSeconds() {
+    return this.seconds;
+  }
+
+  /**
+   * @param { Number } seconds
+   */
+  setSeconds(seconds) {
+    this.seconds = seconds;
+  }
 }

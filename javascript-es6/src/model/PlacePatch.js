@@ -59,4 +59,44 @@ export default class PlacePatch {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getBranchCode() {
+    return this.branchCode;
+  }
+
+  /**
+   * @param { String } branchCode
+   */
+  setBranchCode(branchCode) {
+    this.branchCode = branchCode;
+  }
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
 }

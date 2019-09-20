@@ -67,41 +67,83 @@ var DocumentPatch =
      * @return { module:model/DocumentPatch } The populated "DocumentPatch" instance.
      */
 
-    _createClass(DocumentPatch, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DocumentPatch,
+      [
+        {
+          key: "getFile",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/DocumentPatchFile }
+           */
+          value: function getFile() {
+            return this.file;
           }
-
-          if (object === null) {
-            object = new DocumentPatch();
+          /**
+           * @param { module:model/DocumentPatchFile } file
+           */
+        },
+        {
+          key: "setFile",
+          value: function setFile(file) {
+            this.file = file;
           }
-
-          if (data.hasOwnProperty("file")) {
-            object.file = _ApiClient.default.convertToType(
-              data["file"],
-              object.fileType
-            );
+          /**
+           * @return { module:model/DocumentPermission }
+           */
+        },
+        {
+          key: "getPermission",
+          value: function getPermission() {
+            return this.permission;
           }
-
-          if (data.hasOwnProperty("permission")) {
-            object.permission = _ApiClient.default.convertToType(
-              data["permission"],
-              object.permissionType
-            );
+          /**
+           * @param { module:model/DocumentPermission } permission
+           */
+        },
+        {
+          key: "setPermission",
+          value: function setPermission(permission) {
+            this.permission = permission;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DocumentPatch();
+            }
+
+            if (data.hasOwnProperty("file")) {
+              object.file = _ApiClient.default.convertToType(
+                data["file"],
+                object.fileType
+              );
+            }
+
+            if (data.hasOwnProperty("permission")) {
+              object.permission = _ApiClient.default.convertToType(
+                data["permission"],
+                object.permissionType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DocumentPatch;
   })();

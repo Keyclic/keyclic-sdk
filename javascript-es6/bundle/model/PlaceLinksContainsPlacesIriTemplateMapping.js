@@ -58,34 +58,58 @@ var PlaceLinksContainsPlacesIriTemplateMapping =
      * @return { module:model/PlaceLinksContainsPlacesIriTemplateMapping } The populated "PlaceLinksContainsPlacesIriTemplateMapping" instance.
      */
 
-    _createClass(PlaceLinksContainsPlacesIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PlaceLinksContainsPlacesIriTemplateMapping,
+      [
+        {
+          key: "getParent",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getParent() {
+            return this.parent;
           }
-
-          if (object === null) {
-            object = new PlaceLinksContainsPlacesIriTemplateMapping();
+          /**
+           * @param { String } parent
+           */
+        },
+        {
+          key: "setParent",
+          value: function setParent(parent) {
+            this.parent = parent;
           }
-
-          if (data.hasOwnProperty("parent")) {
-            object.parent = _ApiClient.default.convertToType(
-              data["parent"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PlaceLinksContainsPlacesIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("parent")) {
+              object.parent = _ApiClient.default.convertToType(
+                data["parent"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PlaceLinksContainsPlacesIriTemplateMapping;
   })();

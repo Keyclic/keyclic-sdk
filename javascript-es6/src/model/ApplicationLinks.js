@@ -51,4 +51,18 @@ export default class ApplicationLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ApplicationLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/ApplicationLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

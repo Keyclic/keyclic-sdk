@@ -58,4 +58,33 @@ export default class InternalServiceLinksSelf {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the self associated to the given internalservice.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the self associated to the given internalservice.
+   * @param { String } href The URI of the self associated to the given internalservice.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/InternalServiceLinksSelfIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/InternalServiceLinksSelfIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

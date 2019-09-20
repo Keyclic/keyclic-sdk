@@ -54,4 +54,18 @@ export default class ApplicationLinksSelfIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ApplicationLinksSelfIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/ApplicationLinksSelfIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

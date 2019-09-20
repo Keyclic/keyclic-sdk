@@ -48,4 +48,18 @@ export default class OperationLinksSelfIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getOperation() {
+    return this.operation;
+  }
+
+  /**
+   * @param { String } operation
+   */
+  setOperation(operation) {
+    this.operation = operation;
+  }
 }

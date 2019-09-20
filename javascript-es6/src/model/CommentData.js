@@ -50,4 +50,18 @@ export default class CommentData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getText() {
+    return this.text;
+  }
+
+  /**
+   * @param { String } text
+   */
+  setText(text) {
+    this.text = text;
+  }
 }

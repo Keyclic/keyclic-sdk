@@ -84,101 +84,272 @@ var Place =
      * @return { module:model/Place } The populated "Place" instance.
      */
 
-    _createClass(Place, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Place,
+      [
+        {
+          key: "getEmbedded",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/PlaceEmbedded }
+           */
+          value: function getEmbedded() {
+            return this.embedded;
           }
-
-          if (object === null) {
-            object = new Place();
+          /**
+           * @param { module:model/PlaceEmbedded } embedded
+           */
+        },
+        {
+          key: "setEmbedded",
+          value: function setEmbedded(embedded) {
+            this.embedded = embedded;
           }
-
-          if (data.hasOwnProperty("_embedded")) {
-            object.embedded = _ApiClient.default.convertToType(
-              data["_embedded"],
-              object.embeddedType
-            );
+          /**
+           * @return { module:model/PlaceLinks }
+           */
+        },
+        {
+          key: "getLinks",
+          value: function getLinks() {
+            return this.links;
           }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
-            );
+          /**
+           * @param { module:model/PlaceLinks } links
+           */
+        },
+        {
+          key: "setLinks",
+          value: function setLinks(links) {
+            this.links = links;
           }
-
-          if (data.hasOwnProperty("branchCode")) {
-            object.branchCode = _ApiClient.default.convertToType(
-              data["branchCode"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getBranchCode",
+          value: function getBranchCode() {
+            return this.branchCode;
           }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
+          /**
+           * @param { String } branchCode
+           */
+        },
+        {
+          key: "setBranchCode",
+          value: function setBranchCode(branchCode) {
+            this.branchCode = branchCode;
           }
-
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
-              "String"
-            );
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getCreatedAt",
+          value: function getCreatedAt() {
+            return this.createdAt;
           }
-
-          if (data.hasOwnProperty("geo")) {
-            object.geo = _ApiClient.default.convertToType(
-              data["geo"],
-              object.geoType
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getDescription",
+          value: function getDescription() {
+            return this.description;
           }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          /**
+           * @param { String } description
+           */
+        },
+        {
+          key: "setDescription",
+          value: function setDescription(description) {
+            this.description = description;
           }
-
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
-              "String"
-            );
+          /**
+           * @return { module:model/PlaceGeo }
+           */
+        },
+        {
+          key: "getGeo",
+          value: function getGeo() {
+            return this.geo;
           }
-
-          if (data.hasOwnProperty("preferences")) {
-            object.preferences = _ApiClient.default.convertToType(
-              data["preferences"],
-              object.preferencesType
-            );
+          /**
+           * @param { module:model/PlaceGeo } geo
+           */
+        },
+        {
+          key: "setGeo",
+          value: function setGeo(geo) {
+            this.geo = geo;
           }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getId",
+          value: function getId() {
+            return this.id;
           }
-
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getName",
+          value: function getName() {
+            return this.name;
           }
-
-          return object;
+          /**
+           * @param { String } name
+           */
+        },
+        {
+          key: "setName",
+          value: function setName(name) {
+            this.name = name;
+          }
+          /**
+           * @return { module:model/PlacePreferences }
+           */
+        },
+        {
+          key: "getPreferences",
+          value: function getPreferences() {
+            return this.preferences;
+          }
+          /**
+           * @param { module:model/PlacePreferences } preferences
+           */
+        },
+        {
+          key: "setPreferences",
+          value: function setPreferences(preferences) {
+            this.preferences = preferences;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
+          }
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getUpdatedAt",
+          value: function getUpdatedAt() {
+            return this.updatedAt;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Place();
+            }
+
+            if (data.hasOwnProperty("_embedded")) {
+              object.embedded = _ApiClient.default.convertToType(
+                data["_embedded"],
+                object.embeddedType
+              );
+            }
+
+            if (data.hasOwnProperty("_links")) {
+              object.links = _ApiClient.default.convertToType(
+                data["_links"],
+                object.linksType
+              );
+            }
+
+            if (data.hasOwnProperty("branchCode")) {
+              object.branchCode = _ApiClient.default.convertToType(
+                data["branchCode"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("createdAt")) {
+              object.createdAt = _ApiClient.default.convertToType(
+                data["createdAt"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("description")) {
+              object.description = _ApiClient.default.convertToType(
+                data["description"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("geo")) {
+              object.geo = _ApiClient.default.convertToType(
+                data["geo"],
+                object.geoType
+              );
+            }
+
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("name")) {
+              object.name = _ApiClient.default.convertToType(
+                data["name"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("preferences")) {
+              object.preferences = _ApiClient.default.convertToType(
+                data["preferences"],
+                object.preferencesType
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("updatedAt")) {
+              object.updatedAt = _ApiClient.default.convertToType(
+                data["updatedAt"],
+                "Date"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Place;
   })();

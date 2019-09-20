@@ -58,4 +58,33 @@ export default class ReportLinksFeedback {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the feedback associated to the given report.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the feedback associated to the given report.
+   * @param { String } href The URI of the feedback associated to the given report.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/ReportLinksFeedbackIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/ReportLinksFeedbackIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

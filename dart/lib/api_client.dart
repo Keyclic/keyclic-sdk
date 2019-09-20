@@ -322,6 +322,8 @@ class ApiClient {
           return ExternalServiceLinksSelfIriTemplate.fromJson(value);
         case 'ExternalServicePatch':
           return ExternalServicePatch.fromJson(value);
+        case 'ExternalServicePatchContactPoint':
+          return ExternalServicePatchContactPoint.fromJson(value);
         case 'FacebookConnectData':
           return FacebookConnectData.fromJson(value);
         case 'Feature':

@@ -51,4 +51,18 @@ export default class FeedCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Feed> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Feed> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

@@ -64,41 +64,85 @@ var ReviewLinksItemReviewed =
      * @return { module:model/ReviewLinksItemReviewed } The populated "ReviewLinksItemReviewed" instance.
      */
 
-    _createClass(ReviewLinksItemReviewed, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ReviewLinksItemReviewed,
+      [
+        {
+          key: "getHref",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * Gets The URI of the itemReviewed associated to the given review.
+           * @return { String }
+           */
+          value: function getHref() {
+            return this.href;
           }
-
-          if (object === null) {
-            object = new ReviewLinksItemReviewed();
+          /**
+           * Sets The URI of the itemReviewed associated to the given review.
+           * @param { String } href The URI of the itemReviewed associated to the given review.
+           */
+        },
+        {
+          key: "setHref",
+          value: function setHref(href) {
+            this.href = href;
           }
-
-          if (data.hasOwnProperty("href")) {
-            object.href = _ApiClient.default.convertToType(
-              data["href"],
-              "String"
-            );
+          /**
+           * @return { module:model/ReviewLinksItemReviewedIriTemplate }
+           */
+        },
+        {
+          key: "getIriTemplate",
+          value: function getIriTemplate() {
+            return this.iriTemplate;
           }
-
-          if (data.hasOwnProperty("iriTemplate")) {
-            object.iriTemplate = _ApiClient.default.convertToType(
-              data["iriTemplate"],
-              object.iriTemplateType
-            );
+          /**
+           * @param { module:model/ReviewLinksItemReviewedIriTemplate } iriTemplate
+           */
+        },
+        {
+          key: "setIriTemplate",
+          value: function setIriTemplate(iriTemplate) {
+            this.iriTemplate = iriTemplate;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ReviewLinksItemReviewed();
+            }
+
+            if (data.hasOwnProperty("href")) {
+              object.href = _ApiClient.default.convertToType(
+                data["href"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("iriTemplate")) {
+              object.iriTemplate = _ApiClient.default.convertToType(
+                data["iriTemplate"],
+                object.iriTemplateType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ReviewLinksItemReviewed;
   })();

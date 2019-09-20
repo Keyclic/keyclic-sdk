@@ -51,4 +51,18 @@ export default class WebhookCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Webhook> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Webhook> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

@@ -78,4 +78,73 @@ export default class Review {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ReviewLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/ReviewLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { String }
+   */
+  getReviewBody() {
+    return this.reviewBody;
+  }
+
+  /**
+   * @param { String } reviewBody
+   */
+  setReviewBody(reviewBody) {
+    this.reviewBody = reviewBody;
+  }
+  /**
+   * minimum: 1
+   * maximum: 5
+   * @return { Number }
+   */
+  getReviewRating() {
+    return this.reviewRating;
+  }
+
+  /**
+   * @param { Number } reviewRating
+   */
+  setReviewRating(reviewRating) {
+    this.reviewRating = reviewRating;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
 }

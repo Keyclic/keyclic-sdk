@@ -59,41 +59,83 @@ var PersonPatchPreferences =
      * @return { module:model/PersonPatchPreferences } The populated "PersonPatchPreferences" instance.
      */
 
-    _createClass(PersonPatchPreferences, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PersonPatchPreferences,
+      [
+        {
+          key: "getMessageEmailEnabled",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Boolean }
+           */
+          value: function getMessageEmailEnabled() {
+            return this.messageEmailEnabled;
           }
-
-          if (object === null) {
-            object = new PersonPatchPreferences();
+          /**
+           * @param { Boolean } messageEmailEnabled
+           */
+        },
+        {
+          key: "setMessageEmailEnabled",
+          value: function setMessageEmailEnabled(messageEmailEnabled) {
+            this.messageEmailEnabled = messageEmailEnabled;
           }
-
-          if (data.hasOwnProperty("messageEmailEnabled")) {
-            object.messageEmailEnabled = _ApiClient.default.convertToType(
-              data["messageEmailEnabled"],
-              "Boolean"
-            );
+          /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getMessagePushEnabled",
+          value: function getMessagePushEnabled() {
+            return this.messagePushEnabled;
           }
-
-          if (data.hasOwnProperty("messagePushEnabled")) {
-            object.messagePushEnabled = _ApiClient.default.convertToType(
-              data["messagePushEnabled"],
-              "Boolean"
-            );
+          /**
+           * @param { Boolean } messagePushEnabled
+           */
+        },
+        {
+          key: "setMessagePushEnabled",
+          value: function setMessagePushEnabled(messagePushEnabled) {
+            this.messagePushEnabled = messagePushEnabled;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PersonPatchPreferences();
+            }
+
+            if (data.hasOwnProperty("messageEmailEnabled")) {
+              object.messageEmailEnabled = _ApiClient.default.convertToType(
+                data["messageEmailEnabled"],
+                "Boolean"
+              );
+            }
+
+            if (data.hasOwnProperty("messagePushEnabled")) {
+              object.messagePushEnabled = _ApiClient.default.convertToType(
+                data["messagePushEnabled"],
+                "Boolean"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PersonPatchPreferences;
   })();

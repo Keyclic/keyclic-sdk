@@ -107,90 +107,258 @@ var ReportLinks =
      * @return { module:model/ReportLinks } The populated "ReportLinks" instance.
      */
 
-    _createClass(ReportLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ReportLinks,
+      [
+        {
+          key: "getCategory",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/ReportLinksCategory }
+           */
+          value: function getCategory() {
+            return this.category;
           }
-
-          if (object === null) {
-            object = new ReportLinks();
+          /**
+           * @param { module:model/ReportLinksCategory } category
+           */
+        },
+        {
+          key: "setCategory",
+          value: function setCategory(category) {
+            this.category = category;
           }
-
-          if (data.hasOwnProperty("category")) {
-            object.category = _ApiClient.default.convertToType(
-              data["category"],
-              object.categoryType
-            );
+          /**
+           * @return { module:model/ReportLinksDelegatedFrom }
+           */
+        },
+        {
+          key: "getDelegatedFrom",
+          value: function getDelegatedFrom() {
+            return this.delegatedFrom;
           }
-
-          if (data.hasOwnProperty("delegatedFrom")) {
-            object.delegatedFrom = _ApiClient.default.convertToType(
-              data["delegatedFrom"],
-              object.delegatedFromType
-            );
+          /**
+           * @param { module:model/ReportLinksDelegatedFrom } delegatedFrom
+           */
+        },
+        {
+          key: "setDelegatedFrom",
+          value: function setDelegatedFrom(delegatedFrom) {
+            this.delegatedFrom = delegatedFrom;
           }
-
-          if (data.hasOwnProperty("delegatedTo")) {
-            object.delegatedTo = _ApiClient.default.convertToType(
-              data["delegatedTo"],
-              object.delegatedToType
-            );
+          /**
+           * @return { module:model/ReportLinksDelegatedTo }
+           */
+        },
+        {
+          key: "getDelegatedTo",
+          value: function getDelegatedTo() {
+            return this.delegatedTo;
           }
-
-          if (data.hasOwnProperty("feedback")) {
-            object.feedback = _ApiClient.default.convertToType(
-              data["feedback"],
-              object.feedbackType
-            );
+          /**
+           * @param { module:model/ReportLinksDelegatedTo } delegatedTo
+           */
+        },
+        {
+          key: "setDelegatedTo",
+          value: function setDelegatedTo(delegatedTo) {
+            this.delegatedTo = delegatedTo;
           }
-
-          if (data.hasOwnProperty("operations")) {
-            object.operations = _ApiClient.default.convertToType(
-              data["operations"],
-              object.operationsType
-            );
+          /**
+           * @return { module:model/ReportLinksFeedback }
+           */
+        },
+        {
+          key: "getFeedback",
+          value: function getFeedback() {
+            return this.feedback;
           }
-
-          if (data.hasOwnProperty("organization")) {
-            object.organization = _ApiClient.default.convertToType(
-              data["organization"],
-              object.organizationType
-            );
+          /**
+           * @param { module:model/ReportLinksFeedback } feedback
+           */
+        },
+        {
+          key: "setFeedback",
+          value: function setFeedback(feedback) {
+            this.feedback = feedback;
           }
-
-          if (data.hasOwnProperty("place")) {
-            object.place = _ApiClient.default.convertToType(
-              data["place"],
-              object.placeType
-            );
+          /**
+           * @return { module:model/ReportLinksOperations }
+           */
+        },
+        {
+          key: "getOperations",
+          value: function getOperations() {
+            return this.operations;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @param { module:model/ReportLinksOperations } operations
+           */
+        },
+        {
+          key: "setOperations",
+          value: function setOperations(operations) {
+            this.operations = operations;
           }
-
-          if (data.hasOwnProperty("tracking")) {
-            object.tracking = _ApiClient.default.convertToType(
-              data["tracking"],
-              object.trackingType
-            );
+          /**
+           * @return { module:model/ReportLinksOrganization }
+           */
+        },
+        {
+          key: "getOrganization",
+          value: function getOrganization() {
+            return this.organization;
           }
-
-          return object;
+          /**
+           * @param { module:model/ReportLinksOrganization } organization
+           */
+        },
+        {
+          key: "setOrganization",
+          value: function setOrganization(organization) {
+            this.organization = organization;
+          }
+          /**
+           * @return { module:model/ReportLinksPlace }
+           */
+        },
+        {
+          key: "getPlace",
+          value: function getPlace() {
+            return this.place;
+          }
+          /**
+           * @param { module:model/ReportLinksPlace } place
+           */
+        },
+        {
+          key: "setPlace",
+          value: function setPlace(place) {
+            this.place = place;
+          }
+          /**
+           * @return { module:model/ReportLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
+          }
+          /**
+           * @param { module:model/ReportLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
+          }
+          /**
+           * @return { module:model/ReportLinksTracking }
+           */
+        },
+        {
+          key: "getTracking",
+          value: function getTracking() {
+            return this.tracking;
+          }
+          /**
+           * @param { module:model/ReportLinksTracking } tracking
+           */
+        },
+        {
+          key: "setTracking",
+          value: function setTracking(tracking) {
+            this.tracking = tracking;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ReportLinks();
+            }
+
+            if (data.hasOwnProperty("category")) {
+              object.category = _ApiClient.default.convertToType(
+                data["category"],
+                object.categoryType
+              );
+            }
+
+            if (data.hasOwnProperty("delegatedFrom")) {
+              object.delegatedFrom = _ApiClient.default.convertToType(
+                data["delegatedFrom"],
+                object.delegatedFromType
+              );
+            }
+
+            if (data.hasOwnProperty("delegatedTo")) {
+              object.delegatedTo = _ApiClient.default.convertToType(
+                data["delegatedTo"],
+                object.delegatedToType
+              );
+            }
+
+            if (data.hasOwnProperty("feedback")) {
+              object.feedback = _ApiClient.default.convertToType(
+                data["feedback"],
+                object.feedbackType
+              );
+            }
+
+            if (data.hasOwnProperty("operations")) {
+              object.operations = _ApiClient.default.convertToType(
+                data["operations"],
+                object.operationsType
+              );
+            }
+
+            if (data.hasOwnProperty("organization")) {
+              object.organization = _ApiClient.default.convertToType(
+                data["organization"],
+                object.organizationType
+              );
+            }
+
+            if (data.hasOwnProperty("place")) {
+              object.place = _ApiClient.default.convertToType(
+                data["place"],
+                object.placeType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            if (data.hasOwnProperty("tracking")) {
+              object.tracking = _ApiClient.default.convertToType(
+                data["tracking"],
+                object.trackingType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ReportLinks;
   })();

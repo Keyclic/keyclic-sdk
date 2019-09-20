@@ -60,34 +60,58 @@ var ContributionData =
      * @return { module:model/ContributionData } The populated "ContributionData" instance.
      */
 
-    _createClass(ContributionData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ContributionData,
+      [
+        {
+          key: "getFeedback",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getFeedback() {
+            return this.feedback;
           }
-
-          if (object === null) {
-            object = new ContributionData();
+          /**
+           * @param { String } feedback
+           */
+        },
+        {
+          key: "setFeedback",
+          value: function setFeedback(feedback) {
+            this.feedback = feedback;
           }
-
-          if (data.hasOwnProperty("feedback")) {
-            object.feedback = _ApiClient.default.convertToType(
-              data["feedback"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ContributionData();
+            }
+
+            if (data.hasOwnProperty("feedback")) {
+              object.feedback = _ApiClient.default.convertToType(
+                data["feedback"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ContributionData;
   })();

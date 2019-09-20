@@ -61,33 +61,57 @@ var OrganizationCollection =
      * @return { module:model/OrganizationCollection } The populated "OrganizationCollection" instance.
      */
 
-    _createClass(OrganizationCollection, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OrganizationCollection,
+      [
+        {
+          key: "getItems",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<module:model/Organization> }
+           */
+          value: function getItems() {
+            return this.items;
           }
-
-          if (object === null) {
-            object = new OrganizationCollection();
+          /**
+           * @param { Array.<module:model/Organization> } items
+           */
+        },
+        {
+          key: "setItems",
+          value: function setItems(items) {
+            this.items = items;
           }
-
-          if (data.hasOwnProperty("items")) {
-            object.items = _ApiClient.default.convertToType(data["items"], [
-              object.itemsType
-            ]);
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OrganizationCollection();
+            }
+
+            if (data.hasOwnProperty("items")) {
+              object.items = _ApiClient.default.convertToType(data["items"], [
+                object.itemsType
+              ]);
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OrganizationCollection;
   })();

@@ -60,34 +60,58 @@ var AssignData =
      * @return { module:model/AssignData } The populated "AssignData" instance.
      */
 
-    _createClass(AssignData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      AssignData,
+      [
+        {
+          key: "getMember",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getMember() {
+            return this.member;
           }
-
-          if (object === null) {
-            object = new AssignData();
+          /**
+           * @param { String } member
+           */
+        },
+        {
+          key: "setMember",
+          value: function setMember(member) {
+            this.member = member;
           }
-
-          if (data.hasOwnProperty("member")) {
-            object.member = _ApiClient.default.convertToType(
-              data["member"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new AssignData();
+            }
+
+            if (data.hasOwnProperty("member")) {
+              object.member = _ApiClient.default.convertToType(
+                data["member"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return AssignData;
   })();

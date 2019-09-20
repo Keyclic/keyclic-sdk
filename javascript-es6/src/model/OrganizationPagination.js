@@ -60,4 +60,18 @@ export default class OrganizationPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OrganizationCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/OrganizationCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

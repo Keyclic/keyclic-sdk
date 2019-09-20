@@ -73,45 +73,87 @@ var FeatureGeometry =
      * @return { module:model/FeatureGeometry } The populated "FeatureGeometry" instance.
      */
 
-    _createClass(FeatureGeometry, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FeatureGeometry,
+      [
+        {
+          key: "getType",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/FeatureGeometry.TypeEnum }
+           */
+          value: function getType() {
+            return this.type;
           }
-
-          if (object === null) {
-            object = new FeatureGeometry();
+          /**
+           * @param { module:model/FeatureGeometry.TypeEnum } type
+           */
+        },
+        {
+          key: "setType",
+          value: function setType(type) {
+            this.type = type;
           }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
+          /**
+           * @return { Array.<Array.<Number>> }
+           */
+        },
+        {
+          key: "getCoordinates",
+          value: function getCoordinates() {
+            return this.coordinates;
           }
-
-          if (data.hasOwnProperty("coordinates")) {
-            object.coordinates = _ApiClient.default.convertToType(
-              data["coordinates"],
-              "['Array']"
-            );
+          /**
+           * @param { Array.<Array.<Number>> } coordinates
+           */
+        },
+        {
+          key: "setCoordinates",
+          value: function setCoordinates(coordinates) {
+            this.coordinates = coordinates;
           }
-
-          return object;
+          /**
+           * Allowed values for the "type" property.
+           * @enum { String }
+           */
         }
-        /**
-         * Allowed values for the "type" property.
-         * @enum { String }
-         */
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FeatureGeometry();
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("coordinates")) {
+              object.coordinates = _ApiClient.default.convertToType(
+                data["coordinates"],
+                "['Array']"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FeatureGeometry;
   })();

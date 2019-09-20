@@ -53,6 +53,12 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.InternalServicePatch);
     });
 
+    it('should have the property contactPoint (base name: "contactPoint")', function() {
+      // uncomment below and update the code to test the property contactPoint
+      //var instane = new @KeyclicSdkJavascript.InternalServicePatch();
+      //expect(instance).to.be();
+    });
+
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
       //var instane = new @KeyclicSdkJavascript.InternalServicePatch();

@@ -60,34 +60,58 @@ var CommentData =
      * @return { module:model/CommentData } The populated "CommentData" instance.
      */
 
-    _createClass(CommentData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      CommentData,
+      [
+        {
+          key: "getText",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getText() {
+            return this.text;
           }
-
-          if (object === null) {
-            object = new CommentData();
+          /**
+           * @param { String } text
+           */
+        },
+        {
+          key: "setText",
+          value: function setText(text) {
+            this.text = text;
           }
-
-          if (data.hasOwnProperty("text")) {
-            object.text = _ApiClient.default.convertToType(
-              data["text"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new CommentData();
+            }
+
+            if (data.hasOwnProperty("text")) {
+              object.text = _ApiClient.default.convertToType(
+                data["text"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return CommentData;
   })();

@@ -48,4 +48,18 @@ export default class PaginationLink {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * @param { String } href
+   */
+  setHref(href) {
+    this.href = href;
+  }
 }

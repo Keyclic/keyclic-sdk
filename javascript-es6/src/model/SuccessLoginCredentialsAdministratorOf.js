@@ -56,4 +56,44 @@ export default class SuccessLoginCredentialsAdministratorOf {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @param { String } id
+   */
+  setId(id) {
+    this.id = id;
+  }
+  /**
+   * @return { String }
+   */
+  getToken() {
+    return this.token;
+  }
+
+  /**
+   * @param { String } token
+   */
+  setToken(token) {
+    this.token = token;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @param { String } type
+   */
+  setType(type) {
+    this.type = type;
+  }
 }

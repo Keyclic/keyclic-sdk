@@ -62,4 +62,44 @@ export default class Error {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getMessage() {
+    return this.message;
+  }
+
+  /**
+   * @param { String } message
+   */
+  setMessage(message) {
+    this.message = message;
+  }
+  /**
+   * @return { Number }
+   */
+  getTotal() {
+    return this.total;
+  }
+
+  /**
+   * @param { Number } total
+   */
+  setTotal(total) {
+    this.total = total;
+  }
+  /**
+   * @return { module:model/ErrorEmbedded }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/ErrorEmbedded } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

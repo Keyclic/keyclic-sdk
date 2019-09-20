@@ -63,41 +63,83 @@ var LoginData =
      * @return { module:model/LoginData } The populated "LoginData" instance.
      */
 
-    _createClass(LoginData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      LoginData,
+      [
+        {
+          key: "getLogin",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getLogin() {
+            return this.login;
           }
-
-          if (object === null) {
-            object = new LoginData();
+          /**
+           * @param { String } login
+           */
+        },
+        {
+          key: "setLogin",
+          value: function setLogin(login) {
+            this.login = login;
           }
-
-          if (data.hasOwnProperty("login")) {
-            object.login = _ApiClient.default.convertToType(
-              data["login"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getPassword",
+          value: function getPassword() {
+            return this.password;
           }
-
-          if (data.hasOwnProperty("password")) {
-            object.password = _ApiClient.default.convertToType(
-              data["password"],
-              "String"
-            );
+          /**
+           * @param { String } password
+           */
+        },
+        {
+          key: "setPassword",
+          value: function setPassword(password) {
+            this.password = password;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new LoginData();
+            }
+
+            if (data.hasOwnProperty("login")) {
+              object.login = _ApiClient.default.convertToType(
+                data["login"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("password")) {
+              object.password = _ApiClient.default.convertToType(
+                data["password"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return LoginData;
   })();

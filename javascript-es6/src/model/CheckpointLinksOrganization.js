@@ -58,4 +58,33 @@ export default class CheckpointLinksOrganization {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the organization associated to the given checkpoint.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the organization associated to the given checkpoint.
+   * @param { String } href The URI of the organization associated to the given checkpoint.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/CheckpointLinksOrganizationIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/CheckpointLinksOrganizationIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

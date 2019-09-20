@@ -90,4 +90,96 @@ export default class OrganizationPatch {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { String }
+   */
+  getAlternateName() {
+    return this.alternateName;
+  }
+
+  /**
+   * @param { String } alternateName
+   */
+  setAlternateName(alternateName) {
+    this.alternateName = alternateName;
+  }
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { String }
+   */
+  getLogo() {
+    return this.logo;
+  }
+
+  /**
+   * @param { String } logo
+   */
+  setLogo(logo) {
+    this.logo = logo;
+  }
+  /**
+   * @return { String }
+   */
+  getBillingEmailAddress() {
+    return this.billingEmailAddress;
+  }
+
+  /**
+   * @param { String } billingEmailAddress
+   */
+  setBillingEmailAddress(billingEmailAddress) {
+    this.billingEmailAddress = billingEmailAddress;
+  }
+  /**
+   * @return { String }
+   */
+  getNotificationEmailAddress() {
+    return this.notificationEmailAddress;
+  }
+
+  /**
+   * @param { String } notificationEmailAddress
+   */
+  setNotificationEmailAddress(notificationEmailAddress) {
+    this.notificationEmailAddress = notificationEmailAddress;
+  }
+  /**
+   * @return { module:model/OrganizationPatchPreferences }
+   */
+  getPreferences() {
+    return this.preferences;
+  }
+
+  /**
+   * @param { module:model/OrganizationPatchPreferences } preferences
+   */
+  setPreferences(preferences) {
+    this.preferences = preferences;
+  }
 }

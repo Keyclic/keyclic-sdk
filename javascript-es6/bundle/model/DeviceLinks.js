@@ -65,41 +65,83 @@ var DeviceLinks =
      * @return { module:model/DeviceLinks } The populated "DeviceLinks" instance.
      */
 
-    _createClass(DeviceLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DeviceLinks,
+      [
+        {
+          key: "getPerson",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/DeviceLinksPerson }
+           */
+          value: function getPerson() {
+            return this.person;
           }
-
-          if (object === null) {
-            object = new DeviceLinks();
+          /**
+           * @param { module:model/DeviceLinksPerson } person
+           */
+        },
+        {
+          key: "setPerson",
+          value: function setPerson(person) {
+            this.person = person;
           }
-
-          if (data.hasOwnProperty("person")) {
-            object.person = _ApiClient.default.convertToType(
-              data["person"],
-              object.personType
-            );
+          /**
+           * @return { module:model/DeviceLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @param { module:model/DeviceLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DeviceLinks();
+            }
+
+            if (data.hasOwnProperty("person")) {
+              object.person = _ApiClient.default.convertToType(
+                data["person"],
+                object.personType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DeviceLinks;
   })();

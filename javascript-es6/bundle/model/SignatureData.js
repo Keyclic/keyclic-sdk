@@ -66,41 +66,83 @@ var SignatureData =
      * @return { module:model/SignatureData } The populated "SignatureData" instance.
      */
 
-    _createClass(SignatureData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      SignatureData,
+      [
+        {
+          key: "getSigner",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/SignatureDataSigner }
+           */
+          value: function getSigner() {
+            return this.signer;
           }
-
-          if (object === null) {
-            object = new SignatureData();
+          /**
+           * @param { module:model/SignatureDataSigner } signer
+           */
+        },
+        {
+          key: "setSigner",
+          value: function setSigner(signer) {
+            this.signer = signer;
           }
-
-          if (data.hasOwnProperty("signer")) {
-            object.signer = _ApiClient.default.convertToType(
-              data["signer"],
-              object.signerType
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getImage",
+          value: function getImage() {
+            return this.image;
           }
-
-          if (data.hasOwnProperty("image")) {
-            object.image = _ApiClient.default.convertToType(
-              data["image"],
-              "String"
-            );
+          /**
+           * @param { String } image
+           */
+        },
+        {
+          key: "setImage",
+          value: function setImage(image) {
+            this.image = image;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new SignatureData();
+            }
+
+            if (data.hasOwnProperty("signer")) {
+              object.signer = _ApiClient.default.convertToType(
+                data["signer"],
+                object.signerType
+              );
+            }
+
+            if (data.hasOwnProperty("image")) {
+              object.image = _ApiClient.default.convertToType(
+                data["image"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return SignatureData;
   })();

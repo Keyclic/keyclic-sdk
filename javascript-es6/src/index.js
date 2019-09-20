@@ -10,394 +10,399 @@
  * Do not edit the class manually.
  */
 
+// Since @babel/polyfill is deprecated, we can not use it directly like a wrapper
+// and we use this 2 packages directly.
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
-import ApiClient from './ApiClient';
-import Activity from './model/Activity';
-import ActivityAggregatedPagination from './model/ActivityAggregatedPagination';
-import ActivityGroup from './model/ActivityGroup';
-import ActivityPagination from './model/ActivityPagination';
-import ActivitySubject from './model/ActivitySubject';
-import Application from './model/Application';
-import ApplicationLinks from './model/ApplicationLinks';
-import ApplicationLinksSelf from './model/ApplicationLinksSelf';
-import ApplicationLinksSelfIriTemplate from './model/ApplicationLinksSelfIriTemplate';
-import ApplicationLinksSelfIriTemplateMapping from './model/ApplicationLinksSelfIriTemplateMapping';
-import AssignData from './model/AssignData';
-import BusinessActivity from './model/BusinessActivity';
-import BusinessActivityCollection from './model/BusinessActivityCollection';
-import BusinessActivityLinks from './model/BusinessActivityLinks';
-import BusinessActivityLinksImage from './model/BusinessActivityLinksImage';
-import BusinessActivityLinksImageIriTemplate from './model/BusinessActivityLinksImageIriTemplate';
-import BusinessActivityLinksImageIriTemplateMapping from './model/BusinessActivityLinksImageIriTemplateMapping';
-import BusinessActivityLinksSchema from './model/BusinessActivityLinksSchema';
-import BusinessActivityLinksSchemaIriTemplate from './model/BusinessActivityLinksSchemaIriTemplate';
-import BusinessActivityLinksSelf from './model/BusinessActivityLinksSelf';
-import BusinessActivityLinksSelfIriTemplate from './model/BusinessActivityLinksSelfIriTemplate';
-import BusinessActivityLinksThumbnail from './model/BusinessActivityLinksThumbnail';
-import BusinessActivityLinksThumbnailIriTemplate from './model/BusinessActivityLinksThumbnailIriTemplate';
-import BusinessActivityMetadataSchema from './model/BusinessActivityMetadataSchema';
-import Category from './model/Category';
-import CategoryCollection from './model/CategoryCollection';
-import CategoryData from './model/CategoryData';
-import CategoryLinks from './model/CategoryLinks';
-import CategoryLinksOrganization from './model/CategoryLinksOrganization';
-import CategoryLinksOrganizationIriTemplate from './model/CategoryLinksOrganizationIriTemplate';
-import CategoryLinksOrganizationIriTemplateMapping from './model/CategoryLinksOrganizationIriTemplateMapping';
-import CategoryLinksSelf from './model/CategoryLinksSelf';
-import CategoryLinksSelfIriTemplate from './model/CategoryLinksSelfIriTemplate';
-import CategoryLinksSelfIriTemplateMapping from './model/CategoryLinksSelfIriTemplateMapping';
-import CategoryPatch from './model/CategoryPatch';
-import Chart from './model/Chart';
-import Checkpoint from './model/Checkpoint';
-import CheckpointLinks from './model/CheckpointLinks';
-import CheckpointLinksOrganization from './model/CheckpointLinksOrganization';
-import CheckpointLinksOrganizationIriTemplate from './model/CheckpointLinksOrganizationIriTemplate';
-import Choice from './model/Choice';
-import CommentData from './model/CommentData';
-import Condition from './model/Condition';
-import Contribution from './model/Contribution';
-import ContributionCollection from './model/ContributionCollection';
-import ContributionData from './model/ContributionData';
-import ContributionLinks from './model/ContributionLinks';
-import ContributionLinksContributor from './model/ContributionLinksContributor';
-import ContributionLinksContributorIriTemplate from './model/ContributionLinksContributorIriTemplate';
-import ContributionLinksContributorIriTemplateMapping from './model/ContributionLinksContributorIriTemplateMapping';
-import ContributionLinksFeedback from './model/ContributionLinksFeedback';
-import ContributionLinksFeedbackIriTemplate from './model/ContributionLinksFeedbackIriTemplate';
-import ContributionLinksFeedbackIriTemplateMapping from './model/ContributionLinksFeedbackIriTemplateMapping';
-import Delegation from './model/Delegation';
-import DelegationCollection from './model/DelegationCollection';
-import DelegationData from './model/DelegationData';
-import DelegationEmbedded from './model/DelegationEmbedded';
-import DelegationLinks from './model/DelegationLinks';
-import DelegationLinksCreatedBy from './model/DelegationLinksCreatedBy';
-import DelegationLinksCreatedByIriTemplate from './model/DelegationLinksCreatedByIriTemplate';
-import DelegationLinksReport from './model/DelegationLinksReport';
-import DelegationLinksReportIriTemplate from './model/DelegationLinksReportIriTemplate';
-import DelegationLinksReportIriTemplateMapping from './model/DelegationLinksReportIriTemplateMapping';
-import DelegationLinksSelf from './model/DelegationLinksSelf';
-import DelegationLinksSelfIriTemplate from './model/DelegationLinksSelfIriTemplate';
-import DelegationLinksSelfIriTemplateMapping from './model/DelegationLinksSelfIriTemplateMapping';
-import DelegationLinksService from './model/DelegationLinksService';
-import DelegationLinksServiceIriTemplate from './model/DelegationLinksServiceIriTemplate';
-import DelegationLinksServiceIriTemplateMapping from './model/DelegationLinksServiceIriTemplateMapping';
-import DelegationWorkflowTransitionData from './model/DelegationWorkflowTransitionData';
-import Device from './model/Device';
-import DeviceData from './model/DeviceData';
-import DeviceLinks from './model/DeviceLinks';
-import DeviceLinksPerson from './model/DeviceLinksPerson';
-import DeviceLinksPersonIriTemplate from './model/DeviceLinksPersonIriTemplate';
-import DeviceLinksSelf from './model/DeviceLinksSelf';
-import DeviceLinksSelfIriTemplate from './model/DeviceLinksSelfIriTemplate';
-import DeviceLinksSelfIriTemplateMapping from './model/DeviceLinksSelfIriTemplateMapping';
-import Document from './model/Document';
-import DocumentCollection from './model/DocumentCollection';
-import DocumentData from './model/DocumentData';
-import DocumentDataFile from './model/DocumentDataFile';
-import DocumentDataPermission from './model/DocumentDataPermission';
-import DocumentFile from './model/DocumentFile';
-import DocumentLinks from './model/DocumentLinks';
-import DocumentLinksCreatedBy from './model/DocumentLinksCreatedBy';
-import DocumentLinksCreatedByIriTemplate from './model/DocumentLinksCreatedByIriTemplate';
-import DocumentLinksFile from './model/DocumentLinksFile';
-import DocumentLinksFileIriTemplate from './model/DocumentLinksFileIriTemplate';
-import DocumentLinksFileIriTemplateMapping from './model/DocumentLinksFileIriTemplateMapping';
-import DocumentLinksSelf from './model/DocumentLinksSelf';
-import DocumentLinksSelfIriTemplate from './model/DocumentLinksSelfIriTemplate';
-import DocumentPatch from './model/DocumentPatch';
-import DocumentPatchFile from './model/DocumentPatchFile';
-import DocumentPermission from './model/DocumentPermission';
-import Error from './model/Error';
-import ErrorEmbedded from './model/ErrorEmbedded';
-import ExternalService from './model/ExternalService';
-import ExternalServiceCollection from './model/ExternalServiceCollection';
-import ExternalServiceContactPoint from './model/ExternalServiceContactPoint';
-import ExternalServiceData from './model/ExternalServiceData';
-import ExternalServiceLinks from './model/ExternalServiceLinks';
-import ExternalServiceLinksProvider from './model/ExternalServiceLinksProvider';
-import ExternalServiceLinksProviderIriTemplate from './model/ExternalServiceLinksProviderIriTemplate';
-import ExternalServiceLinksSelf from './model/ExternalServiceLinksSelf';
-import ExternalServiceLinksSelfIriTemplate from './model/ExternalServiceLinksSelfIriTemplate';
-import ExternalServicePatch from './model/ExternalServicePatch';
-import FacebookConnectData from './model/FacebookConnectData';
-import Feature from './model/Feature';
-import FeatureGeometry from './model/FeatureGeometry';
-import Feed from './model/Feed';
-import FeedCollection from './model/FeedCollection';
-import Feedback from './model/Feedback';
-import FeedbackCollection from './model/FeedbackCollection';
-import FeedbackData from './model/FeedbackData';
-import FeedbackDataGeo from './model/FeedbackDataGeo';
-import FeedbackDataGeoPoint from './model/FeedbackDataGeoPoint';
-import FeedbackEmbedded from './model/FeedbackEmbedded';
-import FeedbackGeoCoordinates from './model/FeedbackGeoCoordinates';
-import FeedbackGeoCoordinatesPoint from './model/FeedbackGeoCoordinatesPoint';
-import FeedbackLinks from './model/FeedbackLinks';
-import FeedbackLinksBusinessActivity from './model/FeedbackLinksBusinessActivity';
-import FeedbackLinksBusinessActivityIriTemplate from './model/FeedbackLinksBusinessActivityIriTemplate';
-import FeedbackLinksCategory from './model/FeedbackLinksCategory';
-import FeedbackLinksCategoryIriTemplate from './model/FeedbackLinksCategoryIriTemplate';
-import FeedbackLinksImage from './model/FeedbackLinksImage';
-import FeedbackLinksImageIriTemplate from './model/FeedbackLinksImageIriTemplate';
-import FeedbackLinksImageIriTemplateMapping from './model/FeedbackLinksImageIriTemplateMapping';
-import FeedbackLinksImages from './model/FeedbackLinksImages';
-import FeedbackLinksImagesIriTemplate from './model/FeedbackLinksImagesIriTemplate';
-import FeedbackLinksReporter from './model/FeedbackLinksReporter';
-import FeedbackLinksReporterIriTemplate from './model/FeedbackLinksReporterIriTemplate';
-import FeedbackLinksSelf from './model/FeedbackLinksSelf';
-import FeedbackLinksSelfIriTemplate from './model/FeedbackLinksSelfIriTemplate';
-import FeedbackLinksTracking from './model/FeedbackLinksTracking';
-import FeedbackLinksTrackingIriTemplate from './model/FeedbackLinksTrackingIriTemplate';
-import FeedbackReviewRequest from './model/FeedbackReviewRequest';
-import FeedbackReviewRequestCollection from './model/FeedbackReviewRequestCollection';
-import FeedbackReviewRequestLinks from './model/FeedbackReviewRequestLinks';
-import FeedbackReviewRequestLinksItemToReview from './model/FeedbackReviewRequestLinksItemToReview';
-import FeedbackReviewRequestLinksItemToReviewIriTemplate from './model/FeedbackReviewRequestLinksItemToReviewIriTemplate';
-import FeedbackReviewRequestLinksOrganization from './model/FeedbackReviewRequestLinksOrganization';
-import FeedbackReviewRequestLinksOrganizationIriTemplate from './model/FeedbackReviewRequestLinksOrganizationIriTemplate';
-import FeedbackReviewRequestLinksReview from './model/FeedbackReviewRequestLinksReview';
-import FeedbackReviewRequestLinksReviewIriTemplate from './model/FeedbackReviewRequestLinksReviewIriTemplate';
-import FeedbackReviewRequestLinksReviewIriTemplateMapping from './model/FeedbackReviewRequestLinksReviewIriTemplateMapping';
-import FeedbackReviewRequestLinksReviewer from './model/FeedbackReviewRequestLinksReviewer';
-import FeedbackReviewRequestLinksReviewerIriTemplate from './model/FeedbackReviewRequestLinksReviewerIriTemplate';
-import FeedbackReviewRequestLinksSelf from './model/FeedbackReviewRequestLinksSelf';
-import FeedbackReviewRequestLinksSelfIriTemplate from './model/FeedbackReviewRequestLinksSelfIriTemplate';
-import FeedbackReviewRequestLinksSelfIriTemplateMapping from './model/FeedbackReviewRequestLinksSelfIriTemplateMapping';
-import FeedbackWorkflowTransitionData from './model/FeedbackWorkflowTransitionData';
-import ImageData from './model/ImageData';
-import InternalService from './model/InternalService';
-import InternalServiceCollection from './model/InternalServiceCollection';
-import InternalServiceData from './model/InternalServiceData';
-import InternalServiceLinks from './model/InternalServiceLinks';
-import InternalServiceLinksOrganization from './model/InternalServiceLinksOrganization';
-import InternalServiceLinksOrganizationIriTemplate from './model/InternalServiceLinksOrganizationIriTemplate';
-import InternalServiceLinksSelf from './model/InternalServiceLinksSelf';
-import InternalServiceLinksSelfIriTemplate from './model/InternalServiceLinksSelfIriTemplate';
-import InternalServiceLinksSelfIriTemplateMapping from './model/InternalServiceLinksSelfIriTemplateMapping';
-import InternalServicePatch from './model/InternalServicePatch';
-import LoginData from './model/LoginData';
-import Member from './model/Member';
-import MemberCollection from './model/MemberCollection';
-import MemberData from './model/MemberData';
-import MemberEmbedded from './model/MemberEmbedded';
-import MemberLinks from './model/MemberLinks';
-import MemberLinksOrganization from './model/MemberLinksOrganization';
-import MemberLinksOrganizationIriTemplate from './model/MemberLinksOrganizationIriTemplate';
-import MemberLinksPerson from './model/MemberLinksPerson';
-import MemberLinksPersonIriTemplate from './model/MemberLinksPersonIriTemplate';
-import MemberLinksSelf from './model/MemberLinksSelf';
-import MemberLinksSelfIriTemplate from './model/MemberLinksSelfIriTemplate';
-import MemberLinksSelfIriTemplateMapping from './model/MemberLinksSelfIriTemplateMapping';
-import MemberPatch from './model/MemberPatch';
-import Node from './model/Node';
-import NodeEmbedded from './model/NodeEmbedded';
-import NodePath from './model/NodePath';
-import Occupant from './model/Occupant';
-import OccupantCollection from './model/OccupantCollection';
-import OccupantData from './model/OccupantData';
-import OccupantLinks from './model/OccupantLinks';
-import OccupantLinksPerson from './model/OccupantLinksPerson';
-import OccupantLinksPersonIriTemplate from './model/OccupantLinksPersonIriTemplate';
-import OccupantLinksPlace from './model/OccupantLinksPlace';
-import OccupantLinksPlaceIriTemplate from './model/OccupantLinksPlaceIriTemplate';
-import OccupantLinksPlaceIriTemplateMapping from './model/OccupantLinksPlaceIriTemplateMapping';
-import OccupantLinksSelf from './model/OccupantLinksSelf';
-import OccupantLinksSelfIriTemplate from './model/OccupantLinksSelfIriTemplate';
-import OccupantLinksSelfIriTemplateMapping from './model/OccupantLinksSelfIriTemplateMapping';
-import Operation from './model/Operation';
-import OperationCollection from './model/OperationCollection';
-import OperationData from './model/OperationData';
-import OperationEmbedded from './model/OperationEmbedded';
-import OperationEmbeddedDuration from './model/OperationEmbeddedDuration';
-import OperationLinks from './model/OperationLinks';
-import OperationLinksCreatedBy from './model/OperationLinksCreatedBy';
-import OperationLinksCreatedByIriTemplate from './model/OperationLinksCreatedByIriTemplate';
-import OperationLinksFeedback from './model/OperationLinksFeedback';
-import OperationLinksFeedbackIriTemplate from './model/OperationLinksFeedbackIriTemplate';
-import OperationLinksImage from './model/OperationLinksImage';
-import OperationLinksImageIriTemplate from './model/OperationLinksImageIriTemplate';
-import OperationLinksImageIriTemplateMapping from './model/OperationLinksImageIriTemplateMapping';
-import OperationLinksImages from './model/OperationLinksImages';
-import OperationLinksImagesIriTemplate from './model/OperationLinksImagesIriTemplate';
-import OperationLinksImagesIriTemplateMapping from './model/OperationLinksImagesIriTemplateMapping';
-import OperationLinksOperator from './model/OperationLinksOperator';
-import OperationLinksOperatorIriTemplate from './model/OperationLinksOperatorIriTemplate';
-import OperationLinksReport from './model/OperationLinksReport';
-import OperationLinksReportIriTemplate from './model/OperationLinksReportIriTemplate';
-import OperationLinksSelf from './model/OperationLinksSelf';
-import OperationLinksSelfIriTemplate from './model/OperationLinksSelfIriTemplate';
-import OperationLinksSelfIriTemplateMapping from './model/OperationLinksSelfIriTemplateMapping';
-import OperationLinksTracking from './model/OperationLinksTracking';
-import OperationLinksTrackingIriTemplate from './model/OperationLinksTrackingIriTemplate';
-import OperationPatch from './model/OperationPatch';
-import OperationSignature from './model/OperationSignature';
-import OperationSignatureSigner from './model/OperationSignatureSigner';
-import OperationWorkflowTransitionData from './model/OperationWorkflowTransitionData';
-import Organization from './model/Organization';
-import OrganizationCollection from './model/OrganizationCollection';
-import OrganizationData from './model/OrganizationData';
-import OrganizationLinks from './model/OrganizationLinks';
-import OrganizationLinksApplication from './model/OrganizationLinksApplication';
-import OrganizationLinksApplicationIriTemplate from './model/OrganizationLinksApplicationIriTemplate';
-import OrganizationLinksBusinessActivity from './model/OrganizationLinksBusinessActivity';
-import OrganizationLinksBusinessActivityIriTemplate from './model/OrganizationLinksBusinessActivityIriTemplate';
-import OrganizationLinksLogo from './model/OrganizationLinksLogo';
-import OrganizationLinksLogoIriTemplate from './model/OrganizationLinksLogoIriTemplate';
-import OrganizationLinksSelf from './model/OrganizationLinksSelf';
-import OrganizationLinksSelfIriTemplate from './model/OrganizationLinksSelfIriTemplate';
-import OrganizationPatch from './model/OrganizationPatch';
-import OrganizationPatchPreferences from './model/OrganizationPatchPreferences';
-import OrganizationPreferences from './model/OrganizationPreferences';
-import OrganizationPreferencesReference from './model/OrganizationPreferencesReference';
-import Pagination from './model/Pagination';
-import PaginationLink from './model/PaginationLink';
-import PaginationLinks from './model/PaginationLinks';
-import PasswordChangeData from './model/PasswordChangeData';
-import Person from './model/Person';
-import PersonCollection from './model/PersonCollection';
-import PersonLinks from './model/PersonLinks';
-import PersonLinksImage from './model/PersonLinksImage';
-import PersonLinksImageIriTemplate from './model/PersonLinksImageIriTemplate';
-import PersonLinksSelf from './model/PersonLinksSelf';
-import PersonLinksSelfIriTemplate from './model/PersonLinksSelfIriTemplate';
-import PersonPatch from './model/PersonPatch';
-import PersonPatchPreferences from './model/PersonPatchPreferences';
-import PersonPreferences from './model/PersonPreferences';
-import Place from './model/Place';
-import PlaceCollection from './model/PlaceCollection';
-import PlaceData from './model/PlaceData';
-import PlaceEmbedded from './model/PlaceEmbedded';
-import PlaceGeo from './model/PlaceGeo';
-import PlaceGeoCentroid from './model/PlaceGeoCentroid';
-import PlaceGeoPolygon from './model/PlaceGeoPolygon';
-import PlaceLinks from './model/PlaceLinks';
-import PlaceLinksContainedInPlace from './model/PlaceLinksContainedInPlace';
-import PlaceLinksContainedInPlaceIriTemplate from './model/PlaceLinksContainedInPlaceIriTemplate';
-import PlaceLinksContainsPlaces from './model/PlaceLinksContainsPlaces';
-import PlaceLinksContainsPlacesIriTemplate from './model/PlaceLinksContainsPlacesIriTemplate';
-import PlaceLinksContainsPlacesIriTemplateMapping from './model/PlaceLinksContainsPlacesIriTemplateMapping';
-import PlaceLinksOrganization from './model/PlaceLinksOrganization';
-import PlaceLinksOrganizationIriTemplate from './model/PlaceLinksOrganizationIriTemplate';
-import PlaceLinksSelf from './model/PlaceLinksSelf';
-import PlaceLinksSelfIriTemplate from './model/PlaceLinksSelfIriTemplate';
-import PlacePatch from './model/PlacePatch';
-import PlacePreferences from './model/PlacePreferences';
-import Property from './model/Property';
-import PropertyConditions from './model/PropertyConditions';
-import PropertyItems from './model/PropertyItems';
-import Publication from './model/Publication';
-import PublicationCollection from './model/PublicationCollection';
-import PublicationData from './model/PublicationData';
-import PublicationLinks from './model/PublicationLinks';
-import PublicationLinksAuthor from './model/PublicationLinksAuthor';
-import PublicationLinksAuthorIriTemplate from './model/PublicationLinksAuthorIriTemplate';
-import PublicationLinksFeed from './model/PublicationLinksFeed';
-import PublicationLinksFeedIriTemplate from './model/PublicationLinksFeedIriTemplate';
-import PublicationLinksOrganization from './model/PublicationLinksOrganization';
-import PublicationLinksOrganizationIriTemplate from './model/PublicationLinksOrganizationIriTemplate';
-import PublicationLinksSelf from './model/PublicationLinksSelf';
-import PublicationLinksSelfIriTemplate from './model/PublicationLinksSelfIriTemplate';
-import PublicationLinksSelfIriTemplateMapping from './model/PublicationLinksSelfIriTemplateMapping';
-import RegisterData from './model/RegisterData';
-import Report from './model/Report';
-import ReportCollection from './model/ReportCollection';
-import ReportEmbedded from './model/ReportEmbedded';
-import ReportEmbeddedTargetGroups from './model/ReportEmbeddedTargetGroups';
-import ReportLinks from './model/ReportLinks';
-import ReportLinksCategory from './model/ReportLinksCategory';
-import ReportLinksCategoryIriTemplate from './model/ReportLinksCategoryIriTemplate';
-import ReportLinksDelegatedFrom from './model/ReportLinksDelegatedFrom';
-import ReportLinksDelegatedFromIriTemplate from './model/ReportLinksDelegatedFromIriTemplate';
-import ReportLinksDelegatedTo from './model/ReportLinksDelegatedTo';
-import ReportLinksDelegatedToIriTemplate from './model/ReportLinksDelegatedToIriTemplate';
-import ReportLinksFeedback from './model/ReportLinksFeedback';
-import ReportLinksFeedbackIriTemplate from './model/ReportLinksFeedbackIriTemplate';
-import ReportLinksOperations from './model/ReportLinksOperations';
-import ReportLinksOperationsIriTemplate from './model/ReportLinksOperationsIriTemplate';
-import ReportLinksOrganization from './model/ReportLinksOrganization';
-import ReportLinksOrganizationIriTemplate from './model/ReportLinksOrganizationIriTemplate';
-import ReportLinksPlace from './model/ReportLinksPlace';
-import ReportLinksPlaceIriTemplate from './model/ReportLinksPlaceIriTemplate';
-import ReportLinksSelf from './model/ReportLinksSelf';
-import ReportLinksSelfIriTemplate from './model/ReportLinksSelfIriTemplate';
-import ReportLinksTracking from './model/ReportLinksTracking';
-import ReportLinksTrackingIriTemplate from './model/ReportLinksTrackingIriTemplate';
-import ReportPatch from './model/ReportPatch';
-import ReportWorkflowTransitionData from './model/ReportWorkflowTransitionData';
-import ResetPasswordData from './model/ResetPasswordData';
-import Review from './model/Review';
-import ReviewCollection from './model/ReviewCollection';
-import ReviewData from './model/ReviewData';
-import ReviewLinks from './model/ReviewLinks';
-import ReviewLinksAuthor from './model/ReviewLinksAuthor';
-import ReviewLinksAuthorIriTemplate from './model/ReviewLinksAuthorIriTemplate';
-import ReviewLinksItemReviewed from './model/ReviewLinksItemReviewed';
-import ReviewLinksItemReviewedIriTemplate from './model/ReviewLinksItemReviewedIriTemplate';
-import ReviewLinksSelf from './model/ReviewLinksSelf';
-import ReviewLinksSelfIriTemplate from './model/ReviewLinksSelfIriTemplate';
-import Schema from './model/Schema';
-import SignatureData from './model/SignatureData';
-import SignatureDataSigner from './model/SignatureDataSigner';
-import SuccessLogin from './model/SuccessLogin';
-import SuccessLoginCredentials from './model/SuccessLoginCredentials';
-import SuccessLoginCredentialsAdministratorOf from './model/SuccessLoginCredentialsAdministratorOf';
-import SuccessLoginCredentialsMemberOf from './model/SuccessLoginCredentialsMemberOf';
-import SuccessLoginCredentialsOrganization from './model/SuccessLoginCredentialsOrganization';
-import Tracking from './model/Tracking';
-import TrackingProgression from './model/TrackingProgression';
-import Webhook from './model/Webhook';
-import WebhookCollection from './model/WebhookCollection';
-import WebhookData from './model/WebhookData';
-import WebhookLinks from './model/WebhookLinks';
-import WebhookLinksOrganization from './model/WebhookLinksOrganization';
-import WebhookLinksOrganizationIriTemplate from './model/WebhookLinksOrganizationIriTemplate';
-import WebhookLinksSelf from './model/WebhookLinksSelf';
-import WebhookLinksSelfIriTemplate from './model/WebhookLinksSelfIriTemplate';
-import WebhookLinksSelfIriTemplateMapping from './model/WebhookLinksSelfIriTemplateMapping';
-import WebhookPatch from './model/WebhookPatch';
-import BusinessActivityPagination from './model/BusinessActivityPagination';
-import CategoryPagination from './model/CategoryPagination';
-import ContributionPagination from './model/ContributionPagination';
-import DelegationPagination from './model/DelegationPagination';
-import DocumentPagination from './model/DocumentPagination';
-import ExternalServicePagination from './model/ExternalServicePagination';
-import FeedPagination from './model/FeedPagination';
-import FeedbackPagination from './model/FeedbackPagination';
-import FeedbackReviewRequestPagination from './model/FeedbackReviewRequestPagination';
-import InternalServicePagination from './model/InternalServicePagination';
-import MemberPagination from './model/MemberPagination';
-import OccupantPagination from './model/OccupantPagination';
-import OperationPagination from './model/OperationPagination';
-import OrganizationPagination from './model/OrganizationPagination';
-import PersonPagination from './model/PersonPagination';
-import PlacePagination from './model/PlacePagination';
-import PublicationPagination from './model/PublicationPagination';
-import ReportPagination from './model/ReportPagination';
-import ReviewPagination from './model/ReviewPagination';
-import WebhookPagination from './model/WebhookPagination';
-import ApplicationApi from './api/ApplicationApi';
-import BusinessActivityApi from './api/BusinessActivityApi';
-import CategoryApi from './api/CategoryApi';
-import ContributionApi from './api/ContributionApi';
-import DelegationApi from './api/DelegationApi';
-import DeviceApi from './api/DeviceApi';
-import DocumentApi from './api/DocumentApi';
-import ExternalServiceApi from './api/ExternalServiceApi';
-import FeedApi from './api/FeedApi';
-import FeedbackApi from './api/FeedbackApi';
-import InternalServiceApi from './api/InternalServiceApi';
-import MemberApi from './api/MemberApi';
-import OccupantApi from './api/OccupantApi';
-import OperationApi from './api/OperationApi';
-import OrganizationApi from './api/OrganizationApi';
-import PersonApi from './api/PersonApi';
-import PlaceApi from './api/PlaceApi';
-import PublicationApi from './api/PublicationApi';
-import ReportApi from './api/ReportApi';
-import ReviewApi from './api/ReviewApi';
-import ReviewRequestApi from './api/ReviewRequestApi';
-import SecurityApi from './api/SecurityApi';
-import WebhookApi from './api/WebhookApi';
+import ApiClient from "./ApiClient";
+import Activity from "./model/Activity";
+import ActivityAggregatedPagination from "./model/ActivityAggregatedPagination";
+import ActivityGroup from "./model/ActivityGroup";
+import ActivityPagination from "./model/ActivityPagination";
+import ActivitySubject from "./model/ActivitySubject";
+import Application from "./model/Application";
+import ApplicationLinks from "./model/ApplicationLinks";
+import ApplicationLinksSelf from "./model/ApplicationLinksSelf";
+import ApplicationLinksSelfIriTemplate from "./model/ApplicationLinksSelfIriTemplate";
+import ApplicationLinksSelfIriTemplateMapping from "./model/ApplicationLinksSelfIriTemplateMapping";
+import AssignData from "./model/AssignData";
+import BusinessActivity from "./model/BusinessActivity";
+import BusinessActivityCollection from "./model/BusinessActivityCollection";
+import BusinessActivityLinks from "./model/BusinessActivityLinks";
+import BusinessActivityLinksImage from "./model/BusinessActivityLinksImage";
+import BusinessActivityLinksImageIriTemplate from "./model/BusinessActivityLinksImageIriTemplate";
+import BusinessActivityLinksImageIriTemplateMapping from "./model/BusinessActivityLinksImageIriTemplateMapping";
+import BusinessActivityLinksSchema from "./model/BusinessActivityLinksSchema";
+import BusinessActivityLinksSchemaIriTemplate from "./model/BusinessActivityLinksSchemaIriTemplate";
+import BusinessActivityLinksSelf from "./model/BusinessActivityLinksSelf";
+import BusinessActivityLinksSelfIriTemplate from "./model/BusinessActivityLinksSelfIriTemplate";
+import BusinessActivityLinksThumbnail from "./model/BusinessActivityLinksThumbnail";
+import BusinessActivityLinksThumbnailIriTemplate from "./model/BusinessActivityLinksThumbnailIriTemplate";
+import BusinessActivityMetadataSchema from "./model/BusinessActivityMetadataSchema";
+import Category from "./model/Category";
+import CategoryCollection from "./model/CategoryCollection";
+import CategoryData from "./model/CategoryData";
+import CategoryLinks from "./model/CategoryLinks";
+import CategoryLinksOrganization from "./model/CategoryLinksOrganization";
+import CategoryLinksOrganizationIriTemplate from "./model/CategoryLinksOrganizationIriTemplate";
+import CategoryLinksOrganizationIriTemplateMapping from "./model/CategoryLinksOrganizationIriTemplateMapping";
+import CategoryLinksSelf from "./model/CategoryLinksSelf";
+import CategoryLinksSelfIriTemplate from "./model/CategoryLinksSelfIriTemplate";
+import CategoryLinksSelfIriTemplateMapping from "./model/CategoryLinksSelfIriTemplateMapping";
+import CategoryPatch from "./model/CategoryPatch";
+import Chart from "./model/Chart";
+import Checkpoint from "./model/Checkpoint";
+import CheckpointLinks from "./model/CheckpointLinks";
+import CheckpointLinksOrganization from "./model/CheckpointLinksOrganization";
+import CheckpointLinksOrganizationIriTemplate from "./model/CheckpointLinksOrganizationIriTemplate";
+import Choice from "./model/Choice";
+import CommentData from "./model/CommentData";
+import Condition from "./model/Condition";
+import Contribution from "./model/Contribution";
+import ContributionCollection from "./model/ContributionCollection";
+import ContributionData from "./model/ContributionData";
+import ContributionLinks from "./model/ContributionLinks";
+import ContributionLinksContributor from "./model/ContributionLinksContributor";
+import ContributionLinksContributorIriTemplate from "./model/ContributionLinksContributorIriTemplate";
+import ContributionLinksContributorIriTemplateMapping from "./model/ContributionLinksContributorIriTemplateMapping";
+import ContributionLinksFeedback from "./model/ContributionLinksFeedback";
+import ContributionLinksFeedbackIriTemplate from "./model/ContributionLinksFeedbackIriTemplate";
+import ContributionLinksFeedbackIriTemplateMapping from "./model/ContributionLinksFeedbackIriTemplateMapping";
+import Delegation from "./model/Delegation";
+import DelegationCollection from "./model/DelegationCollection";
+import DelegationData from "./model/DelegationData";
+import DelegationEmbedded from "./model/DelegationEmbedded";
+import DelegationLinks from "./model/DelegationLinks";
+import DelegationLinksCreatedBy from "./model/DelegationLinksCreatedBy";
+import DelegationLinksCreatedByIriTemplate from "./model/DelegationLinksCreatedByIriTemplate";
+import DelegationLinksReport from "./model/DelegationLinksReport";
+import DelegationLinksReportIriTemplate from "./model/DelegationLinksReportIriTemplate";
+import DelegationLinksReportIriTemplateMapping from "./model/DelegationLinksReportIriTemplateMapping";
+import DelegationLinksSelf from "./model/DelegationLinksSelf";
+import DelegationLinksSelfIriTemplate from "./model/DelegationLinksSelfIriTemplate";
+import DelegationLinksSelfIriTemplateMapping from "./model/DelegationLinksSelfIriTemplateMapping";
+import DelegationLinksService from "./model/DelegationLinksService";
+import DelegationLinksServiceIriTemplate from "./model/DelegationLinksServiceIriTemplate";
+import DelegationLinksServiceIriTemplateMapping from "./model/DelegationLinksServiceIriTemplateMapping";
+import DelegationWorkflowTransitionData from "./model/DelegationWorkflowTransitionData";
+import Device from "./model/Device";
+import DeviceData from "./model/DeviceData";
+import DeviceLinks from "./model/DeviceLinks";
+import DeviceLinksPerson from "./model/DeviceLinksPerson";
+import DeviceLinksPersonIriTemplate from "./model/DeviceLinksPersonIriTemplate";
+import DeviceLinksSelf from "./model/DeviceLinksSelf";
+import DeviceLinksSelfIriTemplate from "./model/DeviceLinksSelfIriTemplate";
+import DeviceLinksSelfIriTemplateMapping from "./model/DeviceLinksSelfIriTemplateMapping";
+import Document from "./model/Document";
+import DocumentCollection from "./model/DocumentCollection";
+import DocumentData from "./model/DocumentData";
+import DocumentDataFile from "./model/DocumentDataFile";
+import DocumentDataPermission from "./model/DocumentDataPermission";
+import DocumentFile from "./model/DocumentFile";
+import DocumentLinks from "./model/DocumentLinks";
+import DocumentLinksCreatedBy from "./model/DocumentLinksCreatedBy";
+import DocumentLinksCreatedByIriTemplate from "./model/DocumentLinksCreatedByIriTemplate";
+import DocumentLinksFile from "./model/DocumentLinksFile";
+import DocumentLinksFileIriTemplate from "./model/DocumentLinksFileIriTemplate";
+import DocumentLinksFileIriTemplateMapping from "./model/DocumentLinksFileIriTemplateMapping";
+import DocumentLinksSelf from "./model/DocumentLinksSelf";
+import DocumentLinksSelfIriTemplate from "./model/DocumentLinksSelfIriTemplate";
+import DocumentPatch from "./model/DocumentPatch";
+import DocumentPatchFile from "./model/DocumentPatchFile";
+import DocumentPermission from "./model/DocumentPermission";
+import Error from "./model/Error";
+import ErrorEmbedded from "./model/ErrorEmbedded";
+import ExternalService from "./model/ExternalService";
+import ExternalServiceCollection from "./model/ExternalServiceCollection";
+import ExternalServiceContactPoint from "./model/ExternalServiceContactPoint";
+import ExternalServiceData from "./model/ExternalServiceData";
+import ExternalServiceLinks from "./model/ExternalServiceLinks";
+import ExternalServiceLinksProvider from "./model/ExternalServiceLinksProvider";
+import ExternalServiceLinksProviderIriTemplate from "./model/ExternalServiceLinksProviderIriTemplate";
+import ExternalServiceLinksSelf from "./model/ExternalServiceLinksSelf";
+import ExternalServiceLinksSelfIriTemplate from "./model/ExternalServiceLinksSelfIriTemplate";
+import ExternalServicePatch from "./model/ExternalServicePatch";
+import ExternalServicePatchContactPoint from "./model/ExternalServicePatchContactPoint";
+import FacebookConnectData from "./model/FacebookConnectData";
+import Feature from "./model/Feature";
+import FeatureGeometry from "./model/FeatureGeometry";
+import Feed from "./model/Feed";
+import FeedCollection from "./model/FeedCollection";
+import Feedback from "./model/Feedback";
+import FeedbackCollection from "./model/FeedbackCollection";
+import FeedbackData from "./model/FeedbackData";
+import FeedbackDataGeo from "./model/FeedbackDataGeo";
+import FeedbackDataGeoPoint from "./model/FeedbackDataGeoPoint";
+import FeedbackEmbedded from "./model/FeedbackEmbedded";
+import FeedbackGeoCoordinates from "./model/FeedbackGeoCoordinates";
+import FeedbackGeoCoordinatesPoint from "./model/FeedbackGeoCoordinatesPoint";
+import FeedbackLinks from "./model/FeedbackLinks";
+import FeedbackLinksBusinessActivity from "./model/FeedbackLinksBusinessActivity";
+import FeedbackLinksBusinessActivityIriTemplate from "./model/FeedbackLinksBusinessActivityIriTemplate";
+import FeedbackLinksCategory from "./model/FeedbackLinksCategory";
+import FeedbackLinksCategoryIriTemplate from "./model/FeedbackLinksCategoryIriTemplate";
+import FeedbackLinksImage from "./model/FeedbackLinksImage";
+import FeedbackLinksImageIriTemplate from "./model/FeedbackLinksImageIriTemplate";
+import FeedbackLinksImageIriTemplateMapping from "./model/FeedbackLinksImageIriTemplateMapping";
+import FeedbackLinksImages from "./model/FeedbackLinksImages";
+import FeedbackLinksImagesIriTemplate from "./model/FeedbackLinksImagesIriTemplate";
+import FeedbackLinksReporter from "./model/FeedbackLinksReporter";
+import FeedbackLinksReporterIriTemplate from "./model/FeedbackLinksReporterIriTemplate";
+import FeedbackLinksSelf from "./model/FeedbackLinksSelf";
+import FeedbackLinksSelfIriTemplate from "./model/FeedbackLinksSelfIriTemplate";
+import FeedbackLinksTracking from "./model/FeedbackLinksTracking";
+import FeedbackLinksTrackingIriTemplate from "./model/FeedbackLinksTrackingIriTemplate";
+import FeedbackReviewRequest from "./model/FeedbackReviewRequest";
+import FeedbackReviewRequestCollection from "./model/FeedbackReviewRequestCollection";
+import FeedbackReviewRequestLinks from "./model/FeedbackReviewRequestLinks";
+import FeedbackReviewRequestLinksItemToReview from "./model/FeedbackReviewRequestLinksItemToReview";
+import FeedbackReviewRequestLinksItemToReviewIriTemplate from "./model/FeedbackReviewRequestLinksItemToReviewIriTemplate";
+import FeedbackReviewRequestLinksOrganization from "./model/FeedbackReviewRequestLinksOrganization";
+import FeedbackReviewRequestLinksOrganizationIriTemplate from "./model/FeedbackReviewRequestLinksOrganizationIriTemplate";
+import FeedbackReviewRequestLinksReview from "./model/FeedbackReviewRequestLinksReview";
+import FeedbackReviewRequestLinksReviewIriTemplate from "./model/FeedbackReviewRequestLinksReviewIriTemplate";
+import FeedbackReviewRequestLinksReviewIriTemplateMapping from "./model/FeedbackReviewRequestLinksReviewIriTemplateMapping";
+import FeedbackReviewRequestLinksReviewer from "./model/FeedbackReviewRequestLinksReviewer";
+import FeedbackReviewRequestLinksReviewerIriTemplate from "./model/FeedbackReviewRequestLinksReviewerIriTemplate";
+import FeedbackReviewRequestLinksSelf from "./model/FeedbackReviewRequestLinksSelf";
+import FeedbackReviewRequestLinksSelfIriTemplate from "./model/FeedbackReviewRequestLinksSelfIriTemplate";
+import FeedbackReviewRequestLinksSelfIriTemplateMapping from "./model/FeedbackReviewRequestLinksSelfIriTemplateMapping";
+import FeedbackWorkflowTransitionData from "./model/FeedbackWorkflowTransitionData";
+import ImageData from "./model/ImageData";
+import InternalService from "./model/InternalService";
+import InternalServiceCollection from "./model/InternalServiceCollection";
+import InternalServiceData from "./model/InternalServiceData";
+import InternalServiceLinks from "./model/InternalServiceLinks";
+import InternalServiceLinksOrganization from "./model/InternalServiceLinksOrganization";
+import InternalServiceLinksOrganizationIriTemplate from "./model/InternalServiceLinksOrganizationIriTemplate";
+import InternalServiceLinksSelf from "./model/InternalServiceLinksSelf";
+import InternalServiceLinksSelfIriTemplate from "./model/InternalServiceLinksSelfIriTemplate";
+import InternalServiceLinksSelfIriTemplateMapping from "./model/InternalServiceLinksSelfIriTemplateMapping";
+import InternalServicePatch from "./model/InternalServicePatch";
+import LoginData from "./model/LoginData";
+import Member from "./model/Member";
+import MemberCollection from "./model/MemberCollection";
+import MemberData from "./model/MemberData";
+import MemberEmbedded from "./model/MemberEmbedded";
+import MemberLinks from "./model/MemberLinks";
+import MemberLinksOrganization from "./model/MemberLinksOrganization";
+import MemberLinksOrganizationIriTemplate from "./model/MemberLinksOrganizationIriTemplate";
+import MemberLinksPerson from "./model/MemberLinksPerson";
+import MemberLinksPersonIriTemplate from "./model/MemberLinksPersonIriTemplate";
+import MemberLinksSelf from "./model/MemberLinksSelf";
+import MemberLinksSelfIriTemplate from "./model/MemberLinksSelfIriTemplate";
+import MemberLinksSelfIriTemplateMapping from "./model/MemberLinksSelfIriTemplateMapping";
+import MemberPatch from "./model/MemberPatch";
+import Node from "./model/Node";
+import NodeEmbedded from "./model/NodeEmbedded";
+import NodePath from "./model/NodePath";
+import Occupant from "./model/Occupant";
+import OccupantCollection from "./model/OccupantCollection";
+import OccupantData from "./model/OccupantData";
+import OccupantLinks from "./model/OccupantLinks";
+import OccupantLinksPerson from "./model/OccupantLinksPerson";
+import OccupantLinksPersonIriTemplate from "./model/OccupantLinksPersonIriTemplate";
+import OccupantLinksPlace from "./model/OccupantLinksPlace";
+import OccupantLinksPlaceIriTemplate from "./model/OccupantLinksPlaceIriTemplate";
+import OccupantLinksPlaceIriTemplateMapping from "./model/OccupantLinksPlaceIriTemplateMapping";
+import OccupantLinksSelf from "./model/OccupantLinksSelf";
+import OccupantLinksSelfIriTemplate from "./model/OccupantLinksSelfIriTemplate";
+import OccupantLinksSelfIriTemplateMapping from "./model/OccupantLinksSelfIriTemplateMapping";
+import Operation from "./model/Operation";
+import OperationCollection from "./model/OperationCollection";
+import OperationData from "./model/OperationData";
+import OperationEmbedded from "./model/OperationEmbedded";
+import OperationEmbeddedDuration from "./model/OperationEmbeddedDuration";
+import OperationLinks from "./model/OperationLinks";
+import OperationLinksCreatedBy from "./model/OperationLinksCreatedBy";
+import OperationLinksCreatedByIriTemplate from "./model/OperationLinksCreatedByIriTemplate";
+import OperationLinksFeedback from "./model/OperationLinksFeedback";
+import OperationLinksFeedbackIriTemplate from "./model/OperationLinksFeedbackIriTemplate";
+import OperationLinksImage from "./model/OperationLinksImage";
+import OperationLinksImageIriTemplate from "./model/OperationLinksImageIriTemplate";
+import OperationLinksImageIriTemplateMapping from "./model/OperationLinksImageIriTemplateMapping";
+import OperationLinksImages from "./model/OperationLinksImages";
+import OperationLinksImagesIriTemplate from "./model/OperationLinksImagesIriTemplate";
+import OperationLinksImagesIriTemplateMapping from "./model/OperationLinksImagesIriTemplateMapping";
+import OperationLinksOperator from "./model/OperationLinksOperator";
+import OperationLinksOperatorIriTemplate from "./model/OperationLinksOperatorIriTemplate";
+import OperationLinksReport from "./model/OperationLinksReport";
+import OperationLinksReportIriTemplate from "./model/OperationLinksReportIriTemplate";
+import OperationLinksSelf from "./model/OperationLinksSelf";
+import OperationLinksSelfIriTemplate from "./model/OperationLinksSelfIriTemplate";
+import OperationLinksSelfIriTemplateMapping from "./model/OperationLinksSelfIriTemplateMapping";
+import OperationLinksTracking from "./model/OperationLinksTracking";
+import OperationLinksTrackingIriTemplate from "./model/OperationLinksTrackingIriTemplate";
+import OperationPatch from "./model/OperationPatch";
+import OperationSignature from "./model/OperationSignature";
+import OperationSignatureSigner from "./model/OperationSignatureSigner";
+import OperationWorkflowTransitionData from "./model/OperationWorkflowTransitionData";
+import Organization from "./model/Organization";
+import OrganizationCollection from "./model/OrganizationCollection";
+import OrganizationData from "./model/OrganizationData";
+import OrganizationLinks from "./model/OrganizationLinks";
+import OrganizationLinksApplication from "./model/OrganizationLinksApplication";
+import OrganizationLinksApplicationIriTemplate from "./model/OrganizationLinksApplicationIriTemplate";
+import OrganizationLinksBusinessActivity from "./model/OrganizationLinksBusinessActivity";
+import OrganizationLinksBusinessActivityIriTemplate from "./model/OrganizationLinksBusinessActivityIriTemplate";
+import OrganizationLinksLogo from "./model/OrganizationLinksLogo";
+import OrganizationLinksLogoIriTemplate from "./model/OrganizationLinksLogoIriTemplate";
+import OrganizationLinksSelf from "./model/OrganizationLinksSelf";
+import OrganizationLinksSelfIriTemplate from "./model/OrganizationLinksSelfIriTemplate";
+import OrganizationPatch from "./model/OrganizationPatch";
+import OrganizationPatchPreferences from "./model/OrganizationPatchPreferences";
+import OrganizationPreferences from "./model/OrganizationPreferences";
+import OrganizationPreferencesReference from "./model/OrganizationPreferencesReference";
+import Pagination from "./model/Pagination";
+import PaginationLink from "./model/PaginationLink";
+import PaginationLinks from "./model/PaginationLinks";
+import PasswordChangeData from "./model/PasswordChangeData";
+import Person from "./model/Person";
+import PersonCollection from "./model/PersonCollection";
+import PersonLinks from "./model/PersonLinks";
+import PersonLinksImage from "./model/PersonLinksImage";
+import PersonLinksImageIriTemplate from "./model/PersonLinksImageIriTemplate";
+import PersonLinksSelf from "./model/PersonLinksSelf";
+import PersonLinksSelfIriTemplate from "./model/PersonLinksSelfIriTemplate";
+import PersonPatch from "./model/PersonPatch";
+import PersonPatchPreferences from "./model/PersonPatchPreferences";
+import PersonPreferences from "./model/PersonPreferences";
+import Place from "./model/Place";
+import PlaceCollection from "./model/PlaceCollection";
+import PlaceData from "./model/PlaceData";
+import PlaceEmbedded from "./model/PlaceEmbedded";
+import PlaceGeo from "./model/PlaceGeo";
+import PlaceGeoCentroid from "./model/PlaceGeoCentroid";
+import PlaceGeoPolygon from "./model/PlaceGeoPolygon";
+import PlaceLinks from "./model/PlaceLinks";
+import PlaceLinksContainedInPlace from "./model/PlaceLinksContainedInPlace";
+import PlaceLinksContainedInPlaceIriTemplate from "./model/PlaceLinksContainedInPlaceIriTemplate";
+import PlaceLinksContainsPlaces from "./model/PlaceLinksContainsPlaces";
+import PlaceLinksContainsPlacesIriTemplate from "./model/PlaceLinksContainsPlacesIriTemplate";
+import PlaceLinksContainsPlacesIriTemplateMapping from "./model/PlaceLinksContainsPlacesIriTemplateMapping";
+import PlaceLinksOrganization from "./model/PlaceLinksOrganization";
+import PlaceLinksOrganizationIriTemplate from "./model/PlaceLinksOrganizationIriTemplate";
+import PlaceLinksSelf from "./model/PlaceLinksSelf";
+import PlaceLinksSelfIriTemplate from "./model/PlaceLinksSelfIriTemplate";
+import PlacePatch from "./model/PlacePatch";
+import PlacePreferences from "./model/PlacePreferences";
+import Property from "./model/Property";
+import PropertyConditions from "./model/PropertyConditions";
+import PropertyItems from "./model/PropertyItems";
+import Publication from "./model/Publication";
+import PublicationCollection from "./model/PublicationCollection";
+import PublicationData from "./model/PublicationData";
+import PublicationLinks from "./model/PublicationLinks";
+import PublicationLinksAuthor from "./model/PublicationLinksAuthor";
+import PublicationLinksAuthorIriTemplate from "./model/PublicationLinksAuthorIriTemplate";
+import PublicationLinksFeed from "./model/PublicationLinksFeed";
+import PublicationLinksFeedIriTemplate from "./model/PublicationLinksFeedIriTemplate";
+import PublicationLinksOrganization from "./model/PublicationLinksOrganization";
+import PublicationLinksOrganizationIriTemplate from "./model/PublicationLinksOrganizationIriTemplate";
+import PublicationLinksSelf from "./model/PublicationLinksSelf";
+import PublicationLinksSelfIriTemplate from "./model/PublicationLinksSelfIriTemplate";
+import PublicationLinksSelfIriTemplateMapping from "./model/PublicationLinksSelfIriTemplateMapping";
+import RegisterData from "./model/RegisterData";
+import Report from "./model/Report";
+import ReportCollection from "./model/ReportCollection";
+import ReportEmbedded from "./model/ReportEmbedded";
+import ReportEmbeddedTargetGroups from "./model/ReportEmbeddedTargetGroups";
+import ReportLinks from "./model/ReportLinks";
+import ReportLinksCategory from "./model/ReportLinksCategory";
+import ReportLinksCategoryIriTemplate from "./model/ReportLinksCategoryIriTemplate";
+import ReportLinksDelegatedFrom from "./model/ReportLinksDelegatedFrom";
+import ReportLinksDelegatedFromIriTemplate from "./model/ReportLinksDelegatedFromIriTemplate";
+import ReportLinksDelegatedTo from "./model/ReportLinksDelegatedTo";
+import ReportLinksDelegatedToIriTemplate from "./model/ReportLinksDelegatedToIriTemplate";
+import ReportLinksFeedback from "./model/ReportLinksFeedback";
+import ReportLinksFeedbackIriTemplate from "./model/ReportLinksFeedbackIriTemplate";
+import ReportLinksOperations from "./model/ReportLinksOperations";
+import ReportLinksOperationsIriTemplate from "./model/ReportLinksOperationsIriTemplate";
+import ReportLinksOrganization from "./model/ReportLinksOrganization";
+import ReportLinksOrganizationIriTemplate from "./model/ReportLinksOrganizationIriTemplate";
+import ReportLinksPlace from "./model/ReportLinksPlace";
+import ReportLinksPlaceIriTemplate from "./model/ReportLinksPlaceIriTemplate";
+import ReportLinksSelf from "./model/ReportLinksSelf";
+import ReportLinksSelfIriTemplate from "./model/ReportLinksSelfIriTemplate";
+import ReportLinksTracking from "./model/ReportLinksTracking";
+import ReportLinksTrackingIriTemplate from "./model/ReportLinksTrackingIriTemplate";
+import ReportPatch from "./model/ReportPatch";
+import ReportWorkflowTransitionData from "./model/ReportWorkflowTransitionData";
+import ResetPasswordData from "./model/ResetPasswordData";
+import Review from "./model/Review";
+import ReviewCollection from "./model/ReviewCollection";
+import ReviewData from "./model/ReviewData";
+import ReviewLinks from "./model/ReviewLinks";
+import ReviewLinksAuthor from "./model/ReviewLinksAuthor";
+import ReviewLinksAuthorIriTemplate from "./model/ReviewLinksAuthorIriTemplate";
+import ReviewLinksItemReviewed from "./model/ReviewLinksItemReviewed";
+import ReviewLinksItemReviewedIriTemplate from "./model/ReviewLinksItemReviewedIriTemplate";
+import ReviewLinksSelf from "./model/ReviewLinksSelf";
+import ReviewLinksSelfIriTemplate from "./model/ReviewLinksSelfIriTemplate";
+import Schema from "./model/Schema";
+import SignatureData from "./model/SignatureData";
+import SignatureDataSigner from "./model/SignatureDataSigner";
+import SuccessLogin from "./model/SuccessLogin";
+import SuccessLoginCredentials from "./model/SuccessLoginCredentials";
+import SuccessLoginCredentialsAdministratorOf from "./model/SuccessLoginCredentialsAdministratorOf";
+import SuccessLoginCredentialsMemberOf from "./model/SuccessLoginCredentialsMemberOf";
+import SuccessLoginCredentialsOrganization from "./model/SuccessLoginCredentialsOrganization";
+import Tracking from "./model/Tracking";
+import TrackingProgression from "./model/TrackingProgression";
+import Webhook from "./model/Webhook";
+import WebhookCollection from "./model/WebhookCollection";
+import WebhookData from "./model/WebhookData";
+import WebhookLinks from "./model/WebhookLinks";
+import WebhookLinksOrganization from "./model/WebhookLinksOrganization";
+import WebhookLinksOrganizationIriTemplate from "./model/WebhookLinksOrganizationIriTemplate";
+import WebhookLinksSelf from "./model/WebhookLinksSelf";
+import WebhookLinksSelfIriTemplate from "./model/WebhookLinksSelfIriTemplate";
+import WebhookLinksSelfIriTemplateMapping from "./model/WebhookLinksSelfIriTemplateMapping";
+import WebhookPatch from "./model/WebhookPatch";
+import BusinessActivityPagination from "./model/BusinessActivityPagination";
+import CategoryPagination from "./model/CategoryPagination";
+import ContributionPagination from "./model/ContributionPagination";
+import DelegationPagination from "./model/DelegationPagination";
+import DocumentPagination from "./model/DocumentPagination";
+import ExternalServicePagination from "./model/ExternalServicePagination";
+import FeedPagination from "./model/FeedPagination";
+import FeedbackPagination from "./model/FeedbackPagination";
+import FeedbackReviewRequestPagination from "./model/FeedbackReviewRequestPagination";
+import InternalServicePagination from "./model/InternalServicePagination";
+import MemberPagination from "./model/MemberPagination";
+import OccupantPagination from "./model/OccupantPagination";
+import OperationPagination from "./model/OperationPagination";
+import OrganizationPagination from "./model/OrganizationPagination";
+import PersonPagination from "./model/PersonPagination";
+import PlacePagination from "./model/PlacePagination";
+import PublicationPagination from "./model/PublicationPagination";
+import ReportPagination from "./model/ReportPagination";
+import ReviewPagination from "./model/ReviewPagination";
+import WebhookPagination from "./model/WebhookPagination";
+import ApplicationApi from "./api/ApplicationApi";
+import BusinessActivityApi from "./api/BusinessActivityApi";
+import CategoryApi from "./api/CategoryApi";
+import ContributionApi from "./api/ContributionApi";
+import DelegationApi from "./api/DelegationApi";
+import DeviceApi from "./api/DeviceApi";
+import DocumentApi from "./api/DocumentApi";
+import ExternalServiceApi from "./api/ExternalServiceApi";
+import FeedApi from "./api/FeedApi";
+import FeedbackApi from "./api/FeedbackApi";
+import InternalServiceApi from "./api/InternalServiceApi";
+import MemberApi from "./api/MemberApi";
+import OccupantApi from "./api/OccupantApi";
+import OperationApi from "./api/OperationApi";
+import OrganizationApi from "./api/OrganizationApi";
+import PersonApi from "./api/PersonApi";
+import PlaceApi from "./api/PlaceApi";
+import PublicationApi from "./api/PublicationApi";
+import ReportApi from "./api/ReportApi";
+import ReviewApi from "./api/ReviewApi";
+import ReviewRequestApi from "./api/ReviewRequestApi";
+import SecurityApi from "./api/SecurityApi";
+import WebhookApi from "./api/WebhookApi";
 
 /**
  * Javascript client for Keyclic API.
@@ -419,1944 +424,1947 @@ import WebhookApi from './api/WebhookApi';
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.0.6
+ * @version 2.0.7
  */
 export {
-    /**
-     * The ApiClient constructor.
-     * @property {module:ApiClient}
-     */
-    ApiClient,
-
-    /**
-     * The Activity model constructor.
-     * @property { module:model/Activity }
-     */
-    Activity,
-    /**
-     * The ActivityAggregatedPagination model constructor.
-     * @property { module:model/ActivityAggregatedPagination }
-     */
-    ActivityAggregatedPagination,
-    /**
-     * The ActivityGroup model constructor.
-     * @property { module:model/ActivityGroup }
-     */
-    ActivityGroup,
-    /**
-     * The ActivityPagination model constructor.
-     * @property { module:model/ActivityPagination }
-     */
-    ActivityPagination,
-    /**
-     * The ActivitySubject model constructor.
-     * @property { module:model/ActivitySubject }
-     */
-    ActivitySubject,
-    /**
-     * The Application model constructor.
-     * @property { module:model/Application }
-     */
-    Application,
-    /**
-     * The ApplicationLinks model constructor.
-     * @property { module:model/ApplicationLinks }
-     */
-    ApplicationLinks,
-    /**
-     * The ApplicationLinksSelf model constructor.
-     * @property { module:model/ApplicationLinksSelf }
-     */
-    ApplicationLinksSelf,
-    /**
-     * The ApplicationLinksSelfIriTemplate model constructor.
-     * @property { module:model/ApplicationLinksSelfIriTemplate }
-     */
-    ApplicationLinksSelfIriTemplate,
-    /**
-     * The ApplicationLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/ApplicationLinksSelfIriTemplateMapping }
-     */
-    ApplicationLinksSelfIriTemplateMapping,
-    /**
-     * The AssignData model constructor.
-     * @property { module:model/AssignData }
-     */
-    AssignData,
-    /**
-     * The BusinessActivity model constructor.
-     * @property { module:model/BusinessActivity }
-     */
-    BusinessActivity,
-    /**
-     * The BusinessActivityCollection model constructor.
-     * @property { module:model/BusinessActivityCollection }
-     */
-    BusinessActivityCollection,
-    /**
-     * The BusinessActivityLinks model constructor.
-     * @property { module:model/BusinessActivityLinks }
-     */
-    BusinessActivityLinks,
-    /**
-     * The BusinessActivityLinksImage model constructor.
-     * @property { module:model/BusinessActivityLinksImage }
-     */
-    BusinessActivityLinksImage,
-    /**
-     * The BusinessActivityLinksImageIriTemplate model constructor.
-     * @property { module:model/BusinessActivityLinksImageIriTemplate }
-     */
-    BusinessActivityLinksImageIriTemplate,
-    /**
-     * The BusinessActivityLinksImageIriTemplateMapping model constructor.
-     * @property { module:model/BusinessActivityLinksImageIriTemplateMapping }
-     */
-    BusinessActivityLinksImageIriTemplateMapping,
-    /**
-     * The BusinessActivityLinksSchema model constructor.
-     * @property { module:model/BusinessActivityLinksSchema }
-     */
-    BusinessActivityLinksSchema,
-    /**
-     * The BusinessActivityLinksSchemaIriTemplate model constructor.
-     * @property { module:model/BusinessActivityLinksSchemaIriTemplate }
-     */
-    BusinessActivityLinksSchemaIriTemplate,
-    /**
-     * The BusinessActivityLinksSelf model constructor.
-     * @property { module:model/BusinessActivityLinksSelf }
-     */
-    BusinessActivityLinksSelf,
-    /**
-     * The BusinessActivityLinksSelfIriTemplate model constructor.
-     * @property { module:model/BusinessActivityLinksSelfIriTemplate }
-     */
-    BusinessActivityLinksSelfIriTemplate,
-    /**
-     * The BusinessActivityLinksThumbnail model constructor.
-     * @property { module:model/BusinessActivityLinksThumbnail }
-     */
-    BusinessActivityLinksThumbnail,
-    /**
-     * The BusinessActivityLinksThumbnailIriTemplate model constructor.
-     * @property { module:model/BusinessActivityLinksThumbnailIriTemplate }
-     */
-    BusinessActivityLinksThumbnailIriTemplate,
-    /**
-     * The BusinessActivityMetadataSchema model constructor.
-     * @property { module:model/BusinessActivityMetadataSchema }
-     */
-    BusinessActivityMetadataSchema,
-    /**
-     * The Category model constructor.
-     * @property { module:model/Category }
-     */
-    Category,
-    /**
-     * The CategoryCollection model constructor.
-     * @property { module:model/CategoryCollection }
-     */
-    CategoryCollection,
-    /**
-     * The CategoryData model constructor.
-     * @property { module:model/CategoryData }
-     */
-    CategoryData,
-    /**
-     * The CategoryLinks model constructor.
-     * @property { module:model/CategoryLinks }
-     */
-    CategoryLinks,
-    /**
-     * The CategoryLinksOrganization model constructor.
-     * @property { module:model/CategoryLinksOrganization }
-     */
-    CategoryLinksOrganization,
-    /**
-     * The CategoryLinksOrganizationIriTemplate model constructor.
-     * @property { module:model/CategoryLinksOrganizationIriTemplate }
-     */
-    CategoryLinksOrganizationIriTemplate,
-    /**
-     * The CategoryLinksOrganizationIriTemplateMapping model constructor.
-     * @property { module:model/CategoryLinksOrganizationIriTemplateMapping }
-     */
-    CategoryLinksOrganizationIriTemplateMapping,
-    /**
-     * The CategoryLinksSelf model constructor.
-     * @property { module:model/CategoryLinksSelf }
-     */
-    CategoryLinksSelf,
-    /**
-     * The CategoryLinksSelfIriTemplate model constructor.
-     * @property { module:model/CategoryLinksSelfIriTemplate }
-     */
-    CategoryLinksSelfIriTemplate,
-    /**
-     * The CategoryLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/CategoryLinksSelfIriTemplateMapping }
-     */
-    CategoryLinksSelfIriTemplateMapping,
-    /**
-     * The CategoryPatch model constructor.
-     * @property { module:model/CategoryPatch }
-     */
-    CategoryPatch,
-    /**
-     * The Chart model constructor.
-     * @property { module:model/Chart }
-     */
-    Chart,
-    /**
-     * The Checkpoint model constructor.
-     * @property { module:model/Checkpoint }
-     */
-    Checkpoint,
-    /**
-     * The CheckpointLinks model constructor.
-     * @property { module:model/CheckpointLinks }
-     */
-    CheckpointLinks,
-    /**
-     * The CheckpointLinksOrganization model constructor.
-     * @property { module:model/CheckpointLinksOrganization }
-     */
-    CheckpointLinksOrganization,
-    /**
-     * The CheckpointLinksOrganizationIriTemplate model constructor.
-     * @property { module:model/CheckpointLinksOrganizationIriTemplate }
-     */
-    CheckpointLinksOrganizationIriTemplate,
-    /**
-     * The Choice model constructor.
-     * @property { module:model/Choice }
-     */
-    Choice,
-    /**
-     * The CommentData model constructor.
-     * @property { module:model/CommentData }
-     */
-    CommentData,
-    /**
-     * The Condition model constructor.
-     * @property { module:model/Condition }
-     */
-    Condition,
-    /**
-     * The Contribution model constructor.
-     * @property { module:model/Contribution }
-     */
-    Contribution,
-    /**
-     * The ContributionCollection model constructor.
-     * @property { module:model/ContributionCollection }
-     */
-    ContributionCollection,
-    /**
-     * The ContributionData model constructor.
-     * @property { module:model/ContributionData }
-     */
-    ContributionData,
-    /**
-     * The ContributionLinks model constructor.
-     * @property { module:model/ContributionLinks }
-     */
-    ContributionLinks,
-    /**
-     * The ContributionLinksContributor model constructor.
-     * @property { module:model/ContributionLinksContributor }
-     */
-    ContributionLinksContributor,
-    /**
-     * The ContributionLinksContributorIriTemplate model constructor.
-     * @property { module:model/ContributionLinksContributorIriTemplate }
-     */
-    ContributionLinksContributorIriTemplate,
-    /**
-     * The ContributionLinksContributorIriTemplateMapping model constructor.
-     * @property { module:model/ContributionLinksContributorIriTemplateMapping }
-     */
-    ContributionLinksContributorIriTemplateMapping,
-    /**
-     * The ContributionLinksFeedback model constructor.
-     * @property { module:model/ContributionLinksFeedback }
-     */
-    ContributionLinksFeedback,
-    /**
-     * The ContributionLinksFeedbackIriTemplate model constructor.
-     * @property { module:model/ContributionLinksFeedbackIriTemplate }
-     */
-    ContributionLinksFeedbackIriTemplate,
-    /**
-     * The ContributionLinksFeedbackIriTemplateMapping model constructor.
-     * @property { module:model/ContributionLinksFeedbackIriTemplateMapping }
-     */
-    ContributionLinksFeedbackIriTemplateMapping,
-    /**
-     * The Delegation model constructor.
-     * @property { module:model/Delegation }
-     */
-    Delegation,
-    /**
-     * The DelegationCollection model constructor.
-     * @property { module:model/DelegationCollection }
-     */
-    DelegationCollection,
-    /**
-     * The DelegationData model constructor.
-     * @property { module:model/DelegationData }
-     */
-    DelegationData,
-    /**
-     * The DelegationEmbedded model constructor.
-     * @property { module:model/DelegationEmbedded }
-     */
-    DelegationEmbedded,
-    /**
-     * The DelegationLinks model constructor.
-     * @property { module:model/DelegationLinks }
-     */
-    DelegationLinks,
-    /**
-     * The DelegationLinksCreatedBy model constructor.
-     * @property { module:model/DelegationLinksCreatedBy }
-     */
-    DelegationLinksCreatedBy,
-    /**
-     * The DelegationLinksCreatedByIriTemplate model constructor.
-     * @property { module:model/DelegationLinksCreatedByIriTemplate }
-     */
-    DelegationLinksCreatedByIriTemplate,
-    /**
-     * The DelegationLinksReport model constructor.
-     * @property { module:model/DelegationLinksReport }
-     */
-    DelegationLinksReport,
-    /**
-     * The DelegationLinksReportIriTemplate model constructor.
-     * @property { module:model/DelegationLinksReportIriTemplate }
-     */
-    DelegationLinksReportIriTemplate,
-    /**
-     * The DelegationLinksReportIriTemplateMapping model constructor.
-     * @property { module:model/DelegationLinksReportIriTemplateMapping }
-     */
-    DelegationLinksReportIriTemplateMapping,
-    /**
-     * The DelegationLinksSelf model constructor.
-     * @property { module:model/DelegationLinksSelf }
-     */
-    DelegationLinksSelf,
-    /**
-     * The DelegationLinksSelfIriTemplate model constructor.
-     * @property { module:model/DelegationLinksSelfIriTemplate }
-     */
-    DelegationLinksSelfIriTemplate,
-    /**
-     * The DelegationLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/DelegationLinksSelfIriTemplateMapping }
-     */
-    DelegationLinksSelfIriTemplateMapping,
-    /**
-     * The DelegationLinksService model constructor.
-     * @property { module:model/DelegationLinksService }
-     */
-    DelegationLinksService,
-    /**
-     * The DelegationLinksServiceIriTemplate model constructor.
-     * @property { module:model/DelegationLinksServiceIriTemplate }
-     */
-    DelegationLinksServiceIriTemplate,
-    /**
-     * The DelegationLinksServiceIriTemplateMapping model constructor.
-     * @property { module:model/DelegationLinksServiceIriTemplateMapping }
-     */
-    DelegationLinksServiceIriTemplateMapping,
-    /**
-     * The DelegationWorkflowTransitionData model constructor.
-     * @property { module:model/DelegationWorkflowTransitionData }
-     */
-    DelegationWorkflowTransitionData,
-    /**
-     * The Device model constructor.
-     * @property { module:model/Device }
-     */
-    Device,
-    /**
-     * The DeviceData model constructor.
-     * @property { module:model/DeviceData }
-     */
-    DeviceData,
-    /**
-     * The DeviceLinks model constructor.
-     * @property { module:model/DeviceLinks }
-     */
-    DeviceLinks,
-    /**
-     * The DeviceLinksPerson model constructor.
-     * @property { module:model/DeviceLinksPerson }
-     */
-    DeviceLinksPerson,
-    /**
-     * The DeviceLinksPersonIriTemplate model constructor.
-     * @property { module:model/DeviceLinksPersonIriTemplate }
-     */
-    DeviceLinksPersonIriTemplate,
-    /**
-     * The DeviceLinksSelf model constructor.
-     * @property { module:model/DeviceLinksSelf }
-     */
-    DeviceLinksSelf,
-    /**
-     * The DeviceLinksSelfIriTemplate model constructor.
-     * @property { module:model/DeviceLinksSelfIriTemplate }
-     */
-    DeviceLinksSelfIriTemplate,
-    /**
-     * The DeviceLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/DeviceLinksSelfIriTemplateMapping }
-     */
-    DeviceLinksSelfIriTemplateMapping,
-    /**
-     * The Document model constructor.
-     * @property { module:model/Document }
-     */
-    Document,
-    /**
-     * The DocumentCollection model constructor.
-     * @property { module:model/DocumentCollection }
-     */
-    DocumentCollection,
-    /**
-     * The DocumentData model constructor.
-     * @property { module:model/DocumentData }
-     */
-    DocumentData,
-    /**
-     * The DocumentDataFile model constructor.
-     * @property { module:model/DocumentDataFile }
-     */
-    DocumentDataFile,
-    /**
-     * The DocumentDataPermission model constructor.
-     * @property { module:model/DocumentDataPermission }
-     */
-    DocumentDataPermission,
-    /**
-     * The DocumentFile model constructor.
-     * @property { module:model/DocumentFile }
-     */
-    DocumentFile,
-    /**
-     * The DocumentLinks model constructor.
-     * @property { module:model/DocumentLinks }
-     */
-    DocumentLinks,
-    /**
-     * The DocumentLinksCreatedBy model constructor.
-     * @property { module:model/DocumentLinksCreatedBy }
-     */
-    DocumentLinksCreatedBy,
-    /**
-     * The DocumentLinksCreatedByIriTemplate model constructor.
-     * @property { module:model/DocumentLinksCreatedByIriTemplate }
-     */
-    DocumentLinksCreatedByIriTemplate,
-    /**
-     * The DocumentLinksFile model constructor.
-     * @property { module:model/DocumentLinksFile }
-     */
-    DocumentLinksFile,
-    /**
-     * The DocumentLinksFileIriTemplate model constructor.
-     * @property { module:model/DocumentLinksFileIriTemplate }
-     */
-    DocumentLinksFileIriTemplate,
-    /**
-     * The DocumentLinksFileIriTemplateMapping model constructor.
-     * @property { module:model/DocumentLinksFileIriTemplateMapping }
-     */
-    DocumentLinksFileIriTemplateMapping,
-    /**
-     * The DocumentLinksSelf model constructor.
-     * @property { module:model/DocumentLinksSelf }
-     */
-    DocumentLinksSelf,
-    /**
-     * The DocumentLinksSelfIriTemplate model constructor.
-     * @property { module:model/DocumentLinksSelfIriTemplate }
-     */
-    DocumentLinksSelfIriTemplate,
-    /**
-     * The DocumentPatch model constructor.
-     * @property { module:model/DocumentPatch }
-     */
-    DocumentPatch,
-    /**
-     * The DocumentPatchFile model constructor.
-     * @property { module:model/DocumentPatchFile }
-     */
-    DocumentPatchFile,
-    /**
-     * The DocumentPermission model constructor.
-     * @property { module:model/DocumentPermission }
-     */
-    DocumentPermission,
-    /**
-     * The Error model constructor.
-     * @property { module:model/Error }
-     */
-    Error,
-    /**
-     * The ErrorEmbedded model constructor.
-     * @property { module:model/ErrorEmbedded }
-     */
-    ErrorEmbedded,
-    /**
-     * The ExternalService model constructor.
-     * @property { module:model/ExternalService }
-     */
-    ExternalService,
-    /**
-     * The ExternalServiceCollection model constructor.
-     * @property { module:model/ExternalServiceCollection }
-     */
-    ExternalServiceCollection,
-    /**
-     * The ExternalServiceContactPoint model constructor.
-     * @property { module:model/ExternalServiceContactPoint }
-     */
-    ExternalServiceContactPoint,
-    /**
-     * The ExternalServiceData model constructor.
-     * @property { module:model/ExternalServiceData }
-     */
-    ExternalServiceData,
-    /**
-     * The ExternalServiceLinks model constructor.
-     * @property { module:model/ExternalServiceLinks }
-     */
-    ExternalServiceLinks,
-    /**
-     * The ExternalServiceLinksProvider model constructor.
-     * @property { module:model/ExternalServiceLinksProvider }
-     */
-    ExternalServiceLinksProvider,
-    /**
-     * The ExternalServiceLinksProviderIriTemplate model constructor.
-     * @property { module:model/ExternalServiceLinksProviderIriTemplate }
-     */
-    ExternalServiceLinksProviderIriTemplate,
-    /**
-     * The ExternalServiceLinksSelf model constructor.
-     * @property { module:model/ExternalServiceLinksSelf }
-     */
-    ExternalServiceLinksSelf,
-    /**
-     * The ExternalServiceLinksSelfIriTemplate model constructor.
-     * @property { module:model/ExternalServiceLinksSelfIriTemplate }
-     */
-    ExternalServiceLinksSelfIriTemplate,
-    /**
-     * The ExternalServicePatch model constructor.
-     * @property { module:model/ExternalServicePatch }
-     */
-    ExternalServicePatch,
-    /**
-     * The FacebookConnectData model constructor.
-     * @property { module:model/FacebookConnectData }
-     */
-    FacebookConnectData,
-    /**
-     * The Feature model constructor.
-     * @property { module:model/Feature }
-     */
-    Feature,
-    /**
-     * The FeatureGeometry model constructor.
-     * @property { module:model/FeatureGeometry }
-     */
-    FeatureGeometry,
-    /**
-     * The Feed model constructor.
-     * @property { module:model/Feed }
-     */
-    Feed,
-    /**
-     * The FeedCollection model constructor.
-     * @property { module:model/FeedCollection }
-     */
-    FeedCollection,
-    /**
-     * The Feedback model constructor.
-     * @property { module:model/Feedback }
-     */
-    Feedback,
-    /**
-     * The FeedbackCollection model constructor.
-     * @property { module:model/FeedbackCollection }
-     */
-    FeedbackCollection,
-    /**
-     * The FeedbackData model constructor.
-     * @property { module:model/FeedbackData }
-     */
-    FeedbackData,
-    /**
-     * The FeedbackDataGeo model constructor.
-     * @property { module:model/FeedbackDataGeo }
-     */
-    FeedbackDataGeo,
-    /**
-     * The FeedbackDataGeoPoint model constructor.
-     * @property { module:model/FeedbackDataGeoPoint }
-     */
-    FeedbackDataGeoPoint,
-    /**
-     * The FeedbackEmbedded model constructor.
-     * @property { module:model/FeedbackEmbedded }
-     */
-    FeedbackEmbedded,
-    /**
-     * The FeedbackGeoCoordinates model constructor.
-     * @property { module:model/FeedbackGeoCoordinates }
-     */
-    FeedbackGeoCoordinates,
-    /**
-     * The FeedbackGeoCoordinatesPoint model constructor.
-     * @property { module:model/FeedbackGeoCoordinatesPoint }
-     */
-    FeedbackGeoCoordinatesPoint,
-    /**
-     * The FeedbackLinks model constructor.
-     * @property { module:model/FeedbackLinks }
-     */
-    FeedbackLinks,
-    /**
-     * The FeedbackLinksBusinessActivity model constructor.
-     * @property { module:model/FeedbackLinksBusinessActivity }
-     */
-    FeedbackLinksBusinessActivity,
-    /**
-     * The FeedbackLinksBusinessActivityIriTemplate model constructor.
-     * @property { module:model/FeedbackLinksBusinessActivityIriTemplate }
-     */
-    FeedbackLinksBusinessActivityIriTemplate,
-    /**
-     * The FeedbackLinksCategory model constructor.
-     * @property { module:model/FeedbackLinksCategory }
-     */
-    FeedbackLinksCategory,
-    /**
-     * The FeedbackLinksCategoryIriTemplate model constructor.
-     * @property { module:model/FeedbackLinksCategoryIriTemplate }
-     */
-    FeedbackLinksCategoryIriTemplate,
-    /**
-     * The FeedbackLinksImage model constructor.
-     * @property { module:model/FeedbackLinksImage }
-     */
-    FeedbackLinksImage,
-    /**
-     * The FeedbackLinksImageIriTemplate model constructor.
-     * @property { module:model/FeedbackLinksImageIriTemplate }
-     */
-    FeedbackLinksImageIriTemplate,
-    /**
-     * The FeedbackLinksImageIriTemplateMapping model constructor.
-     * @property { module:model/FeedbackLinksImageIriTemplateMapping }
-     */
-    FeedbackLinksImageIriTemplateMapping,
-    /**
-     * The FeedbackLinksImages model constructor.
-     * @property { module:model/FeedbackLinksImages }
-     */
-    FeedbackLinksImages,
-    /**
-     * The FeedbackLinksImagesIriTemplate model constructor.
-     * @property { module:model/FeedbackLinksImagesIriTemplate }
-     */
-    FeedbackLinksImagesIriTemplate,
-    /**
-     * The FeedbackLinksReporter model constructor.
-     * @property { module:model/FeedbackLinksReporter }
-     */
-    FeedbackLinksReporter,
-    /**
-     * The FeedbackLinksReporterIriTemplate model constructor.
-     * @property { module:model/FeedbackLinksReporterIriTemplate }
-     */
-    FeedbackLinksReporterIriTemplate,
-    /**
-     * The FeedbackLinksSelf model constructor.
-     * @property { module:model/FeedbackLinksSelf }
-     */
-    FeedbackLinksSelf,
-    /**
-     * The FeedbackLinksSelfIriTemplate model constructor.
-     * @property { module:model/FeedbackLinksSelfIriTemplate }
-     */
-    FeedbackLinksSelfIriTemplate,
-    /**
-     * The FeedbackLinksTracking model constructor.
-     * @property { module:model/FeedbackLinksTracking }
-     */
-    FeedbackLinksTracking,
-    /**
-     * The FeedbackLinksTrackingIriTemplate model constructor.
-     * @property { module:model/FeedbackLinksTrackingIriTemplate }
-     */
-    FeedbackLinksTrackingIriTemplate,
-    /**
-     * The FeedbackReviewRequest model constructor.
-     * @property { module:model/FeedbackReviewRequest }
-     */
-    FeedbackReviewRequest,
-    /**
-     * The FeedbackReviewRequestCollection model constructor.
-     * @property { module:model/FeedbackReviewRequestCollection }
-     */
-    FeedbackReviewRequestCollection,
-    /**
-     * The FeedbackReviewRequestLinks model constructor.
-     * @property { module:model/FeedbackReviewRequestLinks }
-     */
-    FeedbackReviewRequestLinks,
-    /**
-     * The FeedbackReviewRequestLinksItemToReview model constructor.
-     * @property { module:model/FeedbackReviewRequestLinksItemToReview }
-     */
-    FeedbackReviewRequestLinksItemToReview,
-    /**
-     * The FeedbackReviewRequestLinksItemToReviewIriTemplate model constructor.
-     * @property { module:model/FeedbackReviewRequestLinksItemToReviewIriTemplate }
-     */
-    FeedbackReviewRequestLinksItemToReviewIriTemplate,
-    /**
-     * The FeedbackReviewRequestLinksOrganization model constructor.
-     * @property { module:model/FeedbackReviewRequestLinksOrganization }
-     */
-    FeedbackReviewRequestLinksOrganization,
-    /**
-     * The FeedbackReviewRequestLinksOrganizationIriTemplate model constructor.
-     * @property { module:model/FeedbackReviewRequestLinksOrganizationIriTemplate }
-     */
-    FeedbackReviewRequestLinksOrganizationIriTemplate,
-    /**
-     * The FeedbackReviewRequestLinksReview model constructor.
-     * @property { module:model/FeedbackReviewRequestLinksReview }
-     */
-    FeedbackReviewRequestLinksReview,
-    /**
-     * The FeedbackReviewRequestLinksReviewIriTemplate model constructor.
-     * @property { module:model/FeedbackReviewRequestLinksReviewIriTemplate }
-     */
-    FeedbackReviewRequestLinksReviewIriTemplate,
-    /**
-     * The FeedbackReviewRequestLinksReviewIriTemplateMapping model constructor.
-     * @property { module:model/FeedbackReviewRequestLinksReviewIriTemplateMapping }
-     */
-    FeedbackReviewRequestLinksReviewIriTemplateMapping,
-    /**
-     * The FeedbackReviewRequestLinksReviewer model constructor.
-     * @property { module:model/FeedbackReviewRequestLinksReviewer }
-     */
-    FeedbackReviewRequestLinksReviewer,
-    /**
-     * The FeedbackReviewRequestLinksReviewerIriTemplate model constructor.
-     * @property { module:model/FeedbackReviewRequestLinksReviewerIriTemplate }
-     */
-    FeedbackReviewRequestLinksReviewerIriTemplate,
-    /**
-     * The FeedbackReviewRequestLinksSelf model constructor.
-     * @property { module:model/FeedbackReviewRequestLinksSelf }
-     */
-    FeedbackReviewRequestLinksSelf,
-    /**
-     * The FeedbackReviewRequestLinksSelfIriTemplate model constructor.
-     * @property { module:model/FeedbackReviewRequestLinksSelfIriTemplate }
-     */
-    FeedbackReviewRequestLinksSelfIriTemplate,
-    /**
-     * The FeedbackReviewRequestLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/FeedbackReviewRequestLinksSelfIriTemplateMapping }
-     */
-    FeedbackReviewRequestLinksSelfIriTemplateMapping,
-    /**
-     * The FeedbackWorkflowTransitionData model constructor.
-     * @property { module:model/FeedbackWorkflowTransitionData }
-     */
-    FeedbackWorkflowTransitionData,
-    /**
-     * The ImageData model constructor.
-     * @property { module:model/ImageData }
-     */
-    ImageData,
-    /**
-     * The InternalService model constructor.
-     * @property { module:model/InternalService }
-     */
-    InternalService,
-    /**
-     * The InternalServiceCollection model constructor.
-     * @property { module:model/InternalServiceCollection }
-     */
-    InternalServiceCollection,
-    /**
-     * The InternalServiceData model constructor.
-     * @property { module:model/InternalServiceData }
-     */
-    InternalServiceData,
-    /**
-     * The InternalServiceLinks model constructor.
-     * @property { module:model/InternalServiceLinks }
-     */
-    InternalServiceLinks,
-    /**
-     * The InternalServiceLinksOrganization model constructor.
-     * @property { module:model/InternalServiceLinksOrganization }
-     */
-    InternalServiceLinksOrganization,
-    /**
-     * The InternalServiceLinksOrganizationIriTemplate model constructor.
-     * @property { module:model/InternalServiceLinksOrganizationIriTemplate }
-     */
-    InternalServiceLinksOrganizationIriTemplate,
-    /**
-     * The InternalServiceLinksSelf model constructor.
-     * @property { module:model/InternalServiceLinksSelf }
-     */
-    InternalServiceLinksSelf,
-    /**
-     * The InternalServiceLinksSelfIriTemplate model constructor.
-     * @property { module:model/InternalServiceLinksSelfIriTemplate }
-     */
-    InternalServiceLinksSelfIriTemplate,
-    /**
-     * The InternalServiceLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/InternalServiceLinksSelfIriTemplateMapping }
-     */
-    InternalServiceLinksSelfIriTemplateMapping,
-    /**
-     * The InternalServicePatch model constructor.
-     * @property { module:model/InternalServicePatch }
-     */
-    InternalServicePatch,
-    /**
-     * The LoginData model constructor.
-     * @property { module:model/LoginData }
-     */
-    LoginData,
-    /**
-     * The Member model constructor.
-     * @property { module:model/Member }
-     */
-    Member,
-    /**
-     * The MemberCollection model constructor.
-     * @property { module:model/MemberCollection }
-     */
-    MemberCollection,
-    /**
-     * The MemberData model constructor.
-     * @property { module:model/MemberData }
-     */
-    MemberData,
-    /**
-     * The MemberEmbedded model constructor.
-     * @property { module:model/MemberEmbedded }
-     */
-    MemberEmbedded,
-    /**
-     * The MemberLinks model constructor.
-     * @property { module:model/MemberLinks }
-     */
-    MemberLinks,
-    /**
-     * The MemberLinksOrganization model constructor.
-     * @property { module:model/MemberLinksOrganization }
-     */
-    MemberLinksOrganization,
-    /**
-     * The MemberLinksOrganizationIriTemplate model constructor.
-     * @property { module:model/MemberLinksOrganizationIriTemplate }
-     */
-    MemberLinksOrganizationIriTemplate,
-    /**
-     * The MemberLinksPerson model constructor.
-     * @property { module:model/MemberLinksPerson }
-     */
-    MemberLinksPerson,
-    /**
-     * The MemberLinksPersonIriTemplate model constructor.
-     * @property { module:model/MemberLinksPersonIriTemplate }
-     */
-    MemberLinksPersonIriTemplate,
-    /**
-     * The MemberLinksSelf model constructor.
-     * @property { module:model/MemberLinksSelf }
-     */
-    MemberLinksSelf,
-    /**
-     * The MemberLinksSelfIriTemplate model constructor.
-     * @property { module:model/MemberLinksSelfIriTemplate }
-     */
-    MemberLinksSelfIriTemplate,
-    /**
-     * The MemberLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/MemberLinksSelfIriTemplateMapping }
-     */
-    MemberLinksSelfIriTemplateMapping,
-    /**
-     * The MemberPatch model constructor.
-     * @property { module:model/MemberPatch }
-     */
-    MemberPatch,
-    /**
-     * The Node model constructor.
-     * @property { module:model/Node }
-     */
-    Node,
-    /**
-     * The NodeEmbedded model constructor.
-     * @property { module:model/NodeEmbedded }
-     */
-    NodeEmbedded,
-    /**
-     * The NodePath model constructor.
-     * @property { module:model/NodePath }
-     */
-    NodePath,
-    /**
-     * The Occupant model constructor.
-     * @property { module:model/Occupant }
-     */
-    Occupant,
-    /**
-     * The OccupantCollection model constructor.
-     * @property { module:model/OccupantCollection }
-     */
-    OccupantCollection,
-    /**
-     * The OccupantData model constructor.
-     * @property { module:model/OccupantData }
-     */
-    OccupantData,
-    /**
-     * The OccupantLinks model constructor.
-     * @property { module:model/OccupantLinks }
-     */
-    OccupantLinks,
-    /**
-     * The OccupantLinksPerson model constructor.
-     * @property { module:model/OccupantLinksPerson }
-     */
-    OccupantLinksPerson,
-    /**
-     * The OccupantLinksPersonIriTemplate model constructor.
-     * @property { module:model/OccupantLinksPersonIriTemplate }
-     */
-    OccupantLinksPersonIriTemplate,
-    /**
-     * The OccupantLinksPlace model constructor.
-     * @property { module:model/OccupantLinksPlace }
-     */
-    OccupantLinksPlace,
-    /**
-     * The OccupantLinksPlaceIriTemplate model constructor.
-     * @property { module:model/OccupantLinksPlaceIriTemplate }
-     */
-    OccupantLinksPlaceIriTemplate,
-    /**
-     * The OccupantLinksPlaceIriTemplateMapping model constructor.
-     * @property { module:model/OccupantLinksPlaceIriTemplateMapping }
-     */
-    OccupantLinksPlaceIriTemplateMapping,
-    /**
-     * The OccupantLinksSelf model constructor.
-     * @property { module:model/OccupantLinksSelf }
-     */
-    OccupantLinksSelf,
-    /**
-     * The OccupantLinksSelfIriTemplate model constructor.
-     * @property { module:model/OccupantLinksSelfIriTemplate }
-     */
-    OccupantLinksSelfIriTemplate,
-    /**
-     * The OccupantLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/OccupantLinksSelfIriTemplateMapping }
-     */
-    OccupantLinksSelfIriTemplateMapping,
-    /**
-     * The Operation model constructor.
-     * @property { module:model/Operation }
-     */
-    Operation,
-    /**
-     * The OperationCollection model constructor.
-     * @property { module:model/OperationCollection }
-     */
-    OperationCollection,
-    /**
-     * The OperationData model constructor.
-     * @property { module:model/OperationData }
-     */
-    OperationData,
-    /**
-     * The OperationEmbedded model constructor.
-     * @property { module:model/OperationEmbedded }
-     */
-    OperationEmbedded,
-    /**
-     * The OperationEmbeddedDuration model constructor.
-     * @property { module:model/OperationEmbeddedDuration }
-     */
-    OperationEmbeddedDuration,
-    /**
-     * The OperationLinks model constructor.
-     * @property { module:model/OperationLinks }
-     */
-    OperationLinks,
-    /**
-     * The OperationLinksCreatedBy model constructor.
-     * @property { module:model/OperationLinksCreatedBy }
-     */
-    OperationLinksCreatedBy,
-    /**
-     * The OperationLinksCreatedByIriTemplate model constructor.
-     * @property { module:model/OperationLinksCreatedByIriTemplate }
-     */
-    OperationLinksCreatedByIriTemplate,
-    /**
-     * The OperationLinksFeedback model constructor.
-     * @property { module:model/OperationLinksFeedback }
-     */
-    OperationLinksFeedback,
-    /**
-     * The OperationLinksFeedbackIriTemplate model constructor.
-     * @property { module:model/OperationLinksFeedbackIriTemplate }
-     */
-    OperationLinksFeedbackIriTemplate,
-    /**
-     * The OperationLinksImage model constructor.
-     * @property { module:model/OperationLinksImage }
-     */
-    OperationLinksImage,
-    /**
-     * The OperationLinksImageIriTemplate model constructor.
-     * @property { module:model/OperationLinksImageIriTemplate }
-     */
-    OperationLinksImageIriTemplate,
-    /**
-     * The OperationLinksImageIriTemplateMapping model constructor.
-     * @property { module:model/OperationLinksImageIriTemplateMapping }
-     */
-    OperationLinksImageIriTemplateMapping,
-    /**
-     * The OperationLinksImages model constructor.
-     * @property { module:model/OperationLinksImages }
-     */
-    OperationLinksImages,
-    /**
-     * The OperationLinksImagesIriTemplate model constructor.
-     * @property { module:model/OperationLinksImagesIriTemplate }
-     */
-    OperationLinksImagesIriTemplate,
-    /**
-     * The OperationLinksImagesIriTemplateMapping model constructor.
-     * @property { module:model/OperationLinksImagesIriTemplateMapping }
-     */
-    OperationLinksImagesIriTemplateMapping,
-    /**
-     * The OperationLinksOperator model constructor.
-     * @property { module:model/OperationLinksOperator }
-     */
-    OperationLinksOperator,
-    /**
-     * The OperationLinksOperatorIriTemplate model constructor.
-     * @property { module:model/OperationLinksOperatorIriTemplate }
-     */
-    OperationLinksOperatorIriTemplate,
-    /**
-     * The OperationLinksReport model constructor.
-     * @property { module:model/OperationLinksReport }
-     */
-    OperationLinksReport,
-    /**
-     * The OperationLinksReportIriTemplate model constructor.
-     * @property { module:model/OperationLinksReportIriTemplate }
-     */
-    OperationLinksReportIriTemplate,
-    /**
-     * The OperationLinksSelf model constructor.
-     * @property { module:model/OperationLinksSelf }
-     */
-    OperationLinksSelf,
-    /**
-     * The OperationLinksSelfIriTemplate model constructor.
-     * @property { module:model/OperationLinksSelfIriTemplate }
-     */
-    OperationLinksSelfIriTemplate,
-    /**
-     * The OperationLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/OperationLinksSelfIriTemplateMapping }
-     */
-    OperationLinksSelfIriTemplateMapping,
-    /**
-     * The OperationLinksTracking model constructor.
-     * @property { module:model/OperationLinksTracking }
-     */
-    OperationLinksTracking,
-    /**
-     * The OperationLinksTrackingIriTemplate model constructor.
-     * @property { module:model/OperationLinksTrackingIriTemplate }
-     */
-    OperationLinksTrackingIriTemplate,
-    /**
-     * The OperationPatch model constructor.
-     * @property { module:model/OperationPatch }
-     */
-    OperationPatch,
-    /**
-     * The OperationSignature model constructor.
-     * @property { module:model/OperationSignature }
-     */
-    OperationSignature,
-    /**
-     * The OperationSignatureSigner model constructor.
-     * @property { module:model/OperationSignatureSigner }
-     */
-    OperationSignatureSigner,
-    /**
-     * The OperationWorkflowTransitionData model constructor.
-     * @property { module:model/OperationWorkflowTransitionData }
-     */
-    OperationWorkflowTransitionData,
-    /**
-     * The Organization model constructor.
-     * @property { module:model/Organization }
-     */
-    Organization,
-    /**
-     * The OrganizationCollection model constructor.
-     * @property { module:model/OrganizationCollection }
-     */
-    OrganizationCollection,
-    /**
-     * The OrganizationData model constructor.
-     * @property { module:model/OrganizationData }
-     */
-    OrganizationData,
-    /**
-     * The OrganizationLinks model constructor.
-     * @property { module:model/OrganizationLinks }
-     */
-    OrganizationLinks,
-    /**
-     * The OrganizationLinksApplication model constructor.
-     * @property { module:model/OrganizationLinksApplication }
-     */
-    OrganizationLinksApplication,
-    /**
-     * The OrganizationLinksApplicationIriTemplate model constructor.
-     * @property { module:model/OrganizationLinksApplicationIriTemplate }
-     */
-    OrganizationLinksApplicationIriTemplate,
-    /**
-     * The OrganizationLinksBusinessActivity model constructor.
-     * @property { module:model/OrganizationLinksBusinessActivity }
-     */
-    OrganizationLinksBusinessActivity,
-    /**
-     * The OrganizationLinksBusinessActivityIriTemplate model constructor.
-     * @property { module:model/OrganizationLinksBusinessActivityIriTemplate }
-     */
-    OrganizationLinksBusinessActivityIriTemplate,
-    /**
-     * The OrganizationLinksLogo model constructor.
-     * @property { module:model/OrganizationLinksLogo }
-     */
-    OrganizationLinksLogo,
-    /**
-     * The OrganizationLinksLogoIriTemplate model constructor.
-     * @property { module:model/OrganizationLinksLogoIriTemplate }
-     */
-    OrganizationLinksLogoIriTemplate,
-    /**
-     * The OrganizationLinksSelf model constructor.
-     * @property { module:model/OrganizationLinksSelf }
-     */
-    OrganizationLinksSelf,
-    /**
-     * The OrganizationLinksSelfIriTemplate model constructor.
-     * @property { module:model/OrganizationLinksSelfIriTemplate }
-     */
-    OrganizationLinksSelfIriTemplate,
-    /**
-     * The OrganizationPatch model constructor.
-     * @property { module:model/OrganizationPatch }
-     */
-    OrganizationPatch,
-    /**
-     * The OrganizationPatchPreferences model constructor.
-     * @property { module:model/OrganizationPatchPreferences }
-     */
-    OrganizationPatchPreferences,
-    /**
-     * The OrganizationPreferences model constructor.
-     * @property { module:model/OrganizationPreferences }
-     */
-    OrganizationPreferences,
-    /**
-     * The OrganizationPreferencesReference model constructor.
-     * @property { module:model/OrganizationPreferencesReference }
-     */
-    OrganizationPreferencesReference,
-    /**
-     * The Pagination model constructor.
-     * @property { module:model/Pagination }
-     */
-    Pagination,
-    /**
-     * The PaginationLink model constructor.
-     * @property { module:model/PaginationLink }
-     */
-    PaginationLink,
-    /**
-     * The PaginationLinks model constructor.
-     * @property { module:model/PaginationLinks }
-     */
-    PaginationLinks,
-    /**
-     * The PasswordChangeData model constructor.
-     * @property { module:model/PasswordChangeData }
-     */
-    PasswordChangeData,
-    /**
-     * The Person model constructor.
-     * @property { module:model/Person }
-     */
-    Person,
-    /**
-     * The PersonCollection model constructor.
-     * @property { module:model/PersonCollection }
-     */
-    PersonCollection,
-    /**
-     * The PersonLinks model constructor.
-     * @property { module:model/PersonLinks }
-     */
-    PersonLinks,
-    /**
-     * The PersonLinksImage model constructor.
-     * @property { module:model/PersonLinksImage }
-     */
-    PersonLinksImage,
-    /**
-     * The PersonLinksImageIriTemplate model constructor.
-     * @property { module:model/PersonLinksImageIriTemplate }
-     */
-    PersonLinksImageIriTemplate,
-    /**
-     * The PersonLinksSelf model constructor.
-     * @property { module:model/PersonLinksSelf }
-     */
-    PersonLinksSelf,
-    /**
-     * The PersonLinksSelfIriTemplate model constructor.
-     * @property { module:model/PersonLinksSelfIriTemplate }
-     */
-    PersonLinksSelfIriTemplate,
-    /**
-     * The PersonPatch model constructor.
-     * @property { module:model/PersonPatch }
-     */
-    PersonPatch,
-    /**
-     * The PersonPatchPreferences model constructor.
-     * @property { module:model/PersonPatchPreferences }
-     */
-    PersonPatchPreferences,
-    /**
-     * The PersonPreferences model constructor.
-     * @property { module:model/PersonPreferences }
-     */
-    PersonPreferences,
-    /**
-     * The Place model constructor.
-     * @property { module:model/Place }
-     */
-    Place,
-    /**
-     * The PlaceCollection model constructor.
-     * @property { module:model/PlaceCollection }
-     */
-    PlaceCollection,
-    /**
-     * The PlaceData model constructor.
-     * @property { module:model/PlaceData }
-     */
-    PlaceData,
-    /**
-     * The PlaceEmbedded model constructor.
-     * @property { module:model/PlaceEmbedded }
-     */
-    PlaceEmbedded,
-    /**
-     * The PlaceGeo model constructor.
-     * @property { module:model/PlaceGeo }
-     */
-    PlaceGeo,
-    /**
-     * The PlaceGeoCentroid model constructor.
-     * @property { module:model/PlaceGeoCentroid }
-     */
-    PlaceGeoCentroid,
-    /**
-     * The PlaceGeoPolygon model constructor.
-     * @property { module:model/PlaceGeoPolygon }
-     */
-    PlaceGeoPolygon,
-    /**
-     * The PlaceLinks model constructor.
-     * @property { module:model/PlaceLinks }
-     */
-    PlaceLinks,
-    /**
-     * The PlaceLinksContainedInPlace model constructor.
-     * @property { module:model/PlaceLinksContainedInPlace }
-     */
-    PlaceLinksContainedInPlace,
-    /**
-     * The PlaceLinksContainedInPlaceIriTemplate model constructor.
-     * @property { module:model/PlaceLinksContainedInPlaceIriTemplate }
-     */
-    PlaceLinksContainedInPlaceIriTemplate,
-    /**
-     * The PlaceLinksContainsPlaces model constructor.
-     * @property { module:model/PlaceLinksContainsPlaces }
-     */
-    PlaceLinksContainsPlaces,
-    /**
-     * The PlaceLinksContainsPlacesIriTemplate model constructor.
-     * @property { module:model/PlaceLinksContainsPlacesIriTemplate }
-     */
-    PlaceLinksContainsPlacesIriTemplate,
-    /**
-     * The PlaceLinksContainsPlacesIriTemplateMapping model constructor.
-     * @property { module:model/PlaceLinksContainsPlacesIriTemplateMapping }
-     */
-    PlaceLinksContainsPlacesIriTemplateMapping,
-    /**
-     * The PlaceLinksOrganization model constructor.
-     * @property { module:model/PlaceLinksOrganization }
-     */
-    PlaceLinksOrganization,
-    /**
-     * The PlaceLinksOrganizationIriTemplate model constructor.
-     * @property { module:model/PlaceLinksOrganizationIriTemplate }
-     */
-    PlaceLinksOrganizationIriTemplate,
-    /**
-     * The PlaceLinksSelf model constructor.
-     * @property { module:model/PlaceLinksSelf }
-     */
-    PlaceLinksSelf,
-    /**
-     * The PlaceLinksSelfIriTemplate model constructor.
-     * @property { module:model/PlaceLinksSelfIriTemplate }
-     */
-    PlaceLinksSelfIriTemplate,
-    /**
-     * The PlacePatch model constructor.
-     * @property { module:model/PlacePatch }
-     */
-    PlacePatch,
-    /**
-     * The PlacePreferences model constructor.
-     * @property { module:model/PlacePreferences }
-     */
-    PlacePreferences,
-    /**
-     * The Property model constructor.
-     * @property { module:model/Property }
-     */
-    Property,
-    /**
-     * The PropertyConditions model constructor.
-     * @property { module:model/PropertyConditions }
-     */
-    PropertyConditions,
-    /**
-     * The PropertyItems model constructor.
-     * @property { module:model/PropertyItems }
-     */
-    PropertyItems,
-    /**
-     * The Publication model constructor.
-     * @property { module:model/Publication }
-     */
-    Publication,
-    /**
-     * The PublicationCollection model constructor.
-     * @property { module:model/PublicationCollection }
-     */
-    PublicationCollection,
-    /**
-     * The PublicationData model constructor.
-     * @property { module:model/PublicationData }
-     */
-    PublicationData,
-    /**
-     * The PublicationLinks model constructor.
-     * @property { module:model/PublicationLinks }
-     */
-    PublicationLinks,
-    /**
-     * The PublicationLinksAuthor model constructor.
-     * @property { module:model/PublicationLinksAuthor }
-     */
-    PublicationLinksAuthor,
-    /**
-     * The PublicationLinksAuthorIriTemplate model constructor.
-     * @property { module:model/PublicationLinksAuthorIriTemplate }
-     */
-    PublicationLinksAuthorIriTemplate,
-    /**
-     * The PublicationLinksFeed model constructor.
-     * @property { module:model/PublicationLinksFeed }
-     */
-    PublicationLinksFeed,
-    /**
-     * The PublicationLinksFeedIriTemplate model constructor.
-     * @property { module:model/PublicationLinksFeedIriTemplate }
-     */
-    PublicationLinksFeedIriTemplate,
-    /**
-     * The PublicationLinksOrganization model constructor.
-     * @property { module:model/PublicationLinksOrganization }
-     */
-    PublicationLinksOrganization,
-    /**
-     * The PublicationLinksOrganizationIriTemplate model constructor.
-     * @property { module:model/PublicationLinksOrganizationIriTemplate }
-     */
-    PublicationLinksOrganizationIriTemplate,
-    /**
-     * The PublicationLinksSelf model constructor.
-     * @property { module:model/PublicationLinksSelf }
-     */
-    PublicationLinksSelf,
-    /**
-     * The PublicationLinksSelfIriTemplate model constructor.
-     * @property { module:model/PublicationLinksSelfIriTemplate }
-     */
-    PublicationLinksSelfIriTemplate,
-    /**
-     * The PublicationLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/PublicationLinksSelfIriTemplateMapping }
-     */
-    PublicationLinksSelfIriTemplateMapping,
-    /**
-     * The RegisterData model constructor.
-     * @property { module:model/RegisterData }
-     */
-    RegisterData,
-    /**
-     * The Report model constructor.
-     * @property { module:model/Report }
-     */
-    Report,
-    /**
-     * The ReportCollection model constructor.
-     * @property { module:model/ReportCollection }
-     */
-    ReportCollection,
-    /**
-     * The ReportEmbedded model constructor.
-     * @property { module:model/ReportEmbedded }
-     */
-    ReportEmbedded,
-    /**
-     * The ReportEmbeddedTargetGroups model constructor.
-     * @property { module:model/ReportEmbeddedTargetGroups }
-     */
-    ReportEmbeddedTargetGroups,
-    /**
-     * The ReportLinks model constructor.
-     * @property { module:model/ReportLinks }
-     */
-    ReportLinks,
-    /**
-     * The ReportLinksCategory model constructor.
-     * @property { module:model/ReportLinksCategory }
-     */
-    ReportLinksCategory,
-    /**
-     * The ReportLinksCategoryIriTemplate model constructor.
-     * @property { module:model/ReportLinksCategoryIriTemplate }
-     */
-    ReportLinksCategoryIriTemplate,
-    /**
-     * The ReportLinksDelegatedFrom model constructor.
-     * @property { module:model/ReportLinksDelegatedFrom }
-     */
-    ReportLinksDelegatedFrom,
-    /**
-     * The ReportLinksDelegatedFromIriTemplate model constructor.
-     * @property { module:model/ReportLinksDelegatedFromIriTemplate }
-     */
-    ReportLinksDelegatedFromIriTemplate,
-    /**
-     * The ReportLinksDelegatedTo model constructor.
-     * @property { module:model/ReportLinksDelegatedTo }
-     */
-    ReportLinksDelegatedTo,
-    /**
-     * The ReportLinksDelegatedToIriTemplate model constructor.
-     * @property { module:model/ReportLinksDelegatedToIriTemplate }
-     */
-    ReportLinksDelegatedToIriTemplate,
-    /**
-     * The ReportLinksFeedback model constructor.
-     * @property { module:model/ReportLinksFeedback }
-     */
-    ReportLinksFeedback,
-    /**
-     * The ReportLinksFeedbackIriTemplate model constructor.
-     * @property { module:model/ReportLinksFeedbackIriTemplate }
-     */
-    ReportLinksFeedbackIriTemplate,
-    /**
-     * The ReportLinksOperations model constructor.
-     * @property { module:model/ReportLinksOperations }
-     */
-    ReportLinksOperations,
-    /**
-     * The ReportLinksOperationsIriTemplate model constructor.
-     * @property { module:model/ReportLinksOperationsIriTemplate }
-     */
-    ReportLinksOperationsIriTemplate,
-    /**
-     * The ReportLinksOrganization model constructor.
-     * @property { module:model/ReportLinksOrganization }
-     */
-    ReportLinksOrganization,
-    /**
-     * The ReportLinksOrganizationIriTemplate model constructor.
-     * @property { module:model/ReportLinksOrganizationIriTemplate }
-     */
-    ReportLinksOrganizationIriTemplate,
-    /**
-     * The ReportLinksPlace model constructor.
-     * @property { module:model/ReportLinksPlace }
-     */
-    ReportLinksPlace,
-    /**
-     * The ReportLinksPlaceIriTemplate model constructor.
-     * @property { module:model/ReportLinksPlaceIriTemplate }
-     */
-    ReportLinksPlaceIriTemplate,
-    /**
-     * The ReportLinksSelf model constructor.
-     * @property { module:model/ReportLinksSelf }
-     */
-    ReportLinksSelf,
-    /**
-     * The ReportLinksSelfIriTemplate model constructor.
-     * @property { module:model/ReportLinksSelfIriTemplate }
-     */
-    ReportLinksSelfIriTemplate,
-    /**
-     * The ReportLinksTracking model constructor.
-     * @property { module:model/ReportLinksTracking }
-     */
-    ReportLinksTracking,
-    /**
-     * The ReportLinksTrackingIriTemplate model constructor.
-     * @property { module:model/ReportLinksTrackingIriTemplate }
-     */
-    ReportLinksTrackingIriTemplate,
-    /**
-     * The ReportPatch model constructor.
-     * @property { module:model/ReportPatch }
-     */
-    ReportPatch,
-    /**
-     * The ReportWorkflowTransitionData model constructor.
-     * @property { module:model/ReportWorkflowTransitionData }
-     */
-    ReportWorkflowTransitionData,
-    /**
-     * The ResetPasswordData model constructor.
-     * @property { module:model/ResetPasswordData }
-     */
-    ResetPasswordData,
-    /**
-     * The Review model constructor.
-     * @property { module:model/Review }
-     */
-    Review,
-    /**
-     * The ReviewCollection model constructor.
-     * @property { module:model/ReviewCollection }
-     */
-    ReviewCollection,
-    /**
-     * The ReviewData model constructor.
-     * @property { module:model/ReviewData }
-     */
-    ReviewData,
-    /**
-     * The ReviewLinks model constructor.
-     * @property { module:model/ReviewLinks }
-     */
-    ReviewLinks,
-    /**
-     * The ReviewLinksAuthor model constructor.
-     * @property { module:model/ReviewLinksAuthor }
-     */
-    ReviewLinksAuthor,
-    /**
-     * The ReviewLinksAuthorIriTemplate model constructor.
-     * @property { module:model/ReviewLinksAuthorIriTemplate }
-     */
-    ReviewLinksAuthorIriTemplate,
-    /**
-     * The ReviewLinksItemReviewed model constructor.
-     * @property { module:model/ReviewLinksItemReviewed }
-     */
-    ReviewLinksItemReviewed,
-    /**
-     * The ReviewLinksItemReviewedIriTemplate model constructor.
-     * @property { module:model/ReviewLinksItemReviewedIriTemplate }
-     */
-    ReviewLinksItemReviewedIriTemplate,
-    /**
-     * The ReviewLinksSelf model constructor.
-     * @property { module:model/ReviewLinksSelf }
-     */
-    ReviewLinksSelf,
-    /**
-     * The ReviewLinksSelfIriTemplate model constructor.
-     * @property { module:model/ReviewLinksSelfIriTemplate }
-     */
-    ReviewLinksSelfIriTemplate,
-    /**
-     * The Schema model constructor.
-     * @property { module:model/Schema }
-     */
-    Schema,
-    /**
-     * The SignatureData model constructor.
-     * @property { module:model/SignatureData }
-     */
-    SignatureData,
-    /**
-     * The SignatureDataSigner model constructor.
-     * @property { module:model/SignatureDataSigner }
-     */
-    SignatureDataSigner,
-    /**
-     * The SuccessLogin model constructor.
-     * @property { module:model/SuccessLogin }
-     */
-    SuccessLogin,
-    /**
-     * The SuccessLoginCredentials model constructor.
-     * @property { module:model/SuccessLoginCredentials }
-     */
-    SuccessLoginCredentials,
-    /**
-     * The SuccessLoginCredentialsAdministratorOf model constructor.
-     * @property { module:model/SuccessLoginCredentialsAdministratorOf }
-     */
-    SuccessLoginCredentialsAdministratorOf,
-    /**
-     * The SuccessLoginCredentialsMemberOf model constructor.
-     * @property { module:model/SuccessLoginCredentialsMemberOf }
-     */
-    SuccessLoginCredentialsMemberOf,
-    /**
-     * The SuccessLoginCredentialsOrganization model constructor.
-     * @property { module:model/SuccessLoginCredentialsOrganization }
-     */
-    SuccessLoginCredentialsOrganization,
-    /**
-     * The Tracking model constructor.
-     * @property { module:model/Tracking }
-     */
-    Tracking,
-    /**
-     * The TrackingProgression model constructor.
-     * @property { module:model/TrackingProgression }
-     */
-    TrackingProgression,
-    /**
-     * The Webhook model constructor.
-     * @property { module:model/Webhook }
-     */
-    Webhook,
-    /**
-     * The WebhookCollection model constructor.
-     * @property { module:model/WebhookCollection }
-     */
-    WebhookCollection,
-    /**
-     * The WebhookData model constructor.
-     * @property { module:model/WebhookData }
-     */
-    WebhookData,
-    /**
-     * The WebhookLinks model constructor.
-     * @property { module:model/WebhookLinks }
-     */
-    WebhookLinks,
-    /**
-     * The WebhookLinksOrganization model constructor.
-     * @property { module:model/WebhookLinksOrganization }
-     */
-    WebhookLinksOrganization,
-    /**
-     * The WebhookLinksOrganizationIriTemplate model constructor.
-     * @property { module:model/WebhookLinksOrganizationIriTemplate }
-     */
-    WebhookLinksOrganizationIriTemplate,
-    /**
-     * The WebhookLinksSelf model constructor.
-     * @property { module:model/WebhookLinksSelf }
-     */
-    WebhookLinksSelf,
-    /**
-     * The WebhookLinksSelfIriTemplate model constructor.
-     * @property { module:model/WebhookLinksSelfIriTemplate }
-     */
-    WebhookLinksSelfIriTemplate,
-    /**
-     * The WebhookLinksSelfIriTemplateMapping model constructor.
-     * @property { module:model/WebhookLinksSelfIriTemplateMapping }
-     */
-    WebhookLinksSelfIriTemplateMapping,
-    /**
-     * The WebhookPatch model constructor.
-     * @property { module:model/WebhookPatch }
-     */
-    WebhookPatch,
-    /**
-     * The BusinessActivityPagination model constructor.
-     * @property { module:model/BusinessActivityPagination }
-     */
-    BusinessActivityPagination,
-    /**
-     * The CategoryPagination model constructor.
-     * @property { module:model/CategoryPagination }
-     */
-    CategoryPagination,
-    /**
-     * The ContributionPagination model constructor.
-     * @property { module:model/ContributionPagination }
-     */
-    ContributionPagination,
-    /**
-     * The DelegationPagination model constructor.
-     * @property { module:model/DelegationPagination }
-     */
-    DelegationPagination,
-    /**
-     * The DocumentPagination model constructor.
-     * @property { module:model/DocumentPagination }
-     */
-    DocumentPagination,
-    /**
-     * The ExternalServicePagination model constructor.
-     * @property { module:model/ExternalServicePagination }
-     */
-    ExternalServicePagination,
-    /**
-     * The FeedPagination model constructor.
-     * @property { module:model/FeedPagination }
-     */
-    FeedPagination,
-    /**
-     * The FeedbackPagination model constructor.
-     * @property { module:model/FeedbackPagination }
-     */
-    FeedbackPagination,
-    /**
-     * The FeedbackReviewRequestPagination model constructor.
-     * @property { module:model/FeedbackReviewRequestPagination }
-     */
-    FeedbackReviewRequestPagination,
-    /**
-     * The InternalServicePagination model constructor.
-     * @property { module:model/InternalServicePagination }
-     */
-    InternalServicePagination,
-    /**
-     * The MemberPagination model constructor.
-     * @property { module:model/MemberPagination }
-     */
-    MemberPagination,
-    /**
-     * The OccupantPagination model constructor.
-     * @property { module:model/OccupantPagination }
-     */
-    OccupantPagination,
-    /**
-     * The OperationPagination model constructor.
-     * @property { module:model/OperationPagination }
-     */
-    OperationPagination,
-    /**
-     * The OrganizationPagination model constructor.
-     * @property { module:model/OrganizationPagination }
-     */
-    OrganizationPagination,
-    /**
-     * The PersonPagination model constructor.
-     * @property { module:model/PersonPagination }
-     */
-    PersonPagination,
-    /**
-     * The PlacePagination model constructor.
-     * @property { module:model/PlacePagination }
-     */
-    PlacePagination,
-    /**
-     * The PublicationPagination model constructor.
-     * @property { module:model/PublicationPagination }
-     */
-    PublicationPagination,
-    /**
-     * The ReportPagination model constructor.
-     * @property { module:model/ReportPagination }
-     */
-    ReportPagination,
-    /**
-     * The ReviewPagination model constructor.
-     * @property { module:model/ReviewPagination }
-     */
-    ReviewPagination,
-    /**
-     * The WebhookPagination model constructor.
-     * @property { module:model/WebhookPagination }
-     */
-    WebhookPagination,
-
-    /**
-     * The ApplicationApi service constructor.
-     * @property { module:api/ApplicationApi }
-     */
-    ApplicationApi,
-    /**
-     * The BusinessActivityApi service constructor.
-     * @property { module:api/BusinessActivityApi }
-     */
-    BusinessActivityApi,
-    /**
-     * The CategoryApi service constructor.
-     * @property { module:api/CategoryApi }
-     */
-    CategoryApi,
-    /**
-     * The ContributionApi service constructor.
-     * @property { module:api/ContributionApi }
-     */
-    ContributionApi,
-    /**
-     * The DelegationApi service constructor.
-     * @property { module:api/DelegationApi }
-     */
-    DelegationApi,
-    /**
-     * The DeviceApi service constructor.
-     * @property { module:api/DeviceApi }
-     */
-    DeviceApi,
-    /**
-     * The DocumentApi service constructor.
-     * @property { module:api/DocumentApi }
-     */
-    DocumentApi,
-    /**
-     * The ExternalServiceApi service constructor.
-     * @property { module:api/ExternalServiceApi }
-     */
-    ExternalServiceApi,
-    /**
-     * The FeedApi service constructor.
-     * @property { module:api/FeedApi }
-     */
-    FeedApi,
-    /**
-     * The FeedbackApi service constructor.
-     * @property { module:api/FeedbackApi }
-     */
-    FeedbackApi,
-    /**
-     * The InternalServiceApi service constructor.
-     * @property { module:api/InternalServiceApi }
-     */
-    InternalServiceApi,
-    /**
-     * The MemberApi service constructor.
-     * @property { module:api/MemberApi }
-     */
-    MemberApi,
-    /**
-     * The OccupantApi service constructor.
-     * @property { module:api/OccupantApi }
-     */
-    OccupantApi,
-    /**
-     * The OperationApi service constructor.
-     * @property { module:api/OperationApi }
-     */
-    OperationApi,
-    /**
-     * The OrganizationApi service constructor.
-     * @property { module:api/OrganizationApi }
-     */
-    OrganizationApi,
-    /**
-     * The PersonApi service constructor.
-     * @property { module:api/PersonApi }
-     */
-    PersonApi,
-    /**
-     * The PlaceApi service constructor.
-     * @property { module:api/PlaceApi }
-     */
-    PlaceApi,
-    /**
-     * The PublicationApi service constructor.
-     * @property { module:api/PublicationApi }
-     */
-    PublicationApi,
-    /**
-     * The ReportApi service constructor.
-     * @property { module:api/ReportApi }
-     */
-    ReportApi,
-    /**
-     * The ReviewApi service constructor.
-     * @property { module:api/ReviewApi }
-     */
-    ReviewApi,
-    /**
-     * The ReviewRequestApi service constructor.
-     * @property { module:api/ReviewRequestApi }
-     */
-    ReviewRequestApi,
-    /**
-     * The SecurityApi service constructor.
-     * @property { module:api/SecurityApi }
-     */
-    SecurityApi,
-    /**
-     * The WebhookApi service constructor.
-     * @property { module:api/WebhookApi }
-     */
-    WebhookApi,
+  /**
+   * The ApiClient constructor.
+   * @property {module:ApiClient}
+   */
+  ApiClient,
+  /**
+   * The Activity model constructor.
+   * @property { module:model/Activity }
+   */
+  Activity,
+  /**
+   * The ActivityAggregatedPagination model constructor.
+   * @property { module:model/ActivityAggregatedPagination }
+   */
+  ActivityAggregatedPagination,
+  /**
+   * The ActivityGroup model constructor.
+   * @property { module:model/ActivityGroup }
+   */
+  ActivityGroup,
+  /**
+   * The ActivityPagination model constructor.
+   * @property { module:model/ActivityPagination }
+   */
+  ActivityPagination,
+  /**
+   * The ActivitySubject model constructor.
+   * @property { module:model/ActivitySubject }
+   */
+  ActivitySubject,
+  /**
+   * The Application model constructor.
+   * @property { module:model/Application }
+   */
+  Application,
+  /**
+   * The ApplicationLinks model constructor.
+   * @property { module:model/ApplicationLinks }
+   */
+  ApplicationLinks,
+  /**
+   * The ApplicationLinksSelf model constructor.
+   * @property { module:model/ApplicationLinksSelf }
+   */
+  ApplicationLinksSelf,
+  /**
+   * The ApplicationLinksSelfIriTemplate model constructor.
+   * @property { module:model/ApplicationLinksSelfIriTemplate }
+   */
+  ApplicationLinksSelfIriTemplate,
+  /**
+   * The ApplicationLinksSelfIriTemplateMapping model constructor.
+   * @property { module:model/ApplicationLinksSelfIriTemplateMapping }
+   */
+  ApplicationLinksSelfIriTemplateMapping,
+  /**
+   * The AssignData model constructor.
+   * @property { module:model/AssignData }
+   */
+  AssignData,
+  /**
+   * The BusinessActivity model constructor.
+   * @property { module:model/BusinessActivity }
+   */
+  BusinessActivity,
+  /**
+   * The BusinessActivityCollection model constructor.
+   * @property { module:model/BusinessActivityCollection }
+   */
+  BusinessActivityCollection,
+  /**
+   * The BusinessActivityLinks model constructor.
+   * @property { module:model/BusinessActivityLinks }
+   */
+  BusinessActivityLinks,
+  /**
+   * The BusinessActivityLinksImage model constructor.
+   * @property { module:model/BusinessActivityLinksImage }
+   */
+  BusinessActivityLinksImage,
+  /**
+   * The BusinessActivityLinksImageIriTemplate model constructor.
+   * @property { module:model/BusinessActivityLinksImageIriTemplate }
+   */
+  BusinessActivityLinksImageIriTemplate,
+  /**
+   * The BusinessActivityLinksImageIriTemplateMapping model constructor.
+   * @property { module:model/BusinessActivityLinksImageIriTemplateMapping }
+   */
+  BusinessActivityLinksImageIriTemplateMapping,
+  /**
+   * The BusinessActivityLinksSchema model constructor.
+   * @property { module:model/BusinessActivityLinksSchema }
+   */
+  BusinessActivityLinksSchema,
+  /**
+   * The BusinessActivityLinksSchemaIriTemplate model constructor.
+   * @property { module:model/BusinessActivityLinksSchemaIriTemplate }
+   */
+  BusinessActivityLinksSchemaIriTemplate,
+  /**
+   * The BusinessActivityLinksSelf model constructor.
+   * @property { module:model/BusinessActivityLinksSelf }
+   */
+  BusinessActivityLinksSelf,
+  /**
+   * The BusinessActivityLinksSelfIriTemplate model constructor.
+   * @property { module:model/BusinessActivityLinksSelfIriTemplate }
+   */
+  BusinessActivityLinksSelfIriTemplate,
+  /**
+   * The BusinessActivityLinksThumbnail model constructor.
+   * @property { module:model/BusinessActivityLinksThumbnail }
+   */
+  BusinessActivityLinksThumbnail,
+  /**
+   * The BusinessActivityLinksThumbnailIriTemplate model constructor.
+   * @property { module:model/BusinessActivityLinksThumbnailIriTemplate }
+   */
+  BusinessActivityLinksThumbnailIriTemplate,
+  /**
+   * The BusinessActivityMetadataSchema model constructor.
+   * @property { module:model/BusinessActivityMetadataSchema }
+   */
+  BusinessActivityMetadataSchema,
+  /**
+   * The Category model constructor.
+   * @property { module:model/Category }
+   */
+  Category,
+  /**
+   * The CategoryCollection model constructor.
+   * @property { module:model/CategoryCollection }
+   */
+  CategoryCollection,
+  /**
+   * The CategoryData model constructor.
+   * @property { module:model/CategoryData }
+   */
+  CategoryData,
+  /**
+   * The CategoryLinks model constructor.
+   * @property { module:model/CategoryLinks }
+   */
+  CategoryLinks,
+  /**
+   * The CategoryLinksOrganization model constructor.
+   * @property { module:model/CategoryLinksOrganization }
+   */
+  CategoryLinksOrganization,
+  /**
+   * The CategoryLinksOrganizationIriTemplate model constructor.
+   * @property { module:model/CategoryLinksOrganizationIriTemplate }
+   */
+  CategoryLinksOrganizationIriTemplate,
+  /**
+   * The CategoryLinksOrganizationIriTemplateMapping model constructor.
+   * @property { module:model/CategoryLinksOrganizationIriTemplateMapping }
+   */
+  CategoryLinksOrganizationIriTemplateMapping,
+  /**
+   * The CategoryLinksSelf model constructor.
+   * @property { module:model/CategoryLinksSelf }
+   */
+  CategoryLinksSelf,
+  /**
+   * The CategoryLinksSelfIriTemplate model constructor.
+   * @property { module:model/CategoryLinksSelfIriTemplate }
+   */
+  CategoryLinksSelfIriTemplate,
+  /**
+   * The CategoryLinksSelfIriTemplateMapping model constructor.
+   * @property { module:model/CategoryLinksSelfIriTemplateMapping }
+   */
+  CategoryLinksSelfIriTemplateMapping,
+  /**
+   * The CategoryPatch model constructor.
+   * @property { module:model/CategoryPatch }
+   */
+  CategoryPatch,
+  /**
+   * The Chart model constructor.
+   * @property { module:model/Chart }
+   */
+  Chart,
+  /**
+   * The Checkpoint model constructor.
+   * @property { module:model/Checkpoint }
+   */
+  Checkpoint,
+  /**
+   * The CheckpointLinks model constructor.
+   * @property { module:model/CheckpointLinks }
+   */
+  CheckpointLinks,
+  /**
+   * The CheckpointLinksOrganization model constructor.
+   * @property { module:model/CheckpointLinksOrganization }
+   */
+  CheckpointLinksOrganization,
+  /**
+   * The CheckpointLinksOrganizationIriTemplate model constructor.
+   * @property { module:model/CheckpointLinksOrganizationIriTemplate }
+   */
+  CheckpointLinksOrganizationIriTemplate,
+  /**
+   * The Choice model constructor.
+   * @property { module:model/Choice }
+   */
+  Choice,
+  /**
+   * The CommentData model constructor.
+   * @property { module:model/CommentData }
+   */
+  CommentData,
+  /**
+   * The Condition model constructor.
+   * @property { module:model/Condition }
+   */
+  Condition,
+  /**
+   * The Contribution model constructor.
+   * @property { module:model/Contribution }
+   */
+  Contribution,
+  /**
+   * The ContributionCollection model constructor.
+   * @property { module:model/ContributionCollection }
+   */
+  ContributionCollection,
+  /**
+   * The ContributionData model constructor.
+   * @property { module:model/ContributionData }
+   */
+  ContributionData,
+  /**
+   * The ContributionLinks model constructor.
+   * @property { module:model/ContributionLinks }
+   */
+  ContributionLinks,
+  /**
+   * The ContributionLinksContributor model constructor.
+   * @property { module:model/ContributionLinksContributor }
+   */
+  ContributionLinksContributor,
+  /**
+   * The ContributionLinksContributorIriTemplate model constructor.
+   * @property { module:model/ContributionLinksContributorIriTemplate }
+   */
+  ContributionLinksContributorIriTemplate,
+  /**
+   * The ContributionLinksContributorIriTemplateMapping model constructor.
+   * @property { module:model/ContributionLinksContributorIriTemplateMapping }
+   */
+  ContributionLinksContributorIriTemplateMapping,
+  /**
+   * The ContributionLinksFeedback model constructor.
+   * @property { module:model/ContributionLinksFeedback }
+   */
+  ContributionLinksFeedback,
+  /**
+   * The ContributionLinksFeedbackIriTemplate model constructor.
+   * @property { module:model/ContributionLinksFeedbackIriTemplate }
+   */
+  ContributionLinksFeedbackIriTemplate,
+  /**
+   * The ContributionLinksFeedbackIriTemplateMapping model constructor.
+   * @property { module:model/ContributionLinksFeedbackIriTemplateMapping }
+   */
+  ContributionLinksFeedbackIriTemplateMapping,
+  /**
+   * The Delegation model constructor.
+   * @property { module:model/Delegation }
+   */
+  Delegation,
+  /**
+   * The DelegationCollection model constructor.
+   * @property { module:model/DelegationCollection }
+   */
+  DelegationCollection,
+  /**
+   * The DelegationData model constructor.
+   * @property { module:model/DelegationData }
+   */
+  DelegationData,
+  /**
+   * The DelegationEmbedded model constructor.
+   * @property { module:model/DelegationEmbedded }
+   */
+  DelegationEmbedded,
+  /**
+   * The DelegationLinks model constructor.
+   * @property { module:model/DelegationLinks }
+   */
+  DelegationLinks,
+  /**
+   * The DelegationLinksCreatedBy model constructor.
+   * @property { module:model/DelegationLinksCreatedBy }
+   */
+  DelegationLinksCreatedBy,
+  /**
+   * The DelegationLinksCreatedByIriTemplate model constructor.
+   * @property { module:model/DelegationLinksCreatedByIriTemplate }
+   */
+  DelegationLinksCreatedByIriTemplate,
+  /**
+   * The DelegationLinksReport model constructor.
+   * @property { module:model/DelegationLinksReport }
+   */
+  DelegationLinksReport,
+  /**
+   * The DelegationLinksReportIriTemplate model constructor.
+   * @property { module:model/DelegationLinksReportIriTemplate }
+   */
+  DelegationLinksReportIriTemplate,
+  /**
+   * The DelegationLinksReportIriTemplateMapping model constructor.
+   * @property { module:model/DelegationLinksReportIriTemplateMapping }
+   */
+  DelegationLinksReportIriTemplateMapping,
+  /**
+   * The DelegationLinksSelf model constructor.
+   * @property { module:model/DelegationLinksSelf }
+   */
+  DelegationLinksSelf,
+  /**
+   * The DelegationLinksSelfIriTemplate model constructor.
+   * @property { module:model/DelegationLinksSelfIriTemplate }
+   */
+  DelegationLinksSelfIriTemplate,
+  /**
+   * The DelegationLinksSelfIriTemplateMapping model constructor.
+   * @property { module:model/DelegationLinksSelfIriTemplateMapping }
+   */
+  DelegationLinksSelfIriTemplateMapping,
+  /**
+   * The DelegationLinksService model constructor.
+   * @property { module:model/DelegationLinksService }
+   */
+  DelegationLinksService,
+  /**
+   * The DelegationLinksServiceIriTemplate model constructor.
+   * @property { module:model/DelegationLinksServiceIriTemplate }
+   */
+  DelegationLinksServiceIriTemplate,
+  /**
+   * The DelegationLinksServiceIriTemplateMapping model constructor.
+   * @property { module:model/DelegationLinksServiceIriTemplateMapping }
+   */
+  DelegationLinksServiceIriTemplateMapping,
+  /**
+   * The DelegationWorkflowTransitionData model constructor.
+   * @property { module:model/DelegationWorkflowTransitionData }
+   */
+  DelegationWorkflowTransitionData,
+  /**
+   * The Device model constructor.
+   * @property { module:model/Device }
+   */
+  Device,
+  /**
+   * The DeviceData model constructor.
+   * @property { module:model/DeviceData }
+   */
+  DeviceData,
+  /**
+   * The DeviceLinks model constructor.
+   * @property { module:model/DeviceLinks }
+   */
+  DeviceLinks,
+  /**
+   * The DeviceLinksPerson model constructor.
+   * @property { module:model/DeviceLinksPerson }
+   */
+  DeviceLinksPerson,
+  /**
+   * The DeviceLinksPersonIriTemplate model constructor.
+   * @property { module:model/DeviceLinksPersonIriTemplate }
+   */
+  DeviceLinksPersonIriTemplate,
+  /**
+   * The DeviceLinksSelf model constructor.
+   * @property { module:model/DeviceLinksSelf }
+   */
+  DeviceLinksSelf,
+  /**
+   * The DeviceLinksSelfIriTemplate model constructor.
+   * @property { module:model/DeviceLinksSelfIriTemplate }
+   */
+  DeviceLinksSelfIriTemplate,
+  /**
+   * The DeviceLinksSelfIriTemplateMapping model constructor.
+   * @property { module:model/DeviceLinksSelfIriTemplateMapping }
+   */
+  DeviceLinksSelfIriTemplateMapping,
+  /**
+   * The Document model constructor.
+   * @property { module:model/Document }
+   */
+  Document,
+  /**
+   * The DocumentCollection model constructor.
+   * @property { module:model/DocumentCollection }
+   */
+  DocumentCollection,
+  /**
+   * The DocumentData model constructor.
+   * @property { module:model/DocumentData }
+   */
+  DocumentData,
+  /**
+   * The DocumentDataFile model constructor.
+   * @property { module:model/DocumentDataFile }
+   */
+  DocumentDataFile,
+  /**
+   * The DocumentDataPermission model constructor.
+   * @property { module:model/DocumentDataPermission }
+   */
+  DocumentDataPermission,
+  /**
+   * The DocumentFile model constructor.
+   * @property { module:model/DocumentFile }
+   */
+  DocumentFile,
+  /**
+   * The DocumentLinks model constructor.
+   * @property { module:model/DocumentLinks }
+   */
+  DocumentLinks,
+  /**
+   * The DocumentLinksCreatedBy model constructor.
+   * @property { module:model/DocumentLinksCreatedBy }
+   */
+  DocumentLinksCreatedBy,
+  /**
+   * The DocumentLinksCreatedByIriTemplate model constructor.
+   * @property { module:model/DocumentLinksCreatedByIriTemplate }
+   */
+  DocumentLinksCreatedByIriTemplate,
+  /**
+   * The DocumentLinksFile model constructor.
+   * @property { module:model/DocumentLinksFile }
+   */
+  DocumentLinksFile,
+  /**
+   * The DocumentLinksFileIriTemplate model constructor.
+   * @property { module:model/DocumentLinksFileIriTemplate }
+   */
+  DocumentLinksFileIriTemplate,
+  /**
+   * The DocumentLinksFileIriTemplateMapping model constructor.
+   * @property { module:model/DocumentLinksFileIriTemplateMapping }
+   */
+  DocumentLinksFileIriTemplateMapping,
+  /**
+   * The DocumentLinksSelf model constructor.
+   * @property { module:model/DocumentLinksSelf }
+   */
+  DocumentLinksSelf,
+  /**
+   * The DocumentLinksSelfIriTemplate model constructor.
+   * @property { module:model/DocumentLinksSelfIriTemplate }
+   */
+  DocumentLinksSelfIriTemplate,
+  /**
+   * The DocumentPatch model constructor.
+   * @property { module:model/DocumentPatch }
+   */
+  DocumentPatch,
+  /**
+   * The DocumentPatchFile model constructor.
+   * @property { module:model/DocumentPatchFile }
+   */
+  DocumentPatchFile,
+  /**
+   * The DocumentPermission model constructor.
+   * @property { module:model/DocumentPermission }
+   */
+  DocumentPermission,
+  /**
+   * The Error model constructor.
+   * @property { module:model/Error }
+   */
+  Error,
+  /**
+   * The ErrorEmbedded model constructor.
+   * @property { module:model/ErrorEmbedded }
+   */
+  ErrorEmbedded,
+  /**
+   * The ExternalService model constructor.
+   * @property { module:model/ExternalService }
+   */
+  ExternalService,
+  /**
+   * The ExternalServiceCollection model constructor.
+   * @property { module:model/ExternalServiceCollection }
+   */
+  ExternalServiceCollection,
+  /**
+   * The ExternalServiceContactPoint model constructor.
+   * @property { module:model/ExternalServiceContactPoint }
+   */
+  ExternalServiceContactPoint,
+  /**
+   * The ExternalServiceData model constructor.
+   * @property { module:model/ExternalServiceData }
+   */
+  ExternalServiceData,
+  /**
+   * The ExternalServiceLinks model constructor.
+   * @property { module:model/ExternalServiceLinks }
+   */
+  ExternalServiceLinks,
+  /**
+   * The ExternalServiceLinksProvider model constructor.
+   * @property { module:model/ExternalServiceLinksProvider }
+   */
+  ExternalServiceLinksProvider,
+  /**
+   * The ExternalServiceLinksProviderIriTemplate model constructor.
+   * @property { module:model/ExternalServiceLinksProviderIriTemplate }
+   */
+  ExternalServiceLinksProviderIriTemplate,
+  /**
+   * The ExternalServiceLinksSelf model constructor.
+   * @property { module:model/ExternalServiceLinksSelf }
+   */
+  ExternalServiceLinksSelf,
+  /**
+   * The ExternalServiceLinksSelfIriTemplate model constructor.
+   * @property { module:model/ExternalServiceLinksSelfIriTemplate }
+   */
+  ExternalServiceLinksSelfIriTemplate,
+  /**
+   * The ExternalServicePatch model constructor.
+   * @property { module:model/ExternalServicePatch }
+   */
+  ExternalServicePatch,
+  /**
+   * The ExternalServicePatchContactPoint model constructor.
+   * @property { module:model/ExternalServicePatchContactPoint }
+   */
+  ExternalServicePatchContactPoint,
+  /**
+   * The FacebookConnectData model constructor.
+   * @property { module:model/FacebookConnectData }
+   */
+  FacebookConnectData,
+  /**
+   * The Feature model constructor.
+   * @property { module:model/Feature }
+   */
+  Feature,
+  /**
+   * The FeatureGeometry model constructor.
+   * @property { module:model/FeatureGeometry }
+   */
+  FeatureGeometry,
+  /**
+   * The Feed model constructor.
+   * @property { module:model/Feed }
+   */
+  Feed,
+  /**
+   * The FeedCollection model constructor.
+   * @property { module:model/FeedCollection }
+   */
+  FeedCollection,
+  /**
+   * The Feedback model constructor.
+   * @property { module:model/Feedback }
+   */
+  Feedback,
+  /**
+   * The FeedbackCollection model constructor.
+   * @property { module:model/FeedbackCollection }
+   */
+  FeedbackCollection,
+  /**
+   * The FeedbackData model constructor.
+   * @property { module:model/FeedbackData }
+   */
+  FeedbackData,
+  /**
+   * The FeedbackDataGeo model constructor.
+   * @property { module:model/FeedbackDataGeo }
+   */
+  FeedbackDataGeo,
+  /**
+   * The FeedbackDataGeoPoint model constructor.
+   * @property { module:model/FeedbackDataGeoPoint }
+   */
+  FeedbackDataGeoPoint,
+  /**
+   * The FeedbackEmbedded model constructor.
+   * @property { module:model/FeedbackEmbedded }
+   */
+  FeedbackEmbedded,
+  /**
+   * The FeedbackGeoCoordinates model constructor.
+   * @property { module:model/FeedbackGeoCoordinates }
+   */
+  FeedbackGeoCoordinates,
+  /**
+   * The FeedbackGeoCoordinatesPoint model constructor.
+   * @property { module:model/FeedbackGeoCoordinatesPoint }
+   */
+  FeedbackGeoCoordinatesPoint,
+  /**
+   * The FeedbackLinks model constructor.
+   * @property { module:model/FeedbackLinks }
+   */
+  FeedbackLinks,
+  /**
+   * The FeedbackLinksBusinessActivity model constructor.
+   * @property { module:model/FeedbackLinksBusinessActivity }
+   */
+  FeedbackLinksBusinessActivity,
+  /**
+   * The FeedbackLinksBusinessActivityIriTemplate model constructor.
+   * @property { module:model/FeedbackLinksBusinessActivityIriTemplate }
+   */
+  FeedbackLinksBusinessActivityIriTemplate,
+  /**
+   * The FeedbackLinksCategory model constructor.
+   * @property { module:model/FeedbackLinksCategory }
+   */
+  FeedbackLinksCategory,
+  /**
+   * The FeedbackLinksCategoryIriTemplate model constructor.
+   * @property { module:model/FeedbackLinksCategoryIriTemplate }
+   */
+  FeedbackLinksCategoryIriTemplate,
+  /**
+   * The FeedbackLinksImage model constructor.
+   * @property { module:model/FeedbackLinksImage }
+   */
+  FeedbackLinksImage,
+  /**
+   * The FeedbackLinksImageIriTemplate model constructor.
+   * @property { module:model/FeedbackLinksImageIriTemplate }
+   */
+  FeedbackLinksImageIriTemplate,
+  /**
+   * The FeedbackLinksImageIriTemplateMapping model constructor.
+   * @property { module:model/FeedbackLinksImageIriTemplateMapping }
+   */
+  FeedbackLinksImageIriTemplateMapping,
+  /**
+   * The FeedbackLinksImages model constructor.
+   * @property { module:model/FeedbackLinksImages }
+   */
+  FeedbackLinksImages,
+  /**
+   * The FeedbackLinksImagesIriTemplate model constructor.
+   * @property { module:model/FeedbackLinksImagesIriTemplate }
+   */
+  FeedbackLinksImagesIriTemplate,
+  /**
+   * The FeedbackLinksReporter model constructor.
+   * @property { module:model/FeedbackLinksReporter }
+   */
+  FeedbackLinksReporter,
+  /**
+   * The FeedbackLinksReporterIriTemplate model constructor.
+   * @property { module:model/FeedbackLinksReporterIriTemplate }
+   */
+  FeedbackLinksReporterIriTemplate,
+  /**
+   * The FeedbackLinksSelf model constructor.
+   * @property { module:model/FeedbackLinksSelf }
+   */
+  FeedbackLinksSelf,
+  /**
+   * The FeedbackLinksSelfIriTemplate model constructor.
+   * @property { module:model/FeedbackLinksSelfIriTemplate }
+   */
+  FeedbackLinksSelfIriTemplate,
+  /**
+   * The FeedbackLinksTracking model constructor.
+   * @property { module:model/FeedbackLinksTracking }
+   */
+  FeedbackLinksTracking,
+  /**
+   * The FeedbackLinksTrackingIriTemplate model constructor.
+   * @property { module:model/FeedbackLinksTrackingIriTemplate }
+   */
+  FeedbackLinksTrackingIriTemplate,
+  /**
+   * The FeedbackReviewRequest model constructor.
+   * @property { module:model/FeedbackReviewRequest }
+   */
+  FeedbackReviewRequest,
+  /**
+   * The FeedbackReviewRequestCollection model constructor.
+   * @property { module:model/FeedbackReviewRequestCollection }
+   */
+  FeedbackReviewRequestCollection,
+  /**
+   * The FeedbackReviewRequestLinks model constructor.
+   * @property { module:model/FeedbackReviewRequestLinks }
+   */
+  FeedbackReviewRequestLinks,
+  /**
+   * The FeedbackReviewRequestLinksItemToReview model constructor.
+   * @property { module:model/FeedbackReviewRequestLinksItemToReview }
+   */
+  FeedbackReviewRequestLinksItemToReview,
+  /**
+   * The FeedbackReviewRequestLinksItemToReviewIriTemplate model constructor.
+   * @property { module:model/FeedbackReviewRequestLinksItemToReviewIriTemplate }
+   */
+  FeedbackReviewRequestLinksItemToReviewIriTemplate,
+  /**
+   * The FeedbackReviewRequestLinksOrganization model constructor.
+   * @property { module:model/FeedbackReviewRequestLinksOrganization }
+   */
+  FeedbackReviewRequestLinksOrganization,
+  /**
+   * The FeedbackReviewRequestLinksOrganizationIriTemplate model constructor.
+   * @property { module:model/FeedbackReviewRequestLinksOrganizationIriTemplate }
+   */
+  FeedbackReviewRequestLinksOrganizationIriTemplate,
+  /**
+   * The FeedbackReviewRequestLinksReview model constructor.
+   * @property { module:model/FeedbackReviewRequestLinksReview }
+   */
+  FeedbackReviewRequestLinksReview,
+  /**
+   * The FeedbackReviewRequestLinksReviewIriTemplate model constructor.
+   * @property { module:model/FeedbackReviewRequestLinksReviewIriTemplate }
+   */
+  FeedbackReviewRequestLinksReviewIriTemplate,
+  /**
+   * The FeedbackReviewRequestLinksReviewIriTemplateMapping model constructor.
+   * @property { module:model/FeedbackReviewRequestLinksReviewIriTemplateMapping }
+   */
+  FeedbackReviewRequestLinksReviewIriTemplateMapping,
+  /**
+   * The FeedbackReviewRequestLinksReviewer model constructor.
+   * @property { module:model/FeedbackReviewRequestLinksReviewer }
+   */
+  FeedbackReviewRequestLinksReviewer,
+  /**
+   * The FeedbackReviewRequestLinksReviewerIriTemplate model constructor.
+   * @property { module:model/FeedbackReviewRequestLinksReviewerIriTemplate }
+   */
+  FeedbackReviewRequestLinksReviewerIriTemplate,
+  /**
+   * The FeedbackReviewRequestLinksSelf model constructor.
+   * @property { module:model/FeedbackReviewRequestLinksSelf }
+   */
+  FeedbackReviewRequestLinksSelf,
+  /**
+   * The FeedbackReviewRequestLinksSelfIriTemplate model constructor.
+   * @property { module:model/FeedbackReviewRequestLinksSelfIriTemplate }
+   */
+  FeedbackReviewRequestLinksSelfIriTemplate,
+  /**
+   * The FeedbackReviewRequestLinksSelfIriTemplateMapping model constructor.
+   * @property { module:model/FeedbackReviewRequestLinksSelfIriTemplateMapping }
+   */
+  FeedbackReviewRequestLinksSelfIriTemplateMapping,
+  /**
+   * The FeedbackWorkflowTransitionData model constructor.
+   * @property { module:model/FeedbackWorkflowTransitionData }
+   */
+  FeedbackWorkflowTransitionData,
+  /**
+   * The ImageData model constructor.
+   * @property { module:model/ImageData }
+   */
+  ImageData,
+  /**
+   * The InternalService model constructor.
+   * @property { module:model/InternalService }
+   */
+  InternalService,
+  /**
+   * The InternalServiceCollection model constructor.
+   * @property { module:model/InternalServiceCollection }
+   */
+  InternalServiceCollection,
+  /**
+   * The InternalServiceData model constructor.
+   * @property { module:model/InternalServiceData }
+   */
+  InternalServiceData,
+  /**
+   * The InternalServiceLinks model constructor.
+   * @property { module:model/InternalServiceLinks }
+   */
+  InternalServiceLinks,
+  /**
+   * The InternalServiceLinksOrganization model constructor.
+   * @property { module:model/InternalServiceLinksOrganization }
+   */
+  InternalServiceLinksOrganization,
+  /**
+   * The InternalServiceLinksOrganizationIriTemplate model constructor.
+   * @property { module:model/InternalServiceLinksOrganizationIriTemplate }
+   */
+  InternalServiceLinksOrganizationIriTemplate,
+  /**
+   * The InternalServiceLinksSelf model constructor.
+   * @property { module:model/InternalServiceLinksSelf }
+   */
+  InternalServiceLinksSelf,
+  /**
+   * The InternalServiceLinksSelfIriTemplate model constructor.
+   * @property { module:model/InternalServiceLinksSelfIriTemplate }
+   */
+  InternalServiceLinksSelfIriTemplate,
+  /**
+   * The InternalServiceLinksSelfIriTemplateMapping model constructor.
+   * @property { module:model/InternalServiceLinksSelfIriTemplateMapping }
+   */
+  InternalServiceLinksSelfIriTemplateMapping,
+  /**
+   * The InternalServicePatch model constructor.
+   * @property { module:model/InternalServicePatch }
+   */
+  InternalServicePatch,
+  /**
+   * The LoginData model constructor.
+   * @property { module:model/LoginData }
+   */
+  LoginData,
+  /**
+   * The Member model constructor.
+   * @property { module:model/Member }
+   */
+  Member,
+  /**
+   * The MemberCollection model constructor.
+   * @property { module:model/MemberCollection }
+   */
+  MemberCollection,
+  /**
+   * The MemberData model constructor.
+   * @property { module:model/MemberData }
+   */
+  MemberData,
+  /**
+   * The MemberEmbedded model constructor.
+   * @property { module:model/MemberEmbedded }
+   */
+  MemberEmbedded,
+  /**
+   * The MemberLinks model constructor.
+   * @property { module:model/MemberLinks }
+   */
+  MemberLinks,
+  /**
+   * The MemberLinksOrganization model constructor.
+   * @property { module:model/MemberLinksOrganization }
+   */
+  MemberLinksOrganization,
+  /**
+   * The MemberLinksOrganizationIriTemplate model constructor.
+   * @property { module:model/MemberLinksOrganizationIriTemplate }
+   */
+  MemberLinksOrganizationIriTemplate,
+  /**
+   * The MemberLinksPerson model constructor.
+   * @property { module:model/MemberLinksPerson }
+   */
+  MemberLinksPerson,
+  /**
+   * The MemberLinksPersonIriTemplate model constructor.
+   * @property { module:model/MemberLinksPersonIriTemplate }
+   */
+  MemberLinksPersonIriTemplate,
+  /**
+   * The MemberLinksSelf model constructor.
+   * @property { module:model/MemberLinksSelf }
+   */
+  MemberLinksSelf,
+  /**
+   * The MemberLinksSelfIriTemplate model constructor.
+   * @property { module:model/MemberLinksSelfIriTemplate }
+   */
+  MemberLinksSelfIriTemplate,
+  /**
+   * The MemberLinksSelfIriTemplateMapping model constructor.
+   * @property { module:model/MemberLinksSelfIriTemplateMapping }
+   */
+  MemberLinksSelfIriTemplateMapping,
+  /**
+   * The MemberPatch model constructor.
+   * @property { module:model/MemberPatch }
+   */
+  MemberPatch,
+  /**
+   * The Node model constructor.
+   * @property { module:model/Node }
+   */
+  Node,
+  /**
+   * The NodeEmbedded model constructor.
+   * @property { module:model/NodeEmbedded }
+   */
+  NodeEmbedded,
+  /**
+   * The NodePath model constructor.
+   * @property { module:model/NodePath }
+   */
+  NodePath,
+  /**
+   * The Occupant model constructor.
+   * @property { module:model/Occupant }
+   */
+  Occupant,
+  /**
+   * The OccupantCollection model constructor.
+   * @property { module:model/OccupantCollection }
+   */
+  OccupantCollection,
+  /**
+   * The OccupantData model constructor.
+   * @property { module:model/OccupantData }
+   */
+  OccupantData,
+  /**
+   * The OccupantLinks model constructor.
+   * @property { module:model/OccupantLinks }
+   */
+  OccupantLinks,
+  /**
+   * The OccupantLinksPerson model constructor.
+   * @property { module:model/OccupantLinksPerson }
+   */
+  OccupantLinksPerson,
+  /**
+   * The OccupantLinksPersonIriTemplate model constructor.
+   * @property { module:model/OccupantLinksPersonIriTemplate }
+   */
+  OccupantLinksPersonIriTemplate,
+  /**
+   * The OccupantLinksPlace model constructor.
+   * @property { module:model/OccupantLinksPlace }
+   */
+  OccupantLinksPlace,
+  /**
+   * The OccupantLinksPlaceIriTemplate model constructor.
+   * @property { module:model/OccupantLinksPlaceIriTemplate }
+   */
+  OccupantLinksPlaceIriTemplate,
+  /**
+   * The OccupantLinksPlaceIriTemplateMapping model constructor.
+   * @property { module:model/OccupantLinksPlaceIriTemplateMapping }
+   */
+  OccupantLinksPlaceIriTemplateMapping,
+  /**
+   * The OccupantLinksSelf model constructor.
+   * @property { module:model/OccupantLinksSelf }
+   */
+  OccupantLinksSelf,
+  /**
+   * The OccupantLinksSelfIriTemplate model constructor.
+   * @property { module:model/OccupantLinksSelfIriTemplate }
+   */
+  OccupantLinksSelfIriTemplate,
+  /**
+   * The OccupantLinksSelfIriTemplateMapping model constructor.
+   * @property { module:model/OccupantLinksSelfIriTemplateMapping }
+   */
+  OccupantLinksSelfIriTemplateMapping,
+  /**
+   * The Operation model constructor.
+   * @property { module:model/Operation }
+   */
+  Operation,
+  /**
+   * The OperationCollection model constructor.
+   * @property { module:model/OperationCollection }
+   */
+  OperationCollection,
+  /**
+   * The OperationData model constructor.
+   * @property { module:model/OperationData }
+   */
+  OperationData,
+  /**
+   * The OperationEmbedded model constructor.
+   * @property { module:model/OperationEmbedded }
+   */
+  OperationEmbedded,
+  /**
+   * The OperationEmbeddedDuration model constructor.
+   * @property { module:model/OperationEmbeddedDuration }
+   */
+  OperationEmbeddedDuration,
+  /**
+   * The OperationLinks model constructor.
+   * @property { module:model/OperationLinks }
+   */
+  OperationLinks,
+  /**
+   * The OperationLinksCreatedBy model constructor.
+   * @property { module:model/OperationLinksCreatedBy }
+   */
+  OperationLinksCreatedBy,
+  /**
+   * The OperationLinksCreatedByIriTemplate model constructor.
+   * @property { module:model/OperationLinksCreatedByIriTemplate }
+   */
+  OperationLinksCreatedByIriTemplate,
+  /**
+   * The OperationLinksFeedback model constructor.
+   * @property { module:model/OperationLinksFeedback }
+   */
+  OperationLinksFeedback,
+  /**
+   * The OperationLinksFeedbackIriTemplate model constructor.
+   * @property { module:model/OperationLinksFeedbackIriTemplate }
+   */
+  OperationLinksFeedbackIriTemplate,
+  /**
+   * The OperationLinksImage model constructor.
+   * @property { module:model/OperationLinksImage }
+   */
+  OperationLinksImage,
+  /**
+   * The OperationLinksImageIriTemplate model constructor.
+   * @property { module:model/OperationLinksImageIriTemplate }
+   */
+  OperationLinksImageIriTemplate,
+  /**
+   * The OperationLinksImageIriTemplateMapping model constructor.
+   * @property { module:model/OperationLinksImageIriTemplateMapping }
+   */
+  OperationLinksImageIriTemplateMapping,
+  /**
+   * The OperationLinksImages model constructor.
+   * @property { module:model/OperationLinksImages }
+   */
+  OperationLinksImages,
+  /**
+   * The OperationLinksImagesIriTemplate model constructor.
+   * @property { module:model/OperationLinksImagesIriTemplate }
+   */
+  OperationLinksImagesIriTemplate,
+  /**
+   * The OperationLinksImagesIriTemplateMapping model constructor.
+   * @property { module:model/OperationLinksImagesIriTemplateMapping }
+   */
+  OperationLinksImagesIriTemplateMapping,
+  /**
+   * The OperationLinksOperator model constructor.
+   * @property { module:model/OperationLinksOperator }
+   */
+  OperationLinksOperator,
+  /**
+   * The OperationLinksOperatorIriTemplate model constructor.
+   * @property { module:model/OperationLinksOperatorIriTemplate }
+   */
+  OperationLinksOperatorIriTemplate,
+  /**
+   * The OperationLinksReport model constructor.
+   * @property { module:model/OperationLinksReport }
+   */
+  OperationLinksReport,
+  /**
+   * The OperationLinksReportIriTemplate model constructor.
+   * @property { module:model/OperationLinksReportIriTemplate }
+   */
+  OperationLinksReportIriTemplate,
+  /**
+   * The OperationLinksSelf model constructor.
+   * @property { module:model/OperationLinksSelf }
+   */
+  OperationLinksSelf,
+  /**
+   * The OperationLinksSelfIriTemplate model constructor.
+   * @property { module:model/OperationLinksSelfIriTemplate }
+   */
+  OperationLinksSelfIriTemplate,
+  /**
+   * The OperationLinksSelfIriTemplateMapping model constructor.
+   * @property { module:model/OperationLinksSelfIriTemplateMapping }
+   */
+  OperationLinksSelfIriTemplateMapping,
+  /**
+   * The OperationLinksTracking model constructor.
+   * @property { module:model/OperationLinksTracking }
+   */
+  OperationLinksTracking,
+  /**
+   * The OperationLinksTrackingIriTemplate model constructor.
+   * @property { module:model/OperationLinksTrackingIriTemplate }
+   */
+  OperationLinksTrackingIriTemplate,
+  /**
+   * The OperationPatch model constructor.
+   * @property { module:model/OperationPatch }
+   */
+  OperationPatch,
+  /**
+   * The OperationSignature model constructor.
+   * @property { module:model/OperationSignature }
+   */
+  OperationSignature,
+  /**
+   * The OperationSignatureSigner model constructor.
+   * @property { module:model/OperationSignatureSigner }
+   */
+  OperationSignatureSigner,
+  /**
+   * The OperationWorkflowTransitionData model constructor.
+   * @property { module:model/OperationWorkflowTransitionData }
+   */
+  OperationWorkflowTransitionData,
+  /**
+   * The Organization model constructor.
+   * @property { module:model/Organization }
+   */
+  Organization,
+  /**
+   * The OrganizationCollection model constructor.
+   * @property { module:model/OrganizationCollection }
+   */
+  OrganizationCollection,
+  /**
+   * The OrganizationData model constructor.
+   * @property { module:model/OrganizationData }
+   */
+  OrganizationData,
+  /**
+   * The OrganizationLinks model constructor.
+   * @property { module:model/OrganizationLinks }
+   */
+  OrganizationLinks,
+  /**
+   * The OrganizationLinksApplication model constructor.
+   * @property { module:model/OrganizationLinksApplication }
+   */
+  OrganizationLinksApplication,
+  /**
+   * The OrganizationLinksApplicationIriTemplate model constructor.
+   * @property { module:model/OrganizationLinksApplicationIriTemplate }
+   */
+  OrganizationLinksApplicationIriTemplate,
+  /**
+   * The OrganizationLinksBusinessActivity model constructor.
+   * @property { module:model/OrganizationLinksBusinessActivity }
+   */
+  OrganizationLinksBusinessActivity,
+  /**
+   * The OrganizationLinksBusinessActivityIriTemplate model constructor.
+   * @property { module:model/OrganizationLinksBusinessActivityIriTemplate }
+   */
+  OrganizationLinksBusinessActivityIriTemplate,
+  /**
+   * The OrganizationLinksLogo model constructor.
+   * @property { module:model/OrganizationLinksLogo }
+   */
+  OrganizationLinksLogo,
+  /**
+   * The OrganizationLinksLogoIriTemplate model constructor.
+   * @property { module:model/OrganizationLinksLogoIriTemplate }
+   */
+  OrganizationLinksLogoIriTemplate,
+  /**
+   * The OrganizationLinksSelf model constructor.
+   * @property { module:model/OrganizationLinksSelf }
+   */
+  OrganizationLinksSelf,
+  /**
+   * The OrganizationLinksSelfIriTemplate model constructor.
+   * @property { module:model/OrganizationLinksSelfIriTemplate }
+   */
+  OrganizationLinksSelfIriTemplate,
+  /**
+   * The OrganizationPatch model constructor.
+   * @property { module:model/OrganizationPatch }
+   */
+  OrganizationPatch,
+  /**
+   * The OrganizationPatchPreferences model constructor.
+   * @property { module:model/OrganizationPatchPreferences }
+   */
+  OrganizationPatchPreferences,
+  /**
+   * The OrganizationPreferences model constructor.
+   * @property { module:model/OrganizationPreferences }
+   */
+  OrganizationPreferences,
+  /**
+   * The OrganizationPreferencesReference model constructor.
+   * @property { module:model/OrganizationPreferencesReference }
+   */
+  OrganizationPreferencesReference,
+  /**
+   * The Pagination model constructor.
+   * @property { module:model/Pagination }
+   */
+  Pagination,
+  /**
+   * The PaginationLink model constructor.
+   * @property { module:model/PaginationLink }
+   */
+  PaginationLink,
+  /**
+   * The PaginationLinks model constructor.
+   * @property { module:model/PaginationLinks }
+   */
+  PaginationLinks,
+  /**
+   * The PasswordChangeData model constructor.
+   * @property { module:model/PasswordChangeData }
+   */
+  PasswordChangeData,
+  /**
+   * The Person model constructor.
+   * @property { module:model/Person }
+   */
+  Person,
+  /**
+   * The PersonCollection model constructor.
+   * @property { module:model/PersonCollection }
+   */
+  PersonCollection,
+  /**
+   * The PersonLinks model constructor.
+   * @property { module:model/PersonLinks }
+   */
+  PersonLinks,
+  /**
+   * The PersonLinksImage model constructor.
+   * @property { module:model/PersonLinksImage }
+   */
+  PersonLinksImage,
+  /**
+   * The PersonLinksImageIriTemplate model constructor.
+   * @property { module:model/PersonLinksImageIriTemplate }
+   */
+  PersonLinksImageIriTemplate,
+  /**
+   * The PersonLinksSelf model constructor.
+   * @property { module:model/PersonLinksSelf }
+   */
+  PersonLinksSelf,
+  /**
+   * The PersonLinksSelfIriTemplate model constructor.
+   * @property { module:model/PersonLinksSelfIriTemplate }
+   */
+  PersonLinksSelfIriTemplate,
+  /**
+   * The PersonPatch model constructor.
+   * @property { module:model/PersonPatch }
+   */
+  PersonPatch,
+  /**
+   * The PersonPatchPreferences model constructor.
+   * @property { module:model/PersonPatchPreferences }
+   */
+  PersonPatchPreferences,
+  /**
+   * The PersonPreferences model constructor.
+   * @property { module:model/PersonPreferences }
+   */
+  PersonPreferences,
+  /**
+   * The Place model constructor.
+   * @property { module:model/Place }
+   */
+  Place,
+  /**
+   * The PlaceCollection model constructor.
+   * @property { module:model/PlaceCollection }
+   */
+  PlaceCollection,
+  /**
+   * The PlaceData model constructor.
+   * @property { module:model/PlaceData }
+   */
+  PlaceData,
+  /**
+   * The PlaceEmbedded model constructor.
+   * @property { module:model/PlaceEmbedded }
+   */
+  PlaceEmbedded,
+  /**
+   * The PlaceGeo model constructor.
+   * @property { module:model/PlaceGeo }
+   */
+  PlaceGeo,
+  /**
+   * The PlaceGeoCentroid model constructor.
+   * @property { module:model/PlaceGeoCentroid }
+   */
+  PlaceGeoCentroid,
+  /**
+   * The PlaceGeoPolygon model constructor.
+   * @property { module:model/PlaceGeoPolygon }
+   */
+  PlaceGeoPolygon,
+  /**
+   * The PlaceLinks model constructor.
+   * @property { module:model/PlaceLinks }
+   */
+  PlaceLinks,
+  /**
+   * The PlaceLinksContainedInPlace model constructor.
+   * @property { module:model/PlaceLinksContainedInPlace }
+   */
+  PlaceLinksContainedInPlace,
+  /**
+   * The PlaceLinksContainedInPlaceIriTemplate model constructor.
+   * @property { module:model/PlaceLinksContainedInPlaceIriTemplate }
+   */
+  PlaceLinksContainedInPlaceIriTemplate,
+  /**
+   * The PlaceLinksContainsPlaces model constructor.
+   * @property { module:model/PlaceLinksContainsPlaces }
+   */
+  PlaceLinksContainsPlaces,
+  /**
+   * The PlaceLinksContainsPlacesIriTemplate model constructor.
+   * @property { module:model/PlaceLinksContainsPlacesIriTemplate }
+   */
+  PlaceLinksContainsPlacesIriTemplate,
+  /**
+   * The PlaceLinksContainsPlacesIriTemplateMapping model constructor.
+   * @property { module:model/PlaceLinksContainsPlacesIriTemplateMapping }
+   */
+  PlaceLinksContainsPlacesIriTemplateMapping,
+  /**
+   * The PlaceLinksOrganization model constructor.
+   * @property { module:model/PlaceLinksOrganization }
+   */
+  PlaceLinksOrganization,
+  /**
+   * The PlaceLinksOrganizationIriTemplate model constructor.
+   * @property { module:model/PlaceLinksOrganizationIriTemplate }
+   */
+  PlaceLinksOrganizationIriTemplate,
+  /**
+   * The PlaceLinksSelf model constructor.
+   * @property { module:model/PlaceLinksSelf }
+   */
+  PlaceLinksSelf,
+  /**
+   * The PlaceLinksSelfIriTemplate model constructor.
+   * @property { module:model/PlaceLinksSelfIriTemplate }
+   */
+  PlaceLinksSelfIriTemplate,
+  /**
+   * The PlacePatch model constructor.
+   * @property { module:model/PlacePatch }
+   */
+  PlacePatch,
+  /**
+   * The PlacePreferences model constructor.
+   * @property { module:model/PlacePreferences }
+   */
+  PlacePreferences,
+  /**
+   * The Property model constructor.
+   * @property { module:model/Property }
+   */
+  Property,
+  /**
+   * The PropertyConditions model constructor.
+   * @property { module:model/PropertyConditions }
+   */
+  PropertyConditions,
+  /**
+   * The PropertyItems model constructor.
+   * @property { module:model/PropertyItems }
+   */
+  PropertyItems,
+  /**
+   * The Publication model constructor.
+   * @property { module:model/Publication }
+   */
+  Publication,
+  /**
+   * The PublicationCollection model constructor.
+   * @property { module:model/PublicationCollection }
+   */
+  PublicationCollection,
+  /**
+   * The PublicationData model constructor.
+   * @property { module:model/PublicationData }
+   */
+  PublicationData,
+  /**
+   * The PublicationLinks model constructor.
+   * @property { module:model/PublicationLinks }
+   */
+  PublicationLinks,
+  /**
+   * The PublicationLinksAuthor model constructor.
+   * @property { module:model/PublicationLinksAuthor }
+   */
+  PublicationLinksAuthor,
+  /**
+   * The PublicationLinksAuthorIriTemplate model constructor.
+   * @property { module:model/PublicationLinksAuthorIriTemplate }
+   */
+  PublicationLinksAuthorIriTemplate,
+  /**
+   * The PublicationLinksFeed model constructor.
+   * @property { module:model/PublicationLinksFeed }
+   */
+  PublicationLinksFeed,
+  /**
+   * The PublicationLinksFeedIriTemplate model constructor.
+   * @property { module:model/PublicationLinksFeedIriTemplate }
+   */
+  PublicationLinksFeedIriTemplate,
+  /**
+   * The PublicationLinksOrganization model constructor.
+   * @property { module:model/PublicationLinksOrganization }
+   */
+  PublicationLinksOrganization,
+  /**
+   * The PublicationLinksOrganizationIriTemplate model constructor.
+   * @property { module:model/PublicationLinksOrganizationIriTemplate }
+   */
+  PublicationLinksOrganizationIriTemplate,
+  /**
+   * The PublicationLinksSelf model constructor.
+   * @property { module:model/PublicationLinksSelf }
+   */
+  PublicationLinksSelf,
+  /**
+   * The PublicationLinksSelfIriTemplate model constructor.
+   * @property { module:model/PublicationLinksSelfIriTemplate }
+   */
+  PublicationLinksSelfIriTemplate,
+  /**
+   * The PublicationLinksSelfIriTemplateMapping model constructor.
+   * @property { module:model/PublicationLinksSelfIriTemplateMapping }
+   */
+  PublicationLinksSelfIriTemplateMapping,
+  /**
+   * The RegisterData model constructor.
+   * @property { module:model/RegisterData }
+   */
+  RegisterData,
+  /**
+   * The Report model constructor.
+   * @property { module:model/Report }
+   */
+  Report,
+  /**
+   * The ReportCollection model constructor.
+   * @property { module:model/ReportCollection }
+   */
+  ReportCollection,
+  /**
+   * The ReportEmbedded model constructor.
+   * @property { module:model/ReportEmbedded }
+   */
+  ReportEmbedded,
+  /**
+   * The ReportEmbeddedTargetGroups model constructor.
+   * @property { module:model/ReportEmbeddedTargetGroups }
+   */
+  ReportEmbeddedTargetGroups,
+  /**
+   * The ReportLinks model constructor.
+   * @property { module:model/ReportLinks }
+   */
+  ReportLinks,
+  /**
+   * The ReportLinksCategory model constructor.
+   * @property { module:model/ReportLinksCategory }
+   */
+  ReportLinksCategory,
+  /**
+   * The ReportLinksCategoryIriTemplate model constructor.
+   * @property { module:model/ReportLinksCategoryIriTemplate }
+   */
+  ReportLinksCategoryIriTemplate,
+  /**
+   * The ReportLinksDelegatedFrom model constructor.
+   * @property { module:model/ReportLinksDelegatedFrom }
+   */
+  ReportLinksDelegatedFrom,
+  /**
+   * The ReportLinksDelegatedFromIriTemplate model constructor.
+   * @property { module:model/ReportLinksDelegatedFromIriTemplate }
+   */
+  ReportLinksDelegatedFromIriTemplate,
+  /**
+   * The ReportLinksDelegatedTo model constructor.
+   * @property { module:model/ReportLinksDelegatedTo }
+   */
+  ReportLinksDelegatedTo,
+  /**
+   * The ReportLinksDelegatedToIriTemplate model constructor.
+   * @property { module:model/ReportLinksDelegatedToIriTemplate }
+   */
+  ReportLinksDelegatedToIriTemplate,
+  /**
+   * The ReportLinksFeedback model constructor.
+   * @property { module:model/ReportLinksFeedback }
+   */
+  ReportLinksFeedback,
+  /**
+   * The ReportLinksFeedbackIriTemplate model constructor.
+   * @property { module:model/ReportLinksFeedbackIriTemplate }
+   */
+  ReportLinksFeedbackIriTemplate,
+  /**
+   * The ReportLinksOperations model constructor.
+   * @property { module:model/ReportLinksOperations }
+   */
+  ReportLinksOperations,
+  /**
+   * The ReportLinksOperationsIriTemplate model constructor.
+   * @property { module:model/ReportLinksOperationsIriTemplate }
+   */
+  ReportLinksOperationsIriTemplate,
+  /**
+   * The ReportLinksOrganization model constructor.
+   * @property { module:model/ReportLinksOrganization }
+   */
+  ReportLinksOrganization,
+  /**
+   * The ReportLinksOrganizationIriTemplate model constructor.
+   * @property { module:model/ReportLinksOrganizationIriTemplate }
+   */
+  ReportLinksOrganizationIriTemplate,
+  /**
+   * The ReportLinksPlace model constructor.
+   * @property { module:model/ReportLinksPlace }
+   */
+  ReportLinksPlace,
+  /**
+   * The ReportLinksPlaceIriTemplate model constructor.
+   * @property { module:model/ReportLinksPlaceIriTemplate }
+   */
+  ReportLinksPlaceIriTemplate,
+  /**
+   * The ReportLinksSelf model constructor.
+   * @property { module:model/ReportLinksSelf }
+   */
+  ReportLinksSelf,
+  /**
+   * The ReportLinksSelfIriTemplate model constructor.
+   * @property { module:model/ReportLinksSelfIriTemplate }
+   */
+  ReportLinksSelfIriTemplate,
+  /**
+   * The ReportLinksTracking model constructor.
+   * @property { module:model/ReportLinksTracking }
+   */
+  ReportLinksTracking,
+  /**
+   * The ReportLinksTrackingIriTemplate model constructor.
+   * @property { module:model/ReportLinksTrackingIriTemplate }
+   */
+  ReportLinksTrackingIriTemplate,
+  /**
+   * The ReportPatch model constructor.
+   * @property { module:model/ReportPatch }
+   */
+  ReportPatch,
+  /**
+   * The ReportWorkflowTransitionData model constructor.
+   * @property { module:model/ReportWorkflowTransitionData }
+   */
+  ReportWorkflowTransitionData,
+  /**
+   * The ResetPasswordData model constructor.
+   * @property { module:model/ResetPasswordData }
+   */
+  ResetPasswordData,
+  /**
+   * The Review model constructor.
+   * @property { module:model/Review }
+   */
+  Review,
+  /**
+   * The ReviewCollection model constructor.
+   * @property { module:model/ReviewCollection }
+   */
+  ReviewCollection,
+  /**
+   * The ReviewData model constructor.
+   * @property { module:model/ReviewData }
+   */
+  ReviewData,
+  /**
+   * The ReviewLinks model constructor.
+   * @property { module:model/ReviewLinks }
+   */
+  ReviewLinks,
+  /**
+   * The ReviewLinksAuthor model constructor.
+   * @property { module:model/ReviewLinksAuthor }
+   */
+  ReviewLinksAuthor,
+  /**
+   * The ReviewLinksAuthorIriTemplate model constructor.
+   * @property { module:model/ReviewLinksAuthorIriTemplate }
+   */
+  ReviewLinksAuthorIriTemplate,
+  /**
+   * The ReviewLinksItemReviewed model constructor.
+   * @property { module:model/ReviewLinksItemReviewed }
+   */
+  ReviewLinksItemReviewed,
+  /**
+   * The ReviewLinksItemReviewedIriTemplate model constructor.
+   * @property { module:model/ReviewLinksItemReviewedIriTemplate }
+   */
+  ReviewLinksItemReviewedIriTemplate,
+  /**
+   * The ReviewLinksSelf model constructor.
+   * @property { module:model/ReviewLinksSelf }
+   */
+  ReviewLinksSelf,
+  /**
+   * The ReviewLinksSelfIriTemplate model constructor.
+   * @property { module:model/ReviewLinksSelfIriTemplate }
+   */
+  ReviewLinksSelfIriTemplate,
+  /**
+   * The Schema model constructor.
+   * @property { module:model/Schema }
+   */
+  Schema,
+  /**
+   * The SignatureData model constructor.
+   * @property { module:model/SignatureData }
+   */
+  SignatureData,
+  /**
+   * The SignatureDataSigner model constructor.
+   * @property { module:model/SignatureDataSigner }
+   */
+  SignatureDataSigner,
+  /**
+   * The SuccessLogin model constructor.
+   * @property { module:model/SuccessLogin }
+   */
+  SuccessLogin,
+  /**
+   * The SuccessLoginCredentials model constructor.
+   * @property { module:model/SuccessLoginCredentials }
+   */
+  SuccessLoginCredentials,
+  /**
+   * The SuccessLoginCredentialsAdministratorOf model constructor.
+   * @property { module:model/SuccessLoginCredentialsAdministratorOf }
+   */
+  SuccessLoginCredentialsAdministratorOf,
+  /**
+   * The SuccessLoginCredentialsMemberOf model constructor.
+   * @property { module:model/SuccessLoginCredentialsMemberOf }
+   */
+  SuccessLoginCredentialsMemberOf,
+  /**
+   * The SuccessLoginCredentialsOrganization model constructor.
+   * @property { module:model/SuccessLoginCredentialsOrganization }
+   */
+  SuccessLoginCredentialsOrganization,
+  /**
+   * The Tracking model constructor.
+   * @property { module:model/Tracking }
+   */
+  Tracking,
+  /**
+   * The TrackingProgression model constructor.
+   * @property { module:model/TrackingProgression }
+   */
+  TrackingProgression,
+  /**
+   * The Webhook model constructor.
+   * @property { module:model/Webhook }
+   */
+  Webhook,
+  /**
+   * The WebhookCollection model constructor.
+   * @property { module:model/WebhookCollection }
+   */
+  WebhookCollection,
+  /**
+   * The WebhookData model constructor.
+   * @property { module:model/WebhookData }
+   */
+  WebhookData,
+  /**
+   * The WebhookLinks model constructor.
+   * @property { module:model/WebhookLinks }
+   */
+  WebhookLinks,
+  /**
+   * The WebhookLinksOrganization model constructor.
+   * @property { module:model/WebhookLinksOrganization }
+   */
+  WebhookLinksOrganization,
+  /**
+   * The WebhookLinksOrganizationIriTemplate model constructor.
+   * @property { module:model/WebhookLinksOrganizationIriTemplate }
+   */
+  WebhookLinksOrganizationIriTemplate,
+  /**
+   * The WebhookLinksSelf model constructor.
+   * @property { module:model/WebhookLinksSelf }
+   */
+  WebhookLinksSelf,
+  /**
+   * The WebhookLinksSelfIriTemplate model constructor.
+   * @property { module:model/WebhookLinksSelfIriTemplate }
+   */
+  WebhookLinksSelfIriTemplate,
+  /**
+   * The WebhookLinksSelfIriTemplateMapping model constructor.
+   * @property { module:model/WebhookLinksSelfIriTemplateMapping }
+   */
+  WebhookLinksSelfIriTemplateMapping,
+  /**
+   * The WebhookPatch model constructor.
+   * @property { module:model/WebhookPatch }
+   */
+  WebhookPatch,
+  /**
+   * The BusinessActivityPagination model constructor.
+   * @property { module:model/BusinessActivityPagination }
+   */
+  BusinessActivityPagination,
+  /**
+   * The CategoryPagination model constructor.
+   * @property { module:model/CategoryPagination }
+   */
+  CategoryPagination,
+  /**
+   * The ContributionPagination model constructor.
+   * @property { module:model/ContributionPagination }
+   */
+  ContributionPagination,
+  /**
+   * The DelegationPagination model constructor.
+   * @property { module:model/DelegationPagination }
+   */
+  DelegationPagination,
+  /**
+   * The DocumentPagination model constructor.
+   * @property { module:model/DocumentPagination }
+   */
+  DocumentPagination,
+  /**
+   * The ExternalServicePagination model constructor.
+   * @property { module:model/ExternalServicePagination }
+   */
+  ExternalServicePagination,
+  /**
+   * The FeedPagination model constructor.
+   * @property { module:model/FeedPagination }
+   */
+  FeedPagination,
+  /**
+   * The FeedbackPagination model constructor.
+   * @property { module:model/FeedbackPagination }
+   */
+  FeedbackPagination,
+  /**
+   * The FeedbackReviewRequestPagination model constructor.
+   * @property { module:model/FeedbackReviewRequestPagination }
+   */
+  FeedbackReviewRequestPagination,
+  /**
+   * The InternalServicePagination model constructor.
+   * @property { module:model/InternalServicePagination }
+   */
+  InternalServicePagination,
+  /**
+   * The MemberPagination model constructor.
+   * @property { module:model/MemberPagination }
+   */
+  MemberPagination,
+  /**
+   * The OccupantPagination model constructor.
+   * @property { module:model/OccupantPagination }
+   */
+  OccupantPagination,
+  /**
+   * The OperationPagination model constructor.
+   * @property { module:model/OperationPagination }
+   */
+  OperationPagination,
+  /**
+   * The OrganizationPagination model constructor.
+   * @property { module:model/OrganizationPagination }
+   */
+  OrganizationPagination,
+  /**
+   * The PersonPagination model constructor.
+   * @property { module:model/PersonPagination }
+   */
+  PersonPagination,
+  /**
+   * The PlacePagination model constructor.
+   * @property { module:model/PlacePagination }
+   */
+  PlacePagination,
+  /**
+   * The PublicationPagination model constructor.
+   * @property { module:model/PublicationPagination }
+   */
+  PublicationPagination,
+  /**
+   * The ReportPagination model constructor.
+   * @property { module:model/ReportPagination }
+   */
+  ReportPagination,
+  /**
+   * The ReviewPagination model constructor.
+   * @property { module:model/ReviewPagination }
+   */
+  ReviewPagination,
+  /**
+   * The WebhookPagination model constructor.
+   * @property { module:model/WebhookPagination }
+   */
+  WebhookPagination,
+  /**
+   * The ApplicationApi service constructor.
+   * @property { module:api/ApplicationApi }
+   */
+  ApplicationApi,
+  /**
+   * The BusinessActivityApi service constructor.
+   * @property { module:api/BusinessActivityApi }
+   */
+  BusinessActivityApi,
+  /**
+   * The CategoryApi service constructor.
+   * @property { module:api/CategoryApi }
+   */
+  CategoryApi,
+  /**
+   * The ContributionApi service constructor.
+   * @property { module:api/ContributionApi }
+   */
+  ContributionApi,
+  /**
+   * The DelegationApi service constructor.
+   * @property { module:api/DelegationApi }
+   */
+  DelegationApi,
+  /**
+   * The DeviceApi service constructor.
+   * @property { module:api/DeviceApi }
+   */
+  DeviceApi,
+  /**
+   * The DocumentApi service constructor.
+   * @property { module:api/DocumentApi }
+   */
+  DocumentApi,
+  /**
+   * The ExternalServiceApi service constructor.
+   * @property { module:api/ExternalServiceApi }
+   */
+  ExternalServiceApi,
+  /**
+   * The FeedApi service constructor.
+   * @property { module:api/FeedApi }
+   */
+  FeedApi,
+  /**
+   * The FeedbackApi service constructor.
+   * @property { module:api/FeedbackApi }
+   */
+  FeedbackApi,
+  /**
+   * The InternalServiceApi service constructor.
+   * @property { module:api/InternalServiceApi }
+   */
+  InternalServiceApi,
+  /**
+   * The MemberApi service constructor.
+   * @property { module:api/MemberApi }
+   */
+  MemberApi,
+  /**
+   * The OccupantApi service constructor.
+   * @property { module:api/OccupantApi }
+   */
+  OccupantApi,
+  /**
+   * The OperationApi service constructor.
+   * @property { module:api/OperationApi }
+   */
+  OperationApi,
+  /**
+   * The OrganizationApi service constructor.
+   * @property { module:api/OrganizationApi }
+   */
+  OrganizationApi,
+  /**
+   * The PersonApi service constructor.
+   * @property { module:api/PersonApi }
+   */
+  PersonApi,
+  /**
+   * The PlaceApi service constructor.
+   * @property { module:api/PlaceApi }
+   */
+  PlaceApi,
+  /**
+   * The PublicationApi service constructor.
+   * @property { module:api/PublicationApi }
+   */
+  PublicationApi,
+  /**
+   * The ReportApi service constructor.
+   * @property { module:api/ReportApi }
+   */
+  ReportApi,
+  /**
+   * The ReviewApi service constructor.
+   * @property { module:api/ReviewApi }
+   */
+  ReviewApi,
+  /**
+   * The ReviewRequestApi service constructor.
+   * @property { module:api/ReviewRequestApi }
+   */
+  ReviewRequestApi,
+  /**
+   * The SecurityApi service constructor.
+   * @property { module:api/SecurityApi }
+   */
+  SecurityApi,
+  /**
+   * The WebhookApi service constructor.
+   * @property { module:api/WebhookApi }
+   */
+  WebhookApi
 };

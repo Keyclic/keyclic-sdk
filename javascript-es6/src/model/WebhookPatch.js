@@ -52,4 +52,31 @@ export default class WebhookPatch {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getEvent() {
+    return this.event;
+  }
+
+  /**
+   * @param { String } event
+   */
+  setEvent(event) {
+    this.event = event;
+  }
+  /**
+   * @return { String }
+   */
+  getPayloadUrl() {
+    return this.payloadUrl;
+  }
+
+  /**
+   * @param { String } payloadUrl
+   */
+  setPayloadUrl(payloadUrl) {
+    this.payloadUrl = payloadUrl;
+  }
 }

@@ -60,4 +60,18 @@ export default class OccupantPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OccupantCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/OccupantCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

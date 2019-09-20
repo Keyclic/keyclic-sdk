@@ -60,4 +60,31 @@ export default class DeviceLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/DeviceLinksPerson }
+   */
+  getPerson() {
+    return this.person;
+  }
+
+  /**
+   * @param { module:model/DeviceLinksPerson } person
+   */
+  setPerson(person) {
+    this.person = person;
+  }
+  /**
+   * @return { module:model/DeviceLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/DeviceLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

@@ -51,4 +51,18 @@ export default class PersonCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Person> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Person> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

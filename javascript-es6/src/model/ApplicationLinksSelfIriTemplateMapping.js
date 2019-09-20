@@ -51,4 +51,18 @@ export default class ApplicationLinksSelfIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getApplication() {
+    return this.application;
+  }
+
+  /**
+   * @param { String } application
+   */
+  setApplication(application) {
+    this.application = application;
+  }
 }

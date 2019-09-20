@@ -61,55 +61,133 @@ var OperationPatch =
      * @return { module:model/OperationPatch } The populated "OperationPatch" instance.
      */
 
-    _createClass(OperationPatch, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OperationPatch,
+      [
+        {
+          key: "getDescription",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getDescription() {
+            return this.description;
           }
-
-          if (object === null) {
-            object = new OperationPatch();
+          /**
+           * @param { String } description
+           */
+        },
+        {
+          key: "setDescription",
+          value: function setDescription(description) {
+            this.description = description;
           }
-
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getIdentificationNumber",
+          value: function getIdentificationNumber() {
+            return this.identificationNumber;
           }
-
-          if (data.hasOwnProperty("identificationNumber")) {
-            object.identificationNumber = _ApiClient.default.convertToType(
-              data["identificationNumber"],
-              "String"
-            );
+          /**
+           * @param { String } identificationNumber
+           */
+        },
+        {
+          key: "setIdentificationNumber",
+          value: function setIdentificationNumber(identificationNumber) {
+            this.identificationNumber = identificationNumber;
           }
-
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getName",
+          value: function getName() {
+            return this.name;
           }
-
-          if (data.hasOwnProperty("scheduledAt")) {
-            object.scheduledAt = _ApiClient.default.convertToType(
-              data["scheduledAt"],
-              "Date"
-            );
+          /**
+           * @param { String } name
+           */
+        },
+        {
+          key: "setName",
+          value: function setName(name) {
+            this.name = name;
           }
-
-          return object;
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getScheduledAt",
+          value: function getScheduledAt() {
+            return this.scheduledAt;
+          }
+          /**
+           * @param { Date } scheduledAt
+           */
+        },
+        {
+          key: "setScheduledAt",
+          value: function setScheduledAt(scheduledAt) {
+            this.scheduledAt = scheduledAt;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OperationPatch();
+            }
+
+            if (data.hasOwnProperty("description")) {
+              object.description = _ApiClient.default.convertToType(
+                data["description"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("identificationNumber")) {
+              object.identificationNumber = _ApiClient.default.convertToType(
+                data["identificationNumber"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("name")) {
+              object.name = _ApiClient.default.convertToType(
+                data["name"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("scheduledAt")) {
+              object.scheduledAt = _ApiClient.default.convertToType(
+                data["scheduledAt"],
+                "Date"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OperationPatch;
   })();

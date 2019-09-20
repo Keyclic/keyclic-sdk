@@ -110,4 +110,109 @@ export default class OperationLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OperationLinksCreatedBy }
+   */
+  getCreatedBy() {
+    return this.createdBy;
+  }
+
+  /**
+   * @param { module:model/OperationLinksCreatedBy } createdBy
+   */
+  setCreatedBy(createdBy) {
+    this.createdBy = createdBy;
+  }
+  /**
+   * @return { module:model/OperationLinksFeedback }
+   */
+  getFeedback() {
+    return this.feedback;
+  }
+
+  /**
+   * @param { module:model/OperationLinksFeedback } feedback
+   */
+  setFeedback(feedback) {
+    this.feedback = feedback;
+  }
+  /**
+   * @return { module:model/OperationLinksImage }
+   */
+  getImage() {
+    return this.image;
+  }
+
+  /**
+   * @param { module:model/OperationLinksImage } image
+   */
+  setImage(image) {
+    this.image = image;
+  }
+  /**
+   * @return { Array.<module:model/OperationLinksImages> }
+   */
+  getImages() {
+    return this.images;
+  }
+
+  /**
+   * @param { Array.<module:model/OperationLinksImages> } images
+   */
+  setImages(images) {
+    this.images = images;
+  }
+  /**
+   * @return { module:model/OperationLinksOperator }
+   */
+  getOperator() {
+    return this.operator;
+  }
+
+  /**
+   * @param { module:model/OperationLinksOperator } operator
+   */
+  setOperator(operator) {
+    this.operator = operator;
+  }
+  /**
+   * @return { module:model/OperationLinksReport }
+   */
+  getReport() {
+    return this.report;
+  }
+
+  /**
+   * @param { module:model/OperationLinksReport } report
+   */
+  setReport(report) {
+    this.report = report;
+  }
+  /**
+   * @return { module:model/OperationLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/OperationLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
+  /**
+   * @return { module:model/OperationLinksTracking }
+   */
+  getTracking() {
+    return this.tracking;
+  }
+
+  /**
+   * @param { module:model/OperationLinksTracking } tracking
+   */
+  setTracking(tracking) {
+    this.tracking = tracking;
+  }
 }

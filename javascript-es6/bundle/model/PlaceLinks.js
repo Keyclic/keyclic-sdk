@@ -79,55 +79,133 @@ var PlaceLinks =
      * @return { module:model/PlaceLinks } The populated "PlaceLinks" instance.
      */
 
-    _createClass(PlaceLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PlaceLinks,
+      [
+        {
+          key: "getContainedInPlace",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/PlaceLinksContainedInPlace }
+           */
+          value: function getContainedInPlace() {
+            return this.containedInPlace;
           }
-
-          if (object === null) {
-            object = new PlaceLinks();
+          /**
+           * @param { module:model/PlaceLinksContainedInPlace } containedInPlace
+           */
+        },
+        {
+          key: "setContainedInPlace",
+          value: function setContainedInPlace(containedInPlace) {
+            this.containedInPlace = containedInPlace;
           }
-
-          if (data.hasOwnProperty("containedInPlace")) {
-            object.containedInPlace = _ApiClient.default.convertToType(
-              data["containedInPlace"],
-              object.containedInPlaceType
-            );
+          /**
+           * @return { module:model/PlaceLinksContainsPlaces }
+           */
+        },
+        {
+          key: "getContainsPlaces",
+          value: function getContainsPlaces() {
+            return this.containsPlaces;
           }
-
-          if (data.hasOwnProperty("containsPlaces")) {
-            object.containsPlaces = _ApiClient.default.convertToType(
-              data["containsPlaces"],
-              object.containsPlacesType
-            );
+          /**
+           * @param { module:model/PlaceLinksContainsPlaces } containsPlaces
+           */
+        },
+        {
+          key: "setContainsPlaces",
+          value: function setContainsPlaces(containsPlaces) {
+            this.containsPlaces = containsPlaces;
           }
-
-          if (data.hasOwnProperty("organization")) {
-            object.organization = _ApiClient.default.convertToType(
-              data["organization"],
-              object.organizationType
-            );
+          /**
+           * @return { module:model/PlaceLinksOrganization }
+           */
+        },
+        {
+          key: "getOrganization",
+          value: function getOrganization() {
+            return this.organization;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @param { module:model/PlaceLinksOrganization } organization
+           */
+        },
+        {
+          key: "setOrganization",
+          value: function setOrganization(organization) {
+            this.organization = organization;
           }
-
-          return object;
+          /**
+           * @return { module:model/PlaceLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
+          }
+          /**
+           * @param { module:model/PlaceLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PlaceLinks();
+            }
+
+            if (data.hasOwnProperty("containedInPlace")) {
+              object.containedInPlace = _ApiClient.default.convertToType(
+                data["containedInPlace"],
+                object.containedInPlaceType
+              );
+            }
+
+            if (data.hasOwnProperty("containsPlaces")) {
+              object.containsPlaces = _ApiClient.default.convertToType(
+                data["containsPlaces"],
+                object.containsPlacesType
+              );
+            }
+
+            if (data.hasOwnProperty("organization")) {
+              object.organization = _ApiClient.default.convertToType(
+                data["organization"],
+                object.organizationType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PlaceLinks;
   })();

@@ -54,4 +54,18 @@ export default class OperationLinksSelfIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OperationLinksSelfIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/OperationLinksSelfIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

@@ -48,4 +48,18 @@ export default class PlacePreferences {
 
     return object;
   }
+
+  /**
+   * @return { Boolean }
+   */
+  getPublic() {
+    return this._public;
+  }
+
+  /**
+   * @param { Boolean } _public
+   */
+  setPublic(_public) {
+    this._public = _public;
+  }
 }

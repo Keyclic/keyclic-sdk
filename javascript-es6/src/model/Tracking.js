@@ -70,4 +70,57 @@ export default class Tracking {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Checkpoint> }
+   */
+  getCheckpoints() {
+    return this.checkpoints;
+  }
+
+  /**
+   * @param { Array.<module:model/Checkpoint> } checkpoints
+   */
+  setCheckpoints(checkpoints) {
+    this.checkpoints = checkpoints;
+  }
+  /**
+   * @return { module:model/TrackingProgression }
+   */
+  getProgression() {
+    return this.progression;
+  }
+
+  /**
+   * @param { module:model/TrackingProgression } progression
+   */
+  setProgression(progression) {
+    this.progression = progression;
+  }
+  /**
+   * @return { String }
+   */
+  getState() {
+    return this.state;
+  }
+
+  /**
+   * @param { String } state
+   */
+  setState(state) {
+    this.state = state;
+  }
+  /**
+   * @return { Number }
+   */
+  getTime() {
+    return this.time;
+  }
+
+  /**
+   * @param { Number } time
+   */
+  setTime(time) {
+    this.time = time;
+  }
 }

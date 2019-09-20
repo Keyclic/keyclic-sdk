@@ -66,4 +66,44 @@ export default class OccupantLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OccupantLinksPerson }
+   */
+  getPerson() {
+    return this.person;
+  }
+
+  /**
+   * @param { module:model/OccupantLinksPerson } person
+   */
+  setPerson(person) {
+    this.person = person;
+  }
+  /**
+   * @return { module:model/OccupantLinksPlace }
+   */
+  getPlace() {
+    return this.place;
+  }
+
+  /**
+   * @param { module:model/OccupantLinksPlace } place
+   */
+  setPlace(place) {
+    this.place = place;
+  }
+  /**
+   * @return { module:model/OccupantLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/OccupantLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

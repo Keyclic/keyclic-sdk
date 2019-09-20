@@ -58,4 +58,33 @@ export default class DeviceLinksPerson {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the person associated to the given device.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the person associated to the given device.
+   * @param { String } href The URI of the person associated to the given device.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/DeviceLinksPersonIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/DeviceLinksPersonIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

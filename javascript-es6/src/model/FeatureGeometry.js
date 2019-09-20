@@ -57,6 +57,33 @@ export default class FeatureGeometry {
   }
 
   /**
+   * @return { module:model/FeatureGeometry.TypeEnum }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @param { module:model/FeatureGeometry.TypeEnum } type
+   */
+  setType(type) {
+    this.type = type;
+  }
+  /**
+   * @return { Array.<Array.<Number>> }
+   */
+  getCoordinates() {
+    return this.coordinates;
+  }
+
+  /**
+   * @param { Array.<Array.<Number>> } coordinates
+   */
+  setCoordinates(coordinates) {
+    this.coordinates = coordinates;
+  }
+
+  /**
    * Allowed values for the "type" property.
    * @enum { String }
    */

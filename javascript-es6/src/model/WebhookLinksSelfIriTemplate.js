@@ -54,4 +54,18 @@ export default class WebhookLinksSelfIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/WebhookLinksSelfIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/WebhookLinksSelfIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

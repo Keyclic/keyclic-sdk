@@ -60,4 +60,18 @@ export default class FeedbackReviewRequestPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/FeedbackReviewRequestCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/FeedbackReviewRequestCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

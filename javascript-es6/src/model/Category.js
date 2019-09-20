@@ -88,4 +88,97 @@ export default class Category {
 
     return object;
   }
+
+  /**
+   * @return { module:model/CategoryLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/CategoryLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { String }
+   */
+  getColor() {
+    return this.color;
+  }
+
+  /**
+   * @param { String } color
+   */
+  setColor(color) {
+    this.color = color;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { String }
+   */
+  getIcon() {
+    return this.icon;
+  }
+
+  /**
+   * @param { String } icon
+   */
+  setIcon(icon) {
+    this.icon = icon;
+  }
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { String }
+   */
+  getIdentificationNumber() {
+    return this.identificationNumber;
+  }
+
+  /**
+   * @param { String } identificationNumber
+   */
+  setIdentificationNumber(identificationNumber) {
+    this.identificationNumber = identificationNumber;
+  }
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
 }

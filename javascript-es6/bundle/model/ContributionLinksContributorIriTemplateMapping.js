@@ -58,34 +58,58 @@ var ContributionLinksContributorIriTemplateMapping =
      * @return { module:model/ContributionLinksContributorIriTemplateMapping } The populated "ContributionLinksContributorIriTemplateMapping" instance.
      */
 
-    _createClass(ContributionLinksContributorIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ContributionLinksContributorIriTemplateMapping,
+      [
+        {
+          key: "getPerson",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getPerson() {
+            return this.person;
           }
-
-          if (object === null) {
-            object = new ContributionLinksContributorIriTemplateMapping();
+          /**
+           * @param { String } person
+           */
+        },
+        {
+          key: "setPerson",
+          value: function setPerson(person) {
+            this.person = person;
           }
-
-          if (data.hasOwnProperty("person")) {
-            object.person = _ApiClient.default.convertToType(
-              data["person"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ContributionLinksContributorIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("person")) {
+              object.person = _ApiClient.default.convertToType(
+                data["person"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ContributionLinksContributorIriTemplateMapping;
   })();

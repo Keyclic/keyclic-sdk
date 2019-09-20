@@ -52,4 +52,31 @@ export default class Chart {
 
     return object;
   }
+
+  /**
+   * @return { Array.<Number> }
+   */
+  getData() {
+    return this.data;
+  }
+
+  /**
+   * @param { Array.<Number> } data
+   */
+  setData(data) {
+    this.data = data;
+  }
+  /**
+   * @return { Array.<String> }
+   */
+  getLabels() {
+    return this.labels;
+  }
+
+  /**
+   * @param { Array.<String> } labels
+   */
+  setLabels(labels) {
+    this.labels = labels;
+  }
 }

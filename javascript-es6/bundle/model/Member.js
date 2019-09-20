@@ -70,73 +70,172 @@ var Member =
      * @return { module:model/Member } The populated "Member" instance.
      */
 
-    _createClass(Member, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Member,
+      [
+        {
+          key: "getEmbedded",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/MemberEmbedded }
+           */
+          value: function getEmbedded() {
+            return this.embedded;
           }
-
-          if (object === null) {
-            object = new Member();
+          /**
+           * @param { module:model/MemberEmbedded } embedded
+           */
+        },
+        {
+          key: "setEmbedded",
+          value: function setEmbedded(embedded) {
+            this.embedded = embedded;
           }
-
-          if (data.hasOwnProperty("_embedded")) {
-            object.embedded = _ApiClient.default.convertToType(
-              data["_embedded"],
-              object.embeddedType
-            );
+          /**
+           * @return { module:model/MemberLinks }
+           */
+        },
+        {
+          key: "getLinks",
+          value: function getLinks() {
+            return this.links;
           }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
-            );
+          /**
+           * @param { module:model/MemberLinks } links
+           */
+        },
+        {
+          key: "setLinks",
+          value: function setLinks(links) {
+            this.links = links;
           }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getCreatedAt",
+          value: function getCreatedAt() {
+            return this.createdAt;
           }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getId",
+          value: function getId() {
+            return this.id;
           }
-
-          if (data.hasOwnProperty("roles")) {
-            object.roles = _ApiClient.default.convertToType(
-              data["roles"],
-              "['String']"
-            );
+          /**
+           * @return { Array.<String> }
+           */
+        },
+        {
+          key: "getRoles",
+          value: function getRoles() {
+            return this.roles;
           }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
+          /**
+           * @param { Array.<String> } roles
+           */
+        },
+        {
+          key: "setRoles",
+          value: function setRoles(roles) {
+            this.roles = roles;
           }
-
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
           }
-
-          return object;
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getUpdatedAt",
+          value: function getUpdatedAt() {
+            return this.updatedAt;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Member();
+            }
+
+            if (data.hasOwnProperty("_embedded")) {
+              object.embedded = _ApiClient.default.convertToType(
+                data["_embedded"],
+                object.embeddedType
+              );
+            }
+
+            if (data.hasOwnProperty("_links")) {
+              object.links = _ApiClient.default.convertToType(
+                data["_links"],
+                object.linksType
+              );
+            }
+
+            if (data.hasOwnProperty("createdAt")) {
+              object.createdAt = _ApiClient.default.convertToType(
+                data["createdAt"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("roles")) {
+              object.roles = _ApiClient.default.convertToType(
+                data["roles"],
+                "['String']"
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("updatedAt")) {
+              object.updatedAt = _ApiClient.default.convertToType(
+                data["updatedAt"],
+                "Date"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Member;
   })();

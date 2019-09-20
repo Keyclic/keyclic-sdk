@@ -52,6 +52,20 @@ export default class ReportWorkflowTransitionData {
   }
 
   /**
+   * @return { module:model/ReportWorkflowTransitionData.TransitionEnum }
+   */
+  getTransition() {
+    return this.transition;
+  }
+
+  /**
+   * @param { module:model/ReportWorkflowTransitionData.TransitionEnum } transition
+   */
+  setTransition(transition) {
+    this.transition = transition;
+  }
+
+  /**
    * Allowed values for the "transition" property.
    * @enum { String }
    */

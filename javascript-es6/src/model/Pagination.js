@@ -67,4 +67,70 @@ export default class Pagination {
 
     return object;
   }
+
+  /**
+   * @return { Number }
+   */
+  getLimit() {
+    return this.limit;
+  }
+
+  /**
+   * @param { Number } limit
+   */
+  setLimit(limit) {
+    this.limit = limit;
+  }
+  /**
+   * @return { Number }
+   */
+  getPage() {
+    return this.page;
+  }
+
+  /**
+   * @param { Number } page
+   */
+  setPage(page) {
+    this.page = page;
+  }
+  /**
+   * @return { Number }
+   */
+  getPages() {
+    return this.pages;
+  }
+
+  /**
+   * @param { Number } pages
+   */
+  setPages(pages) {
+    this.pages = pages;
+  }
+  /**
+   * @return { Number }
+   */
+  getTotal() {
+    return this.total;
+  }
+
+  /**
+   * @param { Number } total
+   */
+  setTotal(total) {
+    this.total = total;
+  }
+  /**
+   * @return { module:model/PaginationLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/PaginationLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
 }

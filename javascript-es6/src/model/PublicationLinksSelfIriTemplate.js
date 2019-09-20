@@ -54,4 +54,18 @@ export default class PublicationLinksSelfIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PublicationLinksSelfIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/PublicationLinksSelfIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

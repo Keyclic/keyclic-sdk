@@ -58,4 +58,33 @@ export default class OperationLinksTracking {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the tracking associated to the given operation.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the tracking associated to the given operation.
+   * @param { String } href The URI of the tracking associated to the given operation.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/OperationLinksTrackingIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/OperationLinksTrackingIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

@@ -61,33 +61,57 @@ var PropertyConditions =
      * @return { module:model/PropertyConditions } The populated "PropertyConditions" instance.
      */
 
-    _createClass(PropertyConditions, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PropertyConditions,
+      [
+        {
+          key: "getAllOf",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<module:model/Condition> }
+           */
+          value: function getAllOf() {
+            return this.allOf;
           }
-
-          if (object === null) {
-            object = new PropertyConditions();
+          /**
+           * @param { Array.<module:model/Condition> } allOf
+           */
+        },
+        {
+          key: "setAllOf",
+          value: function setAllOf(allOf) {
+            this.allOf = allOf;
           }
-
-          if (data.hasOwnProperty("allOf")) {
-            object.allOf = _ApiClient.default.convertToType(data["allOf"], [
-              object.allOfType
-            ]);
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PropertyConditions();
+            }
+
+            if (data.hasOwnProperty("allOf")) {
+              object.allOf = _ApiClient.default.convertToType(data["allOf"], [
+                object.allOfType
+              ]);
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PropertyConditions;
   })();

@@ -60,4 +60,31 @@ export default class ExternalServiceLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ExternalServiceLinksProvider }
+   */
+  getProvider() {
+    return this.provider;
+  }
+
+  /**
+   * @param { module:model/ExternalServiceLinksProvider } provider
+   */
+  setProvider(provider) {
+    this.provider = provider;
+  }
+  /**
+   * @return { module:model/ExternalServiceLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/ExternalServiceLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

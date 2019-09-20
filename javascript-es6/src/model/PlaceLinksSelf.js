@@ -58,4 +58,33 @@ export default class PlaceLinksSelf {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the self associated to the given place.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the self associated to the given place.
+   * @param { String } href The URI of the self associated to the given place.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/PlaceLinksSelfIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/PlaceLinksSelfIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

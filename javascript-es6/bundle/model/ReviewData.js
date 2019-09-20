@@ -64,48 +64,108 @@ var ReviewData =
      * @return { module:model/ReviewData } The populated "ReviewData" instance.
      */
 
-    _createClass(ReviewData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ReviewData,
+      [
+        {
+          key: "getReviewBody",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getReviewBody() {
+            return this.reviewBody;
           }
-
-          if (object === null) {
-            object = new ReviewData();
+          /**
+           * @param { String } reviewBody
+           */
+        },
+        {
+          key: "setReviewBody",
+          value: function setReviewBody(reviewBody) {
+            this.reviewBody = reviewBody;
           }
-
-          if (data.hasOwnProperty("reviewBody")) {
-            object.reviewBody = _ApiClient.default.convertToType(
-              data["reviewBody"],
-              "String"
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getReviewRating",
+          value: function getReviewRating() {
+            return this.reviewRating;
           }
-
-          if (data.hasOwnProperty("reviewRating")) {
-            object.reviewRating = _ApiClient.default.convertToType(
-              data["reviewRating"],
-              "Number"
-            );
+          /**
+           * @param { Number } reviewRating
+           */
+        },
+        {
+          key: "setReviewRating",
+          value: function setReviewRating(reviewRating) {
+            this.reviewRating = reviewRating;
           }
-
-          if (data.hasOwnProperty("reviewRequest")) {
-            object.reviewRequest = _ApiClient.default.convertToType(
-              data["reviewRequest"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getReviewRequest",
+          value: function getReviewRequest() {
+            return this.reviewRequest;
           }
-
-          return object;
+          /**
+           * @param { String } reviewRequest
+           */
+        },
+        {
+          key: "setReviewRequest",
+          value: function setReviewRequest(reviewRequest) {
+            this.reviewRequest = reviewRequest;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ReviewData();
+            }
+
+            if (data.hasOwnProperty("reviewBody")) {
+              object.reviewBody = _ApiClient.default.convertToType(
+                data["reviewBody"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("reviewRating")) {
+              object.reviewRating = _ApiClient.default.convertToType(
+                data["reviewRating"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("reviewRequest")) {
+              object.reviewRequest = _ApiClient.default.convertToType(
+                data["reviewRequest"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ReviewData;
   })();

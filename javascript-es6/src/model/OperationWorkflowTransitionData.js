@@ -52,6 +52,20 @@ export default class OperationWorkflowTransitionData {
   }
 
   /**
+   * @return { module:model/OperationWorkflowTransitionData.TransitionEnum }
+   */
+  getTransition() {
+    return this.transition;
+  }
+
+  /**
+   * @param { module:model/OperationWorkflowTransitionData.TransitionEnum } transition
+   */
+  setTransition(transition) {
+    this.transition = transition;
+  }
+
+  /**
    * Allowed values for the "transition" property.
    * @enum { String }
    */

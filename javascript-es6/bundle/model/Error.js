@@ -63,48 +63,108 @@ var Error =
      * @return { module:model/Error } The populated "Error" instance.
      */
 
-    _createClass(Error, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Error,
+      [
+        {
+          key: "getMessage",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getMessage() {
+            return this.message;
           }
-
-          if (object === null) {
-            object = new Error();
+          /**
+           * @param { String } message
+           */
+        },
+        {
+          key: "setMessage",
+          value: function setMessage(message) {
+            this.message = message;
           }
-
-          if (data.hasOwnProperty("message")) {
-            object.message = _ApiClient.default.convertToType(
-              data["message"],
-              "String"
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getTotal",
+          value: function getTotal() {
+            return this.total;
           }
-
-          if (data.hasOwnProperty("total")) {
-            object.total = _ApiClient.default.convertToType(
-              data["total"],
-              "Number"
-            );
+          /**
+           * @param { Number } total
+           */
+        },
+        {
+          key: "setTotal",
+          value: function setTotal(total) {
+            this.total = total;
           }
-
-          if (data.hasOwnProperty("_embedded")) {
-            object.embedded = _ApiClient.default.convertToType(
-              data["_embedded"],
-              object.embeddedType
-            );
+          /**
+           * @return { module:model/ErrorEmbedded }
+           */
+        },
+        {
+          key: "getEmbedded",
+          value: function getEmbedded() {
+            return this.embedded;
           }
-
-          return object;
+          /**
+           * @param { module:model/ErrorEmbedded } embedded
+           */
+        },
+        {
+          key: "setEmbedded",
+          value: function setEmbedded(embedded) {
+            this.embedded = embedded;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Error();
+            }
+
+            if (data.hasOwnProperty("message")) {
+              object.message = _ApiClient.default.convertToType(
+                data["message"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("total")) {
+              object.total = _ApiClient.default.convertToType(
+                data["total"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("_embedded")) {
+              object.embedded = _ApiClient.default.convertToType(
+                data["_embedded"],
+                object.embeddedType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Error;
   })();

@@ -51,4 +51,18 @@ export default class BusinessActivityCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/BusinessActivity> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/BusinessActivity> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

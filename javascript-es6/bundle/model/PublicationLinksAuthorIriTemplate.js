@@ -64,34 +64,58 @@ var PublicationLinksAuthorIriTemplate =
      * @return { module:model/PublicationLinksAuthorIriTemplate } The populated "PublicationLinksAuthorIriTemplate" instance.
      */
 
-    _createClass(PublicationLinksAuthorIriTemplate, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PublicationLinksAuthorIriTemplate,
+      [
+        {
+          key: "getMapping",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/ContributionLinksContributorIriTemplateMapping }
+           */
+          value: function getMapping() {
+            return this.mapping;
           }
-
-          if (object === null) {
-            object = new PublicationLinksAuthorIriTemplate();
+          /**
+           * @param { module:model/ContributionLinksContributorIriTemplateMapping } mapping
+           */
+        },
+        {
+          key: "setMapping",
+          value: function setMapping(mapping) {
+            this.mapping = mapping;
           }
-
-          if (data.hasOwnProperty("mapping")) {
-            object.mapping = _ApiClient.default.convertToType(
-              data["mapping"],
-              object.mappingType
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PublicationLinksAuthorIriTemplate();
+            }
+
+            if (data.hasOwnProperty("mapping")) {
+              object.mapping = _ApiClient.default.convertToType(
+                data["mapping"],
+                object.mappingType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PublicationLinksAuthorIriTemplate;
   })();

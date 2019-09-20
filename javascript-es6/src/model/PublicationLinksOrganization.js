@@ -58,4 +58,33 @@ export default class PublicationLinksOrganization {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the organization associated to the given publication.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the organization associated to the given publication.
+   * @param { String } href The URI of the organization associated to the given publication.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/PublicationLinksOrganizationIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/PublicationLinksOrganizationIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

@@ -50,4 +50,18 @@ export default class ResetPasswordData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getEmail() {
+    return this.email;
+  }
+
+  /**
+   * @param { String } email
+   */
+  setEmail(email) {
+    this.email = email;
+  }
 }

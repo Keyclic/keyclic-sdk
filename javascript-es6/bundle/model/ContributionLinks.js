@@ -69,41 +69,83 @@ var ContributionLinks =
      * @return { module:model/ContributionLinks } The populated "ContributionLinks" instance.
      */
 
-    _createClass(ContributionLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ContributionLinks,
+      [
+        {
+          key: "getContributor",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/ContributionLinksContributor }
+           */
+          value: function getContributor() {
+            return this.contributor;
           }
-
-          if (object === null) {
-            object = new ContributionLinks();
+          /**
+           * @param { module:model/ContributionLinksContributor } contributor
+           */
+        },
+        {
+          key: "setContributor",
+          value: function setContributor(contributor) {
+            this.contributor = contributor;
           }
-
-          if (data.hasOwnProperty("contributor")) {
-            object.contributor = _ApiClient.default.convertToType(
-              data["contributor"],
-              object.contributorType
-            );
+          /**
+           * @return { module:model/ContributionLinksFeedback }
+           */
+        },
+        {
+          key: "getFeedback",
+          value: function getFeedback() {
+            return this.feedback;
           }
-
-          if (data.hasOwnProperty("feedback")) {
-            object.feedback = _ApiClient.default.convertToType(
-              data["feedback"],
-              object.feedbackType
-            );
+          /**
+           * @param { module:model/ContributionLinksFeedback } feedback
+           */
+        },
+        {
+          key: "setFeedback",
+          value: function setFeedback(feedback) {
+            this.feedback = feedback;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ContributionLinks();
+            }
+
+            if (data.hasOwnProperty("contributor")) {
+              object.contributor = _ApiClient.default.convertToType(
+                data["contributor"],
+                object.contributorType
+              );
+            }
+
+            if (data.hasOwnProperty("feedback")) {
+              object.feedback = _ApiClient.default.convertToType(
+                data["feedback"],
+                object.feedbackType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ContributionLinks;
   })();

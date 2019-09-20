@@ -48,4 +48,18 @@ export default class CategoryLinksSelfIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getCategory() {
+    return this.category;
+  }
+
+  /**
+   * @param { String } category
+   */
+  setCategory(category) {
+    this.category = category;
+  }
 }

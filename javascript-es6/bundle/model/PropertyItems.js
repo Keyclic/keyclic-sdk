@@ -61,33 +61,57 @@ var PropertyItems =
      * @return { module:model/PropertyItems } The populated "PropertyItems" instance.
      */
 
-    _createClass(PropertyItems, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PropertyItems,
+      [
+        {
+          key: "getOneOf",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<module:model/Choice> }
+           */
+          value: function getOneOf() {
+            return this.oneOf;
           }
-
-          if (object === null) {
-            object = new PropertyItems();
+          /**
+           * @param { Array.<module:model/Choice> } oneOf
+           */
+        },
+        {
+          key: "setOneOf",
+          value: function setOneOf(oneOf) {
+            this.oneOf = oneOf;
           }
-
-          if (data.hasOwnProperty("oneOf")) {
-            object.oneOf = _ApiClient.default.convertToType(data["oneOf"], [
-              object.oneOfType
-            ]);
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PropertyItems();
+            }
+
+            if (data.hasOwnProperty("oneOf")) {
+              object.oneOf = _ApiClient.default.convertToType(data["oneOf"], [
+                object.oneOfType
+              ]);
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PropertyItems;
   })();

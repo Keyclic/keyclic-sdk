@@ -56,4 +56,31 @@ export default class Feed {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
 }

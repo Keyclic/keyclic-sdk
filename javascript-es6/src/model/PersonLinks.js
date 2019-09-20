@@ -57,4 +57,31 @@ export default class PersonLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PersonLinksImage }
+   */
+  getImage() {
+    return this.image;
+  }
+
+  /**
+   * @param { module:model/PersonLinksImage } image
+   */
+  setImage(image) {
+    this.image = image;
+  }
+  /**
+   * @return { module:model/PersonLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/PersonLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

@@ -58,4 +58,33 @@ export default class ReportLinksOperations {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the operations associated to the given report.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the operations associated to the given report.
+   * @param { String } href The URI of the operations associated to the given report.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/ReportLinksOperationsIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/ReportLinksOperationsIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

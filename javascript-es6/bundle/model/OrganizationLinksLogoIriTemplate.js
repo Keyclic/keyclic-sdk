@@ -63,34 +63,58 @@ var OrganizationLinksLogoIriTemplate =
      * @return { module:model/OrganizationLinksLogoIriTemplate } The populated "OrganizationLinksLogoIriTemplate" instance.
      */
 
-    _createClass(OrganizationLinksLogoIriTemplate, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OrganizationLinksLogoIriTemplate,
+      [
+        {
+          key: "getMapping",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/CategoryLinksOrganizationIriTemplateMapping }
+           */
+          value: function getMapping() {
+            return this.mapping;
           }
-
-          if (object === null) {
-            object = new OrganizationLinksLogoIriTemplate();
+          /**
+           * @param { module:model/CategoryLinksOrganizationIriTemplateMapping } mapping
+           */
+        },
+        {
+          key: "setMapping",
+          value: function setMapping(mapping) {
+            this.mapping = mapping;
           }
-
-          if (data.hasOwnProperty("mapping")) {
-            object.mapping = _ApiClient.default.convertToType(
-              data["mapping"],
-              object.mappingType
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OrganizationLinksLogoIriTemplate();
+            }
+
+            if (data.hasOwnProperty("mapping")) {
+              object.mapping = _ApiClient.default.convertToType(
+                data["mapping"],
+                object.mappingType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OrganizationLinksLogoIriTemplate;
   })();

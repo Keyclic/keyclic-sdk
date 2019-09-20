@@ -87,62 +87,158 @@ var FeedbackReviewRequestLinks =
      * @return { module:model/FeedbackReviewRequestLinks } The populated "FeedbackReviewRequestLinks" instance.
      */
 
-    _createClass(FeedbackReviewRequestLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FeedbackReviewRequestLinks,
+      [
+        {
+          key: "getItemToReview",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/FeedbackReviewRequestLinksItemToReview }
+           */
+          value: function getItemToReview() {
+            return this.itemToReview;
           }
-
-          if (object === null) {
-            object = new FeedbackReviewRequestLinks();
+          /**
+           * @param { module:model/FeedbackReviewRequestLinksItemToReview } itemToReview
+           */
+        },
+        {
+          key: "setItemToReview",
+          value: function setItemToReview(itemToReview) {
+            this.itemToReview = itemToReview;
           }
-
-          if (data.hasOwnProperty("itemToReview")) {
-            object.itemToReview = _ApiClient.default.convertToType(
-              data["itemToReview"],
-              object.itemToReviewType
-            );
+          /**
+           * @return { module:model/FeedbackReviewRequestLinksOrganization }
+           */
+        },
+        {
+          key: "getOrganization",
+          value: function getOrganization() {
+            return this.organization;
           }
-
-          if (data.hasOwnProperty("organization")) {
-            object.organization = _ApiClient.default.convertToType(
-              data["organization"],
-              object.organizationType
-            );
+          /**
+           * @param { module:model/FeedbackReviewRequestLinksOrganization } organization
+           */
+        },
+        {
+          key: "setOrganization",
+          value: function setOrganization(organization) {
+            this.organization = organization;
           }
-
-          if (data.hasOwnProperty("review")) {
-            object.review = _ApiClient.default.convertToType(
-              data["review"],
-              object.reviewType
-            );
+          /**
+           * @return { module:model/FeedbackReviewRequestLinksReview }
+           */
+        },
+        {
+          key: "getReview",
+          value: function getReview() {
+            return this.review;
           }
-
-          if (data.hasOwnProperty("reviewer")) {
-            object.reviewer = _ApiClient.default.convertToType(
-              data["reviewer"],
-              object.reviewerType
-            );
+          /**
+           * @param { module:model/FeedbackReviewRequestLinksReview } review
+           */
+        },
+        {
+          key: "setReview",
+          value: function setReview(review) {
+            this.review = review;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @return { module:model/FeedbackReviewRequestLinksReviewer }
+           */
+        },
+        {
+          key: "getReviewer",
+          value: function getReviewer() {
+            return this.reviewer;
           }
-
-          return object;
+          /**
+           * @param { module:model/FeedbackReviewRequestLinksReviewer } reviewer
+           */
+        },
+        {
+          key: "setReviewer",
+          value: function setReviewer(reviewer) {
+            this.reviewer = reviewer;
+          }
+          /**
+           * @return { module:model/FeedbackReviewRequestLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
+          }
+          /**
+           * @param { module:model/FeedbackReviewRequestLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FeedbackReviewRequestLinks();
+            }
+
+            if (data.hasOwnProperty("itemToReview")) {
+              object.itemToReview = _ApiClient.default.convertToType(
+                data["itemToReview"],
+                object.itemToReviewType
+              );
+            }
+
+            if (data.hasOwnProperty("organization")) {
+              object.organization = _ApiClient.default.convertToType(
+                data["organization"],
+                object.organizationType
+              );
+            }
+
+            if (data.hasOwnProperty("review")) {
+              object.review = _ApiClient.default.convertToType(
+                data["review"],
+                object.reviewType
+              );
+            }
+
+            if (data.hasOwnProperty("reviewer")) {
+              object.reviewer = _ApiClient.default.convertToType(
+                data["reviewer"],
+                object.reviewerType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FeedbackReviewRequestLinks;
   })();

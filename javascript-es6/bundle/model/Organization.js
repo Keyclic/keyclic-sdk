@@ -79,108 +79,299 @@ var Organization =
      * @return { module:model/Organization } The populated "Organization" instance.
      */
 
-    _createClass(Organization, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Organization,
+      [
+        {
+          key: "getLinks",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/OrganizationLinks }
+           */
+          value: function getLinks() {
+            return this.links;
           }
-
-          if (object === null) {
-            object = new Organization();
+          /**
+           * @param { module:model/OrganizationLinks } links
+           */
+        },
+        {
+          key: "setLinks",
+          value: function setLinks(links) {
+            this.links = links;
           }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getAlternateName",
+          value: function getAlternateName() {
+            return this.alternateName;
           }
-
-          if (data.hasOwnProperty("alternateName")) {
-            object.alternateName = _ApiClient.default.convertToType(
-              data["alternateName"],
-              "String"
-            );
+          /**
+           * @param { String } alternateName
+           */
+        },
+        {
+          key: "setAlternateName",
+          value: function setAlternateName(alternateName) {
+            this.alternateName = alternateName;
           }
-
-          if (data.hasOwnProperty("billingEmailAddress")) {
-            object.billingEmailAddress = _ApiClient.default.convertToType(
-              data["billingEmailAddress"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getBillingEmailAddress",
+          value: function getBillingEmailAddress() {
+            return this.billingEmailAddress;
           }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
+          /**
+           * @param { String } billingEmailAddress
+           */
+        },
+        {
+          key: "setBillingEmailAddress",
+          value: function setBillingEmailAddress(billingEmailAddress) {
+            this.billingEmailAddress = billingEmailAddress;
           }
-
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
-              "String"
-            );
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getCreatedAt",
+          value: function getCreatedAt() {
+            return this.createdAt;
           }
-
-          if (data.hasOwnProperty("enabled")) {
-            object.enabled = _ApiClient.default.convertToType(
-              data["enabled"],
-              "Boolean"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getDescription",
+          value: function getDescription() {
+            return this.description;
           }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          /**
+           * @param { String } description
+           */
+        },
+        {
+          key: "setDescription",
+          value: function setDescription(description) {
+            this.description = description;
           }
-
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
-              "String"
-            );
+          /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getEnabled",
+          value: function getEnabled() {
+            return this.enabled;
           }
-
-          if (data.hasOwnProperty("notificationEmailAddress")) {
-            object.notificationEmailAddress = _ApiClient.default.convertToType(
-              data["notificationEmailAddress"],
-              "String"
-            );
+          /**
+           * @param { Boolean } enabled
+           */
+        },
+        {
+          key: "setEnabled",
+          value: function setEnabled(enabled) {
+            this.enabled = enabled;
           }
-
-          if (data.hasOwnProperty("preferences")) {
-            object.preferences = _ApiClient.default.convertToType(
-              data["preferences"],
-              object.preferencesType
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getId",
+          value: function getId() {
+            return this.id;
           }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getName",
+          value: function getName() {
+            return this.name;
           }
-
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
-            );
+          /**
+           * @param { String } name
+           */
+        },
+        {
+          key: "setName",
+          value: function setName(name) {
+            this.name = name;
           }
-
-          return object;
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getNotificationEmailAddress",
+          value: function getNotificationEmailAddress() {
+            return this.notificationEmailAddress;
+          }
+          /**
+           * @param { String } notificationEmailAddress
+           */
+        },
+        {
+          key: "setNotificationEmailAddress",
+          value: function setNotificationEmailAddress(
+            notificationEmailAddress
+          ) {
+            this.notificationEmailAddress = notificationEmailAddress;
+          }
+          /**
+           * @return { module:model/OrganizationPreferences }
+           */
+        },
+        {
+          key: "getPreferences",
+          value: function getPreferences() {
+            return this.preferences;
+          }
+          /**
+           * @param { module:model/OrganizationPreferences } preferences
+           */
+        },
+        {
+          key: "setPreferences",
+          value: function setPreferences(preferences) {
+            this.preferences = preferences;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
+          }
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getUpdatedAt",
+          value: function getUpdatedAt() {
+            return this.updatedAt;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Organization();
+            }
+
+            if (data.hasOwnProperty("_links")) {
+              object.links = _ApiClient.default.convertToType(
+                data["_links"],
+                object.linksType
+              );
+            }
+
+            if (data.hasOwnProperty("alternateName")) {
+              object.alternateName = _ApiClient.default.convertToType(
+                data["alternateName"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("billingEmailAddress")) {
+              object.billingEmailAddress = _ApiClient.default.convertToType(
+                data["billingEmailAddress"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("createdAt")) {
+              object.createdAt = _ApiClient.default.convertToType(
+                data["createdAt"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("description")) {
+              object.description = _ApiClient.default.convertToType(
+                data["description"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("enabled")) {
+              object.enabled = _ApiClient.default.convertToType(
+                data["enabled"],
+                "Boolean"
+              );
+            }
+
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("name")) {
+              object.name = _ApiClient.default.convertToType(
+                data["name"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("notificationEmailAddress")) {
+              object.notificationEmailAddress = _ApiClient.default.convertToType(
+                data["notificationEmailAddress"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("preferences")) {
+              object.preferences = _ApiClient.default.convertToType(
+                data["preferences"],
+                object.preferencesType
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("updatedAt")) {
+              object.updatedAt = _ApiClient.default.convertToType(
+                data["updatedAt"],
+                "Date"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Organization;
   })();

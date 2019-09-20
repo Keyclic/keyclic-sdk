@@ -58,34 +58,58 @@ var CategoryLinksSelfIriTemplateMapping =
      * @return { module:model/CategoryLinksSelfIriTemplateMapping } The populated "CategoryLinksSelfIriTemplateMapping" instance.
      */
 
-    _createClass(CategoryLinksSelfIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      CategoryLinksSelfIriTemplateMapping,
+      [
+        {
+          key: "getCategory",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getCategory() {
+            return this.category;
           }
-
-          if (object === null) {
-            object = new CategoryLinksSelfIriTemplateMapping();
+          /**
+           * @param { String } category
+           */
+        },
+        {
+          key: "setCategory",
+          value: function setCategory(category) {
+            this.category = category;
           }
-
-          if (data.hasOwnProperty("category")) {
-            object.category = _ApiClient.default.convertToType(
-              data["category"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new CategoryLinksSelfIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("category")) {
+              object.category = _ApiClient.default.convertToType(
+                data["category"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return CategoryLinksSelfIriTemplateMapping;
   })();

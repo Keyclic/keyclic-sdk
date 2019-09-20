@@ -1,5 +1,373 @@
 "use strict";
 
+require("core-js/modules/es.symbol");
+
+require("core-js/modules/es.symbol.description");
+
+require("core-js/modules/es.symbol.async-iterator");
+
+require("core-js/modules/es.symbol.has-instance");
+
+require("core-js/modules/es.symbol.is-concat-spreadable");
+
+require("core-js/modules/es.symbol.iterator");
+
+require("core-js/modules/es.symbol.match");
+
+require("core-js/modules/es.symbol.replace");
+
+require("core-js/modules/es.symbol.search");
+
+require("core-js/modules/es.symbol.species");
+
+require("core-js/modules/es.symbol.split");
+
+require("core-js/modules/es.symbol.to-primitive");
+
+require("core-js/modules/es.symbol.to-string-tag");
+
+require("core-js/modules/es.symbol.unscopables");
+
+require("core-js/modules/es.array.concat");
+
+require("core-js/modules/es.array.copy-within");
+
+require("core-js/modules/es.array.fill");
+
+require("core-js/modules/es.array.filter");
+
+require("core-js/modules/es.array.find");
+
+require("core-js/modules/es.array.find-index");
+
+require("core-js/modules/es.array.flat");
+
+require("core-js/modules/es.array.flat-map");
+
+require("core-js/modules/es.array.from");
+
+require("core-js/modules/es.array.includes");
+
+require("core-js/modules/es.array.iterator");
+
+require("core-js/modules/es.array.join");
+
+require("core-js/modules/es.array.map");
+
+require("core-js/modules/es.array.of");
+
+require("core-js/modules/es.array.reverse");
+
+require("core-js/modules/es.array.slice");
+
+require("core-js/modules/es.array.sort");
+
+require("core-js/modules/es.array.species");
+
+require("core-js/modules/es.array.splice");
+
+require("core-js/modules/es.array.unscopables.flat");
+
+require("core-js/modules/es.array.unscopables.flat-map");
+
+require("core-js/modules/es.array-buffer.constructor");
+
+require("core-js/modules/es.array-buffer.slice");
+
+require("core-js/modules/es.date.to-primitive");
+
+require("core-js/modules/es.function.has-instance");
+
+require("core-js/modules/es.function.name");
+
+require("core-js/modules/es.json.to-string-tag");
+
+require("core-js/modules/es.map");
+
+require("core-js/modules/es.math.acosh");
+
+require("core-js/modules/es.math.asinh");
+
+require("core-js/modules/es.math.atanh");
+
+require("core-js/modules/es.math.cbrt");
+
+require("core-js/modules/es.math.clz32");
+
+require("core-js/modules/es.math.cosh");
+
+require("core-js/modules/es.math.expm1");
+
+require("core-js/modules/es.math.fround");
+
+require("core-js/modules/es.math.hypot");
+
+require("core-js/modules/es.math.imul");
+
+require("core-js/modules/es.math.log10");
+
+require("core-js/modules/es.math.log1p");
+
+require("core-js/modules/es.math.log2");
+
+require("core-js/modules/es.math.sign");
+
+require("core-js/modules/es.math.sinh");
+
+require("core-js/modules/es.math.tanh");
+
+require("core-js/modules/es.math.to-string-tag");
+
+require("core-js/modules/es.math.trunc");
+
+require("core-js/modules/es.number.constructor");
+
+require("core-js/modules/es.number.epsilon");
+
+require("core-js/modules/es.number.is-finite");
+
+require("core-js/modules/es.number.is-integer");
+
+require("core-js/modules/es.number.is-nan");
+
+require("core-js/modules/es.number.is-safe-integer");
+
+require("core-js/modules/es.number.max-safe-integer");
+
+require("core-js/modules/es.number.min-safe-integer");
+
+require("core-js/modules/es.number.parse-float");
+
+require("core-js/modules/es.number.parse-int");
+
+require("core-js/modules/es.number.to-fixed");
+
+require("core-js/modules/es.object.assign");
+
+require("core-js/modules/es.object.define-getter");
+
+require("core-js/modules/es.object.define-setter");
+
+require("core-js/modules/es.object.entries");
+
+require("core-js/modules/es.object.freeze");
+
+require("core-js/modules/es.object.from-entries");
+
+require("core-js/modules/es.object.get-own-property-descriptor");
+
+require("core-js/modules/es.object.get-own-property-descriptors");
+
+require("core-js/modules/es.object.get-own-property-names");
+
+require("core-js/modules/es.object.get-prototype-of");
+
+require("core-js/modules/es.object.is");
+
+require("core-js/modules/es.object.is-extensible");
+
+require("core-js/modules/es.object.is-frozen");
+
+require("core-js/modules/es.object.is-sealed");
+
+require("core-js/modules/es.object.keys");
+
+require("core-js/modules/es.object.lookup-getter");
+
+require("core-js/modules/es.object.lookup-setter");
+
+require("core-js/modules/es.object.prevent-extensions");
+
+require("core-js/modules/es.object.seal");
+
+require("core-js/modules/es.object.to-string");
+
+require("core-js/modules/es.object.values");
+
+require("core-js/modules/es.promise");
+
+require("core-js/modules/es.promise.finally");
+
+require("core-js/modules/es.reflect.apply");
+
+require("core-js/modules/es.reflect.construct");
+
+require("core-js/modules/es.reflect.define-property");
+
+require("core-js/modules/es.reflect.delete-property");
+
+require("core-js/modules/es.reflect.get");
+
+require("core-js/modules/es.reflect.get-own-property-descriptor");
+
+require("core-js/modules/es.reflect.get-prototype-of");
+
+require("core-js/modules/es.reflect.has");
+
+require("core-js/modules/es.reflect.is-extensible");
+
+require("core-js/modules/es.reflect.own-keys");
+
+require("core-js/modules/es.reflect.prevent-extensions");
+
+require("core-js/modules/es.reflect.set");
+
+require("core-js/modules/es.reflect.set-prototype-of");
+
+require("core-js/modules/es.regexp.constructor");
+
+require("core-js/modules/es.regexp.flags");
+
+require("core-js/modules/es.regexp.to-string");
+
+require("core-js/modules/es.set");
+
+require("core-js/modules/es.string.code-point-at");
+
+require("core-js/modules/es.string.ends-with");
+
+require("core-js/modules/es.string.from-code-point");
+
+require("core-js/modules/es.string.includes");
+
+require("core-js/modules/es.string.iterator");
+
+require("core-js/modules/es.string.match");
+
+require("core-js/modules/es.string.pad-end");
+
+require("core-js/modules/es.string.pad-start");
+
+require("core-js/modules/es.string.raw");
+
+require("core-js/modules/es.string.repeat");
+
+require("core-js/modules/es.string.replace");
+
+require("core-js/modules/es.string.search");
+
+require("core-js/modules/es.string.split");
+
+require("core-js/modules/es.string.starts-with");
+
+require("core-js/modules/es.string.trim");
+
+require("core-js/modules/es.string.trim-end");
+
+require("core-js/modules/es.string.trim-start");
+
+require("core-js/modules/es.string.anchor");
+
+require("core-js/modules/es.string.big");
+
+require("core-js/modules/es.string.blink");
+
+require("core-js/modules/es.string.bold");
+
+require("core-js/modules/es.string.fixed");
+
+require("core-js/modules/es.string.fontcolor");
+
+require("core-js/modules/es.string.fontsize");
+
+require("core-js/modules/es.string.italics");
+
+require("core-js/modules/es.string.link");
+
+require("core-js/modules/es.string.small");
+
+require("core-js/modules/es.string.strike");
+
+require("core-js/modules/es.string.sub");
+
+require("core-js/modules/es.string.sup");
+
+require("core-js/modules/es.typed-array.float32-array");
+
+require("core-js/modules/es.typed-array.float64-array");
+
+require("core-js/modules/es.typed-array.int8-array");
+
+require("core-js/modules/es.typed-array.int16-array");
+
+require("core-js/modules/es.typed-array.int32-array");
+
+require("core-js/modules/es.typed-array.uint8-array");
+
+require("core-js/modules/es.typed-array.uint8-clamped-array");
+
+require("core-js/modules/es.typed-array.uint16-array");
+
+require("core-js/modules/es.typed-array.uint32-array");
+
+require("core-js/modules/es.typed-array.copy-within");
+
+require("core-js/modules/es.typed-array.every");
+
+require("core-js/modules/es.typed-array.fill");
+
+require("core-js/modules/es.typed-array.filter");
+
+require("core-js/modules/es.typed-array.find");
+
+require("core-js/modules/es.typed-array.find-index");
+
+require("core-js/modules/es.typed-array.for-each");
+
+require("core-js/modules/es.typed-array.from");
+
+require("core-js/modules/es.typed-array.includes");
+
+require("core-js/modules/es.typed-array.index-of");
+
+require("core-js/modules/es.typed-array.iterator");
+
+require("core-js/modules/es.typed-array.join");
+
+require("core-js/modules/es.typed-array.last-index-of");
+
+require("core-js/modules/es.typed-array.map");
+
+require("core-js/modules/es.typed-array.of");
+
+require("core-js/modules/es.typed-array.reduce");
+
+require("core-js/modules/es.typed-array.reduce-right");
+
+require("core-js/modules/es.typed-array.reverse");
+
+require("core-js/modules/es.typed-array.set");
+
+require("core-js/modules/es.typed-array.slice");
+
+require("core-js/modules/es.typed-array.some");
+
+require("core-js/modules/es.typed-array.sort");
+
+require("core-js/modules/es.typed-array.subarray");
+
+require("core-js/modules/es.typed-array.to-locale-string");
+
+require("core-js/modules/es.typed-array.to-string");
+
+require("core-js/modules/es.weak-map");
+
+require("core-js/modules/es.weak-set");
+
+require("core-js/modules/web.dom-collections.for-each");
+
+require("core-js/modules/web.dom-collections.iterator");
+
+require("core-js/modules/web.immediate");
+
+require("core-js/modules/web.queue-microtask");
+
+require("core-js/modules/web.url");
+
+require("core-js/modules/web.url.to-json");
+
+require("core-js/modules/web.url-search-params");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -303,12 +671,16 @@ Object.defineProperty(exports, "ContributionLinksContributorIriTemplate", {
     return _ContributionLinksContributorIriTemplate.default;
   }
 });
-Object.defineProperty(exports, "ContributionLinksContributorIriTemplateMapping", {
-  enumerable: true,
-  get: function get() {
-    return _ContributionLinksContributorIriTemplateMapping.default;
+Object.defineProperty(
+  exports,
+  "ContributionLinksContributorIriTemplateMapping",
+  {
+    enumerable: true,
+    get: function get() {
+      return _ContributionLinksContributorIriTemplateMapping.default;
+    }
   }
-});
+);
 Object.defineProperty(exports, "ContributionLinksFeedback", {
   enumerable: true,
   get: function get() {
@@ -651,6 +1023,12 @@ Object.defineProperty(exports, "ExternalServicePatch", {
     return _ExternalServicePatch.default;
   }
 });
+Object.defineProperty(exports, "ExternalServicePatchContactPoint", {
+  enumerable: true,
+  get: function get() {
+    return _ExternalServicePatchContactPoint.default;
+  }
+});
 Object.defineProperty(exports, "FacebookConnectData", {
   enumerable: true,
   get: function get() {
@@ -849,24 +1227,32 @@ Object.defineProperty(exports, "FeedbackReviewRequestLinksItemToReview", {
     return _FeedbackReviewRequestLinksItemToReview.default;
   }
 });
-Object.defineProperty(exports, "FeedbackReviewRequestLinksItemToReviewIriTemplate", {
-  enumerable: true,
-  get: function get() {
-    return _FeedbackReviewRequestLinksItemToReviewIriTemplate.default;
+Object.defineProperty(
+  exports,
+  "FeedbackReviewRequestLinksItemToReviewIriTemplate",
+  {
+    enumerable: true,
+    get: function get() {
+      return _FeedbackReviewRequestLinksItemToReviewIriTemplate.default;
+    }
   }
-});
+);
 Object.defineProperty(exports, "FeedbackReviewRequestLinksOrganization", {
   enumerable: true,
   get: function get() {
     return _FeedbackReviewRequestLinksOrganization.default;
   }
 });
-Object.defineProperty(exports, "FeedbackReviewRequestLinksOrganizationIriTemplate", {
-  enumerable: true,
-  get: function get() {
-    return _FeedbackReviewRequestLinksOrganizationIriTemplate.default;
+Object.defineProperty(
+  exports,
+  "FeedbackReviewRequestLinksOrganizationIriTemplate",
+  {
+    enumerable: true,
+    get: function get() {
+      return _FeedbackReviewRequestLinksOrganizationIriTemplate.default;
+    }
   }
-});
+);
 Object.defineProperty(exports, "FeedbackReviewRequestLinksReview", {
   enumerable: true,
   get: function get() {
@@ -879,24 +1265,32 @@ Object.defineProperty(exports, "FeedbackReviewRequestLinksReviewIriTemplate", {
     return _FeedbackReviewRequestLinksReviewIriTemplate.default;
   }
 });
-Object.defineProperty(exports, "FeedbackReviewRequestLinksReviewIriTemplateMapping", {
-  enumerable: true,
-  get: function get() {
-    return _FeedbackReviewRequestLinksReviewIriTemplateMapping.default;
+Object.defineProperty(
+  exports,
+  "FeedbackReviewRequestLinksReviewIriTemplateMapping",
+  {
+    enumerable: true,
+    get: function get() {
+      return _FeedbackReviewRequestLinksReviewIriTemplateMapping.default;
+    }
   }
-});
+);
 Object.defineProperty(exports, "FeedbackReviewRequestLinksReviewer", {
   enumerable: true,
   get: function get() {
     return _FeedbackReviewRequestLinksReviewer.default;
   }
 });
-Object.defineProperty(exports, "FeedbackReviewRequestLinksReviewerIriTemplate", {
-  enumerable: true,
-  get: function get() {
-    return _FeedbackReviewRequestLinksReviewerIriTemplate.default;
+Object.defineProperty(
+  exports,
+  "FeedbackReviewRequestLinksReviewerIriTemplate",
+  {
+    enumerable: true,
+    get: function get() {
+      return _FeedbackReviewRequestLinksReviewerIriTemplate.default;
+    }
   }
-});
+);
 Object.defineProperty(exports, "FeedbackReviewRequestLinksSelf", {
   enumerable: true,
   get: function get() {
@@ -909,12 +1303,16 @@ Object.defineProperty(exports, "FeedbackReviewRequestLinksSelfIriTemplate", {
     return _FeedbackReviewRequestLinksSelfIriTemplate.default;
   }
 });
-Object.defineProperty(exports, "FeedbackReviewRequestLinksSelfIriTemplateMapping", {
-  enumerable: true,
-  get: function get() {
-    return _FeedbackReviewRequestLinksSelfIriTemplateMapping.default;
+Object.defineProperty(
+  exports,
+  "FeedbackReviewRequestLinksSelfIriTemplateMapping",
+  {
+    enumerable: true,
+    get: function get() {
+      return _FeedbackReviewRequestLinksSelfIriTemplateMapping.default;
+    }
   }
-});
+);
 Object.defineProperty(exports, "FeedbackWorkflowTransitionData", {
   enumerable: true,
   get: function get() {
@@ -2326,75 +2724,131 @@ Object.defineProperty(exports, "WebhookApi", {
   }
 });
 
+require("regenerator-runtime/runtime");
+
 var _ApiClient = _interopRequireDefault(require("./ApiClient"));
 
 var _Activity = _interopRequireDefault(require("./model/Activity"));
 
-var _ActivityAggregatedPagination = _interopRequireDefault(require("./model/ActivityAggregatedPagination"));
+var _ActivityAggregatedPagination = _interopRequireDefault(
+  require("./model/ActivityAggregatedPagination")
+);
 
 var _ActivityGroup = _interopRequireDefault(require("./model/ActivityGroup"));
 
-var _ActivityPagination = _interopRequireDefault(require("./model/ActivityPagination"));
+var _ActivityPagination = _interopRequireDefault(
+  require("./model/ActivityPagination")
+);
 
-var _ActivitySubject = _interopRequireDefault(require("./model/ActivitySubject"));
+var _ActivitySubject = _interopRequireDefault(
+  require("./model/ActivitySubject")
+);
 
 var _Application = _interopRequireDefault(require("./model/Application"));
 
-var _ApplicationLinks = _interopRequireDefault(require("./model/ApplicationLinks"));
+var _ApplicationLinks = _interopRequireDefault(
+  require("./model/ApplicationLinks")
+);
 
-var _ApplicationLinksSelf = _interopRequireDefault(require("./model/ApplicationLinksSelf"));
+var _ApplicationLinksSelf = _interopRequireDefault(
+  require("./model/ApplicationLinksSelf")
+);
 
-var _ApplicationLinksSelfIriTemplate = _interopRequireDefault(require("./model/ApplicationLinksSelfIriTemplate"));
+var _ApplicationLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/ApplicationLinksSelfIriTemplate")
+);
 
-var _ApplicationLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/ApplicationLinksSelfIriTemplateMapping"));
+var _ApplicationLinksSelfIriTemplateMapping = _interopRequireDefault(
+  require("./model/ApplicationLinksSelfIriTemplateMapping")
+);
 
 var _AssignData = _interopRequireDefault(require("./model/AssignData"));
 
-var _BusinessActivity = _interopRequireDefault(require("./model/BusinessActivity"));
+var _BusinessActivity = _interopRequireDefault(
+  require("./model/BusinessActivity")
+);
 
-var _BusinessActivityCollection = _interopRequireDefault(require("./model/BusinessActivityCollection"));
+var _BusinessActivityCollection = _interopRequireDefault(
+  require("./model/BusinessActivityCollection")
+);
 
-var _BusinessActivityLinks = _interopRequireDefault(require("./model/BusinessActivityLinks"));
+var _BusinessActivityLinks = _interopRequireDefault(
+  require("./model/BusinessActivityLinks")
+);
 
-var _BusinessActivityLinksImage = _interopRequireDefault(require("./model/BusinessActivityLinksImage"));
+var _BusinessActivityLinksImage = _interopRequireDefault(
+  require("./model/BusinessActivityLinksImage")
+);
 
-var _BusinessActivityLinksImageIriTemplate = _interopRequireDefault(require("./model/BusinessActivityLinksImageIriTemplate"));
+var _BusinessActivityLinksImageIriTemplate = _interopRequireDefault(
+  require("./model/BusinessActivityLinksImageIriTemplate")
+);
 
-var _BusinessActivityLinksImageIriTemplateMapping = _interopRequireDefault(require("./model/BusinessActivityLinksImageIriTemplateMapping"));
+var _BusinessActivityLinksImageIriTemplateMapping = _interopRequireDefault(
+  require("./model/BusinessActivityLinksImageIriTemplateMapping")
+);
 
-var _BusinessActivityLinksSchema = _interopRequireDefault(require("./model/BusinessActivityLinksSchema"));
+var _BusinessActivityLinksSchema = _interopRequireDefault(
+  require("./model/BusinessActivityLinksSchema")
+);
 
-var _BusinessActivityLinksSchemaIriTemplate = _interopRequireDefault(require("./model/BusinessActivityLinksSchemaIriTemplate"));
+var _BusinessActivityLinksSchemaIriTemplate = _interopRequireDefault(
+  require("./model/BusinessActivityLinksSchemaIriTemplate")
+);
 
-var _BusinessActivityLinksSelf = _interopRequireDefault(require("./model/BusinessActivityLinksSelf"));
+var _BusinessActivityLinksSelf = _interopRequireDefault(
+  require("./model/BusinessActivityLinksSelf")
+);
 
-var _BusinessActivityLinksSelfIriTemplate = _interopRequireDefault(require("./model/BusinessActivityLinksSelfIriTemplate"));
+var _BusinessActivityLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/BusinessActivityLinksSelfIriTemplate")
+);
 
-var _BusinessActivityLinksThumbnail = _interopRequireDefault(require("./model/BusinessActivityLinksThumbnail"));
+var _BusinessActivityLinksThumbnail = _interopRequireDefault(
+  require("./model/BusinessActivityLinksThumbnail")
+);
 
-var _BusinessActivityLinksThumbnailIriTemplate = _interopRequireDefault(require("./model/BusinessActivityLinksThumbnailIriTemplate"));
+var _BusinessActivityLinksThumbnailIriTemplate = _interopRequireDefault(
+  require("./model/BusinessActivityLinksThumbnailIriTemplate")
+);
 
-var _BusinessActivityMetadataSchema = _interopRequireDefault(require("./model/BusinessActivityMetadataSchema"));
+var _BusinessActivityMetadataSchema = _interopRequireDefault(
+  require("./model/BusinessActivityMetadataSchema")
+);
 
 var _Category = _interopRequireDefault(require("./model/Category"));
 
-var _CategoryCollection = _interopRequireDefault(require("./model/CategoryCollection"));
+var _CategoryCollection = _interopRequireDefault(
+  require("./model/CategoryCollection")
+);
 
 var _CategoryData = _interopRequireDefault(require("./model/CategoryData"));
 
 var _CategoryLinks = _interopRequireDefault(require("./model/CategoryLinks"));
 
-var _CategoryLinksOrganization = _interopRequireDefault(require("./model/CategoryLinksOrganization"));
+var _CategoryLinksOrganization = _interopRequireDefault(
+  require("./model/CategoryLinksOrganization")
+);
 
-var _CategoryLinksOrganizationIriTemplate = _interopRequireDefault(require("./model/CategoryLinksOrganizationIriTemplate"));
+var _CategoryLinksOrganizationIriTemplate = _interopRequireDefault(
+  require("./model/CategoryLinksOrganizationIriTemplate")
+);
 
-var _CategoryLinksOrganizationIriTemplateMapping = _interopRequireDefault(require("./model/CategoryLinksOrganizationIriTemplateMapping"));
+var _CategoryLinksOrganizationIriTemplateMapping = _interopRequireDefault(
+  require("./model/CategoryLinksOrganizationIriTemplateMapping")
+);
 
-var _CategoryLinksSelf = _interopRequireDefault(require("./model/CategoryLinksSelf"));
+var _CategoryLinksSelf = _interopRequireDefault(
+  require("./model/CategoryLinksSelf")
+);
 
-var _CategoryLinksSelfIriTemplate = _interopRequireDefault(require("./model/CategoryLinksSelfIriTemplate"));
+var _CategoryLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/CategoryLinksSelfIriTemplate")
+);
 
-var _CategoryLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/CategoryLinksSelfIriTemplateMapping"));
+var _CategoryLinksSelfIriTemplateMapping = _interopRequireDefault(
+  require("./model/CategoryLinksSelfIriTemplateMapping")
+);
 
 var _CategoryPatch = _interopRequireDefault(require("./model/CategoryPatch"));
 
@@ -2402,11 +2856,17 @@ var _Chart = _interopRequireDefault(require("./model/Chart"));
 
 var _Checkpoint = _interopRequireDefault(require("./model/Checkpoint"));
 
-var _CheckpointLinks = _interopRequireDefault(require("./model/CheckpointLinks"));
+var _CheckpointLinks = _interopRequireDefault(
+  require("./model/CheckpointLinks")
+);
 
-var _CheckpointLinksOrganization = _interopRequireDefault(require("./model/CheckpointLinksOrganization"));
+var _CheckpointLinksOrganization = _interopRequireDefault(
+  require("./model/CheckpointLinksOrganization")
+);
 
-var _CheckpointLinksOrganizationIriTemplate = _interopRequireDefault(require("./model/CheckpointLinksOrganizationIriTemplate"));
+var _CheckpointLinksOrganizationIriTemplate = _interopRequireDefault(
+  require("./model/CheckpointLinksOrganizationIriTemplate")
+);
 
 var _Choice = _interopRequireDefault(require("./model/Choice"));
 
@@ -2416,57 +2876,105 @@ var _Condition = _interopRequireDefault(require("./model/Condition"));
 
 var _Contribution = _interopRequireDefault(require("./model/Contribution"));
 
-var _ContributionCollection = _interopRequireDefault(require("./model/ContributionCollection"));
+var _ContributionCollection = _interopRequireDefault(
+  require("./model/ContributionCollection")
+);
 
-var _ContributionData = _interopRequireDefault(require("./model/ContributionData"));
+var _ContributionData = _interopRequireDefault(
+  require("./model/ContributionData")
+);
 
-var _ContributionLinks = _interopRequireDefault(require("./model/ContributionLinks"));
+var _ContributionLinks = _interopRequireDefault(
+  require("./model/ContributionLinks")
+);
 
-var _ContributionLinksContributor = _interopRequireDefault(require("./model/ContributionLinksContributor"));
+var _ContributionLinksContributor = _interopRequireDefault(
+  require("./model/ContributionLinksContributor")
+);
 
-var _ContributionLinksContributorIriTemplate = _interopRequireDefault(require("./model/ContributionLinksContributorIriTemplate"));
+var _ContributionLinksContributorIriTemplate = _interopRequireDefault(
+  require("./model/ContributionLinksContributorIriTemplate")
+);
 
-var _ContributionLinksContributorIriTemplateMapping = _interopRequireDefault(require("./model/ContributionLinksContributorIriTemplateMapping"));
+var _ContributionLinksContributorIriTemplateMapping = _interopRequireDefault(
+  require("./model/ContributionLinksContributorIriTemplateMapping")
+);
 
-var _ContributionLinksFeedback = _interopRequireDefault(require("./model/ContributionLinksFeedback"));
+var _ContributionLinksFeedback = _interopRequireDefault(
+  require("./model/ContributionLinksFeedback")
+);
 
-var _ContributionLinksFeedbackIriTemplate = _interopRequireDefault(require("./model/ContributionLinksFeedbackIriTemplate"));
+var _ContributionLinksFeedbackIriTemplate = _interopRequireDefault(
+  require("./model/ContributionLinksFeedbackIriTemplate")
+);
 
-var _ContributionLinksFeedbackIriTemplateMapping = _interopRequireDefault(require("./model/ContributionLinksFeedbackIriTemplateMapping"));
+var _ContributionLinksFeedbackIriTemplateMapping = _interopRequireDefault(
+  require("./model/ContributionLinksFeedbackIriTemplateMapping")
+);
 
 var _Delegation = _interopRequireDefault(require("./model/Delegation"));
 
-var _DelegationCollection = _interopRequireDefault(require("./model/DelegationCollection"));
+var _DelegationCollection = _interopRequireDefault(
+  require("./model/DelegationCollection")
+);
 
 var _DelegationData = _interopRequireDefault(require("./model/DelegationData"));
 
-var _DelegationEmbedded = _interopRequireDefault(require("./model/DelegationEmbedded"));
+var _DelegationEmbedded = _interopRequireDefault(
+  require("./model/DelegationEmbedded")
+);
 
-var _DelegationLinks = _interopRequireDefault(require("./model/DelegationLinks"));
+var _DelegationLinks = _interopRequireDefault(
+  require("./model/DelegationLinks")
+);
 
-var _DelegationLinksCreatedBy = _interopRequireDefault(require("./model/DelegationLinksCreatedBy"));
+var _DelegationLinksCreatedBy = _interopRequireDefault(
+  require("./model/DelegationLinksCreatedBy")
+);
 
-var _DelegationLinksCreatedByIriTemplate = _interopRequireDefault(require("./model/DelegationLinksCreatedByIriTemplate"));
+var _DelegationLinksCreatedByIriTemplate = _interopRequireDefault(
+  require("./model/DelegationLinksCreatedByIriTemplate")
+);
 
-var _DelegationLinksReport = _interopRequireDefault(require("./model/DelegationLinksReport"));
+var _DelegationLinksReport = _interopRequireDefault(
+  require("./model/DelegationLinksReport")
+);
 
-var _DelegationLinksReportIriTemplate = _interopRequireDefault(require("./model/DelegationLinksReportIriTemplate"));
+var _DelegationLinksReportIriTemplate = _interopRequireDefault(
+  require("./model/DelegationLinksReportIriTemplate")
+);
 
-var _DelegationLinksReportIriTemplateMapping = _interopRequireDefault(require("./model/DelegationLinksReportIriTemplateMapping"));
+var _DelegationLinksReportIriTemplateMapping = _interopRequireDefault(
+  require("./model/DelegationLinksReportIriTemplateMapping")
+);
 
-var _DelegationLinksSelf = _interopRequireDefault(require("./model/DelegationLinksSelf"));
+var _DelegationLinksSelf = _interopRequireDefault(
+  require("./model/DelegationLinksSelf")
+);
 
-var _DelegationLinksSelfIriTemplate = _interopRequireDefault(require("./model/DelegationLinksSelfIriTemplate"));
+var _DelegationLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/DelegationLinksSelfIriTemplate")
+);
 
-var _DelegationLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/DelegationLinksSelfIriTemplateMapping"));
+var _DelegationLinksSelfIriTemplateMapping = _interopRequireDefault(
+  require("./model/DelegationLinksSelfIriTemplateMapping")
+);
 
-var _DelegationLinksService = _interopRequireDefault(require("./model/DelegationLinksService"));
+var _DelegationLinksService = _interopRequireDefault(
+  require("./model/DelegationLinksService")
+);
 
-var _DelegationLinksServiceIriTemplate = _interopRequireDefault(require("./model/DelegationLinksServiceIriTemplate"));
+var _DelegationLinksServiceIriTemplate = _interopRequireDefault(
+  require("./model/DelegationLinksServiceIriTemplate")
+);
 
-var _DelegationLinksServiceIriTemplateMapping = _interopRequireDefault(require("./model/DelegationLinksServiceIriTemplateMapping"));
+var _DelegationLinksServiceIriTemplateMapping = _interopRequireDefault(
+  require("./model/DelegationLinksServiceIriTemplateMapping")
+);
 
-var _DelegationWorkflowTransitionData = _interopRequireDefault(require("./model/DelegationWorkflowTransitionData"));
+var _DelegationWorkflowTransitionData = _interopRequireDefault(
+  require("./model/DelegationWorkflowTransitionData")
+);
 
 var _Device = _interopRequireDefault(require("./model/Device"));
 
@@ -2474,79 +2982,141 @@ var _DeviceData = _interopRequireDefault(require("./model/DeviceData"));
 
 var _DeviceLinks = _interopRequireDefault(require("./model/DeviceLinks"));
 
-var _DeviceLinksPerson = _interopRequireDefault(require("./model/DeviceLinksPerson"));
+var _DeviceLinksPerson = _interopRequireDefault(
+  require("./model/DeviceLinksPerson")
+);
 
-var _DeviceLinksPersonIriTemplate = _interopRequireDefault(require("./model/DeviceLinksPersonIriTemplate"));
+var _DeviceLinksPersonIriTemplate = _interopRequireDefault(
+  require("./model/DeviceLinksPersonIriTemplate")
+);
 
-var _DeviceLinksSelf = _interopRequireDefault(require("./model/DeviceLinksSelf"));
+var _DeviceLinksSelf = _interopRequireDefault(
+  require("./model/DeviceLinksSelf")
+);
 
-var _DeviceLinksSelfIriTemplate = _interopRequireDefault(require("./model/DeviceLinksSelfIriTemplate"));
+var _DeviceLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/DeviceLinksSelfIriTemplate")
+);
 
-var _DeviceLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/DeviceLinksSelfIriTemplateMapping"));
+var _DeviceLinksSelfIriTemplateMapping = _interopRequireDefault(
+  require("./model/DeviceLinksSelfIriTemplateMapping")
+);
 
 var _Document = _interopRequireDefault(require("./model/Document"));
 
-var _DocumentCollection = _interopRequireDefault(require("./model/DocumentCollection"));
+var _DocumentCollection = _interopRequireDefault(
+  require("./model/DocumentCollection")
+);
 
 var _DocumentData = _interopRequireDefault(require("./model/DocumentData"));
 
-var _DocumentDataFile = _interopRequireDefault(require("./model/DocumentDataFile"));
+var _DocumentDataFile = _interopRequireDefault(
+  require("./model/DocumentDataFile")
+);
 
-var _DocumentDataPermission = _interopRequireDefault(require("./model/DocumentDataPermission"));
+var _DocumentDataPermission = _interopRequireDefault(
+  require("./model/DocumentDataPermission")
+);
 
 var _DocumentFile = _interopRequireDefault(require("./model/DocumentFile"));
 
 var _DocumentLinks = _interopRequireDefault(require("./model/DocumentLinks"));
 
-var _DocumentLinksCreatedBy = _interopRequireDefault(require("./model/DocumentLinksCreatedBy"));
+var _DocumentLinksCreatedBy = _interopRequireDefault(
+  require("./model/DocumentLinksCreatedBy")
+);
 
-var _DocumentLinksCreatedByIriTemplate = _interopRequireDefault(require("./model/DocumentLinksCreatedByIriTemplate"));
+var _DocumentLinksCreatedByIriTemplate = _interopRequireDefault(
+  require("./model/DocumentLinksCreatedByIriTemplate")
+);
 
-var _DocumentLinksFile = _interopRequireDefault(require("./model/DocumentLinksFile"));
+var _DocumentLinksFile = _interopRequireDefault(
+  require("./model/DocumentLinksFile")
+);
 
-var _DocumentLinksFileIriTemplate = _interopRequireDefault(require("./model/DocumentLinksFileIriTemplate"));
+var _DocumentLinksFileIriTemplate = _interopRequireDefault(
+  require("./model/DocumentLinksFileIriTemplate")
+);
 
-var _DocumentLinksFileIriTemplateMapping = _interopRequireDefault(require("./model/DocumentLinksFileIriTemplateMapping"));
+var _DocumentLinksFileIriTemplateMapping = _interopRequireDefault(
+  require("./model/DocumentLinksFileIriTemplateMapping")
+);
 
-var _DocumentLinksSelf = _interopRequireDefault(require("./model/DocumentLinksSelf"));
+var _DocumentLinksSelf = _interopRequireDefault(
+  require("./model/DocumentLinksSelf")
+);
 
-var _DocumentLinksSelfIriTemplate = _interopRequireDefault(require("./model/DocumentLinksSelfIriTemplate"));
+var _DocumentLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/DocumentLinksSelfIriTemplate")
+);
 
 var _DocumentPatch = _interopRequireDefault(require("./model/DocumentPatch"));
 
-var _DocumentPatchFile = _interopRequireDefault(require("./model/DocumentPatchFile"));
+var _DocumentPatchFile = _interopRequireDefault(
+  require("./model/DocumentPatchFile")
+);
 
-var _DocumentPermission = _interopRequireDefault(require("./model/DocumentPermission"));
+var _DocumentPermission = _interopRequireDefault(
+  require("./model/DocumentPermission")
+);
 
 var _Error = _interopRequireDefault(require("./model/Error"));
 
 var _ErrorEmbedded = _interopRequireDefault(require("./model/ErrorEmbedded"));
 
-var _ExternalService = _interopRequireDefault(require("./model/ExternalService"));
+var _ExternalService = _interopRequireDefault(
+  require("./model/ExternalService")
+);
 
-var _ExternalServiceCollection = _interopRequireDefault(require("./model/ExternalServiceCollection"));
+var _ExternalServiceCollection = _interopRequireDefault(
+  require("./model/ExternalServiceCollection")
+);
 
-var _ExternalServiceContactPoint = _interopRequireDefault(require("./model/ExternalServiceContactPoint"));
+var _ExternalServiceContactPoint = _interopRequireDefault(
+  require("./model/ExternalServiceContactPoint")
+);
 
-var _ExternalServiceData = _interopRequireDefault(require("./model/ExternalServiceData"));
+var _ExternalServiceData = _interopRequireDefault(
+  require("./model/ExternalServiceData")
+);
 
-var _ExternalServiceLinks = _interopRequireDefault(require("./model/ExternalServiceLinks"));
+var _ExternalServiceLinks = _interopRequireDefault(
+  require("./model/ExternalServiceLinks")
+);
 
-var _ExternalServiceLinksProvider = _interopRequireDefault(require("./model/ExternalServiceLinksProvider"));
+var _ExternalServiceLinksProvider = _interopRequireDefault(
+  require("./model/ExternalServiceLinksProvider")
+);
 
-var _ExternalServiceLinksProviderIriTemplate = _interopRequireDefault(require("./model/ExternalServiceLinksProviderIriTemplate"));
+var _ExternalServiceLinksProviderIriTemplate = _interopRequireDefault(
+  require("./model/ExternalServiceLinksProviderIriTemplate")
+);
 
-var _ExternalServiceLinksSelf = _interopRequireDefault(require("./model/ExternalServiceLinksSelf"));
+var _ExternalServiceLinksSelf = _interopRequireDefault(
+  require("./model/ExternalServiceLinksSelf")
+);
 
-var _ExternalServiceLinksSelfIriTemplate = _interopRequireDefault(require("./model/ExternalServiceLinksSelfIriTemplate"));
+var _ExternalServiceLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/ExternalServiceLinksSelfIriTemplate")
+);
 
-var _ExternalServicePatch = _interopRequireDefault(require("./model/ExternalServicePatch"));
+var _ExternalServicePatch = _interopRequireDefault(
+  require("./model/ExternalServicePatch")
+);
 
-var _FacebookConnectData = _interopRequireDefault(require("./model/FacebookConnectData"));
+var _ExternalServicePatchContactPoint = _interopRequireDefault(
+  require("./model/ExternalServicePatchContactPoint")
+);
+
+var _FacebookConnectData = _interopRequireDefault(
+  require("./model/FacebookConnectData")
+);
 
 var _Feature = _interopRequireDefault(require("./model/Feature"));
 
-var _FeatureGeometry = _interopRequireDefault(require("./model/FeatureGeometry"));
+var _FeatureGeometry = _interopRequireDefault(
+  require("./model/FeatureGeometry")
+);
 
 var _Feed = _interopRequireDefault(require("./model/Feed"));
 
@@ -2554,111 +3124,207 @@ var _FeedCollection = _interopRequireDefault(require("./model/FeedCollection"));
 
 var _Feedback = _interopRequireDefault(require("./model/Feedback"));
 
-var _FeedbackCollection = _interopRequireDefault(require("./model/FeedbackCollection"));
+var _FeedbackCollection = _interopRequireDefault(
+  require("./model/FeedbackCollection")
+);
 
 var _FeedbackData = _interopRequireDefault(require("./model/FeedbackData"));
 
-var _FeedbackDataGeo = _interopRequireDefault(require("./model/FeedbackDataGeo"));
+var _FeedbackDataGeo = _interopRequireDefault(
+  require("./model/FeedbackDataGeo")
+);
 
-var _FeedbackDataGeoPoint = _interopRequireDefault(require("./model/FeedbackDataGeoPoint"));
+var _FeedbackDataGeoPoint = _interopRequireDefault(
+  require("./model/FeedbackDataGeoPoint")
+);
 
-var _FeedbackEmbedded = _interopRequireDefault(require("./model/FeedbackEmbedded"));
+var _FeedbackEmbedded = _interopRequireDefault(
+  require("./model/FeedbackEmbedded")
+);
 
-var _FeedbackGeoCoordinates = _interopRequireDefault(require("./model/FeedbackGeoCoordinates"));
+var _FeedbackGeoCoordinates = _interopRequireDefault(
+  require("./model/FeedbackGeoCoordinates")
+);
 
-var _FeedbackGeoCoordinatesPoint = _interopRequireDefault(require("./model/FeedbackGeoCoordinatesPoint"));
+var _FeedbackGeoCoordinatesPoint = _interopRequireDefault(
+  require("./model/FeedbackGeoCoordinatesPoint")
+);
 
 var _FeedbackLinks = _interopRequireDefault(require("./model/FeedbackLinks"));
 
-var _FeedbackLinksBusinessActivity = _interopRequireDefault(require("./model/FeedbackLinksBusinessActivity"));
+var _FeedbackLinksBusinessActivity = _interopRequireDefault(
+  require("./model/FeedbackLinksBusinessActivity")
+);
 
-var _FeedbackLinksBusinessActivityIriTemplate = _interopRequireDefault(require("./model/FeedbackLinksBusinessActivityIriTemplate"));
+var _FeedbackLinksBusinessActivityIriTemplate = _interopRequireDefault(
+  require("./model/FeedbackLinksBusinessActivityIriTemplate")
+);
 
-var _FeedbackLinksCategory = _interopRequireDefault(require("./model/FeedbackLinksCategory"));
+var _FeedbackLinksCategory = _interopRequireDefault(
+  require("./model/FeedbackLinksCategory")
+);
 
-var _FeedbackLinksCategoryIriTemplate = _interopRequireDefault(require("./model/FeedbackLinksCategoryIriTemplate"));
+var _FeedbackLinksCategoryIriTemplate = _interopRequireDefault(
+  require("./model/FeedbackLinksCategoryIriTemplate")
+);
 
-var _FeedbackLinksImage = _interopRequireDefault(require("./model/FeedbackLinksImage"));
+var _FeedbackLinksImage = _interopRequireDefault(
+  require("./model/FeedbackLinksImage")
+);
 
-var _FeedbackLinksImageIriTemplate = _interopRequireDefault(require("./model/FeedbackLinksImageIriTemplate"));
+var _FeedbackLinksImageIriTemplate = _interopRequireDefault(
+  require("./model/FeedbackLinksImageIriTemplate")
+);
 
-var _FeedbackLinksImageIriTemplateMapping = _interopRequireDefault(require("./model/FeedbackLinksImageIriTemplateMapping"));
+var _FeedbackLinksImageIriTemplateMapping = _interopRequireDefault(
+  require("./model/FeedbackLinksImageIriTemplateMapping")
+);
 
-var _FeedbackLinksImages = _interopRequireDefault(require("./model/FeedbackLinksImages"));
+var _FeedbackLinksImages = _interopRequireDefault(
+  require("./model/FeedbackLinksImages")
+);
 
-var _FeedbackLinksImagesIriTemplate = _interopRequireDefault(require("./model/FeedbackLinksImagesIriTemplate"));
+var _FeedbackLinksImagesIriTemplate = _interopRequireDefault(
+  require("./model/FeedbackLinksImagesIriTemplate")
+);
 
-var _FeedbackLinksReporter = _interopRequireDefault(require("./model/FeedbackLinksReporter"));
+var _FeedbackLinksReporter = _interopRequireDefault(
+  require("./model/FeedbackLinksReporter")
+);
 
-var _FeedbackLinksReporterIriTemplate = _interopRequireDefault(require("./model/FeedbackLinksReporterIriTemplate"));
+var _FeedbackLinksReporterIriTemplate = _interopRequireDefault(
+  require("./model/FeedbackLinksReporterIriTemplate")
+);
 
-var _FeedbackLinksSelf = _interopRequireDefault(require("./model/FeedbackLinksSelf"));
+var _FeedbackLinksSelf = _interopRequireDefault(
+  require("./model/FeedbackLinksSelf")
+);
 
-var _FeedbackLinksSelfIriTemplate = _interopRequireDefault(require("./model/FeedbackLinksSelfIriTemplate"));
+var _FeedbackLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/FeedbackLinksSelfIriTemplate")
+);
 
-var _FeedbackLinksTracking = _interopRequireDefault(require("./model/FeedbackLinksTracking"));
+var _FeedbackLinksTracking = _interopRequireDefault(
+  require("./model/FeedbackLinksTracking")
+);
 
-var _FeedbackLinksTrackingIriTemplate = _interopRequireDefault(require("./model/FeedbackLinksTrackingIriTemplate"));
+var _FeedbackLinksTrackingIriTemplate = _interopRequireDefault(
+  require("./model/FeedbackLinksTrackingIriTemplate")
+);
 
-var _FeedbackReviewRequest = _interopRequireDefault(require("./model/FeedbackReviewRequest"));
+var _FeedbackReviewRequest = _interopRequireDefault(
+  require("./model/FeedbackReviewRequest")
+);
 
-var _FeedbackReviewRequestCollection = _interopRequireDefault(require("./model/FeedbackReviewRequestCollection"));
+var _FeedbackReviewRequestCollection = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestCollection")
+);
 
-var _FeedbackReviewRequestLinks = _interopRequireDefault(require("./model/FeedbackReviewRequestLinks"));
+var _FeedbackReviewRequestLinks = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestLinks")
+);
 
-var _FeedbackReviewRequestLinksItemToReview = _interopRequireDefault(require("./model/FeedbackReviewRequestLinksItemToReview"));
+var _FeedbackReviewRequestLinksItemToReview = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestLinksItemToReview")
+);
 
-var _FeedbackReviewRequestLinksItemToReviewIriTemplate = _interopRequireDefault(require("./model/FeedbackReviewRequestLinksItemToReviewIriTemplate"));
+var _FeedbackReviewRequestLinksItemToReviewIriTemplate = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestLinksItemToReviewIriTemplate")
+);
 
-var _FeedbackReviewRequestLinksOrganization = _interopRequireDefault(require("./model/FeedbackReviewRequestLinksOrganization"));
+var _FeedbackReviewRequestLinksOrganization = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestLinksOrganization")
+);
 
-var _FeedbackReviewRequestLinksOrganizationIriTemplate = _interopRequireDefault(require("./model/FeedbackReviewRequestLinksOrganizationIriTemplate"));
+var _FeedbackReviewRequestLinksOrganizationIriTemplate = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestLinksOrganizationIriTemplate")
+);
 
-var _FeedbackReviewRequestLinksReview = _interopRequireDefault(require("./model/FeedbackReviewRequestLinksReview"));
+var _FeedbackReviewRequestLinksReview = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestLinksReview")
+);
 
-var _FeedbackReviewRequestLinksReviewIriTemplate = _interopRequireDefault(require("./model/FeedbackReviewRequestLinksReviewIriTemplate"));
+var _FeedbackReviewRequestLinksReviewIriTemplate = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestLinksReviewIriTemplate")
+);
 
-var _FeedbackReviewRequestLinksReviewIriTemplateMapping = _interopRequireDefault(require("./model/FeedbackReviewRequestLinksReviewIriTemplateMapping"));
+var _FeedbackReviewRequestLinksReviewIriTemplateMapping = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestLinksReviewIriTemplateMapping")
+);
 
-var _FeedbackReviewRequestLinksReviewer = _interopRequireDefault(require("./model/FeedbackReviewRequestLinksReviewer"));
+var _FeedbackReviewRequestLinksReviewer = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestLinksReviewer")
+);
 
-var _FeedbackReviewRequestLinksReviewerIriTemplate = _interopRequireDefault(require("./model/FeedbackReviewRequestLinksReviewerIriTemplate"));
+var _FeedbackReviewRequestLinksReviewerIriTemplate = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestLinksReviewerIriTemplate")
+);
 
-var _FeedbackReviewRequestLinksSelf = _interopRequireDefault(require("./model/FeedbackReviewRequestLinksSelf"));
+var _FeedbackReviewRequestLinksSelf = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestLinksSelf")
+);
 
-var _FeedbackReviewRequestLinksSelfIriTemplate = _interopRequireDefault(require("./model/FeedbackReviewRequestLinksSelfIriTemplate"));
+var _FeedbackReviewRequestLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestLinksSelfIriTemplate")
+);
 
-var _FeedbackReviewRequestLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/FeedbackReviewRequestLinksSelfIriTemplateMapping"));
+var _FeedbackReviewRequestLinksSelfIriTemplateMapping = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestLinksSelfIriTemplateMapping")
+);
 
-var _FeedbackWorkflowTransitionData = _interopRequireDefault(require("./model/FeedbackWorkflowTransitionData"));
+var _FeedbackWorkflowTransitionData = _interopRequireDefault(
+  require("./model/FeedbackWorkflowTransitionData")
+);
 
 var _ImageData = _interopRequireDefault(require("./model/ImageData"));
 
-var _InternalService = _interopRequireDefault(require("./model/InternalService"));
+var _InternalService = _interopRequireDefault(
+  require("./model/InternalService")
+);
 
-var _InternalServiceCollection = _interopRequireDefault(require("./model/InternalServiceCollection"));
+var _InternalServiceCollection = _interopRequireDefault(
+  require("./model/InternalServiceCollection")
+);
 
-var _InternalServiceData = _interopRequireDefault(require("./model/InternalServiceData"));
+var _InternalServiceData = _interopRequireDefault(
+  require("./model/InternalServiceData")
+);
 
-var _InternalServiceLinks = _interopRequireDefault(require("./model/InternalServiceLinks"));
+var _InternalServiceLinks = _interopRequireDefault(
+  require("./model/InternalServiceLinks")
+);
 
-var _InternalServiceLinksOrganization = _interopRequireDefault(require("./model/InternalServiceLinksOrganization"));
+var _InternalServiceLinksOrganization = _interopRequireDefault(
+  require("./model/InternalServiceLinksOrganization")
+);
 
-var _InternalServiceLinksOrganizationIriTemplate = _interopRequireDefault(require("./model/InternalServiceLinksOrganizationIriTemplate"));
+var _InternalServiceLinksOrganizationIriTemplate = _interopRequireDefault(
+  require("./model/InternalServiceLinksOrganizationIriTemplate")
+);
 
-var _InternalServiceLinksSelf = _interopRequireDefault(require("./model/InternalServiceLinksSelf"));
+var _InternalServiceLinksSelf = _interopRequireDefault(
+  require("./model/InternalServiceLinksSelf")
+);
 
-var _InternalServiceLinksSelfIriTemplate = _interopRequireDefault(require("./model/InternalServiceLinksSelfIriTemplate"));
+var _InternalServiceLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/InternalServiceLinksSelfIriTemplate")
+);
 
-var _InternalServiceLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/InternalServiceLinksSelfIriTemplateMapping"));
+var _InternalServiceLinksSelfIriTemplateMapping = _interopRequireDefault(
+  require("./model/InternalServiceLinksSelfIriTemplateMapping")
+);
 
-var _InternalServicePatch = _interopRequireDefault(require("./model/InternalServicePatch"));
+var _InternalServicePatch = _interopRequireDefault(
+  require("./model/InternalServicePatch")
+);
 
 var _LoginData = _interopRequireDefault(require("./model/LoginData"));
 
 var _Member = _interopRequireDefault(require("./model/Member"));
 
-var _MemberCollection = _interopRequireDefault(require("./model/MemberCollection"));
+var _MemberCollection = _interopRequireDefault(
+  require("./model/MemberCollection")
+);
 
 var _MemberData = _interopRequireDefault(require("./model/MemberData"));
 
@@ -2666,19 +3332,33 @@ var _MemberEmbedded = _interopRequireDefault(require("./model/MemberEmbedded"));
 
 var _MemberLinks = _interopRequireDefault(require("./model/MemberLinks"));
 
-var _MemberLinksOrganization = _interopRequireDefault(require("./model/MemberLinksOrganization"));
+var _MemberLinksOrganization = _interopRequireDefault(
+  require("./model/MemberLinksOrganization")
+);
 
-var _MemberLinksOrganizationIriTemplate = _interopRequireDefault(require("./model/MemberLinksOrganizationIriTemplate"));
+var _MemberLinksOrganizationIriTemplate = _interopRequireDefault(
+  require("./model/MemberLinksOrganizationIriTemplate")
+);
 
-var _MemberLinksPerson = _interopRequireDefault(require("./model/MemberLinksPerson"));
+var _MemberLinksPerson = _interopRequireDefault(
+  require("./model/MemberLinksPerson")
+);
 
-var _MemberLinksPersonIriTemplate = _interopRequireDefault(require("./model/MemberLinksPersonIriTemplate"));
+var _MemberLinksPersonIriTemplate = _interopRequireDefault(
+  require("./model/MemberLinksPersonIriTemplate")
+);
 
-var _MemberLinksSelf = _interopRequireDefault(require("./model/MemberLinksSelf"));
+var _MemberLinksSelf = _interopRequireDefault(
+  require("./model/MemberLinksSelf")
+);
 
-var _MemberLinksSelfIriTemplate = _interopRequireDefault(require("./model/MemberLinksSelfIriTemplate"));
+var _MemberLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/MemberLinksSelfIriTemplate")
+);
 
-var _MemberLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/MemberLinksSelfIriTemplateMapping"));
+var _MemberLinksSelfIriTemplateMapping = _interopRequireDefault(
+  require("./model/MemberLinksSelfIriTemplateMapping")
+);
 
 var _MemberPatch = _interopRequireDefault(require("./model/MemberPatch"));
 
@@ -2690,149 +3370,267 @@ var _NodePath = _interopRequireDefault(require("./model/NodePath"));
 
 var _Occupant = _interopRequireDefault(require("./model/Occupant"));
 
-var _OccupantCollection = _interopRequireDefault(require("./model/OccupantCollection"));
+var _OccupantCollection = _interopRequireDefault(
+  require("./model/OccupantCollection")
+);
 
 var _OccupantData = _interopRequireDefault(require("./model/OccupantData"));
 
 var _OccupantLinks = _interopRequireDefault(require("./model/OccupantLinks"));
 
-var _OccupantLinksPerson = _interopRequireDefault(require("./model/OccupantLinksPerson"));
+var _OccupantLinksPerson = _interopRequireDefault(
+  require("./model/OccupantLinksPerson")
+);
 
-var _OccupantLinksPersonIriTemplate = _interopRequireDefault(require("./model/OccupantLinksPersonIriTemplate"));
+var _OccupantLinksPersonIriTemplate = _interopRequireDefault(
+  require("./model/OccupantLinksPersonIriTemplate")
+);
 
-var _OccupantLinksPlace = _interopRequireDefault(require("./model/OccupantLinksPlace"));
+var _OccupantLinksPlace = _interopRequireDefault(
+  require("./model/OccupantLinksPlace")
+);
 
-var _OccupantLinksPlaceIriTemplate = _interopRequireDefault(require("./model/OccupantLinksPlaceIriTemplate"));
+var _OccupantLinksPlaceIriTemplate = _interopRequireDefault(
+  require("./model/OccupantLinksPlaceIriTemplate")
+);
 
-var _OccupantLinksPlaceIriTemplateMapping = _interopRequireDefault(require("./model/OccupantLinksPlaceIriTemplateMapping"));
+var _OccupantLinksPlaceIriTemplateMapping = _interopRequireDefault(
+  require("./model/OccupantLinksPlaceIriTemplateMapping")
+);
 
-var _OccupantLinksSelf = _interopRequireDefault(require("./model/OccupantLinksSelf"));
+var _OccupantLinksSelf = _interopRequireDefault(
+  require("./model/OccupantLinksSelf")
+);
 
-var _OccupantLinksSelfIriTemplate = _interopRequireDefault(require("./model/OccupantLinksSelfIriTemplate"));
+var _OccupantLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/OccupantLinksSelfIriTemplate")
+);
 
-var _OccupantLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/OccupantLinksSelfIriTemplateMapping"));
+var _OccupantLinksSelfIriTemplateMapping = _interopRequireDefault(
+  require("./model/OccupantLinksSelfIriTemplateMapping")
+);
 
 var _Operation = _interopRequireDefault(require("./model/Operation"));
 
-var _OperationCollection = _interopRequireDefault(require("./model/OperationCollection"));
+var _OperationCollection = _interopRequireDefault(
+  require("./model/OperationCollection")
+);
 
 var _OperationData = _interopRequireDefault(require("./model/OperationData"));
 
-var _OperationEmbedded = _interopRequireDefault(require("./model/OperationEmbedded"));
+var _OperationEmbedded = _interopRequireDefault(
+  require("./model/OperationEmbedded")
+);
 
-var _OperationEmbeddedDuration = _interopRequireDefault(require("./model/OperationEmbeddedDuration"));
+var _OperationEmbeddedDuration = _interopRequireDefault(
+  require("./model/OperationEmbeddedDuration")
+);
 
 var _OperationLinks = _interopRequireDefault(require("./model/OperationLinks"));
 
-var _OperationLinksCreatedBy = _interopRequireDefault(require("./model/OperationLinksCreatedBy"));
+var _OperationLinksCreatedBy = _interopRequireDefault(
+  require("./model/OperationLinksCreatedBy")
+);
 
-var _OperationLinksCreatedByIriTemplate = _interopRequireDefault(require("./model/OperationLinksCreatedByIriTemplate"));
+var _OperationLinksCreatedByIriTemplate = _interopRequireDefault(
+  require("./model/OperationLinksCreatedByIriTemplate")
+);
 
-var _OperationLinksFeedback = _interopRequireDefault(require("./model/OperationLinksFeedback"));
+var _OperationLinksFeedback = _interopRequireDefault(
+  require("./model/OperationLinksFeedback")
+);
 
-var _OperationLinksFeedbackIriTemplate = _interopRequireDefault(require("./model/OperationLinksFeedbackIriTemplate"));
+var _OperationLinksFeedbackIriTemplate = _interopRequireDefault(
+  require("./model/OperationLinksFeedbackIriTemplate")
+);
 
-var _OperationLinksImage = _interopRequireDefault(require("./model/OperationLinksImage"));
+var _OperationLinksImage = _interopRequireDefault(
+  require("./model/OperationLinksImage")
+);
 
-var _OperationLinksImageIriTemplate = _interopRequireDefault(require("./model/OperationLinksImageIriTemplate"));
+var _OperationLinksImageIriTemplate = _interopRequireDefault(
+  require("./model/OperationLinksImageIriTemplate")
+);
 
-var _OperationLinksImageIriTemplateMapping = _interopRequireDefault(require("./model/OperationLinksImageIriTemplateMapping"));
+var _OperationLinksImageIriTemplateMapping = _interopRequireDefault(
+  require("./model/OperationLinksImageIriTemplateMapping")
+);
 
-var _OperationLinksImages = _interopRequireDefault(require("./model/OperationLinksImages"));
+var _OperationLinksImages = _interopRequireDefault(
+  require("./model/OperationLinksImages")
+);
 
-var _OperationLinksImagesIriTemplate = _interopRequireDefault(require("./model/OperationLinksImagesIriTemplate"));
+var _OperationLinksImagesIriTemplate = _interopRequireDefault(
+  require("./model/OperationLinksImagesIriTemplate")
+);
 
-var _OperationLinksImagesIriTemplateMapping = _interopRequireDefault(require("./model/OperationLinksImagesIriTemplateMapping"));
+var _OperationLinksImagesIriTemplateMapping = _interopRequireDefault(
+  require("./model/OperationLinksImagesIriTemplateMapping")
+);
 
-var _OperationLinksOperator = _interopRequireDefault(require("./model/OperationLinksOperator"));
+var _OperationLinksOperator = _interopRequireDefault(
+  require("./model/OperationLinksOperator")
+);
 
-var _OperationLinksOperatorIriTemplate = _interopRequireDefault(require("./model/OperationLinksOperatorIriTemplate"));
+var _OperationLinksOperatorIriTemplate = _interopRequireDefault(
+  require("./model/OperationLinksOperatorIriTemplate")
+);
 
-var _OperationLinksReport = _interopRequireDefault(require("./model/OperationLinksReport"));
+var _OperationLinksReport = _interopRequireDefault(
+  require("./model/OperationLinksReport")
+);
 
-var _OperationLinksReportIriTemplate = _interopRequireDefault(require("./model/OperationLinksReportIriTemplate"));
+var _OperationLinksReportIriTemplate = _interopRequireDefault(
+  require("./model/OperationLinksReportIriTemplate")
+);
 
-var _OperationLinksSelf = _interopRequireDefault(require("./model/OperationLinksSelf"));
+var _OperationLinksSelf = _interopRequireDefault(
+  require("./model/OperationLinksSelf")
+);
 
-var _OperationLinksSelfIriTemplate = _interopRequireDefault(require("./model/OperationLinksSelfIriTemplate"));
+var _OperationLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/OperationLinksSelfIriTemplate")
+);
 
-var _OperationLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/OperationLinksSelfIriTemplateMapping"));
+var _OperationLinksSelfIriTemplateMapping = _interopRequireDefault(
+  require("./model/OperationLinksSelfIriTemplateMapping")
+);
 
-var _OperationLinksTracking = _interopRequireDefault(require("./model/OperationLinksTracking"));
+var _OperationLinksTracking = _interopRequireDefault(
+  require("./model/OperationLinksTracking")
+);
 
-var _OperationLinksTrackingIriTemplate = _interopRequireDefault(require("./model/OperationLinksTrackingIriTemplate"));
+var _OperationLinksTrackingIriTemplate = _interopRequireDefault(
+  require("./model/OperationLinksTrackingIriTemplate")
+);
 
 var _OperationPatch = _interopRequireDefault(require("./model/OperationPatch"));
 
-var _OperationSignature = _interopRequireDefault(require("./model/OperationSignature"));
+var _OperationSignature = _interopRequireDefault(
+  require("./model/OperationSignature")
+);
 
-var _OperationSignatureSigner = _interopRequireDefault(require("./model/OperationSignatureSigner"));
+var _OperationSignatureSigner = _interopRequireDefault(
+  require("./model/OperationSignatureSigner")
+);
 
-var _OperationWorkflowTransitionData = _interopRequireDefault(require("./model/OperationWorkflowTransitionData"));
+var _OperationWorkflowTransitionData = _interopRequireDefault(
+  require("./model/OperationWorkflowTransitionData")
+);
 
 var _Organization = _interopRequireDefault(require("./model/Organization"));
 
-var _OrganizationCollection = _interopRequireDefault(require("./model/OrganizationCollection"));
+var _OrganizationCollection = _interopRequireDefault(
+  require("./model/OrganizationCollection")
+);
 
-var _OrganizationData = _interopRequireDefault(require("./model/OrganizationData"));
+var _OrganizationData = _interopRequireDefault(
+  require("./model/OrganizationData")
+);
 
-var _OrganizationLinks = _interopRequireDefault(require("./model/OrganizationLinks"));
+var _OrganizationLinks = _interopRequireDefault(
+  require("./model/OrganizationLinks")
+);
 
-var _OrganizationLinksApplication = _interopRequireDefault(require("./model/OrganizationLinksApplication"));
+var _OrganizationLinksApplication = _interopRequireDefault(
+  require("./model/OrganizationLinksApplication")
+);
 
-var _OrganizationLinksApplicationIriTemplate = _interopRequireDefault(require("./model/OrganizationLinksApplicationIriTemplate"));
+var _OrganizationLinksApplicationIriTemplate = _interopRequireDefault(
+  require("./model/OrganizationLinksApplicationIriTemplate")
+);
 
-var _OrganizationLinksBusinessActivity = _interopRequireDefault(require("./model/OrganizationLinksBusinessActivity"));
+var _OrganizationLinksBusinessActivity = _interopRequireDefault(
+  require("./model/OrganizationLinksBusinessActivity")
+);
 
-var _OrganizationLinksBusinessActivityIriTemplate = _interopRequireDefault(require("./model/OrganizationLinksBusinessActivityIriTemplate"));
+var _OrganizationLinksBusinessActivityIriTemplate = _interopRequireDefault(
+  require("./model/OrganizationLinksBusinessActivityIriTemplate")
+);
 
-var _OrganizationLinksLogo = _interopRequireDefault(require("./model/OrganizationLinksLogo"));
+var _OrganizationLinksLogo = _interopRequireDefault(
+  require("./model/OrganizationLinksLogo")
+);
 
-var _OrganizationLinksLogoIriTemplate = _interopRequireDefault(require("./model/OrganizationLinksLogoIriTemplate"));
+var _OrganizationLinksLogoIriTemplate = _interopRequireDefault(
+  require("./model/OrganizationLinksLogoIriTemplate")
+);
 
-var _OrganizationLinksSelf = _interopRequireDefault(require("./model/OrganizationLinksSelf"));
+var _OrganizationLinksSelf = _interopRequireDefault(
+  require("./model/OrganizationLinksSelf")
+);
 
-var _OrganizationLinksSelfIriTemplate = _interopRequireDefault(require("./model/OrganizationLinksSelfIriTemplate"));
+var _OrganizationLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/OrganizationLinksSelfIriTemplate")
+);
 
-var _OrganizationPatch = _interopRequireDefault(require("./model/OrganizationPatch"));
+var _OrganizationPatch = _interopRequireDefault(
+  require("./model/OrganizationPatch")
+);
 
-var _OrganizationPatchPreferences = _interopRequireDefault(require("./model/OrganizationPatchPreferences"));
+var _OrganizationPatchPreferences = _interopRequireDefault(
+  require("./model/OrganizationPatchPreferences")
+);
 
-var _OrganizationPreferences = _interopRequireDefault(require("./model/OrganizationPreferences"));
+var _OrganizationPreferences = _interopRequireDefault(
+  require("./model/OrganizationPreferences")
+);
 
-var _OrganizationPreferencesReference = _interopRequireDefault(require("./model/OrganizationPreferencesReference"));
+var _OrganizationPreferencesReference = _interopRequireDefault(
+  require("./model/OrganizationPreferencesReference")
+);
 
 var _Pagination = _interopRequireDefault(require("./model/Pagination"));
 
 var _PaginationLink = _interopRequireDefault(require("./model/PaginationLink"));
 
-var _PaginationLinks = _interopRequireDefault(require("./model/PaginationLinks"));
+var _PaginationLinks = _interopRequireDefault(
+  require("./model/PaginationLinks")
+);
 
-var _PasswordChangeData = _interopRequireDefault(require("./model/PasswordChangeData"));
+var _PasswordChangeData = _interopRequireDefault(
+  require("./model/PasswordChangeData")
+);
 
 var _Person = _interopRequireDefault(require("./model/Person"));
 
-var _PersonCollection = _interopRequireDefault(require("./model/PersonCollection"));
+var _PersonCollection = _interopRequireDefault(
+  require("./model/PersonCollection")
+);
 
 var _PersonLinks = _interopRequireDefault(require("./model/PersonLinks"));
 
-var _PersonLinksImage = _interopRequireDefault(require("./model/PersonLinksImage"));
+var _PersonLinksImage = _interopRequireDefault(
+  require("./model/PersonLinksImage")
+);
 
-var _PersonLinksImageIriTemplate = _interopRequireDefault(require("./model/PersonLinksImageIriTemplate"));
+var _PersonLinksImageIriTemplate = _interopRequireDefault(
+  require("./model/PersonLinksImageIriTemplate")
+);
 
-var _PersonLinksSelf = _interopRequireDefault(require("./model/PersonLinksSelf"));
+var _PersonLinksSelf = _interopRequireDefault(
+  require("./model/PersonLinksSelf")
+);
 
-var _PersonLinksSelfIriTemplate = _interopRequireDefault(require("./model/PersonLinksSelfIriTemplate"));
+var _PersonLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/PersonLinksSelfIriTemplate")
+);
 
 var _PersonPatch = _interopRequireDefault(require("./model/PersonPatch"));
 
-var _PersonPatchPreferences = _interopRequireDefault(require("./model/PersonPatchPreferences"));
+var _PersonPatchPreferences = _interopRequireDefault(
+  require("./model/PersonPatchPreferences")
+);
 
-var _PersonPreferences = _interopRequireDefault(require("./model/PersonPreferences"));
+var _PersonPreferences = _interopRequireDefault(
+  require("./model/PersonPreferences")
+);
 
 var _Place = _interopRequireDefault(require("./model/Place"));
 
-var _PlaceCollection = _interopRequireDefault(require("./model/PlaceCollection"));
+var _PlaceCollection = _interopRequireDefault(
+  require("./model/PlaceCollection")
+);
 
 var _PlaceData = _interopRequireDefault(require("./model/PlaceData"));
 
@@ -2840,223 +3638,393 @@ var _PlaceEmbedded = _interopRequireDefault(require("./model/PlaceEmbedded"));
 
 var _PlaceGeo = _interopRequireDefault(require("./model/PlaceGeo"));
 
-var _PlaceGeoCentroid = _interopRequireDefault(require("./model/PlaceGeoCentroid"));
+var _PlaceGeoCentroid = _interopRequireDefault(
+  require("./model/PlaceGeoCentroid")
+);
 
-var _PlaceGeoPolygon = _interopRequireDefault(require("./model/PlaceGeoPolygon"));
+var _PlaceGeoPolygon = _interopRequireDefault(
+  require("./model/PlaceGeoPolygon")
+);
 
 var _PlaceLinks = _interopRequireDefault(require("./model/PlaceLinks"));
 
-var _PlaceLinksContainedInPlace = _interopRequireDefault(require("./model/PlaceLinksContainedInPlace"));
+var _PlaceLinksContainedInPlace = _interopRequireDefault(
+  require("./model/PlaceLinksContainedInPlace")
+);
 
-var _PlaceLinksContainedInPlaceIriTemplate = _interopRequireDefault(require("./model/PlaceLinksContainedInPlaceIriTemplate"));
+var _PlaceLinksContainedInPlaceIriTemplate = _interopRequireDefault(
+  require("./model/PlaceLinksContainedInPlaceIriTemplate")
+);
 
-var _PlaceLinksContainsPlaces = _interopRequireDefault(require("./model/PlaceLinksContainsPlaces"));
+var _PlaceLinksContainsPlaces = _interopRequireDefault(
+  require("./model/PlaceLinksContainsPlaces")
+);
 
-var _PlaceLinksContainsPlacesIriTemplate = _interopRequireDefault(require("./model/PlaceLinksContainsPlacesIriTemplate"));
+var _PlaceLinksContainsPlacesIriTemplate = _interopRequireDefault(
+  require("./model/PlaceLinksContainsPlacesIriTemplate")
+);
 
-var _PlaceLinksContainsPlacesIriTemplateMapping = _interopRequireDefault(require("./model/PlaceLinksContainsPlacesIriTemplateMapping"));
+var _PlaceLinksContainsPlacesIriTemplateMapping = _interopRequireDefault(
+  require("./model/PlaceLinksContainsPlacesIriTemplateMapping")
+);
 
-var _PlaceLinksOrganization = _interopRequireDefault(require("./model/PlaceLinksOrganization"));
+var _PlaceLinksOrganization = _interopRequireDefault(
+  require("./model/PlaceLinksOrganization")
+);
 
-var _PlaceLinksOrganizationIriTemplate = _interopRequireDefault(require("./model/PlaceLinksOrganizationIriTemplate"));
+var _PlaceLinksOrganizationIriTemplate = _interopRequireDefault(
+  require("./model/PlaceLinksOrganizationIriTemplate")
+);
 
 var _PlaceLinksSelf = _interopRequireDefault(require("./model/PlaceLinksSelf"));
 
-var _PlaceLinksSelfIriTemplate = _interopRequireDefault(require("./model/PlaceLinksSelfIriTemplate"));
+var _PlaceLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/PlaceLinksSelfIriTemplate")
+);
 
 var _PlacePatch = _interopRequireDefault(require("./model/PlacePatch"));
 
-var _PlacePreferences = _interopRequireDefault(require("./model/PlacePreferences"));
+var _PlacePreferences = _interopRequireDefault(
+  require("./model/PlacePreferences")
+);
 
 var _Property = _interopRequireDefault(require("./model/Property"));
 
-var _PropertyConditions = _interopRequireDefault(require("./model/PropertyConditions"));
+var _PropertyConditions = _interopRequireDefault(
+  require("./model/PropertyConditions")
+);
 
 var _PropertyItems = _interopRequireDefault(require("./model/PropertyItems"));
 
 var _Publication = _interopRequireDefault(require("./model/Publication"));
 
-var _PublicationCollection = _interopRequireDefault(require("./model/PublicationCollection"));
+var _PublicationCollection = _interopRequireDefault(
+  require("./model/PublicationCollection")
+);
 
-var _PublicationData = _interopRequireDefault(require("./model/PublicationData"));
+var _PublicationData = _interopRequireDefault(
+  require("./model/PublicationData")
+);
 
-var _PublicationLinks = _interopRequireDefault(require("./model/PublicationLinks"));
+var _PublicationLinks = _interopRequireDefault(
+  require("./model/PublicationLinks")
+);
 
-var _PublicationLinksAuthor = _interopRequireDefault(require("./model/PublicationLinksAuthor"));
+var _PublicationLinksAuthor = _interopRequireDefault(
+  require("./model/PublicationLinksAuthor")
+);
 
-var _PublicationLinksAuthorIriTemplate = _interopRequireDefault(require("./model/PublicationLinksAuthorIriTemplate"));
+var _PublicationLinksAuthorIriTemplate = _interopRequireDefault(
+  require("./model/PublicationLinksAuthorIriTemplate")
+);
 
-var _PublicationLinksFeed = _interopRequireDefault(require("./model/PublicationLinksFeed"));
+var _PublicationLinksFeed = _interopRequireDefault(
+  require("./model/PublicationLinksFeed")
+);
 
-var _PublicationLinksFeedIriTemplate = _interopRequireDefault(require("./model/PublicationLinksFeedIriTemplate"));
+var _PublicationLinksFeedIriTemplate = _interopRequireDefault(
+  require("./model/PublicationLinksFeedIriTemplate")
+);
 
-var _PublicationLinksOrganization = _interopRequireDefault(require("./model/PublicationLinksOrganization"));
+var _PublicationLinksOrganization = _interopRequireDefault(
+  require("./model/PublicationLinksOrganization")
+);
 
-var _PublicationLinksOrganizationIriTemplate = _interopRequireDefault(require("./model/PublicationLinksOrganizationIriTemplate"));
+var _PublicationLinksOrganizationIriTemplate = _interopRequireDefault(
+  require("./model/PublicationLinksOrganizationIriTemplate")
+);
 
-var _PublicationLinksSelf = _interopRequireDefault(require("./model/PublicationLinksSelf"));
+var _PublicationLinksSelf = _interopRequireDefault(
+  require("./model/PublicationLinksSelf")
+);
 
-var _PublicationLinksSelfIriTemplate = _interopRequireDefault(require("./model/PublicationLinksSelfIriTemplate"));
+var _PublicationLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/PublicationLinksSelfIriTemplate")
+);
 
-var _PublicationLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/PublicationLinksSelfIriTemplateMapping"));
+var _PublicationLinksSelfIriTemplateMapping = _interopRequireDefault(
+  require("./model/PublicationLinksSelfIriTemplateMapping")
+);
 
 var _RegisterData = _interopRequireDefault(require("./model/RegisterData"));
 
 var _Report = _interopRequireDefault(require("./model/Report"));
 
-var _ReportCollection = _interopRequireDefault(require("./model/ReportCollection"));
+var _ReportCollection = _interopRequireDefault(
+  require("./model/ReportCollection")
+);
 
 var _ReportEmbedded = _interopRequireDefault(require("./model/ReportEmbedded"));
 
-var _ReportEmbeddedTargetGroups = _interopRequireDefault(require("./model/ReportEmbeddedTargetGroups"));
+var _ReportEmbeddedTargetGroups = _interopRequireDefault(
+  require("./model/ReportEmbeddedTargetGroups")
+);
 
 var _ReportLinks = _interopRequireDefault(require("./model/ReportLinks"));
 
-var _ReportLinksCategory = _interopRequireDefault(require("./model/ReportLinksCategory"));
+var _ReportLinksCategory = _interopRequireDefault(
+  require("./model/ReportLinksCategory")
+);
 
-var _ReportLinksCategoryIriTemplate = _interopRequireDefault(require("./model/ReportLinksCategoryIriTemplate"));
+var _ReportLinksCategoryIriTemplate = _interopRequireDefault(
+  require("./model/ReportLinksCategoryIriTemplate")
+);
 
-var _ReportLinksDelegatedFrom = _interopRequireDefault(require("./model/ReportLinksDelegatedFrom"));
+var _ReportLinksDelegatedFrom = _interopRequireDefault(
+  require("./model/ReportLinksDelegatedFrom")
+);
 
-var _ReportLinksDelegatedFromIriTemplate = _interopRequireDefault(require("./model/ReportLinksDelegatedFromIriTemplate"));
+var _ReportLinksDelegatedFromIriTemplate = _interopRequireDefault(
+  require("./model/ReportLinksDelegatedFromIriTemplate")
+);
 
-var _ReportLinksDelegatedTo = _interopRequireDefault(require("./model/ReportLinksDelegatedTo"));
+var _ReportLinksDelegatedTo = _interopRequireDefault(
+  require("./model/ReportLinksDelegatedTo")
+);
 
-var _ReportLinksDelegatedToIriTemplate = _interopRequireDefault(require("./model/ReportLinksDelegatedToIriTemplate"));
+var _ReportLinksDelegatedToIriTemplate = _interopRequireDefault(
+  require("./model/ReportLinksDelegatedToIriTemplate")
+);
 
-var _ReportLinksFeedback = _interopRequireDefault(require("./model/ReportLinksFeedback"));
+var _ReportLinksFeedback = _interopRequireDefault(
+  require("./model/ReportLinksFeedback")
+);
 
-var _ReportLinksFeedbackIriTemplate = _interopRequireDefault(require("./model/ReportLinksFeedbackIriTemplate"));
+var _ReportLinksFeedbackIriTemplate = _interopRequireDefault(
+  require("./model/ReportLinksFeedbackIriTemplate")
+);
 
-var _ReportLinksOperations = _interopRequireDefault(require("./model/ReportLinksOperations"));
+var _ReportLinksOperations = _interopRequireDefault(
+  require("./model/ReportLinksOperations")
+);
 
-var _ReportLinksOperationsIriTemplate = _interopRequireDefault(require("./model/ReportLinksOperationsIriTemplate"));
+var _ReportLinksOperationsIriTemplate = _interopRequireDefault(
+  require("./model/ReportLinksOperationsIriTemplate")
+);
 
-var _ReportLinksOrganization = _interopRequireDefault(require("./model/ReportLinksOrganization"));
+var _ReportLinksOrganization = _interopRequireDefault(
+  require("./model/ReportLinksOrganization")
+);
 
-var _ReportLinksOrganizationIriTemplate = _interopRequireDefault(require("./model/ReportLinksOrganizationIriTemplate"));
+var _ReportLinksOrganizationIriTemplate = _interopRequireDefault(
+  require("./model/ReportLinksOrganizationIriTemplate")
+);
 
-var _ReportLinksPlace = _interopRequireDefault(require("./model/ReportLinksPlace"));
+var _ReportLinksPlace = _interopRequireDefault(
+  require("./model/ReportLinksPlace")
+);
 
-var _ReportLinksPlaceIriTemplate = _interopRequireDefault(require("./model/ReportLinksPlaceIriTemplate"));
+var _ReportLinksPlaceIriTemplate = _interopRequireDefault(
+  require("./model/ReportLinksPlaceIriTemplate")
+);
 
-var _ReportLinksSelf = _interopRequireDefault(require("./model/ReportLinksSelf"));
+var _ReportLinksSelf = _interopRequireDefault(
+  require("./model/ReportLinksSelf")
+);
 
-var _ReportLinksSelfIriTemplate = _interopRequireDefault(require("./model/ReportLinksSelfIriTemplate"));
+var _ReportLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/ReportLinksSelfIriTemplate")
+);
 
-var _ReportLinksTracking = _interopRequireDefault(require("./model/ReportLinksTracking"));
+var _ReportLinksTracking = _interopRequireDefault(
+  require("./model/ReportLinksTracking")
+);
 
-var _ReportLinksTrackingIriTemplate = _interopRequireDefault(require("./model/ReportLinksTrackingIriTemplate"));
+var _ReportLinksTrackingIriTemplate = _interopRequireDefault(
+  require("./model/ReportLinksTrackingIriTemplate")
+);
 
 var _ReportPatch = _interopRequireDefault(require("./model/ReportPatch"));
 
-var _ReportWorkflowTransitionData = _interopRequireDefault(require("./model/ReportWorkflowTransitionData"));
+var _ReportWorkflowTransitionData = _interopRequireDefault(
+  require("./model/ReportWorkflowTransitionData")
+);
 
-var _ResetPasswordData = _interopRequireDefault(require("./model/ResetPasswordData"));
+var _ResetPasswordData = _interopRequireDefault(
+  require("./model/ResetPasswordData")
+);
 
 var _Review = _interopRequireDefault(require("./model/Review"));
 
-var _ReviewCollection = _interopRequireDefault(require("./model/ReviewCollection"));
+var _ReviewCollection = _interopRequireDefault(
+  require("./model/ReviewCollection")
+);
 
 var _ReviewData = _interopRequireDefault(require("./model/ReviewData"));
 
 var _ReviewLinks = _interopRequireDefault(require("./model/ReviewLinks"));
 
-var _ReviewLinksAuthor = _interopRequireDefault(require("./model/ReviewLinksAuthor"));
+var _ReviewLinksAuthor = _interopRequireDefault(
+  require("./model/ReviewLinksAuthor")
+);
 
-var _ReviewLinksAuthorIriTemplate = _interopRequireDefault(require("./model/ReviewLinksAuthorIriTemplate"));
+var _ReviewLinksAuthorIriTemplate = _interopRequireDefault(
+  require("./model/ReviewLinksAuthorIriTemplate")
+);
 
-var _ReviewLinksItemReviewed = _interopRequireDefault(require("./model/ReviewLinksItemReviewed"));
+var _ReviewLinksItemReviewed = _interopRequireDefault(
+  require("./model/ReviewLinksItemReviewed")
+);
 
-var _ReviewLinksItemReviewedIriTemplate = _interopRequireDefault(require("./model/ReviewLinksItemReviewedIriTemplate"));
+var _ReviewLinksItemReviewedIriTemplate = _interopRequireDefault(
+  require("./model/ReviewLinksItemReviewedIriTemplate")
+);
 
-var _ReviewLinksSelf = _interopRequireDefault(require("./model/ReviewLinksSelf"));
+var _ReviewLinksSelf = _interopRequireDefault(
+  require("./model/ReviewLinksSelf")
+);
 
-var _ReviewLinksSelfIriTemplate = _interopRequireDefault(require("./model/ReviewLinksSelfIriTemplate"));
+var _ReviewLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/ReviewLinksSelfIriTemplate")
+);
 
 var _Schema = _interopRequireDefault(require("./model/Schema"));
 
 var _SignatureData = _interopRequireDefault(require("./model/SignatureData"));
 
-var _SignatureDataSigner = _interopRequireDefault(require("./model/SignatureDataSigner"));
+var _SignatureDataSigner = _interopRequireDefault(
+  require("./model/SignatureDataSigner")
+);
 
 var _SuccessLogin = _interopRequireDefault(require("./model/SuccessLogin"));
 
-var _SuccessLoginCredentials = _interopRequireDefault(require("./model/SuccessLoginCredentials"));
+var _SuccessLoginCredentials = _interopRequireDefault(
+  require("./model/SuccessLoginCredentials")
+);
 
-var _SuccessLoginCredentialsAdministratorOf = _interopRequireDefault(require("./model/SuccessLoginCredentialsAdministratorOf"));
+var _SuccessLoginCredentialsAdministratorOf = _interopRequireDefault(
+  require("./model/SuccessLoginCredentialsAdministratorOf")
+);
 
-var _SuccessLoginCredentialsMemberOf = _interopRequireDefault(require("./model/SuccessLoginCredentialsMemberOf"));
+var _SuccessLoginCredentialsMemberOf = _interopRequireDefault(
+  require("./model/SuccessLoginCredentialsMemberOf")
+);
 
-var _SuccessLoginCredentialsOrganization = _interopRequireDefault(require("./model/SuccessLoginCredentialsOrganization"));
+var _SuccessLoginCredentialsOrganization = _interopRequireDefault(
+  require("./model/SuccessLoginCredentialsOrganization")
+);
 
 var _Tracking = _interopRequireDefault(require("./model/Tracking"));
 
-var _TrackingProgression = _interopRequireDefault(require("./model/TrackingProgression"));
+var _TrackingProgression = _interopRequireDefault(
+  require("./model/TrackingProgression")
+);
 
 var _Webhook = _interopRequireDefault(require("./model/Webhook"));
 
-var _WebhookCollection = _interopRequireDefault(require("./model/WebhookCollection"));
+var _WebhookCollection = _interopRequireDefault(
+  require("./model/WebhookCollection")
+);
 
 var _WebhookData = _interopRequireDefault(require("./model/WebhookData"));
 
 var _WebhookLinks = _interopRequireDefault(require("./model/WebhookLinks"));
 
-var _WebhookLinksOrganization = _interopRequireDefault(require("./model/WebhookLinksOrganization"));
+var _WebhookLinksOrganization = _interopRequireDefault(
+  require("./model/WebhookLinksOrganization")
+);
 
-var _WebhookLinksOrganizationIriTemplate = _interopRequireDefault(require("./model/WebhookLinksOrganizationIriTemplate"));
+var _WebhookLinksOrganizationIriTemplate = _interopRequireDefault(
+  require("./model/WebhookLinksOrganizationIriTemplate")
+);
 
-var _WebhookLinksSelf = _interopRequireDefault(require("./model/WebhookLinksSelf"));
+var _WebhookLinksSelf = _interopRequireDefault(
+  require("./model/WebhookLinksSelf")
+);
 
-var _WebhookLinksSelfIriTemplate = _interopRequireDefault(require("./model/WebhookLinksSelfIriTemplate"));
+var _WebhookLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/WebhookLinksSelfIriTemplate")
+);
 
-var _WebhookLinksSelfIriTemplateMapping = _interopRequireDefault(require("./model/WebhookLinksSelfIriTemplateMapping"));
+var _WebhookLinksSelfIriTemplateMapping = _interopRequireDefault(
+  require("./model/WebhookLinksSelfIriTemplateMapping")
+);
 
 var _WebhookPatch = _interopRequireDefault(require("./model/WebhookPatch"));
 
-var _BusinessActivityPagination = _interopRequireDefault(require("./model/BusinessActivityPagination"));
+var _BusinessActivityPagination = _interopRequireDefault(
+  require("./model/BusinessActivityPagination")
+);
 
-var _CategoryPagination = _interopRequireDefault(require("./model/CategoryPagination"));
+var _CategoryPagination = _interopRequireDefault(
+  require("./model/CategoryPagination")
+);
 
-var _ContributionPagination = _interopRequireDefault(require("./model/ContributionPagination"));
+var _ContributionPagination = _interopRequireDefault(
+  require("./model/ContributionPagination")
+);
 
-var _DelegationPagination = _interopRequireDefault(require("./model/DelegationPagination"));
+var _DelegationPagination = _interopRequireDefault(
+  require("./model/DelegationPagination")
+);
 
-var _DocumentPagination = _interopRequireDefault(require("./model/DocumentPagination"));
+var _DocumentPagination = _interopRequireDefault(
+  require("./model/DocumentPagination")
+);
 
-var _ExternalServicePagination = _interopRequireDefault(require("./model/ExternalServicePagination"));
+var _ExternalServicePagination = _interopRequireDefault(
+  require("./model/ExternalServicePagination")
+);
 
 var _FeedPagination = _interopRequireDefault(require("./model/FeedPagination"));
 
-var _FeedbackPagination = _interopRequireDefault(require("./model/FeedbackPagination"));
+var _FeedbackPagination = _interopRequireDefault(
+  require("./model/FeedbackPagination")
+);
 
-var _FeedbackReviewRequestPagination = _interopRequireDefault(require("./model/FeedbackReviewRequestPagination"));
+var _FeedbackReviewRequestPagination = _interopRequireDefault(
+  require("./model/FeedbackReviewRequestPagination")
+);
 
-var _InternalServicePagination = _interopRequireDefault(require("./model/InternalServicePagination"));
+var _InternalServicePagination = _interopRequireDefault(
+  require("./model/InternalServicePagination")
+);
 
-var _MemberPagination = _interopRequireDefault(require("./model/MemberPagination"));
+var _MemberPagination = _interopRequireDefault(
+  require("./model/MemberPagination")
+);
 
-var _OccupantPagination = _interopRequireDefault(require("./model/OccupantPagination"));
+var _OccupantPagination = _interopRequireDefault(
+  require("./model/OccupantPagination")
+);
 
-var _OperationPagination = _interopRequireDefault(require("./model/OperationPagination"));
+var _OperationPagination = _interopRequireDefault(
+  require("./model/OperationPagination")
+);
 
-var _OrganizationPagination = _interopRequireDefault(require("./model/OrganizationPagination"));
+var _OrganizationPagination = _interopRequireDefault(
+  require("./model/OrganizationPagination")
+);
 
-var _PersonPagination = _interopRequireDefault(require("./model/PersonPagination"));
+var _PersonPagination = _interopRequireDefault(
+  require("./model/PersonPagination")
+);
 
-var _PlacePagination = _interopRequireDefault(require("./model/PlacePagination"));
+var _PlacePagination = _interopRequireDefault(
+  require("./model/PlacePagination")
+);
 
-var _PublicationPagination = _interopRequireDefault(require("./model/PublicationPagination"));
+var _PublicationPagination = _interopRequireDefault(
+  require("./model/PublicationPagination")
+);
 
-var _ReportPagination = _interopRequireDefault(require("./model/ReportPagination"));
+var _ReportPagination = _interopRequireDefault(
+  require("./model/ReportPagination")
+);
 
-var _ReviewPagination = _interopRequireDefault(require("./model/ReviewPagination"));
+var _ReviewPagination = _interopRequireDefault(
+  require("./model/ReviewPagination")
+);
 
-var _WebhookPagination = _interopRequireDefault(require("./model/WebhookPagination"));
+var _WebhookPagination = _interopRequireDefault(
+  require("./model/WebhookPagination")
+);
 
 var _ApplicationApi = _interopRequireDefault(require("./api/ApplicationApi"));
 
-var _BusinessActivityApi = _interopRequireDefault(require("./api/BusinessActivityApi"));
+var _BusinessActivityApi = _interopRequireDefault(
+  require("./api/BusinessActivityApi")
+);
 
 var _CategoryApi = _interopRequireDefault(require("./api/CategoryApi"));
 
@@ -3068,13 +4036,17 @@ var _DeviceApi = _interopRequireDefault(require("./api/DeviceApi"));
 
 var _DocumentApi = _interopRequireDefault(require("./api/DocumentApi"));
 
-var _ExternalServiceApi = _interopRequireDefault(require("./api/ExternalServiceApi"));
+var _ExternalServiceApi = _interopRequireDefault(
+  require("./api/ExternalServiceApi")
+);
 
 var _FeedApi = _interopRequireDefault(require("./api/FeedApi"));
 
 var _FeedbackApi = _interopRequireDefault(require("./api/FeedbackApi"));
 
-var _InternalServiceApi = _interopRequireDefault(require("./api/InternalServiceApi"));
+var _InternalServiceApi = _interopRequireDefault(
+  require("./api/InternalServiceApi")
+);
 
 var _MemberApi = _interopRequireDefault(require("./api/MemberApi"));
 
@@ -3094,10 +4066,14 @@ var _ReportApi = _interopRequireDefault(require("./api/ReportApi"));
 
 var _ReviewApi = _interopRequireDefault(require("./api/ReviewApi"));
 
-var _ReviewRequestApi = _interopRequireDefault(require("./api/ReviewRequestApi"));
+var _ReviewRequestApi = _interopRequireDefault(
+  require("./api/ReviewRequestApi")
+);
 
 var _SecurityApi = _interopRequireDefault(require("./api/SecurityApi"));
 
 var _WebhookApi = _interopRequireDefault(require("./api/WebhookApi"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}

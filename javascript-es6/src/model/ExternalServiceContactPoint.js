@@ -60,4 +60,57 @@ export default class ExternalServiceContactPoint {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getEmail() {
+    return this.email;
+  }
+
+  /**
+   * @param { String } email
+   */
+  setEmail(email) {
+    this.email = email;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getIsOpen() {
+    return this.isOpen;
+  }
+
+  /**
+   * @param { Boolean } isOpen
+   */
+  setIsOpen(isOpen) {
+    this.isOpen = isOpen;
+  }
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { String }
+   */
+  getTelephone() {
+    return this.telephone;
+  }
+
+  /**
+   * @param { String } telephone
+   */
+  setTelephone(telephone) {
+    this.telephone = telephone;
+  }
 }

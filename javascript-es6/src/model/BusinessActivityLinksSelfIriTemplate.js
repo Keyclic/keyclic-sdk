@@ -54,4 +54,18 @@ export default class BusinessActivityLinksSelfIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/BusinessActivityLinksImageIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/BusinessActivityLinksImageIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

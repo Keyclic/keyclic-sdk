@@ -65,41 +65,85 @@ var FeedbackReviewRequestLinksReviewer =
      * @return { module:model/FeedbackReviewRequestLinksReviewer } The populated "FeedbackReviewRequestLinksReviewer" instance.
      */
 
-    _createClass(FeedbackReviewRequestLinksReviewer, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FeedbackReviewRequestLinksReviewer,
+      [
+        {
+          key: "getHref",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * Gets The URI of the reviewer associated to the given feedbackreviewrequest.
+           * @return { String }
+           */
+          value: function getHref() {
+            return this.href;
           }
-
-          if (object === null) {
-            object = new FeedbackReviewRequestLinksReviewer();
+          /**
+           * Sets The URI of the reviewer associated to the given feedbackreviewrequest.
+           * @param { String } href The URI of the reviewer associated to the given feedbackreviewrequest.
+           */
+        },
+        {
+          key: "setHref",
+          value: function setHref(href) {
+            this.href = href;
           }
-
-          if (data.hasOwnProperty("href")) {
-            object.href = _ApiClient.default.convertToType(
-              data["href"],
-              "String"
-            );
+          /**
+           * @return { module:model/FeedbackReviewRequestLinksReviewerIriTemplate }
+           */
+        },
+        {
+          key: "getIriTemplate",
+          value: function getIriTemplate() {
+            return this.iriTemplate;
           }
-
-          if (data.hasOwnProperty("iriTemplate")) {
-            object.iriTemplate = _ApiClient.default.convertToType(
-              data["iriTemplate"],
-              object.iriTemplateType
-            );
+          /**
+           * @param { module:model/FeedbackReviewRequestLinksReviewerIriTemplate } iriTemplate
+           */
+        },
+        {
+          key: "setIriTemplate",
+          value: function setIriTemplate(iriTemplate) {
+            this.iriTemplate = iriTemplate;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FeedbackReviewRequestLinksReviewer();
+            }
+
+            if (data.hasOwnProperty("href")) {
+              object.href = _ApiClient.default.convertToType(
+                data["href"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("iriTemplate")) {
+              object.iriTemplate = _ApiClient.default.convertToType(
+                data["iriTemplate"],
+                object.iriTemplateType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FeedbackReviewRequestLinksReviewer;
   })();

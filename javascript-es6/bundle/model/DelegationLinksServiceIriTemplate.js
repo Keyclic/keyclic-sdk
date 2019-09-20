@@ -63,34 +63,58 @@ var DelegationLinksServiceIriTemplate =
      * @return { module:model/DelegationLinksServiceIriTemplate } The populated "DelegationLinksServiceIriTemplate" instance.
      */
 
-    _createClass(DelegationLinksServiceIriTemplate, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DelegationLinksServiceIriTemplate,
+      [
+        {
+          key: "getMapping",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/DelegationLinksServiceIriTemplateMapping }
+           */
+          value: function getMapping() {
+            return this.mapping;
           }
-
-          if (object === null) {
-            object = new DelegationLinksServiceIriTemplate();
+          /**
+           * @param { module:model/DelegationLinksServiceIriTemplateMapping } mapping
+           */
+        },
+        {
+          key: "setMapping",
+          value: function setMapping(mapping) {
+            this.mapping = mapping;
           }
-
-          if (data.hasOwnProperty("mapping")) {
-            object.mapping = _ApiClient.default.convertToType(
-              data["mapping"],
-              object.mappingType
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DelegationLinksServiceIriTemplate();
+            }
+
+            if (data.hasOwnProperty("mapping")) {
+              object.mapping = _ApiClient.default.convertToType(
+                data["mapping"],
+                object.mappingType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DelegationLinksServiceIriTemplate;
   })();

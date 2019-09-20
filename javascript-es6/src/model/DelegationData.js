@@ -61,4 +61,44 @@ export default class DelegationData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { String }
+   */
+  getReport() {
+    return this.report;
+  }
+
+  /**
+   * @param { String } report
+   */
+  setReport(report) {
+    this.report = report;
+  }
+  /**
+   * @return { String }
+   */
+  getService() {
+    return this.service;
+  }
+
+  /**
+   * @param { String } service
+   */
+  setService(service) {
+    this.service = service;
+  }
 }

@@ -68,4 +68,44 @@ export default class DeviceData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getToken() {
+    return this.token;
+  }
+
+  /**
+   * @param { String } token
+   */
+  setToken(token) {
+    this.token = token;
+  }
+  /**
+   * @return { String }
+   */
+  getPlatform() {
+    return this.platform;
+  }
+
+  /**
+   * @param { String } platform
+   */
+  setPlatform(platform) {
+    this.platform = platform;
+  }
+  /**
+   * @return { String }
+   */
+  getPerson() {
+    return this.person;
+  }
+
+  /**
+   * @param { String } person
+   */
+  setPerson(person) {
+    this.person = person;
+  }
 }

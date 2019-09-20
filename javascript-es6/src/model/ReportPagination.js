@@ -60,4 +60,18 @@ export default class ReportPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ReportCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/ReportCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

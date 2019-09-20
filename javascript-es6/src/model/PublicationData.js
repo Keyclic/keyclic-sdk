@@ -79,4 +79,57 @@ export default class PublicationData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getMessage() {
+    return this.message;
+  }
+
+  /**
+   * @param { String } message
+   */
+  setMessage(message) {
+    this.message = message;
+  }
+  /**
+   * @return { String }
+   */
+  getFeed() {
+    return this.feed;
+  }
+
+  /**
+   * @param { String } feed
+   */
+  setFeed(feed) {
+    this.feed = feed;
+  }
+  /**
+   * @return { String }
+   */
+  getTitle() {
+    return this.title;
+  }
+
+  /**
+   * @param { String } title
+   */
+  setTitle(title) {
+    this.title = title;
+  }
+  /**
+   * @return { String }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { String } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
 }

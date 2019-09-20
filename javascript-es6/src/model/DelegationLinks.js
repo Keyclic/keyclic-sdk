@@ -78,4 +78,57 @@ export default class DelegationLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/DelegationLinksCreatedBy }
+   */
+  getCreatedBy() {
+    return this.createdBy;
+  }
+
+  /**
+   * @param { module:model/DelegationLinksCreatedBy } createdBy
+   */
+  setCreatedBy(createdBy) {
+    this.createdBy = createdBy;
+  }
+  /**
+   * @return { module:model/DelegationLinksReport }
+   */
+  getReport() {
+    return this.report;
+  }
+
+  /**
+   * @param { module:model/DelegationLinksReport } report
+   */
+  setReport(report) {
+    this.report = report;
+  }
+  /**
+   * @return { module:model/DelegationLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/DelegationLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
+  /**
+   * @return { module:model/DelegationLinksService }
+   */
+  getService() {
+    return this.service;
+  }
+
+  /**
+   * @param { module:model/DelegationLinksService } service
+   */
+  setService(service) {
+    this.service = service;
+  }
 }

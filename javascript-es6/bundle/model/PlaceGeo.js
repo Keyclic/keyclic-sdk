@@ -68,48 +68,108 @@ var PlaceGeo =
      * @return { module:model/PlaceGeo } The populated "PlaceGeo" instance.
      */
 
-    _createClass(PlaceGeo, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PlaceGeo,
+      [
+        {
+          key: "getCentroid",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/PlaceGeoCentroid }
+           */
+          value: function getCentroid() {
+            return this.centroid;
           }
-
-          if (object === null) {
-            object = new PlaceGeo();
+          /**
+           * @param { module:model/PlaceGeoCentroid } centroid
+           */
+        },
+        {
+          key: "setCentroid",
+          value: function setCentroid(centroid) {
+            this.centroid = centroid;
           }
-
-          if (data.hasOwnProperty("centroid")) {
-            object.centroid = _ApiClient.default.convertToType(
-              data["centroid"],
-              object.centroidType
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getElevation",
+          value: function getElevation() {
+            return this.elevation;
           }
-
-          if (data.hasOwnProperty("elevation")) {
-            object.elevation = _ApiClient.default.convertToType(
-              data["elevation"],
-              "Number"
-            );
+          /**
+           * @param { Number } elevation
+           */
+        },
+        {
+          key: "setElevation",
+          value: function setElevation(elevation) {
+            this.elevation = elevation;
           }
-
-          if (data.hasOwnProperty("polygon")) {
-            object.polygon = _ApiClient.default.convertToType(
-              data["polygon"],
-              object.polygonType
-            );
+          /**
+           * @return { module:model/PlaceGeoPolygon }
+           */
+        },
+        {
+          key: "getPolygon",
+          value: function getPolygon() {
+            return this.polygon;
           }
-
-          return object;
+          /**
+           * @param { module:model/PlaceGeoPolygon } polygon
+           */
+        },
+        {
+          key: "setPolygon",
+          value: function setPolygon(polygon) {
+            this.polygon = polygon;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PlaceGeo();
+            }
+
+            if (data.hasOwnProperty("centroid")) {
+              object.centroid = _ApiClient.default.convertToType(
+                data["centroid"],
+                object.centroidType
+              );
+            }
+
+            if (data.hasOwnProperty("elevation")) {
+              object.elevation = _ApiClient.default.convertToType(
+                data["elevation"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("polygon")) {
+              object.polygon = _ApiClient.default.convertToType(
+                data["polygon"],
+                object.polygonType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PlaceGeo;
   })();

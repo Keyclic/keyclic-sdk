@@ -51,4 +51,18 @@ export default class OperationCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Operation> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Operation> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

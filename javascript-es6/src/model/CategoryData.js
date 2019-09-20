@@ -79,4 +79,57 @@ export default class CategoryData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { String }
+   */
+  getColor() {
+    return this.color;
+  }
+
+  /**
+   * @param { String } color
+   */
+  setColor(color) {
+    this.color = color;
+  }
+  /**
+   * @return { String }
+   */
+  getIcon() {
+    return this.icon;
+  }
+
+  /**
+   * @param { String } icon
+   */
+  setIcon(icon) {
+    this.icon = icon;
+  }
+  /**
+   * @return { String }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { String } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
 }

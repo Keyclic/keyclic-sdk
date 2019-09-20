@@ -81,55 +81,133 @@ var PublicationLinks =
      * @return { module:model/PublicationLinks } The populated "PublicationLinks" instance.
      */
 
-    _createClass(PublicationLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PublicationLinks,
+      [
+        {
+          key: "getAuthor",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/PublicationLinksAuthor }
+           */
+          value: function getAuthor() {
+            return this.author;
           }
-
-          if (object === null) {
-            object = new PublicationLinks();
+          /**
+           * @param { module:model/PublicationLinksAuthor } author
+           */
+        },
+        {
+          key: "setAuthor",
+          value: function setAuthor(author) {
+            this.author = author;
           }
-
-          if (data.hasOwnProperty("author")) {
-            object.author = _ApiClient.default.convertToType(
-              data["author"],
-              object.authorType
-            );
+          /**
+           * @return { module:model/PublicationLinksFeed }
+           */
+        },
+        {
+          key: "getFeed",
+          value: function getFeed() {
+            return this.feed;
           }
-
-          if (data.hasOwnProperty("feed")) {
-            object.feed = _ApiClient.default.convertToType(
-              data["feed"],
-              object.feedType
-            );
+          /**
+           * @param { module:model/PublicationLinksFeed } feed
+           */
+        },
+        {
+          key: "setFeed",
+          value: function setFeed(feed) {
+            this.feed = feed;
           }
-
-          if (data.hasOwnProperty("organization")) {
-            object.organization = _ApiClient.default.convertToType(
-              data["organization"],
-              object.organizationType
-            );
+          /**
+           * @return { module:model/PublicationLinksOrganization }
+           */
+        },
+        {
+          key: "getOrganization",
+          value: function getOrganization() {
+            return this.organization;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @param { module:model/PublicationLinksOrganization } organization
+           */
+        },
+        {
+          key: "setOrganization",
+          value: function setOrganization(organization) {
+            this.organization = organization;
           }
-
-          return object;
+          /**
+           * @return { module:model/PublicationLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
+          }
+          /**
+           * @param { module:model/PublicationLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PublicationLinks();
+            }
+
+            if (data.hasOwnProperty("author")) {
+              object.author = _ApiClient.default.convertToType(
+                data["author"],
+                object.authorType
+              );
+            }
+
+            if (data.hasOwnProperty("feed")) {
+              object.feed = _ApiClient.default.convertToType(
+                data["feed"],
+                object.feedType
+              );
+            }
+
+            if (data.hasOwnProperty("organization")) {
+              object.organization = _ApiClient.default.convertToType(
+                data["organization"],
+                object.organizationType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PublicationLinks;
   })();

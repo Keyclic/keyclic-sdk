@@ -50,4 +50,18 @@ export default class ContributionData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getFeedback() {
+    return this.feedback;
+  }
+
+  /**
+   * @param { String } feedback
+   */
+  setFeedback(feedback) {
+    this.feedback = feedback;
+  }
 }

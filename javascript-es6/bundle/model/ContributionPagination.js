@@ -164,40 +164,64 @@ var ContributionPagination =
      * @return { module:model/ContributionPagination } The populated "ContributionPagination" instance.
      */
 
-    _createClass(ContributionPagination, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ContributionPagination,
+      [
+        {
+          key: "getEmbedded",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/ContributionCollection }
+           */
+          value: function getEmbedded() {
+            return this.embedded;
           }
-
-          if (object === null) {
-            object = new ContributionPagination();
+          /**
+           * @param { module:model/ContributionCollection } embedded
+           */
+        },
+        {
+          key: "setEmbedded",
+          value: function setEmbedded(embedded) {
+            this.embedded = embedded;
           }
-
-          object = _get(
-            _getPrototypeOf(ContributionPagination),
-            "constructFromData",
-            this
-          ).call(this, data, object);
-
-          if (data.hasOwnProperty("_embedded")) {
-            object.embedded = _ApiClient.default.convertToType(
-              data["_embedded"],
-              object.embeddedType
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ContributionPagination();
+            }
+
+            object = _get(
+              _getPrototypeOf(ContributionPagination),
+              "constructFromData",
+              this
+            ).call(this, data, object);
+
+            if (data.hasOwnProperty("_embedded")) {
+              object.embedded = _ApiClient.default.convertToType(
+                data["_embedded"],
+                object.embeddedType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ContributionPagination;
   })(_Pagination2.default);

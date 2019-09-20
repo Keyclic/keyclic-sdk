@@ -65,4 +65,44 @@ export default class OperationEmbedded {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OperationEmbeddedDuration }
+   */
+  getDuration() {
+    return this.duration;
+  }
+
+  /**
+   * @param { module:model/OperationEmbeddedDuration } duration
+   */
+  setDuration(duration) {
+    this.duration = duration;
+  }
+  /**
+   * @return { Array.<String> }
+   */
+  getStateTransitions() {
+    return this.stateTransitions;
+  }
+
+  /**
+   * @param { Array.<String> } stateTransitions
+   */
+  setStateTransitions(stateTransitions) {
+    this.stateTransitions = stateTransitions;
+  }
+  /**
+   * @return { String }
+   */
+  getTracking() {
+    return this.tracking;
+  }
+
+  /**
+   * @param { String } tracking
+   */
+  setTracking(tracking) {
+    this.tracking = tracking;
+  }
 }

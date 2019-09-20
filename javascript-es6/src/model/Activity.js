@@ -82,4 +82,109 @@ export default class Activity {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getActor() {
+    return this.actor;
+  }
+
+  /**
+   * @param { String } actor
+   */
+  setActor(actor) {
+    this.actor = actor;
+  }
+  /**
+   * @return { String }
+   */
+  getMessage() {
+    return this.message;
+  }
+
+  /**
+   * @param { String } message
+   */
+  setMessage(message) {
+    this.message = message;
+  }
+  /**
+   * @return { String }
+   */
+  getObject() {
+    return this._object;
+  }
+
+  /**
+   * @param { String } _object
+   */
+  setObject(_object) {
+    this._object = _object;
+  }
+  /**
+   * @return { String }
+   */
+  getOrigin() {
+    return this.origin;
+  }
+
+  /**
+   * @param { String } origin
+   */
+  setOrigin(origin) {
+    this.origin = origin;
+  }
+  /**
+   * @return { module:model/ActivitySubject }
+   */
+  getSubject() {
+    return this.subject;
+  }
+
+  /**
+   * @param { module:model/ActivitySubject } subject
+   */
+  setSubject(subject) {
+    this.subject = subject;
+  }
+  /**
+   * @return { Date }
+   */
+  getTime() {
+    return this.time;
+  }
+
+  /**
+   * @param { Date } time
+   */
+  setTime(time) {
+    this.time = time;
+  }
+  /**
+   * @return { String }
+   */
+  getTitle() {
+    return this.title;
+  }
+
+  /**
+   * @param { String } title
+   */
+  setTitle(title) {
+    this.title = title;
+  }
+  /**
+   * @return { String }
+   */
+  getVerb() {
+    return this.verb;
+  }
+
+  /**
+   * @param { String } verb
+   */
+  setVerb(verb) {
+    this.verb = verb;
+  }
 }

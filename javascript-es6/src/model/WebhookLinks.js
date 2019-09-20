@@ -60,4 +60,31 @@ export default class WebhookLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/WebhookLinksOrganization }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { module:model/WebhookLinksOrganization } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
+  /**
+   * @return { module:model/WebhookLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/WebhookLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

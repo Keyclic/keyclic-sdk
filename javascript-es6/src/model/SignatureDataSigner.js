@@ -52,4 +52,31 @@ export default class SignatureDataSigner {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getFamilyName() {
+    return this.familyName;
+  }
+
+  /**
+   * @param { String } familyName
+   */
+  setFamilyName(familyName) {
+    this.familyName = familyName;
+  }
+  /**
+   * @return { String }
+   */
+  getGivenName() {
+    return this.givenName;
+  }
+
+  /**
+   * @param { String } givenName
+   */
+  setGivenName(givenName) {
+    this.givenName = givenName;
+  }
 }

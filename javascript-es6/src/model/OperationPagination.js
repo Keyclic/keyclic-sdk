@@ -60,4 +60,18 @@ export default class OperationPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OperationCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/OperationCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

@@ -64,41 +64,85 @@ var PublicationLinksOrganization =
      * @return { module:model/PublicationLinksOrganization } The populated "PublicationLinksOrganization" instance.
      */
 
-    _createClass(PublicationLinksOrganization, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PublicationLinksOrganization,
+      [
+        {
+          key: "getHref",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * Gets The URI of the organization associated to the given publication.
+           * @return { String }
+           */
+          value: function getHref() {
+            return this.href;
           }
-
-          if (object === null) {
-            object = new PublicationLinksOrganization();
+          /**
+           * Sets The URI of the organization associated to the given publication.
+           * @param { String } href The URI of the organization associated to the given publication.
+           */
+        },
+        {
+          key: "setHref",
+          value: function setHref(href) {
+            this.href = href;
           }
-
-          if (data.hasOwnProperty("href")) {
-            object.href = _ApiClient.default.convertToType(
-              data["href"],
-              "String"
-            );
+          /**
+           * @return { module:model/PublicationLinksOrganizationIriTemplate }
+           */
+        },
+        {
+          key: "getIriTemplate",
+          value: function getIriTemplate() {
+            return this.iriTemplate;
           }
-
-          if (data.hasOwnProperty("iriTemplate")) {
-            object.iriTemplate = _ApiClient.default.convertToType(
-              data["iriTemplate"],
-              object.iriTemplateType
-            );
+          /**
+           * @param { module:model/PublicationLinksOrganizationIriTemplate } iriTemplate
+           */
+        },
+        {
+          key: "setIriTemplate",
+          value: function setIriTemplate(iriTemplate) {
+            this.iriTemplate = iriTemplate;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PublicationLinksOrganization();
+            }
+
+            if (data.hasOwnProperty("href")) {
+              object.href = _ApiClient.default.convertToType(
+                data["href"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("iriTemplate")) {
+              object.iriTemplate = _ApiClient.default.convertToType(
+                data["iriTemplate"],
+                object.iriTemplateType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PublicationLinksOrganization;
   })();

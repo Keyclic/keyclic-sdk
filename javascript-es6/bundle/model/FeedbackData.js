@@ -86,87 +86,237 @@ var FeedbackData =
      * @return { module:model/FeedbackData } The populated "FeedbackData" instance.
      */
 
-    _createClass(FeedbackData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FeedbackData,
+      [
+        {
+          key: "getCategory",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getCategory() {
+            return this.category;
           }
-
-          if (object === null) {
-            object = new FeedbackData();
+          /**
+           * @param { String } category
+           */
+        },
+        {
+          key: "setCategory",
+          value: function setCategory(category) {
+            this.category = category;
           }
-
-          if (data.hasOwnProperty("category")) {
-            object.category = _ApiClient.default.convertToType(
-              data["category"],
-              "String"
-            );
+          /**
+           * @return { module:model/FeedbackDataGeo }
+           */
+        },
+        {
+          key: "getGeo",
+          value: function getGeo() {
+            return this.geo;
           }
-
-          if (data.hasOwnProperty("geo")) {
-            object.geo = _ApiClient.default.convertToType(
-              data["geo"],
-              object.geoType
-            );
+          /**
+           * @param { module:model/FeedbackDataGeo } geo
+           */
+        },
+        {
+          key: "setGeo",
+          value: function setGeo(geo) {
+            this.geo = geo;
           }
-
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getDescription",
+          value: function getDescription() {
+            return this.description;
           }
-
-          if (data.hasOwnProperty("visibility")) {
-            object.visibility = _ApiClient.default.convertToType(
-              data["visibility"],
-              "String"
-            );
+          /**
+           * @param { String } description
+           */
+        },
+        {
+          key: "setDescription",
+          value: function setDescription(description) {
+            this.description = description;
           }
-
-          if (data.hasOwnProperty("businessActivity")) {
-            object.businessActivity = _ApiClient.default.convertToType(
-              data["businessActivity"],
-              "String"
-            );
+          /**
+           * @return { module:model/FeedbackData.VisibilityEnum }
+           */
+        },
+        {
+          key: "getVisibility",
+          value: function getVisibility() {
+            return this.visibility;
           }
-
-          if (data.hasOwnProperty("proMode")) {
-            object.proMode = _ApiClient.default.convertToType(
-              data["proMode"],
-              "Boolean"
-            );
+          /**
+           * @param { module:model/FeedbackData.VisibilityEnum } visibility
+           */
+        },
+        {
+          key: "setVisibility",
+          value: function setVisibility(visibility) {
+            this.visibility = visibility;
           }
-
-          if (data.hasOwnProperty("metadata")) {
-            object.metadata = _ApiClient.default.convertToType(
-              data["metadata"],
-              "['String']"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getBusinessActivity",
+          value: function getBusinessActivity() {
+            return this.businessActivity;
           }
-
-          if (data.hasOwnProperty("place")) {
-            object.place = _ApiClient.default.convertToType(
-              data["place"],
-              "String"
-            );
+          /**
+           * @param { String } businessActivity
+           */
+        },
+        {
+          key: "setBusinessActivity",
+          value: function setBusinessActivity(businessActivity) {
+            this.businessActivity = businessActivity;
           }
-
-          return object;
+          /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getProMode",
+          value: function getProMode() {
+            return this.proMode;
+          }
+          /**
+           * @param { Boolean } proMode
+           */
+        },
+        {
+          key: "setProMode",
+          value: function setProMode(proMode) {
+            this.proMode = proMode;
+          }
+          /**
+           * @return { Object.<String, String> }
+           */
+        },
+        {
+          key: "getMetadata",
+          value: function getMetadata() {
+            return this.metadata;
+          }
+          /**
+           * @param { Object.<String, String> } metadata
+           */
+        },
+        {
+          key: "setMetadata",
+          value: function setMetadata(metadata) {
+            this.metadata = metadata;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getPlace",
+          value: function getPlace() {
+            return this.place;
+          }
+          /**
+           * @param { String } place
+           */
+        },
+        {
+          key: "setPlace",
+          value: function setPlace(place) {
+            this.place = place;
+          }
+          /**
+           * Allowed values for the "visibility" property.
+           * @enum { String }
+           */
         }
-        /**
-         * Allowed values for the "visibility" property.
-         * @enum { String }
-         */
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FeedbackData();
+            }
+
+            if (data.hasOwnProperty("category")) {
+              object.category = _ApiClient.default.convertToType(
+                data["category"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("geo")) {
+              object.geo = _ApiClient.default.convertToType(
+                data["geo"],
+                object.geoType
+              );
+            }
+
+            if (data.hasOwnProperty("description")) {
+              object.description = _ApiClient.default.convertToType(
+                data["description"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("visibility")) {
+              object.visibility = _ApiClient.default.convertToType(
+                data["visibility"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("businessActivity")) {
+              object.businessActivity = _ApiClient.default.convertToType(
+                data["businessActivity"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("proMode")) {
+              object.proMode = _ApiClient.default.convertToType(
+                data["proMode"],
+                "Boolean"
+              );
+            }
+
+            if (data.hasOwnProperty("metadata")) {
+              object.metadata = _ApiClient.default.convertToType(
+                data["metadata"],
+                "['String']"
+              );
+            }
+
+            if (data.hasOwnProperty("place")) {
+              object.place = _ApiClient.default.convertToType(
+                data["place"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FeedbackData;
   })();

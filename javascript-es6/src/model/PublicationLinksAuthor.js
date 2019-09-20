@@ -58,4 +58,33 @@ export default class PublicationLinksAuthor {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the author associated to the given publication.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the author associated to the given publication.
+   * @param { String } href The URI of the author associated to the given publication.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/PublicationLinksAuthorIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/PublicationLinksAuthorIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

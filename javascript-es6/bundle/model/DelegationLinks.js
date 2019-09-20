@@ -81,55 +81,133 @@ var DelegationLinks =
      * @return { module:model/DelegationLinks } The populated "DelegationLinks" instance.
      */
 
-    _createClass(DelegationLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DelegationLinks,
+      [
+        {
+          key: "getCreatedBy",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/DelegationLinksCreatedBy }
+           */
+          value: function getCreatedBy() {
+            return this.createdBy;
           }
-
-          if (object === null) {
-            object = new DelegationLinks();
+          /**
+           * @param { module:model/DelegationLinksCreatedBy } createdBy
+           */
+        },
+        {
+          key: "setCreatedBy",
+          value: function setCreatedBy(createdBy) {
+            this.createdBy = createdBy;
           }
-
-          if (data.hasOwnProperty("createdBy")) {
-            object.createdBy = _ApiClient.default.convertToType(
-              data["createdBy"],
-              object.createdByType
-            );
+          /**
+           * @return { module:model/DelegationLinksReport }
+           */
+        },
+        {
+          key: "getReport",
+          value: function getReport() {
+            return this.report;
           }
-
-          if (data.hasOwnProperty("report")) {
-            object.report = _ApiClient.default.convertToType(
-              data["report"],
-              object.reportType
-            );
+          /**
+           * @param { module:model/DelegationLinksReport } report
+           */
+        },
+        {
+          key: "setReport",
+          value: function setReport(report) {
+            this.report = report;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @return { module:model/DelegationLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
           }
-
-          if (data.hasOwnProperty("service")) {
-            object.service = _ApiClient.default.convertToType(
-              data["service"],
-              object.serviceType
-            );
+          /**
+           * @param { module:model/DelegationLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
           }
-
-          return object;
+          /**
+           * @return { module:model/DelegationLinksService }
+           */
+        },
+        {
+          key: "getService",
+          value: function getService() {
+            return this.service;
+          }
+          /**
+           * @param { module:model/DelegationLinksService } service
+           */
+        },
+        {
+          key: "setService",
+          value: function setService(service) {
+            this.service = service;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DelegationLinks();
+            }
+
+            if (data.hasOwnProperty("createdBy")) {
+              object.createdBy = _ApiClient.default.convertToType(
+                data["createdBy"],
+                object.createdByType
+              );
+            }
+
+            if (data.hasOwnProperty("report")) {
+              object.report = _ApiClient.default.convertToType(
+                data["report"],
+                object.reportType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            if (data.hasOwnProperty("service")) {
+              object.service = _ApiClient.default.convertToType(
+                data["service"],
+                object.serviceType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DelegationLinks;
   })();

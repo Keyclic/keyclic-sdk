@@ -64,41 +64,85 @@ var BusinessActivityLinksSchema =
      * @return { module:model/BusinessActivityLinksSchema } The populated "BusinessActivityLinksSchema" instance.
      */
 
-    _createClass(BusinessActivityLinksSchema, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      BusinessActivityLinksSchema,
+      [
+        {
+          key: "getHref",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * Gets The URI of the schema associated to the given businessactivity.
+           * @return { String }
+           */
+          value: function getHref() {
+            return this.href;
           }
-
-          if (object === null) {
-            object = new BusinessActivityLinksSchema();
+          /**
+           * Sets The URI of the schema associated to the given businessactivity.
+           * @param { String } href The URI of the schema associated to the given businessactivity.
+           */
+        },
+        {
+          key: "setHref",
+          value: function setHref(href) {
+            this.href = href;
           }
-
-          if (data.hasOwnProperty("href")) {
-            object.href = _ApiClient.default.convertToType(
-              data["href"],
-              "String"
-            );
+          /**
+           * @return { module:model/BusinessActivityLinksSchemaIriTemplate }
+           */
+        },
+        {
+          key: "getIriTemplate",
+          value: function getIriTemplate() {
+            return this.iriTemplate;
           }
-
-          if (data.hasOwnProperty("iriTemplate")) {
-            object.iriTemplate = _ApiClient.default.convertToType(
-              data["iriTemplate"],
-              object.iriTemplateType
-            );
+          /**
+           * @param { module:model/BusinessActivityLinksSchemaIriTemplate } iriTemplate
+           */
+        },
+        {
+          key: "setIriTemplate",
+          value: function setIriTemplate(iriTemplate) {
+            this.iriTemplate = iriTemplate;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new BusinessActivityLinksSchema();
+            }
+
+            if (data.hasOwnProperty("href")) {
+              object.href = _ApiClient.default.convertToType(
+                data["href"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("iriTemplate")) {
+              object.iriTemplate = _ApiClient.default.convertToType(
+                data["iriTemplate"],
+                object.iriTemplateType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return BusinessActivityLinksSchema;
   })();

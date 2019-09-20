@@ -112,4 +112,123 @@ export default class Feedback {
 
     return object;
   }
+
+  /**
+   * @return { module:model/FeedbackEmbedded }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/FeedbackEmbedded } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
+  /**
+   * @return { module:model/FeedbackLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/FeedbackLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { module:model/FeedbackGeoCoordinates }
+   */
+  getGeoCoordinates() {
+    return this.geoCoordinates;
+  }
+
+  /**
+   * @param { module:model/FeedbackGeoCoordinates } geoCoordinates
+   */
+  setGeoCoordinates(geoCoordinates) {
+    this.geoCoordinates = geoCoordinates;
+  }
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { Object.<String, String> }
+   */
+  getMetadata() {
+    return this.metadata;
+  }
+
+  /**
+   * @param { Object.<String, String> } metadata
+   */
+  setMetadata(metadata) {
+    this.metadata = metadata;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getPublic() {
+    return this._public;
+  }
+
+  /**
+   * @param { Boolean } _public
+   */
+  setPublic(_public) {
+    this._public = _public;
+  }
+  /**
+   * @return { Array.<String> }
+   */
+  getState() {
+    return this.state;
+  }
+
+  /**
+   * @param { Array.<String> } state
+   */
+  setState(state) {
+    this.state = state;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
 }

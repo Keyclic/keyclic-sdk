@@ -51,4 +51,18 @@ export default class OccupantCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Occupant> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Occupant> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

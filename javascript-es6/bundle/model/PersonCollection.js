@@ -61,33 +61,57 @@ var PersonCollection =
      * @return { module:model/PersonCollection } The populated "PersonCollection" instance.
      */
 
-    _createClass(PersonCollection, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PersonCollection,
+      [
+        {
+          key: "getItems",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<module:model/Person> }
+           */
+          value: function getItems() {
+            return this.items;
           }
-
-          if (object === null) {
-            object = new PersonCollection();
+          /**
+           * @param { Array.<module:model/Person> } items
+           */
+        },
+        {
+          key: "setItems",
+          value: function setItems(items) {
+            this.items = items;
           }
-
-          if (data.hasOwnProperty("items")) {
-            object.items = _ApiClient.default.convertToType(data["items"], [
-              object.itemsType
-            ]);
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PersonCollection();
+            }
+
+            if (data.hasOwnProperty("items")) {
+              object.items = _ApiClient.default.convertToType(data["items"], [
+                object.itemsType
+              ]);
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PersonCollection;
   })();

@@ -51,4 +51,18 @@ export default class FeedbackReviewRequestLinksSelfIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getReviewRequest() {
+    return this.reviewRequest;
+  }
+
+  /**
+   * @param { String } reviewRequest
+   */
+  setReviewRequest(reviewRequest) {
+    this.reviewRequest = reviewRequest;
+  }
 }

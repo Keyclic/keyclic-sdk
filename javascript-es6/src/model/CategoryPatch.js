@@ -63,4 +63,57 @@ export default class CategoryPatch {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getColor() {
+    return this.color;
+  }
+
+  /**
+   * @param { String } color
+   */
+  setColor(color) {
+    this.color = color;
+  }
+  /**
+   * @return { String }
+   */
+  getIcon() {
+    return this.icon;
+  }
+
+  /**
+   * @param { String } icon
+   */
+  setIcon(icon) {
+    this.icon = icon;
+  }
+  /**
+   * @return { String }
+   */
+  getIdentificationNumber() {
+    return this.identificationNumber;
+  }
+
+  /**
+   * @param { String } identificationNumber
+   */
+  setIdentificationNumber(identificationNumber) {
+    this.identificationNumber = identificationNumber;
+  }
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
 }

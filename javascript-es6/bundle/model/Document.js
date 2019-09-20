@@ -75,73 +75,172 @@ var Document =
      * @return { module:model/Document } The populated "Document" instance.
      */
 
-    _createClass(Document, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Document,
+      [
+        {
+          key: "getLinks",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/DocumentLinks }
+           */
+          value: function getLinks() {
+            return this.links;
           }
-
-          if (object === null) {
-            object = new Document();
+          /**
+           * @param { module:model/DocumentLinks } links
+           */
+        },
+        {
+          key: "setLinks",
+          value: function setLinks(links) {
+            this.links = links;
           }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
-            );
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getCreatedAt",
+          value: function getCreatedAt() {
+            return this.createdAt;
           }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
+          /**
+           * @return { module:model/DocumentFile }
+           */
+        },
+        {
+          key: "getFile",
+          value: function getFile() {
+            return this.file;
           }
-
-          if (data.hasOwnProperty("file")) {
-            object.file = _ApiClient.default.convertToType(
-              data["file"],
-              object.fileType
-            );
+          /**
+           * @param { module:model/DocumentFile } file
+           */
+        },
+        {
+          key: "setFile",
+          value: function setFile(file) {
+            this.file = file;
           }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getId",
+          value: function getId() {
+            return this.id;
           }
-
-          if (data.hasOwnProperty("permission")) {
-            object.permission = _ApiClient.default.convertToType(
-              data["permission"],
-              object.permissionType
-            );
+          /**
+           * @return { module:model/DocumentPermission }
+           */
+        },
+        {
+          key: "getPermission",
+          value: function getPermission() {
+            return this.permission;
           }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
+          /**
+           * @param { module:model/DocumentPermission } permission
+           */
+        },
+        {
+          key: "setPermission",
+          value: function setPermission(permission) {
+            this.permission = permission;
           }
-
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
           }
-
-          return object;
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getUpdatedAt",
+          value: function getUpdatedAt() {
+            return this.updatedAt;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Document();
+            }
+
+            if (data.hasOwnProperty("_links")) {
+              object.links = _ApiClient.default.convertToType(
+                data["_links"],
+                object.linksType
+              );
+            }
+
+            if (data.hasOwnProperty("createdAt")) {
+              object.createdAt = _ApiClient.default.convertToType(
+                data["createdAt"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("file")) {
+              object.file = _ApiClient.default.convertToType(
+                data["file"],
+                object.fileType
+              );
+            }
+
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("permission")) {
+              object.permission = _ApiClient.default.convertToType(
+                data["permission"],
+                object.permissionType
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("updatedAt")) {
+              object.updatedAt = _ApiClient.default.convertToType(
+                data["updatedAt"],
+                "Date"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Document;
   })();

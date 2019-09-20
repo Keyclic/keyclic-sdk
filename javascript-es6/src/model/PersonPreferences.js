@@ -66,4 +66,31 @@ export default class PersonPreferences {
 
     return object;
   }
+
+  /**
+   * @return { Boolean }
+   */
+  getMessageEmailEnabled() {
+    return this.messageEmailEnabled;
+  }
+
+  /**
+   * @param { Boolean } messageEmailEnabled
+   */
+  setMessageEmailEnabled(messageEmailEnabled) {
+    this.messageEmailEnabled = messageEmailEnabled;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getMessagePushEnabled() {
+    return this.messagePushEnabled;
+  }
+
+  /**
+   * @param { Boolean } messagePushEnabled
+   */
+  setMessagePushEnabled(messagePushEnabled) {
+    this.messagePushEnabled = messagePushEnabled;
+  }
 }

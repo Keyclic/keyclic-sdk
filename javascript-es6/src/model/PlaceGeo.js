@@ -69,4 +69,44 @@ export default class PlaceGeo {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PlaceGeoCentroid }
+   */
+  getCentroid() {
+    return this.centroid;
+  }
+
+  /**
+   * @param { module:model/PlaceGeoCentroid } centroid
+   */
+  setCentroid(centroid) {
+    this.centroid = centroid;
+  }
+  /**
+   * @return { Number }
+   */
+  getElevation() {
+    return this.elevation;
+  }
+
+  /**
+   * @param { Number } elevation
+   */
+  setElevation(elevation) {
+    this.elevation = elevation;
+  }
+  /**
+   * @return { module:model/PlaceGeoPolygon }
+   */
+  getPolygon() {
+    return this.polygon;
+  }
+
+  /**
+   * @param { module:model/PlaceGeoPolygon } polygon
+   */
+  setPolygon(polygon) {
+    this.polygon = polygon;
+  }
 }

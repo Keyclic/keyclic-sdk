@@ -65,61 +65,158 @@ var ActivityAggregatedPagination =
      * @return { module:model/ActivityAggregatedPagination } The populated "ActivityAggregatedPagination" instance.
      */
 
-    _createClass(ActivityAggregatedPagination, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ActivityAggregatedPagination,
+      [
+        {
+          key: "getDuration",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getDuration() {
+            return this.duration;
           }
-
-          if (object === null) {
-            object = new ActivityAggregatedPagination();
+          /**
+           * @param { String } duration
+           */
+        },
+        {
+          key: "setDuration",
+          value: function setDuration(duration) {
+            this.duration = duration;
           }
-
-          if (data.hasOwnProperty("duration")) {
-            object.duration = _ApiClient.default.convertToType(
-              data["duration"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getNext",
+          value: function getNext() {
+            return this.next;
           }
-
-          if (data.hasOwnProperty("next")) {
-            object.next = _ApiClient.default.convertToType(
-              data["next"],
-              "String"
-            );
+          /**
+           * @param { String } next
+           */
+        },
+        {
+          key: "setNext",
+          value: function setNext(next) {
+            this.next = next;
           }
-
-          if (data.hasOwnProperty("unseen")) {
-            object.unseen = _ApiClient.default.convertToType(
-              data["unseen"],
-              "Number"
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getUnseen",
+          value: function getUnseen() {
+            return this.unseen;
           }
-
-          if (data.hasOwnProperty("unread")) {
-            object.unread = _ApiClient.default.convertToType(
-              data["unread"],
-              "Number"
-            );
+          /**
+           * @param { Number } unseen
+           */
+        },
+        {
+          key: "setUnseen",
+          value: function setUnseen(unseen) {
+            this.unseen = unseen;
           }
-
-          if (data.hasOwnProperty("results")) {
-            object.results = _ApiClient.default.convertToType(data["results"], [
-              object.resultsType
-            ]);
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getUnread",
+          value: function getUnread() {
+            return this.unread;
           }
-
-          return object;
+          /**
+           * @param { Number } unread
+           */
+        },
+        {
+          key: "setUnread",
+          value: function setUnread(unread) {
+            this.unread = unread;
+          }
+          /**
+           * @return { Array.<module:model/ActivityGroup> }
+           */
+        },
+        {
+          key: "getResults",
+          value: function getResults() {
+            return this.results;
+          }
+          /**
+           * @param { Array.<module:model/ActivityGroup> } results
+           */
+        },
+        {
+          key: "setResults",
+          value: function setResults(results) {
+            this.results = results;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ActivityAggregatedPagination();
+            }
+
+            if (data.hasOwnProperty("duration")) {
+              object.duration = _ApiClient.default.convertToType(
+                data["duration"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("next")) {
+              object.next = _ApiClient.default.convertToType(
+                data["next"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("unseen")) {
+              object.unseen = _ApiClient.default.convertToType(
+                data["unseen"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("unread")) {
+              object.unread = _ApiClient.default.convertToType(
+                data["unread"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("results")) {
+              object.results = _ApiClient.default.convertToType(
+                data["results"],
+                [object.resultsType]
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ActivityAggregatedPagination;
   })();

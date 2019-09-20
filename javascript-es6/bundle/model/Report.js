@@ -79,108 +79,297 @@ var Report =
      * @return { module:model/Report } The populated "Report" instance.
      */
 
-    _createClass(Report, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Report,
+      [
+        {
+          key: "getEmbedded",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/ReportEmbedded }
+           */
+          value: function getEmbedded() {
+            return this.embedded;
           }
-
-          if (object === null) {
-            object = new Report();
+          /**
+           * @param { module:model/ReportEmbedded } embedded
+           */
+        },
+        {
+          key: "setEmbedded",
+          value: function setEmbedded(embedded) {
+            this.embedded = embedded;
           }
-
-          if (data.hasOwnProperty("_embedded")) {
-            object.embedded = _ApiClient.default.convertToType(
-              data["_embedded"],
-              object.embeddedType
-            );
+          /**
+           * @return { module:model/ReportLinks }
+           */
+        },
+        {
+          key: "getLinks",
+          value: function getLinks() {
+            return this.links;
           }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
-            );
+          /**
+           * @param { module:model/ReportLinks } links
+           */
+        },
+        {
+          key: "setLinks",
+          value: function setLinks(links) {
+            this.links = links;
           }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getCreatedAt",
+          value: function getCreatedAt() {
+            return this.createdAt;
           }
-
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getDescription",
+          value: function getDescription() {
+            return this.description;
           }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          /**
+           * @param { String } description
+           */
+        },
+        {
+          key: "setDescription",
+          value: function setDescription(description) {
+            this.description = description;
           }
-
-          if (data.hasOwnProperty("identificationNumber")) {
-            object.identificationNumber = _ApiClient.default.convertToType(
-              data["identificationNumber"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getId",
+          value: function getId() {
+            return this.id;
           }
-
-          if (data.hasOwnProperty("priority")) {
-            object.priority = _ApiClient.default.convertToType(
-              data["priority"],
-              "Number"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getIdentificationNumber",
+          value: function getIdentificationNumber() {
+            return this.identificationNumber;
           }
-
-          if (data.hasOwnProperty("reference")) {
-            object.reference = _ApiClient.default.convertToType(
-              data["reference"],
-              "String"
-            );
+          /**
+           * @param { String } identificationNumber
+           */
+        },
+        {
+          key: "setIdentificationNumber",
+          value: function setIdentificationNumber(identificationNumber) {
+            this.identificationNumber = identificationNumber;
           }
-
-          if (data.hasOwnProperty("state")) {
-            object.state = _ApiClient.default.convertToType(
-              data["state"],
-              "['String']"
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getPriority",
+          value: function getPriority() {
+            return this.priority;
           }
-
-          if (data.hasOwnProperty("tags")) {
-            object.tags = _ApiClient.default.convertToType(
-              data["tags"],
-              "['String']"
-            );
+          /**
+           * @param { Number } priority
+           */
+        },
+        {
+          key: "setPriority",
+          value: function setPriority(priority) {
+            this.priority = priority;
           }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getReference",
+          value: function getReference() {
+            return this.reference;
           }
-
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
-            );
+          /**
+           * @param { String } reference
+           */
+        },
+        {
+          key: "setReference",
+          value: function setReference(reference) {
+            this.reference = reference;
           }
-
-          return object;
+          /**
+           * @return { Array.<String> }
+           */
+        },
+        {
+          key: "getState",
+          value: function getState() {
+            return this.state;
+          }
+          /**
+           * @param { Array.<String> } state
+           */
+        },
+        {
+          key: "setState",
+          value: function setState(state) {
+            this.state = state;
+          }
+          /**
+           * @return { Array.<String> }
+           */
+        },
+        {
+          key: "getTags",
+          value: function getTags() {
+            return this.tags;
+          }
+          /**
+           * @param { Array.<String> } tags
+           */
+        },
+        {
+          key: "setTags",
+          value: function setTags(tags) {
+            this.tags = tags;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
+          }
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getUpdatedAt",
+          value: function getUpdatedAt() {
+            return this.updatedAt;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Report();
+            }
+
+            if (data.hasOwnProperty("_embedded")) {
+              object.embedded = _ApiClient.default.convertToType(
+                data["_embedded"],
+                object.embeddedType
+              );
+            }
+
+            if (data.hasOwnProperty("_links")) {
+              object.links = _ApiClient.default.convertToType(
+                data["_links"],
+                object.linksType
+              );
+            }
+
+            if (data.hasOwnProperty("createdAt")) {
+              object.createdAt = _ApiClient.default.convertToType(
+                data["createdAt"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("description")) {
+              object.description = _ApiClient.default.convertToType(
+                data["description"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("identificationNumber")) {
+              object.identificationNumber = _ApiClient.default.convertToType(
+                data["identificationNumber"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("priority")) {
+              object.priority = _ApiClient.default.convertToType(
+                data["priority"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("reference")) {
+              object.reference = _ApiClient.default.convertToType(
+                data["reference"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("state")) {
+              object.state = _ApiClient.default.convertToType(
+                data["state"],
+                "['String']"
+              );
+            }
+
+            if (data.hasOwnProperty("tags")) {
+              object.tags = _ApiClient.default.convertToType(
+                data["tags"],
+                "['String']"
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("updatedAt")) {
+              object.updatedAt = _ApiClient.default.convertToType(
+                data["updatedAt"],
+                "Date"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Report;
   })();

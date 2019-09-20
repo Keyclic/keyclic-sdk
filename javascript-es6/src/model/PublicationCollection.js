@@ -51,4 +51,18 @@ export default class PublicationCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Publication> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Publication> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

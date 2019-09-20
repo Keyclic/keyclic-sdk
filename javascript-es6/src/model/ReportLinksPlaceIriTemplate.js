@@ -54,4 +54,18 @@ export default class ReportLinksPlaceIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OccupantLinksPlaceIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/OccupantLinksPlaceIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

@@ -61,33 +61,57 @@ var ErrorEmbedded =
      * @return { module:model/ErrorEmbedded } The populated "ErrorEmbedded" instance.
      */
 
-    _createClass(ErrorEmbedded, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ErrorEmbedded,
+      [
+        {
+          key: "getErrors",
 
-          if (data === null) {
-            throw new _Error.default("No data to build object");
+          /**
+           * @return { Array.<module:model/Error> }
+           */
+          value: function getErrors() {
+            return this.errors;
           }
-
-          if (object === null) {
-            object = new ErrorEmbedded();
+          /**
+           * @param { Array.<module:model/Error> } errors
+           */
+        },
+        {
+          key: "setErrors",
+          value: function setErrors(errors) {
+            this.errors = errors;
           }
-
-          if (data.hasOwnProperty("errors")) {
-            object.errors = _ApiClient.default.convertToType(data["errors"], [
-              object.errorsType
-            ]);
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new _Error.default("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ErrorEmbedded();
+            }
+
+            if (data.hasOwnProperty("errors")) {
+              object.errors = _ApiClient.default.convertToType(data["errors"], [
+                object.errorsType
+              ]);
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ErrorEmbedded;
   })();

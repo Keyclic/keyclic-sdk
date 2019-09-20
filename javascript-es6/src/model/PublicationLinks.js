@@ -75,4 +75,57 @@ export default class PublicationLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PublicationLinksAuthor }
+   */
+  getAuthor() {
+    return this.author;
+  }
+
+  /**
+   * @param { module:model/PublicationLinksAuthor } author
+   */
+  setAuthor(author) {
+    this.author = author;
+  }
+  /**
+   * @return { module:model/PublicationLinksFeed }
+   */
+  getFeed() {
+    return this.feed;
+  }
+
+  /**
+   * @param { module:model/PublicationLinksFeed } feed
+   */
+  setFeed(feed) {
+    this.feed = feed;
+  }
+  /**
+   * @return { module:model/PublicationLinksOrganization }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { module:model/PublicationLinksOrganization } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
+  /**
+   * @return { module:model/PublicationLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/PublicationLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

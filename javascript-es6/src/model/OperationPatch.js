@@ -66,4 +66,57 @@ export default class OperationPatch {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { String }
+   */
+  getIdentificationNumber() {
+    return this.identificationNumber;
+  }
+
+  /**
+   * @param { String } identificationNumber
+   */
+  setIdentificationNumber(identificationNumber) {
+    this.identificationNumber = identificationNumber;
+  }
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { Date }
+   */
+  getScheduledAt() {
+    return this.scheduledAt;
+  }
+
+  /**
+   * @param { Date } scheduledAt
+   */
+  setScheduledAt(scheduledAt) {
+    this.scheduledAt = scheduledAt;
+  }
 }

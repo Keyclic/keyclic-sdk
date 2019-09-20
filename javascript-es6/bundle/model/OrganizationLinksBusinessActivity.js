@@ -65,41 +65,85 @@ var OrganizationLinksBusinessActivity =
      * @return { module:model/OrganizationLinksBusinessActivity } The populated "OrganizationLinksBusinessActivity" instance.
      */
 
-    _createClass(OrganizationLinksBusinessActivity, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OrganizationLinksBusinessActivity,
+      [
+        {
+          key: "getHref",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * Gets The URI of the businessActivity associated to the given organization.
+           * @return { String }
+           */
+          value: function getHref() {
+            return this.href;
           }
-
-          if (object === null) {
-            object = new OrganizationLinksBusinessActivity();
+          /**
+           * Sets The URI of the businessActivity associated to the given organization.
+           * @param { String } href The URI of the businessActivity associated to the given organization.
+           */
+        },
+        {
+          key: "setHref",
+          value: function setHref(href) {
+            this.href = href;
           }
-
-          if (data.hasOwnProperty("href")) {
-            object.href = _ApiClient.default.convertToType(
-              data["href"],
-              "String"
-            );
+          /**
+           * @return { module:model/OrganizationLinksBusinessActivityIriTemplate }
+           */
+        },
+        {
+          key: "getIriTemplate",
+          value: function getIriTemplate() {
+            return this.iriTemplate;
           }
-
-          if (data.hasOwnProperty("iriTemplate")) {
-            object.iriTemplate = _ApiClient.default.convertToType(
-              data["iriTemplate"],
-              object.iriTemplateType
-            );
+          /**
+           * @param { module:model/OrganizationLinksBusinessActivityIriTemplate } iriTemplate
+           */
+        },
+        {
+          key: "setIriTemplate",
+          value: function setIriTemplate(iriTemplate) {
+            this.iriTemplate = iriTemplate;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OrganizationLinksBusinessActivity();
+            }
+
+            if (data.hasOwnProperty("href")) {
+              object.href = _ApiClient.default.convertToType(
+                data["href"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("iriTemplate")) {
+              object.iriTemplate = _ApiClient.default.convertToType(
+                data["iriTemplate"],
+                object.iriTemplateType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OrganizationLinksBusinessActivity;
   })();

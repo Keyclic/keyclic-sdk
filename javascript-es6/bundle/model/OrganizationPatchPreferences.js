@@ -63,34 +63,58 @@ var OrganizationPatchPreferences =
      * @return { module:model/OrganizationPatchPreferences } The populated "OrganizationPatchPreferences" instance.
      */
 
-    _createClass(OrganizationPatchPreferences, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OrganizationPatchPreferences,
+      [
+        {
+          key: "getReference",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/OrganizationPreferencesReference }
+           */
+          value: function getReference() {
+            return this.reference;
           }
-
-          if (object === null) {
-            object = new OrganizationPatchPreferences();
+          /**
+           * @param { module:model/OrganizationPreferencesReference } reference
+           */
+        },
+        {
+          key: "setReference",
+          value: function setReference(reference) {
+            this.reference = reference;
           }
-
-          if (data.hasOwnProperty("reference")) {
-            object.reference = _ApiClient.default.convertToType(
-              data["reference"],
-              object.referenceType
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OrganizationPatchPreferences();
+            }
+
+            if (data.hasOwnProperty("reference")) {
+              object.reference = _ApiClient.default.convertToType(
+                data["reference"],
+                object.referenceType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OrganizationPatchPreferences;
   })();

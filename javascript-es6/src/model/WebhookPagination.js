@@ -60,4 +60,18 @@ export default class WebhookPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/WebhookCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/WebhookCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

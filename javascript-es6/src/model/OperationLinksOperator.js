@@ -58,4 +58,33 @@ export default class OperationLinksOperator {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the operator associated to the given operation.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the operator associated to the given operation.
+   * @param { String } href The URI of the operator associated to the given operation.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/OperationLinksOperatorIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/OperationLinksOperatorIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

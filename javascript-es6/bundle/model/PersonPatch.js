@@ -70,83 +70,233 @@ var PersonPatch =
      * @return { module:model/PersonPatch } The populated "PersonPatch" instance.
      */
 
-    _createClass(PersonPatch, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PersonPatch,
+      [
+        {
+          key: "getGivenName",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getGivenName() {
+            return this.givenName;
           }
-
-          if (object === null) {
-            object = new PersonPatch();
+          /**
+           * @param { String } givenName
+           */
+        },
+        {
+          key: "setGivenName",
+          value: function setGivenName(givenName) {
+            this.givenName = givenName;
           }
-
-          if (data.hasOwnProperty("givenName")) {
-            object.givenName = _ApiClient.default.convertToType(
-              data["givenName"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getFamilyName",
+          value: function getFamilyName() {
+            return this.familyName;
           }
-
-          if (data.hasOwnProperty("familyName")) {
-            object.familyName = _ApiClient.default.convertToType(
-              data["familyName"],
-              "String"
-            );
+          /**
+           * @param { String } familyName
+           */
+        },
+        {
+          key: "setFamilyName",
+          value: function setFamilyName(familyName) {
+            this.familyName = familyName;
           }
-
-          if (data.hasOwnProperty("email")) {
-            object.email = _ApiClient.default.convertToType(
-              data["email"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getEmail",
+          value: function getEmail() {
+            return this.email;
           }
-
-          if (data.hasOwnProperty("jobTitle")) {
-            object.jobTitle = _ApiClient.default.convertToType(
-              data["jobTitle"],
-              "String"
-            );
+          /**
+           * @param { String } email
+           */
+        },
+        {
+          key: "setEmail",
+          value: function setEmail(email) {
+            this.email = email;
           }
-
-          if (data.hasOwnProperty("image")) {
-            object.image = _ApiClient.default.convertToType(
-              data["image"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getJobTitle",
+          value: function getJobTitle() {
+            return this.jobTitle;
           }
-
-          if (data.hasOwnProperty("optIn")) {
-            object.optIn = _ApiClient.default.convertToType(
-              data["optIn"],
-              "Boolean"
-            );
+          /**
+           * @param { String } jobTitle
+           */
+        },
+        {
+          key: "setJobTitle",
+          value: function setJobTitle(jobTitle) {
+            this.jobTitle = jobTitle;
           }
-
-          if (data.hasOwnProperty("preferences")) {
-            object.preferences = _ApiClient.default.convertToType(
-              data["preferences"],
-              object.preferencesType
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getImage",
+          value: function getImage() {
+            return this.image;
           }
-
-          if (data.hasOwnProperty("telephone")) {
-            object.telephone = _ApiClient.default.convertToType(
-              data["telephone"],
-              "String"
-            );
+          /**
+           * @param { String } image
+           */
+        },
+        {
+          key: "setImage",
+          value: function setImage(image) {
+            this.image = image;
           }
-
-          return object;
+          /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getOptIn",
+          value: function getOptIn() {
+            return this.optIn;
+          }
+          /**
+           * @param { Boolean } optIn
+           */
+        },
+        {
+          key: "setOptIn",
+          value: function setOptIn(optIn) {
+            this.optIn = optIn;
+          }
+          /**
+           * @return { module:model/PersonPatchPreferences }
+           */
+        },
+        {
+          key: "getPreferences",
+          value: function getPreferences() {
+            return this.preferences;
+          }
+          /**
+           * @param { module:model/PersonPatchPreferences } preferences
+           */
+        },
+        {
+          key: "setPreferences",
+          value: function setPreferences(preferences) {
+            this.preferences = preferences;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getTelephone",
+          value: function getTelephone() {
+            return this.telephone;
+          }
+          /**
+           * @param { String } telephone
+           */
+        },
+        {
+          key: "setTelephone",
+          value: function setTelephone(telephone) {
+            this.telephone = telephone;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PersonPatch();
+            }
+
+            if (data.hasOwnProperty("givenName")) {
+              object.givenName = _ApiClient.default.convertToType(
+                data["givenName"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("familyName")) {
+              object.familyName = _ApiClient.default.convertToType(
+                data["familyName"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("email")) {
+              object.email = _ApiClient.default.convertToType(
+                data["email"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("jobTitle")) {
+              object.jobTitle = _ApiClient.default.convertToType(
+                data["jobTitle"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("image")) {
+              object.image = _ApiClient.default.convertToType(
+                data["image"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("optIn")) {
+              object.optIn = _ApiClient.default.convertToType(
+                data["optIn"],
+                "Boolean"
+              );
+            }
+
+            if (data.hasOwnProperty("preferences")) {
+              object.preferences = _ApiClient.default.convertToType(
+                data["preferences"],
+                object.preferencesType
+              );
+            }
+
+            if (data.hasOwnProperty("telephone")) {
+              object.telephone = _ApiClient.default.convertToType(
+                data["telephone"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PersonPatch;
   })();

@@ -63,4 +63,31 @@ export default class ContributionLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ContributionLinksContributor }
+   */
+  getContributor() {
+    return this.contributor;
+  }
+
+  /**
+   * @param { module:model/ContributionLinksContributor } contributor
+   */
+  setContributor(contributor) {
+    this.contributor = contributor;
+  }
+  /**
+   * @return { module:model/ContributionLinksFeedback }
+   */
+  getFeedback() {
+    return this.feedback;
+  }
+
+  /**
+   * @param { module:model/ContributionLinksFeedback } feedback
+   */
+  setFeedback(feedback) {
+    this.feedback = feedback;
+  }
 }

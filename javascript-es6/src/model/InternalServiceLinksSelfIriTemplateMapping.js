@@ -51,4 +51,18 @@ export default class InternalServiceLinksSelfIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getInternalService() {
+    return this.internalService;
+  }
+
+  /**
+   * @param { String } internalService
+   */
+  setInternalService(internalService) {
+    this.internalService = internalService;
+  }
 }

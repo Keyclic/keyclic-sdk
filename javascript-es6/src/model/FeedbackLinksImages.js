@@ -58,4 +58,33 @@ export default class FeedbackLinksImages {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the images associated to the given feedback.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the images associated to the given feedback.
+   * @param { String } href The URI of the images associated to the given feedback.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/FeedbackLinksImagesIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/FeedbackLinksImagesIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

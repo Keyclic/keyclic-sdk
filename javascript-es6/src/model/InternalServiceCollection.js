@@ -51,4 +51,18 @@ export default class InternalServiceCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/InternalService> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/InternalService> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

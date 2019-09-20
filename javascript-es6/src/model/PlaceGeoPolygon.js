@@ -59,4 +59,31 @@ export default class PlaceGeoPolygon {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Feature> }
+   */
+  getFeatures() {
+    return this.features;
+  }
+
+  /**
+   * @param { Array.<module:model/Feature> } features
+   */
+  setFeatures(features) {
+    this.features = features;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @param { String } type
+   */
+  setType(type) {
+    this.type = type;
+  }
 }

@@ -82,4 +82,71 @@ export default class Document {
 
     return object;
   }
+
+  /**
+   * @return { module:model/DocumentLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/DocumentLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { module:model/DocumentFile }
+   */
+  getFile() {
+    return this.file;
+  }
+
+  /**
+   * @param { module:model/DocumentFile } file
+   */
+  setFile(file) {
+    this.file = file;
+  }
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { module:model/DocumentPermission }
+   */
+  getPermission() {
+    return this.permission;
+  }
+
+  /**
+   * @param { module:model/DocumentPermission } permission
+   */
+  setPermission(permission) {
+    this.permission = permission;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
 }

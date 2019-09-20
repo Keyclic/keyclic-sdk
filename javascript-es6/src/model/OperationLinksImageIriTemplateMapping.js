@@ -52,4 +52,31 @@ export default class OperationLinksImageIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getImage() {
+    return this.image;
+  }
+
+  /**
+   * @param { String } image
+   */
+  setImage(image) {
+    this.image = image;
+  }
+  /**
+   * @return { String }
+   */
+  getOperation() {
+    return this.operation;
+  }
+
+  /**
+   * @param { String } operation
+   */
+  setOperation(operation) {
+    this.operation = operation;
+  }
 }

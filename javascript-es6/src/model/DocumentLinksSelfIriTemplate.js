@@ -54,4 +54,18 @@ export default class DocumentLinksSelfIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/DocumentLinksFileIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/DocumentLinksFileIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

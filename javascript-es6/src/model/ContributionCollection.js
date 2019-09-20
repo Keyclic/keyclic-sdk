@@ -51,4 +51,18 @@ export default class ContributionCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Contribution> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Contribution> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

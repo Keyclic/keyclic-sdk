@@ -82,4 +82,109 @@ export default class PersonPatch {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getGivenName() {
+    return this.givenName;
+  }
+
+  /**
+   * @param { String } givenName
+   */
+  setGivenName(givenName) {
+    this.givenName = givenName;
+  }
+  /**
+   * @return { String }
+   */
+  getFamilyName() {
+    return this.familyName;
+  }
+
+  /**
+   * @param { String } familyName
+   */
+  setFamilyName(familyName) {
+    this.familyName = familyName;
+  }
+  /**
+   * @return { String }
+   */
+  getEmail() {
+    return this.email;
+  }
+
+  /**
+   * @param { String } email
+   */
+  setEmail(email) {
+    this.email = email;
+  }
+  /**
+   * @return { String }
+   */
+  getJobTitle() {
+    return this.jobTitle;
+  }
+
+  /**
+   * @param { String } jobTitle
+   */
+  setJobTitle(jobTitle) {
+    this.jobTitle = jobTitle;
+  }
+  /**
+   * @return { String }
+   */
+  getImage() {
+    return this.image;
+  }
+
+  /**
+   * @param { String } image
+   */
+  setImage(image) {
+    this.image = image;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getOptIn() {
+    return this.optIn;
+  }
+
+  /**
+   * @param { Boolean } optIn
+   */
+  setOptIn(optIn) {
+    this.optIn = optIn;
+  }
+  /**
+   * @return { module:model/PersonPatchPreferences }
+   */
+  getPreferences() {
+    return this.preferences;
+  }
+
+  /**
+   * @param { module:model/PersonPatchPreferences } preferences
+   */
+  setPreferences(preferences) {
+    this.preferences = preferences;
+  }
+  /**
+   * @return { String }
+   */
+  getTelephone() {
+    return this.telephone;
+  }
+
+  /**
+   * @param { String } telephone
+   */
+  setTelephone(telephone) {
+    this.telephone = telephone;
+  }
 }

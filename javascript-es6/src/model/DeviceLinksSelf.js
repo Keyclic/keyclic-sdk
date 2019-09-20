@@ -58,4 +58,33 @@ export default class DeviceLinksSelf {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the self associated to the given device.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the self associated to the given device.
+   * @param { String } href The URI of the self associated to the given device.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/DeviceLinksSelfIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/DeviceLinksSelfIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

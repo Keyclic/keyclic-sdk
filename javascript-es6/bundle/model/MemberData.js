@@ -63,41 +63,83 @@ var MemberData =
      * @return { module:model/MemberData } The populated "MemberData" instance.
      */
 
-    _createClass(MemberData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      MemberData,
+      [
+        {
+          key: "getPerson",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getPerson() {
+            return this.person;
           }
-
-          if (object === null) {
-            object = new MemberData();
+          /**
+           * @param { String } person
+           */
+        },
+        {
+          key: "setPerson",
+          value: function setPerson(person) {
+            this.person = person;
           }
-
-          if (data.hasOwnProperty("person")) {
-            object.person = _ApiClient.default.convertToType(
-              data["person"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getOrganization",
+          value: function getOrganization() {
+            return this.organization;
           }
-
-          if (data.hasOwnProperty("organization")) {
-            object.organization = _ApiClient.default.convertToType(
-              data["organization"],
-              "String"
-            );
+          /**
+           * @param { String } organization
+           */
+        },
+        {
+          key: "setOrganization",
+          value: function setOrganization(organization) {
+            this.organization = organization;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new MemberData();
+            }
+
+            if (data.hasOwnProperty("person")) {
+              object.person = _ApiClient.default.convertToType(
+                data["person"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("organization")) {
+              object.organization = _ApiClient.default.convertToType(
+                data["organization"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return MemberData;
   })();

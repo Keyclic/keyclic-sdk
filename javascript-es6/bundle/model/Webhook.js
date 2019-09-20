@@ -74,80 +74,197 @@ var Webhook =
      * @return { module:model/Webhook } The populated "Webhook" instance.
      */
 
-    _createClass(Webhook, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Webhook,
+      [
+        {
+          key: "getLinks",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/WebhookLinks }
+           */
+          value: function getLinks() {
+            return this.links;
           }
-
-          if (object === null) {
-            object = new Webhook();
+          /**
+           * @param { module:model/WebhookLinks } links
+           */
+        },
+        {
+          key: "setLinks",
+          value: function setLinks(links) {
+            this.links = links;
           }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
-            );
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getCreatedAt",
+          value: function getCreatedAt() {
+            return this.createdAt;
           }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
+          /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getEnabled",
+          value: function getEnabled() {
+            return this.enabled;
           }
-
-          if (data.hasOwnProperty("enabled")) {
-            object.enabled = _ApiClient.default.convertToType(
-              data["enabled"],
-              "Boolean"
-            );
+          /**
+           * @param { Boolean } enabled
+           */
+        },
+        {
+          key: "setEnabled",
+          value: function setEnabled(enabled) {
+            this.enabled = enabled;
           }
-
-          if (data.hasOwnProperty("event")) {
-            object.event = _ApiClient.default.convertToType(
-              data["event"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getEvent",
+          value: function getEvent() {
+            return this.event;
           }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          /**
+           * @param { String } event
+           */
+        },
+        {
+          key: "setEvent",
+          value: function setEvent(event) {
+            this.event = event;
           }
-
-          if (data.hasOwnProperty("payloadUrl")) {
-            object.payloadUrl = _ApiClient.default.convertToType(
-              data["payloadUrl"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getId",
+          value: function getId() {
+            return this.id;
           }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getPayloadUrl",
+          value: function getPayloadUrl() {
+            return this.payloadUrl;
           }
-
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
-            );
+          /**
+           * @param { String } payloadUrl
+           */
+        },
+        {
+          key: "setPayloadUrl",
+          value: function setPayloadUrl(payloadUrl) {
+            this.payloadUrl = payloadUrl;
           }
-
-          return object;
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
+          }
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getUpdatedAt",
+          value: function getUpdatedAt() {
+            return this.updatedAt;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Webhook();
+            }
+
+            if (data.hasOwnProperty("_links")) {
+              object.links = _ApiClient.default.convertToType(
+                data["_links"],
+                object.linksType
+              );
+            }
+
+            if (data.hasOwnProperty("createdAt")) {
+              object.createdAt = _ApiClient.default.convertToType(
+                data["createdAt"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("enabled")) {
+              object.enabled = _ApiClient.default.convertToType(
+                data["enabled"],
+                "Boolean"
+              );
+            }
+
+            if (data.hasOwnProperty("event")) {
+              object.event = _ApiClient.default.convertToType(
+                data["event"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("payloadUrl")) {
+              object.payloadUrl = _ApiClient.default.convertToType(
+                data["payloadUrl"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("updatedAt")) {
+              object.updatedAt = _ApiClient.default.convertToType(
+                data["updatedAt"],
+                "Date"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Webhook;
   })();

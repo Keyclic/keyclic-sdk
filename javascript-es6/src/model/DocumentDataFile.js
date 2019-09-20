@@ -59,4 +59,44 @@ export default class DocumentDataFile {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getContent() {
+    return this.content;
+  }
+
+  /**
+   * @param { String } content
+   */
+  setContent(content) {
+    this.content = content;
+  }
+  /**
+   * @return { String }
+   */
+  getContentType() {
+    return this.contentType;
+  }
+
+  /**
+   * @param { String } contentType
+   */
+  setContentType(contentType) {
+    this.contentType = contentType;
+  }
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
 }

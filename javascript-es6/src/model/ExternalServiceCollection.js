@@ -51,4 +51,18 @@ export default class ExternalServiceCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/ExternalService> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/ExternalService> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

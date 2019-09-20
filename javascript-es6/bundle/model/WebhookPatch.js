@@ -59,41 +59,83 @@ var WebhookPatch =
      * @return { module:model/WebhookPatch } The populated "WebhookPatch" instance.
      */
 
-    _createClass(WebhookPatch, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      WebhookPatch,
+      [
+        {
+          key: "getEvent",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getEvent() {
+            return this.event;
           }
-
-          if (object === null) {
-            object = new WebhookPatch();
+          /**
+           * @param { String } event
+           */
+        },
+        {
+          key: "setEvent",
+          value: function setEvent(event) {
+            this.event = event;
           }
-
-          if (data.hasOwnProperty("event")) {
-            object.event = _ApiClient.default.convertToType(
-              data["event"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getPayloadUrl",
+          value: function getPayloadUrl() {
+            return this.payloadUrl;
           }
-
-          if (data.hasOwnProperty("payloadUrl")) {
-            object.payloadUrl = _ApiClient.default.convertToType(
-              data["payloadUrl"],
-              "String"
-            );
+          /**
+           * @param { String } payloadUrl
+           */
+        },
+        {
+          key: "setPayloadUrl",
+          value: function setPayloadUrl(payloadUrl) {
+            this.payloadUrl = payloadUrl;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new WebhookPatch();
+            }
+
+            if (data.hasOwnProperty("event")) {
+              object.event = _ApiClient.default.convertToType(
+                data["event"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("payloadUrl")) {
+              object.payloadUrl = _ApiClient.default.convertToType(
+                data["payloadUrl"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return WebhookPatch;
   })();

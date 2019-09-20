@@ -48,4 +48,18 @@ export default class ContributionLinksContributorIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getPerson() {
+    return this.person;
+  }
+
+  /**
+   * @param { String } person
+   */
+  setPerson(person) {
+    this.person = person;
+  }
 }

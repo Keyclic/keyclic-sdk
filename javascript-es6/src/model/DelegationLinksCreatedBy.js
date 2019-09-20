@@ -58,4 +58,33 @@ export default class DelegationLinksCreatedBy {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the createdBy associated to the given delegation.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the createdBy associated to the given delegation.
+   * @param { String } href The URI of the createdBy associated to the given delegation.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/DelegationLinksCreatedByIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/DelegationLinksCreatedByIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

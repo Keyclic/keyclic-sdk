@@ -81,55 +81,133 @@ var OrganizationLinks =
      * @return { module:model/OrganizationLinks } The populated "OrganizationLinks" instance.
      */
 
-    _createClass(OrganizationLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OrganizationLinks,
+      [
+        {
+          key: "getApplication",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/OrganizationLinksApplication }
+           */
+          value: function getApplication() {
+            return this.application;
           }
-
-          if (object === null) {
-            object = new OrganizationLinks();
+          /**
+           * @param { module:model/OrganizationLinksApplication } application
+           */
+        },
+        {
+          key: "setApplication",
+          value: function setApplication(application) {
+            this.application = application;
           }
-
-          if (data.hasOwnProperty("application")) {
-            object.application = _ApiClient.default.convertToType(
-              data["application"],
-              object.applicationType
-            );
+          /**
+           * @return { module:model/OrganizationLinksBusinessActivity }
+           */
+        },
+        {
+          key: "getBusinessActivity",
+          value: function getBusinessActivity() {
+            return this.businessActivity;
           }
-
-          if (data.hasOwnProperty("businessActivity")) {
-            object.businessActivity = _ApiClient.default.convertToType(
-              data["businessActivity"],
-              object.businessActivityType
-            );
+          /**
+           * @param { module:model/OrganizationLinksBusinessActivity } businessActivity
+           */
+        },
+        {
+          key: "setBusinessActivity",
+          value: function setBusinessActivity(businessActivity) {
+            this.businessActivity = businessActivity;
           }
-
-          if (data.hasOwnProperty("logo")) {
-            object.logo = _ApiClient.default.convertToType(
-              data["logo"],
-              object.logoType
-            );
+          /**
+           * @return { module:model/OrganizationLinksLogo }
+           */
+        },
+        {
+          key: "getLogo",
+          value: function getLogo() {
+            return this.logo;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @param { module:model/OrganizationLinksLogo } logo
+           */
+        },
+        {
+          key: "setLogo",
+          value: function setLogo(logo) {
+            this.logo = logo;
           }
-
-          return object;
+          /**
+           * @return { module:model/OrganizationLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
+          }
+          /**
+           * @param { module:model/OrganizationLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OrganizationLinks();
+            }
+
+            if (data.hasOwnProperty("application")) {
+              object.application = _ApiClient.default.convertToType(
+                data["application"],
+                object.applicationType
+              );
+            }
+
+            if (data.hasOwnProperty("businessActivity")) {
+              object.businessActivity = _ApiClient.default.convertToType(
+                data["businessActivity"],
+                object.businessActivityType
+              );
+            }
+
+            if (data.hasOwnProperty("logo")) {
+              object.logo = _ApiClient.default.convertToType(
+                data["logo"],
+                object.logoType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OrganizationLinks;
   })();

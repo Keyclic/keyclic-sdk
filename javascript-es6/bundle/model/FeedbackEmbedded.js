@@ -59,41 +59,83 @@ var FeedbackEmbedded =
      * @return { module:model/FeedbackEmbedded } The populated "FeedbackEmbedded" instance.
      */
 
-    _createClass(FeedbackEmbedded, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FeedbackEmbedded,
+      [
+        {
+          key: "getStateTransitions",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<String> }
+           */
+          value: function getStateTransitions() {
+            return this.stateTransitions;
           }
-
-          if (object === null) {
-            object = new FeedbackEmbedded();
+          /**
+           * @param { Array.<String> } stateTransitions
+           */
+        },
+        {
+          key: "setStateTransitions",
+          value: function setStateTransitions(stateTransitions) {
+            this.stateTransitions = stateTransitions;
           }
-
-          if (data.hasOwnProperty("stateTransitions")) {
-            object.stateTransitions = _ApiClient.default.convertToType(
-              data["stateTransitions"],
-              "['String']"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getTracking",
+          value: function getTracking() {
+            return this.tracking;
           }
-
-          if (data.hasOwnProperty("tracking")) {
-            object.tracking = _ApiClient.default.convertToType(
-              data["tracking"],
-              "String"
-            );
+          /**
+           * @param { String } tracking
+           */
+        },
+        {
+          key: "setTracking",
+          value: function setTracking(tracking) {
+            this.tracking = tracking;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FeedbackEmbedded();
+            }
+
+            if (data.hasOwnProperty("stateTransitions")) {
+              object.stateTransitions = _ApiClient.default.convertToType(
+                data["stateTransitions"],
+                "['String']"
+              );
+            }
+
+            if (data.hasOwnProperty("tracking")) {
+              object.tracking = _ApiClient.default.convertToType(
+                data["tracking"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FeedbackEmbedded;
   })();

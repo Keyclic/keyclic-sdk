@@ -64,4 +64,58 @@ export default class Condition {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { String }
+   */
+  getOperator() {
+    return this.operator;
+  }
+
+  /**
+   * @param { String } operator
+   */
+  setOperator(operator) {
+    this.operator = operator;
+  }
+  /**
+   * @return { String }
+   */
+  getPath() {
+    return this.path;
+  }
+
+  /**
+   * @param { String } path
+   */
+  setPath(path) {
+    this.path = path;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Array.<String> }
+   */
+  getValue() {
+    return this.value;
+  }
+
+  /**
+   * @param { Array.<String> } value
+   */
+  setValue(value) {
+    this.value = value;
+  }
 }

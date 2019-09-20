@@ -64,41 +64,83 @@ var FeedbackDataGeo =
      * @return { module:model/FeedbackDataGeo } The populated "FeedbackDataGeo" instance.
      */
 
-    _createClass(FeedbackDataGeo, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FeedbackDataGeo,
+      [
+        {
+          key: "getPoint",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/FeedbackDataGeoPoint }
+           */
+          value: function getPoint() {
+            return this.point;
           }
-
-          if (object === null) {
-            object = new FeedbackDataGeo();
+          /**
+           * @param { module:model/FeedbackDataGeoPoint } point
+           */
+        },
+        {
+          key: "setPoint",
+          value: function setPoint(point) {
+            this.point = point;
           }
-
-          if (data.hasOwnProperty("point")) {
-            object.point = _ApiClient.default.convertToType(
-              data["point"],
-              object.pointType
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getElevation",
+          value: function getElevation() {
+            return this.elevation;
           }
-
-          if (data.hasOwnProperty("elevation")) {
-            object.elevation = _ApiClient.default.convertToType(
-              data["elevation"],
-              "Number"
-            );
+          /**
+           * @param { Number } elevation
+           */
+        },
+        {
+          key: "setElevation",
+          value: function setElevation(elevation) {
+            this.elevation = elevation;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FeedbackDataGeo();
+            }
+
+            if (data.hasOwnProperty("point")) {
+              object.point = _ApiClient.default.convertToType(
+                data["point"],
+                object.pointType
+              );
+            }
+
+            if (data.hasOwnProperty("elevation")) {
+              object.elevation = _ApiClient.default.convertToType(
+                data["elevation"],
+                "Number"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FeedbackDataGeo;
   })();

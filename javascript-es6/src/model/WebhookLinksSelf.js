@@ -58,4 +58,33 @@ export default class WebhookLinksSelf {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the self associated to the given webhook.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the self associated to the given webhook.
+   * @param { String } href The URI of the self associated to the given webhook.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/WebhookLinksSelfIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/WebhookLinksSelfIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

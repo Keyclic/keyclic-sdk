@@ -78,4 +78,57 @@ export default class PlaceLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PlaceLinksContainedInPlace }
+   */
+  getContainedInPlace() {
+    return this.containedInPlace;
+  }
+
+  /**
+   * @param { module:model/PlaceLinksContainedInPlace } containedInPlace
+   */
+  setContainedInPlace(containedInPlace) {
+    this.containedInPlace = containedInPlace;
+  }
+  /**
+   * @return { module:model/PlaceLinksContainsPlaces }
+   */
+  getContainsPlaces() {
+    return this.containsPlaces;
+  }
+
+  /**
+   * @param { module:model/PlaceLinksContainsPlaces } containsPlaces
+   */
+  setContainsPlaces(containsPlaces) {
+    this.containsPlaces = containsPlaces;
+  }
+  /**
+   * @return { module:model/PlaceLinksOrganization }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { module:model/PlaceLinksOrganization } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
+  /**
+   * @return { module:model/PlaceLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/PlaceLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

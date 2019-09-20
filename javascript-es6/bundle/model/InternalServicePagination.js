@@ -164,40 +164,64 @@ var InternalServicePagination =
      * @return { module:model/InternalServicePagination } The populated "InternalServicePagination" instance.
      */
 
-    _createClass(InternalServicePagination, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      InternalServicePagination,
+      [
+        {
+          key: "getEmbedded",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/InternalServiceCollection }
+           */
+          value: function getEmbedded() {
+            return this.embedded;
           }
-
-          if (object === null) {
-            object = new InternalServicePagination();
+          /**
+           * @param { module:model/InternalServiceCollection } embedded
+           */
+        },
+        {
+          key: "setEmbedded",
+          value: function setEmbedded(embedded) {
+            this.embedded = embedded;
           }
-
-          object = _get(
-            _getPrototypeOf(InternalServicePagination),
-            "constructFromData",
-            this
-          ).call(this, data, object);
-
-          if (data.hasOwnProperty("_embedded")) {
-            object.embedded = _ApiClient.default.convertToType(
-              data["_embedded"],
-              object.embeddedType
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new InternalServicePagination();
+            }
+
+            object = _get(
+              _getPrototypeOf(InternalServicePagination),
+              "constructFromData",
+              this
+            ).call(this, data, object);
+
+            if (data.hasOwnProperty("_embedded")) {
+              object.embedded = _ApiClient.default.convertToType(
+                data["_embedded"],
+                object.embeddedType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return InternalServicePagination;
   })(_Pagination2.default);

@@ -64,41 +64,83 @@ var PlaceGeoPolygon =
      * @return { module:model/PlaceGeoPolygon } The populated "PlaceGeoPolygon" instance.
      */
 
-    _createClass(PlaceGeoPolygon, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PlaceGeoPolygon,
+      [
+        {
+          key: "getFeatures",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<module:model/Feature> }
+           */
+          value: function getFeatures() {
+            return this.features;
           }
-
-          if (object === null) {
-            object = new PlaceGeoPolygon();
+          /**
+           * @param { Array.<module:model/Feature> } features
+           */
+        },
+        {
+          key: "setFeatures",
+          value: function setFeatures(features) {
+            this.features = features;
           }
-
-          if (data.hasOwnProperty("features")) {
-            object.features = _ApiClient.default.convertToType(
-              data["features"],
-              [object.featuresType]
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
           }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
+          /**
+           * @param { String } type
+           */
+        },
+        {
+          key: "setType",
+          value: function setType(type) {
+            this.type = type;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PlaceGeoPolygon();
+            }
+
+            if (data.hasOwnProperty("features")) {
+              object.features = _ApiClient.default.convertToType(
+                data["features"],
+                [object.featuresType]
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PlaceGeoPolygon;
   })();

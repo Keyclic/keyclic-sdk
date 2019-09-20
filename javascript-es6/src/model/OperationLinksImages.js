@@ -58,4 +58,33 @@ export default class OperationLinksImages {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the images associated to the given operation.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the images associated to the given operation.
+   * @param { String } href The URI of the images associated to the given operation.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/OperationLinksImagesIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/OperationLinksImagesIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

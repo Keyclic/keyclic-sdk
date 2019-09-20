@@ -52,6 +52,20 @@ export default class FeedbackWorkflowTransitionData {
   }
 
   /**
+   * @return { module:model/FeedbackWorkflowTransitionData.TransitionEnum }
+   */
+  getTransition() {
+    return this.transition;
+  }
+
+  /**
+   * @param { module:model/FeedbackWorkflowTransitionData.TransitionEnum } transition
+   */
+  setTransition(transition) {
+    this.transition = transition;
+  }
+
+  /**
    * Allowed values for the "transition" property.
    * @enum { String }
    */

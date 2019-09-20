@@ -62,4 +62,44 @@ export default class SuccessLoginCredentialsMemberOf {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @param { String } id
+   */
+  setId(id) {
+    this.id = id;
+  }
+  /**
+   * @return { module:model/SuccessLoginCredentialsOrganization }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { module:model/SuccessLoginCredentialsOrganization } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
+  /**
+   * @return { Array.<String> }
+   */
+  getRoles() {
+    return this.roles;
+  }
+
+  /**
+   * @param { Array.<String> } roles
+   */
+  setRoles(roles) {
+    this.roles = roles;
+  }
 }

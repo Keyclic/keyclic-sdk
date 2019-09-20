@@ -48,4 +48,18 @@ export default class OccupantLinksSelfIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getOccupant() {
+    return this.occupant;
+  }
+
+  /**
+   * @param { String } occupant
+   */
+  setOccupant(occupant) {
+    this.occupant = occupant;
+  }
 }

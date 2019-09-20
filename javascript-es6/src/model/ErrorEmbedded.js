@@ -53,4 +53,18 @@ export default class ErrorEmbedded {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Error> }
+   */
+  getErrors() {
+    return this.errors;
+  }
+
+  /**
+   * @param { Array.<module:model/Error> } errors
+   */
+  setErrors(errors) {
+    this.errors = errors;
+  }
 }

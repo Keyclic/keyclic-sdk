@@ -120,4 +120,122 @@ export default class ReportLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ReportLinksCategory }
+   */
+  getCategory() {
+    return this.category;
+  }
+
+  /**
+   * @param { module:model/ReportLinksCategory } category
+   */
+  setCategory(category) {
+    this.category = category;
+  }
+  /**
+   * @return { module:model/ReportLinksDelegatedFrom }
+   */
+  getDelegatedFrom() {
+    return this.delegatedFrom;
+  }
+
+  /**
+   * @param { module:model/ReportLinksDelegatedFrom } delegatedFrom
+   */
+  setDelegatedFrom(delegatedFrom) {
+    this.delegatedFrom = delegatedFrom;
+  }
+  /**
+   * @return { module:model/ReportLinksDelegatedTo }
+   */
+  getDelegatedTo() {
+    return this.delegatedTo;
+  }
+
+  /**
+   * @param { module:model/ReportLinksDelegatedTo } delegatedTo
+   */
+  setDelegatedTo(delegatedTo) {
+    this.delegatedTo = delegatedTo;
+  }
+  /**
+   * @return { module:model/ReportLinksFeedback }
+   */
+  getFeedback() {
+    return this.feedback;
+  }
+
+  /**
+   * @param { module:model/ReportLinksFeedback } feedback
+   */
+  setFeedback(feedback) {
+    this.feedback = feedback;
+  }
+  /**
+   * @return { module:model/ReportLinksOperations }
+   */
+  getOperations() {
+    return this.operations;
+  }
+
+  /**
+   * @param { module:model/ReportLinksOperations } operations
+   */
+  setOperations(operations) {
+    this.operations = operations;
+  }
+  /**
+   * @return { module:model/ReportLinksOrganization }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { module:model/ReportLinksOrganization } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
+  /**
+   * @return { module:model/ReportLinksPlace }
+   */
+  getPlace() {
+    return this.place;
+  }
+
+  /**
+   * @param { module:model/ReportLinksPlace } place
+   */
+  setPlace(place) {
+    this.place = place;
+  }
+  /**
+   * @return { module:model/ReportLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/ReportLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
+  /**
+   * @return { module:model/ReportLinksTracking }
+   */
+  getTracking() {
+    return this.tracking;
+  }
+
+  /**
+   * @param { module:model/ReportLinksTracking } tracking
+   */
+  setTracking(tracking) {
+    this.tracking = tracking;
+  }
 }

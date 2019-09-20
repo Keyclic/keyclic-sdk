@@ -61,33 +61,57 @@ var DelegationCollection =
      * @return { module:model/DelegationCollection } The populated "DelegationCollection" instance.
      */
 
-    _createClass(DelegationCollection, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DelegationCollection,
+      [
+        {
+          key: "getItems",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<module:model/Delegation> }
+           */
+          value: function getItems() {
+            return this.items;
           }
-
-          if (object === null) {
-            object = new DelegationCollection();
+          /**
+           * @param { Array.<module:model/Delegation> } items
+           */
+        },
+        {
+          key: "setItems",
+          value: function setItems(items) {
+            this.items = items;
           }
-
-          if (data.hasOwnProperty("items")) {
-            object.items = _ApiClient.default.convertToType(data["items"], [
-              object.itemsType
-            ]);
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DelegationCollection();
+            }
+
+            if (data.hasOwnProperty("items")) {
+              object.items = _ApiClient.default.convertToType(data["items"], [
+                object.itemsType
+              ]);
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DelegationCollection;
   })();

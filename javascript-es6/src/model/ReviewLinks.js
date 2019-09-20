@@ -69,4 +69,44 @@ export default class ReviewLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ReviewLinksAuthor }
+   */
+  getAuthor() {
+    return this.author;
+  }
+
+  /**
+   * @param { module:model/ReviewLinksAuthor } author
+   */
+  setAuthor(author) {
+    this.author = author;
+  }
+  /**
+   * @return { module:model/ReviewLinksItemReviewed }
+   */
+  getItemReviewed() {
+    return this.itemReviewed;
+  }
+
+  /**
+   * @param { module:model/ReviewLinksItemReviewed } itemReviewed
+   */
+  setItemReviewed(itemReviewed) {
+    this.itemReviewed = itemReviewed;
+  }
+  /**
+   * @return { module:model/ReviewLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/ReviewLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

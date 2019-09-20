@@ -54,4 +54,18 @@ export default class ReportLinksCategoryIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/CategoryLinksSelfIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/CategoryLinksSelfIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

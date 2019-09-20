@@ -97,75 +97,207 @@ var FeedbackLinks =
      * @return { module:model/FeedbackLinks } The populated "FeedbackLinks" instance.
      */
 
-    _createClass(FeedbackLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FeedbackLinks,
+      [
+        {
+          key: "getBusinessActivity",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/FeedbackLinksBusinessActivity }
+           */
+          value: function getBusinessActivity() {
+            return this.businessActivity;
           }
-
-          if (object === null) {
-            object = new FeedbackLinks();
+          /**
+           * @param { module:model/FeedbackLinksBusinessActivity } businessActivity
+           */
+        },
+        {
+          key: "setBusinessActivity",
+          value: function setBusinessActivity(businessActivity) {
+            this.businessActivity = businessActivity;
           }
-
-          if (data.hasOwnProperty("businessActivity")) {
-            object.businessActivity = _ApiClient.default.convertToType(
-              data["businessActivity"],
-              object.businessActivityType
-            );
+          /**
+           * @return { module:model/FeedbackLinksCategory }
+           */
+        },
+        {
+          key: "getCategory",
+          value: function getCategory() {
+            return this.category;
           }
-
-          if (data.hasOwnProperty("category")) {
-            object.category = _ApiClient.default.convertToType(
-              data["category"],
-              object.categoryType
-            );
+          /**
+           * @param { module:model/FeedbackLinksCategory } category
+           */
+        },
+        {
+          key: "setCategory",
+          value: function setCategory(category) {
+            this.category = category;
           }
-
-          if (data.hasOwnProperty("image")) {
-            object.image = _ApiClient.default.convertToType(
-              data["image"],
-              object.imageType
-            );
+          /**
+           * @return { module:model/FeedbackLinksImage }
+           */
+        },
+        {
+          key: "getImage",
+          value: function getImage() {
+            return this.image;
           }
-
-          if (data.hasOwnProperty("images")) {
-            object.images = _ApiClient.default.convertToType(data["images"], [
-              object.imagesType
-            ]);
+          /**
+           * @param { module:model/FeedbackLinksImage } image
+           */
+        },
+        {
+          key: "setImage",
+          value: function setImage(image) {
+            this.image = image;
           }
-
-          if (data.hasOwnProperty("reporter")) {
-            object.reporter = _ApiClient.default.convertToType(
-              data["reporter"],
-              object.reporterType
-            );
+          /**
+           * @return { Array.<module:model/FeedbackLinksImages> }
+           */
+        },
+        {
+          key: "getImages",
+          value: function getImages() {
+            return this.images;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @param { Array.<module:model/FeedbackLinksImages> } images
+           */
+        },
+        {
+          key: "setImages",
+          value: function setImages(images) {
+            this.images = images;
           }
-
-          if (data.hasOwnProperty("tracking")) {
-            object.tracking = _ApiClient.default.convertToType(
-              data["tracking"],
-              object.trackingType
-            );
+          /**
+           * @return { module:model/FeedbackLinksReporter }
+           */
+        },
+        {
+          key: "getReporter",
+          value: function getReporter() {
+            return this.reporter;
           }
-
-          return object;
+          /**
+           * @param { module:model/FeedbackLinksReporter } reporter
+           */
+        },
+        {
+          key: "setReporter",
+          value: function setReporter(reporter) {
+            this.reporter = reporter;
+          }
+          /**
+           * @return { module:model/FeedbackLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
+          }
+          /**
+           * @param { module:model/FeedbackLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
+          }
+          /**
+           * @return { module:model/FeedbackLinksTracking }
+           */
+        },
+        {
+          key: "getTracking",
+          value: function getTracking() {
+            return this.tracking;
+          }
+          /**
+           * @param { module:model/FeedbackLinksTracking } tracking
+           */
+        },
+        {
+          key: "setTracking",
+          value: function setTracking(tracking) {
+            this.tracking = tracking;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FeedbackLinks();
+            }
+
+            if (data.hasOwnProperty("businessActivity")) {
+              object.businessActivity = _ApiClient.default.convertToType(
+                data["businessActivity"],
+                object.businessActivityType
+              );
+            }
+
+            if (data.hasOwnProperty("category")) {
+              object.category = _ApiClient.default.convertToType(
+                data["category"],
+                object.categoryType
+              );
+            }
+
+            if (data.hasOwnProperty("image")) {
+              object.image = _ApiClient.default.convertToType(
+                data["image"],
+                object.imageType
+              );
+            }
+
+            if (data.hasOwnProperty("images")) {
+              object.images = _ApiClient.default.convertToType(data["images"], [
+                object.imagesType
+              ]);
+            }
+
+            if (data.hasOwnProperty("reporter")) {
+              object.reporter = _ApiClient.default.convertToType(
+                data["reporter"],
+                object.reporterType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            if (data.hasOwnProperty("tracking")) {
+              object.tracking = _ApiClient.default.convertToType(
+                data["tracking"],
+                object.trackingType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FeedbackLinks;
   })();

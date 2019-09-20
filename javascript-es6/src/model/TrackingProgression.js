@@ -52,4 +52,31 @@ export default class TrackingProgression {
 
     return object;
   }
+
+  /**
+   * @return { Number }
+   */
+  getResolved() {
+    return this.resolved;
+  }
+
+  /**
+   * @param { Number } resolved
+   */
+  setResolved(resolved) {
+    this.resolved = resolved;
+  }
+  /**
+   * @return { Number }
+   */
+  getTotal() {
+    return this.total;
+  }
+
+  /**
+   * @param { Number } total
+   */
+  setTotal(total) {
+    this.total = total;
+  }
 }

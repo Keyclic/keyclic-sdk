@@ -51,4 +51,18 @@ export default class DocumentCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Document> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Document> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

@@ -54,4 +54,18 @@ export default class CategoryLinksOrganizationIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/CategoryLinksOrganizationIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/CategoryLinksOrganizationIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

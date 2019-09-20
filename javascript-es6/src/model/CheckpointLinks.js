@@ -54,4 +54,18 @@ export default class CheckpointLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/CheckpointLinksOrganization }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { module:model/CheckpointLinksOrganization } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
 }

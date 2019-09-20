@@ -61,55 +61,133 @@ var ExternalServiceContactPoint =
      * @return { module:model/ExternalServiceContactPoint } The populated "ExternalServiceContactPoint" instance.
      */
 
-    _createClass(ExternalServiceContactPoint, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ExternalServiceContactPoint,
+      [
+        {
+          key: "getEmail",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getEmail() {
+            return this.email;
           }
-
-          if (object === null) {
-            object = new ExternalServiceContactPoint();
+          /**
+           * @param { String } email
+           */
+        },
+        {
+          key: "setEmail",
+          value: function setEmail(email) {
+            this.email = email;
           }
-
-          if (data.hasOwnProperty("email")) {
-            object.email = _ApiClient.default.convertToType(
-              data["email"],
-              "String"
-            );
+          /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getIsOpen",
+          value: function getIsOpen() {
+            return this.isOpen;
           }
-
-          if (data.hasOwnProperty("isOpen")) {
-            object.isOpen = _ApiClient.default.convertToType(
-              data["isOpen"],
-              "Boolean"
-            );
+          /**
+           * @param { Boolean } isOpen
+           */
+        },
+        {
+          key: "setIsOpen",
+          value: function setIsOpen(isOpen) {
+            this.isOpen = isOpen;
           }
-
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getName",
+          value: function getName() {
+            return this.name;
           }
-
-          if (data.hasOwnProperty("telephone")) {
-            object.telephone = _ApiClient.default.convertToType(
-              data["telephone"],
-              "String"
-            );
+          /**
+           * @param { String } name
+           */
+        },
+        {
+          key: "setName",
+          value: function setName(name) {
+            this.name = name;
           }
-
-          return object;
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getTelephone",
+          value: function getTelephone() {
+            return this.telephone;
+          }
+          /**
+           * @param { String } telephone
+           */
+        },
+        {
+          key: "setTelephone",
+          value: function setTelephone(telephone) {
+            this.telephone = telephone;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ExternalServiceContactPoint();
+            }
+
+            if (data.hasOwnProperty("email")) {
+              object.email = _ApiClient.default.convertToType(
+                data["email"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("isOpen")) {
+              object.isOpen = _ApiClient.default.convertToType(
+                data["isOpen"],
+                "Boolean"
+              );
+            }
+
+            if (data.hasOwnProperty("name")) {
+              object.name = _ApiClient.default.convertToType(
+                data["name"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("telephone")) {
+              object.telephone = _ApiClient.default.convertToType(
+                data["telephone"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ExternalServiceContactPoint;
   })();

@@ -48,4 +48,18 @@ export default class WebhookLinksSelfIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getWebhook() {
+    return this.webhook;
+  }
+
+  /**
+   * @param { String } webhook
+   */
+  setWebhook(webhook) {
+    this.webhook = webhook;
+  }
 }

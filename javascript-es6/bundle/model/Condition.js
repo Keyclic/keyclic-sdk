@@ -62,59 +62,140 @@ var Condition =
      * @return { module:model/Condition } The populated "Condition" instance.
      */
 
-    _createClass(Condition, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Condition,
+      [
+        {
+          key: "getId",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getId() {
+            return this.id;
           }
-
-          if (object === null) {
-            object = new Condition();
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getOperator",
+          value: function getOperator() {
+            return this.operator;
           }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          /**
+           * @param { String } operator
+           */
+        },
+        {
+          key: "setOperator",
+          value: function setOperator(operator) {
+            this.operator = operator;
           }
-
-          if (data.hasOwnProperty("operator")) {
-            object.operator = _ApiClient.default.convertToType(
-              data["operator"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getPath",
+          value: function getPath() {
+            return this.path;
           }
-
-          if (data.hasOwnProperty("path")) {
-            object.path = _ApiClient.default.convertToType(
-              data["path"],
-              "String"
-            );
+          /**
+           * @param { String } path
+           */
+        },
+        {
+          key: "setPath",
+          value: function setPath(path) {
+            this.path = path;
           }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
           }
-
-          if (data.hasOwnProperty("value")) {
-            object.value = _ApiClient.default.convertToType(
-              data["value"],
-              "['String']"
-            );
+          /**
+           * @return { Array.<String> }
+           */
+        },
+        {
+          key: "getValue",
+          value: function getValue() {
+            return this.value;
           }
-
-          return object;
+          /**
+           * @param { Array.<String> } value
+           */
+        },
+        {
+          key: "setValue",
+          value: function setValue(value) {
+            this.value = value;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Condition();
+            }
+
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("operator")) {
+              object.operator = _ApiClient.default.convertToType(
+                data["operator"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("path")) {
+              object.path = _ApiClient.default.convertToType(
+                data["path"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("value")) {
+              object.value = _ApiClient.default.convertToType(
+                data["value"],
+                "['String']"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Condition;
   })();

@@ -58,4 +58,33 @@ export default class PublicationLinksFeed {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the feed associated to the given publication.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the feed associated to the given publication.
+   * @param { String } href The URI of the feed associated to the given publication.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/PublicationLinksFeedIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/PublicationLinksFeedIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

@@ -87,4 +87,85 @@ export default class Application {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ApplicationLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/ApplicationLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { String }
+   */
+  getToken() {
+    return this.token;
+  }
+
+  /**
+   * @param { String } token
+   */
+  setToken(token) {
+    this.token = token;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
+
+  /**
+   * @return { String }
+   */
+  getVersion() {
+    return this.version;
+  }
+
+  /**
+   * @param { String } version
+   */
+  setVersion(version) {
+    this.version = version;
+  }
 }

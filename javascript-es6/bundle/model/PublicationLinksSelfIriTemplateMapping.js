@@ -58,34 +58,58 @@ var PublicationLinksSelfIriTemplateMapping =
      * @return { module:model/PublicationLinksSelfIriTemplateMapping } The populated "PublicationLinksSelfIriTemplateMapping" instance.
      */
 
-    _createClass(PublicationLinksSelfIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PublicationLinksSelfIriTemplateMapping,
+      [
+        {
+          key: "getPublication",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getPublication() {
+            return this.publication;
           }
-
-          if (object === null) {
-            object = new PublicationLinksSelfIriTemplateMapping();
+          /**
+           * @param { String } publication
+           */
+        },
+        {
+          key: "setPublication",
+          value: function setPublication(publication) {
+            this.publication = publication;
           }
-
-          if (data.hasOwnProperty("publication")) {
-            object.publication = _ApiClient.default.convertToType(
-              data["publication"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PublicationLinksSelfIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("publication")) {
+              object.publication = _ApiClient.default.convertToType(
+                data["publication"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PublicationLinksSelfIriTemplateMapping;
   })();

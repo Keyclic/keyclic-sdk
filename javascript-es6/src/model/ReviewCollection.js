@@ -51,4 +51,18 @@ export default class ReviewCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Review> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Review> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

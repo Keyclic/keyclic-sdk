@@ -60,4 +60,18 @@ export default class FeedPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/FeedCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/FeedCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

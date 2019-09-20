@@ -89,4 +89,84 @@ export default class BusinessActivity {
 
     return object;
   }
+
+  /**
+   * @return { module:model/BusinessActivityLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/BusinessActivityLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { String }
+   */
+  getAlternateName() {
+    return this.alternateName;
+  }
+
+  /**
+   * @param { String } alternateName
+   */
+  setAlternateName(alternateName) {
+    this.alternateName = alternateName;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { module:model/BusinessActivityMetadataSchema }
+   */
+  getMetadataSchema() {
+    return this.metadataSchema;
+  }
+
+  /**
+   * @param { module:model/BusinessActivityMetadataSchema } metadataSchema
+   */
+  setMetadataSchema(metadataSchema) {
+    this.metadataSchema = metadataSchema;
+  }
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
 }

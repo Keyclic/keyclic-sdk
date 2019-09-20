@@ -164,40 +164,64 @@ var CategoryPagination =
      * @return { module:model/CategoryPagination } The populated "CategoryPagination" instance.
      */
 
-    _createClass(CategoryPagination, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      CategoryPagination,
+      [
+        {
+          key: "getEmbedded",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/CategoryCollection }
+           */
+          value: function getEmbedded() {
+            return this.embedded;
           }
-
-          if (object === null) {
-            object = new CategoryPagination();
+          /**
+           * @param { module:model/CategoryCollection } embedded
+           */
+        },
+        {
+          key: "setEmbedded",
+          value: function setEmbedded(embedded) {
+            this.embedded = embedded;
           }
-
-          object = _get(
-            _getPrototypeOf(CategoryPagination),
-            "constructFromData",
-            this
-          ).call(this, data, object);
-
-          if (data.hasOwnProperty("_embedded")) {
-            object.embedded = _ApiClient.default.convertToType(
-              data["_embedded"],
-              object.embeddedType
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new CategoryPagination();
+            }
+
+            object = _get(
+              _getPrototypeOf(CategoryPagination),
+              "constructFromData",
+              this
+            ).call(this, data, object);
+
+            if (data.hasOwnProperty("_embedded")) {
+              object.embedded = _ApiClient.default.convertToType(
+                data["_embedded"],
+                object.embeddedType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return CategoryPagination;
   })(_Pagination2.default);

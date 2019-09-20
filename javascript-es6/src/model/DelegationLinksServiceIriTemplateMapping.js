@@ -51,4 +51,18 @@ export default class DelegationLinksServiceIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getExternalService() {
+    return this.externalService;
+  }
+
+  /**
+   * @param { String } externalService
+   */
+  setExternalService(externalService) {
+    this.externalService = externalService;
+  }
 }

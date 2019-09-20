@@ -62,48 +62,108 @@ var DelegationData =
      * @return { module:model/DelegationData } The populated "DelegationData" instance.
      */
 
-    _createClass(DelegationData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DelegationData,
+      [
+        {
+          key: "getDescription",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getDescription() {
+            return this.description;
           }
-
-          if (object === null) {
-            object = new DelegationData();
+          /**
+           * @param { String } description
+           */
+        },
+        {
+          key: "setDescription",
+          value: function setDescription(description) {
+            this.description = description;
           }
-
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getReport",
+          value: function getReport() {
+            return this.report;
           }
-
-          if (data.hasOwnProperty("report")) {
-            object.report = _ApiClient.default.convertToType(
-              data["report"],
-              "String"
-            );
+          /**
+           * @param { String } report
+           */
+        },
+        {
+          key: "setReport",
+          value: function setReport(report) {
+            this.report = report;
           }
-
-          if (data.hasOwnProperty("service")) {
-            object.service = _ApiClient.default.convertToType(
-              data["service"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getService",
+          value: function getService() {
+            return this.service;
           }
-
-          return object;
+          /**
+           * @param { String } service
+           */
+        },
+        {
+          key: "setService",
+          value: function setService(service) {
+            this.service = service;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DelegationData();
+            }
+
+            if (data.hasOwnProperty("description")) {
+              object.description = _ApiClient.default.convertToType(
+                data["description"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("report")) {
+              object.report = _ApiClient.default.convertToType(
+                data["report"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("service")) {
+              object.service = _ApiClient.default.convertToType(
+                data["service"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DelegationData;
   })();

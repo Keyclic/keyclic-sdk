@@ -55,4 +55,31 @@ export default class FeedbackDataGeo {
 
     return object;
   }
+
+  /**
+   * @return { module:model/FeedbackDataGeoPoint }
+   */
+  getPoint() {
+    return this.point;
+  }
+
+  /**
+   * @param { module:model/FeedbackDataGeoPoint } point
+   */
+  setPoint(point) {
+    this.point = point;
+  }
+  /**
+   * @return { Number }
+   */
+  getElevation() {
+    return this.elevation;
+  }
+
+  /**
+   * @param { Number } elevation
+   */
+  setElevation(elevation) {
+    this.elevation = elevation;
+  }
 }

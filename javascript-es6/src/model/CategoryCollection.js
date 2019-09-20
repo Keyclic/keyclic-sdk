@@ -51,4 +51,18 @@ export default class CategoryCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Category> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Category> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

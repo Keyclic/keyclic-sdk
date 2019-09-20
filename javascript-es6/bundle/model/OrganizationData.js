@@ -64,48 +64,108 @@ var OrganizationData =
      * @return { module:model/OrganizationData } The populated "OrganizationData" instance.
      */
 
-    _createClass(OrganizationData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OrganizationData,
+      [
+        {
+          key: "getName",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getName() {
+            return this.name;
           }
-
-          if (object === null) {
-            object = new OrganizationData();
+          /**
+           * @param { String } name
+           */
+        },
+        {
+          key: "setName",
+          value: function setName(name) {
+            this.name = name;
           }
-
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getBusinessActivity",
+          value: function getBusinessActivity() {
+            return this.businessActivity;
           }
-
-          if (data.hasOwnProperty("businessActivity")) {
-            object.businessActivity = _ApiClient.default.convertToType(
-              data["businessActivity"],
-              "String"
-            );
+          /**
+           * @param { String } businessActivity
+           */
+        },
+        {
+          key: "setBusinessActivity",
+          value: function setBusinessActivity(businessActivity) {
+            this.businessActivity = businessActivity;
           }
-
-          if (data.hasOwnProperty("logo")) {
-            object.logo = _ApiClient.default.convertToType(
-              data["logo"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getLogo",
+          value: function getLogo() {
+            return this.logo;
           }
-
-          return object;
+          /**
+           * @param { String } logo
+           */
+        },
+        {
+          key: "setLogo",
+          value: function setLogo(logo) {
+            this.logo = logo;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OrganizationData();
+            }
+
+            if (data.hasOwnProperty("name")) {
+              object.name = _ApiClient.default.convertToType(
+                data["name"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("businessActivity")) {
+              object.businessActivity = _ApiClient.default.convertToType(
+                data["businessActivity"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("logo")) {
+              object.logo = _ApiClient.default.convertToType(
+                data["logo"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OrganizationData;
   })();

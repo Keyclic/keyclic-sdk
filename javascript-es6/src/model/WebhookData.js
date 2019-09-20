@@ -73,6 +73,46 @@ export default class WebhookData {
   }
 
   /**
+   * @return { module:model/WebhookData.EventEnum }
+   */
+  getEvent() {
+    return this.event;
+  }
+
+  /**
+   * @param { module:model/WebhookData.EventEnum } event
+   */
+  setEvent(event) {
+    this.event = event;
+  }
+  /**
+   * @return { String }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { String } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
+  /**
+   * @return { String }
+   */
+  getPayloadUrl() {
+    return this.payloadUrl;
+  }
+
+  /**
+   * @param { String } payloadUrl
+   */
+  setPayloadUrl(payloadUrl) {
+    this.payloadUrl = payloadUrl;
+  }
+
+  /**
    * Allowed values for the "event" property.
    * @enum { String }
    */

@@ -60,4 +60,31 @@ export default class DocumentPatch {
 
     return object;
   }
+
+  /**
+   * @return { module:model/DocumentPatchFile }
+   */
+  getFile() {
+    return this.file;
+  }
+
+  /**
+   * @param { module:model/DocumentPatchFile } file
+   */
+  setFile(file) {
+    this.file = file;
+  }
+  /**
+   * @return { module:model/DocumentPermission }
+   */
+  getPermission() {
+    return this.permission;
+  }
+
+  /**
+   * @param { module:model/DocumentPermission } permission
+   */
+  setPermission(permission) {
+    this.permission = permission;
+  }
 }

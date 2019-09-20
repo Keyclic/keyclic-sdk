@@ -60,4 +60,18 @@ export default class DelegationPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/DelegationCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/DelegationCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

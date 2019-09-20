@@ -101,4 +101,96 @@ export default class FeedbackLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/FeedbackLinksBusinessActivity }
+   */
+  getBusinessActivity() {
+    return this.businessActivity;
+  }
+
+  /**
+   * @param { module:model/FeedbackLinksBusinessActivity } businessActivity
+   */
+  setBusinessActivity(businessActivity) {
+    this.businessActivity = businessActivity;
+  }
+  /**
+   * @return { module:model/FeedbackLinksCategory }
+   */
+  getCategory() {
+    return this.category;
+  }
+
+  /**
+   * @param { module:model/FeedbackLinksCategory } category
+   */
+  setCategory(category) {
+    this.category = category;
+  }
+  /**
+   * @return { module:model/FeedbackLinksImage }
+   */
+  getImage() {
+    return this.image;
+  }
+
+  /**
+   * @param { module:model/FeedbackLinksImage } image
+   */
+  setImage(image) {
+    this.image = image;
+  }
+  /**
+   * @return { Array.<module:model/FeedbackLinksImages> }
+   */
+  getImages() {
+    return this.images;
+  }
+
+  /**
+   * @param { Array.<module:model/FeedbackLinksImages> } images
+   */
+  setImages(images) {
+    this.images = images;
+  }
+  /**
+   * @return { module:model/FeedbackLinksReporter }
+   */
+  getReporter() {
+    return this.reporter;
+  }
+
+  /**
+   * @param { module:model/FeedbackLinksReporter } reporter
+   */
+  setReporter(reporter) {
+    this.reporter = reporter;
+  }
+  /**
+   * @return { module:model/FeedbackLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/FeedbackLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
+  /**
+   * @return { module:model/FeedbackLinksTracking }
+   */
+  getTracking() {
+    return this.tracking;
+  }
+
+  /**
+   * @param { module:model/FeedbackLinksTracking } tracking
+   */
+  setTracking(tracking) {
+    this.tracking = tracking;
+  }
 }

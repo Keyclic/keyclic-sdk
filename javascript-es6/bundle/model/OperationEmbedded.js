@@ -65,48 +65,108 @@ var OperationEmbedded =
      * @return { module:model/OperationEmbedded } The populated "OperationEmbedded" instance.
      */
 
-    _createClass(OperationEmbedded, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OperationEmbedded,
+      [
+        {
+          key: "getDuration",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/OperationEmbeddedDuration }
+           */
+          value: function getDuration() {
+            return this.duration;
           }
-
-          if (object === null) {
-            object = new OperationEmbedded();
+          /**
+           * @param { module:model/OperationEmbeddedDuration } duration
+           */
+        },
+        {
+          key: "setDuration",
+          value: function setDuration(duration) {
+            this.duration = duration;
           }
-
-          if (data.hasOwnProperty("duration")) {
-            object.duration = _ApiClient.default.convertToType(
-              data["duration"],
-              object.durationType
-            );
+          /**
+           * @return { Array.<String> }
+           */
+        },
+        {
+          key: "getStateTransitions",
+          value: function getStateTransitions() {
+            return this.stateTransitions;
           }
-
-          if (data.hasOwnProperty("stateTransitions")) {
-            object.stateTransitions = _ApiClient.default.convertToType(
-              data["stateTransitions"],
-              "['String']"
-            );
+          /**
+           * @param { Array.<String> } stateTransitions
+           */
+        },
+        {
+          key: "setStateTransitions",
+          value: function setStateTransitions(stateTransitions) {
+            this.stateTransitions = stateTransitions;
           }
-
-          if (data.hasOwnProperty("tracking")) {
-            object.tracking = _ApiClient.default.convertToType(
-              data["tracking"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getTracking",
+          value: function getTracking() {
+            return this.tracking;
           }
-
-          return object;
+          /**
+           * @param { String } tracking
+           */
+        },
+        {
+          key: "setTracking",
+          value: function setTracking(tracking) {
+            this.tracking = tracking;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OperationEmbedded();
+            }
+
+            if (data.hasOwnProperty("duration")) {
+              object.duration = _ApiClient.default.convertToType(
+                data["duration"],
+                object.durationType
+              );
+            }
+
+            if (data.hasOwnProperty("stateTransitions")) {
+              object.stateTransitions = _ApiClient.default.convertToType(
+                data["stateTransitions"],
+                "['String']"
+              );
+            }
+
+            if (data.hasOwnProperty("tracking")) {
+              object.tracking = _ApiClient.default.convertToType(
+                data["tracking"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OperationEmbedded;
   })();

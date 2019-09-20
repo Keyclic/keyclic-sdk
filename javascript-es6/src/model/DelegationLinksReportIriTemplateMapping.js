@@ -48,4 +48,18 @@ export default class DelegationLinksReportIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getReport() {
+    return this.report;
+  }
+
+  /**
+   * @param { String } report
+   */
+  setReport(report) {
+    this.report = report;
+  }
 }

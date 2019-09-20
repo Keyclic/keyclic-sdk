@@ -54,4 +54,18 @@ export default class OperationLinksImageIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OperationLinksImageIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/OperationLinksImageIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

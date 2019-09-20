@@ -67,4 +67,44 @@ export default class OrganizationPreferences {
 
     return object;
   }
+
+  /**
+   * @return { Boolean }
+   */
+  getPublic() {
+    return this._public;
+  }
+
+  /**
+   * @param { Boolean } _public
+   */
+  setPublic(_public) {
+    this._public = _public;
+  }
+  /**
+   * @return { module:model/OrganizationPreferencesReference }
+   */
+  getReference() {
+    return this.reference;
+  }
+
+  /**
+   * @param { module:model/OrganizationPreferencesReference } reference
+   */
+  setReference(reference) {
+    this.reference = reference;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getReviewEnabled() {
+    return this.reviewEnabled;
+  }
+
+  /**
+   * @param { Boolean } reviewEnabled
+   */
+  setReviewEnabled(reviewEnabled) {
+    this.reviewEnabled = reviewEnabled;
+  }
 }

@@ -58,4 +58,33 @@ export default class ExternalServiceLinksProvider {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the provider associated to the given externalservice.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the provider associated to the given externalservice.
+   * @param { String } href The URI of the provider associated to the given externalservice.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/ExternalServiceLinksProviderIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/ExternalServiceLinksProviderIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

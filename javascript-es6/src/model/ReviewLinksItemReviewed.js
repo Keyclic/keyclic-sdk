@@ -58,4 +58,33 @@ export default class ReviewLinksItemReviewed {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the itemReviewed associated to the given review.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the itemReviewed associated to the given review.
+   * @param { String } href The URI of the itemReviewed associated to the given review.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/ReviewLinksItemReviewedIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/ReviewLinksItemReviewedIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

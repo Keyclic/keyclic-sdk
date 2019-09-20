@@ -63,41 +63,83 @@ var RegisterData =
      * @return { module:model/RegisterData } The populated "RegisterData" instance.
      */
 
-    _createClass(RegisterData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      RegisterData,
+      [
+        {
+          key: "getEmail",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getEmail() {
+            return this.email;
           }
-
-          if (object === null) {
-            object = new RegisterData();
+          /**
+           * @param { String } email
+           */
+        },
+        {
+          key: "setEmail",
+          value: function setEmail(email) {
+            this.email = email;
           }
-
-          if (data.hasOwnProperty("email")) {
-            object.email = _ApiClient.default.convertToType(
-              data["email"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getPassword",
+          value: function getPassword() {
+            return this.password;
           }
-
-          if (data.hasOwnProperty("password")) {
-            object.password = _ApiClient.default.convertToType(
-              data["password"],
-              "String"
-            );
+          /**
+           * @param { String } password
+           */
+        },
+        {
+          key: "setPassword",
+          value: function setPassword(password) {
+            this.password = password;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new RegisterData();
+            }
+
+            if (data.hasOwnProperty("email")) {
+              object.email = _ApiClient.default.convertToType(
+                data["email"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("password")) {
+              object.password = _ApiClient.default.convertToType(
+                data["password"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return RegisterData;
   })();

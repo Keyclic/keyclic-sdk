@@ -55,4 +55,31 @@ export default class FeedbackEmbedded {
 
     return object;
   }
+
+  /**
+   * @return { Array.<String> }
+   */
+  getStateTransitions() {
+    return this.stateTransitions;
+  }
+
+  /**
+   * @param { Array.<String> } stateTransitions
+   */
+  setStateTransitions(stateTransitions) {
+    this.stateTransitions = stateTransitions;
+  }
+  /**
+   * @return { String }
+   */
+  getTracking() {
+    return this.tracking;
+  }
+
+  /**
+   * @param { String } tracking
+   */
+  setTracking(tracking) {
+    this.tracking = tracking;
+  }
 }

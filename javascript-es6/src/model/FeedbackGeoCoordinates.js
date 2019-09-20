@@ -57,4 +57,33 @@ export default class FeedbackGeoCoordinates {
 
     return object;
   }
+
+  /**
+   * minimum: -10000
+   * maximum: 8000
+   * @return { Number }
+   */
+  getElevation() {
+    return this.elevation;
+  }
+
+  /**
+   * @param { Number } elevation
+   */
+  setElevation(elevation) {
+    this.elevation = elevation;
+  }
+  /**
+   * @return { module:model/FeedbackGeoCoordinatesPoint }
+   */
+  getPoint() {
+    return this.point;
+  }
+
+  /**
+   * @param { module:model/FeedbackGeoCoordinatesPoint } point
+   */
+  setPoint(point) {
+    this.point = point;
+  }
 }

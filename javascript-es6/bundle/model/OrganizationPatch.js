@@ -69,76 +69,210 @@ var OrganizationPatch =
      * @return { module:model/OrganizationPatch } The populated "OrganizationPatch" instance.
      */
 
-    _createClass(OrganizationPatch, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OrganizationPatch,
+      [
+        {
+          key: "getName",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getName() {
+            return this.name;
           }
-
-          if (object === null) {
-            object = new OrganizationPatch();
+          /**
+           * @param { String } name
+           */
+        },
+        {
+          key: "setName",
+          value: function setName(name) {
+            this.name = name;
           }
-
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getAlternateName",
+          value: function getAlternateName() {
+            return this.alternateName;
           }
-
-          if (data.hasOwnProperty("alternateName")) {
-            object.alternateName = _ApiClient.default.convertToType(
-              data["alternateName"],
-              "String"
-            );
+          /**
+           * @param { String } alternateName
+           */
+        },
+        {
+          key: "setAlternateName",
+          value: function setAlternateName(alternateName) {
+            this.alternateName = alternateName;
           }
-
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getDescription",
+          value: function getDescription() {
+            return this.description;
           }
-
-          if (data.hasOwnProperty("logo")) {
-            object.logo = _ApiClient.default.convertToType(
-              data["logo"],
-              "String"
-            );
+          /**
+           * @param { String } description
+           */
+        },
+        {
+          key: "setDescription",
+          value: function setDescription(description) {
+            this.description = description;
           }
-
-          if (data.hasOwnProperty("billingEmailAddress")) {
-            object.billingEmailAddress = _ApiClient.default.convertToType(
-              data["billingEmailAddress"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getLogo",
+          value: function getLogo() {
+            return this.logo;
           }
-
-          if (data.hasOwnProperty("notificationEmailAddress")) {
-            object.notificationEmailAddress = _ApiClient.default.convertToType(
-              data["notificationEmailAddress"],
-              "String"
-            );
+          /**
+           * @param { String } logo
+           */
+        },
+        {
+          key: "setLogo",
+          value: function setLogo(logo) {
+            this.logo = logo;
           }
-
-          if (data.hasOwnProperty("preferences")) {
-            object.preferences = _ApiClient.default.convertToType(
-              data["preferences"],
-              object.preferencesType
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getBillingEmailAddress",
+          value: function getBillingEmailAddress() {
+            return this.billingEmailAddress;
           }
-
-          return object;
+          /**
+           * @param { String } billingEmailAddress
+           */
+        },
+        {
+          key: "setBillingEmailAddress",
+          value: function setBillingEmailAddress(billingEmailAddress) {
+            this.billingEmailAddress = billingEmailAddress;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getNotificationEmailAddress",
+          value: function getNotificationEmailAddress() {
+            return this.notificationEmailAddress;
+          }
+          /**
+           * @param { String } notificationEmailAddress
+           */
+        },
+        {
+          key: "setNotificationEmailAddress",
+          value: function setNotificationEmailAddress(
+            notificationEmailAddress
+          ) {
+            this.notificationEmailAddress = notificationEmailAddress;
+          }
+          /**
+           * @return { module:model/OrganizationPatchPreferences }
+           */
+        },
+        {
+          key: "getPreferences",
+          value: function getPreferences() {
+            return this.preferences;
+          }
+          /**
+           * @param { module:model/OrganizationPatchPreferences } preferences
+           */
+        },
+        {
+          key: "setPreferences",
+          value: function setPreferences(preferences) {
+            this.preferences = preferences;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OrganizationPatch();
+            }
+
+            if (data.hasOwnProperty("name")) {
+              object.name = _ApiClient.default.convertToType(
+                data["name"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("alternateName")) {
+              object.alternateName = _ApiClient.default.convertToType(
+                data["alternateName"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("description")) {
+              object.description = _ApiClient.default.convertToType(
+                data["description"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("logo")) {
+              object.logo = _ApiClient.default.convertToType(
+                data["logo"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("billingEmailAddress")) {
+              object.billingEmailAddress = _ApiClient.default.convertToType(
+                data["billingEmailAddress"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("notificationEmailAddress")) {
+              object.notificationEmailAddress = _ApiClient.default.convertToType(
+                data["notificationEmailAddress"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("preferences")) {
+              object.preferences = _ApiClient.default.convertToType(
+                data["preferences"],
+                object.preferencesType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OrganizationPatch;
   })();

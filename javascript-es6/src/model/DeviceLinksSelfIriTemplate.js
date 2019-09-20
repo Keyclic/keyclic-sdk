@@ -54,4 +54,18 @@ export default class DeviceLinksSelfIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/DeviceLinksSelfIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/DeviceLinksSelfIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

@@ -66,4 +66,57 @@ export default class PaginationLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PaginationLink }
+   */
+  getFirst() {
+    return this.first;
+  }
+
+  /**
+   * @param { module:model/PaginationLink } first
+   */
+  setFirst(first) {
+    this.first = first;
+  }
+  /**
+   * @return { module:model/PaginationLink }
+   */
+  getLast() {
+    return this.last;
+  }
+
+  /**
+   * @param { module:model/PaginationLink } last
+   */
+  setLast(last) {
+    this.last = last;
+  }
+  /**
+   * @return { module:model/PaginationLink }
+   */
+  getNext() {
+    return this.next;
+  }
+
+  /**
+   * @param { module:model/PaginationLink } next
+   */
+  setNext(next) {
+    this.next = next;
+  }
+  /**
+   * @return { module:model/PaginationLink }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/PaginationLink } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

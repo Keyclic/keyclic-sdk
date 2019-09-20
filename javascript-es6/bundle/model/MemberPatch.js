@@ -58,34 +58,58 @@ var MemberPatch =
      * @return { module:model/MemberPatch } The populated "MemberPatch" instance.
      */
 
-    _createClass(MemberPatch, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      MemberPatch,
+      [
+        {
+          key: "getRoles",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<String> }
+           */
+          value: function getRoles() {
+            return this.roles;
           }
-
-          if (object === null) {
-            object = new MemberPatch();
+          /**
+           * @param { Array.<String> } roles
+           */
+        },
+        {
+          key: "setRoles",
+          value: function setRoles(roles) {
+            this.roles = roles;
           }
-
-          if (data.hasOwnProperty("roles")) {
-            object.roles = _ApiClient.default.convertToType(
-              data["roles"],
-              "['String']"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new MemberPatch();
+            }
+
+            if (data.hasOwnProperty("roles")) {
+              object.roles = _ApiClient.default.convertToType(
+                data["roles"],
+                "['String']"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return MemberPatch;
   })();

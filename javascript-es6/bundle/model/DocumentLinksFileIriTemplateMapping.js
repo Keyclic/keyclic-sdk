@@ -58,34 +58,58 @@ var DocumentLinksFileIriTemplateMapping =
      * @return { module:model/DocumentLinksFileIriTemplateMapping } The populated "DocumentLinksFileIriTemplateMapping" instance.
      */
 
-    _createClass(DocumentLinksFileIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DocumentLinksFileIriTemplateMapping,
+      [
+        {
+          key: "getDocument",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getDocument() {
+            return this.document;
           }
-
-          if (object === null) {
-            object = new DocumentLinksFileIriTemplateMapping();
+          /**
+           * @param { String } document
+           */
+        },
+        {
+          key: "setDocument",
+          value: function setDocument(document) {
+            this.document = document;
           }
-
-          if (data.hasOwnProperty("document")) {
-            object.document = _ApiClient.default.convertToType(
-              data["document"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DocumentLinksFileIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("document")) {
+              object.document = _ApiClient.default.convertToType(
+                data["document"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DocumentLinksFileIriTemplateMapping;
   })();

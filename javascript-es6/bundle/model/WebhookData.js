@@ -80,52 +80,112 @@ var WebhookData =
      * @return { module:model/WebhookData } The populated "WebhookData" instance.
      */
 
-    _createClass(WebhookData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      WebhookData,
+      [
+        {
+          key: "getEvent",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/WebhookData.EventEnum }
+           */
+          value: function getEvent() {
+            return this.event;
           }
-
-          if (object === null) {
-            object = new WebhookData();
+          /**
+           * @param { module:model/WebhookData.EventEnum } event
+           */
+        },
+        {
+          key: "setEvent",
+          value: function setEvent(event) {
+            this.event = event;
           }
-
-          if (data.hasOwnProperty("event")) {
-            object.event = _ApiClient.default.convertToType(
-              data["event"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getOrganization",
+          value: function getOrganization() {
+            return this.organization;
           }
-
-          if (data.hasOwnProperty("organization")) {
-            object.organization = _ApiClient.default.convertToType(
-              data["organization"],
-              "String"
-            );
+          /**
+           * @param { String } organization
+           */
+        },
+        {
+          key: "setOrganization",
+          value: function setOrganization(organization) {
+            this.organization = organization;
           }
-
-          if (data.hasOwnProperty("payloadUrl")) {
-            object.payloadUrl = _ApiClient.default.convertToType(
-              data["payloadUrl"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getPayloadUrl",
+          value: function getPayloadUrl() {
+            return this.payloadUrl;
           }
-
-          return object;
+          /**
+           * @param { String } payloadUrl
+           */
+        },
+        {
+          key: "setPayloadUrl",
+          value: function setPayloadUrl(payloadUrl) {
+            this.payloadUrl = payloadUrl;
+          }
+          /**
+           * Allowed values for the "event" property.
+           * @enum { String }
+           */
         }
-        /**
-         * Allowed values for the "event" property.
-         * @enum { String }
-         */
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new WebhookData();
+            }
+
+            if (data.hasOwnProperty("event")) {
+              object.event = _ApiClient.default.convertToType(
+                data["event"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("organization")) {
+              object.organization = _ApiClient.default.convertToType(
+                data["organization"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("payloadUrl")) {
+              object.payloadUrl = _ApiClient.default.convertToType(
+                data["payloadUrl"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return WebhookData;
   })();

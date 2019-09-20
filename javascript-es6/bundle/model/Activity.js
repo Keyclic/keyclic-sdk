@@ -68,83 +68,233 @@ var Activity =
      * @return { module:model/Activity } The populated "Activity" instance.
      */
 
-    _createClass(Activity, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Activity,
+      [
+        {
+          key: "getActor",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getActor() {
+            return this.actor;
           }
-
-          if (object === null) {
-            object = new Activity();
+          /**
+           * @param { String } actor
+           */
+        },
+        {
+          key: "setActor",
+          value: function setActor(actor) {
+            this.actor = actor;
           }
-
-          if (data.hasOwnProperty("actor")) {
-            object.actor = _ApiClient.default.convertToType(
-              data["actor"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getMessage",
+          value: function getMessage() {
+            return this.message;
           }
-
-          if (data.hasOwnProperty("message")) {
-            object.message = _ApiClient.default.convertToType(
-              data["message"],
-              "String"
-            );
+          /**
+           * @param { String } message
+           */
+        },
+        {
+          key: "setMessage",
+          value: function setMessage(message) {
+            this.message = message;
           }
-
-          if (data.hasOwnProperty("object")) {
-            object._object = _ApiClient.default.convertToType(
-              data["object"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getObject",
+          value: function getObject() {
+            return this._object;
           }
-
-          if (data.hasOwnProperty("origin")) {
-            object.origin = _ApiClient.default.convertToType(
-              data["origin"],
-              "String"
-            );
+          /**
+           * @param { String } _object
+           */
+        },
+        {
+          key: "setObject",
+          value: function setObject(_object) {
+            this._object = _object;
           }
-
-          if (data.hasOwnProperty("subject")) {
-            object.subject = _ApiClient.default.convertToType(
-              data["subject"],
-              object.subjectType
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getOrigin",
+          value: function getOrigin() {
+            return this.origin;
           }
-
-          if (data.hasOwnProperty("time")) {
-            object.time = _ApiClient.default.convertToType(
-              data["time"],
-              "Date"
-            );
+          /**
+           * @param { String } origin
+           */
+        },
+        {
+          key: "setOrigin",
+          value: function setOrigin(origin) {
+            this.origin = origin;
           }
-
-          if (data.hasOwnProperty("title")) {
-            object.title = _ApiClient.default.convertToType(
-              data["title"],
-              "String"
-            );
+          /**
+           * @return { module:model/ActivitySubject }
+           */
+        },
+        {
+          key: "getSubject",
+          value: function getSubject() {
+            return this.subject;
           }
-
-          if (data.hasOwnProperty("verb")) {
-            object.verb = _ApiClient.default.convertToType(
-              data["verb"],
-              "String"
-            );
+          /**
+           * @param { module:model/ActivitySubject } subject
+           */
+        },
+        {
+          key: "setSubject",
+          value: function setSubject(subject) {
+            this.subject = subject;
           }
-
-          return object;
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getTime",
+          value: function getTime() {
+            return this.time;
+          }
+          /**
+           * @param { Date } time
+           */
+        },
+        {
+          key: "setTime",
+          value: function setTime(time) {
+            this.time = time;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getTitle",
+          value: function getTitle() {
+            return this.title;
+          }
+          /**
+           * @param { String } title
+           */
+        },
+        {
+          key: "setTitle",
+          value: function setTitle(title) {
+            this.title = title;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getVerb",
+          value: function getVerb() {
+            return this.verb;
+          }
+          /**
+           * @param { String } verb
+           */
+        },
+        {
+          key: "setVerb",
+          value: function setVerb(verb) {
+            this.verb = verb;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Activity();
+            }
+
+            if (data.hasOwnProperty("actor")) {
+              object.actor = _ApiClient.default.convertToType(
+                data["actor"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("message")) {
+              object.message = _ApiClient.default.convertToType(
+                data["message"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("object")) {
+              object._object = _ApiClient.default.convertToType(
+                data["object"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("origin")) {
+              object.origin = _ApiClient.default.convertToType(
+                data["origin"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("subject")) {
+              object.subject = _ApiClient.default.convertToType(
+                data["subject"],
+                object.subjectType
+              );
+            }
+
+            if (data.hasOwnProperty("time")) {
+              object.time = _ApiClient.default.convertToType(
+                data["time"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("title")) {
+              object.title = _ApiClient.default.convertToType(
+                data["title"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("verb")) {
+              object.verb = _ApiClient.default.convertToType(
+                data["verb"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Activity;
   })();

@@ -58,4 +58,33 @@ export default class OccupantLinksPlace {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the place associated to the given occupant.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the place associated to the given occupant.
+   * @param { String } href The URI of the place associated to the given occupant.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/OccupantLinksPlaceIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/OccupantLinksPlaceIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

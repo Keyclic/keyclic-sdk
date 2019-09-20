@@ -59,4 +59,31 @@ export default class PlaceEmbedded {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Node> }
+   */
+  getChildren() {
+    return this.children;
+  }
+
+  /**
+   * @param { Array.<module:model/Node> } children
+   */
+  setChildren(children) {
+    this.children = children;
+  }
+  /**
+   * @return { Array.<module:model/NodePath> }
+   */
+  getPath() {
+    return this.path;
+  }
+
+  /**
+   * @param { Array.<module:model/NodePath> } path
+   */
+  setPath(path) {
+    this.path = path;
+  }
 }

@@ -58,4 +58,33 @@ export default class MemberLinksPerson {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the person associated to the given member.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the person associated to the given member.
+   * @param { String } href The URI of the person associated to the given member.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/MemberLinksPersonIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/MemberLinksPersonIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

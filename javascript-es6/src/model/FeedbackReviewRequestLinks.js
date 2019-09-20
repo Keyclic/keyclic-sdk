@@ -87,4 +87,70 @@ export default class FeedbackReviewRequestLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/FeedbackReviewRequestLinksItemToReview }
+   */
+  getItemToReview() {
+    return this.itemToReview;
+  }
+
+  /**
+   * @param { module:model/FeedbackReviewRequestLinksItemToReview } itemToReview
+   */
+  setItemToReview(itemToReview) {
+    this.itemToReview = itemToReview;
+  }
+  /**
+   * @return { module:model/FeedbackReviewRequestLinksOrganization }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { module:model/FeedbackReviewRequestLinksOrganization } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
+  /**
+   * @return { module:model/FeedbackReviewRequestLinksReview }
+   */
+  getReview() {
+    return this.review;
+  }
+
+  /**
+   * @param { module:model/FeedbackReviewRequestLinksReview } review
+   */
+  setReview(review) {
+    this.review = review;
+  }
+  /**
+   * @return { module:model/FeedbackReviewRequestLinksReviewer }
+   */
+  getReviewer() {
+    return this.reviewer;
+  }
+
+  /**
+   * @param { module:model/FeedbackReviewRequestLinksReviewer } reviewer
+   */
+  setReviewer(reviewer) {
+    this.reviewer = reviewer;
+  }
+  /**
+   * @return { module:model/FeedbackReviewRequestLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/FeedbackReviewRequestLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

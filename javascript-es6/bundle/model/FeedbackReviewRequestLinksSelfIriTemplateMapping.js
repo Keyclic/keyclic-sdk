@@ -58,34 +58,58 @@ var FeedbackReviewRequestLinksSelfIriTemplateMapping =
      * @return { module:model/FeedbackReviewRequestLinksSelfIriTemplateMapping } The populated "FeedbackReviewRequestLinksSelfIriTemplateMapping" instance.
      */
 
-    _createClass(FeedbackReviewRequestLinksSelfIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FeedbackReviewRequestLinksSelfIriTemplateMapping,
+      [
+        {
+          key: "getReviewRequest",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getReviewRequest() {
+            return this.reviewRequest;
           }
-
-          if (object === null) {
-            object = new FeedbackReviewRequestLinksSelfIriTemplateMapping();
+          /**
+           * @param { String } reviewRequest
+           */
+        },
+        {
+          key: "setReviewRequest",
+          value: function setReviewRequest(reviewRequest) {
+            this.reviewRequest = reviewRequest;
           }
-
-          if (data.hasOwnProperty("reviewRequest")) {
-            object.reviewRequest = _ApiClient.default.convertToType(
-              data["reviewRequest"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FeedbackReviewRequestLinksSelfIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("reviewRequest")) {
+              object.reviewRequest = _ApiClient.default.convertToType(
+                data["reviewRequest"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FeedbackReviewRequestLinksSelfIriTemplateMapping;
   })();

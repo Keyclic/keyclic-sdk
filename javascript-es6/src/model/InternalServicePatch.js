@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import ExternalServicePatchContactPoint from "./ExternalServicePatchContactPoint";
 
 /**
  * The InternalServicePatch model module.
@@ -24,8 +25,11 @@ export default class InternalServicePatch {
     
      */
   constructor() {
+    this.contactPoint = null;
     this.description = null;
     this.name = null;
+
+    this.contactPointType = ExternalServicePatchContactPoint;
   }
 
   /**
@@ -43,6 +47,12 @@ export default class InternalServicePatch {
       object = new InternalServicePatch();
     }
 
+    if (data.hasOwnProperty("contactPoint")) {
+      object.contactPoint = ApiClient.convertToType(
+        data["contactPoint"],
+        object.contactPointType
+      );
+    }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
         data["description"],
@@ -54,5 +64,45 @@ export default class InternalServicePatch {
     }
 
     return object;
+  }
+
+  /**
+   * @return { module:model/ExternalServicePatchContactPoint }
+   */
+  getContactPoint() {
+    return this.contactPoint;
+  }
+
+  /**
+   * @param { module:model/ExternalServicePatchContactPoint } contactPoint
+   */
+  setContactPoint(contactPoint) {
+    this.contactPoint = contactPoint;
+  }
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
   }
 }

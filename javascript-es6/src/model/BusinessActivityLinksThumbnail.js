@@ -58,4 +58,33 @@ export default class BusinessActivityLinksThumbnail {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the thumbnail associated to the given businessactivity.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the thumbnail associated to the given businessactivity.
+   * @param { String } href The URI of the thumbnail associated to the given businessactivity.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/BusinessActivityLinksThumbnailIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/BusinessActivityLinksThumbnailIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

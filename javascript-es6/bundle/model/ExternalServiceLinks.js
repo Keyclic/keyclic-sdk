@@ -69,41 +69,83 @@ var ExternalServiceLinks =
      * @return { module:model/ExternalServiceLinks } The populated "ExternalServiceLinks" instance.
      */
 
-    _createClass(ExternalServiceLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ExternalServiceLinks,
+      [
+        {
+          key: "getProvider",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/ExternalServiceLinksProvider }
+           */
+          value: function getProvider() {
+            return this.provider;
           }
-
-          if (object === null) {
-            object = new ExternalServiceLinks();
+          /**
+           * @param { module:model/ExternalServiceLinksProvider } provider
+           */
+        },
+        {
+          key: "setProvider",
+          value: function setProvider(provider) {
+            this.provider = provider;
           }
-
-          if (data.hasOwnProperty("provider")) {
-            object.provider = _ApiClient.default.convertToType(
-              data["provider"],
-              object.providerType
-            );
+          /**
+           * @return { module:model/ExternalServiceLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @param { module:model/ExternalServiceLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ExternalServiceLinks();
+            }
+
+            if (data.hasOwnProperty("provider")) {
+              object.provider = _ApiClient.default.convertToType(
+                data["provider"],
+                object.providerType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ExternalServiceLinks;
   })();

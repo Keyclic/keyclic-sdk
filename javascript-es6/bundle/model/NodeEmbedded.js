@@ -65,40 +65,82 @@ var NodeEmbedded =
      * @return { module:model/NodeEmbedded } The populated "NodeEmbedded" instance.
      */
 
-    _createClass(NodeEmbedded, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      NodeEmbedded,
+      [
+        {
+          key: "getPath",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<module:model/NodePath> }
+           */
+          value: function getPath() {
+            return this.path;
           }
-
-          if (object === null) {
-            object = new NodeEmbedded();
+          /**
+           * @param { Array.<module:model/NodePath> } path
+           */
+        },
+        {
+          key: "setPath",
+          value: function setPath(path) {
+            this.path = path;
           }
-
-          if (data.hasOwnProperty("path")) {
-            object.path = _ApiClient.default.convertToType(data["path"], [
-              object.pathType
-            ]);
+          /**
+           * @return { Array.<module:model/Node> }
+           */
+        },
+        {
+          key: "getChildren",
+          value: function getChildren() {
+            return this.children;
           }
-
-          if (data.hasOwnProperty("children")) {
-            object.children = _ApiClient.default.convertToType(
-              data["children"],
-              [object.childrenType]
-            );
+          /**
+           * @param { Array.<module:model/Node> } children
+           */
+        },
+        {
+          key: "setChildren",
+          value: function setChildren(children) {
+            this.children = children;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new NodeEmbedded();
+            }
+
+            if (data.hasOwnProperty("path")) {
+              object.path = _ApiClient.default.convertToType(data["path"], [
+                object.pathType
+              ]);
+            }
+
+            if (data.hasOwnProperty("children")) {
+              object.children = _ApiClient.default.convertToType(
+                data["children"],
+                [object.childrenType]
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return NodeEmbedded;
   })();

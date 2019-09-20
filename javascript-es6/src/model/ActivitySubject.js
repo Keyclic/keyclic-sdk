@@ -52,4 +52,18 @@ export default class ActivitySubject {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
 }

@@ -63,48 +63,99 @@ var Checkpoint =
      * @return { module:model/Checkpoint } The populated "Checkpoint" instance.
      */
 
-    _createClass(Checkpoint, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Checkpoint,
+      [
+        {
+          key: "getCreatedAt",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Date }
+           */
+          value: function getCreatedAt() {
+            return this.createdAt;
           }
-
-          if (object === null) {
-            object = new Checkpoint();
+          /**
+           * @return { Array.<String> }
+           */
+        },
+        {
+          key: "getState",
+          value: function getState() {
+            return this.state;
           }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
+          /**
+           * @param { Array.<String> } state
+           */
+        },
+        {
+          key: "setState",
+          value: function setState(state) {
+            this.state = state;
           }
-
-          if (data.hasOwnProperty("state")) {
-            object.state = _ApiClient.default.convertToType(
-              data["state"],
-              "['String']"
-            );
+          /**
+           * @return { module:model/CheckpointLinks }
+           */
+        },
+        {
+          key: "getLinks",
+          value: function getLinks() {
+            return this.links;
           }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
-            );
+          /**
+           * @param { module:model/CheckpointLinks } links
+           */
+        },
+        {
+          key: "setLinks",
+          value: function setLinks(links) {
+            this.links = links;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Checkpoint();
+            }
+
+            if (data.hasOwnProperty("createdAt")) {
+              object.createdAt = _ApiClient.default.convertToType(
+                data["createdAt"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("state")) {
+              object.state = _ApiClient.default.convertToType(
+                data["state"],
+                "['String']"
+              );
+            }
+
+            if (data.hasOwnProperty("_links")) {
+              object.links = _ApiClient.default.convertToType(
+                data["_links"],
+                object.linksType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Checkpoint;
   })();

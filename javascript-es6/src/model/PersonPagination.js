@@ -60,4 +60,18 @@ export default class PersonPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PersonCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/PersonCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

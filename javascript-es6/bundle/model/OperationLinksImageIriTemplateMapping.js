@@ -59,41 +59,83 @@ var OperationLinksImageIriTemplateMapping =
      * @return { module:model/OperationLinksImageIriTemplateMapping } The populated "OperationLinksImageIriTemplateMapping" instance.
      */
 
-    _createClass(OperationLinksImageIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OperationLinksImageIriTemplateMapping,
+      [
+        {
+          key: "getImage",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getImage() {
+            return this.image;
           }
-
-          if (object === null) {
-            object = new OperationLinksImageIriTemplateMapping();
+          /**
+           * @param { String } image
+           */
+        },
+        {
+          key: "setImage",
+          value: function setImage(image) {
+            this.image = image;
           }
-
-          if (data.hasOwnProperty("image")) {
-            object.image = _ApiClient.default.convertToType(
-              data["image"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getOperation",
+          value: function getOperation() {
+            return this.operation;
           }
-
-          if (data.hasOwnProperty("operation")) {
-            object.operation = _ApiClient.default.convertToType(
-              data["operation"],
-              "String"
-            );
+          /**
+           * @param { String } operation
+           */
+        },
+        {
+          key: "setOperation",
+          value: function setOperation(operation) {
+            this.operation = operation;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OperationLinksImageIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("image")) {
+              object.image = _ApiClient.default.convertToType(
+                data["image"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("operation")) {
+              object.operation = _ApiClient.default.convertToType(
+                data["operation"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OperationLinksImageIriTemplateMapping;
   })();

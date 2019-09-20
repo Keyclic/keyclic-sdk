@@ -58,4 +58,33 @@ export default class ContributionLinksContributor {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the contributor associated to the given contribution.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the contributor associated to the given contribution.
+   * @param { String } href The URI of the contributor associated to the given contribution.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/ContributionLinksContributorIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/ContributionLinksContributorIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

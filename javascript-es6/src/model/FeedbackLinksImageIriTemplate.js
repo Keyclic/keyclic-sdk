@@ -54,4 +54,18 @@ export default class FeedbackLinksImageIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/FeedbackLinksImageIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/FeedbackLinksImageIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

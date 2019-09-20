@@ -51,4 +51,18 @@ export default class MemberCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Member> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Member> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

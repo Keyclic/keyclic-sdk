@@ -60,4 +60,18 @@ export default class ContributionPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ContributionCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/ContributionCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

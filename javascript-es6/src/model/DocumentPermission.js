@@ -51,4 +51,18 @@ export default class DocumentPermission {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getTargetGroup() {
+    return this.targetGroup;
+  }
+
+  /**
+   * @param { String } targetGroup
+   */
+  setTargetGroup(targetGroup) {
+    this.targetGroup = targetGroup;
+  }
 }

@@ -58,34 +58,58 @@ var ApplicationLinksSelfIriTemplateMapping =
      * @return { module:model/ApplicationLinksSelfIriTemplateMapping } The populated "ApplicationLinksSelfIriTemplateMapping" instance.
      */
 
-    _createClass(ApplicationLinksSelfIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ApplicationLinksSelfIriTemplateMapping,
+      [
+        {
+          key: "getApplication",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getApplication() {
+            return this.application;
           }
-
-          if (object === null) {
-            object = new ApplicationLinksSelfIriTemplateMapping();
+          /**
+           * @param { String } application
+           */
+        },
+        {
+          key: "setApplication",
+          value: function setApplication(application) {
+            this.application = application;
           }
-
-          if (data.hasOwnProperty("application")) {
-            object.application = _ApiClient.default.convertToType(
-              data["application"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ApplicationLinksSelfIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("application")) {
+              object.application = _ApiClient.default.convertToType(
+                data["application"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ApplicationLinksSelfIriTemplateMapping;
   })();

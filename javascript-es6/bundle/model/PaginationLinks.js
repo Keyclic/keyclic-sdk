@@ -67,55 +67,133 @@ var PaginationLinks =
      * @return { module:model/PaginationLinks } The populated "PaginationLinks" instance.
      */
 
-    _createClass(PaginationLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PaginationLinks,
+      [
+        {
+          key: "getFirst",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/PaginationLink }
+           */
+          value: function getFirst() {
+            return this.first;
           }
-
-          if (object === null) {
-            object = new PaginationLinks();
+          /**
+           * @param { module:model/PaginationLink } first
+           */
+        },
+        {
+          key: "setFirst",
+          value: function setFirst(first) {
+            this.first = first;
           }
-
-          if (data.hasOwnProperty("first")) {
-            object.first = _ApiClient.default.convertToType(
-              data["first"],
-              object.firstType
-            );
+          /**
+           * @return { module:model/PaginationLink }
+           */
+        },
+        {
+          key: "getLast",
+          value: function getLast() {
+            return this.last;
           }
-
-          if (data.hasOwnProperty("last")) {
-            object.last = _ApiClient.default.convertToType(
-              data["last"],
-              object.lastType
-            );
+          /**
+           * @param { module:model/PaginationLink } last
+           */
+        },
+        {
+          key: "setLast",
+          value: function setLast(last) {
+            this.last = last;
           }
-
-          if (data.hasOwnProperty("next")) {
-            object.next = _ApiClient.default.convertToType(
-              data["next"],
-              object.nextType
-            );
+          /**
+           * @return { module:model/PaginationLink }
+           */
+        },
+        {
+          key: "getNext",
+          value: function getNext() {
+            return this.next;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @param { module:model/PaginationLink } next
+           */
+        },
+        {
+          key: "setNext",
+          value: function setNext(next) {
+            this.next = next;
           }
-
-          return object;
+          /**
+           * @return { module:model/PaginationLink }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
+          }
+          /**
+           * @param { module:model/PaginationLink } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PaginationLinks();
+            }
+
+            if (data.hasOwnProperty("first")) {
+              object.first = _ApiClient.default.convertToType(
+                data["first"],
+                object.firstType
+              );
+            }
+
+            if (data.hasOwnProperty("last")) {
+              object.last = _ApiClient.default.convertToType(
+                data["last"],
+                object.lastType
+              );
+            }
+
+            if (data.hasOwnProperty("next")) {
+              object.next = _ApiClient.default.convertToType(
+                data["next"],
+                object.nextType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PaginationLinks;
   })();

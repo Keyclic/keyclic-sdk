@@ -73,59 +73,158 @@ var SuccessLoginCredentials =
      * @return { module:model/SuccessLoginCredentials } The populated "SuccessLoginCredentials" instance.
      */
 
-    _createClass(SuccessLoginCredentials, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      SuccessLoginCredentials,
+      [
+        {
+          key: "getId",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getId() {
+            return this.id;
           }
-
-          if (object === null) {
-            object = new SuccessLoginCredentials();
+          /**
+           * @param { String } id
+           */
+        },
+        {
+          key: "setId",
+          value: function setId(id) {
+            this.id = id;
           }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getLogin",
+          value: function getLogin() {
+            return this.login;
           }
-
-          if (data.hasOwnProperty("login")) {
-            object.login = _ApiClient.default.convertToType(
-              data["login"],
-              "String"
-            );
+          /**
+           * @param { String } login
+           */
+        },
+        {
+          key: "setLogin",
+          value: function setLogin(login) {
+            this.login = login;
           }
-
-          if (data.hasOwnProperty("roles")) {
-            object.roles = _ApiClient.default.convertToType(
-              data["roles"],
-              "['String']"
-            );
+          /**
+           * @return { Array.<String> }
+           */
+        },
+        {
+          key: "getRoles",
+          value: function getRoles() {
+            return this.roles;
           }
-
-          if (data.hasOwnProperty("administratorOf")) {
-            object.administratorOf = _ApiClient.default.convertToType(
-              data["administratorOf"],
-              [object.administratorOfType]
-            );
+          /**
+           * @param { Array.<String> } roles
+           */
+        },
+        {
+          key: "setRoles",
+          value: function setRoles(roles) {
+            this.roles = roles;
           }
-
-          if (data.hasOwnProperty("memberOf")) {
-            object.memberOf = _ApiClient.default.convertToType(
-              data["memberOf"],
-              [object.memberOfType]
-            );
+          /**
+           * @return { Array.<module:model/SuccessLoginCredentialsAdministratorOf> }
+           */
+        },
+        {
+          key: "getAdministratorOf",
+          value: function getAdministratorOf() {
+            return this.administratorOf;
           }
-
-          return object;
+          /**
+           * @param { Array.<module:model/SuccessLoginCredentialsAdministratorOf> } administratorOf
+           */
+        },
+        {
+          key: "setAdministratorOf",
+          value: function setAdministratorOf(administratorOf) {
+            this.administratorOf = administratorOf;
+          }
+          /**
+           * @return { Array.<module:model/SuccessLoginCredentialsMemberOf> }
+           */
+        },
+        {
+          key: "getMemberOf",
+          value: function getMemberOf() {
+            return this.memberOf;
+          }
+          /**
+           * @param { Array.<module:model/SuccessLoginCredentialsMemberOf> } memberOf
+           */
+        },
+        {
+          key: "setMemberOf",
+          value: function setMemberOf(memberOf) {
+            this.memberOf = memberOf;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new SuccessLoginCredentials();
+            }
+
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("login")) {
+              object.login = _ApiClient.default.convertToType(
+                data["login"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("roles")) {
+              object.roles = _ApiClient.default.convertToType(
+                data["roles"],
+                "['String']"
+              );
+            }
+
+            if (data.hasOwnProperty("administratorOf")) {
+              object.administratorOf = _ApiClient.default.convertToType(
+                data["administratorOf"],
+                [object.administratorOfType]
+              );
+            }
+
+            if (data.hasOwnProperty("memberOf")) {
+              object.memberOf = _ApiClient.default.convertToType(
+                data["memberOf"],
+                [object.memberOfType]
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return SuccessLoginCredentials;
   })();

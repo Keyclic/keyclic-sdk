@@ -54,4 +54,18 @@ export default class ExternalServiceLinksSelfIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/DelegationLinksServiceIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/DelegationLinksServiceIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

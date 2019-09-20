@@ -53,4 +53,18 @@ export default class FacebookConnectData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getAccessToken() {
+    return this.accessToken;
+  }
+
+  /**
+   * @param { String } accessToken
+   */
+  setAccessToken(accessToken) {
+    this.accessToken = accessToken;
+  }
 }

@@ -51,4 +51,18 @@ export default class DelegationCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Delegation> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Delegation> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

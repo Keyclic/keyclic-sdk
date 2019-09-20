@@ -60,4 +60,18 @@ export default class PlacePagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PlaceCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/PlaceCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

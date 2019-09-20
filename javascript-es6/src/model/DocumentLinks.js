@@ -66,4 +66,44 @@ export default class DocumentLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/DocumentLinksCreatedBy }
+   */
+  getCreatedBy() {
+    return this.createdBy;
+  }
+
+  /**
+   * @param { module:model/DocumentLinksCreatedBy } createdBy
+   */
+  setCreatedBy(createdBy) {
+    this.createdBy = createdBy;
+  }
+  /**
+   * @return { module:model/DocumentLinksFile }
+   */
+  getFile() {
+    return this.file;
+  }
+
+  /**
+   * @param { module:model/DocumentLinksFile } file
+   */
+  setFile(file) {
+    this.file = file;
+  }
+  /**
+   * @return { module:model/DocumentLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/DocumentLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

@@ -54,4 +54,18 @@ export default class ReportLinksOperationsIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/DelegationLinksReportIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/DelegationLinksReportIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

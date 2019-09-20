@@ -58,4 +58,33 @@ export default class FeedbackReviewRequestLinksSelf {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the self associated to the given feedbackreviewrequest.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the self associated to the given feedbackreviewrequest.
+   * @param { String } href The URI of the self associated to the given feedbackreviewrequest.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/FeedbackReviewRequestLinksSelfIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/FeedbackReviewRequestLinksSelfIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

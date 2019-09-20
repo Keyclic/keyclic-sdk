@@ -56,4 +56,44 @@ export default class FeedbackDataGeoPoint {
 
     return object;
   }
+
+  /**
+   * @return { Number }
+   */
+  getLatitude() {
+    return this.latitude;
+  }
+
+  /**
+   * @param { Number } latitude
+   */
+  setLatitude(latitude) {
+    this.latitude = latitude;
+  }
+  /**
+   * @return { Number }
+   */
+  getLongitude() {
+    return this.longitude;
+  }
+
+  /**
+   * @param { Number } longitude
+   */
+  setLongitude(longitude) {
+    this.longitude = longitude;
+  }
+  /**
+   * @return { Number }
+   */
+  getSrid() {
+    return this.srid;
+  }
+
+  /**
+   * @param { Number } srid
+   */
+  setSrid(srid) {
+    this.srid = srid;
+  }
 }

@@ -58,34 +58,58 @@ var PlacePreferences =
      * @return { module:model/PlacePreferences } The populated "PlacePreferences" instance.
      */
 
-    _createClass(PlacePreferences, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PlacePreferences,
+      [
+        {
+          key: "getPublic",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Boolean }
+           */
+          value: function getPublic() {
+            return this._public;
           }
-
-          if (object === null) {
-            object = new PlacePreferences();
+          /**
+           * @param { Boolean } _public
+           */
+        },
+        {
+          key: "setPublic",
+          value: function setPublic(_public) {
+            this._public = _public;
           }
-
-          if (data.hasOwnProperty("public")) {
-            object._public = _ApiClient.default.convertToType(
-              data["public"],
-              "Boolean"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PlacePreferences();
+            }
+
+            if (data.hasOwnProperty("public")) {
+              object._public = _ApiClient.default.convertToType(
+                data["public"],
+                "Boolean"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PlacePreferences;
   })();

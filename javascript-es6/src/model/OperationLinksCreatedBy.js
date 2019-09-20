@@ -58,4 +58,33 @@ export default class OperationLinksCreatedBy {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the createdBy associated to the given operation.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the createdBy associated to the given operation.
+   * @param { String } href The URI of the createdBy associated to the given operation.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/OperationLinksCreatedByIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/OperationLinksCreatedByIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

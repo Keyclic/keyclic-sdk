@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.0.6
-- Package version: 2.0.6
+- API version: 2.0.7
+- Package version: 2.0.7
 
 ## Getting started
 
@@ -255,6 +255,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ExternalServiceLinksSelf](docs/ExternalServiceLinksSelf.md)
 - [@KeyclicSdkJavascript.ExternalServiceLinksSelfIriTemplate](docs/ExternalServiceLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.ExternalServicePatch](docs/ExternalServicePatch.md)
+- [@KeyclicSdkJavascript.ExternalServicePatchContactPoint](docs/ExternalServicePatchContactPoint.md)
 - [@KeyclicSdkJavascript.FacebookConnectData](docs/FacebookConnectData.md)
 - [@KeyclicSdkJavascript.Feature](docs/Feature.md)
 - [@KeyclicSdkJavascript.FeatureGeometry](docs/FeatureGeometry.md)

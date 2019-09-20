@@ -78,4 +78,57 @@ export default class ExternalServiceData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { String } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { String }
+   */
+  getProvider() {
+    return this.provider;
+  }
+
+  /**
+   * @param { String } provider
+   */
+  setProvider(provider) {
+    this.provider = provider;
+  }
 }

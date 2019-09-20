@@ -58,4 +58,33 @@ export default class FeedbackReviewRequestLinksItemToReview {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the itemToReview associated to the given feedbackreviewrequest.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the itemToReview associated to the given feedbackreviewrequest.
+   * @param { String } href The URI of the itemToReview associated to the given feedbackreviewrequest.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/FeedbackReviewRequestLinksItemToReviewIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/FeedbackReviewRequestLinksItemToReviewIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

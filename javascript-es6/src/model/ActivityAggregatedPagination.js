@@ -69,4 +69,70 @@ export default class ActivityAggregatedPagination {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getDuration() {
+    return this.duration;
+  }
+
+  /**
+   * @param { String } duration
+   */
+  setDuration(duration) {
+    this.duration = duration;
+  }
+  /**
+   * @return { String }
+   */
+  getNext() {
+    return this.next;
+  }
+
+  /**
+   * @param { String } next
+   */
+  setNext(next) {
+    this.next = next;
+  }
+  /**
+   * @return { Number }
+   */
+  getUnseen() {
+    return this.unseen;
+  }
+
+  /**
+   * @param { Number } unseen
+   */
+  setUnseen(unseen) {
+    this.unseen = unseen;
+  }
+  /**
+   * @return { Number }
+   */
+  getUnread() {
+    return this.unread;
+  }
+
+  /**
+   * @param { Number } unread
+   */
+  setUnread(unread) {
+    this.unread = unread;
+  }
+  /**
+   * @return { Array.<module:model/ActivityGroup> }
+   */
+  getResults() {
+    return this.results;
+  }
+
+  /**
+   * @param { Array.<module:model/ActivityGroup> } results
+   */
+  setResults(results) {
+    this.results = results;
+  }
 }

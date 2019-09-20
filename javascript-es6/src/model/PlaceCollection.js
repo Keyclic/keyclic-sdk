@@ -51,4 +51,18 @@ export default class PlaceCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Place> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Place> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

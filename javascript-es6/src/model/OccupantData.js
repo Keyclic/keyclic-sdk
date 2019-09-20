@@ -60,4 +60,31 @@ export default class OccupantData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getPerson() {
+    return this.person;
+  }
+
+  /**
+   * @param { String } person
+   */
+  setPerson(person) {
+    this.person = person;
+  }
+  /**
+   * @return { String }
+   */
+  getPlace() {
+    return this.place;
+  }
+
+  /**
+   * @param { String } place
+   */
+  setPlace(place) {
+    this.place = place;
+  }
 }

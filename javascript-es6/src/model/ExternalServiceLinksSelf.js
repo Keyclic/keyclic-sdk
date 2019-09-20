@@ -58,4 +58,33 @@ export default class ExternalServiceLinksSelf {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the self associated to the given externalservice.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the self associated to the given externalservice.
+   * @param { String } href The URI of the self associated to the given externalservice.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/ExternalServiceLinksSelfIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/ExternalServiceLinksSelfIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

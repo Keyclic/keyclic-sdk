@@ -58,4 +58,33 @@ export default class CategoryLinksOrganization {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the organization associated to the given category.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the organization associated to the given category.
+   * @param { String } href The URI of the organization associated to the given category.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/CategoryLinksOrganizationIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/CategoryLinksOrganizationIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

@@ -51,4 +51,18 @@ export default class BusinessActivityLinksImageIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getBusinessActivity() {
+    return this.businessActivity;
+  }
+
+  /**
+   * @param { String } businessActivity
+   */
+  setBusinessActivity(businessActivity) {
+    this.businessActivity = businessActivity;
+  }
 }

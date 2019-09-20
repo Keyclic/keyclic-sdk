@@ -48,4 +48,18 @@ export default class MemberPatch {
 
     return object;
   }
+
+  /**
+   * @return { Array.<String> }
+   */
+  getRoles() {
+    return this.roles;
+  }
+
+  /**
+   * @param { Array.<String> } roles
+   */
+  setRoles(roles) {
+    this.roles = roles;
+  }
 }

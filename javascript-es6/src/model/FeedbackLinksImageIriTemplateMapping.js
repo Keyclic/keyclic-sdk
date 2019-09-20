@@ -52,4 +52,31 @@ export default class FeedbackLinksImageIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getFeedback() {
+    return this.feedback;
+  }
+
+  /**
+   * @param { String } feedback
+   */
+  setFeedback(feedback) {
+    this.feedback = feedback;
+  }
+  /**
+   * @return { String }
+   */
+  getImage() {
+    return this.image;
+  }
+
+  /**
+   * @param { String } image
+   */
+  setImage(image) {
+    this.image = image;
+  }
 }

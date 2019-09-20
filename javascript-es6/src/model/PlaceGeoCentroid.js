@@ -60,4 +60,31 @@ export default class PlaceGeoCentroid {
 
     return object;
   }
+
+  /**
+   * @return { Number }
+   */
+  getLatitude() {
+    return this.latitude;
+  }
+
+  /**
+   * @param { Number } latitude
+   */
+  setLatitude(latitude) {
+    this.latitude = latitude;
+  }
+  /**
+   * @return { Number }
+   */
+  getLongitude() {
+    return this.longitude;
+  }
+
+  /**
+   * @param { Number } longitude
+   */
+  setLongitude(longitude) {
+    this.longitude = longitude;
+  }
 }

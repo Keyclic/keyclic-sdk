@@ -50,4 +50,18 @@ export default class PasswordChangeData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getPassword() {
+    return this.password;
+  }
+
+  /**
+   * @param { String } password
+   */
+  setPassword(password) {
+    this.password = password;
+  }
 }

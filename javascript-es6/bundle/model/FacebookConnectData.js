@@ -60,34 +60,58 @@ var FacebookConnectData =
      * @return { module:model/FacebookConnectData } The populated "FacebookConnectData" instance.
      */
 
-    _createClass(FacebookConnectData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FacebookConnectData,
+      [
+        {
+          key: "getAccessToken",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getAccessToken() {
+            return this.accessToken;
           }
-
-          if (object === null) {
-            object = new FacebookConnectData();
+          /**
+           * @param { String } accessToken
+           */
+        },
+        {
+          key: "setAccessToken",
+          value: function setAccessToken(accessToken) {
+            this.accessToken = accessToken;
           }
-
-          if (data.hasOwnProperty("accessToken")) {
-            object.accessToken = _ApiClient.default.convertToType(
-              data["accessToken"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FacebookConnectData();
+            }
+
+            if (data.hasOwnProperty("accessToken")) {
+              object.accessToken = _ApiClient.default.convertToType(
+                data["accessToken"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FacebookConnectData;
   })();

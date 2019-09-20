@@ -54,4 +54,18 @@ export default class MemberLinksSelfIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/MemberLinksSelfIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/MemberLinksSelfIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

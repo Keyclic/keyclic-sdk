@@ -58,34 +58,58 @@ var OccupantLinksPlaceIriTemplateMapping =
      * @return { module:model/OccupantLinksPlaceIriTemplateMapping } The populated "OccupantLinksPlaceIriTemplateMapping" instance.
      */
 
-    _createClass(OccupantLinksPlaceIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OccupantLinksPlaceIriTemplateMapping,
+      [
+        {
+          key: "getPlace",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getPlace() {
+            return this.place;
           }
-
-          if (object === null) {
-            object = new OccupantLinksPlaceIriTemplateMapping();
+          /**
+           * @param { String } place
+           */
+        },
+        {
+          key: "setPlace",
+          value: function setPlace(place) {
+            this.place = place;
           }
-
-          if (data.hasOwnProperty("place")) {
-            object.place = _ApiClient.default.convertToType(
-              data["place"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OccupantLinksPlaceIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("place")) {
+              object.place = _ApiClient.default.convertToType(
+                data["place"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OccupantLinksPlaceIriTemplateMapping;
   })();

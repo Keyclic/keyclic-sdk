@@ -58,34 +58,58 @@ var OrganizationPreferencesReference =
      * @return { module:model/OrganizationPreferencesReference } The populated "OrganizationPreferencesReference" instance.
      */
 
-    _createClass(OrganizationPreferencesReference, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OrganizationPreferencesReference,
+      [
+        {
+          key: "getPrefix",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getPrefix() {
+            return this.prefix;
           }
-
-          if (object === null) {
-            object = new OrganizationPreferencesReference();
+          /**
+           * @param { String } prefix
+           */
+        },
+        {
+          key: "setPrefix",
+          value: function setPrefix(prefix) {
+            this.prefix = prefix;
           }
-
-          if (data.hasOwnProperty("prefix")) {
-            object.prefix = _ApiClient.default.convertToType(
-              data["prefix"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OrganizationPreferencesReference();
+            }
+
+            if (data.hasOwnProperty("prefix")) {
+              object.prefix = _ApiClient.default.convertToType(
+                data["prefix"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OrganizationPreferencesReference;
   })();

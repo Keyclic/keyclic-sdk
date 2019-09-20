@@ -51,4 +51,18 @@ export default class PublicationLinksSelfIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getPublication() {
+    return this.publication;
+  }
+
+  /**
+   * @param { String } publication
+   */
+  setPublication(publication) {
+    this.publication = publication;
+  }
 }

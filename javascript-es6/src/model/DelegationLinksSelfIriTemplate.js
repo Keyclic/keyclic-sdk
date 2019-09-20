@@ -54,4 +54,18 @@ export default class DelegationLinksSelfIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/DelegationLinksSelfIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/DelegationLinksSelfIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

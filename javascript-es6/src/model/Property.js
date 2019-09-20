@@ -106,4 +106,148 @@ export default class Property {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PropertyConditions }
+   */
+  getConditions() {
+    return this.conditions;
+  }
+
+  /**
+   * @param { module:model/PropertyConditions } conditions
+   */
+  setConditions(conditions) {
+    this.conditions = conditions;
+  }
+  /**
+   * @return { String }
+   */
+  getDefault() {
+    return this._default;
+  }
+
+  /**
+   * @param { String } _default
+   */
+  setDefault(_default) {
+    this._default = _default;
+  }
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { Array.<String> }
+   */
+  getEnum() {
+    return this._enum;
+  }
+
+  /**
+   * @param { Array.<String> } _enum
+   */
+  setEnum(_enum) {
+    this._enum = _enum;
+  }
+  /**
+   * @return { String }
+   */
+  getFormat() {
+    return this.format;
+  }
+
+  /**
+   * @param { String } format
+   */
+  setFormat(format) {
+    this.format = format;
+  }
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { module:model/PropertyItems }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { module:model/PropertyItems } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
+  /**
+   * @return { Number }
+   */
+  getMaxItems() {
+    return this.maxItems;
+  }
+
+  /**
+   * @param { Number } maxItems
+   */
+  setMaxItems(maxItems) {
+    this.maxItems = maxItems;
+  }
+  /**
+   * @return { Number }
+   */
+  getMinItems() {
+    return this.minItems;
+  }
+
+  /**
+   * @param { Number } minItems
+   */
+  setMinItems(minItems) {
+    this.minItems = minItems;
+  }
+  /**
+   * @return { Number }
+   */
+  getPropertyOrder() {
+    return this.propertyOrder;
+  }
+
+  /**
+   * @param { Number } propertyOrder
+   */
+  setPropertyOrder(propertyOrder) {
+    this.propertyOrder = propertyOrder;
+  }
+  /**
+   * @return { String }
+   */
+  getTitle() {
+    return this.title;
+  }
+
+  /**
+   * @param { String } title
+   */
+  setTitle(title) {
+    this.title = title;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
 }

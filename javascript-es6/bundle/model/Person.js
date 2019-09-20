@@ -78,115 +78,322 @@ var Person =
      * @return { module:model/Person } The populated "Person" instance.
      */
 
-    _createClass(Person, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Person,
+      [
+        {
+          key: "getLinks",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/PersonLinks }
+           */
+          value: function getLinks() {
+            return this.links;
           }
-
-          if (object === null) {
-            object = new Person();
+          /**
+           * @param { module:model/PersonLinks } links
+           */
+        },
+        {
+          key: "setLinks",
+          value: function setLinks(links) {
+            this.links = links;
           }
-
-          if (data.hasOwnProperty("_links")) {
-            object.links = _ApiClient.default.convertToType(
-              data["_links"],
-              object.linksType
-            );
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getCreatedAt",
+          value: function getCreatedAt() {
+            return this.createdAt;
           }
-
-          if (data.hasOwnProperty("createdAt")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["createdAt"],
-              "Date"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getEmail",
+          value: function getEmail() {
+            return this.email;
           }
-
-          if (data.hasOwnProperty("email")) {
-            object.email = _ApiClient.default.convertToType(
-              data["email"],
-              "String"
-            );
+          /**
+           * @param { String } email
+           */
+        },
+        {
+          key: "setEmail",
+          value: function setEmail(email) {
+            this.email = email;
           }
-
-          if (data.hasOwnProperty("familyName")) {
-            object.familyName = _ApiClient.default.convertToType(
-              data["familyName"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getFamilyName",
+          value: function getFamilyName() {
+            return this.familyName;
           }
-
-          if (data.hasOwnProperty("givenName")) {
-            object.givenName = _ApiClient.default.convertToType(
-              data["givenName"],
-              "String"
-            );
+          /**
+           * @param { String } familyName
+           */
+        },
+        {
+          key: "setFamilyName",
+          value: function setFamilyName(familyName) {
+            this.familyName = familyName;
           }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getGivenName",
+          value: function getGivenName() {
+            return this.givenName;
           }
-
-          if (data.hasOwnProperty("jobTitle")) {
-            object.jobTitle = _ApiClient.default.convertToType(
-              data["jobTitle"],
-              "String"
-            );
+          /**
+           * @param { String } givenName
+           */
+        },
+        {
+          key: "setGivenName",
+          value: function setGivenName(givenName) {
+            this.givenName = givenName;
           }
-
-          if (data.hasOwnProperty("optIn")) {
-            object.optIn = _ApiClient.default.convertToType(
-              data["optIn"],
-              "Boolean"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getId",
+          value: function getId() {
+            return this.id;
           }
-
-          if (data.hasOwnProperty("preferences")) {
-            object.preferences = _ApiClient.default.convertToType(
-              data["preferences"],
-              object.preferencesType
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getJobTitle",
+          value: function getJobTitle() {
+            return this.jobTitle;
           }
-
-          if (data.hasOwnProperty("telephone")) {
-            object.telephone = _ApiClient.default.convertToType(
-              data["telephone"],
-              "String"
-            );
+          /**
+           * @param { String } jobTitle
+           */
+        },
+        {
+          key: "setJobTitle",
+          value: function setJobTitle(jobTitle) {
+            this.jobTitle = jobTitle;
           }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
+          /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getOptIn",
+          value: function getOptIn() {
+            return this.optIn;
           }
-
-          if (data.hasOwnProperty("updatedAt")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updatedAt"],
-              "Date"
-            );
+          /**
+           * @param { Boolean } optIn
+           */
+        },
+        {
+          key: "setOptIn",
+          value: function setOptIn(optIn) {
+            this.optIn = optIn;
           }
-
-          if (data.hasOwnProperty("username")) {
-            object.username = _ApiClient.default.convertToType(
-              data["username"],
-              "String"
-            );
+          /**
+           * @return { module:model/PersonPreferences }
+           */
+        },
+        {
+          key: "getPreferences",
+          value: function getPreferences() {
+            return this.preferences;
           }
-
-          return object;
+          /**
+           * @param { module:model/PersonPreferences } preferences
+           */
+        },
+        {
+          key: "setPreferences",
+          value: function setPreferences(preferences) {
+            this.preferences = preferences;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getTelephone",
+          value: function getTelephone() {
+            return this.telephone;
+          }
+          /**
+           * @param { String } telephone
+           */
+        },
+        {
+          key: "setTelephone",
+          value: function setTelephone(telephone) {
+            this.telephone = telephone;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
+          }
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getUpdatedAt",
+          value: function getUpdatedAt() {
+            return this.updatedAt;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getUsername",
+          value: function getUsername() {
+            return this.username;
+          }
+          /**
+           * @param { String } username
+           */
+        },
+        {
+          key: "setUsername",
+          value: function setUsername(username) {
+            this.username = username;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Person();
+            }
+
+            if (data.hasOwnProperty("_links")) {
+              object.links = _ApiClient.default.convertToType(
+                data["_links"],
+                object.linksType
+              );
+            }
+
+            if (data.hasOwnProperty("createdAt")) {
+              object.createdAt = _ApiClient.default.convertToType(
+                data["createdAt"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("email")) {
+              object.email = _ApiClient.default.convertToType(
+                data["email"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("familyName")) {
+              object.familyName = _ApiClient.default.convertToType(
+                data["familyName"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("givenName")) {
+              object.givenName = _ApiClient.default.convertToType(
+                data["givenName"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("jobTitle")) {
+              object.jobTitle = _ApiClient.default.convertToType(
+                data["jobTitle"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("optIn")) {
+              object.optIn = _ApiClient.default.convertToType(
+                data["optIn"],
+                "Boolean"
+              );
+            }
+
+            if (data.hasOwnProperty("preferences")) {
+              object.preferences = _ApiClient.default.convertToType(
+                data["preferences"],
+                object.preferencesType
+              );
+            }
+
+            if (data.hasOwnProperty("telephone")) {
+              object.telephone = _ApiClient.default.convertToType(
+                data["telephone"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("updatedAt")) {
+              object.updatedAt = _ApiClient.default.convertToType(
+                data["updatedAt"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("username")) {
+              object.username = _ApiClient.default.convertToType(
+                data["username"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Person;
   })();

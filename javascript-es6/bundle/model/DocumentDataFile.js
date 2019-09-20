@@ -60,48 +60,108 @@ var DocumentDataFile =
      * @return { module:model/DocumentDataFile } The populated "DocumentDataFile" instance.
      */
 
-    _createClass(DocumentDataFile, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DocumentDataFile,
+      [
+        {
+          key: "getContent",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getContent() {
+            return this.content;
           }
-
-          if (object === null) {
-            object = new DocumentDataFile();
+          /**
+           * @param { String } content
+           */
+        },
+        {
+          key: "setContent",
+          value: function setContent(content) {
+            this.content = content;
           }
-
-          if (data.hasOwnProperty("content")) {
-            object.content = _ApiClient.default.convertToType(
-              data["content"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getContentType",
+          value: function getContentType() {
+            return this.contentType;
           }
-
-          if (data.hasOwnProperty("contentType")) {
-            object.contentType = _ApiClient.default.convertToType(
-              data["contentType"],
-              "String"
-            );
+          /**
+           * @param { String } contentType
+           */
+        },
+        {
+          key: "setContentType",
+          value: function setContentType(contentType) {
+            this.contentType = contentType;
           }
-
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getName",
+          value: function getName() {
+            return this.name;
           }
-
-          return object;
+          /**
+           * @param { String } name
+           */
+        },
+        {
+          key: "setName",
+          value: function setName(name) {
+            this.name = name;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DocumentDataFile();
+            }
+
+            if (data.hasOwnProperty("content")) {
+              object.content = _ApiClient.default.convertToType(
+                data["content"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("contentType")) {
+              object.contentType = _ApiClient.default.convertToType(
+                data["contentType"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("name")) {
+              object.name = _ApiClient.default.convertToType(
+                data["name"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DocumentDataFile;
   })();

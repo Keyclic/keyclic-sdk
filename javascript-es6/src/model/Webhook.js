@@ -91,4 +91,84 @@ export default class Webhook {
 
     return object;
   }
+
+  /**
+   * @return { module:model/WebhookLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/WebhookLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { Boolean }
+   */
+  getEnabled() {
+    return this.enabled;
+  }
+
+  /**
+   * @param { Boolean } enabled
+   */
+  setEnabled(enabled) {
+    this.enabled = enabled;
+  }
+  /**
+   * @return { String }
+   */
+  getEvent() {
+    return this.event;
+  }
+
+  /**
+   * @param { String } event
+   */
+  setEvent(event) {
+    this.event = event;
+  }
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { String }
+   */
+  getPayloadUrl() {
+    return this.payloadUrl;
+  }
+
+  /**
+   * @param { String } payloadUrl
+   */
+  setPayloadUrl(payloadUrl) {
+    this.payloadUrl = payloadUrl;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
 }

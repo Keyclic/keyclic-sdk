@@ -54,4 +54,18 @@ export default class ContributionLinksContributorIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ContributionLinksContributorIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/ContributionLinksContributorIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

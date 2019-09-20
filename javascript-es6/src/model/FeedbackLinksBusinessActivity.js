@@ -58,4 +58,33 @@ export default class FeedbackLinksBusinessActivity {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the businessActivity associated to the given feedback.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the businessActivity associated to the given feedback.
+   * @param { String } href The URI of the businessActivity associated to the given feedback.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/FeedbackLinksBusinessActivityIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/FeedbackLinksBusinessActivityIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

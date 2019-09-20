@@ -60,4 +60,18 @@ export default class InternalServicePagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/InternalServiceCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/InternalServiceCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

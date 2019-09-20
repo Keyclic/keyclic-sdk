@@ -48,4 +48,18 @@ export default class DocumentPatchFile {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
 }

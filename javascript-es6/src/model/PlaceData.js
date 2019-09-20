@@ -75,4 +75,57 @@ export default class PlaceData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { String }
+   */
+  getBranchCode() {
+    return this.branchCode;
+  }
+
+  /**
+   * @param { String } branchCode
+   */
+  setBranchCode(branchCode) {
+    this.branchCode = branchCode;
+  }
+  /**
+   * @return { String }
+   */
+  getPolygon() {
+    return this.polygon;
+  }
+
+  /**
+   * @param { String } polygon
+   */
+  setPolygon(polygon) {
+    this.polygon = polygon;
+  }
+  /**
+   * @return { String }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { String } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
 }

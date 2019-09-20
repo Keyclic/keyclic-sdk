@@ -50,4 +50,18 @@ export default class AssignData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getMember() {
+    return this.member;
+  }
+
+  /**
+   * @param { String } member
+   */
+  setMember(member) {
+    this.member = member;
+  }
 }

@@ -69,4 +69,44 @@ export default class MemberLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/MemberLinksOrganization }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { module:model/MemberLinksOrganization } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
+  /**
+   * @return { module:model/MemberLinksPerson }
+   */
+  getPerson() {
+    return this.person;
+  }
+
+  /**
+   * @param { module:model/MemberLinksPerson } person
+   */
+  setPerson(person) {
+    this.person = person;
+  }
+  /**
+   * @return { module:model/MemberLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/MemberLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

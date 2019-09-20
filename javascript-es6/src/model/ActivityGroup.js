@@ -95,4 +95,135 @@ export default class ActivityGroup {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Activity> }
+   */
+  getActivities() {
+    return this.activities;
+  }
+
+  /**
+   * @param { Array.<module:model/Activity> } activities
+   */
+  setActivities(activities) {
+    this.activities = activities;
+  }
+  /**
+   * @return { Number }
+   */
+  getActivityCount() {
+    return this.activityCount;
+  }
+
+  /**
+   * @param { Number } activityCount
+   */
+  setActivityCount(activityCount) {
+    this.activityCount = activityCount;
+  }
+  /**
+   * @return { Number }
+   */
+  getActorCount() {
+    return this.actorCount;
+  }
+
+  /**
+   * @param { Number } actorCount
+   */
+  setActorCount(actorCount) {
+    this.actorCount = actorCount;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @param { Date } createdAt
+   */
+  setCreatedAt(createdAt) {
+    this.createdAt = createdAt;
+  }
+  /**
+   * @return { String }
+   */
+  getGroup() {
+    return this.group;
+  }
+
+  /**
+   * @param { String } group
+   */
+  setGroup(group) {
+    this.group = group;
+  }
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @param { String } id
+   */
+  setId(id) {
+    this.id = id;
+  }
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
+
+  /**
+   * @param { Date } updatedAt
+   */
+  setUpdatedAt(updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+  /**
+   * @return { String }
+   */
+  getVerb() {
+    return this.verb;
+  }
+
+  /**
+   * @param { String } verb
+   */
+  setVerb(verb) {
+    this.verb = verb;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getIsRead() {
+    return this.isRead;
+  }
+
+  /**
+   * @param { Boolean } isRead
+   */
+  setIsRead(isRead) {
+    this.isRead = isRead;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getIsSeen() {
+    return this.isSeen;
+  }
+
+  /**
+   * @param { Boolean } isSeen
+   */
+  setIsSeen(isSeen) {
+    this.isSeen = isSeen;
+  }
 }

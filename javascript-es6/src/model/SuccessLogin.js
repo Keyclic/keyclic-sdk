@@ -65,4 +65,44 @@ export default class SuccessLogin {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getAccessToken() {
+    return this.accessToken;
+  }
+
+  /**
+   * @param { String } accessToken
+   */
+  setAccessToken(accessToken) {
+    this.accessToken = accessToken;
+  }
+  /**
+   * @return { module:model/SuccessLoginCredentials }
+   */
+  getCredentials() {
+    return this.credentials;
+  }
+
+  /**
+   * @param { module:model/SuccessLoginCredentials } credentials
+   */
+  setCredentials(credentials) {
+    this.credentials = credentials;
+  }
+  /**
+   * @return { String }
+   */
+  getTokenType() {
+    return this.tokenType;
+  }
+
+  /**
+   * @param { String } tokenType
+   */
+  setTokenType(tokenType) {
+    this.tokenType = tokenType;
+  }
 }

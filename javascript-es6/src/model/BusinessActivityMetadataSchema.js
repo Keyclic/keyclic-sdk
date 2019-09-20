@@ -57,4 +57,31 @@ export default class BusinessActivityMetadataSchema {
 
     return object;
   }
+
+  /**
+   * @return { Object.<String, module:model/Property> }
+   */
+  getProperties() {
+    return this.properties;
+  }
+
+  /**
+   * @param { Object.<String, module:model/Property> } properties
+   */
+  setProperties(properties) {
+    this.properties = properties;
+  }
+  /**
+   * @return { Array.<String> }
+   */
+  getRequired() {
+    return this.required;
+  }
+
+  /**
+   * @param { Array.<String> } required
+   */
+  setRequired(required) {
+    this.required = required;
+  }
 }

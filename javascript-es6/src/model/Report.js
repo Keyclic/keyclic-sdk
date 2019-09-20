@@ -114,4 +114,136 @@ export default class Report {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ReportEmbedded }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/ReportEmbedded } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
+  /**
+   * @return { module:model/ReportLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/ReportLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { String }
+   */
+  getIdentificationNumber() {
+    return this.identificationNumber;
+  }
+
+  /**
+   * @param { String } identificationNumber
+   */
+  setIdentificationNumber(identificationNumber) {
+    this.identificationNumber = identificationNumber;
+  }
+  /**
+   * @return { Number }
+   */
+  getPriority() {
+    return this.priority;
+  }
+
+  /**
+   * @param { Number } priority
+   */
+  setPriority(priority) {
+    this.priority = priority;
+  }
+  /**
+   * @return { String }
+   */
+  getReference() {
+    return this.reference;
+  }
+
+  /**
+   * @param { String } reference
+   */
+  setReference(reference) {
+    this.reference = reference;
+  }
+  /**
+   * @return { Array.<String> }
+   */
+  getState() {
+    return this.state;
+  }
+
+  /**
+   * @param { Array.<String> } state
+   */
+  setState(state) {
+    this.state = state;
+  }
+  /**
+   * @return { Array.<String> }
+   */
+  getTags() {
+    return this.tags;
+  }
+
+  /**
+   * @param { Array.<String> } tags
+   */
+  setTags(tags) {
+    this.tags = tags;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
 }

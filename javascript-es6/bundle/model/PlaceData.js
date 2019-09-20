@@ -67,55 +67,133 @@ var PlaceData =
      * @return { module:model/PlaceData } The populated "PlaceData" instance.
      */
 
-    _createClass(PlaceData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PlaceData,
+      [
+        {
+          key: "getName",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getName() {
+            return this.name;
           }
-
-          if (object === null) {
-            object = new PlaceData();
+          /**
+           * @param { String } name
+           */
+        },
+        {
+          key: "setName",
+          value: function setName(name) {
+            this.name = name;
           }
-
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getBranchCode",
+          value: function getBranchCode() {
+            return this.branchCode;
           }
-
-          if (data.hasOwnProperty("branchCode")) {
-            object.branchCode = _ApiClient.default.convertToType(
-              data["branchCode"],
-              "String"
-            );
+          /**
+           * @param { String } branchCode
+           */
+        },
+        {
+          key: "setBranchCode",
+          value: function setBranchCode(branchCode) {
+            this.branchCode = branchCode;
           }
-
-          if (data.hasOwnProperty("polygon")) {
-            object.polygon = _ApiClient.default.convertToType(
-              data["polygon"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getPolygon",
+          value: function getPolygon() {
+            return this.polygon;
           }
-
-          if (data.hasOwnProperty("organization")) {
-            object.organization = _ApiClient.default.convertToType(
-              data["organization"],
-              "String"
-            );
+          /**
+           * @param { String } polygon
+           */
+        },
+        {
+          key: "setPolygon",
+          value: function setPolygon(polygon) {
+            this.polygon = polygon;
           }
-
-          return object;
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getOrganization",
+          value: function getOrganization() {
+            return this.organization;
+          }
+          /**
+           * @param { String } organization
+           */
+        },
+        {
+          key: "setOrganization",
+          value: function setOrganization(organization) {
+            this.organization = organization;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PlaceData();
+            }
+
+            if (data.hasOwnProperty("name")) {
+              object.name = _ApiClient.default.convertToType(
+                data["name"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("branchCode")) {
+              object.branchCode = _ApiClient.default.convertToType(
+                data["branchCode"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("polygon")) {
+              object.polygon = _ApiClient.default.convertToType(
+                data["polygon"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("organization")) {
+              object.organization = _ApiClient.default.convertToType(
+                data["organization"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PlaceData;
   })();

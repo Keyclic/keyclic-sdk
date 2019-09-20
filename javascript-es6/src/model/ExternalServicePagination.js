@@ -60,4 +60,18 @@ export default class ExternalServicePagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ExternalServiceCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/ExternalServiceCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

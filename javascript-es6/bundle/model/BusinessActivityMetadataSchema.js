@@ -62,43 +62,85 @@ var BusinessActivityMetadataSchema =
      * @return { module:model/BusinessActivityMetadataSchema } The populated "BusinessActivityMetadataSchema" instance.
      */
 
-    _createClass(BusinessActivityMetadataSchema, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      BusinessActivityMetadataSchema,
+      [
+        {
+          key: "getProperties",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Object.<String, module:model/Property> }
+           */
+          value: function getProperties() {
+            return this.properties;
           }
-
-          if (object === null) {
-            object = new BusinessActivityMetadataSchema();
+          /**
+           * @param { Object.<String, module:model/Property> } properties
+           */
+        },
+        {
+          key: "setProperties",
+          value: function setProperties(properties) {
+            this.properties = properties;
           }
-
-          if (data.hasOwnProperty("properties")) {
-            object.properties = _ApiClient.default.convertToType(
-              data["properties"],
-              {
-                String: object.propertiesType
-              }
-            );
+          /**
+           * @return { Array.<String> }
+           */
+        },
+        {
+          key: "getRequired",
+          value: function getRequired() {
+            return this.required;
           }
-
-          if (data.hasOwnProperty("required")) {
-            object.required = _ApiClient.default.convertToType(
-              data["required"],
-              "['String']"
-            );
+          /**
+           * @param { Array.<String> } required
+           */
+        },
+        {
+          key: "setRequired",
+          value: function setRequired(required) {
+            this.required = required;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new BusinessActivityMetadataSchema();
+            }
+
+            if (data.hasOwnProperty("properties")) {
+              object.properties = _ApiClient.default.convertToType(
+                data["properties"],
+                {
+                  String: object.propertiesType
+                }
+              );
+            }
+
+            if (data.hasOwnProperty("required")) {
+              object.required = _ApiClient.default.convertToType(
+                data["required"],
+                "['String']"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return BusinessActivityMetadataSchema;
   })();

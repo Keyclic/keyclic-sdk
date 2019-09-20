@@ -58,4 +58,33 @@ export default class DelegationLinksService {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the service associated to the given delegation.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the service associated to the given delegation.
+   * @param { String } href The URI of the service associated to the given delegation.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/DelegationLinksServiceIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/DelegationLinksServiceIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

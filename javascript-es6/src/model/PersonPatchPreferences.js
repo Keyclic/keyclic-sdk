@@ -58,4 +58,31 @@ export default class PersonPatchPreferences {
 
     return object;
   }
+
+  /**
+   * @return { Boolean }
+   */
+  getMessageEmailEnabled() {
+    return this.messageEmailEnabled;
+  }
+
+  /**
+   * @param { Boolean } messageEmailEnabled
+   */
+  setMessageEmailEnabled(messageEmailEnabled) {
+    this.messageEmailEnabled = messageEmailEnabled;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getMessagePushEnabled() {
+    return this.messagePushEnabled;
+  }
+
+  /**
+   * @param { Boolean } messagePushEnabled
+   */
+  setMessagePushEnabled(messagePushEnabled) {
+    this.messagePushEnabled = messagePushEnabled;
+  }
 }

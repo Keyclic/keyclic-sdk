@@ -58,34 +58,58 @@ var WebhookLinksSelfIriTemplateMapping =
      * @return { module:model/WebhookLinksSelfIriTemplateMapping } The populated "WebhookLinksSelfIriTemplateMapping" instance.
      */
 
-    _createClass(WebhookLinksSelfIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      WebhookLinksSelfIriTemplateMapping,
+      [
+        {
+          key: "getWebhook",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getWebhook() {
+            return this.webhook;
           }
-
-          if (object === null) {
-            object = new WebhookLinksSelfIriTemplateMapping();
+          /**
+           * @param { String } webhook
+           */
+        },
+        {
+          key: "setWebhook",
+          value: function setWebhook(webhook) {
+            this.webhook = webhook;
           }
-
-          if (data.hasOwnProperty("webhook")) {
-            object.webhook = _ApiClient.default.convertToType(
-              data["webhook"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new WebhookLinksSelfIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("webhook")) {
+              object.webhook = _ApiClient.default.convertToType(
+                data["webhook"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return WebhookLinksSelfIriTemplateMapping;
   })();

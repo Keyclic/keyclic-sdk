@@ -70,4 +70,44 @@ export default class ReviewData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getReviewBody() {
+    return this.reviewBody;
+  }
+
+  /**
+   * @param { String } reviewBody
+   */
+  setReviewBody(reviewBody) {
+    this.reviewBody = reviewBody;
+  }
+  /**
+   * @return { Number }
+   */
+  getReviewRating() {
+    return this.reviewRating;
+  }
+
+  /**
+   * @param { Number } reviewRating
+   */
+  setReviewRating(reviewRating) {
+    this.reviewRating = reviewRating;
+  }
+  /**
+   * @return { String }
+   */
+  getReviewRequest() {
+    return this.reviewRequest;
+  }
+
+  /**
+   * @param { String } reviewRequest
+   */
+  setReviewRequest(reviewRequest) {
+    this.reviewRequest = reviewRequest;
+  }
 }

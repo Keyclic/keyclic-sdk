@@ -60,4 +60,18 @@ export default class BusinessActivityPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/BusinessActivityCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/BusinessActivityCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

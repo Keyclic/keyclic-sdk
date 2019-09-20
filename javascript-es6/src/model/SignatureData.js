@@ -60,4 +60,31 @@ export default class SignatureData {
 
     return object;
   }
+
+  /**
+   * @return { module:model/SignatureDataSigner }
+   */
+  getSigner() {
+    return this.signer;
+  }
+
+  /**
+   * @param { module:model/SignatureDataSigner } signer
+   */
+  setSigner(signer) {
+    this.signer = signer;
+  }
+  /**
+   * @return { String }
+   */
+  getImage() {
+    return this.image;
+  }
+
+  /**
+   * @param { String } image
+   */
+  setImage(image) {
+    this.image = image;
+  }
 }

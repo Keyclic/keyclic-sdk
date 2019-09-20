@@ -58,34 +58,58 @@ var DelegationEmbedded =
      * @return { module:model/DelegationEmbedded } The populated "DelegationEmbedded" instance.
      */
 
-    _createClass(DelegationEmbedded, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DelegationEmbedded,
+      [
+        {
+          key: "getStateTransitions",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<String> }
+           */
+          value: function getStateTransitions() {
+            return this.stateTransitions;
           }
-
-          if (object === null) {
-            object = new DelegationEmbedded();
+          /**
+           * @param { Array.<String> } stateTransitions
+           */
+        },
+        {
+          key: "setStateTransitions",
+          value: function setStateTransitions(stateTransitions) {
+            this.stateTransitions = stateTransitions;
           }
-
-          if (data.hasOwnProperty("stateTransitions")) {
-            object.stateTransitions = _ApiClient.default.convertToType(
-              data["stateTransitions"],
-              "['String']"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DelegationEmbedded();
+            }
+
+            if (data.hasOwnProperty("stateTransitions")) {
+              object.stateTransitions = _ApiClient.default.convertToType(
+                data["stateTransitions"],
+                "['String']"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DelegationEmbedded;
   })();

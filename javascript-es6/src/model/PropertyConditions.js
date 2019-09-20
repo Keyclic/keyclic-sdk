@@ -51,4 +51,18 @@ export default class PropertyConditions {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Condition> }
+   */
+  getAllOf() {
+    return this.allOf;
+  }
+
+  /**
+   * @param { Array.<module:model/Condition> } allOf
+   */
+  setAllOf(allOf) {
+    this.allOf = allOf;
+  }
 }

@@ -48,4 +48,18 @@ export default class PlaceLinksContainsPlacesIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getParent() {
+    return this.parent;
+  }
+
+  /**
+   * @param { String } parent
+   */
+  setParent(parent) {
+    this.parent = parent;
+  }
 }

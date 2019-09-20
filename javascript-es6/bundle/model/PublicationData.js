@@ -69,55 +69,133 @@ var PublicationData =
      * @return { module:model/PublicationData } The populated "PublicationData" instance.
      */
 
-    _createClass(PublicationData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      PublicationData,
+      [
+        {
+          key: "getMessage",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getMessage() {
+            return this.message;
           }
-
-          if (object === null) {
-            object = new PublicationData();
+          /**
+           * @param { String } message
+           */
+        },
+        {
+          key: "setMessage",
+          value: function setMessage(message) {
+            this.message = message;
           }
-
-          if (data.hasOwnProperty("message")) {
-            object.message = _ApiClient.default.convertToType(
-              data["message"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getFeed",
+          value: function getFeed() {
+            return this.feed;
           }
-
-          if (data.hasOwnProperty("feed")) {
-            object.feed = _ApiClient.default.convertToType(
-              data["feed"],
-              "String"
-            );
+          /**
+           * @param { String } feed
+           */
+        },
+        {
+          key: "setFeed",
+          value: function setFeed(feed) {
+            this.feed = feed;
           }
-
-          if (data.hasOwnProperty("title")) {
-            object.title = _ApiClient.default.convertToType(
-              data["title"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getTitle",
+          value: function getTitle() {
+            return this.title;
           }
-
-          if (data.hasOwnProperty("organization")) {
-            object.organization = _ApiClient.default.convertToType(
-              data["organization"],
-              "String"
-            );
+          /**
+           * @param { String } title
+           */
+        },
+        {
+          key: "setTitle",
+          value: function setTitle(title) {
+            this.title = title;
           }
-
-          return object;
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getOrganization",
+          value: function getOrganization() {
+            return this.organization;
+          }
+          /**
+           * @param { String } organization
+           */
+        },
+        {
+          key: "setOrganization",
+          value: function setOrganization(organization) {
+            this.organization = organization;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new PublicationData();
+            }
+
+            if (data.hasOwnProperty("message")) {
+              object.message = _ApiClient.default.convertToType(
+                data["message"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("feed")) {
+              object.feed = _ApiClient.default.convertToType(
+                data["feed"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("title")) {
+              object.title = _ApiClient.default.convertToType(
+                data["title"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("organization")) {
+              object.organization = _ApiClient.default.convertToType(
+                data["organization"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return PublicationData;
   })();

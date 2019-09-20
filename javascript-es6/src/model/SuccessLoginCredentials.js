@@ -74,4 +74,70 @@ export default class SuccessLoginCredentials {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @param { String } id
+   */
+  setId(id) {
+    this.id = id;
+  }
+  /**
+   * @return { String }
+   */
+  getLogin() {
+    return this.login;
+  }
+
+  /**
+   * @param { String } login
+   */
+  setLogin(login) {
+    this.login = login;
+  }
+  /**
+   * @return { Array.<String> }
+   */
+  getRoles() {
+    return this.roles;
+  }
+
+  /**
+   * @param { Array.<String> } roles
+   */
+  setRoles(roles) {
+    this.roles = roles;
+  }
+  /**
+   * @return { Array.<module:model/SuccessLoginCredentialsAdministratorOf> }
+   */
+  getAdministratorOf() {
+    return this.administratorOf;
+  }
+
+  /**
+   * @param { Array.<module:model/SuccessLoginCredentialsAdministratorOf> } administratorOf
+   */
+  setAdministratorOf(administratorOf) {
+    this.administratorOf = administratorOf;
+  }
+  /**
+   * @return { Array.<module:model/SuccessLoginCredentialsMemberOf> }
+   */
+  getMemberOf() {
+    return this.memberOf;
+  }
+
+  /**
+   * @param { Array.<module:model/SuccessLoginCredentialsMemberOf> } memberOf
+   */
+  setMemberOf(memberOf) {
+    this.memberOf = memberOf;
+  }
 }

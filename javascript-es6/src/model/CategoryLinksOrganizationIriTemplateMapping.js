@@ -51,4 +51,18 @@ export default class CategoryLinksOrganizationIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { String } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
 }

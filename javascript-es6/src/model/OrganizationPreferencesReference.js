@@ -48,4 +48,18 @@ export default class OrganizationPreferencesReference {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getPrefix() {
+    return this.prefix;
+  }
+
+  /**
+   * @param { String } prefix
+   */
+  setPrefix(prefix) {
+    this.prefix = prefix;
+  }
 }

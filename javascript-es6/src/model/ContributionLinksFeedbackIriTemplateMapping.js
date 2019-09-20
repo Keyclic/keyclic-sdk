@@ -48,4 +48,18 @@ export default class ContributionLinksFeedbackIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getFeedback() {
+    return this.feedback;
+  }
+
+  /**
+   * @param { String } feedback
+   */
+  setFeedback(feedback) {
+    this.feedback = feedback;
+  }
 }

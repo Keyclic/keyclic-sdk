@@ -58,34 +58,58 @@ var BusinessActivityLinksImageIriTemplateMapping =
      * @return { module:model/BusinessActivityLinksImageIriTemplateMapping } The populated "BusinessActivityLinksImageIriTemplateMapping" instance.
      */
 
-    _createClass(BusinessActivityLinksImageIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      BusinessActivityLinksImageIriTemplateMapping,
+      [
+        {
+          key: "getBusinessActivity",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getBusinessActivity() {
+            return this.businessActivity;
           }
-
-          if (object === null) {
-            object = new BusinessActivityLinksImageIriTemplateMapping();
+          /**
+           * @param { String } businessActivity
+           */
+        },
+        {
+          key: "setBusinessActivity",
+          value: function setBusinessActivity(businessActivity) {
+            this.businessActivity = businessActivity;
           }
-
-          if (data.hasOwnProperty("businessActivity")) {
-            object.businessActivity = _ApiClient.default.convertToType(
-              data["businessActivity"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new BusinessActivityLinksImageIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("businessActivity")) {
+              object.businessActivity = _ApiClient.default.convertToType(
+                data["businessActivity"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return BusinessActivityLinksImageIriTemplateMapping;
   })();

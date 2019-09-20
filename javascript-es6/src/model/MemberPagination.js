@@ -60,4 +60,18 @@ export default class MemberPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/MemberCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/MemberCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

@@ -58,4 +58,33 @@ export default class ReportLinksDelegatedTo {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the delegatedTo associated to the given report.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the delegatedTo associated to the given report.
+   * @param { String } href The URI of the delegatedTo associated to the given report.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/ReportLinksDelegatedToIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/ReportLinksDelegatedToIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

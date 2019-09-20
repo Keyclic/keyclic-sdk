@@ -71,55 +71,133 @@ var ReportEmbedded =
      * @return { module:model/ReportEmbedded } The populated "ReportEmbedded" instance.
      */
 
-    _createClass(ReportEmbedded, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ReportEmbedded,
+      [
+        {
+          key: "getDuration",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/OperationEmbeddedDuration }
+           */
+          value: function getDuration() {
+            return this.duration;
           }
-
-          if (object === null) {
-            object = new ReportEmbedded();
+          /**
+           * @param { module:model/OperationEmbeddedDuration } duration
+           */
+        },
+        {
+          key: "setDuration",
+          value: function setDuration(duration) {
+            this.duration = duration;
           }
-
-          if (data.hasOwnProperty("duration")) {
-            object.duration = _ApiClient.default.convertToType(
-              data["duration"],
-              object.durationType
-            );
+          /**
+           * @return { Array.<String> }
+           */
+        },
+        {
+          key: "getStateTransitions",
+          value: function getStateTransitions() {
+            return this.stateTransitions;
           }
-
-          if (data.hasOwnProperty("stateTransitions")) {
-            object.stateTransitions = _ApiClient.default.convertToType(
-              data["stateTransitions"],
-              "['String']"
-            );
+          /**
+           * @param { Array.<String> } stateTransitions
+           */
+        },
+        {
+          key: "setStateTransitions",
+          value: function setStateTransitions(stateTransitions) {
+            this.stateTransitions = stateTransitions;
           }
-
-          if (data.hasOwnProperty("targetGroups")) {
-            object.targetGroups = _ApiClient.default.convertToType(
-              data["targetGroups"],
-              [object.targetGroupsType]
-            );
+          /**
+           * @return { Array.<module:model/ReportEmbeddedTargetGroups> }
+           */
+        },
+        {
+          key: "getTargetGroups",
+          value: function getTargetGroups() {
+            return this.targetGroups;
           }
-
-          if (data.hasOwnProperty("tracking")) {
-            object.tracking = _ApiClient.default.convertToType(
-              data["tracking"],
-              "String"
-            );
+          /**
+           * @param { Array.<module:model/ReportEmbeddedTargetGroups> } targetGroups
+           */
+        },
+        {
+          key: "setTargetGroups",
+          value: function setTargetGroups(targetGroups) {
+            this.targetGroups = targetGroups;
           }
-
-          return object;
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getTracking",
+          value: function getTracking() {
+            return this.tracking;
+          }
+          /**
+           * @param { String } tracking
+           */
+        },
+        {
+          key: "setTracking",
+          value: function setTracking(tracking) {
+            this.tracking = tracking;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ReportEmbedded();
+            }
+
+            if (data.hasOwnProperty("duration")) {
+              object.duration = _ApiClient.default.convertToType(
+                data["duration"],
+                object.durationType
+              );
+            }
+
+            if (data.hasOwnProperty("stateTransitions")) {
+              object.stateTransitions = _ApiClient.default.convertToType(
+                data["stateTransitions"],
+                "['String']"
+              );
+            }
+
+            if (data.hasOwnProperty("targetGroups")) {
+              object.targetGroups = _ApiClient.default.convertToType(
+                data["targetGroups"],
+                [object.targetGroupsType]
+              );
+            }
+
+            if (data.hasOwnProperty("tracking")) {
+              object.tracking = _ApiClient.default.convertToType(
+                data["tracking"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ReportEmbedded;
   })();

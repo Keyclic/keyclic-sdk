@@ -58,34 +58,58 @@ var MemberEmbedded =
      * @return { module:model/MemberEmbedded } The populated "MemberEmbedded" instance.
      */
 
-    _createClass(MemberEmbedded, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      MemberEmbedded,
+      [
+        {
+          key: "getAvailableRoles",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<String> }
+           */
+          value: function getAvailableRoles() {
+            return this.availableRoles;
           }
-
-          if (object === null) {
-            object = new MemberEmbedded();
+          /**
+           * @param { Array.<String> } availableRoles
+           */
+        },
+        {
+          key: "setAvailableRoles",
+          value: function setAvailableRoles(availableRoles) {
+            this.availableRoles = availableRoles;
           }
-
-          if (data.hasOwnProperty("availableRoles")) {
-            object.availableRoles = _ApiClient.default.convertToType(
-              data["availableRoles"],
-              "['String']"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new MemberEmbedded();
+            }
+
+            if (data.hasOwnProperty("availableRoles")) {
+              object.availableRoles = _ApiClient.default.convertToType(
+                data["availableRoles"],
+                "['String']"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return MemberEmbedded;
   })();

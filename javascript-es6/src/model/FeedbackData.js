@@ -95,6 +95,111 @@ export default class FeedbackData {
   }
 
   /**
+   * @return { String }
+   */
+  getCategory() {
+    return this.category;
+  }
+
+  /**
+   * @param { String } category
+   */
+  setCategory(category) {
+    this.category = category;
+  }
+  /**
+   * @return { module:model/FeedbackDataGeo }
+   */
+  getGeo() {
+    return this.geo;
+  }
+
+  /**
+   * @param { module:model/FeedbackDataGeo } geo
+   */
+  setGeo(geo) {
+    this.geo = geo;
+  }
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { module:model/FeedbackData.VisibilityEnum }
+   */
+  getVisibility() {
+    return this.visibility;
+  }
+
+  /**
+   * @param { module:model/FeedbackData.VisibilityEnum } visibility
+   */
+  setVisibility(visibility) {
+    this.visibility = visibility;
+  }
+  /**
+   * @return { String }
+   */
+  getBusinessActivity() {
+    return this.businessActivity;
+  }
+
+  /**
+   * @param { String } businessActivity
+   */
+  setBusinessActivity(businessActivity) {
+    this.businessActivity = businessActivity;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getProMode() {
+    return this.proMode;
+  }
+
+  /**
+   * @param { Boolean } proMode
+   */
+  setProMode(proMode) {
+    this.proMode = proMode;
+  }
+  /**
+   * @return { Object.<String, String> }
+   */
+  getMetadata() {
+    return this.metadata;
+  }
+
+  /**
+   * @param { Object.<String, String> } metadata
+   */
+  setMetadata(metadata) {
+    this.metadata = metadata;
+  }
+  /**
+   * @return { String }
+   */
+  getPlace() {
+    return this.place;
+  }
+
+  /**
+   * @param { String } place
+   */
+  setPlace(place) {
+    this.place = place;
+  }
+
+  /**
    * Allowed values for the "visibility" property.
    * @enum { String }
    */

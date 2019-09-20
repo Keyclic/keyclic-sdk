@@ -54,4 +54,18 @@ export default class OccupantLinksSelfIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OccupantLinksSelfIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/OccupantLinksSelfIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

@@ -74,38 +74,62 @@ var DelegationWorkflowTransitionData =
      * @return { module:model/DelegationWorkflowTransitionData } The populated "DelegationWorkflowTransitionData" instance.
      */
 
-    _createClass(DelegationWorkflowTransitionData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DelegationWorkflowTransitionData,
+      [
+        {
+          key: "getTransition",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/DelegationWorkflowTransitionData.TransitionEnum }
+           */
+          value: function getTransition() {
+            return this.transition;
           }
-
-          if (object === null) {
-            object = new DelegationWorkflowTransitionData();
+          /**
+           * @param { module:model/DelegationWorkflowTransitionData.TransitionEnum } transition
+           */
+        },
+        {
+          key: "setTransition",
+          value: function setTransition(transition) {
+            this.transition = transition;
           }
-
-          if (data.hasOwnProperty("transition")) {
-            object.transition = _ApiClient.default.convertToType(
-              data["transition"],
-              "String"
-            );
-          }
-
-          return object;
+          /**
+           * Allowed values for the "transition" property.
+           * @enum { String }
+           */
         }
-        /**
-         * Allowed values for the "transition" property.
-         * @enum { String }
-         */
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DelegationWorkflowTransitionData();
+            }
+
+            if (data.hasOwnProperty("transition")) {
+              object.transition = _ApiClient.default.convertToType(
+                data["transition"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DelegationWorkflowTransitionData;
   })();

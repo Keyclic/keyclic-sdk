@@ -58,4 +58,33 @@ export default class OrganizationLinksSelf {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the self associated to the given organization.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the self associated to the given organization.
+   * @param { String } href The URI of the self associated to the given organization.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/OrganizationLinksSelfIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/OrganizationLinksSelfIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

@@ -61,55 +61,133 @@ var CategoryPatch =
      * @return { module:model/CategoryPatch } The populated "CategoryPatch" instance.
      */
 
-    _createClass(CategoryPatch, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      CategoryPatch,
+      [
+        {
+          key: "getColor",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getColor() {
+            return this.color;
           }
-
-          if (object === null) {
-            object = new CategoryPatch();
+          /**
+           * @param { String } color
+           */
+        },
+        {
+          key: "setColor",
+          value: function setColor(color) {
+            this.color = color;
           }
-
-          if (data.hasOwnProperty("color")) {
-            object.color = _ApiClient.default.convertToType(
-              data["color"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getIcon",
+          value: function getIcon() {
+            return this.icon;
           }
-
-          if (data.hasOwnProperty("icon")) {
-            object.icon = _ApiClient.default.convertToType(
-              data["icon"],
-              "String"
-            );
+          /**
+           * @param { String } icon
+           */
+        },
+        {
+          key: "setIcon",
+          value: function setIcon(icon) {
+            this.icon = icon;
           }
-
-          if (data.hasOwnProperty("identificationNumber")) {
-            object.identificationNumber = _ApiClient.default.convertToType(
-              data["identificationNumber"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getIdentificationNumber",
+          value: function getIdentificationNumber() {
+            return this.identificationNumber;
           }
-
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
-              "String"
-            );
+          /**
+           * @param { String } identificationNumber
+           */
+        },
+        {
+          key: "setIdentificationNumber",
+          value: function setIdentificationNumber(identificationNumber) {
+            this.identificationNumber = identificationNumber;
           }
-
-          return object;
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getName",
+          value: function getName() {
+            return this.name;
+          }
+          /**
+           * @param { String } name
+           */
+        },
+        {
+          key: "setName",
+          value: function setName(name) {
+            this.name = name;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new CategoryPatch();
+            }
+
+            if (data.hasOwnProperty("color")) {
+              object.color = _ApiClient.default.convertToType(
+                data["color"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("icon")) {
+              object.icon = _ApiClient.default.convertToType(
+                data["icon"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("identificationNumber")) {
+              object.identificationNumber = _ApiClient.default.convertToType(
+                data["identificationNumber"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("name")) {
+              object.name = _ApiClient.default.convertToType(
+                data["name"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return CategoryPatch;
   })();

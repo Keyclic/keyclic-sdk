@@ -105,82 +105,232 @@ var OperationLinks =
      * @return { module:model/OperationLinks } The populated "OperationLinks" instance.
      */
 
-    _createClass(OperationLinks, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OperationLinks,
+      [
+        {
+          key: "getCreatedBy",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/OperationLinksCreatedBy }
+           */
+          value: function getCreatedBy() {
+            return this.createdBy;
           }
-
-          if (object === null) {
-            object = new OperationLinks();
+          /**
+           * @param { module:model/OperationLinksCreatedBy } createdBy
+           */
+        },
+        {
+          key: "setCreatedBy",
+          value: function setCreatedBy(createdBy) {
+            this.createdBy = createdBy;
           }
-
-          if (data.hasOwnProperty("createdBy")) {
-            object.createdBy = _ApiClient.default.convertToType(
-              data["createdBy"],
-              object.createdByType
-            );
+          /**
+           * @return { module:model/OperationLinksFeedback }
+           */
+        },
+        {
+          key: "getFeedback",
+          value: function getFeedback() {
+            return this.feedback;
           }
-
-          if (data.hasOwnProperty("feedback")) {
-            object.feedback = _ApiClient.default.convertToType(
-              data["feedback"],
-              object.feedbackType
-            );
+          /**
+           * @param { module:model/OperationLinksFeedback } feedback
+           */
+        },
+        {
+          key: "setFeedback",
+          value: function setFeedback(feedback) {
+            this.feedback = feedback;
           }
-
-          if (data.hasOwnProperty("image")) {
-            object.image = _ApiClient.default.convertToType(
-              data["image"],
-              object.imageType
-            );
+          /**
+           * @return { module:model/OperationLinksImage }
+           */
+        },
+        {
+          key: "getImage",
+          value: function getImage() {
+            return this.image;
           }
-
-          if (data.hasOwnProperty("images")) {
-            object.images = _ApiClient.default.convertToType(data["images"], [
-              object.imagesType
-            ]);
+          /**
+           * @param { module:model/OperationLinksImage } image
+           */
+        },
+        {
+          key: "setImage",
+          value: function setImage(image) {
+            this.image = image;
           }
-
-          if (data.hasOwnProperty("operator")) {
-            object.operator = _ApiClient.default.convertToType(
-              data["operator"],
-              object.operatorType
-            );
+          /**
+           * @return { Array.<module:model/OperationLinksImages> }
+           */
+        },
+        {
+          key: "getImages",
+          value: function getImages() {
+            return this.images;
           }
-
-          if (data.hasOwnProperty("report")) {
-            object.report = _ApiClient.default.convertToType(
-              data["report"],
-              object.reportType
-            );
+          /**
+           * @param { Array.<module:model/OperationLinksImages> } images
+           */
+        },
+        {
+          key: "setImages",
+          value: function setImages(images) {
+            this.images = images;
           }
-
-          if (data.hasOwnProperty("self")) {
-            object.self = _ApiClient.default.convertToType(
-              data["self"],
-              object.selfType
-            );
+          /**
+           * @return { module:model/OperationLinksOperator }
+           */
+        },
+        {
+          key: "getOperator",
+          value: function getOperator() {
+            return this.operator;
           }
-
-          if (data.hasOwnProperty("tracking")) {
-            object.tracking = _ApiClient.default.convertToType(
-              data["tracking"],
-              object.trackingType
-            );
+          /**
+           * @param { module:model/OperationLinksOperator } operator
+           */
+        },
+        {
+          key: "setOperator",
+          value: function setOperator(operator) {
+            this.operator = operator;
           }
-
-          return object;
+          /**
+           * @return { module:model/OperationLinksReport }
+           */
+        },
+        {
+          key: "getReport",
+          value: function getReport() {
+            return this.report;
+          }
+          /**
+           * @param { module:model/OperationLinksReport } report
+           */
+        },
+        {
+          key: "setReport",
+          value: function setReport(report) {
+            this.report = report;
+          }
+          /**
+           * @return { module:model/OperationLinksSelf }
+           */
+        },
+        {
+          key: "getSelf",
+          value: function getSelf() {
+            return this.self;
+          }
+          /**
+           * @param { module:model/OperationLinksSelf } self
+           */
+        },
+        {
+          key: "setSelf",
+          value: function setSelf(self) {
+            this.self = self;
+          }
+          /**
+           * @return { module:model/OperationLinksTracking }
+           */
+        },
+        {
+          key: "getTracking",
+          value: function getTracking() {
+            return this.tracking;
+          }
+          /**
+           * @param { module:model/OperationLinksTracking } tracking
+           */
+        },
+        {
+          key: "setTracking",
+          value: function setTracking(tracking) {
+            this.tracking = tracking;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OperationLinks();
+            }
+
+            if (data.hasOwnProperty("createdBy")) {
+              object.createdBy = _ApiClient.default.convertToType(
+                data["createdBy"],
+                object.createdByType
+              );
+            }
+
+            if (data.hasOwnProperty("feedback")) {
+              object.feedback = _ApiClient.default.convertToType(
+                data["feedback"],
+                object.feedbackType
+              );
+            }
+
+            if (data.hasOwnProperty("image")) {
+              object.image = _ApiClient.default.convertToType(
+                data["image"],
+                object.imageType
+              );
+            }
+
+            if (data.hasOwnProperty("images")) {
+              object.images = _ApiClient.default.convertToType(data["images"], [
+                object.imagesType
+              ]);
+            }
+
+            if (data.hasOwnProperty("operator")) {
+              object.operator = _ApiClient.default.convertToType(
+                data["operator"],
+                object.operatorType
+              );
+            }
+
+            if (data.hasOwnProperty("report")) {
+              object.report = _ApiClient.default.convertToType(
+                data["report"],
+                object.reportType
+              );
+            }
+
+            if (data.hasOwnProperty("self")) {
+              object.self = _ApiClient.default.convertToType(
+                data["self"],
+                object.selfType
+              );
+            }
+
+            if (data.hasOwnProperty("tracking")) {
+              object.tracking = _ApiClient.default.convertToType(
+                data["tracking"],
+                object.trackingType
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OperationLinks;
   })();

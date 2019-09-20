@@ -69,55 +69,133 @@ var CategoryData =
      * @return { module:model/CategoryData } The populated "CategoryData" instance.
      */
 
-    _createClass(CategoryData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      CategoryData,
+      [
+        {
+          key: "getName",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getName() {
+            return this.name;
           }
-
-          if (object === null) {
-            object = new CategoryData();
+          /**
+           * @param { String } name
+           */
+        },
+        {
+          key: "setName",
+          value: function setName(name) {
+            this.name = name;
           }
-
-          if (data.hasOwnProperty("name")) {
-            object.name = _ApiClient.default.convertToType(
-              data["name"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getColor",
+          value: function getColor() {
+            return this.color;
           }
-
-          if (data.hasOwnProperty("color")) {
-            object.color = _ApiClient.default.convertToType(
-              data["color"],
-              "String"
-            );
+          /**
+           * @param { String } color
+           */
+        },
+        {
+          key: "setColor",
+          value: function setColor(color) {
+            this.color = color;
           }
-
-          if (data.hasOwnProperty("icon")) {
-            object.icon = _ApiClient.default.convertToType(
-              data["icon"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getIcon",
+          value: function getIcon() {
+            return this.icon;
           }
-
-          if (data.hasOwnProperty("organization")) {
-            object.organization = _ApiClient.default.convertToType(
-              data["organization"],
-              "String"
-            );
+          /**
+           * @param { String } icon
+           */
+        },
+        {
+          key: "setIcon",
+          value: function setIcon(icon) {
+            this.icon = icon;
           }
-
-          return object;
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getOrganization",
+          value: function getOrganization() {
+            return this.organization;
+          }
+          /**
+           * @param { String } organization
+           */
+        },
+        {
+          key: "setOrganization",
+          value: function setOrganization(organization) {
+            this.organization = organization;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new CategoryData();
+            }
+
+            if (data.hasOwnProperty("name")) {
+              object.name = _ApiClient.default.convertToType(
+                data["name"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("color")) {
+              object.color = _ApiClient.default.convertToType(
+                data["color"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("icon")) {
+              object.icon = _ApiClient.default.convertToType(
+                data["icon"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("organization")) {
+              object.organization = _ApiClient.default.convertToType(
+                data["organization"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return CategoryData;
   })();

@@ -60,4 +60,31 @@ export default class LoginData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getLogin() {
+    return this.login;
+  }
+
+  /**
+   * @param { String } login
+   */
+  setLogin(login) {
+    this.login = login;
+  }
+  /**
+   * @return { String }
+   */
+  getPassword() {
+    return this.password;
+  }
+
+  /**
+   * @param { String } password
+   */
+  setPassword(password) {
+    this.password = password;
+  }
 }

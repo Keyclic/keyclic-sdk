@@ -52,4 +52,31 @@ export default class SuccessLoginCredentialsOrganization {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @param { String } type
+   */
+  setType(type) {
+    this.type = type;
+  }
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @param { String } id
+   */
+  setId(id) {
+    this.id = id;
+  }
 }

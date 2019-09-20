@@ -51,4 +51,18 @@ export default class ReportCollection {
 
     return object;
   }
+
+  /**
+   * @return { Array.<module:model/Report> }
+   */
+  getItems() {
+    return this.items;
+  }
+
+  /**
+   * @param { Array.<module:model/Report> } items
+   */
+  setItems(items) {
+    this.items = items;
+  }
 }

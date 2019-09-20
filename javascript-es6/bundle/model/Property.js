@@ -77,108 +77,315 @@ var Property =
      * @return { module:model/Property } The populated "Property" instance.
      */
 
-    _createClass(Property, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      Property,
+      [
+        {
+          key: "getConditions",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { module:model/PropertyConditions }
+           */
+          value: function getConditions() {
+            return this.conditions;
           }
-
-          if (object === null) {
-            object = new Property();
+          /**
+           * @param { module:model/PropertyConditions } conditions
+           */
+        },
+        {
+          key: "setConditions",
+          value: function setConditions(conditions) {
+            this.conditions = conditions;
           }
-
-          if (data.hasOwnProperty("conditions")) {
-            object.conditions = _ApiClient.default.convertToType(
-              data["conditions"],
-              object.conditionsType
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getDefault",
+          value: function getDefault() {
+            return this._default;
           }
-
-          if (data.hasOwnProperty("default")) {
-            object._default = _ApiClient.default.convertToType(
-              data["default"],
-              "String"
-            );
+          /**
+           * @param { String } _default
+           */
+        },
+        {
+          key: "setDefault",
+          value: function setDefault(_default) {
+            this._default = _default;
           }
-
-          if (data.hasOwnProperty("description")) {
-            object.description = _ApiClient.default.convertToType(
-              data["description"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getDescription",
+          value: function getDescription() {
+            return this.description;
           }
-
-          if (data.hasOwnProperty("enum")) {
-            object._enum = _ApiClient.default.convertToType(
-              data["enum"],
-              "['String']"
-            );
+          /**
+           * @param { String } description
+           */
+        },
+        {
+          key: "setDescription",
+          value: function setDescription(description) {
+            this.description = description;
           }
-
-          if (data.hasOwnProperty("format")) {
-            object.format = _ApiClient.default.convertToType(
-              data["format"],
-              "String"
-            );
+          /**
+           * @return { Array.<String> }
+           */
+        },
+        {
+          key: "getEnum",
+          value: function getEnum() {
+            return this._enum;
           }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          /**
+           * @param { Array.<String> } _enum
+           */
+        },
+        {
+          key: "setEnum",
+          value: function setEnum(_enum) {
+            this._enum = _enum;
           }
-
-          if (data.hasOwnProperty("items")) {
-            object.items = _ApiClient.default.convertToType(
-              data["items"],
-              object.itemsType
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getFormat",
+          value: function getFormat() {
+            return this.format;
           }
-
-          if (data.hasOwnProperty("maxItems")) {
-            object.maxItems = _ApiClient.default.convertToType(
-              data["maxItems"],
-              "Number"
-            );
+          /**
+           * @param { String } format
+           */
+        },
+        {
+          key: "setFormat",
+          value: function setFormat(format) {
+            this.format = format;
           }
-
-          if (data.hasOwnProperty("minItems")) {
-            object.minItems = _ApiClient.default.convertToType(
-              data["minItems"],
-              "Number"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getId",
+          value: function getId() {
+            return this.id;
           }
-
-          if (data.hasOwnProperty("propertyOrder")) {
-            object.propertyOrder = _ApiClient.default.convertToType(
-              data["propertyOrder"],
-              "Number"
-            );
+          /**
+           * @return { module:model/PropertyItems }
+           */
+        },
+        {
+          key: "getItems",
+          value: function getItems() {
+            return this.items;
           }
-
-          if (data.hasOwnProperty("title")) {
-            object.title = _ApiClient.default.convertToType(
-              data["title"],
-              "String"
-            );
+          /**
+           * @param { module:model/PropertyItems } items
+           */
+        },
+        {
+          key: "setItems",
+          value: function setItems(items) {
+            this.items = items;
           }
-
-          if (data.hasOwnProperty("type")) {
-            object.type = _ApiClient.default.convertToType(
-              data["type"],
-              "String"
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getMaxItems",
+          value: function getMaxItems() {
+            return this.maxItems;
           }
-
-          return object;
+          /**
+           * @param { Number } maxItems
+           */
+        },
+        {
+          key: "setMaxItems",
+          value: function setMaxItems(maxItems) {
+            this.maxItems = maxItems;
+          }
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getMinItems",
+          value: function getMinItems() {
+            return this.minItems;
+          }
+          /**
+           * @param { Number } minItems
+           */
+        },
+        {
+          key: "setMinItems",
+          value: function setMinItems(minItems) {
+            this.minItems = minItems;
+          }
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getPropertyOrder",
+          value: function getPropertyOrder() {
+            return this.propertyOrder;
+          }
+          /**
+           * @param { Number } propertyOrder
+           */
+        },
+        {
+          key: "setPropertyOrder",
+          value: function setPropertyOrder(propertyOrder) {
+            this.propertyOrder = propertyOrder;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getTitle",
+          value: function getTitle() {
+            return this.title;
+          }
+          /**
+           * @param { String } title
+           */
+        },
+        {
+          key: "setTitle",
+          value: function setTitle(title) {
+            this.title = title;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new Property();
+            }
+
+            if (data.hasOwnProperty("conditions")) {
+              object.conditions = _ApiClient.default.convertToType(
+                data["conditions"],
+                object.conditionsType
+              );
+            }
+
+            if (data.hasOwnProperty("default")) {
+              object._default = _ApiClient.default.convertToType(
+                data["default"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("description")) {
+              object.description = _ApiClient.default.convertToType(
+                data["description"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("enum")) {
+              object._enum = _ApiClient.default.convertToType(
+                data["enum"],
+                "['String']"
+              );
+            }
+
+            if (data.hasOwnProperty("format")) {
+              object.format = _ApiClient.default.convertToType(
+                data["format"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("items")) {
+              object.items = _ApiClient.default.convertToType(
+                data["items"],
+                object.itemsType
+              );
+            }
+
+            if (data.hasOwnProperty("maxItems")) {
+              object.maxItems = _ApiClient.default.convertToType(
+                data["maxItems"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("minItems")) {
+              object.minItems = _ApiClient.default.convertToType(
+                data["minItems"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("propertyOrder")) {
+              object.propertyOrder = _ApiClient.default.convertToType(
+                data["propertyOrder"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("title")) {
+              object.title = _ApiClient.default.convertToType(
+                data["title"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return Property;
   })();

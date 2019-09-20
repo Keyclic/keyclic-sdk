@@ -59,41 +59,83 @@ var FeedbackLinksImageIriTemplateMapping =
      * @return { module:model/FeedbackLinksImageIriTemplateMapping } The populated "FeedbackLinksImageIriTemplateMapping" instance.
      */
 
-    _createClass(FeedbackLinksImageIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FeedbackLinksImageIriTemplateMapping,
+      [
+        {
+          key: "getFeedback",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getFeedback() {
+            return this.feedback;
           }
-
-          if (object === null) {
-            object = new FeedbackLinksImageIriTemplateMapping();
+          /**
+           * @param { String } feedback
+           */
+        },
+        {
+          key: "setFeedback",
+          value: function setFeedback(feedback) {
+            this.feedback = feedback;
           }
-
-          if (data.hasOwnProperty("feedback")) {
-            object.feedback = _ApiClient.default.convertToType(
-              data["feedback"],
-              "String"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getImage",
+          value: function getImage() {
+            return this.image;
           }
-
-          if (data.hasOwnProperty("image")) {
-            object.image = _ApiClient.default.convertToType(
-              data["image"],
-              "String"
-            );
+          /**
+           * @param { String } image
+           */
+        },
+        {
+          key: "setImage",
+          value: function setImage(image) {
+            this.image = image;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FeedbackLinksImageIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("feedback")) {
+              object.feedback = _ApiClient.default.convertToType(
+                data["feedback"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("image")) {
+              object.image = _ApiClient.default.convertToType(
+                data["image"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FeedbackLinksImageIriTemplateMapping;
   })();

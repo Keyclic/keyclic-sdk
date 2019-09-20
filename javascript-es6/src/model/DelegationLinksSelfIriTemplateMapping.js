@@ -48,4 +48,18 @@ export default class DelegationLinksSelfIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getDelegation() {
+    return this.delegation;
+  }
+
+  /**
+   * @param { String } delegation
+   */
+  setDelegation(delegation) {
+    this.delegation = delegation;
+  }
 }

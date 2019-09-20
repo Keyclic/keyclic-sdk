@@ -58,34 +58,58 @@ var FeedbackReviewRequestLinksReviewIriTemplateMapping =
      * @return { module:model/FeedbackReviewRequestLinksReviewIriTemplateMapping } The populated "FeedbackReviewRequestLinksReviewIriTemplateMapping" instance.
      */
 
-    _createClass(FeedbackReviewRequestLinksReviewIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      FeedbackReviewRequestLinksReviewIriTemplateMapping,
+      [
+        {
+          key: "getReview",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getReview() {
+            return this.review;
           }
-
-          if (object === null) {
-            object = new FeedbackReviewRequestLinksReviewIriTemplateMapping();
+          /**
+           * @param { String } review
+           */
+        },
+        {
+          key: "setReview",
+          value: function setReview(review) {
+            this.review = review;
           }
-
-          if (data.hasOwnProperty("review")) {
-            object.review = _ApiClient.default.convertToType(
-              data["review"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new FeedbackReviewRequestLinksReviewIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("review")) {
+              object.review = _ApiClient.default.convertToType(
+                data["review"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return FeedbackReviewRequestLinksReviewIriTemplateMapping;
   })();

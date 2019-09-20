@@ -70,4 +70,70 @@ export default class ReportPatch {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getCategory() {
+    return this.category;
+  }
+
+  /**
+   * @param { String } category
+   */
+  setCategory(category) {
+    this.category = category;
+  }
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { String }
+   */
+  getIdentificationNumber() {
+    return this.identificationNumber;
+  }
+
+  /**
+   * @param { String } identificationNumber
+   */
+  setIdentificationNumber(identificationNumber) {
+    this.identificationNumber = identificationNumber;
+  }
+  /**
+   * @return { Number }
+   */
+  getPriority() {
+    return this.priority;
+  }
+
+  /**
+   * @param { Number } priority
+   */
+  setPriority(priority) {
+    this.priority = priority;
+  }
+  /**
+   * @return { Array.<String> }
+   */
+  getTags() {
+    return this.tags;
+  }
+
+  /**
+   * @param { Array.<String> } tags
+   */
+  setTags(tags) {
+    this.tags = tags;
+  }
 }

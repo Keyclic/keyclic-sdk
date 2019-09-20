@@ -60,4 +60,31 @@ export default class InternalServiceLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/InternalServiceLinksOrganization }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { module:model/InternalServiceLinksOrganization } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
+  /**
+   * @return { module:model/InternalServiceLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/InternalServiceLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

@@ -54,4 +54,18 @@ export default class ContributionLinksFeedbackIriTemplate {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ContributionLinksFeedbackIriTemplateMapping }
+   */
+  getMapping() {
+    return this.mapping;
+  }
+
+  /**
+   * @param { module:model/ContributionLinksFeedbackIriTemplateMapping } mapping
+   */
+  setMapping(mapping) {
+    this.mapping = mapping;
+  }
 }

@@ -58,4 +58,33 @@ export default class PlaceLinksContainsPlaces {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the containsPlaces associated to the given place.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the containsPlaces associated to the given place.
+   * @param { String } href The URI of the containsPlaces associated to the given place.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/PlaceLinksContainsPlacesIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/PlaceLinksContainsPlacesIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

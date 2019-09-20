@@ -54,4 +54,18 @@ export default class OrganizationPatchPreferences {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OrganizationPreferencesReference }
+   */
+  getReference() {
+    return this.reference;
+  }
+
+  /**
+   * @param { module:model/OrganizationPreferencesReference } reference
+   */
+  setReference(reference) {
+    this.reference = reference;
+  }
 }

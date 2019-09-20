@@ -52,6 +52,20 @@ export default class DelegationWorkflowTransitionData {
   }
 
   /**
+   * @return { module:model/DelegationWorkflowTransitionData.TransitionEnum }
+   */
+  getTransition() {
+    return this.transition;
+  }
+
+  /**
+   * @param { module:model/DelegationWorkflowTransitionData.TransitionEnum } transition
+   */
+  setTransition(transition) {
+    this.transition = transition;
+  }
+
+  /**
    * Allowed values for the "transition" property.
    * @enum { String }
    */

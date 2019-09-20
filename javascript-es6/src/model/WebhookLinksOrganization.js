@@ -58,4 +58,33 @@ export default class WebhookLinksOrganization {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the organization associated to the given webhook.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the organization associated to the given webhook.
+   * @param { String } href The URI of the organization associated to the given webhook.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/WebhookLinksOrganizationIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/WebhookLinksOrganizationIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

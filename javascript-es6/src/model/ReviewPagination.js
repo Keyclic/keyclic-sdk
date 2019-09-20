@@ -60,4 +60,18 @@ export default class ReviewPagination extends Pagination {
 
     return object;
   }
+
+  /**
+   * @return { module:model/ReviewCollection }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/ReviewCollection } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
 }

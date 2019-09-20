@@ -68,4 +68,31 @@ export default class DocumentData {
 
     return object;
   }
+
+  /**
+   * @return { module:model/DocumentDataFile }
+   */
+  getFile() {
+    return this.file;
+  }
+
+  /**
+   * @param { module:model/DocumentDataFile } file
+   */
+  setFile(file) {
+    this.file = file;
+  }
+  /**
+   * @return { module:model/DocumentDataPermission }
+   */
+  getPermission() {
+    return this.permission;
+  }
+
+  /**
+   * @param { module:model/DocumentDataPermission } permission
+   */
+  setPermission(permission) {
+    this.permission = permission;
+  }
 }

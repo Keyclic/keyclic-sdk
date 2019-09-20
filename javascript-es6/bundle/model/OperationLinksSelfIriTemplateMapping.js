@@ -58,34 +58,58 @@ var OperationLinksSelfIriTemplateMapping =
      * @return { module:model/OperationLinksSelfIriTemplateMapping } The populated "OperationLinksSelfIriTemplateMapping" instance.
      */
 
-    _createClass(OperationLinksSelfIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OperationLinksSelfIriTemplateMapping,
+      [
+        {
+          key: "getOperation",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getOperation() {
+            return this.operation;
           }
-
-          if (object === null) {
-            object = new OperationLinksSelfIriTemplateMapping();
+          /**
+           * @param { String } operation
+           */
+        },
+        {
+          key: "setOperation",
+          value: function setOperation(operation) {
+            this.operation = operation;
           }
-
-          if (data.hasOwnProperty("operation")) {
-            object.operation = _ApiClient.default.convertToType(
-              data["operation"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OperationLinksSelfIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("operation")) {
+              object.operation = _ApiClient.default.convertToType(
+                data["operation"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OperationLinksSelfIriTemplateMapping;
   })();

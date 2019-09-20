@@ -58,4 +58,31 @@ export default class OperationSignature {
 
     return object;
   }
+
+  /**
+   * @return { Date }
+   */
+  getSignedAt() {
+    return this.signedAt;
+  }
+
+  /**
+   * @param { Date } signedAt
+   */
+  setSignedAt(signedAt) {
+    this.signedAt = signedAt;
+  }
+  /**
+   * @return { module:model/OperationSignatureSigner }
+   */
+  getSigner() {
+    return this.signer;
+  }
+
+  /**
+   * @param { module:model/OperationSignatureSigner } signer
+   */
+  setSigner(signer) {
+    this.signer = signer;
+  }
 }

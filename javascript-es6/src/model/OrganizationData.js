@@ -67,4 +67,44 @@ export default class OrganizationData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { String }
+   */
+  getBusinessActivity() {
+    return this.businessActivity;
+  }
+
+  /**
+   * @param { String } businessActivity
+   */
+  setBusinessActivity(businessActivity) {
+    this.businessActivity = businessActivity;
+  }
+  /**
+   * @return { String }
+   */
+  getLogo() {
+    return this.logo;
+  }
+
+  /**
+   * @param { String } logo
+   */
+  setLogo(logo) {
+    this.logo = logo;
+  }
 }

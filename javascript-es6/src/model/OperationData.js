@@ -82,4 +82,83 @@ export default class OperationData {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
+  }
+  /**
+   * @return { String }
+   */
+  getIdentificationNumber() {
+    return this.identificationNumber;
+  }
+
+  /**
+   * @param { String } identificationNumber
+   */
+  setIdentificationNumber(identificationNumber) {
+    this.identificationNumber = identificationNumber;
+  }
+  /**
+   * @return { String }
+   */
+  getReport() {
+    return this.report;
+  }
+
+  /**
+   * @param { String } report
+   */
+  setReport(report) {
+    this.report = report;
+  }
+  /**
+   * @return { String }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { String } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
+  /**
+   * @return { String }
+   */
+  getScheduledAt() {
+    return this.scheduledAt;
+  }
+
+  /**
+   * @param { String } scheduledAt
+   */
+  setScheduledAt(scheduledAt) {
+    this.scheduledAt = scheduledAt;
+  }
 }

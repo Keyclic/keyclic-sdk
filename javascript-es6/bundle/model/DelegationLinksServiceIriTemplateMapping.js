@@ -58,34 +58,58 @@ var DelegationLinksServiceIriTemplateMapping =
      * @return { module:model/DelegationLinksServiceIriTemplateMapping } The populated "DelegationLinksServiceIriTemplateMapping" instance.
      */
 
-    _createClass(DelegationLinksServiceIriTemplateMapping, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      DelegationLinksServiceIriTemplateMapping,
+      [
+        {
+          key: "getExternalService",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getExternalService() {
+            return this.externalService;
           }
-
-          if (object === null) {
-            object = new DelegationLinksServiceIriTemplateMapping();
+          /**
+           * @param { String } externalService
+           */
+        },
+        {
+          key: "setExternalService",
+          value: function setExternalService(externalService) {
+            this.externalService = externalService;
           }
-
-          if (data.hasOwnProperty("externalService")) {
-            object.externalService = _ApiClient.default.convertToType(
-              data["externalService"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new DelegationLinksServiceIriTemplateMapping();
+            }
+
+            if (data.hasOwnProperty("externalService")) {
+              object.externalService = _ApiClient.default.convertToType(
+                data["externalService"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return DelegationLinksServiceIriTemplateMapping;
   })();

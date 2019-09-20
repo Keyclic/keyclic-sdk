@@ -60,34 +60,58 @@ var ResetPasswordData =
      * @return { module:model/ResetPasswordData } The populated "ResetPasswordData" instance.
      */
 
-    _createClass(ResetPasswordData, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ResetPasswordData,
+      [
+        {
+          key: "getEmail",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { String }
+           */
+          value: function getEmail() {
+            return this.email;
           }
-
-          if (object === null) {
-            object = new ResetPasswordData();
+          /**
+           * @param { String } email
+           */
+        },
+        {
+          key: "setEmail",
+          value: function setEmail(email) {
+            this.email = email;
           }
-
-          if (data.hasOwnProperty("email")) {
-            object.email = _ApiClient.default.convertToType(
-              data["email"],
-              "String"
-            );
-          }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ResetPasswordData();
+            }
+
+            if (data.hasOwnProperty("email")) {
+              object.email = _ApiClient.default.convertToType(
+                data["email"],
+                "String"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ResetPasswordData;
   })();

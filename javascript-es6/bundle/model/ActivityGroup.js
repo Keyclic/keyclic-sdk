@@ -70,94 +70,283 @@ var ActivityGroup =
      * @return { module:model/ActivityGroup } The populated "ActivityGroup" instance.
      */
 
-    _createClass(ActivityGroup, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      ActivityGroup,
+      [
+        {
+          key: "getActivities",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Array.<module:model/Activity> }
+           */
+          value: function getActivities() {
+            return this.activities;
           }
-
-          if (object === null) {
-            object = new ActivityGroup();
+          /**
+           * @param { Array.<module:model/Activity> } activities
+           */
+        },
+        {
+          key: "setActivities",
+          value: function setActivities(activities) {
+            this.activities = activities;
           }
-
-          if (data.hasOwnProperty("activities")) {
-            object.activities = _ApiClient.default.convertToType(
-              data["activities"],
-              [object.activitiesType]
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getActivityCount",
+          value: function getActivityCount() {
+            return this.activityCount;
           }
-
-          if (data.hasOwnProperty("activity_count")) {
-            object.activityCount = _ApiClient.default.convertToType(
-              data["activity_count"],
-              "Number"
-            );
+          /**
+           * @param { Number } activityCount
+           */
+        },
+        {
+          key: "setActivityCount",
+          value: function setActivityCount(activityCount) {
+            this.activityCount = activityCount;
           }
-
-          if (data.hasOwnProperty("actor_count")) {
-            object.actorCount = _ApiClient.default.convertToType(
-              data["actor_count"],
-              "Number"
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getActorCount",
+          value: function getActorCount() {
+            return this.actorCount;
           }
-
-          if (data.hasOwnProperty("created_at")) {
-            object.createdAt = _ApiClient.default.convertToType(
-              data["created_at"],
-              "Date"
-            );
+          /**
+           * @param { Number } actorCount
+           */
+        },
+        {
+          key: "setActorCount",
+          value: function setActorCount(actorCount) {
+            this.actorCount = actorCount;
           }
-
-          if (data.hasOwnProperty("group")) {
-            object.group = _ApiClient.default.convertToType(
-              data["group"],
-              "String"
-            );
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getCreatedAt",
+          value: function getCreatedAt() {
+            return this.createdAt;
           }
-
-          if (data.hasOwnProperty("id")) {
-            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          /**
+           * @param { Date } createdAt
+           */
+        },
+        {
+          key: "setCreatedAt",
+          value: function setCreatedAt(createdAt) {
+            this.createdAt = createdAt;
           }
-
-          if (data.hasOwnProperty("updated_at")) {
-            object.updatedAt = _ApiClient.default.convertToType(
-              data["updated_at"],
-              "Date"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getGroup",
+          value: function getGroup() {
+            return this.group;
           }
-
-          if (data.hasOwnProperty("verb")) {
-            object.verb = _ApiClient.default.convertToType(
-              data["verb"],
-              "String"
-            );
+          /**
+           * @param { String } group
+           */
+        },
+        {
+          key: "setGroup",
+          value: function setGroup(group) {
+            this.group = group;
           }
-
-          if (data.hasOwnProperty("is_read")) {
-            object.isRead = _ApiClient.default.convertToType(
-              data["is_read"],
-              "Boolean"
-            );
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getId",
+          value: function getId() {
+            return this.id;
           }
-
-          if (data.hasOwnProperty("is_seen")) {
-            object.isSeen = _ApiClient.default.convertToType(
-              data["is_seen"],
-              "Boolean"
-            );
+          /**
+           * @param { String } id
+           */
+        },
+        {
+          key: "setId",
+          value: function setId(id) {
+            this.id = id;
           }
-
-          return object;
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getUpdatedAt",
+          value: function getUpdatedAt() {
+            return this.updatedAt;
+          }
+          /**
+           * @param { Date } updatedAt
+           */
+        },
+        {
+          key: "setUpdatedAt",
+          value: function setUpdatedAt(updatedAt) {
+            this.updatedAt = updatedAt;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getVerb",
+          value: function getVerb() {
+            return this.verb;
+          }
+          /**
+           * @param { String } verb
+           */
+        },
+        {
+          key: "setVerb",
+          value: function setVerb(verb) {
+            this.verb = verb;
+          }
+          /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getIsRead",
+          value: function getIsRead() {
+            return this.isRead;
+          }
+          /**
+           * @param { Boolean } isRead
+           */
+        },
+        {
+          key: "setIsRead",
+          value: function setIsRead(isRead) {
+            this.isRead = isRead;
+          }
+          /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getIsSeen",
+          value: function getIsSeen() {
+            return this.isSeen;
+          }
+          /**
+           * @param { Boolean } isSeen
+           */
+        },
+        {
+          key: "setIsSeen",
+          value: function setIsSeen(isSeen) {
+            this.isSeen = isSeen;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new ActivityGroup();
+            }
+
+            if (data.hasOwnProperty("activities")) {
+              object.activities = _ApiClient.default.convertToType(
+                data["activities"],
+                [object.activitiesType]
+              );
+            }
+
+            if (data.hasOwnProperty("activity_count")) {
+              object.activityCount = _ApiClient.default.convertToType(
+                data["activity_count"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("actor_count")) {
+              object.actorCount = _ApiClient.default.convertToType(
+                data["actor_count"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("created_at")) {
+              object.createdAt = _ApiClient.default.convertToType(
+                data["created_at"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("group")) {
+              object.group = _ApiClient.default.convertToType(
+                data["group"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("updated_at")) {
+              object.updatedAt = _ApiClient.default.convertToType(
+                data["updated_at"],
+                "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("verb")) {
+              object.verb = _ApiClient.default.convertToType(
+                data["verb"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("is_read")) {
+              object.isRead = _ApiClient.default.convertToType(
+                data["is_read"],
+                "Boolean"
+              );
+            }
+
+            if (data.hasOwnProperty("is_seen")) {
+              object.isSeen = _ApiClient.default.convertToType(
+                data["is_seen"],
+                "Boolean"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return ActivityGroup;
   })();

@@ -67,48 +67,108 @@ var OrganizationPreferences =
      * @return { module:model/OrganizationPreferences } The populated "OrganizationPreferences" instance.
      */
 
-    _createClass(OrganizationPreferences, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      OrganizationPreferences,
+      [
+        {
+          key: "getPublic",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Boolean }
+           */
+          value: function getPublic() {
+            return this._public;
           }
-
-          if (object === null) {
-            object = new OrganizationPreferences();
+          /**
+           * @param { Boolean } _public
+           */
+        },
+        {
+          key: "setPublic",
+          value: function setPublic(_public) {
+            this._public = _public;
           }
-
-          if (data.hasOwnProperty("public")) {
-            object._public = _ApiClient.default.convertToType(
-              data["public"],
-              "Boolean"
-            );
+          /**
+           * @return { module:model/OrganizationPreferencesReference }
+           */
+        },
+        {
+          key: "getReference",
+          value: function getReference() {
+            return this.reference;
           }
-
-          if (data.hasOwnProperty("reference")) {
-            object.reference = _ApiClient.default.convertToType(
-              data["reference"],
-              object.referenceType
-            );
+          /**
+           * @param { module:model/OrganizationPreferencesReference } reference
+           */
+        },
+        {
+          key: "setReference",
+          value: function setReference(reference) {
+            this.reference = reference;
           }
-
-          if (data.hasOwnProperty("reviewEnabled")) {
-            object.reviewEnabled = _ApiClient.default.convertToType(
-              data["reviewEnabled"],
-              "Boolean"
-            );
+          /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getReviewEnabled",
+          value: function getReviewEnabled() {
+            return this.reviewEnabled;
           }
-
-          return object;
+          /**
+           * @param { Boolean } reviewEnabled
+           */
+        },
+        {
+          key: "setReviewEnabled",
+          value: function setReviewEnabled(reviewEnabled) {
+            this.reviewEnabled = reviewEnabled;
+          }
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new OrganizationPreferences();
+            }
+
+            if (data.hasOwnProperty("public")) {
+              object._public = _ApiClient.default.convertToType(
+                data["public"],
+                "Boolean"
+              );
+            }
+
+            if (data.hasOwnProperty("reference")) {
+              object.reference = _ApiClient.default.convertToType(
+                data["reference"],
+                object.referenceType
+              );
+            }
+
+            if (data.hasOwnProperty("reviewEnabled")) {
+              object.reviewEnabled = _ApiClient.default.convertToType(
+                data["reviewEnabled"],
+                "Boolean"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return OrganizationPreferences;
   })();

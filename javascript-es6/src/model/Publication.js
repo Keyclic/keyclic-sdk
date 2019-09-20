@@ -91,4 +91,84 @@ export default class Publication {
 
     return object;
   }
+
+  /**
+   * @return { module:model/PublicationLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/PublicationLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { Date }
+   */
+  getCreatedAt() {
+    return this.createdAt;
+  }
+
+  /**
+   * @return { String }
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * @return { String }
+   */
+  getMessage() {
+    return this.message;
+  }
+
+  /**
+   * @param { String } message
+   */
+  setMessage(message) {
+    this.message = message;
+  }
+  /**
+   * @return { Number }
+   */
+  getRead() {
+    return this.read;
+  }
+
+  /**
+   * @param { Number } read
+   */
+  setRead(read) {
+    this.read = read;
+  }
+  /**
+   * @return { String }
+   */
+  getTitle() {
+    return this.title;
+  }
+
+  /**
+   * @param { String } title
+   */
+  setTitle(title) {
+    this.title = title;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @return { Date }
+   */
+  getUpdatedAt() {
+    return this.updatedAt;
+  }
 }

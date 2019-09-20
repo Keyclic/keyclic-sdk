@@ -48,4 +48,18 @@ export default class DocumentLinksFileIriTemplateMapping {
 
     return object;
   }
+
+  /**
+   * @return { String }
+   */
+  getDocument() {
+    return this.document;
+  }
+
+  /**
+   * @param { String } document
+   */
+  setDocument(document) {
+    this.document = document;
+  }
 }

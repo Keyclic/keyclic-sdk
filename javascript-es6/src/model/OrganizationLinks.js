@@ -75,4 +75,57 @@ export default class OrganizationLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/OrganizationLinksApplication }
+   */
+  getApplication() {
+    return this.application;
+  }
+
+  /**
+   * @param { module:model/OrganizationLinksApplication } application
+   */
+  setApplication(application) {
+    this.application = application;
+  }
+  /**
+   * @return { module:model/OrganizationLinksBusinessActivity }
+   */
+  getBusinessActivity() {
+    return this.businessActivity;
+  }
+
+  /**
+   * @param { module:model/OrganizationLinksBusinessActivity } businessActivity
+   */
+  setBusinessActivity(businessActivity) {
+    this.businessActivity = businessActivity;
+  }
+  /**
+   * @return { module:model/OrganizationLinksLogo }
+   */
+  getLogo() {
+    return this.logo;
+  }
+
+  /**
+   * @param { module:model/OrganizationLinksLogo } logo
+   */
+  setLogo(logo) {
+    this.logo = logo;
+  }
+  /**
+   * @return { module:model/OrganizationLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/OrganizationLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

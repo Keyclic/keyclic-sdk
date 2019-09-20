@@ -58,4 +58,33 @@ export default class DocumentLinksCreatedBy {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the createdBy associated to the given document.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the createdBy associated to the given document.
+   * @param { String } href The URI of the createdBy associated to the given document.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/DocumentLinksCreatedByIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/DocumentLinksCreatedByIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

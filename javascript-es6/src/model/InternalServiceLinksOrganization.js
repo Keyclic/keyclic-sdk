@@ -58,4 +58,33 @@ export default class InternalServiceLinksOrganization {
 
     return object;
   }
+
+  /**
+   * Gets The URI of the organization associated to the given internalservice.
+   * @return { String }
+   */
+  getHref() {
+    return this.href;
+  }
+
+  /**
+   * Sets The URI of the organization associated to the given internalservice.
+   * @param { String } href The URI of the organization associated to the given internalservice.
+   */
+  setHref(href) {
+    this.href = href;
+  }
+  /**
+   * @return { module:model/InternalServiceLinksOrganizationIriTemplate }
+   */
+  getIriTemplate() {
+    return this.iriTemplate;
+  }
+
+  /**
+   * @param { module:model/InternalServiceLinksOrganizationIriTemplate } iriTemplate
+   */
+  setIriTemplate(iriTemplate) {
+    this.iriTemplate = iriTemplate;
+  }
 }

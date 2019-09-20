@@ -59,41 +59,83 @@ var TrackingProgression =
      * @return { module:model/TrackingProgression } The populated "TrackingProgression" instance.
      */
 
-    _createClass(TrackingProgression, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+    _createClass(
+      TrackingProgression,
+      [
+        {
+          key: "getResolved",
 
-          if (data === null) {
-            throw new Error("No data to build object");
+          /**
+           * @return { Number }
+           */
+          value: function getResolved() {
+            return this.resolved;
           }
-
-          if (object === null) {
-            object = new TrackingProgression();
+          /**
+           * @param { Number } resolved
+           */
+        },
+        {
+          key: "setResolved",
+          value: function setResolved(resolved) {
+            this.resolved = resolved;
           }
-
-          if (data.hasOwnProperty("resolved")) {
-            object.resolved = _ApiClient.default.convertToType(
-              data["resolved"],
-              "Number"
-            );
+          /**
+           * @return { Number }
+           */
+        },
+        {
+          key: "getTotal",
+          value: function getTotal() {
+            return this.total;
           }
-
-          if (data.hasOwnProperty("total")) {
-            object.total = _ApiClient.default.convertToType(
-              data["total"],
-              "Number"
-            );
+          /**
+           * @param { Number } total
+           */
+        },
+        {
+          key: "setTotal",
+          value: function setTotal(total) {
+            this.total = total;
           }
-
-          return object;
         }
-      }
-    ]);
+      ],
+      [
+        {
+          key: "constructFromData",
+          value: function constructFromData(data) {
+            var object =
+              arguments.length > 1 && arguments[1] !== undefined
+                ? arguments[1]
+                : null;
+
+            if (data === null) {
+              throw new Error("No data to build object");
+            }
+
+            if (object === null) {
+              object = new TrackingProgression();
+            }
+
+            if (data.hasOwnProperty("resolved")) {
+              object.resolved = _ApiClient.default.convertToType(
+                data["resolved"],
+                "Number"
+              );
+            }
+
+            if (data.hasOwnProperty("total")) {
+              object.total = _ApiClient.default.convertToType(
+                data["total"],
+                "Number"
+              );
+            }
+
+            return object;
+          }
+        }
+      ]
+    );
 
     return TrackingProgression;
   })();

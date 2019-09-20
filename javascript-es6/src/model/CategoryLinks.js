@@ -60,4 +60,31 @@ export default class CategoryLinks {
 
     return object;
   }
+
+  /**
+   * @return { module:model/CategoryLinksOrganization }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { module:model/CategoryLinksOrganization } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
+  /**
+   * @return { module:model/CategoryLinksSelf }
+   */
+  getSelf() {
+    return this.self;
+  }
+
+  /**
+   * @param { module:model/CategoryLinksSelf } self
+   */
+  setSelf(self) {
+    this.self = self;
+  }
 }

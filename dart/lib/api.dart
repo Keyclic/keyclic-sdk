@@ -144,6 +144,7 @@ part 'model/external_service_links_provider_iri_template.dart';
 part 'model/external_service_links_self.dart';
 part 'model/external_service_links_self_iri_template.dart';
 part 'model/external_service_patch.dart';
+part 'model/external_service_patch_contact_point.dart';
 part 'model/facebook_connect_data.dart';
 part 'model/feature.dart';
 part 'model/feature_geometry.dart';
