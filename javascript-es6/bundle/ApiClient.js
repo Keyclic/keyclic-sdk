@@ -59,7 +59,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
 /**
  * @module ApiClient
- * @version 2.0.7
+ * @version 2.0.8
  */
 
 /**
@@ -277,12 +277,29 @@ var ApiClient =
               }
             }
 
-            for (var queryParam in queryParams) {
-              if (queryParams.hasOwnProperty(queryParam) === false) {
-                continue;
+            var _loop = function _loop(property) {
+              if (
+                queryParams.hasOwnProperty(property) === false ||
+                typeof queryParams[property] === "undefined" ||
+                queryParams[property] === null
+              ) {
+                return "continue";
               }
 
-              params.append(queryParam, queryParams[queryParam]);
+              if (Array.isArray(queryParams[property])) {
+                queryParams[property].forEach(function(value) {
+                  params.append(property, value);
+                });
+                return "continue";
+              }
+
+              params.append(property, queryParams[property]);
+            };
+
+            for (var property in queryParams) {
+              var _ret = _loop(property);
+
+              if (_ret === "continue") continue;
             }
 
             return "".concat(separator).concat(params);
@@ -563,19 +580,21 @@ var ApiClientUtils =
 
           for (var key in params) {
             if (
-              params.hasOwnProperty(key) &&
-              typeof params[key] !== "undefined" &&
-              params[key] !== null
+              params.hasOwnProperty(key) === false ||
+              typeof params[key] === "undefined" ||
+              params[key] === null
             ) {
-              var value = params[key];
-
-              if (Array.isArray(value)) {
-                newParams[key] = value;
-                continue;
-              }
-
-              newParams[key] = ApiClientUtils.paramToString(value);
+              continue;
             }
+
+            var value = params[key];
+
+            if (Array.isArray(value)) {
+              newParams[key] = value;
+              continue;
+            }
+
+            newParams[key] = ApiClientUtils.paramToString(value);
           }
 
           return newParams;
@@ -594,7 +613,7 @@ var ApiClientUtils =
           }
 
           if (param instanceof Date) {
-            return param.toJSON();
+            return param.toISOString();
           }
 
           return param.toString();

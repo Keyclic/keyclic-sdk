@@ -12,7 +12,7 @@
 
 /**
  * @module ApiClient
- * @version 2.0.7
+ * @version 2.0.8
  */
 
 /**
@@ -166,14 +166,27 @@ export default class ApiClient {
       if (separator === "&") {
         break;
       }
+
       separator = "&";
     }
 
-    for (let queryParam in queryParams) {
-      if (queryParams.hasOwnProperty(queryParam) === false) {
+    for (let property in queryParams) {
+      if (
+        queryParams.hasOwnProperty(property) === false ||
+        typeof queryParams[property] === "undefined" ||
+        queryParams[property] === null
+      ) {
         continue;
       }
-      params.append(queryParam, queryParams[queryParam]);
+
+      if (Array.isArray(queryParams[property])) {
+        queryParams[property].forEach(value => {
+          params.append(property, value);
+        });
+        continue;
+      }
+
+      params.append(property, queryParams[property]);
     }
 
     return `${separator}${params}`;
@@ -424,21 +437,24 @@ class ApiClientUtils {
    */
   static normalizeParams(params) {
     let newParams = {};
+
     for (let key in params) {
       if (
-        params.hasOwnProperty(key) &&
-        typeof params[key] !== "undefined" &&
-        params[key] !== null
+        params.hasOwnProperty(key) === false ||
+        typeof params[key] === "undefined" ||
+        params[key] === null
       ) {
-        let value = params[key];
-
-        if (Array.isArray(value)) {
-          newParams[key] = value;
-          continue;
-        }
-
-        newParams[key] = ApiClientUtils.paramToString(value);
+        continue;
       }
+
+      const value = params[key];
+
+      if (Array.isArray(value)) {
+        newParams[key] = value;
+        continue;
+      }
+
+      newParams[key] = ApiClientUtils.paramToString(value);
     }
 
     return newParams;
@@ -455,7 +471,7 @@ class ApiClientUtils {
     }
 
     if (param instanceof Date) {
-      return param.toJSON();
+      return param.toISOString();
     }
 
     return param.toString();
