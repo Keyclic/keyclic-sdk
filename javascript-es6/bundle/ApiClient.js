@@ -59,7 +59,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
 /**
  * @module ApiClient
- * @version 2.0.8
+ * @version 2.0.9
  */
 
 /**
@@ -241,41 +241,7 @@ var ApiClient =
                 ? arguments[1]
                 : {};
             queryParams = ApiClientUtils.normalizeParams(queryParams);
-            var params = new URLSearchParams(url.search.slice(1));
-            var separator = "?"; // find if query params were already set
-
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-              for (
-                var _iterator = params.keys()[Symbol.iterator](), _step;
-                !(_iteratorNormalCompletion = (_step = _iterator.next()).done);
-                _iteratorNormalCompletion = true
-              ) {
-                var p = _step.value;
-
-                if (separator === "&") {
-                  break;
-                }
-
-                separator = "&";
-              }
-            } catch (err) {
-              _didIteratorError = true;
-              _iteratorError = err;
-            } finally {
-              try {
-                if (!_iteratorNormalCompletion && _iterator.return != null) {
-                  _iterator.return();
-                }
-              } finally {
-                if (_didIteratorError) {
-                  throw _iteratorError;
-                }
-              }
-            }
+            var params = new URLSearchParams();
 
             var _loop = function _loop(property) {
               if (
@@ -302,6 +268,11 @@ var ApiClient =
               if (_ret === "continue") continue;
             }
 
+            if (params.toString().length === 0) {
+              return "";
+            }
+
+            var separator = url.search.slice(1).length > 0 ? "&" : "?";
             return "".concat(separator).concat(params);
           }
           /**
@@ -385,8 +356,8 @@ var ApiClient =
 
             var contentType = ApiClientUtils.jsonPreferredMime(contentTypes);
             var accept = ApiClientUtils.jsonPreferredMime(accepts);
-            var builtPath = this.buildPath(path, pathParams);
-            var url = new URL(builtPath, this.basePath);
+            var builtPath = this.buildPath(this.basePath + path, pathParams);
+            var url = new URL(builtPath);
             var builtQueryParams = this.buildQueryParams(url, queryParams);
             var apiUrl = "".concat(url).concat(builtQueryParams);
             var headers = this.buildHeaders(headerParams, contentType, accept);

@@ -12,7 +12,7 @@
 
 /**
  * @module ApiClient
- * @version 2.0.8
+ * @version 2.0.9
  */
 
 /**
@@ -158,17 +158,7 @@ export default class ApiClient {
   buildQueryParams(url, queryParams = {}) {
     queryParams = ApiClientUtils.normalizeParams(queryParams);
 
-    let params = new URLSearchParams(url.search.slice(1));
-
-    let separator = "?";
-    // find if query params were already set
-    for (let p of params.keys()) {
-      if (separator === "&") {
-        break;
-      }
-
-      separator = "&";
-    }
+    let params = new URLSearchParams();
 
     for (let property in queryParams) {
       if (
@@ -188,6 +178,12 @@ export default class ApiClient {
 
       params.append(property, queryParams[property]);
     }
+
+    if (params.toString().length === 0) {
+      return "";
+    }
+
+    const separator = url.search.slice(1).length > 0 ? "&" : "?";
 
     return `${separator}${params}`;
   }
@@ -265,9 +261,9 @@ export default class ApiClient {
     let contentType = ApiClientUtils.jsonPreferredMime(contentTypes);
     let accept = ApiClientUtils.jsonPreferredMime(accepts);
 
-    const builtPath = this.buildPath(path, pathParams);
+    const builtPath = this.buildPath(this.basePath + path, pathParams);
 
-    const url = new URL(builtPath, this.basePath);
+    const url = new URL(builtPath);
     const builtQueryParams = this.buildQueryParams(url, queryParams);
 
     const apiUrl = `${url}${builtQueryParams}`;
