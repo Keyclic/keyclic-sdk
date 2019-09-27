@@ -53,11 +53,11 @@ class FeedbackReviewRequestLinks {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (itemToReview?.hashCode ?? 0);
-    hashCode ^= (organization?.hashCode ?? 0);
-    hashCode ^= (review?.hashCode ?? 0);
-    hashCode ^= (reviewer?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
+    hashCode ^= itemToReview?.hashCode ?? 0;
+    hashCode ^= organization?.hashCode ?? 0;
+    hashCode ^= review?.hashCode ?? 0;
+    hashCode ^= reviewer?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
 
     return hashCode;
   }

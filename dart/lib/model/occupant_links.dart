@@ -41,9 +41,9 @@ class OccupantLinks {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (person?.hashCode ?? 0);
-    hashCode ^= (place?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
+    hashCode ^= person?.hashCode ?? 0;
+    hashCode ^= place?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
 
     return hashCode;
   }

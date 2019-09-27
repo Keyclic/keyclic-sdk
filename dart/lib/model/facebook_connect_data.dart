@@ -31,7 +31,7 @@ class FacebookConnectData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (accessToken?.hashCode ?? 0);
+    hashCode ^= accessToken?.hashCode ?? 0;
 
     return hashCode;
   }

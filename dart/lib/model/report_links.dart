@@ -71,15 +71,15 @@ class ReportLinks {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (category?.hashCode ?? 0);
-    hashCode ^= (delegatedFrom?.hashCode ?? 0);
-    hashCode ^= (delegatedTo?.hashCode ?? 0);
-    hashCode ^= (feedback?.hashCode ?? 0);
-    hashCode ^= (operations?.hashCode ?? 0);
-    hashCode ^= (organization?.hashCode ?? 0);
-    hashCode ^= (place?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
-    hashCode ^= (tracking?.hashCode ?? 0);
+    hashCode ^= category?.hashCode ?? 0;
+    hashCode ^= delegatedFrom?.hashCode ?? 0;
+    hashCode ^= delegatedTo?.hashCode ?? 0;
+    hashCode ^= feedback?.hashCode ?? 0;
+    hashCode ^= operations?.hashCode ?? 0;
+    hashCode ^= organization?.hashCode ?? 0;
+    hashCode ^= place?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
+    hashCode ^= tracking?.hashCode ?? 0;
 
     return hashCode;
   }

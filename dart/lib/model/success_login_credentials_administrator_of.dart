@@ -41,9 +41,9 @@ class SuccessLoginCredentialsAdministratorOf {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (id?.hashCode ?? 0);
-    hashCode ^= (token?.hashCode ?? 0);
-    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= token?.hashCode ?? 0;
+    hashCode ^= type?.hashCode ?? 0;
 
     return hashCode;
   }

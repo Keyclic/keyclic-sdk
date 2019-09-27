@@ -53,9 +53,9 @@ class Tracking {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (progression?.hashCode ?? 0);
-    hashCode ^= (state?.hashCode ?? 0);
-    hashCode ^= (time?.hashCode ?? 0);
+    hashCode ^= progression?.hashCode ?? 0;
+    hashCode ^= state?.hashCode ?? 0;
+    hashCode ^= time?.hashCode ?? 0;
 
     return hashCode;
   }

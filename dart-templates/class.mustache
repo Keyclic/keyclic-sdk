@@ -117,7 +117,7 @@ class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
     {{#vars}}
       {{^isListContainer}}
         {{^isMapContainer}}
-          hashCode ^= ({{name}}?.hashCode ?? 0);
+          hashCode ^= {{name}}?.hashCode ?? 0;
         {{/isMapContainer}}
       {{/isListContainer}}
     {{/vars}}

@@ -41,9 +41,9 @@ class OrganizationPreferences {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (public?.hashCode ?? 0);
-    hashCode ^= (reference?.hashCode ?? 0);
-    hashCode ^= (reviewEnabled?.hashCode ?? 0);
+    hashCode ^= public?.hashCode ?? 0;
+    hashCode ^= reference?.hashCode ?? 0;
+    hashCode ^= reviewEnabled?.hashCode ?? 0;
 
     return hashCode;
   }

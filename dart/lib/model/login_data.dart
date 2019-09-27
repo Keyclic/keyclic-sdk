@@ -36,8 +36,8 @@ class LoginData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (login?.hashCode ?? 0);
-    hashCode ^= (password?.hashCode ?? 0);
+    hashCode ^= login?.hashCode ?? 0;
+    hashCode ^= password?.hashCode ?? 0;
 
     return hashCode;
   }

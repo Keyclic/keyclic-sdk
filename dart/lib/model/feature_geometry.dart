@@ -49,7 +49,7 @@ class FeatureGeometry {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= type?.hashCode ?? 0;
 
     return hashCode;
   }

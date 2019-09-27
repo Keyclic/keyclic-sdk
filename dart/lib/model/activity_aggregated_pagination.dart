@@ -57,10 +57,10 @@ class ActivityAggregatedPagination {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (duration?.hashCode ?? 0);
-    hashCode ^= (next?.hashCode ?? 0);
-    hashCode ^= (unseen?.hashCode ?? 0);
-    hashCode ^= (unread?.hashCode ?? 0);
+    hashCode ^= duration?.hashCode ?? 0;
+    hashCode ^= next?.hashCode ?? 0;
+    hashCode ^= unseen?.hashCode ?? 0;
+    hashCode ^= unread?.hashCode ?? 0;
 
     return hashCode;
   }

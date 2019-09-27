@@ -32,7 +32,7 @@ class InternalServiceLinksSelfIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (internalService?.hashCode ?? 0);
+    hashCode ^= internalService?.hashCode ?? 0;
 
     return hashCode;
   }

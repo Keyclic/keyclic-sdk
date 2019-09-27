@@ -31,7 +31,7 @@ class DelegationLinksReportIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (report?.hashCode ?? 0);
+    hashCode ^= report?.hashCode ?? 0;
 
     return hashCode;
   }

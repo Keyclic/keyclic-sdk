@@ -47,10 +47,10 @@ class PlaceLinks {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (containedInPlace?.hashCode ?? 0);
-    hashCode ^= (containsPlaces?.hashCode ?? 0);
-    hashCode ^= (organization?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
+    hashCode ^= containedInPlace?.hashCode ?? 0;
+    hashCode ^= containsPlaces?.hashCode ?? 0;
+    hashCode ^= organization?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
 
     return hashCode;
   }

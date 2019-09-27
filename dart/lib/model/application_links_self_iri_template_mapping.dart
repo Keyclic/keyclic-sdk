@@ -31,7 +31,7 @@ class ApplicationLinksSelfIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (application?.hashCode ?? 0);
+    hashCode ^= application?.hashCode ?? 0;
 
     return hashCode;
   }

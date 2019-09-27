@@ -62,8 +62,8 @@ class ReportEmbedded {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (duration?.hashCode ?? 0);
-    hashCode ^= (tracking?.hashCode ?? 0);
+    hashCode ^= duration?.hashCode ?? 0;
+    hashCode ^= tracking?.hashCode ?? 0;
 
     return hashCode;
   }

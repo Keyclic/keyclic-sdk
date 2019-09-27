@@ -31,7 +31,7 @@ class DocumentPermission {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (targetGroup?.hashCode ?? 0);
+    hashCode ^= targetGroup?.hashCode ?? 0;
 
     return hashCode;
   }

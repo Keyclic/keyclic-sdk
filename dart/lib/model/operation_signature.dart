@@ -40,8 +40,8 @@ class OperationSignature {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (signedAt?.hashCode ?? 0);
-    hashCode ^= (signer?.hashCode ?? 0);
+    hashCode ^= signedAt?.hashCode ?? 0;
+    hashCode ^= signer?.hashCode ?? 0;
 
     return hashCode;
   }

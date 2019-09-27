@@ -41,9 +41,9 @@ class DocumentLinks {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (createdBy?.hashCode ?? 0);
-    hashCode ^= (file?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
+    hashCode ^= createdBy?.hashCode ?? 0;
+    hashCode ^= file?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
 
     return hashCode;
   }

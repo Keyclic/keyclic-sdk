@@ -56,12 +56,12 @@ class ReportPagination extends Pagination {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (limit?.hashCode ?? 0);
-    hashCode ^= (page?.hashCode ?? 0);
-    hashCode ^= (pages?.hashCode ?? 0);
-    hashCode ^= (total?.hashCode ?? 0);
-    hashCode ^= (links?.hashCode ?? 0);
-    hashCode ^= (embedded?.hashCode ?? 0);
+    hashCode ^= limit?.hashCode ?? 0;
+    hashCode ^= page?.hashCode ?? 0;
+    hashCode ^= pages?.hashCode ?? 0;
+    hashCode ^= total?.hashCode ?? 0;
+    hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= embedded?.hashCode ?? 0;
 
     return hashCode;
   }

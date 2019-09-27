@@ -66,14 +66,14 @@ class PersonPatch {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (givenName?.hashCode ?? 0);
-    hashCode ^= (familyName?.hashCode ?? 0);
-    hashCode ^= (email?.hashCode ?? 0);
-    hashCode ^= (jobTitle?.hashCode ?? 0);
-    hashCode ^= (image?.hashCode ?? 0);
-    hashCode ^= (optIn?.hashCode ?? 0);
-    hashCode ^= (preferences?.hashCode ?? 0);
-    hashCode ^= (telephone?.hashCode ?? 0);
+    hashCode ^= givenName?.hashCode ?? 0;
+    hashCode ^= familyName?.hashCode ?? 0;
+    hashCode ^= email?.hashCode ?? 0;
+    hashCode ^= jobTitle?.hashCode ?? 0;
+    hashCode ^= image?.hashCode ?? 0;
+    hashCode ^= optIn?.hashCode ?? 0;
+    hashCode ^= preferences?.hashCode ?? 0;
+    hashCode ^= telephone?.hashCode ?? 0;
 
     return hashCode;
   }

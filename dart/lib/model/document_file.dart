@@ -55,8 +55,8 @@ class DocumentFile {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (contentType?.hashCode ?? 0);
-    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= contentType?.hashCode ?? 0;
+    hashCode ^= name?.hashCode ?? 0;
 
     return hashCode;
   }

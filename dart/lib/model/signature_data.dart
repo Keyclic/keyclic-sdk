@@ -36,8 +36,8 @@ class SignatureData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (signer?.hashCode ?? 0);
-    hashCode ^= (image?.hashCode ?? 0);
+    hashCode ^= signer?.hashCode ?? 0;
+    hashCode ^= image?.hashCode ?? 0;
 
     return hashCode;
   }

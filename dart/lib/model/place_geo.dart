@@ -41,9 +41,9 @@ class PlaceGeo {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (centroid?.hashCode ?? 0);
-    hashCode ^= (elevation?.hashCode ?? 0);
-    hashCode ^= (polygon?.hashCode ?? 0);
+    hashCode ^= centroid?.hashCode ?? 0;
+    hashCode ^= elevation?.hashCode ?? 0;
+    hashCode ^= polygon?.hashCode ?? 0;
 
     return hashCode;
   }

@@ -45,7 +45,7 @@ class FeedbackEmbedded {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (tracking?.hashCode ?? 0);
+    hashCode ^= tracking?.hashCode ?? 0;
 
     return hashCode;
   }

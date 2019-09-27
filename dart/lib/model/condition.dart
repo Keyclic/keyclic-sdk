@@ -59,10 +59,10 @@ class Condition {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (id?.hashCode ?? 0);
-    hashCode ^= (operator_?.hashCode ?? 0);
-    hashCode ^= (path?.hashCode ?? 0);
-    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= operator_?.hashCode ?? 0;
+    hashCode ^= path?.hashCode ?? 0;
+    hashCode ^= type?.hashCode ?? 0;
 
     return hashCode;
   }

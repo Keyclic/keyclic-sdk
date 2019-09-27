@@ -72,13 +72,13 @@ class OperationLinks {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (createdBy?.hashCode ?? 0);
-    hashCode ^= (feedback?.hashCode ?? 0);
-    hashCode ^= (image?.hashCode ?? 0);
-    hashCode ^= (operator_?.hashCode ?? 0);
-    hashCode ^= (report?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
-    hashCode ^= (tracking?.hashCode ?? 0);
+    hashCode ^= createdBy?.hashCode ?? 0;
+    hashCode ^= feedback?.hashCode ?? 0;
+    hashCode ^= image?.hashCode ?? 0;
+    hashCode ^= operator_?.hashCode ?? 0;
+    hashCode ^= report?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
+    hashCode ^= tracking?.hashCode ?? 0;
 
     return hashCode;
   }

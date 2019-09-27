@@ -36,8 +36,8 @@ class NodePath {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (id?.hashCode ?? 0);
-    hashCode ^= (name?.hashCode ?? 0);
+    hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= name?.hashCode ?? 0;
 
     return hashCode;
   }

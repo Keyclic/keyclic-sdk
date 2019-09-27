@@ -41,9 +41,9 @@ class FeedbackGeoCoordinatesPoint {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (latitude?.hashCode ?? 0);
-    hashCode ^= (longitude?.hashCode ?? 0);
-    hashCode ^= (srid?.hashCode ?? 0);
+    hashCode ^= latitude?.hashCode ?? 0;
+    hashCode ^= longitude?.hashCode ?? 0;
+    hashCode ^= srid?.hashCode ?? 0;
 
     return hashCode;
   }

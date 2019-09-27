@@ -31,7 +31,7 @@ class PublicationLinksSelfIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (publication?.hashCode ?? 0);
+    hashCode ^= publication?.hashCode ?? 0;
 
     return hashCode;
   }

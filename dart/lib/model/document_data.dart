@@ -36,8 +36,8 @@ class DocumentData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (file?.hashCode ?? 0);
-    hashCode ^= (permission?.hashCode ?? 0);
+    hashCode ^= file?.hashCode ?? 0;
+    hashCode ^= permission?.hashCode ?? 0;
 
     return hashCode;
   }

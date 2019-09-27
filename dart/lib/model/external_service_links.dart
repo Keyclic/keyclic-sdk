@@ -36,8 +36,8 @@ class ExternalServiceLinks {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (provider?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
+    hashCode ^= provider?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
 
     return hashCode;
   }

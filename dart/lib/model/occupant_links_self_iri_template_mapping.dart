@@ -31,7 +31,7 @@ class OccupantLinksSelfIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (occupant?.hashCode ?? 0);
+    hashCode ^= occupant?.hashCode ?? 0;
 
     return hashCode;
   }

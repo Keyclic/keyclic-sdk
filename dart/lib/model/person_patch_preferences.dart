@@ -36,8 +36,8 @@ class PersonPatchPreferences {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (messageEmailEnabled?.hashCode ?? 0);
-    hashCode ^= (messagePushEnabled?.hashCode ?? 0);
+    hashCode ^= messageEmailEnabled?.hashCode ?? 0;
+    hashCode ^= messagePushEnabled?.hashCode ?? 0;
 
     return hashCode;
   }

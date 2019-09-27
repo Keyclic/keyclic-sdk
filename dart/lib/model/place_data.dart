@@ -46,10 +46,10 @@ class PlaceData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (name?.hashCode ?? 0);
-    hashCode ^= (branchCode?.hashCode ?? 0);
-    hashCode ^= (polygon?.hashCode ?? 0);
-    hashCode ^= (organization?.hashCode ?? 0);
+    hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= branchCode?.hashCode ?? 0;
+    hashCode ^= polygon?.hashCode ?? 0;
+    hashCode ^= organization?.hashCode ?? 0;
 
     return hashCode;
   }

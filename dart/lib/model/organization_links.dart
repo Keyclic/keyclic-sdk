@@ -47,10 +47,10 @@ class OrganizationLinks {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (application?.hashCode ?? 0);
-    hashCode ^= (businessActivity?.hashCode ?? 0);
-    hashCode ^= (logo?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
+    hashCode ^= application?.hashCode ?? 0;
+    hashCode ^= businessActivity?.hashCode ?? 0;
+    hashCode ^= logo?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
 
     return hashCode;
   }

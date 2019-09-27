@@ -99,19 +99,19 @@ class Person {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (links?.hashCode ?? 0);
-    hashCode ^= (createdAt?.hashCode ?? 0);
-    hashCode ^= (email?.hashCode ?? 0);
-    hashCode ^= (familyName?.hashCode ?? 0);
-    hashCode ^= (givenName?.hashCode ?? 0);
-    hashCode ^= (id?.hashCode ?? 0);
-    hashCode ^= (jobTitle?.hashCode ?? 0);
-    hashCode ^= (optIn?.hashCode ?? 0);
-    hashCode ^= (preferences?.hashCode ?? 0);
-    hashCode ^= (telephone?.hashCode ?? 0);
-    hashCode ^= (type?.hashCode ?? 0);
-    hashCode ^= (updatedAt?.hashCode ?? 0);
-    hashCode ^= (username?.hashCode ?? 0);
+    hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= createdAt?.hashCode ?? 0;
+    hashCode ^= email?.hashCode ?? 0;
+    hashCode ^= familyName?.hashCode ?? 0;
+    hashCode ^= givenName?.hashCode ?? 0;
+    hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= jobTitle?.hashCode ?? 0;
+    hashCode ^= optIn?.hashCode ?? 0;
+    hashCode ^= preferences?.hashCode ?? 0;
+    hashCode ^= telephone?.hashCode ?? 0;
+    hashCode ^= type?.hashCode ?? 0;
+    hashCode ^= updatedAt?.hashCode ?? 0;
+    hashCode ^= username?.hashCode ?? 0;
 
     return hashCode;
   }

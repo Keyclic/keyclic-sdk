@@ -59,10 +59,10 @@ class ReportPatch {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (category?.hashCode ?? 0);
-    hashCode ^= (description?.hashCode ?? 0);
-    hashCode ^= (identificationNumber?.hashCode ?? 0);
-    hashCode ^= (priority?.hashCode ?? 0);
+    hashCode ^= category?.hashCode ?? 0;
+    hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= identificationNumber?.hashCode ?? 0;
+    hashCode ^= priority?.hashCode ?? 0;
 
     return hashCode;
   }

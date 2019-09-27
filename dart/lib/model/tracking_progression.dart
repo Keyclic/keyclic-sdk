@@ -36,8 +36,8 @@ class TrackingProgression {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (resolved?.hashCode ?? 0);
-    hashCode ^= (total?.hashCode ?? 0);
+    hashCode ^= resolved?.hashCode ?? 0;
+    hashCode ^= total?.hashCode ?? 0;
 
     return hashCode;
   }

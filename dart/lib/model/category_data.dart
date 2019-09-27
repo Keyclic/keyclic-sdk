@@ -46,10 +46,10 @@ class CategoryData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (name?.hashCode ?? 0);
-    hashCode ^= (color?.hashCode ?? 0);
-    hashCode ^= (icon?.hashCode ?? 0);
-    hashCode ^= (organization?.hashCode ?? 0);
+    hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= color?.hashCode ?? 0;
+    hashCode ^= icon?.hashCode ?? 0;
+    hashCode ^= organization?.hashCode ?? 0;
 
     return hashCode;
   }

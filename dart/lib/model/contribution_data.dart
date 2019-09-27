@@ -31,7 +31,7 @@ class ContributionData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (feedback?.hashCode ?? 0);
+    hashCode ^= feedback?.hashCode ?? 0;
 
     return hashCode;
   }

@@ -51,10 +51,10 @@ class OperationPatch {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (description?.hashCode ?? 0);
-    hashCode ^= (identificationNumber?.hashCode ?? 0);
-    hashCode ^= (name?.hashCode ?? 0);
-    hashCode ^= (scheduledAt?.hashCode ?? 0);
+    hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= identificationNumber?.hashCode ?? 0;
+    hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= scheduledAt?.hashCode ?? 0;
 
     return hashCode;
   }

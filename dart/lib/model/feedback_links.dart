@@ -68,12 +68,12 @@ class FeedbackLinks {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (businessActivity?.hashCode ?? 0);
-    hashCode ^= (category?.hashCode ?? 0);
-    hashCode ^= (image?.hashCode ?? 0);
-    hashCode ^= (reporter?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
-    hashCode ^= (tracking?.hashCode ?? 0);
+    hashCode ^= businessActivity?.hashCode ?? 0;
+    hashCode ^= category?.hashCode ?? 0;
+    hashCode ^= image?.hashCode ?? 0;
+    hashCode ^= reporter?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
+    hashCode ^= tracking?.hashCode ?? 0;
 
     return hashCode;
   }

@@ -41,9 +41,9 @@ class ReviewData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (reviewBody?.hashCode ?? 0);
-    hashCode ^= (reviewRating?.hashCode ?? 0);
-    hashCode ^= (reviewRequest?.hashCode ?? 0);
+    hashCode ^= reviewBody?.hashCode ?? 0;
+    hashCode ^= reviewRating?.hashCode ?? 0;
+    hashCode ^= reviewRequest?.hashCode ?? 0;
 
     return hashCode;
   }

@@ -50,8 +50,8 @@ class SuccessLoginCredentialsMemberOf {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (id?.hashCode ?? 0);
-    hashCode ^= (organization?.hashCode ?? 0);
+    hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= organization?.hashCode ?? 0;
 
     return hashCode;
   }

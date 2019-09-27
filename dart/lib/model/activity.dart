@@ -69,14 +69,14 @@ class Activity {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (actor?.hashCode ?? 0);
-    hashCode ^= (message?.hashCode ?? 0);
-    hashCode ^= (object?.hashCode ?? 0);
-    hashCode ^= (origin?.hashCode ?? 0);
-    hashCode ^= (subject?.hashCode ?? 0);
-    hashCode ^= (time?.hashCode ?? 0);
-    hashCode ^= (title?.hashCode ?? 0);
-    hashCode ^= (verb?.hashCode ?? 0);
+    hashCode ^= actor?.hashCode ?? 0;
+    hashCode ^= message?.hashCode ?? 0;
+    hashCode ^= object?.hashCode ?? 0;
+    hashCode ^= origin?.hashCode ?? 0;
+    hashCode ^= subject?.hashCode ?? 0;
+    hashCode ^= time?.hashCode ?? 0;
+    hashCode ^= title?.hashCode ?? 0;
+    hashCode ^= verb?.hashCode ?? 0;
 
     return hashCode;
   }

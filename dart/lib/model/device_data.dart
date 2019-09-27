@@ -41,9 +41,9 @@ class DeviceData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (token?.hashCode ?? 0);
-    hashCode ^= (platform?.hashCode ?? 0);
-    hashCode ^= (person?.hashCode ?? 0);
+    hashCode ^= token?.hashCode ?? 0;
+    hashCode ^= platform?.hashCode ?? 0;
+    hashCode ^= person?.hashCode ?? 0;
 
     return hashCode;
   }

@@ -94,17 +94,17 @@ class Property {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (conditions?.hashCode ?? 0);
-    hashCode ^= (default_?.hashCode ?? 0);
-    hashCode ^= (description?.hashCode ?? 0);
-    hashCode ^= (format?.hashCode ?? 0);
-    hashCode ^= (id?.hashCode ?? 0);
-    hashCode ^= (items?.hashCode ?? 0);
-    hashCode ^= (maxItems?.hashCode ?? 0);
-    hashCode ^= (minItems?.hashCode ?? 0);
-    hashCode ^= (propertyOrder?.hashCode ?? 0);
-    hashCode ^= (title?.hashCode ?? 0);
-    hashCode ^= (type?.hashCode ?? 0);
+    hashCode ^= conditions?.hashCode ?? 0;
+    hashCode ^= default_?.hashCode ?? 0;
+    hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= format?.hashCode ?? 0;
+    hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= items?.hashCode ?? 0;
+    hashCode ^= maxItems?.hashCode ?? 0;
+    hashCode ^= minItems?.hashCode ?? 0;
+    hashCode ^= propertyOrder?.hashCode ?? 0;
+    hashCode ^= title?.hashCode ?? 0;
+    hashCode ^= type?.hashCode ?? 0;
 
     return hashCode;
   }

@@ -31,7 +31,7 @@ class MemberLinksSelfIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (member?.hashCode ?? 0);
+    hashCode ^= member?.hashCode ?? 0;
 
     return hashCode;
   }

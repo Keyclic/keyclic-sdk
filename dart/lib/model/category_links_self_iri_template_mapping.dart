@@ -31,7 +31,7 @@ class CategoryLinksSelfIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (category?.hashCode ?? 0);
+    hashCode ^= category?.hashCode ?? 0;
 
     return hashCode;
   }

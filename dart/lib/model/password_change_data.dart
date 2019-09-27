@@ -31,7 +31,7 @@ class PasswordChangeData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (password?.hashCode ?? 0);
+    hashCode ^= password?.hashCode ?? 0;
 
     return hashCode;
   }

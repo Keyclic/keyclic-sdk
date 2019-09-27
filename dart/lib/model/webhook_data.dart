@@ -50,9 +50,9 @@ class WebhookData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (event?.hashCode ?? 0);
-    hashCode ^= (organization?.hashCode ?? 0);
-    hashCode ^= (payloadUrl?.hashCode ?? 0);
+    hashCode ^= event?.hashCode ?? 0;
+    hashCode ^= organization?.hashCode ?? 0;
+    hashCode ^= payloadUrl?.hashCode ?? 0;
 
     return hashCode;
   }

@@ -81,13 +81,13 @@ class FeedbackData {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (category?.hashCode ?? 0);
-    hashCode ^= (geo?.hashCode ?? 0);
-    hashCode ^= (description?.hashCode ?? 0);
-    hashCode ^= (visibility?.hashCode ?? 0);
-    hashCode ^= (businessActivity?.hashCode ?? 0);
-    hashCode ^= (proMode?.hashCode ?? 0);
-    hashCode ^= (place?.hashCode ?? 0);
+    hashCode ^= category?.hashCode ?? 0;
+    hashCode ^= geo?.hashCode ?? 0;
+    hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= visibility?.hashCode ?? 0;
+    hashCode ^= businessActivity?.hashCode ?? 0;
+    hashCode ^= proMode?.hashCode ?? 0;
+    hashCode ^= place?.hashCode ?? 0;
 
     return hashCode;
   }

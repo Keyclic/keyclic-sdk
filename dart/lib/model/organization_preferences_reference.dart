@@ -31,7 +31,7 @@ class OrganizationPreferencesReference {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (prefix?.hashCode ?? 0);
+    hashCode ^= prefix?.hashCode ?? 0;
 
     return hashCode;
   }

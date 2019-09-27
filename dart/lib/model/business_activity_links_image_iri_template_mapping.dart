@@ -32,7 +32,7 @@ class BusinessActivityLinksImageIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (businessActivity?.hashCode ?? 0);
+    hashCode ^= businessActivity?.hashCode ?? 0;
 
     return hashCode;
   }

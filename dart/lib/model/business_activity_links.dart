@@ -46,10 +46,10 @@ class BusinessActivityLinks {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (image?.hashCode ?? 0);
-    hashCode ^= (schema?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
-    hashCode ^= (thumbnail?.hashCode ?? 0);
+    hashCode ^= image?.hashCode ?? 0;
+    hashCode ^= schema?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
+    hashCode ^= thumbnail?.hashCode ?? 0;
 
     return hashCode;
   }

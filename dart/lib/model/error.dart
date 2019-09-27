@@ -41,9 +41,9 @@ class Error {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (message?.hashCode ?? 0);
-    hashCode ^= (total?.hashCode ?? 0);
-    hashCode ^= (embedded?.hashCode ?? 0);
+    hashCode ^= message?.hashCode ?? 0;
+    hashCode ^= total?.hashCode ?? 0;
+    hashCode ^= embedded?.hashCode ?? 0;
 
     return hashCode;
   }

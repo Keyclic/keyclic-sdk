@@ -46,10 +46,10 @@ class PublicationLinks {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (author?.hashCode ?? 0);
-    hashCode ^= (feed?.hashCode ?? 0);
-    hashCode ^= (organization?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
+    hashCode ^= author?.hashCode ?? 0;
+    hashCode ^= feed?.hashCode ?? 0;
+    hashCode ^= organization?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
 
     return hashCode;
   }

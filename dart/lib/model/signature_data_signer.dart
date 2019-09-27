@@ -36,8 +36,8 @@ class SignatureDataSigner {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (familyName?.hashCode ?? 0);
-    hashCode ^= (givenName?.hashCode ?? 0);
+    hashCode ^= familyName?.hashCode ?? 0;
+    hashCode ^= givenName?.hashCode ?? 0;
 
     return hashCode;
   }

@@ -46,10 +46,10 @@ class DelegationLinks {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (createdBy?.hashCode ?? 0);
-    hashCode ^= (report?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
-    hashCode ^= (service?.hashCode ?? 0);
+    hashCode ^= createdBy?.hashCode ?? 0;
+    hashCode ^= report?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
+    hashCode ^= service?.hashCode ?? 0;
 
     return hashCode;
   }

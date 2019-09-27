@@ -72,8 +72,8 @@ class SuccessLoginCredentials {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (id?.hashCode ?? 0);
-    hashCode ^= (login?.hashCode ?? 0);
+    hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= login?.hashCode ?? 0;
 
     return hashCode;
   }

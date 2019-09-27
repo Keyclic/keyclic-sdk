@@ -46,10 +46,10 @@ class PublicationData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (message?.hashCode ?? 0);
-    hashCode ^= (feed?.hashCode ?? 0);
-    hashCode ^= (title?.hashCode ?? 0);
-    hashCode ^= (organization?.hashCode ?? 0);
+    hashCode ^= message?.hashCode ?? 0;
+    hashCode ^= feed?.hashCode ?? 0;
+    hashCode ^= title?.hashCode ?? 0;
+    hashCode ^= organization?.hashCode ?? 0;
 
     return hashCode;
   }

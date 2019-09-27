@@ -53,8 +53,8 @@ class Checkpoint {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (createdAt?.hashCode ?? 0);
-    hashCode ^= (links?.hashCode ?? 0);
+    hashCode ^= createdAt?.hashCode ?? 0;
+    hashCode ^= links?.hashCode ?? 0;
 
     return hashCode;
   }

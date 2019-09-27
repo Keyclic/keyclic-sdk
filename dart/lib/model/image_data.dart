@@ -31,7 +31,7 @@ class ImageData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (image?.hashCode ?? 0);
+    hashCode ^= image?.hashCode ?? 0;
 
     return hashCode;
   }

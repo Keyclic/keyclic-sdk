@@ -32,7 +32,7 @@ class PlaceLinksContainsPlacesIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (parent?.hashCode ?? 0);
+    hashCode ^= parent?.hashCode ?? 0;
 
     return hashCode;
   }

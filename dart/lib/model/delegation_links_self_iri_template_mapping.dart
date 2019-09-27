@@ -31,7 +31,7 @@ class DelegationLinksSelfIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (delegation?.hashCode ?? 0);
+    hashCode ^= delegation?.hashCode ?? 0;
 
     return hashCode;
   }

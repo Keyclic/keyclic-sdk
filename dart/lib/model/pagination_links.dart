@@ -46,10 +46,10 @@ class PaginationLinks {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (first?.hashCode ?? 0);
-    hashCode ^= (last?.hashCode ?? 0);
-    hashCode ^= (next?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
+    hashCode ^= first?.hashCode ?? 0;
+    hashCode ^= last?.hashCode ?? 0;
+    hashCode ^= next?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
 
     return hashCode;
   }

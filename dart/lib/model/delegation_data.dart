@@ -41,9 +41,9 @@ class DelegationData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (description?.hashCode ?? 0);
-    hashCode ^= (report?.hashCode ?? 0);
-    hashCode ^= (service?.hashCode ?? 0);
+    hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= report?.hashCode ?? 0;
+    hashCode ^= service?.hashCode ?? 0;
 
     return hashCode;
   }

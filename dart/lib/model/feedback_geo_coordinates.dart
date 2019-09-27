@@ -37,8 +37,8 @@ class FeedbackGeoCoordinates {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (elevation?.hashCode ?? 0);
-    hashCode ^= (point?.hashCode ?? 0);
+    hashCode ^= elevation?.hashCode ?? 0;
+    hashCode ^= point?.hashCode ?? 0;
 
     return hashCode;
   }

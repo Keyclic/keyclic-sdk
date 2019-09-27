@@ -41,9 +41,9 @@ class SuccessLogin {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (accessToken?.hashCode ?? 0);
-    hashCode ^= (credentials?.hashCode ?? 0);
-    hashCode ^= (tokenType?.hashCode ?? 0);
+    hashCode ^= accessToken?.hashCode ?? 0;
+    hashCode ^= credentials?.hashCode ?? 0;
+    hashCode ^= tokenType?.hashCode ?? 0;
 
     return hashCode;
   }

@@ -31,7 +31,7 @@ class OperationEmbeddedDuration {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (seconds?.hashCode ?? 0);
+    hashCode ^= seconds?.hashCode ?? 0;
 
     return hashCode;
   }

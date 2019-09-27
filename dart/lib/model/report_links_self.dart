@@ -37,8 +37,8 @@ class ReportLinksSelf {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (href?.hashCode ?? 0);
-    hashCode ^= (iriTemplate?.hashCode ?? 0);
+    hashCode ^= href?.hashCode ?? 0;
+    hashCode ^= iriTemplate?.hashCode ?? 0;
 
     return hashCode;
   }

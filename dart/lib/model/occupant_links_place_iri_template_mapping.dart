@@ -31,7 +31,7 @@ class OccupantLinksPlaceIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (place?.hashCode ?? 0);
+    hashCode ^= place?.hashCode ?? 0;
 
     return hashCode;
   }

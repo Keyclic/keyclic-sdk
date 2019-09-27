@@ -46,10 +46,10 @@ class ExternalServiceData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (organization?.hashCode ?? 0);
-    hashCode ^= (name?.hashCode ?? 0);
-    hashCode ^= (description?.hashCode ?? 0);
-    hashCode ^= (provider?.hashCode ?? 0);
+    hashCode ^= organization?.hashCode ?? 0;
+    hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= provider?.hashCode ?? 0;
 
     return hashCode;
   }

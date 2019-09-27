@@ -109,16 +109,16 @@ class Report {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (embedded?.hashCode ?? 0);
-    hashCode ^= (links?.hashCode ?? 0);
-    hashCode ^= (createdAt?.hashCode ?? 0);
-    hashCode ^= (description?.hashCode ?? 0);
-    hashCode ^= (id?.hashCode ?? 0);
-    hashCode ^= (identificationNumber?.hashCode ?? 0);
-    hashCode ^= (priority?.hashCode ?? 0);
-    hashCode ^= (reference?.hashCode ?? 0);
-    hashCode ^= (type?.hashCode ?? 0);
-    hashCode ^= (updatedAt?.hashCode ?? 0);
+    hashCode ^= embedded?.hashCode ?? 0;
+    hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= createdAt?.hashCode ?? 0;
+    hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= identificationNumber?.hashCode ?? 0;
+    hashCode ^= priority?.hashCode ?? 0;
+    hashCode ^= reference?.hashCode ?? 0;
+    hashCode ^= type?.hashCode ?? 0;
+    hashCode ^= updatedAt?.hashCode ?? 0;
 
     return hashCode;
   }

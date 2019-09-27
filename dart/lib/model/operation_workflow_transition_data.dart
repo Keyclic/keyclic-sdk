@@ -38,7 +38,7 @@ class OperationWorkflowTransitionData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (transition?.hashCode ?? 0);
+    hashCode ^= transition?.hashCode ?? 0;
 
     return hashCode;
   }

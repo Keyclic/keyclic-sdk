@@ -32,7 +32,7 @@ class CategoryLinksOrganizationIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (organization?.hashCode ?? 0);
+    hashCode ^= organization?.hashCode ?? 0;
 
     return hashCode;
   }

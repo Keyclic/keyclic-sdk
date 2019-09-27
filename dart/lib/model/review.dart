@@ -70,13 +70,13 @@ class Review {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (links?.hashCode ?? 0);
-    hashCode ^= (createdAt?.hashCode ?? 0);
-    hashCode ^= (id?.hashCode ?? 0);
-    hashCode ^= (reviewBody?.hashCode ?? 0);
-    hashCode ^= (reviewRating?.hashCode ?? 0);
-    hashCode ^= (type?.hashCode ?? 0);
-    hashCode ^= (updatedAt?.hashCode ?? 0);
+    hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= createdAt?.hashCode ?? 0;
+    hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= reviewBody?.hashCode ?? 0;
+    hashCode ^= reviewRating?.hashCode ?? 0;
+    hashCode ^= type?.hashCode ?? 0;
+    hashCode ^= updatedAt?.hashCode ?? 0;
 
     return hashCode;
   }

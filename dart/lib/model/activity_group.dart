@@ -91,15 +91,15 @@ class ActivityGroup {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= (activityCount?.hashCode ?? 0);
-    hashCode ^= (actorCount?.hashCode ?? 0);
-    hashCode ^= (createdAt?.hashCode ?? 0);
-    hashCode ^= (group?.hashCode ?? 0);
-    hashCode ^= (id?.hashCode ?? 0);
-    hashCode ^= (updatedAt?.hashCode ?? 0);
-    hashCode ^= (verb?.hashCode ?? 0);
-    hashCode ^= (isRead?.hashCode ?? 0);
-    hashCode ^= (isSeen?.hashCode ?? 0);
+    hashCode ^= activityCount?.hashCode ?? 0;
+    hashCode ^= actorCount?.hashCode ?? 0;
+    hashCode ^= createdAt?.hashCode ?? 0;
+    hashCode ^= group?.hashCode ?? 0;
+    hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= updatedAt?.hashCode ?? 0;
+    hashCode ^= verb?.hashCode ?? 0;
+    hashCode ^= isRead?.hashCode ?? 0;
+    hashCode ^= isSeen?.hashCode ?? 0;
 
     return hashCode;
   }

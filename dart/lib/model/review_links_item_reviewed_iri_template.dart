@@ -32,7 +32,7 @@ class ReviewLinksItemReviewedIriTemplate {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (mapping?.hashCode ?? 0);
+    hashCode ^= mapping?.hashCode ?? 0;
 
     return hashCode;
   }

@@ -79,15 +79,15 @@ class Category {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (links?.hashCode ?? 0);
-    hashCode ^= (color?.hashCode ?? 0);
-    hashCode ^= (createdAt?.hashCode ?? 0);
-    hashCode ^= (icon?.hashCode ?? 0);
-    hashCode ^= (id?.hashCode ?? 0);
-    hashCode ^= (identificationNumber?.hashCode ?? 0);
-    hashCode ^= (name?.hashCode ?? 0);
-    hashCode ^= (type?.hashCode ?? 0);
-    hashCode ^= (updatedAt?.hashCode ?? 0);
+    hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= color?.hashCode ?? 0;
+    hashCode ^= createdAt?.hashCode ?? 0;
+    hashCode ^= icon?.hashCode ?? 0;
+    hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= identificationNumber?.hashCode ?? 0;
+    hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= type?.hashCode ?? 0;
+    hashCode ^= updatedAt?.hashCode ?? 0;
 
     return hashCode;
   }

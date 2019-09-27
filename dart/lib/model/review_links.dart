@@ -41,9 +41,9 @@ class ReviewLinks {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (author?.hashCode ?? 0);
-    hashCode ^= (itemReviewed?.hashCode ?? 0);
-    hashCode ^= (self?.hashCode ?? 0);
+    hashCode ^= author?.hashCode ?? 0;
+    hashCode ^= itemReviewed?.hashCode ?? 0;
+    hashCode ^= self?.hashCode ?? 0;
 
     return hashCode;
   }

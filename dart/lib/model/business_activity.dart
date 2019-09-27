@@ -75,14 +75,14 @@ class BusinessActivity {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (links?.hashCode ?? 0);
-    hashCode ^= (alternateName?.hashCode ?? 0);
-    hashCode ^= (createdAt?.hashCode ?? 0);
-    hashCode ^= (id?.hashCode ?? 0);
-    hashCode ^= (metadataSchema?.hashCode ?? 0);
-    hashCode ^= (name?.hashCode ?? 0);
-    hashCode ^= (type?.hashCode ?? 0);
-    hashCode ^= (updatedAt?.hashCode ?? 0);
+    hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= alternateName?.hashCode ?? 0;
+    hashCode ^= createdAt?.hashCode ?? 0;
+    hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= metadataSchema?.hashCode ?? 0;
+    hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= type?.hashCode ?? 0;
+    hashCode ^= updatedAt?.hashCode ?? 0;
 
     return hashCode;
   }

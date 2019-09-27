@@ -31,7 +31,7 @@ class DeviceLinksSelfIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (device?.hashCode ?? 0);
+    hashCode ^= device?.hashCode ?? 0;
 
     return hashCode;
   }

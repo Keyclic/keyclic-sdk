@@ -32,7 +32,7 @@ class FeedbackReviewRequestLinksSelfIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (reviewRequest?.hashCode ?? 0);
+    hashCode ^= reviewRequest?.hashCode ?? 0;
 
     return hashCode;
   }

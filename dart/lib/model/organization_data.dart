@@ -41,9 +41,9 @@ class OrganizationData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (name?.hashCode ?? 0);
-    hashCode ^= (businessActivity?.hashCode ?? 0);
-    hashCode ^= (logo?.hashCode ?? 0);
+    hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= businessActivity?.hashCode ?? 0;
+    hashCode ^= logo?.hashCode ?? 0;
 
     return hashCode;
   }

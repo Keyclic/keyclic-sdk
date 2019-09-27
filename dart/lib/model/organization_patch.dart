@@ -61,13 +61,13 @@ class OrganizationPatch {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (name?.hashCode ?? 0);
-    hashCode ^= (alternateName?.hashCode ?? 0);
-    hashCode ^= (description?.hashCode ?? 0);
-    hashCode ^= (logo?.hashCode ?? 0);
-    hashCode ^= (billingEmailAddress?.hashCode ?? 0);
-    hashCode ^= (notificationEmailAddress?.hashCode ?? 0);
-    hashCode ^= (preferences?.hashCode ?? 0);
+    hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= alternateName?.hashCode ?? 0;
+    hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= logo?.hashCode ?? 0;
+    hashCode ^= billingEmailAddress?.hashCode ?? 0;
+    hashCode ^= notificationEmailAddress?.hashCode ?? 0;
+    hashCode ^= preferences?.hashCode ?? 0;
 
     return hashCode;
   }

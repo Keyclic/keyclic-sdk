@@ -31,7 +31,7 @@ class ResetPasswordData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (email?.hashCode ?? 0);
+    hashCode ^= email?.hashCode ?? 0;
 
     return hashCode;
   }

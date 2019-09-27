@@ -31,7 +31,7 @@ class DocumentLinksFileIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (document?.hashCode ?? 0);
+    hashCode ^= document?.hashCode ?? 0;
 
     return hashCode;
   }

@@ -36,8 +36,8 @@ class OperationLinksImageIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= (image?.hashCode ?? 0);
-    hashCode ^= (operation?.hashCode ?? 0);
+    hashCode ^= image?.hashCode ?? 0;
+    hashCode ^= operation?.hashCode ?? 0;
 
     return hashCode;
   }
