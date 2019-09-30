@@ -33,14 +33,14 @@ export default class FeedbackData {
 
     visibility
   ) {
-    this.category = null;
-    this.geo = geo;
-    this.description = null;
-    this.visibility = visibility;
     this.businessActivity = null;
-    this.proMode = null;
+    this.category = null;
+    this.description = null;
+    this.geo = geo;
     this.metadata = [];
     this.place = null;
+    this.proMode = null;
+    this.visibility = visibility;
 
     this.geoType = FeedbackDataGeo;
   }
@@ -60,11 +60,14 @@ export default class FeedbackData {
       object = new FeedbackData();
     }
 
+    if (data.hasOwnProperty("businessActivity")) {
+      object.businessActivity = ApiClient.convertToType(
+        data["businessActivity"],
+        "String"
+      );
+    }
     if (data.hasOwnProperty("category")) {
       object.category = ApiClient.convertToType(data["category"], "String");
-    }
-    if (data.hasOwnProperty("geo")) {
-      object.geo = ApiClient.convertToType(data["geo"], object.geoType);
     }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
@@ -72,17 +75,8 @@ export default class FeedbackData {
         "String"
       );
     }
-    if (data.hasOwnProperty("visibility")) {
-      object.visibility = ApiClient.convertToType(data["visibility"], "String");
-    }
-    if (data.hasOwnProperty("businessActivity")) {
-      object.businessActivity = ApiClient.convertToType(
-        data["businessActivity"],
-        "String"
-      );
-    }
-    if (data.hasOwnProperty("proMode")) {
-      object.proMode = ApiClient.convertToType(data["proMode"], "Boolean");
+    if (data.hasOwnProperty("geo")) {
+      object.geo = ApiClient.convertToType(data["geo"], object.geoType);
     }
     if (data.hasOwnProperty("metadata")) {
       object.metadata = ApiClient.convertToType(data["metadata"], "['String']");
@@ -90,10 +84,29 @@ export default class FeedbackData {
     if (data.hasOwnProperty("place")) {
       object.place = ApiClient.convertToType(data["place"], "String");
     }
+    if (data.hasOwnProperty("proMode")) {
+      object.proMode = ApiClient.convertToType(data["proMode"], "Boolean");
+    }
+    if (data.hasOwnProperty("visibility")) {
+      object.visibility = ApiClient.convertToType(data["visibility"], "String");
+    }
 
     return object;
   }
 
+  /**
+   * @return { String }
+   */
+  getBusinessActivity() {
+    return this.businessActivity;
+  }
+
+  /**
+   * @param { String } businessActivity
+   */
+  setBusinessActivity(businessActivity) {
+    this.businessActivity = businessActivity;
+  }
   /**
    * @return { String }
    */
@@ -106,19 +119,6 @@ export default class FeedbackData {
    */
   setCategory(category) {
     this.category = category;
-  }
-  /**
-   * @return { module:model/FeedbackDataGeo }
-   */
-  getGeo() {
-    return this.geo;
-  }
-
-  /**
-   * @param { module:model/FeedbackDataGeo } geo
-   */
-  setGeo(geo) {
-    this.geo = geo;
   }
   /**
    * @return { String }
@@ -134,43 +134,17 @@ export default class FeedbackData {
     this.description = description;
   }
   /**
-   * @return { module:model/FeedbackData.VisibilityEnum }
+   * @return { module:model/FeedbackDataGeo }
    */
-  getVisibility() {
-    return this.visibility;
+  getGeo() {
+    return this.geo;
   }
 
   /**
-   * @param { module:model/FeedbackData.VisibilityEnum } visibility
+   * @param { module:model/FeedbackDataGeo } geo
    */
-  setVisibility(visibility) {
-    this.visibility = visibility;
-  }
-  /**
-   * @return { String }
-   */
-  getBusinessActivity() {
-    return this.businessActivity;
-  }
-
-  /**
-   * @param { String } businessActivity
-   */
-  setBusinessActivity(businessActivity) {
-    this.businessActivity = businessActivity;
-  }
-  /**
-   * @return { Boolean }
-   */
-  getProMode() {
-    return this.proMode;
-  }
-
-  /**
-   * @param { Boolean } proMode
-   */
-  setProMode(proMode) {
-    this.proMode = proMode;
+  setGeo(geo) {
+    this.geo = geo;
   }
   /**
    * @return { Object.<String, String> }
@@ -197,6 +171,32 @@ export default class FeedbackData {
    */
   setPlace(place) {
     this.place = place;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getProMode() {
+    return this.proMode;
+  }
+
+  /**
+   * @param { Boolean } proMode
+   */
+  setProMode(proMode) {
+    this.proMode = proMode;
+  }
+  /**
+   * @return { module:model/FeedbackData.VisibilityEnum }
+   */
+  getVisibility() {
+    return this.visibility;
+  }
+
+  /**
+   * @param { module:model/FeedbackData.VisibilityEnum } visibility
+   */
+  setVisibility(visibility) {
+    this.visibility = visibility;
   }
 
   /**

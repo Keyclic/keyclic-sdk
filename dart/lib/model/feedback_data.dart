@@ -7,46 +7,46 @@ class FeedbackDataVisibilityEnum {
 
 class FeedbackData {
   FeedbackData({
-    this.category,
-    this.geo,
-    this.description,
-    this.visibility,
     this.businessActivity,
-    this.proMode,
+    this.category,
+    this.description,
+    this.geo,
     this.metadata,
     this.place,
+    this.proMode,
+    this.visibility,
   });
 
   FeedbackData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    category = json['category'];
-    geo = FeedbackDataGeo.fromJson(json['geo']);
-    description = json['description'];
-    visibility = json['visibility'];
     businessActivity = json['businessActivity'];
-    proMode = json['proMode'];
+    category = json['category'];
+    description = json['description'];
+    geo = FeedbackDataGeo.fromJson(json['geo']);
     metadata = json['metadata'];
     place = json['place'];
+    proMode = json['proMode'];
+    visibility = json['visibility'];
   }
-
-  String category;
-
-  FeedbackDataGeo geo;
-
-  String description;
-
-  /// use FeedbackDataVisibilityEnum
-  String visibility;
 
   String businessActivity;
 
-  bool proMode;
+  String category;
+
+  String description;
+
+  FeedbackDataGeo geo;
 
   Map<String, String> metadata;
 
   String place;
+
+  bool proMode;
+
+  /// use FeedbackDataVisibilityEnum
+  String visibility;
 
   @override
   bool operator ==(dynamic other) {
@@ -57,14 +57,14 @@ class FeedbackData {
 
     return other is FeedbackData &&
         runtimeType == other.runtimeType &&
-        category == other.category &&
-        geo == other.geo &&
-        description == other.description &&
-        visibility == other.visibility &&
         businessActivity == other.businessActivity &&
-        proMode == other.proMode &&
+        category == other.category &&
+        description == other.description &&
+        geo == other.geo &&
         DeepCollectionEquality.unordered().equals(metadata, other.metadata) &&
-        place == other.place;
+        place == other.place &&
+        proMode == other.proMode &&
+        visibility == other.visibility;
   }
 
   /// By default hashCode return reference
@@ -81,13 +81,13 @@ class FeedbackData {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= category?.hashCode ?? 0;
-    hashCode ^= geo?.hashCode ?? 0;
-    hashCode ^= description?.hashCode ?? 0;
-    hashCode ^= visibility?.hashCode ?? 0;
     hashCode ^= businessActivity?.hashCode ?? 0;
-    hashCode ^= proMode?.hashCode ?? 0;
+    hashCode ^= category?.hashCode ?? 0;
+    hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= geo?.hashCode ?? 0;
     hashCode ^= place?.hashCode ?? 0;
+    hashCode ^= proMode?.hashCode ?? 0;
+    hashCode ^= visibility?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -110,19 +110,19 @@ class FeedbackData {
 
   Map<String, dynamic> toJson() {
     return {
-      'category': category,
-      'geo': geo,
-      'description': description,
-      'visibility': visibility,
       'businessActivity': businessActivity,
-      'proMode': proMode,
+      'category': category,
+      'description': description,
+      'geo': geo,
       'metadata': metadata,
       'place': place,
+      'proMode': proMode,
+      'visibility': visibility,
     };
   }
 
   @override
   String toString() {
-    return 'FeedbackData[category=$category, geo=$geo, description=$description, visibility=$visibility, businessActivity=$businessActivity, proMode=$proMode, metadata=$metadata, place=$place, ]';
+    return 'FeedbackData[businessActivity=$businessActivity, category=$category, description=$description, geo=$geo, metadata=$metadata, place=$place, proMode=$proMode, visibility=$visibility, ]';
   }
 }

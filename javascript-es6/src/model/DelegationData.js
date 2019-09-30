@@ -24,11 +24,17 @@ export default class DelegationData {
     
      * @param report { String }
     
+     * @param service { String }
+    
      */
-  constructor(report) {
+  constructor(
+    report,
+
+    service
+  ) {
     this.description = null;
     this.report = report;
-    this.service = null;
+    this.service = service;
   }
 
   /**

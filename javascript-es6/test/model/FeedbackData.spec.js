@@ -53,14 +53,14 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.FeedbackData);
     });
 
-    it('should have the property category (base name: "category")', function() {
-      // uncomment below and update the code to test the property category
+    it('should have the property businessActivity (base name: "businessActivity")', function() {
+      // uncomment below and update the code to test the property businessActivity
       //var instane = new @KeyclicSdkJavascript.FeedbackData();
       //expect(instance).to.be();
     });
 
-    it('should have the property geo (base name: "geo")', function() {
-      // uncomment below and update the code to test the property geo
+    it('should have the property category (base name: "category")', function() {
+      // uncomment below and update the code to test the property category
       //var instane = new @KeyclicSdkJavascript.FeedbackData();
       //expect(instance).to.be();
     });
@@ -71,20 +71,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property visibility (base name: "visibility")', function() {
-      // uncomment below and update the code to test the property visibility
-      //var instane = new @KeyclicSdkJavascript.FeedbackData();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property businessActivity (base name: "businessActivity")', function() {
-      // uncomment below and update the code to test the property businessActivity
-      //var instane = new @KeyclicSdkJavascript.FeedbackData();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property proMode (base name: "proMode")', function() {
-      // uncomment below and update the code to test the property proMode
+    it('should have the property geo (base name: "geo")', function() {
+      // uncomment below and update the code to test the property geo
       //var instane = new @KeyclicSdkJavascript.FeedbackData();
       //expect(instance).to.be();
     });
@@ -97,6 +85,18 @@
 
     it('should have the property place (base name: "place")', function() {
       // uncomment below and update the code to test the property place
+      //var instane = new @KeyclicSdkJavascript.FeedbackData();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property proMode (base name: "proMode")', function() {
+      // uncomment below and update the code to test the property proMode
+      //var instane = new @KeyclicSdkJavascript.FeedbackData();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property visibility (base name: "visibility")', function() {
+      // uncomment below and update the code to test the property visibility
       //var instane = new @KeyclicSdkJavascript.FeedbackData();
       //expect(instance).to.be();
     });

@@ -47,13 +47,15 @@ var DelegationData =
   
    * @param report { String }
   
+   * @param service { String }
+  
    */
-    function DelegationData(report) {
+    function DelegationData(report, service) {
       _classCallCheck(this, DelegationData);
 
       this.description = null;
       this.report = report;
-      this.service = null;
+      this.service = service;
     }
     /**
      * Constructs a "DelegationData" from a plain JavaScript object.

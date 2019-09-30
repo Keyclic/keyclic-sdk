@@ -10,16 +10,19 @@ class QueryParam {
 class ApiClient {
   ApiClient({
     this.basePath = "https://api.keyclic.com",
+    this.debug = false,
   });
 
   final Map<String, Authentication> _authentications = {
     // Setup authentications (key: authentication name, value: authentication).
     'bearer': OAuth(),
   };
+  final Logger _logger = Logger('ApiClient');
   final RegExp _regList = RegExp(r'^List<(.*)>$');
   final RegExp _regMap = RegExp(r'^Map<String,(.*)>$');
 
   final String basePath;
+  final bool debug;
   final Client client = Client();
 
   Map<String, String> _defaultHeaderMap = {};
@@ -68,6 +71,11 @@ class ApiClient {
     headerParams['Content-Type'] = contentType;
 
     final String msgBody = serialize(body);
+
+    if (debug) {
+      _logger.info('===== ApiClient::invokeAPI =====');
+      _logger.info('url: ${url}');
+    }
 
     switch (method) {
       case "POST":

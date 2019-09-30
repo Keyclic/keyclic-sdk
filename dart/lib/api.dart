@@ -4,6 +4,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:collection/collection.dart';
 import 'package:http/http.dart';
+import 'package:logging/logging.dart';
 
 part 'api_client.dart';
 part 'api_helper.dart';

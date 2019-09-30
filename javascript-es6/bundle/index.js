@@ -60,8 +60,6 @@ require("core-js/modules/es.array.reverse");
 
 require("core-js/modules/es.array.slice");
 
-require("core-js/modules/es.array.sort");
-
 require("core-js/modules/es.array.species");
 
 require("core-js/modules/es.array.splice");

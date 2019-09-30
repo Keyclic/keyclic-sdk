@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | **String** |  | [optional] 
-**geo** | [**FeedbackDataGeo**](FeedbackDataGeo.md) |  | 
-**description** | **String** |  | [optional] 
-**visibility** | **String** |  | 
 **businessActivity** | **String** |  | [optional] 
-**proMode** | **Boolean** |  | [optional] 
+**category** | **String** |  | [optional] 
+**description** | **String** |  | [optional] 
+**geo** | [**FeedbackDataGeo**](FeedbackDataGeo.md) |  | 
 **metadata** | **{String: String}** |  | [optional] 
 **place** | **String** |  | [optional] 
+**proMode** | **Boolean** |  | [optional] 
+**visibility** | **String** |  | 
 
 
 <a name="VisibilityEnum"></a>

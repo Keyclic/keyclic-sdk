@@ -69,14 +69,14 @@ var FeedbackData =
     function FeedbackData(geo, visibility) {
       _classCallCheck(this, FeedbackData);
 
-      this.category = null;
-      this.geo = geo;
-      this.description = null;
-      this.visibility = visibility;
       this.businessActivity = null;
-      this.proMode = null;
+      this.category = null;
+      this.description = null;
+      this.geo = geo;
       this.metadata = [];
       this.place = null;
+      this.proMode = null;
+      this.visibility = visibility;
       this.geoType = _FeedbackDataGeo.default;
     }
     /**
@@ -90,11 +90,29 @@ var FeedbackData =
       FeedbackData,
       [
         {
-          key: "getCategory",
+          key: "getBusinessActivity",
 
           /**
            * @return { String }
            */
+          value: function getBusinessActivity() {
+            return this.businessActivity;
+          }
+          /**
+           * @param { String } businessActivity
+           */
+        },
+        {
+          key: "setBusinessActivity",
+          value: function setBusinessActivity(businessActivity) {
+            this.businessActivity = businessActivity;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getCategory",
           value: function getCategory() {
             return this.category;
           }
@@ -106,24 +124,6 @@ var FeedbackData =
           key: "setCategory",
           value: function setCategory(category) {
             this.category = category;
-          }
-          /**
-           * @return { module:model/FeedbackDataGeo }
-           */
-        },
-        {
-          key: "getGeo",
-          value: function getGeo() {
-            return this.geo;
-          }
-          /**
-           * @param { module:model/FeedbackDataGeo } geo
-           */
-        },
-        {
-          key: "setGeo",
-          value: function setGeo(geo) {
-            this.geo = geo;
           }
           /**
            * @return { String }
@@ -144,58 +144,22 @@ var FeedbackData =
             this.description = description;
           }
           /**
-           * @return { module:model/FeedbackData.VisibilityEnum }
+           * @return { module:model/FeedbackDataGeo }
            */
         },
         {
-          key: "getVisibility",
-          value: function getVisibility() {
-            return this.visibility;
+          key: "getGeo",
+          value: function getGeo() {
+            return this.geo;
           }
           /**
-           * @param { module:model/FeedbackData.VisibilityEnum } visibility
+           * @param { module:model/FeedbackDataGeo } geo
            */
         },
         {
-          key: "setVisibility",
-          value: function setVisibility(visibility) {
-            this.visibility = visibility;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getBusinessActivity",
-          value: function getBusinessActivity() {
-            return this.businessActivity;
-          }
-          /**
-           * @param { String } businessActivity
-           */
-        },
-        {
-          key: "setBusinessActivity",
-          value: function setBusinessActivity(businessActivity) {
-            this.businessActivity = businessActivity;
-          }
-          /**
-           * @return { Boolean }
-           */
-        },
-        {
-          key: "getProMode",
-          value: function getProMode() {
-            return this.proMode;
-          }
-          /**
-           * @param { Boolean } proMode
-           */
-        },
-        {
-          key: "setProMode",
-          value: function setProMode(proMode) {
-            this.proMode = proMode;
+          key: "setGeo",
+          value: function setGeo(geo) {
+            this.geo = geo;
           }
           /**
            * @return { Object.<String, String> }
@@ -234,6 +198,42 @@ var FeedbackData =
             this.place = place;
           }
           /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getProMode",
+          value: function getProMode() {
+            return this.proMode;
+          }
+          /**
+           * @param { Boolean } proMode
+           */
+        },
+        {
+          key: "setProMode",
+          value: function setProMode(proMode) {
+            this.proMode = proMode;
+          }
+          /**
+           * @return { module:model/FeedbackData.VisibilityEnum }
+           */
+        },
+        {
+          key: "getVisibility",
+          value: function getVisibility() {
+            return this.visibility;
+          }
+          /**
+           * @param { module:model/FeedbackData.VisibilityEnum } visibility
+           */
+        },
+        {
+          key: "setVisibility",
+          value: function setVisibility(visibility) {
+            this.visibility = visibility;
+          }
+          /**
            * Allowed values for the "visibility" property.
            * @enum { String }
            */
@@ -256,17 +256,17 @@ var FeedbackData =
               object = new FeedbackData();
             }
 
-            if (data.hasOwnProperty("category")) {
-              object.category = _ApiClient.default.convertToType(
-                data["category"],
+            if (data.hasOwnProperty("businessActivity")) {
+              object.businessActivity = _ApiClient.default.convertToType(
+                data["businessActivity"],
                 "String"
               );
             }
 
-            if (data.hasOwnProperty("geo")) {
-              object.geo = _ApiClient.default.convertToType(
-                data["geo"],
-                object.geoType
+            if (data.hasOwnProperty("category")) {
+              object.category = _ApiClient.default.convertToType(
+                data["category"],
+                "String"
               );
             }
 
@@ -277,24 +277,10 @@ var FeedbackData =
               );
             }
 
-            if (data.hasOwnProperty("visibility")) {
-              object.visibility = _ApiClient.default.convertToType(
-                data["visibility"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("businessActivity")) {
-              object.businessActivity = _ApiClient.default.convertToType(
-                data["businessActivity"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("proMode")) {
-              object.proMode = _ApiClient.default.convertToType(
-                data["proMode"],
-                "Boolean"
+            if (data.hasOwnProperty("geo")) {
+              object.geo = _ApiClient.default.convertToType(
+                data["geo"],
+                object.geoType
               );
             }
 
@@ -308,6 +294,20 @@ var FeedbackData =
             if (data.hasOwnProperty("place")) {
               object.place = _ApiClient.default.convertToType(
                 data["place"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("proMode")) {
+              object.proMode = _ApiClient.default.convertToType(
+                data["proMode"],
+                "Boolean"
+              );
+            }
+
+            if (data.hasOwnProperty("visibility")) {
+              object.visibility = _ApiClient.default.convertToType(
+                data["visibility"],
                 "String"
               );
             }

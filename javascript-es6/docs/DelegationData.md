@@ -5,6 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **String** |  | [optional] 
 **report** | **String** |  | 
-**service** | **String** |  | [optional] 
+**service** | **String** |  | 
 
 
