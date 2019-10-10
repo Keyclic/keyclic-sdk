@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **image** | [**OperationLinksImage**](OperationLinksImage.md) |  | [optional] [default to null]
 **images** | [**List&lt;OperationLinksImages&gt;**](OperationLinksImages.md) |  | [optional] [default to []]
 **operator_** | [**OperationLinksOperator**](OperationLinksOperator.md) |  | [optional] [default to null]
+**organization** | [**OperationLinksOrganization**](OperationLinksOrganization.md) |  | [optional] [default to null]
 **report** | [**OperationLinksReport**](OperationLinksReport.md) |  | [optional] [default to null]
 **self** | [**OperationLinksSelf**](OperationLinksSelf.md) |  | [optional] [default to null]
 **tracking** | [**OperationLinksTracking**](OperationLinksTracking.md) |  | [optional] [default to null]

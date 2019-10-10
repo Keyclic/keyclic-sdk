@@ -83,6 +83,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property organization (base name: "organization")', function() {
+      // uncomment below and update the code to test the property organization
+      //var instane = new @KeyclicSdkJavascript.OperationLinks();
+      //expect(instance).to.be();
+    });
+
     it('should have the property report (base name: "report")', function() {
       // uncomment below and update the code to test the property report
       //var instane = new @KeyclicSdkJavascript.OperationLinks();

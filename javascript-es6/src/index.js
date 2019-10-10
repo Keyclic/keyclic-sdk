@@ -227,6 +227,8 @@ import OperationLinksImagesIriTemplate from "./model/OperationLinksImagesIriTemp
 import OperationLinksImagesIriTemplateMapping from "./model/OperationLinksImagesIriTemplateMapping";
 import OperationLinksOperator from "./model/OperationLinksOperator";
 import OperationLinksOperatorIriTemplate from "./model/OperationLinksOperatorIriTemplate";
+import OperationLinksOrganization from "./model/OperationLinksOrganization";
+import OperationLinksOrganizationIriTemplate from "./model/OperationLinksOrganizationIriTemplate";
 import OperationLinksReport from "./model/OperationLinksReport";
 import OperationLinksReportIriTemplate from "./model/OperationLinksReportIriTemplate";
 import OperationLinksSelf from "./model/OperationLinksSelf";
@@ -424,7 +426,7 @@ import WebhookApi from "./api/WebhookApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.0.10
+ * @version 2.1.0
  */
 export {
   /**
@@ -1487,6 +1489,16 @@ export {
    * @property { module:model/OperationLinksOperatorIriTemplate }
    */
   OperationLinksOperatorIriTemplate,
+  /**
+   * The OperationLinksOrganization model constructor.
+   * @property { module:model/OperationLinksOrganization }
+   */
+  OperationLinksOrganization,
+  /**
+   * The OperationLinksOrganizationIriTemplate model constructor.
+   * @property { module:model/OperationLinksOrganizationIriTemplate }
+   */
+  OperationLinksOrganizationIriTemplate,
   /**
    * The OperationLinksReport model constructor.
    * @property { module:model/OperationLinksReport }

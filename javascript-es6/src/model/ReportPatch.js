@@ -26,6 +26,7 @@ export default class ReportPatch {
   constructor() {
     this.category = null;
     this.description = null;
+    this.dueDate = null;
     this.identificationNumber = null;
     this.priority = null;
     this.tags = [];
@@ -54,6 +55,9 @@ export default class ReportPatch {
         data["description"],
         "String"
       );
+    }
+    if (data.hasOwnProperty("dueDate")) {
+      object.dueDate = ApiClient.convertToType(data["dueDate"], "Date");
     }
     if (data.hasOwnProperty("identificationNumber")) {
       object.identificationNumber = ApiClient.convertToType(
@@ -96,6 +100,19 @@ export default class ReportPatch {
    */
   setDescription(description) {
     this.description = description;
+  }
+  /**
+   * @return { Date }
+   */
+  getDueDate() {
+    return this.dueDate;
+  }
+
+  /**
+   * @param { Date } dueDate
+   */
+  setDueDate(dueDate) {
+    this.dueDate = dueDate;
   }
   /**
    * @return { String }

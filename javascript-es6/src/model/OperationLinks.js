@@ -16,6 +16,7 @@ import OperationLinksFeedback from "./OperationLinksFeedback";
 import OperationLinksImage from "./OperationLinksImage";
 import OperationLinksImages from "./OperationLinksImages";
 import OperationLinksOperator from "./OperationLinksOperator";
+import OperationLinksOrganization from "./OperationLinksOrganization";
 import OperationLinksReport from "./OperationLinksReport";
 import OperationLinksSelf from "./OperationLinksSelf";
 import OperationLinksTracking from "./OperationLinksTracking";
@@ -37,6 +38,7 @@ export default class OperationLinks {
     this.image = null;
     this.images = [];
     this.operator = null;
+    this.organization = null;
     this.report = null;
     this.self = null;
     this.tracking = null;
@@ -46,6 +48,7 @@ export default class OperationLinks {
     this.imageType = OperationLinksImage;
     this.imagesType = OperationLinksImages;
     this.operatorType = OperationLinksOperator;
+    this.organizationType = OperationLinksOrganization;
     this.reportType = OperationLinksReport;
     this.selfType = OperationLinksSelf;
     this.trackingType = OperationLinksTracking;
@@ -90,6 +93,12 @@ export default class OperationLinks {
       object.operator = ApiClient.convertToType(
         data["operator"],
         object.operatorType
+      );
+    }
+    if (data.hasOwnProperty("organization")) {
+      object.organization = ApiClient.convertToType(
+        data["organization"],
+        object.organizationType
       );
     }
     if (data.hasOwnProperty("report")) {
@@ -175,6 +184,19 @@ export default class OperationLinks {
    */
   setOperator(operator) {
     this.operator = operator;
+  }
+  /**
+   * @return { module:model/OperationLinksOrganization }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { module:model/OperationLinksOrganization } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
   }
   /**
    * @return { module:model/OperationLinksReport }

@@ -7,6 +7,7 @@ class OperationLinks {
     this.image,
     this.images,
     this.operator_,
+    this.organization,
     this.report,
     this.self,
     this.tracking,
@@ -21,6 +22,7 @@ class OperationLinks {
     image = OperationLinksImage.fromJson(json['image']);
     images = OperationLinksImages.listFromJson(json['images']);
     operator_ = OperationLinksOperator.fromJson(json['operator']);
+    organization = OperationLinksOrganization.fromJson(json['organization']);
     report = OperationLinksReport.fromJson(json['report']);
     self = OperationLinksSelf.fromJson(json['self']);
     tracking = OperationLinksTracking.fromJson(json['tracking']);
@@ -35,6 +37,8 @@ class OperationLinks {
   List<OperationLinksImages> images;
 
   OperationLinksOperator operator_;
+
+  OperationLinksOrganization organization;
 
   OperationLinksReport report;
 
@@ -56,6 +60,7 @@ class OperationLinks {
         image == other.image &&
         DeepCollectionEquality.unordered().equals(images, other.images) &&
         operator_ == other.operator_ &&
+        organization == other.organization &&
         report == other.report &&
         self == other.self &&
         tracking == other.tracking;
@@ -76,6 +81,7 @@ class OperationLinks {
     hashCode ^= feedback?.hashCode ?? 0;
     hashCode ^= image?.hashCode ?? 0;
     hashCode ^= operator_?.hashCode ?? 0;
+    hashCode ^= organization?.hashCode ?? 0;
     hashCode ^= report?.hashCode ?? 0;
     hashCode ^= self?.hashCode ?? 0;
     hashCode ^= tracking?.hashCode ?? 0;
@@ -106,6 +112,7 @@ class OperationLinks {
       'image': image,
       'images': images,
       'operator': operator_,
+      'organization': organization,
       'report': report,
       'self': self,
       'tracking': tracking,
@@ -114,6 +121,6 @@ class OperationLinks {
 
   @override
   String toString() {
-    return 'OperationLinks[createdBy=$createdBy, feedback=$feedback, image=$image, images=$images, operator_=$operator_, report=$report, self=$self, tracking=$tracking, ]';
+    return 'OperationLinks[createdBy=$createdBy, feedback=$feedback, image=$image, images=$images, operator_=$operator_, organization=$organization, report=$report, self=$self, tracking=$tracking, ]';
   }
 }

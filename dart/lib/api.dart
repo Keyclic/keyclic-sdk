@@ -249,6 +249,8 @@ part 'model/operation_links_images_iri_template.dart';
 part 'model/operation_links_images_iri_template_mapping.dart';
 part 'model/operation_links_operator.dart';
 part 'model/operation_links_operator_iri_template.dart';
+part 'model/operation_links_organization.dart';
+part 'model/operation_links_organization_iri_template.dart';
 part 'model/operation_links_report.dart';
 part 'model/operation_links_report_iri_template.dart';
 part 'model/operation_links_self.dart';

@@ -51,6 +51,7 @@ var ReportPatch =
 
       this.category = null;
       this.description = null;
+      this.dueDate = null;
       this.identificationNumber = null;
       this.priority = null;
       this.tags = [];
@@ -100,6 +101,24 @@ var ReportPatch =
           key: "setDescription",
           value: function setDescription(description) {
             this.description = description;
+          }
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getDueDate",
+          value: function getDueDate() {
+            return this.dueDate;
+          }
+          /**
+           * @param { Date } dueDate
+           */
+        },
+        {
+          key: "setDueDate",
+          value: function setDueDate(dueDate) {
+            this.dueDate = dueDate;
           }
           /**
            * @return { String }
@@ -185,6 +204,13 @@ var ReportPatch =
               object.description = _ApiClient.default.convertToType(
                 data["description"],
                 "String"
+              );
+            }
+
+            if (data.hasOwnProperty("dueDate")) {
+              object.dueDate = _ApiClient.default.convertToType(
+                data["dueDate"],
+                "Date"
               );
             }
 

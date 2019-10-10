@@ -73,7 +73,6 @@ class ApiClient {
     final String msgBody = serialize(body);
 
     if (debug) {
-      _logger.info('===== ApiClient::invokeAPI =====');
       _logger.info('url: ${url}');
     }
 
@@ -542,6 +541,10 @@ class ApiClient {
           return OperationLinksOperator.fromJson(value);
         case 'OperationLinksOperatorIriTemplate':
           return OperationLinksOperatorIriTemplate.fromJson(value);
+        case 'OperationLinksOrganization':
+          return OperationLinksOrganization.fromJson(value);
+        case 'OperationLinksOrganizationIriTemplate':
+          return OperationLinksOrganizationIriTemplate.fromJson(value);
         case 'OperationLinksReport':
           return OperationLinksReport.fromJson(value);
         case 'OperationLinksReportIriTemplate':

@@ -1665,6 +1665,18 @@ Object.defineProperty(exports, "OperationLinksOperatorIriTemplate", {
     return _OperationLinksOperatorIriTemplate.default;
   }
 });
+Object.defineProperty(exports, "OperationLinksOrganization", {
+  enumerable: true,
+  get: function get() {
+    return _OperationLinksOrganization.default;
+  }
+});
+Object.defineProperty(exports, "OperationLinksOrganizationIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _OperationLinksOrganizationIriTemplate.default;
+  }
+});
 Object.defineProperty(exports, "OperationLinksReport", {
   enumerable: true,
   get: function get() {
@@ -3472,6 +3484,14 @@ var _OperationLinksOperator = _interopRequireDefault(
 
 var _OperationLinksOperatorIriTemplate = _interopRequireDefault(
   require("./model/OperationLinksOperatorIriTemplate")
+);
+
+var _OperationLinksOrganization = _interopRequireDefault(
+  require("./model/OperationLinksOrganization")
+);
+
+var _OperationLinksOrganizationIriTemplate = _interopRequireDefault(
+  require("./model/OperationLinksOrganizationIriTemplate")
 );
 
 var _OperationLinksReport = _interopRequireDefault(

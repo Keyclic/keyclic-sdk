@@ -27,6 +27,10 @@ var _OperationLinksOperator = _interopRequireDefault(
   require("./OperationLinksOperator")
 );
 
+var _OperationLinksOrganization = _interopRequireDefault(
+  require("./OperationLinksOrganization")
+);
+
 var _OperationLinksReport = _interopRequireDefault(
   require("./OperationLinksReport")
 );
@@ -86,6 +90,7 @@ var OperationLinks =
       this.image = null;
       this.images = [];
       this.operator = null;
+      this.organization = null;
       this.report = null;
       this.self = null;
       this.tracking = null;
@@ -94,6 +99,7 @@ var OperationLinks =
       this.imageType = _OperationLinksImage.default;
       this.imagesType = _OperationLinksImages.default;
       this.operatorType = _OperationLinksOperator.default;
+      this.organizationType = _OperationLinksOrganization.default;
       this.reportType = _OperationLinksReport.default;
       this.selfType = _OperationLinksSelf.default;
       this.trackingType = _OperationLinksTracking.default;
@@ -199,6 +205,24 @@ var OperationLinks =
             this.operator = operator;
           }
           /**
+           * @return { module:model/OperationLinksOrganization }
+           */
+        },
+        {
+          key: "getOrganization",
+          value: function getOrganization() {
+            return this.organization;
+          }
+          /**
+           * @param { module:model/OperationLinksOrganization } organization
+           */
+        },
+        {
+          key: "setOrganization",
+          value: function setOrganization(organization) {
+            this.organization = organization;
+          }
+          /**
            * @return { module:model/OperationLinksReport }
            */
         },
@@ -302,6 +326,13 @@ var OperationLinks =
               object.operator = _ApiClient.default.convertToType(
                 data["operator"],
                 object.operatorType
+              );
+            }
+
+            if (data.hasOwnProperty("organization")) {
+              object.organization = _ApiClient.default.convertToType(
+                data["organization"],
+                object.organizationType
               );
             }
 

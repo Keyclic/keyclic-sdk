@@ -6,6 +6,7 @@ class Report {
     this.links,
     this.createdAt,
     this.description,
+    this.dueDate,
     this.id,
     this.identificationNumber,
     this.priority,
@@ -28,6 +29,10 @@ class Report {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
     description = json['description'];
+    dueDate = json['dueDate'] == null ? null : DateTime.parse(json['dueDate']);
+    if (dueDate is DateTime && dueDate.isUtc == false) {
+      dueDate = DateTime.parse('${dueDate.toIso8601String()}Z');
+    }
     id = json['id'];
     identificationNumber = json['identificationNumber'];
     priority = json['priority'];
@@ -53,6 +58,8 @@ class Report {
   DateTime createdAt;
 
   String description;
+
+  DateTime dueDate;
 
   String id;
 
@@ -83,6 +90,7 @@ class Report {
         links == other.links &&
         createdAt == other.createdAt &&
         description == other.description &&
+        dueDate == other.dueDate &&
         id == other.id &&
         identificationNumber == other.identificationNumber &&
         priority == other.priority &&
@@ -113,6 +121,7 @@ class Report {
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= dueDate?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= identificationNumber?.hashCode ?? 0;
     hashCode ^= priority?.hashCode ?? 0;
@@ -145,6 +154,7 @@ class Report {
       '_links': links,
       'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
       'description': description,
+      'dueDate': dueDate == null ? '' : dueDate.toUtc().toIso8601String(),
       'id': id,
       'identificationNumber': identificationNumber,
       'priority': priority,
@@ -158,6 +168,6 @@ class Report {
 
   @override
   String toString() {
-    return 'Report[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, id=$id, identificationNumber=$identificationNumber, priority=$priority, reference=$reference, state=$state, tags=$tags, type=$type, updatedAt=$updatedAt, ]';
+    return 'Report[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, dueDate=$dueDate, id=$id, identificationNumber=$identificationNumber, priority=$priority, reference=$reference, state=$state, tags=$tags, type=$type, updatedAt=$updatedAt, ]';
   }
 }

@@ -4,6 +4,7 @@ class ReportPatch {
   ReportPatch({
     this.category,
     this.description,
+    this.dueDate,
     this.identificationNumber,
     this.priority,
     this.tags,
@@ -15,6 +16,10 @@ class ReportPatch {
     }
     category = json['category'];
     description = json['description'];
+    dueDate = json['dueDate'] == null ? null : DateTime.parse(json['dueDate']);
+    if (dueDate is DateTime && dueDate.isUtc == false) {
+      dueDate = DateTime.parse('${dueDate.toIso8601String()}Z');
+    }
     identificationNumber = json['identificationNumber'];
     priority = json['priority'];
     if (json['tags'] is List) {
@@ -25,6 +30,8 @@ class ReportPatch {
   String category;
 
   String description;
+
+  DateTime dueDate;
 
   String identificationNumber;
 
@@ -43,6 +50,7 @@ class ReportPatch {
         runtimeType == other.runtimeType &&
         category == other.category &&
         description == other.description &&
+        dueDate == other.dueDate &&
         identificationNumber == other.identificationNumber &&
         priority == other.priority &&
         DeepCollectionEquality.unordered().equals(tags, other.tags);
@@ -61,6 +69,7 @@ class ReportPatch {
 
     hashCode ^= category?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= dueDate?.hashCode ?? 0;
     hashCode ^= identificationNumber?.hashCode ?? 0;
     hashCode ^= priority?.hashCode ?? 0;
 
@@ -87,6 +96,7 @@ class ReportPatch {
     return {
       'category': category,
       'description': description,
+      'dueDate': dueDate == null ? '' : dueDate.toUtc().toIso8601String(),
       'identificationNumber': identificationNumber,
       'priority': priority,
       'tags': tags,
@@ -95,6 +105,6 @@ class ReportPatch {
 
   @override
   String toString() {
-    return 'ReportPatch[category=$category, description=$description, identificationNumber=$identificationNumber, priority=$priority, tags=$tags, ]';
+    return 'ReportPatch[category=$category, description=$description, dueDate=$dueDate, identificationNumber=$identificationNumber, priority=$priority, tags=$tags, ]';
   }
 }
