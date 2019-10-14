@@ -141,8 +141,9 @@ class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
   Map<String, dynamic> toJson() {
     return {
       {{#vars}}
+      if ({{name}} != null)
         {{#isDateTime}}
-          '{{{baseName}}}': {{name}} == null ? '' : {{name}}.toUtc().toIso8601String(),
+          '{{{baseName}}}': {{name}}.toUtc().toIso8601String(),
         {{/isDateTime}}
         {{^isDateTime}}
           '{{{baseName}}}': {{name}},
