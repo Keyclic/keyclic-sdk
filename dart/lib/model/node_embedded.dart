@@ -68,8 +68,8 @@ class NodeEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'path': path,
-      'children': children,
+      if (path != null) 'path': path,
+      if (children != null) 'children': children,
     };
   }
 

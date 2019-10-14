@@ -60,8 +60,8 @@ class FeedbackDataGeo {
 
   Map<String, dynamic> toJson() {
     return {
-      'point': point,
-      'elevation': elevation,
+      if (point != null) 'point': point,
+      if (elevation != null) 'elevation': elevation,
     };
   }
 

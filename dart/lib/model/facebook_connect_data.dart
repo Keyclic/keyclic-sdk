@@ -57,7 +57,7 @@ class FacebookConnectData {
 
   Map<String, dynamic> toJson() {
     return {
-      'accessToken': accessToken,
+      if (accessToken != null) 'accessToken': accessToken,
     };
   }
 

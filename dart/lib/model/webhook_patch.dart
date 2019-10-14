@@ -60,8 +60,8 @@ class WebhookPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      'event': event,
-      'payloadUrl': payloadUrl,
+      if (event != null) 'event': event,
+      if (payloadUrl != null) 'payloadUrl': payloadUrl,
     };
   }
 

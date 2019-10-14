@@ -74,10 +74,10 @@ class PublicationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'author': author,
-      'feed': feed,
-      'organization': organization,
-      'self': self,
+      if (author != null) 'author': author,
+      if (feed != null) 'feed': feed,
+      if (organization != null) 'organization': organization,
+      if (self != null) 'self': self,
     };
   }
 

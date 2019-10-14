@@ -1833,6 +1833,18 @@ Object.defineProperty(exports, "OrganizationPreferences", {
     return _OrganizationPreferences.default;
   }
 });
+Object.defineProperty(exports, "OrganizationPreferencesNotification", {
+  enumerable: true,
+  get: function get() {
+    return _OrganizationPreferencesNotification.default;
+  }
+});
+Object.defineProperty(exports, "OrganizationPreferencesNotificationReport", {
+  enumerable: true,
+  get: function get() {
+    return _OrganizationPreferencesNotificationReport.default;
+  }
+});
 Object.defineProperty(exports, "OrganizationPreferencesReference", {
   enumerable: true,
   get: function get() {
@@ -3592,6 +3604,14 @@ var _OrganizationPatchPreferences = _interopRequireDefault(
 
 var _OrganizationPreferences = _interopRequireDefault(
   require("./model/OrganizationPreferences")
+);
+
+var _OrganizationPreferencesNotification = _interopRequireDefault(
+  require("./model/OrganizationPreferencesNotification")
+);
+
+var _OrganizationPreferencesNotificationReport = _interopRequireDefault(
+  require("./model/OrganizationPreferencesNotificationReport")
 );
 
 var _OrganizationPreferencesReference = _interopRequireDefault(

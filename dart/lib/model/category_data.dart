@@ -72,10 +72,10 @@ class CategoryData {
 
   Map<String, dynamic> toJson() {
     return {
-      'name': name,
-      'color': color,
-      'icon': icon,
-      'organization': organization,
+      if (name != null) 'name': name,
+      if (color != null) 'color': color,
+      if (icon != null) 'icon': icon,
+      if (organization != null) 'organization': organization,
     };
   }
 

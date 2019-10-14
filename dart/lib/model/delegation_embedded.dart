@@ -64,7 +64,7 @@ class DelegationEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'stateTransitions': stateTransitions,
+      if (stateTransitions != null) 'stateTransitions': stateTransitions,
     };
   }
 

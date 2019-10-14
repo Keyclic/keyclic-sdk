@@ -70,9 +70,9 @@ class ExternalServicePatch {
 
   Map<String, dynamic> toJson() {
     return {
-      'contactPoint': contactPoint,
-      'description': description,
-      'name': name,
+      if (contactPoint != null) 'contactPoint': contactPoint,
+      if (description != null) 'description': description,
+      if (name != null) 'name': name,
     };
   }
 

@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import OrganizationPreferencesNotification from "./OrganizationPreferencesNotification";
 import OrganizationPreferencesReference from "./OrganizationPreferencesReference";
 
 /**
@@ -27,10 +28,12 @@ export default class OrganizationPreferences {
     
      */
   constructor(_public) {
+    this.notification = null;
     this._public = _public;
     this.reference = null;
     this.reviewEnabled = null;
 
+    this.notificationType = OrganizationPreferencesNotification;
     this.referenceType = OrganizationPreferencesReference;
   }
 
@@ -49,6 +52,12 @@ export default class OrganizationPreferences {
       object = new OrganizationPreferences();
     }
 
+    if (data.hasOwnProperty("notification")) {
+      object.notification = ApiClient.convertToType(
+        data["notification"],
+        object.notificationType
+      );
+    }
     if (data.hasOwnProperty("public")) {
       object._public = ApiClient.convertToType(data["public"], "Boolean");
     }
@@ -68,6 +77,19 @@ export default class OrganizationPreferences {
     return object;
   }
 
+  /**
+   * @return { module:model/OrganizationPreferencesNotification }
+   */
+  getNotification() {
+    return this.notification;
+  }
+
+  /**
+   * @param { module:model/OrganizationPreferencesNotification } notification
+   */
+  setNotification(notification) {
+    this.notification = notification;
+  }
   /**
    * @return { Boolean }
    */

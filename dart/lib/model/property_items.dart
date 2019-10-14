@@ -58,7 +58,7 @@ class PropertyItems {
 
   Map<String, dynamic> toJson() {
     return {
-      'oneOf': oneOf,
+      if (oneOf != null) 'oneOf': oneOf,
     };
   }
 

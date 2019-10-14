@@ -79,9 +79,9 @@ class SuccessLoginCredentialsMemberOf {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'organization': organization,
-      'roles': roles,
+      if (id != null) 'id': id,
+      if (organization != null) 'organization': organization,
+      if (roles != null) 'roles': roles,
     };
   }
 

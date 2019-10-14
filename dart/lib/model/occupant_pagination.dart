@@ -87,12 +87,12 @@ class OccupantPagination extends Pagination {
 
   Map<String, dynamic> toJson() {
     return {
-      'limit': limit,
-      'page': page,
-      'pages': pages,
-      'total': total,
-      '_links': links,
-      '_embedded': embedded,
+      if (limit != null) 'limit': limit,
+      if (page != null) 'page': page,
+      if (pages != null) 'pages': pages,
+      if (total != null) 'total': total,
+      if (links != null) '_links': links,
+      if (embedded != null) '_embedded': embedded,
     };
   }
 

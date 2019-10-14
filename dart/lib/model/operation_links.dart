@@ -107,15 +107,15 @@ class OperationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'createdBy': createdBy,
-      'feedback': feedback,
-      'image': image,
-      'images': images,
-      'operator': operator_,
-      'organization': organization,
-      'report': report,
-      'self': self,
-      'tracking': tracking,
+      if (createdBy != null) 'createdBy': createdBy,
+      if (feedback != null) 'feedback': feedback,
+      if (image != null) 'image': image,
+      if (images != null) 'images': images,
+      if (operator_ != null) 'operator': operator_,
+      if (organization != null) 'organization': organization,
+      if (report != null) 'report': report,
+      if (self != null) 'self': self,
+      if (tracking != null) 'tracking': tracking,
     };
   }
 

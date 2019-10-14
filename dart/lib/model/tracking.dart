@@ -78,10 +78,10 @@ class Tracking {
 
   Map<String, dynamic> toJson() {
     return {
-      'checkpoints': checkpoints,
-      'progression': progression,
-      'state': state,
-      'time': time,
+      if (checkpoints != null) 'checkpoints': checkpoints,
+      if (progression != null) 'progression': progression,
+      if (state != null) 'state': state,
+      if (time != null) 'time': time,
     };
   }
 

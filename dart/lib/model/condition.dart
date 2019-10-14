@@ -85,11 +85,11 @@ class Condition {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'operator': operator_,
-      'path': path,
-      'type': type,
-      'value': value,
+      if (id != null) 'id': id,
+      if (operator_ != null) 'operator': operator_,
+      if (path != null) 'path': path,
+      if (type != null) 'type': type,
+      if (value != null) 'value': value,
     };
   }
 

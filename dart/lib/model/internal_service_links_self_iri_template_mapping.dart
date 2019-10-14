@@ -60,7 +60,7 @@ class InternalServiceLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'internalService': internalService,
+      if (internalService != null) 'internalService': internalService,
     };
   }
 

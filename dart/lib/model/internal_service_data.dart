@@ -69,9 +69,9 @@ class InternalServiceData {
 
   Map<String, dynamic> toJson() {
     return {
-      'organization': organization,
-      'name': name,
-      'description': description,
+      if (organization != null) 'organization': organization,
+      if (name != null) 'name': name,
+      if (description != null) 'description': description,
     };
   }
 

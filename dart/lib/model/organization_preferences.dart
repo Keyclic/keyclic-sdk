@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class OrganizationPreferences {
   OrganizationPreferences({
+    this.notification,
     this.public,
     this.reference,
     this.reviewEnabled,
@@ -11,10 +12,14 @@ class OrganizationPreferences {
     if (json == null) {
       return;
     }
+    notification =
+        OrganizationPreferencesNotification.fromJson(json['notification']);
     public = json['public'];
     reference = OrganizationPreferencesReference.fromJson(json['reference']);
     reviewEnabled = json['reviewEnabled'];
   }
+
+  OrganizationPreferencesNotification notification;
 
   bool public;
 
@@ -31,6 +36,7 @@ class OrganizationPreferences {
 
     return other is OrganizationPreferences &&
         runtimeType == other.runtimeType &&
+        notification == other.notification &&
         public == other.public &&
         reference == other.reference &&
         reviewEnabled == other.reviewEnabled;
@@ -41,6 +47,7 @@ class OrganizationPreferences {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= notification?.hashCode ?? 0;
     hashCode ^= public?.hashCode ?? 0;
     hashCode ^= reference?.hashCode ?? 0;
     hashCode ^= reviewEnabled?.hashCode ?? 0;
@@ -69,14 +76,15 @@ class OrganizationPreferences {
 
   Map<String, dynamic> toJson() {
     return {
-      'public': public,
-      'reference': reference,
-      'reviewEnabled': reviewEnabled,
+      if (notification != null) 'notification': notification,
+      if (public != null) 'public': public,
+      if (reference != null) 'reference': reference,
+      if (reviewEnabled != null) 'reviewEnabled': reviewEnabled,
     };
   }
 
   @override
   String toString() {
-    return 'OrganizationPreferences[public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
+    return 'OrganizationPreferences[notification=$notification, public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
   }
 }

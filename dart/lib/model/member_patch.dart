@@ -60,7 +60,7 @@ class MemberPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      'roles': roles,
+      if (roles != null) 'roles': roles,
     };
   }
 

@@ -59,7 +59,7 @@ class CategoryLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'category': category,
+      if (category != null) 'category': category,
     };
   }
 

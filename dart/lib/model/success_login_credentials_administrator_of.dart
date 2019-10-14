@@ -71,9 +71,9 @@ class SuccessLoginCredentialsAdministratorOf {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'token': token,
-      'type': type,
+      if (id != null) 'id': id,
+      if (token != null) 'token': token,
+      if (type != null) 'type': type,
     };
   }
 

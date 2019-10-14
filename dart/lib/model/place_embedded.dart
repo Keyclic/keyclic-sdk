@@ -68,8 +68,8 @@ class PlaceEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'children': children,
-      'path': path,
+      if (children != null) 'children': children,
+      if (path != null) 'path': path,
     };
   }
 

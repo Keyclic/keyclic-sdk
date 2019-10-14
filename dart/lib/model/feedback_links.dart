@@ -96,13 +96,13 @@ class FeedbackLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'businessActivity': businessActivity,
-      'category': category,
-      'image': image,
-      'images': images,
-      'reporter': reporter,
-      'self': self,
-      'tracking': tracking,
+      if (businessActivity != null) 'businessActivity': businessActivity,
+      if (category != null) 'category': category,
+      if (image != null) 'image': image,
+      if (images != null) 'images': images,
+      if (reporter != null) 'reporter': reporter,
+      if (self != null) 'self': self,
+      if (tracking != null) 'tracking': tracking,
     };
   }
 

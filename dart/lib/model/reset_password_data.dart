@@ -56,7 +56,7 @@ class ResetPasswordData {
 
   Map<String, dynamic> toJson() {
     return {
-      'email': email,
+      if (email != null) 'email': email,
     };
   }
 

@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _OrganizationPreferencesNotification = _interopRequireDefault(
+  require("./OrganizationPreferencesNotification")
+);
+
 var _OrganizationPreferencesReference = _interopRequireDefault(
   require("./OrganizationPreferencesReference")
 );
@@ -53,7 +57,9 @@ var OrganizationPatchPreferences =
     function OrganizationPatchPreferences() {
       _classCallCheck(this, OrganizationPatchPreferences);
 
+      this.notification = null;
       this.reference = null;
+      this.notificationType = _OrganizationPreferencesNotification.default;
       this.referenceType = _OrganizationPreferencesReference.default;
     }
     /**
@@ -67,11 +73,29 @@ var OrganizationPatchPreferences =
       OrganizationPatchPreferences,
       [
         {
-          key: "getReference",
+          key: "getNotification",
 
+          /**
+           * @return { module:model/OrganizationPreferencesNotification }
+           */
+          value: function getNotification() {
+            return this.notification;
+          }
+          /**
+           * @param { module:model/OrganizationPreferencesNotification } notification
+           */
+        },
+        {
+          key: "setNotification",
+          value: function setNotification(notification) {
+            this.notification = notification;
+          }
           /**
            * @return { module:model/OrganizationPreferencesReference }
            */
+        },
+        {
+          key: "getReference",
           value: function getReference() {
             return this.reference;
           }
@@ -101,6 +125,13 @@ var OrganizationPatchPreferences =
 
             if (object === null) {
               object = new OrganizationPatchPreferences();
+            }
+
+            if (data.hasOwnProperty("notification")) {
+              object.notification = _ApiClient.default.convertToType(
+                data["notification"],
+                object.notificationType
+              );
             }
 
             if (data.hasOwnProperty("reference")) {

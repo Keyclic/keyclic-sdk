@@ -64,8 +64,8 @@ class InternalServiceLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'organization': organization,
-      'self': self,
+      if (organization != null) 'organization': organization,
+      if (self != null) 'self': self,
     };
   }
 

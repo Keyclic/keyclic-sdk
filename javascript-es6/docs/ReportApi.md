@@ -108,6 +108,7 @@ let report = "report_example"; // String | The identifier of the resource.
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+  'assignedTo': "assignedTo_example", // String | The identifier of the resource.
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'order': "desc", // String | 
@@ -135,6 +136,7 @@ Name | Type | Description  | Notes
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
+ **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]

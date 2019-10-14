@@ -75,9 +75,9 @@ class WebhookData {
 
   Map<String, dynamic> toJson() {
     return {
-      'event': event,
-      'organization': organization,
-      'payloadUrl': payloadUrl,
+      if (event != null) 'event': event,
+      if (organization != null) 'organization': organization,
+      if (payloadUrl != null) 'payloadUrl': payloadUrl,
     };
   }
 

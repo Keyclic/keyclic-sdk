@@ -285,6 +285,7 @@ class PersonApi {
     String person, {
     String acceptLanguage,
     String xKeyclicAppVersion,
+    String assignedTo,
     DateTime after,
     DateTime before,
     String order,
@@ -311,6 +312,8 @@ class PersonApi {
 
     // query params
     final List<QueryParam> queryParams = [
+      if (assignedTo != null)
+        ..._convertParametersForCollectionFormat("assigned_to", assignedTo),
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)

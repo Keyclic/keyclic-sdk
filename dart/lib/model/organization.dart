@@ -128,18 +128,20 @@ class Organization {
 
   Map<String, dynamic> toJson() {
     return {
-      '_links': links,
-      'alternateName': alternateName,
-      'billingEmailAddress': billingEmailAddress,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'description': description,
-      'enabled': enabled,
-      'id': id,
-      'name': name,
-      'notificationEmailAddress': notificationEmailAddress,
-      'preferences': preferences,
-      'type': type,
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
+      if (links != null) '_links': links,
+      if (alternateName != null) 'alternateName': alternateName,
+      if (billingEmailAddress != null)
+        'billingEmailAddress': billingEmailAddress,
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (description != null) 'description': description,
+      if (enabled != null) 'enabled': enabled,
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (notificationEmailAddress != null)
+        'notificationEmailAddress': notificationEmailAddress,
+      if (preferences != null) 'preferences': preferences,
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 

@@ -53,6 +53,12 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.OrganizationPreferences);
     });
 
+    it('should have the property notification (base name: "notification")', function() {
+      // uncomment below and update the code to test the property notification
+      //var instane = new @KeyclicSdkJavascript.OrganizationPreferences();
+      //expect(instance).to.be();
+    });
+
     it('should have the property _public (base name: "public")', function() {
       // uncomment below and update the code to test the property _public
       //var instane = new @KeyclicSdkJavascript.OrganizationPreferences();

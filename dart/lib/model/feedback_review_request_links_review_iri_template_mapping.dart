@@ -61,7 +61,7 @@ class FeedbackReviewRequestLinksReviewIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'review': review,
+      if (review != null) 'review': review,
     };
   }
 

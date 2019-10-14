@@ -75,10 +75,10 @@ class ExternalServiceData {
 
   Map<String, dynamic> toJson() {
     return {
-      'organization': organization,
-      'name': name,
-      'description': description,
-      'provider': provider,
+      if (organization != null) 'organization': organization,
+      if (name != null) 'name': name,
+      if (description != null) 'description': description,
+      if (provider != null) 'provider': provider,
     };
   }
 

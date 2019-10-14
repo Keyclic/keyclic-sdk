@@ -122,18 +122,16 @@ class ActivityGroup {
 
   Map<String, dynamic> toJson() {
     return {
-      'activities': activities,
-      'activity_count': activityCount,
-      'actor_count': actorCount,
-      'created_at':
-          createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'group': group,
-      'id': id,
-      'updated_at':
-          updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
-      'verb': verb,
-      'is_read': isRead,
-      'is_seen': isSeen,
+      if (activities != null) 'activities': activities,
+      if (activityCount != null) 'activity_count': activityCount,
+      if (actorCount != null) 'actor_count': actorCount,
+      if (createdAt != null) 'created_at': createdAt.toUtc().toIso8601String(),
+      if (group != null) 'group': group,
+      if (id != null) 'id': id,
+      if (updatedAt != null) 'updated_at': updatedAt.toUtc().toIso8601String(),
+      if (verb != null) 'verb': verb,
+      if (isRead != null) 'is_read': isRead,
+      if (isSeen != null) 'is_seen': isSeen,
     };
   }
 

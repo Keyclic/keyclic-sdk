@@ -66,9 +66,9 @@ class OccupantLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'person': person,
-      'place': place,
-      'self': self,
+      if (person != null) 'person': person,
+      if (place != null) 'place': place,
+      if (self != null) 'self': self,
     };
   }
 

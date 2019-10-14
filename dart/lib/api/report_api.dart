@@ -95,6 +95,7 @@ class ReportApi {
     String report, {
     String acceptLanguage,
     String xKeyclicAppVersion,
+    String assignedTo,
     DateTime after,
     DateTime before,
     String order,
@@ -121,6 +122,8 @@ class ReportApi {
 
     // query params
     final List<QueryParam> queryParams = [
+      if (assignedTo != null)
+        ..._convertParametersForCollectionFormat("assigned_to", assignedTo),
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)

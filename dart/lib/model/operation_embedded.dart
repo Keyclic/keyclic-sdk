@@ -76,9 +76,9 @@ class OperationEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'duration': duration,
-      'stateTransitions': stateTransitions,
-      'tracking': tracking,
+      if (duration != null) 'duration': duration,
+      if (stateTransitions != null) 'stateTransitions': stateTransitions,
+      if (tracking != null) 'tracking': tracking,
     };
   }
 

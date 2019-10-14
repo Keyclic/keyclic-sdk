@@ -94,12 +94,13 @@ class ReportPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      'category': category,
-      'description': description,
-      'dueDate': dueDate == null ? '' : dueDate.toUtc().toIso8601String(),
-      'identificationNumber': identificationNumber,
-      'priority': priority,
-      'tags': tags,
+      if (category != null) 'category': category,
+      if (description != null) 'description': description,
+      if (dueDate != null) 'dueDate': dueDate.toUtc().toIso8601String(),
+      if (identificationNumber != null)
+        'identificationNumber': identificationNumber,
+      if (priority != null) 'priority': priority,
+      if (tags != null) 'tags': tags,
     };
   }
 

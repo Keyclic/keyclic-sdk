@@ -73,10 +73,10 @@ class PlaceLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'containedInPlace': containedInPlace,
-      'containsPlaces': containsPlaces,
-      'organization': organization,
-      'self': self,
+      if (containedInPlace != null) 'containedInPlace': containedInPlace,
+      if (containsPlaces != null) 'containsPlaces': containsPlaces,
+      if (organization != null) 'organization': organization,
+      if (self != null) 'self': self,
     };
   }
 

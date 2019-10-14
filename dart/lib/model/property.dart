@@ -127,18 +127,18 @@ class Property {
 
   Map<String, dynamic> toJson() {
     return {
-      'conditions': conditions,
-      'default': default_,
-      'description': description,
-      'enum': enum_,
-      'format': format,
-      'id': id,
-      'items': items,
-      'maxItems': maxItems,
-      'minItems': minItems,
-      'propertyOrder': propertyOrder,
-      'title': title,
-      'type': type,
+      if (conditions != null) 'conditions': conditions,
+      if (default_ != null) 'default': default_,
+      if (description != null) 'description': description,
+      if (enum_ != null) 'enum': enum_,
+      if (format != null) 'format': format,
+      if (id != null) 'id': id,
+      if (items != null) 'items': items,
+      if (maxItems != null) 'maxItems': maxItems,
+      if (minItems != null) 'minItems': minItems,
+      if (propertyOrder != null) 'propertyOrder': propertyOrder,
+      if (title != null) 'title': title,
+      if (type != null) 'type': type,
     };
   }
 

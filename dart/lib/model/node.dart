@@ -72,10 +72,10 @@ class Node {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'type': type,
-      'name': name,
-      '_embedded': embedded,
+      if (id != null) 'id': id,
+      if (type != null) 'type': type,
+      if (name != null) 'name': name,
+      if (embedded != null) '_embedded': embedded,
     };
   }
 

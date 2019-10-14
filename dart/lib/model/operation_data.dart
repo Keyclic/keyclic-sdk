@@ -84,12 +84,13 @@ class OperationData {
 
   Map<String, dynamic> toJson() {
     return {
-      'description': description,
-      'name': name,
-      'identificationNumber': identificationNumber,
-      'report': report,
-      'organization': organization,
-      'scheduledAt': scheduledAt,
+      if (description != null) 'description': description,
+      if (name != null) 'name': name,
+      if (identificationNumber != null)
+        'identificationNumber': identificationNumber,
+      if (report != null) 'report': report,
+      if (organization != null) 'organization': organization,
+      if (scheduledAt != null) 'scheduledAt': scheduledAt,
     };
   }
 

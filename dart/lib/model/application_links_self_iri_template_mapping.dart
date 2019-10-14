@@ -59,7 +59,7 @@ class ApplicationLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'application': application,
+      if (application != null) 'application': application,
     };
   }
 

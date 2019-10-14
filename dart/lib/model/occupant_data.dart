@@ -60,8 +60,8 @@ class OccupantData {
 
   Map<String, dynamic> toJson() {
     return {
-      'person': person,
-      'place': place,
+      if (person != null) 'person': person,
+      if (place != null) 'place': place,
     };
   }
 

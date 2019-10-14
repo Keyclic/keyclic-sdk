@@ -137,17 +137,17 @@ class Feedback {
 
   Map<String, dynamic> toJson() {
     return {
-      '_embedded': embedded,
-      '_links': links,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'description': description,
-      'geoCoordinates': geoCoordinates,
-      'id': id,
-      'metadata': metadata,
-      'public': public,
-      'state': state,
-      'type': type,
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
+      if (embedded != null) '_embedded': embedded,
+      if (links != null) '_links': links,
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (description != null) 'description': description,
+      if (geoCoordinates != null) 'geoCoordinates': geoCoordinates,
+      if (id != null) 'id': id,
+      if (metadata != null) 'metadata': metadata,
+      if (public != null) 'public': public,
+      if (state != null) 'state': state,
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 

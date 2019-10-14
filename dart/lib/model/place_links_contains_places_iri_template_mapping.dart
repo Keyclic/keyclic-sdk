@@ -60,7 +60,7 @@ class PlaceLinksContainsPlacesIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'parent': parent,
+      if (parent != null) 'parent': parent,
     };
   }
 

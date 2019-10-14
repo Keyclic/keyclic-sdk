@@ -111,14 +111,14 @@ class Delegation {
 
   Map<String, dynamic> toJson() {
     return {
-      '_embedded': embedded,
-      '_links': links,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'description': description,
-      'id': id,
-      'state': state,
-      'type': type,
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
+      if (embedded != null) '_embedded': embedded,
+      if (links != null) '_links': links,
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (description != null) 'description': description,
+      if (id != null) 'id': id,
+      if (state != null) 'state': state,
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 

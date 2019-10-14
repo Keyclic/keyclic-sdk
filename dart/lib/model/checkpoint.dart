@@ -77,9 +77,9 @@ class Checkpoint {
 
   Map<String, dynamic> toJson() {
     return {
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'state': state,
-      '_links': links,
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (state != null) 'state': state,
+      if (links != null) '_links': links,
     };
   }
 

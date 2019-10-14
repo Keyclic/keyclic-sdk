@@ -72,10 +72,10 @@ class DelegationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'createdBy': createdBy,
-      'report': report,
-      'self': self,
-      'service': service,
+      if (createdBy != null) 'createdBy': createdBy,
+      if (report != null) 'report': report,
+      if (self != null) 'self': self,
+      if (service != null) 'service': service,
     };
   }
 

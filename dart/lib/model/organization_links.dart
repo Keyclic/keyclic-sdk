@@ -75,10 +75,10 @@ class OrganizationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'application': application,
-      'businessActivity': businessActivity,
-      'logo': logo,
-      'self': self,
+      if (application != null) 'application': application,
+      if (businessActivity != null) 'businessActivity': businessActivity,
+      if (logo != null) 'logo': logo,
+      if (self != null) 'self': self,
     };
   }
 

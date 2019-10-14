@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _OrganizationPreferencesNotification = _interopRequireDefault(
+  require("./OrganizationPreferencesNotification")
+);
+
 var _OrganizationPreferencesReference = _interopRequireDefault(
   require("./OrganizationPreferencesReference")
 );
@@ -55,9 +59,11 @@ var OrganizationPreferences =
     function OrganizationPreferences(_public) {
       _classCallCheck(this, OrganizationPreferences);
 
+      this.notification = null;
       this._public = _public;
       this.reference = null;
       this.reviewEnabled = null;
+      this.notificationType = _OrganizationPreferencesNotification.default;
       this.referenceType = _OrganizationPreferencesReference.default;
     }
     /**
@@ -71,11 +77,29 @@ var OrganizationPreferences =
       OrganizationPreferences,
       [
         {
-          key: "getPublic",
+          key: "getNotification",
 
+          /**
+           * @return { module:model/OrganizationPreferencesNotification }
+           */
+          value: function getNotification() {
+            return this.notification;
+          }
+          /**
+           * @param { module:model/OrganizationPreferencesNotification } notification
+           */
+        },
+        {
+          key: "setNotification",
+          value: function setNotification(notification) {
+            this.notification = notification;
+          }
           /**
            * @return { Boolean }
            */
+        },
+        {
+          key: "getPublic",
           value: function getPublic() {
             return this._public;
           }
@@ -141,6 +165,13 @@ var OrganizationPreferences =
 
             if (object === null) {
               object = new OrganizationPreferences();
+            }
+
+            if (data.hasOwnProperty("notification")) {
+              object.notification = _ApiClient.default.convertToType(
+                data["notification"],
+                object.notificationType
+              );
             }
 
             if (data.hasOwnProperty("public")) {

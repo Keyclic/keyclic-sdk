@@ -54,7 +54,7 @@ class ImageData {
 
   Map<String, dynamic> toJson() {
     return {
-      'image': image,
+      if (image != null) 'image': image,
     };
   }
 

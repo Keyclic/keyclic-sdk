@@ -62,8 +62,9 @@ class PersonPreferences {
 
   Map<String, dynamic> toJson() {
     return {
-      'messageEmailEnabled': messageEmailEnabled,
-      'messagePushEnabled': messagePushEnabled,
+      if (messageEmailEnabled != null)
+        'messageEmailEnabled': messageEmailEnabled,
+      if (messagePushEnabled != null) 'messagePushEnabled': messagePushEnabled,
     };
   }
 

@@ -104,14 +104,14 @@ class Publication {
 
   Map<String, dynamic> toJson() {
     return {
-      '_links': links,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'id': id,
-      'message': message,
-      'read': read,
-      'title': title,
-      'type': type,
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
+      if (links != null) '_links': links,
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (id != null) 'id': id,
+      if (message != null) 'message': message,
+      if (read != null) 'read': read,
+      if (title != null) 'title': title,
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 

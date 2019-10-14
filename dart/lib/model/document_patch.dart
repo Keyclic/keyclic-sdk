@@ -60,8 +60,8 @@ class DocumentPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      'file': file,
-      'permission': permission,
+      if (file != null) 'file': file,
+      if (permission != null) 'permission': permission,
     };
   }
 

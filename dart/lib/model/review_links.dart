@@ -66,9 +66,9 @@ class ReviewLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'author': author,
-      'itemReviewed': itemReviewed,
-      'self': self,
+      if (author != null) 'author': author,
+      if (itemReviewed != null) 'itemReviewed': itemReviewed,
+      if (self != null) 'self': self,
     };
   }
 

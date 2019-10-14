@@ -65,8 +65,8 @@ class OperationLinksTracking {
 
   Map<String, dynamic> toJson() {
     return {
-      'href': href,
-      'iriTemplate': iriTemplate,
+      if (href != null) 'href': href,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate,
     };
   }
 

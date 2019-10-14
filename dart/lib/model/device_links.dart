@@ -60,8 +60,8 @@ class DeviceLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'person': person,
-      'self': self,
+      if (person != null) 'person': person,
+      if (self != null) 'self': self,
     };
   }
 

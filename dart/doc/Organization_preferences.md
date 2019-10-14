@@ -8,6 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**notification** | [**OrganizationPreferencesNotification**](OrganizationPreferencesNotification.md) |  | [optional] [default to null]
 **public** | **bool** |  | [default to null]
 **reference** | [**OrganizationPreferencesReference**](OrganizationPreferencesReference.md) |  | [optional] [default to null]
 **reviewEnabled** | **bool** |  | [optional] [default to null]

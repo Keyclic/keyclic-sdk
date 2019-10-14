@@ -102,15 +102,15 @@ class ReportLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'category': category,
-      'delegatedFrom': delegatedFrom,
-      'delegatedTo': delegatedTo,
-      'feedback': feedback,
-      'operations': operations,
-      'organization': organization,
-      'place': place,
-      'self': self,
-      'tracking': tracking,
+      if (category != null) 'category': category,
+      if (delegatedFrom != null) 'delegatedFrom': delegatedFrom,
+      if (delegatedTo != null) 'delegatedTo': delegatedTo,
+      if (feedback != null) 'feedback': feedback,
+      if (operations != null) 'operations': operations,
+      if (organization != null) 'organization': organization,
+      if (place != null) 'place': place,
+      if (self != null) 'self': self,
+      if (tracking != null) 'tracking': tracking,
     };
   }
 

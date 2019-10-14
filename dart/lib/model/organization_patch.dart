@@ -92,13 +92,15 @@ class OrganizationPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      'name': name,
-      'alternateName': alternateName,
-      'description': description,
-      'logo': logo,
-      'billingEmailAddress': billingEmailAddress,
-      'notificationEmailAddress': notificationEmailAddress,
-      'preferences': preferences,
+      if (name != null) 'name': name,
+      if (alternateName != null) 'alternateName': alternateName,
+      if (description != null) 'description': description,
+      if (logo != null) 'logo': logo,
+      if (billingEmailAddress != null)
+        'billingEmailAddress': billingEmailAddress,
+      if (notificationEmailAddress != null)
+        'notificationEmailAddress': notificationEmailAddress,
+      if (preferences != null) 'preferences': preferences,
     };
   }
 

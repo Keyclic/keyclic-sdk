@@ -66,9 +66,9 @@ class PlacePatch {
 
   Map<String, dynamic> toJson() {
     return {
-      'branchCode': branchCode,
-      'description': description,
-      'name': name,
+      if (branchCode != null) 'branchCode': branchCode,
+      if (description != null) 'description': description,
+      if (name != null) 'name': name,
     };
   }
 

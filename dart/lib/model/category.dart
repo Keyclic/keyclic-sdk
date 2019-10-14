@@ -110,15 +110,16 @@ class Category {
 
   Map<String, dynamic> toJson() {
     return {
-      '_links': links,
-      'color': color,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'icon': icon,
-      'id': id,
-      'identificationNumber': identificationNumber,
-      'name': name,
-      'type': type,
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
+      if (links != null) '_links': links,
+      if (color != null) 'color': color,
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (icon != null) 'icon': icon,
+      if (id != null) 'id': id,
+      if (identificationNumber != null)
+        'identificationNumber': identificationNumber,
+      if (name != null) 'name': name,
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 

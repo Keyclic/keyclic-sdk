@@ -122,17 +122,17 @@ class Place {
 
   Map<String, dynamic> toJson() {
     return {
-      '_embedded': embedded,
-      '_links': links,
-      'branchCode': branchCode,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'description': description,
-      'geo': geo,
-      'id': id,
-      'name': name,
-      'preferences': preferences,
-      'type': type,
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
+      if (embedded != null) '_embedded': embedded,
+      if (links != null) '_links': links,
+      if (branchCode != null) 'branchCode': branchCode,
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (description != null) 'description': description,
+      if (geo != null) 'geo': geo,
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (preferences != null) 'preferences': preferences,
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 

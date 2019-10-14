@@ -104,14 +104,14 @@ class Application {
 
   Map<String, dynamic> toJson() {
     return {
-      '_links': links,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'id': id,
-      'name': name,
-      'token': token,
-      'type': type,
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
-      'version': version,
+      if (links != null) '_links': links,
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (token != null) 'token': token,
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
+      if (version != null) 'version': version,
     };
   }
 

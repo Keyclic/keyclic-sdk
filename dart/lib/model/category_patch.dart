@@ -72,10 +72,11 @@ class CategoryPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      'color': color,
-      'icon': icon,
-      'identificationNumber': identificationNumber,
-      'name': name,
+      if (color != null) 'color': color,
+      if (icon != null) 'icon': icon,
+      if (identificationNumber != null)
+        'identificationNumber': identificationNumber,
+      if (name != null) 'name': name,
     };
   }
 

@@ -68,9 +68,9 @@ class OrganizationData {
 
   Map<String, dynamic> toJson() {
     return {
-      'name': name,
-      'businessActivity': businessActivity,
-      'logo': logo,
+      if (name != null) 'name': name,
+      if (businessActivity != null) 'businessActivity': businessActivity,
+      if (logo != null) 'logo': logo,
     };
   }
 

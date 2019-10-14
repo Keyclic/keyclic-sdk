@@ -60,8 +60,8 @@ class PersonLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'image': image,
-      'self': self,
+      if (image != null) 'image': image,
+      if (self != null) 'self': self,
     };
   }
 

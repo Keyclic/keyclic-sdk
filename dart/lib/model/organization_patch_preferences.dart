@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class OrganizationPatchPreferences {
   OrganizationPatchPreferences({
+    this.notification,
     this.reference,
   });
 
@@ -9,8 +10,12 @@ class OrganizationPatchPreferences {
     if (json == null) {
       return;
     }
+    notification =
+        OrganizationPreferencesNotification.fromJson(json['notification']);
     reference = OrganizationPreferencesReference.fromJson(json['reference']);
   }
+
+  OrganizationPreferencesNotification notification;
 
   OrganizationPreferencesReference reference;
 
@@ -23,6 +28,7 @@ class OrganizationPatchPreferences {
 
     return other is OrganizationPatchPreferences &&
         runtimeType == other.runtimeType &&
+        notification == other.notification &&
         reference == other.reference;
   }
 
@@ -31,6 +37,7 @@ class OrganizationPatchPreferences {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= notification?.hashCode ?? 0;
     hashCode ^= reference?.hashCode ?? 0;
 
     return hashCode;
@@ -58,12 +65,13 @@ class OrganizationPatchPreferences {
 
   Map<String, dynamic> toJson() {
     return {
-      'reference': reference,
+      if (notification != null) 'notification': notification,
+      if (reference != null) 'reference': reference,
     };
   }
 
   @override
   String toString() {
-    return 'OrganizationPatchPreferences[reference=$reference, ]';
+    return 'OrganizationPatchPreferences[notification=$notification, reference=$reference, ]';
   }
 }

@@ -61,7 +61,7 @@ class PropertyConditions {
 
   Map<String, dynamic> toJson() {
     return {
-      'allOf': allOf,
+      if (allOf != null) 'allOf': allOf,
     };
   }
 

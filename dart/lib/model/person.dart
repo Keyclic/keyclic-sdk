@@ -134,19 +134,19 @@ class Person {
 
   Map<String, dynamic> toJson() {
     return {
-      '_links': links,
-      'createdAt': createdAt == null ? '' : createdAt.toUtc().toIso8601String(),
-      'email': email,
-      'familyName': familyName,
-      'givenName': givenName,
-      'id': id,
-      'jobTitle': jobTitle,
-      'optIn': optIn,
-      'preferences': preferences,
-      'telephone': telephone,
-      'type': type,
-      'updatedAt': updatedAt == null ? '' : updatedAt.toUtc().toIso8601String(),
-      'username': username,
+      if (links != null) '_links': links,
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (email != null) 'email': email,
+      if (familyName != null) 'familyName': familyName,
+      if (givenName != null) 'givenName': givenName,
+      if (id != null) 'id': id,
+      if (jobTitle != null) 'jobTitle': jobTitle,
+      if (optIn != null) 'optIn': optIn,
+      if (preferences != null) 'preferences': preferences,
+      if (telephone != null) 'telephone': telephone,
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
+      if (username != null) 'username': username,
     };
   }
 

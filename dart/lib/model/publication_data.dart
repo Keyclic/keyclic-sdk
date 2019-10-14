@@ -72,10 +72,10 @@ class PublicationData {
 
   Map<String, dynamic> toJson() {
     return {
-      'message': message,
-      'feed': feed,
-      'title': title,
-      'organization': organization,
+      if (message != null) 'message': message,
+      if (feed != null) 'feed': feed,
+      if (title != null) 'title': title,
+      if (organization != null) 'organization': organization,
     };
   }
 

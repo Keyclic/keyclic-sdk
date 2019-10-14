@@ -110,14 +110,14 @@ class FeedbackData {
 
   Map<String, dynamic> toJson() {
     return {
-      'businessActivity': businessActivity,
-      'category': category,
-      'description': description,
-      'geo': geo,
-      'metadata': metadata,
-      'place': place,
-      'proMode': proMode,
-      'visibility': visibility,
+      if (businessActivity != null) 'businessActivity': businessActivity,
+      if (category != null) 'category': category,
+      if (description != null) 'description': description,
+      if (geo != null) 'geo': geo,
+      if (metadata != null) 'metadata': metadata,
+      if (place != null) 'place': place,
+      if (proMode != null) 'proMode': proMode,
+      if (visibility != null) 'visibility': visibility,
     };
   }
 

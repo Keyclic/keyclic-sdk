@@ -60,7 +60,7 @@ class ExternalServiceLinksProviderIriTemplate {
 
   Map<String, dynamic> toJson() {
     return {
-      'mapping': mapping,
+      if (mapping != null) 'mapping': mapping,
     };
   }
 

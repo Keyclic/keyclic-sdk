@@ -66,9 +66,9 @@ class PlaceGeo {
 
   Map<String, dynamic> toJson() {
     return {
-      'centroid': centroid,
-      'elevation': elevation,
-      'polygon': polygon,
+      if (centroid != null) 'centroid': centroid,
+      if (elevation != null) 'elevation': elevation,
+      if (polygon != null) 'polygon': polygon,
     };
   }
 

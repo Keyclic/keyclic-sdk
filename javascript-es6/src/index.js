@@ -255,6 +255,8 @@ import OrganizationLinksSelfIriTemplate from "./model/OrganizationLinksSelfIriTe
 import OrganizationPatch from "./model/OrganizationPatch";
 import OrganizationPatchPreferences from "./model/OrganizationPatchPreferences";
 import OrganizationPreferences from "./model/OrganizationPreferences";
+import OrganizationPreferencesNotification from "./model/OrganizationPreferencesNotification";
+import OrganizationPreferencesNotificationReport from "./model/OrganizationPreferencesNotificationReport";
 import OrganizationPreferencesReference from "./model/OrganizationPreferencesReference";
 import Pagination from "./model/Pagination";
 import PaginationLink from "./model/PaginationLink";
@@ -426,7 +428,7 @@ import WebhookApi from "./api/WebhookApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.1.0
+ * @version 2.1.2
  */
 export {
   /**
@@ -1629,6 +1631,16 @@ export {
    * @property { module:model/OrganizationPreferences }
    */
   OrganizationPreferences,
+  /**
+   * The OrganizationPreferencesNotification model constructor.
+   * @property { module:model/OrganizationPreferencesNotification }
+   */
+  OrganizationPreferencesNotification,
+  /**
+   * The OrganizationPreferencesNotificationReport model constructor.
+   * @property { module:model/OrganizationPreferencesNotificationReport }
+   */
+  OrganizationPreferencesNotificationReport,
   /**
    * The OrganizationPreferencesReference model constructor.
    * @property { module:model/OrganizationPreferencesReference }

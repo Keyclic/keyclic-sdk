@@ -277,6 +277,8 @@ part 'model/organization_links_self_iri_template.dart';
 part 'model/organization_patch.dart';
 part 'model/organization_patch_preferences.dart';
 part 'model/organization_preferences.dart';
+part 'model/organization_preferences_notification.dart';
+part 'model/organization_preferences_notification_report.dart';
 part 'model/organization_preferences_reference.dart';
 part 'model/pagination.dart';
 part 'model/pagination_link.dart';

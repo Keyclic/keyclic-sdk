@@ -96,14 +96,14 @@ class PersonPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      'givenName': givenName,
-      'familyName': familyName,
-      'email': email,
-      'jobTitle': jobTitle,
-      'image': image,
-      'optIn': optIn,
-      'preferences': preferences,
-      'telephone': telephone,
+      if (givenName != null) 'givenName': givenName,
+      if (familyName != null) 'familyName': familyName,
+      if (email != null) 'email': email,
+      if (jobTitle != null) 'jobTitle': jobTitle,
+      if (image != null) 'image': image,
+      if (optIn != null) 'optIn': optIn,
+      if (preferences != null) 'preferences': preferences,
+      if (telephone != null) 'telephone': telephone,
     };
   }
 

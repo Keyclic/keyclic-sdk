@@ -70,8 +70,8 @@ class FeedbackEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'stateTransitions': stateTransitions,
-      'tracking': tracking,
+      if (stateTransitions != null) 'stateTransitions': stateTransitions,
+      if (tracking != null) 'tracking': tracking,
     };
   }
 

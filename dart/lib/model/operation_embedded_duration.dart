@@ -57,7 +57,7 @@ class OperationEmbeddedDuration {
 
   Map<String, dynamic> toJson() {
     return {
-      'seconds': seconds,
+      if (seconds != null) 'seconds': seconds,
     };
   }
 

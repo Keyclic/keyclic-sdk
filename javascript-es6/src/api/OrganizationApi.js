@@ -778,6 +778,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
+   * @param { String } assignedTo The identifier of the resource.
    * @param { module:model/Date } after
    * @param { module:model/Date } before
    * @param { module:model/String } order   (default to desc)
@@ -796,6 +797,7 @@ export default class OrganizationApi extends ApiClient {
       organization,
       acceptLanguage,
       xKeyclicAppVersion,
+      assignedTo,
       after,
       before,
       order,
@@ -844,6 +846,11 @@ export default class OrganizationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
+    // verify the null value of parameter 'assignedTo'
+    if (typeof assignedTo === "undefined") {
+      assignedTo = null;
+    }
+
     // verify the null value of parameter 'after'
     if (typeof after === "undefined") {
       after = null;
@@ -877,6 +884,7 @@ export default class OrganizationApi extends ApiClient {
     let bodyParam = null;
 
     let queryParams = {
+      assigned_to: assignedTo,
       after: after,
       before: before,
       order: order,

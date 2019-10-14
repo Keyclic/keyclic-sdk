@@ -86,10 +86,10 @@ class ReportEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'duration': duration,
-      'stateTransitions': stateTransitions,
-      'targetGroups': targetGroups,
-      'tracking': tracking,
+      if (duration != null) 'duration': duration,
+      if (stateTransitions != null) 'stateTransitions': stateTransitions,
+      if (targetGroups != null) 'targetGroups': targetGroups,
+      if (tracking != null) 'tracking': tracking,
     };
   }
 

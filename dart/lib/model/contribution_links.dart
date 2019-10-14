@@ -62,8 +62,8 @@ class ContributionLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'contributor': contributor,
-      'feedback': feedback,
+      if (contributor != null) 'contributor': contributor,
+      if (feedback != null) 'feedback': feedback,
     };
   }
 

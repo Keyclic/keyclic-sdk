@@ -56,7 +56,7 @@ class ApplicationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self,
+      if (self != null) 'self': self,
     };
   }
 

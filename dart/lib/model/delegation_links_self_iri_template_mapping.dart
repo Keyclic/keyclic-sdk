@@ -59,7 +59,7 @@ class DelegationLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'delegation': delegation,
+      if (delegation != null) 'delegation': delegation,
     };
   }
 

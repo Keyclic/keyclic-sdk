@@ -61,7 +61,7 @@ class MemberEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'availableRoles': availableRoles,
+      if (availableRoles != null) 'availableRoles': availableRoles,
     };
   }
 

@@ -69,9 +69,9 @@ class ReportEmbeddedTargetGroups {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'name': name,
-      'description': description,
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (description != null) 'description': description,
     };
   }
 

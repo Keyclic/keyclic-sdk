@@ -99,11 +99,11 @@ class SuccessLoginCredentials {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'login': login,
-      'roles': roles,
-      'administratorOf': administratorOf,
-      'memberOf': memberOf,
+      if (id != null) 'id': id,
+      if (login != null) 'login': login,
+      if (roles != null) 'roles': roles,
+      if (administratorOf != null) 'administratorOf': administratorOf,
+      if (memberOf != null) 'memberOf': memberOf,
     };
   }
 

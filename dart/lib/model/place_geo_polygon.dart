@@ -65,8 +65,8 @@ class PlaceGeoPolygon {
 
   Map<String, dynamic> toJson() {
     return {
-      'features': features,
-      'type': type,
+      if (features != null) 'features': features,
+      if (type != null) 'type': type,
     };
   }
 

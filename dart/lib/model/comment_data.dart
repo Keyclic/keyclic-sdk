@@ -54,7 +54,7 @@ class CommentData {
 
   Map<String, dynamic> toJson() {
     return {
-      'text': text,
+      if (text != null) 'text': text,
     };
   }
 

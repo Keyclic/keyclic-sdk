@@ -60,8 +60,8 @@ class NodePath {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'name': name,
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
     };
   }
 

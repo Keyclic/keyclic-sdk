@@ -65,7 +65,7 @@ class DelegationWorkflowTransitionData {
 
   Map<String, dynamic> toJson() {
     return {
-      'transition': transition,
+      if (transition != null) 'transition': transition,
     };
   }
 

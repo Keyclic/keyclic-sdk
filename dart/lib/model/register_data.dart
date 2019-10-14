@@ -60,8 +60,8 @@ class RegisterData {
 
   Map<String, dynamic> toJson() {
     return {
-      'email': email,
-      'password': password,
+      if (email != null) 'email': email,
+      if (password != null) 'password': password,
     };
   }
 

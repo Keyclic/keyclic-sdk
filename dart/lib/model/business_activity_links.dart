@@ -75,10 +75,10 @@ class BusinessActivityLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'image': image,
-      'schema': schema,
-      'self': self,
-      'thumbnail': thumbnail,
+      if (image != null) 'image': image,
+      if (schema != null) 'schema': schema,
+      if (self != null) 'self': self,
+      if (thumbnail != null) 'thumbnail': thumbnail,
     };
   }
 

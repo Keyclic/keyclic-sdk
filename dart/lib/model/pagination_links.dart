@@ -72,10 +72,10 @@ class PaginationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'first': first,
-      'last': last,
-      'next': next,
-      'self': self,
+      if (first != null) 'first': first,
+      if (last != null) 'last': last,
+      if (next != null) 'next': next,
+      if (self != null) 'self': self,
     };
   }
 
