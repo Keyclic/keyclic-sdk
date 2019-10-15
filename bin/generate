@@ -70,25 +70,21 @@ sed -i -r 's/"([a-zA-Z0-9_]+)_([a-zA-Z0-9]*)_"/"\1\[\2\]"/g' lib/api/*
 sed -i -r 's/"([a-zA-Z0-9]+)__"/"\1\[]"/g' lib/api/*
 
 # fix metadata type
-sed -i 's/Map<String, String> metadata/Map<String, dynamic> metadata/g' lib/model/feedback.dart
+sed -i 's/Map<String, String> metadata/Map<String, dynamic> metadata/g' lib/model/*
 # fix coordinates
-sed -i 's/List<List<num>>/List/g' lib/model/feature_geometry.dart
+sed -i 's/List<List<num>> coordinates/List<dynamic> coordinates/g' lib/model/*
 # replace coordinates type when mapping
-sed -i 's/map((List<num> element)/map((dynamic element)/' lib/model/feature_geometry.dart
+sed -i 's/coordinates\.map((List<num> element)/coordinates\.map((dynamic element)/' lib/model/feature_geometry.dart
 # remove List.listFromJson
 sed -i 's/List.listFromJson//g' lib/model/*
 
 # change some files to match requirements of pubspec.yaml specifications
 cp ../LICENSE .
 mv docs doc
-# rename deprecated analysis option file
 mv .analysis_options analysis_options.yaml
 
 pub get
 dartfmt --fix --overwrite lib
-
-rm -rf android
-rm -rf ios
 
 # When the script exits call cleanup function
 trap cleanup EXIT
