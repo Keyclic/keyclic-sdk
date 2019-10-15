@@ -22,7 +22,7 @@ class FeatureGeometry {
   /// use FeatureGeometryTypeEnum
   String type;
 
-  List coordinates;
+  List<dynamic> coordinates;
 
   @override
   bool operator ==(dynamic other) {

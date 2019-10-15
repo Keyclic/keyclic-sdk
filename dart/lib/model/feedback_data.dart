@@ -39,7 +39,7 @@ class FeedbackData {
 
   FeedbackDataGeo geo;
 
-  Map<String, String> metadata;
+  Map<String, dynamic> metadata;
 
   String place;
 
