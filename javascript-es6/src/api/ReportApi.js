@@ -50,7 +50,7 @@ export default class ReportApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetDocumentsByReport(returnType = null, options, credentials) {
+  cgetDocumentsByReport(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = DocumentPagination;
     }
@@ -116,19 +116,13 @@ export default class ReportApi extends ApiClient {
       before = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetDocumentsByReport'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       report: report
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       order: order,
@@ -142,7 +136,7 @@ export default class ReportApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -183,7 +177,7 @@ export default class ReportApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetOperationsByReport(returnType = null, options, credentials) {
+  cgetOperationsByReport(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = OperationPagination;
     }
@@ -273,19 +267,13 @@ export default class ReportApi extends ApiClient {
       state = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetOperationsByReport'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       report: report
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       assigned_to: assignedTo,
       after: after,
       before: before,
@@ -303,7 +291,7 @@ export default class ReportApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -335,7 +323,7 @@ export default class ReportApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getReport(returnType = null, options, credentials) {
+  getReport(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Report;
     }
@@ -366,19 +354,13 @@ export default class ReportApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getReport'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       report: report
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -386,7 +368,7 @@ export default class ReportApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -418,7 +400,7 @@ export default class ReportApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getTrackingByReport(returnType = null, options, credentials) {
+  getTrackingByReport(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Tracking;
     }
@@ -449,19 +431,13 @@ export default class ReportApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getTrackingByReport'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       report: report
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -469,7 +445,7 @@ export default class ReportApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -502,7 +478,7 @@ export default class ReportApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  patchReport(returnType = null, options, credentials) {
+  patchReport(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Report;
     }
@@ -546,19 +522,13 @@ export default class ReportApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling patchReport'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       report: report
     };
 
-    let bodyParam = reportPatch;
+    const bodyParam = reportPatch;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -566,7 +536,7 @@ export default class ReportApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -599,7 +569,7 @@ export default class ReportApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postDocumentByReport(returnType = null, options, credentials) {
+  postDocumentByReport(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Document;
     }
@@ -643,19 +613,13 @@ export default class ReportApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postDocumentByReport'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       report: report
     };
 
-    let bodyParam = documentData;
+    const bodyParam = documentData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -663,7 +627,7 @@ export default class ReportApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -696,7 +660,7 @@ export default class ReportApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postWorkflowByReport(returnType = null, options, credentials) {
+  postWorkflowByReport(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Report;
     }
@@ -743,19 +707,13 @@ export default class ReportApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postWorkflowByReport'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       report: report
     };
 
-    let bodyParam = reportWorkflowTransitionData;
+    const bodyParam = reportWorkflowTransitionData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -763,7 +721,7 @@ export default class ReportApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

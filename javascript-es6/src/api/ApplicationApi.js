@@ -73,13 +73,13 @@ export default class ApplicationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    let pathParams = {
+    const pathParams = {
       application: application
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -87,7 +87,7 @@ export default class ApplicationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = null;
+    const credentialParams = null;
 
     let authNames = [];
 

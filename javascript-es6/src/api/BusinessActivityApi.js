@@ -47,7 +47,7 @@ export default class BusinessActivityApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetBusinessActivities(returnType = null, options, credentials) {
+  cgetBusinessActivities(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = BusinessActivityPagination;
     }
@@ -123,17 +123,11 @@ export default class BusinessActivityApi extends ApiClient {
       organization = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetBusinessActivities'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = null;
 
-    let bodyParam = null;
-
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       geo_point: geoPoint,
@@ -150,7 +144,7 @@ export default class BusinessActivityApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -182,7 +176,7 @@ export default class BusinessActivityApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getBusinessActivity(returnType = null, options, credentials) {
+  getBusinessActivity(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = BusinessActivity;
     }
@@ -218,19 +212,13 @@ export default class BusinessActivityApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getBusinessActivity'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       businessActivity: businessActivity
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -238,7 +226,7 @@ export default class BusinessActivityApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -270,7 +258,7 @@ export default class BusinessActivityApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getSchemaByBusinessActivity(returnType = null, options, credentials) {
+  getSchemaByBusinessActivity(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Schema;
     }
@@ -306,19 +294,13 @@ export default class BusinessActivityApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getSchemaByBusinessActivity'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       businessActivity: businessActivity
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -326,7 +308,7 @@ export default class BusinessActivityApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

@@ -49,7 +49,7 @@ export default class OperationApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetCommentsByOperation(returnType = null, options, credentials) {
+  cgetCommentsByOperation(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = ActivityPagination;
     }
@@ -97,19 +97,13 @@ export default class OperationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetCommentsByOperation'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       operation: operation
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       page: page,
       limit: limit
     };
@@ -120,7 +114,7 @@ export default class OperationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -153,7 +147,11 @@ export default class OperationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  deleteImageByOperationAndImage(returnType = null, options, credentials) {
+  deleteImageByOperationAndImage(
+    returnType = null,
+    options,
+    credentials = null
+  ) {
     let {
       xKeyclicApp,
       operation,
@@ -193,20 +191,14 @@ export default class OperationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling deleteImageByOperationAndImage'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       operation: operation,
       image: image
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -214,7 +206,7 @@ export default class OperationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -246,7 +238,7 @@ export default class OperationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  deleteOperation(returnType = null, options, credentials) {
+  deleteOperation(returnType = null, options, credentials = null) {
     let {
       xKeyclicApp,
       operation,
@@ -278,19 +270,13 @@ export default class OperationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling deleteOperation'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       operation: operation
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -298,7 +284,7 @@ export default class OperationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -330,7 +316,7 @@ export default class OperationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getOperation(returnType = null, options, credentials) {
+  getOperation(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Operation;
     }
@@ -366,19 +352,13 @@ export default class OperationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getOperation'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       operation: operation
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -386,7 +366,7 @@ export default class OperationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -418,7 +398,7 @@ export default class OperationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getTrackingByOperation(returnType = null, options, credentials) {
+  getTrackingByOperation(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Tracking;
     }
@@ -454,19 +434,13 @@ export default class OperationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getTrackingByOperation'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       operation: operation
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -474,7 +448,7 @@ export default class OperationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -507,7 +481,7 @@ export default class OperationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  patchOperation(returnType = null, options, credentials) {
+  patchOperation(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Operation;
     }
@@ -551,19 +525,13 @@ export default class OperationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling patchOperation'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       operation: operation
     };
 
-    let bodyParam = operationPatch;
+    const bodyParam = operationPatch;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -571,7 +539,7 @@ export default class OperationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -604,7 +572,7 @@ export default class OperationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postAssignByOperation(returnType = null, options, credentials) {
+  postAssignByOperation(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Operation;
     }
@@ -648,19 +616,13 @@ export default class OperationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postAssignByOperation'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       operation: operation
     };
 
-    let bodyParam = assignData;
+    const bodyParam = assignData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -668,7 +630,7 @@ export default class OperationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -701,7 +663,7 @@ export default class OperationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postCommentByOperation(returnType = null, options, credentials) {
+  postCommentByOperation(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Operation;
     }
@@ -745,19 +707,13 @@ export default class OperationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postCommentByOperation'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       operation: operation
     };
 
-    let bodyParam = commentData;
+    const bodyParam = commentData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -765,7 +721,7 @@ export default class OperationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -798,7 +754,7 @@ export default class OperationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postImageByOperation(returnType = null, options, credentials) {
+  postImageByOperation(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Operation;
     }
@@ -842,19 +798,13 @@ export default class OperationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postImageByOperation'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       operation: operation
     };
 
-    let bodyParam = imageData;
+    const bodyParam = imageData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -862,7 +812,7 @@ export default class OperationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -894,7 +844,7 @@ export default class OperationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postOperation(returnType = null, options, credentials) {
+  postOperation(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Operation;
     }
@@ -930,17 +880,11 @@ export default class OperationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postOperation'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = operationData;
 
-    let bodyParam = operationData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -948,7 +892,7 @@ export default class OperationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -981,7 +925,7 @@ export default class OperationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postSignByOperation(returnType = null, options, credentials) {
+  postSignByOperation(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Operation;
     }
@@ -1025,19 +969,13 @@ export default class OperationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postSignByOperation'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       operation: operation
     };
 
-    let bodyParam = signatureData;
+    const bodyParam = signatureData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -1045,7 +983,7 @@ export default class OperationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -1078,7 +1016,7 @@ export default class OperationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postWorkflowByOperation(returnType = null, options, credentials) {
+  postWorkflowByOperation(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Operation;
     }
@@ -1125,19 +1063,13 @@ export default class OperationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postWorkflowByOperation'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       operation: operation
     };
 
-    let bodyParam = operationWorkflowTransitionData;
+    const bodyParam = operationWorkflowTransitionData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -1145,7 +1077,7 @@ export default class OperationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

@@ -1893,6 +1893,18 @@ Object.defineProperty(exports, "PersonLinks", {
     return _PersonLinks.default;
   }
 });
+Object.defineProperty(exports, "PersonLinksCreatedBy", {
+  enumerable: true,
+  get: function get() {
+    return _PersonLinksCreatedBy.default;
+  }
+});
+Object.defineProperty(exports, "PersonLinksCreatedByIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _PersonLinksCreatedByIriTemplate.default;
+  }
+});
 Object.defineProperty(exports, "PersonLinksImage", {
   enumerable: true,
   get: function get() {
@@ -3637,6 +3649,14 @@ var _PersonCollection = _interopRequireDefault(
 );
 
 var _PersonLinks = _interopRequireDefault(require("./model/PersonLinks"));
+
+var _PersonLinksCreatedBy = _interopRequireDefault(
+  require("./model/PersonLinksCreatedBy")
+);
+
+var _PersonLinksCreatedByIriTemplate = _interopRequireDefault(
+  require("./model/PersonLinksCreatedByIriTemplate")
+);
 
 var _PersonLinksImage = _interopRequireDefault(
   require("./model/PersonLinksImage")

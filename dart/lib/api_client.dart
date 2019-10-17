@@ -617,6 +617,10 @@ class ApiClient {
           return PersonCollection.fromJson(value);
         case 'PersonLinks':
           return PersonLinks.fromJson(value);
+        case 'PersonLinksCreatedBy':
+          return PersonLinksCreatedBy.fromJson(value);
+        case 'PersonLinksCreatedByIriTemplate':
+          return PersonLinksCreatedByIriTemplate.fromJson(value);
         case 'PersonLinksImage':
           return PersonLinksImage.fromJson(value);
         case 'PersonLinksImageIriTemplate':

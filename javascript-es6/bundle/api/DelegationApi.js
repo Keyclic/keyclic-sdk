@@ -163,7 +163,10 @@ var DelegationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Delegation.default;
@@ -195,12 +198,6 @@ var DelegationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling getDelegation'
-            );
           }
 
           var pathParams = {
@@ -249,7 +246,10 @@ var DelegationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Delegation.default;
@@ -284,12 +284,6 @@ var DelegationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling postDelegation'
-            );
           }
 
           var pathParams = {};
@@ -337,7 +331,10 @@ var DelegationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Delegation.default;
@@ -380,12 +377,6 @@ var DelegationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling postWorkflowByDelegation'
-            );
           }
 
           var pathParams = {

@@ -50,7 +50,7 @@ export default class CategoryApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetCategories(returnType = null, options, credentials) {
+  cgetCategories(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = CategoryPagination;
     }
@@ -138,17 +138,11 @@ export default class CategoryApi extends ApiClient {
       query = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetCategories'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = null;
 
-    let bodyParam = null;
-
-    let queryParams = {
+    const queryParams = {
       business_activity: businessActivity,
       after: after,
       before: before,
@@ -167,7 +161,7 @@ export default class CategoryApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -199,7 +193,7 @@ export default class CategoryApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  deleteCategory(returnType = null, options, credentials) {
+  deleteCategory(returnType = null, options, credentials = null) {
     let { xKeyclicApp, category, acceptLanguage, xKeyclicAppVersion } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -226,19 +220,13 @@ export default class CategoryApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling deleteCategory'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       category: category
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -246,7 +234,7 @@ export default class CategoryApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -278,7 +266,7 @@ export default class CategoryApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getCategory(returnType = null, options, credentials) {
+  getCategory(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Category;
     }
@@ -309,19 +297,13 @@ export default class CategoryApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getCategory'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       category: category
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -329,7 +311,7 @@ export default class CategoryApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -362,7 +344,7 @@ export default class CategoryApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  patchCategory(returnType = null, options, credentials) {
+  patchCategory(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Category;
     }
@@ -406,19 +388,13 @@ export default class CategoryApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling patchCategory'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       category: category
     };
 
-    let bodyParam = categoryPatch;
+    const bodyParam = categoryPatch;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -426,7 +402,7 @@ export default class CategoryApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -458,7 +434,7 @@ export default class CategoryApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postCategory(returnType = null, options, credentials) {
+  postCategory(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Category;
     }
@@ -494,17 +470,11 @@ export default class CategoryApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postCategory'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = categoryData;
 
-    let bodyParam = categoryData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -512,7 +482,7 @@ export default class CategoryApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

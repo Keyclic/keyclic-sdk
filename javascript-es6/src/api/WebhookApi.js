@@ -40,7 +40,7 @@ export default class WebhookApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  deleteWebhook(returnType = null, options, credentials) {
+  deleteWebhook(returnType = null, options, credentials = null) {
     let { xKeyclicApp, webhook, acceptLanguage, xKeyclicAppVersion } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -67,19 +67,13 @@ export default class WebhookApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling deleteWebhook'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       webhook: webhook
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -87,7 +81,7 @@ export default class WebhookApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -119,7 +113,7 @@ export default class WebhookApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getWebhook(returnType = null, options, credentials) {
+  getWebhook(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Webhook;
     }
@@ -150,19 +144,13 @@ export default class WebhookApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getWebhook'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       webhook: webhook
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -170,7 +158,7 @@ export default class WebhookApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -203,7 +191,7 @@ export default class WebhookApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  patchWebhook(returnType = null, options, credentials) {
+  patchWebhook(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Webhook;
     }
@@ -247,19 +235,13 @@ export default class WebhookApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling patchWebhook'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       webhook: webhook
     };
 
-    let bodyParam = webhookPatch;
+    const bodyParam = webhookPatch;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -267,7 +249,7 @@ export default class WebhookApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -299,7 +281,7 @@ export default class WebhookApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postWebhook(returnType = null, options, credentials) {
+  postWebhook(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Webhook;
     }
@@ -335,17 +317,11 @@ export default class WebhookApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postWebhook'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = webhookData;
 
-    let bodyParam = webhookData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -353,7 +329,7 @@ export default class WebhookApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

@@ -40,7 +40,7 @@ export default class InternalServiceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  deleteInternalService(returnType = null, options, credentials) {
+  deleteInternalService(returnType = null, options, credentials = null) {
     let {
       xKeyclicApp,
       internalService,
@@ -72,19 +72,13 @@ export default class InternalServiceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling deleteInternalService'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       internalService: internalService
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -92,7 +86,7 @@ export default class InternalServiceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -124,7 +118,7 @@ export default class InternalServiceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getInternalService(returnType = null, options, credentials) {
+  getInternalService(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = InternalService;
     }
@@ -160,19 +154,13 @@ export default class InternalServiceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getInternalService'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       internalService: internalService
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -180,7 +168,7 @@ export default class InternalServiceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -213,7 +201,7 @@ export default class InternalServiceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  patchInternalService(returnType = null, options, credentials) {
+  patchInternalService(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = InternalService;
     }
@@ -260,19 +248,13 @@ export default class InternalServiceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling patchInternalService'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       internalService: internalService
     };
 
-    let bodyParam = internalServicePatch;
+    const bodyParam = internalServicePatch;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -280,7 +262,7 @@ export default class InternalServiceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -312,7 +294,7 @@ export default class InternalServiceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postInternalService(returnType = null, options, credentials) {
+  postInternalService(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = InternalService;
     }
@@ -351,17 +333,11 @@ export default class InternalServiceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postInternalService'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = internalServiceData;
 
-    let bodyParam = internalServiceData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -369,7 +345,7 @@ export default class InternalServiceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

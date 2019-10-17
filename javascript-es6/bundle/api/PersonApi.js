@@ -195,7 +195,10 @@ var PersonApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _FeedbackPagination.default;
@@ -279,12 +282,6 @@ var PersonApi =
             visibility = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetFeedbackByPerson'
-            );
-          }
-
           var pathParams = {
             person: person
           };
@@ -350,7 +347,10 @@ var PersonApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _MemberPagination.default;
@@ -424,12 +424,6 @@ var PersonApi =
             roles = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetMembershipsByPerson'
-            );
-          }
-
           var pathParams = {
             person: person
           };
@@ -490,7 +484,10 @@ var PersonApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _OccupantPagination.default;
@@ -547,12 +544,6 @@ var PersonApi =
 
           if (typeof before === "undefined") {
             before = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetOccupantsByPerson'
-            );
           }
 
           var pathParams = {
@@ -616,7 +607,10 @@ var PersonApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _OperationPagination.default;
@@ -695,12 +689,6 @@ var PersonApi =
             state = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetOperationsByPerson'
-            );
-          }
-
           var pathParams = {
             person: person
           };
@@ -762,7 +750,10 @@ var PersonApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _PersonPagination.default;
@@ -817,12 +808,6 @@ var PersonApi =
 
           if (typeof query === "undefined") {
             query = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetPeople'
-            );
           }
 
           var pathParams = {};
@@ -887,7 +872,10 @@ var PersonApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _ReportPagination.default;
@@ -976,12 +964,6 @@ var PersonApi =
             state = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetReportsByPerson'
-            );
-          }
-
           var pathParams = {
             person: person
           };
@@ -1045,7 +1027,10 @@ var PersonApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _FeedbackReviewRequestPagination.default;
@@ -1104,12 +1089,6 @@ var PersonApi =
             before = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetReviewRequestsByPerson'
-            );
-          }
-
           var pathParams = {
             person: person
           };
@@ -1162,7 +1141,10 @@ var PersonApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Person.default;
@@ -1194,12 +1176,6 @@ var PersonApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling getPerson'
-            );
           }
 
           var pathParams = {
@@ -1249,7 +1225,10 @@ var PersonApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Person.default;
@@ -1288,12 +1267,6 @@ var PersonApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling patchPerson'
-            );
           }
 
           var pathParams = {

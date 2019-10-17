@@ -181,7 +181,10 @@ var OperationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _ActivityPagination.default;
@@ -223,12 +226,6 @@ var OperationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetCommentsByOperation'
-            );
           }
 
           var pathParams = {
@@ -281,7 +278,10 @@ var OperationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
           var xKeyclicApp = options.xKeyclicApp,
             operation = options.operation,
             image = options.image,
@@ -315,12 +315,6 @@ var OperationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling deleteImageByOperationAndImage'
-            );
           }
 
           var pathParams = {
@@ -370,7 +364,10 @@ var OperationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
           var xKeyclicApp = options.xKeyclicApp,
             operation = options.operation,
             acceptLanguage = options.acceptLanguage,
@@ -397,12 +394,6 @@ var OperationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling deleteOperation'
-            );
           }
 
           var pathParams = {
@@ -451,7 +442,10 @@ var OperationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Operation.default;
@@ -483,12 +477,6 @@ var OperationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling getOperation'
-            );
           }
 
           var pathParams = {
@@ -537,7 +525,10 @@ var OperationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Tracking.default;
@@ -569,12 +560,6 @@ var OperationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling getTrackingByOperation'
-            );
           }
 
           var pathParams = {
@@ -624,7 +609,10 @@ var OperationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Operation.default;
@@ -666,12 +654,6 @@ var OperationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling patchOperation'
-            );
           }
 
           var pathParams = {
@@ -721,7 +703,10 @@ var OperationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Operation.default;
@@ -760,12 +745,6 @@ var OperationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling postAssignByOperation'
-            );
           }
 
           var pathParams = {
@@ -815,7 +794,10 @@ var OperationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Operation.default;
@@ -854,12 +836,6 @@ var OperationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling postCommentByOperation'
-            );
           }
 
           var pathParams = {
@@ -909,7 +885,10 @@ var OperationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Operation.default;
@@ -948,12 +927,6 @@ var OperationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling postImageByOperation'
-            );
           }
 
           var pathParams = {
@@ -1002,7 +975,10 @@ var OperationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Operation.default;
@@ -1034,12 +1010,6 @@ var OperationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling postOperation'
-            );
           }
 
           var pathParams = {};
@@ -1087,7 +1057,10 @@ var OperationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Operation.default;
@@ -1126,12 +1099,6 @@ var OperationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling postSignByOperation'
-            );
           }
 
           var pathParams = {
@@ -1181,7 +1148,10 @@ var OperationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Operation.default;
@@ -1224,12 +1194,6 @@ var OperationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling postWorkflowByOperation'
-            );
           }
 
           var pathParams = {

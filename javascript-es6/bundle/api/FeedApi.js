@@ -162,7 +162,10 @@ var FeedApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _FeedPagination.default;
@@ -197,12 +200,6 @@ var FeedApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetFeeds'
-            );
           }
 
           var pathParams = {};
@@ -254,7 +251,10 @@ var FeedApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _ActivityAggregatedPagination.default;
@@ -296,12 +296,6 @@ var FeedApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetFeedsByFeed'
-            );
           }
 
           var pathParams = {
@@ -355,7 +349,10 @@ var FeedApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _FeedPagination.default;
@@ -397,12 +394,6 @@ var FeedApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetFollowingsByFeed'
-            );
           }
 
           var pathParams = {
@@ -454,7 +445,10 @@ var FeedApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
           var xKeyclicApp = options.xKeyclicApp,
             feed = options.feed,
             acceptLanguage = options.acceptLanguage,
@@ -481,12 +475,6 @@ var FeedApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling postFollowByFeed'
-            );
           }
 
           var pathParams = {
@@ -536,7 +524,10 @@ var FeedApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
           var xKeyclicApp = options.xKeyclicApp,
             feed = options.feed,
             group = options.group,
@@ -570,12 +561,6 @@ var FeedApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling postReadByFeedAndGroup'
-            );
           }
 
           var pathParams = {
@@ -625,7 +610,10 @@ var FeedApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
           var xKeyclicApp = options.xKeyclicApp,
             feed = options.feed,
             acceptLanguage = options.acceptLanguage,
@@ -652,12 +640,6 @@ var FeedApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling postUnfollowByFeed'
-            );
           }
 
           var pathParams = {

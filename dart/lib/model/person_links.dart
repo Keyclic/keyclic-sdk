@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class PersonLinks {
   PersonLinks({
+    this.createdBy,
     this.image,
     this.self,
   });
@@ -10,9 +11,12 @@ class PersonLinks {
     if (json == null) {
       return;
     }
+    createdBy = PersonLinksCreatedBy.fromJson(json['createdBy']);
     image = PersonLinksImage.fromJson(json['image']);
     self = PersonLinksSelf.fromJson(json['self']);
   }
+
+  PersonLinksCreatedBy createdBy;
 
   PersonLinksImage image;
 
@@ -27,6 +31,7 @@ class PersonLinks {
 
     return other is PersonLinks &&
         runtimeType == other.runtimeType &&
+        createdBy == other.createdBy &&
         image == other.image &&
         self == other.self;
   }
@@ -36,6 +41,7 @@ class PersonLinks {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= createdBy?.hashCode ?? 0;
     hashCode ^= image?.hashCode ?? 0;
     hashCode ^= self?.hashCode ?? 0;
 
@@ -60,6 +66,7 @@ class PersonLinks {
 
   Map<String, dynamic> toJson() {
     return {
+      if (createdBy != null) 'createdBy': createdBy,
       if (image != null) 'image': image,
       if (self != null) 'self': self,
     };
@@ -67,6 +74,6 @@ class PersonLinks {
 
   @override
   String toString() {
-    return 'PersonLinks[image=$image, self=$self, ]';
+    return 'PersonLinks[createdBy=$createdBy, image=$image, self=$self, ]';
   }
 }

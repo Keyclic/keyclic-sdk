@@ -39,7 +39,7 @@ export default class OccupantApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  deleteOccupant(returnType = null, options, credentials) {
+  deleteOccupant(returnType = null, options, credentials = null) {
     let { xKeyclicApp, occupant, acceptLanguage, xKeyclicAppVersion } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -66,19 +66,13 @@ export default class OccupantApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling deleteOccupant'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       occupant: occupant
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -86,7 +80,7 @@ export default class OccupantApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -118,7 +112,7 @@ export default class OccupantApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getOccupant(returnType = null, options, credentials) {
+  getOccupant(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Occupant;
     }
@@ -149,19 +143,13 @@ export default class OccupantApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getOccupant'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       occupant: occupant
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -169,7 +157,7 @@ export default class OccupantApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -201,7 +189,7 @@ export default class OccupantApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postOccupant(returnType = null, options, credentials) {
+  postOccupant(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Occupant;
     }
@@ -237,17 +225,11 @@ export default class OccupantApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postOccupant'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = occupantData;
 
-    let bodyParam = occupantData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -255,7 +237,7 @@ export default class OccupantApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

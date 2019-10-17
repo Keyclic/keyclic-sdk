@@ -39,7 +39,7 @@ export default class DocumentApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  deleteDocument(returnType = null, options, credentials) {
+  deleteDocument(returnType = null, options, credentials = null) {
     let { xKeyclicApp, document, acceptLanguage, xKeyclicAppVersion } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -66,19 +66,13 @@ export default class DocumentApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling deleteDocument'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       document: document
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -86,7 +80,7 @@ export default class DocumentApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -118,7 +112,7 @@ export default class DocumentApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getDocument(returnType = null, options, credentials) {
+  getDocument(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Document;
     }
@@ -149,19 +143,13 @@ export default class DocumentApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getDocument'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       document: document
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -169,7 +157,7 @@ export default class DocumentApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -202,7 +190,7 @@ export default class DocumentApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  patchDocument(returnType = null, options, credentials) {
+  patchDocument(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Document;
     }
@@ -246,19 +234,13 @@ export default class DocumentApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling patchDocument'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       document: document
     };
 
-    let bodyParam = documentPatch;
+    const bodyParam = documentPatch;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -266,7 +248,7 @@ export default class DocumentApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

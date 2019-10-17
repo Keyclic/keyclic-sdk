@@ -82,11 +82,11 @@ export default class SecurityApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    let pathParams = {};
+    const pathParams = {};
 
-    let bodyParam = facebookConnectData;
+    const bodyParam = facebookConnectData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -94,7 +94,7 @@ export default class SecurityApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = null;
+    const credentialParams = null;
 
     let authNames = [];
 
@@ -161,11 +161,11 @@ export default class SecurityApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    let pathParams = {};
+    const pathParams = {};
 
-    let bodyParam = loginData;
+    const bodyParam = loginData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -173,7 +173,7 @@ export default class SecurityApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = null;
+    const credentialParams = null;
 
     let authNames = [];
 
@@ -248,13 +248,13 @@ export default class SecurityApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    let pathParams = {
+    const pathParams = {
       token: token
     };
 
-    let bodyParam = passwordChangeData;
+    const bodyParam = passwordChangeData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -262,7 +262,7 @@ export default class SecurityApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = null;
+    const credentialParams = null;
 
     let authNames = [];
 
@@ -328,11 +328,11 @@ export default class SecurityApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    let pathParams = {};
+    const pathParams = {};
 
-    let bodyParam = resetPasswordData;
+    const bodyParam = resetPasswordData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -340,7 +340,7 @@ export default class SecurityApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = null;
+    const credentialParams = null;
 
     let authNames = [];
 
@@ -367,11 +367,12 @@ export default class SecurityApi extends ApiClient {
    * Create one Register resource.
    * @param { String } xKeyclicApp
    * @param { module:model/RegisterData } registerData
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postRegister(returnType = null, options) {
+  postRegister(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Person;
     }
@@ -407,11 +408,11 @@ export default class SecurityApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    let pathParams = {};
+    const pathParams = {};
 
-    let bodyParam = registerData;
+    const bodyParam = registerData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -419,9 +420,9 @@ export default class SecurityApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = null;
+    const credentialParams = credentials;
 
-    let authNames = [];
+    let authNames = ["bearer"];
 
     let contentTypes = ["application/json;charset=UTF-8"];
 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **links** | [**PersonLinks**](PersonLinks.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **email** | **String** |  | [optional] [default to null]
+**enabled** | **bool** |  | [optional] [default to null]
 **familyName** | **String** |  | [optional] [default to null]
 **givenName** | **String** |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]

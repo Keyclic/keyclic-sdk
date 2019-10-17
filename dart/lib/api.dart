@@ -287,6 +287,8 @@ part 'model/password_change_data.dart';
 part 'model/person.dart';
 part 'model/person_collection.dart';
 part 'model/person_links.dart';
+part 'model/person_links_created_by.dart';
+part 'model/person_links_created_by_iri_template.dart';
 part 'model/person_links_image.dart';
 part 'model/person_links_image_iri_template.dart';
 part 'model/person_links_self.dart';

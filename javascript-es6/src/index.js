@@ -265,6 +265,8 @@ import PasswordChangeData from "./model/PasswordChangeData";
 import Person from "./model/Person";
 import PersonCollection from "./model/PersonCollection";
 import PersonLinks from "./model/PersonLinks";
+import PersonLinksCreatedBy from "./model/PersonLinksCreatedBy";
+import PersonLinksCreatedByIriTemplate from "./model/PersonLinksCreatedByIriTemplate";
 import PersonLinksImage from "./model/PersonLinksImage";
 import PersonLinksImageIriTemplate from "./model/PersonLinksImageIriTemplate";
 import PersonLinksSelf from "./model/PersonLinksSelf";
@@ -428,7 +430,7 @@ import WebhookApi from "./api/WebhookApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.1.3
+ * @version 2.1.9
  */
 export {
   /**
@@ -1681,6 +1683,16 @@ export {
    * @property { module:model/PersonLinks }
    */
   PersonLinks,
+  /**
+   * The PersonLinksCreatedBy model constructor.
+   * @property { module:model/PersonLinksCreatedBy }
+   */
+  PersonLinksCreatedBy,
+  /**
+   * The PersonLinksCreatedByIriTemplate model constructor.
+   * @property { module:model/PersonLinksCreatedByIriTemplate }
+   */
+  PersonLinksCreatedByIriTemplate,
   /**
    * The PersonLinksImage model constructor.
    * @property { module:model/PersonLinksImage }

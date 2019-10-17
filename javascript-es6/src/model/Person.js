@@ -31,6 +31,7 @@ export default class Person {
     this.links = null;
     this.createdAt = null;
     this.email = null;
+    this.enabled = null;
     this.familyName = null;
     this.givenName = null;
     this.id = null;
@@ -69,6 +70,9 @@ export default class Person {
     }
     if (data.hasOwnProperty("email")) {
       object.email = ApiClient.convertToType(data["email"], "String");
+    }
+    if (data.hasOwnProperty("enabled")) {
+      object.enabled = ApiClient.convertToType(data["enabled"], "Boolean");
     }
     if (data.hasOwnProperty("familyName")) {
       object.familyName = ApiClient.convertToType(data["familyName"], "String");
@@ -139,6 +143,19 @@ export default class Person {
    */
   setEmail(email) {
     this.email = email;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getEnabled() {
+    return this.enabled;
+  }
+
+  /**
+   * @param { Boolean } enabled
+   */
+  setEnabled(enabled) {
+    this.enabled = enabled;
   }
   /**
    * @return { String }

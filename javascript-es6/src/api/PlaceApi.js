@@ -48,7 +48,7 @@ export default class PlaceApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetOccupantsByPlace(returnType = null, options, credentials) {
+  cgetOccupantsByPlace(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = OccupantPagination;
     }
@@ -120,19 +120,13 @@ export default class PlaceApi extends ApiClient {
       person = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetOccupantsByPlace'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       place: place
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       order: order,
@@ -147,7 +141,7 @@ export default class PlaceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -192,7 +186,7 @@ export default class PlaceApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetPlaces(returnType = null, options, credentials) {
+  cgetPlaces(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = PlacePagination;
     }
@@ -304,17 +298,11 @@ export default class PlaceApi extends ApiClient {
       query = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetPlaces'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = null;
 
-    let bodyParam = null;
-
-    let queryParams = {
+    const queryParams = {
       business_activity: businessActivity,
       after: after,
       before: before,
@@ -337,7 +325,7 @@ export default class PlaceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -369,7 +357,7 @@ export default class PlaceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getPlace(returnType = null, options, credentials) {
+  getPlace(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Place;
     }
@@ -400,19 +388,13 @@ export default class PlaceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getPlace'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       place: place
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -420,7 +402,7 @@ export default class PlaceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -453,7 +435,7 @@ export default class PlaceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  patchPlace(returnType = null, options, credentials) {
+  patchPlace(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Place;
     }
@@ -497,19 +479,13 @@ export default class PlaceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling patchPlace'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       place: place
     };
 
-    let bodyParam = placePatch;
+    const bodyParam = placePatch;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -517,7 +493,7 @@ export default class PlaceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -549,7 +525,7 @@ export default class PlaceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postPlace(returnType = null, options, credentials) {
+  postPlace(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Place;
     }
@@ -585,17 +561,11 @@ export default class PlaceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postPlace'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = placeData;
 
-    let bodyParam = placeData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -603,7 +573,7 @@ export default class PlaceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

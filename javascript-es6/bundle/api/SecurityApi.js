@@ -472,6 +472,7 @@ var SecurityApi =
          * Create one Register resource.
          * @param { String } xKeyclicApp
          * @param { module:model/RegisterData } registerData
+         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
          * @param { String } xKeyclicAppVersion
@@ -485,6 +486,10 @@ var SecurityApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Person.default;
@@ -526,8 +531,8 @@ var SecurityApi =
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
-          var credentialParams = null;
-          var authNames = [];
+          var credentialParams = credentials;
+          var authNames = ["bearer"];
           var contentTypes = ["application/json;charset=UTF-8"];
           var accepts = ["application/hal+json;charset=UTF-8"];
           return this.callApi(

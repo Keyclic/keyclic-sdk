@@ -222,7 +222,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _CategoryPagination.default;
@@ -301,12 +304,6 @@ var OrganizationApi =
             query = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetCategoriesByOrganization'
-            );
-          }
-
           var pathParams = {
             organization: organization
           };
@@ -369,7 +366,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _DelegationPagination.default;
@@ -433,12 +433,6 @@ var OrganizationApi =
             state = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetDelegationsByOrganization'
-            );
-          }
-
           var pathParams = {
             organization: organization
           };
@@ -498,7 +492,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _ExternalServicePagination.default;
@@ -562,12 +559,6 @@ var OrganizationApi =
             query = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetExternalServicesByOrganization'
-            );
-          }
-
           var pathParams = {
             organization: organization
           };
@@ -627,7 +618,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _InternalServicePagination.default;
@@ -691,12 +685,6 @@ var OrganizationApi =
             query = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetInternalServicesByOrganization'
-            );
-          }
-
           var pathParams = {
             organization: organization
           };
@@ -758,7 +746,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _MemberPagination.default;
@@ -832,12 +823,6 @@ var OrganizationApi =
             roles = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetMembersByOrganization'
-            );
-          }
-
           var pathParams = {
             organization: organization
           };
@@ -901,7 +886,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _OperationPagination.default;
@@ -975,12 +963,6 @@ var OrganizationApi =
             state = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetOperationsByOrganization'
-            );
-          }
-
           var pathParams = {
             organization: organization
           };
@@ -1046,7 +1028,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _OrganizationPagination.default;
@@ -1128,12 +1113,6 @@ var OrganizationApi =
             query = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetOrganizations'
-            );
-          }
-
           var pathParams = {};
           var bodyParam = null;
           var queryParams = {
@@ -1203,7 +1182,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _PlacePagination.default;
@@ -1302,12 +1284,6 @@ var OrganizationApi =
             query = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetPlacesByOrganization'
-            );
-          }
-
           var pathParams = {
             organization: organization
           };
@@ -1374,7 +1350,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _PublicationPagination.default;
@@ -1436,12 +1415,6 @@ var OrganizationApi =
 
           if (typeof place === "undefined") {
             place = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetPublicationsByOrganization'
-            );
           }
 
           var pathParams = {
@@ -1508,7 +1481,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _ReportPagination.default;
@@ -1597,12 +1573,6 @@ var OrganizationApi =
             state = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetReportsByOrganization'
-            );
-          }
-
           var pathParams = {
             organization: organization
           };
@@ -1666,7 +1636,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _WebhookPagination.default;
@@ -1723,12 +1696,6 @@ var OrganizationApi =
 
           if (typeof before === "undefined") {
             before = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cgetWebhooksByOrganization'
-            );
           }
 
           var pathParams = {
@@ -1794,7 +1761,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Report.default;
@@ -1883,12 +1853,6 @@ var OrganizationApi =
             state = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling cpostExportByOrganization'
-            );
-          }
-
           var pathParams = {
             organization: organization
           };
@@ -1952,7 +1916,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Chart.default;
@@ -2011,12 +1978,6 @@ var OrganizationApi =
             optionsSort = null;
           }
 
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling getAnalyticByOrganization'
-            );
-          }
-
           var pathParams = {
             organization: organization
           };
@@ -2069,7 +2030,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Schema.default;
@@ -2101,12 +2065,6 @@ var OrganizationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling getFormByOrganization'
-            );
           }
 
           var pathParams = {
@@ -2155,7 +2113,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Organization.default;
@@ -2187,12 +2148,6 @@ var OrganizationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling getOrganization'
-            );
           }
 
           var pathParams = {
@@ -2242,7 +2197,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Organization.default;
@@ -2284,12 +2242,6 @@ var OrganizationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling patchOrganization'
-            );
           }
 
           var pathParams = {
@@ -2338,7 +2290,10 @@ var OrganizationApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials = arguments.length > 2 ? arguments[2] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _Organization.default;
@@ -2373,12 +2328,6 @@ var OrganizationApi =
 
           if (typeof xKeyclicAppVersion === "undefined") {
             xKeyclicAppVersion = null;
-          }
-
-          if (typeof credentials === "undefined" || credentials === null) {
-            throw new window.Error(
-              'Missing the required parameter "credentials" when calling postOrganization'
-            );
           }
 
           var pathParams = {};

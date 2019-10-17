@@ -48,7 +48,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetCommentsByFeedback(returnType = null, options, credentials) {
+  cgetCommentsByFeedback(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = ActivityPagination;
     }
@@ -96,19 +96,13 @@ export default class FeedbackApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetCommentsByFeedback'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       feedback: feedback
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       page: page,
       limit: limit
     };
@@ -119,7 +113,7 @@ export default class FeedbackApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -247,11 +241,11 @@ export default class FeedbackApi extends ApiClient {
       visibility = null;
     }
 
-    let pathParams = {};
+    const pathParams = {};
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       state: state,
       category: category,
       after: after,
@@ -270,7 +264,7 @@ export default class FeedbackApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = null;
+    const credentialParams = null;
 
     let authNames = [];
 
@@ -307,7 +301,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetReviewsByFeedback(returnType = null, options, credentials) {
+  cgetReviewsByFeedback(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = ReviewPagination;
     }
@@ -373,19 +367,13 @@ export default class FeedbackApi extends ApiClient {
       before = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetReviewsByFeedback'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       feedback: feedback
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       order: order,
@@ -399,7 +387,7 @@ export default class FeedbackApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -431,7 +419,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getFeedback(returnType = null, options, credentials) {
+  getFeedback(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Feedback;
     }
@@ -462,19 +450,13 @@ export default class FeedbackApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getFeedback'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       feedback: feedback
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -482,7 +464,7 @@ export default class FeedbackApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -514,7 +496,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getTrackingByFeedback(returnType = null, options, credentials) {
+  getTrackingByFeedback(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Tracking;
     }
@@ -545,19 +527,13 @@ export default class FeedbackApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getTrackingByFeedback'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       feedback: feedback
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -565,7 +541,7 @@ export default class FeedbackApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -598,7 +574,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postCommentByFeedback(returnType = null, options, credentials) {
+  postCommentByFeedback(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Feedback;
     }
@@ -642,19 +618,13 @@ export default class FeedbackApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postCommentByFeedback'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       feedback: feedback
     };
 
-    let bodyParam = commentData;
+    const bodyParam = commentData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -662,7 +632,7 @@ export default class FeedbackApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -695,7 +665,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postImageByFeedback(returnType = null, options, credentials) {
+  postImageByFeedback(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Feedback;
     }
@@ -739,19 +709,13 @@ export default class FeedbackApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postImageByFeedback'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       feedback: feedback
     };
 
-    let bodyParam = imageData;
+    const bodyParam = imageData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -759,7 +723,7 @@ export default class FeedbackApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -791,7 +755,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postIssue(returnType = null, options, credentials) {
+  postIssue(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Feedback;
     }
@@ -827,17 +791,11 @@ export default class FeedbackApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postIssue'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = feedbackData;
 
-    let bodyParam = feedbackData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -845,7 +803,7 @@ export default class FeedbackApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -878,7 +836,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postWorkflowByFeedback(returnType = null, options, credentials) {
+  postWorkflowByFeedback(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Feedback;
     }
@@ -925,19 +883,13 @@ export default class FeedbackApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postWorkflowByFeedback'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       feedback: feedback
     };
 
-    let bodyParam = feedbackWorkflowTransitionData;
+    const bodyParam = feedbackWorkflowTransitionData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -945,7 +897,7 @@ export default class FeedbackApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

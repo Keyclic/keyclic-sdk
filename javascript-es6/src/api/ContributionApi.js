@@ -45,7 +45,7 @@ export default class ContributionApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetContributions(returnType = null, options, credentials) {
+  cgetContributions(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = ContributionPagination;
     }
@@ -109,17 +109,11 @@ export default class ContributionApi extends ApiClient {
       feedback = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetContributions'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = null;
 
-    let bodyParam = null;
-
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       feedback: feedback,
@@ -134,7 +128,7 @@ export default class ContributionApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -166,7 +160,7 @@ export default class ContributionApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getContribution(returnType = null, options, credentials) {
+  getContribution(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Contribution;
     }
@@ -202,19 +196,13 @@ export default class ContributionApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getContribution'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       contribution: contribution
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -222,7 +210,7 @@ export default class ContributionApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -254,7 +242,7 @@ export default class ContributionApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postContribution(returnType = null, options, credentials) {
+  postContribution(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Contribution;
     }
@@ -290,17 +278,11 @@ export default class ContributionApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postContribution'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = contributionData;
 
-    let bodyParam = contributionData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -308,7 +290,7 @@ export default class ContributionApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

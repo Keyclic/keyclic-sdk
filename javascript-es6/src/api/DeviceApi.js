@@ -39,7 +39,7 @@ export default class DeviceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  deleteDevice(returnType = null, options, credentials) {
+  deleteDevice(returnType = null, options, credentials = null) {
     let { xKeyclicApp, device, acceptLanguage, xKeyclicAppVersion } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -66,19 +66,13 @@ export default class DeviceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling deleteDevice'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       device: device
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -86,7 +80,7 @@ export default class DeviceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -118,7 +112,7 @@ export default class DeviceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getDevice(returnType = null, options, credentials) {
+  getDevice(returnType = null, options, credentials = null) {
     let { xKeyclicApp, device, acceptLanguage, xKeyclicAppVersion } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -145,19 +139,13 @@ export default class DeviceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getDevice'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       device: device
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -165,7 +153,7 @@ export default class DeviceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -197,7 +185,7 @@ export default class DeviceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postDevice(returnType = null, options, credentials) {
+  postDevice(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Device;
     }
@@ -233,17 +221,11 @@ export default class DeviceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postDevice'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = deviceData;
 
-    let bodyParam = deviceData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -251,7 +233,7 @@ export default class DeviceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

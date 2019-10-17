@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.PersonLinks();
+    instance = new @KeyclicSdkJavascript.PersonLinksCreatedBy();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,28 +46,22 @@
       object[property] = value;
   }
 
-  describe('PersonLinks', function() {
-    it('should create an instance of PersonLinks', function() {
-      // uncomment below and update the code to test PersonLinks
-      //var instane = new @KeyclicSdkJavascript.PersonLinks();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.PersonLinks);
+  describe('PersonLinksCreatedBy', function() {
+    it('should create an instance of PersonLinksCreatedBy', function() {
+      // uncomment below and update the code to test PersonLinksCreatedBy
+      //var instane = new @KeyclicSdkJavascript.PersonLinksCreatedBy();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.PersonLinksCreatedBy);
     });
 
-    it('should have the property createdBy (base name: "createdBy")', function() {
-      // uncomment below and update the code to test the property createdBy
-      //var instane = new @KeyclicSdkJavascript.PersonLinks();
+    it('should have the property href (base name: "href")', function() {
+      // uncomment below and update the code to test the property href
+      //var instane = new @KeyclicSdkJavascript.PersonLinksCreatedBy();
       //expect(instance).to.be();
     });
 
-    it('should have the property image (base name: "image")', function() {
-      // uncomment below and update the code to test the property image
-      //var instane = new @KeyclicSdkJavascript.PersonLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
-      //var instane = new @KeyclicSdkJavascript.PersonLinks();
+    it('should have the property iriTemplate (base name: "iriTemplate")', function() {
+      // uncomment below and update the code to test the property iriTemplate
+      //var instane = new @KeyclicSdkJavascript.PersonLinksCreatedBy();
       //expect(instance).to.be();
     });
 

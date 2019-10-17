@@ -40,7 +40,7 @@ export default class FeedApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetFeeds(returnType = null, options, credentials) {
+  cgetFeeds(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = FeedPagination;
     }
@@ -80,17 +80,11 @@ export default class FeedApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetFeeds'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = null;
 
-    let bodyParam = null;
-
-    let queryParams = {
+    const queryParams = {
       page: page,
       limit: limit
     };
@@ -101,7 +95,7 @@ export default class FeedApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -135,7 +129,7 @@ export default class FeedApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetFeedsByFeed(returnType = null, options, credentials) {
+  cgetFeedsByFeed(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = ActivityAggregatedPagination;
     }
@@ -183,19 +177,13 @@ export default class FeedApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetFeedsByFeed'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       feed: feed
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       page: page,
       limit: limit
     };
@@ -206,7 +194,7 @@ export default class FeedApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -240,7 +228,7 @@ export default class FeedApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetFollowingsByFeed(returnType = null, options, credentials) {
+  cgetFollowingsByFeed(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = FeedPagination;
     }
@@ -288,19 +276,13 @@ export default class FeedApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetFollowingsByFeed'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       feed: feed
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       page: page,
       limit: limit
     };
@@ -311,7 +293,7 @@ export default class FeedApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -343,7 +325,7 @@ export default class FeedApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postFollowByFeed(returnType = null, options, credentials) {
+  postFollowByFeed(returnType = null, options, credentials = null) {
     let { xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -370,19 +352,13 @@ export default class FeedApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postFollowByFeed'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       feed: feed
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -390,7 +366,7 @@ export default class FeedApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -423,7 +399,7 @@ export default class FeedApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postReadByFeedAndGroup(returnType = null, options, credentials) {
+  postReadByFeedAndGroup(returnType = null, options, credentials = null) {
     let {
       xKeyclicApp,
       feed,
@@ -463,20 +439,14 @@ export default class FeedApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postReadByFeedAndGroup'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       feed: feed,
       group: group
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -484,7 +454,7 @@ export default class FeedApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -516,7 +486,7 @@ export default class FeedApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postUnfollowByFeed(returnType = null, options, credentials) {
+  postUnfollowByFeed(returnType = null, options, credentials = null) {
     let { xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -543,19 +513,13 @@ export default class FeedApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postUnfollowByFeed'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       feed: feed
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -563,7 +527,7 @@ export default class FeedApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

@@ -58,6 +58,7 @@ var Person =
       this.links = null;
       this.createdAt = null;
       this.email = null;
+      this.enabled = null;
       this.familyName = null;
       this.givenName = null;
       this.id = null;
@@ -125,6 +126,24 @@ var Person =
           key: "setEmail",
           value: function setEmail(email) {
             this.email = email;
+          }
+          /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getEnabled",
+          value: function getEnabled() {
+            return this.enabled;
+          }
+          /**
+           * @param { Boolean } enabled
+           */
+        },
+        {
+          key: "setEnabled",
+          value: function setEnabled(enabled) {
+            this.enabled = enabled;
           }
           /**
            * @return { String }
@@ -316,6 +335,13 @@ var Person =
               object.email = _ApiClient.default.convertToType(
                 data["email"],
                 "String"
+              );
+            }
+
+            if (data.hasOwnProperty("enabled")) {
+              object.enabled = _ApiClient.default.convertToType(
+                data["enabled"],
+                "Boolean"
               );
             }
 

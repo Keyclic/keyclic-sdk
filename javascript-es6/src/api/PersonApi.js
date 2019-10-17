@@ -56,7 +56,7 @@ export default class PersonApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetFeedbackByPerson(returnType = null, options, credentials) {
+  cgetFeedbackByPerson(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = FeedbackPagination;
     }
@@ -152,19 +152,13 @@ export default class PersonApi extends ApiClient {
       visibility = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetFeedbackByPerson'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       person: person
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       category: category,
       after: after,
       before: before,
@@ -183,7 +177,7 @@ export default class PersonApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -223,7 +217,7 @@ export default class PersonApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetMembershipsByPerson(returnType = null, options, credentials) {
+  cgetMembershipsByPerson(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = MemberPagination;
     }
@@ -307,19 +301,13 @@ export default class PersonApi extends ApiClient {
       roles = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetMembershipsByPerson'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       person: person
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       order: order,
@@ -336,7 +324,7 @@ export default class PersonApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -373,7 +361,7 @@ export default class PersonApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetOccupantsByPerson(returnType = null, options, credentials) {
+  cgetOccupantsByPerson(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = OccupantPagination;
     }
@@ -439,19 +427,13 @@ export default class PersonApi extends ApiClient {
       before = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetOccupantsByPerson'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       person: person
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       order: order,
@@ -465,7 +447,7 @@ export default class PersonApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -506,7 +488,7 @@ export default class PersonApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetOperationsByPerson(returnType = null, options, credentials) {
+  cgetOperationsByPerson(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = OperationPagination;
     }
@@ -596,19 +578,13 @@ export default class PersonApi extends ApiClient {
       state = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetOperationsByPerson'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       person: person
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       assigned_to: assignedTo,
       after: after,
       before: before,
@@ -626,7 +602,7 @@ export default class PersonApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -663,7 +639,7 @@ export default class PersonApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetPeople(returnType = null, options, credentials) {
+  cgetPeople(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = PersonPagination;
     }
@@ -727,17 +703,11 @@ export default class PersonApi extends ApiClient {
       query = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetPeople'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = null;
 
-    let bodyParam = null;
-
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       order: order,
@@ -752,7 +722,7 @@ export default class PersonApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -795,7 +765,7 @@ export default class PersonApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetReportsByPerson(returnType = null, options, credentials) {
+  cgetReportsByPerson(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = ReportPagination;
     }
@@ -897,19 +867,13 @@ export default class PersonApi extends ApiClient {
       state = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetReportsByPerson'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       person: person
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       assigned_to: assignedTo,
       category: category,
       after: after,
@@ -929,7 +893,7 @@ export default class PersonApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -966,7 +930,7 @@ export default class PersonApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetReviewRequestsByPerson(returnType = null, options, credentials) {
+  cgetReviewRequestsByPerson(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = FeedbackReviewRequestPagination;
     }
@@ -1032,19 +996,13 @@ export default class PersonApi extends ApiClient {
       before = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetReviewRequestsByPerson'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       person: person
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       order: order,
@@ -1058,7 +1016,7 @@ export default class PersonApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -1090,7 +1048,7 @@ export default class PersonApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getPerson(returnType = null, options, credentials) {
+  getPerson(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Person;
     }
@@ -1121,19 +1079,13 @@ export default class PersonApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getPerson'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       person: person
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -1141,7 +1093,7 @@ export default class PersonApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -1174,7 +1126,7 @@ export default class PersonApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  patchPerson(returnType = null, options, credentials) {
+  patchPerson(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Person;
     }
@@ -1218,19 +1170,13 @@ export default class PersonApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling patchPerson'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       person: person
     };
 
-    let bodyParam = personPatch;
+    const bodyParam = personPatch;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -1238,7 +1184,7 @@ export default class PersonApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

@@ -5,6 +5,7 @@ class Person {
     this.links,
     this.createdAt,
     this.email,
+    this.enabled,
     this.familyName,
     this.givenName,
     this.id,
@@ -28,6 +29,7 @@ class Person {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
     email = json['email'];
+    enabled = json['enabled'];
     familyName = json['familyName'];
     givenName = json['givenName'];
     id = json['id'];
@@ -49,6 +51,8 @@ class Person {
   DateTime createdAt;
 
   String email;
+
+  bool enabled;
 
   String familyName;
 
@@ -82,6 +86,7 @@ class Person {
         links == other.links &&
         createdAt == other.createdAt &&
         email == other.email &&
+        enabled == other.enabled &&
         familyName == other.familyName &&
         givenName == other.givenName &&
         id == other.id &&
@@ -102,6 +107,7 @@ class Person {
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= email?.hashCode ?? 0;
+    hashCode ^= enabled?.hashCode ?? 0;
     hashCode ^= familyName?.hashCode ?? 0;
     hashCode ^= givenName?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
@@ -137,6 +143,7 @@ class Person {
       if (links != null) '_links': links,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (email != null) 'email': email,
+      if (enabled != null) 'enabled': enabled,
       if (familyName != null) 'familyName': familyName,
       if (givenName != null) 'givenName': givenName,
       if (id != null) 'id': id,
@@ -152,6 +159,6 @@ class Person {
 
   @override
   String toString() {
-    return 'Person[links=$links, createdAt=$createdAt, email=$email, familyName=$familyName, givenName=$givenName, id=$id, jobTitle=$jobTitle, optIn=$optIn, preferences=$preferences, telephone=$telephone, type=$type, updatedAt=$updatedAt, username=$username, ]';
+    return 'Person[links=$links, createdAt=$createdAt, email=$email, enabled=$enabled, familyName=$familyName, givenName=$givenName, id=$id, jobTitle=$jobTitle, optIn=$optIn, preferences=$preferences, telephone=$telephone, type=$type, updatedAt=$updatedAt, username=$username, ]';
   }
 }

@@ -39,7 +39,7 @@ export default class ReviewApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getReview(returnType = null, options, credentials) {
+  getReview(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Review;
     }
@@ -70,19 +70,13 @@ export default class ReviewApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getReview'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       review: review
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -90,7 +84,7 @@ export default class ReviewApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -122,7 +116,7 @@ export default class ReviewApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postReview(returnType = null, options, credentials) {
+  postReview(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Review;
     }
@@ -158,17 +152,11 @@ export default class ReviewApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postReview'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = reviewData;
 
-    let bodyParam = reviewData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -176,7 +164,7 @@ export default class ReviewApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

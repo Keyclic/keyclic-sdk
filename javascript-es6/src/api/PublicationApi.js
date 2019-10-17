@@ -39,7 +39,7 @@ export default class PublicationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  deletePublication(returnType = null, options, credentials) {
+  deletePublication(returnType = null, options, credentials = null) {
     let {
       xKeyclicApp,
       publication,
@@ -71,19 +71,13 @@ export default class PublicationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling deletePublication'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       publication: publication
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -91,7 +85,7 @@ export default class PublicationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -123,7 +117,7 @@ export default class PublicationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getPublication(returnType = null, options, credentials) {
+  getPublication(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Publication;
     }
@@ -159,19 +153,13 @@ export default class PublicationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getPublication'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       publication: publication
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -179,7 +167,7 @@ export default class PublicationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -211,7 +199,7 @@ export default class PublicationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postPublication(returnType = null, options, credentials) {
+  postPublication(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Publication;
     }
@@ -247,17 +235,11 @@ export default class PublicationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postPublication'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = publicationData;
 
-    let bodyParam = publicationData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -265,7 +247,7 @@ export default class PublicationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

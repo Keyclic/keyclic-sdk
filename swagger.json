@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.0.6"
+    "version": "2.1.9"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -5954,6 +5954,9 @@
             "$ref": "#\/parameters\/x-keyclic-app-version"
           },
           {
+            "$ref": "#\/parameters\/assigned_to"
+          },
+          {
             "$ref": "#\/parameters\/after"
           },
           {
@@ -7393,6 +7396,9 @@
             "$ref": "#\/parameters\/x-keyclic-app-version"
           },
           {
+            "$ref": "#\/parameters\/assigned_to"
+          },
+          {
             "$ref": "#\/parameters\/after"
           },
           {
@@ -8766,6 +8772,9 @@
             "$ref": "#\/parameters\/x-keyclic-app-version"
           },
           {
+            "$ref": "#\/parameters\/assigned_to"
+          },
+          {
             "$ref": "#\/parameters\/after"
           },
           {
@@ -9657,6 +9666,18 @@
               "$ref": "#\/definitions\/Error"
             }
           },
+          "401": {
+            "description": "Returned when the resource is unauthorized.",
+            "schema": {
+              "$ref": "#\/definitions\/Error"
+            }
+          },
+          "403": {
+            "description": "Returned when the resource is forbidden.",
+            "schema": {
+              "$ref": "#\/definitions\/Error"
+            }
+          },
           "500": {
             "description": "",
             "schema": {
@@ -9666,6 +9687,11 @@
         },
         "schemes": [
           "https"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
         ]
       }
     },
@@ -11071,7 +11097,8 @@
         }
       },
       "required": [
-        "report"
+        "report",
+        "service"
       ]
     },
     "DelegationLinksCreatedBy": {
@@ -12018,7 +12045,13 @@
     "FeedbackData": {
       "type": "object",
       "properties": {
+        "businessActivity": {
+          "type": "string"
+        },
         "category": {
+          "type": "string"
+        },
+        "description": {
           "type": "string"
         },
         "geo": {
@@ -12043,22 +12076,6 @@
             }
           }
         },
-        "description": {
-          "type": "string"
-        },
-        "visibility": {
-          "type": "string",
-          "enum": [
-            "VISIBILITY_PRIVATE",
-            "VISIBILITY_PUBLIC"
-          ]
-        },
-        "businessActivity": {
-          "type": "string"
-        },
-        "proMode": {
-          "type": "boolean"
-        },
         "metadata": {
           "type": "object",
           "additionalProperties": {
@@ -12067,6 +12084,16 @@
         },
         "place": {
           "type": "string"
+        },
+        "proMode": {
+          "type": "boolean"
+        },
+        "visibility": {
+          "type": "string",
+          "enum": [
+            "VISIBILITY_PRIVATE",
+            "VISIBILITY_PUBLIC"
+          ]
         }
       },
       "required": [
@@ -13170,6 +13197,9 @@
             "operator": {
               "$ref": "#\/definitions\/OperationLinksOperator"
             },
+            "organization": {
+              "$ref": "#\/definitions\/OperationLinksOrganization"
+            },
             "report": {
               "$ref": "#\/definitions\/OperationLinksReport"
             },
@@ -13436,6 +13466,32 @@
         }
       }
     },
+    "OperationLinksOrganization": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "description": "The URI of the organization associated to the given operation.",
+          "type": "string",
+          "format": "string"
+        },
+        "iriTemplate": {
+          "$ref": "#\/definitions\/OperationLinksOrganizationIriTemplate"
+        }
+      }
+    },
+    "OperationLinksOrganizationIriTemplate": {
+      "type": "object",
+      "properties": {
+        "mapping": {
+          "type": "object",
+          "properties": {
+            "organization": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
     "OperationLinksReport": {
       "type": "object",
       "properties": {
@@ -13633,6 +13689,22 @@
         "preferences": {
           "type": "object",
           "properties": {
+            "notification": {
+              "type": "object",
+              "properties": {
+                "report": {
+                  "type": "object",
+                  "properties": {
+                    "accepted": {
+                      "type": "boolean"
+                    },
+                    "refused": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            },
             "public": {
               "type": "boolean"
             },
@@ -13852,6 +13924,22 @@
         "preferences": {
           "type": "object",
           "properties": {
+            "notification": {
+              "type": "object",
+              "properties": {
+                "report": {
+                  "type": "object",
+                  "properties": {
+                    "accepted": {
+                      "type": "boolean"
+                    },
+                    "refused": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            },
             "reference": {
               "type": "object",
               "properties": {
@@ -13932,6 +14020,9 @@
         "_links": {
           "type": "object",
           "properties": {
+            "createdBy": {
+              "$ref": "#\/definitions\/PersonLinksCreatedBy"
+            },
             "image": {
               "$ref": "#\/definitions\/PersonLinksImage"
             },
@@ -13950,6 +14041,9 @@
           "maxLength": 180,
           "minLength": 1,
           "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
         },
         "familyName": {
           "maxLength": 255,
@@ -14027,6 +14121,32 @@
           "default": [],
           "items": {
             "$ref": "#\/definitions\/Person"
+          }
+        }
+      }
+    },
+    "PersonLinksCreatedBy": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "description": "The URI of the createdBy associated to the given person.",
+          "type": "string",
+          "format": "string"
+        },
+        "iriTemplate": {
+          "$ref": "#\/definitions\/PersonLinksCreatedByIriTemplate"
+        }
+      }
+    },
+    "PersonLinksCreatedByIriTemplate": {
+      "type": "object",
+      "properties": {
+        "mapping": {
+          "type": "object",
+          "properties": {
+            "person": {
+              "type": "string"
+            }
           }
         }
       }
@@ -14850,6 +14970,10 @@
           "type": "string",
           "format": "string"
         },
+        "dueDate": {
+          "type": "string",
+          "format": "date-time"
+        },
         "id": {
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
@@ -15180,6 +15304,10 @@
           "minLength": 1,
           "type": "string",
           "format": "string"
+        },
+        "dueDate": {
+          "type": "string",
+          "format": "date-time"
         },
         "identificationNumber": {
           "maxLength": 255,
@@ -16092,6 +16220,13 @@
       "pattern": ".*",
       "type": "array"
     },
+    "assigned_to": {
+      "description": "The identifier of the resource.",
+      "format": "uuid",
+      "in": "query",
+      "name": "assigned_to",
+      "type": "string"
+    },
     "place": {
       "description": "The identifier of the resource.",
       "format": "uuid",
@@ -16122,13 +16257,6 @@
       },
       "name": "parents[]",
       "type": "array"
-    },
-    "assigned_to": {
-      "description": "The identifier of the resource.",
-      "format": "uuid",
-      "in": "query",
-      "name": "assigned_to",
-      "type": "string"
     },
     "delegated_to": {
       "description": "The identifier of the resource.",

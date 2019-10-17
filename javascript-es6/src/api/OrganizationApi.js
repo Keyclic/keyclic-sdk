@@ -63,7 +63,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetCategoriesByOrganization(returnType = null, options, credentials) {
+  cgetCategoriesByOrganization(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = CategoryPagination;
     }
@@ -153,19 +153,13 @@ export default class OrganizationApi extends ApiClient {
       query = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetCategoriesByOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       business_activity: businessActivity,
       after: after,
       before: before,
@@ -183,7 +177,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -221,7 +215,11 @@ export default class OrganizationApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetDelegationsByOrganization(returnType = null, options, credentials) {
+  cgetDelegationsByOrganization(
+    returnType = null,
+    options,
+    credentials = null
+  ) {
     if (returnType === null) {
       returnType = DelegationPagination;
     }
@@ -293,19 +291,13 @@ export default class OrganizationApi extends ApiClient {
       state = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetDelegationsByOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       order: order,
@@ -320,7 +312,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -358,7 +350,11 @@ export default class OrganizationApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetExternalServicesByOrganization(returnType = null, options, credentials) {
+  cgetExternalServicesByOrganization(
+    returnType = null,
+    options,
+    credentials = null
+  ) {
     if (returnType === null) {
       returnType = ExternalServicePagination;
     }
@@ -430,19 +426,13 @@ export default class OrganizationApi extends ApiClient {
       query = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetExternalServicesByOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       order: order,
@@ -457,7 +447,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -495,7 +485,11 @@ export default class OrganizationApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetInternalServicesByOrganization(returnType = null, options, credentials) {
+  cgetInternalServicesByOrganization(
+    returnType = null,
+    options,
+    credentials = null
+  ) {
     if (returnType === null) {
       returnType = InternalServicePagination;
     }
@@ -567,19 +561,13 @@ export default class OrganizationApi extends ApiClient {
       query = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetInternalServicesByOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       order: order,
@@ -594,7 +582,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -634,7 +622,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetMembersByOrganization(returnType = null, options, credentials) {
+  cgetMembersByOrganization(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = MemberPagination;
     }
@@ -718,19 +706,13 @@ export default class OrganizationApi extends ApiClient {
       roles = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetMembersByOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       order: order,
@@ -747,7 +729,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -787,7 +769,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetOperationsByOrganization(returnType = null, options, credentials) {
+  cgetOperationsByOrganization(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = OperationPagination;
     }
@@ -871,19 +853,13 @@ export default class OrganizationApi extends ApiClient {
       state = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetOperationsByOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       assigned_to: assignedTo,
       after: after,
       before: before,
@@ -900,7 +876,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -942,7 +918,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetOrganizations(returnType = null, options, credentials) {
+  cgetOrganizations(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = OrganizationPagination;
     }
@@ -1036,17 +1012,11 @@ export default class OrganizationApi extends ApiClient {
       query = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetOrganizations'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = null;
 
-    let bodyParam = null;
-
-    let queryParams = {
+    const queryParams = {
       business_activity: businessActivity,
       after: after,
       before: before,
@@ -1066,7 +1036,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -1111,7 +1081,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetPlacesByOrganization(returnType = null, options, credentials) {
+  cgetPlacesByOrganization(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = PlacePagination;
     }
@@ -1225,19 +1195,13 @@ export default class OrganizationApi extends ApiClient {
       query = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetPlacesByOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       business_activity: businessActivity,
       after: after,
       before: before,
@@ -1259,7 +1223,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -1297,7 +1261,11 @@ export default class OrganizationApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetPublicationsByOrganization(returnType = null, options, credentials) {
+  cgetPublicationsByOrganization(
+    returnType = null,
+    options,
+    credentials = null
+  ) {
     if (returnType === null) {
       returnType = PublicationPagination;
     }
@@ -1369,19 +1337,13 @@ export default class OrganizationApi extends ApiClient {
       place = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetPublicationsByOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       order: order,
@@ -1396,7 +1358,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -1439,7 +1401,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetReportsByOrganization(returnType = null, options, credentials) {
+  cgetReportsByOrganization(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = ReportPagination;
     }
@@ -1541,19 +1503,13 @@ export default class OrganizationApi extends ApiClient {
       state = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetReportsByOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       assigned_to: assignedTo,
       category: category,
       after: after,
@@ -1573,7 +1529,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -1610,7 +1566,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetWebhooksByOrganization(returnType = null, options, credentials) {
+  cgetWebhooksByOrganization(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = WebhookPagination;
     }
@@ -1676,19 +1632,13 @@ export default class OrganizationApi extends ApiClient {
       before = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cgetWebhooksByOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       after: after,
       before: before,
       order: order,
@@ -1702,7 +1652,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -1745,7 +1695,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cpostExportByOrganization(returnType = null, options, credentials) {
+  cpostExportByOrganization(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Report;
     }
@@ -1847,19 +1797,13 @@ export default class OrganizationApi extends ApiClient {
       state = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling cpostExportByOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       assigned_to: assignedTo,
       category: category,
       after: after,
@@ -1879,7 +1823,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -1916,7 +1860,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { String } optionsProperty
    * @param { module:model/String } optionsSort
    */
-  getAnalyticByOrganization(returnType = null, options, credentials) {
+  getAnalyticByOrganization(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Chart;
     }
@@ -1982,19 +1926,13 @@ export default class OrganizationApi extends ApiClient {
       optionsSort = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getAnalyticByOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {
+    const queryParams = {
       category: category,
       place: place,
       state: state,
@@ -2008,7 +1946,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -2040,7 +1978,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getFormByOrganization(returnType = null, options, credentials) {
+  getFormByOrganization(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Schema;
     }
@@ -2076,19 +2014,13 @@ export default class OrganizationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getFormByOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -2096,7 +2028,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -2128,7 +2060,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getOrganization(returnType = null, options, credentials) {
+  getOrganization(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Organization;
     }
@@ -2164,19 +2096,13 @@ export default class OrganizationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -2184,7 +2110,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -2217,7 +2143,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  patchOrganization(returnType = null, options, credentials) {
+  patchOrganization(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Organization;
     }
@@ -2264,19 +2190,13 @@ export default class OrganizationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling patchOrganization'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       organization: organization
     };
 
-    let bodyParam = organizationPatch;
+    const bodyParam = organizationPatch;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -2284,7 +2204,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -2316,7 +2236,7 @@ export default class OrganizationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postOrganization(returnType = null, options, credentials) {
+  postOrganization(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Organization;
     }
@@ -2352,17 +2272,11 @@ export default class OrganizationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postOrganization'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = organizationData;
 
-    let bodyParam = organizationData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -2370,7 +2284,7 @@ export default class OrganizationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

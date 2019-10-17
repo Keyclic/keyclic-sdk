@@ -38,7 +38,7 @@ export default class ReviewRequestApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getReviewRequest(returnType = null, options, credentials) {
+  getReviewRequest(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = FeedbackReviewRequest;
     }
@@ -74,19 +74,13 @@ export default class ReviewRequestApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getReviewRequest'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       reviewRequest: reviewRequest
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -94,7 +88,7 @@ export default class ReviewRequestApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

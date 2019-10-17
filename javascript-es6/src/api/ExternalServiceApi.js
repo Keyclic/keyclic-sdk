@@ -40,7 +40,7 @@ export default class ExternalServiceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  deleteExternalService(returnType = null, options, credentials) {
+  deleteExternalService(returnType = null, options, credentials = null) {
     let {
       xKeyclicApp,
       externalService,
@@ -72,19 +72,13 @@ export default class ExternalServiceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling deleteExternalService'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       externalService: externalService
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -92,7 +86,7 @@ export default class ExternalServiceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -124,7 +118,7 @@ export default class ExternalServiceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getExternalService(returnType = null, options, credentials) {
+  getExternalService(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = ExternalService;
     }
@@ -160,19 +154,13 @@ export default class ExternalServiceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getExternalService'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       externalService: externalService
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -180,7 +168,7 @@ export default class ExternalServiceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -213,7 +201,7 @@ export default class ExternalServiceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  patchExternalService(returnType = null, options, credentials) {
+  patchExternalService(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = ExternalService;
     }
@@ -260,19 +248,13 @@ export default class ExternalServiceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling patchExternalService'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       externalService: externalService
     };
 
-    let bodyParam = externalServicePatch;
+    const bodyParam = externalServicePatch;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -280,7 +262,7 @@ export default class ExternalServiceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -312,7 +294,7 @@ export default class ExternalServiceApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postExternalService(returnType = null, options, credentials) {
+  postExternalService(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = ExternalService;
     }
@@ -351,17 +333,11 @@ export default class ExternalServiceApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postExternalService'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = externalServiceData;
 
-    let bodyParam = externalServiceData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -369,7 +345,7 @@ export default class ExternalServiceApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

@@ -40,7 +40,7 @@ export default class DelegationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getDelegation(returnType = null, options, credentials) {
+  getDelegation(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Delegation;
     }
@@ -76,19 +76,13 @@ export default class DelegationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getDelegation'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       delegation: delegation
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -96,7 +90,7 @@ export default class DelegationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -128,7 +122,7 @@ export default class DelegationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postDelegation(returnType = null, options, credentials) {
+  postDelegation(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Delegation;
     }
@@ -164,17 +158,11 @@ export default class DelegationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postDelegation'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = delegationData;
 
-    let bodyParam = delegationData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -182,7 +170,7 @@ export default class DelegationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -215,7 +203,7 @@ export default class DelegationApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postWorkflowByDelegation(returnType = null, options, credentials) {
+  postWorkflowByDelegation(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Delegation;
     }
@@ -262,19 +250,13 @@ export default class DelegationApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postWorkflowByDelegation'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       delegation: delegation
     };
 
-    let bodyParam = delegationWorkflowTransitionData;
+    const bodyParam = delegationWorkflowTransitionData;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -282,7 +264,7 @@ export default class DelegationApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

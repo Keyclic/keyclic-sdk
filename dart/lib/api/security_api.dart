@@ -300,7 +300,9 @@ class SecurityApi {
       "application/json",
     ];
 
-    final List<String> authNames = [];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
     final RegisterData postBody = registerData;
 

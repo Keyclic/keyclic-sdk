@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **links** | [**PersonLinks**](PersonLinks.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **email** | **String** |  | [optional] 
+**enabled** | **Boolean** |  | [optional] 
 **familyName** | **String** |  | [optional] 
 **givenName** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 

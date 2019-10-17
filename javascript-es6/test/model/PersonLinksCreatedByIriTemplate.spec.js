@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.PersonLinks();
+    instance = new @KeyclicSdkJavascript.PersonLinksCreatedByIriTemplate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,28 +46,16 @@
       object[property] = value;
   }
 
-  describe('PersonLinks', function() {
-    it('should create an instance of PersonLinks', function() {
-      // uncomment below and update the code to test PersonLinks
-      //var instane = new @KeyclicSdkJavascript.PersonLinks();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.PersonLinks);
+  describe('PersonLinksCreatedByIriTemplate', function() {
+    it('should create an instance of PersonLinksCreatedByIriTemplate', function() {
+      // uncomment below and update the code to test PersonLinksCreatedByIriTemplate
+      //var instane = new @KeyclicSdkJavascript.PersonLinksCreatedByIriTemplate();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.PersonLinksCreatedByIriTemplate);
     });
 
-    it('should have the property createdBy (base name: "createdBy")', function() {
-      // uncomment below and update the code to test the property createdBy
-      //var instane = new @KeyclicSdkJavascript.PersonLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property image (base name: "image")', function() {
-      // uncomment below and update the code to test the property image
-      //var instane = new @KeyclicSdkJavascript.PersonLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
-      //var instane = new @KeyclicSdkJavascript.PersonLinks();
+    it('should have the property mapping (base name: "mapping")', function() {
+      // uncomment below and update the code to test the property mapping
+      //var instane = new @KeyclicSdkJavascript.PersonLinksCreatedByIriTemplate();
       //expect(instance).to.be();
     });
 

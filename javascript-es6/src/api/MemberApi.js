@@ -40,7 +40,7 @@ export default class MemberApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  deleteMember(returnType = null, options, credentials) {
+  deleteMember(returnType = null, options, credentials = null) {
     let { xKeyclicApp, member, acceptLanguage, xKeyclicAppVersion } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
@@ -67,19 +67,13 @@ export default class MemberApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling deleteMember'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       member: member
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -87,7 +81,7 @@ export default class MemberApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -119,7 +113,7 @@ export default class MemberApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  getMember(returnType = null, options, credentials) {
+  getMember(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Member;
     }
@@ -150,19 +144,13 @@ export default class MemberApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling getMember'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       member: member
     };
 
-    let bodyParam = null;
+    const bodyParam = null;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -170,7 +158,7 @@ export default class MemberApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -203,7 +191,7 @@ export default class MemberApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  patchMember(returnType = null, options, credentials) {
+  patchMember(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Member;
     }
@@ -247,19 +235,13 @@ export default class MemberApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling patchMember'
-      );
-    }
-
-    let pathParams = {
+    const pathParams = {
       member: member
     };
 
-    let bodyParam = memberPatch;
+    const bodyParam = memberPatch;
 
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -267,7 +249,7 @@ export default class MemberApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 
@@ -299,7 +281,7 @@ export default class MemberApi extends ApiClient {
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
-  postMember(returnType = null, options, credentials) {
+  postMember(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = Member;
     }
@@ -335,17 +317,11 @@ export default class MemberApi extends ApiClient {
       xKeyclicAppVersion = null;
     }
 
-    if (typeof credentials === "undefined" || credentials === null) {
-      throw new window.Error(
-        'Missing the required parameter "credentials" when calling postMember'
-      );
-    }
+    const pathParams = {};
 
-    let pathParams = {};
+    const bodyParam = memberData;
 
-    let bodyParam = memberData;
-
-    let queryParams = {};
+    const queryParams = {};
 
     let headerParams = {
       "accept-language": acceptLanguage,
@@ -353,7 +329,7 @@ export default class MemberApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    let credentialParams = credentials;
+    const credentialParams = credentials;
 
     let authNames = ["bearer"];
 

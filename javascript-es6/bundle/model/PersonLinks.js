@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _PersonLinksCreatedBy = _interopRequireDefault(
+  require("./PersonLinksCreatedBy")
+);
+
 var _PersonLinksImage = _interopRequireDefault(require("./PersonLinksImage"));
 
 var _PersonLinksSelf = _interopRequireDefault(require("./PersonLinksSelf"));
@@ -53,8 +57,10 @@ var PersonLinks =
     function PersonLinks() {
       _classCallCheck(this, PersonLinks);
 
+      this.createdBy = null;
       this.image = null;
       this.self = null;
+      this.createdByType = _PersonLinksCreatedBy.default;
       this.imageType = _PersonLinksImage.default;
       this.selfType = _PersonLinksSelf.default;
     }
@@ -69,11 +75,29 @@ var PersonLinks =
       PersonLinks,
       [
         {
-          key: "getImage",
+          key: "getCreatedBy",
 
+          /**
+           * @return { module:model/PersonLinksCreatedBy }
+           */
+          value: function getCreatedBy() {
+            return this.createdBy;
+          }
+          /**
+           * @param { module:model/PersonLinksCreatedBy } createdBy
+           */
+        },
+        {
+          key: "setCreatedBy",
+          value: function setCreatedBy(createdBy) {
+            this.createdBy = createdBy;
+          }
           /**
            * @return { module:model/PersonLinksImage }
            */
+        },
+        {
+          key: "getImage",
           value: function getImage() {
             return this.image;
           }
@@ -121,6 +145,13 @@ var PersonLinks =
 
             if (object === null) {
               object = new PersonLinks();
+            }
+
+            if (data.hasOwnProperty("createdBy")) {
+              object.createdBy = _ApiClient.default.convertToType(
+                data["createdBy"],
+                object.createdByType
+              );
             }
 
             if (data.hasOwnProperty("image")) {
