@@ -52,7 +52,7 @@ export default class {{classname}} extends ApiClient {
         returnType = null,
         options,
     {{#hasAuthMethods}}
-        credentials,
+        credentials = null,
     {{/hasAuthMethods}}
     ) {
         {{#returnType}}
@@ -88,26 +88,20 @@ export default class {{classname}} extends ApiClient {
         }
         {{/defaultValue}}{{/required}}{{/allParams}}
 
-        {{#hasAuthMethods}}
-        if (typeof credentials === 'undefined' || credentials === null) {
-            throw new window.Error('Missing the required parameter "credentials" when calling {{&operationId}}');
-        }
-        {{/hasAuthMethods}}
-
-        let pathParams = {
+        const pathParams = {
         {{#pathParams}}
             '{{&baseName}}': {{&paramName}},
         {{/pathParams}}
         };
 
         {{#bodyParam}}
-        let bodyParam = {{&paramName}};
+        const bodyParam = {{&paramName}};
         {{/bodyParam}}
         {{^bodyParam}}
-        let bodyParam = null;
+        const bodyParam = null;
         {{/bodyParam}}
 
-        let queryParams = {
+        const queryParams = {
             {{#queryParams}}
             '{{&baseName}}': {{&paramName}},
             {{/queryParams}}
@@ -120,10 +114,10 @@ export default class {{classname}} extends ApiClient {
         };
 
         {{#hasAuthMethods}}
-        let credentialParams = credentials;
+        const credentialParams = credentials;
         {{/hasAuthMethods}}
         {{^hasAuthMethods}}
-        let credentialParams = null;
+        const credentialParams = null;
         {{/hasAuthMethods}}
 
         let authNames = [
