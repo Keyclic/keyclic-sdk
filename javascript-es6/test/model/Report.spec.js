@@ -77,8 +77,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property dueDate (base name: "dueDate")', function() {
-      // uncomment below and update the code to test the property dueDate
+    it('should have the property dueAt (base name: "dueAt")', function() {
+      // uncomment below and update the code to test the property dueAt
       //var instane = new @KeyclicSdkJavascript.Report();
       //expect(instance).to.be();
     });

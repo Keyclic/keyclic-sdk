@@ -61,7 +61,7 @@ var Report =
       this.links = null;
       this.createdAt = null;
       this.description = null;
-      this.dueDate = null;
+      this.dueAt = null;
       this.id = null;
       this.identificationNumber = null;
       this.priority = priority;
@@ -151,18 +151,18 @@ var Report =
            */
         },
         {
-          key: "getDueDate",
-          value: function getDueDate() {
-            return this.dueDate;
+          key: "getDueAt",
+          value: function getDueAt() {
+            return this.dueAt;
           }
           /**
-           * @param { Date } dueDate
+           * @param { Date } dueAt
            */
         },
         {
-          key: "setDueDate",
-          value: function setDueDate(dueDate) {
-            this.dueDate = dueDate;
+          key: "setDueAt",
+          value: function setDueAt(dueAt) {
+            this.dueAt = dueAt;
           }
           /**
            * @return { String }
@@ -328,9 +328,9 @@ var Report =
               );
             }
 
-            if (data.hasOwnProperty("dueDate")) {
-              object.dueDate = _ApiClient.default.convertToType(
-                data["dueDate"],
+            if (data.hasOwnProperty("dueAt")) {
+              object.dueAt = _ApiClient.default.convertToType(
+                data["dueAt"],
                 "Date"
               );
             }

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **category** | **String** |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
-**dueDate** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
+**dueAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **identificationNumber** | **String** |  | [optional] [default to null]
 **priority** | **int** |  | [optional] [default to null]
 **tags** | **List&lt;String&gt;** |  | [optional] [default to []]

@@ -38,7 +38,7 @@ export default class Report {
     this.links = null;
     this.createdAt = null;
     this.description = null;
-    this.dueDate = null;
+    this.dueAt = null;
     this.id = null;
     this.identificationNumber = null;
     this.priority = priority;
@@ -85,8 +85,8 @@ export default class Report {
         "String"
       );
     }
-    if (data.hasOwnProperty("dueDate")) {
-      object.dueDate = ApiClient.convertToType(data["dueDate"], "Date");
+    if (data.hasOwnProperty("dueAt")) {
+      object.dueAt = ApiClient.convertToType(data["dueAt"], "Date");
     }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
@@ -168,15 +168,15 @@ export default class Report {
   /**
    * @return { Date }
    */
-  getDueDate() {
-    return this.dueDate;
+  getDueAt() {
+    return this.dueAt;
   }
 
   /**
-   * @param { Date } dueDate
+   * @param { Date } dueAt
    */
-  setDueDate(dueDate) {
-    this.dueDate = dueDate;
+  setDueAt(dueAt) {
+    this.dueAt = dueAt;
   }
   /**
    * @return { String }

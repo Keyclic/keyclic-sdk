@@ -633,8 +633,12 @@ class ApiClient {
           return PersonPatch.fromJson(value);
         case 'PersonPatchPreferences':
           return PersonPatchPreferences.fromJson(value);
+        case 'PersonPatchPreferencesNotification':
+          return PersonPatchPreferencesNotification.fromJson(value);
         case 'PersonPreferences':
           return PersonPreferences.fromJson(value);
+        case 'PersonPreferencesNotification':
+          return PersonPreferencesNotification.fromJson(value);
         case 'Place':
           return Place.fromJson(value);
         case 'PlaceCollection':

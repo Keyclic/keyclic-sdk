@@ -273,7 +273,9 @@ import PersonLinksSelf from "./model/PersonLinksSelf";
 import PersonLinksSelfIriTemplate from "./model/PersonLinksSelfIriTemplate";
 import PersonPatch from "./model/PersonPatch";
 import PersonPatchPreferences from "./model/PersonPatchPreferences";
+import PersonPatchPreferencesNotification from "./model/PersonPatchPreferencesNotification";
 import PersonPreferences from "./model/PersonPreferences";
+import PersonPreferencesNotification from "./model/PersonPreferencesNotification";
 import Place from "./model/Place";
 import PlaceCollection from "./model/PlaceCollection";
 import PlaceData from "./model/PlaceData";
@@ -430,7 +432,7 @@ import WebhookApi from "./api/WebhookApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.1.9
+ * @version 2.1.14
  */
 export {
   /**
@@ -1724,10 +1726,20 @@ export {
    */
   PersonPatchPreferences,
   /**
+   * The PersonPatchPreferencesNotification model constructor.
+   * @property { module:model/PersonPatchPreferencesNotification }
+   */
+  PersonPatchPreferencesNotification,
+  /**
    * The PersonPreferences model constructor.
    * @property { module:model/PersonPreferences }
    */
   PersonPreferences,
+  /**
+   * The PersonPreferencesNotification model constructor.
+   * @property { module:model/PersonPreferencesNotification }
+   */
+  PersonPreferencesNotification,
   /**
    * The Place model constructor.
    * @property { module:model/Place }

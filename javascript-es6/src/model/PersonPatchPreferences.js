@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import PersonPatchPreferencesNotification from "./PersonPatchPreferencesNotification";
 
 /**
  * The PersonPatchPreferences model module.
@@ -24,8 +25,9 @@ export default class PersonPatchPreferences {
     
      */
   constructor() {
-    this.messageEmailEnabled = null;
-    this.messagePushEnabled = null;
+    this.notification = null;
+
+    this.notificationType = PersonPatchPreferencesNotification;
   }
 
   /**
@@ -43,16 +45,10 @@ export default class PersonPatchPreferences {
       object = new PersonPatchPreferences();
     }
 
-    if (data.hasOwnProperty("messageEmailEnabled")) {
-      object.messageEmailEnabled = ApiClient.convertToType(
-        data["messageEmailEnabled"],
-        "Boolean"
-      );
-    }
-    if (data.hasOwnProperty("messagePushEnabled")) {
-      object.messagePushEnabled = ApiClient.convertToType(
-        data["messagePushEnabled"],
-        "Boolean"
+    if (data.hasOwnProperty("notification")) {
+      object.notification = ApiClient.convertToType(
+        data["notification"],
+        object.notificationType
       );
     }
 
@@ -60,29 +56,16 @@ export default class PersonPatchPreferences {
   }
 
   /**
-   * @return { Boolean }
+   * @return { module:model/PersonPatchPreferencesNotification }
    */
-  getMessageEmailEnabled() {
-    return this.messageEmailEnabled;
+  getNotification() {
+    return this.notification;
   }
 
   /**
-   * @param { Boolean } messageEmailEnabled
+   * @param { module:model/PersonPatchPreferencesNotification } notification
    */
-  setMessageEmailEnabled(messageEmailEnabled) {
-    this.messageEmailEnabled = messageEmailEnabled;
-  }
-  /**
-   * @return { Boolean }
-   */
-  getMessagePushEnabled() {
-    return this.messagePushEnabled;
-  }
-
-  /**
-   * @param { Boolean } messagePushEnabled
-   */
-  setMessagePushEnabled(messagePushEnabled) {
-    this.messagePushEnabled = messagePushEnabled;
+  setNotification(notification) {
+    this.notification = notification;
   }
 }

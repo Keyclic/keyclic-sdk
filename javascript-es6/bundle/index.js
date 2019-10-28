@@ -32,6 +32,8 @@ require("core-js/modules/es.array.concat");
 
 require("core-js/modules/es.array.copy-within");
 
+require("core-js/modules/es.array.every");
+
 require("core-js/modules/es.array.fill");
 
 require("core-js/modules/es.array.filter");
@@ -44,21 +46,35 @@ require("core-js/modules/es.array.flat");
 
 require("core-js/modules/es.array.flat-map");
 
+require("core-js/modules/es.array.for-each");
+
 require("core-js/modules/es.array.from");
 
 require("core-js/modules/es.array.includes");
+
+require("core-js/modules/es.array.index-of");
 
 require("core-js/modules/es.array.iterator");
 
 require("core-js/modules/es.array.join");
 
+require("core-js/modules/es.array.last-index-of");
+
 require("core-js/modules/es.array.map");
 
 require("core-js/modules/es.array.of");
 
+require("core-js/modules/es.array.reduce");
+
+require("core-js/modules/es.array.reduce-right");
+
 require("core-js/modules/es.array.reverse");
 
 require("core-js/modules/es.array.slice");
+
+require("core-js/modules/es.array.some");
+
+require("core-js/modules/es.array.sort");
 
 require("core-js/modules/es.array.species");
 
@@ -70,9 +86,19 @@ require("core-js/modules/es.array.unscopables.flat-map");
 
 require("core-js/modules/es.array-buffer.constructor");
 
+require("core-js/modules/es.array-buffer.is-view");
+
 require("core-js/modules/es.array-buffer.slice");
 
+require("core-js/modules/es.data-view");
+
+require("core-js/modules/es.date.to-iso-string");
+
+require("core-js/modules/es.date.to-json");
+
 require("core-js/modules/es.date.to-primitive");
+
+require("core-js/modules/es.date.to-string");
 
 require("core-js/modules/es.function.has-instance");
 
@@ -140,9 +166,15 @@ require("core-js/modules/es.number.parse-int");
 
 require("core-js/modules/es.number.to-fixed");
 
+require("core-js/modules/es.number.to-precision");
+
 require("core-js/modules/es.object.assign");
 
 require("core-js/modules/es.object.define-getter");
+
+require("core-js/modules/es.object.define-properties");
+
+require("core-js/modules/es.object.define-property");
 
 require("core-js/modules/es.object.define-setter");
 
@@ -178,9 +210,15 @@ require("core-js/modules/es.object.prevent-extensions");
 
 require("core-js/modules/es.object.seal");
 
+require("core-js/modules/es.object.set-prototype-of");
+
 require("core-js/modules/es.object.to-string");
 
 require("core-js/modules/es.object.values");
+
+require("core-js/modules/es.parse-float");
+
+require("core-js/modules/es.parse-int");
 
 require("core-js/modules/es.promise");
 
@@ -213,6 +251,8 @@ require("core-js/modules/es.reflect.set");
 require("core-js/modules/es.reflect.set-prototype-of");
 
 require("core-js/modules/es.regexp.constructor");
+
+require("core-js/modules/es.regexp.exec");
 
 require("core-js/modules/es.regexp.flags");
 
@@ -1941,10 +1981,22 @@ Object.defineProperty(exports, "PersonPatchPreferences", {
     return _PersonPatchPreferences.default;
   }
 });
+Object.defineProperty(exports, "PersonPatchPreferencesNotification", {
+  enumerable: true,
+  get: function get() {
+    return _PersonPatchPreferencesNotification.default;
+  }
+});
 Object.defineProperty(exports, "PersonPreferences", {
   enumerable: true,
   get: function get() {
     return _PersonPreferences.default;
+  }
+});
+Object.defineProperty(exports, "PersonPreferencesNotification", {
+  enumerable: true,
+  get: function get() {
+    return _PersonPreferencesNotification.default;
   }
 });
 Object.defineProperty(exports, "Place", {
@@ -3680,8 +3732,16 @@ var _PersonPatchPreferences = _interopRequireDefault(
   require("./model/PersonPatchPreferences")
 );
 
+var _PersonPatchPreferencesNotification = _interopRequireDefault(
+  require("./model/PersonPatchPreferencesNotification")
+);
+
 var _PersonPreferences = _interopRequireDefault(
   require("./model/PersonPreferences")
+);
+
+var _PersonPreferencesNotification = _interopRequireDefault(
+  require("./model/PersonPreferencesNotification")
 );
 
 var _Place = _interopRequireDefault(require("./model/Place"));

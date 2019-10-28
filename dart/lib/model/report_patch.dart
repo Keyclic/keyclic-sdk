@@ -4,7 +4,7 @@ class ReportPatch {
   ReportPatch({
     this.category,
     this.description,
-    this.dueDate,
+    this.dueAt,
     this.identificationNumber,
     this.priority,
     this.tags,
@@ -16,9 +16,9 @@ class ReportPatch {
     }
     category = json['category'];
     description = json['description'];
-    dueDate = json['dueDate'] == null ? null : DateTime.parse(json['dueDate']);
-    if (dueDate is DateTime && dueDate.isUtc == false) {
-      dueDate = DateTime.parse('${dueDate.toIso8601String()}Z');
+    dueAt = json['dueAt'] == null ? null : DateTime.parse(json['dueAt']);
+    if (dueAt is DateTime && dueAt.isUtc == false) {
+      dueAt = DateTime.parse('${dueAt.toIso8601String()}Z');
     }
     identificationNumber = json['identificationNumber'];
     priority = json['priority'];
@@ -31,7 +31,7 @@ class ReportPatch {
 
   String description;
 
-  DateTime dueDate;
+  DateTime dueAt;
 
   String identificationNumber;
 
@@ -50,7 +50,7 @@ class ReportPatch {
         runtimeType == other.runtimeType &&
         category == other.category &&
         description == other.description &&
-        dueDate == other.dueDate &&
+        dueAt == other.dueAt &&
         identificationNumber == other.identificationNumber &&
         priority == other.priority &&
         DeepCollectionEquality.unordered().equals(tags, other.tags);
@@ -69,7 +69,7 @@ class ReportPatch {
 
     hashCode ^= category?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
-    hashCode ^= dueDate?.hashCode ?? 0;
+    hashCode ^= dueAt?.hashCode ?? 0;
     hashCode ^= identificationNumber?.hashCode ?? 0;
     hashCode ^= priority?.hashCode ?? 0;
 
@@ -96,7 +96,7 @@ class ReportPatch {
     return {
       if (category != null) 'category': category,
       if (description != null) 'description': description,
-      if (dueDate != null) 'dueDate': dueDate.toUtc().toIso8601String(),
+      if (dueAt != null) 'dueAt': dueAt.toUtc().toIso8601String(),
       if (identificationNumber != null)
         'identificationNumber': identificationNumber,
       if (priority != null) 'priority': priority,
@@ -106,6 +106,6 @@ class ReportPatch {
 
   @override
   String toString() {
-    return 'ReportPatch[category=$category, description=$description, dueDate=$dueDate, identificationNumber=$identificationNumber, priority=$priority, tags=$tags, ]';
+    return 'ReportPatch[category=$category, description=$description, dueAt=$dueAt, identificationNumber=$identificationNumber, priority=$priority, tags=$tags, ]';
   }
 }

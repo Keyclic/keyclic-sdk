@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**messageEmailEnabled** | **Boolean** |  | [optional] 
-**messagePushEnabled** | **Boolean** |  | [optional] 
+**notification** | [**PersonPatchPreferencesNotification**](PersonPatchPreferencesNotification.md) |  | [optional] 
 
 

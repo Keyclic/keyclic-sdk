@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.1.9
-- Package version: 2.1.9
+- API version: 2.1.14
+- Package version: 2.1.14
 
 ## Getting started
 
@@ -405,7 +405,9 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.PersonLinksSelfIriTemplate](docs/PersonLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.PersonPatch](docs/PersonPatch.md)
 - [@KeyclicSdkJavascript.PersonPatchPreferences](docs/PersonPatchPreferences.md)
+- [@KeyclicSdkJavascript.PersonPatchPreferencesNotification](docs/PersonPatchPreferencesNotification.md)
 - [@KeyclicSdkJavascript.PersonPreferences](docs/PersonPreferences.md)
+- [@KeyclicSdkJavascript.PersonPreferencesNotification](docs/PersonPreferencesNotification.md)
 - [@KeyclicSdkJavascript.Place](docs/Place.md)
 - [@KeyclicSdkJavascript.PlaceCollection](docs/PlaceCollection.md)
 - [@KeyclicSdkJavascript.PlaceData](docs/PlaceData.md)

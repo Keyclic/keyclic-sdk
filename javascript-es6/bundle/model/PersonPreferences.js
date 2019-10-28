@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _PersonPreferencesNotification = _interopRequireDefault(
+  require("./PersonPreferencesNotification")
+);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -45,16 +49,12 @@ var PersonPreferences =
    * @alias module:model/PersonPreferences
    * @class
   
-   * @param messageEmailEnabled { Boolean }
-  
-   * @param messagePushEnabled { Boolean }
-  
    */
-    function PersonPreferences(messageEmailEnabled, messagePushEnabled) {
+    function PersonPreferences() {
       _classCallCheck(this, PersonPreferences);
 
-      this.messageEmailEnabled = messageEmailEnabled;
-      this.messagePushEnabled = messagePushEnabled;
+      this.notification = null;
+      this.notificationType = _PersonPreferencesNotification.default;
     }
     /**
      * Constructs a "PersonPreferences" from a plain JavaScript object.
@@ -67,40 +67,22 @@ var PersonPreferences =
       PersonPreferences,
       [
         {
-          key: "getMessageEmailEnabled",
+          key: "getNotification",
 
           /**
-           * @return { Boolean }
+           * @return { module:model/PersonPreferencesNotification }
            */
-          value: function getMessageEmailEnabled() {
-            return this.messageEmailEnabled;
+          value: function getNotification() {
+            return this.notification;
           }
           /**
-           * @param { Boolean } messageEmailEnabled
+           * @param { module:model/PersonPreferencesNotification } notification
            */
         },
         {
-          key: "setMessageEmailEnabled",
-          value: function setMessageEmailEnabled(messageEmailEnabled) {
-            this.messageEmailEnabled = messageEmailEnabled;
-          }
-          /**
-           * @return { Boolean }
-           */
-        },
-        {
-          key: "getMessagePushEnabled",
-          value: function getMessagePushEnabled() {
-            return this.messagePushEnabled;
-          }
-          /**
-           * @param { Boolean } messagePushEnabled
-           */
-        },
-        {
-          key: "setMessagePushEnabled",
-          value: function setMessagePushEnabled(messagePushEnabled) {
-            this.messagePushEnabled = messagePushEnabled;
+          key: "setNotification",
+          value: function setNotification(notification) {
+            this.notification = notification;
           }
         }
       ],
@@ -121,17 +103,10 @@ var PersonPreferences =
               object = new PersonPreferences();
             }
 
-            if (data.hasOwnProperty("messageEmailEnabled")) {
-              object.messageEmailEnabled = _ApiClient.default.convertToType(
-                data["messageEmailEnabled"],
-                "Boolean"
-              );
-            }
-
-            if (data.hasOwnProperty("messagePushEnabled")) {
-              object.messagePushEnabled = _ApiClient.default.convertToType(
-                data["messagePushEnabled"],
-                "Boolean"
+            if (data.hasOwnProperty("notification")) {
+              object.notification = _ApiClient.default.convertToType(
+                data["notification"],
+                object.notificationType
               );
             }
 

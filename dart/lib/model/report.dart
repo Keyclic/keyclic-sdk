@@ -6,7 +6,7 @@ class Report {
     this.links,
     this.createdAt,
     this.description,
-    this.dueDate,
+    this.dueAt,
     this.id,
     this.identificationNumber,
     this.priority,
@@ -29,9 +29,9 @@ class Report {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
     description = json['description'];
-    dueDate = json['dueDate'] == null ? null : DateTime.parse(json['dueDate']);
-    if (dueDate is DateTime && dueDate.isUtc == false) {
-      dueDate = DateTime.parse('${dueDate.toIso8601String()}Z');
+    dueAt = json['dueAt'] == null ? null : DateTime.parse(json['dueAt']);
+    if (dueAt is DateTime && dueAt.isUtc == false) {
+      dueAt = DateTime.parse('${dueAt.toIso8601String()}Z');
     }
     id = json['id'];
     identificationNumber = json['identificationNumber'];
@@ -59,7 +59,7 @@ class Report {
 
   String description;
 
-  DateTime dueDate;
+  DateTime dueAt;
 
   String id;
 
@@ -90,7 +90,7 @@ class Report {
         links == other.links &&
         createdAt == other.createdAt &&
         description == other.description &&
-        dueDate == other.dueDate &&
+        dueAt == other.dueAt &&
         id == other.id &&
         identificationNumber == other.identificationNumber &&
         priority == other.priority &&
@@ -121,7 +121,7 @@ class Report {
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
-    hashCode ^= dueDate?.hashCode ?? 0;
+    hashCode ^= dueAt?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= identificationNumber?.hashCode ?? 0;
     hashCode ^= priority?.hashCode ?? 0;
@@ -154,7 +154,7 @@ class Report {
       if (links != null) '_links': links,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
-      if (dueDate != null) 'dueDate': dueDate.toUtc().toIso8601String(),
+      if (dueAt != null) 'dueAt': dueAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
       if (identificationNumber != null)
         'identificationNumber': identificationNumber,
@@ -169,6 +169,6 @@ class Report {
 
   @override
   String toString() {
-    return 'Report[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, dueDate=$dueDate, id=$id, identificationNumber=$identificationNumber, priority=$priority, reference=$reference, state=$state, tags=$tags, type=$type, updatedAt=$updatedAt, ]';
+    return 'Report[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, dueAt=$dueAt, id=$id, identificationNumber=$identificationNumber, priority=$priority, reference=$reference, state=$state, tags=$tags, type=$type, updatedAt=$updatedAt, ]';
   }
 }

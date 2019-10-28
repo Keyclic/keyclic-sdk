@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **links** | [**ReportLinks**](ReportLinks.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
-**dueDate** | **Date** |  | [optional] 
+**dueAt** | **Date** |  | [optional] 
 **id** | **String** |  | [optional] 
 **identificationNumber** | **String** |  | [optional] 
 **priority** | **Number** |  | 

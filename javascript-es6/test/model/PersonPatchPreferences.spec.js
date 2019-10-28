@@ -53,14 +53,8 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.PersonPatchPreferences);
     });
 
-    it('should have the property messageEmailEnabled (base name: "messageEmailEnabled")', function() {
-      // uncomment below and update the code to test the property messageEmailEnabled
-      //var instane = new @KeyclicSdkJavascript.PersonPatchPreferences();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property messagePushEnabled (base name: "messagePushEnabled")', function() {
-      // uncomment below and update the code to test the property messagePushEnabled
+    it('should have the property notification (base name: "notification")', function() {
+      // uncomment below and update the code to test the property notification
       //var instane = new @KeyclicSdkJavascript.PersonPatchPreferences();
       //expect(instance).to.be();
     });

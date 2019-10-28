@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import PersonPreferencesNotification from "./PersonPreferencesNotification";
 
 /**
  * The PersonPreferences model module.
@@ -22,18 +23,11 @@ export default class PersonPreferences {
      * @alias module:model/PersonPreferences
      * @class
     
-     * @param messageEmailEnabled { Boolean }
-    
-     * @param messagePushEnabled { Boolean }
-    
      */
-  constructor(
-    messageEmailEnabled,
+  constructor() {
+    this.notification = null;
 
-    messagePushEnabled
-  ) {
-    this.messageEmailEnabled = messageEmailEnabled;
-    this.messagePushEnabled = messagePushEnabled;
+    this.notificationType = PersonPreferencesNotification;
   }
 
   /**
@@ -51,16 +45,10 @@ export default class PersonPreferences {
       object = new PersonPreferences();
     }
 
-    if (data.hasOwnProperty("messageEmailEnabled")) {
-      object.messageEmailEnabled = ApiClient.convertToType(
-        data["messageEmailEnabled"],
-        "Boolean"
-      );
-    }
-    if (data.hasOwnProperty("messagePushEnabled")) {
-      object.messagePushEnabled = ApiClient.convertToType(
-        data["messagePushEnabled"],
-        "Boolean"
+    if (data.hasOwnProperty("notification")) {
+      object.notification = ApiClient.convertToType(
+        data["notification"],
+        object.notificationType
       );
     }
 
@@ -68,29 +56,16 @@ export default class PersonPreferences {
   }
 
   /**
-   * @return { Boolean }
+   * @return { module:model/PersonPreferencesNotification }
    */
-  getMessageEmailEnabled() {
-    return this.messageEmailEnabled;
+  getNotification() {
+    return this.notification;
   }
 
   /**
-   * @param { Boolean } messageEmailEnabled
+   * @param { module:model/PersonPreferencesNotification } notification
    */
-  setMessageEmailEnabled(messageEmailEnabled) {
-    this.messageEmailEnabled = messageEmailEnabled;
-  }
-  /**
-   * @return { Boolean }
-   */
-  getMessagePushEnabled() {
-    return this.messagePushEnabled;
-  }
-
-  /**
-   * @param { Boolean } messagePushEnabled
-   */
-  setMessagePushEnabled(messagePushEnabled) {
-    this.messagePushEnabled = messagePushEnabled;
+  setNotification(notification) {
+    this.notification = notification;
   }
 }

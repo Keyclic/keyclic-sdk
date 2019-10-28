@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **links** | [**ReportLinks**](ReportLinks.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
-**dueDate** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
+**dueAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
 **identificationNumber** | **String** |  | [optional] [default to null]
 **priority** | **int** |  | [default to null]

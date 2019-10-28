@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.PersonPreferences();
+    instance = new @KeyclicSdkJavascript.PersonPreferencesNotification();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,16 +46,22 @@
       object[property] = value;
   }
 
-  describe('PersonPreferences', function() {
-    it('should create an instance of PersonPreferences', function() {
-      // uncomment below and update the code to test PersonPreferences
-      //var instane = new @KeyclicSdkJavascript.PersonPreferences();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.PersonPreferences);
+  describe('PersonPreferencesNotification', function() {
+    it('should create an instance of PersonPreferencesNotification', function() {
+      // uncomment below and update the code to test PersonPreferencesNotification
+      //var instane = new @KeyclicSdkJavascript.PersonPreferencesNotification();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.PersonPreferencesNotification);
     });
 
-    it('should have the property notification (base name: "notification")', function() {
-      // uncomment below and update the code to test the property notification
-      //var instane = new @KeyclicSdkJavascript.PersonPreferences();
+    it('should have the property mail (base name: "mail")', function() {
+      // uncomment below and update the code to test the property mail
+      //var instane = new @KeyclicSdkJavascript.PersonPreferencesNotification();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property push (base name: "push")', function() {
+      // uncomment below and update the code to test the property push
+      //var instane = new @KeyclicSdkJavascript.PersonPreferencesNotification();
       //expect(instance).to.be();
     });
 

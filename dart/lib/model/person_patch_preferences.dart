@@ -2,21 +2,18 @@ part of keyclic_sdk_api.api;
 
 class PersonPatchPreferences {
   PersonPatchPreferences({
-    this.messageEmailEnabled,
-    this.messagePushEnabled,
+    this.notification,
   });
 
   PersonPatchPreferences.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return;
     }
-    messageEmailEnabled = json['messageEmailEnabled'];
-    messagePushEnabled = json['messagePushEnabled'];
+    notification =
+        PersonPatchPreferencesNotification.fromJson(json['notification']);
   }
 
-  bool messageEmailEnabled;
-
-  bool messagePushEnabled;
+  PersonPatchPreferencesNotification notification;
 
   @override
   bool operator ==(dynamic other) {
@@ -27,8 +24,7 @@ class PersonPatchPreferences {
 
     return other is PersonPatchPreferences &&
         runtimeType == other.runtimeType &&
-        messageEmailEnabled == other.messageEmailEnabled &&
-        messagePushEnabled == other.messagePushEnabled;
+        notification == other.notification;
   }
 
   /// By default hashCode return reference
@@ -36,8 +32,7 @@ class PersonPatchPreferences {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= messageEmailEnabled?.hashCode ?? 0;
-    hashCode ^= messagePushEnabled?.hashCode ?? 0;
+    hashCode ^= notification?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -63,14 +58,12 @@ class PersonPatchPreferences {
 
   Map<String, dynamic> toJson() {
     return {
-      if (messageEmailEnabled != null)
-        'messageEmailEnabled': messageEmailEnabled,
-      if (messagePushEnabled != null) 'messagePushEnabled': messagePushEnabled,
+      if (notification != null) 'notification': notification,
     };
   }
 
   @override
   String toString() {
-    return 'PersonPatchPreferences[messageEmailEnabled=$messageEmailEnabled, messagePushEnabled=$messagePushEnabled, ]';
+    return 'PersonPatchPreferences[notification=$notification, ]';
   }
 }
