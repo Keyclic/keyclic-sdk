@@ -59,7 +59,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
 /**
  * @module ApiClient
- * @version 2.1.14
+ * @version 2.1.17
  */
 
 /**
@@ -152,19 +152,16 @@ var ApiClient =
               switch (auth.type) {
                 case "apiKey":
                   if (
-                    credentials.hasOwnProperty("accessToken") === false ||
-                    typeof credentials.accessToken === "undefined" ||
-                    credentials.accessToken === null
+                    credentials.hasOwnProperty("accessToken") &&
+                    credentials.accessToken !== null &&
+                    typeof credentials.accessToken === "string"
                   ) {
-                    throw new Error(
-                      'ApiKey authentication claims an "accessToken" as credentials.'
+                    options.headers.append(
+                      auth.name,
+                      "Bearer " + credentials.accessToken
                     );
                   }
 
-                  options.headers.append(
-                    auth.name,
-                    "Bearer " + credentials.accessToken
-                  );
                   break;
 
                 default:
