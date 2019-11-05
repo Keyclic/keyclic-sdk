@@ -82,18 +82,19 @@ export default class ApiClient {
      * @param {Object} credentials An object with good properties to use different types of authentication.
      */
     applyAuthToRequest(options, authNames, credentials) {
-        authNames.forEach((authName) => {
-            let auth = this.authentications[authName];
+        authNames.forEach(authName => {
+            const auth = this.authentications[authName];
             switch (auth.type) {
-                case 'apiKey':
-                    if (credentials.hasOwnProperty('accessToken') === false || typeof credentials.accessToken === 'undefined' || credentials.accessToken === null) {
-                        throw new Error('ApiKey authentication claims an "accessToken" as credentials.');
+                case "apiKey":
+                    if (credentials.hasOwnProperty("accessToken")
+                    && credentials.accessToken !== null
+                    && typeof credentials.accessToken === "string") {
+                        options.headers.append(auth.name, "Bearer " + credentials.accessToken);
                     }
 
-                    options.headers.append(auth.name, 'Bearer ' + credentials.accessToken);
                     break;
                 default:
-                    throw new Error('Unknown authentication type: ' + auth.type);
+                    throw new Error("Unknown authentication type: " + auth.type);
             }
         });
 
