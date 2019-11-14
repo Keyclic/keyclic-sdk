@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import PersonAgreement from "./PersonAgreement";
 import PersonLinks from "./PersonLinks";
 import PersonPreferences from "./PersonPreferences";
 
@@ -29,6 +30,7 @@ export default class Person {
      */
   constructor(optIn) {
     this.links = null;
+    this.agreement = null;
     this.createdAt = null;
     this.email = null;
     this.enabled = null;
@@ -44,6 +46,7 @@ export default class Person {
     this.username = null;
 
     this.linksType = PersonLinks;
+    this.agreementType = PersonAgreement;
     this.preferencesType = PersonPreferences;
   }
 
@@ -64,6 +67,12 @@ export default class Person {
 
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
+    if (data.hasOwnProperty("agreement")) {
+      object.agreement = ApiClient.convertToType(
+        data["agreement"],
+        object.agreementType
+      );
     }
     if (data.hasOwnProperty("createdAt")) {
       object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
@@ -123,6 +132,19 @@ export default class Person {
    */
   setLinks(links) {
     this.links = links;
+  }
+  /**
+   * @return { module:model/PersonAgreement }
+   */
+  getAgreement() {
+    return this.agreement;
+  }
+
+  /**
+   * @param { module:model/PersonAgreement } agreement
+   */
+  setAgreement(agreement) {
+    this.agreement = agreement;
   }
   /**
    * @return { Date }

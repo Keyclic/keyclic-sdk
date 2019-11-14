@@ -201,13 +201,6 @@ _defineProperty(WebhookData, "EventEnum", {
   operationCreated: "operationCreated",
 
   /**
-   * value: "operationRemoved"
-   * @const
-   * @readonly
-   */
-  operationRemoved: "operationRemoved",
-
-  /**
    * value: "operationStateChanged"
    * @const
    * @readonly

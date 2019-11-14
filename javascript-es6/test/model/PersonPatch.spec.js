@@ -53,6 +53,12 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.PersonPatch);
     });
 
+    it('should have the property agreement (base name: "agreement")', function() {
+      // uncomment below and update the code to test the property agreement
+      //var instane = new @KeyclicSdkJavascript.PersonPatch();
+      //expect(instance).to.be();
+    });
+
     it('should have the property givenName (base name: "givenName")', function() {
       // uncomment below and update the code to test the property givenName
       //var instane = new @KeyclicSdkJavascript.PersonPatch();

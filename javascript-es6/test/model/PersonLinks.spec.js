@@ -53,6 +53,12 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.PersonLinks);
     });
 
+    it('should have the property application (base name: "application")', function() {
+      // uncomment below and update the code to test the property application
+      //var instane = new @KeyclicSdkJavascript.PersonLinks();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdBy (base name: "createdBy")', function() {
       // uncomment below and update the code to test the property createdBy
       //var instane = new @KeyclicSdkJavascript.PersonLinks();

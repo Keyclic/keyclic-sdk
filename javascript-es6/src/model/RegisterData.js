@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import PersonAgreement from "./PersonAgreement";
 
 /**
  * The RegisterData model module.
@@ -34,6 +35,9 @@ export default class RegisterData {
   ) {
     this.email = email;
     this.password = password;
+    this.agreement = null;
+
+    this.agreementType = PersonAgreement;
   }
 
   /**
@@ -56,6 +60,12 @@ export default class RegisterData {
     }
     if (data.hasOwnProperty("password")) {
       object.password = ApiClient.convertToType(data["password"], "String");
+    }
+    if (data.hasOwnProperty("agreement")) {
+      object.agreement = ApiClient.convertToType(
+        data["agreement"],
+        object.agreementType
+      );
     }
 
     return object;
@@ -86,5 +96,18 @@ export default class RegisterData {
    */
   setPassword(password) {
     this.password = password;
+  }
+  /**
+   * @return { module:model/PersonAgreement }
+   */
+  getAgreement() {
+    return this.agreement;
+  }
+
+  /**
+   * @param { module:model/PersonAgreement } agreement
+   */
+  setAgreement(agreement) {
+    this.agreement = agreement;
   }
 }

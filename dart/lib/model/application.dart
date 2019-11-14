@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class Application {
   Application({
     this.links,
+    this.agreement,
     this.createdAt,
     this.id,
     this.name,
@@ -17,6 +18,7 @@ class Application {
       return;
     }
     links = ApplicationLinks.fromJson(json['_links']);
+    agreement = ApplicationAgreement.fromJson(json['agreement']);
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
@@ -35,6 +37,8 @@ class Application {
   }
 
   ApplicationLinks links;
+
+  ApplicationAgreement agreement;
 
   DateTime createdAt;
 
@@ -60,6 +64,7 @@ class Application {
     return other is Application &&
         runtimeType == other.runtimeType &&
         links == other.links &&
+        agreement == other.agreement &&
         createdAt == other.createdAt &&
         id == other.id &&
         name == other.name &&
@@ -75,6 +80,7 @@ class Application {
     int hashCode = 0;
 
     hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= agreement?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
@@ -105,6 +111,7 @@ class Application {
   Map<String, dynamic> toJson() {
     return {
       if (links != null) '_links': links,
+      if (agreement != null) 'agreement': agreement,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
       if (name != null) 'name': name,
@@ -117,6 +124,6 @@ class Application {
 
   @override
   String toString() {
-    return 'Application[links=$links, createdAt=$createdAt, id=$id, name=$name, token=$token, type=$type, updatedAt=$updatedAt, version=$version, ]';
+    return 'Application[links=$links, agreement=$agreement, createdAt=$createdAt, id=$id, name=$name, token=$token, type=$type, updatedAt=$updatedAt, version=$version, ]';
   }
 }

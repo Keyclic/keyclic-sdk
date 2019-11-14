@@ -2,7 +2,6 @@ part of keyclic_sdk_api.api;
 
 class WebhookDataEventEnum {
   static const String operationCreated_ = "operationCreated";
-  static const String operationRemoved_ = "operationRemoved";
   static const String operationStateChanged_ = "operationStateChanged";
   static const String reportCreated_ = "reportCreated";
   static const String reportStateChanged_ = "reportStateChanged";

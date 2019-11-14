@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**agreement** | [**PersonPatchAgreement**](PersonPatchAgreement.md) |  | [optional] 
 **givenName** | **String** |  | [optional] 
 **familyName** | **String** |  | [optional] 
 **email** | **String** |  | [optional] 

@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _PersonLinksApplication = _interopRequireDefault(
+  require("./PersonLinksApplication")
+);
+
 var _PersonLinksCreatedBy = _interopRequireDefault(
   require("./PersonLinksCreatedBy")
 );
@@ -57,9 +61,11 @@ var PersonLinks =
     function PersonLinks() {
       _classCallCheck(this, PersonLinks);
 
+      this.application = null;
       this.createdBy = null;
       this.image = null;
       this.self = null;
+      this.applicationType = _PersonLinksApplication.default;
       this.createdByType = _PersonLinksCreatedBy.default;
       this.imageType = _PersonLinksImage.default;
       this.selfType = _PersonLinksSelf.default;
@@ -75,11 +81,29 @@ var PersonLinks =
       PersonLinks,
       [
         {
-          key: "getCreatedBy",
+          key: "getApplication",
 
+          /**
+           * @return { module:model/PersonLinksApplication }
+           */
+          value: function getApplication() {
+            return this.application;
+          }
+          /**
+           * @param { module:model/PersonLinksApplication } application
+           */
+        },
+        {
+          key: "setApplication",
+          value: function setApplication(application) {
+            this.application = application;
+          }
           /**
            * @return { module:model/PersonLinksCreatedBy }
            */
+        },
+        {
+          key: "getCreatedBy",
           value: function getCreatedBy() {
             return this.createdBy;
           }
@@ -145,6 +169,13 @@ var PersonLinks =
 
             if (object === null) {
               object = new PersonLinks();
+            }
+
+            if (data.hasOwnProperty("application")) {
+              object.application = _ApiClient.default.convertToType(
+                data["application"],
+                object.applicationType
+              );
             }
 
             if (data.hasOwnProperty("createdBy")) {

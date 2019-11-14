@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ApplicationAgreement = _interopRequireDefault(
+  require("./ApplicationAgreement")
+);
+
 var _ApplicationLinks = _interopRequireDefault(require("./ApplicationLinks"));
 
 function _interopRequireDefault(obj) {
@@ -56,6 +60,7 @@ var Application =
       _classCallCheck(this, Application);
 
       this.links = null;
+      this.agreement = null;
       this.createdAt = null;
       this.id = null;
       this.name = name;
@@ -64,6 +69,7 @@ var Application =
       this.updatedAt = null;
       this.version = null;
       this.linksType = _ApplicationLinks.default;
+      this.agreementType = _ApplicationAgreement.default;
     }
     /**
      * Constructs a "Application" from a plain JavaScript object.
@@ -92,6 +98,24 @@ var Application =
           key: "setLinks",
           value: function setLinks(links) {
             this.links = links;
+          }
+          /**
+           * @return { module:model/ApplicationAgreement }
+           */
+        },
+        {
+          key: "getAgreement",
+          value: function getAgreement() {
+            return this.agreement;
+          }
+          /**
+           * @param { module:model/ApplicationAgreement } agreement
+           */
+        },
+        {
+          key: "setAgreement",
+          value: function setAgreement(agreement) {
+            this.agreement = agreement;
           }
           /**
            * @return { Date }
@@ -206,6 +230,13 @@ var Application =
               object.links = _ApiClient.default.convertToType(
                 data["_links"],
                 object.linksType
+              );
+            }
+
+            if (data.hasOwnProperty("agreement")) {
+              object.agreement = _ApiClient.default.convertToType(
+                data["agreement"],
+                object.agreementType
               );
             }
 

@@ -451,6 +451,18 @@ Object.defineProperty(exports, "Application", {
     return _Application.default;
   }
 });
+Object.defineProperty(exports, "ApplicationAgreement", {
+  enumerable: true,
+  get: function get() {
+    return _ApplicationAgreement.default;
+  }
+});
+Object.defineProperty(exports, "ApplicationAgreementPrivacyPolicy", {
+  enumerable: true,
+  get: function get() {
+    return _ApplicationAgreementPrivacyPolicy.default;
+  }
+});
 Object.defineProperty(exports, "ApplicationLinks", {
   enumerable: true,
   get: function get() {
@@ -1921,6 +1933,12 @@ Object.defineProperty(exports, "Person", {
     return _Person.default;
   }
 });
+Object.defineProperty(exports, "PersonAgreement", {
+  enumerable: true,
+  get: function get() {
+    return _PersonAgreement.default;
+  }
+});
 Object.defineProperty(exports, "PersonCollection", {
   enumerable: true,
   get: function get() {
@@ -1931,6 +1949,18 @@ Object.defineProperty(exports, "PersonLinks", {
   enumerable: true,
   get: function get() {
     return _PersonLinks.default;
+  }
+});
+Object.defineProperty(exports, "PersonLinksApplication", {
+  enumerable: true,
+  get: function get() {
+    return _PersonLinksApplication.default;
+  }
+});
+Object.defineProperty(exports, "PersonLinksApplicationIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _PersonLinksApplicationIriTemplate.default;
   }
 });
 Object.defineProperty(exports, "PersonLinksCreatedBy", {
@@ -1973,6 +2003,12 @@ Object.defineProperty(exports, "PersonPatch", {
   enumerable: true,
   get: function get() {
     return _PersonPatch.default;
+  }
+});
+Object.defineProperty(exports, "PersonPatchAgreement", {
+  enumerable: true,
+  get: function get() {
+    return _PersonPatchAgreement.default;
   }
 });
 Object.defineProperty(exports, "PersonPatchPreferences", {
@@ -2831,6 +2867,14 @@ var _ActivitySubject = _interopRequireDefault(
 );
 
 var _Application = _interopRequireDefault(require("./model/Application"));
+
+var _ApplicationAgreement = _interopRequireDefault(
+  require("./model/ApplicationAgreement")
+);
+
+var _ApplicationAgreementPrivacyPolicy = _interopRequireDefault(
+  require("./model/ApplicationAgreementPrivacyPolicy")
+);
 
 var _ApplicationLinks = _interopRequireDefault(
   require("./model/ApplicationLinks")
@@ -3696,11 +3740,23 @@ var _PasswordChangeData = _interopRequireDefault(
 
 var _Person = _interopRequireDefault(require("./model/Person"));
 
+var _PersonAgreement = _interopRequireDefault(
+  require("./model/PersonAgreement")
+);
+
 var _PersonCollection = _interopRequireDefault(
   require("./model/PersonCollection")
 );
 
 var _PersonLinks = _interopRequireDefault(require("./model/PersonLinks"));
+
+var _PersonLinksApplication = _interopRequireDefault(
+  require("./model/PersonLinksApplication")
+);
+
+var _PersonLinksApplicationIriTemplate = _interopRequireDefault(
+  require("./model/PersonLinksApplicationIriTemplate")
+);
 
 var _PersonLinksCreatedBy = _interopRequireDefault(
   require("./model/PersonLinksCreatedBy")
@@ -3727,6 +3783,10 @@ var _PersonLinksSelfIriTemplate = _interopRequireDefault(
 );
 
 var _PersonPatch = _interopRequireDefault(require("./model/PersonPatch"));
+
+var _PersonPatchAgreement = _interopRequireDefault(
+  require("./model/PersonPatchAgreement")
+);
 
 var _PersonPatchPreferences = _interopRequireDefault(
   require("./model/PersonPatchPreferences")

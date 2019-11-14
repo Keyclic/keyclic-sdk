@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import PersonPatchAgreement from "./PersonPatchAgreement";
 import PersonPatchPreferences from "./PersonPatchPreferences";
 
 /**
@@ -25,6 +26,7 @@ export default class PersonPatch {
     
      */
   constructor() {
+    this.agreement = null;
     this.givenName = null;
     this.familyName = null;
     this.email = null;
@@ -34,6 +36,7 @@ export default class PersonPatch {
     this.preferences = null;
     this.telephone = null;
 
+    this.agreementType = PersonPatchAgreement;
     this.preferencesType = PersonPatchPreferences;
   }
 
@@ -52,6 +55,12 @@ export default class PersonPatch {
       object = new PersonPatch();
     }
 
+    if (data.hasOwnProperty("agreement")) {
+      object.agreement = ApiClient.convertToType(
+        data["agreement"],
+        object.agreementType
+      );
+    }
     if (data.hasOwnProperty("givenName")) {
       object.givenName = ApiClient.convertToType(data["givenName"], "String");
     }
@@ -83,6 +92,19 @@ export default class PersonPatch {
     return object;
   }
 
+  /**
+   * @return { module:model/PersonPatchAgreement }
+   */
+  getAgreement() {
+    return this.agreement;
+  }
+
+  /**
+   * @param { module:model/PersonPatchAgreement } agreement
+   */
+  setAgreement(agreement) {
+    this.agreement = agreement;
+  }
   /**
    * @return { String }
    */

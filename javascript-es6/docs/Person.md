@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**PersonLinks**](PersonLinks.md) |  | [optional] 
+**agreement** | [**PersonAgreement**](PersonAgreement.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **email** | **String** |  | [optional] 
 **enabled** | **Boolean** |  | [optional] 

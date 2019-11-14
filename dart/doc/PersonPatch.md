@@ -8,6 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**agreement** | [**PersonPatchAgreement**](PersonPatchAgreement.md) |  | [optional] [default to null]
 **givenName** | **String** |  | [optional] [default to null]
 **familyName** | **String** |  | [optional] [default to null]
 **email** | **String** |  | [optional] [default to null]

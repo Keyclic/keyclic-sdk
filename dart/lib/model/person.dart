@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class Person {
   Person({
     this.links,
+    this.agreement,
     this.createdAt,
     this.email,
     this.enabled,
@@ -23,6 +24,7 @@ class Person {
       return;
     }
     links = PersonLinks.fromJson(json['_links']);
+    agreement = PersonAgreement.fromJson(json['agreement']);
     createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
@@ -47,6 +49,8 @@ class Person {
   }
 
   PersonLinks links;
+
+  PersonAgreement agreement;
 
   DateTime createdAt;
 
@@ -84,6 +88,7 @@ class Person {
     return other is Person &&
         runtimeType == other.runtimeType &&
         links == other.links &&
+        agreement == other.agreement &&
         createdAt == other.createdAt &&
         email == other.email &&
         enabled == other.enabled &&
@@ -105,6 +110,7 @@ class Person {
     int hashCode = 0;
 
     hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= agreement?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= email?.hashCode ?? 0;
     hashCode ^= enabled?.hashCode ?? 0;
@@ -141,6 +147,7 @@ class Person {
   Map<String, dynamic> toJson() {
     return {
       if (links != null) '_links': links,
+      if (agreement != null) 'agreement': agreement,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (email != null) 'email': email,
       if (enabled != null) 'enabled': enabled,
@@ -159,6 +166,6 @@ class Person {
 
   @override
   String toString() {
-    return 'Person[links=$links, createdAt=$createdAt, email=$email, enabled=$enabled, familyName=$familyName, givenName=$givenName, id=$id, jobTitle=$jobTitle, optIn=$optIn, preferences=$preferences, telephone=$telephone, type=$type, updatedAt=$updatedAt, username=$username, ]';
+    return 'Person[links=$links, agreement=$agreement, createdAt=$createdAt, email=$email, enabled=$enabled, familyName=$familyName, givenName=$givenName, id=$id, jobTitle=$jobTitle, optIn=$optIn, preferences=$preferences, telephone=$telephone, type=$type, updatedAt=$updatedAt, username=$username, ]';
   }
 }

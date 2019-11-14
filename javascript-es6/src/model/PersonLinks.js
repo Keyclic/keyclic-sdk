@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import PersonLinksApplication from "./PersonLinksApplication";
 import PersonLinksCreatedBy from "./PersonLinksCreatedBy";
 import PersonLinksImage from "./PersonLinksImage";
 import PersonLinksSelf from "./PersonLinksSelf";
@@ -27,10 +28,12 @@ export default class PersonLinks {
     
      */
   constructor() {
+    this.application = null;
     this.createdBy = null;
     this.image = null;
     this.self = null;
 
+    this.applicationType = PersonLinksApplication;
     this.createdByType = PersonLinksCreatedBy;
     this.imageType = PersonLinksImage;
     this.selfType = PersonLinksSelf;
@@ -51,6 +54,12 @@ export default class PersonLinks {
       object = new PersonLinks();
     }
 
+    if (data.hasOwnProperty("application")) {
+      object.application = ApiClient.convertToType(
+        data["application"],
+        object.applicationType
+      );
+    }
     if (data.hasOwnProperty("createdBy")) {
       object.createdBy = ApiClient.convertToType(
         data["createdBy"],
@@ -67,6 +76,19 @@ export default class PersonLinks {
     return object;
   }
 
+  /**
+   * @return { module:model/PersonLinksApplication }
+   */
+  getApplication() {
+    return this.application;
+  }
+
+  /**
+   * @param { module:model/PersonLinksApplication } application
+   */
+  setApplication(application) {
+    this.application = application;
+  }
   /**
    * @return { module:model/PersonLinksCreatedBy }
    */

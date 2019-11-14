@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _PersonAgreement = _interopRequireDefault(require("./PersonAgreement"));
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -55,6 +57,8 @@ var RegisterData =
 
       this.email = email;
       this.password = password;
+      this.agreement = null;
+      this.agreementType = _PersonAgreement.default;
     }
     /**
      * Constructs a "RegisterData" from a plain JavaScript object.
@@ -102,6 +106,24 @@ var RegisterData =
           value: function setPassword(password) {
             this.password = password;
           }
+          /**
+           * @return { module:model/PersonAgreement }
+           */
+        },
+        {
+          key: "getAgreement",
+          value: function getAgreement() {
+            return this.agreement;
+          }
+          /**
+           * @param { module:model/PersonAgreement } agreement
+           */
+        },
+        {
+          key: "setAgreement",
+          value: function setAgreement(agreement) {
+            this.agreement = agreement;
+          }
         }
       ],
       [
@@ -132,6 +154,13 @@ var RegisterData =
               object.password = _ApiClient.default.convertToType(
                 data["password"],
                 "String"
+              );
+            }
+
+            if (data.hasOwnProperty("agreement")) {
+              object.agreement = _ApiClient.default.convertToType(
+                data["agreement"],
+                object.agreementType
               );
             }
 

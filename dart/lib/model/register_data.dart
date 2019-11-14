@@ -4,6 +4,7 @@ class RegisterData {
   RegisterData({
     this.email,
     this.password,
+    this.agreement,
   });
 
   RegisterData.fromJson(Map<String, dynamic> json) {
@@ -12,11 +13,14 @@ class RegisterData {
     }
     email = json['email'];
     password = json['password'];
+    agreement = PersonAgreement.fromJson(json['agreement']);
   }
 
   String email;
 
   String password;
+
+  PersonAgreement agreement;
 
   @override
   bool operator ==(dynamic other) {
@@ -28,7 +32,8 @@ class RegisterData {
     return other is RegisterData &&
         runtimeType == other.runtimeType &&
         email == other.email &&
-        password == other.password;
+        password == other.password &&
+        agreement == other.agreement;
   }
 
   /// By default hashCode return reference
@@ -38,6 +43,7 @@ class RegisterData {
 
     hashCode ^= email?.hashCode ?? 0;
     hashCode ^= password?.hashCode ?? 0;
+    hashCode ^= agreement?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -62,11 +68,12 @@ class RegisterData {
     return {
       if (email != null) 'email': email,
       if (password != null) 'password': password,
+      if (agreement != null) 'agreement': agreement,
     };
   }
 
   @override
   String toString() {
-    return 'RegisterData[email=$email, password=$password, ]';
+    return 'RegisterData[email=$email, password=$password, agreement=$agreement, ]';
   }
 }

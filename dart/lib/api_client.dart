@@ -127,6 +127,10 @@ class ApiClient {
           return ActivitySubject.fromJson(value);
         case 'Application':
           return Application.fromJson(value);
+        case 'ApplicationAgreement':
+          return ApplicationAgreement.fromJson(value);
+        case 'ApplicationAgreementPrivacyPolicy':
+          return ApplicationAgreementPrivacyPolicy.fromJson(value);
         case 'ApplicationLinks':
           return ApplicationLinks.fromJson(value);
         case 'ApplicationLinksSelf':
@@ -613,10 +617,16 @@ class ApiClient {
           return PasswordChangeData.fromJson(value);
         case 'Person':
           return Person.fromJson(value);
+        case 'PersonAgreement':
+          return PersonAgreement.fromJson(value);
         case 'PersonCollection':
           return PersonCollection.fromJson(value);
         case 'PersonLinks':
           return PersonLinks.fromJson(value);
+        case 'PersonLinksApplication':
+          return PersonLinksApplication.fromJson(value);
+        case 'PersonLinksApplicationIriTemplate':
+          return PersonLinksApplicationIriTemplate.fromJson(value);
         case 'PersonLinksCreatedBy':
           return PersonLinksCreatedBy.fromJson(value);
         case 'PersonLinksCreatedByIriTemplate':
@@ -631,6 +641,8 @@ class ApiClient {
           return PersonLinksSelfIriTemplate.fromJson(value);
         case 'PersonPatch':
           return PersonPatch.fromJson(value);
+        case 'PersonPatchAgreement':
+          return PersonPatchAgreement.fromJson(value);
         case 'PersonPatchPreferences':
           return PersonPatchPreferences.fromJson(value);
         case 'PersonPatchPreferencesNotification':

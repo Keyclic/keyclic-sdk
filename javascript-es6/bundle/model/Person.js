@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _PersonAgreement = _interopRequireDefault(require("./PersonAgreement"));
+
 var _PersonLinks = _interopRequireDefault(require("./PersonLinks"));
 
 var _PersonPreferences = _interopRequireDefault(require("./PersonPreferences"));
@@ -56,6 +58,7 @@ var Person =
       _classCallCheck(this, Person);
 
       this.links = null;
+      this.agreement = null;
       this.createdAt = null;
       this.email = null;
       this.enabled = null;
@@ -70,6 +73,7 @@ var Person =
       this.updatedAt = null;
       this.username = null;
       this.linksType = _PersonLinks.default;
+      this.agreementType = _PersonAgreement.default;
       this.preferencesType = _PersonPreferences.default;
     }
     /**
@@ -99,6 +103,24 @@ var Person =
           key: "setLinks",
           value: function setLinks(links) {
             this.links = links;
+          }
+          /**
+           * @return { module:model/PersonAgreement }
+           */
+        },
+        {
+          key: "getAgreement",
+          value: function getAgreement() {
+            return this.agreement;
+          }
+          /**
+           * @param { module:model/PersonAgreement } agreement
+           */
+        },
+        {
+          key: "setAgreement",
+          value: function setAgreement(agreement) {
+            this.agreement = agreement;
           }
           /**
            * @return { Date }
@@ -321,6 +343,13 @@ var Person =
               object.links = _ApiClient.default.convertToType(
                 data["_links"],
                 object.linksType
+              );
+            }
+
+            if (data.hasOwnProperty("agreement")) {
+              object.agreement = _ApiClient.default.convertToType(
+                data["agreement"],
+                object.agreementType
               );
             }
 

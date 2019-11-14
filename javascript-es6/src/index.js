@@ -22,6 +22,8 @@ import ActivityGroup from "./model/ActivityGroup";
 import ActivityPagination from "./model/ActivityPagination";
 import ActivitySubject from "./model/ActivitySubject";
 import Application from "./model/Application";
+import ApplicationAgreement from "./model/ApplicationAgreement";
+import ApplicationAgreementPrivacyPolicy from "./model/ApplicationAgreementPrivacyPolicy";
 import ApplicationLinks from "./model/ApplicationLinks";
 import ApplicationLinksSelf from "./model/ApplicationLinksSelf";
 import ApplicationLinksSelfIriTemplate from "./model/ApplicationLinksSelfIriTemplate";
@@ -263,8 +265,11 @@ import PaginationLink from "./model/PaginationLink";
 import PaginationLinks from "./model/PaginationLinks";
 import PasswordChangeData from "./model/PasswordChangeData";
 import Person from "./model/Person";
+import PersonAgreement from "./model/PersonAgreement";
 import PersonCollection from "./model/PersonCollection";
 import PersonLinks from "./model/PersonLinks";
+import PersonLinksApplication from "./model/PersonLinksApplication";
+import PersonLinksApplicationIriTemplate from "./model/PersonLinksApplicationIriTemplate";
 import PersonLinksCreatedBy from "./model/PersonLinksCreatedBy";
 import PersonLinksCreatedByIriTemplate from "./model/PersonLinksCreatedByIriTemplate";
 import PersonLinksImage from "./model/PersonLinksImage";
@@ -272,6 +277,7 @@ import PersonLinksImageIriTemplate from "./model/PersonLinksImageIriTemplate";
 import PersonLinksSelf from "./model/PersonLinksSelf";
 import PersonLinksSelfIriTemplate from "./model/PersonLinksSelfIriTemplate";
 import PersonPatch from "./model/PersonPatch";
+import PersonPatchAgreement from "./model/PersonPatchAgreement";
 import PersonPatchPreferences from "./model/PersonPatchPreferences";
 import PersonPatchPreferencesNotification from "./model/PersonPatchPreferencesNotification";
 import PersonPreferences from "./model/PersonPreferences";
@@ -432,7 +438,7 @@ import WebhookApi from "./api/WebhookApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.1.17
+ * @version 2.1.20
  */
 export {
   /**
@@ -470,6 +476,16 @@ export {
    * @property { module:model/Application }
    */
   Application,
+  /**
+   * The ApplicationAgreement model constructor.
+   * @property { module:model/ApplicationAgreement }
+   */
+  ApplicationAgreement,
+  /**
+   * The ApplicationAgreementPrivacyPolicy model constructor.
+   * @property { module:model/ApplicationAgreementPrivacyPolicy }
+   */
+  ApplicationAgreementPrivacyPolicy,
   /**
    * The ApplicationLinks model constructor.
    * @property { module:model/ApplicationLinks }
@@ -1676,6 +1692,11 @@ export {
    */
   Person,
   /**
+   * The PersonAgreement model constructor.
+   * @property { module:model/PersonAgreement }
+   */
+  PersonAgreement,
+  /**
    * The PersonCollection model constructor.
    * @property { module:model/PersonCollection }
    */
@@ -1685,6 +1706,16 @@ export {
    * @property { module:model/PersonLinks }
    */
   PersonLinks,
+  /**
+   * The PersonLinksApplication model constructor.
+   * @property { module:model/PersonLinksApplication }
+   */
+  PersonLinksApplication,
+  /**
+   * The PersonLinksApplicationIriTemplate model constructor.
+   * @property { module:model/PersonLinksApplicationIriTemplate }
+   */
+  PersonLinksApplicationIriTemplate,
   /**
    * The PersonLinksCreatedBy model constructor.
    * @property { module:model/PersonLinksCreatedBy }
@@ -1720,6 +1751,11 @@ export {
    * @property { module:model/PersonPatch }
    */
   PersonPatch,
+  /**
+   * The PersonPatchAgreement model constructor.
+   * @property { module:model/PersonPatchAgreement }
+   */
+  PersonPatchAgreement,
   /**
    * The PersonPatchPreferences model constructor.
    * @property { module:model/PersonPatchPreferences }

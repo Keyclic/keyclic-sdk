@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.1.17
-- Package version: 2.1.17
+- API version: 2.1.20
+- Package version: 2.1.20
 
 ## Getting started
 
@@ -154,6 +154,8 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ActivityPagination](docs/ActivityPagination.md)
 - [@KeyclicSdkJavascript.ActivitySubject](docs/ActivitySubject.md)
 - [@KeyclicSdkJavascript.Application](docs/Application.md)
+- [@KeyclicSdkJavascript.ApplicationAgreement](docs/ApplicationAgreement.md)
+- [@KeyclicSdkJavascript.ApplicationAgreementPrivacyPolicy](docs/ApplicationAgreementPrivacyPolicy.md)
 - [@KeyclicSdkJavascript.ApplicationLinks](docs/ApplicationLinks.md)
 - [@KeyclicSdkJavascript.ApplicationLinksSelf](docs/ApplicationLinksSelf.md)
 - [@KeyclicSdkJavascript.ApplicationLinksSelfIriTemplate](docs/ApplicationLinksSelfIriTemplate.md)
@@ -395,8 +397,11 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.PaginationLinks](docs/PaginationLinks.md)
 - [@KeyclicSdkJavascript.PasswordChangeData](docs/PasswordChangeData.md)
 - [@KeyclicSdkJavascript.Person](docs/Person.md)
+- [@KeyclicSdkJavascript.PersonAgreement](docs/PersonAgreement.md)
 - [@KeyclicSdkJavascript.PersonCollection](docs/PersonCollection.md)
 - [@KeyclicSdkJavascript.PersonLinks](docs/PersonLinks.md)
+- [@KeyclicSdkJavascript.PersonLinksApplication](docs/PersonLinksApplication.md)
+- [@KeyclicSdkJavascript.PersonLinksApplicationIriTemplate](docs/PersonLinksApplicationIriTemplate.md)
 - [@KeyclicSdkJavascript.PersonLinksCreatedBy](docs/PersonLinksCreatedBy.md)
 - [@KeyclicSdkJavascript.PersonLinksCreatedByIriTemplate](docs/PersonLinksCreatedByIriTemplate.md)
 - [@KeyclicSdkJavascript.PersonLinksImage](docs/PersonLinksImage.md)
@@ -404,6 +409,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.PersonLinksSelf](docs/PersonLinksSelf.md)
 - [@KeyclicSdkJavascript.PersonLinksSelfIriTemplate](docs/PersonLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.PersonPatch](docs/PersonPatch.md)
+- [@KeyclicSdkJavascript.PersonPatchAgreement](docs/PersonPatchAgreement.md)
 - [@KeyclicSdkJavascript.PersonPatchPreferences](docs/PersonPatchPreferences.md)
 - [@KeyclicSdkJavascript.PersonPatchPreferencesNotification](docs/PersonPatchPreferencesNotification.md)
 - [@KeyclicSdkJavascript.PersonPreferences](docs/PersonPreferences.md)

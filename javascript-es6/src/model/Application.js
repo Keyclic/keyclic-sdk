@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import ApplicationAgreement from "./ApplicationAgreement";
 import ApplicationLinks from "./ApplicationLinks";
 
 /**
@@ -34,6 +35,7 @@ export default class Application {
     token
   ) {
     this.links = null;
+    this.agreement = null;
     this.createdAt = null;
     this.id = null;
     this.name = name;
@@ -43,6 +45,7 @@ export default class Application {
     this.version = null;
 
     this.linksType = ApplicationLinks;
+    this.agreementType = ApplicationAgreement;
   }
 
   /**
@@ -62,6 +65,12 @@ export default class Application {
 
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
+    if (data.hasOwnProperty("agreement")) {
+      object.agreement = ApiClient.convertToType(
+        data["agreement"],
+        object.agreementType
+      );
     }
     if (data.hasOwnProperty("createdAt")) {
       object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
@@ -100,6 +109,19 @@ export default class Application {
    */
   setLinks(links) {
     this.links = links;
+  }
+  /**
+   * @return { module:model/ApplicationAgreement }
+   */
+  getAgreement() {
+    return this.agreement;
+  }
+
+  /**
+   * @param { module:model/ApplicationAgreement } agreement
+   */
+  setAgreement(agreement) {
+    this.agreement = agreement;
   }
   /**
    * @return { Date }

@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _PersonPatchAgreement = _interopRequireDefault(
+  require("./PersonPatchAgreement")
+);
+
 var _PersonPatchPreferences = _interopRequireDefault(
   require("./PersonPatchPreferences")
 );
@@ -53,6 +57,7 @@ var PersonPatch =
     function PersonPatch() {
       _classCallCheck(this, PersonPatch);
 
+      this.agreement = null;
       this.givenName = null;
       this.familyName = null;
       this.email = null;
@@ -61,6 +66,7 @@ var PersonPatch =
       this.optIn = null;
       this.preferences = null;
       this.telephone = null;
+      this.agreementType = _PersonPatchAgreement.default;
       this.preferencesType = _PersonPatchPreferences.default;
     }
     /**
@@ -74,11 +80,29 @@ var PersonPatch =
       PersonPatch,
       [
         {
-          key: "getGivenName",
+          key: "getAgreement",
 
+          /**
+           * @return { module:model/PersonPatchAgreement }
+           */
+          value: function getAgreement() {
+            return this.agreement;
+          }
+          /**
+           * @param { module:model/PersonPatchAgreement } agreement
+           */
+        },
+        {
+          key: "setAgreement",
+          value: function setAgreement(agreement) {
+            this.agreement = agreement;
+          }
           /**
            * @return { String }
            */
+        },
+        {
+          key: "getGivenName",
           value: function getGivenName() {
             return this.givenName;
           }
@@ -234,6 +258,13 @@ var PersonPatch =
 
             if (object === null) {
               object = new PersonPatch();
+            }
+
+            if (data.hasOwnProperty("agreement")) {
+              object.agreement = _ApiClient.default.convertToType(
+                data["agreement"],
+                object.agreementType
+              );
             }
 
             if (data.hasOwnProperty("givenName")) {

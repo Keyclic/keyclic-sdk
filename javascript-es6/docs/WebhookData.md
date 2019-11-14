@@ -14,8 +14,6 @@ Name | Type | Description | Notes
 
 * `operationCreated` (value: `"operationCreated"`)
 
-* `operationRemoved` (value: `"operationRemoved"`)
-
 * `operationStateChanged` (value: `"operationStateChanged"`)
 
 * `reportCreated` (value: `"reportCreated"`)

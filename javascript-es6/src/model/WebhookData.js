@@ -124,12 +124,6 @@ export default class WebhookData {
      */
     operationCreated: "operationCreated",
     /**
-     * value: "operationRemoved"
-     * @const
-     * @readonly
-     */
-    operationRemoved: "operationRemoved",
-    /**
      * value: "operationStateChanged"
      * @const
      * @readonly

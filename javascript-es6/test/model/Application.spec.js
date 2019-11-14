@@ -59,6 +59,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property agreement (base name: "agreement")', function() {
+      // uncomment below and update the code to test the property agreement
+      //var instane = new @KeyclicSdkJavascript.Application();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdAt (base name: "createdAt")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instane = new @KeyclicSdkJavascript.Application();

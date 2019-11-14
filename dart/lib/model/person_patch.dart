@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class PersonPatch {
   PersonPatch({
+    this.agreement,
     this.givenName,
     this.familyName,
     this.email,
@@ -16,6 +17,7 @@ class PersonPatch {
     if (json == null) {
       return;
     }
+    agreement = PersonPatchAgreement.fromJson(json['agreement']);
     givenName = json['givenName'];
     familyName = json['familyName'];
     email = json['email'];
@@ -25,6 +27,8 @@ class PersonPatch {
     preferences = PersonPatchPreferences.fromJson(json['preferences']);
     telephone = json['telephone'];
   }
+
+  PersonPatchAgreement agreement;
 
   String givenName;
 
@@ -51,6 +55,7 @@ class PersonPatch {
 
     return other is PersonPatch &&
         runtimeType == other.runtimeType &&
+        agreement == other.agreement &&
         givenName == other.givenName &&
         familyName == other.familyName &&
         email == other.email &&
@@ -66,6 +71,7 @@ class PersonPatch {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= agreement?.hashCode ?? 0;
     hashCode ^= givenName?.hashCode ?? 0;
     hashCode ^= familyName?.hashCode ?? 0;
     hashCode ^= email?.hashCode ?? 0;
@@ -96,6 +102,7 @@ class PersonPatch {
 
   Map<String, dynamic> toJson() {
     return {
+      if (agreement != null) 'agreement': agreement,
       if (givenName != null) 'givenName': givenName,
       if (familyName != null) 'familyName': familyName,
       if (email != null) 'email': email,
@@ -109,6 +116,6 @@ class PersonPatch {
 
   @override
   String toString() {
-    return 'PersonPatch[givenName=$givenName, familyName=$familyName, email=$email, jobTitle=$jobTitle, image=$image, optIn=$optIn, preferences=$preferences, telephone=$telephone, ]';
+    return 'PersonPatch[agreement=$agreement, givenName=$givenName, familyName=$familyName, email=$email, jobTitle=$jobTitle, image=$image, optIn=$optIn, preferences=$preferences, telephone=$telephone, ]';
   }
 }

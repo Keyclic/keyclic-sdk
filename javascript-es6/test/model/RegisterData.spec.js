@@ -65,6 +65,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property agreement (base name: "agreement")', function() {
+      // uncomment below and update the code to test the property agreement
+      //var instane = new @KeyclicSdkJavascript.RegisterData();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
