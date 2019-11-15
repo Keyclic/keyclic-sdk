@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.1.20"
+        "version": "2.1.21-dev.dd0437e9b8"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -10240,17 +10240,18 @@
                     "type": "object",
                     "properties": {
                         "olderThan": {
-                            "type": "integer",
-                            "format": "int32"
-                        },
-                        "privacyPolicy": {
                             "type": "object",
                             "properties": {
                                 "content": {
                                     "type": "string",
                                     "format": "string"
-                                },
-                                "version": {
+                                }
+                            }
+                        },
+                        "privacyPolicy": {
+                            "type": "object",
+                            "properties": {
+                                "content": {
                                     "type": "string",
                                     "format": "string"
                                 }
@@ -10260,10 +10261,6 @@
                             "type": "object",
                             "properties": {
                                 "content": {
-                                    "type": "string",
-                                    "format": "string"
-                                },
-                                "version": {
                                     "type": "string",
                                     "format": "string"
                                 }
