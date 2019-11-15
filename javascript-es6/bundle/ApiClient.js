@@ -59,7 +59,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
 /**
  * @module ApiClient
- * @version 2.1.21-dev.dd0437e9b8
+ * @version 2.1.23
  */
 
 /**
