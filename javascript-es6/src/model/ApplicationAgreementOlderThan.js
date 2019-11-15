@@ -13,26 +13,25 @@
 import ApiClient from "../ApiClient";
 
 /**
- * The ApplicationAgreementPrivacyPolicy model module.
- * @module model/ApplicationAgreementPrivacyPolicy
+ * The ApplicationAgreementOlderThan model module.
+ * @module model/ApplicationAgreementOlderThan
  */
-export default class ApplicationAgreementPrivacyPolicy {
+export default class ApplicationAgreementOlderThan {
   /**
-     * Constructs a new "ApplicationAgreementPrivacyPolicy".
-     * @alias module:model/ApplicationAgreementPrivacyPolicy
+     * Constructs a new "ApplicationAgreementOlderThan".
+     * @alias module:model/ApplicationAgreementOlderThan
      * @class
     
      */
   constructor() {
     this.content = null;
-    this.version = null;
   }
 
   /**
-   * Constructs a "ApplicationAgreementPrivacyPolicy" from a plain JavaScript object.
+   * Constructs a "ApplicationAgreementOlderThan" from a plain JavaScript object.
    * @param { object } data The plain JavaScript object bearing properties of interest.
-   * @param { module:model/ApplicationAgreementPrivacyPolicy } object Optional instance to populate.
-   * @return { module:model/ApplicationAgreementPrivacyPolicy } The populated "ApplicationAgreementPrivacyPolicy" instance.
+   * @param { module:model/ApplicationAgreementOlderThan } object Optional instance to populate.
+   * @return { module:model/ApplicationAgreementOlderThan } The populated "ApplicationAgreementOlderThan" instance.
    */
   static constructFromData(data, object = null) {
     if (data === null) {
@@ -40,14 +39,11 @@ export default class ApplicationAgreementPrivacyPolicy {
     }
 
     if (object === null) {
-      object = new ApplicationAgreementPrivacyPolicy();
+      object = new ApplicationAgreementOlderThan();
     }
 
     if (data.hasOwnProperty("content")) {
       object.content = ApiClient.convertToType(data["content"], "String");
-    }
-    if (data.hasOwnProperty("version")) {
-      object.version = ApiClient.convertToType(data["version"], "String");
     }
 
     return object;
@@ -65,18 +61,5 @@ export default class ApplicationAgreementPrivacyPolicy {
    */
   setContent(content) {
     this.content = content;
-  }
-  /**
-   * @return { String }
-   */
-  getVersion() {
-    return this.version;
-  }
-
-  /**
-   * @param { String } version
-   */
-  setVersion(version) {
-    this.version = version;
   }
 }

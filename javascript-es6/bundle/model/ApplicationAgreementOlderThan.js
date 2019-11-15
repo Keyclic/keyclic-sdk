@@ -34,33 +34,32 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 /**
- * The ApplicationAgreementPrivacyPolicy model module.
- * @module model/ApplicationAgreementPrivacyPolicy
+ * The ApplicationAgreementOlderThan model module.
+ * @module model/ApplicationAgreementOlderThan
  */
-var ApplicationAgreementPrivacyPolicy =
+var ApplicationAgreementOlderThan =
   /*#__PURE__*/
   (function() {
     /**
-   * Constructs a new "ApplicationAgreementPrivacyPolicy".
-   * @alias module:model/ApplicationAgreementPrivacyPolicy
+   * Constructs a new "ApplicationAgreementOlderThan".
+   * @alias module:model/ApplicationAgreementOlderThan
    * @class
   
    */
-    function ApplicationAgreementPrivacyPolicy() {
-      _classCallCheck(this, ApplicationAgreementPrivacyPolicy);
+    function ApplicationAgreementOlderThan() {
+      _classCallCheck(this, ApplicationAgreementOlderThan);
 
       this.content = null;
-      this.version = null;
     }
     /**
-     * Constructs a "ApplicationAgreementPrivacyPolicy" from a plain JavaScript object.
+     * Constructs a "ApplicationAgreementOlderThan" from a plain JavaScript object.
      * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ApplicationAgreementPrivacyPolicy } object Optional instance to populate.
-     * @return { module:model/ApplicationAgreementPrivacyPolicy } The populated "ApplicationAgreementPrivacyPolicy" instance.
+     * @param { module:model/ApplicationAgreementOlderThan } object Optional instance to populate.
+     * @return { module:model/ApplicationAgreementOlderThan } The populated "ApplicationAgreementOlderThan" instance.
      */
 
     _createClass(
-      ApplicationAgreementPrivacyPolicy,
+      ApplicationAgreementOlderThan,
       [
         {
           key: "getContent",
@@ -80,24 +79,6 @@ var ApplicationAgreementPrivacyPolicy =
           value: function setContent(content) {
             this.content = content;
           }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getVersion",
-          value: function getVersion() {
-            return this.version;
-          }
-          /**
-           * @param { String } version
-           */
-        },
-        {
-          key: "setVersion",
-          value: function setVersion(version) {
-            this.version = version;
-          }
         }
       ],
       [
@@ -114,19 +95,12 @@ var ApplicationAgreementPrivacyPolicy =
             }
 
             if (object === null) {
-              object = new ApplicationAgreementPrivacyPolicy();
+              object = new ApplicationAgreementOlderThan();
             }
 
             if (data.hasOwnProperty("content")) {
               object.content = _ApiClient.default.convertToType(
                 data["content"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("version")) {
-              object.version = _ApiClient.default.convertToType(
-                data["version"],
                 "String"
               );
             }
@@ -137,7 +111,7 @@ var ApplicationAgreementPrivacyPolicy =
       ]
     );
 
-    return ApplicationAgreementPrivacyPolicy;
+    return ApplicationAgreementOlderThan;
   })();
 
-exports.default = ApplicationAgreementPrivacyPolicy;
+exports.default = ApplicationAgreementOlderThan;

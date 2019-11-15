@@ -11,18 +11,18 @@ class ApplicationAgreement {
     if (json == null) {
       return;
     }
-    olderThan = json['olderThan'];
+    olderThan = ApplicationAgreementOlderThan.fromJson(json['olderThan']);
     privacyPolicy =
-        ApplicationAgreementPrivacyPolicy.fromJson(json['privacyPolicy']);
+        ApplicationAgreementOlderThan.fromJson(json['privacyPolicy']);
     termsOfService =
-        ApplicationAgreementPrivacyPolicy.fromJson(json['termsOfService']);
+        ApplicationAgreementOlderThan.fromJson(json['termsOfService']);
   }
 
-  int olderThan;
+  ApplicationAgreementOlderThan olderThan;
 
-  ApplicationAgreementPrivacyPolicy privacyPolicy;
+  ApplicationAgreementOlderThan privacyPolicy;
 
-  ApplicationAgreementPrivacyPolicy termsOfService;
+  ApplicationAgreementOlderThan termsOfService;
 
   @override
   bool operator ==(dynamic other) {

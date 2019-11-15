@@ -23,7 +23,7 @@ import ActivityPagination from "./model/ActivityPagination";
 import ActivitySubject from "./model/ActivitySubject";
 import Application from "./model/Application";
 import ApplicationAgreement from "./model/ApplicationAgreement";
-import ApplicationAgreementPrivacyPolicy from "./model/ApplicationAgreementPrivacyPolicy";
+import ApplicationAgreementOlderThan from "./model/ApplicationAgreementOlderThan";
 import ApplicationLinks from "./model/ApplicationLinks";
 import ApplicationLinksSelf from "./model/ApplicationLinksSelf";
 import ApplicationLinksSelfIriTemplate from "./model/ApplicationLinksSelfIriTemplate";
@@ -438,7 +438,7 @@ import WebhookApi from "./api/WebhookApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.1.20
+ * @version 2.1.21-dev.dd0437e9b8
  */
 export {
   /**
@@ -482,10 +482,10 @@ export {
    */
   ApplicationAgreement,
   /**
-   * The ApplicationAgreementPrivacyPolicy model constructor.
-   * @property { module:model/ApplicationAgreementPrivacyPolicy }
+   * The ApplicationAgreementOlderThan model constructor.
+   * @property { module:model/ApplicationAgreementOlderThan }
    */
-  ApplicationAgreementPrivacyPolicy,
+  ApplicationAgreementOlderThan,
   /**
    * The ApplicationLinks model constructor.
    * @property { module:model/ApplicationLinks }

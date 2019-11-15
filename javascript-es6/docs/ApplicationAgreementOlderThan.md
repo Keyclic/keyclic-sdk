@@ -1,9 +1,8 @@
-# @KeyclicSdkJavascript.ApplicationAgreementPrivacyPolicy
+# @KeyclicSdkJavascript.ApplicationAgreementOlderThan
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | **String** |  | [optional] 
-**version** | **String** |  | [optional] 
 
 

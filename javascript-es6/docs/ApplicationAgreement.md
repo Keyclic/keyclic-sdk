@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**olderThan** | **Number** |  | [optional] 
-**privacyPolicy** | [**ApplicationAgreementPrivacyPolicy**](ApplicationAgreementPrivacyPolicy.md) |  | [optional] 
-**termsOfService** | [**ApplicationAgreementPrivacyPolicy**](ApplicationAgreementPrivacyPolicy.md) |  | [optional] 
+**olderThan** | [**ApplicationAgreementOlderThan**](ApplicationAgreementOlderThan.md) |  | [optional] 
+**privacyPolicy** | [**ApplicationAgreementOlderThan**](ApplicationAgreementOlderThan.md) |  | [optional] 
+**termsOfService** | [**ApplicationAgreementOlderThan**](ApplicationAgreementOlderThan.md) |  | [optional] 
 
 

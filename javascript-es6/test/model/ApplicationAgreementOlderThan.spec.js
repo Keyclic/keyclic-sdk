@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.ApplicationAgreementPrivacyPolicy();
+    instance = new @KeyclicSdkJavascript.ApplicationAgreementOlderThan();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,22 +46,16 @@
       object[property] = value;
   }
 
-  describe('ApplicationAgreementPrivacyPolicy', function() {
-    it('should create an instance of ApplicationAgreementPrivacyPolicy', function() {
-      // uncomment below and update the code to test ApplicationAgreementPrivacyPolicy
-      //var instane = new @KeyclicSdkJavascript.ApplicationAgreementPrivacyPolicy();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.ApplicationAgreementPrivacyPolicy);
+  describe('ApplicationAgreementOlderThan', function() {
+    it('should create an instance of ApplicationAgreementOlderThan', function() {
+      // uncomment below and update the code to test ApplicationAgreementOlderThan
+      //var instane = new @KeyclicSdkJavascript.ApplicationAgreementOlderThan();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.ApplicationAgreementOlderThan);
     });
 
     it('should have the property content (base name: "content")', function() {
       // uncomment below and update the code to test the property content
-      //var instane = new @KeyclicSdkJavascript.ApplicationAgreementPrivacyPolicy();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property version (base name: "version")', function() {
-      // uncomment below and update the code to test the property version
-      //var instane = new @KeyclicSdkJavascript.ApplicationAgreementPrivacyPolicy();
+      //var instane = new @KeyclicSdkJavascript.ApplicationAgreementOlderThan();
       //expect(instance).to.be();
     });
 

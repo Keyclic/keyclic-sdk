@@ -45,7 +45,7 @@ part 'model/activity_pagination.dart';
 part 'model/activity_subject.dart';
 part 'model/application.dart';
 part 'model/application_agreement.dart';
-part 'model/application_agreement_privacy_policy.dart';
+part 'model/application_agreement_older_than.dart';
 part 'model/application_links.dart';
 part 'model/application_links_self.dart';
 part 'model/application_links_self_iri_template.dart';

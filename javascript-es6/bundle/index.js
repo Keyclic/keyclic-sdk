@@ -457,10 +457,10 @@ Object.defineProperty(exports, "ApplicationAgreement", {
     return _ApplicationAgreement.default;
   }
 });
-Object.defineProperty(exports, "ApplicationAgreementPrivacyPolicy", {
+Object.defineProperty(exports, "ApplicationAgreementOlderThan", {
   enumerable: true,
   get: function get() {
-    return _ApplicationAgreementPrivacyPolicy.default;
+    return _ApplicationAgreementOlderThan.default;
   }
 });
 Object.defineProperty(exports, "ApplicationLinks", {
@@ -2872,8 +2872,8 @@ var _ApplicationAgreement = _interopRequireDefault(
   require("./model/ApplicationAgreement")
 );
 
-var _ApplicationAgreementPrivacyPolicy = _interopRequireDefault(
-  require("./model/ApplicationAgreementPrivacyPolicy")
+var _ApplicationAgreementOlderThan = _interopRequireDefault(
+  require("./model/ApplicationAgreementOlderThan")
 );
 
 var _ApplicationLinks = _interopRequireDefault(

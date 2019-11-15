@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import ApplicationAgreementPrivacyPolicy from "./ApplicationAgreementPrivacyPolicy";
+import ApplicationAgreementOlderThan from "./ApplicationAgreementOlderThan";
 
 /**
  * The ApplicationAgreement model module.
@@ -29,8 +29,9 @@ export default class ApplicationAgreement {
     this.privacyPolicy = null;
     this.termsOfService = null;
 
-    this.privacyPolicyType = ApplicationAgreementPrivacyPolicy;
-    this.termsOfServiceType = ApplicationAgreementPrivacyPolicy;
+    this.olderThanType = ApplicationAgreementOlderThan;
+    this.privacyPolicyType = ApplicationAgreementOlderThan;
+    this.termsOfServiceType = ApplicationAgreementOlderThan;
   }
 
   /**
@@ -49,7 +50,10 @@ export default class ApplicationAgreement {
     }
 
     if (data.hasOwnProperty("olderThan")) {
-      object.olderThan = ApiClient.convertToType(data["olderThan"], "Number");
+      object.olderThan = ApiClient.convertToType(
+        data["olderThan"],
+        object.olderThanType
+      );
     }
     if (data.hasOwnProperty("privacyPolicy")) {
       object.privacyPolicy = ApiClient.convertToType(
@@ -68,40 +72,40 @@ export default class ApplicationAgreement {
   }
 
   /**
-   * @return { Number }
+   * @return { module:model/ApplicationAgreementOlderThan }
    */
   getOlderThan() {
     return this.olderThan;
   }
 
   /**
-   * @param { Number } olderThan
+   * @param { module:model/ApplicationAgreementOlderThan } olderThan
    */
   setOlderThan(olderThan) {
     this.olderThan = olderThan;
   }
   /**
-   * @return { module:model/ApplicationAgreementPrivacyPolicy }
+   * @return { module:model/ApplicationAgreementOlderThan }
    */
   getPrivacyPolicy() {
     return this.privacyPolicy;
   }
 
   /**
-   * @param { module:model/ApplicationAgreementPrivacyPolicy } privacyPolicy
+   * @param { module:model/ApplicationAgreementOlderThan } privacyPolicy
    */
   setPrivacyPolicy(privacyPolicy) {
     this.privacyPolicy = privacyPolicy;
   }
   /**
-   * @return { module:model/ApplicationAgreementPrivacyPolicy }
+   * @return { module:model/ApplicationAgreementOlderThan }
    */
   getTermsOfService() {
     return this.termsOfService;
   }
 
   /**
-   * @param { module:model/ApplicationAgreementPrivacyPolicy } termsOfService
+   * @param { module:model/ApplicationAgreementOlderThan } termsOfService
    */
   setTermsOfService(termsOfService) {
     this.termsOfService = termsOfService;

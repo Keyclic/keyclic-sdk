@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ApplicationAgreementPrivacyPolicy = _interopRequireDefault(
-  require("./ApplicationAgreementPrivacyPolicy")
+var _ApplicationAgreementOlderThan = _interopRequireDefault(
+  require("./ApplicationAgreementOlderThan")
 );
 
 function _interopRequireDefault(obj) {
@@ -56,8 +56,9 @@ var ApplicationAgreement =
       this.olderThan = null;
       this.privacyPolicy = null;
       this.termsOfService = null;
-      this.privacyPolicyType = _ApplicationAgreementPrivacyPolicy.default;
-      this.termsOfServiceType = _ApplicationAgreementPrivacyPolicy.default;
+      this.olderThanType = _ApplicationAgreementOlderThan.default;
+      this.privacyPolicyType = _ApplicationAgreementOlderThan.default;
+      this.termsOfServiceType = _ApplicationAgreementOlderThan.default;
     }
     /**
      * Constructs a "ApplicationAgreement" from a plain JavaScript object.
@@ -73,13 +74,13 @@ var ApplicationAgreement =
           key: "getOlderThan",
 
           /**
-           * @return { Number }
+           * @return { module:model/ApplicationAgreementOlderThan }
            */
           value: function getOlderThan() {
             return this.olderThan;
           }
           /**
-           * @param { Number } olderThan
+           * @param { module:model/ApplicationAgreementOlderThan } olderThan
            */
         },
         {
@@ -88,7 +89,7 @@ var ApplicationAgreement =
             this.olderThan = olderThan;
           }
           /**
-           * @return { module:model/ApplicationAgreementPrivacyPolicy }
+           * @return { module:model/ApplicationAgreementOlderThan }
            */
         },
         {
@@ -97,7 +98,7 @@ var ApplicationAgreement =
             return this.privacyPolicy;
           }
           /**
-           * @param { module:model/ApplicationAgreementPrivacyPolicy } privacyPolicy
+           * @param { module:model/ApplicationAgreementOlderThan } privacyPolicy
            */
         },
         {
@@ -106,7 +107,7 @@ var ApplicationAgreement =
             this.privacyPolicy = privacyPolicy;
           }
           /**
-           * @return { module:model/ApplicationAgreementPrivacyPolicy }
+           * @return { module:model/ApplicationAgreementOlderThan }
            */
         },
         {
@@ -115,7 +116,7 @@ var ApplicationAgreement =
             return this.termsOfService;
           }
           /**
-           * @param { module:model/ApplicationAgreementPrivacyPolicy } termsOfService
+           * @param { module:model/ApplicationAgreementOlderThan } termsOfService
            */
         },
         {
@@ -145,7 +146,7 @@ var ApplicationAgreement =
             if (data.hasOwnProperty("olderThan")) {
               object.olderThan = _ApiClient.default.convertToType(
                 data["olderThan"],
-                "Number"
+                object.olderThanType
               );
             }
 

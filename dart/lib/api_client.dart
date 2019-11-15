@@ -129,8 +129,8 @@ class ApiClient {
           return Application.fromJson(value);
         case 'ApplicationAgreement':
           return ApplicationAgreement.fromJson(value);
-        case 'ApplicationAgreementPrivacyPolicy':
-          return ApplicationAgreementPrivacyPolicy.fromJson(value);
+        case 'ApplicationAgreementOlderThan':
+          return ApplicationAgreementOlderThan.fromJson(value);
         case 'ApplicationLinks':
           return ApplicationLinks.fromJson(value);
         case 'ApplicationLinksSelf':
