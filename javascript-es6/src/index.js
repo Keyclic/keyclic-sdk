@@ -438,7 +438,7 @@ import WebhookApi from "./api/WebhookApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.1.24
+ * @version 2.1.26
  */
 export {
   /**

@@ -262,6 +262,7 @@ var FeedbackApi =
         /**
          * Retrieve all Feedback resources.
          * @param { String } xKeyclicApp
+         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { FeedbackPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
          * @param { String } xKeyclicAppVersion
@@ -285,6 +286,10 @@ var FeedbackApi =
               ? arguments[0]
               : null;
           var options = arguments.length > 1 ? arguments[1] : undefined;
+          var credentials =
+            arguments.length > 2 && arguments[2] !== undefined
+              ? arguments[2]
+              : null;
 
           if (returnType === null) {
             returnType = _FeedbackPagination.default;
@@ -380,8 +385,8 @@ var FeedbackApi =
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
-          var credentialParams = null;
-          var authNames = [];
+          var credentialParams = credentials;
+          var authNames = ["bearer"];
           var contentTypes = ["application/json;charset=UTF-8"];
           var accepts = ["application/hal+json;charset=UTF-8"];
           return this.callApi(

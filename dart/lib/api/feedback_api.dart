@@ -143,7 +143,9 @@ class FeedbackApi {
       "application/json",
     ];
 
-    final List<String> authNames = [];
+    final List<String> authNames = [
+      "bearer",
+    ];
 
     final Object postBody = null;
 

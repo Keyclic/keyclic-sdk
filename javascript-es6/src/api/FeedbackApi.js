@@ -139,6 +139,7 @@ export default class FeedbackApi extends ApiClient {
   /**
    * Retrieve all Feedback resources.
    * @param { String } xKeyclicApp
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { FeedbackPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
@@ -153,7 +154,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
-  cgetFeedback(returnType = null, options) {
+  cgetFeedback(returnType = null, options, credentials = null) {
     if (returnType === null) {
       returnType = FeedbackPagination;
     }
@@ -264,9 +265,9 @@ export default class FeedbackApi extends ApiClient {
       "x-keyclic-app-version": xKeyclicAppVersion
     };
 
-    const credentialParams = null;
+    const credentialParams = credentials;
 
-    let authNames = [];
+    let authNames = ["bearer"];
 
     let contentTypes = ["application/json;charset=UTF-8"];
 
