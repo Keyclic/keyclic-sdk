@@ -7,11 +7,15 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ApplicationAbout = _interopRequireDefault(require("./ApplicationAbout"));
+
 var _ApplicationAgreement = _interopRequireDefault(
   require("./ApplicationAgreement")
 );
 
 var _ApplicationLinks = _interopRequireDefault(require("./ApplicationLinks"));
+
+var _ContactPoint = _interopRequireDefault(require("./ContactPoint"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -60,7 +64,9 @@ var Application =
       _classCallCheck(this, Application);
 
       this.links = null;
+      this.about = null;
       this.agreement = null;
+      this.contactPoints = [];
       this.createdAt = null;
       this.id = null;
       this.name = name;
@@ -69,7 +75,9 @@ var Application =
       this.updatedAt = null;
       this.version = null;
       this.linksType = _ApplicationLinks.default;
+      this.aboutType = _ApplicationAbout.default;
       this.agreementType = _ApplicationAgreement.default;
+      this.contactPointsType = _ContactPoint.default;
     }
     /**
      * Constructs a "Application" from a plain JavaScript object.
@@ -100,6 +108,24 @@ var Application =
             this.links = links;
           }
           /**
+           * @return { module:model/ApplicationAbout }
+           */
+        },
+        {
+          key: "getAbout",
+          value: function getAbout() {
+            return this.about;
+          }
+          /**
+           * @param { module:model/ApplicationAbout } about
+           */
+        },
+        {
+          key: "setAbout",
+          value: function setAbout(about) {
+            this.about = about;
+          }
+          /**
            * @return { module:model/ApplicationAgreement }
            */
         },
@@ -116,6 +142,24 @@ var Application =
           key: "setAgreement",
           value: function setAgreement(agreement) {
             this.agreement = agreement;
+          }
+          /**
+           * @return { Array.<module:model/ContactPoint> }
+           */
+        },
+        {
+          key: "getContactPoints",
+          value: function getContactPoints() {
+            return this.contactPoints;
+          }
+          /**
+           * @param { Array.<module:model/ContactPoint> } contactPoints
+           */
+        },
+        {
+          key: "setContactPoints",
+          value: function setContactPoints(contactPoints) {
+            this.contactPoints = contactPoints;
           }
           /**
            * @return { Date }
@@ -233,10 +277,24 @@ var Application =
               );
             }
 
+            if (data.hasOwnProperty("about")) {
+              object.about = _ApiClient.default.convertToType(
+                data["about"],
+                object.aboutType
+              );
+            }
+
             if (data.hasOwnProperty("agreement")) {
               object.agreement = _ApiClient.default.convertToType(
                 data["agreement"],
                 object.agreementType
+              );
+            }
+
+            if (data.hasOwnProperty("contactPoints")) {
+              object.contactPoints = _ApiClient.default.convertToType(
+                data["contactPoints"],
+                [object.contactPointsType]
               );
             }
 

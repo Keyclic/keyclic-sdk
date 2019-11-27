@@ -1,0 +1,8 @@
+# @KeyclicSdkJavascript.ReviewRequestLinksReviewIriTemplate
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**mapping** | [**ReviewLinksSelfIriTemplateMapping**](ReviewLinksSelfIriTemplateMapping.md) |  | [optional] 
+
+

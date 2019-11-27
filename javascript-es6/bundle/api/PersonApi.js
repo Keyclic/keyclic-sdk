@@ -13,10 +13,6 @@ var _FeedbackPagination = _interopRequireDefault(
   require("../model/FeedbackPagination")
 );
 
-var _FeedbackReviewRequestPagination = _interopRequireDefault(
-  require("../model/FeedbackReviewRequestPagination")
-);
-
 var _MemberPagination = _interopRequireDefault(
   require("../model/MemberPagination")
 );
@@ -39,6 +35,10 @@ var _PersonPatch = _interopRequireDefault(require("../model/PersonPatch"));
 
 var _ReportPagination = _interopRequireDefault(
   require("../model/ReportPagination")
+);
+
+var _ReviewRequestPagination = _interopRequireDefault(
+  require("../model/ReviewRequestPagination")
 );
 
 function _interopRequireDefault(obj) {
@@ -1009,7 +1009,7 @@ var PersonApi =
          * @param { String } xKeyclicApp
          * @param { String } person The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { FeedbackReviewRequestPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+         * @param { ReviewRequestPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
          * @param { String } xKeyclicAppVersion
          * @param { module:model/Date } after
@@ -1033,7 +1033,7 @@ var PersonApi =
               : null;
 
           if (returnType === null) {
-            returnType = _FeedbackReviewRequestPagination.default;
+            returnType = _ReviewRequestPagination.default;
           }
 
           var xKeyclicApp = options.xKeyclicApp,

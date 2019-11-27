@@ -552,7 +552,7 @@ class PersonApi {
   /// Retrieve all ReviewRequest resources.
   ///
   ///
-  Future<FeedbackReviewRequestPagination> cgetReviewRequestsByPerson(
+  Future<ReviewRequestPagination> cgetReviewRequestsByPerson(
     String xKeyclicApp,
     String person, {
     String acceptLanguage,
@@ -627,9 +627,8 @@ class PersonApi {
       return null;
     }
 
-    return apiClient.deserialize(
-            response.body, 'FeedbackReviewRequestPagination')
-        as FeedbackReviewRequestPagination;
+    return apiClient.deserialize(response.body, 'ReviewRequestPagination')
+        as ReviewRequestPagination;
   }
 
   /// Retrieve one Person resource.

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getReviewRequest"></a>
 # **getReviewRequest**
-> FeedbackReviewRequest getReviewRequest(xKeyclicApp, reviewRequest, opts)
+> ReviewRequest getReviewRequest(xKeyclicApp, reviewRequest, opts)
 
 Retrieve one ReviewRequest resource.
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FeedbackReviewRequest**](FeedbackReviewRequest.md)
+[**ReviewRequest**](ReviewRequest.md)
 
 ### Authorization
 

@@ -59,8 +59,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property about (base name: "about")', function() {
+      // uncomment below and update the code to test the property about
+      //var instane = new @KeyclicSdkJavascript.Application();
+      //expect(instance).to.be();
+    });
+
     it('should have the property agreement (base name: "agreement")', function() {
       // uncomment below and update the code to test the property agreement
+      //var instane = new @KeyclicSdkJavascript.Application();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property contactPoints (base name: "contactPoints")', function() {
+      // uncomment below and update the code to test the property contactPoints
       //var instane = new @KeyclicSdkJavascript.Application();
       //expect(instance).to.be();
     });

@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetReviewRequestsByPerson**
-> FeedbackReviewRequestPagination cgetReviewRequestsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, after, before, order, page, limit)
+> ReviewRequestPagination cgetReviewRequestsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, after, before, order, page, limit)
 
 Retrieve all ReviewRequest resources.
 
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FeedbackReviewRequestPagination**](FeedbackReviewRequestPagination.md)
+[**ReviewRequestPagination**](ReviewRequestPagination.md)
 
 ### Authorization
 

@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.1.26
-- Package version: 2.1.26
+- API version: 2.1.28
+- Package version: 2.1.28
 
 ## Getting started
 
@@ -154,6 +154,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ActivityPagination](docs/ActivityPagination.md)
 - [@KeyclicSdkJavascript.ActivitySubject](docs/ActivitySubject.md)
 - [@KeyclicSdkJavascript.Application](docs/Application.md)
+- [@KeyclicSdkJavascript.ApplicationAbout](docs/ApplicationAbout.md)
 - [@KeyclicSdkJavascript.ApplicationAgreement](docs/ApplicationAgreement.md)
 - [@KeyclicSdkJavascript.ApplicationAgreementOlderThan](docs/ApplicationAgreementOlderThan.md)
 - [@KeyclicSdkJavascript.ApplicationLinks](docs/ApplicationLinks.md)
@@ -193,6 +194,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.Choice](docs/Choice.md)
 - [@KeyclicSdkJavascript.CommentData](docs/CommentData.md)
 - [@KeyclicSdkJavascript.Condition](docs/Condition.md)
+- [@KeyclicSdkJavascript.ContactPoint](docs/ContactPoint.md)
 - [@KeyclicSdkJavascript.Contribution](docs/Contribution.md)
 - [@KeyclicSdkJavascript.ContributionCollection](docs/ContributionCollection.md)
 - [@KeyclicSdkJavascript.ContributionData](docs/ContributionData.md)
@@ -287,21 +289,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.FeedbackLinksSelfIriTemplate](docs/FeedbackLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.FeedbackLinksTracking](docs/FeedbackLinksTracking.md)
 - [@KeyclicSdkJavascript.FeedbackLinksTrackingIriTemplate](docs/FeedbackLinksTrackingIriTemplate.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequest](docs/FeedbackReviewRequest.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestCollection](docs/FeedbackReviewRequestCollection.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestLinks](docs/FeedbackReviewRequestLinks.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestLinksItemToReview](docs/FeedbackReviewRequestLinksItemToReview.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestLinksItemToReviewIriTemplate](docs/FeedbackReviewRequestLinksItemToReviewIriTemplate.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestLinksOrganization](docs/FeedbackReviewRequestLinksOrganization.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestLinksOrganizationIriTemplate](docs/FeedbackReviewRequestLinksOrganizationIriTemplate.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestLinksReview](docs/FeedbackReviewRequestLinksReview.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestLinksReviewIriTemplate](docs/FeedbackReviewRequestLinksReviewIriTemplate.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestLinksReviewIriTemplateMapping](docs/FeedbackReviewRequestLinksReviewIriTemplateMapping.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestLinksReviewer](docs/FeedbackReviewRequestLinksReviewer.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestLinksReviewerIriTemplate](docs/FeedbackReviewRequestLinksReviewerIriTemplate.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestLinksSelf](docs/FeedbackReviewRequestLinksSelf.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestLinksSelfIriTemplate](docs/FeedbackReviewRequestLinksSelfIriTemplate.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestLinksSelfIriTemplateMapping](docs/FeedbackReviewRequestLinksSelfIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.FeedbackWorkflowTransitionData](docs/FeedbackWorkflowTransitionData.md)
 - [@KeyclicSdkJavascript.ImageData](docs/ImageData.md)
 - [@KeyclicSdkJavascript.InternalService](docs/InternalService.md)
@@ -486,6 +473,21 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ReviewLinksItemReviewedIriTemplate](docs/ReviewLinksItemReviewedIriTemplate.md)
 - [@KeyclicSdkJavascript.ReviewLinksSelf](docs/ReviewLinksSelf.md)
 - [@KeyclicSdkJavascript.ReviewLinksSelfIriTemplate](docs/ReviewLinksSelfIriTemplate.md)
+- [@KeyclicSdkJavascript.ReviewLinksSelfIriTemplateMapping](docs/ReviewLinksSelfIriTemplateMapping.md)
+- [@KeyclicSdkJavascript.ReviewRequest](docs/ReviewRequest.md)
+- [@KeyclicSdkJavascript.ReviewRequestCollection](docs/ReviewRequestCollection.md)
+- [@KeyclicSdkJavascript.ReviewRequestLinks](docs/ReviewRequestLinks.md)
+- [@KeyclicSdkJavascript.ReviewRequestLinksItemToReview](docs/ReviewRequestLinksItemToReview.md)
+- [@KeyclicSdkJavascript.ReviewRequestLinksItemToReviewIriTemplate](docs/ReviewRequestLinksItemToReviewIriTemplate.md)
+- [@KeyclicSdkJavascript.ReviewRequestLinksOrganization](docs/ReviewRequestLinksOrganization.md)
+- [@KeyclicSdkJavascript.ReviewRequestLinksOrganizationIriTemplate](docs/ReviewRequestLinksOrganizationIriTemplate.md)
+- [@KeyclicSdkJavascript.ReviewRequestLinksReview](docs/ReviewRequestLinksReview.md)
+- [@KeyclicSdkJavascript.ReviewRequestLinksReviewIriTemplate](docs/ReviewRequestLinksReviewIriTemplate.md)
+- [@KeyclicSdkJavascript.ReviewRequestLinksReviewer](docs/ReviewRequestLinksReviewer.md)
+- [@KeyclicSdkJavascript.ReviewRequestLinksReviewerIriTemplate](docs/ReviewRequestLinksReviewerIriTemplate.md)
+- [@KeyclicSdkJavascript.ReviewRequestLinksSelf](docs/ReviewRequestLinksSelf.md)
+- [@KeyclicSdkJavascript.ReviewRequestLinksSelfIriTemplate](docs/ReviewRequestLinksSelfIriTemplate.md)
+- [@KeyclicSdkJavascript.ReviewRequestLinksSelfIriTemplateMapping](docs/ReviewRequestLinksSelfIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.Schema](docs/Schema.md)
 - [@KeyclicSdkJavascript.SignatureData](docs/SignatureData.md)
 - [@KeyclicSdkJavascript.SignatureDataSigner](docs/SignatureDataSigner.md)
@@ -514,7 +516,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ExternalServicePagination](docs/ExternalServicePagination.md)
 - [@KeyclicSdkJavascript.FeedPagination](docs/FeedPagination.md)
 - [@KeyclicSdkJavascript.FeedbackPagination](docs/FeedbackPagination.md)
-- [@KeyclicSdkJavascript.FeedbackReviewRequestPagination](docs/FeedbackReviewRequestPagination.md)
 - [@KeyclicSdkJavascript.InternalServicePagination](docs/InternalServicePagination.md)
 - [@KeyclicSdkJavascript.MemberPagination](docs/MemberPagination.md)
 - [@KeyclicSdkJavascript.OccupantPagination](docs/OccupantPagination.md)
@@ -525,6 +526,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.PublicationPagination](docs/PublicationPagination.md)
 - [@KeyclicSdkJavascript.ReportPagination](docs/ReportPagination.md)
 - [@KeyclicSdkJavascript.ReviewPagination](docs/ReviewPagination.md)
+- [@KeyclicSdkJavascript.ReviewRequestPagination](docs/ReviewRequestPagination.md)
 - [@KeyclicSdkJavascript.WebhookPagination](docs/WebhookPagination.md)
 
 ## Documentation for Authorization

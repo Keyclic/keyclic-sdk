@@ -4,7 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**ApplicationLinks**](ApplicationLinks.md) |  | [optional] 
+**about** | [**ApplicationAbout**](ApplicationAbout.md) |  | [optional] 
 **agreement** | [**ApplicationAgreement**](ApplicationAgreement.md) |  | [optional] 
+**contactPoints** | [**[ContactPoint]**](ContactPoint.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **id** | **String** |  | [optional] 
 **name** | **String** |  | 

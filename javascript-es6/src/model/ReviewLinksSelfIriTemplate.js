@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import FeedbackReviewRequestLinksReviewIriTemplateMapping from "./FeedbackReviewRequestLinksReviewIriTemplateMapping";
+import ReviewLinksSelfIriTemplateMapping from "./ReviewLinksSelfIriTemplateMapping";
 
 /**
  * The ReviewLinksSelfIriTemplate model module.
@@ -27,7 +27,7 @@ export default class ReviewLinksSelfIriTemplate {
   constructor() {
     this.mapping = null;
 
-    this.mappingType = FeedbackReviewRequestLinksReviewIriTemplateMapping;
+    this.mappingType = ReviewLinksSelfIriTemplateMapping;
   }
 
   /**
@@ -56,14 +56,14 @@ export default class ReviewLinksSelfIriTemplate {
   }
 
   /**
-   * @return { module:model/FeedbackReviewRequestLinksReviewIriTemplateMapping }
+   * @return { module:model/ReviewLinksSelfIriTemplateMapping }
    */
   getMapping() {
     return this.mapping;
   }
 
   /**
-   * @param { module:model/FeedbackReviewRequestLinksReviewIriTemplateMapping } mapping
+   * @param { module:model/ReviewLinksSelfIriTemplateMapping } mapping
    */
   setMapping(mapping) {
     this.mapping = mapping;

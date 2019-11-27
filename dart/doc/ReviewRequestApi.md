@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getReviewRequest**
-> FeedbackReviewRequest getReviewRequest(xKeyclicApp, reviewRequest, acceptLanguage, xKeyclicAppVersion)
+> ReviewRequest getReviewRequest(xKeyclicApp, reviewRequest, acceptLanguage, xKeyclicAppVersion)
 
 Retrieve one ReviewRequest resource.
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FeedbackReviewRequest**](FeedbackReviewRequest.md)
+[**ReviewRequest**](ReviewRequest.md)
 
 ### Authorization
 

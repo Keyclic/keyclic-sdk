@@ -9,9 +9,7 @@ var _ApiClient2 = _interopRequireDefault(require("../ApiClient"));
 
 var _Error = _interopRequireDefault(require("../model/Error"));
 
-var _FeedbackReviewRequest = _interopRequireDefault(
-  require("../model/FeedbackReviewRequest")
-);
+var _ReviewRequest = _interopRequireDefault(require("../model/ReviewRequest"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -143,7 +141,7 @@ var ReviewRequestApi =
      * @param { String } xKeyclicApp
      * @param { String } reviewRequest The identifier of the resource.
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { FeedbackReviewRequest }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+     * @param { ReviewRequest }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
      * @param { String } xKeyclicAppVersion
      */
@@ -163,7 +161,7 @@ var ReviewRequestApi =
               : null;
 
           if (returnType === null) {
-            returnType = _FeedbackReviewRequest.default;
+            returnType = _ReviewRequest.default;
           }
 
           var xKeyclicApp = options.xKeyclicApp,

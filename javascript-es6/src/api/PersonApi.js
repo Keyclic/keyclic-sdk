@@ -13,7 +13,6 @@
 import ApiClient from "../ApiClient";
 import Error from "../model/Error";
 import FeedbackPagination from "../model/FeedbackPagination";
-import FeedbackReviewRequestPagination from "../model/FeedbackReviewRequestPagination";
 import MemberPagination from "../model/MemberPagination";
 import OccupantPagination from "../model/OccupantPagination";
 import OperationPagination from "../model/OperationPagination";
@@ -21,6 +20,7 @@ import Person from "../model/Person";
 import PersonPagination from "../model/PersonPagination";
 import PersonPatch from "../model/PersonPatch";
 import ReportPagination from "../model/ReportPagination";
+import ReviewRequestPagination from "../model/ReviewRequestPagination";
 
 /**
  * Person service.
@@ -921,7 +921,7 @@ export default class PersonApi extends ApiClient {
    * @param { String } xKeyclicApp
    * @param { String } person The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { FeedbackReviewRequestPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { ReviewRequestPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    * @param { module:model/Date } after
@@ -932,7 +932,7 @@ export default class PersonApi extends ApiClient {
    */
   cgetReviewRequestsByPerson(returnType = null, options, credentials = null) {
     if (returnType === null) {
-      returnType = FeedbackReviewRequestPagination;
+      returnType = ReviewRequestPagination;
     }
 
     let {

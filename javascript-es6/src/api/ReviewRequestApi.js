@@ -12,7 +12,7 @@
 
 import ApiClient from "../ApiClient";
 import Error from "../model/Error";
-import FeedbackReviewRequest from "../model/FeedbackReviewRequest";
+import ReviewRequest from "../model/ReviewRequest";
 
 /**
  * ReviewRequest service.
@@ -34,13 +34,13 @@ export default class ReviewRequestApi extends ApiClient {
    * @param { String } xKeyclicApp
    * @param { String } reviewRequest The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { FeedbackReviewRequest }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { ReviewRequest }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { String } xKeyclicAppVersion
    */
   getReviewRequest(returnType = null, options, credentials = null) {
     if (returnType === null) {
-      returnType = FeedbackReviewRequest;
+      returnType = ReviewRequest;
     }
 
     let {

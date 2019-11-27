@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 <a name="cgetReviewRequestsByPerson"></a>
 # **cgetReviewRequestsByPerson**
-> FeedbackReviewRequestPagination cgetReviewRequestsByPerson(xKeyclicApp, person, opts)
+> ReviewRequestPagination cgetReviewRequestsByPerson(xKeyclicApp, person, opts)
 
 Retrieve all ReviewRequest resources.
 
@@ -522,7 +522,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FeedbackReviewRequestPagination**](FeedbackReviewRequestPagination.md)
+[**ReviewRequestPagination**](ReviewRequestPagination.md)
 
 ### Authorization
 

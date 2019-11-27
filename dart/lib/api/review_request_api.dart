@@ -9,7 +9,7 @@ class ReviewRequestApi {
   /// Retrieve one ReviewRequest resource.
   ///
   ///
-  Future<FeedbackReviewRequest> getReviewRequest(
+  Future<ReviewRequest> getReviewRequest(
     String xKeyclicApp,
     String reviewRequest, {
     String acceptLanguage,
@@ -69,7 +69,7 @@ class ReviewRequestApi {
       return null;
     }
 
-    return apiClient.deserialize(response.body, 'FeedbackReviewRequest')
-        as FeedbackReviewRequest;
+    return apiClient.deserialize(response.body, 'ReviewRequest')
+        as ReviewRequest;
   }
 }

@@ -11,8 +11,10 @@
  */
 
 import ApiClient from "../ApiClient";
+import ApplicationAbout from "./ApplicationAbout";
 import ApplicationAgreement from "./ApplicationAgreement";
 import ApplicationLinks from "./ApplicationLinks";
+import ContactPoint from "./ContactPoint";
 
 /**
  * The Application model module.
@@ -35,7 +37,9 @@ export default class Application {
     token
   ) {
     this.links = null;
+    this.about = null;
     this.agreement = null;
+    this.contactPoints = [];
     this.createdAt = null;
     this.id = null;
     this.name = name;
@@ -45,7 +49,9 @@ export default class Application {
     this.version = null;
 
     this.linksType = ApplicationLinks;
+    this.aboutType = ApplicationAbout;
     this.agreementType = ApplicationAgreement;
+    this.contactPointsType = ContactPoint;
   }
 
   /**
@@ -66,11 +72,19 @@ export default class Application {
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
+    if (data.hasOwnProperty("about")) {
+      object.about = ApiClient.convertToType(data["about"], object.aboutType);
+    }
     if (data.hasOwnProperty("agreement")) {
       object.agreement = ApiClient.convertToType(
         data["agreement"],
         object.agreementType
       );
+    }
+    if (data.hasOwnProperty("contactPoints")) {
+      object.contactPoints = ApiClient.convertToType(data["contactPoints"], [
+        object.contactPointsType
+      ]);
     }
     if (data.hasOwnProperty("createdAt")) {
       object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
@@ -111,6 +125,19 @@ export default class Application {
     this.links = links;
   }
   /**
+   * @return { module:model/ApplicationAbout }
+   */
+  getAbout() {
+    return this.about;
+  }
+
+  /**
+   * @param { module:model/ApplicationAbout } about
+   */
+  setAbout(about) {
+    this.about = about;
+  }
+  /**
    * @return { module:model/ApplicationAgreement }
    */
   getAgreement() {
@@ -122,6 +149,19 @@ export default class Application {
    */
   setAgreement(agreement) {
     this.agreement = agreement;
+  }
+  /**
+   * @return { Array.<module:model/ContactPoint> }
+   */
+  getContactPoints() {
+    return this.contactPoints;
+  }
+
+  /**
+   * @param { Array.<module:model/ContactPoint> } contactPoints
+   */
+  setContactPoints(contactPoints) {
+    this.contactPoints = contactPoints;
   }
   /**
    * @return { Date }
