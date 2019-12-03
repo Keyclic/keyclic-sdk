@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.1.23"
+        "version": "2.2.1"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -2628,6 +2628,18 @@
                             "$ref": "#\/definitions\/Error"
                         }
                     },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
                     "500": {
                         "description": "",
                         "schema": {
@@ -2637,6 +2649,11 @@
                 },
                 "schemes": [
                     "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
                 ]
             }
         },
@@ -5325,77 +5342,6 @@
                         "bearer": []
                     }
                 ]
-            },
-            "post": {
-                "tags": [
-                    "Organization"
-                ],
-                "summary": "Create one Organization resource.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "postOrganization",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "$ref": "#\/parameters\/OrganizationData"
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Returned when the resource is created",
-                        "schema": {
-                            "$ref": "#\/definitions\/Organization"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
             }
         },
         "\/organizations\/{organization}\/categories": {
@@ -5855,10 +5801,10 @@
                         "$ref": "#\/parameters\/order"
                     },
                     {
-                        "$ref": "#\/parameters\/query"
+                        "$ref": "#\/parameters\/role"
                     },
                     {
-                        "$ref": "#\/parameters\/role"
+                        "$ref": "#\/parameters\/query"
                     },
                     {
                         "$ref": "#\/parameters\/roles__"
@@ -6650,6 +6596,90 @@
                 ]
             }
         },
+        "\/organizations\/{organization}\/configuration": {
+            "get": {
+                "tags": [
+                    "Organization"
+                ],
+                "summary": "Retrieve one Configuration resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "getConfigurationByOrganization",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "organization",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Configuration"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
         "\/organizations\/{organization}\/analytics": {
             "get": {
                 "tags": [
@@ -7198,10 +7228,10 @@
                         "$ref": "#\/parameters\/order"
                     },
                     {
-                        "$ref": "#\/parameters\/query"
+                        "$ref": "#\/parameters\/role"
                     },
                     {
-                        "$ref": "#\/parameters\/role"
+                        "$ref": "#\/parameters\/query"
                     },
                     {
                         "$ref": "#\/parameters\/roles__"
@@ -7657,7 +7687,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/FeedbackReviewRequestPagination"
+                            "$ref": "#\/definitions\/ReviewRequestPagination"
                         }
                     },
                     "400": {
@@ -9395,7 +9425,91 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/FeedbackReviewRequest"
+                            "$ref": "#\/definitions\/ReviewRequest"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/roles\/{role}": {
+            "get": {
+                "tags": [
+                    "Role"
+                ],
+                "summary": "Retrieve one Role resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "getRole",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "role",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Role"
                         }
                     },
                     "400": {
@@ -10236,6 +10350,19 @@
                         }
                     }
                 },
+                "about": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "format": "string"
+                        },
+                        "text": {
+                            "type": "string",
+                            "format": "string"
+                        }
+                    }
+                },
                 "agreement": {
                     "type": "object",
                     "properties": {
@@ -10267,6 +10394,12 @@
                             }
                         }
                     }
+                },
+                "contactPoints": {
+                    "items": {
+                        "$ref": "#\/definitions\/ContactPoint"
+                    },
+                    "type": "array"
                 },
                 "createdAt": {
                     "readOnly": true,
@@ -10904,6 +11037,76 @@
                         "type": "string"
                     },
                     "type": "array"
+                }
+            }
+        },
+        "Configuration": {
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "description": {
+                    "maxLength": 255,
+                    "type": "string",
+                    "format": "string"
+                },
+                "id": {
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "name": {
+                    "maxLength": 255,
+                    "type": "string",
+                    "format": "string"
+                },
+                "roles": {
+                    "items": {
+                        "$ref": "#\/definitions\/Role"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "string"
+                },
+                "updatedAt": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "ContactPoint": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "id": {
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "name": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "telephone": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "type": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "string"
                 }
             }
         },
@@ -12336,209 +12539,6 @@
                 }
             ]
         },
-        "FeedbackReviewRequest": {
-            "type": "object",
-            "properties": {
-                "_links": {
-                    "type": "object",
-                    "properties": {
-                        "itemToReview": {
-                            "$ref": "#\/definitions\/FeedbackReviewRequestLinksItemToReview"
-                        },
-                        "organization": {
-                            "$ref": "#\/definitions\/FeedbackReviewRequestLinksOrganization"
-                        },
-                        "review": {
-                            "$ref": "#\/definitions\/FeedbackReviewRequestLinksReview"
-                        },
-                        "reviewer": {
-                            "$ref": "#\/definitions\/FeedbackReviewRequestLinksReviewer"
-                        },
-                        "self": {
-                            "$ref": "#\/definitions\/FeedbackReviewRequestLinksSelf"
-                        }
-                    }
-                },
-                "createdAt": {
-                    "readOnly": true,
-                    "type": "string",
-                    "format": "date-time"
-                },
-                "id": {
-                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
-                    "readOnly": true,
-                    "type": "string",
-                    "format": "uuid"
-                },
-                "type": {
-                    "readOnly": true,
-                    "type": "string",
-                    "format": "string"
-                },
-                "updatedAt": {
-                    "readOnly": true,
-                    "type": "string",
-                    "format": "date-time"
-                }
-            }
-        },
-        "FeedbackReviewRequestCollection": {
-            "type": "object",
-            "properties": {
-                "items": {
-                    "type": "array",
-                    "default": [],
-                    "items": {
-                        "$ref": "#\/definitions\/FeedbackReviewRequest"
-                    }
-                }
-            }
-        },
-        "FeedbackReviewRequestLinksItemToReview": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the itemToReview associated to the given feedbackreviewrequest.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/FeedbackReviewRequestLinksItemToReviewIriTemplate"
-                }
-            }
-        },
-        "FeedbackReviewRequestLinksItemToReviewIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "feedback": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "FeedbackReviewRequestLinksOrganization": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the organization associated to the given feedbackreviewrequest.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/FeedbackReviewRequestLinksOrganizationIriTemplate"
-                }
-            }
-        },
-        "FeedbackReviewRequestLinksOrganizationIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "organization": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "FeedbackReviewRequestLinksReview": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the review associated to the given feedbackreviewrequest.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/FeedbackReviewRequestLinksReviewIriTemplate"
-                }
-            }
-        },
-        "FeedbackReviewRequestLinksReviewIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "review": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "FeedbackReviewRequestLinksReviewer": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the reviewer associated to the given feedbackreviewrequest.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/FeedbackReviewRequestLinksReviewerIriTemplate"
-                }
-            }
-        },
-        "FeedbackReviewRequestLinksReviewerIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "person": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "FeedbackReviewRequestLinksSelf": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the self associated to the given feedbackreviewrequest.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/FeedbackReviewRequestLinksSelfIriTemplate"
-                }
-            }
-        },
-        "FeedbackReviewRequestLinksSelfIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "reviewRequest": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "FeedbackReviewRequestPagination": {
-            "allOf": [
-                {
-                    "$ref": "#\/definitions\/Pagination"
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "_embedded": {
-                            "$ref": "#\/definitions\/FeedbackReviewRequestCollection"
-                        }
-                    }
-                }
-            ]
-        },
         "FeedbackWorkflowTransitionData": {
             "type": "object",
             "properties": {
@@ -12816,13 +12816,6 @@
                     "format": "uuid"
                 },
                 "roles": {
-                    "enum": [
-                        "ORGANIZATION:ADMIN",
-                        "ORGANIZATION:AGENT",
-                        "ORGANIZATION:ANALYTICS",
-                        "ORGANIZATION:EXPORT",
-                        "ORGANIZATION:OPERATOR"
-                    ],
                     "items": {
                         "type": "string"
                     },
@@ -12964,13 +12957,6 @@
             "type": "object",
             "properties": {
                 "roles": {
-                    "enum": [
-                        "ORGANIZATION:ADMIN",
-                        "ORGANIZATION:AGENT",
-                        "ORGANIZATION:ANALYTICS",
-                        "ORGANIZATION:EXPORT",
-                        "ORGANIZATION:OPERATOR"
-                    ],
                     "items": {
                         "type": "string"
                     },
@@ -13783,24 +13769,6 @@
                     }
                 }
             }
-        },
-        "OrganizationData": {
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "businessActivity": {
-                    "type": "string"
-                },
-                "logo": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "name",
-                "businessActivity"
-            ]
         },
         "OrganizationLinksApplication": {
             "type": "object",
@@ -15646,6 +15614,271 @@
                 }
             ]
         },
+        "ReviewRequest": {
+            "type": "object",
+            "properties": {
+                "_links": {
+                    "type": "object",
+                    "properties": {
+                        "itemToReview": {
+                            "$ref": "#\/definitions\/ReviewRequestLinksItemToReview"
+                        },
+                        "organization": {
+                            "$ref": "#\/definitions\/ReviewRequestLinksOrganization"
+                        },
+                        "review": {
+                            "$ref": "#\/definitions\/ReviewRequestLinksReview"
+                        },
+                        "reviewer": {
+                            "$ref": "#\/definitions\/ReviewRequestLinksReviewer"
+                        },
+                        "self": {
+                            "$ref": "#\/definitions\/ReviewRequestLinksSelf"
+                        }
+                    }
+                },
+                "createdAt": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "id": {
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "type": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "string"
+                },
+                "updatedAt": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "ReviewRequestCollection": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "$ref": "#\/definitions\/ReviewRequest"
+                    }
+                }
+            }
+        },
+        "ReviewRequestLinksItemToReview": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the itemToReview associated to the given reviewrequest.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/ReviewRequestLinksItemToReviewIriTemplate"
+                }
+            }
+        },
+        "ReviewRequestLinksItemToReviewIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "feedback": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "ReviewRequestLinksOrganization": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the organization associated to the given reviewrequest.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/ReviewRequestLinksOrganizationIriTemplate"
+                }
+            }
+        },
+        "ReviewRequestLinksOrganizationIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "organization": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "ReviewRequestLinksReview": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the review associated to the given reviewrequest.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/ReviewRequestLinksReviewIriTemplate"
+                }
+            }
+        },
+        "ReviewRequestLinksReviewIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "review": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "ReviewRequestLinksReviewer": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the reviewer associated to the given reviewrequest.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/ReviewRequestLinksReviewerIriTemplate"
+                }
+            }
+        },
+        "ReviewRequestLinksReviewerIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "person": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "ReviewRequestLinksSelf": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the self associated to the given reviewrequest.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/ReviewRequestLinksSelfIriTemplate"
+                }
+            }
+        },
+        "ReviewRequestLinksSelfIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "reviewRequest": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "ReviewRequestPagination": {
+            "allOf": [
+                {
+                    "$ref": "#\/definitions\/Pagination"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "_embedded": {
+                            "$ref": "#\/definitions\/ReviewRequestCollection"
+                        }
+                    }
+                }
+            ]
+        },
+        "Role": {
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "description": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "id": {
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "key": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "name": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "permissions": {
+                    "enum": [
+                        "ORGANIZATION:AGENT",
+                        "ORGANIZATION:MEMBER",
+                        "ORGANIZATION:OPERATOR",
+                        "ALL",
+                        "ANALYTICS:ALL",
+                        "CATEGORY:ALL",
+                        "EXPORT:ALL",
+                        "MEMBER:ALL",
+                        "OCCUPANT:ALL",
+                        "OPERATION:ALL",
+                        "ORGANIZATION:ALL",
+                        "PLACE:ALL",
+                        "PUBLICATION:ALL",
+                        "REPORT:ALL",
+                        "SERVICE:ALL",
+                        "WEBHOOK:ALL"
+                    ],
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "string"
+                },
+                "updatedAt": {
+                    "readOnly": true,
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
         "Schema": {
             "type": "object",
             "properties": {
@@ -16397,14 +16630,6 @@
             "in": "body",
             "schema": {
                 "$ref": "#\/definitions\/OrganizationPatch"
-            },
-            "required": true
-        },
-        "OrganizationData": {
-            "name": "OrganizationData",
-            "in": "body",
-            "schema": {
-                "$ref": "#\/definitions\/OrganizationData"
             },
             "required": true
         },
