@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _Role = _interopRequireDefault(require("./Role"));
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -50,6 +52,8 @@ var MemberEmbedded =
       _classCallCheck(this, MemberEmbedded);
 
       this.availableRoles = [];
+      this.roles = [];
+      this.rolesType = _Role.default;
     }
     /**
      * Constructs a "MemberEmbedded" from a plain JavaScript object.
@@ -79,6 +83,24 @@ var MemberEmbedded =
           value: function setAvailableRoles(availableRoles) {
             this.availableRoles = availableRoles;
           }
+          /**
+           * @return { Array.<module:model/Role> }
+           */
+        },
+        {
+          key: "getRoles",
+          value: function getRoles() {
+            return this.roles;
+          }
+          /**
+           * @param { Array.<module:model/Role> } roles
+           */
+        },
+        {
+          key: "setRoles",
+          value: function setRoles(roles) {
+            this.roles = roles;
+          }
         }
       ],
       [
@@ -103,6 +125,12 @@ var MemberEmbedded =
                 data["availableRoles"],
                 "['String']"
               );
+            }
+
+            if (data.hasOwnProperty("roles")) {
+              object.roles = _ApiClient.default.convertToType(data["roles"], [
+                object.rolesType
+              ]);
             }
 
             return object;

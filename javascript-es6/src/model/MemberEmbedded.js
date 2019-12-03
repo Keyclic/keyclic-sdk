@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import Role from "./Role";
 
 /**
  * The MemberEmbedded model module.
@@ -25,6 +26,9 @@ export default class MemberEmbedded {
      */
   constructor() {
     this.availableRoles = [];
+    this.roles = [];
+
+    this.rolesType = Role;
   }
 
   /**
@@ -48,6 +52,9 @@ export default class MemberEmbedded {
         "['String']"
       );
     }
+    if (data.hasOwnProperty("roles")) {
+      object.roles = ApiClient.convertToType(data["roles"], [object.rolesType]);
+    }
 
     return object;
   }
@@ -64,5 +71,18 @@ export default class MemberEmbedded {
    */
   setAvailableRoles(availableRoles) {
     this.availableRoles = availableRoles;
+  }
+  /**
+   * @return { Array.<module:model/Role> }
+   */
+  getRoles() {
+    return this.roles;
+  }
+
+  /**
+   * @param { Array.<module:model/Role> } roles
+   */
+  setRoles(roles) {
+    this.roles = roles;
   }
 }

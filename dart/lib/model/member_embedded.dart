@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class MemberEmbedded {
   MemberEmbedded({
     this.availableRoles,
+    this.roles,
   });
 
   MemberEmbedded.fromJson(Map<String, dynamic> json) {
@@ -12,9 +13,12 @@ class MemberEmbedded {
     if (json['availableRoles'] is List) {
       availableRoles = List<String>.from(json['availableRoles']);
     }
+    roles = Role.listFromJson(json['roles']);
   }
 
   List<String> availableRoles;
+
+  List<Role> roles;
 
   @override
   bool operator ==(dynamic other) {
@@ -26,7 +30,8 @@ class MemberEmbedded {
     return other is MemberEmbedded &&
         runtimeType == other.runtimeType &&
         DeepCollectionEquality.unordered()
-            .equals(availableRoles, other.availableRoles);
+            .equals(availableRoles, other.availableRoles) &&
+        DeepCollectionEquality.unordered().equals(roles, other.roles);
   }
 
   /// By default hashCode return reference
@@ -37,6 +42,11 @@ class MemberEmbedded {
     if (availableRoles is List && availableRoles.isNotEmpty) {
       hashCode ^= availableRoles
           .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+    if (roles is List && roles.isNotEmpty) {
+      hashCode ^= roles
+          .map((Role element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
@@ -62,11 +72,12 @@ class MemberEmbedded {
   Map<String, dynamic> toJson() {
     return {
       if (availableRoles != null) 'availableRoles': availableRoles,
+      if (roles != null) 'roles': roles,
     };
   }
 
   @override
   String toString() {
-    return 'MemberEmbedded[availableRoles=$availableRoles, ]';
+    return 'MemberEmbedded[availableRoles=$availableRoles, roles=$roles, ]';
   }
 }
