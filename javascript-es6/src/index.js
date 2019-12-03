@@ -62,6 +62,7 @@ import CheckpointLinksOrganizationIriTemplate from "./model/CheckpointLinksOrgan
 import Choice from "./model/Choice";
 import CommentData from "./model/CommentData";
 import Condition from "./model/Condition";
+import Configuration from "./model/Configuration";
 import ContactPoint from "./model/ContactPoint";
 import Contribution from "./model/Contribution";
 import ContributionCollection from "./model/ContributionCollection";
@@ -231,7 +232,6 @@ import OperationSignatureSigner from "./model/OperationSignatureSigner";
 import OperationWorkflowTransitionData from "./model/OperationWorkflowTransitionData";
 import Organization from "./model/Organization";
 import OrganizationCollection from "./model/OrganizationCollection";
-import OrganizationData from "./model/OrganizationData";
 import OrganizationLinks from "./model/OrganizationLinks";
 import OrganizationLinksApplication from "./model/OrganizationLinksApplication";
 import OrganizationLinksApplicationIriTemplate from "./model/OrganizationLinksApplicationIriTemplate";
@@ -356,6 +356,7 @@ import ReviewRequestLinksReviewerIriTemplate from "./model/ReviewRequestLinksRev
 import ReviewRequestLinksSelf from "./model/ReviewRequestLinksSelf";
 import ReviewRequestLinksSelfIriTemplate from "./model/ReviewRequestLinksSelfIriTemplate";
 import ReviewRequestLinksSelfIriTemplateMapping from "./model/ReviewRequestLinksSelfIriTemplateMapping";
+import Role from "./model/Role";
 import Schema from "./model/Schema";
 import SignatureData from "./model/SignatureData";
 import SignatureDataSigner from "./model/SignatureDataSigner";
@@ -417,6 +418,7 @@ import PublicationApi from "./api/PublicationApi";
 import ReportApi from "./api/ReportApi";
 import ReviewApi from "./api/ReviewApi";
 import ReviewRequestApi from "./api/ReviewRequestApi";
+import RoleApi from "./api/RoleApi";
 import SecurityApi from "./api/SecurityApi";
 import WebhookApi from "./api/WebhookApi";
 
@@ -440,7 +442,7 @@ import WebhookApi from "./api/WebhookApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.1.28
+ * @version 2.2.1
  */
 export {
   /**
@@ -678,6 +680,11 @@ export {
    * @property { module:model/Condition }
    */
   Condition,
+  /**
+   * The Configuration model constructor.
+   * @property { module:model/Configuration }
+   */
+  Configuration,
   /**
    * The ContactPoint model constructor.
    * @property { module:model/ContactPoint }
@@ -1524,11 +1531,6 @@ export {
    */
   OrganizationCollection,
   /**
-   * The OrganizationData model constructor.
-   * @property { module:model/OrganizationData }
-   */
-  OrganizationData,
-  /**
    * The OrganizationLinks model constructor.
    * @property { module:model/OrganizationLinks }
    */
@@ -2149,6 +2151,11 @@ export {
    */
   ReviewRequestLinksSelfIriTemplateMapping,
   /**
+   * The Role model constructor.
+   * @property { module:model/Role }
+   */
+  Role,
+  /**
    * The Schema model constructor.
    * @property { module:model/Schema }
    */
@@ -2453,6 +2460,11 @@ export {
    * @property { module:api/ReviewRequestApi }
    */
   ReviewRequestApi,
+  /**
+   * The RoleApi service constructor.
+   * @property { module:api/RoleApi }
+   */
+  RoleApi,
   /**
    * The SecurityApi service constructor.
    * @property { module:api/SecurityApi }

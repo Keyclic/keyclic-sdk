@@ -332,8 +332,8 @@ var PersonApi =
          * @param { module:model/Date } after
          * @param { module:model/Date } before
          * @param { module:model/String } order   (default to desc)
-         * @param { String } query
          * @param { String } role
+         * @param { String } query
          * @param { Array.<String> } roles
          * @param { Number } page Page of the overview.  (default to 1)
          * @param { Number } limit Page of the overview.  (default to 10)
@@ -363,8 +363,8 @@ var PersonApi =
             after = options.after,
             before = options.before,
             order = options.order,
-            query = options.query,
             role = options.role,
+            query = options.query,
             roles = options.roles,
             page = options.page,
             limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
@@ -410,14 +410,14 @@ var PersonApi =
 
           if (typeof before === "undefined") {
             before = null;
-          } // verify the null value of parameter 'query'
-
-          if (typeof query === "undefined") {
-            query = null;
           } // verify the null value of parameter 'role'
 
           if (typeof role === "undefined") {
             role = null;
+          } // verify the null value of parameter 'query'
+
+          if (typeof query === "undefined") {
+            query = null;
           } // verify the null value of parameter 'roles'
 
           if (typeof roles === "undefined") {
@@ -432,8 +432,8 @@ var PersonApi =
             after: after,
             before: before,
             order: order,
-            query: query,
             role: role,
+            query: query,
             "roles[]": roles,
             page: page,
             limit: limit

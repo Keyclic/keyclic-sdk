@@ -691,6 +691,12 @@ Object.defineProperty(exports, "Condition", {
     return _Condition.default;
   }
 });
+Object.defineProperty(exports, "Configuration", {
+  enumerable: true,
+  get: function get() {
+    return _Configuration.default;
+  }
+});
 Object.defineProperty(exports, "ContactPoint", {
   enumerable: true,
   get: function get() {
@@ -1709,12 +1715,6 @@ Object.defineProperty(exports, "OrganizationCollection", {
     return _OrganizationCollection.default;
   }
 });
-Object.defineProperty(exports, "OrganizationData", {
-  enumerable: true,
-  get: function get() {
-    return _OrganizationData.default;
-  }
-});
 Object.defineProperty(exports, "OrganizationLinks", {
   enumerable: true,
   get: function get() {
@@ -2459,6 +2459,12 @@ Object.defineProperty(exports, "ReviewRequestLinksSelfIriTemplateMapping", {
     return _ReviewRequestLinksSelfIriTemplateMapping.default;
   }
 });
+Object.defineProperty(exports, "Role", {
+  enumerable: true,
+  get: function get() {
+    return _Role.default;
+  }
+});
 Object.defineProperty(exports, "Schema", {
   enumerable: true,
   get: function get() {
@@ -2825,6 +2831,12 @@ Object.defineProperty(exports, "ReviewRequestApi", {
     return _ReviewRequestApi.default;
   }
 });
+Object.defineProperty(exports, "RoleApi", {
+  enumerable: true,
+  get: function get() {
+    return _RoleApi.default;
+  }
+});
 Object.defineProperty(exports, "SecurityApi", {
   enumerable: true,
   get: function get() {
@@ -2999,6 +3011,8 @@ var _Choice = _interopRequireDefault(require("./model/Choice"));
 var _CommentData = _interopRequireDefault(require("./model/CommentData"));
 
 var _Condition = _interopRequireDefault(require("./model/Condition"));
+
+var _Configuration = _interopRequireDefault(require("./model/Configuration"));
 
 var _ContactPoint = _interopRequireDefault(require("./model/ContactPoint"));
 
@@ -3600,10 +3614,6 @@ var _OrganizationCollection = _interopRequireDefault(
   require("./model/OrganizationCollection")
 );
 
-var _OrganizationData = _interopRequireDefault(
-  require("./model/OrganizationData")
-);
-
 var _OrganizationLinks = _interopRequireDefault(
   require("./model/OrganizationLinks")
 );
@@ -4052,6 +4062,8 @@ var _ReviewRequestLinksSelfIriTemplateMapping = _interopRequireDefault(
   require("./model/ReviewRequestLinksSelfIriTemplateMapping")
 );
 
+var _Role = _interopRequireDefault(require("./model/Role"));
+
 var _Schema = _interopRequireDefault(require("./model/Schema"));
 
 var _SignatureData = _interopRequireDefault(require("./model/SignatureData"));
@@ -4243,6 +4255,8 @@ var _ReviewApi = _interopRequireDefault(require("./api/ReviewApi"));
 var _ReviewRequestApi = _interopRequireDefault(
   require("./api/ReviewRequestApi")
 );
+
+var _RoleApi = _interopRequireDefault(require("./api/RoleApi"));
 
 var _SecurityApi = _interopRequireDefault(require("./api/SecurityApi"));
 

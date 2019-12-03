@@ -177,6 +177,16 @@
         done();
       });
     });
+    describe('getConfigurationByOrganization', function() {
+      it('should call getConfigurationByOrganization successfully', function(done) {
+        //uncomment below and update the code to test getConfigurationByOrganization
+        //instance.getConfigurationByOrganization(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getFormByOrganization', function() {
       it('should call getFormByOrganization successfully', function(done) {
         //uncomment below and update the code to test getFormByOrganization
@@ -201,16 +211,6 @@
       it('should call patchOrganization successfully', function(done) {
         //uncomment below and update the code to test patchOrganization
         //instance.patchOrganization(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('postOrganization', function() {
-      it('should call postOrganization successfully', function(done) {
-        //uncomment below and update the code to test postOrganization
-        //instance.postOrganization(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

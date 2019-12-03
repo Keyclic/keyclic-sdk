@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.1.28
-- Package version: 2.1.28
+- API version: 2.2.1
+- Package version: 2.2.1
 
 ## Getting started
 
@@ -104,10 +104,10 @@ Class | Method | HTTP request | Description
 *@KeyclicSdkJavascript.OrganizationApi* | [**cgetWebhooksByOrganization**](docs/OrganizationApi.md#cgetWebhooksByOrganization) | **GET** /organizations/{organization}/webhooks | Retrieve all Webhook resources.
 *@KeyclicSdkJavascript.OrganizationApi* | [**cpostExportByOrganization**](docs/OrganizationApi.md#cpostExportByOrganization) | **POST** /organizations/{organization}/exports | Retrieve all Export resources.
 *@KeyclicSdkJavascript.OrganizationApi* | [**getAnalyticByOrganization**](docs/OrganizationApi.md#getAnalyticByOrganization) | **GET** /organizations/{organization}/analytics | Retrieve one Analytic resource.
+*@KeyclicSdkJavascript.OrganizationApi* | [**getConfigurationByOrganization**](docs/OrganizationApi.md#getConfigurationByOrganization) | **GET** /organizations/{organization}/configuration | Retrieve one Configuration resource.
 *@KeyclicSdkJavascript.OrganizationApi* | [**getFormByOrganization**](docs/OrganizationApi.md#getFormByOrganization) | **GET** /organizations/{organization}/form | Retrieve one Form resource.
 *@KeyclicSdkJavascript.OrganizationApi* | [**getOrganization**](docs/OrganizationApi.md#getOrganization) | **GET** /organizations/{organization} | Retrieve one Organization resource.
 *@KeyclicSdkJavascript.OrganizationApi* | [**patchOrganization**](docs/OrganizationApi.md#patchOrganization) | **PATCH** /organizations/{organization} | Edit one Organization resource.
-*@KeyclicSdkJavascript.OrganizationApi* | [**postOrganization**](docs/OrganizationApi.md#postOrganization) | **POST** /organizations | Create one Organization resource.
 *@KeyclicSdkJavascript.PersonApi* | [**cgetFeedbackByPerson**](docs/PersonApi.md#cgetFeedbackByPerson) | **GET** /people/{person}/feedbacks | Retrieve all Feedback resources.
 *@KeyclicSdkJavascript.PersonApi* | [**cgetMembershipsByPerson**](docs/PersonApi.md#cgetMembershipsByPerson) | **GET** /people/{person}/memberships | Retrieve all Membership resources.
 *@KeyclicSdkJavascript.PersonApi* | [**cgetOccupantsByPerson**](docs/PersonApi.md#cgetOccupantsByPerson) | **GET** /people/{person}/occupants | Retrieve all Occupant resources.
@@ -135,6 +135,7 @@ Class | Method | HTTP request | Description
 *@KeyclicSdkJavascript.ReviewApi* | [**getReview**](docs/ReviewApi.md#getReview) | **GET** /reviews/{review} | Retrieve one Review resource.
 *@KeyclicSdkJavascript.ReviewApi* | [**postReview**](docs/ReviewApi.md#postReview) | **POST** /reviews | Create one Review resource.
 *@KeyclicSdkJavascript.ReviewRequestApi* | [**getReviewRequest**](docs/ReviewRequestApi.md#getReviewRequest) | **GET** /review-requests/{reviewRequest} | Retrieve one ReviewRequest resource.
+*@KeyclicSdkJavascript.RoleApi* | [**getRole**](docs/RoleApi.md#getRole) | **GET** /roles/{role} | Retrieve one Role resource.
 *@KeyclicSdkJavascript.SecurityApi* | [**postConnectFacebook**](docs/SecurityApi.md#postConnectFacebook) | **POST** /security/connect/facebook | Create one ConnectFacebook resource.
 *@KeyclicSdkJavascript.SecurityApi* | [**postLogin**](docs/SecurityApi.md#postLogin) | **POST** /security/login | Create one Login resource.
 *@KeyclicSdkJavascript.SecurityApi* | [**postPasswordChangeByToken**](docs/SecurityApi.md#postPasswordChangeByToken) | **POST** /security/password/change/{token} | Create one PasswordChange resource.
@@ -194,6 +195,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.Choice](docs/Choice.md)
 - [@KeyclicSdkJavascript.CommentData](docs/CommentData.md)
 - [@KeyclicSdkJavascript.Condition](docs/Condition.md)
+- [@KeyclicSdkJavascript.Configuration](docs/Configuration.md)
 - [@KeyclicSdkJavascript.ContactPoint](docs/ContactPoint.md)
 - [@KeyclicSdkJavascript.Contribution](docs/Contribution.md)
 - [@KeyclicSdkJavascript.ContributionCollection](docs/ContributionCollection.md)
@@ -363,7 +365,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.OperationWorkflowTransitionData](docs/OperationWorkflowTransitionData.md)
 - [@KeyclicSdkJavascript.Organization](docs/Organization.md)
 - [@KeyclicSdkJavascript.OrganizationCollection](docs/OrganizationCollection.md)
-- [@KeyclicSdkJavascript.OrganizationData](docs/OrganizationData.md)
 - [@KeyclicSdkJavascript.OrganizationLinks](docs/OrganizationLinks.md)
 - [@KeyclicSdkJavascript.OrganizationLinksApplication](docs/OrganizationLinksApplication.md)
 - [@KeyclicSdkJavascript.OrganizationLinksApplicationIriTemplate](docs/OrganizationLinksApplicationIriTemplate.md)
@@ -488,6 +489,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ReviewRequestLinksSelf](docs/ReviewRequestLinksSelf.md)
 - [@KeyclicSdkJavascript.ReviewRequestLinksSelfIriTemplate](docs/ReviewRequestLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.ReviewRequestLinksSelfIriTemplateMapping](docs/ReviewRequestLinksSelfIriTemplateMapping.md)
+- [@KeyclicSdkJavascript.Role](docs/Role.md)
 - [@KeyclicSdkJavascript.Schema](docs/Schema.md)
 - [@KeyclicSdkJavascript.SignatureData](docs/SignatureData.md)
 - [@KeyclicSdkJavascript.SignatureDataSigner](docs/SignatureDataSigner.md)

@@ -211,8 +211,8 @@ export default class PersonApi extends ApiClient {
    * @param { module:model/Date } after
    * @param { module:model/Date } before
    * @param { module:model/String } order   (default to desc)
-   * @param { String } query
    * @param { String } role
+   * @param { String } query
    * @param { Array.<String> } roles
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
@@ -230,8 +230,8 @@ export default class PersonApi extends ApiClient {
       after,
       before,
       order,
-      query,
       role,
+      query,
       roles,
       page,
       limit
@@ -286,14 +286,14 @@ export default class PersonApi extends ApiClient {
       before = null;
     }
 
-    // verify the null value of parameter 'query'
-    if (typeof query === "undefined") {
-      query = null;
-    }
-
     // verify the null value of parameter 'role'
     if (typeof role === "undefined") {
       role = null;
+    }
+
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
     }
 
     // verify the null value of parameter 'roles'
@@ -311,8 +311,8 @@ export default class PersonApi extends ApiClient {
       after: after,
       before: before,
       order: order,
-      query: query,
       role: role,
+      query: query,
       "roles[]": roles,
       page: page,
       limit: limit

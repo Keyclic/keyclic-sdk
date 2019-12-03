@@ -17,10 +17,10 @@ Method | HTTP request | Description
 [**cgetWebhooksByOrganization**](OrganizationApi.md#cgetWebhooksByOrganization) | **GET** /organizations/{organization}/webhooks | Retrieve all Webhook resources.
 [**cpostExportByOrganization**](OrganizationApi.md#cpostExportByOrganization) | **POST** /organizations/{organization}/exports | Retrieve all Export resources.
 [**getAnalyticByOrganization**](OrganizationApi.md#getAnalyticByOrganization) | **GET** /organizations/{organization}/analytics | Retrieve one Analytic resource.
+[**getConfigurationByOrganization**](OrganizationApi.md#getConfigurationByOrganization) | **GET** /organizations/{organization}/configuration | Retrieve one Configuration resource.
 [**getFormByOrganization**](OrganizationApi.md#getFormByOrganization) | **GET** /organizations/{organization}/form | Retrieve one Form resource.
 [**getOrganization**](OrganizationApi.md#getOrganization) | **GET** /organizations/{organization} | Retrieve one Organization resource.
 [**patchOrganization**](OrganizationApi.md#patchOrganization) | **PATCH** /organizations/{organization} | Edit one Organization resource.
-[**postOrganization**](OrganizationApi.md#postOrganization) | **POST** /organizations | Create one Organization resource.
 
 
 <a name="cgetCategoriesByOrganization"></a>
@@ -342,8 +342,8 @@ let opts = {
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'order': "desc", // String | 
-  'query': "query_example", // String | 
   'role': "role_example", // String | 
+  'query': "query_example", // String | 
   'roles': ["roles_example"], // [String] | 
   'page': 1, // Number | Page of the overview.
   'limit': 10 // Number | Page of the overview.
@@ -369,8 +369,8 @@ Name | Type | Description  | Notes
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **query** | **String**|  | [optional] 
  **role** | **String**|  | [optional] 
+ **query** | **String**|  | [optional] 
  **roles** | [**[String]**](String.md)|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
@@ -997,6 +997,65 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json;charset=UTF-8
  - **Accept**: application/hal+json;charset=UTF-8
 
+<a name="getConfigurationByOrganization"></a>
+# **getConfigurationByOrganization**
+> Configuration getConfigurationByOrganization(xKeyclicApp, organization, opts)
+
+Retrieve one Configuration resource.
+
+### Example
+```javascript
+import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
+let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
+
+// Configure API key authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//bearer.apiKeyPrefix = 'Token';
+
+let apiInstance = new @KeyclicSdkJavascript.OrganizationApi();
+
+let xKeyclicApp = "com.keyclic.app"; // String | 
+
+let organization = "organization_example"; // String | The identifier of the resource.
+
+let opts = { 
+  'acceptLanguage': "fr-FR", // String | 
+  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
+};
+
+apiInstance.getConfigurationByOrganization(xKeyclicApp, organization, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **organization** | [**String**](.md)| The identifier of the resource. | 
+ **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xKeyclicAppVersion** | **String**|  | [optional] 
+
+### Return type
+
+[**Configuration**](Configuration.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/hal+json;charset=UTF-8
+
 <a name="getFormByOrganization"></a>
 # **getFormByOrganization**
 > Schema getFormByOrganization(xKeyclicApp, organization, opts)
@@ -1161,65 +1220,6 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organizationPatch** | [**OrganizationPatch**](OrganizationPatch.md)|  | 
  **organization** | [**String**](.md)| The identifier of the resource. | 
- **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
- **xKeyclicAppVersion** | **String**|  | [optional] 
-
-### Return type
-
-[**Organization**](Organization.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=UTF-8
- - **Accept**: application/hal+json;charset=UTF-8
-
-<a name="postOrganization"></a>
-# **postOrganization**
-> Organization postOrganization(xKeyclicApp, organizationData, opts)
-
-Create one Organization resource.
-
-### Example
-```javascript
-import @KeyclicSdkJavascript from '@keyclic/sdk-javascript';
-let defaultClient = @KeyclicSdkJavascript.ApiClient.default;
-
-// Configure API key authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//bearer.apiKeyPrefix = 'Token';
-
-let apiInstance = new @KeyclicSdkJavascript.OrganizationApi();
-
-let xKeyclicApp = "com.keyclic.app"; // String | 
-
-let organizationData = new @KeyclicSdkJavascript.OrganizationData(); // OrganizationData | 
-
-let opts = { 
-  'acceptLanguage': "fr-FR", // String | 
-  'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
-};
-
-apiInstance.postOrganization(xKeyclicApp, organizationData, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **organizationData** | [**OrganizationData**](OrganizationData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xKeyclicAppVersion** | **String**|  | [optional] 
 

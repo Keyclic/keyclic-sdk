@@ -115,8 +115,8 @@ class PersonApi {
     DateTime after,
     DateTime before,
     String order,
-    String query,
     String role,
+    String query,
     List<String> roles__,
     int page,
     int limit,
@@ -144,9 +144,9 @@ class PersonApi {
         ..._convertParametersForCollectionFormat("before", before),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
+      if (role != null) ..._convertParametersForCollectionFormat("role", role),
       if (query != null)
         ..._convertParametersForCollectionFormat("query", query),
-      if (role != null) ..._convertParametersForCollectionFormat("role", role),
       if (roles__ != null)
         ..._convertParametersForCollectionFormat("roles[]", roles__,
             collectionFormat: "multi"),

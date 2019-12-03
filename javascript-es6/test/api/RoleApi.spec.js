@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.OrganizationData();
+    instance = new @KeyclicSdkJavascript.RoleApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,31 +46,17 @@
       object[property] = value;
   }
 
-  describe('OrganizationData', function() {
-    it('should create an instance of OrganizationData', function() {
-      // uncomment below and update the code to test OrganizationData
-      //var instane = new @KeyclicSdkJavascript.OrganizationData();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.OrganizationData);
+  describe('RoleApi', function() {
+    describe('getRole', function() {
+      it('should call getRole successfully', function(done) {
+        //uncomment below and update the code to test getRole
+        //instance.getRole(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new @KeyclicSdkJavascript.OrganizationData();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property businessActivity (base name: "businessActivity")', function() {
-      // uncomment below and update the code to test the property businessActivity
-      //var instane = new @KeyclicSdkJavascript.OrganizationData();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property logo (base name: "logo")', function() {
-      // uncomment below and update the code to test the property logo
-      //var instane = new @KeyclicSdkJavascript.OrganizationData();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

@@ -207,6 +207,8 @@ class ApiClient {
           return CommentData.fromJson(value);
         case 'Condition':
           return Condition.fromJson(value);
+        case 'Configuration':
+          return Configuration.fromJson(value);
         case 'ContactPoint':
           return ContactPoint.fromJson(value);
         case 'Contribution':
@@ -545,8 +547,6 @@ class ApiClient {
           return Organization.fromJson(value);
         case 'OrganizationCollection':
           return OrganizationCollection.fromJson(value);
-        case 'OrganizationData':
-          return OrganizationData.fromJson(value);
         case 'OrganizationLinks':
           return OrganizationLinks.fromJson(value);
         case 'OrganizationLinksApplication':
@@ -795,6 +795,8 @@ class ApiClient {
           return ReviewRequestLinksSelfIriTemplate.fromJson(value);
         case 'ReviewRequestLinksSelfIriTemplateMapping':
           return ReviewRequestLinksSelfIriTemplateMapping.fromJson(value);
+        case 'Role':
+          return Role.fromJson(value);
         case 'Schema':
           return Schema.fromJson(value);
         case 'SignatureData':

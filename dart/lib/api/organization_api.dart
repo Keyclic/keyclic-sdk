@@ -368,8 +368,8 @@ class OrganizationApi {
     DateTime after,
     DateTime before,
     String order,
-    String query,
     String role,
+    String query,
     List<String> roles__,
     int page,
     int limit,
@@ -397,9 +397,9 @@ class OrganizationApi {
         ..._convertParametersForCollectionFormat("before", before),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
+      if (role != null) ..._convertParametersForCollectionFormat("role", role),
       if (query != null)
         ..._convertParametersForCollectionFormat("query", query),
-      if (role != null) ..._convertParametersForCollectionFormat("role", role),
       if (roles__ != null)
         ..._convertParametersForCollectionFormat("roles[]", roles__,
             collectionFormat: "multi"),
@@ -1194,6 +1194,73 @@ class OrganizationApi {
     return apiClient.deserialize(response.body, 'Chart') as Chart;
   }
 
+  /// Retrieve one Configuration resource.
+  ///
+  ///
+  Future<Configuration> getConfigurationByOrganization(
+    String xKeyclicApp,
+    String organization, {
+    String acceptLanguage,
+    String xKeyclicAppVersion,
+  }) async {
+    // verify required params are set
+
+    if (xKeyclicApp == null) {
+      throw ApiException(0, "Missing required param: xKeyclicApp");
+    }
+
+    if (organization == null) {
+      throw ApiException(0, "Missing required param: organization");
+    }
+
+    // create path and map variables
+    final String path = "/organizations/{organization}/configuration"
+        .replaceAll("{format}", "json")
+        .replaceAll("{" + "organization" + "}", organization.toString());
+
+    // query params
+    final List<QueryParam> queryParams = [];
+
+    // header params
+    final Map<String, String> headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion,
+    };
+
+    final List<String> contentTypes = [
+      "application/json;charset=UTF-8",
+      "application/json",
+    ];
+
+    final List<String> authNames = [
+      "bearer",
+    ];
+
+    final Object postBody = null;
+
+    final Response response = await apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      contentTypes[0],
+      authNames,
+    );
+
+    if (response.statusCode >= 400) {
+      throw ApiException(response.statusCode, response.body);
+    }
+
+    if (response.body == null) {
+      return null;
+    }
+
+    return apiClient.deserialize(response.body, 'Configuration')
+        as Configuration;
+  }
+
   /// Retrieve one Form resource.
   ///
   ///
@@ -1379,70 +1446,6 @@ class OrganizationApi {
     final Response response = await apiClient.invokeAPI(
       path,
       'PATCH',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
-    );
-
-    if (response.statusCode >= 400) {
-      throw ApiException(response.statusCode, response.body);
-    }
-
-    if (response.body == null) {
-      return null;
-    }
-
-    return apiClient.deserialize(response.body, 'Organization') as Organization;
-  }
-
-  /// Create one Organization resource.
-  ///
-  ///
-  Future<Organization> postOrganization(
-    String xKeyclicApp,
-    OrganizationData organizationData, {
-    String acceptLanguage,
-    String xKeyclicAppVersion,
-  }) async {
-    // verify required params are set
-
-    if (xKeyclicApp == null) {
-      throw ApiException(0, "Missing required param: xKeyclicApp");
-    }
-
-    if (organizationData == null) {
-      throw ApiException(0, "Missing required param: organizationData");
-    }
-
-    // create path and map variables
-    final String path = "/organizations".replaceAll("{format}", "json");
-
-    // query params
-    final List<QueryParam> queryParams = [];
-
-    // header params
-    final Map<String, String> headerParams = {
-      "accept-language": acceptLanguage,
-      "x-keyclic-app": xKeyclicApp,
-      "x-keyclic-app-version": xKeyclicAppVersion,
-    };
-
-    final List<String> contentTypes = [
-      "application/json;charset=UTF-8",
-      "application/json",
-    ];
-
-    final List<String> authNames = [
-      "bearer",
-    ];
-
-    final OrganizationData postBody = organizationData;
-
-    final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
       queryParams,
       postBody,
       headerParams,

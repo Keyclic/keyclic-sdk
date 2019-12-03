@@ -13,6 +13,7 @@
 import ApiClient from "../ApiClient";
 import CategoryPagination from "../model/CategoryPagination";
 import Chart from "../model/Chart";
+import Configuration from "../model/Configuration";
 import DelegationPagination from "../model/DelegationPagination";
 import Error from "../model/Error";
 import ExternalServicePagination from "../model/ExternalServicePagination";
@@ -20,7 +21,6 @@ import InternalServicePagination from "../model/InternalServicePagination";
 import MemberPagination from "../model/MemberPagination";
 import OperationPagination from "../model/OperationPagination";
 import Organization from "../model/Organization";
-import OrganizationData from "../model/OrganizationData";
 import OrganizationPagination from "../model/OrganizationPagination";
 import OrganizationPatch from "../model/OrganizationPatch";
 import PlacePagination from "../model/PlacePagination";
@@ -616,8 +616,8 @@ export default class OrganizationApi extends ApiClient {
    * @param { module:model/Date } after
    * @param { module:model/Date } before
    * @param { module:model/String } order   (default to desc)
-   * @param { String } query
    * @param { String } role
+   * @param { String } query
    * @param { Array.<String> } roles
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
@@ -635,8 +635,8 @@ export default class OrganizationApi extends ApiClient {
       after,
       before,
       order,
-      query,
       role,
+      query,
       roles,
       page,
       limit
@@ -691,14 +691,14 @@ export default class OrganizationApi extends ApiClient {
       before = null;
     }
 
-    // verify the null value of parameter 'query'
-    if (typeof query === "undefined") {
-      query = null;
-    }
-
     // verify the null value of parameter 'role'
     if (typeof role === "undefined") {
       role = null;
+    }
+
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
     }
 
     // verify the null value of parameter 'roles'
@@ -716,8 +716,8 @@ export default class OrganizationApi extends ApiClient {
       after: after,
       before: before,
       order: order,
-      query: query,
       role: role,
+      query: query,
       "roles[]": roles,
       page: page,
       limit: limit
@@ -1970,6 +1970,92 @@ export default class OrganizationApi extends ApiClient {
   }
 
   /**
+   * Retrieve one Configuration resource.
+   * @param { String } xKeyclicApp
+   * @param { String } organization The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Configuration }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { String } xKeyclicAppVersion
+   */
+  getConfigurationByOrganization(
+    returnType = null,
+    options,
+    credentials = null
+  ) {
+    if (returnType === null) {
+      returnType = Configuration;
+    }
+
+    let {
+      xKeyclicApp,
+      organization,
+      acceptLanguage,
+      xKeyclicAppVersion
+    } = options;
+
+    // verify the required parameter 'xKeyclicApp' is set
+    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+      throw new window.Error(
+        'Missing the required parameter "xKeyclicApp" when calling getConfigurationByOrganization'
+      );
+    }
+
+    // verify the required parameter 'organization' is set
+    if (typeof organization === "undefined" || organization === null) {
+      throw new window.Error(
+        'Missing the required parameter "organization" when calling getConfigurationByOrganization'
+      );
+    }
+
+    // verify the default value of parameter 'acceptLanguage'
+    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+      acceptLanguage = "fr-FR";
+    }
+
+    // verify the null value of parameter 'xKeyclicAppVersion'
+    if (typeof xKeyclicAppVersion === "undefined") {
+      xKeyclicAppVersion = null;
+    }
+
+    const pathParams = {
+      organization: organization
+    };
+
+    const bodyParam = null;
+
+    const queryParams = {};
+
+    let headerParams = {
+      "accept-language": acceptLanguage,
+      "x-keyclic-app": xKeyclicApp,
+      "x-keyclic-app-version": xKeyclicAppVersion
+    };
+
+    const credentialParams = credentials;
+
+    let authNames = ["bearer"];
+
+    let contentTypes = ["application/json;charset=UTF-8"];
+
+    let accepts = ["application/hal+json;charset=UTF-8"];
+
+    return this.callApi(
+      "/organizations/{organization}/configuration",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      bodyParam,
+      authNames,
+      credentialParams,
+      contentTypes,
+      accepts,
+      returnType
+    );
+  }
+
+  /**
    * Retrieve one Form resource.
    * @param { String } xKeyclicApp
    * @param { String } organization The identifier of the resource.
@@ -2215,86 +2301,6 @@ export default class OrganizationApi extends ApiClient {
     return this.callApi(
       "/organizations/{organization}",
       "PATCH",
-      pathParams,
-      queryParams,
-      headerParams,
-      bodyParam,
-      authNames,
-      credentialParams,
-      contentTypes,
-      accepts,
-      returnType
-    );
-  }
-
-  /**
-   * Create one Organization resource.
-   * @param { String } xKeyclicApp
-   * @param { module:model/OrganizationData } organizationData
-   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { Organization }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-   * @param { module:model/String } acceptLanguage   (default to fr-FR)
-   * @param { String } xKeyclicAppVersion
-   */
-  postOrganization(returnType = null, options, credentials = null) {
-    if (returnType === null) {
-      returnType = Organization;
-    }
-
-    let {
-      xKeyclicApp,
-      organizationData,
-      acceptLanguage,
-      xKeyclicAppVersion
-    } = options;
-
-    // verify the required parameter 'xKeyclicApp' is set
-    if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-      throw new window.Error(
-        'Missing the required parameter "xKeyclicApp" when calling postOrganization'
-      );
-    }
-
-    // verify the required parameter 'organizationData' is set
-    if (typeof organizationData === "undefined" || organizationData === null) {
-      throw new window.Error(
-        'Missing the required parameter "organizationData" when calling postOrganization'
-      );
-    }
-
-    // verify the default value of parameter 'acceptLanguage'
-    if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
-      acceptLanguage = "fr-FR";
-    }
-
-    // verify the null value of parameter 'xKeyclicAppVersion'
-    if (typeof xKeyclicAppVersion === "undefined") {
-      xKeyclicAppVersion = null;
-    }
-
-    const pathParams = {};
-
-    const bodyParam = organizationData;
-
-    const queryParams = {};
-
-    let headerParams = {
-      "accept-language": acceptLanguage,
-      "x-keyclic-app": xKeyclicApp,
-      "x-keyclic-app-version": xKeyclicAppVersion
-    };
-
-    const credentialParams = credentials;
-
-    let authNames = ["bearer"];
-
-    let contentTypes = ["application/json;charset=UTF-8"];
-
-    let accepts = ["application/hal+json;charset=UTF-8"];
-
-    return this.callApi(
-      "/organizations",
-      "POST",
       pathParams,
       queryParams,
       headerParams,
