@@ -1,6 +1,9 @@
 name: Deployment CI
 
-on: [push]
+on:
+  push:
+    tags:
+      - '*'
 
 jobs:
   start:
