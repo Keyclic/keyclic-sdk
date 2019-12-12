@@ -79,6 +79,7 @@ pana() {
 }
 
 generate() {
+  check npm
   check pub
   check dartfmt
 
