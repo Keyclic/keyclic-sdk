@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.2.2"
+        "version": "2.2.5"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -11059,16 +11059,33 @@
                     "type": "string",
                     "format": "uuid"
                 },
+                "memberType": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                            "readOnly": true,
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "roles": {
+                            "items": {
+                                "$ref": "#\/definitions\/Role"
+                            },
+                            "properties": [],
+                            "type": "array"
+                        },
+                        "type": {
+                            "readOnly": true,
+                            "type": "string",
+                            "format": "string"
+                        }
+                    }
+                },
                 "name": {
                     "maxLength": 255,
                     "type": "string",
                     "format": "string"
-                },
-                "roles": {
-                    "items": {
-                        "$ref": "#\/definitions\/Role"
-                    },
-                    "type": "array"
                 },
                 "type": {
                     "readOnly": true,
@@ -16143,13 +16160,6 @@
                         "login": {
                             "type": "string",
                             "format": "string"
-                        },
-                        "roles": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "format": "string"
-                            }
                         },
                         "administratorOf": {
                             "type": "array",
