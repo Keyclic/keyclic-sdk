@@ -1,27 +1,24 @@
-dart/.swagger-codegen/
-dart/.swagger-codegen-ignore
+# Swagger
+*/.swagger-codegen-ignore
+*/.swagger-codegen/
+!.codegen.*.log
 
-javascript-es6/.swagger-codegen/
-javascript-es6/node_modules/
-javascript-es6/.swagger-codegen-ignore
-
-######################### Common configuration #########################
-### Dev configurations
-.rules/
+# Dart
+.dart_tool/
+.packages
 build/
 
-### Packages managers
-node_modules/*
-platforms/*
-plugins/*
-vendor/*
+# Javascript
+javascript-es6/node_modules/
 
-### IDE template
+######################### Common configuration #########################
+# IntelliJ template
 .idea/
-*.sublime-project
-*.sublime-workspace
+*.iml
+*.ipr
+*.iws
 
-### OS
+# OS
 *~
 *.sw[mnpcod]
 *.log
@@ -37,5 +34,3 @@ $RECYCLE.BIN/
 Desktop.ini
 Thumbs.db
 UserInterfaceState.xcuserstate
-
-!.codegen.*.log
