@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.SuccessLoginCredentials
+# keyclic_sdk_api.model.ConfigurationMemberType
 
 ## Load the model package
 ```dart
@@ -9,9 +9,8 @@ import 'package:keyclic_sdk_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] [default to null]
-**login** | **String** |  | [optional] [default to null]
-**administratorOf** | [**List&lt;SuccessLoginCredentialsAdministratorOf&gt;**](SuccessLoginCredentialsAdministratorOf.md) |  | [optional] [default to []]
-**memberOf** | [**List&lt;SuccessLoginCredentialsMemberOf&gt;**](SuccessLoginCredentialsMemberOf.md) |  | [optional] [default to []]
+**roles** | [**List&lt;Role&gt;**](Role.md) |  | [optional] [default to []]
+**type** | **String** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

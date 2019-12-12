@@ -65,12 +65,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property roles (base name: "roles")', function() {
-      // uncomment below and update the code to test the property roles
-      //var instane = new @KeyclicSdkJavascript.SuccessLoginCredentials();
-      //expect(instance).to.be();
-    });
-
     it('should have the property administratorOf (base name: "administratorOf")', function() {
       // uncomment below and update the code to test the property administratorOf
       //var instane = new @KeyclicSdkJavascript.SuccessLoginCredentials();

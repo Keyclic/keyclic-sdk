@@ -86,6 +86,7 @@ part 'model/choice.dart';
 part 'model/comment_data.dart';
 part 'model/condition.dart';
 part 'model/configuration.dart';
+part 'model/configuration_member_type.dart';
 part 'model/contact_point.dart';
 part 'model/contribution.dart';
 part 'model/contribution_collection.dart';

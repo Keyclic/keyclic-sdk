@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
+**memberType** | [**ConfigurationMemberType**](ConfigurationMemberType.md) |  | [optional] [default to null]
 **name** | **String** |  | [optional] [default to null]
-**roles** | [**List&lt;Role&gt;**](Role.md) |  | [optional] [default to []]
 **type** | **String** |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 

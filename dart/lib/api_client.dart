@@ -209,6 +209,8 @@ class ApiClient {
           return Condition.fromJson(value);
         case 'Configuration':
           return Configuration.fromJson(value);
+        case 'ConfigurationMemberType':
+          return ConfigurationMemberType.fromJson(value);
         case 'ContactPoint':
           return ContactPoint.fromJson(value);
         case 'Contribution':

@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import Role from "./Role";
+import ConfigurationMemberType from "./ConfigurationMemberType";
 
 /**
  * The Configuration model module.
@@ -28,12 +28,12 @@ export default class Configuration {
     this.createdAt = null;
     this.description = null;
     this.id = null;
+    this.memberType = null;
     this.name = null;
-    this.roles = [];
     this.type = null;
     this.updatedAt = null;
 
-    this.rolesType = Role;
+    this.memberTypeType = ConfigurationMemberType;
   }
 
   /**
@@ -63,11 +63,14 @@ export default class Configuration {
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
     }
+    if (data.hasOwnProperty("memberType")) {
+      object.memberType = ApiClient.convertToType(
+        data["memberType"],
+        object.memberTypeType
+      );
+    }
     if (data.hasOwnProperty("name")) {
       object.name = ApiClient.convertToType(data["name"], "String");
-    }
-    if (data.hasOwnProperty("roles")) {
-      object.roles = ApiClient.convertToType(data["roles"], [object.rolesType]);
     }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
@@ -107,6 +110,19 @@ export default class Configuration {
   }
 
   /**
+   * @return { module:model/ConfigurationMemberType }
+   */
+  getMemberType() {
+    return this.memberType;
+  }
+
+  /**
+   * @param { module:model/ConfigurationMemberType } memberType
+   */
+  setMemberType(memberType) {
+    this.memberType = memberType;
+  }
+  /**
    * @return { String }
    */
   getName() {
@@ -118,19 +134,6 @@ export default class Configuration {
    */
   setName(name) {
     this.name = name;
-  }
-  /**
-   * @return { Array.<module:model/Role> }
-   */
-  getRoles() {
-    return this.roles;
-  }
-
-  /**
-   * @param { Array.<module:model/Role> } roles
-   */
-  setRoles(roles) {
-    this.roles = roles;
   }
   /**
    * @return { String }

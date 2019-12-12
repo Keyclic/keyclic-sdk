@@ -59,7 +59,6 @@ var SuccessLoginCredentials =
 
       this.id = null;
       this.login = null;
-      this.roles = [];
       this.administratorOf = [];
       this.memberOf = [];
       this.administratorOfType =
@@ -111,24 +110,6 @@ var SuccessLoginCredentials =
           key: "setLogin",
           value: function setLogin(login) {
             this.login = login;
-          }
-          /**
-           * @return { Array.<String> }
-           */
-        },
-        {
-          key: "getRoles",
-          value: function getRoles() {
-            return this.roles;
-          }
-          /**
-           * @param { Array.<String> } roles
-           */
-        },
-        {
-          key: "setRoles",
-          value: function setRoles(roles) {
-            this.roles = roles;
           }
           /**
            * @return { Array.<module:model/SuccessLoginCredentialsAdministratorOf> }
@@ -196,13 +177,6 @@ var SuccessLoginCredentials =
               object.login = _ApiClient.default.convertToType(
                 data["login"],
                 "String"
-              );
-            }
-
-            if (data.hasOwnProperty("roles")) {
-              object.roles = _ApiClient.default.convertToType(
-                data["roles"],
-                "['String']"
               );
             }
 

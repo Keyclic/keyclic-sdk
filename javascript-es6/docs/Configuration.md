@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 **createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
+**memberType** | [**ConfigurationMemberType**](ConfigurationMemberType.md) |  | [optional] 
 **name** | **String** |  | [optional] 
-**roles** | [**[Role]**](Role.md) |  | [optional] 
 **type** | **String** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 

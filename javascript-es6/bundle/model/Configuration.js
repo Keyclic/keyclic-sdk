@@ -7,7 +7,9 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Role = _interopRequireDefault(require("./Role"));
+var _ConfigurationMemberType = _interopRequireDefault(
+  require("./ConfigurationMemberType")
+);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -54,11 +56,11 @@ var Configuration =
       this.createdAt = null;
       this.description = null;
       this.id = null;
+      this.memberType = null;
       this.name = null;
-      this.roles = [];
       this.type = null;
       this.updatedAt = null;
-      this.rolesType = _Role.default;
+      this.memberTypeType = _ConfigurationMemberType.default;
     }
     /**
      * Constructs a "Configuration" from a plain JavaScript object.
@@ -107,6 +109,24 @@ var Configuration =
             return this.id;
           }
           /**
+           * @return { module:model/ConfigurationMemberType }
+           */
+        },
+        {
+          key: "getMemberType",
+          value: function getMemberType() {
+            return this.memberType;
+          }
+          /**
+           * @param { module:model/ConfigurationMemberType } memberType
+           */
+        },
+        {
+          key: "setMemberType",
+          value: function setMemberType(memberType) {
+            this.memberType = memberType;
+          }
+          /**
            * @return { String }
            */
         },
@@ -123,24 +143,6 @@ var Configuration =
           key: "setName",
           value: function setName(name) {
             this.name = name;
-          }
-          /**
-           * @return { Array.<module:model/Role> }
-           */
-        },
-        {
-          key: "getRoles",
-          value: function getRoles() {
-            return this.roles;
-          }
-          /**
-           * @param { Array.<module:model/Role> } roles
-           */
-        },
-        {
-          key: "setRoles",
-          value: function setRoles(roles) {
-            this.roles = roles;
           }
           /**
            * @return { String }
@@ -200,17 +202,18 @@ var Configuration =
               );
             }
 
+            if (data.hasOwnProperty("memberType")) {
+              object.memberType = _ApiClient.default.convertToType(
+                data["memberType"],
+                object.memberTypeType
+              );
+            }
+
             if (data.hasOwnProperty("name")) {
               object.name = _ApiClient.default.convertToType(
                 data["name"],
                 "String"
               );
-            }
-
-            if (data.hasOwnProperty("roles")) {
-              object.roles = _ApiClient.default.convertToType(data["roles"], [
-                object.rolesType
-              ]);
             }
 
             if (data.hasOwnProperty("type")) {

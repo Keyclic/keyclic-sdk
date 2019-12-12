@@ -4,7 +4,6 @@ class SuccessLoginCredentials {
   SuccessLoginCredentials({
     this.id,
     this.login,
-    this.roles,
     this.administratorOf,
     this.memberOf,
   });
@@ -15,9 +14,6 @@ class SuccessLoginCredentials {
     }
     id = json['id'];
     login = json['login'];
-    if (json['roles'] is List) {
-      roles = List<String>.from(json['roles']);
-    }
     administratorOf = SuccessLoginCredentialsAdministratorOf.listFromJson(
         json['administratorOf']);
     memberOf = SuccessLoginCredentialsMemberOf.listFromJson(json['memberOf']);
@@ -26,8 +22,6 @@ class SuccessLoginCredentials {
   String id;
 
   String login;
-
-  List<String> roles;
 
   List<SuccessLoginCredentialsAdministratorOf> administratorOf;
 
@@ -44,7 +38,6 @@ class SuccessLoginCredentials {
         runtimeType == other.runtimeType &&
         id == other.id &&
         login == other.login &&
-        DeepCollectionEquality.unordered().equals(roles, other.roles) &&
         DeepCollectionEquality.unordered()
             .equals(administratorOf, other.administratorOf) &&
         DeepCollectionEquality.unordered().equals(memberOf, other.memberOf);
@@ -55,11 +48,6 @@ class SuccessLoginCredentials {
   int get hashCode {
     int hashCode = 0;
 
-    if (roles is List && roles.isNotEmpty) {
-      hashCode ^= roles
-          .map((String element) => element.hashCode)
-          .reduce((int value, int cursor) => value ^ cursor);
-    }
     if (administratorOf is List && administratorOf.isNotEmpty) {
       hashCode ^= administratorOf
           .map((SuccessLoginCredentialsAdministratorOf element) =>
@@ -101,7 +89,6 @@ class SuccessLoginCredentials {
     return {
       if (id != null) 'id': id,
       if (login != null) 'login': login,
-      if (roles != null) 'roles': roles,
       if (administratorOf != null) 'administratorOf': administratorOf,
       if (memberOf != null) 'memberOf': memberOf,
     };
@@ -109,6 +96,6 @@ class SuccessLoginCredentials {
 
   @override
   String toString() {
-    return 'SuccessLoginCredentials[id=$id, login=$login, roles=$roles, administratorOf=$administratorOf, memberOf=$memberOf, ]';
+    return 'SuccessLoginCredentials[id=$id, login=$login, administratorOf=$administratorOf, memberOf=$memberOf, ]';
   }
 }

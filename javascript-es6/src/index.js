@@ -63,6 +63,7 @@ import Choice from "./model/Choice";
 import CommentData from "./model/CommentData";
 import Condition from "./model/Condition";
 import Configuration from "./model/Configuration";
+import ConfigurationMemberType from "./model/ConfigurationMemberType";
 import ContactPoint from "./model/ContactPoint";
 import Contribution from "./model/Contribution";
 import ContributionCollection from "./model/ContributionCollection";
@@ -442,7 +443,7 @@ import WebhookApi from "./api/WebhookApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.2.2
+ * @version 2.2.6
  */
 export {
   /**
@@ -685,6 +686,11 @@ export {
    * @property { module:model/Configuration }
    */
   Configuration,
+  /**
+   * The ConfigurationMemberType model constructor.
+   * @property { module:model/ConfigurationMemberType }
+   */
+  ConfigurationMemberType,
   /**
    * The ContactPoint model constructor.
    * @property { module:model/ContactPoint }

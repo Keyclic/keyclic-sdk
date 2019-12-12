@@ -5,8 +5,8 @@ class Configuration {
     this.createdAt,
     this.description,
     this.id,
+    this.memberType,
     this.name,
-    this.roles,
     this.type,
     this.updatedAt,
   });
@@ -22,8 +22,8 @@ class Configuration {
     }
     description = json['description'];
     id = json['id'];
+    memberType = ConfigurationMemberType.fromJson(json['memberType']);
     name = json['name'];
-    roles = Role.listFromJson(json['roles']);
     type = json['type'];
     updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
@@ -38,9 +38,9 @@ class Configuration {
 
   String id;
 
-  String name;
+  ConfigurationMemberType memberType;
 
-  List<Role> roles;
+  String name;
 
   String type;
 
@@ -58,8 +58,8 @@ class Configuration {
         createdAt == other.createdAt &&
         description == other.description &&
         id == other.id &&
+        memberType == other.memberType &&
         name == other.name &&
-        DeepCollectionEquality.unordered().equals(roles, other.roles) &&
         type == other.type &&
         updatedAt == other.updatedAt;
   }
@@ -69,15 +69,10 @@ class Configuration {
   int get hashCode {
     int hashCode = 0;
 
-    if (roles is List && roles.isNotEmpty) {
-      hashCode ^= roles
-          .map((Role element) => element.hashCode)
-          .reduce((int value, int cursor) => value ^ cursor);
-    }
-
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= memberType?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
     hashCode ^= updatedAt?.hashCode ?? 0;
@@ -106,8 +101,8 @@ class Configuration {
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (id != null) 'id': id,
+      if (memberType != null) 'memberType': memberType,
       if (name != null) 'name': name,
-      if (roles != null) 'roles': roles,
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
@@ -115,6 +110,6 @@ class Configuration {
 
   @override
   String toString() {
-    return 'Configuration[createdAt=$createdAt, description=$description, id=$id, name=$name, roles=$roles, type=$type, updatedAt=$updatedAt, ]';
+    return 'Configuration[createdAt=$createdAt, description=$description, id=$id, memberType=$memberType, name=$name, type=$type, updatedAt=$updatedAt, ]';
   }
 }

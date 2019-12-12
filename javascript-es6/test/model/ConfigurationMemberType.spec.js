@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.Configuration();
+    instance = new @KeyclicSdkJavascript.ConfigurationMemberType();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,52 +46,28 @@
       object[property] = value;
   }
 
-  describe('Configuration', function() {
-    it('should create an instance of Configuration', function() {
-      // uncomment below and update the code to test Configuration
-      //var instane = new @KeyclicSdkJavascript.Configuration();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.Configuration);
-    });
-
-    it('should have the property createdAt (base name: "createdAt")', function() {
-      // uncomment below and update the code to test the property createdAt
-      //var instane = new @KeyclicSdkJavascript.Configuration();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
-      //var instane = new @KeyclicSdkJavascript.Configuration();
-      //expect(instance).to.be();
+  describe('ConfigurationMemberType', function() {
+    it('should create an instance of ConfigurationMemberType', function() {
+      // uncomment below and update the code to test ConfigurationMemberType
+      //var instane = new @KeyclicSdkJavascript.ConfigurationMemberType();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.ConfigurationMemberType);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new @KeyclicSdkJavascript.Configuration();
+      //var instane = new @KeyclicSdkJavascript.ConfigurationMemberType();
       //expect(instance).to.be();
     });
 
-    it('should have the property memberType (base name: "memberType")', function() {
-      // uncomment below and update the code to test the property memberType
-      //var instane = new @KeyclicSdkJavascript.Configuration();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new @KeyclicSdkJavascript.Configuration();
+    it('should have the property roles (base name: "roles")', function() {
+      // uncomment below and update the code to test the property roles
+      //var instane = new @KeyclicSdkJavascript.ConfigurationMemberType();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new @KeyclicSdkJavascript.Configuration();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property updatedAt (base name: "updatedAt")', function() {
-      // uncomment below and update the code to test the property updatedAt
-      //var instane = new @KeyclicSdkJavascript.Configuration();
+      //var instane = new @KeyclicSdkJavascript.ConfigurationMemberType();
       //expect(instance).to.be();
     });
 

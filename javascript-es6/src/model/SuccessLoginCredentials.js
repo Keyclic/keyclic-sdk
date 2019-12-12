@@ -28,7 +28,6 @@ export default class SuccessLoginCredentials {
   constructor() {
     this.id = null;
     this.login = null;
-    this.roles = [];
     this.administratorOf = [];
     this.memberOf = [];
 
@@ -56,9 +55,6 @@ export default class SuccessLoginCredentials {
     }
     if (data.hasOwnProperty("login")) {
       object.login = ApiClient.convertToType(data["login"], "String");
-    }
-    if (data.hasOwnProperty("roles")) {
-      object.roles = ApiClient.convertToType(data["roles"], "['String']");
     }
     if (data.hasOwnProperty("administratorOf")) {
       object.administratorOf = ApiClient.convertToType(
@@ -100,19 +96,6 @@ export default class SuccessLoginCredentials {
    */
   setLogin(login) {
     this.login = login;
-  }
-  /**
-   * @return { Array.<String> }
-   */
-  getRoles() {
-    return this.roles;
-  }
-
-  /**
-   * @param { Array.<String> } roles
-   */
-  setRoles(roles) {
-    this.roles = roles;
   }
   /**
    * @return { Array.<module:model/SuccessLoginCredentialsAdministratorOf> }

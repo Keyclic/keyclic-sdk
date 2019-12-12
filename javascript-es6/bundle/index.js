@@ -697,6 +697,12 @@ Object.defineProperty(exports, "Configuration", {
     return _Configuration.default;
   }
 });
+Object.defineProperty(exports, "ConfigurationMemberType", {
+  enumerable: true,
+  get: function get() {
+    return _ConfigurationMemberType.default;
+  }
+});
 Object.defineProperty(exports, "ContactPoint", {
   enumerable: true,
   get: function get() {
@@ -3013,6 +3019,10 @@ var _CommentData = _interopRequireDefault(require("./model/CommentData"));
 var _Condition = _interopRequireDefault(require("./model/Condition"));
 
 var _Configuration = _interopRequireDefault(require("./model/Configuration"));
+
+var _ConfigurationMemberType = _interopRequireDefault(
+  require("./model/ConfigurationMemberType")
+);
 
 var _ContactPoint = _interopRequireDefault(require("./model/ContactPoint"));
 
