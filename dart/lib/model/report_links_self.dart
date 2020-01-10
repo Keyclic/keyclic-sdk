@@ -6,12 +6,15 @@ class ReportLinksSelf {
     this.iriTemplate,
   });
 
-  ReportLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory ReportLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = ReportLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return ReportLinksSelf(
+      href: json['href'],
+      iriTemplate: ReportLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given report. */

@@ -10,11 +10,14 @@ class FeedbackWorkflowTransitionData {
     this.transition,
   });
 
-  FeedbackWorkflowTransitionData.fromJson(Map<String, dynamic> json) {
+  factory FeedbackWorkflowTransitionData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    transition = json['transition'];
+
+    return FeedbackWorkflowTransitionData(
+      transition: json['transition'],
+    );
   }
 
   /// use FeedbackWorkflowTransitionDataTransitionEnum

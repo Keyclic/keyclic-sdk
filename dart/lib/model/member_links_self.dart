@@ -6,12 +6,15 @@ class MemberLinksSelf {
     this.iriTemplate,
   });
 
-  MemberLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory MemberLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = MemberLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return MemberLinksSelf(
+      href: json['href'],
+      iriTemplate: MemberLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given member. */

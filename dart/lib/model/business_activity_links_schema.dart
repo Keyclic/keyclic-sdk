@@ -6,13 +6,16 @@ class BusinessActivityLinksSchema {
     this.iriTemplate,
   });
 
-  BusinessActivityLinksSchema.fromJson(Map<String, dynamic> json) {
+  factory BusinessActivityLinksSchema.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        BusinessActivityLinksSchemaIriTemplate.fromJson(json['iriTemplate']);
+
+    return BusinessActivityLinksSchema(
+      href: json['href'],
+      iriTemplate:
+          BusinessActivityLinksSchemaIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the schema associated to the given businessactivity. */

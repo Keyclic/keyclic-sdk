@@ -16,37 +16,44 @@ class Operation {
     this.updatedAt,
   });
 
-  Operation.fromJson(Map<String, dynamic> json) {
+  factory Operation.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    embedded = OperationEmbedded.fromJson(json['_embedded']);
-    links = OperationLinks.fromJson(json['_links']);
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    description = json['description'];
-    id = json['id'];
-    identificationNumber = json['identificationNumber'];
-    name = json['name'];
-    scheduledAt = json['scheduledAt'] == null
+
+    DateTime scheduledAt = json['scheduledAt'] == null
         ? null
         : DateTime.parse(json['scheduledAt']);
     if (scheduledAt is DateTime && scheduledAt.isUtc == false) {
       scheduledAt = DateTime.parse('${scheduledAt.toIso8601String()}Z');
     }
-    signature = OperationSignature.fromJson(json['signature']);
-    if (json['state'] is List) {
-      state = List<String>.from(json['state']);
-    }
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return Operation(
+      embedded: OperationEmbedded.fromJson(json['_embedded']),
+      links: OperationLinks.fromJson(json['_links']),
+      createdAt: createdAt,
+      description: json['description'],
+      id: json['id'],
+      identificationNumber: json['identificationNumber'],
+      name: json['name'],
+      scheduledAt: scheduledAt,
+      signature: OperationSignature.fromJson(json['signature']),
+      state: json['state'] is List ? List<String>.from(json['state']) : null,
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   OperationEmbedded embedded;

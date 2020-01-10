@@ -5,12 +5,16 @@ class CheckpointLinksOrganizationIriTemplate {
     this.mapping,
   });
 
-  CheckpointLinksOrganizationIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory CheckpointLinksOrganizationIriTemplate.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping =
-        CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']);
+
+    return CheckpointLinksOrganizationIriTemplate(
+      mapping:
+          CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   CategoryLinksOrganizationIriTemplateMapping mapping;

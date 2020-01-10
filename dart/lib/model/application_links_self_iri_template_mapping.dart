@@ -5,11 +5,15 @@ class ApplicationLinksSelfIriTemplateMapping {
     this.application,
   });
 
-  ApplicationLinksSelfIriTemplateMapping.fromJson(Map<String, dynamic> json) {
+  factory ApplicationLinksSelfIriTemplateMapping.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    application = json['application'];
+
+    return ApplicationLinksSelfIriTemplateMapping(
+      application: json['application'],
+    );
   }
 
   String application;

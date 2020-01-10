@@ -13,27 +13,34 @@ class Category {
     this.updatedAt,
   });
 
-  Category.fromJson(Map<String, dynamic> json) {
+  factory Category.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    links = CategoryLinks.fromJson(json['_links']);
-    color = json['color'];
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    icon = json['icon'];
-    id = json['id'];
-    identificationNumber = json['identificationNumber'];
-    name = json['name'];
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return Category(
+      links: CategoryLinks.fromJson(json['_links']),
+      color: json['color'],
+      createdAt: createdAt,
+      icon: json['icon'],
+      id: json['id'],
+      identificationNumber: json['identificationNumber'],
+      name: json['name'],
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   CategoryLinks links;

@@ -6,13 +6,16 @@ class OrganizationPreferencesNotificationReport {
     this.refused,
   });
 
-  OrganizationPreferencesNotificationReport.fromJson(
+  factory OrganizationPreferencesNotificationReport.fromJson(
       Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    accepted = json['accepted'];
-    refused = json['refused'];
+
+    return OrganizationPreferencesNotificationReport(
+      accepted: json['accepted'],
+      refused: json['refused'],
+    );
   }
 
   bool accepted;

@@ -6,12 +6,15 @@ class ReportLinksFeedback {
     this.iriTemplate,
   });
 
-  ReportLinksFeedback.fromJson(Map<String, dynamic> json) {
+  factory ReportLinksFeedback.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = ReportLinksFeedbackIriTemplate.fromJson(json['iriTemplate']);
+
+    return ReportLinksFeedback(
+      href: json['href'],
+      iriTemplate: ReportLinksFeedbackIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the feedback associated to the given report. */

@@ -5,11 +5,14 @@ class OperationCollection {
     this.items,
   });
 
-  OperationCollection.fromJson(Map<String, dynamic> json) {
+  factory OperationCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Operation.listFromJson(json['items']);
+
+    return OperationCollection(
+      items: Operation.listFromJson(json['items']),
+    );
   }
 
   List<Operation> items;

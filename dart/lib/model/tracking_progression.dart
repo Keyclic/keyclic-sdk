@@ -6,12 +6,15 @@ class TrackingProgression {
     this.total,
   });
 
-  TrackingProgression.fromJson(Map<String, dynamic> json) {
+  factory TrackingProgression.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    resolved = json['resolved']?.toDouble();
-    total = json['total'];
+
+    return TrackingProgression(
+      resolved: json['resolved']?.toDouble(),
+      total: json['total'],
+    );
   }
 
   double resolved;

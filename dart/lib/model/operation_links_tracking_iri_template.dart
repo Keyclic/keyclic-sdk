@@ -5,11 +5,15 @@ class OperationLinksTrackingIriTemplate {
     this.mapping,
   });
 
-  OperationLinksTrackingIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory OperationLinksTrackingIriTemplate.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = OperationLinksSelfIriTemplateMapping.fromJson(json['mapping']);
+
+    return OperationLinksTrackingIriTemplate(
+      mapping: OperationLinksSelfIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   OperationLinksSelfIriTemplateMapping mapping;

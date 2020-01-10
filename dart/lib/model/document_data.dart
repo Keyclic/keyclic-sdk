@@ -6,12 +6,15 @@ class DocumentData {
     this.permission,
   });
 
-  DocumentData.fromJson(Map<String, dynamic> json) {
+  factory DocumentData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    file = DocumentDataFile.fromJson(json['file']);
-    permission = DocumentDataPermission.fromJson(json['permission']);
+
+    return DocumentData(
+      file: DocumentDataFile.fromJson(json['file']),
+      permission: DocumentDataPermission.fromJson(json['permission']),
+    );
   }
 
   DocumentDataFile file;

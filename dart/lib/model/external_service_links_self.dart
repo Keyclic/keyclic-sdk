@@ -6,13 +6,16 @@ class ExternalServiceLinksSelf {
     this.iriTemplate,
   });
 
-  ExternalServiceLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory ExternalServiceLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        ExternalServiceLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return ExternalServiceLinksSelf(
+      href: json['href'],
+      iriTemplate:
+          ExternalServiceLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given externalservice. */

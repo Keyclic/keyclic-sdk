@@ -148,6 +148,7 @@ var FeedApi =
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { FeedPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { Date } xDateTime
      * @param { String } xKeyclicAppVersion
      * @param { Number } page Page of the overview.  (default to 1)
      * @param { Number } limit Page of the overview.  (default to 10)
@@ -173,6 +174,7 @@ var FeedApi =
 
           var xKeyclicApp = options.xKeyclicApp,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             page = options.page,
             limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
@@ -196,6 +198,10 @@ var FeedApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -210,6 +216,7 @@ var FeedApi =
           };
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -238,6 +245,7 @@ var FeedApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { ActivityAggregatedPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          * @param { Number } page Page of the overview.  (default to 1)
          * @param { Number } limit Page of the overview.  (default to 10)
@@ -263,6 +271,7 @@ var FeedApi =
           var xKeyclicApp = options.xKeyclicApp,
             feed = options.feed,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             page = options.page,
             limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
@@ -292,6 +301,10 @@ var FeedApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -308,6 +321,7 @@ var FeedApi =
           };
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -336,6 +350,7 @@ var FeedApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { FeedPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          * @param { Number } page Page of the overview.  (default to 1)
          * @param { Number } limit Page of the overview.  (default to 10)
@@ -361,6 +376,7 @@ var FeedApi =
           var xKeyclicApp = options.xKeyclicApp,
             feed = options.feed,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             page = options.page,
             limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
@@ -390,6 +406,10 @@ var FeedApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -406,6 +426,7 @@ var FeedApi =
           };
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -434,6 +455,7 @@ var FeedApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          */
       },
@@ -452,6 +474,7 @@ var FeedApi =
           var xKeyclicApp = options.xKeyclicApp,
             feed = options.feed,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -471,6 +494,10 @@ var FeedApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -484,6 +511,7 @@ var FeedApi =
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -513,6 +541,7 @@ var FeedApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          */
       },
@@ -532,6 +561,7 @@ var FeedApi =
             feed = options.feed,
             group = options.group,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -557,6 +587,10 @@ var FeedApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -571,6 +605,7 @@ var FeedApi =
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -599,6 +634,7 @@ var FeedApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          */
       },
@@ -617,6 +653,7 @@ var FeedApi =
           var xKeyclicApp = options.xKeyclicApp,
             feed = options.feed,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -636,6 +673,10 @@ var FeedApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -649,6 +690,7 @@ var FeedApi =
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };

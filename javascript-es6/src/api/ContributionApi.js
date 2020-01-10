@@ -37,6 +37,7 @@ export default class ContributionApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { ContributionPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { module:model/Date } after
    * @param { module:model/Date } before
@@ -53,6 +54,7 @@ export default class ContributionApi extends ApiClient {
     let {
       xKeyclicApp,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion,
       after,
       before,
@@ -87,6 +89,11 @@ export default class ContributionApi extends ApiClient {
     // verify the default value of parameter 'limit'
     if (typeof limit === "undefined" || limit === null) {
       limit = 10;
+    }
+
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
     }
 
     // verify the null value of parameter 'xKeyclicAppVersion'
@@ -124,6 +131,7 @@ export default class ContributionApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -158,6 +166,7 @@ export default class ContributionApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Contribution }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   getContribution(returnType = null, options, credentials = null) {
@@ -169,6 +178,7 @@ export default class ContributionApi extends ApiClient {
       xKeyclicApp,
       contribution,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -191,6 +201,11 @@ export default class ContributionApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -206,6 +221,7 @@ export default class ContributionApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -240,6 +256,7 @@ export default class ContributionApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Contribution }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postContribution(returnType = null, options, credentials = null) {
@@ -251,6 +268,7 @@ export default class ContributionApi extends ApiClient {
       xKeyclicApp,
       contributionData,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -273,6 +291,11 @@ export default class ContributionApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -286,6 +309,7 @@ export default class ContributionApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };

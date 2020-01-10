@@ -7,15 +7,18 @@ class OperationEmbedded {
     this.tracking,
   });
 
-  OperationEmbedded.fromJson(Map<String, dynamic> json) {
+  factory OperationEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    duration = OperationEmbeddedDuration.fromJson(json['duration']);
-    if (json['stateTransitions'] is List) {
-      stateTransitions = List<String>.from(json['stateTransitions']);
-    }
-    tracking = json['tracking'];
+
+    return OperationEmbedded(
+      duration: OperationEmbeddedDuration.fromJson(json['duration']),
+      stateTransitions: json['stateTransitions'] is List
+          ? List<String>.from(json['stateTransitions'])
+          : null,
+      tracking: json['tracking'],
+    );
   }
 
   OperationEmbeddedDuration duration;

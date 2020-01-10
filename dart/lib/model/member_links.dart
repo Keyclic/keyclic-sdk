@@ -7,13 +7,16 @@ class MemberLinks {
     this.self,
   });
 
-  MemberLinks.fromJson(Map<String, dynamic> json) {
+  factory MemberLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    organization = MemberLinksOrganization.fromJson(json['organization']);
-    person = MemberLinksPerson.fromJson(json['person']);
-    self = MemberLinksSelf.fromJson(json['self']);
+
+    return MemberLinks(
+      organization: MemberLinksOrganization.fromJson(json['organization']),
+      person: MemberLinksPerson.fromJson(json['person']),
+      self: MemberLinksSelf.fromJson(json['self']),
+    );
   }
 
   MemberLinksOrganization organization;

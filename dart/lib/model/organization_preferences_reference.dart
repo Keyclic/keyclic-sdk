@@ -5,11 +5,14 @@ class OrganizationPreferencesReference {
     this.prefix,
   });
 
-  OrganizationPreferencesReference.fromJson(Map<String, dynamic> json) {
+  factory OrganizationPreferencesReference.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    prefix = json['prefix'];
+
+    return OrganizationPreferencesReference(
+      prefix: json['prefix'],
+    );
   }
 
   String prefix;

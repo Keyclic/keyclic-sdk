@@ -5,11 +5,14 @@ class PublicationCollection {
     this.items,
   });
 
-  PublicationCollection.fromJson(Map<String, dynamic> json) {
+  factory PublicationCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Publication.listFromJson(json['items']);
+
+    return PublicationCollection(
+      items: Publication.listFromJson(json['items']),
+    );
   }
 
   List<Publication> items;

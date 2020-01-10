@@ -7,13 +7,16 @@ class ReviewLinks {
     this.self,
   });
 
-  ReviewLinks.fromJson(Map<String, dynamic> json) {
+  factory ReviewLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    author = ReviewLinksAuthor.fromJson(json['author']);
-    itemReviewed = ReviewLinksItemReviewed.fromJson(json['itemReviewed']);
-    self = ReviewLinksSelf.fromJson(json['self']);
+
+    return ReviewLinks(
+      author: ReviewLinksAuthor.fromJson(json['author']),
+      itemReviewed: ReviewLinksItemReviewed.fromJson(json['itemReviewed']),
+      self: ReviewLinksSelf.fromJson(json['self']),
+    );
   }
 
   ReviewLinksAuthor author;

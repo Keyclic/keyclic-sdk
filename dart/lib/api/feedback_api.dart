@@ -13,6 +13,7 @@ class FeedbackApi {
     String xKeyclicApp,
     String feedback, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     int page,
     int limit,
@@ -42,6 +43,7 @@ class FeedbackApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -85,6 +87,7 @@ class FeedbackApi {
   Future<FeedbackPagination> cgetFeedback(
     String xKeyclicApp, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     String state,
     String category,
@@ -134,6 +137,7 @@ class FeedbackApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -178,6 +182,7 @@ class FeedbackApi {
     String xKeyclicApp,
     String feedback, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -216,6 +221,7 @@ class FeedbackApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -260,6 +266,7 @@ class FeedbackApi {
     String xKeyclicApp,
     String feedback, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -283,6 +290,7 @@ class FeedbackApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -326,6 +334,7 @@ class FeedbackApi {
     String xKeyclicApp,
     String feedback, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -349,6 +358,7 @@ class FeedbackApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -393,6 +403,7 @@ class FeedbackApi {
     CommentData commentData,
     String feedback, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -420,6 +431,7 @@ class FeedbackApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -464,6 +476,7 @@ class FeedbackApi {
     ImageData imageData,
     String feedback, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -491,6 +504,7 @@ class FeedbackApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -534,6 +548,7 @@ class FeedbackApi {
     String xKeyclicApp,
     FeedbackData feedbackData, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -555,6 +570,7 @@ class FeedbackApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -599,6 +615,7 @@ class FeedbackApi {
     FeedbackWorkflowTransitionData feedbackWorkflowTransitionData,
     String feedback, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -627,6 +644,7 @@ class FeedbackApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };

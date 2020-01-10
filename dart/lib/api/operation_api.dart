@@ -13,6 +13,7 @@ class OperationApi {
     String xKeyclicApp,
     String operation, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     int page,
     int limit,
@@ -42,6 +43,7 @@ class OperationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -87,6 +89,7 @@ class OperationApi {
     String operation,
     String image, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -115,6 +118,7 @@ class OperationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -158,6 +162,7 @@ class OperationApi {
     String xKeyclicApp,
     String operation, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -181,6 +186,7 @@ class OperationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -224,6 +230,7 @@ class OperationApi {
     String xKeyclicApp,
     String operation, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -247,6 +254,7 @@ class OperationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -290,6 +298,7 @@ class OperationApi {
     String xKeyclicApp,
     String operation, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -313,6 +322,7 @@ class OperationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -357,6 +367,7 @@ class OperationApi {
     OperationPatch operationPatch,
     String operation, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -384,6 +395,7 @@ class OperationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -428,6 +440,7 @@ class OperationApi {
     AssignData assignData,
     String operation, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -455,6 +468,7 @@ class OperationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -499,6 +513,7 @@ class OperationApi {
     CommentData commentData,
     String operation, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -526,6 +541,7 @@ class OperationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -570,6 +586,7 @@ class OperationApi {
     ImageData imageData,
     String operation, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -597,6 +614,7 @@ class OperationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -640,6 +658,7 @@ class OperationApi {
     String xKeyclicApp,
     OperationData operationData, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -661,6 +680,7 @@ class OperationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -705,6 +725,7 @@ class OperationApi {
     SignatureData signatureData,
     String operation, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -732,6 +753,7 @@ class OperationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -776,6 +798,7 @@ class OperationApi {
     OperationWorkflowTransitionData operationWorkflowTransitionData,
     String operation, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -804,6 +827,7 @@ class OperationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };

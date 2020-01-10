@@ -7,15 +7,18 @@ class Feature {
     this.properties,
   });
 
-  Feature.fromJson(Map<String, dynamic> json) {
+  factory Feature.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    type = json['type'];
-    geometry = FeatureGeometry.fromJson(json['geometry']);
-    if (json['properties'] is List) {
-      properties = List<String>.from(json['properties']);
-    }
+
+    return Feature(
+      type: json['type'],
+      geometry: FeatureGeometry.fromJson(json['geometry']),
+      properties: json['properties'] is List
+          ? List<String>.from(json['properties'])
+          : null,
+    );
   }
 
   String type;

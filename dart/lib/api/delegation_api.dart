@@ -13,6 +13,7 @@ class DelegationApi {
     String xKeyclicApp,
     String delegation, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -36,6 +37,7 @@ class DelegationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -79,6 +81,7 @@ class DelegationApi {
     String xKeyclicApp,
     DelegationData delegationData, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -100,6 +103,7 @@ class DelegationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -144,6 +148,7 @@ class DelegationApi {
     DelegationWorkflowTransitionData delegationWorkflowTransitionData,
     String delegation, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -172,6 +177,7 @@ class DelegationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };

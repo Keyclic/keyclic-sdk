@@ -7,13 +7,16 @@ class PlacePatch {
     this.name,
   });
 
-  PlacePatch.fromJson(Map<String, dynamic> json) {
+  factory PlacePatch.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    branchCode = json['branchCode'];
-    description = json['description'];
-    name = json['name'];
+
+    return PlacePatch(
+      branchCode: json['branchCode'],
+      description: json['description'],
+      name: json['name'],
+    );
   }
 
   String branchCode;

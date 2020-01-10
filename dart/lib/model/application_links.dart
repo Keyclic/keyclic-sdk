@@ -5,11 +5,14 @@ class ApplicationLinks {
     this.self,
   });
 
-  ApplicationLinks.fromJson(Map<String, dynamic> json) {
+  factory ApplicationLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    self = ApplicationLinksSelf.fromJson(json['self']);
+
+    return ApplicationLinks(
+      self: ApplicationLinksSelf.fromJson(json['self']),
+    );
   }
 
   ApplicationLinksSelf self;

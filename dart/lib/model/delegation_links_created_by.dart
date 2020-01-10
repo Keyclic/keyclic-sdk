@@ -6,13 +6,16 @@ class DelegationLinksCreatedBy {
     this.iriTemplate,
   });
 
-  DelegationLinksCreatedBy.fromJson(Map<String, dynamic> json) {
+  factory DelegationLinksCreatedBy.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+
+    return DelegationLinksCreatedBy(
+      href: json['href'],
+      iriTemplate:
+          DelegationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the createdBy associated to the given delegation. */

@@ -6,12 +6,15 @@ class WebhookPatch {
     this.payloadUrl,
   });
 
-  WebhookPatch.fromJson(Map<String, dynamic> json) {
+  factory WebhookPatch.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    event = json['event'];
-    payloadUrl = json['payloadUrl'];
+
+    return WebhookPatch(
+      event: json['event'],
+      payloadUrl: json['payloadUrl'],
+    );
   }
 
   String event;

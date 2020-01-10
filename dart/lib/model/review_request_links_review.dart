@@ -6,13 +6,16 @@ class ReviewRequestLinksReview {
     this.iriTemplate,
   });
 
-  ReviewRequestLinksReview.fromJson(Map<String, dynamic> json) {
+  factory ReviewRequestLinksReview.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        ReviewRequestLinksReviewIriTemplate.fromJson(json['iriTemplate']);
+
+    return ReviewRequestLinksReview(
+      href: json['href'],
+      iriTemplate:
+          ReviewRequestLinksReviewIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the review associated to the given reviewrequest. */

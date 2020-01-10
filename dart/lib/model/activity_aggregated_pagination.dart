@@ -9,15 +9,18 @@ class ActivityAggregatedPagination {
     this.results,
   });
 
-  ActivityAggregatedPagination.fromJson(Map<String, dynamic> json) {
+  factory ActivityAggregatedPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    duration = json['duration'];
-    next = json['next'];
-    unseen = json['unseen'];
-    unread = json['unread'];
-    results = ActivityGroup.listFromJson(json['results']);
+
+    return ActivityAggregatedPagination(
+      duration: json['duration'],
+      next: json['next'],
+      unseen: json['unseen'],
+      unread: json['unread'],
+      results: ActivityGroup.listFromJson(json['results']),
+    );
   }
 
   String duration;

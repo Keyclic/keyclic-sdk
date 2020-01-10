@@ -10,16 +10,19 @@ class ReportPagination extends Pagination {
     this.embedded,
   });
 
-  ReportPagination.fromJson(Map<String, dynamic> json) {
+  factory ReportPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = ReportCollection.fromJson(json['_embedded']);
+
+    return ReportPagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: ReportCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

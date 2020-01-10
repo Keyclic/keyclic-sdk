@@ -8,14 +8,17 @@ class PublicationData {
     this.organization,
   });
 
-  PublicationData.fromJson(Map<String, dynamic> json) {
+  factory PublicationData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    message = json['message'];
-    feed = json['feed'];
-    title = json['title'];
-    organization = json['organization'];
+
+    return PublicationData(
+      message: json['message'],
+      feed: json['feed'],
+      title: json['title'],
+      organization: json['organization'],
+    );
   }
 
   String message;

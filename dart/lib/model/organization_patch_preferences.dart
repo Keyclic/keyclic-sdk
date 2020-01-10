@@ -6,13 +6,16 @@ class OrganizationPatchPreferences {
     this.reference,
   });
 
-  OrganizationPatchPreferences.fromJson(Map<String, dynamic> json) {
+  factory OrganizationPatchPreferences.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    notification =
-        OrganizationPreferencesNotification.fromJson(json['notification']);
-    reference = OrganizationPreferencesReference.fromJson(json['reference']);
+
+    return OrganizationPatchPreferences(
+      notification:
+          OrganizationPreferencesNotification.fromJson(json['notification']),
+      reference: OrganizationPreferencesReference.fromJson(json['reference']),
+    );
   }
 
   OrganizationPreferencesNotification notification;

@@ -6,13 +6,16 @@ class DelegationLinksService {
     this.iriTemplate,
   });
 
-  DelegationLinksService.fromJson(Map<String, dynamic> json) {
+  factory DelegationLinksService.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        DelegationLinksServiceIriTemplate.fromJson(json['iriTemplate']);
+
+    return DelegationLinksService(
+      href: json['href'],
+      iriTemplate:
+          DelegationLinksServiceIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the service associated to the given delegation. */

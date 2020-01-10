@@ -145,6 +145,7 @@ var DeviceApi =
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { Date } xDateTime
      * @param { String } xKeyclicAppVersion
      */
 
@@ -164,6 +165,7 @@ var DeviceApi =
           var xKeyclicApp = options.xKeyclicApp,
             device = options.device,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -183,6 +185,10 @@ var DeviceApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -196,6 +202,7 @@ var DeviceApi =
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -224,6 +231,7 @@ var DeviceApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          */
       },
@@ -242,6 +250,7 @@ var DeviceApi =
           var xKeyclicApp = options.xKeyclicApp,
             device = options.device,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -261,6 +270,10 @@ var DeviceApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -274,6 +287,7 @@ var DeviceApi =
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -302,6 +316,7 @@ var DeviceApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Device }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          */
       },
@@ -325,6 +340,7 @@ var DeviceApi =
           var xKeyclicApp = options.xKeyclicApp,
             deviceData = options.deviceData,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -344,6 +360,10 @@ var DeviceApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -355,6 +375,7 @@ var DeviceApi =
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };

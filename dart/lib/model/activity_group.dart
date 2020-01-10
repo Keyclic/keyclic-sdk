@@ -14,28 +14,35 @@ class ActivityGroup {
     this.isSeen,
   });
 
-  ActivityGroup.fromJson(Map<String, dynamic> json) {
+  factory ActivityGroup.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    activities = Activity.listFromJson(json['activities']);
-    activityCount = json['activity_count'];
-    actorCount = json['actor_count'];
-    createdAt =
+
+    DateTime createdAt =
         json['created_at'] == null ? null : DateTime.parse(json['created_at']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    group = json['group'];
-    id = json['id'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updated_at'] == null ? null : DateTime.parse(json['updated_at']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
-    verb = json['verb'];
-    isRead = json['is_read'];
-    isSeen = json['is_seen'];
+
+    return ActivityGroup(
+      activities: Activity.listFromJson(json['activities']),
+      activityCount: json['activity_count'],
+      actorCount: json['actor_count'],
+      createdAt: createdAt,
+      group: json['group'],
+      id: json['id'],
+      updatedAt: updatedAt,
+      verb: json['verb'],
+      isRead: json['is_read'],
+      isSeen: json['is_seen'],
+    );
   }
 
   List<Activity> activities;

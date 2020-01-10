@@ -10,16 +10,19 @@ class CategoryPagination extends Pagination {
     this.embedded,
   });
 
-  CategoryPagination.fromJson(Map<String, dynamic> json) {
+  factory CategoryPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = CategoryCollection.fromJson(json['_embedded']);
+
+    return CategoryPagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: CategoryCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

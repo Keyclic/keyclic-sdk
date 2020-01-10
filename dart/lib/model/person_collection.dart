@@ -5,11 +5,14 @@ class PersonCollection {
     this.items,
   });
 
-  PersonCollection.fromJson(Map<String, dynamic> json) {
+  factory PersonCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Person.listFromJson(json['items']);
+
+    return PersonCollection(
+      items: Person.listFromJson(json['items']),
+    );
   }
 
   List<Person> items;

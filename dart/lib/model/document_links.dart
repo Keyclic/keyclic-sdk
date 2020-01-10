@@ -7,13 +7,16 @@ class DocumentLinks {
     this.self,
   });
 
-  DocumentLinks.fromJson(Map<String, dynamic> json) {
+  factory DocumentLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    createdBy = DocumentLinksCreatedBy.fromJson(json['createdBy']);
-    file = DocumentLinksFile.fromJson(json['file']);
-    self = DocumentLinksSelf.fromJson(json['self']);
+
+    return DocumentLinks(
+      createdBy: DocumentLinksCreatedBy.fromJson(json['createdBy']),
+      file: DocumentLinksFile.fromJson(json['file']),
+      self: DocumentLinksSelf.fromJson(json['self']),
+    );
   }
 
   DocumentLinksCreatedBy createdBy;

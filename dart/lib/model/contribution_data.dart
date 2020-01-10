@@ -5,11 +5,14 @@ class ContributionData {
     this.feedback,
   });
 
-  ContributionData.fromJson(Map<String, dynamic> json) {
+  factory ContributionData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    feedback = json['feedback'];
+
+    return ContributionData(
+      feedback: json['feedback'],
+    );
   }
 
   String feedback;

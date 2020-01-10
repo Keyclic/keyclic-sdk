@@ -10,16 +10,19 @@ class ExternalServicePagination extends Pagination {
     this.embedded,
   });
 
-  ExternalServicePagination.fromJson(Map<String, dynamic> json) {
+  factory ExternalServicePagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = ExternalServiceCollection.fromJson(json['_embedded']);
+
+    return ExternalServicePagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: ExternalServiceCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

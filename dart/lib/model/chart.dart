@@ -6,16 +6,15 @@ class Chart {
     this.labels,
   });
 
-  Chart.fromJson(Map<String, dynamic> json) {
+  factory Chart.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    if (json['data'] is List) {
-      data = List<int>.from(json['data']);
-    }
-    if (json['labels'] is List) {
-      labels = List<String>.from(json['labels']);
-    }
+
+    return Chart(
+      data: json['data'] is List ? List<int>.from(json['data']) : null,
+      labels: json['labels'] is List ? List<String>.from(json['labels']) : null,
+    );
   }
 
   List<int> data;

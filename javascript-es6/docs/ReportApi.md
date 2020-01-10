@@ -38,6 +38,7 @@ let report = "report_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
@@ -62,6 +63,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
@@ -107,6 +109,7 @@ let report = "report_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'assignedTo': "assignedTo_example", // String | The identifier of the resource.
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
@@ -135,6 +138,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **Date**|  | [optional] 
@@ -184,6 +188,7 @@ let report = "report_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -203,6 +208,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -243,6 +249,7 @@ let report = "report_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -262,6 +269,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -304,6 +312,7 @@ let report = "report_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -324,6 +333,7 @@ Name | Type | Description  | Notes
  **reportPatch** | [**ReportPatch**](ReportPatch.md)|  | 
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -366,6 +376,7 @@ let report = "report_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -386,6 +397,7 @@ Name | Type | Description  | Notes
  **documentData** | [**DocumentData**](DocumentData.md)|  | 
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -428,6 +440,7 @@ let report = "report_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -448,6 +461,7 @@ Name | Type | Description  | Notes
  **reportWorkflowTransitionData** | [**ReportWorkflowTransitionData**](ReportWorkflowTransitionData.md)|  | 
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

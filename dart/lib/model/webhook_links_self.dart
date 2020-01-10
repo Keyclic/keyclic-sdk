@@ -6,12 +6,15 @@ class WebhookLinksSelf {
     this.iriTemplate,
   });
 
-  WebhookLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory WebhookLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = WebhookLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return WebhookLinksSelf(
+      href: json['href'],
+      iriTemplate: WebhookLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given webhook. */

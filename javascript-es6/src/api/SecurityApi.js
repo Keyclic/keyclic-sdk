@@ -41,6 +41,7 @@ export default class SecurityApi extends ApiClient {
    * @param { module:model/FacebookConnectData } facebookConnectData
    * @param { SuccessLogin }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postConnectFacebook(returnType = null, options) {
@@ -52,6 +53,7 @@ export default class SecurityApi extends ApiClient {
       xKeyclicApp,
       facebookConnectData,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -77,6 +79,11 @@ export default class SecurityApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -90,6 +97,7 @@ export default class SecurityApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -123,6 +131,7 @@ export default class SecurityApi extends ApiClient {
    * @param { module:model/LoginData } loginData
    * @param { SuccessLogin }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postLogin(returnType = null, options) {
@@ -134,6 +143,7 @@ export default class SecurityApi extends ApiClient {
       xKeyclicApp,
       loginData,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -156,6 +166,11 @@ export default class SecurityApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -169,6 +184,7 @@ export default class SecurityApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -203,6 +219,7 @@ export default class SecurityApi extends ApiClient {
    * @param { String } token
    * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postPasswordChangeByToken(returnType = null, options) {
@@ -211,6 +228,7 @@ export default class SecurityApi extends ApiClient {
       passwordChangeData,
       token,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -243,6 +261,11 @@ export default class SecurityApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -258,6 +281,7 @@ export default class SecurityApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -291,6 +315,7 @@ export default class SecurityApi extends ApiClient {
    * @param { module:model/ResetPasswordData } resetPasswordData
    * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postPasswordReset(returnType = null, options) {
@@ -298,6 +323,7 @@ export default class SecurityApi extends ApiClient {
       xKeyclicApp,
       resetPasswordData,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -323,6 +349,11 @@ export default class SecurityApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -336,6 +367,7 @@ export default class SecurityApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -370,6 +402,7 @@ export default class SecurityApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postRegister(returnType = null, options, credentials = null) {
@@ -381,6 +414,7 @@ export default class SecurityApi extends ApiClient {
       xKeyclicApp,
       registerData,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -403,6 +437,11 @@ export default class SecurityApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -416,6 +455,7 @@ export default class SecurityApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };

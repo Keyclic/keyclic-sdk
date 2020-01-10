@@ -8,14 +8,17 @@ class BusinessActivityLinks {
     this.thumbnail,
   });
 
-  BusinessActivityLinks.fromJson(Map<String, dynamic> json) {
+  factory BusinessActivityLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    image = BusinessActivityLinksImage.fromJson(json['image']);
-    schema = BusinessActivityLinksSchema.fromJson(json['schema']);
-    self = BusinessActivityLinksSelf.fromJson(json['self']);
-    thumbnail = BusinessActivityLinksThumbnail.fromJson(json['thumbnail']);
+
+    return BusinessActivityLinks(
+      image: BusinessActivityLinksImage.fromJson(json['image']),
+      schema: BusinessActivityLinksSchema.fromJson(json['schema']),
+      self: BusinessActivityLinksSelf.fromJson(json['self']),
+      thumbnail: BusinessActivityLinksThumbnail.fromJson(json['thumbnail']),
+    );
   }
 
   BusinessActivityLinksImage image;

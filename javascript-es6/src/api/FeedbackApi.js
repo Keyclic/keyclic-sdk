@@ -44,6 +44,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { ActivityPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
@@ -57,6 +58,7 @@ export default class FeedbackApi extends ApiClient {
       xKeyclicApp,
       feedback,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion,
       page,
       limit
@@ -91,6 +93,11 @@ export default class FeedbackApi extends ApiClient {
       limit = 10;
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -109,6 +116,7 @@ export default class FeedbackApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -142,6 +150,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { FeedbackPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { String } state   (default to DELIVERED)
    * @param { String } category The identifier of the resource.
@@ -162,6 +171,7 @@ export default class FeedbackApi extends ApiClient {
     let {
       xKeyclicApp,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion,
       state,
       category,
@@ -205,6 +215,11 @@ export default class FeedbackApi extends ApiClient {
     // verify the default value of parameter 'limit'
     if (typeof limit === "undefined" || limit === null) {
       limit = 10;
+    }
+
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
     }
 
     // verify the null value of parameter 'xKeyclicAppVersion'
@@ -261,6 +276,7 @@ export default class FeedbackApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -295,6 +311,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { ReviewPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { module:model/Date } after
    * @param { module:model/Date } before
@@ -311,6 +328,7 @@ export default class FeedbackApi extends ApiClient {
       xKeyclicApp,
       feedback,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion,
       after,
       before,
@@ -353,6 +371,11 @@ export default class FeedbackApi extends ApiClient {
       limit = 10;
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -384,6 +407,7 @@ export default class FeedbackApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -418,6 +442,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   getFeedback(returnType = null, options, credentials = null) {
@@ -425,7 +450,13 @@ export default class FeedbackApi extends ApiClient {
       returnType = Feedback;
     }
 
-    let { xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion } = options;
+    let {
+      xKeyclicApp,
+      feedback,
+      acceptLanguage,
+      xDateTime,
+      xKeyclicAppVersion
+    } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -446,6 +477,11 @@ export default class FeedbackApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -461,6 +497,7 @@ export default class FeedbackApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -495,6 +532,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Tracking }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   getTrackingByFeedback(returnType = null, options, credentials = null) {
@@ -502,7 +540,13 @@ export default class FeedbackApi extends ApiClient {
       returnType = Tracking;
     }
 
-    let { xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion } = options;
+    let {
+      xKeyclicApp,
+      feedback,
+      acceptLanguage,
+      xDateTime,
+      xKeyclicAppVersion
+    } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -523,6 +567,11 @@ export default class FeedbackApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -538,6 +587,7 @@ export default class FeedbackApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -573,6 +623,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postCommentByFeedback(returnType = null, options, credentials = null) {
@@ -585,6 +636,7 @@ export default class FeedbackApi extends ApiClient {
       commentData,
       feedback,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -614,6 +666,11 @@ export default class FeedbackApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -629,6 +686,7 @@ export default class FeedbackApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -664,6 +722,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postImageByFeedback(returnType = null, options, credentials = null) {
@@ -676,6 +735,7 @@ export default class FeedbackApi extends ApiClient {
       imageData,
       feedback,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -705,6 +765,11 @@ export default class FeedbackApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -720,6 +785,7 @@ export default class FeedbackApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -754,6 +820,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postIssue(returnType = null, options, credentials = null) {
@@ -765,6 +832,7 @@ export default class FeedbackApi extends ApiClient {
       xKeyclicApp,
       feedbackData,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -787,6 +855,11 @@ export default class FeedbackApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -800,6 +873,7 @@ export default class FeedbackApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -835,6 +909,7 @@ export default class FeedbackApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Feedback }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postWorkflowByFeedback(returnType = null, options, credentials = null) {
@@ -847,6 +922,7 @@ export default class FeedbackApi extends ApiClient {
       feedbackWorkflowTransitionData,
       feedback,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -879,6 +955,11 @@ export default class FeedbackApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -894,6 +975,7 @@ export default class FeedbackApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };

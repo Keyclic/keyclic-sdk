@@ -5,11 +5,14 @@ class PlacePreferences {
     this.public,
   });
 
-  PlacePreferences.fromJson(Map<String, dynamic> json) {
+  factory PlacePreferences.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    public = json['public'];
+
+    return PlacePreferences(
+      public: json['public'],
+    );
   }
 
   bool public;

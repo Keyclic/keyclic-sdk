@@ -6,13 +6,16 @@ class ReportLinksDelegatedTo {
     this.iriTemplate,
   });
 
-  ReportLinksDelegatedTo.fromJson(Map<String, dynamic> json) {
+  factory ReportLinksDelegatedTo.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        ReportLinksDelegatedToIriTemplate.fromJson(json['iriTemplate']);
+
+    return ReportLinksDelegatedTo(
+      href: json['href'],
+      iriTemplate:
+          ReportLinksDelegatedToIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the delegatedTo associated to the given report. */

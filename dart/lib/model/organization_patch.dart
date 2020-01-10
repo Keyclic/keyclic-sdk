@@ -11,17 +11,20 @@ class OrganizationPatch {
     this.preferences,
   });
 
-  OrganizationPatch.fromJson(Map<String, dynamic> json) {
+  factory OrganizationPatch.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    name = json['name'];
-    alternateName = json['alternateName'];
-    description = json['description'];
-    logo = json['logo'];
-    billingEmailAddress = json['billingEmailAddress'];
-    notificationEmailAddress = json['notificationEmailAddress'];
-    preferences = OrganizationPatchPreferences.fromJson(json['preferences']);
+
+    return OrganizationPatch(
+      name: json['name'],
+      alternateName: json['alternateName'],
+      description: json['description'],
+      logo: json['logo'],
+      billingEmailAddress: json['billingEmailAddress'],
+      notificationEmailAddress: json['notificationEmailAddress'],
+      preferences: OrganizationPatchPreferences.fromJson(json['preferences']),
+    );
   }
 
   String name;

@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.2.6"
+    "version": "2.2.11"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -43,6 +43,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -110,6 +113,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -206,6 +212,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -290,6 +299,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -372,6 +384,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -472,6 +487,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -543,6 +561,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -622,6 +643,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -704,6 +728,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -793,6 +820,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -879,6 +909,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -950,6 +983,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -1036,6 +1072,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -1120,6 +1159,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -1191,6 +1233,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -1280,6 +1325,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -1356,6 +1404,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -1438,6 +1489,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -1509,6 +1563,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -1588,6 +1645,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -1675,6 +1735,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -1759,6 +1822,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -1836,6 +1902,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -1918,6 +1987,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -2007,6 +2079,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -2078,6 +2153,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -2154,6 +2232,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -2244,6 +2325,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -2332,6 +2416,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -2411,6 +2498,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -2488,6 +2578,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -2573,6 +2666,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -2679,6 +2775,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -2767,6 +2866,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -2852,6 +2954,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -2953,6 +3058,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -3037,6 +3145,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -3119,6 +3230,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -3208,6 +3322,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -3279,6 +3396,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -3368,6 +3488,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -3445,6 +3568,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -3527,6 +3653,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -3616,6 +3745,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -3687,6 +3819,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -3766,6 +3901,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -3848,6 +3986,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -3937,6 +4078,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -4008,6 +4152,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -4087,6 +4234,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -4173,6 +4323,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -4244,6 +4397,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -4334,6 +4490,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -4421,6 +4580,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -4498,6 +4660,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -4580,6 +4745,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -4667,6 +4835,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -4758,6 +4929,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -4842,6 +5016,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -4913,6 +5090,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -5002,6 +5182,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -5087,6 +5270,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -5176,6 +5362,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -5261,6 +5450,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -5364,6 +5556,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -5477,6 +5672,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -5582,6 +5780,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -5684,6 +5885,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -5784,6 +5988,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -5892,6 +6099,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -6005,6 +6215,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -6105,6 +6318,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -6230,6 +6446,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -6350,6 +6569,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -6449,6 +6671,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -6529,6 +6754,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -6618,6 +6846,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -6700,6 +6931,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -6804,6 +7038,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -6886,6 +7123,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -7008,6 +7248,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -7094,6 +7337,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -7213,6 +7459,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -7321,6 +7570,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -7418,6 +7670,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -7532,6 +7787,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -7654,6 +7912,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -7753,6 +8014,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -7833,6 +8097,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -7920,6 +8187,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -8032,6 +8302,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -8103,6 +8376,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -8207,6 +8483,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -8287,6 +8566,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -8376,6 +8658,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -8453,6 +8738,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -8539,6 +8827,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -8610,6 +8901,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -8709,6 +9003,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -8794,6 +9091,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -8910,6 +9210,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -8990,6 +9293,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -9079,6 +9385,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -9161,6 +9470,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -9250,6 +9562,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -9334,6 +9649,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -9405,6 +9723,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -9491,6 +9812,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -9575,6 +9899,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -9632,6 +9959,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -9705,6 +10035,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -9756,6 +10089,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -9831,6 +10167,9 @@
             "$ref": "#\/parameters\/accept-language"
           },
           {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
             "$ref": "#\/parameters\/x-keyclic-app"
           },
           {
@@ -9895,6 +10234,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -9974,6 +10316,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -10056,6 +10401,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -10143,6 +10491,9 @@
         "parameters": [
           {
             "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
           },
           {
             "$ref": "#\/parameters\/x-keyclic-app"
@@ -16216,6 +16567,13 @@
         "en-US"
       ],
       "default": "fr-FR"
+    },
+    "x-date-time": {
+      "name": "x-date-time",
+      "in": "header",
+      "type": "string",
+      "format": "date-time",
+      "required": false
     },
     "x-keyclic-app": {
       "name": "x-keyclic-app",

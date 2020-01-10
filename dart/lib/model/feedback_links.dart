@@ -11,18 +11,21 @@ class FeedbackLinks {
     this.tracking,
   });
 
-  FeedbackLinks.fromJson(Map<String, dynamic> json) {
+  factory FeedbackLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    businessActivity =
-        FeedbackLinksBusinessActivity.fromJson(json['businessActivity']);
-    category = FeedbackLinksCategory.fromJson(json['category']);
-    image = FeedbackLinksImage.fromJson(json['image']);
-    images = FeedbackLinksImages.listFromJson(json['images']);
-    reporter = FeedbackLinksReporter.fromJson(json['reporter']);
-    self = FeedbackLinksSelf.fromJson(json['self']);
-    tracking = FeedbackLinksTracking.fromJson(json['tracking']);
+
+    return FeedbackLinks(
+      businessActivity:
+          FeedbackLinksBusinessActivity.fromJson(json['businessActivity']),
+      category: FeedbackLinksCategory.fromJson(json['category']),
+      image: FeedbackLinksImage.fromJson(json['image']),
+      images: FeedbackLinksImages.listFromJson(json['images']),
+      reporter: FeedbackLinksReporter.fromJson(json['reporter']),
+      self: FeedbackLinksSelf.fromJson(json['self']),
+      tracking: FeedbackLinksTracking.fromJson(json['tracking']),
+    );
   }
 
   FeedbackLinksBusinessActivity businessActivity;

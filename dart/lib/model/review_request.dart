@@ -9,23 +9,30 @@ class ReviewRequest {
     this.updatedAt,
   });
 
-  ReviewRequest.fromJson(Map<String, dynamic> json) {
+  factory ReviewRequest.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    links = ReviewRequestLinks.fromJson(json['_links']);
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    id = json['id'];
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return ReviewRequest(
+      links: ReviewRequestLinks.fromJson(json['_links']),
+      createdAt: createdAt,
+      id: json['id'],
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   ReviewRequestLinks links;

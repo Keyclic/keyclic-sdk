@@ -9,17 +9,20 @@ class ReviewRequestLinks {
     this.self,
   });
 
-  ReviewRequestLinks.fromJson(Map<String, dynamic> json) {
+  factory ReviewRequestLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    itemToReview =
-        ReviewRequestLinksItemToReview.fromJson(json['itemToReview']);
-    organization =
-        ReviewRequestLinksOrganization.fromJson(json['organization']);
-    review = ReviewRequestLinksReview.fromJson(json['review']);
-    reviewer = ReviewRequestLinksReviewer.fromJson(json['reviewer']);
-    self = ReviewRequestLinksSelf.fromJson(json['self']);
+
+    return ReviewRequestLinks(
+      itemToReview:
+          ReviewRequestLinksItemToReview.fromJson(json['itemToReview']),
+      organization:
+          ReviewRequestLinksOrganization.fromJson(json['organization']),
+      review: ReviewRequestLinksReview.fromJson(json['review']),
+      reviewer: ReviewRequestLinksReviewer.fromJson(json['reviewer']),
+      self: ReviewRequestLinksSelf.fromJson(json['self']),
+    );
   }
 
   ReviewRequestLinksItemToReview itemToReview;

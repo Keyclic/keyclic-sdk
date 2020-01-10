@@ -7,14 +7,17 @@ class InternalServicePatch {
     this.name,
   });
 
-  InternalServicePatch.fromJson(Map<String, dynamic> json) {
+  factory InternalServicePatch.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    contactPoint =
-        ExternalServicePatchContactPoint.fromJson(json['contactPoint']);
-    description = json['description'];
-    name = json['name'];
+
+    return InternalServicePatch(
+      contactPoint:
+          ExternalServicePatchContactPoint.fromJson(json['contactPoint']),
+      description: json['description'],
+      name: json['name'],
+    );
   }
 
   ExternalServicePatchContactPoint contactPoint;

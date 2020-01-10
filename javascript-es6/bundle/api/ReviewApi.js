@@ -145,6 +145,7 @@ var ReviewApi =
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { Review }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { Date } xDateTime
      * @param { String } xKeyclicAppVersion
      */
 
@@ -169,6 +170,7 @@ var ReviewApi =
           var xKeyclicApp = options.xKeyclicApp,
             review = options.review,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -188,6 +190,10 @@ var ReviewApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -201,6 +207,7 @@ var ReviewApi =
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -229,6 +236,7 @@ var ReviewApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Review }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          */
       },
@@ -252,6 +260,7 @@ var ReviewApi =
           var xKeyclicApp = options.xKeyclicApp,
             reviewData = options.reviewData,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -271,6 +280,10 @@ var ReviewApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -282,6 +295,7 @@ var ReviewApi =
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };

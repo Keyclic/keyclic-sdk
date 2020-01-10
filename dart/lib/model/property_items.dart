@@ -5,11 +5,14 @@ class PropertyItems {
     this.oneOf,
   });
 
-  PropertyItems.fromJson(Map<String, dynamic> json) {
+  factory PropertyItems.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    oneOf = Choice.listFromJson(json['oneOf']);
+
+    return PropertyItems(
+      oneOf: Choice.listFromJson(json['oneOf']),
+    );
   }
 
   List<Choice> oneOf;

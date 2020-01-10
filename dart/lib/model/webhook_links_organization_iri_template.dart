@@ -5,12 +5,16 @@ class WebhookLinksOrganizationIriTemplate {
     this.mapping,
   });
 
-  WebhookLinksOrganizationIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory WebhookLinksOrganizationIriTemplate.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping =
-        CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']);
+
+    return WebhookLinksOrganizationIriTemplate(
+      mapping:
+          CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   CategoryLinksOrganizationIriTemplateMapping mapping;

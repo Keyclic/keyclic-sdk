@@ -8,15 +8,18 @@ class PlaceLinks {
     this.self,
   });
 
-  PlaceLinks.fromJson(Map<String, dynamic> json) {
+  factory PlaceLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    containedInPlace =
-        PlaceLinksContainedInPlace.fromJson(json['containedInPlace']);
-    containsPlaces = PlaceLinksContainsPlaces.fromJson(json['containsPlaces']);
-    organization = PlaceLinksOrganization.fromJson(json['organization']);
-    self = PlaceLinksSelf.fromJson(json['self']);
+
+    return PlaceLinks(
+      containedInPlace:
+          PlaceLinksContainedInPlace.fromJson(json['containedInPlace']),
+      containsPlaces: PlaceLinksContainsPlaces.fromJson(json['containsPlaces']),
+      organization: PlaceLinksOrganization.fromJson(json['organization']),
+      self: PlaceLinksSelf.fromJson(json['self']),
+    );
   }
 
   PlaceLinksContainedInPlace containedInPlace;

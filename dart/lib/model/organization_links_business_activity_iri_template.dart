@@ -5,13 +5,16 @@ class OrganizationLinksBusinessActivityIriTemplate {
     this.mapping,
   });
 
-  OrganizationLinksBusinessActivityIriTemplate.fromJson(
+  factory OrganizationLinksBusinessActivityIriTemplate.fromJson(
       Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping =
-        BusinessActivityLinksImageIriTemplateMapping.fromJson(json['mapping']);
+
+    return OrganizationLinksBusinessActivityIriTemplate(
+      mapping: BusinessActivityLinksImageIriTemplateMapping.fromJson(
+          json['mapping']),
+    );
   }
 
   BusinessActivityLinksImageIriTemplateMapping mapping;

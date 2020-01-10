@@ -6,14 +6,16 @@ class Schema {
     this.required,
   });
 
-  Schema.fromJson(Map<String, dynamic> json) {
+  factory Schema.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    properties = Property.mapFromJson(json['properties']);
-    if (json['required'] is List) {
-      required = List<String>.from(json['required']);
-    }
+
+    return Schema(
+      properties: Property.mapFromJson(json['properties']),
+      required:
+          json['required'] is List ? List<String>.from(json['required']) : null,
+    );
   }
 
   Map<String, Property> properties;

@@ -5,12 +5,15 @@ class PlaceLinksContainsPlacesIriTemplateMapping {
     this.parent,
   });
 
-  PlaceLinksContainsPlacesIriTemplateMapping.fromJson(
+  factory PlaceLinksContainsPlacesIriTemplateMapping.fromJson(
       Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    parent = json['parent'];
+
+    return PlaceLinksContainsPlacesIriTemplateMapping(
+      parent: json['parent'],
+    );
   }
 
   String parent;

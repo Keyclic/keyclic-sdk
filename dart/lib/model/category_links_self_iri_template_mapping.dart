@@ -5,11 +5,15 @@ class CategoryLinksSelfIriTemplateMapping {
     this.category,
   });
 
-  CategoryLinksSelfIriTemplateMapping.fromJson(Map<String, dynamic> json) {
+  factory CategoryLinksSelfIriTemplateMapping.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    category = json['category'];
+
+    return CategoryLinksSelfIriTemplateMapping(
+      category: json['category'],
+    );
   }
 
   String category;

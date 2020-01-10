@@ -5,12 +5,15 @@ class BusinessActivityLinksImageIriTemplateMapping {
     this.businessActivity,
   });
 
-  BusinessActivityLinksImageIriTemplateMapping.fromJson(
+  factory BusinessActivityLinksImageIriTemplateMapping.fromJson(
       Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    businessActivity = json['businessActivity'];
+
+    return BusinessActivityLinksImageIriTemplateMapping(
+      businessActivity: json['businessActivity'],
+    );
   }
 
   String businessActivity;

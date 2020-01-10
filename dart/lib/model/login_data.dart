@@ -6,12 +6,15 @@ class LoginData {
     this.password,
   });
 
-  LoginData.fromJson(Map<String, dynamic> json) {
+  factory LoginData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    login = json['login'];
-    password = json['password'];
+
+    return LoginData(
+      login: json['login'],
+      password: json['password'],
+    );
   }
 
   String login;

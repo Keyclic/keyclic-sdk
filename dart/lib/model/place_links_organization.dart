@@ -6,13 +6,16 @@ class PlaceLinksOrganization {
     this.iriTemplate,
   });
 
-  PlaceLinksOrganization.fromJson(Map<String, dynamic> json) {
+  factory PlaceLinksOrganization.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        PlaceLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+
+    return PlaceLinksOrganization(
+      href: json['href'],
+      iriTemplate:
+          PlaceLinksOrganizationIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the organization associated to the given place. */

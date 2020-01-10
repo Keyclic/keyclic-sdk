@@ -5,11 +5,14 @@ class ExternalServiceCollection {
     this.items,
   });
 
-  ExternalServiceCollection.fromJson(Map<String, dynamic> json) {
+  factory ExternalServiceCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = ExternalService.listFromJson(json['items']);
+
+    return ExternalServiceCollection(
+      items: ExternalService.listFromJson(json['items']),
+    );
   }
 
   List<ExternalService> items;

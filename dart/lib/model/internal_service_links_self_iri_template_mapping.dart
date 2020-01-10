@@ -5,12 +5,15 @@ class InternalServiceLinksSelfIriTemplateMapping {
     this.internalService,
   });
 
-  InternalServiceLinksSelfIriTemplateMapping.fromJson(
+  factory InternalServiceLinksSelfIriTemplateMapping.fromJson(
       Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    internalService = json['internalService'];
+
+    return InternalServiceLinksSelfIriTemplateMapping(
+      internalService: json['internalService'],
+    );
   }
 
   String internalService;

@@ -7,13 +7,16 @@ class SuccessLogin {
     this.tokenType,
   });
 
-  SuccessLogin.fromJson(Map<String, dynamic> json) {
+  factory SuccessLogin.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    accessToken = json['accessToken'];
-    credentials = SuccessLoginCredentials.fromJson(json['credentials']);
-    tokenType = json['tokenType'];
+
+    return SuccessLogin(
+      accessToken: json['accessToken'],
+      credentials: SuccessLoginCredentials.fromJson(json['credentials']),
+      tokenType: json['tokenType'],
+    );
   }
 
   String accessToken;

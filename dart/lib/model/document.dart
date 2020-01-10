@@ -11,25 +11,32 @@ class Document {
     this.updatedAt,
   });
 
-  Document.fromJson(Map<String, dynamic> json) {
+  factory Document.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    links = DocumentLinks.fromJson(json['_links']);
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    file = DocumentFile.fromJson(json['file']);
-    id = json['id'];
-    permission = DocumentPermission.fromJson(json['permission']);
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return Document(
+      links: DocumentLinks.fromJson(json['_links']),
+      createdAt: createdAt,
+      file: DocumentFile.fromJson(json['file']),
+      id: json['id'],
+      permission: DocumentPermission.fromJson(json['permission']),
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   DocumentLinks links;

@@ -6,12 +6,15 @@ class DocumentLinksSelf {
     this.iriTemplate,
   });
 
-  DocumentLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory DocumentLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = DocumentLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return DocumentLinksSelf(
+      href: json['href'],
+      iriTemplate: DocumentLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given document. */

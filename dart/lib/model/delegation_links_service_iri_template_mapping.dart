@@ -5,11 +5,15 @@ class DelegationLinksServiceIriTemplateMapping {
     this.externalService,
   });
 
-  DelegationLinksServiceIriTemplateMapping.fromJson(Map<String, dynamic> json) {
+  factory DelegationLinksServiceIriTemplateMapping.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    externalService = json['externalService'];
+
+    return DelegationLinksServiceIriTemplateMapping(
+      externalService: json['externalService'],
+    );
   }
 
   String externalService;

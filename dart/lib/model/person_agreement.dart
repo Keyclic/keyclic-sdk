@@ -7,13 +7,16 @@ class PersonAgreement {
     this.termsOfService,
   });
 
-  PersonAgreement.fromJson(Map<String, dynamic> json) {
+  factory PersonAgreement.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    olderThan = json['olderThan'];
-    privacyPolicy = json['privacyPolicy'];
-    termsOfService = json['termsOfService'];
+
+    return PersonAgreement(
+      olderThan: json['olderThan'],
+      privacyPolicy: json['privacyPolicy'],
+      termsOfService: json['termsOfService'],
+    );
   }
 
   bool olderThan;

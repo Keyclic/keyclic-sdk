@@ -5,11 +5,15 @@ class DelegationLinksSelfIriTemplateMapping {
     this.delegation,
   });
 
-  DelegationLinksSelfIriTemplateMapping.fromJson(Map<String, dynamic> json) {
+  factory DelegationLinksSelfIriTemplateMapping.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    delegation = json['delegation'];
+
+    return DelegationLinksSelfIriTemplateMapping(
+      delegation: json['delegation'],
+    );
   }
 
   String delegation;

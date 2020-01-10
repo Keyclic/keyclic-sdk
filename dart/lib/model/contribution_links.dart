@@ -6,12 +6,15 @@ class ContributionLinks {
     this.feedback,
   });
 
-  ContributionLinks.fromJson(Map<String, dynamic> json) {
+  factory ContributionLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    contributor = ContributionLinksContributor.fromJson(json['contributor']);
-    feedback = ContributionLinksFeedback.fromJson(json['feedback']);
+
+    return ContributionLinks(
+      contributor: ContributionLinksContributor.fromJson(json['contributor']),
+      feedback: ContributionLinksFeedback.fromJson(json['feedback']),
+    );
   }
 
   ContributionLinksContributor contributor;

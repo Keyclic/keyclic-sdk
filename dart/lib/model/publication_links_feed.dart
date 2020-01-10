@@ -6,12 +6,16 @@ class PublicationLinksFeed {
     this.iriTemplate,
   });
 
-  PublicationLinksFeed.fromJson(Map<String, dynamic> json) {
+  factory PublicationLinksFeed.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = PublicationLinksFeedIriTemplate.fromJson(json['iriTemplate']);
+
+    return PublicationLinksFeed(
+      href: json['href'],
+      iriTemplate:
+          PublicationLinksFeedIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the feed associated to the given publication. */

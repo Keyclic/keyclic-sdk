@@ -45,6 +45,7 @@ export default class OperationApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { ActivityPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
@@ -58,6 +59,7 @@ export default class OperationApi extends ApiClient {
       xKeyclicApp,
       operation,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion,
       page,
       limit
@@ -92,6 +94,11 @@ export default class OperationApi extends ApiClient {
       limit = 10;
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -110,6 +117,7 @@ export default class OperationApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -145,6 +153,7 @@ export default class OperationApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   deleteImageByOperationAndImage(
@@ -157,6 +166,7 @@ export default class OperationApi extends ApiClient {
       operation,
       image,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -186,6 +196,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -202,6 +217,7 @@ export default class OperationApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -236,6 +252,7 @@ export default class OperationApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   deleteOperation(returnType = null, options, credentials = null) {
@@ -243,6 +260,7 @@ export default class OperationApi extends ApiClient {
       xKeyclicApp,
       operation,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -265,6 +283,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -280,6 +303,7 @@ export default class OperationApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -314,6 +338,7 @@ export default class OperationApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   getOperation(returnType = null, options, credentials = null) {
@@ -325,6 +350,7 @@ export default class OperationApi extends ApiClient {
       xKeyclicApp,
       operation,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -347,6 +373,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -362,6 +393,7 @@ export default class OperationApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -396,6 +428,7 @@ export default class OperationApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Tracking }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   getTrackingByOperation(returnType = null, options, credentials = null) {
@@ -407,6 +440,7 @@ export default class OperationApi extends ApiClient {
       xKeyclicApp,
       operation,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -429,6 +463,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -444,6 +483,7 @@ export default class OperationApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -479,6 +519,7 @@ export default class OperationApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   patchOperation(returnType = null, options, credentials = null) {
@@ -491,6 +532,7 @@ export default class OperationApi extends ApiClient {
       operationPatch,
       operation,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -520,6 +562,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -535,6 +582,7 @@ export default class OperationApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -570,6 +618,7 @@ export default class OperationApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postAssignByOperation(returnType = null, options, credentials = null) {
@@ -582,6 +631,7 @@ export default class OperationApi extends ApiClient {
       assignData,
       operation,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -611,6 +661,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -626,6 +681,7 @@ export default class OperationApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -661,6 +717,7 @@ export default class OperationApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postCommentByOperation(returnType = null, options, credentials = null) {
@@ -673,6 +730,7 @@ export default class OperationApi extends ApiClient {
       commentData,
       operation,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -702,6 +760,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -717,6 +780,7 @@ export default class OperationApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -752,6 +816,7 @@ export default class OperationApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postImageByOperation(returnType = null, options, credentials = null) {
@@ -764,6 +829,7 @@ export default class OperationApi extends ApiClient {
       imageData,
       operation,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -793,6 +859,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -808,6 +879,7 @@ export default class OperationApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -842,6 +914,7 @@ export default class OperationApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postOperation(returnType = null, options, credentials = null) {
@@ -853,6 +926,7 @@ export default class OperationApi extends ApiClient {
       xKeyclicApp,
       operationData,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -875,6 +949,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -888,6 +967,7 @@ export default class OperationApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -923,6 +1003,7 @@ export default class OperationApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postSignByOperation(returnType = null, options, credentials = null) {
@@ -935,6 +1016,7 @@ export default class OperationApi extends ApiClient {
       signatureData,
       operation,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -964,6 +1046,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -979,6 +1066,7 @@ export default class OperationApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -1014,6 +1102,7 @@ export default class OperationApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postWorkflowByOperation(returnType = null, options, credentials = null) {
@@ -1026,6 +1115,7 @@ export default class OperationApi extends ApiClient {
       operationWorkflowTransitionData,
       operation,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -1058,6 +1148,11 @@ export default class OperationApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -1073,6 +1168,7 @@ export default class OperationApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };

@@ -5,11 +5,14 @@ class InternalServiceCollection {
     this.items,
   });
 
-  InternalServiceCollection.fromJson(Map<String, dynamic> json) {
+  factory InternalServiceCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = InternalService.listFromJson(json['items']);
+
+    return InternalServiceCollection(
+      items: InternalService.listFromJson(json['items']),
+    );
   }
 
   List<InternalService> items;

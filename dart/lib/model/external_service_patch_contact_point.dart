@@ -7,13 +7,16 @@ class ExternalServicePatchContactPoint {
     this.telephone,
   });
 
-  ExternalServicePatchContactPoint.fromJson(Map<String, dynamic> json) {
+  factory ExternalServicePatchContactPoint.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    email = json['email'];
-    name = json['name'];
-    telephone = json['telephone'];
+
+    return ExternalServicePatchContactPoint(
+      email: json['email'],
+      name: json['name'],
+      telephone: json['telephone'],
+    );
   }
 
   String email;

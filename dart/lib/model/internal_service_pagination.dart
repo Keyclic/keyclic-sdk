@@ -10,16 +10,19 @@ class InternalServicePagination extends Pagination {
     this.embedded,
   });
 
-  InternalServicePagination.fromJson(Map<String, dynamic> json) {
+  factory InternalServicePagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = InternalServiceCollection.fromJson(json['_embedded']);
+
+    return InternalServicePagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: InternalServiceCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

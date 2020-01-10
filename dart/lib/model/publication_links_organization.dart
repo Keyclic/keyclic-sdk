@@ -6,13 +6,16 @@ class PublicationLinksOrganization {
     this.iriTemplate,
   });
 
-  PublicationLinksOrganization.fromJson(Map<String, dynamic> json) {
+  factory PublicationLinksOrganization.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        PublicationLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+
+    return PublicationLinksOrganization(
+      href: json['href'],
+      iriTemplate:
+          PublicationLinksOrganizationIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the organization associated to the given publication. */

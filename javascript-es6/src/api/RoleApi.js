@@ -36,6 +36,7 @@ export default class RoleApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Role }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   getRole(returnType = null, options, credentials = null) {
@@ -43,7 +44,13 @@ export default class RoleApi extends ApiClient {
       returnType = Role;
     }
 
-    let { xKeyclicApp, role, acceptLanguage, xKeyclicAppVersion } = options;
+    let {
+      xKeyclicApp,
+      role,
+      acceptLanguage,
+      xDateTime,
+      xKeyclicAppVersion
+    } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -64,6 +71,11 @@ export default class RoleApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -79,6 +91,7 @@ export default class RoleApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };

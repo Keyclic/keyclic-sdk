@@ -5,12 +5,15 @@ class FeedbackLinksReporterIriTemplate {
     this.mapping,
   });
 
-  FeedbackLinksReporterIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory FeedbackLinksReporterIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = ContributionLinksContributorIriTemplateMapping.fromJson(
-        json['mapping']);
+
+    return FeedbackLinksReporterIriTemplate(
+      mapping: ContributionLinksContributorIriTemplateMapping.fromJson(
+          json['mapping']),
+    );
   }
 
   ContributionLinksContributorIriTemplateMapping mapping;

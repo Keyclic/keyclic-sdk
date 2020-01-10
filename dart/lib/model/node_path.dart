@@ -6,12 +6,15 @@ class NodePath {
     this.name,
   });
 
-  NodePath.fromJson(Map<String, dynamic> json) {
+  factory NodePath.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    id = json['id'];
-    name = json['name'];
+
+    return NodePath(
+      id: json['id'],
+      name: json['name'],
+    );
   }
 
   String id;

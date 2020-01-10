@@ -5,11 +5,15 @@ class PersonPreferences {
     this.notification,
   });
 
-  PersonPreferences.fromJson(Map<String, dynamic> json) {
+  factory PersonPreferences.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    notification = PersonPreferencesNotification.fromJson(json['notification']);
+
+    return PersonPreferences(
+      notification:
+          PersonPreferencesNotification.fromJson(json['notification']),
+    );
   }
 
   PersonPreferencesNotification notification;

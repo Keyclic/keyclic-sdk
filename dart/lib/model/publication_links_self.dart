@@ -6,12 +6,16 @@ class PublicationLinksSelf {
     this.iriTemplate,
   });
 
-  PublicationLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory PublicationLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = PublicationLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return PublicationLinksSelf(
+      href: json['href'],
+      iriTemplate:
+          PublicationLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given publication. */

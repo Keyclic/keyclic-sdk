@@ -6,12 +6,15 @@ class FeedbackDataGeo {
     this.elevation,
   });
 
-  FeedbackDataGeo.fromJson(Map<String, dynamic> json) {
+  factory FeedbackDataGeo.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    point = FeedbackDataGeoPoint.fromJson(json['point']);
-    elevation = json['elevation'];
+
+    return FeedbackDataGeo(
+      point: FeedbackDataGeoPoint.fromJson(json['point']),
+      elevation: json['elevation'],
+    );
   }
 
   FeedbackDataGeoPoint point;

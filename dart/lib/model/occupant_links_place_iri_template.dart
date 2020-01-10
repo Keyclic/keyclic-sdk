@@ -5,11 +5,14 @@ class OccupantLinksPlaceIriTemplate {
     this.mapping,
   });
 
-  OccupantLinksPlaceIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory OccupantLinksPlaceIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = OccupantLinksPlaceIriTemplateMapping.fromJson(json['mapping']);
+
+    return OccupantLinksPlaceIriTemplate(
+      mapping: OccupantLinksPlaceIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   OccupantLinksPlaceIriTemplateMapping mapping;

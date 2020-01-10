@@ -5,11 +5,14 @@ class DocumentLinksSelfIriTemplate {
     this.mapping,
   });
 
-  DocumentLinksSelfIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory DocumentLinksSelfIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = DocumentLinksFileIriTemplateMapping.fromJson(json['mapping']);
+
+    return DocumentLinksSelfIriTemplate(
+      mapping: DocumentLinksFileIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   DocumentLinksFileIriTemplateMapping mapping;

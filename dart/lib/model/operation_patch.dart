@@ -8,19 +8,24 @@ class OperationPatch {
     this.scheduledAt,
   });
 
-  OperationPatch.fromJson(Map<String, dynamic> json) {
+  factory OperationPatch.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    description = json['description'];
-    identificationNumber = json['identificationNumber'];
-    name = json['name'];
-    scheduledAt = json['scheduledAt'] == null
+
+    DateTime scheduledAt = json['scheduledAt'] == null
         ? null
         : DateTime.parse(json['scheduledAt']);
     if (scheduledAt is DateTime && scheduledAt.isUtc == false) {
       scheduledAt = DateTime.parse('${scheduledAt.toIso8601String()}Z');
     }
+
+    return OperationPatch(
+      description: json['description'],
+      identificationNumber: json['identificationNumber'],
+      name: json['name'],
+      scheduledAt: scheduledAt,
+    );
   }
 
   String description;

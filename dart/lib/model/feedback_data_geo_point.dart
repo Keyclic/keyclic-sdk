@@ -7,13 +7,16 @@ class FeedbackDataGeoPoint {
     this.srid,
   });
 
-  FeedbackDataGeoPoint.fromJson(Map<String, dynamic> json) {
+  factory FeedbackDataGeoPoint.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    latitude = json['latitude'];
-    longitude = json['longitude'];
-    srid = json['srid'];
+
+    return FeedbackDataGeoPoint(
+      latitude: json['latitude'],
+      longitude: json['longitude'],
+      srid: json['srid'],
+    );
   }
 
   num latitude;

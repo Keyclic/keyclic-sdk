@@ -13,19 +13,22 @@ class PersonPatch {
     this.telephone,
   });
 
-  PersonPatch.fromJson(Map<String, dynamic> json) {
+  factory PersonPatch.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    agreement = PersonPatchAgreement.fromJson(json['agreement']);
-    givenName = json['givenName'];
-    familyName = json['familyName'];
-    email = json['email'];
-    jobTitle = json['jobTitle'];
-    image = json['image'];
-    optIn = json['optIn'];
-    preferences = PersonPatchPreferences.fromJson(json['preferences']);
-    telephone = json['telephone'];
+
+    return PersonPatch(
+      agreement: PersonPatchAgreement.fromJson(json['agreement']),
+      givenName: json['givenName'],
+      familyName: json['familyName'],
+      email: json['email'],
+      jobTitle: json['jobTitle'],
+      image: json['image'],
+      optIn: json['optIn'],
+      preferences: PersonPatchPreferences.fromJson(json['preferences']),
+      telephone: json['telephone'],
+    );
   }
 
   PersonPatchAgreement agreement;

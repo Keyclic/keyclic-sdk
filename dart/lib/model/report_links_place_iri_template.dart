@@ -5,11 +5,14 @@ class ReportLinksPlaceIriTemplate {
     this.mapping,
   });
 
-  ReportLinksPlaceIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory ReportLinksPlaceIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = OccupantLinksPlaceIriTemplateMapping.fromJson(json['mapping']);
+
+    return ReportLinksPlaceIriTemplate(
+      mapping: OccupantLinksPlaceIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   OccupantLinksPlaceIriTemplateMapping mapping;

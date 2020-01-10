@@ -6,13 +6,16 @@ class InternalServiceLinks {
     this.self,
   });
 
-  InternalServiceLinks.fromJson(Map<String, dynamic> json) {
+  factory InternalServiceLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    organization =
-        InternalServiceLinksOrganization.fromJson(json['organization']);
-    self = InternalServiceLinksSelf.fromJson(json['self']);
+
+    return InternalServiceLinks(
+      organization:
+          InternalServiceLinksOrganization.fromJson(json['organization']),
+      self: InternalServiceLinksSelf.fromJson(json['self']),
+    );
   }
 
   InternalServiceLinksOrganization organization;

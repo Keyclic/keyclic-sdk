@@ -12,6 +12,7 @@ class PlaceApi {
     String xKeyclicApp,
     String place, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -53,6 +54,7 @@ class PlaceApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -96,6 +98,7 @@ class PlaceApi {
   Future<PlacePagination> cgetPlaces(
     String xKeyclicApp, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     String businessActivity,
     DateTime after,
@@ -159,6 +162,7 @@ class PlaceApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -203,6 +207,7 @@ class PlaceApi {
     String xKeyclicApp,
     String place, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -226,6 +231,7 @@ class PlaceApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -270,6 +276,7 @@ class PlaceApi {
     PlacePatch placePatch,
     String place, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -297,6 +304,7 @@ class PlaceApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -340,6 +348,7 @@ class PlaceApi {
     String xKeyclicApp,
     PlaceData placeData, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -361,6 +370,7 @@ class PlaceApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };

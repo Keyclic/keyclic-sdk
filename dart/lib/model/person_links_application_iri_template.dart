@@ -5,11 +5,15 @@ class PersonLinksApplicationIriTemplate {
     this.mapping,
   });
 
-  PersonLinksApplicationIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory PersonLinksApplicationIriTemplate.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = ApplicationLinksSelfIriTemplateMapping.fromJson(json['mapping']);
+
+    return PersonLinksApplicationIriTemplate(
+      mapping: ApplicationLinksSelfIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   ApplicationLinksSelfIriTemplateMapping mapping;

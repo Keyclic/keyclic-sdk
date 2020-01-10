@@ -5,12 +5,16 @@ class PublicationLinksOrganizationIriTemplate {
     this.mapping,
   });
 
-  PublicationLinksOrganizationIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory PublicationLinksOrganizationIriTemplate.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping =
-        CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']);
+
+    return PublicationLinksOrganizationIriTemplate(
+      mapping:
+          CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   CategoryLinksOrganizationIriTemplateMapping mapping;

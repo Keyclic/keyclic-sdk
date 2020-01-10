@@ -5,11 +5,14 @@ class MemberCollection {
     this.items,
   });
 
-  MemberCollection.fromJson(Map<String, dynamic> json) {
+  factory MemberCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Member.listFromJson(json['items']);
+
+    return MemberCollection(
+      items: Member.listFromJson(json['items']),
+    );
   }
 
   List<Member> items;

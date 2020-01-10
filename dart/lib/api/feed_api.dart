@@ -11,6 +11,7 @@ class FeedApi {
   Future<FeedPagination> cgetFeeds(
     String xKeyclicApp, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     int page,
     int limit,
@@ -34,6 +35,7 @@ class FeedApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -78,6 +80,7 @@ class FeedApi {
     String xKeyclicApp,
     String feed, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     int page,
     int limit,
@@ -107,6 +110,7 @@ class FeedApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -151,6 +155,7 @@ class FeedApi {
     String xKeyclicApp,
     String feed, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     int page,
     int limit,
@@ -180,6 +185,7 @@ class FeedApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -224,6 +230,7 @@ class FeedApi {
     String xKeyclicApp,
     String feed, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -247,6 +254,7 @@ class FeedApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -291,6 +299,7 @@ class FeedApi {
     String feed,
     String group, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -319,6 +328,7 @@ class FeedApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -362,6 +372,7 @@ class FeedApi {
     String xKeyclicApp,
     String feed, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -385,6 +396,7 @@ class FeedApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };

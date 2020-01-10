@@ -6,12 +6,15 @@ class OperationSignatureSigner {
     this.givenName,
   });
 
-  OperationSignatureSigner.fromJson(Map<String, dynamic> json) {
+  factory OperationSignatureSigner.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    familyName = json['familyName'];
-    givenName = json['givenName'];
+
+    return OperationSignatureSigner(
+      familyName: json['familyName'],
+      givenName: json['givenName'],
+    );
   }
 
   String familyName;

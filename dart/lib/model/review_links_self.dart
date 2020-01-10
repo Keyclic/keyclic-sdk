@@ -6,12 +6,15 @@ class ReviewLinksSelf {
     this.iriTemplate,
   });
 
-  ReviewLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory ReviewLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = ReviewLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return ReviewLinksSelf(
+      href: json['href'],
+      iriTemplate: ReviewLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given review. */

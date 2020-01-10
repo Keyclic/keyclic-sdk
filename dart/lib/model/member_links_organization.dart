@@ -6,13 +6,16 @@ class MemberLinksOrganization {
     this.iriTemplate,
   });
 
-  MemberLinksOrganization.fromJson(Map<String, dynamic> json) {
+  factory MemberLinksOrganization.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        MemberLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+
+    return MemberLinksOrganization(
+      href: json['href'],
+      iriTemplate:
+          MemberLinksOrganizationIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the organization associated to the given member. */

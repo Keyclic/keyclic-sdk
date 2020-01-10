@@ -7,13 +7,16 @@ class PlaceGeo {
     this.polygon,
   });
 
-  PlaceGeo.fromJson(Map<String, dynamic> json) {
+  factory PlaceGeo.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    centroid = PlaceGeoCentroid.fromJson(json['centroid']);
-    elevation = json['elevation']?.toDouble();
-    polygon = PlaceGeoPolygon.fromJson(json['polygon']);
+
+    return PlaceGeo(
+      centroid: PlaceGeoCentroid.fromJson(json['centroid']),
+      elevation: json['elevation']?.toDouble(),
+      polygon: PlaceGeoPolygon.fromJson(json['polygon']),
+    );
   }
 
   PlaceGeoCentroid centroid;

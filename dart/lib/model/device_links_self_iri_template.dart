@@ -5,11 +5,14 @@ class DeviceLinksSelfIriTemplate {
     this.mapping,
   });
 
-  DeviceLinksSelfIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory DeviceLinksSelfIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = DeviceLinksSelfIriTemplateMapping.fromJson(json['mapping']);
+
+    return DeviceLinksSelfIriTemplate(
+      mapping: DeviceLinksSelfIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   DeviceLinksSelfIriTemplateMapping mapping;

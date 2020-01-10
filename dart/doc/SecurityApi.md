@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **postConnectFacebook**
-> SuccessLogin postConnectFacebook(xKeyclicApp, facebookConnectData, acceptLanguage, xKeyclicAppVersion)
+> SuccessLogin postConnectFacebook(xKeyclicApp, facebookConnectData, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one ConnectFacebook resource.
 
@@ -29,10 +29,11 @@ var api_instance = SecurityApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var facebookConnectData = FacebookConnectData(); // FacebookConnectData | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postConnectFacebook(xKeyclicApp, facebookConnectData, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postConnectFacebook(xKeyclicApp, facebookConnectData, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling SecurityApi->postConnectFacebook: $e\n");
@@ -46,6 +47,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **facebookConnectData** | [**FacebookConnectData**](FacebookConnectData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -64,7 +66,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postLogin**
-> SuccessLogin postLogin(xKeyclicApp, loginData, acceptLanguage, xKeyclicAppVersion)
+> SuccessLogin postLogin(xKeyclicApp, loginData, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Login resource.
 
@@ -76,10 +78,11 @@ var api_instance = SecurityApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var loginData = LoginData(); // LoginData | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postLogin(xKeyclicApp, loginData, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postLogin(xKeyclicApp, loginData, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling SecurityApi->postLogin: $e\n");
@@ -93,6 +96,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **loginData** | [**LoginData**](LoginData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -111,7 +115,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postPasswordChangeByToken**
-> postPasswordChangeByToken(xKeyclicApp, passwordChangeData, token, acceptLanguage, xKeyclicAppVersion)
+> postPasswordChangeByToken(xKeyclicApp, passwordChangeData, token, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one PasswordChange resource.
 
@@ -124,10 +128,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var passwordChangeData = PasswordChangeData(); // PasswordChangeData | 
 var token = token_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.postPasswordChangeByToken(xKeyclicApp, passwordChangeData, token, acceptLanguage, xKeyclicAppVersion);
+    api_instance.postPasswordChangeByToken(xKeyclicApp, passwordChangeData, token, acceptLanguage, xDateTime, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling SecurityApi->postPasswordChangeByToken: $e\n");
 }
@@ -141,6 +146,7 @@ Name | Type | Description  | Notes
  **passwordChangeData** | [**PasswordChangeData**](PasswordChangeData.md)|  | 
  **token** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -159,7 +165,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postPasswordReset**
-> postPasswordReset(xKeyclicApp, resetPasswordData, acceptLanguage, xKeyclicAppVersion)
+> postPasswordReset(xKeyclicApp, resetPasswordData, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one PasswordReset resource.
 
@@ -171,10 +177,11 @@ var api_instance = SecurityApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var resetPasswordData = ResetPasswordData(); // ResetPasswordData | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.postPasswordReset(xKeyclicApp, resetPasswordData, acceptLanguage, xKeyclicAppVersion);
+    api_instance.postPasswordReset(xKeyclicApp, resetPasswordData, acceptLanguage, xDateTime, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling SecurityApi->postPasswordReset: $e\n");
 }
@@ -187,6 +194,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **resetPasswordData** | [**ResetPasswordData**](ResetPasswordData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -205,7 +213,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postRegister**
-> Person postRegister(xKeyclicApp, registerData, acceptLanguage, xKeyclicAppVersion)
+> Person postRegister(xKeyclicApp, registerData, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Register resource.
 
@@ -221,10 +229,11 @@ var api_instance = SecurityApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var registerData = RegisterData(); // RegisterData | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postRegister(xKeyclicApp, registerData, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postRegister(xKeyclicApp, registerData, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling SecurityApi->postRegister: $e\n");
@@ -238,6 +247,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **registerData** | [**RegisterData**](RegisterData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

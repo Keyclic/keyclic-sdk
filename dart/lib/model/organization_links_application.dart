@@ -6,13 +6,16 @@ class OrganizationLinksApplication {
     this.iriTemplate,
   });
 
-  OrganizationLinksApplication.fromJson(Map<String, dynamic> json) {
+  factory OrganizationLinksApplication.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        OrganizationLinksApplicationIriTemplate.fromJson(json['iriTemplate']);
+
+    return OrganizationLinksApplication(
+      href: json['href'],
+      iriTemplate:
+          OrganizationLinksApplicationIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the application associated to the given organization. */

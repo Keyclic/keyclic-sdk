@@ -5,12 +5,16 @@ class ExternalServiceLinksProviderIriTemplate {
     this.mapping,
   });
 
-  ExternalServiceLinksProviderIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory ExternalServiceLinksProviderIriTemplate.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping =
-        CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']);
+
+    return ExternalServiceLinksProviderIriTemplate(
+      mapping:
+          CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   CategoryLinksOrganizationIriTemplateMapping mapping;

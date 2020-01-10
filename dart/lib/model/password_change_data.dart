@@ -5,11 +5,14 @@ class PasswordChangeData {
     this.password,
   });
 
-  PasswordChangeData.fromJson(Map<String, dynamic> json) {
+  factory PasswordChangeData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    password = json['password'];
+
+    return PasswordChangeData(
+      password: json['password'],
+    );
   }
 
   String password;

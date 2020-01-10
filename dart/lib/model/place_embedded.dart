@@ -6,12 +6,15 @@ class PlaceEmbedded {
     this.path,
   });
 
-  PlaceEmbedded.fromJson(Map<String, dynamic> json) {
+  factory PlaceEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    children = Node.listFromJson(json['children']);
-    path = NodePath.listFromJson(json['path']);
+
+    return PlaceEmbedded(
+      children: Node.listFromJson(json['children']),
+      path: NodePath.listFromJson(json['path']),
+    );
   }
 
   List<Node> children;

@@ -12,28 +12,35 @@ class Role {
     this.updatedAt,
   });
 
-  Role.fromJson(Map<String, dynamic> json) {
+  factory Role.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    description = json['description'];
-    id = json['id'];
-    key = json['key'];
-    name = json['name'];
-    if (json['permissions'] is List) {
-      permissions = List<String>.from(json['permissions']);
-    }
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return Role(
+      createdAt: createdAt,
+      description: json['description'],
+      id: json['id'],
+      key: json['key'],
+      name: json['name'],
+      permissions: json['permissions'] is List
+          ? List<String>.from(json['permissions'])
+          : null,
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   DateTime createdAt;

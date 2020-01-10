@@ -16,30 +16,37 @@ class Organization {
     this.updatedAt,
   });
 
-  Organization.fromJson(Map<String, dynamic> json) {
+  factory Organization.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    links = OrganizationLinks.fromJson(json['_links']);
-    alternateName = json['alternateName'];
-    billingEmailAddress = json['billingEmailAddress'];
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    description = json['description'];
-    enabled = json['enabled'];
-    id = json['id'];
-    name = json['name'];
-    notificationEmailAddress = json['notificationEmailAddress'];
-    preferences = OrganizationPreferences.fromJson(json['preferences']);
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return Organization(
+      links: OrganizationLinks.fromJson(json['_links']),
+      alternateName: json['alternateName'],
+      billingEmailAddress: json['billingEmailAddress'],
+      createdAt: createdAt,
+      description: json['description'],
+      enabled: json['enabled'],
+      id: json['id'],
+      name: json['name'],
+      notificationEmailAddress: json['notificationEmailAddress'],
+      preferences: OrganizationPreferences.fromJson(json['preferences']),
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   OrganizationLinks links;

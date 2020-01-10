@@ -5,11 +5,14 @@ class DelegationCollection {
     this.items,
   });
 
-  DelegationCollection.fromJson(Map<String, dynamic> json) {
+  factory DelegationCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Delegation.listFromJson(json['items']);
+
+    return DelegationCollection(
+      items: Delegation.listFromJson(json['items']),
+    );
   }
 
   List<Delegation> items;

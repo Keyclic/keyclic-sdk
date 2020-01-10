@@ -6,13 +6,16 @@ class WebhookLinksOrganization {
     this.iriTemplate,
   });
 
-  WebhookLinksOrganization.fromJson(Map<String, dynamic> json) {
+  factory WebhookLinksOrganization.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        WebhookLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+
+    return WebhookLinksOrganization(
+      href: json['href'],
+      iriTemplate:
+          WebhookLinksOrganizationIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the organization associated to the given webhook. */

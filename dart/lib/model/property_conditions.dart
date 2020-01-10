@@ -5,11 +5,14 @@ class PropertyConditions {
     this.allOf,
   });
 
-  PropertyConditions.fromJson(Map<String, dynamic> json) {
+  factory PropertyConditions.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    allOf = Condition.listFromJson(json['allOf']);
+
+    return PropertyConditions(
+      allOf: Condition.listFromJson(json['allOf']),
+    );
   }
 
   List<Condition> allOf;

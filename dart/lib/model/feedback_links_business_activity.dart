@@ -6,13 +6,16 @@ class FeedbackLinksBusinessActivity {
     this.iriTemplate,
   });
 
-  FeedbackLinksBusinessActivity.fromJson(Map<String, dynamic> json) {
+  factory FeedbackLinksBusinessActivity.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        FeedbackLinksBusinessActivityIriTemplate.fromJson(json['iriTemplate']);
+
+    return FeedbackLinksBusinessActivity(
+      href: json['href'],
+      iriTemplate: FeedbackLinksBusinessActivityIriTemplate.fromJson(
+          json['iriTemplate']),
+    );
   }
 
   /* The URI of the businessActivity associated to the given feedback. */

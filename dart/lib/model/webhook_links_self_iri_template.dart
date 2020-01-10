@@ -5,11 +5,14 @@ class WebhookLinksSelfIriTemplate {
     this.mapping,
   });
 
-  WebhookLinksSelfIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory WebhookLinksSelfIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = WebhookLinksSelfIriTemplateMapping.fromJson(json['mapping']);
+
+    return WebhookLinksSelfIriTemplate(
+      mapping: WebhookLinksSelfIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   WebhookLinksSelfIriTemplateMapping mapping;

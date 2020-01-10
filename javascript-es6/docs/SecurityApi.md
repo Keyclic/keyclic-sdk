@@ -29,6 +29,7 @@ let facebookConnectData = new @KeyclicSdkJavascript.FacebookConnectData(); // Fa
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **facebookConnectData** | [**FacebookConnectData**](FacebookConnectData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -81,6 +83,7 @@ let loginData = new @KeyclicSdkJavascript.LoginData(); // LoginData |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -100,6 +103,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **loginData** | [**LoginData**](LoginData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -135,6 +139,7 @@ let token = "token_example"; // String |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -155,6 +160,7 @@ Name | Type | Description  | Notes
  **passwordChangeData** | [**PasswordChangeData**](PasswordChangeData.md)|  | 
  **token** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -188,6 +194,7 @@ let resetPasswordData = new @KeyclicSdkJavascript.ResetPasswordData(); // ResetP
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -207,6 +214,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **resetPasswordData** | [**ResetPasswordData**](ResetPasswordData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -247,6 +255,7 @@ let registerData = new @KeyclicSdkJavascript.RegisterData(); // RegisterData |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -266,6 +275,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **registerData** | [**RegisterData**](RegisterData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

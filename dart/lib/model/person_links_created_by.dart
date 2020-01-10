@@ -6,12 +6,16 @@ class PersonLinksCreatedBy {
     this.iriTemplate,
   });
 
-  PersonLinksCreatedBy.fromJson(Map<String, dynamic> json) {
+  factory PersonLinksCreatedBy.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = PersonLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+
+    return PersonLinksCreatedBy(
+      href: json['href'],
+      iriTemplate:
+          PersonLinksCreatedByIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the createdBy associated to the given person. */

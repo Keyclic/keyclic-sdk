@@ -6,12 +6,15 @@ class SignatureDataSigner {
     this.givenName,
   });
 
-  SignatureDataSigner.fromJson(Map<String, dynamic> json) {
+  factory SignatureDataSigner.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    familyName = json['familyName'];
-    givenName = json['givenName'];
+
+    return SignatureDataSigner(
+      familyName: json['familyName'],
+      givenName: json['givenName'],
+    );
   }
 
   String familyName;

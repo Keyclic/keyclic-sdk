@@ -6,12 +6,15 @@ class DelegationLinksSelf {
     this.iriTemplate,
   });
 
-  DelegationLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory DelegationLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = DelegationLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return DelegationLinksSelf(
+      href: json['href'],
+      iriTemplate: DelegationLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given delegation. */

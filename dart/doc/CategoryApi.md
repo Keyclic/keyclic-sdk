@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **cgetCategories**
-> CategoryPagination cgetCategories(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, organization, query, page, limit)
+> CategoryPagination cgetCategories(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, organization, query, page, limit)
 
 Retrieve all Category resources.
 
@@ -32,6 +32,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = CategoryApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var businessActivity = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -45,7 +46,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetCategories(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, organization, query, page, limit);
+    var result = api_instance.cgetCategories(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, organization, query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling CategoryApi->cgetCategories: $e\n");
@@ -58,6 +59,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 
@@ -86,7 +88,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteCategory**
-> deleteCategory(xKeyclicApp, category, acceptLanguage, xKeyclicAppVersion)
+> deleteCategory(xKeyclicApp, category, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Remove one Category resource.
 
@@ -102,10 +104,11 @@ var api_instance = CategoryApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var category = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteCategory(xKeyclicApp, category, acceptLanguage, xKeyclicAppVersion);
+    api_instance.deleteCategory(xKeyclicApp, category, acceptLanguage, xDateTime, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling CategoryApi->deleteCategory: $e\n");
 }
@@ -118,6 +121,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **category** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -136,7 +140,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCategory**
-> Category getCategory(xKeyclicApp, category, acceptLanguage, xKeyclicAppVersion)
+> Category getCategory(xKeyclicApp, category, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one Category resource.
 
@@ -152,10 +156,11 @@ var api_instance = CategoryApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var category = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getCategory(xKeyclicApp, category, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getCategory(xKeyclicApp, category, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling CategoryApi->getCategory: $e\n");
@@ -169,6 +174,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **category** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -187,7 +193,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchCategory**
-> Category patchCategory(xKeyclicApp, categoryPatch, category, acceptLanguage, xKeyclicAppVersion)
+> Category patchCategory(xKeyclicApp, categoryPatch, category, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Edit one Category resource.
 
@@ -204,10 +210,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var categoryPatch = CategoryPatch(); // CategoryPatch | 
 var category = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.patchCategory(xKeyclicApp, categoryPatch, category, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.patchCategory(xKeyclicApp, categoryPatch, category, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling CategoryApi->patchCategory: $e\n");
@@ -222,6 +229,7 @@ Name | Type | Description  | Notes
  **categoryPatch** | [**CategoryPatch**](CategoryPatch.md)|  | 
  **category** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -240,7 +248,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postCategory**
-> Category postCategory(xKeyclicApp, categoryData, acceptLanguage, xKeyclicAppVersion)
+> Category postCategory(xKeyclicApp, categoryData, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Category resource.
 
@@ -256,10 +264,11 @@ var api_instance = CategoryApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var categoryData = CategoryData(); // CategoryData | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postCategory(xKeyclicApp, categoryData, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postCategory(xKeyclicApp, categoryData, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling CategoryApi->postCategory: $e\n");
@@ -273,6 +282,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **categoryData** | [**CategoryData**](CategoryData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

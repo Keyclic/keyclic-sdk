@@ -11,12 +11,15 @@ class FeatureGeometry {
     this.coordinates,
   });
 
-  FeatureGeometry.fromJson(Map<String, dynamic> json) {
+  factory FeatureGeometry.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    type = json['type'];
-    coordinates = (json['coordinates']);
+
+    return FeatureGeometry(
+      type: json['type'],
+      coordinates: (json['coordinates']),
+    );
   }
 
   /// use FeatureGeometryTypeEnum

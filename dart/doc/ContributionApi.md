@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **cgetContributions**
-> ContributionPagination cgetContributions(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, feedback, order, page, limit)
+> ContributionPagination cgetContributions(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, feedback, order, page, limit)
 
 Retrieve all Contribution resources.
 
@@ -30,6 +30,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = ContributionApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -39,7 +40,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetContributions(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, feedback, order, page, limit);
+    var result = api_instance.cgetContributions(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, feedback, order, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling ContributionApi->cgetContributions: $e\n");
@@ -52,6 +53,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -76,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getContribution**
-> Contribution getContribution(xKeyclicApp, contribution, acceptLanguage, xKeyclicAppVersion)
+> Contribution getContribution(xKeyclicApp, contribution, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one Contribution resource.
 
@@ -92,10 +94,11 @@ var api_instance = ContributionApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var contribution = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getContribution(xKeyclicApp, contribution, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getContribution(xKeyclicApp, contribution, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ContributionApi->getContribution: $e\n");
@@ -109,6 +112,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **contribution** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -127,7 +131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postContribution**
-> Contribution postContribution(xKeyclicApp, contributionData, acceptLanguage, xKeyclicAppVersion)
+> Contribution postContribution(xKeyclicApp, contributionData, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Contribution resource.
 
@@ -143,10 +147,11 @@ var api_instance = ContributionApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var contributionData = ContributionData(); // ContributionData | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postContribution(xKeyclicApp, contributionData, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postContribution(xKeyclicApp, contributionData, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ContributionApi->postContribution: $e\n");
@@ -160,6 +165,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **contributionData** | [**ContributionData**](ContributionData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

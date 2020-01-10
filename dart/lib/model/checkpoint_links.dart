@@ -5,11 +5,14 @@ class CheckpointLinks {
     this.organization,
   });
 
-  CheckpointLinks.fromJson(Map<String, dynamic> json) {
+  factory CheckpointLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    organization = CheckpointLinksOrganization.fromJson(json['organization']);
+
+    return CheckpointLinks(
+      organization: CheckpointLinksOrganization.fromJson(json['organization']),
+    );
   }
 
   CheckpointLinksOrganization organization;

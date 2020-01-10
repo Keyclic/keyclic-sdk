@@ -6,12 +6,15 @@ class ReviewLinksAuthor {
     this.iriTemplate,
   });
 
-  ReviewLinksAuthor.fromJson(Map<String, dynamic> json) {
+  factory ReviewLinksAuthor.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = ReviewLinksAuthorIriTemplate.fromJson(json['iriTemplate']);
+
+    return ReviewLinksAuthor(
+      href: json['href'],
+      iriTemplate: ReviewLinksAuthorIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the author associated to the given review. */

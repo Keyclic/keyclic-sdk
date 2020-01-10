@@ -5,11 +5,14 @@ class ReportCollection {
     this.items,
   });
 
-  ReportCollection.fromJson(Map<String, dynamic> json) {
+  factory ReportCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Report.listFromJson(json['items']);
+
+    return ReportCollection(
+      items: Report.listFromJson(json['items']),
+    );
   }
 
   List<Report> items;

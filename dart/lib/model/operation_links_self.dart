@@ -6,12 +6,15 @@ class OperationLinksSelf {
     this.iriTemplate,
   });
 
-  OperationLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory OperationLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = OperationLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return OperationLinksSelf(
+      href: json['href'],
+      iriTemplate: OperationLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given operation. */

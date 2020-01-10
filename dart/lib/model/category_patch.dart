@@ -8,14 +8,17 @@ class CategoryPatch {
     this.name,
   });
 
-  CategoryPatch.fromJson(Map<String, dynamic> json) {
+  factory CategoryPatch.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    color = json['color'];
-    icon = json['icon'];
-    identificationNumber = json['identificationNumber'];
-    name = json['name'];
+
+    return CategoryPatch(
+      color: json['color'],
+      icon: json['icon'],
+      identificationNumber: json['identificationNumber'],
+      name: json['name'],
+    );
   }
 
   String color;

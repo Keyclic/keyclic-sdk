@@ -11,25 +11,32 @@ class Review {
     this.updatedAt,
   });
 
-  Review.fromJson(Map<String, dynamic> json) {
+  factory Review.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    links = ReviewLinks.fromJson(json['_links']);
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    id = json['id'];
-    reviewBody = json['reviewBody'];
-    reviewRating = json['reviewRating'];
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return Review(
+      links: ReviewLinks.fromJson(json['_links']),
+      createdAt: createdAt,
+      id: json['id'],
+      reviewBody: json['reviewBody'],
+      reviewRating: json['reviewRating'],
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   ReviewLinks links;

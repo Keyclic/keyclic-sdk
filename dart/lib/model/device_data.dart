@@ -7,13 +7,16 @@ class DeviceData {
     this.person,
   });
 
-  DeviceData.fromJson(Map<String, dynamic> json) {
+  factory DeviceData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    token = json['token'];
-    platform = json['platform'];
-    person = json['person'];
+
+    return DeviceData(
+      token: json['token'],
+      platform: json['platform'],
+      person: json['person'],
+    );
   }
 
   String token;

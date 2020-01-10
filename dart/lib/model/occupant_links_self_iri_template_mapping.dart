@@ -5,11 +5,15 @@ class OccupantLinksSelfIriTemplateMapping {
     this.occupant,
   });
 
-  OccupantLinksSelfIriTemplateMapping.fromJson(Map<String, dynamic> json) {
+  factory OccupantLinksSelfIriTemplateMapping.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    occupant = json['occupant'];
+
+    return OccupantLinksSelfIriTemplateMapping(
+      occupant: json['occupant'],
+    );
   }
 
   String occupant;

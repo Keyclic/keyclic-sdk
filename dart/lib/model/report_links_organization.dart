@@ -6,13 +6,16 @@ class ReportLinksOrganization {
     this.iriTemplate,
   });
 
-  ReportLinksOrganization.fromJson(Map<String, dynamic> json) {
+  factory ReportLinksOrganization.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        ReportLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+
+    return ReportLinksOrganization(
+      href: json['href'],
+      iriTemplate:
+          ReportLinksOrganizationIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the organization associated to the given report. */

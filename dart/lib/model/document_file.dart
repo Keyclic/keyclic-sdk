@@ -24,12 +24,15 @@ class DocumentFile {
     this.name,
   });
 
-  DocumentFile.fromJson(Map<String, dynamic> json) {
+  factory DocumentFile.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    contentType = json['contentType'];
-    name = json['name'];
+
+    return DocumentFile(
+      contentType: json['contentType'],
+      name: json['name'],
+    );
   }
 
   /// use DocumentFileContentTypeEnum

@@ -6,13 +6,16 @@ class OrganizationLinksSelf {
     this.iriTemplate,
   });
 
-  OrganizationLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory OrganizationLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        OrganizationLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return OrganizationLinksSelf(
+      href: json['href'],
+      iriTemplate:
+          OrganizationLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given organization. */

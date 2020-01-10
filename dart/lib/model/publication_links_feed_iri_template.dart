@@ -5,11 +5,14 @@ class PublicationLinksFeedIriTemplate {
     this.mapping,
   });
 
-  PublicationLinksFeedIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory PublicationLinksFeedIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = OccupantLinksPlaceIriTemplateMapping.fromJson(json['mapping']);
+
+    return PublicationLinksFeedIriTemplate(
+      mapping: OccupantLinksPlaceIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   OccupantLinksPlaceIriTemplateMapping mapping;

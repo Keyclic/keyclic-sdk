@@ -6,16 +6,21 @@ class OperationSignature {
     this.signer,
   });
 
-  OperationSignature.fromJson(Map<String, dynamic> json) {
+  factory OperationSignature.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    signedAt =
+
+    DateTime signedAt =
         json['signedAt'] == null ? null : DateTime.parse(json['signedAt']);
     if (signedAt is DateTime && signedAt.isUtc == false) {
       signedAt = DateTime.parse('${signedAt.toIso8601String()}Z');
     }
-    signer = OperationSignatureSigner.fromJson(json['signer']);
+
+    return OperationSignature(
+      signedAt: signedAt,
+      signer: OperationSignatureSigner.fromJson(json['signer']),
+    );
   }
 
   DateTime signedAt;

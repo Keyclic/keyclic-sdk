@@ -6,13 +6,16 @@ class ExternalServiceLinksProvider {
     this.iriTemplate,
   });
 
-  ExternalServiceLinksProvider.fromJson(Map<String, dynamic> json) {
+  factory ExternalServiceLinksProvider.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        ExternalServiceLinksProviderIriTemplate.fromJson(json['iriTemplate']);
+
+    return ExternalServiceLinksProvider(
+      href: json['href'],
+      iriTemplate:
+          ExternalServiceLinksProviderIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the provider associated to the given externalservice. */

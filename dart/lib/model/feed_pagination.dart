@@ -10,16 +10,19 @@ class FeedPagination extends Pagination {
     this.embedded,
   });
 
-  FeedPagination.fromJson(Map<String, dynamic> json) {
+  factory FeedPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = FeedCollection.fromJson(json['_embedded']);
+
+    return FeedPagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: FeedCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

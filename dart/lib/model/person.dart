@@ -19,33 +19,40 @@ class Person {
     this.username,
   });
 
-  Person.fromJson(Map<String, dynamic> json) {
+  factory Person.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    links = PersonLinks.fromJson(json['_links']);
-    agreement = PersonAgreement.fromJson(json['agreement']);
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    email = json['email'];
-    enabled = json['enabled'];
-    familyName = json['familyName'];
-    givenName = json['givenName'];
-    id = json['id'];
-    jobTitle = json['jobTitle'];
-    optIn = json['optIn'];
-    preferences = PersonPreferences.fromJson(json['preferences']);
-    telephone = json['telephone'];
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
-    username = json['username'];
+
+    return Person(
+      links: PersonLinks.fromJson(json['_links']),
+      agreement: PersonAgreement.fromJson(json['agreement']),
+      createdAt: createdAt,
+      email: json['email'],
+      enabled: json['enabled'],
+      familyName: json['familyName'],
+      givenName: json['givenName'],
+      id: json['id'],
+      jobTitle: json['jobTitle'],
+      optIn: json['optIn'],
+      preferences: PersonPreferences.fromJson(json['preferences']),
+      telephone: json['telephone'],
+      type: json['type'],
+      updatedAt: updatedAt,
+      username: json['username'],
+    );
   }
 
   PersonLinks links;

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **deletePublication**
-> deletePublication(xKeyclicApp, publication, acceptLanguage, xKeyclicAppVersion)
+> deletePublication(xKeyclicApp, publication, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Remove one Publication resource.
 
@@ -31,10 +31,11 @@ var api_instance = PublicationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var publication = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deletePublication(xKeyclicApp, publication, acceptLanguage, xKeyclicAppVersion);
+    api_instance.deletePublication(xKeyclicApp, publication, acceptLanguage, xDateTime, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling PublicationApi->deletePublication: $e\n");
 }
@@ -47,6 +48,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **publication** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -65,7 +67,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPublication**
-> Publication getPublication(xKeyclicApp, publication, acceptLanguage, xKeyclicAppVersion)
+> Publication getPublication(xKeyclicApp, publication, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one Publication resource.
 
@@ -81,10 +83,11 @@ var api_instance = PublicationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var publication = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getPublication(xKeyclicApp, publication, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getPublication(xKeyclicApp, publication, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling PublicationApi->getPublication: $e\n");
@@ -98,6 +101,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **publication** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -116,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postPublication**
-> Publication postPublication(xKeyclicApp, publicationData, acceptLanguage, xKeyclicAppVersion)
+> Publication postPublication(xKeyclicApp, publicationData, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Publication resource.
 
@@ -132,10 +136,11 @@ var api_instance = PublicationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var publicationData = PublicationData(); // PublicationData | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postPublication(xKeyclicApp, publicationData, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postPublication(xKeyclicApp, publicationData, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling PublicationApi->postPublication: $e\n");
@@ -149,6 +154,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **publicationData** | [**PublicationData**](PublicationData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

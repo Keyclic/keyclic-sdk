@@ -8,14 +8,17 @@ class DelegationLinks {
     this.service,
   });
 
-  DelegationLinks.fromJson(Map<String, dynamic> json) {
+  factory DelegationLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    createdBy = DelegationLinksCreatedBy.fromJson(json['createdBy']);
-    report = DelegationLinksReport.fromJson(json['report']);
-    self = DelegationLinksSelf.fromJson(json['self']);
-    service = DelegationLinksService.fromJson(json['service']);
+
+    return DelegationLinks(
+      createdBy: DelegationLinksCreatedBy.fromJson(json['createdBy']),
+      report: DelegationLinksReport.fromJson(json['report']),
+      self: DelegationLinksSelf.fromJson(json['self']),
+      service: DelegationLinksService.fromJson(json['service']),
+    );
   }
 
   DelegationLinksCreatedBy createdBy;

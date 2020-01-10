@@ -6,13 +6,16 @@ class BusinessActivityLinksSelf {
     this.iriTemplate,
   });
 
-  BusinessActivityLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory BusinessActivityLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return BusinessActivityLinksSelf(
+      href: json['href'],
+      iriTemplate:
+          BusinessActivityLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given businessactivity. */

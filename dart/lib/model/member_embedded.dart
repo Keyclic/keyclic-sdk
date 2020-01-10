@@ -6,14 +6,17 @@ class MemberEmbedded {
     this.roles,
   });
 
-  MemberEmbedded.fromJson(Map<String, dynamic> json) {
+  factory MemberEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    if (json['availableRoles'] is List) {
-      availableRoles = List<String>.from(json['availableRoles']);
-    }
-    roles = Role.listFromJson(json['roles']);
+
+    return MemberEmbedded(
+      availableRoles: json['availableRoles'] is List
+          ? List<String>.from(json['availableRoles'])
+          : null,
+      roles: Role.listFromJson(json['roles']),
+    );
   }
 
   List<String> availableRoles;

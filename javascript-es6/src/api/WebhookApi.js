@@ -38,10 +38,17 @@ export default class WebhookApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   deleteWebhook(returnType = null, options, credentials = null) {
-    let { xKeyclicApp, webhook, acceptLanguage, xKeyclicAppVersion } = options;
+    let {
+      xKeyclicApp,
+      webhook,
+      acceptLanguage,
+      xDateTime,
+      xKeyclicAppVersion
+    } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -62,6 +69,11 @@ export default class WebhookApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -77,6 +89,7 @@ export default class WebhookApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -111,6 +124,7 @@ export default class WebhookApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Webhook }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   getWebhook(returnType = null, options, credentials = null) {
@@ -118,7 +132,13 @@ export default class WebhookApi extends ApiClient {
       returnType = Webhook;
     }
 
-    let { xKeyclicApp, webhook, acceptLanguage, xKeyclicAppVersion } = options;
+    let {
+      xKeyclicApp,
+      webhook,
+      acceptLanguage,
+      xDateTime,
+      xKeyclicAppVersion
+    } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -139,6 +159,11 @@ export default class WebhookApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -154,6 +179,7 @@ export default class WebhookApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -189,6 +215,7 @@ export default class WebhookApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Webhook }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   patchWebhook(returnType = null, options, credentials = null) {
@@ -201,6 +228,7 @@ export default class WebhookApi extends ApiClient {
       webhookPatch,
       webhook,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -230,6 +258,11 @@ export default class WebhookApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -245,6 +278,7 @@ export default class WebhookApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -279,6 +313,7 @@ export default class WebhookApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Webhook }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   postWebhook(returnType = null, options, credentials = null) {
@@ -290,6 +325,7 @@ export default class WebhookApi extends ApiClient {
       xKeyclicApp,
       webhookData,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -312,6 +348,11 @@ export default class WebhookApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -325,6 +366,7 @@ export default class WebhookApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };

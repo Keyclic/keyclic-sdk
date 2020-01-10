@@ -6,13 +6,17 @@ class OrganizationLinksBusinessActivity {
     this.iriTemplate,
   });
 
-  OrganizationLinksBusinessActivity.fromJson(Map<String, dynamic> json) {
+  factory OrganizationLinksBusinessActivity.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = OrganizationLinksBusinessActivityIriTemplate.fromJson(
-        json['iriTemplate']);
+
+    return OrganizationLinksBusinessActivity(
+      href: json['href'],
+      iriTemplate: OrganizationLinksBusinessActivityIriTemplate.fromJson(
+          json['iriTemplate']),
+    );
   }
 
   /* The URI of the businessActivity associated to the given organization. */

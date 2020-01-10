@@ -14,13 +14,16 @@ class WebhookData {
     this.payloadUrl,
   });
 
-  WebhookData.fromJson(Map<String, dynamic> json) {
+  factory WebhookData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    event = json['event'];
-    organization = json['organization'];
-    payloadUrl = json['payloadUrl'];
+
+    return WebhookData(
+      event: json['event'],
+      organization: json['organization'],
+      payloadUrl: json['payloadUrl'],
+    );
   }
 
   /// use WebhookDataEventEnum

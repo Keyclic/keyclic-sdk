@@ -7,13 +7,16 @@ class ReportEmbeddedTargetGroups {
     this.description,
   });
 
-  ReportEmbeddedTargetGroups.fromJson(Map<String, dynamic> json) {
+  factory ReportEmbeddedTargetGroups.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    id = json['id'];
-    name = json['name'];
-    description = json['description'];
+
+    return ReportEmbeddedTargetGroups(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+    );
   }
 
   String id;

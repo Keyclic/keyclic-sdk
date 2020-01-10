@@ -37,6 +37,7 @@ export default class BusinessActivityApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { BusinessActivityPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { module:model/Date } after
    * @param { module:model/Date } before
@@ -55,6 +56,7 @@ export default class BusinessActivityApi extends ApiClient {
     let {
       xKeyclicApp,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion,
       after,
       before,
@@ -91,6 +93,11 @@ export default class BusinessActivityApi extends ApiClient {
     // verify the default value of parameter 'limit'
     if (typeof limit === "undefined" || limit === null) {
       limit = 10;
+    }
+
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
     }
 
     // verify the null value of parameter 'xKeyclicAppVersion'
@@ -140,6 +147,7 @@ export default class BusinessActivityApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -174,6 +182,7 @@ export default class BusinessActivityApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { BusinessActivity }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   getBusinessActivity(returnType = null, options, credentials = null) {
@@ -185,6 +194,7 @@ export default class BusinessActivityApi extends ApiClient {
       xKeyclicApp,
       businessActivity,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -207,6 +217,11 @@ export default class BusinessActivityApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -222,6 +237,7 @@ export default class BusinessActivityApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -256,6 +272,7 @@ export default class BusinessActivityApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Schema }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   getSchemaByBusinessActivity(returnType = null, options, credentials = null) {
@@ -267,6 +284,7 @@ export default class BusinessActivityApi extends ApiClient {
       xKeyclicApp,
       businessActivity,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -289,6 +307,11 @@ export default class BusinessActivityApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -304,6 +327,7 @@ export default class BusinessActivityApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };

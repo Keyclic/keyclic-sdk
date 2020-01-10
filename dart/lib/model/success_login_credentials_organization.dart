@@ -6,12 +6,16 @@ class SuccessLoginCredentialsOrganization {
     this.id,
   });
 
-  SuccessLoginCredentialsOrganization.fromJson(Map<String, dynamic> json) {
+  factory SuccessLoginCredentialsOrganization.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    type = json['type'];
-    id = json['id'];
+
+    return SuccessLoginCredentialsOrganization(
+      type: json['type'],
+      id: json['id'],
+    );
   }
 
   String type;

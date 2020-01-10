@@ -7,13 +7,16 @@ class FeedbackGeoCoordinatesPoint {
     this.srid,
   });
 
-  FeedbackGeoCoordinatesPoint.fromJson(Map<String, dynamic> json) {
+  factory FeedbackGeoCoordinatesPoint.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    latitude = json['latitude']?.toDouble();
-    longitude = json['longitude']?.toDouble();
-    srid = json['srid'];
+
+    return FeedbackGeoCoordinatesPoint(
+      latitude: json['latitude']?.toDouble(),
+      longitude: json['longitude']?.toDouble(),
+      srid: json['srid'],
+    );
   }
 
   double latitude;

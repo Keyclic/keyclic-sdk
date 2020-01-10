@@ -15,29 +15,36 @@ class Application {
     this.version,
   });
 
-  Application.fromJson(Map<String, dynamic> json) {
+  factory Application.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    links = ApplicationLinks.fromJson(json['_links']);
-    about = ApplicationAbout.fromJson(json['about']);
-    agreement = ApplicationAgreement.fromJson(json['agreement']);
-    contactPoints = ContactPoint.listFromJson(json['contactPoints']);
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    id = json['id'];
-    name = json['name'];
-    token = json['token'];
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
-    version = json['version'];
+
+    return Application(
+      links: ApplicationLinks.fromJson(json['_links']),
+      about: ApplicationAbout.fromJson(json['about']),
+      agreement: ApplicationAgreement.fromJson(json['agreement']),
+      contactPoints: ContactPoint.listFromJson(json['contactPoints']),
+      createdAt: createdAt,
+      id: json['id'],
+      name: json['name'],
+      token: json['token'],
+      type: json['type'],
+      updatedAt: updatedAt,
+      version: json['version'],
+    );
   }
 
   ApplicationLinks links;

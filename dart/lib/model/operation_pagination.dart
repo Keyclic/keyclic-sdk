@@ -10,16 +10,19 @@ class OperationPagination extends Pagination {
     this.embedded,
   });
 
-  OperationPagination.fromJson(Map<String, dynamic> json) {
+  factory OperationPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = OperationCollection.fromJson(json['_embedded']);
+
+    return OperationPagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: OperationCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

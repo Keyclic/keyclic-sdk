@@ -6,13 +6,16 @@ class DelegationLinksReport {
     this.iriTemplate,
   });
 
-  DelegationLinksReport.fromJson(Map<String, dynamic> json) {
+  factory DelegationLinksReport.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        DelegationLinksReportIriTemplate.fromJson(json['iriTemplate']);
+
+    return DelegationLinksReport(
+      href: json['href'],
+      iriTemplate:
+          DelegationLinksReportIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the report associated to the given delegation. */

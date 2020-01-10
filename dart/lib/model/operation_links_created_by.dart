@@ -6,13 +6,16 @@ class OperationLinksCreatedBy {
     this.iriTemplate,
   });
 
-  OperationLinksCreatedBy.fromJson(Map<String, dynamic> json) {
+  factory OperationLinksCreatedBy.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        OperationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+
+    return OperationLinksCreatedBy(
+      href: json['href'],
+      iriTemplate:
+          OperationLinksCreatedByIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the createdBy associated to the given operation. */

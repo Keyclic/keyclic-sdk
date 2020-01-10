@@ -5,13 +5,16 @@ class DelegationEmbedded {
     this.stateTransitions,
   });
 
-  DelegationEmbedded.fromJson(Map<String, dynamic> json) {
+  factory DelegationEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    if (json['stateTransitions'] is List) {
-      stateTransitions = List<String>.from(json['stateTransitions']);
-    }
+
+    return DelegationEmbedded(
+      stateTransitions: json['stateTransitions'] is List
+          ? List<String>.from(json['stateTransitions'])
+          : null,
+    );
   }
 
   List<String> stateTransitions;

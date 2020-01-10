@@ -5,13 +5,16 @@ class InternalServiceLinksOrganizationIriTemplate {
     this.mapping,
   });
 
-  InternalServiceLinksOrganizationIriTemplate.fromJson(
+  factory InternalServiceLinksOrganizationIriTemplate.fromJson(
       Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping =
-        CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']);
+
+    return InternalServiceLinksOrganizationIriTemplate(
+      mapping:
+          CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   CategoryLinksOrganizationIriTemplateMapping mapping;

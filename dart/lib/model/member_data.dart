@@ -6,12 +6,15 @@ class MemberData {
     this.organization,
   });
 
-  MemberData.fromJson(Map<String, dynamic> json) {
+  factory MemberData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    person = json['person'];
-    organization = json['organization'];
+
+    return MemberData(
+      person: json['person'],
+      organization: json['organization'],
+    );
   }
 
   String person;

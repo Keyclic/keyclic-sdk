@@ -44,6 +44,7 @@ export default class PersonApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { FeedbackPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { String } category The identifier of the resource.
    * @param { module:model/Date } after
@@ -65,6 +66,7 @@ export default class PersonApi extends ApiClient {
       xKeyclicApp,
       person,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion,
       category,
       after,
@@ -110,6 +112,11 @@ export default class PersonApi extends ApiClient {
     // verify the default value of parameter 'limit'
     if (typeof limit === "undefined" || limit === null) {
       limit = 10;
+    }
+
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
     }
 
     // verify the null value of parameter 'xKeyclicAppVersion'
@@ -173,6 +180,7 @@ export default class PersonApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -207,6 +215,7 @@ export default class PersonApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { MemberPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { module:model/Date } after
    * @param { module:model/Date } before
@@ -226,6 +235,7 @@ export default class PersonApi extends ApiClient {
       xKeyclicApp,
       person,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion,
       after,
       before,
@@ -269,6 +279,11 @@ export default class PersonApi extends ApiClient {
     // verify the default value of parameter 'limit'
     if (typeof limit === "undefined" || limit === null) {
       limit = 10;
+    }
+
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
     }
 
     // verify the null value of parameter 'xKeyclicAppVersion'
@@ -320,6 +335,7 @@ export default class PersonApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -354,6 +370,7 @@ export default class PersonApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { OccupantPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { module:model/Date } after
    * @param { module:model/Date } before
@@ -370,6 +387,7 @@ export default class PersonApi extends ApiClient {
       xKeyclicApp,
       person,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion,
       after,
       before,
@@ -412,6 +430,11 @@ export default class PersonApi extends ApiClient {
       limit = 10;
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -443,6 +466,7 @@ export default class PersonApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -477,6 +501,7 @@ export default class PersonApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { String } assignedTo The identifier of the resource.
    * @param { module:model/Date } after
@@ -497,6 +522,7 @@ export default class PersonApi extends ApiClient {
       xKeyclicApp,
       person,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion,
       assignedTo,
       after,
@@ -541,6 +567,11 @@ export default class PersonApi extends ApiClient {
     // verify the default value of parameter 'limit'
     if (typeof limit === "undefined" || limit === null) {
       limit = 10;
+    }
+
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
     }
 
     // verify the null value of parameter 'xKeyclicAppVersion'
@@ -598,6 +629,7 @@ export default class PersonApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -631,6 +663,7 @@ export default class PersonApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { PersonPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { module:model/Date } after
    * @param { module:model/Date } before
@@ -647,6 +680,7 @@ export default class PersonApi extends ApiClient {
     let {
       xKeyclicApp,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion,
       after,
       before,
@@ -681,6 +715,11 @@ export default class PersonApi extends ApiClient {
     // verify the default value of parameter 'limit'
     if (typeof limit === "undefined" || limit === null) {
       limit = 10;
+    }
+
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
     }
 
     // verify the null value of parameter 'xKeyclicAppVersion'
@@ -718,6 +757,7 @@ export default class PersonApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -752,6 +792,7 @@ export default class PersonApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { ReportPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { String } assignedTo The identifier of the resource.
    * @param { String } category The identifier of the resource.
@@ -774,6 +815,7 @@ export default class PersonApi extends ApiClient {
       xKeyclicApp,
       person,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion,
       assignedTo,
       category,
@@ -820,6 +862,11 @@ export default class PersonApi extends ApiClient {
     // verify the default value of parameter 'limit'
     if (typeof limit === "undefined" || limit === null) {
       limit = 10;
+    }
+
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
     }
 
     // verify the null value of parameter 'xKeyclicAppVersion'
@@ -889,6 +936,7 @@ export default class PersonApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -923,6 +971,7 @@ export default class PersonApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { ReviewRequestPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { module:model/Date } after
    * @param { module:model/Date } before
@@ -939,6 +988,7 @@ export default class PersonApi extends ApiClient {
       xKeyclicApp,
       person,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion,
       after,
       before,
@@ -981,6 +1031,11 @@ export default class PersonApi extends ApiClient {
       limit = 10;
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -1012,6 +1067,7 @@ export default class PersonApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -1046,6 +1102,7 @@ export default class PersonApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   getPerson(returnType = null, options, credentials = null) {
@@ -1053,7 +1110,13 @@ export default class PersonApi extends ApiClient {
       returnType = Person;
     }
 
-    let { xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion } = options;
+    let {
+      xKeyclicApp,
+      person,
+      acceptLanguage,
+      xDateTime,
+      xKeyclicAppVersion
+    } = options;
 
     // verify the required parameter 'xKeyclicApp' is set
     if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -1074,6 +1137,11 @@ export default class PersonApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -1089,6 +1157,7 @@ export default class PersonApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };
@@ -1124,6 +1193,7 @@ export default class PersonApi extends ApiClient {
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    */
   patchPerson(returnType = null, options, credentials = null) {
@@ -1136,6 +1206,7 @@ export default class PersonApi extends ApiClient {
       personPatch,
       person,
       acceptLanguage,
+      xDateTime,
       xKeyclicAppVersion
     } = options;
 
@@ -1165,6 +1236,11 @@ export default class PersonApi extends ApiClient {
       acceptLanguage = "fr-FR";
     }
 
+    // verify the null value of parameter 'xDateTime'
+    if (typeof xDateTime === "undefined") {
+      xDateTime = null;
+    }
+
     // verify the null value of parameter 'xKeyclicAppVersion'
     if (typeof xKeyclicAppVersion === "undefined") {
       xKeyclicAppVersion = null;
@@ -1180,6 +1256,7 @@ export default class PersonApi extends ApiClient {
 
     let headerParams = {
       "accept-language": acceptLanguage,
+      "x-date-time": xDateTime,
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion
     };

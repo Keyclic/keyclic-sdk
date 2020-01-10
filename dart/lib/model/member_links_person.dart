@@ -6,12 +6,15 @@ class MemberLinksPerson {
     this.iriTemplate,
   });
 
-  MemberLinksPerson.fromJson(Map<String, dynamic> json) {
+  factory MemberLinksPerson.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = MemberLinksPersonIriTemplate.fromJson(json['iriTemplate']);
+
+    return MemberLinksPerson(
+      href: json['href'],
+      iriTemplate: MemberLinksPersonIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the person associated to the given member. */

@@ -10,16 +10,19 @@ class BusinessActivityPagination extends Pagination {
     this.embedded,
   });
 
-  BusinessActivityPagination.fromJson(Map<String, dynamic> json) {
+  factory BusinessActivityPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = BusinessActivityCollection.fromJson(json['_embedded']);
+
+    return BusinessActivityPagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: BusinessActivityCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

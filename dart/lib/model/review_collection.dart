@@ -5,11 +5,14 @@ class ReviewCollection {
     this.items,
   });
 
-  ReviewCollection.fromJson(Map<String, dynamic> json) {
+  factory ReviewCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Review.listFromJson(json['items']);
+
+    return ReviewCollection(
+      items: Review.listFromJson(json['items']),
+    );
   }
 
   List<Review> items;

@@ -6,13 +6,16 @@ class ContributionLinksContributor {
     this.iriTemplate,
   });
 
-  ContributionLinksContributor.fromJson(Map<String, dynamic> json) {
+  factory ContributionLinksContributor.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        ContributionLinksContributorIriTemplate.fromJson(json['iriTemplate']);
+
+    return ContributionLinksContributor(
+      href: json['href'],
+      iriTemplate:
+          ContributionLinksContributorIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the contributor associated to the given contribution. */

@@ -6,13 +6,16 @@ class CategoryLinksOrganization {
     this.iriTemplate,
   });
 
-  CategoryLinksOrganization.fromJson(Map<String, dynamic> json) {
+  factory CategoryLinksOrganization.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+
+    return CategoryLinksOrganization(
+      href: json['href'],
+      iriTemplate:
+          CategoryLinksOrganizationIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the organization associated to the given category. */

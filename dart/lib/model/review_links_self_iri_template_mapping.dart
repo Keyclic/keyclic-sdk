@@ -5,11 +5,15 @@ class ReviewLinksSelfIriTemplateMapping {
     this.review,
   });
 
-  ReviewLinksSelfIriTemplateMapping.fromJson(Map<String, dynamic> json) {
+  factory ReviewLinksSelfIriTemplateMapping.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    review = json['review'];
+
+    return ReviewLinksSelfIriTemplateMapping(
+      review: json['review'],
+    );
   }
 
   String review;

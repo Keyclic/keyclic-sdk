@@ -12,28 +12,33 @@ class Delegation {
     this.updatedAt,
   });
 
-  Delegation.fromJson(Map<String, dynamic> json) {
+  factory Delegation.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    embedded = DelegationEmbedded.fromJson(json['_embedded']);
-    links = DelegationLinks.fromJson(json['_links']);
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    description = json['description'];
-    id = json['id'];
-    if (json['state'] is List) {
-      state = List<String>.from(json['state']);
-    }
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return Delegation(
+      embedded: DelegationEmbedded.fromJson(json['_embedded']),
+      links: DelegationLinks.fromJson(json['_links']),
+      createdAt: createdAt,
+      description: json['description'],
+      id: json['id'],
+      state: json['state'] is List ? List<String>.from(json['state']) : null,
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   DelegationEmbedded embedded;

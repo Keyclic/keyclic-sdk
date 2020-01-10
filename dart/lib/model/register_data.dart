@@ -7,13 +7,16 @@ class RegisterData {
     this.agreement,
   });
 
-  RegisterData.fromJson(Map<String, dynamic> json) {
+  factory RegisterData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    email = json['email'];
-    password = json['password'];
-    agreement = PersonAgreement.fromJson(json['agreement']);
+
+    return RegisterData(
+      email: json['email'],
+      password: json['password'],
+      agreement: PersonAgreement.fromJson(json['agreement']),
+    );
   }
 
   String email;

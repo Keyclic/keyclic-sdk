@@ -5,11 +5,14 @@ class CommentData {
     this.text,
   });
 
-  CommentData.fromJson(Map<String, dynamic> json) {
+  factory CommentData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    text = json['text'];
+
+    return CommentData(
+      text: json['text'],
+    );
   }
 
   String text;

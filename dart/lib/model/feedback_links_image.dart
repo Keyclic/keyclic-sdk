@@ -6,12 +6,15 @@ class FeedbackLinksImage {
     this.iriTemplate,
   });
 
-  FeedbackLinksImage.fromJson(Map<String, dynamic> json) {
+  factory FeedbackLinksImage.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = FeedbackLinksImageIriTemplate.fromJson(json['iriTemplate']);
+
+    return FeedbackLinksImage(
+      href: json['href'],
+      iriTemplate: FeedbackLinksImageIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the image associated to the given feedback. */

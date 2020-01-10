@@ -7,13 +7,16 @@ class InternalServiceData {
     this.description,
   });
 
-  InternalServiceData.fromJson(Map<String, dynamic> json) {
+  factory InternalServiceData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    organization = json['organization'];
-    name = json['name'];
-    description = json['description'];
+
+    return InternalServiceData(
+      organization: json['organization'],
+      name: json['name'],
+      description: json['description'],
+    );
   }
 
   String organization;

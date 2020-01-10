@@ -6,12 +6,15 @@ class DeviceLinksSelf {
     this.iriTemplate,
   });
 
-  DeviceLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory DeviceLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = DeviceLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return DeviceLinksSelf(
+      href: json['href'],
+      iriTemplate: DeviceLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given device. */

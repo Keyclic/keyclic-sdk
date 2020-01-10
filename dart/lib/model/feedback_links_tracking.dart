@@ -6,13 +6,16 @@ class FeedbackLinksTracking {
     this.iriTemplate,
   });
 
-  FeedbackLinksTracking.fromJson(Map<String, dynamic> json) {
+  factory FeedbackLinksTracking.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        FeedbackLinksTrackingIriTemplate.fromJson(json['iriTemplate']);
+
+    return FeedbackLinksTracking(
+      href: json['href'],
+      iriTemplate:
+          FeedbackLinksTrackingIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the tracking associated to the given feedback. */

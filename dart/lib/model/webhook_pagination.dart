@@ -10,16 +10,19 @@ class WebhookPagination extends Pagination {
     this.embedded,
   });
 
-  WebhookPagination.fromJson(Map<String, dynamic> json) {
+  factory WebhookPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = WebhookCollection.fromJson(json['_embedded']);
+
+    return WebhookPagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: WebhookCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

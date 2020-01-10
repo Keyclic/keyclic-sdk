@@ -7,13 +7,16 @@ class DocumentDataFile {
     this.name,
   });
 
-  DocumentDataFile.fromJson(Map<String, dynamic> json) {
+  factory DocumentDataFile.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    content = json['content'];
-    contentType = json['contentType'];
-    name = json['name'];
+
+    return DocumentDataFile(
+      content: json['content'],
+      contentType: json['contentType'],
+      name: json['name'],
+    );
   }
 
   String content;

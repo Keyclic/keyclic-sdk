@@ -10,16 +10,19 @@ class ContributionPagination extends Pagination {
     this.embedded,
   });
 
-  ContributionPagination.fromJson(Map<String, dynamic> json) {
+  factory ContributionPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = ContributionCollection.fromJson(json['_embedded']);
+
+    return ContributionPagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: ContributionCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

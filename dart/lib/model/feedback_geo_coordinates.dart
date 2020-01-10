@@ -6,12 +6,15 @@ class FeedbackGeoCoordinates {
     this.point,
   });
 
-  FeedbackGeoCoordinates.fromJson(Map<String, dynamic> json) {
+  factory FeedbackGeoCoordinates.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    elevation = json['elevation']?.toDouble();
-    point = FeedbackGeoCoordinatesPoint.fromJson(json['point']);
+
+    return FeedbackGeoCoordinates(
+      elevation: json['elevation']?.toDouble(),
+      point: FeedbackGeoCoordinatesPoint.fromJson(json['point']),
+    );
   }
 
   /// range from -10000 to 8000

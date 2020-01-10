@@ -5,13 +5,16 @@ class ReviewRequestLinksOrganizationIriTemplate {
     this.mapping,
   });
 
-  ReviewRequestLinksOrganizationIriTemplate.fromJson(
+  factory ReviewRequestLinksOrganizationIriTemplate.fromJson(
       Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping =
-        CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']);
+
+    return ReviewRequestLinksOrganizationIriTemplate(
+      mapping:
+          CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   CategoryLinksOrganizationIriTemplateMapping mapping;

@@ -8,14 +8,17 @@ class PlaceData {
     this.organization,
   });
 
-  PlaceData.fromJson(Map<String, dynamic> json) {
+  factory PlaceData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    name = json['name'];
-    branchCode = json['branchCode'];
-    polygon = json['polygon'];
-    organization = json['organization'];
+
+    return PlaceData(
+      name: json['name'],
+      branchCode: json['branchCode'],
+      polygon: json['polygon'],
+      organization: json['organization'],
+    );
   }
 
   String name;

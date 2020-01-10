@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **cgetBusinessActivities**
-> BusinessActivityPagination cgetBusinessActivities(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, geoPoint, geoCoordinates, order, organization, page, limit)
+> BusinessActivityPagination cgetBusinessActivities(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, geoPoint, geoCoordinates, order, organization, page, limit)
 
 Retrieve all BusinessActivity resources.
 
@@ -30,6 +30,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = BusinessActivityApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -41,7 +42,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetBusinessActivities(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, geoPoint, geoCoordinates, order, organization, page, limit);
+    var result = api_instance.cgetBusinessActivities(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, geoPoint, geoCoordinates, order, organization, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling BusinessActivityApi->cgetBusinessActivities: $e\n");
@@ -54,6 +55,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -80,7 +82,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getBusinessActivity**
-> BusinessActivity getBusinessActivity(xKeyclicApp, businessActivity, acceptLanguage, xKeyclicAppVersion)
+> BusinessActivity getBusinessActivity(xKeyclicApp, businessActivity, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one BusinessActivity resource.
 
@@ -96,10 +98,11 @@ var api_instance = BusinessActivityApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var businessActivity = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getBusinessActivity(xKeyclicApp, businessActivity, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getBusinessActivity(xKeyclicApp, businessActivity, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling BusinessActivityApi->getBusinessActivity: $e\n");
@@ -113,6 +116,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **businessActivity** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -131,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSchemaByBusinessActivity**
-> Schema getSchemaByBusinessActivity(xKeyclicApp, businessActivity, acceptLanguage, xKeyclicAppVersion)
+> Schema getSchemaByBusinessActivity(xKeyclicApp, businessActivity, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one Schema resource.
 
@@ -147,10 +151,11 @@ var api_instance = BusinessActivityApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var businessActivity = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getSchemaByBusinessActivity(xKeyclicApp, businessActivity, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getSchemaByBusinessActivity(xKeyclicApp, businessActivity, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling BusinessActivityApi->getSchemaByBusinessActivity: $e\n");
@@ -164,6 +169,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **businessActivity** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

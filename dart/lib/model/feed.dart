@@ -7,13 +7,16 @@ class Feed {
     this.type,
   });
 
-  Feed.fromJson(Map<String, dynamic> json) {
+  factory Feed.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    id = json['id'];
-    name = json['name'];
-    type = json['type'];
+
+    return Feed(
+      id: json['id'],
+      name: json['name'],
+      type: json['type'],
+    );
   }
 
   String id;

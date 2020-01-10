@@ -6,12 +6,15 @@ class DeviceLinksPerson {
     this.iriTemplate,
   });
 
-  DeviceLinksPerson.fromJson(Map<String, dynamic> json) {
+  factory DeviceLinksPerson.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = DeviceLinksPersonIriTemplate.fromJson(json['iriTemplate']);
+
+    return DeviceLinksPerson(
+      href: json['href'],
+      iriTemplate: DeviceLinksPersonIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the person associated to the given device. */

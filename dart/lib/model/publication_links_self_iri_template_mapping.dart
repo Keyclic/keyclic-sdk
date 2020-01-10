@@ -5,11 +5,15 @@ class PublicationLinksSelfIriTemplateMapping {
     this.publication,
   });
 
-  PublicationLinksSelfIriTemplateMapping.fromJson(Map<String, dynamic> json) {
+  factory PublicationLinksSelfIriTemplateMapping.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    publication = json['publication'];
+
+    return PublicationLinksSelfIriTemplateMapping(
+      publication: json['publication'],
+    );
   }
 
   String publication;

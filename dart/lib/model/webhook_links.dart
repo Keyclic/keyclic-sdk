@@ -6,12 +6,15 @@ class WebhookLinks {
     this.self,
   });
 
-  WebhookLinks.fromJson(Map<String, dynamic> json) {
+  factory WebhookLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    organization = WebhookLinksOrganization.fromJson(json['organization']);
-    self = WebhookLinksSelf.fromJson(json['self']);
+
+    return WebhookLinks(
+      organization: WebhookLinksOrganization.fromJson(json['organization']),
+      self: WebhookLinksSelf.fromJson(json['self']),
+    );
   }
 
   WebhookLinksOrganization organization;

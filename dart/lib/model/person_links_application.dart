@@ -6,13 +6,16 @@ class PersonLinksApplication {
     this.iriTemplate,
   });
 
-  PersonLinksApplication.fromJson(Map<String, dynamic> json) {
+  factory PersonLinksApplication.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        PersonLinksApplicationIriTemplate.fromJson(json['iriTemplate']);
+
+    return PersonLinksApplication(
+      href: json['href'],
+      iriTemplate:
+          PersonLinksApplicationIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the application associated to the given person. */

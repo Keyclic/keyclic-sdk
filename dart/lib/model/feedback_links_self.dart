@@ -6,12 +6,15 @@ class FeedbackLinksSelf {
     this.iriTemplate,
   });
 
-  FeedbackLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory FeedbackLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = FeedbackLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return FeedbackLinksSelf(
+      href: json['href'],
+      iriTemplate: FeedbackLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given feedback. */

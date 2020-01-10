@@ -7,13 +7,16 @@ class OccupantLinks {
     this.self,
   });
 
-  OccupantLinks.fromJson(Map<String, dynamic> json) {
+  factory OccupantLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    person = OccupantLinksPerson.fromJson(json['person']);
-    place = OccupantLinksPlace.fromJson(json['place']);
-    self = OccupantLinksSelf.fromJson(json['self']);
+
+    return OccupantLinks(
+      person: OccupantLinksPerson.fromJson(json['person']),
+      place: OccupantLinksPlace.fromJson(json['place']),
+      self: OccupantLinksSelf.fromJson(json['self']),
+    );
   }
 
   OccupantLinksPerson person;

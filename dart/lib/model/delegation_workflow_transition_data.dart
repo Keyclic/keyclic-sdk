@@ -10,11 +10,14 @@ class DelegationWorkflowTransitionData {
     this.transition,
   });
 
-  DelegationWorkflowTransitionData.fromJson(Map<String, dynamic> json) {
+  factory DelegationWorkflowTransitionData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    transition = json['transition'];
+
+    return DelegationWorkflowTransitionData(
+      transition: json['transition'],
+    );
   }
 
   /// use DelegationWorkflowTransitionDataTransitionEnum

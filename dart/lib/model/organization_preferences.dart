@@ -8,15 +8,18 @@ class OrganizationPreferences {
     this.reviewEnabled,
   });
 
-  OrganizationPreferences.fromJson(Map<String, dynamic> json) {
+  factory OrganizationPreferences.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    notification =
-        OrganizationPreferencesNotification.fromJson(json['notification']);
-    public = json['public'];
-    reference = OrganizationPreferencesReference.fromJson(json['reference']);
-    reviewEnabled = json['reviewEnabled'];
+
+    return OrganizationPreferences(
+      notification:
+          OrganizationPreferencesNotification.fromJson(json['notification']),
+      public: json['public'],
+      reference: OrganizationPreferencesReference.fromJson(json['reference']),
+      reviewEnabled: json['reviewEnabled'],
+    );
   }
 
   OrganizationPreferencesNotification notification;

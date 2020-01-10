@@ -10,16 +10,19 @@ class OccupantPagination extends Pagination {
     this.embedded,
   });
 
-  OccupantPagination.fromJson(Map<String, dynamic> json) {
+  factory OccupantPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = OccupantCollection.fromJson(json['_embedded']);
+
+    return OccupantPagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: OccupantCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

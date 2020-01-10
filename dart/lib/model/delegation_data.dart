@@ -7,13 +7,16 @@ class DelegationData {
     this.service,
   });
 
-  DelegationData.fromJson(Map<String, dynamic> json) {
+  factory DelegationData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    description = json['description'];
-    report = json['report'];
-    service = json['service'];
+
+    return DelegationData(
+      description: json['description'],
+      report: json['report'],
+      service: json['service'],
+    );
   }
 
   String description;

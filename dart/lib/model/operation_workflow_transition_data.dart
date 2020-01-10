@@ -11,11 +11,14 @@ class OperationWorkflowTransitionData {
     this.transition,
   });
 
-  OperationWorkflowTransitionData.fromJson(Map<String, dynamic> json) {
+  factory OperationWorkflowTransitionData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    transition = json['transition'];
+
+    return OperationWorkflowTransitionData(
+      transition: json['transition'],
+    );
   }
 
   /// use OperationWorkflowTransitionDataTransitionEnum

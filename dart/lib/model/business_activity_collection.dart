@@ -5,11 +5,14 @@ class BusinessActivityCollection {
     this.items,
   });
 
-  BusinessActivityCollection.fromJson(Map<String, dynamic> json) {
+  factory BusinessActivityCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = BusinessActivity.listFromJson(json['items']);
+
+    return BusinessActivityCollection(
+      items: BusinessActivity.listFromJson(json['items']),
+    );
   }
 
   List<BusinessActivity> items;

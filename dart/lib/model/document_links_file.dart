@@ -6,12 +6,15 @@ class DocumentLinksFile {
     this.iriTemplate,
   });
 
-  DocumentLinksFile.fromJson(Map<String, dynamic> json) {
+  factory DocumentLinksFile.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = DocumentLinksFileIriTemplate.fromJson(json['iriTemplate']);
+
+    return DocumentLinksFile(
+      href: json['href'],
+      iriTemplate: DocumentLinksFileIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the file associated to the given document. */

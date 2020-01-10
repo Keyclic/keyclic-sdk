@@ -8,15 +8,18 @@ class SuccessLoginCredentials {
     this.memberOf,
   });
 
-  SuccessLoginCredentials.fromJson(Map<String, dynamic> json) {
+  factory SuccessLoginCredentials.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    id = json['id'];
-    login = json['login'];
-    administratorOf = SuccessLoginCredentialsAdministratorOf.listFromJson(
-        json['administratorOf']);
-    memberOf = SuccessLoginCredentialsMemberOf.listFromJson(json['memberOf']);
+
+    return SuccessLoginCredentials(
+      id: json['id'],
+      login: json['login'],
+      administratorOf: SuccessLoginCredentialsAdministratorOf.listFromJson(
+          json['administratorOf']),
+      memberOf: SuccessLoginCredentialsMemberOf.listFromJson(json['memberOf']),
+    );
   }
 
   String id;

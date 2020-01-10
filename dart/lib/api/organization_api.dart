@@ -13,6 +13,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     String businessActivity,
     DateTime after,
@@ -65,6 +66,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -109,6 +111,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -150,6 +153,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -194,6 +198,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -235,6 +240,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -279,6 +285,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -320,6 +327,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -364,6 +372,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -411,6 +420,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -455,6 +465,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     String assignedTo,
     DateTime after,
@@ -502,6 +513,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -545,6 +557,7 @@ class OrganizationApi {
   Future<OrganizationPagination> cgetOrganizations(
     String xKeyclicApp, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     String businessActivity,
     DateTime after,
@@ -597,6 +610,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -641,6 +655,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     String businessActivity,
     DateTime after,
@@ -707,6 +722,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -751,6 +767,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -792,6 +809,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -836,6 +854,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     String assignedTo,
     String category,
@@ -892,6 +911,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -936,6 +956,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -974,6 +995,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -1018,6 +1040,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     String assignedTo,
     String category,
@@ -1074,6 +1097,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -1117,6 +1141,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     String category,
     String place,
@@ -1158,6 +1183,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -1201,6 +1227,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -1224,6 +1251,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -1268,6 +1296,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -1291,6 +1320,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -1334,6 +1364,7 @@ class OrganizationApi {
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -1357,6 +1388,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -1401,6 +1433,7 @@ class OrganizationApi {
     OrganizationPatch organizationPatch,
     String organization, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -1428,6 +1461,7 @@ class OrganizationApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };

@@ -32,6 +32,7 @@ let reviewRequest = "reviewRequest_example"; // String | The identifier of the r
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -51,6 +52,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **reviewRequest** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

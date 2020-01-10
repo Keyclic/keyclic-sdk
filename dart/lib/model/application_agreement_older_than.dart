@@ -5,11 +5,14 @@ class ApplicationAgreementOlderThan {
     this.content,
   });
 
-  ApplicationAgreementOlderThan.fromJson(Map<String, dynamic> json) {
+  factory ApplicationAgreementOlderThan.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    content = json['content'];
+
+    return ApplicationAgreementOlderThan(
+      content: json['content'],
+    );
   }
 
   String content;

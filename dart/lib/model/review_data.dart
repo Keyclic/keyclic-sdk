@@ -7,13 +7,16 @@ class ReviewData {
     this.reviewRequest,
   });
 
-  ReviewData.fromJson(Map<String, dynamic> json) {
+  factory ReviewData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    reviewBody = json['reviewBody'];
-    reviewRating = json['reviewRating'];
-    reviewRequest = json['reviewRequest'];
+
+    return ReviewData(
+      reviewBody: json['reviewBody'],
+      reviewRating: json['reviewRating'],
+      reviewRequest: json['reviewRequest'],
+    );
   }
 
   String reviewBody;

@@ -6,13 +6,16 @@ class BusinessActivityLinksThumbnail {
     this.iriTemplate,
   });
 
-  BusinessActivityLinksThumbnail.fromJson(Map<String, dynamic> json) {
+  factory BusinessActivityLinksThumbnail.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        BusinessActivityLinksThumbnailIriTemplate.fromJson(json['iriTemplate']);
+
+    return BusinessActivityLinksThumbnail(
+      href: json['href'],
+      iriTemplate: BusinessActivityLinksThumbnailIriTemplate.fromJson(
+          json['iriTemplate']),
+    );
   }
 
   /* The URI of the thumbnail associated to the given businessactivity. */

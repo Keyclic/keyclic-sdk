@@ -6,12 +6,15 @@ class PlaceLinksSelf {
     this.iriTemplate,
   });
 
-  PlaceLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory PlaceLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = PlaceLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return PlaceLinksSelf(
+      href: json['href'],
+      iriTemplate: PlaceLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given place. */

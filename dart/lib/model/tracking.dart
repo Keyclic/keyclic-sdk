@@ -8,14 +8,17 @@ class Tracking {
     this.time,
   });
 
-  Tracking.fromJson(Map<String, dynamic> json) {
+  factory Tracking.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    checkpoints = Checkpoint.listFromJson(json['checkpoints']);
-    progression = TrackingProgression.fromJson(json['progression']);
-    state = json['state'];
-    time = json['time'];
+
+    return Tracking(
+      checkpoints: Checkpoint.listFromJson(json['checkpoints']),
+      progression: TrackingProgression.fromJson(json['progression']),
+      state: json['state'],
+      time: json['time'],
+    );
   }
 
   List<Checkpoint> checkpoints;

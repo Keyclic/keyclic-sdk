@@ -6,12 +6,15 @@ class PersonLinksImage {
     this.iriTemplate,
   });
 
-  PersonLinksImage.fromJson(Map<String, dynamic> json) {
+  factory PersonLinksImage.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = PersonLinksImageIriTemplate.fromJson(json['iriTemplate']);
+
+    return PersonLinksImage(
+      href: json['href'],
+      iriTemplate: PersonLinksImageIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the image associated to the given person. */

@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 # **cgetFeedbackByPerson**
-> FeedbackPagination cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, category, after, before, geoHash[], order, organization, state, visibility[], page, limit)
+> FeedbackPagination cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, category, after, before, geoHash[], order, organization, state, visibility[], page, limit)
 
 Retrieve all Feedback resources.
 
@@ -37,6 +37,7 @@ var api_instance = PersonApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var person = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var category = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -50,7 +51,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, category, after, before, geoHash[], order, organization, state, visibility[], page, limit);
+    var result = api_instance.cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, category, after, before, geoHash[], order, organization, state, visibility[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetFeedbackByPerson: $e\n");
@@ -64,6 +65,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **category** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 
@@ -92,7 +94,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetMembershipsByPerson**
-> MemberPagination cgetMembershipsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, after, before, order, role, query, roles[], page, limit)
+> MemberPagination cgetMembershipsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, role, query, roles[], page, limit)
 
 Retrieve all Membership resources.
 
@@ -108,6 +110,7 @@ var api_instance = PersonApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var person = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -119,7 +122,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetMembershipsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, after, before, order, role, query, roles[], page, limit);
+    var result = api_instance.cgetMembershipsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, role, query, roles[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetMembershipsByPerson: $e\n");
@@ -133,6 +136,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -159,7 +163,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetOccupantsByPerson**
-> OccupantPagination cgetOccupantsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, after, before, order, page, limit)
+> OccupantPagination cgetOccupantsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit)
 
 Retrieve all Occupant resources.
 
@@ -175,6 +179,7 @@ var api_instance = PersonApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var person = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -183,7 +188,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetOccupantsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, after, before, order, page, limit);
+    var result = api_instance.cgetOccupantsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetOccupantsByPerson: $e\n");
@@ -197,6 +202,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -220,7 +226,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetOperationsByPerson**
-> OperationPagination cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, page, limit)
+> OperationPagination cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, page, limit)
 
 Retrieve all Operation resources.
 
@@ -236,6 +242,7 @@ var api_instance = PersonApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var person = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var assignedTo = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -248,7 +255,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, page, limit);
+    var result = api_instance.cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetOperationsByPerson: $e\n");
@@ -262,6 +269,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 
@@ -289,7 +297,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetPeople**
-> PersonPagination cgetPeople(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, order, query, page, limit)
+> PersonPagination cgetPeople(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, query, page, limit)
 
 Retrieve all Person resources.
 
@@ -304,6 +312,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = PersonApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -313,7 +322,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetPeople(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, after, before, order, query, page, limit);
+    var result = api_instance.cgetPeople(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetPeople: $e\n");
@@ -326,6 +335,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -350,7 +360,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetReportsByPerson**
-> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, order, place, query, state, page, limit)
+> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, order, place, query, state, page, limit)
 
 Retrieve all Report resources.
 
@@ -366,6 +376,7 @@ var api_instance = PersonApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var person = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var assignedTo = ; // String | The identifier of the resource.
 var category = ; // String | The identifier of the resource.
@@ -380,7 +391,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, order, place, query, state, page, limit);
+    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, order, place, query, state, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetReportsByPerson: $e\n");
@@ -394,6 +405,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **category** | [**String**](.md)| The identifier of the resource. | [optional] 
@@ -423,7 +435,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetReviewRequestsByPerson**
-> ReviewRequestPagination cgetReviewRequestsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, after, before, order, page, limit)
+> ReviewRequestPagination cgetReviewRequestsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit)
 
 Retrieve all ReviewRequest resources.
 
@@ -439,6 +451,7 @@ var api_instance = PersonApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var person = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -447,7 +460,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetReviewRequestsByPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion, after, before, order, page, limit);
+    var result = api_instance.cgetReviewRequestsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetReviewRequestsByPerson: $e\n");
@@ -461,6 +474,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -484,7 +498,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPerson**
-> Person getPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion)
+> Person getPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one Person resource.
 
@@ -500,10 +514,11 @@ var api_instance = PersonApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var person = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getPerson(xKeyclicApp, person, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->getPerson: $e\n");
@@ -517,6 +532,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -535,7 +551,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchPerson**
-> Person patchPerson(xKeyclicApp, personPatch, person, acceptLanguage, xKeyclicAppVersion)
+> Person patchPerson(xKeyclicApp, personPatch, person, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Edit one Person resource.
 
@@ -552,10 +568,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var personPatch = PersonPatch(); // PersonPatch | 
 var person = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.patchPerson(xKeyclicApp, personPatch, person, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.patchPerson(xKeyclicApp, personPatch, person, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->patchPerson: $e\n");
@@ -570,6 +587,7 @@ Name | Type | Description  | Notes
  **personPatch** | [**PersonPatch**](PersonPatch.md)|  | 
  **person** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

@@ -6,13 +6,16 @@ class InternalServiceLinksSelf {
     this.iriTemplate,
   });
 
-  InternalServiceLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory InternalServiceLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        InternalServiceLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return InternalServiceLinksSelf(
+      href: json['href'],
+      iriTemplate:
+          InternalServiceLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given internalservice. */

@@ -9,15 +9,18 @@ class Pagination {
     this.links,
   });
 
-  Pagination.fromJson(Map<String, dynamic> json) {
+  factory Pagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
+
+    return Pagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+    );
   }
 
   int limit;

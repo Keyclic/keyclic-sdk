@@ -6,13 +6,16 @@ class CheckpointLinksOrganization {
     this.iriTemplate,
   });
 
-  CheckpointLinksOrganization.fromJson(Map<String, dynamic> json) {
+  factory CheckpointLinksOrganization.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        CheckpointLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+
+    return CheckpointLinksOrganization(
+      href: json['href'],
+      iriTemplate:
+          CheckpointLinksOrganizationIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the organization associated to the given checkpoint. */

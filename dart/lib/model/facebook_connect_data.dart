@@ -5,11 +5,14 @@ class FacebookConnectData {
     this.accessToken,
   });
 
-  FacebookConnectData.fromJson(Map<String, dynamic> json) {
+  factory FacebookConnectData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    accessToken = json['accessToken'];
+
+    return FacebookConnectData(
+      accessToken: json['accessToken'],
+    );
   }
 
   String accessToken;

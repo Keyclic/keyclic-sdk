@@ -8,17 +8,20 @@ class ReportEmbedded {
     this.tracking,
   });
 
-  ReportEmbedded.fromJson(Map<String, dynamic> json) {
+  factory ReportEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    duration = OperationEmbeddedDuration.fromJson(json['duration']);
-    if (json['stateTransitions'] is List) {
-      stateTransitions = List<String>.from(json['stateTransitions']);
-    }
-    targetGroups =
-        ReportEmbeddedTargetGroups.listFromJson(json['targetGroups']);
-    tracking = json['tracking'];
+
+    return ReportEmbedded(
+      duration: OperationEmbeddedDuration.fromJson(json['duration']),
+      stateTransitions: json['stateTransitions'] is List
+          ? List<String>.from(json['stateTransitions'])
+          : null,
+      targetGroups:
+          ReportEmbeddedTargetGroups.listFromJson(json['targetGroups']),
+      tracking: json['tracking'],
+    );
   }
 
   OperationEmbeddedDuration duration;

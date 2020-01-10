@@ -13,19 +13,22 @@ class ReportLinks {
     this.tracking,
   });
 
-  ReportLinks.fromJson(Map<String, dynamic> json) {
+  factory ReportLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    category = ReportLinksCategory.fromJson(json['category']);
-    delegatedFrom = ReportLinksDelegatedFrom.fromJson(json['delegatedFrom']);
-    delegatedTo = ReportLinksDelegatedTo.fromJson(json['delegatedTo']);
-    feedback = ReportLinksFeedback.fromJson(json['feedback']);
-    operations = ReportLinksOperations.fromJson(json['operations']);
-    organization = ReportLinksOrganization.fromJson(json['organization']);
-    place = ReportLinksPlace.fromJson(json['place']);
-    self = ReportLinksSelf.fromJson(json['self']);
-    tracking = ReportLinksTracking.fromJson(json['tracking']);
+
+    return ReportLinks(
+      category: ReportLinksCategory.fromJson(json['category']),
+      delegatedFrom: ReportLinksDelegatedFrom.fromJson(json['delegatedFrom']),
+      delegatedTo: ReportLinksDelegatedTo.fromJson(json['delegatedTo']),
+      feedback: ReportLinksFeedback.fromJson(json['feedback']),
+      operations: ReportLinksOperations.fromJson(json['operations']),
+      organization: ReportLinksOrganization.fromJson(json['organization']),
+      place: ReportLinksPlace.fromJson(json['place']),
+      self: ReportLinksSelf.fromJson(json['self']),
+      tracking: ReportLinksTracking.fromJson(json['tracking']),
+    );
   }
 
   ReportLinksCategory category;

@@ -5,13 +5,14 @@ class MemberPatch {
     this.roles,
   });
 
-  MemberPatch.fromJson(Map<String, dynamic> json) {
+  factory MemberPatch.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    if (json['roles'] is List) {
-      roles = List<String>.from(json['roles']);
-    }
+
+    return MemberPatch(
+      roles: json['roles'] is List ? List<String>.from(json['roles']) : null,
+    );
   }
 
   List<String> roles;

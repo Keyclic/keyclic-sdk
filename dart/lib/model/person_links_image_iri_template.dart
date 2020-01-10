@@ -5,12 +5,15 @@ class PersonLinksImageIriTemplate {
     this.mapping,
   });
 
-  PersonLinksImageIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory PersonLinksImageIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = ContributionLinksContributorIriTemplateMapping.fromJson(
-        json['mapping']);
+
+    return PersonLinksImageIriTemplate(
+      mapping: ContributionLinksContributorIriTemplateMapping.fromJson(
+          json['mapping']),
+    );
   }
 
   ContributionLinksContributorIriTemplateMapping mapping;

@@ -5,11 +5,14 @@ class PlaceCollection {
     this.items,
   });
 
-  PlaceCollection.fromJson(Map<String, dynamic> json) {
+  factory PlaceCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Place.listFromJson(json['items']);
+
+    return PlaceCollection(
+      items: Place.listFromJson(json['items']),
+    );
   }
 
   List<Place> items;

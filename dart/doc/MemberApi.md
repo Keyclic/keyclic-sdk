@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **deleteMember**
-> deleteMember(xKeyclicApp, member, acceptLanguage, xKeyclicAppVersion)
+> deleteMember(xKeyclicApp, member, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Remove one Member resource.
 
@@ -32,10 +32,11 @@ var api_instance = MemberApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var member = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteMember(xKeyclicApp, member, acceptLanguage, xKeyclicAppVersion);
+    api_instance.deleteMember(xKeyclicApp, member, acceptLanguage, xDateTime, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling MemberApi->deleteMember: $e\n");
 }
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -66,7 +68,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getMember**
-> Member getMember(xKeyclicApp, member, acceptLanguage, xKeyclicAppVersion)
+> Member getMember(xKeyclicApp, member, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one Member resource.
 
@@ -82,10 +84,11 @@ var api_instance = MemberApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var member = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getMember(xKeyclicApp, member, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getMember(xKeyclicApp, member, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling MemberApi->getMember: $e\n");
@@ -99,6 +102,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -117,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchMember**
-> Member patchMember(xKeyclicApp, memberPatch, member, acceptLanguage, xKeyclicAppVersion)
+> Member patchMember(xKeyclicApp, memberPatch, member, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Edit one Member resource.
 
@@ -134,10 +138,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var memberPatch = MemberPatch(); // MemberPatch | 
 var member = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.patchMember(xKeyclicApp, memberPatch, member, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.patchMember(xKeyclicApp, memberPatch, member, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling MemberApi->patchMember: $e\n");
@@ -152,6 +157,7 @@ Name | Type | Description  | Notes
  **memberPatch** | [**MemberPatch**](MemberPatch.md)|  | 
  **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -170,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postMember**
-> Member postMember(xKeyclicApp, memberData, acceptLanguage, xKeyclicAppVersion)
+> Member postMember(xKeyclicApp, memberData, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Member resource.
 
@@ -186,10 +192,11 @@ var api_instance = MemberApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var memberData = MemberData(); // MemberData | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postMember(xKeyclicApp, memberData, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postMember(xKeyclicApp, memberData, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling MemberApi->postMember: $e\n");
@@ -203,6 +210,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **memberData** | [**MemberData**](MemberData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

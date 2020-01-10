@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **deleteOccupant**
-> deleteOccupant(xKeyclicApp, occupant, acceptLanguage, xKeyclicAppVersion)
+> deleteOccupant(xKeyclicApp, occupant, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Remove one Occupant resource.
 
@@ -31,10 +31,11 @@ var api_instance = OccupantApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var occupant = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteOccupant(xKeyclicApp, occupant, acceptLanguage, xKeyclicAppVersion);
+    api_instance.deleteOccupant(xKeyclicApp, occupant, acceptLanguage, xDateTime, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling OccupantApi->deleteOccupant: $e\n");
 }
@@ -47,6 +48,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **occupant** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -65,7 +67,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getOccupant**
-> Occupant getOccupant(xKeyclicApp, occupant, acceptLanguage, xKeyclicAppVersion)
+> Occupant getOccupant(xKeyclicApp, occupant, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one Occupant resource.
 
@@ -81,10 +83,11 @@ var api_instance = OccupantApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var occupant = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getOccupant(xKeyclicApp, occupant, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getOccupant(xKeyclicApp, occupant, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OccupantApi->getOccupant: $e\n");
@@ -98,6 +101,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **occupant** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -116,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postOccupant**
-> Occupant postOccupant(xKeyclicApp, occupantData, acceptLanguage, xKeyclicAppVersion)
+> Occupant postOccupant(xKeyclicApp, occupantData, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Occupant resource.
 
@@ -132,10 +136,11 @@ var api_instance = OccupantApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var occupantData = OccupantData(); // OccupantData | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postOccupant(xKeyclicApp, occupantData, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postOccupant(xKeyclicApp, occupantData, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OccupantApi->postOccupant: $e\n");
@@ -149,6 +154,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **occupantData** | [**OccupantData**](OccupantData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

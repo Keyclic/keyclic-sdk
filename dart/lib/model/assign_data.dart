@@ -5,11 +5,14 @@ class AssignData {
     this.member,
   });
 
-  AssignData.fromJson(Map<String, dynamic> json) {
+  factory AssignData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    member = json['member'];
+
+    return AssignData(
+      member: json['member'],
+    );
   }
 
   String member;

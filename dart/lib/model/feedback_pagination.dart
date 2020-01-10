@@ -10,16 +10,19 @@ class FeedbackPagination extends Pagination {
     this.embedded,
   });
 
-  FeedbackPagination.fromJson(Map<String, dynamic> json) {
+  factory FeedbackPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = FeedbackCollection.fromJson(json['_embedded']);
+
+    return FeedbackPagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: FeedbackCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

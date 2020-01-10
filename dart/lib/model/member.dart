@@ -11,27 +11,32 @@ class Member {
     this.updatedAt,
   });
 
-  Member.fromJson(Map<String, dynamic> json) {
+  factory Member.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    embedded = MemberEmbedded.fromJson(json['_embedded']);
-    links = MemberLinks.fromJson(json['_links']);
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    id = json['id'];
-    if (json['roles'] is List) {
-      roles = List<String>.from(json['roles']);
-    }
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return Member(
+      embedded: MemberEmbedded.fromJson(json['_embedded']),
+      links: MemberLinks.fromJson(json['_links']),
+      createdAt: createdAt,
+      id: json['id'],
+      roles: json['roles'] is List ? List<String>.from(json['roles']) : null,
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   MemberEmbedded embedded;

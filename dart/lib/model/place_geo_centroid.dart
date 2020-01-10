@@ -6,12 +6,15 @@ class PlaceGeoCentroid {
     this.longitude,
   });
 
-  PlaceGeoCentroid.fromJson(Map<String, dynamic> json) {
+  factory PlaceGeoCentroid.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    latitude = json['latitude']?.toDouble();
-    longitude = json['longitude']?.toDouble();
+
+    return PlaceGeoCentroid(
+      latitude: json['latitude']?.toDouble(),
+      longitude: json['longitude']?.toDouble(),
+    );
   }
 
   double latitude;

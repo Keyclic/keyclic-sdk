@@ -12,6 +12,7 @@ class PersonApi {
     String xKeyclicApp,
     String person, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     String category,
     DateTime after,
@@ -67,6 +68,7 @@ class PersonApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -111,6 +113,7 @@ class PersonApi {
     String xKeyclicApp,
     String person, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -158,6 +161,7 @@ class PersonApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -202,6 +206,7 @@ class PersonApi {
     String xKeyclicApp,
     String person, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -240,6 +245,7 @@ class PersonApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -284,6 +290,7 @@ class PersonApi {
     String xKeyclicApp,
     String person, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     String assignedTo,
     DateTime after,
@@ -334,6 +341,7 @@ class PersonApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -377,6 +385,7 @@ class PersonApi {
   Future<PersonPagination> cgetPeople(
     String xKeyclicApp, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -412,6 +421,7 @@ class PersonApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -456,6 +466,7 @@ class PersonApi {
     String xKeyclicApp,
     String person, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     String assignedTo,
     String category,
@@ -512,6 +523,7 @@ class PersonApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -556,6 +568,7 @@ class PersonApi {
     String xKeyclicApp,
     String person, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -594,6 +607,7 @@ class PersonApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -638,6 +652,7 @@ class PersonApi {
     String xKeyclicApp,
     String person, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -661,6 +676,7 @@ class PersonApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
@@ -705,6 +721,7 @@ class PersonApi {
     PersonPatch personPatch,
     String person, {
     String acceptLanguage,
+    DateTime xDateTime,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -732,6 +749,7 @@ class PersonApi {
     // header params
     final Map<String, String> headerParams = {
       "accept-language": acceptLanguage,
+      if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };

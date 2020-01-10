@@ -9,17 +9,18 @@ class Condition {
     this.value,
   });
 
-  Condition.fromJson(Map<String, dynamic> json) {
+  factory Condition.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    id = json['id'];
-    operator_ = json['operator'];
-    path = json['path'];
-    type = json['type'];
-    if (json['value'] is List) {
-      value = List<String>.from(json['value']);
-    }
+
+    return Condition(
+      id: json['id'],
+      operator_: json['operator'],
+      path: json['path'],
+      type: json['type'],
+      value: json['value'] is List ? List<String>.from(json['value']) : null,
+    );
   }
 
   String id;

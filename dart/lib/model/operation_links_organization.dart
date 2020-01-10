@@ -6,13 +6,16 @@ class OperationLinksOrganization {
     this.iriTemplate,
   });
 
-  OperationLinksOrganization.fromJson(Map<String, dynamic> json) {
+  factory OperationLinksOrganization.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        OperationLinksOrganizationIriTemplate.fromJson(json['iriTemplate']);
+
+    return OperationLinksOrganization(
+      href: json['href'],
+      iriTemplate:
+          OperationLinksOrganizationIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the organization associated to the given operation. */

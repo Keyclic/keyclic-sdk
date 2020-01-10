@@ -5,11 +5,14 @@ class ErrorEmbedded {
     this.errors,
   });
 
-  ErrorEmbedded.fromJson(Map<String, dynamic> json) {
+  factory ErrorEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    errors = Error.listFromJson(json['errors']);
+
+    return ErrorEmbedded(
+      errors: Error.listFromJson(json['errors']),
+    );
   }
 
   List<Error> errors;

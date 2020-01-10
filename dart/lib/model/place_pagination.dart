@@ -10,16 +10,19 @@ class PlacePagination extends Pagination {
     this.embedded,
   });
 
-  PlacePagination.fromJson(Map<String, dynamic> json) {
+  factory PlacePagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = PlaceCollection.fromJson(json['_embedded']);
+
+    return PlacePagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: PlaceCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

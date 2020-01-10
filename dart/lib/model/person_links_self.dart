@@ -6,12 +6,15 @@ class PersonLinksSelf {
     this.iriTemplate,
   });
 
-  PersonLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory PersonLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = PersonLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return PersonLinksSelf(
+      href: json['href'],
+      iriTemplate: PersonLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given person. */

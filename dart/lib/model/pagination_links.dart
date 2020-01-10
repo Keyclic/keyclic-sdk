@@ -8,14 +8,17 @@ class PaginationLinks {
     this.self,
   });
 
-  PaginationLinks.fromJson(Map<String, dynamic> json) {
+  factory PaginationLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    first = PaginationLink.fromJson(json['first']);
-    last = PaginationLink.fromJson(json['last']);
-    next = PaginationLink.fromJson(json['next']);
-    self = PaginationLink.fromJson(json['self']);
+
+    return PaginationLinks(
+      first: PaginationLink.fromJson(json['first']),
+      last: PaginationLink.fromJson(json['last']),
+      next: PaginationLink.fromJson(json['next']),
+      self: PaginationLink.fromJson(json['self']),
+    );
   }
 
   PaginationLink first;

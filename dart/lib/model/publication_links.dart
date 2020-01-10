@@ -8,14 +8,17 @@ class PublicationLinks {
     this.self,
   });
 
-  PublicationLinks.fromJson(Map<String, dynamic> json) {
+  factory PublicationLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    author = PublicationLinksAuthor.fromJson(json['author']);
-    feed = PublicationLinksFeed.fromJson(json['feed']);
-    organization = PublicationLinksOrganization.fromJson(json['organization']);
-    self = PublicationLinksSelf.fromJson(json['self']);
+
+    return PublicationLinks(
+      author: PublicationLinksAuthor.fromJson(json['author']),
+      feed: PublicationLinksFeed.fromJson(json['feed']),
+      organization: PublicationLinksOrganization.fromJson(json['organization']),
+      self: PublicationLinksSelf.fromJson(json['self']),
+    );
   }
 
   PublicationLinksAuthor author;

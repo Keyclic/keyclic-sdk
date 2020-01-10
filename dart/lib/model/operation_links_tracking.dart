@@ -6,13 +6,16 @@ class OperationLinksTracking {
     this.iriTemplate,
   });
 
-  OperationLinksTracking.fromJson(Map<String, dynamic> json) {
+  factory OperationLinksTracking.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        OperationLinksTrackingIriTemplate.fromJson(json['iriTemplate']);
+
+    return OperationLinksTracking(
+      href: json['href'],
+      iriTemplate:
+          OperationLinksTrackingIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the tracking associated to the given operation. */

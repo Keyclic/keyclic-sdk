@@ -6,12 +6,15 @@ class DocumentPatch {
     this.permission,
   });
 
-  DocumentPatch.fromJson(Map<String, dynamic> json) {
+  factory DocumentPatch.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    file = DocumentPatchFile.fromJson(json['file']);
-    permission = DocumentPermission.fromJson(json['permission']);
+
+    return DocumentPatch(
+      file: DocumentPatchFile.fromJson(json['file']),
+      permission: DocumentPermission.fromJson(json['permission']),
+    );
   }
 
   DocumentPatchFile file;

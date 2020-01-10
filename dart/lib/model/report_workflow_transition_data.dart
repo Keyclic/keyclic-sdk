@@ -13,11 +13,14 @@ class ReportWorkflowTransitionData {
     this.transition,
   });
 
-  ReportWorkflowTransitionData.fromJson(Map<String, dynamic> json) {
+  factory ReportWorkflowTransitionData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    transition = json['transition'];
+
+    return ReportWorkflowTransitionData(
+      transition: json['transition'],
+    );
   }
 
   /// use ReportWorkflowTransitionDataTransitionEnum

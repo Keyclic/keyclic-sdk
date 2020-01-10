@@ -35,6 +35,7 @@ let member = "member_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -54,6 +55,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -94,6 +96,7 @@ let member = "member_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -113,6 +116,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -155,6 +159,7 @@ let member = "member_example"; // String | The identifier of the resource.
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -175,6 +180,7 @@ Name | Type | Description  | Notes
  **memberPatch** | [**MemberPatch**](MemberPatch.md)|  | 
  **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -215,6 +221,7 @@ let memberData = new @KeyclicSdkJavascript.MemberData(); // MemberData |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -234,6 +241,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **memberData** | [**MemberData**](MemberData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

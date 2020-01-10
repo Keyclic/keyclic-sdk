@@ -5,11 +5,14 @@ class OccupantCollection {
     this.items,
   });
 
-  OccupantCollection.fromJson(Map<String, dynamic> json) {
+  factory OccupantCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Occupant.listFromJson(json['items']);
+
+    return OccupantCollection(
+      items: Occupant.listFromJson(json['items']),
+    );
   }
 
   List<Occupant> items;

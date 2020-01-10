@@ -5,11 +5,14 @@ class ImageData {
     this.image,
   });
 
-  ImageData.fromJson(Map<String, dynamic> json) {
+  factory ImageData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    image = json['image'];
+
+    return ImageData(
+      image: json['image'],
+    );
   }
 
   String image;

@@ -17,18 +17,21 @@ class FeedbackData {
     this.visibility,
   });
 
-  FeedbackData.fromJson(Map<String, dynamic> json) {
+  factory FeedbackData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    businessActivity = json['businessActivity'];
-    category = json['category'];
-    description = json['description'];
-    geo = FeedbackDataGeo.fromJson(json['geo']);
-    metadata = json['metadata'];
-    place = json['place'];
-    proMode = json['proMode'];
-    visibility = json['visibility'];
+
+    return FeedbackData(
+      businessActivity: json['businessActivity'],
+      category: json['category'],
+      description: json['description'],
+      geo: FeedbackDataGeo.fromJson(json['geo']),
+      metadata: json['metadata'],
+      place: json['place'],
+      proMode: json['proMode'],
+      visibility: json['visibility'],
+    );
   }
 
   String businessActivity;

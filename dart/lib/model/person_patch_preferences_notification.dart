@@ -6,12 +6,16 @@ class PersonPatchPreferencesNotification {
     this.push,
   });
 
-  PersonPatchPreferencesNotification.fromJson(Map<String, dynamic> json) {
+  factory PersonPatchPreferencesNotification.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mail = json['mail'];
-    push = json['push'];
+
+    return PersonPatchPreferencesNotification(
+      mail: json['mail'],
+      push: json['push'],
+    );
   }
 
   bool mail;

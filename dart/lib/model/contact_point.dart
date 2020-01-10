@@ -9,15 +9,18 @@ class ContactPoint {
     this.type,
   });
 
-  ContactPoint.fromJson(Map<String, dynamic> json) {
+  factory ContactPoint.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    email = json['email'];
-    id = json['id'];
-    name = json['name'];
-    telephone = json['telephone'];
-    type = json['type'];
+
+    return ContactPoint(
+      email: json['email'],
+      id: json['id'],
+      name: json['name'],
+      telephone: json['telephone'],
+      type: json['type'],
+    );
   }
 
   String email;

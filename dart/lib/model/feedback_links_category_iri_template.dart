@@ -5,11 +5,14 @@ class FeedbackLinksCategoryIriTemplate {
     this.mapping,
   });
 
-  FeedbackLinksCategoryIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory FeedbackLinksCategoryIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = CategoryLinksSelfIriTemplateMapping.fromJson(json['mapping']);
+
+    return FeedbackLinksCategoryIriTemplate(
+      mapping: CategoryLinksSelfIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   CategoryLinksSelfIriTemplateMapping mapping;

@@ -150,6 +150,7 @@ var ContributionApi =
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { ContributionPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { Date } xDateTime
      * @param { String } xKeyclicAppVersion
      * @param { module:model/Date } after
      * @param { module:model/Date } before
@@ -179,6 +180,7 @@ var ContributionApi =
 
           var xKeyclicApp = options.xKeyclicApp,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             after = options.after,
             before = options.before,
@@ -210,6 +212,10 @@ var ContributionApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -240,6 +246,7 @@ var ContributionApi =
           };
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -268,6 +275,7 @@ var ContributionApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Contribution }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          */
       },
@@ -291,6 +299,7 @@ var ContributionApi =
           var xKeyclicApp = options.xKeyclicApp,
             contribution = options.contribution,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -310,6 +319,10 @@ var ContributionApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -323,6 +336,7 @@ var ContributionApi =
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -351,6 +365,7 @@ var ContributionApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Contribution }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          */
       },
@@ -374,6 +389,7 @@ var ContributionApi =
           var xKeyclicApp = options.xKeyclicApp,
             contributionData = options.contributionData,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -396,6 +412,10 @@ var ContributionApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -407,6 +427,7 @@ var ContributionApi =
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };

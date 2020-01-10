@@ -5,12 +5,16 @@ class OperationLinksCreatedByIriTemplate {
     this.mapping,
   });
 
-  OperationLinksCreatedByIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory OperationLinksCreatedByIriTemplate.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = ContributionLinksContributorIriTemplateMapping.fromJson(
-        json['mapping']);
+
+    return OperationLinksCreatedByIriTemplate(
+      mapping: ContributionLinksContributorIriTemplateMapping.fromJson(
+          json['mapping']),
+    );
   }
 
   ContributionLinksContributorIriTemplateMapping mapping;

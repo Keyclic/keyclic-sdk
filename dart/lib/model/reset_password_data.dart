@@ -5,11 +5,14 @@ class ResetPasswordData {
     this.email,
   });
 
-  ResetPasswordData.fromJson(Map<String, dynamic> json) {
+  factory ResetPasswordData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    email = json['email'];
+
+    return ResetPasswordData(
+      email: json['email'],
+    );
   }
 
   String email;

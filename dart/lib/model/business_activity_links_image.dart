@@ -6,13 +6,16 @@ class BusinessActivityLinksImage {
     this.iriTemplate,
   });
 
-  BusinessActivityLinksImage.fromJson(Map<String, dynamic> json) {
+  factory BusinessActivityLinksImage.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        BusinessActivityLinksImageIriTemplate.fromJson(json['iriTemplate']);
+
+    return BusinessActivityLinksImage(
+      href: json['href'],
+      iriTemplate:
+          BusinessActivityLinksImageIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the image associated to the given businessactivity. */

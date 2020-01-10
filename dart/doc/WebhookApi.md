@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **deleteWebhook**
-> deleteWebhook(xKeyclicApp, webhook, acceptLanguage, xKeyclicAppVersion)
+> deleteWebhook(xKeyclicApp, webhook, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Remove one Webhook resource.
 
@@ -32,10 +32,11 @@ var api_instance = WebhookApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var webhook = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteWebhook(xKeyclicApp, webhook, acceptLanguage, xKeyclicAppVersion);
+    api_instance.deleteWebhook(xKeyclicApp, webhook, acceptLanguage, xDateTime, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling WebhookApi->deleteWebhook: $e\n");
 }
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **webhook** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -66,7 +68,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getWebhook**
-> Webhook getWebhook(xKeyclicApp, webhook, acceptLanguage, xKeyclicAppVersion)
+> Webhook getWebhook(xKeyclicApp, webhook, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one Webhook resource.
 
@@ -82,10 +84,11 @@ var api_instance = WebhookApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var webhook = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getWebhook(xKeyclicApp, webhook, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getWebhook(xKeyclicApp, webhook, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling WebhookApi->getWebhook: $e\n");
@@ -99,6 +102,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **webhook** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -117,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchWebhook**
-> Webhook patchWebhook(xKeyclicApp, webhookPatch, webhook, acceptLanguage, xKeyclicAppVersion)
+> Webhook patchWebhook(xKeyclicApp, webhookPatch, webhook, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Edit one Webhook resource.
 
@@ -134,10 +138,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var webhookPatch = WebhookPatch(); // WebhookPatch | 
 var webhook = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.patchWebhook(xKeyclicApp, webhookPatch, webhook, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.patchWebhook(xKeyclicApp, webhookPatch, webhook, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling WebhookApi->patchWebhook: $e\n");
@@ -152,6 +157,7 @@ Name | Type | Description  | Notes
  **webhookPatch** | [**WebhookPatch**](WebhookPatch.md)|  | 
  **webhook** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -170,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postWebhook**
-> Webhook postWebhook(xKeyclicApp, webhookData, acceptLanguage, xKeyclicAppVersion)
+> Webhook postWebhook(xKeyclicApp, webhookData, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Webhook resource.
 
@@ -186,10 +192,11 @@ var api_instance = WebhookApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var webhookData = WebhookData(); // WebhookData | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postWebhook(xKeyclicApp, webhookData, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postWebhook(xKeyclicApp, webhookData, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling WebhookApi->postWebhook: $e\n");
@@ -203,6 +210,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **webhookData** | [**WebhookData**](WebhookData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

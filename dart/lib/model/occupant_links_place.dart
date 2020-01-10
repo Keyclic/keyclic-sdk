@@ -6,12 +6,15 @@ class OccupantLinksPlace {
     this.iriTemplate,
   });
 
-  OccupantLinksPlace.fromJson(Map<String, dynamic> json) {
+  factory OccupantLinksPlace.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = OccupantLinksPlaceIriTemplate.fromJson(json['iriTemplate']);
+
+    return OccupantLinksPlace(
+      href: json['href'],
+      iriTemplate: OccupantLinksPlaceIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the place associated to the given occupant. */

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **getDelegation**
-> Delegation getDelegation(xKeyclicApp, delegation, acceptLanguage, xKeyclicAppVersion)
+> Delegation getDelegation(xKeyclicApp, delegation, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one Delegation resource.
 
@@ -31,10 +31,11 @@ var api_instance = DelegationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var delegation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getDelegation(xKeyclicApp, delegation, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getDelegation(xKeyclicApp, delegation, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling DelegationApi->getDelegation: $e\n");
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **delegation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -66,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postDelegation**
-> Delegation postDelegation(xKeyclicApp, delegationData, acceptLanguage, xKeyclicAppVersion)
+> Delegation postDelegation(xKeyclicApp, delegationData, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Delegation resource.
 
@@ -82,10 +84,11 @@ var api_instance = DelegationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var delegationData = DelegationData(); // DelegationData | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postDelegation(xKeyclicApp, delegationData, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postDelegation(xKeyclicApp, delegationData, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling DelegationApi->postDelegation: $e\n");
@@ -99,6 +102,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **delegationData** | [**DelegationData**](DelegationData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -117,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postWorkflowByDelegation**
-> Delegation postWorkflowByDelegation(xKeyclicApp, delegationWorkflowTransitionData, delegation, acceptLanguage, xKeyclicAppVersion)
+> Delegation postWorkflowByDelegation(xKeyclicApp, delegationWorkflowTransitionData, delegation, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Workflow resource.
 
@@ -134,10 +138,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var delegationWorkflowTransitionData = DelegationWorkflowTransitionData(); // DelegationWorkflowTransitionData | 
 var delegation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postWorkflowByDelegation(xKeyclicApp, delegationWorkflowTransitionData, delegation, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postWorkflowByDelegation(xKeyclicApp, delegationWorkflowTransitionData, delegation, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling DelegationApi->postWorkflowByDelegation: $e\n");
@@ -152,6 +157,7 @@ Name | Type | Description  | Notes
  **delegationWorkflowTransitionData** | [**DelegationWorkflowTransitionData**](DelegationWorkflowTransitionData.md)|  | 
  **delegation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

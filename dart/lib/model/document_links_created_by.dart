@@ -6,13 +6,16 @@ class DocumentLinksCreatedBy {
     this.iriTemplate,
   });
 
-  DocumentLinksCreatedBy.fromJson(Map<String, dynamic> json) {
+  factory DocumentLinksCreatedBy.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        DocumentLinksCreatedByIriTemplate.fromJson(json['iriTemplate']);
+
+    return DocumentLinksCreatedBy(
+      href: json['href'],
+      iriTemplate:
+          DocumentLinksCreatedByIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the createdBy associated to the given document. */

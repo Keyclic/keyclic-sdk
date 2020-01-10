@@ -7,19 +7,22 @@ class Checkpoint {
     this.links,
   });
 
-  Checkpoint.fromJson(Map<String, dynamic> json) {
+  factory Checkpoint.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    if (json['state'] is List) {
-      state = List<String>.from(json['state']);
-    }
-    links = CheckpointLinks.fromJson(json['_links']);
+
+    return Checkpoint(
+      createdAt: createdAt,
+      state: json['state'] is List ? List<String>.from(json['state']) : null,
+      links: CheckpointLinks.fromJson(json['_links']),
+    );
   }
 
   DateTime createdAt;

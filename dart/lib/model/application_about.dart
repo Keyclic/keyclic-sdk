@@ -6,12 +6,15 @@ class ApplicationAbout {
     this.text,
   });
 
-  ApplicationAbout.fromJson(Map<String, dynamic> json) {
+  factory ApplicationAbout.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    name = json['name'];
-    text = json['text'];
+
+    return ApplicationAbout(
+      name: json['name'],
+      text: json['text'],
+    );
   }
 
   String name;

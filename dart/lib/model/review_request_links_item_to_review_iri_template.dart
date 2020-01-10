@@ -5,13 +5,16 @@ class ReviewRequestLinksItemToReviewIriTemplate {
     this.mapping,
   });
 
-  ReviewRequestLinksItemToReviewIriTemplate.fromJson(
+  factory ReviewRequestLinksItemToReviewIriTemplate.fromJson(
       Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping =
-        ContributionLinksFeedbackIriTemplateMapping.fromJson(json['mapping']);
+
+    return ReviewRequestLinksItemToReviewIriTemplate(
+      mapping:
+          ContributionLinksFeedbackIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   ContributionLinksFeedbackIriTemplateMapping mapping;

@@ -6,12 +6,15 @@ class OccupantData {
     this.place,
   });
 
-  OccupantData.fromJson(Map<String, dynamic> json) {
+  factory OccupantData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    person = json['person'];
-    place = json['place'];
+
+    return OccupantData(
+      person: json['person'],
+      place: json['place'],
+    );
   }
 
   String person;

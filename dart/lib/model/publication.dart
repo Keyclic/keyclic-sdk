@@ -12,26 +12,33 @@ class Publication {
     this.updatedAt,
   });
 
-  Publication.fromJson(Map<String, dynamic> json) {
+  factory Publication.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    links = PublicationLinks.fromJson(json['_links']);
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    id = json['id'];
-    message = json['message'];
-    read = json['read'];
-    title = json['title'];
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return Publication(
+      links: PublicationLinks.fromJson(json['_links']),
+      createdAt: createdAt,
+      id: json['id'],
+      message: json['message'],
+      read: json['read'],
+      title: json['title'],
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   PublicationLinks links;

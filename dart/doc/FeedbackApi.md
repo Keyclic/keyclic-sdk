@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 # **cgetCommentsByFeedback**
-> ActivityPagination cgetCommentsByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion, page, limit)
+> ActivityPagination cgetCommentsByFeedback(xKeyclicApp, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion, page, limit)
 
 Retrieve all Comment resources.
 
@@ -37,12 +37,13 @@ var api_instance = FeedbackApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var feedback = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetCommentsByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion, page, limit);
+    var result = api_instance.cgetCommentsByFeedback(xKeyclicApp, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling FeedbackApi->cgetCommentsByFeedback: $e\n");
@@ -56,6 +57,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
@@ -76,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetFeedback**
-> FeedbackPagination cgetFeedback(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, state, category, after, before, geoHash[], order, organization, visibility[], page, limit)
+> FeedbackPagination cgetFeedback(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, state, category, after, before, geoHash[], order, organization, visibility[], page, limit)
 
 Retrieve all Feedback resources.
 
@@ -91,6 +93,7 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = FeedbackApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var state = state_example; // String | 
 var category = ; // String | The identifier of the resource.
@@ -104,7 +107,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetFeedback(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, state, category, after, before, geoHash[], order, organization, visibility[], page, limit);
+    var result = api_instance.cgetFeedback(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, state, category, after, before, geoHash[], order, organization, visibility[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling FeedbackApi->cgetFeedback: $e\n");
@@ -117,6 +120,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **state** | **String**|  | [optional] [default to DELIVERED]
  **category** | [**String**](.md)| The identifier of the resource. | [optional] 
@@ -145,7 +149,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetReviewsByFeedback**
-> ReviewPagination cgetReviewsByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion, after, before, order, page, limit)
+> ReviewPagination cgetReviewsByFeedback(xKeyclicApp, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit)
 
 Retrieve all Review resources.
 
@@ -161,6 +165,7 @@ var api_instance = FeedbackApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var feedback = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -169,7 +174,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetReviewsByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion, after, before, order, page, limit);
+    var result = api_instance.cgetReviewsByFeedback(xKeyclicApp, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling FeedbackApi->cgetReviewsByFeedback: $e\n");
@@ -183,6 +188,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -206,7 +212,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFeedback**
-> Feedback getFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion)
+> Feedback getFeedback(xKeyclicApp, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one Feedback resource.
 
@@ -222,10 +228,11 @@ var api_instance = FeedbackApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var feedback = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getFeedback(xKeyclicApp, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling FeedbackApi->getFeedback: $e\n");
@@ -239,6 +246,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -257,7 +265,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTrackingByFeedback**
-> Tracking getTrackingByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion)
+> Tracking getTrackingByFeedback(xKeyclicApp, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one Tracking resource.
 
@@ -273,10 +281,11 @@ var api_instance = FeedbackApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var feedback = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getTrackingByFeedback(xKeyclicApp, feedback, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getTrackingByFeedback(xKeyclicApp, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling FeedbackApi->getTrackingByFeedback: $e\n");
@@ -290,6 +299,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -308,7 +318,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postCommentByFeedback**
-> Feedback postCommentByFeedback(xKeyclicApp, commentData, feedback, acceptLanguage, xKeyclicAppVersion)
+> Feedback postCommentByFeedback(xKeyclicApp, commentData, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Comment resource.
 
@@ -325,10 +335,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var commentData = CommentData(); // CommentData | 
 var feedback = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postCommentByFeedback(xKeyclicApp, commentData, feedback, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postCommentByFeedback(xKeyclicApp, commentData, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling FeedbackApi->postCommentByFeedback: $e\n");
@@ -343,6 +354,7 @@ Name | Type | Description  | Notes
  **commentData** | [**CommentData**](CommentData.md)|  | 
  **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -361,7 +373,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postImageByFeedback**
-> Feedback postImageByFeedback(xKeyclicApp, imageData, feedback, acceptLanguage, xKeyclicAppVersion)
+> Feedback postImageByFeedback(xKeyclicApp, imageData, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Image resource.
 
@@ -378,10 +390,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var imageData = ImageData(); // ImageData | 
 var feedback = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postImageByFeedback(xKeyclicApp, imageData, feedback, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postImageByFeedback(xKeyclicApp, imageData, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling FeedbackApi->postImageByFeedback: $e\n");
@@ -396,6 +409,7 @@ Name | Type | Description  | Notes
  **imageData** | [**ImageData**](ImageData.md)|  | 
  **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -414,7 +428,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postIssue**
-> Feedback postIssue(xKeyclicApp, feedbackData, acceptLanguage, xKeyclicAppVersion)
+> Feedback postIssue(xKeyclicApp, feedbackData, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Issue resource.
 
@@ -430,10 +444,11 @@ var api_instance = FeedbackApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var feedbackData = FeedbackData(); // FeedbackData | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postIssue(xKeyclicApp, feedbackData, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postIssue(xKeyclicApp, feedbackData, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling FeedbackApi->postIssue: $e\n");
@@ -447,6 +462,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feedbackData** | [**FeedbackData**](FeedbackData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -465,7 +481,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postWorkflowByFeedback**
-> Feedback postWorkflowByFeedback(xKeyclicApp, feedbackWorkflowTransitionData, feedback, acceptLanguage, xKeyclicAppVersion)
+> Feedback postWorkflowByFeedback(xKeyclicApp, feedbackWorkflowTransitionData, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Workflow resource.
 
@@ -482,10 +498,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var feedbackWorkflowTransitionData = FeedbackWorkflowTransitionData(); // FeedbackWorkflowTransitionData | 
 var feedback = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postWorkflowByFeedback(xKeyclicApp, feedbackWorkflowTransitionData, feedback, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postWorkflowByFeedback(xKeyclicApp, feedbackWorkflowTransitionData, feedback, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling FeedbackApi->postWorkflowByFeedback: $e\n");
@@ -500,6 +517,7 @@ Name | Type | Description  | Notes
  **feedbackWorkflowTransitionData** | [**FeedbackWorkflowTransitionData**](FeedbackWorkflowTransitionData.md)|  | 
  **feedback** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

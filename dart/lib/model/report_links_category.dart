@@ -6,12 +6,15 @@ class ReportLinksCategory {
     this.iriTemplate,
   });
 
-  ReportLinksCategory.fromJson(Map<String, dynamic> json) {
+  factory ReportLinksCategory.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = ReportLinksCategoryIriTemplate.fromJson(json['iriTemplate']);
+
+    return ReportLinksCategory(
+      href: json['href'],
+      iriTemplate: ReportLinksCategoryIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the category associated to the given report. */

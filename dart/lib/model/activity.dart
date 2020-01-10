@@ -12,21 +12,26 @@ class Activity {
     this.verb,
   });
 
-  Activity.fromJson(Map<String, dynamic> json) {
+  factory Activity.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    actor = json['actor'];
-    message = json['message'];
-    object = json['object'];
-    origin = json['origin'];
-    subject = ActivitySubject.fromJson(json['subject']);
-    time = json['time'] == null ? null : DateTime.parse(json['time']);
+
+    DateTime time = json['time'] == null ? null : DateTime.parse(json['time']);
     if (time is DateTime && time.isUtc == false) {
       time = DateTime.parse('${time.toIso8601String()}Z');
     }
-    title = json['title'];
-    verb = json['verb'];
+
+    return Activity(
+      actor: json['actor'],
+      message: json['message'],
+      object: json['object'],
+      origin: json['origin'],
+      subject: ActivitySubject.fromJson(json['subject']),
+      time: time,
+      title: json['title'],
+      verb: json['verb'],
+    );
   }
 
   String actor;

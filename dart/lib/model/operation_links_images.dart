@@ -6,12 +6,16 @@ class OperationLinksImages {
     this.iriTemplate,
   });
 
-  OperationLinksImages.fromJson(Map<String, dynamic> json) {
+  factory OperationLinksImages.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = OperationLinksImagesIriTemplate.fromJson(json['iriTemplate']);
+
+    return OperationLinksImages(
+      href: json['href'],
+      iriTemplate:
+          OperationLinksImagesIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the images associated to the given operation. */

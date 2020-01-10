@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getReviewRequest**
-> ReviewRequest getReviewRequest(xKeyclicApp, reviewRequest, acceptLanguage, xKeyclicAppVersion)
+> ReviewRequest getReviewRequest(xKeyclicApp, reviewRequest, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one ReviewRequest resource.
 
@@ -29,10 +29,11 @@ var api_instance = ReviewRequestApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var reviewRequest = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getReviewRequest(xKeyclicApp, reviewRequest, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getReviewRequest(xKeyclicApp, reviewRequest, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ReviewRequestApi->getReviewRequest: $e\n");
@@ -46,6 +47,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **reviewRequest** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

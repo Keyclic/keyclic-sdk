@@ -5,12 +5,16 @@ class ReportLinksDelegatedFromIriTemplate {
     this.mapping,
   });
 
-  ReportLinksDelegatedFromIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory ReportLinksDelegatedFromIriTemplate.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping =
-        CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']);
+
+    return ReportLinksDelegatedFromIriTemplate(
+      mapping:
+          CategoryLinksOrganizationIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   CategoryLinksOrganizationIriTemplateMapping mapping;

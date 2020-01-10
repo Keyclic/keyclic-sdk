@@ -6,12 +6,16 @@ class FeedbackLinksImageIriTemplateMapping {
     this.image,
   });
 
-  FeedbackLinksImageIriTemplateMapping.fromJson(Map<String, dynamic> json) {
+  factory FeedbackLinksImageIriTemplateMapping.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    feedback = json['feedback'];
-    image = json['image'];
+
+    return FeedbackLinksImageIriTemplateMapping(
+      feedback: json['feedback'],
+      image: json['image'],
+    );
   }
 
   String feedback;

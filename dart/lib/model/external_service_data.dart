@@ -8,14 +8,17 @@ class ExternalServiceData {
     this.provider,
   });
 
-  ExternalServiceData.fromJson(Map<String, dynamic> json) {
+  factory ExternalServiceData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    organization = json['organization'];
-    name = json['name'];
-    description = json['description'];
-    provider = json['provider'];
+
+    return ExternalServiceData(
+      organization: json['organization'],
+      name: json['name'],
+      description: json['description'],
+      provider: json['provider'],
+    );
   }
 
   String organization;

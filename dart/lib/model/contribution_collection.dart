@@ -5,11 +5,14 @@ class ContributionCollection {
     this.items,
   });
 
-  ContributionCollection.fromJson(Map<String, dynamic> json) {
+  factory ContributionCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Contribution.listFromJson(json['items']);
+
+    return ContributionCollection(
+      items: Contribution.listFromJson(json['items']),
+    );
   }
 
   List<Contribution> items;

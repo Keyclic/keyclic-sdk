@@ -6,12 +6,15 @@ class CategoryLinksSelf {
     this.iriTemplate,
   });
 
-  CategoryLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory CategoryLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = CategoryLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return CategoryLinksSelf(
+      href: json['href'],
+      iriTemplate: CategoryLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given category. */

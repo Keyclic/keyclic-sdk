@@ -6,12 +6,15 @@ class DeviceLinks {
     this.self,
   });
 
-  DeviceLinks.fromJson(Map<String, dynamic> json) {
+  factory DeviceLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    person = DeviceLinksPerson.fromJson(json['person']);
-    self = DeviceLinksSelf.fromJson(json['self']);
+
+    return DeviceLinks(
+      person: DeviceLinksPerson.fromJson(json['person']),
+      self: DeviceLinksSelf.fromJson(json['self']),
+    );
   }
 
   DeviceLinksPerson person;

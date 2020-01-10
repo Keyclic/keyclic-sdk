@@ -10,16 +10,19 @@ class DelegationPagination extends Pagination {
     this.embedded,
   });
 
-  DelegationPagination.fromJson(Map<String, dynamic> json) {
+  factory DelegationPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = DelegationCollection.fromJson(json['_embedded']);
+
+    return DelegationPagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: DelegationCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

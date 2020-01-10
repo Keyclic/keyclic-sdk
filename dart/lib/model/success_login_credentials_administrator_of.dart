@@ -7,13 +7,17 @@ class SuccessLoginCredentialsAdministratorOf {
     this.type,
   });
 
-  SuccessLoginCredentialsAdministratorOf.fromJson(Map<String, dynamic> json) {
+  factory SuccessLoginCredentialsAdministratorOf.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    id = json['id'];
-    token = json['token'];
-    type = json['type'];
+
+    return SuccessLoginCredentialsAdministratorOf(
+      id: json['id'],
+      token: json['token'],
+      type: json['type'],
+    );
   }
 
   String id;

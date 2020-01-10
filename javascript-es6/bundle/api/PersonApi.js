@@ -173,6 +173,7 @@ var PersonApi =
      * @param { Object } credentials The required credentials with good properties to use different types of authentication.
      * @param { FeedbackPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
      * @param { module:model/String } acceptLanguage   (default to fr-FR)
+     * @param { Date } xDateTime
      * @param { String } xKeyclicAppVersion
      * @param { String } category The identifier of the resource.
      * @param { module:model/Date } after
@@ -207,6 +208,7 @@ var PersonApi =
           var xKeyclicApp = options.xKeyclicApp,
             person = options.person,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             category = options.category,
             after = options.after,
@@ -248,6 +250,10 @@ var PersonApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -300,6 +306,7 @@ var PersonApi =
           };
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -328,6 +335,7 @@ var PersonApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { MemberPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          * @param { module:model/Date } after
          * @param { module:model/Date } before
@@ -359,6 +367,7 @@ var PersonApi =
           var xKeyclicApp = options.xKeyclicApp,
             person = options.person,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             after = options.after,
             before = options.before,
@@ -398,6 +407,10 @@ var PersonApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -440,6 +453,7 @@ var PersonApi =
           };
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -468,6 +482,7 @@ var PersonApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { OccupantPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          * @param { module:model/Date } after
          * @param { module:model/Date } before
@@ -496,6 +511,7 @@ var PersonApi =
           var xKeyclicApp = options.xKeyclicApp,
             person = options.person,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             after = options.after,
             before = options.before,
@@ -532,6 +548,10 @@ var PersonApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -559,6 +579,7 @@ var PersonApi =
           };
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -587,6 +608,7 @@ var PersonApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { OperationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          * @param { String } assignedTo The identifier of the resource.
          * @param { module:model/Date } after
@@ -619,6 +641,7 @@ var PersonApi =
           var xKeyclicApp = options.xKeyclicApp,
             person = options.person,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             assignedTo = options.assignedTo,
             after = options.after,
@@ -659,6 +682,10 @@ var PersonApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -706,6 +733,7 @@ var PersonApi =
           };
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -733,6 +761,7 @@ var PersonApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { PersonPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          * @param { module:model/Date } after
          * @param { module:model/Date } before
@@ -761,6 +790,7 @@ var PersonApi =
 
           var xKeyclicApp = options.xKeyclicApp,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             after = options.after,
             before = options.before,
@@ -792,6 +822,10 @@ var PersonApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -822,6 +856,7 @@ var PersonApi =
           };
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -850,6 +885,7 @@ var PersonApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { ReportPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          * @param { String } assignedTo The identifier of the resource.
          * @param { String } category The identifier of the resource.
@@ -884,6 +920,7 @@ var PersonApi =
           var xKeyclicApp = options.xKeyclicApp,
             person = options.person,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             assignedTo = options.assignedTo,
             category = options.category,
@@ -926,6 +963,10 @@ var PersonApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -983,6 +1024,7 @@ var PersonApi =
           };
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -1011,6 +1053,7 @@ var PersonApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { ReviewRequestPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          * @param { module:model/Date } after
          * @param { module:model/Date } before
@@ -1039,6 +1082,7 @@ var PersonApi =
           var xKeyclicApp = options.xKeyclicApp,
             person = options.person,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion,
             after = options.after,
             before = options.before,
@@ -1075,6 +1119,10 @@ var PersonApi =
 
           if (typeof limit === "undefined" || limit === null) {
             limit = 10;
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -1102,6 +1150,7 @@ var PersonApi =
           };
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -1130,6 +1179,7 @@ var PersonApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          */
       },
@@ -1153,6 +1203,7 @@ var PersonApi =
           var xKeyclicApp = options.xKeyclicApp,
             person = options.person,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -1172,6 +1223,10 @@ var PersonApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -1185,6 +1240,7 @@ var PersonApi =
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };
@@ -1214,6 +1270,7 @@ var PersonApi =
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Person }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
          * @param { module:model/String } acceptLanguage   (default to fr-FR)
+         * @param { Date } xDateTime
          * @param { String } xKeyclicAppVersion
          */
       },
@@ -1238,6 +1295,7 @@ var PersonApi =
             personPatch = options.personPatch,
             person = options.person,
             acceptLanguage = options.acceptLanguage,
+            xDateTime = options.xDateTime,
             xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
           if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
@@ -1263,6 +1321,10 @@ var PersonApi =
             acceptLanguage === null
           ) {
             acceptLanguage = "fr-FR";
+          } // verify the null value of parameter 'xDateTime'
+
+          if (typeof xDateTime === "undefined") {
+            xDateTime = null;
           } // verify the null value of parameter 'xKeyclicAppVersion'
 
           if (typeof xKeyclicAppVersion === "undefined") {
@@ -1276,6 +1338,7 @@ var PersonApi =
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,
+            "x-date-time": xDateTime,
             "x-keyclic-app": xKeyclicApp,
             "x-keyclic-app-version": xKeyclicAppVersion
           };

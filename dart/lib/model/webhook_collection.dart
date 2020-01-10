@@ -5,11 +5,14 @@ class WebhookCollection {
     this.items,
   });
 
-  WebhookCollection.fromJson(Map<String, dynamic> json) {
+  factory WebhookCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Webhook.listFromJson(json['items']);
+
+    return WebhookCollection(
+      items: Webhook.listFromJson(json['items']),
+    );
   }
 
   List<Webhook> items;

@@ -6,13 +6,16 @@ class OrganizationLinksLogo {
     this.iriTemplate,
   });
 
-  OrganizationLinksLogo.fromJson(Map<String, dynamic> json) {
+  factory OrganizationLinksLogo.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        OrganizationLinksLogoIriTemplate.fromJson(json['iriTemplate']);
+
+    return OrganizationLinksLogo(
+      href: json['href'],
+      iriTemplate:
+          OrganizationLinksLogoIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the logo associated to the given organization. */

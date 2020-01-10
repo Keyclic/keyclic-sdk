@@ -13,19 +13,22 @@ class OperationLinks {
     this.tracking,
   });
 
-  OperationLinks.fromJson(Map<String, dynamic> json) {
+  factory OperationLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    createdBy = OperationLinksCreatedBy.fromJson(json['createdBy']);
-    feedback = OperationLinksFeedback.fromJson(json['feedback']);
-    image = OperationLinksImage.fromJson(json['image']);
-    images = OperationLinksImages.listFromJson(json['images']);
-    operator_ = OperationLinksOperator.fromJson(json['operator']);
-    organization = OperationLinksOrganization.fromJson(json['organization']);
-    report = OperationLinksReport.fromJson(json['report']);
-    self = OperationLinksSelf.fromJson(json['self']);
-    tracking = OperationLinksTracking.fromJson(json['tracking']);
+
+    return OperationLinks(
+      createdBy: OperationLinksCreatedBy.fromJson(json['createdBy']),
+      feedback: OperationLinksFeedback.fromJson(json['feedback']),
+      image: OperationLinksImage.fromJson(json['image']),
+      images: OperationLinksImages.listFromJson(json['images']),
+      operator_: OperationLinksOperator.fromJson(json['operator']),
+      organization: OperationLinksOrganization.fromJson(json['organization']),
+      report: OperationLinksReport.fromJson(json['report']),
+      self: OperationLinksSelf.fromJson(json['self']),
+      tracking: OperationLinksTracking.fromJson(json['tracking']),
+    );
   }
 
   OperationLinksCreatedBy createdBy;

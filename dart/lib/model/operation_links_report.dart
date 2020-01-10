@@ -6,12 +6,16 @@ class OperationLinksReport {
     this.iriTemplate,
   });
 
-  OperationLinksReport.fromJson(Map<String, dynamic> json) {
+  factory OperationLinksReport.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = OperationLinksReportIriTemplate.fromJson(json['iriTemplate']);
+
+    return OperationLinksReport(
+      href: json['href'],
+      iriTemplate:
+          OperationLinksReportIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the report associated to the given operation. */

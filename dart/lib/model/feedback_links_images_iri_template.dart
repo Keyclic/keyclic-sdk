@@ -5,11 +5,14 @@ class FeedbackLinksImagesIriTemplate {
     this.mapping,
   });
 
-  FeedbackLinksImagesIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory FeedbackLinksImagesIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = FeedbackLinksImageIriTemplateMapping.fromJson(json['mapping']);
+
+    return FeedbackLinksImagesIriTemplate(
+      mapping: FeedbackLinksImageIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   FeedbackLinksImageIriTemplateMapping mapping;

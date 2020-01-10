@@ -5,11 +5,14 @@ class OrganizationCollection {
     this.items,
   });
 
-  OrganizationCollection.fromJson(Map<String, dynamic> json) {
+  factory OrganizationCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Organization.listFromJson(json['items']);
+
+    return OrganizationCollection(
+      items: Organization.listFromJson(json['items']),
+    );
   }
 
   List<Organization> items;

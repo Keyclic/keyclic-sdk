@@ -8,14 +8,17 @@ class Node {
     this.embedded,
   });
 
-  Node.fromJson(Map<String, dynamic> json) {
+  factory Node.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    id = json['id'];
-    type = json['type'];
-    name = json['name'];
-    embedded = NodeEmbedded.fromJson(json['_embedded']);
+
+    return Node(
+      id: json['id'],
+      type: json['type'],
+      name: json['name'],
+      embedded: NodeEmbedded.fromJson(json['_embedded']),
+    );
   }
 
   String id;

@@ -6,12 +6,15 @@ class ReportLinksTracking {
     this.iriTemplate,
   });
 
-  ReportLinksTracking.fromJson(Map<String, dynamic> json) {
+  factory ReportLinksTracking.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = ReportLinksTrackingIriTemplate.fromJson(json['iriTemplate']);
+
+    return ReportLinksTracking(
+      href: json['href'],
+      iriTemplate: ReportLinksTrackingIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the tracking associated to the given report. */

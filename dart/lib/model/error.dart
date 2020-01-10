@@ -7,13 +7,16 @@ class Error {
     this.embedded,
   });
 
-  Error.fromJson(Map<String, dynamic> json) {
+  factory Error.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    message = json['message'];
-    total = json['total'];
-    embedded = ErrorEmbedded.fromJson(json['_embedded']);
+
+    return Error(
+      message: json['message'],
+      total: json['total'],
+      embedded: ErrorEmbedded.fromJson(json['_embedded']),
+    );
   }
 
   String message;

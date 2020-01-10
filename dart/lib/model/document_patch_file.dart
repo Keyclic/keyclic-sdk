@@ -5,11 +5,14 @@ class DocumentPatchFile {
     this.name,
   });
 
-  DocumentPatchFile.fromJson(Map<String, dynamic> json) {
+  factory DocumentPatchFile.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    name = json['name'];
+
+    return DocumentPatchFile(
+      name: json['name'],
+    );
   }
 
   String name;

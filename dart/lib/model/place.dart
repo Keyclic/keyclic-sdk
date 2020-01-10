@@ -15,29 +15,36 @@ class Place {
     this.updatedAt,
   });
 
-  Place.fromJson(Map<String, dynamic> json) {
+  factory Place.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    embedded = PlaceEmbedded.fromJson(json['_embedded']);
-    links = PlaceLinks.fromJson(json['_links']);
-    branchCode = json['branchCode'];
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    description = json['description'];
-    geo = PlaceGeo.fromJson(json['geo']);
-    id = json['id'];
-    name = json['name'];
-    preferences = PlacePreferences.fromJson(json['preferences']);
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return Place(
+      embedded: PlaceEmbedded.fromJson(json['_embedded']),
+      links: PlaceLinks.fromJson(json['_links']),
+      branchCode: json['branchCode'],
+      createdAt: createdAt,
+      description: json['description'],
+      geo: PlaceGeo.fromJson(json['geo']),
+      id: json['id'],
+      name: json['name'],
+      preferences: PlacePreferences.fromJson(json['preferences']),
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   PlaceEmbedded embedded;

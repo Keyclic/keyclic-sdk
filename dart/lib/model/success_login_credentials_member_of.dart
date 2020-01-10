@@ -7,16 +7,17 @@ class SuccessLoginCredentialsMemberOf {
     this.roles,
   });
 
-  SuccessLoginCredentialsMemberOf.fromJson(Map<String, dynamic> json) {
+  factory SuccessLoginCredentialsMemberOf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    id = json['id'];
-    organization =
-        SuccessLoginCredentialsOrganization.fromJson(json['organization']);
-    if (json['roles'] is List) {
-      roles = List<String>.from(json['roles']);
-    }
+
+    return SuccessLoginCredentialsMemberOf(
+      id: json['id'],
+      organization:
+          SuccessLoginCredentialsOrganization.fromJson(json['organization']),
+      roles: json['roles'] is List ? List<String>.from(json['roles']) : null,
+    );
   }
 
   String id;

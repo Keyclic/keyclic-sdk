@@ -6,12 +6,15 @@ class ExternalServiceLinks {
     this.self,
   });
 
-  ExternalServiceLinks.fromJson(Map<String, dynamic> json) {
+  factory ExternalServiceLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    provider = ExternalServiceLinksProvider.fromJson(json['provider']);
-    self = ExternalServiceLinksSelf.fromJson(json['self']);
+
+    return ExternalServiceLinks(
+      provider: ExternalServiceLinksProvider.fromJson(json['provider']),
+      self: ExternalServiceLinksSelf.fromJson(json['self']),
+    );
   }
 
   ExternalServiceLinksProvider provider;

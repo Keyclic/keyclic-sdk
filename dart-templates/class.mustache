@@ -13,51 +13,59 @@
 class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
 {{classname}}({{#hasVars}}{ {{#vars}}this.{{name}},{{/vars}} }{{/hasVars}});
 
-  {{classname}}.fromJson(Map<String, dynamic> json) {
+  factory {{classname}}.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
+
     {{#vars}}
-      {{#isDateTime}}
-        {{name}} = json['{{baseName}}'] == null ? null : DateTime.parse(json['{{baseName}}']);
+    {{#isDateTime}}
+        {{{datatype}}} {{name}} = json['{{baseName}}'] == null ? null : DateTime.parse(json['{{baseName}}']);
         if ({{name}} is DateTime && {{name}}.isUtc == false) {
           {{=<< >>=}}
             <<name>> = DateTime.parse('${<<name>>.toIso8601String()}Z');
           <<={{ }}=>>
         }
+
+      {{/isDateTime}}
+    {{/vars}}
+
+    return {{classname}}(
+      {{#vars}}
+      {{#isDateTime}}
+        {{name}}: {{name}},
       {{/isDateTime}}
       {{^isDateTime}}
         {{#complexType}}
           {{#isListContainer}}
-            {{name}} = {{complexType}}.listFromJson(json['{{baseName}}']);
+            {{name}}: {{complexType}}.listFromJson(json['{{baseName}}']),
           {{/isListContainer}}
           {{^isListContainer}}
             {{#isMapContainer}}
-              {{name}} = {{complexType}}.mapFromJson(json['{{baseName}}']);
+              {{name}}: {{complexType}}.mapFromJson(json['{{baseName}}']),
             {{/isMapContainer}}
             {{^isMapContainer}}
-              {{name}} = {{complexType}}.fromJson(json['{{baseName}}']);
+              {{name}}: {{complexType}}.fromJson(json['{{baseName}}']),
             {{/isMapContainer}}
           {{/isListContainer}}
         {{/complexType}}
         {{^complexType}}
           {{#isListContainer}}
-              if (json['{{baseName}}'] is List) {
-                {{name}} = List<{{{items.datatype}}}>.from(json['{{baseName}}']);
-              }
+            {{name}}: json['{{baseName}}'] is List ? List<{{{items.datatype}}}>.from(json['{{baseName}}']) : null,
           {{/isListContainer}}
           {{^isListContainer}}
             {{! Double type in dart must have a point separator (0 must be cast in 0.0) }}
             {{#isFloat}}
-              {{name}} = json['{{baseName}}']?.toDouble();
+              {{name}}: json['{{baseName}}']?.toDouble(),
             {{/isFloat}}
             {{^isFloat}}
-              {{name}} = json['{{baseName}}'];
+              {{name}}: json['{{baseName}}'],
             {{/isFloat}}
           {{/isListContainer}}
         {{/complexType}}
       {{/isDateTime}}
     {{/vars}}
+    );
   }
 
   {{#vars}}

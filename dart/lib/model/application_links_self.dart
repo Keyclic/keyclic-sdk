@@ -6,12 +6,16 @@ class ApplicationLinksSelf {
     this.iriTemplate,
   });
 
-  ApplicationLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory ApplicationLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = ApplicationLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return ApplicationLinksSelf(
+      href: json['href'],
+      iriTemplate:
+          ApplicationLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given application. */

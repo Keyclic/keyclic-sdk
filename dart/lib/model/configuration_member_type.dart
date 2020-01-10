@@ -7,13 +7,16 @@ class ConfigurationMemberType {
     this.type,
   });
 
-  ConfigurationMemberType.fromJson(Map<String, dynamic> json) {
+  factory ConfigurationMemberType.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    id = json['id'];
-    roles = Role.listFromJson(json['roles']);
-    type = json['type'];
+
+    return ConfigurationMemberType(
+      id: json['id'],
+      roles: Role.listFromJson(json['roles']),
+      type: json['type'],
+    );
   }
 
   String id;

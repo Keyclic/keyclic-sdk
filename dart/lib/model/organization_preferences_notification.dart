@@ -5,11 +5,16 @@ class OrganizationPreferencesNotification {
     this.report,
   });
 
-  OrganizationPreferencesNotification.fromJson(Map<String, dynamic> json) {
+  factory OrganizationPreferencesNotification.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    report = OrganizationPreferencesNotificationReport.fromJson(json['report']);
+
+    return OrganizationPreferencesNotification(
+      report:
+          OrganizationPreferencesNotificationReport.fromJson(json['report']),
+    );
   }
 
   OrganizationPreferencesNotificationReport report;

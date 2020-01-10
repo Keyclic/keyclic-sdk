@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **cgetFeeds**
-> FeedPagination cgetFeeds(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, page, limit)
+> FeedPagination cgetFeeds(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, page, limit)
 
 Retrieve all Feed resources.
 
@@ -33,12 +33,13 @@ import 'package:keyclic_sdk_api/api.dart';
 var api_instance = FeedApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetFeeds(xKeyclicApp, acceptLanguage, xKeyclicAppVersion, page, limit);
+    var result = api_instance.cgetFeeds(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling FeedApi->cgetFeeds: $e\n");
@@ -51,6 +52,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
@@ -71,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetFeedsByFeed**
-> ActivityAggregatedPagination cgetFeedsByFeed(xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion, page, limit)
+> ActivityAggregatedPagination cgetFeedsByFeed(xKeyclicApp, feed, acceptLanguage, xDateTime, xKeyclicAppVersion, page, limit)
 
 Retrieve all Feed resources.
 
@@ -87,12 +89,13 @@ var api_instance = FeedApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var feed = feed_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetFeedsByFeed(xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion, page, limit);
+    var result = api_instance.cgetFeedsByFeed(xKeyclicApp, feed, acceptLanguage, xDateTime, xKeyclicAppVersion, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling FeedApi->cgetFeedsByFeed: $e\n");
@@ -106,6 +109,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feed** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
@@ -126,7 +130,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetFollowingsByFeed**
-> FeedPagination cgetFollowingsByFeed(xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion, page, limit)
+> FeedPagination cgetFollowingsByFeed(xKeyclicApp, feed, acceptLanguage, xDateTime, xKeyclicAppVersion, page, limit)
 
 Retrieve all Following resources.
 
@@ -142,12 +146,13 @@ var api_instance = FeedApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var feed = feed_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetFollowingsByFeed(xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion, page, limit);
+    var result = api_instance.cgetFollowingsByFeed(xKeyclicApp, feed, acceptLanguage, xDateTime, xKeyclicAppVersion, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling FeedApi->cgetFollowingsByFeed: $e\n");
@@ -161,6 +166,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feed** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
@@ -181,7 +187,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postFollowByFeed**
-> postFollowByFeed(xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion)
+> postFollowByFeed(xKeyclicApp, feed, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Follow resource.
 
@@ -197,10 +203,11 @@ var api_instance = FeedApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var feed = feed_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.postFollowByFeed(xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion);
+    api_instance.postFollowByFeed(xKeyclicApp, feed, acceptLanguage, xDateTime, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling FeedApi->postFollowByFeed: $e\n");
 }
@@ -213,6 +220,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feed** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -231,7 +239,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postReadByFeedAndGroup**
-> postReadByFeedAndGroup(xKeyclicApp, feed, group, acceptLanguage, xKeyclicAppVersion)
+> postReadByFeedAndGroup(xKeyclicApp, feed, group, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Read resource.
 
@@ -248,10 +256,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var feed = feed_example; // String | 
 var group = group_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.postReadByFeedAndGroup(xKeyclicApp, feed, group, acceptLanguage, xKeyclicAppVersion);
+    api_instance.postReadByFeedAndGroup(xKeyclicApp, feed, group, acceptLanguage, xDateTime, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling FeedApi->postReadByFeedAndGroup: $e\n");
 }
@@ -265,6 +274,7 @@ Name | Type | Description  | Notes
  **feed** | **String**|  | 
  **group** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -283,7 +293,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postUnfollowByFeed**
-> postUnfollowByFeed(xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion)
+> postUnfollowByFeed(xKeyclicApp, feed, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Unfollow resource.
 
@@ -299,10 +309,11 @@ var api_instance = FeedApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var feed = feed_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.postUnfollowByFeed(xKeyclicApp, feed, acceptLanguage, xKeyclicAppVersion);
+    api_instance.postUnfollowByFeed(xKeyclicApp, feed, acceptLanguage, xDateTime, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling FeedApi->postUnfollowByFeed: $e\n");
 }
@@ -315,6 +326,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **feed** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

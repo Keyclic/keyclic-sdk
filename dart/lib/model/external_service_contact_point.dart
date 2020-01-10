@@ -8,14 +8,17 @@ class ExternalServiceContactPoint {
     this.telephone,
   });
 
-  ExternalServiceContactPoint.fromJson(Map<String, dynamic> json) {
+  factory ExternalServiceContactPoint.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    email = json['email'];
-    isOpen = json['isOpen'];
-    name = json['name'];
-    telephone = json['telephone'];
+
+    return ExternalServiceContactPoint(
+      email: json['email'],
+      isOpen: json['isOpen'],
+      name: json['name'],
+      telephone: json['telephone'],
+    );
   }
 
   String email;

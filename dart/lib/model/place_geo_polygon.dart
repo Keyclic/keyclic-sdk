@@ -6,12 +6,15 @@ class PlaceGeoPolygon {
     this.type,
   });
 
-  PlaceGeoPolygon.fromJson(Map<String, dynamic> json) {
+  factory PlaceGeoPolygon.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    features = Feature.listFromJson(json['features']);
-    type = json['type'];
+
+    return PlaceGeoPolygon(
+      features: Feature.listFromJson(json['features']),
+      type: json['type'],
+    );
   }
 
   List<Feature> features;

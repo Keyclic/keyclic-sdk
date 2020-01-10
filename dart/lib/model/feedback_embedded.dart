@@ -6,14 +6,17 @@ class FeedbackEmbedded {
     this.tracking,
   });
 
-  FeedbackEmbedded.fromJson(Map<String, dynamic> json) {
+  factory FeedbackEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    if (json['stateTransitions'] is List) {
-      stateTransitions = List<String>.from(json['stateTransitions']);
-    }
-    tracking = json['tracking'];
+
+    return FeedbackEmbedded(
+      stateTransitions: json['stateTransitions'] is List
+          ? List<String>.from(json['stateTransitions'])
+          : null,
+      tracking: json['tracking'],
+    );
   }
 
   List<String> stateTransitions;

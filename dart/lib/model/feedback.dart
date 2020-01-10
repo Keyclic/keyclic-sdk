@@ -15,31 +15,36 @@ class Feedback {
     this.updatedAt,
   });
 
-  Feedback.fromJson(Map<String, dynamic> json) {
+  factory Feedback.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    embedded = FeedbackEmbedded.fromJson(json['_embedded']);
-    links = FeedbackLinks.fromJson(json['_links']);
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    description = json['description'];
-    geoCoordinates = FeedbackGeoCoordinates.fromJson(json['geoCoordinates']);
-    id = json['id'];
-    metadata = json['metadata'];
-    public = json['public'];
-    if (json['state'] is List) {
-      state = List<String>.from(json['state']);
-    }
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return Feedback(
+      embedded: FeedbackEmbedded.fromJson(json['_embedded']),
+      links: FeedbackLinks.fromJson(json['_links']),
+      createdAt: createdAt,
+      description: json['description'],
+      geoCoordinates: FeedbackGeoCoordinates.fromJson(json['geoCoordinates']),
+      id: json['id'],
+      metadata: json['metadata'],
+      public: json['public'],
+      state: json['state'] is List ? List<String>.from(json['state']) : null,
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   FeedbackEmbedded embedded;

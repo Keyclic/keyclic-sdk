@@ -8,14 +8,17 @@ class PersonLinks {
     this.self,
   });
 
-  PersonLinks.fromJson(Map<String, dynamic> json) {
+  factory PersonLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    application = PersonLinksApplication.fromJson(json['application']);
-    createdBy = PersonLinksCreatedBy.fromJson(json['createdBy']);
-    image = PersonLinksImage.fromJson(json['image']);
-    self = PersonLinksSelf.fromJson(json['self']);
+
+    return PersonLinks(
+      application: PersonLinksApplication.fromJson(json['application']),
+      createdBy: PersonLinksCreatedBy.fromJson(json['createdBy']),
+      image: PersonLinksImage.fromJson(json['image']),
+      self: PersonLinksSelf.fromJson(json['self']),
+    );
   }
 
   PersonLinksApplication application;

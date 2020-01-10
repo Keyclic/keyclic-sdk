@@ -6,13 +6,16 @@ class ContributionLinksFeedback {
     this.iriTemplate,
   });
 
-  ContributionLinksFeedback.fromJson(Map<String, dynamic> json) {
+  factory ContributionLinksFeedback.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        ContributionLinksFeedbackIriTemplate.fromJson(json['iriTemplate']);
+
+    return ContributionLinksFeedback(
+      href: json['href'],
+      iriTemplate:
+          ContributionLinksFeedbackIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the feedback associated to the given contribution. */

@@ -48,6 +48,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'businessActivity': "businessActivity_example", // String | The identifier of the resource.
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
@@ -76,6 +77,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **Date**|  | [optional] 
@@ -125,6 +127,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
@@ -150,6 +153,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
@@ -196,6 +200,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
@@ -221,6 +226,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
@@ -267,6 +273,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
@@ -292,6 +299,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
@@ -338,6 +346,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
@@ -365,6 +374,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
@@ -413,6 +423,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'assignedTo': "assignedTo_example", // String | The identifier of the resource.
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
@@ -440,6 +451,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **Date**|  | [optional] 
@@ -486,6 +498,7 @@ let xKeyclicApp = "com.keyclic.app"; // String |
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'businessActivity': "businessActivity_example", // String | The identifier of the resource.
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
@@ -515,6 +528,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **Date**|  | [optional] 
@@ -566,6 +580,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'businessActivity': "businessActivity_example", // String | The identifier of the resource.
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
@@ -598,6 +613,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **Date**|  | [optional] 
@@ -651,6 +667,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
@@ -676,6 +693,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
@@ -722,6 +740,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'assignedTo': "assignedTo_example", // String | The identifier of the resource.
   'category': "category_example", // String | The identifier of the resource.
@@ -752,6 +771,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **category** | [**String**](.md)| The identifier of the resource. | [optional] 
@@ -803,6 +823,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
@@ -827,6 +848,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
@@ -872,6 +894,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'assignedTo': "assignedTo_example", // String | The identifier of the resource.
   'category': "category_example", // String | The identifier of the resource.
@@ -902,6 +925,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **category** | [**String**](.md)| The identifier of the resource. | [optional] 
@@ -953,6 +977,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
   'category': "category_example", // String | The identifier of the resource.
   'place': "place_example", // String | The identifier of the resource.
@@ -977,6 +1002,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **category** | [**String**](.md)| The identifier of the resource. | [optional] 
  **place** | [**String**](.md)| The identifier of the resource. | [optional] 
@@ -1022,6 +1048,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -1041,6 +1068,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -1081,6 +1109,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -1100,6 +1129,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -1140,6 +1170,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -1159,6 +1190,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -1201,6 +1233,7 @@ let organization = "organization_example"; // String | The identifier of the res
 
 let opts = { 
   'acceptLanguage': "fr-FR", // String | 
+  'xDateTime': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
@@ -1221,6 +1254,7 @@ Name | Type | Description  | Notes
  **organizationPatch** | [**OrganizationPatch**](OrganizationPatch.md)|  | 
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **Date**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

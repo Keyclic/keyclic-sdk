@@ -7,15 +7,18 @@ class ApplicationAgreement {
     this.termsOfService,
   });
 
-  ApplicationAgreement.fromJson(Map<String, dynamic> json) {
+  factory ApplicationAgreement.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    olderThan = ApplicationAgreementOlderThan.fromJson(json['olderThan']);
-    privacyPolicy =
-        ApplicationAgreementOlderThan.fromJson(json['privacyPolicy']);
-    termsOfService =
-        ApplicationAgreementOlderThan.fromJson(json['termsOfService']);
+
+    return ApplicationAgreement(
+      olderThan: ApplicationAgreementOlderThan.fromJson(json['olderThan']),
+      privacyPolicy:
+          ApplicationAgreementOlderThan.fromJson(json['privacyPolicy']),
+      termsOfService:
+          ApplicationAgreementOlderThan.fromJson(json['termsOfService']),
+    );
   }
 
   ApplicationAgreementOlderThan olderThan;

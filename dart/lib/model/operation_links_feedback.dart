@@ -6,13 +6,16 @@ class OperationLinksFeedback {
     this.iriTemplate,
   });
 
-  OperationLinksFeedback.fromJson(Map<String, dynamic> json) {
+  factory OperationLinksFeedback.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        OperationLinksFeedbackIriTemplate.fromJson(json['iriTemplate']);
+
+    return OperationLinksFeedback(
+      href: json['href'],
+      iriTemplate:
+          OperationLinksFeedbackIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the feedback associated to the given operation. */

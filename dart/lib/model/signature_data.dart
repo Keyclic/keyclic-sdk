@@ -6,12 +6,15 @@ class SignatureData {
     this.image,
   });
 
-  SignatureData.fromJson(Map<String, dynamic> json) {
+  factory SignatureData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    signer = SignatureDataSigner.fromJson(json['signer']);
-    image = json['image'];
+
+    return SignatureData(
+      signer: SignatureDataSigner.fromJson(json['signer']),
+      image: json['image'],
+    );
   }
 
   SignatureDataSigner signer;

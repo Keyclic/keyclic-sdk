@@ -6,13 +6,16 @@ class InternalServiceLinksOrganization {
     this.iriTemplate,
   });
 
-  InternalServiceLinksOrganization.fromJson(Map<String, dynamic> json) {
+  factory InternalServiceLinksOrganization.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = InternalServiceLinksOrganizationIriTemplate.fromJson(
-        json['iriTemplate']);
+
+    return InternalServiceLinksOrganization(
+      href: json['href'],
+      iriTemplate: InternalServiceLinksOrganizationIriTemplate.fromJson(
+          json['iriTemplate']),
+    );
   }
 
   /* The URI of the organization associated to the given internalservice. */

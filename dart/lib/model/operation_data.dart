@@ -10,16 +10,19 @@ class OperationData {
     this.scheduledAt,
   });
 
-  OperationData.fromJson(Map<String, dynamic> json) {
+  factory OperationData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    description = json['description'];
-    name = json['name'];
-    identificationNumber = json['identificationNumber'];
-    report = json['report'];
-    organization = json['organization'];
-    scheduledAt = json['scheduledAt'];
+
+    return OperationData(
+      description: json['description'],
+      name: json['name'],
+      identificationNumber: json['identificationNumber'],
+      report: json['report'],
+      organization: json['organization'],
+      scheduledAt: json['scheduledAt'],
+    );
   }
 
   String description;

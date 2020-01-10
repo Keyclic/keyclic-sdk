@@ -5,11 +5,14 @@ class FeedbackCollection {
     this.items,
   });
 
-  FeedbackCollection.fromJson(Map<String, dynamic> json) {
+  factory FeedbackCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Feedback.listFromJson(json['items']);
+
+    return FeedbackCollection(
+      items: Feedback.listFromJson(json['items']),
+    );
   }
 
   List<Feedback> items;

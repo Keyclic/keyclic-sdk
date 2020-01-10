@@ -5,11 +5,14 @@ class ReviewRequestCollection {
     this.items,
   });
 
-  ReviewRequestCollection.fromJson(Map<String, dynamic> json) {
+  factory ReviewRequestCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = ReviewRequest.listFromJson(json['items']);
+
+    return ReviewRequestCollection(
+      items: ReviewRequest.listFromJson(json['items']),
+    );
   }
 
   List<ReviewRequest> items;

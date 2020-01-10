@@ -6,12 +6,15 @@ class ReportLinksPlace {
     this.iriTemplate,
   });
 
-  ReportLinksPlace.fromJson(Map<String, dynamic> json) {
+  factory ReportLinksPlace.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = ReportLinksPlaceIriTemplate.fromJson(json['iriTemplate']);
+
+    return ReportLinksPlace(
+      href: json['href'],
+      iriTemplate: ReportLinksPlaceIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the place associated to the given report. */

@@ -5,11 +5,14 @@ class CategoryCollection {
     this.items,
   });
 
-  CategoryCollection.fromJson(Map<String, dynamic> json) {
+  factory CategoryCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Category.listFromJson(json['items']);
+
+    return CategoryCollection(
+      items: Category.listFromJson(json['items']),
+    );
   }
 
   List<Category> items;

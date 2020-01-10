@@ -11,25 +11,32 @@ class Configuration {
     this.updatedAt,
   });
 
-  Configuration.fromJson(Map<String, dynamic> json) {
+  factory Configuration.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    description = json['description'];
-    id = json['id'];
-    memberType = ConfigurationMemberType.fromJson(json['memberType']);
-    name = json['name'];
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return Configuration(
+      createdAt: createdAt,
+      description: json['description'],
+      id: json['id'],
+      memberType: ConfigurationMemberType.fromJson(json['memberType']),
+      name: json['name'],
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   DateTime createdAt;

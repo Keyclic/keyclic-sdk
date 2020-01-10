@@ -10,16 +10,19 @@ class ReviewRequestPagination extends Pagination {
     this.embedded,
   });
 
-  ReviewRequestPagination.fromJson(Map<String, dynamic> json) {
+  factory ReviewRequestPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = ReviewRequestCollection.fromJson(json['_embedded']);
+
+    return ReviewRequestPagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: ReviewRequestCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

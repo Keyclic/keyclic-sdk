@@ -10,21 +10,25 @@ class ReportPatch {
     this.tags,
   });
 
-  ReportPatch.fromJson(Map<String, dynamic> json) {
+  factory ReportPatch.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    category = json['category'];
-    description = json['description'];
-    dueAt = json['dueAt'] == null ? null : DateTime.parse(json['dueAt']);
+
+    DateTime dueAt =
+        json['dueAt'] == null ? null : DateTime.parse(json['dueAt']);
     if (dueAt is DateTime && dueAt.isUtc == false) {
       dueAt = DateTime.parse('${dueAt.toIso8601String()}Z');
     }
-    identificationNumber = json['identificationNumber'];
-    priority = json['priority'];
-    if (json['tags'] is List) {
-      tags = List<String>.from(json['tags']);
-    }
+
+    return ReportPatch(
+      category: json['category'],
+      description: json['description'],
+      dueAt: dueAt,
+      identificationNumber: json['identificationNumber'],
+      priority: json['priority'],
+      tags: json['tags'] is List ? List<String>.from(json['tags']) : null,
+    );
   }
 
   String category;

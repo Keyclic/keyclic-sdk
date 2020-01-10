@@ -5,11 +5,14 @@ class DocumentCollection {
     this.items,
   });
 
-  DocumentCollection.fromJson(Map<String, dynamic> json) {
+  factory DocumentCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Document.listFromJson(json['items']);
+
+    return DocumentCollection(
+      items: Document.listFromJson(json['items']),
+    );
   }
 
   List<Document> items;

@@ -6,13 +6,16 @@ class PlaceLinksContainsPlaces {
     this.iriTemplate,
   });
 
-  PlaceLinksContainsPlaces.fromJson(Map<String, dynamic> json) {
+  factory PlaceLinksContainsPlaces.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        PlaceLinksContainsPlacesIriTemplate.fromJson(json['iriTemplate']);
+
+    return PlaceLinksContainsPlaces(
+      href: json['href'],
+      iriTemplate:
+          PlaceLinksContainsPlacesIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the containsPlaces associated to the given place. */

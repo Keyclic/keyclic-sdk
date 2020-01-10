@@ -17,38 +17,44 @@ class Report {
     this.updatedAt,
   });
 
-  Report.fromJson(Map<String, dynamic> json) {
+  factory Report.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    embedded = ReportEmbedded.fromJson(json['_embedded']);
-    links = ReportLinks.fromJson(json['_links']);
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    description = json['description'];
-    dueAt = json['dueAt'] == null ? null : DateTime.parse(json['dueAt']);
+
+    DateTime dueAt =
+        json['dueAt'] == null ? null : DateTime.parse(json['dueAt']);
     if (dueAt is DateTime && dueAt.isUtc == false) {
       dueAt = DateTime.parse('${dueAt.toIso8601String()}Z');
     }
-    id = json['id'];
-    identificationNumber = json['identificationNumber'];
-    priority = json['priority'];
-    reference = json['reference'];
-    if (json['state'] is List) {
-      state = List<String>.from(json['state']);
-    }
-    if (json['tags'] is List) {
-      tags = List<String>.from(json['tags']);
-    }
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return Report(
+      embedded: ReportEmbedded.fromJson(json['_embedded']),
+      links: ReportLinks.fromJson(json['_links']),
+      createdAt: createdAt,
+      description: json['description'],
+      dueAt: dueAt,
+      id: json['id'],
+      identificationNumber: json['identificationNumber'],
+      priority: json['priority'],
+      reference: json['reference'],
+      state: json['state'] is List ? List<String>.from(json['state']) : null,
+      tags: json['tags'] is List ? List<String>.from(json['tags']) : null,
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   ReportEmbedded embedded;

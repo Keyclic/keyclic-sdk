@@ -5,11 +5,14 @@ class OperationEmbeddedDuration {
     this.seconds,
   });
 
-  OperationEmbeddedDuration.fromJson(Map<String, dynamic> json) {
+  factory OperationEmbeddedDuration.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    seconds = json['seconds'];
+
+    return OperationEmbeddedDuration(
+      seconds: json['seconds'],
+    );
   }
 
   int seconds;

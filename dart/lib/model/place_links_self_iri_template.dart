@@ -5,11 +5,14 @@ class PlaceLinksSelfIriTemplate {
     this.mapping,
   });
 
-  PlaceLinksSelfIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory PlaceLinksSelfIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = OccupantLinksPlaceIriTemplateMapping.fromJson(json['mapping']);
+
+    return PlaceLinksSelfIriTemplate(
+      mapping: OccupantLinksPlaceIriTemplateMapping.fromJson(json['mapping']),
+    );
   }
 
   OccupantLinksPlaceIriTemplateMapping mapping;

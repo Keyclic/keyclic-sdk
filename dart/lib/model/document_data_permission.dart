@@ -5,11 +5,14 @@ class DocumentDataPermission {
     this.targetGroup,
   });
 
-  DocumentDataPermission.fromJson(Map<String, dynamic> json) {
+  factory DocumentDataPermission.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    targetGroup = json['targetGroup'];
+
+    return DocumentDataPermission(
+      targetGroup: json['targetGroup'],
+    );
   }
 
   String targetGroup;

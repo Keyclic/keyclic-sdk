@@ -5,11 +5,14 @@ class PaginationLink {
     this.href,
   });
 
-  PaginationLink.fromJson(Map<String, dynamic> json) {
+  factory PaginationLink.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
+
+    return PaginationLink(
+      href: json['href'],
+    );
   }
 
   String href;

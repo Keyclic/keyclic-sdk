@@ -6,12 +6,15 @@ class OccupantLinksSelf {
     this.iriTemplate,
   });
 
-  OccupantLinksSelf.fromJson(Map<String, dynamic> json) {
+  factory OccupantLinksSelf.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate = OccupantLinksSelfIriTemplate.fromJson(json['iriTemplate']);
+
+    return OccupantLinksSelf(
+      href: json['href'],
+      iriTemplate: OccupantLinksSelfIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the self associated to the given occupant. */

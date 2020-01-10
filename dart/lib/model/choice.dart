@@ -14,22 +14,23 @@ class Choice {
     this.type,
   });
 
-  Choice.fromJson(Map<String, dynamic> json) {
+  factory Choice.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    default_ = json['default'];
-    description = json['description'];
-    if (json['enum'] is List) {
-      enum_ = List<String>.from(json['enum']);
-    }
-    format = json['format'];
-    id = json['id'];
-    maxItems = json['maxItems'];
-    minItems = json['minItems'];
-    propertyOrder = json['propertyOrder'];
-    title = json['title'];
-    type = json['type'];
+
+    return Choice(
+      default_: json['default'],
+      description: json['description'],
+      enum_: json['enum'] is List ? List<String>.from(json['enum']) : null,
+      format: json['format'],
+      id: json['id'],
+      maxItems: json['maxItems'],
+      minItems: json['minItems'],
+      propertyOrder: json['propertyOrder'],
+      title: json['title'],
+      type: json['type'],
+    );
   }
 
   String default_;

@@ -8,15 +8,18 @@ class OrganizationLinks {
     this.self,
   });
 
-  OrganizationLinks.fromJson(Map<String, dynamic> json) {
+  factory OrganizationLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    application = OrganizationLinksApplication.fromJson(json['application']);
-    businessActivity =
-        OrganizationLinksBusinessActivity.fromJson(json['businessActivity']);
-    logo = OrganizationLinksLogo.fromJson(json['logo']);
-    self = OrganizationLinksSelf.fromJson(json['self']);
+
+    return OrganizationLinks(
+      application: OrganizationLinksApplication.fromJson(json['application']),
+      businessActivity:
+          OrganizationLinksBusinessActivity.fromJson(json['businessActivity']),
+      logo: OrganizationLinksLogo.fromJson(json['logo']),
+      self: OrganizationLinksSelf.fromJson(json['self']),
+    );
   }
 
   OrganizationLinksApplication application;

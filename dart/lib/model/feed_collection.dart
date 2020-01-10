@@ -5,11 +5,14 @@ class FeedCollection {
     this.items,
   });
 
-  FeedCollection.fromJson(Map<String, dynamic> json) {
+  factory FeedCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    items = Feed.listFromJson(json['items']);
+
+    return FeedCollection(
+      items: Feed.listFromJson(json['items']),
+    );
   }
 
   List<Feed> items;

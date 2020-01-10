@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **deleteInternalService**
-> deleteInternalService(xKeyclicApp, internalService, acceptLanguage, xKeyclicAppVersion)
+> deleteInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Remove one InternalService resource.
 
@@ -32,10 +32,11 @@ var api_instance = InternalServiceApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var internalService = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteInternalService(xKeyclicApp, internalService, acceptLanguage, xKeyclicAppVersion);
+    api_instance.deleteInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling InternalServiceApi->deleteInternalService: $e\n");
 }
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **internalService** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -66,7 +68,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getInternalService**
-> InternalService getInternalService(xKeyclicApp, internalService, acceptLanguage, xKeyclicAppVersion)
+> InternalService getInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Retrieve one InternalService resource.
 
@@ -82,10 +84,11 @@ var api_instance = InternalServiceApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var internalService = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getInternalService(xKeyclicApp, internalService, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.getInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling InternalServiceApi->getInternalService: $e\n");
@@ -99,6 +102,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **internalService** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -117,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchInternalService**
-> InternalService patchInternalService(xKeyclicApp, internalServicePatch, internalService, acceptLanguage, xKeyclicAppVersion)
+> InternalService patchInternalService(xKeyclicApp, internalServicePatch, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Edit one InternalService resource.
 
@@ -134,10 +138,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var internalServicePatch = InternalServicePatch(); // InternalServicePatch | 
 var internalService = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.patchInternalService(xKeyclicApp, internalServicePatch, internalService, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.patchInternalService(xKeyclicApp, internalServicePatch, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling InternalServiceApi->patchInternalService: $e\n");
@@ -152,6 +157,7 @@ Name | Type | Description  | Notes
  **internalServicePatch** | [**InternalServicePatch**](InternalServicePatch.md)|  | 
  **internalService** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -170,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postInternalService**
-> InternalService postInternalService(xKeyclicApp, internalServiceData, acceptLanguage, xKeyclicAppVersion)
+> InternalService postInternalService(xKeyclicApp, internalServiceData, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one InternalService resource.
 
@@ -186,10 +192,11 @@ var api_instance = InternalServiceApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var internalServiceData = InternalServiceData(); // InternalServiceData | 
 var acceptLanguage = acceptLanguage_example; // String | 
+var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postInternalService(xKeyclicApp, internalServiceData, acceptLanguage, xKeyclicAppVersion);
+    var result = api_instance.postInternalService(xKeyclicApp, internalServiceData, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling InternalServiceApi->postInternalService: $e\n");
@@ -203,6 +210,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **internalServiceData** | [**InternalServiceData**](InternalServiceData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
+ **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

@@ -5,12 +5,15 @@ class ContributionLinksFeedbackIriTemplateMapping {
     this.feedback,
   });
 
-  ContributionLinksFeedbackIriTemplateMapping.fromJson(
+  factory ContributionLinksFeedbackIriTemplateMapping.fromJson(
       Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    feedback = json['feedback'];
+
+    return ContributionLinksFeedbackIriTemplateMapping(
+      feedback: json['feedback'],
+    );
   }
 
   String feedback;

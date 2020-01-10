@@ -10,16 +10,19 @@ class PersonPagination extends Pagination {
     this.embedded,
   });
 
-  PersonPagination.fromJson(Map<String, dynamic> json) {
+  factory PersonPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    limit = json['limit'];
-    page = json['page'];
-    pages = json['pages'];
-    total = json['total'];
-    links = PaginationLinks.fromJson(json['_links']);
-    embedded = PersonCollection.fromJson(json['_embedded']);
+
+    return PersonPagination(
+      limit: json['limit'],
+      page: json['page'],
+      pages: json['pages'],
+      total: json['total'],
+      links: PaginationLinks.fromJson(json['_links']),
+      embedded: PersonCollection.fromJson(json['_embedded']),
+    );
   }
 
   int limit;

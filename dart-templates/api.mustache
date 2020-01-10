@@ -38,7 +38,14 @@ class {{classname}} {
 
     // header params
     final Map<String, String> headerParams = {
-      {{#headerParams}}"{{baseName}}": {{paramName}},{{/headerParams}}
+      {{#headerParams}}
+        {{#isDateTime}}
+          if({{paramName}} is {{{dataType}}}) "{{baseName}}": {{paramName}}.toIso8601String(),
+        {{/isDateTime}}
+        {{^isDateTime}}
+          "{{baseName}}": {{paramName}},
+        {{/isDateTime}}
+      {{/headerParams}}
     };
 
     final List<String> contentTypes = [

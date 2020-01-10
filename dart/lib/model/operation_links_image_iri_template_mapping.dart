@@ -6,12 +6,16 @@ class OperationLinksImageIriTemplateMapping {
     this.operation,
   });
 
-  OperationLinksImageIriTemplateMapping.fromJson(Map<String, dynamic> json) {
+  factory OperationLinksImageIriTemplateMapping.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    image = json['image'];
-    operation = json['operation'];
+
+    return OperationLinksImageIriTemplateMapping(
+      image: json['image'],
+      operation: json['operation'],
+    );
   }
 
   String image;

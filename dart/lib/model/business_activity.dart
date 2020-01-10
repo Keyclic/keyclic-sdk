@@ -12,27 +12,34 @@ class BusinessActivity {
     this.updatedAt,
   });
 
-  BusinessActivity.fromJson(Map<String, dynamic> json) {
+  factory BusinessActivity.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    links = BusinessActivityLinks.fromJson(json['_links']);
-    alternateName = json['alternateName'];
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    id = json['id'];
-    metadataSchema =
-        BusinessActivityMetadataSchema.fromJson(json['metadataSchema']);
-    name = json['name'];
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return BusinessActivity(
+      links: BusinessActivityLinks.fromJson(json['_links']),
+      alternateName: json['alternateName'],
+      createdAt: createdAt,
+      id: json['id'],
+      metadataSchema:
+          BusinessActivityMetadataSchema.fromJson(json['metadataSchema']),
+      name: json['name'],
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   BusinessActivityLinks links;

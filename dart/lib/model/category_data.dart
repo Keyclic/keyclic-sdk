@@ -8,14 +8,17 @@ class CategoryData {
     this.organization,
   });
 
-  CategoryData.fromJson(Map<String, dynamic> json) {
+  factory CategoryData.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    name = json['name'];
-    color = json['color'];
-    icon = json['icon'];
-    organization = json['organization'];
+
+    return CategoryData(
+      name: json['name'],
+      color: json['color'],
+      icon: json['icon'],
+      organization: json['organization'],
+    );
   }
 
   String name;

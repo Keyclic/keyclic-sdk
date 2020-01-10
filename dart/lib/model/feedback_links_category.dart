@@ -6,13 +6,16 @@ class FeedbackLinksCategory {
     this.iriTemplate,
   });
 
-  FeedbackLinksCategory.fromJson(Map<String, dynamic> json) {
+  factory FeedbackLinksCategory.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        FeedbackLinksCategoryIriTemplate.fromJson(json['iriTemplate']);
+
+    return FeedbackLinksCategory(
+      href: json['href'],
+      iriTemplate:
+          FeedbackLinksCategoryIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the category associated to the given feedback. */

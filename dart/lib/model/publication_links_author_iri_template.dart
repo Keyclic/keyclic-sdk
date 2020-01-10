@@ -5,12 +5,16 @@ class PublicationLinksAuthorIriTemplate {
     this.mapping,
   });
 
-  PublicationLinksAuthorIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory PublicationLinksAuthorIriTemplate.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    mapping = ContributionLinksContributorIriTemplateMapping.fromJson(
-        json['mapping']);
+
+    return PublicationLinksAuthorIriTemplate(
+      mapping: ContributionLinksContributorIriTemplateMapping.fromJson(
+          json['mapping']),
+    );
   }
 
   ContributionLinksContributorIriTemplateMapping mapping;

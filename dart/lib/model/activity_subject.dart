@@ -6,12 +6,15 @@ class ActivitySubject {
     this.type,
   });
 
-  ActivitySubject.fromJson(Map<String, dynamic> json) {
+  factory ActivitySubject.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    id = json['id'];
-    type = json['type'];
+
+    return ActivitySubject(
+      id: json['id'],
+      type: json['type'],
+    );
   }
 
   String id;

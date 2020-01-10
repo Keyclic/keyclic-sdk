@@ -12,26 +12,33 @@ class InternalService {
     this.updatedAt,
   });
 
-  InternalService.fromJson(Map<String, dynamic> json) {
+  factory InternalService.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    links = InternalServiceLinks.fromJson(json['_links']);
-    contactPoint = ExternalServiceContactPoint.fromJson(json['contactPoint']);
-    createdAt =
+
+    DateTime createdAt =
         json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
     if (createdAt is DateTime && createdAt.isUtc == false) {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
-    description = json['description'];
-    id = json['id'];
-    name = json['name'];
-    type = json['type'];
-    updatedAt =
+
+    DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
       updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
     }
+
+    return InternalService(
+      links: InternalServiceLinks.fromJson(json['_links']),
+      contactPoint: ExternalServiceContactPoint.fromJson(json['contactPoint']),
+      createdAt: createdAt,
+      description: json['description'],
+      id: json['id'],
+      name: json['name'],
+      type: json['type'],
+      updatedAt: updatedAt,
+    );
   }
 
   InternalServiceLinks links;

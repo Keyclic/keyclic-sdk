@@ -6,12 +6,15 @@ class CategoryLinks {
     this.self,
   });
 
-  CategoryLinks.fromJson(Map<String, dynamic> json) {
+  factory CategoryLinks.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    organization = CategoryLinksOrganization.fromJson(json['organization']);
-    self = CategoryLinksSelf.fromJson(json['self']);
+
+    return CategoryLinks(
+      organization: CategoryLinksOrganization.fromJson(json['organization']),
+      self: CategoryLinksSelf.fromJson(json['self']),
+    );
   }
 
   CategoryLinksOrganization organization;

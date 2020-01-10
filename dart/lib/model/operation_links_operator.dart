@@ -6,13 +6,16 @@ class OperationLinksOperator {
     this.iriTemplate,
   });
 
-  OperationLinksOperator.fromJson(Map<String, dynamic> json) {
+  factory OperationLinksOperator.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        OperationLinksOperatorIriTemplate.fromJson(json['iriTemplate']);
+
+    return OperationLinksOperator(
+      href: json['href'],
+      iriTemplate:
+          OperationLinksOperatorIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the operator associated to the given operation. */

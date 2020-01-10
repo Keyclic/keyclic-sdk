@@ -6,13 +6,16 @@ class PublicationLinksAuthor {
     this.iriTemplate,
   });
 
-  PublicationLinksAuthor.fromJson(Map<String, dynamic> json) {
+  factory PublicationLinksAuthor.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      return;
+      return null;
     }
-    href = json['href'];
-    iriTemplate =
-        PublicationLinksAuthorIriTemplate.fromJson(json['iriTemplate']);
+
+    return PublicationLinksAuthor(
+      href: json['href'],
+      iriTemplate:
+          PublicationLinksAuthorIriTemplate.fromJson(json['iriTemplate']),
+    );
   }
 
   /* The URI of the author associated to the given publication. */
