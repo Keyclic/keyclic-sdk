@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class OrganizationPreferences {
   OrganizationPreferences({
     this.notification,
+    this.offline,
     this.public,
     this.reference,
     this.reviewEnabled,
@@ -16,6 +17,7 @@ class OrganizationPreferences {
     return OrganizationPreferences(
       notification:
           OrganizationPreferencesNotification.fromJson(json['notification']),
+      offline: json['offline'],
       public: json['public'],
       reference: OrganizationPreferencesReference.fromJson(json['reference']),
       reviewEnabled: json['reviewEnabled'],
@@ -23,6 +25,8 @@ class OrganizationPreferences {
   }
 
   OrganizationPreferencesNotification notification;
+
+  bool offline;
 
   bool public;
 
@@ -40,6 +44,7 @@ class OrganizationPreferences {
     return other is OrganizationPreferences &&
         runtimeType == other.runtimeType &&
         notification == other.notification &&
+        offline == other.offline &&
         public == other.public &&
         reference == other.reference &&
         reviewEnabled == other.reviewEnabled;
@@ -51,6 +56,7 @@ class OrganizationPreferences {
     int hashCode = 0;
 
     hashCode ^= notification?.hashCode ?? 0;
+    hashCode ^= offline?.hashCode ?? 0;
     hashCode ^= public?.hashCode ?? 0;
     hashCode ^= reference?.hashCode ?? 0;
     hashCode ^= reviewEnabled?.hashCode ?? 0;
@@ -80,6 +86,7 @@ class OrganizationPreferences {
   Map<String, dynamic> toJson() {
     return {
       if (notification != null) 'notification': notification,
+      if (offline != null) 'offline': offline,
       if (public != null) 'public': public,
       if (reference != null) 'reference': reference,
       if (reviewEnabled != null) 'reviewEnabled': reviewEnabled,
@@ -88,6 +95,6 @@ class OrganizationPreferences {
 
   @override
   String toString() {
-    return 'OrganizationPreferences[notification=$notification, public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
+    return 'OrganizationPreferences[notification=$notification, offline=$offline, public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
   }
 }

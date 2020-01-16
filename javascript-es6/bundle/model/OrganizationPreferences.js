@@ -60,6 +60,7 @@ var OrganizationPreferences =
       _classCallCheck(this, OrganizationPreferences);
 
       this.notification = null;
+      this.offline = null;
       this._public = _public;
       this.reference = null;
       this.reviewEnabled = null;
@@ -93,6 +94,24 @@ var OrganizationPreferences =
           key: "setNotification",
           value: function setNotification(notification) {
             this.notification = notification;
+          }
+          /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getOffline",
+          value: function getOffline() {
+            return this.offline;
+          }
+          /**
+           * @param { Boolean } offline
+           */
+        },
+        {
+          key: "setOffline",
+          value: function setOffline(offline) {
+            this.offline = offline;
           }
           /**
            * @return { Boolean }
@@ -171,6 +190,13 @@ var OrganizationPreferences =
               object.notification = _ApiClient.default.convertToType(
                 data["notification"],
                 object.notificationType
+              );
+            }
+
+            if (data.hasOwnProperty("offline")) {
+              object.offline = _ApiClient.default.convertToType(
+                data["offline"],
+                "Boolean"
               );
             }
 

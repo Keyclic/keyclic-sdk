@@ -443,7 +443,7 @@ import WebhookApi from "./api/WebhookApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.2.11
+ * @version 2.2.12
  */
 export {
   /**

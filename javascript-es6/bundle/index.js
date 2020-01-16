@@ -98,8 +98,6 @@ require("core-js/modules/es.date.to-json");
 
 require("core-js/modules/es.date.to-primitive");
 
-require("core-js/modules/es.date.to-string");
-
 require("core-js/modules/es.function.has-instance");
 
 require("core-js/modules/es.function.name");
@@ -171,10 +169,6 @@ require("core-js/modules/es.number.to-precision");
 require("core-js/modules/es.object.assign");
 
 require("core-js/modules/es.object.define-getter");
-
-require("core-js/modules/es.object.define-properties");
-
-require("core-js/modules/es.object.define-property");
 
 require("core-js/modules/es.object.define-setter");
 

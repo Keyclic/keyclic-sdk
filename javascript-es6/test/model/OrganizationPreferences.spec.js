@@ -59,6 +59,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property offline (base name: "offline")', function() {
+      // uncomment below and update the code to test the property offline
+      //var instane = new @KeyclicSdkJavascript.OrganizationPreferences();
+      //expect(instance).to.be();
+    });
+
     it('should have the property _public (base name: "public")', function() {
       // uncomment below and update the code to test the property _public
       //var instane = new @KeyclicSdkJavascript.OrganizationPreferences();
