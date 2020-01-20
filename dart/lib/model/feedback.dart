@@ -37,7 +37,7 @@ class Feedback {
       links: FeedbackLinks.fromJson(json['_links']),
       createdAt: createdAt,
       description: json['description'],
-      geoCoordinates: FeedbackGeoCoordinates.fromJson(json['geoCoordinates']),
+      geoCoordinates: GeoCoordinates.fromJson(json['geoCoordinates']),
       id: json['id'],
       metadata: json['metadata'],
       public: json['public'],
@@ -55,11 +55,11 @@ class Feedback {
 
   String description;
 
-  FeedbackGeoCoordinates geoCoordinates;
+  GeoCoordinates geoCoordinates;
 
   String id;
 
-  Map<String, dynamic> metadata;
+  String metadata;
 
   bool public;
 
@@ -84,7 +84,7 @@ class Feedback {
         description == other.description &&
         geoCoordinates == other.geoCoordinates &&
         id == other.id &&
-        DeepCollectionEquality.unordered().equals(metadata, other.metadata) &&
+        metadata == other.metadata &&
         public == other.public &&
         DeepCollectionEquality.unordered().equals(state, other.state) &&
         type == other.type &&
@@ -102,21 +102,13 @@ class Feedback {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    if (metadata is Map && metadata.isNotEmpty) {
-      hashCode ^= metadata.keys
-          .map((dynamic element) => element.hashCode)
-          .reduce((int value, int cursor) => value ^ cursor);
-      hashCode ^= metadata.values
-          .map((dynamic element) => element.hashCode)
-          .reduce((int value, int cursor) => value ^ cursor);
-    }
-
     hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= geoCoordinates?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= metadata?.hashCode ?? 0;
     hashCode ^= public?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
     hashCode ^= updatedAt?.hashCode ?? 0;

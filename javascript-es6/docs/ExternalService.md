@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**ExternalServiceLinks**](ExternalServiceLinks.md) |  | [optional] 
-**contactPoint** | [**ExternalServiceContactPoint**](ExternalServiceContactPoint.md) |  | [optional] 
+**contactPoint** | [**ContactPoint**](ContactPoint.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 

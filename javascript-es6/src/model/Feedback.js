@@ -12,8 +12,8 @@
 
 import ApiClient from "../ApiClient";
 import FeedbackEmbedded from "./FeedbackEmbedded";
-import FeedbackGeoCoordinates from "./FeedbackGeoCoordinates";
 import FeedbackLinks from "./FeedbackLinks";
+import GeoCoordinates from "./GeoCoordinates";
 
 /**
  * The Feedback model module.
@@ -25,23 +25,17 @@ export default class Feedback {
      * @alias module:model/Feedback
      * @class
     
-     * @param geoCoordinates { module:model/FeedbackGeoCoordinates }
-    
      * @param state { Array.<String> }
     
      */
-  constructor(
-    geoCoordinates,
-
-    state
-  ) {
+  constructor(state) {
     this.embedded = null;
     this.links = null;
     this.createdAt = null;
     this.description = null;
-    this.geoCoordinates = geoCoordinates;
+    this.geoCoordinates = null;
     this.id = null;
-    this.metadata = [];
+    this.metadata = null;
     this._public = null;
     this.state = state;
     this.type = null;
@@ -49,7 +43,7 @@ export default class Feedback {
 
     this.embeddedType = FeedbackEmbedded;
     this.linksType = FeedbackLinks;
-    this.geoCoordinatesType = FeedbackGeoCoordinates;
+    this.geoCoordinatesType = GeoCoordinates;
   }
 
   /**
@@ -95,7 +89,7 @@ export default class Feedback {
       object.id = ApiClient.convertToType(data["id"], "String");
     }
     if (data.hasOwnProperty("metadata")) {
-      object.metadata = ApiClient.convertToType(data["metadata"], "['String']");
+      object.metadata = ApiClient.convertToType(data["metadata"], "String");
     }
     if (data.hasOwnProperty("public")) {
       object._public = ApiClient.convertToType(data["public"], "Boolean");
@@ -160,14 +154,14 @@ export default class Feedback {
     this.description = description;
   }
   /**
-   * @return { module:model/FeedbackGeoCoordinates }
+   * @return { module:model/GeoCoordinates }
    */
   getGeoCoordinates() {
     return this.geoCoordinates;
   }
 
   /**
-   * @param { module:model/FeedbackGeoCoordinates } geoCoordinates
+   * @param { module:model/GeoCoordinates } geoCoordinates
    */
   setGeoCoordinates(geoCoordinates) {
     this.geoCoordinates = geoCoordinates;
@@ -180,14 +174,14 @@ export default class Feedback {
   }
 
   /**
-   * @return { Object.<String, String> }
+   * @return { String }
    */
   getMetadata() {
     return this.metadata;
   }
 
   /**
-   * @param { Object.<String, String> } metadata
+   * @param { String } metadata
    */
   setMetadata(metadata) {
     this.metadata = metadata;

@@ -65,6 +65,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property configuration (base name: "configuration")', function() {
+      // uncomment below and update the code to test the property configuration
+      //var instane = new @KeyclicSdkJavascript.OrganizationLinks();
+      //expect(instance).to.be();
+    });
+
     it('should have the property logo (base name: "logo")', function() {
       // uncomment below and update the code to test the property logo
       //var instane = new @KeyclicSdkJavascript.OrganizationLinks();

@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import PersonAgreement from "./PersonAgreement";
+import RegisterDataAgreement from "./RegisterDataAgreement";
 
 /**
  * The RegisterData model module.
@@ -37,7 +37,7 @@ export default class RegisterData {
     this.password = password;
     this.agreement = null;
 
-    this.agreementType = PersonAgreement;
+    this.agreementType = RegisterDataAgreement;
   }
 
   /**
@@ -98,14 +98,14 @@ export default class RegisterData {
     this.password = password;
   }
   /**
-   * @return { module:model/PersonAgreement }
+   * @return { module:model/RegisterDataAgreement }
    */
   getAgreement() {
     return this.agreement;
   }
 
   /**
-   * @param { module:model/PersonAgreement } agreement
+   * @param { module:model/RegisterDataAgreement } agreement
    */
   setAgreement(agreement) {
     this.agreement = agreement;

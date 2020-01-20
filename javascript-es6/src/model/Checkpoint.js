@@ -48,7 +48,7 @@ export default class Checkpoint {
     }
 
     if (data.hasOwnProperty("createdAt")) {
-      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "String");
     }
     if (data.hasOwnProperty("state")) {
       object.state = ApiClient.convertToType(data["state"], "['String']");
@@ -61,7 +61,7 @@ export default class Checkpoint {
   }
 
   /**
-   * @return { Date }
+   * @return { String }
    */
   getCreatedAt() {
     return this.createdAt;

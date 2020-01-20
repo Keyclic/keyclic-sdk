@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **branchCode** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
-**geo** | [**PlaceGeo**](PlaceGeo.md) |  | 
+**geo** | [**GeoShape**](GeoShape.md) |  | [optional] 
 **id** | **String** |  | [optional] 
 **name** | **String** |  | 
-**preferences** | [**PlacePreferences**](PlacePreferences.md) |  | [optional] 
+**preferences** | [**Preferences**](Preferences.md) |  | [optional] 
 **type** | **String** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 

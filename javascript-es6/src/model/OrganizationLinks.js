@@ -13,6 +13,7 @@
 import ApiClient from "../ApiClient";
 import OrganizationLinksApplication from "./OrganizationLinksApplication";
 import OrganizationLinksBusinessActivity from "./OrganizationLinksBusinessActivity";
+import OrganizationLinksConfiguration from "./OrganizationLinksConfiguration";
 import OrganizationLinksLogo from "./OrganizationLinksLogo";
 import OrganizationLinksSelf from "./OrganizationLinksSelf";
 
@@ -30,11 +31,13 @@ export default class OrganizationLinks {
   constructor() {
     this.application = null;
     this.businessActivity = null;
+    this.configuration = null;
     this.logo = null;
     this.self = null;
 
     this.applicationType = OrganizationLinksApplication;
     this.businessActivityType = OrganizationLinksBusinessActivity;
+    this.configurationType = OrganizationLinksConfiguration;
     this.logoType = OrganizationLinksLogo;
     this.selfType = OrganizationLinksSelf;
   }
@@ -64,6 +67,12 @@ export default class OrganizationLinks {
       object.businessActivity = ApiClient.convertToType(
         data["businessActivity"],
         object.businessActivityType
+      );
+    }
+    if (data.hasOwnProperty("configuration")) {
+      object.configuration = ApiClient.convertToType(
+        data["configuration"],
+        object.configurationType
       );
     }
     if (data.hasOwnProperty("logo")) {
@@ -101,6 +110,19 @@ export default class OrganizationLinks {
    */
   setBusinessActivity(businessActivity) {
     this.businessActivity = businessActivity;
+  }
+  /**
+   * @return { module:model/OrganizationLinksConfiguration }
+   */
+  getConfiguration() {
+    return this.configuration;
+  }
+
+  /**
+   * @param { module:model/OrganizationLinksConfiguration } configuration
+   */
+  setConfiguration(configuration) {
+    this.configuration = configuration;
   }
   /**
    * @return { module:model/OrganizationLinksLogo }

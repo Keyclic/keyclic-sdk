@@ -38,10 +38,10 @@ class Place {
       branchCode: json['branchCode'],
       createdAt: createdAt,
       description: json['description'],
-      geo: PlaceGeo.fromJson(json['geo']),
+      geo: GeoShape.fromJson(json['geo']),
       id: json['id'],
       name: json['name'],
-      preferences: PlacePreferences.fromJson(json['preferences']),
+      preferences: Preferences.fromJson(json['preferences']),
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -57,13 +57,13 @@ class Place {
 
   String description;
 
-  PlaceGeo geo;
+  GeoShape geo;
 
   String id;
 
   String name;
 
-  PlacePreferences preferences;
+  Preferences preferences;
 
   String type;
 

@@ -31,7 +31,7 @@ class InternalService {
 
     return InternalService(
       links: InternalServiceLinks.fromJson(json['_links']),
-      contactPoint: ExternalServiceContactPoint.fromJson(json['contactPoint']),
+      contactPoint: ContactPoint.fromJson(json['contactPoint']),
       createdAt: createdAt,
       description: json['description'],
       id: json['id'],
@@ -43,7 +43,7 @@ class InternalService {
 
   InternalServiceLinks links;
 
-  ExternalServiceContactPoint contactPoint;
+  ContactPoint contactPoint;
 
   DateTime createdAt;
 

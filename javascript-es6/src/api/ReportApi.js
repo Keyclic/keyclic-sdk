@@ -18,8 +18,8 @@ import Error from "../model/Error";
 import OperationPagination from "../model/OperationPagination";
 import Report from "../model/Report";
 import ReportPatch from "../model/ReportPatch";
-import ReportWorkflowTransitionData from "../model/ReportWorkflowTransitionData";
 import Tracking from "../model/Tracking";
+import WorkflowData from "../model/WorkflowData";
 
 /**
  * Report service.
@@ -711,7 +711,7 @@ export default class ReportApi extends ApiClient {
   /**
    * Create one Workflow resource.
    * @param { String } xKeyclicApp
-   * @param { module:model/ReportWorkflowTransitionData } reportWorkflowTransitionData
+   * @param { module:model/WorkflowData } workflowData
    * @param { String } report The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
@@ -726,7 +726,7 @@ export default class ReportApi extends ApiClient {
 
     let {
       xKeyclicApp,
-      reportWorkflowTransitionData,
+      workflowData,
       report,
       acceptLanguage,
       xDateTime,
@@ -740,13 +740,10 @@ export default class ReportApi extends ApiClient {
       );
     }
 
-    // verify the required parameter 'reportWorkflowTransitionData' is set
-    if (
-      typeof reportWorkflowTransitionData === "undefined" ||
-      reportWorkflowTransitionData === null
-    ) {
+    // verify the required parameter 'workflowData' is set
+    if (typeof workflowData === "undefined" || workflowData === null) {
       throw new window.Error(
-        'Missing the required parameter "reportWorkflowTransitionData" when calling postWorkflowByReport'
+        'Missing the required parameter "workflowData" when calling postWorkflowByReport'
       );
     }
 
@@ -776,7 +773,7 @@ export default class ReportApi extends ApiClient {
       report: report
     };
 
-    const bodyParam = reportWorkflowTransitionData;
+    const bodyParam = workflowData;
 
     const queryParams = {};
 

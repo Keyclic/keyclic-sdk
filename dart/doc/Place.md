@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **branchCode** | **String** |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
-**geo** | [**PlaceGeo**](PlaceGeo.md) |  | [default to null]
+**geo** | [**GeoShape**](GeoShape.md) |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
 **name** | **String** |  | [default to null]
-**preferences** | [**PlacePreferences**](PlacePreferences.md) |  | [optional] [default to null]
+**preferences** | [**Preferences**](Preferences.md) |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 

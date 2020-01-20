@@ -7,12 +7,12 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _OrganizationPreferencesNotification = _interopRequireDefault(
-  require("./OrganizationPreferencesNotification")
+var _OrganizationPatchPreferencesNotification = _interopRequireDefault(
+  require("./OrganizationPatchPreferencesNotification")
 );
 
-var _OrganizationPreferencesReference = _interopRequireDefault(
-  require("./OrganizationPreferencesReference")
+var _OrganizationPatchPreferencesReference = _interopRequireDefault(
+  require("./OrganizationPatchPreferencesReference")
 );
 
 function _interopRequireDefault(obj) {
@@ -59,8 +59,8 @@ var OrganizationPatchPreferences =
 
       this.notification = null;
       this.reference = null;
-      this.notificationType = _OrganizationPreferencesNotification.default;
-      this.referenceType = _OrganizationPreferencesReference.default;
+      this.notificationType = _OrganizationPatchPreferencesNotification.default;
+      this.referenceType = _OrganizationPatchPreferencesReference.default;
     }
     /**
      * Constructs a "OrganizationPatchPreferences" from a plain JavaScript object.
@@ -76,13 +76,13 @@ var OrganizationPatchPreferences =
           key: "getNotification",
 
           /**
-           * @return { module:model/OrganizationPreferencesNotification }
+           * @return { module:model/OrganizationPatchPreferencesNotification }
            */
           value: function getNotification() {
             return this.notification;
           }
           /**
-           * @param { module:model/OrganizationPreferencesNotification } notification
+           * @param { module:model/OrganizationPatchPreferencesNotification } notification
            */
         },
         {
@@ -91,7 +91,7 @@ var OrganizationPatchPreferences =
             this.notification = notification;
           }
           /**
-           * @return { module:model/OrganizationPreferencesReference }
+           * @return { module:model/OrganizationPatchPreferencesReference }
            */
         },
         {
@@ -100,7 +100,7 @@ var OrganizationPatchPreferences =
             return this.reference;
           }
           /**
-           * @param { module:model/OrganizationPreferencesReference } reference
+           * @param { module:model/OrganizationPatchPreferencesReference } reference
            */
         },
         {

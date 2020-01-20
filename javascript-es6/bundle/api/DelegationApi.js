@@ -13,11 +13,9 @@ var _DelegationData = _interopRequireDefault(
   require("../model/DelegationData")
 );
 
-var _DelegationWorkflowTransitionData = _interopRequireDefault(
-  require("../model/DelegationWorkflowTransitionData")
-);
-
 var _Error = _interopRequireDefault(require("../model/Error"));
+
+var _WorkflowData = _interopRequireDefault(require("../model/WorkflowData"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -329,7 +327,7 @@ var DelegationApi =
         /**
          * Create one Workflow resource.
          * @param { String } xKeyclicApp
-         * @param { module:model/DelegationWorkflowTransitionData } delegationWorkflowTransitionData
+         * @param { module:model/WorkflowData } workflowData
          * @param { String } delegation The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Delegation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
@@ -356,8 +354,7 @@ var DelegationApi =
           }
 
           var xKeyclicApp = options.xKeyclicApp,
-            delegationWorkflowTransitionData =
-              options.delegationWorkflowTransitionData,
+            workflowData = options.workflowData,
             delegation = options.delegation,
             acceptLanguage = options.acceptLanguage,
             xDateTime = options.xDateTime,
@@ -367,14 +364,11 @@ var DelegationApi =
             throw new window.Error(
               'Missing the required parameter "xKeyclicApp" when calling postWorkflowByDelegation'
             );
-          } // verify the required parameter 'delegationWorkflowTransitionData' is set
+          } // verify the required parameter 'workflowData' is set
 
-          if (
-            typeof delegationWorkflowTransitionData === "undefined" ||
-            delegationWorkflowTransitionData === null
-          ) {
+          if (typeof workflowData === "undefined" || workflowData === null) {
             throw new window.Error(
-              'Missing the required parameter "delegationWorkflowTransitionData" when calling postWorkflowByDelegation'
+              'Missing the required parameter "workflowData" when calling postWorkflowByDelegation'
             );
           } // verify the required parameter 'delegation' is set
 
@@ -402,7 +396,7 @@ var DelegationApi =
           var pathParams = {
             delegation: delegation
           };
-          var bodyParam = delegationWorkflowTransitionData;
+          var bodyParam = workflowData;
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,

@@ -50,7 +50,7 @@ export default class Role {
     }
 
     if (data.hasOwnProperty("createdAt")) {
-      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "String");
     }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
@@ -77,14 +77,14 @@ export default class Role {
       object.type = ApiClient.convertToType(data["type"], "String");
     }
     if (data.hasOwnProperty("updatedAt")) {
-      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "String");
     }
 
     return object;
   }
 
   /**
-   * @return { Date }
+   * @return { String }
    */
   getCreatedAt() {
     return this.createdAt;
@@ -157,7 +157,7 @@ export default class Role {
   }
 
   /**
-   * @return { Date }
+   * @return { String }
    */
   getUpdatedAt() {
     return this.updatedAt;

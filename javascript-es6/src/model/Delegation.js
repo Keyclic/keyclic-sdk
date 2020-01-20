@@ -24,16 +24,14 @@ export default class Delegation {
      * @alias module:model/Delegation
      * @class
     
-     * @param state { Array.<String> }
-    
      */
-  constructor(state) {
+  constructor() {
     this.embedded = null;
     this.links = null;
     this.createdAt = null;
     this.description = null;
     this.id = null;
-    this.state = state;
+    this.state = [];
     this.type = null;
     this.updatedAt = null;
 

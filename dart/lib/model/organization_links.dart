@@ -4,6 +4,7 @@ class OrganizationLinks {
   OrganizationLinks({
     this.application,
     this.businessActivity,
+    this.configuration,
     this.logo,
     this.self,
   });
@@ -17,6 +18,8 @@ class OrganizationLinks {
       application: OrganizationLinksApplication.fromJson(json['application']),
       businessActivity:
           OrganizationLinksBusinessActivity.fromJson(json['businessActivity']),
+      configuration:
+          OrganizationLinksConfiguration.fromJson(json['configuration']),
       logo: OrganizationLinksLogo.fromJson(json['logo']),
       self: OrganizationLinksSelf.fromJson(json['self']),
     );
@@ -25,6 +28,8 @@ class OrganizationLinks {
   OrganizationLinksApplication application;
 
   OrganizationLinksBusinessActivity businessActivity;
+
+  OrganizationLinksConfiguration configuration;
 
   OrganizationLinksLogo logo;
 
@@ -41,6 +46,7 @@ class OrganizationLinks {
         runtimeType == other.runtimeType &&
         application == other.application &&
         businessActivity == other.businessActivity &&
+        configuration == other.configuration &&
         logo == other.logo &&
         self == other.self;
   }
@@ -52,6 +58,7 @@ class OrganizationLinks {
 
     hashCode ^= application?.hashCode ?? 0;
     hashCode ^= businessActivity?.hashCode ?? 0;
+    hashCode ^= configuration?.hashCode ?? 0;
     hashCode ^= logo?.hashCode ?? 0;
     hashCode ^= self?.hashCode ?? 0;
 
@@ -80,6 +87,7 @@ class OrganizationLinks {
     return {
       if (application != null) 'application': application,
       if (businessActivity != null) 'businessActivity': businessActivity,
+      if (configuration != null) 'configuration': configuration,
       if (logo != null) 'logo': logo,
       if (self != null) 'self': self,
     };
@@ -87,6 +95,6 @@ class OrganizationLinks {
 
   @override
   String toString() {
-    return 'OrganizationLinks[application=$application, businessActivity=$businessActivity, logo=$logo, self=$self, ]';
+    return 'OrganizationLinks[application=$application, businessActivity=$businessActivity, configuration=$configuration, logo=$logo, self=$self, ]';
   }
 }

@@ -53,8 +53,20 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.Configuration);
     });
 
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
+      //var instane = new @KeyclicSdkJavascript.Configuration();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdAt (base name: "createdAt")', function() {
       // uncomment below and update the code to test the property createdAt
+      //var instane = new @KeyclicSdkJavascript.Configuration();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property delegationType (base name: "delegationType")', function() {
+      // uncomment below and update the code to test the property delegationType
       //var instane = new @KeyclicSdkJavascript.Configuration();
       //expect(instance).to.be();
     });
@@ -79,6 +91,18 @@
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
+      //var instane = new @KeyclicSdkJavascript.Configuration();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property operationType (base name: "operationType")', function() {
+      // uncomment below and update the code to test the property operationType
+      //var instane = new @KeyclicSdkJavascript.Configuration();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property reportType (base name: "reportType")', function() {
+      // uncomment below and update the code to test the property reportType
       //var instane = new @KeyclicSdkJavascript.Configuration();
       //expect(instance).to.be();
     });

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
-**state** | **[String]** |  | 
+**state** | **[String]** |  | [optional] 
 **type** | **String** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 

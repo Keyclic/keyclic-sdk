@@ -472,7 +472,7 @@ class ReportApi {
   ///
   Future<Report> postWorkflowByReport(
     String xKeyclicApp,
-    ReportWorkflowTransitionData reportWorkflowTransitionData,
+    WorkflowData workflowData,
     String report, {
     String acceptLanguage,
     DateTime xDateTime,
@@ -484,9 +484,8 @@ class ReportApi {
       throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
-    if (reportWorkflowTransitionData == null) {
-      throw ApiException(
-          0, "Missing required param: reportWorkflowTransitionData");
+    if (workflowData == null) {
+      throw ApiException(0, "Missing required param: workflowData");
     }
 
     if (report == null) {
@@ -518,7 +517,7 @@ class ReportApi {
       "bearer",
     ];
 
-    final ReportWorkflowTransitionData postBody = reportWorkflowTransitionData;
+    final WorkflowData postBody = workflowData;
 
     final Response response = await apiClient.invokeAPI(
       path,

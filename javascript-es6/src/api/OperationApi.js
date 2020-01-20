@@ -19,9 +19,9 @@ import ImageData from "../model/ImageData";
 import Operation from "../model/Operation";
 import OperationData from "../model/OperationData";
 import OperationPatch from "../model/OperationPatch";
-import OperationWorkflowTransitionData from "../model/OperationWorkflowTransitionData";
 import SignatureData from "../model/SignatureData";
 import Tracking from "../model/Tracking";
+import WorkflowData from "../model/WorkflowData";
 
 /**
  * Operation service.
@@ -1097,7 +1097,7 @@ export default class OperationApi extends ApiClient {
   /**
    * Create one Workflow resource.
    * @param { String } xKeyclicApp
-   * @param { module:model/OperationWorkflowTransitionData } operationWorkflowTransitionData
+   * @param { module:model/WorkflowData } workflowData
    * @param { String } operation The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
@@ -1112,7 +1112,7 @@ export default class OperationApi extends ApiClient {
 
     let {
       xKeyclicApp,
-      operationWorkflowTransitionData,
+      workflowData,
       operation,
       acceptLanguage,
       xDateTime,
@@ -1126,13 +1126,10 @@ export default class OperationApi extends ApiClient {
       );
     }
 
-    // verify the required parameter 'operationWorkflowTransitionData' is set
-    if (
-      typeof operationWorkflowTransitionData === "undefined" ||
-      operationWorkflowTransitionData === null
-    ) {
+    // verify the required parameter 'workflowData' is set
+    if (typeof workflowData === "undefined" || workflowData === null) {
       throw new window.Error(
-        'Missing the required parameter "operationWorkflowTransitionData" when calling postWorkflowByOperation'
+        'Missing the required parameter "workflowData" when calling postWorkflowByOperation'
       );
     }
 
@@ -1162,7 +1159,7 @@ export default class OperationApi extends ApiClient {
       operation: operation
     };
 
-    const bodyParam = operationWorkflowTransitionData;
+    const bodyParam = workflowData;
 
     const queryParams = {};
 

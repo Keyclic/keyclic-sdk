@@ -44,37 +44,37 @@ export default class PersonPatchPreferencesNotification {
     }
 
     if (data.hasOwnProperty("mail")) {
-      object.mail = ApiClient.convertToType(data["mail"], "Boolean");
+      object.mail = ApiClient.convertToType(data["mail"], "String");
     }
     if (data.hasOwnProperty("push")) {
-      object.push = ApiClient.convertToType(data["push"], "Boolean");
+      object.push = ApiClient.convertToType(data["push"], "String");
     }
 
     return object;
   }
 
   /**
-   * @return { Boolean }
+   * @return { String }
    */
   getMail() {
     return this.mail;
   }
 
   /**
-   * @param { Boolean } mail
+   * @param { String } mail
    */
   setMail(mail) {
     this.mail = mail;
   }
   /**
-   * @return { Boolean }
+   * @return { String }
    */
   getPush() {
     return this.push;
   }
 
   /**
-   * @param { Boolean } push
+   * @param { String } push
    */
   setPush(push) {
     this.push = push;

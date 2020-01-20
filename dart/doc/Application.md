@@ -9,8 +9,8 @@ import 'package:keyclic_sdk_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**ApplicationLinks**](ApplicationLinks.md) |  | [optional] [default to null]
-**about** | [**ApplicationAbout**](ApplicationAbout.md) |  | [optional] [default to null]
-**agreement** | [**ApplicationAgreement**](ApplicationAgreement.md) |  | [optional] [default to null]
+**about** | [**About**](About.md) |  | [optional] [default to null]
+**agreement** | [**Agreement**](Agreement.md) |  | [optional] [default to null]
 **contactPoints** | [**List&lt;ContactPoint&gt;**](ContactPoint.md) |  | [optional] [default to []]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]

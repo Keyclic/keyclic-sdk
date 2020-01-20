@@ -103,7 +103,7 @@ var ReportPatch =
             this.description = description;
           }
           /**
-           * @return { Date }
+           * @return { String }
            */
         },
         {
@@ -112,7 +112,7 @@ var ReportPatch =
             return this.dueAt;
           }
           /**
-           * @param { Date } dueAt
+           * @param { String } dueAt
            */
         },
         {
@@ -210,7 +210,7 @@ var ReportPatch =
             if (data.hasOwnProperty("dueAt")) {
               object.dueAt = _ApiClient.default.convertToType(
                 data["dueAt"],
-                "Date"
+                "String"
               );
             }
 

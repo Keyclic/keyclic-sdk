@@ -34,8 +34,7 @@ class BusinessActivity {
       alternateName: json['alternateName'],
       createdAt: createdAt,
       id: json['id'],
-      metadataSchema:
-          BusinessActivityMetadataSchema.fromJson(json['metadataSchema']),
+      metadataSchema: Schema.fromJson(json['metadataSchema']),
       name: json['name'],
       type: json['type'],
       updatedAt: updatedAt,
@@ -50,7 +49,7 @@ class BusinessActivity {
 
   String id;
 
-  BusinessActivityMetadataSchema metadataSchema;
+  Schema metadataSchema;
 
   String name;
 

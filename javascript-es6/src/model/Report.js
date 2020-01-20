@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import Reference from "./Reference";
 import ReportEmbedded from "./ReportEmbedded";
 import ReportLinks from "./ReportLinks";
 
@@ -50,6 +51,7 @@ export default class Report {
 
     this.embeddedType = ReportEmbedded;
     this.linksType = ReportLinks;
+    this.referenceType = Reference;
   }
 
   /**
@@ -101,7 +103,10 @@ export default class Report {
       object.priority = ApiClient.convertToType(data["priority"], "Number");
     }
     if (data.hasOwnProperty("reference")) {
-      object.reference = ApiClient.convertToType(data["reference"], "String");
+      object.reference = ApiClient.convertToType(
+        data["reference"],
+        object.referenceType
+      );
     }
     if (data.hasOwnProperty("state")) {
       object.state = ApiClient.convertToType(data["state"], "['String']");
@@ -212,14 +217,14 @@ export default class Report {
     this.priority = priority;
   }
   /**
-   * @return { String }
+   * @return { module:model/Reference }
    */
   getReference() {
     return this.reference;
   }
 
   /**
-   * @param { String } reference
+   * @param { module:model/Reference } reference
    */
   setReference(reference) {
     this.reference = reference;

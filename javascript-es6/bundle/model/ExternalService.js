@@ -7,9 +7,7 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ExternalServiceContactPoint = _interopRequireDefault(
-  require("./ExternalServiceContactPoint")
-);
+var _ContactPoint = _interopRequireDefault(require("./ContactPoint"));
 
 var _ExternalServiceLinks = _interopRequireDefault(
   require("./ExternalServiceLinks")
@@ -68,7 +66,7 @@ var ExternalService =
       this.type = null;
       this.updatedAt = null;
       this.linksType = _ExternalServiceLinks.default;
-      this.contactPointType = _ExternalServiceContactPoint.default;
+      this.contactPointType = _ContactPoint.default;
     }
     /**
      * Constructs a "ExternalService" from a plain JavaScript object.
@@ -99,7 +97,7 @@ var ExternalService =
             this.links = links;
           }
           /**
-           * @return { module:model/ExternalServiceContactPoint }
+           * @return { module:model/ContactPoint }
            */
         },
         {
@@ -108,7 +106,7 @@ var ExternalService =
             return this.contactPoint;
           }
           /**
-           * @param { module:model/ExternalServiceContactPoint } contactPoint
+           * @param { module:model/ContactPoint } contactPoint
            */
         },
         {

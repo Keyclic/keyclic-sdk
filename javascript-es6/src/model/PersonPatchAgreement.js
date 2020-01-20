@@ -47,57 +47,57 @@ export default class PersonPatchAgreement {
     if (data.hasOwnProperty("privacyPolicy")) {
       object.privacyPolicy = ApiClient.convertToType(
         data["privacyPolicy"],
-        "Boolean"
+        "String"
       );
     }
     if (data.hasOwnProperty("termsOfService")) {
       object.termsOfService = ApiClient.convertToType(
         data["termsOfService"],
-        "Boolean"
+        "String"
       );
     }
     if (data.hasOwnProperty("olderThan")) {
-      object.olderThan = ApiClient.convertToType(data["olderThan"], "Boolean");
+      object.olderThan = ApiClient.convertToType(data["olderThan"], "String");
     }
 
     return object;
   }
 
   /**
-   * @return { Boolean }
+   * @return { String }
    */
   getPrivacyPolicy() {
     return this.privacyPolicy;
   }
 
   /**
-   * @param { Boolean } privacyPolicy
+   * @param { String } privacyPolicy
    */
   setPrivacyPolicy(privacyPolicy) {
     this.privacyPolicy = privacyPolicy;
   }
   /**
-   * @return { Boolean }
+   * @return { String }
    */
   getTermsOfService() {
     return this.termsOfService;
   }
 
   /**
-   * @param { Boolean } termsOfService
+   * @param { String } termsOfService
    */
   setTermsOfService(termsOfService) {
     this.termsOfService = termsOfService;
   }
   /**
-   * @return { Boolean }
+   * @return { String }
    */
   getOlderThan() {
     return this.olderThan;
   }
 
   /**
-   * @param { Boolean } olderThan
+   * @param { String } olderThan
    */
   setOlderThan(olderThan) {
     this.olderThan = olderThan;

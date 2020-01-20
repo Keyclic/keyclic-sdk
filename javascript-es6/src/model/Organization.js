@@ -12,7 +12,7 @@
 
 import ApiClient from "../ApiClient";
 import OrganizationLinks from "./OrganizationLinks";
-import OrganizationPreferences from "./OrganizationPreferences";
+import Preferences from "./Preferences";
 
 /**
  * The Organization model module.
@@ -42,7 +42,7 @@ export default class Organization {
     this.updatedAt = null;
 
     this.linksType = OrganizationLinks;
-    this.preferencesType = OrganizationPreferences;
+    this.preferencesType = Preferences;
   }
 
   /**
@@ -221,14 +221,14 @@ export default class Organization {
     this.notificationEmailAddress = notificationEmailAddress;
   }
   /**
-   * @return { module:model/OrganizationPreferences }
+   * @return { module:model/Preferences }
    */
   getPreferences() {
     return this.preferences;
   }
 
   /**
-   * @param { module:model/OrganizationPreferences } preferences
+   * @param { module:model/Preferences } preferences
    */
   setPreferences(preferences) {
     this.preferences = preferences;

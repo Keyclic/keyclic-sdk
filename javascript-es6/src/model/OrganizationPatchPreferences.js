@@ -11,8 +11,8 @@
  */
 
 import ApiClient from "../ApiClient";
-import OrganizationPreferencesNotification from "./OrganizationPreferencesNotification";
-import OrganizationPreferencesReference from "./OrganizationPreferencesReference";
+import OrganizationPatchPreferencesNotification from "./OrganizationPatchPreferencesNotification";
+import OrganizationPatchPreferencesReference from "./OrganizationPatchPreferencesReference";
 
 /**
  * The OrganizationPatchPreferences model module.
@@ -29,8 +29,8 @@ export default class OrganizationPatchPreferences {
     this.notification = null;
     this.reference = null;
 
-    this.notificationType = OrganizationPreferencesNotification;
-    this.referenceType = OrganizationPreferencesReference;
+    this.notificationType = OrganizationPatchPreferencesNotification;
+    this.referenceType = OrganizationPatchPreferencesReference;
   }
 
   /**
@@ -65,27 +65,27 @@ export default class OrganizationPatchPreferences {
   }
 
   /**
-   * @return { module:model/OrganizationPreferencesNotification }
+   * @return { module:model/OrganizationPatchPreferencesNotification }
    */
   getNotification() {
     return this.notification;
   }
 
   /**
-   * @param { module:model/OrganizationPreferencesNotification } notification
+   * @param { module:model/OrganizationPatchPreferencesNotification } notification
    */
   setNotification(notification) {
     this.notification = notification;
   }
   /**
-   * @return { module:model/OrganizationPreferencesReference }
+   * @return { module:model/OrganizationPatchPreferencesReference }
    */
   getReference() {
     return this.reference;
   }
 
   /**
-   * @param { module:model/OrganizationPreferencesReference } reference
+   * @param { module:model/OrganizationPatchPreferencesReference } reference
    */
   setReference(reference) {
     this.reference = reference;

@@ -7,13 +7,13 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _PlaceEmbedded = _interopRequireDefault(require("./PlaceEmbedded"));
+var _GeoShape = _interopRequireDefault(require("./GeoShape"));
 
-var _PlaceGeo = _interopRequireDefault(require("./PlaceGeo"));
+var _PlaceEmbedded = _interopRequireDefault(require("./PlaceEmbedded"));
 
 var _PlaceLinks = _interopRequireDefault(require("./PlaceLinks"));
 
-var _PlacePreferences = _interopRequireDefault(require("./PlacePreferences"));
+var _Preferences = _interopRequireDefault(require("./Preferences"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -53,12 +53,10 @@ var Place =
    * @alias module:model/Place
    * @class
   
-   * @param geo { module:model/PlaceGeo }
-  
    * @param name { String }
   
    */
-    function Place(geo, name) {
+    function Place(name) {
       _classCallCheck(this, Place);
 
       this.embedded = null;
@@ -66,7 +64,7 @@ var Place =
       this.branchCode = null;
       this.createdAt = null;
       this.description = null;
-      this.geo = geo;
+      this.geo = null;
       this.id = null;
       this.name = name;
       this.preferences = null;
@@ -74,8 +72,8 @@ var Place =
       this.updatedAt = null;
       this.embeddedType = _PlaceEmbedded.default;
       this.linksType = _PlaceLinks.default;
-      this.geoType = _PlaceGeo.default;
-      this.preferencesType = _PlacePreferences.default;
+      this.geoType = _GeoShape.default;
+      this.preferencesType = _Preferences.default;
     }
     /**
      * Constructs a "Place" from a plain JavaScript object.
@@ -169,7 +167,7 @@ var Place =
             this.description = description;
           }
           /**
-           * @return { module:model/PlaceGeo }
+           * @return { module:model/GeoShape }
            */
         },
         {
@@ -178,7 +176,7 @@ var Place =
             return this.geo;
           }
           /**
-           * @param { module:model/PlaceGeo } geo
+           * @param { module:model/GeoShape } geo
            */
         },
         {
@@ -214,7 +212,7 @@ var Place =
             this.name = name;
           }
           /**
-           * @return { module:model/PlacePreferences }
+           * @return { module:model/Preferences }
            */
         },
         {
@@ -223,7 +221,7 @@ var Place =
             return this.preferences;
           }
           /**
-           * @param { module:model/PlacePreferences } preferences
+           * @param { module:model/Preferences } preferences
            */
         },
         {

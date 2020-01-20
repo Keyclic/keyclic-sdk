@@ -9,8 +9,8 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _DocumentPatchFile = _interopRequireDefault(require("./DocumentPatchFile"));
 
-var _DocumentPermission = _interopRequireDefault(
-  require("./DocumentPermission")
+var _DocumentPatchPermission = _interopRequireDefault(
+  require("./DocumentPatchPermission")
 );
 
 function _interopRequireDefault(obj) {
@@ -58,7 +58,7 @@ var DocumentPatch =
       this.file = null;
       this.permission = null;
       this.fileType = _DocumentPatchFile.default;
-      this.permissionType = _DocumentPermission.default;
+      this.permissionType = _DocumentPatchPermission.default;
     }
     /**
      * Constructs a "DocumentPatch" from a plain JavaScript object.
@@ -89,7 +89,7 @@ var DocumentPatch =
             this.file = file;
           }
           /**
-           * @return { module:model/DocumentPermission }
+           * @return { module:model/DocumentPatchPermission }
            */
         },
         {
@@ -98,7 +98,7 @@ var DocumentPatch =
             return this.permission;
           }
           /**
-           * @param { module:model/DocumentPermission } permission
+           * @param { module:model/DocumentPatchPermission } permission
            */
         },
         {

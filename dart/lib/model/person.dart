@@ -38,7 +38,7 @@ class Person {
 
     return Person(
       links: PersonLinks.fromJson(json['_links']),
-      agreement: PersonAgreement.fromJson(json['agreement']),
+      agreement: Agreement.fromJson(json['agreement']),
       createdAt: createdAt,
       email: json['email'],
       enabled: json['enabled'],
@@ -47,7 +47,7 @@ class Person {
       id: json['id'],
       jobTitle: json['jobTitle'],
       optIn: json['optIn'],
-      preferences: PersonPreferences.fromJson(json['preferences']),
+      preferences: Preferences.fromJson(json['preferences']),
       telephone: json['telephone'],
       type: json['type'],
       updatedAt: updatedAt,
@@ -57,7 +57,7 @@ class Person {
 
   PersonLinks links;
 
-  PersonAgreement agreement;
+  Agreement agreement;
 
   DateTime createdAt;
 
@@ -75,7 +75,7 @@ class Person {
 
   bool optIn;
 
-  PersonPreferences preferences;
+  Preferences preferences;
 
   String telephone;
 

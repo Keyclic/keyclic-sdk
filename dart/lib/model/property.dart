@@ -22,13 +22,13 @@ class Property {
     }
 
     return Property(
-      conditions: PropertyConditions.fromJson(json['conditions']),
+      conditions: ConditionList.fromJson(json['conditions']),
       default_: json['default'],
       description: json['description'],
       enum_: json['enum'] is List ? List<String>.from(json['enum']) : null,
       format: json['format'],
       id: json['id'],
-      items: PropertyItems.fromJson(json['items']),
+      items: Items.fromJson(json['items']),
       maxItems: json['maxItems'],
       minItems: json['minItems'],
       propertyOrder: json['propertyOrder'],
@@ -37,7 +37,7 @@ class Property {
     );
   }
 
-  PropertyConditions conditions;
+  ConditionList conditions;
 
   String default_;
 
@@ -49,7 +49,7 @@ class Property {
 
   String id;
 
-  PropertyItems items;
+  Items items;
 
   int maxItems;
 

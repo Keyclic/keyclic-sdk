@@ -27,13 +27,11 @@ var _OperationPatch = _interopRequireDefault(
   require("../model/OperationPatch")
 );
 
-var _OperationWorkflowTransitionData = _interopRequireDefault(
-  require("../model/OperationWorkflowTransitionData")
-);
-
 var _SignatureData = _interopRequireDefault(require("../model/SignatureData"));
 
 var _Tracking = _interopRequireDefault(require("../model/Tracking"));
+
+var _WorkflowData = _interopRequireDefault(require("../model/WorkflowData"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -1209,7 +1207,7 @@ var OperationApi =
         /**
          * Create one Workflow resource.
          * @param { String } xKeyclicApp
-         * @param { module:model/OperationWorkflowTransitionData } operationWorkflowTransitionData
+         * @param { module:model/WorkflowData } workflowData
          * @param { String } operation The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Operation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
@@ -1236,8 +1234,7 @@ var OperationApi =
           }
 
           var xKeyclicApp = options.xKeyclicApp,
-            operationWorkflowTransitionData =
-              options.operationWorkflowTransitionData,
+            workflowData = options.workflowData,
             operation = options.operation,
             acceptLanguage = options.acceptLanguage,
             xDateTime = options.xDateTime,
@@ -1247,14 +1244,11 @@ var OperationApi =
             throw new window.Error(
               'Missing the required parameter "xKeyclicApp" when calling postWorkflowByOperation'
             );
-          } // verify the required parameter 'operationWorkflowTransitionData' is set
+          } // verify the required parameter 'workflowData' is set
 
-          if (
-            typeof operationWorkflowTransitionData === "undefined" ||
-            operationWorkflowTransitionData === null
-          ) {
+          if (typeof workflowData === "undefined" || workflowData === null) {
             throw new window.Error(
-              'Missing the required parameter "operationWorkflowTransitionData" when calling postWorkflowByOperation'
+              'Missing the required parameter "workflowData" when calling postWorkflowByOperation'
             );
           } // verify the required parameter 'operation' is set
 
@@ -1282,7 +1276,7 @@ var OperationApi =
           var pathParams = {
             operation: operation
           };
-          var bodyParam = operationWorkflowTransitionData;
+          var bodyParam = workflowData;
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,

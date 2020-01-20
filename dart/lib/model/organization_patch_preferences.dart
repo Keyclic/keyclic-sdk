@@ -12,15 +12,16 @@ class OrganizationPatchPreferences {
     }
 
     return OrganizationPatchPreferences(
-      notification:
-          OrganizationPreferencesNotification.fromJson(json['notification']),
-      reference: OrganizationPreferencesReference.fromJson(json['reference']),
+      notification: OrganizationPatchPreferencesNotification.fromJson(
+          json['notification']),
+      reference:
+          OrganizationPatchPreferencesReference.fromJson(json['reference']),
     );
   }
 
-  OrganizationPreferencesNotification notification;
+  OrganizationPatchPreferencesNotification notification;
 
-  OrganizationPreferencesReference reference;
+  OrganizationPatchPreferencesReference reference;
 
   @override
   bool operator ==(dynamic other) {

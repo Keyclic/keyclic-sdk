@@ -13,7 +13,7 @@
 import ApiClient from "../ApiClient";
 import OperationEmbedded from "./OperationEmbedded";
 import OperationLinks from "./OperationLinks";
-import OperationSignature from "./OperationSignature";
+import Signature from "./Signature";
 
 /**
  * The Operation model module.
@@ -44,7 +44,7 @@ export default class Operation {
 
     this.embeddedType = OperationEmbedded;
     this.linksType = OperationLinks;
-    this.signatureType = OperationSignature;
+    this.signatureType = Signature;
   }
 
   /**
@@ -207,14 +207,14 @@ export default class Operation {
     this.scheduledAt = scheduledAt;
   }
   /**
-   * @return { module:model/OperationSignature }
+   * @return { module:model/Signature }
    */
   getSignature() {
     return this.signature;
   }
 
   /**
-   * @param { module:model/OperationSignature } signature
+   * @param { module:model/Signature } signature
    */
   setSignature(signature) {
     this.signature = signature;

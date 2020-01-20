@@ -51,10 +51,8 @@ var Delegation =
    * @alias module:model/Delegation
    * @class
   
-   * @param state { Array.<String> }
-  
    */
-    function Delegation(state) {
+    function Delegation() {
       _classCallCheck(this, Delegation);
 
       this.embedded = null;
@@ -62,7 +60,7 @@ var Delegation =
       this.createdAt = null;
       this.description = null;
       this.id = null;
-      this.state = state;
+      this.state = [];
       this.type = null;
       this.updatedAt = null;
       this.embeddedType = _DelegationEmbedded.default;

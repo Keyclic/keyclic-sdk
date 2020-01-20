@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **name** | **String** |  | 
 **notificationEmailAddress** | **String** |  | [optional] 
-**preferences** | [**OrganizationPreferences**](OrganizationPreferences.md) |  | [optional] 
+**preferences** | [**Preferences**](Preferences.md) |  | [optional] 
 **type** | **String** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 

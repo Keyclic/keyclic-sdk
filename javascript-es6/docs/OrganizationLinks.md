@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **application** | [**OrganizationLinksApplication**](OrganizationLinksApplication.md) |  | [optional] 
 **businessActivity** | [**OrganizationLinksBusinessActivity**](OrganizationLinksBusinessActivity.md) |  | [optional] 
+**configuration** | [**OrganizationLinksConfiguration**](OrganizationLinksConfiguration.md) |  | [optional] 
 **logo** | [**OrganizationLinksLogo**](OrganizationLinksLogo.md) |  | [optional] 
 **self** | [**OrganizationLinksSelf**](OrganizationLinksSelf.md) |  | [optional] 
 

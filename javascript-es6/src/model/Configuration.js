@@ -11,7 +11,11 @@
  */
 
 import ApiClient from "../ApiClient";
-import ConfigurationMemberType from "./ConfigurationMemberType";
+import ConfigurationLinks from "./ConfigurationLinks";
+import DelegationType from "./DelegationType";
+import MemberType from "./MemberType";
+import OperationType from "./OperationType";
+import ReportType from "./ReportType";
 
 /**
  * The Configuration model module.
@@ -25,15 +29,23 @@ export default class Configuration {
     
      */
   constructor() {
+    this.links = null;
     this.createdAt = null;
+    this.delegationType = null;
     this.description = null;
     this.id = null;
     this.memberType = null;
     this.name = null;
+    this.operationType = null;
+    this.reportType = null;
     this.type = null;
     this.updatedAt = null;
 
-    this.memberTypeType = ConfigurationMemberType;
+    this.linksType = ConfigurationLinks;
+    this.delegationTypeType = DelegationType;
+    this.memberTypeType = MemberType;
+    this.operationTypeType = OperationType;
+    this.reportTypeType = ReportType;
   }
 
   /**
@@ -51,8 +63,17 @@ export default class Configuration {
       object = new Configuration();
     }
 
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
     if (data.hasOwnProperty("createdAt")) {
       object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
+    }
+    if (data.hasOwnProperty("delegationType")) {
+      object.delegationType = ApiClient.convertToType(
+        data["delegationType"],
+        object.delegationTypeType
+      );
     }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
@@ -72,6 +93,18 @@ export default class Configuration {
     if (data.hasOwnProperty("name")) {
       object.name = ApiClient.convertToType(data["name"], "String");
     }
+    if (data.hasOwnProperty("operationType")) {
+      object.operationType = ApiClient.convertToType(
+        data["operationType"],
+        object.operationTypeType
+      );
+    }
+    if (data.hasOwnProperty("reportType")) {
+      object.reportType = ApiClient.convertToType(
+        data["reportType"],
+        object.reportTypeType
+      );
+    }
     if (data.hasOwnProperty("type")) {
       object.type = ApiClient.convertToType(data["type"], "String");
     }
@@ -83,12 +116,38 @@ export default class Configuration {
   }
 
   /**
+   * @return { module:model/ConfigurationLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/ConfigurationLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
    * @return { Date }
    */
   getCreatedAt() {
     return this.createdAt;
   }
 
+  /**
+   * @return { module:model/DelegationType }
+   */
+  getDelegationType() {
+    return this.delegationType;
+  }
+
+  /**
+   * @param { module:model/DelegationType } delegationType
+   */
+  setDelegationType(delegationType) {
+    this.delegationType = delegationType;
+  }
   /**
    * @return { String }
    */
@@ -110,14 +169,14 @@ export default class Configuration {
   }
 
   /**
-   * @return { module:model/ConfigurationMemberType }
+   * @return { module:model/MemberType }
    */
   getMemberType() {
     return this.memberType;
   }
 
   /**
-   * @param { module:model/ConfigurationMemberType } memberType
+   * @param { module:model/MemberType } memberType
    */
   setMemberType(memberType) {
     this.memberType = memberType;
@@ -134,6 +193,32 @@ export default class Configuration {
    */
   setName(name) {
     this.name = name;
+  }
+  /**
+   * @return { module:model/OperationType }
+   */
+  getOperationType() {
+    return this.operationType;
+  }
+
+  /**
+   * @param { module:model/OperationType } operationType
+   */
+  setOperationType(operationType) {
+    this.operationType = operationType;
+  }
+  /**
+   * @return { module:model/ReportType }
+   */
+  getReportType() {
+    return this.reportType;
+  }
+
+  /**
+   * @param { module:model/ReportType } reportType
+   */
+  setReportType(reportType) {
+    this.reportType = reportType;
   }
   /**
    * @return { String }

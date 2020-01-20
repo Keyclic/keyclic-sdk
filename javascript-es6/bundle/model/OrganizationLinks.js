@@ -15,6 +15,10 @@ var _OrganizationLinksBusinessActivity = _interopRequireDefault(
   require("./OrganizationLinksBusinessActivity")
 );
 
+var _OrganizationLinksConfiguration = _interopRequireDefault(
+  require("./OrganizationLinksConfiguration")
+);
+
 var _OrganizationLinksLogo = _interopRequireDefault(
   require("./OrganizationLinksLogo")
 );
@@ -67,10 +71,12 @@ var OrganizationLinks =
 
       this.application = null;
       this.businessActivity = null;
+      this.configuration = null;
       this.logo = null;
       this.self = null;
       this.applicationType = _OrganizationLinksApplication.default;
       this.businessActivityType = _OrganizationLinksBusinessActivity.default;
+      this.configurationType = _OrganizationLinksConfiguration.default;
       this.logoType = _OrganizationLinksLogo.default;
       this.selfType = _OrganizationLinksSelf.default;
     }
@@ -119,6 +125,24 @@ var OrganizationLinks =
           key: "setBusinessActivity",
           value: function setBusinessActivity(businessActivity) {
             this.businessActivity = businessActivity;
+          }
+          /**
+           * @return { module:model/OrganizationLinksConfiguration }
+           */
+        },
+        {
+          key: "getConfiguration",
+          value: function getConfiguration() {
+            return this.configuration;
+          }
+          /**
+           * @param { module:model/OrganizationLinksConfiguration } configuration
+           */
+        },
+        {
+          key: "setConfiguration",
+          value: function setConfiguration(configuration) {
+            this.configuration = configuration;
           }
           /**
            * @return { module:model/OrganizationLinksLogo }
@@ -186,6 +210,13 @@ var OrganizationLinks =
               object.businessActivity = _ApiClient.default.convertToType(
                 data["businessActivity"],
                 object.businessActivityType
+              );
+            }
+
+            if (data.hasOwnProperty("configuration")) {
+              object.configuration = _ApiClient.default.convertToType(
+                data["configuration"],
+                object.configurationType
               );
             }
 

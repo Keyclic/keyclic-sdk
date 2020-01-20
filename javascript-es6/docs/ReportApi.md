@@ -415,7 +415,7 @@ Name | Type | Description  | Notes
 
 <a name="postWorkflowByReport"></a>
 # **postWorkflowByReport**
-> Report postWorkflowByReport(xKeyclicApp, reportWorkflowTransitionData, report, opts)
+> Report postWorkflowByReport(xKeyclicApp, workflowData, report, opts)
 
 Create one Workflow resource.
 
@@ -434,7 +434,7 @@ let apiInstance = new @KeyclicSdkJavascript.ReportApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let reportWorkflowTransitionData = new @KeyclicSdkJavascript.ReportWorkflowTransitionData(); // ReportWorkflowTransitionData | 
+let workflowData = new @KeyclicSdkJavascript.WorkflowData(); // WorkflowData | 
 
 let report = "report_example"; // String | The identifier of the resource.
 
@@ -444,7 +444,7 @@ let opts = {
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.postWorkflowByReport(xKeyclicApp, reportWorkflowTransitionData, report, opts, (error, data, response) => {
+apiInstance.postWorkflowByReport(xKeyclicApp, workflowData, report, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -458,7 +458,7 @@ apiInstance.postWorkflowByReport(xKeyclicApp, reportWorkflowTransitionData, repo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **reportWorkflowTransitionData** | [**ReportWorkflowTransitionData**](ReportWorkflowTransitionData.md)|  | 
+ **workflowData** | [**WorkflowData**](WorkflowData.md)|  | 
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **Date**|  | [optional] 

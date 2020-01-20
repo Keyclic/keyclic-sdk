@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**createdAt** | **Date** |  | [optional] 
+**createdAt** | **String** |  | [optional] 
 **state** | **[String]** |  | [optional] 
 **links** | [**CheckpointLinks**](CheckpointLinks.md) |  | [optional] 
 

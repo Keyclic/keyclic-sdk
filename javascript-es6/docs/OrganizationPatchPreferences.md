@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**notification** | [**OrganizationPreferencesNotification**](OrganizationPreferencesNotification.md) |  | [optional] 
-**reference** | [**OrganizationPreferencesReference**](OrganizationPreferencesReference.md) |  | [optional] 
+**notification** | [**OrganizationPatchPreferencesNotification**](OrganizationPatchPreferencesNotification.md) |  | [optional] 
+**reference** | [**OrganizationPatchPreferencesReference**](OrganizationPatchPreferencesReference.md) |  | [optional] 
 
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **identificationNumber** | **String** |  | [optional] 
 **priority** | **Number** |  | 
-**reference** | **String** |  | [optional] 
+**reference** | [**Reference**](Reference.md) |  | [optional] 
 **state** | **[String]** |  | 
 **tags** | **[String]** |  | [optional] 
 **type** | **String** |  | [optional] 

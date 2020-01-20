@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import ActivitySubject from "./ActivitySubject";
+import Entity from "./Entity";
 
 /**
  * The Activity model module.
@@ -34,7 +34,7 @@ export default class Activity {
     this.title = null;
     this.verb = null;
 
-    this.subjectType = ActivitySubject;
+    this.subjectType = Entity;
   }
 
   /**
@@ -136,14 +136,14 @@ export default class Activity {
     this.origin = origin;
   }
   /**
-   * @return { module:model/ActivitySubject }
+   * @return { module:model/Entity }
    */
   getSubject() {
     return this.subject;
   }
 
   /**
-   * @param { module:model/ActivitySubject } subject
+   * @param { module:model/Entity } subject
    */
   setSubject(subject) {
     this.subject = subject;

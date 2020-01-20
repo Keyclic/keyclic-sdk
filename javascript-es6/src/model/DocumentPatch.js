@@ -12,7 +12,7 @@
 
 import ApiClient from "../ApiClient";
 import DocumentPatchFile from "./DocumentPatchFile";
-import DocumentPermission from "./DocumentPermission";
+import DocumentPatchPermission from "./DocumentPatchPermission";
 
 /**
  * The DocumentPatch model module.
@@ -30,7 +30,7 @@ export default class DocumentPatch {
     this.permission = null;
 
     this.fileType = DocumentPatchFile;
-    this.permissionType = DocumentPermission;
+    this.permissionType = DocumentPatchPermission;
   }
 
   /**
@@ -75,14 +75,14 @@ export default class DocumentPatch {
     this.file = file;
   }
   /**
-   * @return { module:model/DocumentPermission }
+   * @return { module:model/DocumentPatchPermission }
    */
   getPermission() {
     return this.permission;
   }
 
   /**
-   * @param { module:model/DocumentPermission } permission
+   * @param { module:model/DocumentPatchPermission } permission
    */
   setPermission(permission) {
     this.permission = permission;

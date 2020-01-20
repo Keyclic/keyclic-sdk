@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postWorkflowByReport**
-> Report postWorkflowByReport(xKeyclicApp, reportWorkflowTransitionData, report, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Report postWorkflowByReport(xKeyclicApp, workflowData, report, acceptLanguage, xDateTime, xKeyclicAppVersion)
 
 Create one Workflow resource.
 
@@ -383,14 +383,14 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = ReportApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var reportWorkflowTransitionData = ReportWorkflowTransitionData(); // ReportWorkflowTransitionData | 
+var workflowData = WorkflowData(); // WorkflowData | 
 var report = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postWorkflowByReport(xKeyclicApp, reportWorkflowTransitionData, report, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postWorkflowByReport(xKeyclicApp, workflowData, report, acceptLanguage, xDateTime, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ReportApi->postWorkflowByReport: $e\n");
@@ -402,7 +402,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **reportWorkflowTransitionData** | [**ReportWorkflowTransitionData**](ReportWorkflowTransitionData.md)|  | 
+ **workflowData** | [**WorkflowData**](WorkflowData.md)|  | 
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 

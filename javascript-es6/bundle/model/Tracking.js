@@ -9,9 +9,7 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _Checkpoint = _interopRequireDefault(require("./Checkpoint"));
 
-var _TrackingProgression = _interopRequireDefault(
-  require("./TrackingProgression")
-);
+var _Progression = _interopRequireDefault(require("./Progression"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -60,7 +58,7 @@ var Tracking =
       this.state = null;
       this.time = null;
       this.checkpointsType = _Checkpoint.default;
-      this.progressionType = _TrackingProgression.default;
+      this.progressionType = _Progression.default;
     }
     /**
      * Constructs a "Tracking" from a plain JavaScript object.
@@ -91,7 +89,7 @@ var Tracking =
             this.checkpoints = checkpoints;
           }
           /**
-           * @return { module:model/TrackingProgression }
+           * @return { module:model/Progression }
            */
         },
         {
@@ -100,7 +98,7 @@ var Tracking =
             return this.progression;
           }
           /**
-           * @param { module:model/TrackingProgression } progression
+           * @param { module:model/Progression } progression
            */
         },
         {

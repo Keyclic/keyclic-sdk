@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] [default to null]
 **name** | **String** |  | [default to null]
 **notificationEmailAddress** | **String** |  | [optional] [default to null]
-**preferences** | [**OrganizationPreferences**](OrganizationPreferences.md) |  | [optional] [default to null]
+**preferences** | [**Preferences**](Preferences.md) |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] [default to null]
 **identificationNumber** | **String** |  | [optional] [default to null]
 **priority** | **int** |  | [default to null]
-**reference** | **String** |  | [optional] [default to null]
+**reference** | [**Reference**](Reference.md) |  | [optional] [default to null]
 **state** | **List&lt;String&gt;** |  | [default to []]
 **tags** | **List&lt;String&gt;** |  | [optional] [default to []]
 **type** | **String** |  | [optional] [default to null]

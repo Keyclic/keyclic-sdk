@@ -12,7 +12,7 @@
 
 import ApiClient from "../ApiClient";
 import BusinessActivityLinks from "./BusinessActivityLinks";
-import BusinessActivityMetadataSchema from "./BusinessActivityMetadataSchema";
+import Schema from "./Schema";
 
 /**
  * The BusinessActivity model module.
@@ -38,7 +38,7 @@ export default class BusinessActivity {
     this.updatedAt = null;
 
     this.linksType = BusinessActivityLinks;
-    this.metadataSchemaType = BusinessActivityMetadataSchema;
+    this.metadataSchemaType = Schema;
   }
 
   /**
@@ -131,14 +131,14 @@ export default class BusinessActivity {
   }
 
   /**
-   * @return { module:model/BusinessActivityMetadataSchema }
+   * @return { module:model/Schema }
    */
   getMetadataSchema() {
     return this.metadataSchema;
   }
 
   /**
-   * @param { module:model/BusinessActivityMetadataSchema } metadataSchema
+   * @param { module:model/Schema } metadataSchema
    */
   setMetadataSchema(metadataSchema) {
     this.metadataSchema = metadataSchema;

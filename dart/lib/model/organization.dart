@@ -43,7 +43,7 @@ class Organization {
       id: json['id'],
       name: json['name'],
       notificationEmailAddress: json['notificationEmailAddress'],
-      preferences: OrganizationPreferences.fromJson(json['preferences']),
+      preferences: Preferences.fromJson(json['preferences']),
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -67,7 +67,7 @@ class Organization {
 
   String notificationEmailAddress;
 
-  OrganizationPreferences preferences;
+  Preferences preferences;
 
   String type;
 

@@ -57,7 +57,7 @@ export default class ReportPatch {
       );
     }
     if (data.hasOwnProperty("dueAt")) {
-      object.dueAt = ApiClient.convertToType(data["dueAt"], "Date");
+      object.dueAt = ApiClient.convertToType(data["dueAt"], "String");
     }
     if (data.hasOwnProperty("identificationNumber")) {
       object.identificationNumber = ApiClient.convertToType(
@@ -102,14 +102,14 @@ export default class ReportPatch {
     this.description = description;
   }
   /**
-   * @return { Date }
+   * @return { String }
    */
   getDueAt() {
     return this.dueAt;
   }
 
   /**
-   * @param { Date } dueAt
+   * @param { String } dueAt
    */
   setDueAt(dueAt) {
     this.dueAt = dueAt;

@@ -145,7 +145,7 @@ class DelegationApi {
   ///
   Future<Delegation> postWorkflowByDelegation(
     String xKeyclicApp,
-    DelegationWorkflowTransitionData delegationWorkflowTransitionData,
+    WorkflowData workflowData,
     String delegation, {
     String acceptLanguage,
     DateTime xDateTime,
@@ -157,9 +157,8 @@ class DelegationApi {
       throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
-    if (delegationWorkflowTransitionData == null) {
-      throw ApiException(
-          0, "Missing required param: delegationWorkflowTransitionData");
+    if (workflowData == null) {
+      throw ApiException(0, "Missing required param: workflowData");
     }
 
     if (delegation == null) {
@@ -191,8 +190,7 @@ class DelegationApi {
       "bearer",
     ];
 
-    final DelegationWorkflowTransitionData postBody =
-        delegationWorkflowTransitionData;
+    final WorkflowData postBody = workflowData;
 
     final Response response = await apiClient.invokeAPI(
       path,

@@ -7,13 +7,9 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _DocumentFile = _interopRequireDefault(require("./DocumentFile"));
-
 var _DocumentLinks = _interopRequireDefault(require("./DocumentLinks"));
 
-var _DocumentPermission = _interopRequireDefault(
-  require("./DocumentPermission")
-);
+var _Permission = _interopRequireDefault(require("./Permission"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -65,8 +61,7 @@ var Document =
       this.type = null;
       this.updatedAt = null;
       this.linksType = _DocumentLinks.default;
-      this.fileType = _DocumentFile.default;
-      this.permissionType = _DocumentPermission.default;
+      this.permissionType = _Permission.default;
     }
     /**
      * Constructs a "Document" from a plain JavaScript object.
@@ -106,7 +101,7 @@ var Document =
             return this.createdAt;
           }
           /**
-           * @return { module:model/DocumentFile }
+           * @return { File }
            */
         },
         {
@@ -115,7 +110,7 @@ var Document =
             return this.file;
           }
           /**
-           * @param { module:model/DocumentFile } file
+           * @param { File } file
            */
         },
         {
@@ -133,7 +128,7 @@ var Document =
             return this.id;
           }
           /**
-           * @return { module:model/DocumentPermission }
+           * @return { module:model/Permission }
            */
         },
         {
@@ -142,7 +137,7 @@ var Document =
             return this.permission;
           }
           /**
-           * @param { module:model/DocumentPermission } permission
+           * @param { module:model/Permission } permission
            */
         },
         {
@@ -204,7 +199,7 @@ var Document =
             if (data.hasOwnProperty("file")) {
               object.file = _ApiClient.default.convertToType(
                 data["file"],
-                object.fileType
+                "File"
               );
             }
 

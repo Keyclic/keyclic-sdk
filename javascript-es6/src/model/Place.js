@@ -11,10 +11,10 @@
  */
 
 import ApiClient from "../ApiClient";
+import GeoShape from "./GeoShape";
 import PlaceEmbedded from "./PlaceEmbedded";
-import PlaceGeo from "./PlaceGeo";
 import PlaceLinks from "./PlaceLinks";
-import PlacePreferences from "./PlacePreferences";
+import Preferences from "./Preferences";
 
 /**
  * The Place model module.
@@ -26,22 +26,16 @@ export default class Place {
      * @alias module:model/Place
      * @class
     
-     * @param geo { module:model/PlaceGeo }
-    
      * @param name { String }
     
      */
-  constructor(
-    geo,
-
-    name
-  ) {
+  constructor(name) {
     this.embedded = null;
     this.links = null;
     this.branchCode = null;
     this.createdAt = null;
     this.description = null;
-    this.geo = geo;
+    this.geo = null;
     this.id = null;
     this.name = name;
     this.preferences = null;
@@ -50,8 +44,8 @@ export default class Place {
 
     this.embeddedType = PlaceEmbedded;
     this.linksType = PlaceLinks;
-    this.geoType = PlaceGeo;
-    this.preferencesType = PlacePreferences;
+    this.geoType = GeoShape;
+    this.preferencesType = Preferences;
   }
 
   /**
@@ -175,14 +169,14 @@ export default class Place {
     this.description = description;
   }
   /**
-   * @return { module:model/PlaceGeo }
+   * @return { module:model/GeoShape }
    */
   getGeo() {
     return this.geo;
   }
 
   /**
-   * @param { module:model/PlaceGeo } geo
+   * @param { module:model/GeoShape } geo
    */
   setGeo(geo) {
     this.geo = geo;
@@ -208,14 +202,14 @@ export default class Place {
     this.name = name;
   }
   /**
-   * @return { module:model/PlacePreferences }
+   * @return { module:model/Preferences }
    */
   getPreferences() {
     return this.preferences;
   }
 
   /**
-   * @param { module:model/PlacePreferences } preferences
+   * @param { module:model/Preferences } preferences
    */
   setPreferences(preferences) {
     this.preferences = preferences;

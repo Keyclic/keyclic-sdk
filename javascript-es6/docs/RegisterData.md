@@ -5,6 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **String** |  | 
 **password** | **String** |  | 
-**agreement** | [**PersonAgreement**](PersonAgreement.md) |  | [optional] 
+**agreement** | [**RegisterDataAgreement**](RegisterDataAgreement.md) |  | [optional] 
 
 

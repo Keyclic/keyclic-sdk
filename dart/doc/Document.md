@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**DocumentLinks**](DocumentLinks.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**file** | [**DocumentFile**](DocumentFile.md) |  | [optional] [default to null]
+**file** | [**MultipartFile**](MultipartFile.md) |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
-**permission** | [**DocumentPermission**](DocumentPermission.md) |  | [optional] [default to null]
+**permission** | [**Permission**](Permission.md) |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 

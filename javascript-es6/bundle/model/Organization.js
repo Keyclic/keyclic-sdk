@@ -9,9 +9,7 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _OrganizationLinks = _interopRequireDefault(require("./OrganizationLinks"));
 
-var _OrganizationPreferences = _interopRequireDefault(
-  require("./OrganizationPreferences")
-);
+var _Preferences = _interopRequireDefault(require("./Preferences"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -70,7 +68,7 @@ var Organization =
       this.type = null;
       this.updatedAt = null;
       this.linksType = _OrganizationLinks.default;
-      this.preferencesType = _OrganizationPreferences.default;
+      this.preferencesType = _Preferences.default;
     }
     /**
      * Constructs a "Organization" from a plain JavaScript object.
@@ -229,7 +227,7 @@ var Organization =
             this.notificationEmailAddress = notificationEmailAddress;
           }
           /**
-           * @return { module:model/OrganizationPreferences }
+           * @return { module:model/Preferences }
            */
         },
         {
@@ -238,7 +236,7 @@ var Organization =
             return this.preferences;
           }
           /**
-           * @param { module:model/OrganizationPreferences } preferences
+           * @param { module:model/Preferences } preferences
            */
         },
         {

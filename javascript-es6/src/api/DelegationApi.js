@@ -13,8 +13,8 @@
 import ApiClient from "../ApiClient";
 import Delegation from "../model/Delegation";
 import DelegationData from "../model/DelegationData";
-import DelegationWorkflowTransitionData from "../model/DelegationWorkflowTransitionData";
 import Error from "../model/Error";
+import WorkflowData from "../model/WorkflowData";
 
 /**
  * Delegation service.
@@ -212,7 +212,7 @@ export default class DelegationApi extends ApiClient {
   /**
    * Create one Workflow resource.
    * @param { String } xKeyclicApp
-   * @param { module:model/DelegationWorkflowTransitionData } delegationWorkflowTransitionData
+   * @param { module:model/WorkflowData } workflowData
    * @param { String } delegation The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
    * @param { Delegation }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
@@ -227,7 +227,7 @@ export default class DelegationApi extends ApiClient {
 
     let {
       xKeyclicApp,
-      delegationWorkflowTransitionData,
+      workflowData,
       delegation,
       acceptLanguage,
       xDateTime,
@@ -241,13 +241,10 @@ export default class DelegationApi extends ApiClient {
       );
     }
 
-    // verify the required parameter 'delegationWorkflowTransitionData' is set
-    if (
-      typeof delegationWorkflowTransitionData === "undefined" ||
-      delegationWorkflowTransitionData === null
-    ) {
+    // verify the required parameter 'workflowData' is set
+    if (typeof workflowData === "undefined" || workflowData === null) {
       throw new window.Error(
-        'Missing the required parameter "delegationWorkflowTransitionData" when calling postWorkflowByDelegation'
+        'Missing the required parameter "workflowData" when calling postWorkflowByDelegation'
       );
     }
 
@@ -277,7 +274,7 @@ export default class DelegationApi extends ApiClient {
       delegation: delegation
     };
 
-    const bodyParam = delegationWorkflowTransitionData;
+    const bodyParam = workflowData;
 
     const queryParams = {};
 

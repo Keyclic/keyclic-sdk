@@ -15,7 +15,7 @@ class RegisterData {
     return RegisterData(
       email: json['email'],
       password: json['password'],
-      agreement: PersonAgreement.fromJson(json['agreement']),
+      agreement: RegisterDataAgreement.fromJson(json['agreement']),
     );
   }
 
@@ -23,7 +23,7 @@ class RegisterData {
 
   String password;
 
-  PersonAgreement agreement;
+  RegisterDataAgreement agreement;
 
   @override
   bool operator ==(dynamic other) {

@@ -9,7 +9,7 @@ import 'package:keyclic_sdk_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**InternalServiceLinks**](InternalServiceLinks.md) |  | [optional] [default to null]
-**contactPoint** | [**ExternalServiceContactPoint**](ExternalServiceContactPoint.md) |  | [optional] [default to null]
+**contactPoint** | [**ContactPoint**](ContactPoint.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]

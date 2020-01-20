@@ -713,7 +713,7 @@ Name | Type | Description  | Notes
 
 <a name="postWorkflowByOperation"></a>
 # **postWorkflowByOperation**
-> Operation postWorkflowByOperation(xKeyclicApp, operationWorkflowTransitionData, operation, opts)
+> Operation postWorkflowByOperation(xKeyclicApp, workflowData, operation, opts)
 
 Create one Workflow resource.
 
@@ -732,7 +732,7 @@ let apiInstance = new @KeyclicSdkJavascript.OperationApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let operationWorkflowTransitionData = new @KeyclicSdkJavascript.OperationWorkflowTransitionData(); // OperationWorkflowTransitionData | 
+let workflowData = new @KeyclicSdkJavascript.WorkflowData(); // WorkflowData | 
 
 let operation = "operation_example"; // String | The identifier of the resource.
 
@@ -742,7 +742,7 @@ let opts = {
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.postWorkflowByOperation(xKeyclicApp, operationWorkflowTransitionData, operation, opts, (error, data, response) => {
+apiInstance.postWorkflowByOperation(xKeyclicApp, workflowData, operation, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -756,7 +756,7 @@ apiInstance.postWorkflowByOperation(xKeyclicApp, operationWorkflowTransitionData
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **operationWorkflowTransitionData** | [**OperationWorkflowTransitionData**](OperationWorkflowTransitionData.md)|  | 
+ **workflowData** | [**WorkflowData**](WorkflowData.md)|  | 
  **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **Date**|  | [optional] 

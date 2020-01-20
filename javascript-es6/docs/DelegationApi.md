@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 <a name="postWorkflowByDelegation"></a>
 # **postWorkflowByDelegation**
-> Delegation postWorkflowByDelegation(xKeyclicApp, delegationWorkflowTransitionData, delegation, opts)
+> Delegation postWorkflowByDelegation(xKeyclicApp, workflowData, delegation, opts)
 
 Create one Workflow resource.
 
@@ -152,7 +152,7 @@ let apiInstance = new @KeyclicSdkJavascript.DelegationApi();
 
 let xKeyclicApp = "com.keyclic.app"; // String | 
 
-let delegationWorkflowTransitionData = new @KeyclicSdkJavascript.DelegationWorkflowTransitionData(); // DelegationWorkflowTransitionData | 
+let workflowData = new @KeyclicSdkJavascript.WorkflowData(); // WorkflowData | 
 
 let delegation = "delegation_example"; // String | The identifier of the resource.
 
@@ -162,7 +162,7 @@ let opts = {
   'xKeyclicAppVersion': "xKeyclicAppVersion_example" // String | 
 };
 
-apiInstance.postWorkflowByDelegation(xKeyclicApp, delegationWorkflowTransitionData, delegation, opts, (error, data, response) => {
+apiInstance.postWorkflowByDelegation(xKeyclicApp, workflowData, delegation, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -176,7 +176,7 @@ apiInstance.postWorkflowByDelegation(xKeyclicApp, delegationWorkflowTransitionDa
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **delegationWorkflowTransitionData** | [**DelegationWorkflowTransitionData**](DelegationWorkflowTransitionData.md)|  | 
+ **workflowData** | [**WorkflowData**](WorkflowData.md)|  | 
  **delegation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **Date**|  | [optional] 

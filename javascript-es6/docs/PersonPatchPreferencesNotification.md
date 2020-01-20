@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mail** | **Boolean** |  | [optional] 
-**push** | **Boolean** |  | [optional] 
+**mail** | **String** |  | [optional] 
+**push** | **String** |  | [optional] 
 
 

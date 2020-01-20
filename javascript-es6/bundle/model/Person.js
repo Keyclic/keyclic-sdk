@@ -7,11 +7,11 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _PersonAgreement = _interopRequireDefault(require("./PersonAgreement"));
+var _Agreement = _interopRequireDefault(require("./Agreement"));
 
 var _PersonLinks = _interopRequireDefault(require("./PersonLinks"));
 
-var _PersonPreferences = _interopRequireDefault(require("./PersonPreferences"));
+var _Preferences = _interopRequireDefault(require("./Preferences"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -73,8 +73,8 @@ var Person =
       this.updatedAt = null;
       this.username = null;
       this.linksType = _PersonLinks.default;
-      this.agreementType = _PersonAgreement.default;
-      this.preferencesType = _PersonPreferences.default;
+      this.agreementType = _Agreement.default;
+      this.preferencesType = _Preferences.default;
     }
     /**
      * Constructs a "Person" from a plain JavaScript object.
@@ -105,7 +105,7 @@ var Person =
             this.links = links;
           }
           /**
-           * @return { module:model/PersonAgreement }
+           * @return { module:model/Agreement }
            */
         },
         {
@@ -114,7 +114,7 @@ var Person =
             return this.agreement;
           }
           /**
-           * @param { module:model/PersonAgreement } agreement
+           * @param { module:model/Agreement } agreement
            */
         },
         {
@@ -249,7 +249,7 @@ var Person =
             this.optIn = optIn;
           }
           /**
-           * @return { module:model/PersonPreferences }
+           * @return { module:model/Preferences }
            */
         },
         {
@@ -258,7 +258,7 @@ var Person =
             return this.preferences;
           }
           /**
-           * @param { module:model/PersonPreferences } preferences
+           * @param { module:model/Preferences } preferences
            */
         },
         {

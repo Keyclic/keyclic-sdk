@@ -7,9 +7,17 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ConfigurationMemberType = _interopRequireDefault(
-  require("./ConfigurationMemberType")
+var _ConfigurationLinks = _interopRequireDefault(
+  require("./ConfigurationLinks")
 );
+
+var _DelegationType = _interopRequireDefault(require("./DelegationType"));
+
+var _MemberType = _interopRequireDefault(require("./MemberType"));
+
+var _OperationType = _interopRequireDefault(require("./OperationType"));
+
+var _ReportType = _interopRequireDefault(require("./ReportType"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -53,14 +61,22 @@ var Configuration =
     function Configuration() {
       _classCallCheck(this, Configuration);
 
+      this.links = null;
       this.createdAt = null;
+      this.delegationType = null;
       this.description = null;
       this.id = null;
       this.memberType = null;
       this.name = null;
+      this.operationType = null;
+      this.reportType = null;
       this.type = null;
       this.updatedAt = null;
-      this.memberTypeType = _ConfigurationMemberType.default;
+      this.linksType = _ConfigurationLinks.default;
+      this.delegationTypeType = _DelegationType.default;
+      this.memberTypeType = _MemberType.default;
+      this.operationTypeType = _OperationType.default;
+      this.reportTypeType = _ReportType.default;
     }
     /**
      * Constructs a "Configuration" from a plain JavaScript object.
@@ -73,13 +89,49 @@ var Configuration =
       Configuration,
       [
         {
-          key: "getCreatedAt",
+          key: "getLinks",
 
+          /**
+           * @return { module:model/ConfigurationLinks }
+           */
+          value: function getLinks() {
+            return this.links;
+          }
+          /**
+           * @param { module:model/ConfigurationLinks } links
+           */
+        },
+        {
+          key: "setLinks",
+          value: function setLinks(links) {
+            this.links = links;
+          }
           /**
            * @return { Date }
            */
+        },
+        {
+          key: "getCreatedAt",
           value: function getCreatedAt() {
             return this.createdAt;
+          }
+          /**
+           * @return { module:model/DelegationType }
+           */
+        },
+        {
+          key: "getDelegationType",
+          value: function getDelegationType() {
+            return this.delegationType;
+          }
+          /**
+           * @param { module:model/DelegationType } delegationType
+           */
+        },
+        {
+          key: "setDelegationType",
+          value: function setDelegationType(delegationType) {
+            this.delegationType = delegationType;
           }
           /**
            * @return { String }
@@ -109,7 +161,7 @@ var Configuration =
             return this.id;
           }
           /**
-           * @return { module:model/ConfigurationMemberType }
+           * @return { module:model/MemberType }
            */
         },
         {
@@ -118,7 +170,7 @@ var Configuration =
             return this.memberType;
           }
           /**
-           * @param { module:model/ConfigurationMemberType } memberType
+           * @param { module:model/MemberType } memberType
            */
         },
         {
@@ -143,6 +195,42 @@ var Configuration =
           key: "setName",
           value: function setName(name) {
             this.name = name;
+          }
+          /**
+           * @return { module:model/OperationType }
+           */
+        },
+        {
+          key: "getOperationType",
+          value: function getOperationType() {
+            return this.operationType;
+          }
+          /**
+           * @param { module:model/OperationType } operationType
+           */
+        },
+        {
+          key: "setOperationType",
+          value: function setOperationType(operationType) {
+            this.operationType = operationType;
+          }
+          /**
+           * @return { module:model/ReportType }
+           */
+        },
+        {
+          key: "getReportType",
+          value: function getReportType() {
+            return this.reportType;
+          }
+          /**
+           * @param { module:model/ReportType } reportType
+           */
+        },
+        {
+          key: "setReportType",
+          value: function setReportType(reportType) {
+            this.reportType = reportType;
           }
           /**
            * @return { String }
@@ -181,10 +269,24 @@ var Configuration =
               object = new Configuration();
             }
 
+            if (data.hasOwnProperty("_links")) {
+              object.links = _ApiClient.default.convertToType(
+                data["_links"],
+                object.linksType
+              );
+            }
+
             if (data.hasOwnProperty("createdAt")) {
               object.createdAt = _ApiClient.default.convertToType(
                 data["createdAt"],
                 "Date"
+              );
+            }
+
+            if (data.hasOwnProperty("delegationType")) {
+              object.delegationType = _ApiClient.default.convertToType(
+                data["delegationType"],
+                object.delegationTypeType
               );
             }
 
@@ -213,6 +315,20 @@ var Configuration =
               object.name = _ApiClient.default.convertToType(
                 data["name"],
                 "String"
+              );
+            }
+
+            if (data.hasOwnProperty("operationType")) {
+              object.operationType = _ApiClient.default.convertToType(
+                data["operationType"],
+                object.operationTypeType
+              );
+            }
+
+            if (data.hasOwnProperty("reportType")) {
+              object.reportType = _ApiClient.default.convertToType(
+                data["reportType"],
+                object.reportTypeType
               );
             }
 

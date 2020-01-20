@@ -67,13 +67,13 @@ var PersonPatchAgreement =
           key: "getPrivacyPolicy",
 
           /**
-           * @return { Boolean }
+           * @return { String }
            */
           value: function getPrivacyPolicy() {
             return this.privacyPolicy;
           }
           /**
-           * @param { Boolean } privacyPolicy
+           * @param { String } privacyPolicy
            */
         },
         {
@@ -82,7 +82,7 @@ var PersonPatchAgreement =
             this.privacyPolicy = privacyPolicy;
           }
           /**
-           * @return { Boolean }
+           * @return { String }
            */
         },
         {
@@ -91,7 +91,7 @@ var PersonPatchAgreement =
             return this.termsOfService;
           }
           /**
-           * @param { Boolean } termsOfService
+           * @param { String } termsOfService
            */
         },
         {
@@ -100,7 +100,7 @@ var PersonPatchAgreement =
             this.termsOfService = termsOfService;
           }
           /**
-           * @return { Boolean }
+           * @return { String }
            */
         },
         {
@@ -109,7 +109,7 @@ var PersonPatchAgreement =
             return this.olderThan;
           }
           /**
-           * @param { Boolean } olderThan
+           * @param { String } olderThan
            */
         },
         {
@@ -139,21 +139,21 @@ var PersonPatchAgreement =
             if (data.hasOwnProperty("privacyPolicy")) {
               object.privacyPolicy = _ApiClient.default.convertToType(
                 data["privacyPolicy"],
-                "Boolean"
+                "String"
               );
             }
 
             if (data.hasOwnProperty("termsOfService")) {
               object.termsOfService = _ApiClient.default.convertToType(
                 data["termsOfService"],
-                "Boolean"
+                "String"
               );
             }
 
             if (data.hasOwnProperty("olderThan")) {
               object.olderThan = _ApiClient.default.convertToType(
                 data["olderThan"],
-                "Boolean"
+                "String"
               );
             }
 

@@ -25,11 +25,9 @@ var _Report = _interopRequireDefault(require("../model/Report"));
 
 var _ReportPatch = _interopRequireDefault(require("../model/ReportPatch"));
 
-var _ReportWorkflowTransitionData = _interopRequireDefault(
-  require("../model/ReportWorkflowTransitionData")
-);
-
 var _Tracking = _interopRequireDefault(require("../model/Tracking"));
+
+var _WorkflowData = _interopRequireDefault(require("../model/WorkflowData"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -816,7 +814,7 @@ var ReportApi =
         /**
          * Create one Workflow resource.
          * @param { String } xKeyclicApp
-         * @param { module:model/ReportWorkflowTransitionData } reportWorkflowTransitionData
+         * @param { module:model/WorkflowData } workflowData
          * @param { String } report The identifier of the resource.
          * @param { Object } credentials The required credentials with good properties to use different types of authentication.
          * @param { Report }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
@@ -843,7 +841,7 @@ var ReportApi =
           }
 
           var xKeyclicApp = options.xKeyclicApp,
-            reportWorkflowTransitionData = options.reportWorkflowTransitionData,
+            workflowData = options.workflowData,
             report = options.report,
             acceptLanguage = options.acceptLanguage,
             xDateTime = options.xDateTime,
@@ -853,14 +851,11 @@ var ReportApi =
             throw new window.Error(
               'Missing the required parameter "xKeyclicApp" when calling postWorkflowByReport'
             );
-          } // verify the required parameter 'reportWorkflowTransitionData' is set
+          } // verify the required parameter 'workflowData' is set
 
-          if (
-            typeof reportWorkflowTransitionData === "undefined" ||
-            reportWorkflowTransitionData === null
-          ) {
+          if (typeof workflowData === "undefined" || workflowData === null) {
             throw new window.Error(
-              'Missing the required parameter "reportWorkflowTransitionData" when calling postWorkflowByReport'
+              'Missing the required parameter "workflowData" when calling postWorkflowByReport'
             );
           } // verify the required parameter 'report' is set
 
@@ -888,7 +883,7 @@ var ReportApi =
           var pathParams = {
             report: report
           };
-          var bodyParam = reportWorkflowTransitionData;
+          var bodyParam = workflowData;
           var queryParams = {};
           var headerParams = {
             "accept-language": acceptLanguage,

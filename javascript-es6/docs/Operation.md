@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **identificationNumber** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **scheduledAt** | **Date** |  | [optional] 
-**signature** | [**OperationSignature**](OperationSignature.md) |  | [optional] 
+**signature** | [**Signature**](Signature.md) |  | [optional] 
 **state** | **[String]** |  | 
 **type** | **String** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
