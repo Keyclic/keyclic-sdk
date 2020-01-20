@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.2.12"
+    "version": "2.2.27"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -798,6 +798,93 @@
         ]
       }
     },
+    "\/configurations\/{configuration}": {
+      "get": {
+        "tags": [
+          "Configuration"
+        ],
+        "summary": "Retrieve one Configuration resource.",
+        "externalDocs": {
+          "description": "Keyclic API documentation.",
+          "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+        },
+        "operationId": "getConfiguration",
+        "consumes": [
+          "application\/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application\/hal+json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
+            "$ref": "#\/parameters\/x-keyclic-app"
+          },
+          {
+            "$ref": "#\/parameters\/x-keyclic-app-version"
+          },
+          {
+            "description": "The identifier of the resource.",
+            "format": "uuid",
+            "in": "path",
+            "name": "configuration",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#\/definitions\/Configuration"
+            }
+          },
+          "400": {
+            "description": "Returned when the request is invalid.",
+            "schema": {
+              "$ref": "#\/definitions\/Error"
+            }
+          },
+          "401": {
+            "description": "Returned when the resource is unauthorized.",
+            "schema": {
+              "$ref": "#\/definitions\/Error"
+            }
+          },
+          "403": {
+            "description": "Returned when the resource is forbidden.",
+            "schema": {
+              "$ref": "#\/definitions\/Error"
+            }
+          },
+          "404": {
+            "description": "Returned when the resource is not found",
+            "schema": {
+              "$ref": "#\/definitions\/Error"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#\/definitions\/Error"
+            }
+          }
+        },
+        "schemes": [
+          "https"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
     "\/contributions": {
       "get": {
         "tags": [
@@ -1244,7 +1331,7 @@
             "$ref": "#\/parameters\/x-keyclic-app-version"
           },
           {
-            "$ref": "#\/parameters\/DelegationWorkflowTransitionData"
+            "$ref": "#\/parameters\/WorkflowData"
           },
           {
             "description": "The identifier of the resource.",
@@ -5371,7 +5458,7 @@
             "$ref": "#\/parameters\/x-keyclic-app-version"
           },
           {
-            "$ref": "#\/parameters\/OperationWorkflowTransitionData"
+            "$ref": "#\/parameters\/WorkflowData"
           },
           {
             "description": "The identifier of the resource.",
@@ -9481,7 +9568,7 @@
             "$ref": "#\/parameters\/x-keyclic-app-version"
           },
           {
-            "$ref": "#\/parameters\/ReportWorkflowTransitionData"
+            "$ref": "#\/parameters\/WorkflowData"
           },
           {
             "description": "The identifier of the resource.",
@@ -10546,9 +10633,109 @@
           }
         ]
       }
+    },
+    "\/workflows\/{workflow}": {
+      "get": {
+        "tags": [
+          "Workflow"
+        ],
+        "summary": "Retrieve one Workflow resource.",
+        "externalDocs": {
+          "description": "Keyclic API documentation.",
+          "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+        },
+        "operationId": "getWorkflow",
+        "consumes": [
+          "application\/json;charset=UTF-8"
+        ],
+        "produces": [
+          "application\/hal+json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "$ref": "#\/parameters\/accept-language"
+          },
+          {
+            "$ref": "#\/parameters\/x-date-time"
+          },
+          {
+            "$ref": "#\/parameters\/x-keyclic-app"
+          },
+          {
+            "$ref": "#\/parameters\/x-keyclic-app-version"
+          },
+          {
+            "description": "The identifier of the resource.",
+            "format": "uuid",
+            "in": "path",
+            "name": "workflow",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#\/definitions\/Workflow"
+            }
+          },
+          "400": {
+            "description": "Returned when the request is invalid.",
+            "schema": {
+              "$ref": "#\/definitions\/Error"
+            }
+          },
+          "401": {
+            "description": "Returned when the resource is unauthorized.",
+            "schema": {
+              "$ref": "#\/definitions\/Error"
+            }
+          },
+          "403": {
+            "description": "Returned when the resource is forbidden.",
+            "schema": {
+              "$ref": "#\/definitions\/Error"
+            }
+          },
+          "404": {
+            "description": "Returned when the resource is not found",
+            "schema": {
+              "$ref": "#\/definitions\/Error"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#\/definitions\/Error"
+            }
+          }
+        },
+        "schemes": [
+          "https"
+        ],
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
     }
   },
   "definitions": {
+    "About": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "format": "string",
+          "type": "string"
+        },
+        "text": {
+          "format": "string",
+          "type": "string"
+        }
+      }
+    },
     "Activity": {
       "type": "object",
       "properties": {
@@ -10557,45 +10744,32 @@
           "format": "string"
         },
         "message": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "object": {
           "type": "string",
           "format": "string"
         },
         "origin": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "subject": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
-              "readOnly": true,
-              "type": "string",
-              "format": "uuid"
-            },
-            "type": {
-              "readOnly": true,
-              "type": "string",
-              "format": "string"
-            }
-          }
+          "$ref": "#\/definitions\/Entity"
         },
         "time": {
-          "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "type": "string"
         },
         "title": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "verb": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         }
       }
     },
@@ -10690,6 +10864,20 @@
         }
       }
     },
+    "Agreement": {
+      "type": "object",
+      "properties": {
+        "olderThan": {
+          "$ref": "#\/definitions\/OlderThan"
+        },
+        "privacyPolicy": {
+          "$ref": "#\/definitions\/PrivacyPolicy"
+        },
+        "termsOfService": {
+          "$ref": "#\/definitions\/TermsOfService"
+        }
+      }
+    },
     "Application": {
       "type": "object",
       "properties": {
@@ -10702,49 +10890,10 @@
           }
         },
         "about": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string",
-              "format": "string"
-            },
-            "text": {
-              "type": "string",
-              "format": "string"
-            }
-          }
+          "$ref": "#\/definitions\/About"
         },
         "agreement": {
-          "type": "object",
-          "properties": {
-            "olderThan": {
-              "type": "object",
-              "properties": {
-                "content": {
-                  "type": "string",
-                  "format": "string"
-                }
-              }
-            },
-            "privacyPolicy": {
-              "type": "object",
-              "properties": {
-                "content": {
-                  "type": "string",
-                  "format": "string"
-                }
-              }
-            },
-            "termsOfService": {
-              "type": "object",
-              "properties": {
-                "content": {
-                  "type": "string",
-                  "format": "string"
-                }
-              }
-            }
-          }
+          "$ref": "#\/definitions\/Agreement"
         },
         "contactPoints": {
           "items": {
@@ -10753,43 +10902,43 @@
           "type": "array"
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "name": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "token": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "version": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         }
       },
       "required": [
@@ -10855,52 +11004,38 @@
           }
         },
         "alternateName": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "metadataSchema": {
-          "type": "object",
-          "properties": {
-            "properties": {
-              "type": "object",
-              "additionalProperties": {
-                "$ref": "#\/definitions\/Property"
-              }
-            },
-            "required": {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            }
-          }
+          "$ref": "#\/definitions\/Schema"
         },
         "name": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       },
       "required": [
@@ -11053,48 +11188,48 @@
           }
         },
         "color": {
+          "format": "string",
           "pattern": "\/^#(?:[0-9a-fA-F]{3}){1,2}$\/",
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "icon": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "identificationNumber": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 0,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "name": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       },
       "required": [
@@ -11210,26 +11345,26 @@
       "type": "object",
       "properties": {
         "color": {
+          "format": "string",
           "pattern": "\/^#(?:[0-9a-fA-F]{3}){1,2}$\/",
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "icon": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "identificationNumber": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "name": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         }
       }
     },
@@ -11254,9 +11389,9 @@
       "type": "object",
       "properties": {
         "createdAt": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "state": {
           "items": {
@@ -11304,12 +11439,12 @@
       "type": "object",
       "properties": {
         "default": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "description": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "enum": {
           "items": {
@@ -11318,35 +11453,35 @@
           "type": "array"
         },
         "format": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "id": {
+          "format": "string",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "maxItems": {
-          "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "type": "integer"
         },
         "minItems": {
-          "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "type": "integer"
         },
         "propertyOrder": {
-          "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "type": "integer"
         },
         "title": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         }
       }
     },
@@ -11365,23 +11500,23 @@
       "type": "object",
       "properties": {
         "id": {
+          "format": "string",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "operator": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "path": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "value": {
           "items": {
@@ -11391,61 +11526,95 @@
         }
       }
     },
+    "ConditionList": {
+      "type": "object",
+      "properties": {
+        "allOf": {
+          "items": {
+            "$ref": "#\/definitions\/Condition"
+          },
+          "type": "array"
+        }
+      }
+    },
     "Configuration": {
       "type": "object",
       "properties": {
-        "createdAt": {
-          "readOnly": true,
-          "type": "string",
-          "format": "date-time"
-        },
-        "description": {
-          "maxLength": 255,
-          "type": "string",
-          "format": "string"
-        },
-        "id": {
-          "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
-          "readOnly": true,
-          "type": "string",
-          "format": "uuid"
-        },
-        "memberType": {
+        "_links": {
           "type": "object",
           "properties": {
-            "id": {
-              "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
-              "readOnly": true,
-              "type": "string",
-              "format": "uuid"
-            },
-            "roles": {
-              "items": {
-                "$ref": "#\/definitions\/Role"
-              },
-              "type": "array"
-            },
-            "type": {
-              "readOnly": true,
-              "type": "string",
-              "format": "string"
+            "self": {
+              "$ref": "#\/definitions\/ConfigurationLinksSelf"
             }
           }
         },
+        "createdAt": {
+          "format": "date-time",
+          "readOnly": true,
+          "type": "string"
+        },
+        "delegationType": {
+          "$ref": "#\/definitions\/DelegationType"
+        },
+        "description": {
+          "format": "string",
+          "type": "string"
+        },
+        "id": {
+          "format": "uuid",
+          "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+          "readOnly": true,
+          "type": "string"
+        },
+        "memberType": {
+          "$ref": "#\/definitions\/MemberType"
+        },
         "name": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
+        },
+        "operationType": {
+          "$ref": "#\/definitions\/OperationType"
+        },
+        "reportType": {
+          "$ref": "#\/definitions\/ReportType"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "ConfigurationLinksSelf": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "description": "The URI of the self associated to the given configuration.",
           "type": "string",
           "format": "string"
         },
-        "updatedAt": {
-          "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+        "iriTemplate": {
+          "$ref": "#\/definitions\/ConfigurationLinksSelfIriTemplate"
+        }
+      }
+    },
+    "ConfigurationLinksSelfIriTemplate": {
+      "type": "object",
+      "properties": {
+        "mapping": {
+          "type": "object",
+          "properties": {
+            "configuration": {
+              "type": "string"
+            }
+          }
         }
       }
     },
@@ -11453,27 +11622,27 @@
       "type": "object",
       "properties": {
         "email": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "id": {
+          "format": "string",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "name": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "telephone": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         }
       }
     },
@@ -11492,25 +11661,25 @@
           }
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       }
     },
@@ -11637,41 +11806,37 @@
           }
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "description": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "state": {
           "items": {
             "type": "string"
           },
-          "maxLength": 18,
           "type": "array"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
-      },
-      "required": [
-        "state"
-      ]
+      }
     },
     "DelegationCollection": {
       "type": "object",
@@ -11822,20 +11987,24 @@
         }
       ]
     },
-    "DelegationWorkflowTransitionData": {
+    "DelegationType": {
       "type": "object",
       "properties": {
-        "transition": {
-          "type": "string",
-          "enum": [
-            "accept",
-            "refuse"
-          ]
+        "id": {
+          "format": "string",
+          "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+          "readOnly": true,
+          "type": "string"
+        },
+        "type": {
+          "format": "string",
+          "readOnly": true,
+          "type": "string"
+        },
+        "workflow": {
+          "$ref": "#\/definitions\/Workflow"
         }
-      },
-      "required": [
-        "transition"
-      ]
+      }
     },
     "Device": {
       "type": "object",
@@ -11852,25 +12021,25 @@
           }
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       }
     },
@@ -11963,63 +12132,31 @@
           }
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "file": {
-          "type": "object",
-          "properties": {
-            "contentType": {
-              "enum": [
-                "text\/csv",
-                "application\/msword",
-                "application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
-                "image\/jpeg",
-                "image\/jpg",
-                "application\/pdf",
-                "image\/png",
-                "text\/plain",
-                "application\/vnd.ms-excel",
-                "application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                "application\/zip"
-              ],
-              "type": "string",
-              "format": "string"
-            },
-            "name": {
-              "type": "string",
-              "format": "string"
-            }
-          },
-          "required": [
-            "contentType"
-          ]
+          "$ref": "#\/definitions\/File"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "permission": {
-          "type": "object",
-          "properties": {
-            "targetGroup": {
-              "type": "string",
-              "format": "string"
-            }
-          }
+          "$ref": "#\/definitions\/Permission"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       }
     },
@@ -12182,6 +12319,22 @@
         }
       }
     },
+    "Entity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "string",
+          "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+          "readOnly": true,
+          "type": "string"
+        },
+        "type": {
+          "format": "string",
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
     "Error": {
       "type": "object",
       "properties": {
@@ -12221,53 +12374,36 @@
           }
         },
         "contactPoint": {
-          "type": "object",
-          "properties": {
-            "email": {
-              "type": "string",
-              "format": "string"
-            },
-            "isOpen": {
-              "type": "boolean"
-            },
-            "name": {
-              "type": "string",
-              "format": "string"
-            },
-            "telephone": {
-              "type": "string",
-              "format": "string"
-            }
-          }
+          "$ref": "#\/definitions\/ContactPoint"
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "description": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "name": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       },
       "required": [
@@ -12396,12 +12532,12 @@
           }
         },
         "description": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "name": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         }
       }
     },
@@ -12457,18 +12593,18 @@
       "type": "object",
       "properties": {
         "id": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "name": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         }
       }
     },
@@ -12548,63 +12684,26 @@
           }
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "description": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "geoCoordinates": {
-          "type": "object",
-          "properties": {
-            "elevation": {
-              "exclusiveMaximum": false,
-              "exclusiveMinimum": false,
-              "maximum": 8000,
-              "minimum": -10000,
-              "type": "number",
-              "format": "float"
-            },
-            "point": {
-              "type": "object",
-              "properties": {
-                "latitude": {
-                  "type": "number",
-                  "format": "float"
-                },
-                "longitude": {
-                  "type": "number",
-                  "format": "float"
-                },
-                "srid": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              },
-              "required": [
-                "latitude",
-                "longitude",
-                "srid"
-              ]
-            }
-          },
-          "required": [
-            "point"
-          ]
+          "$ref": "#\/definitions\/GeoCoordinates"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "metadata": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
+          "type": "string",
+          "format": "string"
         },
         "public": {
           "type": "boolean"
@@ -12617,18 +12716,17 @@
           "type": "array"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       },
       "required": [
-        "geoCoordinates",
         "state"
       ]
     },
@@ -12921,6 +13019,61 @@
         "transition"
       ]
     },
+    "File": {
+      "type": "object",
+      "properties": {
+        "contentType": {
+          "enum": [
+            "text\/csv",
+            "application\/msword",
+            "application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "image\/jpeg",
+            "image\/jpg",
+            "application\/pdf",
+            "image\/png",
+            "text\/plain",
+            "application\/vnd.ms-excel",
+            "application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "application\/zip"
+          ],
+          "format": "string",
+          "type": "string"
+        },
+        "name": {
+          "format": "string",
+          "type": "string"
+        }
+      }
+    },
+    "GeoCoordinates": {
+      "type": "object",
+      "properties": {
+        "elevation": {
+          "format": "int32",
+          "maximum": 8000,
+          "minimum": -10000,
+          "type": "integer"
+        },
+        "point": {
+          "type": "object"
+        }
+      }
+    },
+    "GeoShape": {
+      "type": "object",
+      "properties": {
+        "centroid": {
+          "type": "object"
+        },
+        "elevation": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "polygon": {
+          "type": "object"
+        }
+      }
+    },
     "ImageData": {
       "type": "object",
       "properties": {
@@ -12947,53 +13100,36 @@
           }
         },
         "contactPoint": {
-          "type": "object",
-          "properties": {
-            "email": {
-              "type": "string",
-              "format": "string"
-            },
-            "isOpen": {
-              "type": "boolean"
-            },
-            "name": {
-              "type": "string",
-              "format": "string"
-            },
-            "telephone": {
-              "type": "string",
-              "format": "string"
-            }
-          }
+          "$ref": "#\/definitions\/ContactPoint"
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "description": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "name": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       },
       "required": [
@@ -13118,12 +13254,23 @@
           }
         },
         "description": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "name": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
+        }
+      }
+    },
+    "Items": {
+      "type": "object",
+      "properties": {
+        "oneOf": {
+          "items": {
+            "$ref": "#\/definitions\/Choice"
+          },
+          "type": "array"
         }
       }
     },
@@ -13178,15 +13325,15 @@
           }
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "roles": {
           "items": {
@@ -13195,14 +13342,14 @@
           "type": "array"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       }
     },
@@ -13337,6 +13484,28 @@
         }
       }
     },
+    "MemberType": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "string",
+          "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+          "readOnly": true,
+          "type": "string"
+        },
+        "roles": {
+          "items": {
+            "$ref": "#\/definitions\/Role"
+          },
+          "type": "array"
+        },
+        "type": {
+          "format": "string",
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
     "Node": {
       "type": "object",
       "properties": {
@@ -13379,6 +13548,14 @@
         }
       }
     },
+    "Notification": {
+      "type": "object",
+      "properties": {
+        "report": {
+          "$ref": "#\/definitions\/ReportNotification"
+        }
+      }
+    },
     "Occupant": {
       "type": "object",
       "properties": {
@@ -13397,25 +13574,25 @@
           }
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       }
     },
@@ -13539,6 +13716,15 @@
         }
       ]
     },
+    "OlderThan": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "format": "string",
+          "type": "string"
+        }
+      }
+    },
     "Operation": {
       "type": "object",
       "properties": {
@@ -13603,80 +13789,54 @@
           }
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "description": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "identificationNumber": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 0,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "name": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 0,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "scheduledAt": {
-          "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "type": "string"
         },
         "signature": {
-          "type": "object",
-          "properties": {
-            "signedAt": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "signer": {
-              "type": "object",
-              "properties": {
-                "familyName": {
-                  "type": "string",
-                  "format": "string"
-                },
-                "givenName": {
-                  "type": "string",
-                  "format": "string"
-                }
-              }
-            }
-          }
+          "$ref": "#\/definitions\/Signature"
         },
         "state": {
-          "enum": [
-            "ASSIGNED",
-            "IN_PROGRESS",
-            "NEW",
-            "RESOLVED"
-          ],
           "items": {
             "type": "string"
           },
-          "maxLength": 18,
           "type": "array"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       },
       "required": [
@@ -13980,40 +14140,43 @@
       "type": "object",
       "properties": {
         "description": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "identificationNumber": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "name": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "scheduledAt": {
-          "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "type": "string"
         }
       }
     },
-    "OperationWorkflowTransitionData": {
+    "OperationType": {
       "type": "object",
       "properties": {
-        "transition": {
-          "type": "string",
-          "enum": [
-            "assign",
-            "progress",
-            "resolve"
-          ]
+        "id": {
+          "format": "string",
+          "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+          "readOnly": true,
+          "type": "string"
+        },
+        "type": {
+          "format": "string",
+          "readOnly": true,
+          "type": "string"
+        },
+        "workflow": {
+          "$ref": "#\/definitions\/Workflow"
         }
-      },
-      "required": [
-        "transition"
-      ]
+      }
     },
     "Organization": {
       "type": "object",
@@ -14027,6 +14190,9 @@
             "businessActivity": {
               "$ref": "#\/definitions\/OrganizationLinksBusinessActivity"
             },
+            "configuration": {
+              "$ref": "#\/definitions\/OrganizationLinksConfiguration"
+            },
             "logo": {
               "$ref": "#\/definitions\/OrganizationLinksLogo"
             },
@@ -14036,9 +14202,9 @@
           }
         },
         "alternateName": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "billingEmailAddress": {
           "format": "email",
@@ -14047,29 +14213,29 @@
           "type": "string"
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "description": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "enabled": {
           "type": "boolean"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "name": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 0,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "notificationEmailAddress": {
           "format": "email",
@@ -14078,56 +14244,17 @@
           "type": "string"
         },
         "preferences": {
-          "type": "object",
-          "properties": {
-            "notification": {
-              "type": "object",
-              "properties": {
-                "report": {
-                  "type": "object",
-                  "properties": {
-                    "accepted": {
-                      "type": "boolean"
-                    },
-                    "refused": {
-                      "type": "boolean"
-                    }
-                  }
-                }
-              }
-            },
-            "offline": {
-              "type": "boolean"
-            },
-            "public": {
-              "type": "boolean"
-            },
-            "reference": {
-              "type": "object",
-              "properties": {
-                "prefix": {
-                  "type": "string",
-                  "format": "string"
-                }
-              }
-            },
-            "reviewEnabled": {
-              "type": "boolean"
-            }
-          },
-          "required": [
-            "public"
-          ]
+          "$ref": "#\/definitions\/Preferences"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       },
       "required": [
@@ -14192,6 +14319,32 @@
           "type": "object",
           "properties": {
             "businessActivity": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "OrganizationLinksConfiguration": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "description": "The URI of the configuration associated to the given organization.",
+          "type": "string",
+          "format": "string"
+        },
+        "iriTemplate": {
+          "$ref": "#\/definitions\/OrganizationLinksConfigurationIriTemplate"
+        }
+      }
+    },
+    "OrganizationLinksConfigurationIriTemplate": {
+      "type": "object",
+      "properties": {
+        "mapping": {
+          "type": "object",
+          "properties": {
+            "organization": {
               "type": "string"
             }
           }
@@ -14269,19 +14422,19 @@
       "type": "object",
       "properties": {
         "name": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "alternateName": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "description": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "logo": {
           "type": "string",
@@ -14307,10 +14460,12 @@
                   "type": "object",
                   "properties": {
                     "accepted": {
-                      "type": "boolean"
+                      "type": "string",
+                      "format": "string"
                     },
                     "refused": {
-                      "type": "boolean"
+                      "type": "string",
+                      "format": "string"
                     }
                   }
                 }
@@ -14390,6 +14545,15 @@
         "password"
       ]
     },
+    "Permission": {
+      "type": "object",
+      "properties": {
+        "targetGroup": {
+          "format": "string",
+          "type": "string"
+        }
+      }
+    },
     "Person": {
       "type": "object",
       "properties": {
@@ -14411,23 +14575,12 @@
           }
         },
         "agreement": {
-          "type": "object",
-          "properties": {
-            "olderThan": {
-              "type": "boolean"
-            },
-            "privacyPolicy": {
-              "type": "boolean"
-            },
-            "termsOfService": {
-              "type": "boolean"
-            }
-          }
+          "$ref": "#\/definitions\/Agreement"
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "email": {
           "format": "email",
@@ -14439,72 +14592,55 @@
           "type": "boolean"
         },
         "familyName": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "givenName": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "jobTitle": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 0,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "optIn": {
           "type": "boolean"
         },
         "preferences": {
-          "type": "object",
-          "properties": {
-            "notification": {
-              "type": "object",
-              "properties": {
-                "mail": {
-                  "type": "boolean"
-                },
-                "push": {
-                  "type": "boolean"
-                }
-              },
-              "required": [
-                "mail",
-                "push"
-              ]
-            }
-          }
+          "$ref": "#\/definitions\/Preferences"
         },
         "telephone": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "username": {
+          "format": "string",
           "maxLength": 180,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         }
       },
       "required": [
@@ -14649,27 +14785,30 @@
           "type": "object",
           "properties": {
             "privacyPolicy": {
-              "type": "boolean"
+              "type": "string",
+              "format": "string"
             },
             "termsOfService": {
-              "type": "boolean"
+              "type": "string",
+              "format": "string"
             },
             "olderThan": {
-              "type": "boolean"
+              "type": "string",
+              "format": "string"
             }
           }
         },
         "givenName": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "familyName": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "email": {
           "format": "string",
@@ -14678,9 +14817,9 @@
           "type": "string"
         },
         "jobTitle": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "image": {
           "type": "string",
@@ -14696,19 +14835,21 @@
               "type": "object",
               "properties": {
                 "mail": {
-                  "type": "boolean"
+                  "type": "string",
+                  "format": "string"
                 },
                 "push": {
-                  "type": "boolean"
+                  "type": "string",
+                  "format": "string"
                 }
               }
             }
           }
         },
         "telephone": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         }
       }
     },
@@ -14750,99 +14891,48 @@
           }
         },
         "branchCode": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "description": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "geo": {
-          "type": "object",
-          "properties": {
-            "centroid": {
-              "type": "object",
-              "properties": {
-                "latitude": {
-                  "type": "number",
-                  "format": "float"
-                },
-                "longitude": {
-                  "type": "number",
-                  "format": "float"
-                }
-              },
-              "required": [
-                "latitude",
-                "longitude"
-              ]
-            },
-            "elevation": {
-              "type": "number",
-              "format": "float"
-            },
-            "polygon": {
-              "type": "object",
-              "properties": {
-                "features": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#\/definitions\/Feature"
-                  }
-                },
-                "type": {
-                  "type": "string",
-                  "default": "FeatureCollection",
-                  "format": "string"
-                }
-              },
-              "required": [
-                "type"
-              ]
-            }
-          },
-          "required": [
-            "polygon"
-          ]
+          "$ref": "#\/definitions\/GeoShape"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "name": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "preferences": {
-          "type": "object",
-          "properties": {
-            "public": {
-              "type": "boolean"
-            }
-          }
+          "$ref": "#\/definitions\/Preferences"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       },
       "required": [
-        "geo",
         "name"
       ]
     },
@@ -15005,18 +15095,60 @@
       "type": "object",
       "properties": {
         "branchCode": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "description": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "name": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
+        }
+      }
+    },
+    "Preferences": {
+      "type": "object",
+      "properties": {
+        "notification": {
+          "$ref": "#\/definitions\/Notification"
+        },
+        "offline": {
+          "type": "boolean"
+        },
+        "public": {
+          "type": "boolean"
+        },
+        "reference": {
+          "$ref": "#\/definitions\/Reference"
+        },
+        "reviewEnabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "PrivacyPolicy": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "format": "string",
+          "type": "string"
+        }
+      }
+    },
+    "Progression": {
+      "type": "object",
+      "properties": {
+        "resolved": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "total": {
+          "format": "int32",
+          "type": "integer"
         }
       }
     },
@@ -15024,23 +15156,15 @@
       "type": "object",
       "properties": {
         "conditions": {
-          "properties": {
-            "allOf": {
-              "items": {
-                "$ref": "#\/definitions\/Condition"
-              },
-              "type": "array"
-            }
-          },
-          "type": "object"
+          "$ref": "#\/definitions\/ConditionList"
         },
         "default": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "description": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "enum": {
           "items": {
@@ -15049,47 +15173,39 @@
           "type": "array"
         },
         "format": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "id": {
+          "format": "string",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "items": {
-          "properties": {
-            "oneOf": {
-              "items": {
-                "$ref": "#\/definitions\/Choice"
-              },
-              "type": "array"
-            }
-          },
-          "type": "object"
+          "$ref": "#\/definitions\/Items"
         },
         "maxItems": {
-          "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "type": "integer"
         },
         "minItems": {
-          "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "type": "integer"
         },
         "propertyOrder": {
-          "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "type": "integer"
         },
         "title": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         }
       }
     },
@@ -15114,39 +15230,39 @@
           }
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "message": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "read": {
-          "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "type": "integer"
         },
         "title": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 0,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       },
       "required": [
@@ -15309,6 +15425,15 @@
         }
       ]
     },
+    "Reference": {
+      "type": "object",
+      "properties": {
+        "prefix": {
+          "format": "string",
+          "type": "string"
+        }
+      }
+    },
     "RegisterData": {
       "type": "object",
       "properties": {
@@ -15417,53 +15542,43 @@
           }
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "description": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "dueAt": {
-          "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "identificationNumber": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 0,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "priority": {
-          "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "type": "integer"
         },
         "reference": {
-          "type": "string",
-          "format": "string"
+          "$ref": "#\/definitions\/Reference"
         },
         "state": {
-          "enum": [
-            "ACCEPTED",
-            "CLOSED",
-            "IN_PROGRESS",
-            "NEW",
-            "ON_HOLD",
-            "REFUSED"
-          ],
           "items": {
             "type": "string"
           },
-          "maxLength": 18,
           "type": "array"
         },
         "tags": {
@@ -15473,14 +15588,14 @@
           "type": "array"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       },
       "required": [
@@ -15734,6 +15849,17 @@
         }
       }
     },
+    "ReportNotification": {
+      "type": "object",
+      "properties": {
+        "accepted": {
+          "type": "boolean"
+        },
+        "refused": {
+          "type": "boolean"
+        }
+      }
+    },
     "ReportPagination": {
       "allOf": [
         {
@@ -15757,23 +15883,23 @@
           "format": "string"
         },
         "description": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 1,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "dueAt": {
-          "type": "string",
-          "format": "date-time"
+          "format": "string",
+          "type": "string"
         },
         "identificationNumber": {
+          "format": "string",
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "priority": {
-          "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "type": "integer"
         },
         "tags": {
           "items": {
@@ -15783,23 +15909,24 @@
         }
       }
     },
-    "ReportWorkflowTransitionData": {
+    "ReportType": {
       "type": "object",
       "properties": {
-        "transition": {
-          "type": "string",
-          "enum": [
-            "accept",
-            "close",
-            "hold",
-            "progress",
-            "refuse"
-          ]
+        "id": {
+          "format": "string",
+          "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+          "readOnly": true,
+          "type": "string"
+        },
+        "type": {
+          "format": "string",
+          "readOnly": true,
+          "type": "string"
+        },
+        "workflow": {
+          "$ref": "#\/definitions\/Workflow"
         }
-      },
-      "required": [
-        "transition"
-      ]
+      }
     },
     "ResetPasswordData": {
       "type": "object",
@@ -15831,39 +15958,39 @@
           }
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "reviewBody": {
+          "format": "string",
           "maxLength": 255,
           "minLength": 0,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "reviewRating": {
           "exclusiveMaximum": false,
           "exclusiveMinimum": false,
+          "format": "int32",
           "maximum": 5,
           "minimum": 1,
-          "type": "integer",
-          "format": "int32"
+          "type": "integer"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       }
     },
@@ -16014,25 +16141,25 @@
           }
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       }
     },
@@ -16197,27 +16324,27 @@
       "type": "object",
       "properties": {
         "createdAt": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "description": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "id": {
+          "format": "string",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "key": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "name": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "permissions": {
           "items": {
@@ -16226,14 +16353,14 @@
           "type": "array"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       }
     },
@@ -16241,16 +16368,28 @@
       "type": "object",
       "properties": {
         "properties": {
-          "type": "object",
           "additionalProperties": {
             "$ref": "#\/definitions\/Property"
-          }
+          },
+          "type": "object"
         },
         "required": {
           "items": {
             "type": "string"
           },
           "type": "array"
+        }
+      }
+    },
+    "Signature": {
+      "type": "object",
+      "properties": {
+        "signedAt": {
+          "format": "string",
+          "type": "string"
+        },
+        "signer": {
+          "$ref": "#\/definitions\/Signer"
         }
       }
     },
@@ -16276,6 +16415,62 @@
         "image"
       ]
     },
+    "Signer": {
+      "type": "object",
+      "properties": {
+        "familyName": {
+          "format": "string",
+          "type": "string"
+        },
+        "givenName": {
+          "format": "string",
+          "type": "string"
+        }
+      }
+    },
+    "State": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "format": "string",
+          "maxLength": 255,
+          "type": "string"
+        },
+        "description": {
+          "format": "string",
+          "type": "string"
+        },
+        "id": {
+          "format": "string",
+          "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {
+          "format": "string",
+          "maxLength": 255,
+          "type": "string"
+        },
+        "progression": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "type": {
+          "format": "string",
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "TermsOfService": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "format": "string",
+          "type": "string"
+        }
+      }
+    },
     "Tracking": {
       "type": "object",
       "properties": {
@@ -16286,25 +16481,46 @@
           }
         },
         "progression": {
-          "type": "object",
-          "properties": {
-            "resolved": {
-              "type": "number",
-              "format": "float"
-            },
-            "total": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
+          "$ref": "#\/definitions\/Progression"
         },
         "state": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "time": {
-          "type": "integer",
-          "format": "int32"
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "Transition": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "format": "string",
+          "type": "string"
+        },
+        "from": {
+          "$ref": "#\/definitions\/State"
+        },
+        "id": {
+          "format": "string",
+          "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {
+          "format": "string",
+          "maxLength": 255,
+          "type": "string"
+        },
+        "to": {
+          "$ref": "#\/definitions\/State"
+        },
+        "type": {
+          "format": "string",
+          "readOnly": true,
+          "type": "string"
         }
       }
     },
@@ -16323,36 +16539,36 @@
           }
         },
         "createdAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         },
         "enabled": {
           "type": "boolean"
         },
         "event": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "id": {
+          "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
           "readOnly": true,
-          "type": "string",
-          "format": "uuid"
+          "type": "string"
         },
         "payloadUrl": {
           "format": "uri",
           "type": "string"
         },
         "type": {
+          "format": "string",
           "readOnly": true,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "updatedAt": {
+          "format": "date-time",
           "readOnly": true,
-          "type": "string",
-          "format": "date-time"
+          "type": "string"
         }
       },
       "required": [
@@ -16469,12 +16685,102 @@
       "type": "object",
       "properties": {
         "event": {
-          "type": "string",
-          "format": "string"
+          "format": "string",
+          "type": "string"
         },
         "payloadUrl": {
           "format": "string",
           "type": "string"
+        }
+      }
+    },
+    "Workflow": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "format": "string",
+          "readOnly": true,
+          "type": "string"
+        },
+        "description": {
+          "format": "string",
+          "type": "string"
+        },
+        "end": {
+          "$ref": "#\/definitions\/State"
+        },
+        "id": {
+          "format": "string",
+          "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {
+          "format": "string",
+          "maxLength": 255,
+          "type": "string"
+        },
+        "start": {
+          "$ref": "#\/definitions\/State"
+        },
+        "states": {
+          "items": {
+            "$ref": "#\/definitions\/State"
+          },
+          "type": "array"
+        },
+        "transitions": {
+          "items": {
+            "$ref": "#\/definitions\/Transition"
+          },
+          "type": "array"
+        },
+        "type": {
+          "format": "string",
+          "readOnly": true,
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "string",
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "WorkflowData": {
+      "type": "object",
+      "properties": {
+        "transition": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "transition"
+      ]
+    },
+    "WorkflowLinksSelf": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "description": "The URI of the self associated to the given workflow.",
+          "type": "string",
+          "format": "string"
+        },
+        "iriTemplate": {
+          "$ref": "#\/definitions\/WorkflowLinksSelfIriTemplate"
+        }
+      }
+    },
+    "WorkflowLinksSelfIriTemplate": {
+      "type": "object",
+      "properties": {
+        "mapping": {
+          "type": "object",
+          "properties": {
+            "workflow": {
+              "type": "string"
+            }
+          }
         }
       }
     },
@@ -16713,11 +17019,11 @@
       },
       "required": true
     },
-    "DelegationWorkflowTransitionData": {
-      "name": "DelegationWorkflowTransitionData",
+    "WorkflowData": {
+      "name": "WorkflowData",
       "in": "body",
       "schema": {
-        "$ref": "#\/definitions\/DelegationWorkflowTransitionData"
+        "$ref": "#\/definitions\/WorkflowData"
       },
       "required": true
     },
@@ -16889,14 +17195,6 @@
       },
       "required": true
     },
-    "OperationWorkflowTransitionData": {
-      "name": "OperationWorkflowTransitionData",
-      "in": "body",
-      "schema": {
-        "$ref": "#\/definitions\/OperationWorkflowTransitionData"
-      },
-      "required": true
-    },
     "disabledAt": {
       "enum": [
         "(\\d\\d\\d\\d)(-)?(\\d\\d)(-)?(\\d\\d)(T)?(\\d\\d)(:)?(\\d\\d)(:)?(\\d\\d)(\\.\\d+)?(Z",
@@ -17043,14 +17341,6 @@
       "in": "body",
       "schema": {
         "$ref": "#\/definitions\/DocumentData"
-      },
-      "required": true
-    },
-    "ReportWorkflowTransitionData": {
-      "name": "ReportWorkflowTransitionData",
-      "in": "body",
-      "schema": {
-        "$ref": "#\/definitions\/ReportWorkflowTransitionData"
       },
       "required": true
     },
