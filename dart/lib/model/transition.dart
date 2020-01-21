@@ -17,23 +17,23 @@ class Transition {
 
     return Transition(
       description: json['description'],
-      from: State.fromJson(json['from']),
+      from: TransitionState.fromJson(json['from']),
       id: json['id'],
       name: json['name'],
-      to: State.fromJson(json['to']),
+      to: TransitionState.fromJson(json['to']),
       type: json['type'],
     );
   }
 
   String description;
 
-  State from;
+  TransitionState from;
 
   String id;
 
   String name;
 
-  State to;
+  TransitionState to;
 
   String type;
 

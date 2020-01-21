@@ -7,8 +7,6 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Reference = _interopRequireDefault(require("./Reference"));
-
 var _ReportEmbedded = _interopRequireDefault(require("./ReportEmbedded"));
 
 var _ReportLinks = _interopRequireDefault(require("./ReportLinks"));
@@ -74,7 +72,6 @@ var Report =
       this.updatedAt = null;
       this.embeddedType = _ReportEmbedded.default;
       this.linksType = _ReportLinks.default;
-      this.referenceType = _Reference.default;
     }
     /**
      * Constructs a "Report" from a plain JavaScript object.
@@ -213,7 +210,7 @@ var Report =
             this.priority = priority;
           }
           /**
-           * @return { module:model/Reference }
+           * @return { String }
            */
         },
         {
@@ -222,7 +219,7 @@ var Report =
             return this.reference;
           }
           /**
-           * @param { module:model/Reference } reference
+           * @param { String } reference
            */
         },
         {
@@ -362,7 +359,7 @@ var Report =
             if (data.hasOwnProperty("reference")) {
               object.reference = _ApiClient.default.convertToType(
                 data["reference"],
-                object.referenceType
+                "String"
               );
             }
 

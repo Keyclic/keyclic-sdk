@@ -7,13 +7,13 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _GeoShape = _interopRequireDefault(require("./GeoShape"));
-
 var _PlaceEmbedded = _interopRequireDefault(require("./PlaceEmbedded"));
+
+var _PlaceGeoShape = _interopRequireDefault(require("./PlaceGeoShape"));
 
 var _PlaceLinks = _interopRequireDefault(require("./PlaceLinks"));
 
-var _Preferences = _interopRequireDefault(require("./Preferences"));
+var _PlacePreferences = _interopRequireDefault(require("./PlacePreferences"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -72,8 +72,8 @@ var Place =
       this.updatedAt = null;
       this.embeddedType = _PlaceEmbedded.default;
       this.linksType = _PlaceLinks.default;
-      this.geoType = _GeoShape.default;
-      this.preferencesType = _Preferences.default;
+      this.geoType = _PlaceGeoShape.default;
+      this.preferencesType = _PlacePreferences.default;
     }
     /**
      * Constructs a "Place" from a plain JavaScript object.
@@ -167,7 +167,7 @@ var Place =
             this.description = description;
           }
           /**
-           * @return { module:model/GeoShape }
+           * @return { module:model/PlaceGeoShape }
            */
         },
         {
@@ -176,7 +176,7 @@ var Place =
             return this.geo;
           }
           /**
-           * @param { module:model/GeoShape } geo
+           * @param { module:model/PlaceGeoShape } geo
            */
         },
         {
@@ -212,7 +212,7 @@ var Place =
             this.name = name;
           }
           /**
-           * @return { module:model/Preferences }
+           * @return { module:model/PlacePreferences }
            */
         },
         {
@@ -221,7 +221,7 @@ var Place =
             return this.preferences;
           }
           /**
-           * @param { module:model/Preferences } preferences
+           * @param { module:model/PlacePreferences } preferences
            */
         },
         {

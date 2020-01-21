@@ -18,9 +18,9 @@ class PersonPatchPreferencesNotification {
     );
   }
 
-  String mail;
+  bool mail;
 
-  String push;
+  bool push;
 
   @override
   bool operator ==(dynamic other) {

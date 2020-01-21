@@ -11,8 +11,8 @@
  */
 
 import ApiClient from "../ApiClient";
-import About from "./About";
-import Agreement from "./Agreement";
+import ApplicationAbout from "./ApplicationAbout";
+import ApplicationAgreement from "./ApplicationAgreement";
 import ApplicationLinks from "./ApplicationLinks";
 import ContactPoint from "./ContactPoint";
 
@@ -49,8 +49,8 @@ export default class Application {
     this.version = null;
 
     this.linksType = ApplicationLinks;
-    this.aboutType = About;
-    this.agreementType = Agreement;
+    this.aboutType = ApplicationAbout;
+    this.agreementType = ApplicationAgreement;
     this.contactPointsType = ContactPoint;
   }
 
@@ -125,27 +125,27 @@ export default class Application {
     this.links = links;
   }
   /**
-   * @return { module:model/About }
+   * @return { module:model/ApplicationAbout }
    */
   getAbout() {
     return this.about;
   }
 
   /**
-   * @param { module:model/About } about
+   * @param { module:model/ApplicationAbout } about
    */
   setAbout(about) {
     this.about = about;
   }
   /**
-   * @return { module:model/Agreement }
+   * @return { module:model/ApplicationAgreement }
    */
   getAgreement() {
     return this.agreement;
   }
 
   /**
-   * @param { module:model/Agreement } agreement
+   * @param { module:model/ApplicationAgreement } agreement
    */
   setAgreement(agreement) {
     this.agreement = agreement;

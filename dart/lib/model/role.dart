@@ -17,8 +17,20 @@ class Role {
       return null;
     }
 
+    DateTime createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    if (createdAt is DateTime && createdAt.isUtc == false) {
+      createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
+    }
+
+    DateTime updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    if (updatedAt is DateTime && updatedAt.isUtc == false) {
+      updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
+    }
+
     return Role(
-      createdAt: json['createdAt'],
+      createdAt: createdAt,
       description: json['description'],
       id: json['id'],
       key: json['key'],
@@ -27,11 +39,11 @@ class Role {
           ? List<String>.from(json['permissions'])
           : null,
       type: json['type'],
-      updatedAt: json['updatedAt'],
+      updatedAt: updatedAt,
     );
   }
 
-  String createdAt;
+  DateTime createdAt;
 
   String description;
 
@@ -45,7 +57,7 @@ class Role {
 
   String type;
 
-  String updatedAt;
+  DateTime updatedAt;
 
   @override
   bool operator ==(dynamic other) {
@@ -107,14 +119,14 @@ class Role {
 
   Map<String, dynamic> toJson() {
     return {
-      if (createdAt != null) 'createdAt': createdAt,
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (id != null) 'id': id,
       if (key != null) 'key': key,
       if (name != null) 'name': name,
       if (permissions != null) 'permissions': permissions,
       if (type != null) 'type': type,
-      if (updatedAt != null) 'updatedAt': updatedAt,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 

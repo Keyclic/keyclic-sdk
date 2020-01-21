@@ -12,8 +12,8 @@
 
 import ApiClient from "../ApiClient";
 import FeedbackEmbedded from "./FeedbackEmbedded";
+import FeedbackGeoCoordinates from "./FeedbackGeoCoordinates";
 import FeedbackLinks from "./FeedbackLinks";
-import GeoCoordinates from "./GeoCoordinates";
 
 /**
  * The Feedback model module.
@@ -35,7 +35,7 @@ export default class Feedback {
     this.description = null;
     this.geoCoordinates = null;
     this.id = null;
-    this.metadata = null;
+    this.metadata = [];
     this._public = null;
     this.state = state;
     this.type = null;
@@ -43,7 +43,7 @@ export default class Feedback {
 
     this.embeddedType = FeedbackEmbedded;
     this.linksType = FeedbackLinks;
-    this.geoCoordinatesType = GeoCoordinates;
+    this.geoCoordinatesType = FeedbackGeoCoordinates;
   }
 
   /**
@@ -89,7 +89,7 @@ export default class Feedback {
       object.id = ApiClient.convertToType(data["id"], "String");
     }
     if (data.hasOwnProperty("metadata")) {
-      object.metadata = ApiClient.convertToType(data["metadata"], "String");
+      object.metadata = ApiClient.convertToType(data["metadata"], "['String']");
     }
     if (data.hasOwnProperty("public")) {
       object._public = ApiClient.convertToType(data["public"], "Boolean");
@@ -154,14 +154,14 @@ export default class Feedback {
     this.description = description;
   }
   /**
-   * @return { module:model/GeoCoordinates }
+   * @return { module:model/FeedbackGeoCoordinates }
    */
   getGeoCoordinates() {
     return this.geoCoordinates;
   }
 
   /**
-   * @param { module:model/GeoCoordinates } geoCoordinates
+   * @param { module:model/FeedbackGeoCoordinates } geoCoordinates
    */
   setGeoCoordinates(geoCoordinates) {
     this.geoCoordinates = geoCoordinates;
@@ -174,14 +174,14 @@ export default class Feedback {
   }
 
   /**
-   * @return { String }
+   * @return { Object.<String, String> }
    */
   getMetadata() {
     return this.metadata;
   }
 
   /**
-   * @param { String } metadata
+   * @param { Object.<String, String> } metadata
    */
   setMetadata(metadata) {
     this.metadata = metadata;

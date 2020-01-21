@@ -20,7 +20,7 @@ class State {
       description: json['description'],
       id: json['id'],
       name: json['name'],
-      progression: json['progression'],
+      progression: json['progression']?.toDouble(),
       type: json['type'],
     );
   }
@@ -33,7 +33,7 @@ class State {
 
   String name;
 
-  int progression;
+  double progression;
 
   String type;
 

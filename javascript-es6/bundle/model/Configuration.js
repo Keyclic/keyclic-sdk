@@ -7,17 +7,25 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ConfigurationDelegationType = _interopRequireDefault(
+  require("./ConfigurationDelegationType")
+);
+
 var _ConfigurationLinks = _interopRequireDefault(
   require("./ConfigurationLinks")
 );
 
-var _DelegationType = _interopRequireDefault(require("./DelegationType"));
+var _ConfigurationMemberType = _interopRequireDefault(
+  require("./ConfigurationMemberType")
+);
 
-var _MemberType = _interopRequireDefault(require("./MemberType"));
+var _ConfigurationOperationType = _interopRequireDefault(
+  require("./ConfigurationOperationType")
+);
 
-var _OperationType = _interopRequireDefault(require("./OperationType"));
-
-var _ReportType = _interopRequireDefault(require("./ReportType"));
+var _ConfigurationReportType = _interopRequireDefault(
+  require("./ConfigurationReportType")
+);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -73,10 +81,10 @@ var Configuration =
       this.type = null;
       this.updatedAt = null;
       this.linksType = _ConfigurationLinks.default;
-      this.delegationTypeType = _DelegationType.default;
-      this.memberTypeType = _MemberType.default;
-      this.operationTypeType = _OperationType.default;
-      this.reportTypeType = _ReportType.default;
+      this.delegationTypeType = _ConfigurationDelegationType.default;
+      this.memberTypeType = _ConfigurationMemberType.default;
+      this.operationTypeType = _ConfigurationOperationType.default;
+      this.reportTypeType = _ConfigurationReportType.default;
     }
     /**
      * Constructs a "Configuration" from a plain JavaScript object.
@@ -116,7 +124,7 @@ var Configuration =
             return this.createdAt;
           }
           /**
-           * @return { module:model/DelegationType }
+           * @return { module:model/ConfigurationDelegationType }
            */
         },
         {
@@ -125,7 +133,7 @@ var Configuration =
             return this.delegationType;
           }
           /**
-           * @param { module:model/DelegationType } delegationType
+           * @param { module:model/ConfigurationDelegationType } delegationType
            */
         },
         {
@@ -161,7 +169,7 @@ var Configuration =
             return this.id;
           }
           /**
-           * @return { module:model/MemberType }
+           * @return { module:model/ConfigurationMemberType }
            */
         },
         {
@@ -170,7 +178,7 @@ var Configuration =
             return this.memberType;
           }
           /**
-           * @param { module:model/MemberType } memberType
+           * @param { module:model/ConfigurationMemberType } memberType
            */
         },
         {
@@ -197,7 +205,7 @@ var Configuration =
             this.name = name;
           }
           /**
-           * @return { module:model/OperationType }
+           * @return { module:model/ConfigurationOperationType }
            */
         },
         {
@@ -206,7 +214,7 @@ var Configuration =
             return this.operationType;
           }
           /**
-           * @param { module:model/OperationType } operationType
+           * @param { module:model/ConfigurationOperationType } operationType
            */
         },
         {
@@ -215,7 +223,7 @@ var Configuration =
             this.operationType = operationType;
           }
           /**
-           * @return { module:model/ReportType }
+           * @return { module:model/ConfigurationReportType }
            */
         },
         {
@@ -224,7 +232,7 @@ var Configuration =
             return this.reportType;
           }
           /**
-           * @param { module:model/ReportType } reportType
+           * @param { module:model/ConfigurationReportType } reportType
            */
         },
         {

@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import State from "./State";
+import TransitionState from "./TransitionState";
 
 /**
  * The Transition model module.
@@ -32,8 +32,8 @@ export default class Transition {
     this.to = null;
     this.type = null;
 
-    this.fromType = State;
-    this.toType = State;
+    this.fromType = TransitionState;
+    this.toType = TransitionState;
   }
 
   /**
@@ -90,14 +90,14 @@ export default class Transition {
     this.description = description;
   }
   /**
-   * @return { module:model/State }
+   * @return { module:model/TransitionState }
    */
   getFrom() {
     return this.from;
   }
 
   /**
-   * @param { module:model/State } from
+   * @param { module:model/TransitionState } from
    */
   setFrom(from) {
     this.from = from;
@@ -123,14 +123,14 @@ export default class Transition {
     this.name = name;
   }
   /**
-   * @return { module:model/State }
+   * @return { module:model/TransitionState }
    */
   getTo() {
     return this.to;
   }
 
   /**
-   * @param { module:model/State } to
+   * @param { module:model/TransitionState } to
    */
   setTo(to) {
     this.to = to;

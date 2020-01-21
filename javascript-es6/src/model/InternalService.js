@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import ContactPoint from "./ContactPoint";
+import InternalServiceContactPoint from "./InternalServiceContactPoint";
 import InternalServiceLinks from "./InternalServiceLinks";
 
 /**
@@ -38,7 +38,7 @@ export default class InternalService {
     this.updatedAt = null;
 
     this.linksType = InternalServiceLinks;
-    this.contactPointType = ContactPoint;
+    this.contactPointType = InternalServiceContactPoint;
   }
 
   /**
@@ -104,14 +104,14 @@ export default class InternalService {
     this.links = links;
   }
   /**
-   * @return { module:model/ContactPoint }
+   * @return { module:model/InternalServiceContactPoint }
    */
   getContactPoint() {
     return this.contactPoint;
   }
 
   /**
-   * @param { module:model/ContactPoint } contactPoint
+   * @param { module:model/InternalServiceContactPoint } contactPoint
    */
   setContactPoint(contactPoint) {
     this.contactPoint = contactPoint;

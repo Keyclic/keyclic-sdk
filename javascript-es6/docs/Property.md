@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**conditions** | [**ConditionList**](ConditionList.md) |  | [optional] 
+**conditions** | [**PropertyConditionList**](PropertyConditionList.md) |  | [optional] 
 **_default** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **_enum** | **[String]** |  | [optional] 
 **format** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
-**items** | [**Items**](Items.md) |  | [optional] 
+**items** | [**PropertyItems**](PropertyItems.md) |  | [optional] 
 **maxItems** | **Number** |  | [optional] 
 **minItems** | **Number** |  | [optional] 
 **propertyOrder** | **Number** |  | [optional] 

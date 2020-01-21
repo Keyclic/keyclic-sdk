@@ -10,13 +10,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**ConfigurationLinks**](ConfigurationLinks.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**delegationType** | [**DelegationType**](DelegationType.md) |  | [optional] [default to null]
+**delegationType** | [**ConfigurationDelegationType**](ConfigurationDelegationType.md) |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
-**memberType** | [**MemberType**](MemberType.md) |  | [optional] [default to null]
+**memberType** | [**ConfigurationMemberType**](ConfigurationMemberType.md) |  | [optional] [default to null]
 **name** | **String** |  | [optional] [default to null]
-**operationType** | [**OperationType**](OperationType.md) |  | [optional] [default to null]
-**reportType** | [**ReportType**](ReportType.md) |  | [optional] [default to null]
+**operationType** | [**ConfigurationOperationType**](ConfigurationOperationType.md) |  | [optional] [default to null]
+**reportType** | [**ConfigurationReportType**](ConfigurationReportType.md) |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 

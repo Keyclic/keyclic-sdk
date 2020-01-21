@@ -31,7 +31,7 @@ class ExternalService {
 
     return ExternalService(
       links: ExternalServiceLinks.fromJson(json['_links']),
-      contactPoint: ContactPoint.fromJson(json['contactPoint']),
+      contactPoint: ExternalServiceContactPoint.fromJson(json['contactPoint']),
       createdAt: createdAt,
       description: json['description'],
       id: json['id'],
@@ -43,7 +43,7 @@ class ExternalService {
 
   ExternalServiceLinks links;
 
-  ContactPoint contactPoint;
+  ExternalServiceContactPoint contactPoint;
 
   DateTime createdAt;
 

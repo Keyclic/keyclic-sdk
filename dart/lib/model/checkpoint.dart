@@ -12,14 +12,20 @@ class Checkpoint {
       return null;
     }
 
+    DateTime createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    if (createdAt is DateTime && createdAt.isUtc == false) {
+      createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
+    }
+
     return Checkpoint(
-      createdAt: json['createdAt'],
+      createdAt: createdAt,
       state: json['state'] is List ? List<String>.from(json['state']) : null,
       links: CheckpointLinks.fromJson(json['_links']),
     );
   }
 
-  String createdAt;
+  DateTime createdAt;
 
   List<String> state;
 
@@ -74,7 +80,7 @@ class Checkpoint {
 
   Map<String, dynamic> toJson() {
     return {
-      if (createdAt != null) 'createdAt': createdAt,
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (state != null) 'state': state,
       if (links != null) '_links': links,
     };

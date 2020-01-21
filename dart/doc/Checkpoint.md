@@ -8,7 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**createdAt** | **String** |  | [optional] [default to null]
+**createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **state** | **List&lt;String&gt;** |  | [optional] [default to []]
 **links** | [**CheckpointLinks**](CheckpointLinks.md) |  | [optional] [default to null]
 

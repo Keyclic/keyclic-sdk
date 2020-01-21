@@ -3,15 +3,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**createdAt** | **String** |  | [optional] 
+**links** | [**WorkflowLinks**](WorkflowLinks.md) |  | [optional] 
+**createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
-**end** | [**State**](State.md) |  | [optional] 
+**end** | [**WorkflowState**](WorkflowState.md) |  | [optional] 
 **id** | **String** |  | [optional] 
-**name** | **String** |  | [optional] 
-**start** | [**State**](State.md) |  | [optional] 
+**name** | **String** |  | 
+**start** | [**WorkflowState**](WorkflowState.md) |  | [optional] 
 **states** | [**[State]**](State.md) |  | [optional] 
 **transitions** | [**[Transition]**](Transition.md) |  | [optional] 
 **type** | **String** |  | [optional] 
-**updatedAt** | **String** |  | [optional] 
+**updatedAt** | **Date** |  | [optional] 
 
 

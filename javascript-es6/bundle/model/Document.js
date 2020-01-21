@@ -7,9 +7,13 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _DocumentFile = _interopRequireDefault(require("./DocumentFile"));
+
 var _DocumentLinks = _interopRequireDefault(require("./DocumentLinks"));
 
-var _Permission = _interopRequireDefault(require("./Permission"));
+var _DocumentPermission = _interopRequireDefault(
+  require("./DocumentPermission")
+);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -61,7 +65,8 @@ var Document =
       this.type = null;
       this.updatedAt = null;
       this.linksType = _DocumentLinks.default;
-      this.permissionType = _Permission.default;
+      this.fileType = _DocumentFile.default;
+      this.permissionType = _DocumentPermission.default;
     }
     /**
      * Constructs a "Document" from a plain JavaScript object.
@@ -101,7 +106,7 @@ var Document =
             return this.createdAt;
           }
           /**
-           * @return { File }
+           * @return { module:model/DocumentFile }
            */
         },
         {
@@ -110,7 +115,7 @@ var Document =
             return this.file;
           }
           /**
-           * @param { File } file
+           * @param { module:model/DocumentFile } file
            */
         },
         {
@@ -128,7 +133,7 @@ var Document =
             return this.id;
           }
           /**
-           * @return { module:model/Permission }
+           * @return { module:model/DocumentPermission }
            */
         },
         {
@@ -137,7 +142,7 @@ var Document =
             return this.permission;
           }
           /**
-           * @param { module:model/Permission } permission
+           * @param { module:model/DocumentPermission } permission
            */
         },
         {
@@ -199,7 +204,7 @@ var Document =
             if (data.hasOwnProperty("file")) {
               object.file = _ApiClient.default.convertToType(
                 data["file"],
-                "File"
+                object.fileType
               );
             }
 

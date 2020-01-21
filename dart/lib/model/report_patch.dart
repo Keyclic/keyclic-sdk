@@ -15,10 +15,16 @@ class ReportPatch {
       return null;
     }
 
+    DateTime dueAt =
+        json['dueAt'] == null ? null : DateTime.parse(json['dueAt']);
+    if (dueAt is DateTime && dueAt.isUtc == false) {
+      dueAt = DateTime.parse('${dueAt.toIso8601String()}Z');
+    }
+
     return ReportPatch(
       category: json['category'],
       description: json['description'],
-      dueAt: json['dueAt'],
+      dueAt: dueAt,
       identificationNumber: json['identificationNumber'],
       priority: json['priority'],
       tags: json['tags'] is List ? List<String>.from(json['tags']) : null,
@@ -29,7 +35,7 @@ class ReportPatch {
 
   String description;
 
-  String dueAt;
+  DateTime dueAt;
 
   String identificationNumber;
 
@@ -94,7 +100,7 @@ class ReportPatch {
     return {
       if (category != null) 'category': category,
       if (description != null) 'description': description,
-      if (dueAt != null) 'dueAt': dueAt,
+      if (dueAt != null) 'dueAt': dueAt.toUtc().toIso8601String(),
       if (identificationNumber != null)
         'identificationNumber': identificationNumber,
       if (priority != null) 'priority': priority,

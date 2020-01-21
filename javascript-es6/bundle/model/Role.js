@@ -72,7 +72,7 @@ var Role =
           key: "getCreatedAt",
 
           /**
-           * @return { String }
+           * @return { Date }
            */
           value: function getCreatedAt() {
             return this.createdAt;
@@ -168,7 +168,7 @@ var Role =
             return this.type;
           }
           /**
-           * @return { String }
+           * @return { Date }
            */
         },
         {
@@ -198,7 +198,7 @@ var Role =
             if (data.hasOwnProperty("createdAt")) {
               object.createdAt = _ApiClient.default.convertToType(
                 data["createdAt"],
-                "String"
+                "Date"
               );
             }
 
@@ -247,7 +247,7 @@ var Role =
             if (data.hasOwnProperty("updatedAt")) {
               object.updatedAt = _ApiClient.default.convertToType(
                 data["updatedAt"],
-                "String"
+                "Date"
               );
             }
 

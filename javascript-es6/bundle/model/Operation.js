@@ -11,7 +11,9 @@ var _OperationEmbedded = _interopRequireDefault(require("./OperationEmbedded"));
 
 var _OperationLinks = _interopRequireDefault(require("./OperationLinks"));
 
-var _Signature = _interopRequireDefault(require("./Signature"));
+var _OperationSignature = _interopRequireDefault(
+  require("./OperationSignature")
+);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -71,7 +73,7 @@ var Operation =
       this.updatedAt = null;
       this.embeddedType = _OperationEmbedded.default;
       this.linksType = _OperationLinks.default;
-      this.signatureType = _Signature.default;
+      this.signatureType = _OperationSignature.default;
     }
     /**
      * Constructs a "Operation" from a plain JavaScript object.
@@ -210,7 +212,7 @@ var Operation =
             this.scheduledAt = scheduledAt;
           }
           /**
-           * @return { module:model/Signature }
+           * @return { module:model/OperationSignature }
            */
         },
         {
@@ -219,7 +221,7 @@ var Operation =
             return this.signature;
           }
           /**
-           * @param { module:model/Signature } signature
+           * @param { module:model/OperationSignature } signature
            */
         },
         {

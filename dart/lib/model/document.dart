@@ -31,9 +31,9 @@ class Document {
     return Document(
       links: DocumentLinks.fromJson(json['_links']),
       createdAt: createdAt,
-      file: MultipartFile.fromJson(json['file']),
+      file: DocumentFile.fromJson(json['file']),
       id: json['id'],
-      permission: Permission.fromJson(json['permission']),
+      permission: DocumentPermission.fromJson(json['permission']),
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -43,11 +43,11 @@ class Document {
 
   DateTime createdAt;
 
-  MultipartFile file;
+  DocumentFile file;
 
   String id;
 
-  Permission permission;
+  DocumentPermission permission;
 
   String type;
 

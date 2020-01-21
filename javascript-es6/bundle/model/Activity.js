@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Entity = _interopRequireDefault(require("./Entity"));
+var _ActivityEntity = _interopRequireDefault(require("./ActivityEntity"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -59,7 +59,7 @@ var Activity =
       this.time = null;
       this.title = null;
       this.verb = null;
-      this.subjectType = _Entity.default;
+      this.subjectType = _ActivityEntity.default;
     }
     /**
      * Constructs a "Activity" from a plain JavaScript object.
@@ -144,7 +144,7 @@ var Activity =
             this.origin = origin;
           }
           /**
-           * @return { module:model/Entity }
+           * @return { module:model/ActivityEntity }
            */
         },
         {
@@ -153,7 +153,7 @@ var Activity =
             return this.subject;
           }
           /**
-           * @param { module:model/Entity } subject
+           * @param { module:model/ActivityEntity } subject
            */
         },
         {

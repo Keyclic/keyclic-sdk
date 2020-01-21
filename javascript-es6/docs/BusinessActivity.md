@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **alternateName** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **id** | **String** |  | [optional] 
-**metadataSchema** | [**Schema**](Schema.md) |  | [optional] 
+**metadataSchema** | [**BusinessActivitySchema**](BusinessActivitySchema.md) |  | [optional] 
 **name** | **String** |  | 
 **type** | **String** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 

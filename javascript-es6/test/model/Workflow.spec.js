@@ -53,6 +53,12 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.Workflow);
     });
 
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
+      //var instane = new @KeyclicSdkJavascript.Workflow();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdAt (base name: "createdAt")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instane = new @KeyclicSdkJavascript.Workflow();

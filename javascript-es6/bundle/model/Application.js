@@ -7,9 +7,11 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _About = _interopRequireDefault(require("./About"));
+var _ApplicationAbout = _interopRequireDefault(require("./ApplicationAbout"));
 
-var _Agreement = _interopRequireDefault(require("./Agreement"));
+var _ApplicationAgreement = _interopRequireDefault(
+  require("./ApplicationAgreement")
+);
 
 var _ApplicationLinks = _interopRequireDefault(require("./ApplicationLinks"));
 
@@ -73,8 +75,8 @@ var Application =
       this.updatedAt = null;
       this.version = null;
       this.linksType = _ApplicationLinks.default;
-      this.aboutType = _About.default;
-      this.agreementType = _Agreement.default;
+      this.aboutType = _ApplicationAbout.default;
+      this.agreementType = _ApplicationAgreement.default;
       this.contactPointsType = _ContactPoint.default;
     }
     /**
@@ -106,7 +108,7 @@ var Application =
             this.links = links;
           }
           /**
-           * @return { module:model/About }
+           * @return { module:model/ApplicationAbout }
            */
         },
         {
@@ -115,7 +117,7 @@ var Application =
             return this.about;
           }
           /**
-           * @param { module:model/About } about
+           * @param { module:model/ApplicationAbout } about
            */
         },
         {
@@ -124,7 +126,7 @@ var Application =
             this.about = about;
           }
           /**
-           * @return { module:model/Agreement }
+           * @return { module:model/ApplicationAgreement }
            */
         },
         {
@@ -133,7 +135,7 @@ var Application =
             return this.agreement;
           }
           /**
-           * @param { module:model/Agreement } agreement
+           * @param { module:model/ApplicationAgreement } agreement
            */
         },
         {

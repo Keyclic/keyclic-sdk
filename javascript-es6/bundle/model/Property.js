@@ -7,9 +7,11 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ConditionList = _interopRequireDefault(require("./ConditionList"));
+var _PropertyConditionList = _interopRequireDefault(
+  require("./PropertyConditionList")
+);
 
-var _Items = _interopRequireDefault(require("./Items"));
+var _PropertyItems = _interopRequireDefault(require("./PropertyItems"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -65,8 +67,8 @@ var Property =
       this.propertyOrder = null;
       this.title = null;
       this.type = null;
-      this.conditionsType = _ConditionList.default;
-      this.itemsType = _Items.default;
+      this.conditionsType = _PropertyConditionList.default;
+      this.itemsType = _PropertyItems.default;
     }
     /**
      * Constructs a "Property" from a plain JavaScript object.
@@ -82,13 +84,13 @@ var Property =
           key: "getConditions",
 
           /**
-           * @return { module:model/ConditionList }
+           * @return { module:model/PropertyConditionList }
            */
           value: function getConditions() {
             return this.conditions;
           }
           /**
-           * @param { module:model/ConditionList } conditions
+           * @param { module:model/PropertyConditionList } conditions
            */
         },
         {
@@ -178,7 +180,7 @@ var Property =
             return this.id;
           }
           /**
-           * @return { module:model/Items }
+           * @return { module:model/PropertyItems }
            */
         },
         {
@@ -187,7 +189,7 @@ var Property =
             return this.items;
           }
           /**
-           * @param { module:model/Items } items
+           * @param { module:model/PropertyItems } items
            */
         },
         {

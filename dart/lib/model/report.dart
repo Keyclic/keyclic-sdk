@@ -49,7 +49,7 @@ class Report {
       id: json['id'],
       identificationNumber: json['identificationNumber'],
       priority: json['priority'],
-      reference: Reference.fromJson(json['reference']),
+      reference: json['reference'],
       state: json['state'] is List ? List<String>.from(json['state']) : null,
       tags: json['tags'] is List ? List<String>.from(json['tags']) : null,
       type: json['type'],
@@ -73,7 +73,7 @@ class Report {
 
   int priority;
 
-  Reference reference;
+  String reference;
 
   List<String> state;
 

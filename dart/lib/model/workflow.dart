@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class Workflow {
   Workflow({
+    this.links,
     this.createdAt,
     this.description,
     this.end,
@@ -19,31 +20,46 @@ class Workflow {
       return null;
     }
 
+    DateTime createdAt =
+        json['createdAt'] == null ? null : DateTime.parse(json['createdAt']);
+    if (createdAt is DateTime && createdAt.isUtc == false) {
+      createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
+    }
+
+    DateTime updatedAt =
+        json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
+    if (updatedAt is DateTime && updatedAt.isUtc == false) {
+      updatedAt = DateTime.parse('${updatedAt.toIso8601String()}Z');
+    }
+
     return Workflow(
-      createdAt: json['createdAt'],
+      links: WorkflowLinks.fromJson(json['_links']),
+      createdAt: createdAt,
       description: json['description'],
-      end: State.fromJson(json['end']),
+      end: WorkflowState.fromJson(json['end']),
       id: json['id'],
       name: json['name'],
-      start: State.fromJson(json['start']),
+      start: WorkflowState.fromJson(json['start']),
       states: State.listFromJson(json['states']),
       transitions: Transition.listFromJson(json['transitions']),
       type: json['type'],
-      updatedAt: json['updatedAt'],
+      updatedAt: updatedAt,
     );
   }
 
-  String createdAt;
+  WorkflowLinks links;
+
+  DateTime createdAt;
 
   String description;
 
-  State end;
+  WorkflowState end;
 
   String id;
 
   String name;
 
-  State start;
+  WorkflowState start;
 
   List<State> states;
 
@@ -51,7 +67,7 @@ class Workflow {
 
   String type;
 
-  String updatedAt;
+  DateTime updatedAt;
 
   @override
   bool operator ==(dynamic other) {
@@ -62,6 +78,7 @@ class Workflow {
 
     return other is Workflow &&
         runtimeType == other.runtimeType &&
+        links == other.links &&
         createdAt == other.createdAt &&
         description == other.description &&
         end == other.end &&
@@ -91,6 +108,7 @@ class Workflow {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
+    hashCode ^= links?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= end?.hashCode ?? 0;
@@ -121,7 +139,8 @@ class Workflow {
 
   Map<String, dynamic> toJson() {
     return {
-      if (createdAt != null) 'createdAt': createdAt,
+      if (links != null) '_links': links,
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (end != null) 'end': end,
       if (id != null) 'id': id,
@@ -130,12 +149,12 @@ class Workflow {
       if (states != null) 'states': states,
       if (transitions != null) 'transitions': transitions,
       if (type != null) 'type': type,
-      if (updatedAt != null) 'updatedAt': updatedAt,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 
   @override
   String toString() {
-    return 'Workflow[createdAt=$createdAt, description=$description, end=$end, id=$id, name=$name, start=$start, states=$states, transitions=$transitions, type=$type, updatedAt=$updatedAt, ]';
+    return 'Workflow[links=$links, createdAt=$createdAt, description=$description, end=$end, id=$id, name=$name, start=$start, states=$states, transitions=$transitions, type=$type, updatedAt=$updatedAt, ]';
   }
 }

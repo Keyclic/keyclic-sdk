@@ -9,9 +9,11 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _FeedbackEmbedded = _interopRequireDefault(require("./FeedbackEmbedded"));
 
-var _FeedbackLinks = _interopRequireDefault(require("./FeedbackLinks"));
+var _FeedbackGeoCoordinates = _interopRequireDefault(
+  require("./FeedbackGeoCoordinates")
+);
 
-var _GeoCoordinates = _interopRequireDefault(require("./GeoCoordinates"));
+var _FeedbackLinks = _interopRequireDefault(require("./FeedbackLinks"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -63,14 +65,14 @@ var Feedback =
       this.description = null;
       this.geoCoordinates = null;
       this.id = null;
-      this.metadata = null;
+      this.metadata = [];
       this._public = null;
       this.state = state;
       this.type = null;
       this.updatedAt = null;
       this.embeddedType = _FeedbackEmbedded.default;
       this.linksType = _FeedbackLinks.default;
-      this.geoCoordinatesType = _GeoCoordinates.default;
+      this.geoCoordinatesType = _FeedbackGeoCoordinates.default;
     }
     /**
      * Constructs a "Feedback" from a plain JavaScript object.
@@ -146,7 +148,7 @@ var Feedback =
             this.description = description;
           }
           /**
-           * @return { module:model/GeoCoordinates }
+           * @return { module:model/FeedbackGeoCoordinates }
            */
         },
         {
@@ -155,7 +157,7 @@ var Feedback =
             return this.geoCoordinates;
           }
           /**
-           * @param { module:model/GeoCoordinates } geoCoordinates
+           * @param { module:model/FeedbackGeoCoordinates } geoCoordinates
            */
         },
         {
@@ -173,7 +175,7 @@ var Feedback =
             return this.id;
           }
           /**
-           * @return { String }
+           * @return { Object.<String, String> }
            */
         },
         {
@@ -182,7 +184,7 @@ var Feedback =
             return this.metadata;
           }
           /**
-           * @param { String } metadata
+           * @param { Object.<String, String> } metadata
            */
         },
         {
@@ -308,7 +310,7 @@ var Feedback =
             if (data.hasOwnProperty("metadata")) {
               object.metadata = _ApiClient.default.convertToType(
                 data["metadata"],
-                "String"
+                "['String']"
               );
             }
 

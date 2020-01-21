@@ -9,7 +9,7 @@ import 'package:keyclic_sdk_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **checkpoints** | [**List&lt;Checkpoint&gt;**](Checkpoint.md) |  | [optional] [default to []]
-**progression** | [**Progression**](Progression.md) |  | [optional] [default to null]
+**progression** | [**TrackingProgression**](TrackingProgression.md) |  | [optional] [default to null]
 **state** | **String** |  | [optional] [default to null]
 **time** | **int** |  | [optional] [default to null]
 

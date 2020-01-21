@@ -27,7 +27,7 @@ class Activity {
       message: json['message'],
       object: json['object'],
       origin: json['origin'],
-      subject: Entity.fromJson(json['subject']),
+      subject: ActivityEntity.fromJson(json['subject']),
       time: time,
       title: json['title'],
       verb: json['verb'],
@@ -42,7 +42,7 @@ class Activity {
 
   String origin;
 
-  Entity subject;
+  ActivityEntity subject;
 
   DateTime time;
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **message** | **String** |  | [optional] 
 **_object** | **String** |  | [optional] 
 **origin** | **String** |  | [optional] 
-**subject** | [**Entity**](Entity.md) |  | [optional] 
+**subject** | [**ActivityEntity**](ActivityEntity.md) |  | [optional] 
 **time** | **Date** |  | [optional] 
 **title** | **String** |  | [optional] 
 **verb** | **String** |  | [optional] 

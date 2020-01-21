@@ -7,7 +7,9 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ContactPoint = _interopRequireDefault(require("./ContactPoint"));
+var _InternalServiceContactPoint = _interopRequireDefault(
+  require("./InternalServiceContactPoint")
+);
 
 var _InternalServiceLinks = _interopRequireDefault(
   require("./InternalServiceLinks")
@@ -66,7 +68,7 @@ var InternalService =
       this.type = null;
       this.updatedAt = null;
       this.linksType = _InternalServiceLinks.default;
-      this.contactPointType = _ContactPoint.default;
+      this.contactPointType = _InternalServiceContactPoint.default;
     }
     /**
      * Constructs a "InternalService" from a plain JavaScript object.
@@ -97,7 +99,7 @@ var InternalService =
             this.links = links;
           }
           /**
-           * @return { module:model/ContactPoint }
+           * @return { module:model/InternalServiceContactPoint }
            */
         },
         {
@@ -106,7 +108,7 @@ var InternalService =
             return this.contactPoint;
           }
           /**
-           * @param { module:model/ContactPoint } contactPoint
+           * @param { module:model/InternalServiceContactPoint } contactPoint
            */
         },
         {

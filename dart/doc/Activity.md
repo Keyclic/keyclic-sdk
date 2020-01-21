@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **message** | **String** |  | [optional] [default to null]
 **object** | **String** |  | [optional] [default to null]
 **origin** | **String** |  | [optional] [default to null]
-**subject** | [**Entity**](Entity.md) |  | [optional] [default to null]
+**subject** | [**ActivityEntity**](ActivityEntity.md) |  | [optional] [default to null]
 **time** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **title** | **String** |  | [optional] [default to null]
 **verb** | **String** |  | [optional] [default to null]

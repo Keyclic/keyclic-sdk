@@ -35,13 +35,14 @@ class Configuration {
     return Configuration(
       links: ConfigurationLinks.fromJson(json['_links']),
       createdAt: createdAt,
-      delegationType: DelegationType.fromJson(json['delegationType']),
+      delegationType:
+          ConfigurationDelegationType.fromJson(json['delegationType']),
       description: json['description'],
       id: json['id'],
-      memberType: MemberType.fromJson(json['memberType']),
+      memberType: ConfigurationMemberType.fromJson(json['memberType']),
       name: json['name'],
-      operationType: OperationType.fromJson(json['operationType']),
-      reportType: ReportType.fromJson(json['reportType']),
+      operationType: ConfigurationOperationType.fromJson(json['operationType']),
+      reportType: ConfigurationReportType.fromJson(json['reportType']),
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -51,19 +52,19 @@ class Configuration {
 
   DateTime createdAt;
 
-  DelegationType delegationType;
+  ConfigurationDelegationType delegationType;
 
   String description;
 
   String id;
 
-  MemberType memberType;
+  ConfigurationMemberType memberType;
 
   String name;
 
-  OperationType operationType;
+  ConfigurationOperationType operationType;
 
-  ReportType reportType;
+  ConfigurationReportType reportType;
 
   String type;
 

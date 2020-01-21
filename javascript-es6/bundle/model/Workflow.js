@@ -11,6 +11,10 @@ var _State = _interopRequireDefault(require("./State"));
 
 var _Transition = _interopRequireDefault(require("./Transition"));
 
+var _WorkflowLinks = _interopRequireDefault(require("./WorkflowLinks"));
+
+var _WorkflowState = _interopRequireDefault(require("./WorkflowState"));
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -49,22 +53,26 @@ var Workflow =
    * @alias module:model/Workflow
    * @class
   
+   * @param name { String }
+  
    */
-    function Workflow() {
+    function Workflow(name) {
       _classCallCheck(this, Workflow);
 
+      this.links = null;
       this.createdAt = null;
       this.description = null;
       this.end = null;
       this.id = null;
-      this.name = null;
+      this.name = name;
       this.start = null;
       this.states = [];
       this.transitions = [];
       this.type = null;
       this.updatedAt = null;
-      this.endType = _State.default;
-      this.startType = _State.default;
+      this.linksType = _WorkflowLinks.default;
+      this.endType = _WorkflowState.default;
+      this.startType = _WorkflowState.default;
       this.statesType = _State.default;
       this.transitionsType = _Transition.default;
     }
@@ -79,11 +87,29 @@ var Workflow =
       Workflow,
       [
         {
-          key: "getCreatedAt",
+          key: "getLinks",
 
           /**
-           * @return { String }
+           * @return { module:model/WorkflowLinks }
            */
+          value: function getLinks() {
+            return this.links;
+          }
+          /**
+           * @param { module:model/WorkflowLinks } links
+           */
+        },
+        {
+          key: "setLinks",
+          value: function setLinks(links) {
+            this.links = links;
+          }
+          /**
+           * @return { Date }
+           */
+        },
+        {
+          key: "getCreatedAt",
           value: function getCreatedAt() {
             return this.createdAt;
           }
@@ -106,7 +132,7 @@ var Workflow =
             this.description = description;
           }
           /**
-           * @return { module:model/State }
+           * @return { module:model/WorkflowState }
            */
         },
         {
@@ -115,7 +141,7 @@ var Workflow =
             return this.end;
           }
           /**
-           * @param { module:model/State } end
+           * @param { module:model/WorkflowState } end
            */
         },
         {
@@ -151,7 +177,7 @@ var Workflow =
             this.name = name;
           }
           /**
-           * @return { module:model/State }
+           * @return { module:model/WorkflowState }
            */
         },
         {
@@ -160,7 +186,7 @@ var Workflow =
             return this.start;
           }
           /**
-           * @param { module:model/State } start
+           * @param { module:model/WorkflowState } start
            */
         },
         {
@@ -214,7 +240,7 @@ var Workflow =
             return this.type;
           }
           /**
-           * @return { String }
+           * @return { Date }
            */
         },
         {
@@ -241,10 +267,17 @@ var Workflow =
               object = new Workflow();
             }
 
+            if (data.hasOwnProperty("_links")) {
+              object.links = _ApiClient.default.convertToType(
+                data["_links"],
+                object.linksType
+              );
+            }
+
             if (data.hasOwnProperty("createdAt")) {
               object.createdAt = _ApiClient.default.convertToType(
                 data["createdAt"],
-                "String"
+                "Date"
               );
             }
 
@@ -306,7 +339,7 @@ var Workflow =
             if (data.hasOwnProperty("updatedAt")) {
               object.updatedAt = _ApiClient.default.convertToType(
                 data["updatedAt"],
-                "String"
+                "Date"
               );
             }
 

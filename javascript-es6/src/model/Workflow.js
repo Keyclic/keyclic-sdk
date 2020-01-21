@@ -13,6 +13,8 @@
 import ApiClient from "../ApiClient";
 import State from "./State";
 import Transition from "./Transition";
+import WorkflowLinks from "./WorkflowLinks";
+import WorkflowState from "./WorkflowState";
 
 /**
  * The Workflow model module.
@@ -24,21 +26,25 @@ export default class Workflow {
      * @alias module:model/Workflow
      * @class
     
+     * @param name { String }
+    
      */
-  constructor() {
+  constructor(name) {
+    this.links = null;
     this.createdAt = null;
     this.description = null;
     this.end = null;
     this.id = null;
-    this.name = null;
+    this.name = name;
     this.start = null;
     this.states = [];
     this.transitions = [];
     this.type = null;
     this.updatedAt = null;
 
-    this.endType = State;
-    this.startType = State;
+    this.linksType = WorkflowLinks;
+    this.endType = WorkflowState;
+    this.startType = WorkflowState;
     this.statesType = State;
     this.transitionsType = Transition;
   }
@@ -58,8 +64,11 @@ export default class Workflow {
       object = new Workflow();
     }
 
+    if (data.hasOwnProperty("_links")) {
+      object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
     if (data.hasOwnProperty("createdAt")) {
-      object.createdAt = ApiClient.convertToType(data["createdAt"], "String");
+      object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
     }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
@@ -93,14 +102,27 @@ export default class Workflow {
       object.type = ApiClient.convertToType(data["type"], "String");
     }
     if (data.hasOwnProperty("updatedAt")) {
-      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "String");
+      object.updatedAt = ApiClient.convertToType(data["updatedAt"], "Date");
     }
 
     return object;
   }
 
   /**
-   * @return { String }
+   * @return { module:model/WorkflowLinks }
+   */
+  getLinks() {
+    return this.links;
+  }
+
+  /**
+   * @param { module:model/WorkflowLinks } links
+   */
+  setLinks(links) {
+    this.links = links;
+  }
+  /**
+   * @return { Date }
    */
   getCreatedAt() {
     return this.createdAt;
@@ -120,14 +142,14 @@ export default class Workflow {
     this.description = description;
   }
   /**
-   * @return { module:model/State }
+   * @return { module:model/WorkflowState }
    */
   getEnd() {
     return this.end;
   }
 
   /**
-   * @param { module:model/State } end
+   * @param { module:model/WorkflowState } end
    */
   setEnd(end) {
     this.end = end;
@@ -153,14 +175,14 @@ export default class Workflow {
     this.name = name;
   }
   /**
-   * @return { module:model/State }
+   * @return { module:model/WorkflowState }
    */
   getStart() {
     return this.start;
   }
 
   /**
-   * @param { module:model/State } start
+   * @param { module:model/WorkflowState } start
    */
   setStart(start) {
     this.start = start;
@@ -199,7 +221,7 @@ export default class Workflow {
   }
 
   /**
-   * @return { String }
+   * @return { Date }
    */
   getUpdatedAt() {
     return this.updatedAt;

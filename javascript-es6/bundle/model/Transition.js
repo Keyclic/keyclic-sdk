@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _State = _interopRequireDefault(require("./State"));
+var _TransitionState = _interopRequireDefault(require("./TransitionState"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -57,8 +57,8 @@ var Transition =
       this.name = null;
       this.to = null;
       this.type = null;
-      this.fromType = _State.default;
-      this.toType = _State.default;
+      this.fromType = _TransitionState.default;
+      this.toType = _TransitionState.default;
     }
     /**
      * Constructs a "Transition" from a plain JavaScript object.
@@ -89,7 +89,7 @@ var Transition =
             this.description = description;
           }
           /**
-           * @return { module:model/State }
+           * @return { module:model/TransitionState }
            */
         },
         {
@@ -98,7 +98,7 @@ var Transition =
             return this.from;
           }
           /**
-           * @param { module:model/State } from
+           * @param { module:model/TransitionState } from
            */
         },
         {
@@ -134,7 +134,7 @@ var Transition =
             this.name = name;
           }
           /**
-           * @return { module:model/State }
+           * @return { module:model/TransitionState }
            */
         },
         {
@@ -143,7 +143,7 @@ var Transition =
             return this.to;
           }
           /**
-           * @param { module:model/State } to
+           * @param { module:model/TransitionState } to
            */
         },
         {

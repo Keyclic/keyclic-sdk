@@ -49,7 +49,7 @@ class Operation {
       identificationNumber: json['identificationNumber'],
       name: json['name'],
       scheduledAt: scheduledAt,
-      signature: Signature.fromJson(json['signature']),
+      signature: OperationSignature.fromJson(json['signature']),
       state: json['state'] is List ? List<String>.from(json['state']) : null,
       type: json['type'],
       updatedAt: updatedAt,
@@ -72,7 +72,7 @@ class Operation {
 
   DateTime scheduledAt;
 
-  Signature signature;
+  OperationSignature signature;
 
   List<String> state;
 

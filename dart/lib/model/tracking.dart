@@ -15,7 +15,7 @@ class Tracking {
 
     return Tracking(
       checkpoints: Checkpoint.listFromJson(json['checkpoints']),
-      progression: Progression.fromJson(json['progression']),
+      progression: TrackingProgression.fromJson(json['progression']),
       state: json['state'],
       time: json['time'],
     );
@@ -23,7 +23,7 @@ class Tracking {
 
   List<Checkpoint> checkpoints;
 
-  Progression progression;
+  TrackingProgression progression;
 
   String state;
 

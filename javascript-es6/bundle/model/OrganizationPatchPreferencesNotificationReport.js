@@ -66,13 +66,13 @@ var OrganizationPatchPreferencesNotificationReport =
           key: "getAccepted",
 
           /**
-           * @return { String }
+           * @return { Boolean }
            */
           value: function getAccepted() {
             return this.accepted;
           }
           /**
-           * @param { String } accepted
+           * @param { Boolean } accepted
            */
         },
         {
@@ -81,7 +81,7 @@ var OrganizationPatchPreferencesNotificationReport =
             this.accepted = accepted;
           }
           /**
-           * @return { String }
+           * @return { Boolean }
            */
         },
         {
@@ -90,7 +90,7 @@ var OrganizationPatchPreferencesNotificationReport =
             return this.refused;
           }
           /**
-           * @param { String } refused
+           * @param { Boolean } refused
            */
         },
         {
@@ -120,14 +120,14 @@ var OrganizationPatchPreferencesNotificationReport =
             if (data.hasOwnProperty("accepted")) {
               object.accepted = _ApiClient.default.convertToType(
                 data["accepted"],
-                "String"
+                "Boolean"
               );
             }
 
             if (data.hasOwnProperty("refused")) {
               object.refused = _ApiClient.default.convertToType(
                 data["refused"],
-                "String"
+                "Boolean"
               );
             }
 

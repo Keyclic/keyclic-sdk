@@ -70,7 +70,7 @@ var Checkpoint =
           key: "getCreatedAt",
 
           /**
-           * @return { String }
+           * @return { Date }
            */
           value: function getCreatedAt() {
             return this.createdAt;
@@ -133,7 +133,7 @@ var Checkpoint =
             if (data.hasOwnProperty("createdAt")) {
               object.createdAt = _ApiClient.default.convertToType(
                 data["createdAt"],
-                "String"
+                "Date"
               );
             }
 

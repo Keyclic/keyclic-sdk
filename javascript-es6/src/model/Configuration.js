@@ -11,11 +11,11 @@
  */
 
 import ApiClient from "../ApiClient";
+import ConfigurationDelegationType from "./ConfigurationDelegationType";
 import ConfigurationLinks from "./ConfigurationLinks";
-import DelegationType from "./DelegationType";
-import MemberType from "./MemberType";
-import OperationType from "./OperationType";
-import ReportType from "./ReportType";
+import ConfigurationMemberType from "./ConfigurationMemberType";
+import ConfigurationOperationType from "./ConfigurationOperationType";
+import ConfigurationReportType from "./ConfigurationReportType";
 
 /**
  * The Configuration model module.
@@ -42,10 +42,10 @@ export default class Configuration {
     this.updatedAt = null;
 
     this.linksType = ConfigurationLinks;
-    this.delegationTypeType = DelegationType;
-    this.memberTypeType = MemberType;
-    this.operationTypeType = OperationType;
-    this.reportTypeType = ReportType;
+    this.delegationTypeType = ConfigurationDelegationType;
+    this.memberTypeType = ConfigurationMemberType;
+    this.operationTypeType = ConfigurationOperationType;
+    this.reportTypeType = ConfigurationReportType;
   }
 
   /**
@@ -136,14 +136,14 @@ export default class Configuration {
   }
 
   /**
-   * @return { module:model/DelegationType }
+   * @return { module:model/ConfigurationDelegationType }
    */
   getDelegationType() {
     return this.delegationType;
   }
 
   /**
-   * @param { module:model/DelegationType } delegationType
+   * @param { module:model/ConfigurationDelegationType } delegationType
    */
   setDelegationType(delegationType) {
     this.delegationType = delegationType;
@@ -169,14 +169,14 @@ export default class Configuration {
   }
 
   /**
-   * @return { module:model/MemberType }
+   * @return { module:model/ConfigurationMemberType }
    */
   getMemberType() {
     return this.memberType;
   }
 
   /**
-   * @param { module:model/MemberType } memberType
+   * @param { module:model/ConfigurationMemberType } memberType
    */
   setMemberType(memberType) {
     this.memberType = memberType;
@@ -195,27 +195,27 @@ export default class Configuration {
     this.name = name;
   }
   /**
-   * @return { module:model/OperationType }
+   * @return { module:model/ConfigurationOperationType }
    */
   getOperationType() {
     return this.operationType;
   }
 
   /**
-   * @param { module:model/OperationType } operationType
+   * @param { module:model/ConfigurationOperationType } operationType
    */
   setOperationType(operationType) {
     this.operationType = operationType;
   }
   /**
-   * @return { module:model/ReportType }
+   * @return { module:model/ConfigurationReportType }
    */
   getReportType() {
     return this.reportType;
   }
 
   /**
-   * @param { module:model/ReportType } reportType
+   * @param { module:model/ConfigurationReportType } reportType
    */
   setReportType(reportType) {
     this.reportType = reportType;

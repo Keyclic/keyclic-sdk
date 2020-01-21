@@ -44,37 +44,37 @@ export default class OrganizationPatchPreferencesNotificationReport {
     }
 
     if (data.hasOwnProperty("accepted")) {
-      object.accepted = ApiClient.convertToType(data["accepted"], "String");
+      object.accepted = ApiClient.convertToType(data["accepted"], "Boolean");
     }
     if (data.hasOwnProperty("refused")) {
-      object.refused = ApiClient.convertToType(data["refused"], "String");
+      object.refused = ApiClient.convertToType(data["refused"], "Boolean");
     }
 
     return object;
   }
 
   /**
-   * @return { String }
+   * @return { Boolean }
    */
   getAccepted() {
     return this.accepted;
   }
 
   /**
-   * @param { String } accepted
+   * @param { Boolean } accepted
    */
   setAccepted(accepted) {
     this.accepted = accepted;
   }
   /**
-   * @return { String }
+   * @return { Boolean }
    */
   getRefused() {
     return this.refused;
   }
 
   /**
-   * @param { String } refused
+   * @param { Boolean } refused
    */
   setRefused(refused) {
     this.refused = refused;

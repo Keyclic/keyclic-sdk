@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import ContactPoint from "./ContactPoint";
+import ExternalServiceContactPoint from "./ExternalServiceContactPoint";
 import ExternalServiceLinks from "./ExternalServiceLinks";
 
 /**
@@ -38,7 +38,7 @@ export default class ExternalService {
     this.updatedAt = null;
 
     this.linksType = ExternalServiceLinks;
-    this.contactPointType = ContactPoint;
+    this.contactPointType = ExternalServiceContactPoint;
   }
 
   /**
@@ -104,14 +104,14 @@ export default class ExternalService {
     this.links = links;
   }
   /**
-   * @return { module:model/ContactPoint }
+   * @return { module:model/ExternalServiceContactPoint }
    */
   getContactPoint() {
     return this.contactPoint;
   }
 
   /**
-   * @param { module:model/ContactPoint } contactPoint
+   * @param { module:model/ExternalServiceContactPoint } contactPoint
    */
   setContactPoint(contactPoint) {
     this.contactPoint = contactPoint;

@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**privacyPolicy** | **String** |  | [optional] 
-**termsOfService** | **String** |  | [optional] 
-**olderThan** | **String** |  | [optional] 
+**privacyPolicy** | **Boolean** |  | [optional] 
+**termsOfService** | **Boolean** |  | [optional] 
+**olderThan** | **Boolean** |  | [optional] 
 
 

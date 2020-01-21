@@ -12,7 +12,7 @@
 
 import ApiClient from "../ApiClient";
 import Checkpoint from "./Checkpoint";
-import Progression from "./Progression";
+import TrackingProgression from "./TrackingProgression";
 
 /**
  * The Tracking model module.
@@ -32,7 +32,7 @@ export default class Tracking {
     this.time = null;
 
     this.checkpointsType = Checkpoint;
-    this.progressionType = Progression;
+    this.progressionType = TrackingProgression;
   }
 
   /**
@@ -85,14 +85,14 @@ export default class Tracking {
     this.checkpoints = checkpoints;
   }
   /**
-   * @return { module:model/Progression }
+   * @return { module:model/TrackingProgression }
    */
   getProgression() {
     return this.progression;
   }
 
   /**
-   * @param { module:model/Progression } progression
+   * @param { module:model/TrackingProgression } progression
    */
   setProgression(progression) {
     this.progression = progression;

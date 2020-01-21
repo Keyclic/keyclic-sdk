@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**InternalServiceLinks**](InternalServiceLinks.md) |  | [optional] 
-**contactPoint** | [**ContactPoint**](ContactPoint.md) |  | [optional] 
+**contactPoint** | [**InternalServiceContactPoint**](InternalServiceContactPoint.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 

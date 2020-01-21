@@ -18,9 +18,9 @@ class OrganizationPatchPreferencesNotificationReport {
     );
   }
 
-  String accepted;
+  bool accepted;
 
-  String refused;
+  bool refused;
 
   @override
   bool operator ==(dynamic other) {

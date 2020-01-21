@@ -34,8 +34,8 @@ class Application {
 
     return Application(
       links: ApplicationLinks.fromJson(json['_links']),
-      about: About.fromJson(json['about']),
-      agreement: Agreement.fromJson(json['agreement']),
+      about: ApplicationAbout.fromJson(json['about']),
+      agreement: ApplicationAgreement.fromJson(json['agreement']),
       contactPoints: ContactPoint.listFromJson(json['contactPoints']),
       createdAt: createdAt,
       id: json['id'],
@@ -49,9 +49,9 @@ class Application {
 
   ApplicationLinks links;
 
-  About about;
+  ApplicationAbout about;
 
-  Agreement agreement;
+  ApplicationAgreement agreement;
 
   List<ContactPoint> contactPoints;
 

@@ -11,7 +11,9 @@ var _BusinessActivityLinks = _interopRequireDefault(
   require("./BusinessActivityLinks")
 );
 
-var _Schema = _interopRequireDefault(require("./Schema"));
+var _BusinessActivitySchema = _interopRequireDefault(
+  require("./BusinessActivitySchema")
+);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -66,7 +68,7 @@ var BusinessActivity =
       this.type = null;
       this.updatedAt = null;
       this.linksType = _BusinessActivityLinks.default;
-      this.metadataSchemaType = _Schema.default;
+      this.metadataSchemaType = _BusinessActivitySchema.default;
     }
     /**
      * Constructs a "BusinessActivity" from a plain JavaScript object.
@@ -133,7 +135,7 @@ var BusinessActivity =
             return this.id;
           }
           /**
-           * @return { module:model/Schema }
+           * @return { module:model/BusinessActivitySchema }
            */
         },
         {
@@ -142,7 +144,7 @@ var BusinessActivity =
             return this.metadataSchema;
           }
           /**
-           * @param { module:model/Schema } metadataSchema
+           * @param { module:model/BusinessActivitySchema } metadataSchema
            */
         },
         {

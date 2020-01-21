@@ -66,13 +66,13 @@ var PersonPatchPreferencesNotification =
           key: "getMail",
 
           /**
-           * @return { String }
+           * @return { Boolean }
            */
           value: function getMail() {
             return this.mail;
           }
           /**
-           * @param { String } mail
+           * @param { Boolean } mail
            */
         },
         {
@@ -81,7 +81,7 @@ var PersonPatchPreferencesNotification =
             this.mail = mail;
           }
           /**
-           * @return { String }
+           * @return { Boolean }
            */
         },
         {
@@ -90,7 +90,7 @@ var PersonPatchPreferencesNotification =
             return this.push;
           }
           /**
-           * @param { String } push
+           * @param { Boolean } push
            */
         },
         {
@@ -120,14 +120,14 @@ var PersonPatchPreferencesNotification =
             if (data.hasOwnProperty("mail")) {
               object.mail = _ApiClient.default.convertToType(
                 data["mail"],
-                "String"
+                "Boolean"
               );
             }
 
             if (data.hasOwnProperty("push")) {
               object.push = _ApiClient.default.convertToType(
                 data["push"],
-                "String"
+                "Boolean"
               );
             }
 

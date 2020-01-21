@@ -5,9 +5,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**DocumentLinks**](DocumentLinks.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
-**file** | **File** |  | [optional] 
+**file** | [**DocumentFile**](DocumentFile.md) |  | [optional] 
 **id** | **String** |  | [optional] 
-**permission** | [**Permission**](Permission.md) |  | [optional] 
+**permission** | [**DocumentPermission**](DocumentPermission.md) |  | [optional] 
 **type** | **String** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 

@@ -16,13 +16,17 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 
 import ApiClient from "./ApiClient";
-import About from "./model/About";
 import Activity from "./model/Activity";
 import ActivityAggregatedPagination from "./model/ActivityAggregatedPagination";
+import ActivityEntity from "./model/ActivityEntity";
 import ActivityGroup from "./model/ActivityGroup";
 import ActivityPagination from "./model/ActivityPagination";
-import Agreement from "./model/Agreement";
+import AgreementOlderThan from "./model/AgreementOlderThan";
+import AgreementPrivacyPolicy from "./model/AgreementPrivacyPolicy";
+import AgreementTermsOfService from "./model/AgreementTermsOfService";
 import Application from "./model/Application";
+import ApplicationAbout from "./model/ApplicationAbout";
+import ApplicationAgreement from "./model/ApplicationAgreement";
 import ApplicationLinks from "./model/ApplicationLinks";
 import ApplicationLinksSelf from "./model/ApplicationLinksSelf";
 import ApplicationLinksSelfIriTemplate from "./model/ApplicationLinksSelfIriTemplate";
@@ -40,6 +44,7 @@ import BusinessActivityLinksSelf from "./model/BusinessActivityLinksSelf";
 import BusinessActivityLinksSelfIriTemplate from "./model/BusinessActivityLinksSelfIriTemplate";
 import BusinessActivityLinksThumbnail from "./model/BusinessActivityLinksThumbnail";
 import BusinessActivityLinksThumbnailIriTemplate from "./model/BusinessActivityLinksThumbnailIriTemplate";
+import BusinessActivitySchema from "./model/BusinessActivitySchema";
 import Category from "./model/Category";
 import CategoryCollection from "./model/CategoryCollection";
 import CategoryData from "./model/CategoryData";
@@ -59,12 +64,15 @@ import CheckpointLinksOrganizationIriTemplate from "./model/CheckpointLinksOrgan
 import Choice from "./model/Choice";
 import CommentData from "./model/CommentData";
 import Condition from "./model/Condition";
-import ConditionList from "./model/ConditionList";
 import Configuration from "./model/Configuration";
+import ConfigurationDelegationType from "./model/ConfigurationDelegationType";
 import ConfigurationLinks from "./model/ConfigurationLinks";
 import ConfigurationLinksSelf from "./model/ConfigurationLinksSelf";
 import ConfigurationLinksSelfIriTemplate from "./model/ConfigurationLinksSelfIriTemplate";
 import ConfigurationLinksSelfIriTemplateMapping from "./model/ConfigurationLinksSelfIriTemplateMapping";
+import ConfigurationMemberType from "./model/ConfigurationMemberType";
+import ConfigurationOperationType from "./model/ConfigurationOperationType";
+import ConfigurationReportType from "./model/ConfigurationReportType";
 import ContactPoint from "./model/ContactPoint";
 import Contribution from "./model/Contribution";
 import ContributionCollection from "./model/ContributionCollection";
@@ -92,7 +100,7 @@ import DelegationLinksSelfIriTemplateMapping from "./model/DelegationLinksSelfIr
 import DelegationLinksService from "./model/DelegationLinksService";
 import DelegationLinksServiceIriTemplate from "./model/DelegationLinksServiceIriTemplate";
 import DelegationLinksServiceIriTemplateMapping from "./model/DelegationLinksServiceIriTemplateMapping";
-import DelegationType from "./model/DelegationType";
+import DelegationTypeWorkflow from "./model/DelegationTypeWorkflow";
 import Device from "./model/Device";
 import DeviceData from "./model/DeviceData";
 import DeviceLinks from "./model/DeviceLinks";
@@ -106,6 +114,7 @@ import DocumentCollection from "./model/DocumentCollection";
 import DocumentData from "./model/DocumentData";
 import DocumentDataFile from "./model/DocumentDataFile";
 import DocumentDataPermission from "./model/DocumentDataPermission";
+import DocumentFile from "./model/DocumentFile";
 import DocumentLinks from "./model/DocumentLinks";
 import DocumentLinksCreatedBy from "./model/DocumentLinksCreatedBy";
 import DocumentLinksCreatedByIriTemplate from "./model/DocumentLinksCreatedByIriTemplate";
@@ -117,11 +126,12 @@ import DocumentLinksSelfIriTemplate from "./model/DocumentLinksSelfIriTemplate";
 import DocumentPatch from "./model/DocumentPatch";
 import DocumentPatchFile from "./model/DocumentPatchFile";
 import DocumentPatchPermission from "./model/DocumentPatchPermission";
-import Entity from "./model/Entity";
+import DocumentPermission from "./model/DocumentPermission";
 import Error from "./model/Error";
 import ErrorEmbedded from "./model/ErrorEmbedded";
 import ExternalService from "./model/ExternalService";
 import ExternalServiceCollection from "./model/ExternalServiceCollection";
+import ExternalServiceContactPoint from "./model/ExternalServiceContactPoint";
 import ExternalServiceData from "./model/ExternalServiceData";
 import ExternalServiceLinks from "./model/ExternalServiceLinks";
 import ExternalServiceLinksProvider from "./model/ExternalServiceLinksProvider";
@@ -141,6 +151,7 @@ import FeedbackData from "./model/FeedbackData";
 import FeedbackDataGeo from "./model/FeedbackDataGeo";
 import FeedbackDataGeoPoint from "./model/FeedbackDataGeoPoint";
 import FeedbackEmbedded from "./model/FeedbackEmbedded";
+import FeedbackGeoCoordinates from "./model/FeedbackGeoCoordinates";
 import FeedbackLinks from "./model/FeedbackLinks";
 import FeedbackLinksBusinessActivity from "./model/FeedbackLinksBusinessActivity";
 import FeedbackLinksBusinessActivityIriTemplate from "./model/FeedbackLinksBusinessActivityIriTemplate";
@@ -158,12 +169,10 @@ import FeedbackLinksSelfIriTemplate from "./model/FeedbackLinksSelfIriTemplate";
 import FeedbackLinksTracking from "./model/FeedbackLinksTracking";
 import FeedbackLinksTrackingIriTemplate from "./model/FeedbackLinksTrackingIriTemplate";
 import FeedbackWorkflowTransitionData from "./model/FeedbackWorkflowTransitionData";
-import File from "./model/File";
-import GeoCoordinates from "./model/GeoCoordinates";
-import GeoShape from "./model/GeoShape";
 import ImageData from "./model/ImageData";
 import InternalService from "./model/InternalService";
 import InternalServiceCollection from "./model/InternalServiceCollection";
+import InternalServiceContactPoint from "./model/InternalServiceContactPoint";
 import InternalServiceData from "./model/InternalServiceData";
 import InternalServiceLinks from "./model/InternalServiceLinks";
 import InternalServiceLinksOrganization from "./model/InternalServiceLinksOrganization";
@@ -172,7 +181,6 @@ import InternalServiceLinksSelf from "./model/InternalServiceLinksSelf";
 import InternalServiceLinksSelfIriTemplate from "./model/InternalServiceLinksSelfIriTemplate";
 import InternalServiceLinksSelfIriTemplateMapping from "./model/InternalServiceLinksSelfIriTemplateMapping";
 import InternalServicePatch from "./model/InternalServicePatch";
-import Items from "./model/Items";
 import LoginData from "./model/LoginData";
 import Member from "./model/Member";
 import MemberCollection from "./model/MemberCollection";
@@ -187,11 +195,10 @@ import MemberLinksSelf from "./model/MemberLinksSelf";
 import MemberLinksSelfIriTemplate from "./model/MemberLinksSelfIriTemplate";
 import MemberLinksSelfIriTemplateMapping from "./model/MemberLinksSelfIriTemplateMapping";
 import MemberPatch from "./model/MemberPatch";
-import MemberType from "./model/MemberType";
 import Node from "./model/Node";
 import NodeEmbedded from "./model/NodeEmbedded";
 import NodePath from "./model/NodePath";
-import Notification from "./model/Notification";
+import NotificationReportNotification from "./model/NotificationReportNotification";
 import Occupant from "./model/Occupant";
 import OccupantCollection from "./model/OccupantCollection";
 import OccupantData from "./model/OccupantData";
@@ -204,7 +211,6 @@ import OccupantLinksPlaceIriTemplateMapping from "./model/OccupantLinksPlaceIriT
 import OccupantLinksSelf from "./model/OccupantLinksSelf";
 import OccupantLinksSelfIriTemplate from "./model/OccupantLinksSelfIriTemplate";
 import OccupantLinksSelfIriTemplateMapping from "./model/OccupantLinksSelfIriTemplateMapping";
-import OlderThan from "./model/OlderThan";
 import Operation from "./model/Operation";
 import OperationCollection from "./model/OperationCollection";
 import OperationData from "./model/OperationData";
@@ -233,7 +239,8 @@ import OperationLinksSelfIriTemplateMapping from "./model/OperationLinksSelfIriT
 import OperationLinksTracking from "./model/OperationLinksTracking";
 import OperationLinksTrackingIriTemplate from "./model/OperationLinksTrackingIriTemplate";
 import OperationPatch from "./model/OperationPatch";
-import OperationType from "./model/OperationType";
+import OperationSignature from "./model/OperationSignature";
+import OperationTypeWorkflow from "./model/OperationTypeWorkflow";
 import Organization from "./model/Organization";
 import OrganizationCollection from "./model/OrganizationCollection";
 import OrganizationLinks from "./model/OrganizationLinks";
@@ -252,12 +259,13 @@ import OrganizationPatchPreferences from "./model/OrganizationPatchPreferences";
 import OrganizationPatchPreferencesNotification from "./model/OrganizationPatchPreferencesNotification";
 import OrganizationPatchPreferencesNotificationReport from "./model/OrganizationPatchPreferencesNotificationReport";
 import OrganizationPatchPreferencesReference from "./model/OrganizationPatchPreferencesReference";
+import OrganizationPreferences from "./model/OrganizationPreferences";
 import Pagination from "./model/Pagination";
 import PaginationLink from "./model/PaginationLink";
 import PaginationLinks from "./model/PaginationLinks";
 import PasswordChangeData from "./model/PasswordChangeData";
-import Permission from "./model/Permission";
 import Person from "./model/Person";
+import PersonAgreement from "./model/PersonAgreement";
 import PersonCollection from "./model/PersonCollection";
 import PersonLinks from "./model/PersonLinks";
 import PersonLinksApplication from "./model/PersonLinksApplication";
@@ -272,10 +280,12 @@ import PersonPatch from "./model/PersonPatch";
 import PersonPatchAgreement from "./model/PersonPatchAgreement";
 import PersonPatchPreferences from "./model/PersonPatchPreferences";
 import PersonPatchPreferencesNotification from "./model/PersonPatchPreferencesNotification";
+import PersonPreferences from "./model/PersonPreferences";
 import Place from "./model/Place";
 import PlaceCollection from "./model/PlaceCollection";
 import PlaceData from "./model/PlaceData";
 import PlaceEmbedded from "./model/PlaceEmbedded";
+import PlaceGeoShape from "./model/PlaceGeoShape";
 import PlaceLinks from "./model/PlaceLinks";
 import PlaceLinksContainedInPlace from "./model/PlaceLinksContainedInPlace";
 import PlaceLinksContainedInPlaceIriTemplate from "./model/PlaceLinksContainedInPlaceIriTemplate";
@@ -287,10 +297,14 @@ import PlaceLinksOrganizationIriTemplate from "./model/PlaceLinksOrganizationIri
 import PlaceLinksSelf from "./model/PlaceLinksSelf";
 import PlaceLinksSelfIriTemplate from "./model/PlaceLinksSelfIriTemplate";
 import PlacePatch from "./model/PlacePatch";
-import Preferences from "./model/Preferences";
-import PrivacyPolicy from "./model/PrivacyPolicy";
-import Progression from "./model/Progression";
+import PlacePreferences from "./model/PlacePreferences";
+import Point from "./model/Point";
+import Polygon from "./model/Polygon";
+import PreferencesNotification from "./model/PreferencesNotification";
+import PreferencesReference from "./model/PreferencesReference";
 import Property from "./model/Property";
+import PropertyConditionList from "./model/PropertyConditionList";
+import PropertyItems from "./model/PropertyItems";
 import Publication from "./model/Publication";
 import PublicationCollection from "./model/PublicationCollection";
 import PublicationData from "./model/PublicationData";
@@ -304,7 +318,6 @@ import PublicationLinksOrganizationIriTemplate from "./model/PublicationLinksOrg
 import PublicationLinksSelf from "./model/PublicationLinksSelf";
 import PublicationLinksSelfIriTemplate from "./model/PublicationLinksSelfIriTemplate";
 import PublicationLinksSelfIriTemplateMapping from "./model/PublicationLinksSelfIriTemplateMapping";
-import Reference from "./model/Reference";
 import RegisterData from "./model/RegisterData";
 import RegisterDataAgreement from "./model/RegisterDataAgreement";
 import Report from "./model/Report";
@@ -330,9 +343,9 @@ import ReportLinksSelf from "./model/ReportLinksSelf";
 import ReportLinksSelfIriTemplate from "./model/ReportLinksSelfIriTemplate";
 import ReportLinksTracking from "./model/ReportLinksTracking";
 import ReportLinksTrackingIriTemplate from "./model/ReportLinksTrackingIriTemplate";
-import ReportNotification from "./model/ReportNotification";
 import ReportPatch from "./model/ReportPatch";
-import ReportType from "./model/ReportType";
+import ReportReference from "./model/ReportReference";
+import ReportTypeWorkflow from "./model/ReportTypeWorkflow";
 import ResetPasswordData from "./model/ResetPasswordData";
 import Review from "./model/Review";
 import ReviewCollection from "./model/ReviewCollection";
@@ -361,19 +374,19 @@ import ReviewRequestLinksSelfIriTemplate from "./model/ReviewRequestLinksSelfIri
 import ReviewRequestLinksSelfIriTemplateMapping from "./model/ReviewRequestLinksSelfIriTemplateMapping";
 import Role from "./model/Role";
 import Schema from "./model/Schema";
-import Signature from "./model/Signature";
 import SignatureData from "./model/SignatureData";
 import SignatureDataSigner from "./model/SignatureDataSigner";
-import Signer from "./model/Signer";
+import SignatureSigner from "./model/SignatureSigner";
 import State from "./model/State";
 import SuccessLogin from "./model/SuccessLogin";
 import SuccessLoginCredentials from "./model/SuccessLoginCredentials";
 import SuccessLoginCredentialsAdministratorOf from "./model/SuccessLoginCredentialsAdministratorOf";
 import SuccessLoginCredentialsMemberOf from "./model/SuccessLoginCredentialsMemberOf";
 import SuccessLoginCredentialsOrganization from "./model/SuccessLoginCredentialsOrganization";
-import TermsOfService from "./model/TermsOfService";
 import Tracking from "./model/Tracking";
+import TrackingProgression from "./model/TrackingProgression";
 import Transition from "./model/Transition";
+import TransitionState from "./model/TransitionState";
 import Webhook from "./model/Webhook";
 import WebhookCollection from "./model/WebhookCollection";
 import WebhookData from "./model/WebhookData";
@@ -386,9 +399,11 @@ import WebhookLinksSelfIriTemplateMapping from "./model/WebhookLinksSelfIriTempl
 import WebhookPatch from "./model/WebhookPatch";
 import Workflow from "./model/Workflow";
 import WorkflowData from "./model/WorkflowData";
+import WorkflowLinks from "./model/WorkflowLinks";
 import WorkflowLinksSelf from "./model/WorkflowLinksSelf";
 import WorkflowLinksSelfIriTemplate from "./model/WorkflowLinksSelfIriTemplate";
 import WorkflowLinksSelfIriTemplateMapping from "./model/WorkflowLinksSelfIriTemplateMapping";
+import WorkflowState from "./model/WorkflowState";
 import BusinessActivityPagination from "./model/BusinessActivityPagination";
 import CategoryPagination from "./model/CategoryPagination";
 import ContributionPagination from "./model/ContributionPagination";
@@ -456,7 +471,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.2.27
+ * @version 2.2.29
  */
 export {
   /**
@@ -464,11 +479,6 @@ export {
    * @property {module:ApiClient}
    */
   ApiClient,
-  /**
-   * The About model constructor.
-   * @property { module:model/About }
-   */
-  About,
   /**
    * The Activity model constructor.
    * @property { module:model/Activity }
@@ -480,6 +490,11 @@ export {
    */
   ActivityAggregatedPagination,
   /**
+   * The ActivityEntity model constructor.
+   * @property { module:model/ActivityEntity }
+   */
+  ActivityEntity,
+  /**
    * The ActivityGroup model constructor.
    * @property { module:model/ActivityGroup }
    */
@@ -490,15 +505,35 @@ export {
    */
   ActivityPagination,
   /**
-   * The Agreement model constructor.
-   * @property { module:model/Agreement }
+   * The AgreementOlderThan model constructor.
+   * @property { module:model/AgreementOlderThan }
    */
-  Agreement,
+  AgreementOlderThan,
+  /**
+   * The AgreementPrivacyPolicy model constructor.
+   * @property { module:model/AgreementPrivacyPolicy }
+   */
+  AgreementPrivacyPolicy,
+  /**
+   * The AgreementTermsOfService model constructor.
+   * @property { module:model/AgreementTermsOfService }
+   */
+  AgreementTermsOfService,
   /**
    * The Application model constructor.
    * @property { module:model/Application }
    */
   Application,
+  /**
+   * The ApplicationAbout model constructor.
+   * @property { module:model/ApplicationAbout }
+   */
+  ApplicationAbout,
+  /**
+   * The ApplicationAgreement model constructor.
+   * @property { module:model/ApplicationAgreement }
+   */
+  ApplicationAgreement,
   /**
    * The ApplicationLinks model constructor.
    * @property { module:model/ApplicationLinks }
@@ -584,6 +619,11 @@ export {
    * @property { module:model/BusinessActivityLinksThumbnailIriTemplate }
    */
   BusinessActivityLinksThumbnailIriTemplate,
+  /**
+   * The BusinessActivitySchema model constructor.
+   * @property { module:model/BusinessActivitySchema }
+   */
+  BusinessActivitySchema,
   /**
    * The Category model constructor.
    * @property { module:model/Category }
@@ -680,15 +720,15 @@ export {
    */
   Condition,
   /**
-   * The ConditionList model constructor.
-   * @property { module:model/ConditionList }
-   */
-  ConditionList,
-  /**
    * The Configuration model constructor.
    * @property { module:model/Configuration }
    */
   Configuration,
+  /**
+   * The ConfigurationDelegationType model constructor.
+   * @property { module:model/ConfigurationDelegationType }
+   */
+  ConfigurationDelegationType,
   /**
    * The ConfigurationLinks model constructor.
    * @property { module:model/ConfigurationLinks }
@@ -709,6 +749,21 @@ export {
    * @property { module:model/ConfigurationLinksSelfIriTemplateMapping }
    */
   ConfigurationLinksSelfIriTemplateMapping,
+  /**
+   * The ConfigurationMemberType model constructor.
+   * @property { module:model/ConfigurationMemberType }
+   */
+  ConfigurationMemberType,
+  /**
+   * The ConfigurationOperationType model constructor.
+   * @property { module:model/ConfigurationOperationType }
+   */
+  ConfigurationOperationType,
+  /**
+   * The ConfigurationReportType model constructor.
+   * @property { module:model/ConfigurationReportType }
+   */
+  ConfigurationReportType,
   /**
    * The ContactPoint model constructor.
    * @property { module:model/ContactPoint }
@@ -845,10 +900,10 @@ export {
    */
   DelegationLinksServiceIriTemplateMapping,
   /**
-   * The DelegationType model constructor.
-   * @property { module:model/DelegationType }
+   * The DelegationTypeWorkflow model constructor.
+   * @property { module:model/DelegationTypeWorkflow }
    */
-  DelegationType,
+  DelegationTypeWorkflow,
   /**
    * The Device model constructor.
    * @property { module:model/Device }
@@ -915,6 +970,11 @@ export {
    */
   DocumentDataPermission,
   /**
+   * The DocumentFile model constructor.
+   * @property { module:model/DocumentFile }
+   */
+  DocumentFile,
+  /**
    * The DocumentLinks model constructor.
    * @property { module:model/DocumentLinks }
    */
@@ -970,10 +1030,10 @@ export {
    */
   DocumentPatchPermission,
   /**
-   * The Entity model constructor.
-   * @property { module:model/Entity }
+   * The DocumentPermission model constructor.
+   * @property { module:model/DocumentPermission }
    */
-  Entity,
+  DocumentPermission,
   /**
    * The Error model constructor.
    * @property { module:model/Error }
@@ -994,6 +1054,11 @@ export {
    * @property { module:model/ExternalServiceCollection }
    */
   ExternalServiceCollection,
+  /**
+   * The ExternalServiceContactPoint model constructor.
+   * @property { module:model/ExternalServiceContactPoint }
+   */
+  ExternalServiceContactPoint,
   /**
    * The ExternalServiceData model constructor.
    * @property { module:model/ExternalServiceData }
@@ -1090,6 +1155,11 @@ export {
    */
   FeedbackEmbedded,
   /**
+   * The FeedbackGeoCoordinates model constructor.
+   * @property { module:model/FeedbackGeoCoordinates }
+   */
+  FeedbackGeoCoordinates,
+  /**
    * The FeedbackLinks model constructor.
    * @property { module:model/FeedbackLinks }
    */
@@ -1175,21 +1245,6 @@ export {
    */
   FeedbackWorkflowTransitionData,
   /**
-   * The File model constructor.
-   * @property { module:model/File }
-   */
-  File,
-  /**
-   * The GeoCoordinates model constructor.
-   * @property { module:model/GeoCoordinates }
-   */
-  GeoCoordinates,
-  /**
-   * The GeoShape model constructor.
-   * @property { module:model/GeoShape }
-   */
-  GeoShape,
-  /**
    * The ImageData model constructor.
    * @property { module:model/ImageData }
    */
@@ -1204,6 +1259,11 @@ export {
    * @property { module:model/InternalServiceCollection }
    */
   InternalServiceCollection,
+  /**
+   * The InternalServiceContactPoint model constructor.
+   * @property { module:model/InternalServiceContactPoint }
+   */
+  InternalServiceContactPoint,
   /**
    * The InternalServiceData model constructor.
    * @property { module:model/InternalServiceData }
@@ -1244,11 +1304,6 @@ export {
    * @property { module:model/InternalServicePatch }
    */
   InternalServicePatch,
-  /**
-   * The Items model constructor.
-   * @property { module:model/Items }
-   */
-  Items,
   /**
    * The LoginData model constructor.
    * @property { module:model/LoginData }
@@ -1320,11 +1375,6 @@ export {
    */
   MemberPatch,
   /**
-   * The MemberType model constructor.
-   * @property { module:model/MemberType }
-   */
-  MemberType,
-  /**
    * The Node model constructor.
    * @property { module:model/Node }
    */
@@ -1340,10 +1390,10 @@ export {
    */
   NodePath,
   /**
-   * The Notification model constructor.
-   * @property { module:model/Notification }
+   * The NotificationReportNotification model constructor.
+   * @property { module:model/NotificationReportNotification }
    */
-  Notification,
+  NotificationReportNotification,
   /**
    * The Occupant model constructor.
    * @property { module:model/Occupant }
@@ -1404,11 +1454,6 @@ export {
    * @property { module:model/OccupantLinksSelfIriTemplateMapping }
    */
   OccupantLinksSelfIriTemplateMapping,
-  /**
-   * The OlderThan model constructor.
-   * @property { module:model/OlderThan }
-   */
-  OlderThan,
   /**
    * The Operation model constructor.
    * @property { module:model/Operation }
@@ -1550,10 +1595,15 @@ export {
    */
   OperationPatch,
   /**
-   * The OperationType model constructor.
-   * @property { module:model/OperationType }
+   * The OperationSignature model constructor.
+   * @property { module:model/OperationSignature }
    */
-  OperationType,
+  OperationSignature,
+  /**
+   * The OperationTypeWorkflow model constructor.
+   * @property { module:model/OperationTypeWorkflow }
+   */
+  OperationTypeWorkflow,
   /**
    * The Organization model constructor.
    * @property { module:model/Organization }
@@ -1645,6 +1695,11 @@ export {
    */
   OrganizationPatchPreferencesReference,
   /**
+   * The OrganizationPreferences model constructor.
+   * @property { module:model/OrganizationPreferences }
+   */
+  OrganizationPreferences,
+  /**
    * The Pagination model constructor.
    * @property { module:model/Pagination }
    */
@@ -1665,15 +1720,15 @@ export {
    */
   PasswordChangeData,
   /**
-   * The Permission model constructor.
-   * @property { module:model/Permission }
-   */
-  Permission,
-  /**
    * The Person model constructor.
    * @property { module:model/Person }
    */
   Person,
+  /**
+   * The PersonAgreement model constructor.
+   * @property { module:model/PersonAgreement }
+   */
+  PersonAgreement,
   /**
    * The PersonCollection model constructor.
    * @property { module:model/PersonCollection }
@@ -1745,6 +1800,11 @@ export {
    */
   PersonPatchPreferencesNotification,
   /**
+   * The PersonPreferences model constructor.
+   * @property { module:model/PersonPreferences }
+   */
+  PersonPreferences,
+  /**
    * The Place model constructor.
    * @property { module:model/Place }
    */
@@ -1764,6 +1824,11 @@ export {
    * @property { module:model/PlaceEmbedded }
    */
   PlaceEmbedded,
+  /**
+   * The PlaceGeoShape model constructor.
+   * @property { module:model/PlaceGeoShape }
+   */
+  PlaceGeoShape,
   /**
    * The PlaceLinks model constructor.
    * @property { module:model/PlaceLinks }
@@ -1820,25 +1885,45 @@ export {
    */
   PlacePatch,
   /**
-   * The Preferences model constructor.
-   * @property { module:model/Preferences }
+   * The PlacePreferences model constructor.
+   * @property { module:model/PlacePreferences }
    */
-  Preferences,
+  PlacePreferences,
   /**
-   * The PrivacyPolicy model constructor.
-   * @property { module:model/PrivacyPolicy }
+   * The Point model constructor.
+   * @property { module:model/Point }
    */
-  PrivacyPolicy,
+  Point,
   /**
-   * The Progression model constructor.
-   * @property { module:model/Progression }
+   * The Polygon model constructor.
+   * @property { module:model/Polygon }
    */
-  Progression,
+  Polygon,
+  /**
+   * The PreferencesNotification model constructor.
+   * @property { module:model/PreferencesNotification }
+   */
+  PreferencesNotification,
+  /**
+   * The PreferencesReference model constructor.
+   * @property { module:model/PreferencesReference }
+   */
+  PreferencesReference,
   /**
    * The Property model constructor.
    * @property { module:model/Property }
    */
   Property,
+  /**
+   * The PropertyConditionList model constructor.
+   * @property { module:model/PropertyConditionList }
+   */
+  PropertyConditionList,
+  /**
+   * The PropertyItems model constructor.
+   * @property { module:model/PropertyItems }
+   */
+  PropertyItems,
   /**
    * The Publication model constructor.
    * @property { module:model/Publication }
@@ -1904,11 +1989,6 @@ export {
    * @property { module:model/PublicationLinksSelfIriTemplateMapping }
    */
   PublicationLinksSelfIriTemplateMapping,
-  /**
-   * The Reference model constructor.
-   * @property { module:model/Reference }
-   */
-  Reference,
   /**
    * The RegisterData model constructor.
    * @property { module:model/RegisterData }
@@ -2035,20 +2115,20 @@ export {
    */
   ReportLinksTrackingIriTemplate,
   /**
-   * The ReportNotification model constructor.
-   * @property { module:model/ReportNotification }
-   */
-  ReportNotification,
-  /**
    * The ReportPatch model constructor.
    * @property { module:model/ReportPatch }
    */
   ReportPatch,
   /**
-   * The ReportType model constructor.
-   * @property { module:model/ReportType }
+   * The ReportReference model constructor.
+   * @property { module:model/ReportReference }
    */
-  ReportType,
+  ReportReference,
+  /**
+   * The ReportTypeWorkflow model constructor.
+   * @property { module:model/ReportTypeWorkflow }
+   */
+  ReportTypeWorkflow,
   /**
    * The ResetPasswordData model constructor.
    * @property { module:model/ResetPasswordData }
@@ -2190,11 +2270,6 @@ export {
    */
   Schema,
   /**
-   * The Signature model constructor.
-   * @property { module:model/Signature }
-   */
-  Signature,
-  /**
    * The SignatureData model constructor.
    * @property { module:model/SignatureData }
    */
@@ -2205,10 +2280,10 @@ export {
    */
   SignatureDataSigner,
   /**
-   * The Signer model constructor.
-   * @property { module:model/Signer }
+   * The SignatureSigner model constructor.
+   * @property { module:model/SignatureSigner }
    */
-  Signer,
+  SignatureSigner,
   /**
    * The State model constructor.
    * @property { module:model/State }
@@ -2240,20 +2315,25 @@ export {
    */
   SuccessLoginCredentialsOrganization,
   /**
-   * The TermsOfService model constructor.
-   * @property { module:model/TermsOfService }
-   */
-  TermsOfService,
-  /**
    * The Tracking model constructor.
    * @property { module:model/Tracking }
    */
   Tracking,
   /**
+   * The TrackingProgression model constructor.
+   * @property { module:model/TrackingProgression }
+   */
+  TrackingProgression,
+  /**
    * The Transition model constructor.
    * @property { module:model/Transition }
    */
   Transition,
+  /**
+   * The TransitionState model constructor.
+   * @property { module:model/TransitionState }
+   */
+  TransitionState,
   /**
    * The Webhook model constructor.
    * @property { module:model/Webhook }
@@ -2315,6 +2395,11 @@ export {
    */
   WorkflowData,
   /**
+   * The WorkflowLinks model constructor.
+   * @property { module:model/WorkflowLinks }
+   */
+  WorkflowLinks,
+  /**
    * The WorkflowLinksSelf model constructor.
    * @property { module:model/WorkflowLinksSelf }
    */
@@ -2329,6 +2414,11 @@ export {
    * @property { module:model/WorkflowLinksSelfIriTemplateMapping }
    */
   WorkflowLinksSelfIriTemplateMapping,
+  /**
+   * The WorkflowState model constructor.
+   * @property { module:model/WorkflowState }
+   */
+  WorkflowState,
   /**
    * The BusinessActivityPagination model constructor.
    * @property { module:model/BusinessActivityPagination }

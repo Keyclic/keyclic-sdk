@@ -11,8 +11,9 @@
  */
 
 import ApiClient from "../ApiClient";
+import DocumentFile from "./DocumentFile";
 import DocumentLinks from "./DocumentLinks";
-import Permission from "./Permission";
+import DocumentPermission from "./DocumentPermission";
 
 /**
  * The Document model module.
@@ -35,7 +36,8 @@ export default class Document {
     this.updatedAt = null;
 
     this.linksType = DocumentLinks;
-    this.permissionType = Permission;
+    this.fileType = DocumentFile;
+    this.permissionType = DocumentPermission;
   }
 
   /**
@@ -60,7 +62,7 @@ export default class Document {
       object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
     }
     if (data.hasOwnProperty("file")) {
-      object.file = ApiClient.convertToType(data["file"], "File");
+      object.file = ApiClient.convertToType(data["file"], object.fileType);
     }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
@@ -102,14 +104,14 @@ export default class Document {
   }
 
   /**
-   * @return { File }
+   * @return { module:model/DocumentFile }
    */
   getFile() {
     return this.file;
   }
 
   /**
-   * @param { File } file
+   * @param { module:model/DocumentFile } file
    */
   setFile(file) {
     this.file = file;
@@ -122,14 +124,14 @@ export default class Document {
   }
 
   /**
-   * @return { module:model/Permission }
+   * @return { module:model/DocumentPermission }
    */
   getPermission() {
     return this.permission;
   }
 
   /**
-   * @param { module:model/Permission } permission
+   * @param { module:model/DocumentPermission } permission
    */
   setPermission(permission) {
     this.permission = permission;

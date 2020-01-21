@@ -11,8 +11,8 @@
  */
 
 import ApiClient from "../ApiClient";
-import ConditionList from "./ConditionList";
-import Items from "./Items";
+import PropertyConditionList from "./PropertyConditionList";
+import PropertyItems from "./PropertyItems";
 
 /**
  * The Property model module.
@@ -39,8 +39,8 @@ export default class Property {
     this.title = null;
     this.type = null;
 
-    this.conditionsType = ConditionList;
-    this.itemsType = Items;
+    this.conditionsType = PropertyConditionList;
+    this.itemsType = PropertyItems;
   }
 
   /**
@@ -108,14 +108,14 @@ export default class Property {
   }
 
   /**
-   * @return { module:model/ConditionList }
+   * @return { module:model/PropertyConditionList }
    */
   getConditions() {
     return this.conditions;
   }
 
   /**
-   * @param { module:model/ConditionList } conditions
+   * @param { module:model/PropertyConditionList } conditions
    */
   setConditions(conditions) {
     this.conditions = conditions;
@@ -180,14 +180,14 @@ export default class Property {
   }
 
   /**
-   * @return { module:model/Items }
+   * @return { module:model/PropertyItems }
    */
   getItems() {
     return this.items;
   }
 
   /**
-   * @param { module:model/Items } items
+   * @param { module:model/PropertyItems } items
    */
   setItems(items) {
     this.items = items;

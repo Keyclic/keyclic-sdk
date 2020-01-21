@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **links** | [**FeedbackLinks**](FeedbackLinks.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **description** | **String** |  | [optional] 
-**geoCoordinates** | [**GeoCoordinates**](GeoCoordinates.md) |  | [optional] 
+**geoCoordinates** | [**FeedbackGeoCoordinates**](FeedbackGeoCoordinates.md) |  | [optional] 
 **id** | **String** |  | [optional] 
-**metadata** | **String** |  | [optional] 
+**metadata** | **{String: String}** |  | [optional] 
 **_public** | **Boolean** |  | [optional] 
 **state** | **[String]** |  | 
 **type** | **String** |  | [optional] 

@@ -11,9 +11,9 @@
  */
 
 import ApiClient from "../ApiClient";
-import Agreement from "./Agreement";
+import PersonAgreement from "./PersonAgreement";
 import PersonLinks from "./PersonLinks";
-import Preferences from "./Preferences";
+import PersonPreferences from "./PersonPreferences";
 
 /**
  * The Person model module.
@@ -46,8 +46,8 @@ export default class Person {
     this.username = null;
 
     this.linksType = PersonLinks;
-    this.agreementType = Agreement;
-    this.preferencesType = Preferences;
+    this.agreementType = PersonAgreement;
+    this.preferencesType = PersonPreferences;
   }
 
   /**
@@ -134,14 +134,14 @@ export default class Person {
     this.links = links;
   }
   /**
-   * @return { module:model/Agreement }
+   * @return { module:model/PersonAgreement }
    */
   getAgreement() {
     return this.agreement;
   }
 
   /**
-   * @param { module:model/Agreement } agreement
+   * @param { module:model/PersonAgreement } agreement
    */
   setAgreement(agreement) {
     this.agreement = agreement;
@@ -239,14 +239,14 @@ export default class Person {
     this.optIn = optIn;
   }
   /**
-   * @return { module:model/Preferences }
+   * @return { module:model/PersonPreferences }
    */
   getPreferences() {
     return this.preferences;
   }
 
   /**
-   * @param { module:model/Preferences } preferences
+   * @param { module:model/PersonPreferences } preferences
    */
   setPreferences(preferences) {
     this.preferences = preferences;

@@ -19,11 +19,11 @@ class PersonPatchAgreement {
     );
   }
 
-  String privacyPolicy;
+  bool privacyPolicy;
 
-  String termsOfService;
+  bool termsOfService;
 
-  String olderThan;
+  bool olderThan;
 
   @override
   bool operator ==(dynamic other) {
