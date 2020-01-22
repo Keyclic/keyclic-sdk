@@ -725,6 +725,8 @@ class ApiClient {
           return RegisterDataAgreement.fromJson(value);
         case 'Report':
           return Report.fromJson(value);
+        case 'ReportCategory':
+          return ReportCategory.fromJson(value);
         case 'ReportCollection':
           return ReportCollection.fromJson(value);
         case 'ReportEmbedded':
@@ -771,8 +773,8 @@ class ApiClient {
           return ReportLinksTrackingIriTemplate.fromJson(value);
         case 'ReportPatch':
           return ReportPatch.fromJson(value);
-        case 'ReportReference':
-          return ReportReference.fromJson(value);
+        case 'ReportPlace':
+          return ReportPlace.fromJson(value);
         case 'ReportTypeWorkflow':
           return ReportTypeWorkflow.fromJson(value);
         case 'ResetPasswordData':

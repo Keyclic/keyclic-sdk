@@ -4,6 +4,7 @@ class OrganizationPreferences {
   OrganizationPreferences({
     this.notification,
     this.offline,
+    this.public,
     this.reference,
     this.reviewEnabled,
   });
@@ -16,6 +17,7 @@ class OrganizationPreferences {
     return OrganizationPreferences(
       notification: PreferencesNotification.fromJson(json['notification']),
       offline: json['offline'],
+      public: json['public'],
       reference: PreferencesReference.fromJson(json['reference']),
       reviewEnabled: json['reviewEnabled'],
     );
@@ -24,6 +26,8 @@ class OrganizationPreferences {
   PreferencesNotification notification;
 
   bool offline;
+
+  bool public;
 
   PreferencesReference reference;
 
@@ -40,6 +44,7 @@ class OrganizationPreferences {
         runtimeType == other.runtimeType &&
         notification == other.notification &&
         offline == other.offline &&
+        public == other.public &&
         reference == other.reference &&
         reviewEnabled == other.reviewEnabled;
   }
@@ -51,6 +56,7 @@ class OrganizationPreferences {
 
     hashCode ^= notification?.hashCode ?? 0;
     hashCode ^= offline?.hashCode ?? 0;
+    hashCode ^= public?.hashCode ?? 0;
     hashCode ^= reference?.hashCode ?? 0;
     hashCode ^= reviewEnabled?.hashCode ?? 0;
 
@@ -80,6 +86,7 @@ class OrganizationPreferences {
     return {
       if (notification != null) 'notification': notification,
       if (offline != null) 'offline': offline,
+      if (public != null) 'public': public,
       if (reference != null) 'reference': reference,
       if (reviewEnabled != null) 'reviewEnabled': reviewEnabled,
     };
@@ -87,6 +94,6 @@ class OrganizationPreferences {
 
   @override
   String toString() {
-    return 'OrganizationPreferences[notification=$notification, offline=$offline, reference=$reference, reviewEnabled=$reviewEnabled, ]';
+    return 'OrganizationPreferences[notification=$notification, offline=$offline, public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
   }
 }

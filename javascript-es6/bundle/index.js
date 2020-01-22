@@ -2247,6 +2247,12 @@ Object.defineProperty(exports, "Report", {
     return _Report.default;
   }
 });
+Object.defineProperty(exports, "ReportCategory", {
+  enumerable: true,
+  get: function get() {
+    return _ReportCategory.default;
+  }
+});
 Object.defineProperty(exports, "ReportCollection", {
   enumerable: true,
   get: function get() {
@@ -2385,10 +2391,10 @@ Object.defineProperty(exports, "ReportPatch", {
     return _ReportPatch.default;
   }
 });
-Object.defineProperty(exports, "ReportReference", {
+Object.defineProperty(exports, "ReportPlace", {
   enumerable: true,
   get: function get() {
-    return _ReportReference.default;
+    return _ReportPlace.default;
   }
 });
 Object.defineProperty(exports, "ReportTypeWorkflow", {
@@ -4102,6 +4108,8 @@ var _RegisterDataAgreement = _interopRequireDefault(
 
 var _Report = _interopRequireDefault(require("./model/Report"));
 
+var _ReportCategory = _interopRequireDefault(require("./model/ReportCategory"));
+
 var _ReportCollection = _interopRequireDefault(
   require("./model/ReportCollection")
 );
@@ -4188,9 +4196,7 @@ var _ReportLinksTrackingIriTemplate = _interopRequireDefault(
 
 var _ReportPatch = _interopRequireDefault(require("./model/ReportPatch"));
 
-var _ReportReference = _interopRequireDefault(
-  require("./model/ReportReference")
-);
+var _ReportPlace = _interopRequireDefault(require("./model/ReportPlace"));
 
 var _ReportTypeWorkflow = _interopRequireDefault(
   require("./model/ReportTypeWorkflow")

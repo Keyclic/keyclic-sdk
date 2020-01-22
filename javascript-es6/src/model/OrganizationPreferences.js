@@ -28,6 +28,7 @@ export default class OrganizationPreferences {
   constructor() {
     this.notification = null;
     this.offline = null;
+    this._public = null;
     this.reference = null;
     this.reviewEnabled = null;
 
@@ -58,6 +59,9 @@ export default class OrganizationPreferences {
     }
     if (data.hasOwnProperty("offline")) {
       object.offline = ApiClient.convertToType(data["offline"], "Boolean");
+    }
+    if (data.hasOwnProperty("public")) {
+      object._public = ApiClient.convertToType(data["public"], "Boolean");
     }
     if (data.hasOwnProperty("reference")) {
       object.reference = ApiClient.convertToType(
@@ -100,6 +104,19 @@ export default class OrganizationPreferences {
    */
   setOffline(offline) {
     this.offline = offline;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getPublic() {
+    return this._public;
+  }
+
+  /**
+   * @param { Boolean } _public
+   */
+  setPublic(_public) {
+    this._public = _public;
   }
   /**
    * @return { module:model/PreferencesReference }

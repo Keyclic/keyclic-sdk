@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **notification** | [**PreferencesNotification**](PreferencesNotification.md) |  | [optional] [default to null]
 **offline** | **bool** |  | [optional] [default to null]
+**public** | **bool** |  | [optional] [default to null]
 **reference** | [**PreferencesReference**](PreferencesReference.md) |  | [optional] [default to null]
 **reviewEnabled** | **bool** |  | [optional] [default to null]
 

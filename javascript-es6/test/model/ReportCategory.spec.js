@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.ReportReference();
+    instance = new @KeyclicSdkJavascript.ReportCategory();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,11 +46,29 @@
       object[property] = value;
   }
 
-  describe('ReportReference', function() {
-    it('should create an instance of ReportReference', function() {
-      // uncomment below and update the code to test ReportReference
-      //var instane = new @KeyclicSdkJavascript.ReportReference();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.ReportReference);
+  describe('ReportCategory', function() {
+    it('should create an instance of ReportCategory', function() {
+      // uncomment below and update the code to test ReportCategory
+      //var instane = new @KeyclicSdkJavascript.ReportCategory();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.ReportCategory);
+    });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new @KeyclicSdkJavascript.ReportCategory();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new @KeyclicSdkJavascript.ReportCategory();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
+      //var instane = new @KeyclicSdkJavascript.ReportCategory();
+      //expect(instance).to.be();
     });
 
   });

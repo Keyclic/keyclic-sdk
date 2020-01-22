@@ -59,6 +59,7 @@ var OrganizationPreferences =
 
       this.notification = null;
       this.offline = null;
+      this._public = null;
       this.reference = null;
       this.reviewEnabled = null;
       this.notificationType = _PreferencesNotification.default;
@@ -109,6 +110,24 @@ var OrganizationPreferences =
           key: "setOffline",
           value: function setOffline(offline) {
             this.offline = offline;
+          }
+          /**
+           * @return { Boolean }
+           */
+        },
+        {
+          key: "getPublic",
+          value: function getPublic() {
+            return this._public;
+          }
+          /**
+           * @param { Boolean } _public
+           */
+        },
+        {
+          key: "setPublic",
+          value: function setPublic(_public) {
+            this._public = _public;
           }
           /**
            * @return { module:model/PreferencesReference }
@@ -175,6 +194,13 @@ var OrganizationPreferences =
             if (data.hasOwnProperty("offline")) {
               object.offline = _ApiClient.default.convertToType(
                 data["offline"],
+                "Boolean"
+              );
+            }
+
+            if (data.hasOwnProperty("public")) {
+              object._public = _ApiClient.default.convertToType(
+                data["public"],
                 "Boolean"
               );
             }

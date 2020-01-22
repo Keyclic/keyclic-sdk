@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.2.29
-- Package version: 2.2.29
+- API version: 2.2.30
+- Package version: 2.2.30
 
 ## Getting started
 
@@ -456,6 +456,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.RegisterData](docs/RegisterData.md)
 - [@KeyclicSdkJavascript.RegisterDataAgreement](docs/RegisterDataAgreement.md)
 - [@KeyclicSdkJavascript.Report](docs/Report.md)
+- [@KeyclicSdkJavascript.ReportCategory](docs/ReportCategory.md)
 - [@KeyclicSdkJavascript.ReportCollection](docs/ReportCollection.md)
 - [@KeyclicSdkJavascript.ReportEmbedded](docs/ReportEmbedded.md)
 - [@KeyclicSdkJavascript.ReportEmbeddedTargetGroups](docs/ReportEmbeddedTargetGroups.md)
@@ -479,7 +480,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ReportLinksTracking](docs/ReportLinksTracking.md)
 - [@KeyclicSdkJavascript.ReportLinksTrackingIriTemplate](docs/ReportLinksTrackingIriTemplate.md)
 - [@KeyclicSdkJavascript.ReportPatch](docs/ReportPatch.md)
-- [@KeyclicSdkJavascript.ReportReference](docs/ReportReference.md)
+- [@KeyclicSdkJavascript.ReportPlace](docs/ReportPlace.md)
 - [@KeyclicSdkJavascript.ReportTypeWorkflow](docs/ReportTypeWorkflow.md)
 - [@KeyclicSdkJavascript.ResetPasswordData](docs/ResetPasswordData.md)
 - [@KeyclicSdkJavascript.Review](docs/Review.md)

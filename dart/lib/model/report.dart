@@ -4,11 +4,13 @@ class Report {
   Report({
     this.embedded,
     this.links,
+    this.category,
     this.createdAt,
     this.description,
     this.dueAt,
     this.id,
     this.identificationNumber,
+    this.place,
     this.priority,
     this.reference,
     this.state,
@@ -43,11 +45,13 @@ class Report {
     return Report(
       embedded: ReportEmbedded.fromJson(json['_embedded']),
       links: ReportLinks.fromJson(json['_links']),
+      category: ReportCategory.fromJson(json['category']),
       createdAt: createdAt,
       description: json['description'],
       dueAt: dueAt,
       id: json['id'],
       identificationNumber: json['identificationNumber'],
+      place: ReportPlace.fromJson(json['place']),
       priority: json['priority'],
       reference: json['reference'],
       state: json['state'] is List ? List<String>.from(json['state']) : null,
@@ -61,6 +65,8 @@ class Report {
 
   ReportLinks links;
 
+  ReportCategory category;
+
   DateTime createdAt;
 
   String description;
@@ -70,6 +76,8 @@ class Report {
   String id;
 
   String identificationNumber;
+
+  ReportPlace place;
 
   int priority;
 
@@ -94,11 +102,13 @@ class Report {
         runtimeType == other.runtimeType &&
         embedded == other.embedded &&
         links == other.links &&
+        category == other.category &&
         createdAt == other.createdAt &&
         description == other.description &&
         dueAt == other.dueAt &&
         id == other.id &&
         identificationNumber == other.identificationNumber &&
+        place == other.place &&
         priority == other.priority &&
         reference == other.reference &&
         DeepCollectionEquality.unordered().equals(state, other.state) &&
@@ -125,11 +135,13 @@ class Report {
 
     hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= category?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= dueAt?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= identificationNumber?.hashCode ?? 0;
+    hashCode ^= place?.hashCode ?? 0;
     hashCode ^= priority?.hashCode ?? 0;
     hashCode ^= reference?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
@@ -158,12 +170,14 @@ class Report {
     return {
       if (embedded != null) '_embedded': embedded,
       if (links != null) '_links': links,
+      if (category != null) 'category': category,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (dueAt != null) 'dueAt': dueAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
       if (identificationNumber != null)
         'identificationNumber': identificationNumber,
+      if (place != null) 'place': place,
       if (priority != null) 'priority': priority,
       if (reference != null) 'reference': reference,
       if (state != null) 'state': state,
@@ -175,6 +189,6 @@ class Report {
 
   @override
   String toString() {
-    return 'Report[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, dueAt=$dueAt, id=$id, identificationNumber=$identificationNumber, priority=$priority, reference=$reference, state=$state, tags=$tags, type=$type, updatedAt=$updatedAt, ]';
+    return 'Report[embedded=$embedded, links=$links, category=$category, createdAt=$createdAt, description=$description, dueAt=$dueAt, id=$id, identificationNumber=$identificationNumber, place=$place, priority=$priority, reference=$reference, state=$state, tags=$tags, type=$type, updatedAt=$updatedAt, ]';
   }
 }

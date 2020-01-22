@@ -10,11 +10,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **embedded** | [**ReportEmbedded**](ReportEmbedded.md) |  | [optional] [default to null]
 **links** | [**ReportLinks**](ReportLinks.md) |  | [optional] [default to null]
+**category** | [**ReportCategory**](ReportCategory.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
 **dueAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
 **identificationNumber** | **String** |  | [optional] [default to null]
+**place** | [**ReportPlace**](ReportPlace.md) |  | [optional] [default to null]
 **priority** | **int** |  | [default to null]
 **reference** | **String** |  | [optional] [default to null]
 **state** | **List&lt;String&gt;** |  | [default to []]

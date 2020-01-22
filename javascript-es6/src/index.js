@@ -321,6 +321,7 @@ import PublicationLinksSelfIriTemplateMapping from "./model/PublicationLinksSelf
 import RegisterData from "./model/RegisterData";
 import RegisterDataAgreement from "./model/RegisterDataAgreement";
 import Report from "./model/Report";
+import ReportCategory from "./model/ReportCategory";
 import ReportCollection from "./model/ReportCollection";
 import ReportEmbedded from "./model/ReportEmbedded";
 import ReportEmbeddedTargetGroups from "./model/ReportEmbeddedTargetGroups";
@@ -344,7 +345,7 @@ import ReportLinksSelfIriTemplate from "./model/ReportLinksSelfIriTemplate";
 import ReportLinksTracking from "./model/ReportLinksTracking";
 import ReportLinksTrackingIriTemplate from "./model/ReportLinksTrackingIriTemplate";
 import ReportPatch from "./model/ReportPatch";
-import ReportReference from "./model/ReportReference";
+import ReportPlace from "./model/ReportPlace";
 import ReportTypeWorkflow from "./model/ReportTypeWorkflow";
 import ResetPasswordData from "./model/ResetPasswordData";
 import Review from "./model/Review";
@@ -471,7 +472,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.2.29
+ * @version 2.2.30
  */
 export {
   /**
@@ -2005,6 +2006,11 @@ export {
    */
   Report,
   /**
+   * The ReportCategory model constructor.
+   * @property { module:model/ReportCategory }
+   */
+  ReportCategory,
+  /**
    * The ReportCollection model constructor.
    * @property { module:model/ReportCollection }
    */
@@ -2120,10 +2126,10 @@ export {
    */
   ReportPatch,
   /**
-   * The ReportReference model constructor.
-   * @property { module:model/ReportReference }
+   * The ReportPlace model constructor.
+   * @property { module:model/ReportPlace }
    */
-  ReportReference,
+  ReportPlace,
   /**
    * The ReportTypeWorkflow model constructor.
    * @property { module:model/ReportTypeWorkflow }

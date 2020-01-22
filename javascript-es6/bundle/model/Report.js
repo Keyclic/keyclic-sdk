@@ -7,9 +7,13 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ReportCategory = _interopRequireDefault(require("./ReportCategory"));
+
 var _ReportEmbedded = _interopRequireDefault(require("./ReportEmbedded"));
 
 var _ReportLinks = _interopRequireDefault(require("./ReportLinks"));
+
+var _ReportPlace = _interopRequireDefault(require("./ReportPlace"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -59,11 +63,13 @@ var Report =
 
       this.embedded = null;
       this.links = null;
+      this.category = null;
       this.createdAt = null;
       this.description = null;
       this.dueAt = null;
       this.id = null;
       this.identificationNumber = null;
+      this.place = null;
       this.priority = priority;
       this.reference = null;
       this.state = state;
@@ -72,6 +78,8 @@ var Report =
       this.updatedAt = null;
       this.embeddedType = _ReportEmbedded.default;
       this.linksType = _ReportLinks.default;
+      this.categoryType = _ReportCategory.default;
+      this.placeType = _ReportPlace.default;
     }
     /**
      * Constructs a "Report" from a plain JavaScript object.
@@ -118,6 +126,24 @@ var Report =
           key: "setLinks",
           value: function setLinks(links) {
             this.links = links;
+          }
+          /**
+           * @return { module:model/ReportCategory }
+           */
+        },
+        {
+          key: "getCategory",
+          value: function getCategory() {
+            return this.category;
+          }
+          /**
+           * @param { module:model/ReportCategory } category
+           */
+        },
+        {
+          key: "setCategory",
+          value: function setCategory(category) {
+            this.category = category;
           }
           /**
            * @return { Date }
@@ -190,6 +216,24 @@ var Report =
           key: "setIdentificationNumber",
           value: function setIdentificationNumber(identificationNumber) {
             this.identificationNumber = identificationNumber;
+          }
+          /**
+           * @return { module:model/ReportPlace }
+           */
+        },
+        {
+          key: "getPlace",
+          value: function getPlace() {
+            return this.place;
+          }
+          /**
+           * @param { module:model/ReportPlace } place
+           */
+        },
+        {
+          key: "setPlace",
+          value: function setPlace(place) {
+            this.place = place;
           }
           /**
            * @return { Number }
@@ -314,6 +358,13 @@ var Report =
               );
             }
 
+            if (data.hasOwnProperty("category")) {
+              object.category = _ApiClient.default.convertToType(
+                data["category"],
+                object.categoryType
+              );
+            }
+
             if (data.hasOwnProperty("createdAt")) {
               object.createdAt = _ApiClient.default.convertToType(
                 data["createdAt"],
@@ -346,6 +397,13 @@ var Report =
               object.identificationNumber = _ApiClient.default.convertToType(
                 data["identificationNumber"],
                 "String"
+              );
+            }
+
+            if (data.hasOwnProperty("place")) {
+              object.place = _ApiClient.default.convertToType(
+                data["place"],
+                object.placeType
               );
             }
 

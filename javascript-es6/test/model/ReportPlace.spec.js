@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.OrganizationPreferences();
+    instance = new @KeyclicSdkJavascript.ReportPlace();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,40 +46,40 @@
       object[property] = value;
   }
 
-  describe('OrganizationPreferences', function() {
-    it('should create an instance of OrganizationPreferences', function() {
-      // uncomment below and update the code to test OrganizationPreferences
-      //var instane = new @KeyclicSdkJavascript.OrganizationPreferences();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.OrganizationPreferences);
+  describe('ReportPlace', function() {
+    it('should create an instance of ReportPlace', function() {
+      // uncomment below and update the code to test ReportPlace
+      //var instane = new @KeyclicSdkJavascript.ReportPlace();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.ReportPlace);
     });
 
-    it('should have the property notification (base name: "notification")', function() {
-      // uncomment below and update the code to test the property notification
-      //var instane = new @KeyclicSdkJavascript.OrganizationPreferences();
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new @KeyclicSdkJavascript.ReportPlace();
       //expect(instance).to.be();
     });
 
-    it('should have the property offline (base name: "offline")', function() {
-      // uncomment below and update the code to test the property offline
-      //var instane = new @KeyclicSdkJavascript.OrganizationPreferences();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new @KeyclicSdkJavascript.ReportPlace();
       //expect(instance).to.be();
     });
 
-    it('should have the property _public (base name: "public")', function() {
-      // uncomment below and update the code to test the property _public
-      //var instane = new @KeyclicSdkJavascript.OrganizationPreferences();
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new @KeyclicSdkJavascript.ReportPlace();
       //expect(instance).to.be();
     });
 
-    it('should have the property reference (base name: "reference")', function() {
-      // uncomment below and update the code to test the property reference
-      //var instane = new @KeyclicSdkJavascript.OrganizationPreferences();
+    it('should have the property links (base name: "_links")', function() {
+      // uncomment below and update the code to test the property links
+      //var instane = new @KeyclicSdkJavascript.ReportPlace();
       //expect(instance).to.be();
     });
 
-    it('should have the property reviewEnabled (base name: "reviewEnabled")', function() {
-      // uncomment below and update the code to test the property reviewEnabled
-      //var instane = new @KeyclicSdkJavascript.OrganizationPreferences();
+    it('should have the property embedded (base name: "_embedded")', function() {
+      // uncomment below and update the code to test the property embedded
+      //var instane = new @KeyclicSdkJavascript.ReportPlace();
       //expect(instance).to.be();
     });
 
