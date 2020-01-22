@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.2.29"
+        "version": "2.2.30"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -14681,8 +14681,7 @@
                     "type": "boolean"
                 },
                 "public": {
-                    "format": "bool",
-                    "type": "bool"
+                    "type": "boolean"
                 },
                 "reference": {
                     "$ref": "#\/definitions\/PreferencesReference"
@@ -14788,7 +14787,6 @@
                     "type": "string"
                 },
                 "enabled": {
-                    "format": "bool",
                     "type": "boolean"
                 },
                 "familyName": {
@@ -15802,6 +15800,9 @@
                         }
                     }
                 },
+                "category": {
+                    "$ref": "#\/definitions\/ReportCategory"
+                },
                 "createdAt": {
                     "format": "date-time",
                     "readOnly": true,
@@ -15828,6 +15829,9 @@
                     "maxLength": 255,
                     "minLength": 0,
                     "type": "string"
+                },
+                "place": {
+                    "$ref": "#\/definitions\/ReportPlace"
                 },
                 "priority": {
                     "format": "int32",
@@ -15864,6 +15868,33 @@
                 "priority",
                 "state"
             ]
+        },
+        "ReportCategory": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "format": "string",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "type": {
+                    "format": "string",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "_links": {
+                    "type": "object",
+                    "properties": {
+                        "organization": {
+                            "$ref": "#\/definitions\/CategoryLinksOrganization"
+                        },
+                        "self": {
+                            "$ref": "#\/definitions\/CategoryLinksSelf"
+                        }
+                    }
+                }
+            }
         },
         "ReportCollection": {
             "type": "object",
@@ -16130,8 +16161,8 @@
             "type": "object",
             "properties": {
                 "category": {
-                    "type": "string",
-                    "format": "string"
+                    "format": "string",
+                    "type": "string"
                 },
                 "description": {
                     "format": "string",
@@ -16160,9 +16191,58 @@
                 }
             }
         },
-        "ReportReference": {
+        "ReportPlace": {
             "type": "object",
-            "properties": []
+            "properties": {
+                "description": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "type": {
+                    "format": "string",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "_links": {
+                    "type": "object",
+                    "properties": {
+                        "containedInPlace": {
+                            "$ref": "#\/definitions\/PlaceLinksContainedInPlace"
+                        },
+                        "containsPlaces": {
+                            "$ref": "#\/definitions\/PlaceLinksContainsPlaces"
+                        },
+                        "organization": {
+                            "$ref": "#\/definitions\/PlaceLinksOrganization"
+                        },
+                        "self": {
+                            "$ref": "#\/definitions\/PlaceLinksSelf"
+                        }
+                    }
+                },
+                "_embedded": {
+                    "type": "object",
+                    "properties": {
+                        "children": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/Node"
+                            }
+                        },
+                        "path": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/NodePath"
+                            }
+                        }
+                    }
+                }
+            }
         },
         "ReportTypeWorkflow": {
             "type": "object",
@@ -16266,7 +16346,7 @@
                 "reviewRating": {
                     "exclusiveMaximum": false,
                     "exclusiveMinimum": false,
-                    "format": "integer",
+                    "format": "int32",
                     "maximum": 5,
                     "minimum": 1,
                     "type": "integer"
