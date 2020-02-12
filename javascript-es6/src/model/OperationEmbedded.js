@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import DelegationEmbeddedWorkflow from "./DelegationEmbeddedWorkflow";
 import OperationEmbeddedDuration from "./OperationEmbeddedDuration";
 
 /**
@@ -28,8 +29,10 @@ export default class OperationEmbedded {
     this.duration = null;
     this.stateTransitions = [];
     this.tracking = null;
+    this.workflow = null;
 
     this.durationType = OperationEmbeddedDuration;
+    this.workflowType = DelegationEmbeddedWorkflow;
   }
 
   /**
@@ -61,6 +64,12 @@ export default class OperationEmbedded {
     }
     if (data.hasOwnProperty("tracking")) {
       object.tracking = ApiClient.convertToType(data["tracking"], "String");
+    }
+    if (data.hasOwnProperty("workflow")) {
+      object.workflow = ApiClient.convertToType(
+        data["workflow"],
+        object.workflowType
+      );
     }
 
     return object;
@@ -104,5 +113,18 @@ export default class OperationEmbedded {
    */
   setTracking(tracking) {
     this.tracking = tracking;
+  }
+  /**
+   * @return { module:model/DelegationEmbeddedWorkflow }
+   */
+  getWorkflow() {
+    return this.workflow;
+  }
+
+  /**
+   * @param { module:model/DelegationEmbeddedWorkflow } workflow
+   */
+  setWorkflow(workflow) {
+    this.workflow = workflow;
   }
 }

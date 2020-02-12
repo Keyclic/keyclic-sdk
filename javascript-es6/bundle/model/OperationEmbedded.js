@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _DelegationEmbeddedWorkflow = _interopRequireDefault(
+  require("./DelegationEmbeddedWorkflow")
+);
+
 var _OperationEmbeddedDuration = _interopRequireDefault(
   require("./OperationEmbeddedDuration")
 );
@@ -56,7 +60,9 @@ var OperationEmbedded =
       this.duration = null;
       this.stateTransitions = [];
       this.tracking = null;
+      this.workflow = null;
       this.durationType = _OperationEmbeddedDuration.default;
+      this.workflowType = _DelegationEmbeddedWorkflow.default;
     }
     /**
      * Constructs a "OperationEmbedded" from a plain JavaScript object.
@@ -122,6 +128,24 @@ var OperationEmbedded =
           value: function setTracking(tracking) {
             this.tracking = tracking;
           }
+          /**
+           * @return { module:model/DelegationEmbeddedWorkflow }
+           */
+        },
+        {
+          key: "getWorkflow",
+          value: function getWorkflow() {
+            return this.workflow;
+          }
+          /**
+           * @param { module:model/DelegationEmbeddedWorkflow } workflow
+           */
+        },
+        {
+          key: "setWorkflow",
+          value: function setWorkflow(workflow) {
+            this.workflow = workflow;
+          }
         }
       ],
       [
@@ -159,6 +183,13 @@ var OperationEmbedded =
               object.tracking = _ApiClient.default.convertToType(
                 data["tracking"],
                 "String"
+              );
+            }
+
+            if (data.hasOwnProperty("workflow")) {
+              object.workflow = _ApiClient.default.convertToType(
+                data["workflow"],
+                object.workflowType
               );
             }
 

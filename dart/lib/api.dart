@@ -113,6 +113,7 @@ part 'model/delegation.dart';
 part 'model/delegation_collection.dart';
 part 'model/delegation_data.dart';
 part 'model/delegation_embedded.dart';
+part 'model/delegation_embedded_workflow.dart';
 part 'model/delegation_links.dart';
 part 'model/delegation_links_created_by.dart';
 part 'model/delegation_links_created_by_iri_template.dart';

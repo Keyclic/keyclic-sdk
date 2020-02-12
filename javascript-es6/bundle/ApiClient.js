@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 function _typeof(obj) {
+  "@babel/helpers - typeof";
   if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
     _typeof = function _typeof(obj) {
       return typeof obj;
@@ -59,7 +60,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
 /**
  * @module ApiClient
- * @version 2.2.30
+ * @version 2.2.38
  */
 
 /**

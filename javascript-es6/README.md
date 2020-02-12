@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.2.30
-- Package version: 2.2.30
+- API version: 2.2.38
+- Package version: 2.2.38
 
 ## Getting started
 
@@ -223,6 +223,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.DelegationCollection](docs/DelegationCollection.md)
 - [@KeyclicSdkJavascript.DelegationData](docs/DelegationData.md)
 - [@KeyclicSdkJavascript.DelegationEmbedded](docs/DelegationEmbedded.md)
+- [@KeyclicSdkJavascript.DelegationEmbeddedWorkflow](docs/DelegationEmbeddedWorkflow.md)
 - [@KeyclicSdkJavascript.DelegationLinks](docs/DelegationLinks.md)
 - [@KeyclicSdkJavascript.DelegationLinksCreatedBy](docs/DelegationLinksCreatedBy.md)
 - [@KeyclicSdkJavascript.DelegationLinksCreatedByIriTemplate](docs/DelegationLinksCreatedByIriTemplate.md)

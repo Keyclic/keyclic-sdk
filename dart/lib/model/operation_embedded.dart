@@ -5,6 +5,7 @@ class OperationEmbedded {
     this.duration,
     this.stateTransitions,
     this.tracking,
+    this.workflow,
   });
 
   factory OperationEmbedded.fromJson(Map<String, dynamic> json) {
@@ -18,6 +19,7 @@ class OperationEmbedded {
           ? List<String>.from(json['stateTransitions'])
           : null,
       tracking: json['tracking'],
+      workflow: DelegationEmbeddedWorkflow.fromJson(json['workflow']),
     );
   }
 
@@ -26,6 +28,8 @@ class OperationEmbedded {
   List<String> stateTransitions;
 
   String tracking;
+
+  DelegationEmbeddedWorkflow workflow;
 
   @override
   bool operator ==(dynamic other) {
@@ -39,7 +43,8 @@ class OperationEmbedded {
         duration == other.duration &&
         DeepCollectionEquality.unordered()
             .equals(stateTransitions, other.stateTransitions) &&
-        tracking == other.tracking;
+        tracking == other.tracking &&
+        workflow == other.workflow;
   }
 
   /// By default hashCode return reference
@@ -55,6 +60,7 @@ class OperationEmbedded {
 
     hashCode ^= duration?.hashCode ?? 0;
     hashCode ^= tracking?.hashCode ?? 0;
+    hashCode ^= workflow?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -82,11 +88,12 @@ class OperationEmbedded {
       if (duration != null) 'duration': duration,
       if (stateTransitions != null) 'stateTransitions': stateTransitions,
       if (tracking != null) 'tracking': tracking,
+      if (workflow != null) 'workflow': workflow,
     };
   }
 
   @override
   String toString() {
-    return 'OperationEmbedded[duration=$duration, stateTransitions=$stateTransitions, tracking=$tracking, ]';
+    return 'OperationEmbedded[duration=$duration, stateTransitions=$stateTransitions, tracking=$tracking, workflow=$workflow, ]';
   }
 }

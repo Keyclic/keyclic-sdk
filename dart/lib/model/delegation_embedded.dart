@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class DelegationEmbedded {
   DelegationEmbedded({
     this.stateTransitions,
+    this.workflow,
   });
 
   factory DelegationEmbedded.fromJson(Map<String, dynamic> json) {
@@ -14,10 +15,13 @@ class DelegationEmbedded {
       stateTransitions: json['stateTransitions'] is List
           ? List<String>.from(json['stateTransitions'])
           : null,
+      workflow: DelegationEmbeddedWorkflow.fromJson(json['workflow']),
     );
   }
 
   List<String> stateTransitions;
+
+  DelegationEmbeddedWorkflow workflow;
 
   @override
   bool operator ==(dynamic other) {
@@ -29,7 +33,8 @@ class DelegationEmbedded {
     return other is DelegationEmbedded &&
         runtimeType == other.runtimeType &&
         DeepCollectionEquality.unordered()
-            .equals(stateTransitions, other.stateTransitions);
+            .equals(stateTransitions, other.stateTransitions) &&
+        workflow == other.workflow;
   }
 
   /// By default hashCode return reference
@@ -42,6 +47,8 @@ class DelegationEmbedded {
           .map((String element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
+
+    hashCode ^= workflow?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -68,11 +75,12 @@ class DelegationEmbedded {
   Map<String, dynamic> toJson() {
     return {
       if (stateTransitions != null) 'stateTransitions': stateTransitions,
+      if (workflow != null) 'workflow': workflow,
     };
   }
 
   @override
   String toString() {
-    return 'DelegationEmbedded[stateTransitions=$stateTransitions, ]';
+    return 'DelegationEmbedded[stateTransitions=$stateTransitions, workflow=$workflow, ]';
   }
 }

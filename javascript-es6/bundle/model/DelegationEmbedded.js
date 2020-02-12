@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _DelegationEmbeddedWorkflow = _interopRequireDefault(
+  require("./DelegationEmbeddedWorkflow")
+);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -50,6 +54,8 @@ var DelegationEmbedded =
       _classCallCheck(this, DelegationEmbedded);
 
       this.stateTransitions = [];
+      this.workflow = null;
+      this.workflowType = _DelegationEmbeddedWorkflow.default;
     }
     /**
      * Constructs a "DelegationEmbedded" from a plain JavaScript object.
@@ -79,6 +85,24 @@ var DelegationEmbedded =
           value: function setStateTransitions(stateTransitions) {
             this.stateTransitions = stateTransitions;
           }
+          /**
+           * @return { module:model/DelegationEmbeddedWorkflow }
+           */
+        },
+        {
+          key: "getWorkflow",
+          value: function getWorkflow() {
+            return this.workflow;
+          }
+          /**
+           * @param { module:model/DelegationEmbeddedWorkflow } workflow
+           */
+        },
+        {
+          key: "setWorkflow",
+          value: function setWorkflow(workflow) {
+            this.workflow = workflow;
+          }
         }
       ],
       [
@@ -102,6 +126,13 @@ var DelegationEmbedded =
               object.stateTransitions = _ApiClient.default.convertToType(
                 data["stateTransitions"],
                 "['String']"
+              );
+            }
+
+            if (data.hasOwnProperty("workflow")) {
+              object.workflow = _ApiClient.default.convertToType(
+                data["workflow"],
+                object.workflowType
               );
             }
 

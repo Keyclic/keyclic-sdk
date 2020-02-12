@@ -68,8 +68,6 @@ require("core-js/modules/es.array.reduce");
 
 require("core-js/modules/es.array.reduce-right");
 
-require("core-js/modules/es.array.reverse");
-
 require("core-js/modules/es.array.slice");
 
 require("core-js/modules/es.array.some");
@@ -85,16 +83,6 @@ require("core-js/modules/es.array.unscopables.flat");
 require("core-js/modules/es.array.unscopables.flat-map");
 
 require("core-js/modules/es.array-buffer.constructor");
-
-require("core-js/modules/es.array-buffer.is-view");
-
-require("core-js/modules/es.array-buffer.slice");
-
-require("core-js/modules/es.data-view");
-
-require("core-js/modules/es.date.to-iso-string");
-
-require("core-js/modules/es.date.to-json");
 
 require("core-js/modules/es.date.to-primitive");
 
@@ -164,8 +152,6 @@ require("core-js/modules/es.number.parse-int");
 
 require("core-js/modules/es.number.to-fixed");
 
-require("core-js/modules/es.number.to-precision");
-
 require("core-js/modules/es.object.assign");
 
 require("core-js/modules/es.object.define-getter");
@@ -204,15 +190,9 @@ require("core-js/modules/es.object.prevent-extensions");
 
 require("core-js/modules/es.object.seal");
 
-require("core-js/modules/es.object.set-prototype-of");
-
 require("core-js/modules/es.object.to-string");
 
 require("core-js/modules/es.object.values");
-
-require("core-js/modules/es.parse-float");
-
-require("core-js/modules/es.parse-int");
 
 require("core-js/modules/es.promise");
 
@@ -843,6 +823,12 @@ Object.defineProperty(exports, "DelegationEmbedded", {
   enumerable: true,
   get: function get() {
     return _DelegationEmbedded.default;
+  }
+});
+Object.defineProperty(exports, "DelegationEmbeddedWorkflow", {
+  enumerable: true,
+  get: function get() {
+    return _DelegationEmbeddedWorkflow.default;
   }
 });
 Object.defineProperty(exports, "DelegationLinks", {
@@ -3280,6 +3266,10 @@ var _DelegationData = _interopRequireDefault(require("./model/DelegationData"));
 
 var _DelegationEmbedded = _interopRequireDefault(
   require("./model/DelegationEmbedded")
+);
+
+var _DelegationEmbeddedWorkflow = _interopRequireDefault(
+  require("./model/DelegationEmbeddedWorkflow")
 );
 
 var _DelegationLinks = _interopRequireDefault(

@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import DelegationEmbeddedWorkflow from "./DelegationEmbeddedWorkflow";
 
 /**
  * The DelegationEmbedded model module.
@@ -25,6 +26,9 @@ export default class DelegationEmbedded {
      */
   constructor() {
     this.stateTransitions = [];
+    this.workflow = null;
+
+    this.workflowType = DelegationEmbeddedWorkflow;
   }
 
   /**
@@ -48,6 +52,12 @@ export default class DelegationEmbedded {
         "['String']"
       );
     }
+    if (data.hasOwnProperty("workflow")) {
+      object.workflow = ApiClient.convertToType(
+        data["workflow"],
+        object.workflowType
+      );
+    }
 
     return object;
   }
@@ -64,5 +74,18 @@ export default class DelegationEmbedded {
    */
   setStateTransitions(stateTransitions) {
     this.stateTransitions = stateTransitions;
+  }
+  /**
+   * @return { module:model/DelegationEmbeddedWorkflow }
+   */
+  getWorkflow() {
+    return this.workflow;
+  }
+
+  /**
+   * @param { module:model/DelegationEmbeddedWorkflow } workflow
+   */
+  setWorkflow(workflow) {
+    this.workflow = workflow;
   }
 }

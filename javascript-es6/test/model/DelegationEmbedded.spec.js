@@ -59,6 +59,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property workflow (base name: "workflow")', function() {
+      // uncomment below and update the code to test the property workflow
+      //var instane = new @KeyclicSdkJavascript.DelegationEmbedded();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

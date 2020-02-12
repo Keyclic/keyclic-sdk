@@ -88,6 +88,7 @@ import Delegation from "./model/Delegation";
 import DelegationCollection from "./model/DelegationCollection";
 import DelegationData from "./model/DelegationData";
 import DelegationEmbedded from "./model/DelegationEmbedded";
+import DelegationEmbeddedWorkflow from "./model/DelegationEmbeddedWorkflow";
 import DelegationLinks from "./model/DelegationLinks";
 import DelegationLinksCreatedBy from "./model/DelegationLinksCreatedBy";
 import DelegationLinksCreatedByIriTemplate from "./model/DelegationLinksCreatedByIriTemplate";
@@ -472,7 +473,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.2.30
+ * @version 2.2.38
  */
 export {
   /**
@@ -840,6 +841,11 @@ export {
    * @property { module:model/DelegationEmbedded }
    */
   DelegationEmbedded,
+  /**
+   * The DelegationEmbeddedWorkflow model constructor.
+   * @property { module:model/DelegationEmbeddedWorkflow }
+   */
+  DelegationEmbeddedWorkflow,
   /**
    * The DelegationLinks model constructor.
    * @property { module:model/DelegationLinks }

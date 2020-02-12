@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.OperationEmbedded();
+    instance = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,34 +46,22 @@
       object[property] = value;
   }
 
-  describe('OperationEmbedded', function() {
-    it('should create an instance of OperationEmbedded', function() {
-      // uncomment below and update the code to test OperationEmbedded
-      //var instane = new @KeyclicSdkJavascript.OperationEmbedded();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.OperationEmbedded);
+  describe('DelegationEmbeddedWorkflow', function() {
+    it('should create an instance of DelegationEmbeddedWorkflow', function() {
+      // uncomment below and update the code to test DelegationEmbeddedWorkflow
+      //var instane = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.DelegationEmbeddedWorkflow);
     });
 
-    it('should have the property duration (base name: "duration")', function() {
-      // uncomment below and update the code to test the property duration
-      //var instane = new @KeyclicSdkJavascript.OperationEmbedded();
+    it('should have the property state (base name: "state")', function() {
+      // uncomment below and update the code to test the property state
+      //var instane = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
       //expect(instance).to.be();
     });
 
-    it('should have the property stateTransitions (base name: "stateTransitions")', function() {
-      // uncomment below and update the code to test the property stateTransitions
-      //var instane = new @KeyclicSdkJavascript.OperationEmbedded();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property tracking (base name: "tracking")', function() {
-      // uncomment below and update the code to test the property tracking
-      //var instane = new @KeyclicSdkJavascript.OperationEmbedded();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property workflow (base name: "workflow")', function() {
-      // uncomment below and update the code to test the property workflow
-      //var instane = new @KeyclicSdkJavascript.OperationEmbedded();
+    it('should have the property transitions (base name: "transitions")', function() {
+      // uncomment below and update the code to test the property transitions
+      //var instane = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
       //expect(instance).to.be();
     });
 

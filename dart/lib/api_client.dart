@@ -259,6 +259,8 @@ class ApiClient {
           return DelegationData.fromJson(value);
         case 'DelegationEmbedded':
           return DelegationEmbedded.fromJson(value);
+        case 'DelegationEmbeddedWorkflow':
+          return DelegationEmbeddedWorkflow.fromJson(value);
         case 'DelegationLinks':
           return DelegationLinks.fromJson(value);
         case 'DelegationLinksCreatedBy':

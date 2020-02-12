@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **stateTransitions** | **[String]** |  | [optional] 
 **targetGroups** | [**[ReportEmbeddedTargetGroups]**](ReportEmbeddedTargetGroups.md) |  | [optional] 
 **tracking** | **String** |  | [optional] 
+**workflow** | [**DelegationEmbeddedWorkflow**](DelegationEmbeddedWorkflow.md) |  | [optional] 
 
 
