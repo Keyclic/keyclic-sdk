@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import ApplicationLinksKnowledgeBase from "./ApplicationLinksKnowledgeBase";
 import ApplicationLinksSelf from "./ApplicationLinksSelf";
 
 /**
@@ -25,8 +26,10 @@ export default class ApplicationLinks {
     
      */
   constructor() {
+    this.knowledgeBase = null;
     this.self = null;
 
+    this.knowledgeBaseType = ApplicationLinksKnowledgeBase;
     this.selfType = ApplicationLinksSelf;
   }
 
@@ -45,6 +48,12 @@ export default class ApplicationLinks {
       object = new ApplicationLinks();
     }
 
+    if (data.hasOwnProperty("knowledgeBase")) {
+      object.knowledgeBase = ApiClient.convertToType(
+        data["knowledgeBase"],
+        object.knowledgeBaseType
+      );
+    }
     if (data.hasOwnProperty("self")) {
       object.self = ApiClient.convertToType(data["self"], object.selfType);
     }
@@ -52,6 +61,19 @@ export default class ApplicationLinks {
     return object;
   }
 
+  /**
+   * @return { module:model/ApplicationLinksKnowledgeBase }
+   */
+  getKnowledgeBase() {
+    return this.knowledgeBase;
+  }
+
+  /**
+   * @param { module:model/ApplicationLinksKnowledgeBase } knowledgeBase
+   */
+  setKnowledgeBase(knowledgeBase) {
+    this.knowledgeBase = knowledgeBase;
+  }
   /**
    * @return { module:model/ApplicationLinksSelf }
    */

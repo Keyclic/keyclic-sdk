@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**color** | **String** |  | [optional] 
-**description** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
-**name** | **String** |  | [optional] 
-**progression** | **Number** |  | [optional] 
 **type** | **String** |  | [optional] 
+**name** | **String** |  | [optional] 
+**description** | **String** |  | [optional] 
+**color** | **String** |  | [optional] 
+**progression** | **Number** |  | [optional] 
 
 

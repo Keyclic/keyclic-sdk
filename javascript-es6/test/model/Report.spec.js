@@ -65,12 +65,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property category (base name: "category")', function() {
-      // uncomment below and update the code to test the property category
-      //var instane = new @KeyclicSdkJavascript.Report();
-      //expect(instance).to.be();
-    });
-
     it('should have the property createdAt (base name: "createdAt")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instane = new @KeyclicSdkJavascript.Report();
@@ -97,12 +91,6 @@
 
     it('should have the property identificationNumber (base name: "identificationNumber")', function() {
       // uncomment below and update the code to test the property identificationNumber
-      //var instane = new @KeyclicSdkJavascript.Report();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property place (base name: "place")', function() {
-      // uncomment below and update the code to test the property place
       //var instane = new @KeyclicSdkJavascript.Report();
       //expect(instance).to.be();
     });

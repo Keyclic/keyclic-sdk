@@ -77,6 +77,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property parent (base name: "parent")', function() {
+      // uncomment below and update the code to test the property parent
+      //var instane = new @KeyclicSdkJavascript.CategoryData();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

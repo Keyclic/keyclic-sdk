@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import OccupantLinksPerson from "./OccupantLinksPerson";
+import OccupantLinksMember from "./OccupantLinksMember";
 import OccupantLinksPlace from "./OccupantLinksPlace";
 import OccupantLinksSelf from "./OccupantLinksSelf";
 
@@ -27,11 +27,11 @@ export default class OccupantLinks {
     
      */
   constructor() {
-    this.person = null;
+    this.member = null;
     this.place = null;
     this.self = null;
 
-    this.personType = OccupantLinksPerson;
+    this.memberType = OccupantLinksMember;
     this.placeType = OccupantLinksPlace;
     this.selfType = OccupantLinksSelf;
   }
@@ -51,10 +51,10 @@ export default class OccupantLinks {
       object = new OccupantLinks();
     }
 
-    if (data.hasOwnProperty("person")) {
-      object.person = ApiClient.convertToType(
-        data["person"],
-        object.personType
+    if (data.hasOwnProperty("member")) {
+      object.member = ApiClient.convertToType(
+        data["member"],
+        object.memberType
       );
     }
     if (data.hasOwnProperty("place")) {
@@ -68,17 +68,17 @@ export default class OccupantLinks {
   }
 
   /**
-   * @return { module:model/OccupantLinksPerson }
+   * @return { module:model/OccupantLinksMember }
    */
-  getPerson() {
-    return this.person;
+  getMember() {
+    return this.member;
   }
 
   /**
-   * @param { module:model/OccupantLinksPerson } person
+   * @param { module:model/OccupantLinksMember } member
    */
-  setPerson(person) {
-    this.person = person;
+  setMember(member) {
+    this.member = member;
   }
   /**
    * @return { module:model/OccupantLinksPlace }

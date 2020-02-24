@@ -10,13 +10,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**OrganizationLinks**](OrganizationLinks.md) |  | [optional] [default to null]
 **alternateName** | **String** |  | [optional] [default to null]
-**billingEmailAddress** | **String** |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
 **enabled** | **bool** |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
 **name** | **String** |  | [default to null]
-**notificationEmailAddress** | **String** |  | [optional] [default to null]
 **preferences** | [**OrganizationPreferences**](OrganizationPreferences.md) |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]

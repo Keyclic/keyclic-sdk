@@ -1,9 +1,16 @@
 part of keyclic_sdk_api.api;
 
+class MemberDataTypeEnum {
+  static const String collaborator_ = "collaborator";
+  static const String contact_ = "contact";
+}
+
 class MemberData {
   MemberData({
-    this.person,
+    this.contactPoint,
     this.organization,
+    this.person,
+    this.type,
   });
 
   factory MemberData.fromJson(Map<String, dynamic> json) {
@@ -12,14 +19,21 @@ class MemberData {
     }
 
     return MemberData(
-      person: json['person'],
+      contactPoint: MemberDataContactPoint.fromJson(json['contactPoint']),
       organization: json['organization'],
+      person: json['person'],
+      type: json['type'],
     );
   }
 
-  String person;
+  MemberDataContactPoint contactPoint;
 
   String organization;
+
+  String person;
+
+  /// use MemberDataTypeEnum
+  String type;
 
   @override
   bool operator ==(dynamic other) {
@@ -30,8 +44,10 @@ class MemberData {
 
     return other is MemberData &&
         runtimeType == other.runtimeType &&
+        contactPoint == other.contactPoint &&
+        organization == other.organization &&
         person == other.person &&
-        organization == other.organization;
+        type == other.type;
   }
 
   /// By default hashCode return reference
@@ -39,8 +55,10 @@ class MemberData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= person?.hashCode ?? 0;
+    hashCode ^= contactPoint?.hashCode ?? 0;
     hashCode ^= organization?.hashCode ?? 0;
+    hashCode ^= person?.hashCode ?? 0;
+    hashCode ^= type?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -63,13 +81,15 @@ class MemberData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (person != null) 'person': person,
+      if (contactPoint != null) 'contactPoint': contactPoint,
       if (organization != null) 'organization': organization,
+      if (person != null) 'person': person,
+      if (type != null) 'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'MemberData[person=$person, organization=$organization, ]';
+    return 'MemberData[contactPoint=$contactPoint, organization=$organization, person=$person, type=$type, ]';
   }
 }

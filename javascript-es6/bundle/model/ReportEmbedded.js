@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _Category = _interopRequireDefault(require("./Category"));
+
 var _DelegationEmbeddedWorkflow = _interopRequireDefault(
   require("./DelegationEmbeddedWorkflow")
 );
@@ -14,6 +16,8 @@ var _DelegationEmbeddedWorkflow = _interopRequireDefault(
 var _OperationEmbeddedDuration = _interopRequireDefault(
   require("./OperationEmbeddedDuration")
 );
+
+var _Place = _interopRequireDefault(require("./Place"));
 
 var _ReportEmbeddedTargetGroups = _interopRequireDefault(
   require("./ReportEmbeddedTargetGroups")
@@ -61,12 +65,16 @@ var ReportEmbedded =
     function ReportEmbedded() {
       _classCallCheck(this, ReportEmbedded);
 
+      this.category = null;
       this.duration = null;
+      this.place = null;
       this.stateTransitions = [];
       this.targetGroups = [];
       this.tracking = null;
       this.workflow = null;
+      this.categoryType = _Category.default;
       this.durationType = _OperationEmbeddedDuration.default;
+      this.placeType = _Place.default;
       this.targetGroupsType = _ReportEmbeddedTargetGroups.default;
       this.workflowType = _DelegationEmbeddedWorkflow.default;
     }
@@ -81,11 +89,29 @@ var ReportEmbedded =
       ReportEmbedded,
       [
         {
-          key: "getDuration",
+          key: "getCategory",
 
+          /**
+           * @return { module:model/Category }
+           */
+          value: function getCategory() {
+            return this.category;
+          }
+          /**
+           * @param { module:model/Category } category
+           */
+        },
+        {
+          key: "setCategory",
+          value: function setCategory(category) {
+            this.category = category;
+          }
           /**
            * @return { module:model/OperationEmbeddedDuration }
            */
+        },
+        {
+          key: "getDuration",
           value: function getDuration() {
             return this.duration;
           }
@@ -97,6 +123,24 @@ var ReportEmbedded =
           key: "setDuration",
           value: function setDuration(duration) {
             this.duration = duration;
+          }
+          /**
+           * @return { module:model/Place }
+           */
+        },
+        {
+          key: "getPlace",
+          value: function getPlace() {
+            return this.place;
+          }
+          /**
+           * @param { module:model/Place } place
+           */
+        },
+        {
+          key: "setPlace",
+          value: function setPlace(place) {
+            this.place = place;
           }
           /**
            * @return { Array.<String> }
@@ -189,10 +233,24 @@ var ReportEmbedded =
               object = new ReportEmbedded();
             }
 
+            if (data.hasOwnProperty("category")) {
+              object.category = _ApiClient.default.convertToType(
+                data["category"],
+                object.categoryType
+              );
+            }
+
             if (data.hasOwnProperty("duration")) {
               object.duration = _ApiClient.default.convertToType(
                 data["duration"],
                 object.durationType
+              );
+            }
+
+            if (data.hasOwnProperty("place")) {
+              object.place = _ApiClient.default.convertToType(
+                data["place"],
+                object.placeType
               );
             }
 

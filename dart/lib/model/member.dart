@@ -4,6 +4,7 @@ class Member {
   Member({
     this.embedded,
     this.links,
+    this.contactPoint,
     this.createdAt,
     this.id,
     this.roles,
@@ -31,6 +32,7 @@ class Member {
     return Member(
       embedded: MemberEmbedded.fromJson(json['_embedded']),
       links: MemberLinks.fromJson(json['_links']),
+      contactPoint: MemberContactPoint.fromJson(json['contactPoint']),
       createdAt: createdAt,
       id: json['id'],
       roles: json['roles'] is List ? List<String>.from(json['roles']) : null,
@@ -42,6 +44,8 @@ class Member {
   MemberEmbedded embedded;
 
   MemberLinks links;
+
+  MemberContactPoint contactPoint;
 
   DateTime createdAt;
 
@@ -64,6 +68,7 @@ class Member {
         runtimeType == other.runtimeType &&
         embedded == other.embedded &&
         links == other.links &&
+        contactPoint == other.contactPoint &&
         createdAt == other.createdAt &&
         id == other.id &&
         DeepCollectionEquality.unordered().equals(roles, other.roles) &&
@@ -84,6 +89,7 @@ class Member {
 
     hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= contactPoint?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
@@ -112,6 +118,7 @@ class Member {
     return {
       if (embedded != null) '_embedded': embedded,
       if (links != null) '_links': links,
+      if (contactPoint != null) 'contactPoint': contactPoint,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
       if (roles != null) 'roles': roles,
@@ -122,6 +129,6 @@ class Member {
 
   @override
   String toString() {
-    return 'Member[embedded=$embedded, links=$links, createdAt=$createdAt, id=$id, roles=$roles, type=$type, updatedAt=$updatedAt, ]';
+    return 'Member[embedded=$embedded, links=$links, contactPoint=$contactPoint, createdAt=$createdAt, id=$id, roles=$roles, type=$type, updatedAt=$updatedAt, ]';
   }
 }

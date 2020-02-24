@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import MemberContactPoint from "./MemberContactPoint";
 import MemberEmbedded from "./MemberEmbedded";
 import MemberLinks from "./MemberLinks";
 
@@ -28,6 +29,7 @@ export default class Member {
   constructor() {
     this.embedded = null;
     this.links = null;
+    this.contactPoint = null;
     this.createdAt = null;
     this.id = null;
     this.roles = [];
@@ -36,6 +38,7 @@ export default class Member {
 
     this.embeddedType = MemberEmbedded;
     this.linksType = MemberLinks;
+    this.contactPointType = MemberContactPoint;
   }
 
   /**
@@ -61,6 +64,12 @@ export default class Member {
     }
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
+    }
+    if (data.hasOwnProperty("contactPoint")) {
+      object.contactPoint = ApiClient.convertToType(
+        data["contactPoint"],
+        object.contactPointType
+      );
     }
     if (data.hasOwnProperty("createdAt")) {
       object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
@@ -106,6 +115,19 @@ export default class Member {
    */
   setLinks(links) {
     this.links = links;
+  }
+  /**
+   * @return { module:model/MemberContactPoint }
+   */
+  getContactPoint() {
+    return this.contactPoint;
+  }
+
+  /**
+   * @param { module:model/MemberContactPoint } contactPoint
+   */
+  setContactPoint(contactPoint) {
+    this.contactPoint = contactPoint;
   }
   /**
    * @return { Date }

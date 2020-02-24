@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class Category {
   Category({
+    this.embedded,
     this.links,
     this.color,
     this.createdAt,
@@ -31,6 +32,7 @@ class Category {
     }
 
     return Category(
+      embedded: CategoryEmbedded.fromJson(json['_embedded']),
       links: CategoryLinks.fromJson(json['_links']),
       color: json['color'],
       createdAt: createdAt,
@@ -42,6 +44,8 @@ class Category {
       updatedAt: updatedAt,
     );
   }
+
+  CategoryEmbedded embedded;
 
   CategoryLinks links;
 
@@ -70,6 +74,7 @@ class Category {
 
     return other is Category &&
         runtimeType == other.runtimeType &&
+        embedded == other.embedded &&
         links == other.links &&
         color == other.color &&
         createdAt == other.createdAt &&
@@ -86,6 +91,7 @@ class Category {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= color?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
@@ -117,6 +123,7 @@ class Category {
 
   Map<String, dynamic> toJson() {
     return {
+      if (embedded != null) '_embedded': embedded,
       if (links != null) '_links': links,
       if (color != null) 'color': color,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
@@ -132,6 +139,6 @@ class Category {
 
   @override
   String toString() {
-    return 'Category[links=$links, color=$color, createdAt=$createdAt, icon=$icon, id=$id, identificationNumber=$identificationNumber, name=$name, type=$type, updatedAt=$updatedAt, ]';
+    return 'Category[embedded=$embedded, links=$links, color=$color, createdAt=$createdAt, icon=$icon, id=$id, identificationNumber=$identificationNumber, name=$name, type=$type, updatedAt=$updatedAt, ]';
   }
 }

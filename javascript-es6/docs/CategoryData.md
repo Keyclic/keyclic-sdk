@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **color** | **String** |  | 
 **icon** | **String** |  | 
 **organization** | **String** |  | 
+**parent** | **String** |  | [optional] 
 
 

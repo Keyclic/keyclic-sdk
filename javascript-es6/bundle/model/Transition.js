@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _TransitionState = _interopRequireDefault(require("./TransitionState"));
+var _State = _interopRequireDefault(require("./State"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -51,14 +51,14 @@ var Transition =
     function Transition() {
       _classCallCheck(this, Transition);
 
+      this.id = null;
+      this.type = null;
+      this.name = null;
       this.description = null;
       this.from = null;
-      this.id = null;
-      this.name = null;
       this.to = null;
-      this.type = null;
-      this.fromType = _TransitionState.default;
-      this.toType = _TransitionState.default;
+      this.fromType = _State.default;
+      this.toType = _State.default;
     }
     /**
      * Constructs a "Transition" from a plain JavaScript object.
@@ -71,49 +71,40 @@ var Transition =
       Transition,
       [
         {
-          key: "getDescription",
+          key: "getId",
 
           /**
            * @return { String }
            */
-          value: function getDescription() {
-            return this.description;
+          value: function getId() {
+            return this.id;
           }
           /**
-           * @param { String } description
+           * @param { String } id
            */
         },
         {
-          key: "setDescription",
-          value: function setDescription(description) {
-            this.description = description;
-          }
-          /**
-           * @return { module:model/TransitionState }
-           */
-        },
-        {
-          key: "getFrom",
-          value: function getFrom() {
-            return this.from;
-          }
-          /**
-           * @param { module:model/TransitionState } from
-           */
-        },
-        {
-          key: "setFrom",
-          value: function setFrom(from) {
-            this.from = from;
+          key: "setId",
+          value: function setId(id) {
+            this.id = id;
           }
           /**
            * @return { String }
            */
         },
         {
-          key: "getId",
-          value: function getId() {
-            return this.id;
+          key: "getType",
+          value: function getType() {
+            return this.type;
+          }
+          /**
+           * @param { String } type
+           */
+        },
+        {
+          key: "setType",
+          value: function setType(type) {
+            this.type = type;
           }
           /**
            * @return { String }
@@ -134,7 +125,43 @@ var Transition =
             this.name = name;
           }
           /**
-           * @return { module:model/TransitionState }
+           * @return { String }
+           */
+        },
+        {
+          key: "getDescription",
+          value: function getDescription() {
+            return this.description;
+          }
+          /**
+           * @param { String } description
+           */
+        },
+        {
+          key: "setDescription",
+          value: function setDescription(description) {
+            this.description = description;
+          }
+          /**
+           * @return { module:model/State }
+           */
+        },
+        {
+          key: "getFrom",
+          value: function getFrom() {
+            return this.from;
+          }
+          /**
+           * @param { module:model/State } from
+           */
+        },
+        {
+          key: "setFrom",
+          value: function setFrom(from) {
+            this.from = from;
+          }
+          /**
+           * @return { module:model/State }
            */
         },
         {
@@ -143,22 +170,13 @@ var Transition =
             return this.to;
           }
           /**
-           * @param { module:model/TransitionState } to
+           * @param { module:model/State } to
            */
         },
         {
           key: "setTo",
           value: function setTo(to) {
             this.to = to;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
           }
         }
       ],
@@ -179,6 +197,27 @@ var Transition =
               object = new Transition();
             }
 
+            if (data.hasOwnProperty("id")) {
+              object.id = _ApiClient.default.convertToType(
+                data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("name")) {
+              object.name = _ApiClient.default.convertToType(
+                data["name"],
+                "String"
+              );
+            }
+
             if (data.hasOwnProperty("description")) {
               object.description = _ApiClient.default.convertToType(
                 data["description"],
@@ -193,31 +232,10 @@ var Transition =
               );
             }
 
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
             if (data.hasOwnProperty("to")) {
               object.to = _ApiClient.default.convertToType(
                 data["to"],
                 object.toType
-              );
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
               );
             }
 

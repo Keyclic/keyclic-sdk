@@ -8,7 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**person** | [**OccupantLinksPerson**](OccupantLinksPerson.md) |  | [optional] [default to null]
+**member** | [**OccupantLinksMember**](OccupantLinksMember.md) |  | [optional] [default to null]
 **place** | [**OccupantLinksPlace**](OccupantLinksPlace.md) |  | [optional] [default to null]
 **self** | [**OccupantLinksSelf**](OccupantLinksSelf.md) |  | [optional] [default to null]
 

@@ -59,13 +59,11 @@ var Organization =
 
       this.links = null;
       this.alternateName = null;
-      this.billingEmailAddress = null;
       this.createdAt = null;
       this.description = null;
       this.enabled = null;
       this.id = null;
       this.name = name;
-      this.notificationEmailAddress = null;
       this.preferences = null;
       this.type = null;
       this.updatedAt = null;
@@ -117,24 +115,6 @@ var Organization =
           key: "setAlternateName",
           value: function setAlternateName(alternateName) {
             this.alternateName = alternateName;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getBillingEmailAddress",
-          value: function getBillingEmailAddress() {
-            return this.billingEmailAddress;
-          }
-          /**
-           * @param { String } billingEmailAddress
-           */
-        },
-        {
-          key: "setBillingEmailAddress",
-          value: function setBillingEmailAddress(billingEmailAddress) {
-            this.billingEmailAddress = billingEmailAddress;
           }
           /**
            * @return { Date }
@@ -209,26 +189,6 @@ var Organization =
             this.name = name;
           }
           /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getNotificationEmailAddress",
-          value: function getNotificationEmailAddress() {
-            return this.notificationEmailAddress;
-          }
-          /**
-           * @param { String } notificationEmailAddress
-           */
-        },
-        {
-          key: "setNotificationEmailAddress",
-          value: function setNotificationEmailAddress(
-            notificationEmailAddress
-          ) {
-            this.notificationEmailAddress = notificationEmailAddress;
-          }
-          /**
            * @return { module:model/OrganizationPreferences }
            */
         },
@@ -297,13 +257,6 @@ var Organization =
               );
             }
 
-            if (data.hasOwnProperty("billingEmailAddress")) {
-              object.billingEmailAddress = _ApiClient.default.convertToType(
-                data["billingEmailAddress"],
-                "String"
-              );
-            }
-
             if (data.hasOwnProperty("createdAt")) {
               object.createdAt = _ApiClient.default.convertToType(
                 data["createdAt"],
@@ -335,13 +288,6 @@ var Organization =
             if (data.hasOwnProperty("name")) {
               object.name = _ApiClient.default.convertToType(
                 data["name"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("notificationEmailAddress")) {
-              object.notificationEmailAddress = _ApiClient.default.convertToType(
-                data["notificationEmailAddress"],
                 "String"
               );
             }

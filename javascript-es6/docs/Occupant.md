@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**embedded** | [**OccupantEmbedded**](OccupantEmbedded.md) |  | [optional] 
 **links** | [**OccupantLinks**](OccupantLinks.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **id** | **String** |  | [optional] 

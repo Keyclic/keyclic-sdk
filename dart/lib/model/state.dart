@@ -2,12 +2,12 @@ part of keyclic_sdk_api.api;
 
 class State {
   State({
-    this.color,
-    this.description,
     this.id,
-    this.name,
-    this.progression,
     this.type,
+    this.name,
+    this.description,
+    this.color,
+    this.progression,
   });
 
   factory State.fromJson(Map<String, dynamic> json) {
@@ -16,26 +16,26 @@ class State {
     }
 
     return State(
-      color: json['color'],
-      description: json['description'],
       id: json['id'],
-      name: json['name'],
-      progression: json['progression']?.toDouble(),
       type: json['type'],
+      name: json['name'],
+      description: json['description'],
+      color: json['color'],
+      progression: json['progression']?.toDouble(),
     );
   }
 
-  String color;
-
-  String description;
-
   String id;
+
+  String type;
 
   String name;
 
-  double progression;
+  String description;
 
-  String type;
+  String color;
+
+  double progression;
 
   @override
   bool operator ==(dynamic other) {
@@ -46,12 +46,12 @@ class State {
 
     return other is State &&
         runtimeType == other.runtimeType &&
-        color == other.color &&
-        description == other.description &&
         id == other.id &&
+        type == other.type &&
         name == other.name &&
-        progression == other.progression &&
-        type == other.type;
+        description == other.description &&
+        color == other.color &&
+        progression == other.progression;
   }
 
   /// By default hashCode return reference
@@ -59,12 +59,12 @@ class State {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= color?.hashCode ?? 0;
-    hashCode ^= description?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
-    hashCode ^= name?.hashCode ?? 0;
-    hashCode ^= progression?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
+    hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= color?.hashCode ?? 0;
+    hashCode ^= progression?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -87,17 +87,17 @@ class State {
 
   Map<String, dynamic> toJson() {
     return {
-      if (color != null) 'color': color,
-      if (description != null) 'description': description,
       if (id != null) 'id': id,
-      if (name != null) 'name': name,
-      if (progression != null) 'progression': progression,
       if (type != null) 'type': type,
+      if (name != null) 'name': name,
+      if (description != null) 'description': description,
+      if (color != null) 'color': color,
+      if (progression != null) 'progression': progression,
     };
   }
 
   @override
   String toString() {
-    return 'State[color=$color, description=$description, id=$id, name=$name, progression=$progression, type=$type, ]';
+    return 'State[id=$id, type=$type, name=$name, description=$description, color=$color, progression=$progression, ]';
   }
 }

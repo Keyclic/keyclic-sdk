@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.2.38
-- Package version: 2.2.38
+- API version: 2.3.3
+- Package version: 2.3.3
 
 ## Getting started
 
@@ -29,6 +29,7 @@ All URIs are relative to *https://api.keyclic.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *@KeyclicSdkJavascript.ApplicationApi* | [**getApplication**](docs/ApplicationApi.md#getApplication) | **GET** /applications/{application} | Retrieve one Application resource.
+*@KeyclicSdkJavascript.ArticleApi* | [**getArticle**](docs/ArticleApi.md#getArticle) | **GET** /articles/{article} | Retrieve one Article resource.
 *@KeyclicSdkJavascript.BusinessActivityApi* | [**cgetBusinessActivities**](docs/BusinessActivityApi.md#cgetBusinessActivities) | **GET** /business-activities | Retrieve all BusinessActivity resources.
 *@KeyclicSdkJavascript.BusinessActivityApi* | [**getBusinessActivity**](docs/BusinessActivityApi.md#getBusinessActivity) | **GET** /business-activities/{businessActivity} | Retrieve one BusinessActivity resource.
 *@KeyclicSdkJavascript.BusinessActivityApi* | [**getSchemaByBusinessActivity**](docs/BusinessActivityApi.md#getSchemaByBusinessActivity) | **GET** /businessactivities/{businessActivity}/schema | Retrieve one Schema resource.
@@ -73,6 +74,12 @@ Class | Method | HTTP request | Description
 *@KeyclicSdkJavascript.InternalServiceApi* | [**getInternalService**](docs/InternalServiceApi.md#getInternalService) | **GET** /internal-services/{internalService} | Retrieve one InternalService resource.
 *@KeyclicSdkJavascript.InternalServiceApi* | [**patchInternalService**](docs/InternalServiceApi.md#patchInternalService) | **PATCH** /internal-services/{internalService} | Edit one InternalService resource.
 *@KeyclicSdkJavascript.InternalServiceApi* | [**postInternalService**](docs/InternalServiceApi.md#postInternalService) | **POST** /internal-services | Create one InternalService resource.
+*@KeyclicSdkJavascript.InvitationApi* | [**deleteInvitation**](docs/InvitationApi.md#deleteInvitation) | **DELETE** /invitations/{invitation} | Remove one Invitation resource.
+*@KeyclicSdkJavascript.InvitationApi* | [**getInvitation**](docs/InvitationApi.md#getInvitation) | **GET** /invitations/{invitation} | Retrieve one Invitation resource.
+*@KeyclicSdkJavascript.InvitationApi* | [**postInvitation**](docs/InvitationApi.md#postInvitation) | **POST** /invitations | Create one Invitation resource.
+*@KeyclicSdkJavascript.KnowledgeBaseApi* | [**cgetArticlesByKnowledgeBase**](docs/KnowledgeBaseApi.md#cgetArticlesByKnowledgeBase) | **GET** /knowledge-bases/{knowledgeBase}/articles | Retrieve all Article resources.
+*@KeyclicSdkJavascript.KnowledgeBaseApi* | [**cgetSectionsByKnowledgeBase**](docs/KnowledgeBaseApi.md#cgetSectionsByKnowledgeBase) | **GET** /knowledge-bases/{knowledgeBase}/sections | Retrieve all Section resources.
+*@KeyclicSdkJavascript.KnowledgeBaseApi* | [**getKnowledgeBase**](docs/KnowledgeBaseApi.md#getKnowledgeBase) | **GET** /knowledge-bases/{knowledgeBase} | Retrieve one KnowledgeBase resource.
 *@KeyclicSdkJavascript.MemberApi* | [**deleteMember**](docs/MemberApi.md#deleteMember) | **DELETE** /members/{member} | Remove one Member resource.
 *@KeyclicSdkJavascript.MemberApi* | [**getMember**](docs/MemberApi.md#getMember) | **GET** /members/{member} | Retrieve one Member resource.
 *@KeyclicSdkJavascript.MemberApi* | [**patchMember**](docs/MemberApi.md#patchMember) | **PATCH** /members/{member} | Edit one Member resource.
@@ -137,6 +144,7 @@ Class | Method | HTTP request | Description
 *@KeyclicSdkJavascript.ReviewApi* | [**postReview**](docs/ReviewApi.md#postReview) | **POST** /reviews | Create one Review resource.
 *@KeyclicSdkJavascript.ReviewRequestApi* | [**getReviewRequest**](docs/ReviewRequestApi.md#getReviewRequest) | **GET** /review-requests/{reviewRequest} | Retrieve one ReviewRequest resource.
 *@KeyclicSdkJavascript.RoleApi* | [**getRole**](docs/RoleApi.md#getRole) | **GET** /roles/{role} | Retrieve one Role resource.
+*@KeyclicSdkJavascript.SectionApi* | [**getSection**](docs/SectionApi.md#getSection) | **GET** /sections/{section} | Retrieve one Section resource.
 *@KeyclicSdkJavascript.SecurityApi* | [**postConnectFacebook**](docs/SecurityApi.md#postConnectFacebook) | **POST** /security/connect/facebook | Create one ConnectFacebook resource.
 *@KeyclicSdkJavascript.SecurityApi* | [**postLogin**](docs/SecurityApi.md#postLogin) | **POST** /security/login | Create one Login resource.
 *@KeyclicSdkJavascript.SecurityApi* | [**postPasswordChangeByToken**](docs/SecurityApi.md#postPasswordChangeByToken) | **POST** /security/password/change/{token} | Create one PasswordChange resource.
@@ -163,9 +171,21 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ApplicationAbout](docs/ApplicationAbout.md)
 - [@KeyclicSdkJavascript.ApplicationAgreement](docs/ApplicationAgreement.md)
 - [@KeyclicSdkJavascript.ApplicationLinks](docs/ApplicationLinks.md)
+- [@KeyclicSdkJavascript.ApplicationLinksKnowledgeBase](docs/ApplicationLinksKnowledgeBase.md)
+- [@KeyclicSdkJavascript.ApplicationLinksKnowledgeBaseIriTemplate](docs/ApplicationLinksKnowledgeBaseIriTemplate.md)
+- [@KeyclicSdkJavascript.ApplicationLinksKnowledgeBaseIriTemplateMapping](docs/ApplicationLinksKnowledgeBaseIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.ApplicationLinksSelf](docs/ApplicationLinksSelf.md)
 - [@KeyclicSdkJavascript.ApplicationLinksSelfIriTemplate](docs/ApplicationLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.ApplicationLinksSelfIriTemplateMapping](docs/ApplicationLinksSelfIriTemplateMapping.md)
+- [@KeyclicSdkJavascript.Article](docs/Article.md)
+- [@KeyclicSdkJavascript.ArticleCollection](docs/ArticleCollection.md)
+- [@KeyclicSdkJavascript.ArticleLinks](docs/ArticleLinks.md)
+- [@KeyclicSdkJavascript.ArticleLinksSection](docs/ArticleLinksSection.md)
+- [@KeyclicSdkJavascript.ArticleLinksSectionIriTemplate](docs/ArticleLinksSectionIriTemplate.md)
+- [@KeyclicSdkJavascript.ArticleLinksSectionIriTemplateMapping](docs/ArticleLinksSectionIriTemplateMapping.md)
+- [@KeyclicSdkJavascript.ArticleLinksSelf](docs/ArticleLinksSelf.md)
+- [@KeyclicSdkJavascript.ArticleLinksSelfIriTemplate](docs/ArticleLinksSelfIriTemplate.md)
+- [@KeyclicSdkJavascript.ArticleLinksSelfIriTemplateMapping](docs/ArticleLinksSelfIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.AssignData](docs/AssignData.md)
 - [@KeyclicSdkJavascript.BusinessActivity](docs/BusinessActivity.md)
 - [@KeyclicSdkJavascript.BusinessActivityCollection](docs/BusinessActivityCollection.md)
@@ -183,6 +203,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.Category](docs/Category.md)
 - [@KeyclicSdkJavascript.CategoryCollection](docs/CategoryCollection.md)
 - [@KeyclicSdkJavascript.CategoryData](docs/CategoryData.md)
+- [@KeyclicSdkJavascript.CategoryEmbedded](docs/CategoryEmbedded.md)
 - [@KeyclicSdkJavascript.CategoryLinks](docs/CategoryLinks.md)
 - [@KeyclicSdkJavascript.CategoryLinksOrganization](docs/CategoryLinksOrganization.md)
 - [@KeyclicSdkJavascript.CategoryLinksOrganizationIriTemplate](docs/CategoryLinksOrganizationIriTemplate.md)
@@ -317,10 +338,26 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.InternalServiceLinksSelfIriTemplate](docs/InternalServiceLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.InternalServiceLinksSelfIriTemplateMapping](docs/InternalServiceLinksSelfIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.InternalServicePatch](docs/InternalServicePatch.md)
+- [@KeyclicSdkJavascript.Invitation](docs/Invitation.md)
+- [@KeyclicSdkJavascript.InvitationData](docs/InvitationData.md)
+- [@KeyclicSdkJavascript.InvitationDateTime](docs/InvitationDateTime.md)
+- [@KeyclicSdkJavascript.InvitationLinks](docs/InvitationLinks.md)
+- [@KeyclicSdkJavascript.InvitationLinksMember](docs/InvitationLinksMember.md)
+- [@KeyclicSdkJavascript.InvitationLinksMemberIriTemplate](docs/InvitationLinksMemberIriTemplate.md)
+- [@KeyclicSdkJavascript.InvitationLinksMemberIriTemplateMapping](docs/InvitationLinksMemberIriTemplateMapping.md)
+- [@KeyclicSdkJavascript.InvitationLinksSelf](docs/InvitationLinksSelf.md)
+- [@KeyclicSdkJavascript.InvitationLinksSelfIriTemplate](docs/InvitationLinksSelfIriTemplate.md)
+- [@KeyclicSdkJavascript.InvitationLinksSelfIriTemplateMapping](docs/InvitationLinksSelfIriTemplateMapping.md)
+- [@KeyclicSdkJavascript.KnowledgeBase](docs/KnowledgeBase.md)
+- [@KeyclicSdkJavascript.KnowledgeBaseLinks](docs/KnowledgeBaseLinks.md)
+- [@KeyclicSdkJavascript.KnowledgeBaseLinksSelf](docs/KnowledgeBaseLinksSelf.md)
+- [@KeyclicSdkJavascript.KnowledgeBaseLinksSelfIriTemplate](docs/KnowledgeBaseLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.LoginData](docs/LoginData.md)
 - [@KeyclicSdkJavascript.Member](docs/Member.md)
 - [@KeyclicSdkJavascript.MemberCollection](docs/MemberCollection.md)
+- [@KeyclicSdkJavascript.MemberContactPoint](docs/MemberContactPoint.md)
 - [@KeyclicSdkJavascript.MemberData](docs/MemberData.md)
+- [@KeyclicSdkJavascript.MemberDataContactPoint](docs/MemberDataContactPoint.md)
 - [@KeyclicSdkJavascript.MemberEmbedded](docs/MemberEmbedded.md)
 - [@KeyclicSdkJavascript.MemberLinks](docs/MemberLinks.md)
 - [@KeyclicSdkJavascript.MemberLinksOrganization](docs/MemberLinksOrganization.md)
@@ -329,8 +366,8 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.MemberLinksPersonIriTemplate](docs/MemberLinksPersonIriTemplate.md)
 - [@KeyclicSdkJavascript.MemberLinksSelf](docs/MemberLinksSelf.md)
 - [@KeyclicSdkJavascript.MemberLinksSelfIriTemplate](docs/MemberLinksSelfIriTemplate.md)
-- [@KeyclicSdkJavascript.MemberLinksSelfIriTemplateMapping](docs/MemberLinksSelfIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.MemberPatch](docs/MemberPatch.md)
+- [@KeyclicSdkJavascript.MemberPatchContactPoint](docs/MemberPatchContactPoint.md)
 - [@KeyclicSdkJavascript.Node](docs/Node.md)
 - [@KeyclicSdkJavascript.NodeEmbedded](docs/NodeEmbedded.md)
 - [@KeyclicSdkJavascript.NodePath](docs/NodePath.md)
@@ -338,9 +375,10 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.Occupant](docs/Occupant.md)
 - [@KeyclicSdkJavascript.OccupantCollection](docs/OccupantCollection.md)
 - [@KeyclicSdkJavascript.OccupantData](docs/OccupantData.md)
+- [@KeyclicSdkJavascript.OccupantEmbedded](docs/OccupantEmbedded.md)
 - [@KeyclicSdkJavascript.OccupantLinks](docs/OccupantLinks.md)
-- [@KeyclicSdkJavascript.OccupantLinksPerson](docs/OccupantLinksPerson.md)
-- [@KeyclicSdkJavascript.OccupantLinksPersonIriTemplate](docs/OccupantLinksPersonIriTemplate.md)
+- [@KeyclicSdkJavascript.OccupantLinksMember](docs/OccupantLinksMember.md)
+- [@KeyclicSdkJavascript.OccupantLinksMemberIriTemplate](docs/OccupantLinksMemberIriTemplate.md)
 - [@KeyclicSdkJavascript.OccupantLinksPlace](docs/OccupantLinksPlace.md)
 - [@KeyclicSdkJavascript.OccupantLinksPlaceIriTemplate](docs/OccupantLinksPlaceIriTemplate.md)
 - [@KeyclicSdkJavascript.OccupantLinksPlaceIriTemplateMapping](docs/OccupantLinksPlaceIriTemplateMapping.md)
@@ -420,7 +458,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.Place](docs/Place.md)
 - [@KeyclicSdkJavascript.PlaceCollection](docs/PlaceCollection.md)
 - [@KeyclicSdkJavascript.PlaceData](docs/PlaceData.md)
-- [@KeyclicSdkJavascript.PlaceEmbedded](docs/PlaceEmbedded.md)
 - [@KeyclicSdkJavascript.PlaceGeoShape](docs/PlaceGeoShape.md)
 - [@KeyclicSdkJavascript.PlaceLinks](docs/PlaceLinks.md)
 - [@KeyclicSdkJavascript.PlaceLinksContainedInPlace](docs/PlaceLinksContainedInPlace.md)
@@ -457,7 +494,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.RegisterData](docs/RegisterData.md)
 - [@KeyclicSdkJavascript.RegisterDataAgreement](docs/RegisterDataAgreement.md)
 - [@KeyclicSdkJavascript.Report](docs/Report.md)
-- [@KeyclicSdkJavascript.ReportCategory](docs/ReportCategory.md)
 - [@KeyclicSdkJavascript.ReportCollection](docs/ReportCollection.md)
 - [@KeyclicSdkJavascript.ReportEmbedded](docs/ReportEmbedded.md)
 - [@KeyclicSdkJavascript.ReportEmbeddedTargetGroups](docs/ReportEmbeddedTargetGroups.md)
@@ -481,7 +517,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ReportLinksTracking](docs/ReportLinksTracking.md)
 - [@KeyclicSdkJavascript.ReportLinksTrackingIriTemplate](docs/ReportLinksTrackingIriTemplate.md)
 - [@KeyclicSdkJavascript.ReportPatch](docs/ReportPatch.md)
-- [@KeyclicSdkJavascript.ReportPlace](docs/ReportPlace.md)
 - [@KeyclicSdkJavascript.ReportTypeWorkflow](docs/ReportTypeWorkflow.md)
 - [@KeyclicSdkJavascript.ResetPasswordData](docs/ResetPasswordData.md)
 - [@KeyclicSdkJavascript.Review](docs/Review.md)
@@ -511,6 +546,11 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ReviewRequestLinksSelfIriTemplateMapping](docs/ReviewRequestLinksSelfIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.Role](docs/Role.md)
 - [@KeyclicSdkJavascript.Schema](docs/Schema.md)
+- [@KeyclicSdkJavascript.Section](docs/Section.md)
+- [@KeyclicSdkJavascript.SectionCollection](docs/SectionCollection.md)
+- [@KeyclicSdkJavascript.SectionLinks](docs/SectionLinks.md)
+- [@KeyclicSdkJavascript.SectionLinksSelf](docs/SectionLinksSelf.md)
+- [@KeyclicSdkJavascript.SectionLinksSelfIriTemplate](docs/SectionLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.SignatureData](docs/SignatureData.md)
 - [@KeyclicSdkJavascript.SignatureDataSigner](docs/SignatureDataSigner.md)
 - [@KeyclicSdkJavascript.SignatureSigner](docs/SignatureSigner.md)
@@ -541,6 +581,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.WorkflowLinksSelfIriTemplate](docs/WorkflowLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.WorkflowLinksSelfIriTemplateMapping](docs/WorkflowLinksSelfIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.WorkflowState](docs/WorkflowState.md)
+- [@KeyclicSdkJavascript.ArticlePagination](docs/ArticlePagination.md)
 - [@KeyclicSdkJavascript.BusinessActivityPagination](docs/BusinessActivityPagination.md)
 - [@KeyclicSdkJavascript.CategoryPagination](docs/CategoryPagination.md)
 - [@KeyclicSdkJavascript.ContributionPagination](docs/ContributionPagination.md)
@@ -560,6 +601,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ReportPagination](docs/ReportPagination.md)
 - [@KeyclicSdkJavascript.ReviewPagination](docs/ReviewPagination.md)
 - [@KeyclicSdkJavascript.ReviewRequestPagination](docs/ReviewRequestPagination.md)
+- [@KeyclicSdkJavascript.SectionPagination](docs/SectionPagination.md)
 - [@KeyclicSdkJavascript.WebhookPagination](docs/WebhookPagination.md)
 
 ## Documentation for Authorization

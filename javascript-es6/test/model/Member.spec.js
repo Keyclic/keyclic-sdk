@@ -65,6 +65,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property contactPoint (base name: "contactPoint")', function() {
+      // uncomment below and update the code to test the property contactPoint
+      //var instane = new @KeyclicSdkJavascript.Member();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdAt (base name: "createdAt")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instane = new @KeyclicSdkJavascript.Member();

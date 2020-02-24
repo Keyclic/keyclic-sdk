@@ -2,12 +2,12 @@ part of keyclic_sdk_api.api;
 
 class Transition {
   Transition({
+    this.id,
+    this.type,
+    this.name,
     this.description,
     this.from,
-    this.id,
-    this.name,
     this.to,
-    this.type,
   });
 
   factory Transition.fromJson(Map<String, dynamic> json) {
@@ -16,26 +16,26 @@ class Transition {
     }
 
     return Transition(
-      description: json['description'],
-      from: TransitionState.fromJson(json['from']),
       id: json['id'],
-      name: json['name'],
-      to: TransitionState.fromJson(json['to']),
       type: json['type'],
+      name: json['name'],
+      description: json['description'],
+      from: State.fromJson(json['from']),
+      to: State.fromJson(json['to']),
     );
   }
 
-  String description;
-
-  TransitionState from;
-
   String id;
+
+  String type;
 
   String name;
 
-  TransitionState to;
+  String description;
 
-  String type;
+  State from;
+
+  State to;
 
   @override
   bool operator ==(dynamic other) {
@@ -46,12 +46,12 @@ class Transition {
 
     return other is Transition &&
         runtimeType == other.runtimeType &&
+        id == other.id &&
+        type == other.type &&
+        name == other.name &&
         description == other.description &&
         from == other.from &&
-        id == other.id &&
-        name == other.name &&
-        to == other.to &&
-        type == other.type;
+        to == other.to;
   }
 
   /// By default hashCode return reference
@@ -59,12 +59,12 @@ class Transition {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= type?.hashCode ?? 0;
+    hashCode ^= name?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= from?.hashCode ?? 0;
-    hashCode ^= id?.hashCode ?? 0;
-    hashCode ^= name?.hashCode ?? 0;
     hashCode ^= to?.hashCode ?? 0;
-    hashCode ^= type?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -87,17 +87,17 @@ class Transition {
 
   Map<String, dynamic> toJson() {
     return {
+      if (id != null) 'id': id,
+      if (type != null) 'type': type,
+      if (name != null) 'name': name,
       if (description != null) 'description': description,
       if (from != null) 'from': from,
-      if (id != null) 'id': id,
-      if (name != null) 'name': name,
       if (to != null) 'to': to,
-      if (type != null) 'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'Transition[description=$description, from=$from, id=$id, name=$name, to=$to, type=$type, ]';
+    return 'Transition[id=$id, type=$type, name=$name, description=$description, from=$from, to=$to, ]';
   }
 }

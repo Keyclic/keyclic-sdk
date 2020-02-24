@@ -11,10 +11,8 @@
  */
 
 import ApiClient from "../ApiClient";
-import ReportCategory from "./ReportCategory";
 import ReportEmbedded from "./ReportEmbedded";
 import ReportLinks from "./ReportLinks";
-import ReportPlace from "./ReportPlace";
 
 /**
  * The Report model module.
@@ -38,13 +36,11 @@ export default class Report {
   ) {
     this.embedded = null;
     this.links = null;
-    this.category = null;
     this.createdAt = null;
     this.description = null;
     this.dueAt = null;
     this.id = null;
     this.identificationNumber = null;
-    this.place = null;
     this.priority = priority;
     this.reference = null;
     this.state = state;
@@ -54,8 +50,6 @@ export default class Report {
 
     this.embeddedType = ReportEmbedded;
     this.linksType = ReportLinks;
-    this.categoryType = ReportCategory;
-    this.placeType = ReportPlace;
   }
 
   /**
@@ -82,12 +76,6 @@ export default class Report {
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
-    if (data.hasOwnProperty("category")) {
-      object.category = ApiClient.convertToType(
-        data["category"],
-        object.categoryType
-      );
-    }
     if (data.hasOwnProperty("createdAt")) {
       object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
     }
@@ -108,9 +96,6 @@ export default class Report {
         data["identificationNumber"],
         "String"
       );
-    }
-    if (data.hasOwnProperty("place")) {
-      object.place = ApiClient.convertToType(data["place"], object.placeType);
     }
     if (data.hasOwnProperty("priority")) {
       object.priority = ApiClient.convertToType(data["priority"], "Number");
@@ -159,19 +144,6 @@ export default class Report {
    */
   setLinks(links) {
     this.links = links;
-  }
-  /**
-   * @return { module:model/ReportCategory }
-   */
-  getCategory() {
-    return this.category;
-  }
-
-  /**
-   * @param { module:model/ReportCategory } category
-   */
-  setCategory(category) {
-    this.category = category;
   }
   /**
    * @return { Date }
@@ -225,19 +197,6 @@ export default class Report {
    */
   setIdentificationNumber(identificationNumber) {
     this.identificationNumber = identificationNumber;
-  }
-  /**
-   * @return { module:model/ReportPlace }
-   */
-  getPlace() {
-    return this.place;
-  }
-
-  /**
-   * @param { module:model/ReportPlace } place
-   */
-  setPlace(place) {
-    this.place = place;
   }
   /**
    * @return { Number }

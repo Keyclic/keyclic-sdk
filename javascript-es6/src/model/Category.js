@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import CategoryEmbedded from "./CategoryEmbedded";
 import CategoryLinks from "./CategoryLinks";
 
 /**
@@ -27,6 +28,7 @@ export default class Category {
     
      */
   constructor(name) {
+    this.embedded = null;
     this.links = null;
     this.color = null;
     this.createdAt = null;
@@ -37,6 +39,7 @@ export default class Category {
     this.type = null;
     this.updatedAt = null;
 
+    this.embeddedType = CategoryEmbedded;
     this.linksType = CategoryLinks;
   }
 
@@ -55,6 +58,12 @@ export default class Category {
       object = new Category();
     }
 
+    if (data.hasOwnProperty("_embedded")) {
+      object.embedded = ApiClient.convertToType(
+        data["_embedded"],
+        object.embeddedType
+      );
+    }
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
@@ -89,6 +98,19 @@ export default class Category {
     return object;
   }
 
+  /**
+   * @return { module:model/CategoryEmbedded }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/CategoryEmbedded } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
   /**
    * @return { module:model/CategoryLinks }
    */

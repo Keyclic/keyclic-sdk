@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _MemberDataContactPoint = _interopRequireDefault(
+  require("./MemberDataContactPoint")
+);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -33,6 +37,20 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+
 /**
  * The MemberData model module.
  * @module model/MemberData
@@ -45,16 +63,17 @@ var MemberData =
    * @alias module:model/MemberData
    * @class
   
-   * @param person { String }
-  
    * @param organization { String }
   
    */
-    function MemberData(person, organization) {
+    function MemberData(organization) {
       _classCallCheck(this, MemberData);
 
-      this.person = person;
+      this.contactPoint = null;
       this.organization = organization;
+      this.person = null;
+      this.type = null;
+      this.contactPointType = _MemberDataContactPoint.default;
     }
     /**
      * Constructs a "MemberData" from a plain JavaScript object.
@@ -67,22 +86,22 @@ var MemberData =
       MemberData,
       [
         {
-          key: "getPerson",
+          key: "getContactPoint",
 
           /**
-           * @return { String }
+           * @return { module:model/MemberDataContactPoint }
            */
-          value: function getPerson() {
-            return this.person;
+          value: function getContactPoint() {
+            return this.contactPoint;
           }
           /**
-           * @param { String } person
+           * @param { module:model/MemberDataContactPoint } contactPoint
            */
         },
         {
-          key: "setPerson",
-          value: function setPerson(person) {
-            this.person = person;
+          key: "setContactPoint",
+          value: function setContactPoint(contactPoint) {
+            this.contactPoint = contactPoint;
           }
           /**
            * @return { String }
@@ -102,6 +121,46 @@ var MemberData =
           value: function setOrganization(organization) {
             this.organization = organization;
           }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getPerson",
+          value: function getPerson() {
+            return this.person;
+          }
+          /**
+           * @param { String } person
+           */
+        },
+        {
+          key: "setPerson",
+          value: function setPerson(person) {
+            this.person = person;
+          }
+          /**
+           * @return { module:model/MemberData.TypeEnum }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
+          }
+          /**
+           * @param { module:model/MemberData.TypeEnum } type
+           */
+        },
+        {
+          key: "setType",
+          value: function setType(type) {
+            this.type = type;
+          }
+          /**
+           * Allowed values for the "type" property.
+           * @enum { String }
+           */
         }
       ],
       [
@@ -121,6 +180,20 @@ var MemberData =
               object = new MemberData();
             }
 
+            if (data.hasOwnProperty("contactPoint")) {
+              object.contactPoint = _ApiClient.default.convertToType(
+                data["contactPoint"],
+                object.contactPointType
+              );
+            }
+
+            if (data.hasOwnProperty("organization")) {
+              object.organization = _ApiClient.default.convertToType(
+                data["organization"],
+                "String"
+              );
+            }
+
             if (data.hasOwnProperty("person")) {
               object.person = _ApiClient.default.convertToType(
                 data["person"],
@@ -128,9 +201,9 @@ var MemberData =
               );
             }
 
-            if (data.hasOwnProperty("organization")) {
-              object.organization = _ApiClient.default.convertToType(
-                data["organization"],
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
                 "String"
               );
             }
@@ -145,3 +218,19 @@ var MemberData =
   })();
 
 exports.default = MemberData;
+
+_defineProperty(MemberData, "TypeEnum", {
+  /**
+   * value: "collaborator"
+   * @const
+   * @readonly
+   */
+  collaborator: "collaborator",
+
+  /**
+   * value: "contact"
+   * @const
+   * @readonly
+   */
+  contact: "contact"
+});

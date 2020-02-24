@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import TransitionState from "./TransitionState";
+import State from "./State";
 
 /**
  * The Transition model module.
@@ -25,15 +25,15 @@ export default class Transition {
     
      */
   constructor() {
+    this.id = null;
+    this.type = null;
+    this.name = null;
     this.description = null;
     this.from = null;
-    this.id = null;
-    this.name = null;
     this.to = null;
-    this.type = null;
 
-    this.fromType = TransitionState;
-    this.toType = TransitionState;
+    this.fromType = State;
+    this.toType = State;
   }
 
   /**
@@ -51,6 +51,15 @@ export default class Transition {
       object = new Transition();
     }
 
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
+    }
+    if (data.hasOwnProperty("type")) {
+      object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("name")) {
+      object.name = ApiClient.convertToType(data["name"], "String");
+    }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
         data["description"],
@@ -60,17 +69,8 @@ export default class Transition {
     if (data.hasOwnProperty("from")) {
       object.from = ApiClient.convertToType(data["from"], object.fromType);
     }
-    if (data.hasOwnProperty("id")) {
-      object.id = ApiClient.convertToType(data["id"], "String");
-    }
-    if (data.hasOwnProperty("name")) {
-      object.name = ApiClient.convertToType(data["name"], "String");
-    }
     if (data.hasOwnProperty("to")) {
       object.to = ApiClient.convertToType(data["to"], object.toType);
-    }
-    if (data.hasOwnProperty("type")) {
-      object.type = ApiClient.convertToType(data["type"], "String");
     }
 
     return object;
@@ -79,36 +79,29 @@ export default class Transition {
   /**
    * @return { String }
    */
-  getDescription() {
-    return this.description;
-  }
-
-  /**
-   * @param { String } description
-   */
-  setDescription(description) {
-    this.description = description;
-  }
-  /**
-   * @return { module:model/TransitionState }
-   */
-  getFrom() {
-    return this.from;
-  }
-
-  /**
-   * @param { module:model/TransitionState } from
-   */
-  setFrom(from) {
-    this.from = from;
-  }
-  /**
-   * @return { String }
-   */
   getId() {
     return this.id;
   }
 
+  /**
+   * @param { String } id
+   */
+  setId(id) {
+    this.id = id;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @param { String } type
+   */
+  setType(type) {
+    this.type = type;
+  }
   /**
    * @return { String }
    */
@@ -123,22 +116,42 @@ export default class Transition {
     this.name = name;
   }
   /**
-   * @return { module:model/TransitionState }
+   * @return { String }
+   */
+  getDescription() {
+    return this.description;
+  }
+
+  /**
+   * @param { String } description
+   */
+  setDescription(description) {
+    this.description = description;
+  }
+  /**
+   * @return { module:model/State }
+   */
+  getFrom() {
+    return this.from;
+  }
+
+  /**
+   * @param { module:model/State } from
+   */
+  setFrom(from) {
+    this.from = from;
+  }
+  /**
+   * @return { module:model/State }
    */
   getTo() {
     return this.to;
   }
 
   /**
-   * @param { module:model/TransitionState } to
+   * @param { module:model/State } to
    */
   setTo(to) {
     this.to = to;
-  }
-  /**
-   * @return { String }
-   */
-  getType() {
-    return this.type;
   }
 }

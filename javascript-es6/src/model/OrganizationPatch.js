@@ -29,8 +29,6 @@ export default class OrganizationPatch {
     this.alternateName = null;
     this.description = null;
     this.logo = null;
-    this.billingEmailAddress = null;
-    this.notificationEmailAddress = null;
     this.preferences = null;
 
     this.preferencesType = OrganizationPatchPreferences;
@@ -68,18 +66,6 @@ export default class OrganizationPatch {
     }
     if (data.hasOwnProperty("logo")) {
       object.logo = ApiClient.convertToType(data["logo"], "String");
-    }
-    if (data.hasOwnProperty("billingEmailAddress")) {
-      object.billingEmailAddress = ApiClient.convertToType(
-        data["billingEmailAddress"],
-        "String"
-      );
-    }
-    if (data.hasOwnProperty("notificationEmailAddress")) {
-      object.notificationEmailAddress = ApiClient.convertToType(
-        data["notificationEmailAddress"],
-        "String"
-      );
     }
     if (data.hasOwnProperty("preferences")) {
       object.preferences = ApiClient.convertToType(
@@ -142,32 +128,6 @@ export default class OrganizationPatch {
    */
   setLogo(logo) {
     this.logo = logo;
-  }
-  /**
-   * @return { String }
-   */
-  getBillingEmailAddress() {
-    return this.billingEmailAddress;
-  }
-
-  /**
-   * @param { String } billingEmailAddress
-   */
-  setBillingEmailAddress(billingEmailAddress) {
-    this.billingEmailAddress = billingEmailAddress;
-  }
-  /**
-   * @return { String }
-   */
-  getNotificationEmailAddress() {
-    return this.notificationEmailAddress;
-  }
-
-  /**
-   * @param { String } notificationEmailAddress
-   */
-  setNotificationEmailAddress(notificationEmailAddress) {
-    this.notificationEmailAddress = notificationEmailAddress;
   }
   /**
    * @return { module:model/OrganizationPatchPreferences }

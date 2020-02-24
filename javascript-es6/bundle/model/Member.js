@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _MemberContactPoint = _interopRequireDefault(
+  require("./MemberContactPoint")
+);
+
 var _MemberEmbedded = _interopRequireDefault(require("./MemberEmbedded"));
 
 var _MemberLinks = _interopRequireDefault(require("./MemberLinks"));
@@ -55,6 +59,7 @@ var Member =
 
       this.embedded = null;
       this.links = null;
+      this.contactPoint = null;
       this.createdAt = null;
       this.id = null;
       this.roles = [];
@@ -62,6 +67,7 @@ var Member =
       this.updatedAt = null;
       this.embeddedType = _MemberEmbedded.default;
       this.linksType = _MemberLinks.default;
+      this.contactPointType = _MemberContactPoint.default;
     }
     /**
      * Constructs a "Member" from a plain JavaScript object.
@@ -108,6 +114,24 @@ var Member =
           key: "setLinks",
           value: function setLinks(links) {
             this.links = links;
+          }
+          /**
+           * @return { module:model/MemberContactPoint }
+           */
+        },
+        {
+          key: "getContactPoint",
+          value: function getContactPoint() {
+            return this.contactPoint;
+          }
+          /**
+           * @param { module:model/MemberContactPoint } contactPoint
+           */
+        },
+        {
+          key: "setContactPoint",
+          value: function setContactPoint(contactPoint) {
+            this.contactPoint = contactPoint;
           }
           /**
            * @return { Date }
@@ -193,6 +217,13 @@ var Member =
               object.links = _ApiClient.default.convertToType(
                 data["_links"],
                 object.linksType
+              );
+            }
+
+            if (data.hasOwnProperty("contactPoint")) {
+              object.contactPoint = _ApiClient.default.convertToType(
+                data["contactPoint"],
+                object.contactPointType
               );
             }
 

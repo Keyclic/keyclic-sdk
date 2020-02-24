@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**person** | **String** |  | 
+**member** | **String** |  | 
 **place** | **String** |  | 
 
 

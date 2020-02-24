@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **color** | **String** |  | [default to null]
 **icon** | **String** |  | [default to null]
 **organization** | **String** |  | [default to null]
+**parent** | **String** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

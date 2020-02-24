@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _MemberPatchContactPoint = _interopRequireDefault(
+  require("./MemberPatchContactPoint")
+);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -49,7 +53,9 @@ var MemberPatch =
     function MemberPatch() {
       _classCallCheck(this, MemberPatch);
 
+      this.contactPoint = null;
       this.roles = [];
+      this.contactPointType = _MemberPatchContactPoint.default;
     }
     /**
      * Constructs a "MemberPatch" from a plain JavaScript object.
@@ -62,11 +68,29 @@ var MemberPatch =
       MemberPatch,
       [
         {
-          key: "getRoles",
+          key: "getContactPoint",
 
+          /**
+           * @return { module:model/MemberPatchContactPoint }
+           */
+          value: function getContactPoint() {
+            return this.contactPoint;
+          }
+          /**
+           * @param { module:model/MemberPatchContactPoint } contactPoint
+           */
+        },
+        {
+          key: "setContactPoint",
+          value: function setContactPoint(contactPoint) {
+            this.contactPoint = contactPoint;
+          }
           /**
            * @return { Array.<String> }
            */
+        },
+        {
+          key: "getRoles",
           value: function getRoles() {
             return this.roles;
           }
@@ -96,6 +120,13 @@ var MemberPatch =
 
             if (object === null) {
               object = new MemberPatch();
+            }
+
+            if (data.hasOwnProperty("contactPoint")) {
+              object.contactPoint = _ApiClient.default.convertToType(
+                data["contactPoint"],
+                object.contactPointType
+              );
             }
 
             if (data.hasOwnProperty("roles")) {

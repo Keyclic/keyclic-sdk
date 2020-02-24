@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import MemberPatchContactPoint from "./MemberPatchContactPoint";
 
 /**
  * The MemberPatch model module.
@@ -24,7 +25,10 @@ export default class MemberPatch {
     
      */
   constructor() {
+    this.contactPoint = null;
     this.roles = [];
+
+    this.contactPointType = MemberPatchContactPoint;
   }
 
   /**
@@ -42,6 +46,12 @@ export default class MemberPatch {
       object = new MemberPatch();
     }
 
+    if (data.hasOwnProperty("contactPoint")) {
+      object.contactPoint = ApiClient.convertToType(
+        data["contactPoint"],
+        object.contactPointType
+      );
+    }
     if (data.hasOwnProperty("roles")) {
       object.roles = ApiClient.convertToType(data["roles"], "['String']");
     }
@@ -49,6 +59,19 @@ export default class MemberPatch {
     return object;
   }
 
+  /**
+   * @return { module:model/MemberPatchContactPoint }
+   */
+  getContactPoint() {
+    return this.contactPoint;
+  }
+
+  /**
+   * @param { module:model/MemberPatchContactPoint } contactPoint
+   */
+  setContactPoint(contactPoint) {
+    this.contactPoint = contactPoint;
+  }
   /**
    * @return { Array.<String> }
    */

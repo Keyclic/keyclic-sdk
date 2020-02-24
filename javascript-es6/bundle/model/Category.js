@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _CategoryEmbedded = _interopRequireDefault(require("./CategoryEmbedded"));
+
 var _CategoryLinks = _interopRequireDefault(require("./CategoryLinks"));
 
 function _interopRequireDefault(obj) {
@@ -53,6 +55,7 @@ var Category =
     function Category(name) {
       _classCallCheck(this, Category);
 
+      this.embedded = null;
       this.links = null;
       this.color = null;
       this.createdAt = null;
@@ -62,6 +65,7 @@ var Category =
       this.name = name;
       this.type = null;
       this.updatedAt = null;
+      this.embeddedType = _CategoryEmbedded.default;
       this.linksType = _CategoryLinks.default;
     }
     /**
@@ -75,11 +79,29 @@ var Category =
       Category,
       [
         {
-          key: "getLinks",
+          key: "getEmbedded",
 
+          /**
+           * @return { module:model/CategoryEmbedded }
+           */
+          value: function getEmbedded() {
+            return this.embedded;
+          }
+          /**
+           * @param { module:model/CategoryEmbedded } embedded
+           */
+        },
+        {
+          key: "setEmbedded",
+          value: function setEmbedded(embedded) {
+            this.embedded = embedded;
+          }
           /**
            * @return { module:model/CategoryLinks }
            */
+        },
+        {
+          key: "getLinks",
           value: function getLinks() {
             return this.links;
           }
@@ -217,6 +239,13 @@ var Category =
 
             if (object === null) {
               object = new Category();
+            }
+
+            if (data.hasOwnProperty("_embedded")) {
+              object.embedded = _ApiClient.default.convertToType(
+                data["_embedded"],
+                object.embeddedType
+              );
             }
 
             if (data.hasOwnProperty("_links")) {

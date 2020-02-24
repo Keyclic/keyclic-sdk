@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _OccupantEmbedded = _interopRequireDefault(require("./OccupantEmbedded"));
+
 var _OccupantLinks = _interopRequireDefault(require("./OccupantLinks"));
 
 function _interopRequireDefault(obj) {
@@ -51,11 +53,13 @@ var Occupant =
     function Occupant() {
       _classCallCheck(this, Occupant);
 
+      this.embedded = null;
       this.links = null;
       this.createdAt = null;
       this.id = null;
       this.type = null;
       this.updatedAt = null;
+      this.embeddedType = _OccupantEmbedded.default;
       this.linksType = _OccupantLinks.default;
     }
     /**
@@ -69,11 +73,29 @@ var Occupant =
       Occupant,
       [
         {
-          key: "getLinks",
+          key: "getEmbedded",
 
+          /**
+           * @return { module:model/OccupantEmbedded }
+           */
+          value: function getEmbedded() {
+            return this.embedded;
+          }
+          /**
+           * @param { module:model/OccupantEmbedded } embedded
+           */
+        },
+        {
+          key: "setEmbedded",
+          value: function setEmbedded(embedded) {
+            this.embedded = embedded;
+          }
           /**
            * @return { module:model/OccupantLinks }
            */
+        },
+        {
+          key: "getLinks",
           value: function getLinks() {
             return this.links;
           }
@@ -139,6 +161,13 @@ var Occupant =
 
             if (object === null) {
               object = new Occupant();
+            }
+
+            if (data.hasOwnProperty("_embedded")) {
+              object.embedded = _ApiClient.default.convertToType(
+                data["_embedded"],
+                object.embeddedType
+              );
             }
 
             if (data.hasOwnProperty("_links")) {

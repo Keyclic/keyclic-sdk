@@ -2,7 +2,7 @@ part of keyclic_sdk_api.api;
 
 class OccupantLinks {
   OccupantLinks({
-    this.person,
+    this.member,
     this.place,
     this.self,
   });
@@ -13,13 +13,13 @@ class OccupantLinks {
     }
 
     return OccupantLinks(
-      person: OccupantLinksPerson.fromJson(json['person']),
+      member: OccupantLinksMember.fromJson(json['member']),
       place: OccupantLinksPlace.fromJson(json['place']),
       self: OccupantLinksSelf.fromJson(json['self']),
     );
   }
 
-  OccupantLinksPerson person;
+  OccupantLinksMember member;
 
   OccupantLinksPlace place;
 
@@ -34,7 +34,7 @@ class OccupantLinks {
 
     return other is OccupantLinks &&
         runtimeType == other.runtimeType &&
-        person == other.person &&
+        member == other.member &&
         place == other.place &&
         self == other.self;
   }
@@ -44,7 +44,7 @@ class OccupantLinks {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= person?.hashCode ?? 0;
+    hashCode ^= member?.hashCode ?? 0;
     hashCode ^= place?.hashCode ?? 0;
     hashCode ^= self?.hashCode ?? 0;
 
@@ -69,7 +69,7 @@ class OccupantLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      if (person != null) 'person': person,
+      if (member != null) 'member': member,
       if (place != null) 'place': place,
       if (self != null) 'self': self,
     };
@@ -77,6 +77,6 @@ class OccupantLinks {
 
   @override
   String toString() {
-    return 'OccupantLinks[person=$person, place=$place, self=$self, ]';
+    return 'OccupantLinks[member=$member, place=$place, self=$self, ]';
   }
 }

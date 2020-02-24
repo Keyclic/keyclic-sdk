@@ -44,6 +44,7 @@ export default class CategoryData {
     this.color = color;
     this.icon = icon;
     this.organization = organization;
+    this.parent = null;
   }
 
   /**
@@ -75,6 +76,9 @@ export default class CategoryData {
         data["organization"],
         "String"
       );
+    }
+    if (data.hasOwnProperty("parent")) {
+      object.parent = ApiClient.convertToType(data["parent"], "String");
     }
 
     return object;
@@ -131,5 +135,18 @@ export default class CategoryData {
    */
   setOrganization(organization) {
     this.organization = organization;
+  }
+  /**
+   * @return { String }
+   */
+  getParent() {
+    return this.parent;
+  }
+
+  /**
+   * @param { String } parent
+   */
+  setParent(parent) {
+    this.parent = parent;
   }
 }

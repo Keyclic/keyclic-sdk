@@ -6,8 +6,6 @@ class OrganizationPatch {
     this.alternateName,
     this.description,
     this.logo,
-    this.billingEmailAddress,
-    this.notificationEmailAddress,
     this.preferences,
   });
 
@@ -21,8 +19,6 @@ class OrganizationPatch {
       alternateName: json['alternateName'],
       description: json['description'],
       logo: json['logo'],
-      billingEmailAddress: json['billingEmailAddress'],
-      notificationEmailAddress: json['notificationEmailAddress'],
       preferences: OrganizationPatchPreferences.fromJson(json['preferences']),
     );
   }
@@ -34,10 +30,6 @@ class OrganizationPatch {
   String description;
 
   String logo;
-
-  String billingEmailAddress;
-
-  String notificationEmailAddress;
 
   OrganizationPatchPreferences preferences;
 
@@ -54,8 +46,6 @@ class OrganizationPatch {
         alternateName == other.alternateName &&
         description == other.description &&
         logo == other.logo &&
-        billingEmailAddress == other.billingEmailAddress &&
-        notificationEmailAddress == other.notificationEmailAddress &&
         preferences == other.preferences;
   }
 
@@ -68,8 +58,6 @@ class OrganizationPatch {
     hashCode ^= alternateName?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= logo?.hashCode ?? 0;
-    hashCode ^= billingEmailAddress?.hashCode ?? 0;
-    hashCode ^= notificationEmailAddress?.hashCode ?? 0;
     hashCode ^= preferences?.hashCode ?? 0;
 
     return hashCode;
@@ -99,16 +87,12 @@ class OrganizationPatch {
       if (alternateName != null) 'alternateName': alternateName,
       if (description != null) 'description': description,
       if (logo != null) 'logo': logo,
-      if (billingEmailAddress != null)
-        'billingEmailAddress': billingEmailAddress,
-      if (notificationEmailAddress != null)
-        'notificationEmailAddress': notificationEmailAddress,
       if (preferences != null) 'preferences': preferences,
     };
   }
 
   @override
   String toString() {
-    return 'OrganizationPatch[name=$name, alternateName=$alternateName, description=$description, logo=$logo, billingEmailAddress=$billingEmailAddress, notificationEmailAddress=$notificationEmailAddress, preferences=$preferences, ]';
+    return 'OrganizationPatch[name=$name, alternateName=$alternateName, description=$description, logo=$logo, preferences=$preferences, ]';
   }
 }

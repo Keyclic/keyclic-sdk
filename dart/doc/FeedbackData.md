@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] [default to null]
 **geo** | [**FeedbackDataGeo**](FeedbackDataGeo.md) |  | [default to null]
 **metadata** | **Map&lt;String, String&gt;** |  | [optional] [default to {}]
-**place** | **String** |  | [optional] [default to null]
+**place** | **String** |  | [default to null]
 **proMode** | **bool** |  | [optional] [default to null]
 **visibility** | **String** |  | [default to null]
 

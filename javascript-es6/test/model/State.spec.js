@@ -53,20 +53,14 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.State);
     });
 
-    it('should have the property color (base name: "color")', function() {
-      // uncomment below and update the code to test the property color
-      //var instane = new @KeyclicSdkJavascript.State();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
-      //var instane = new @KeyclicSdkJavascript.State();
-      //expect(instance).to.be();
-    });
-
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
+      //var instane = new @KeyclicSdkJavascript.State();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new @KeyclicSdkJavascript.State();
       //expect(instance).to.be();
     });
@@ -77,14 +71,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property progression (base name: "progression")', function() {
-      // uncomment below and update the code to test the property progression
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
       //var instane = new @KeyclicSdkJavascript.State();
       //expect(instance).to.be();
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
+    it('should have the property color (base name: "color")', function() {
+      // uncomment below and update the code to test the property color
+      //var instane = new @KeyclicSdkJavascript.State();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property progression (base name: "progression")', function() {
+      // uncomment below and update the code to test the property progression
       //var instane = new @KeyclicSdkJavascript.State();
       //expect(instance).to.be();
     });

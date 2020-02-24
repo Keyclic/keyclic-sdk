@@ -53,6 +53,12 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.ApplicationLinks);
     });
 
+    it('should have the property knowledgeBase (base name: "knowledgeBase")', function() {
+      // uncomment below and update the code to test the property knowledgeBase
+      //var instane = new @KeyclicSdkJavascript.ApplicationLinks();
+      //expect(instance).to.be();
+    });
+
     it('should have the property self (base name: "self")', function() {
       // uncomment below and update the code to test the property self
       //var instane = new @KeyclicSdkJavascript.ApplicationLinks();

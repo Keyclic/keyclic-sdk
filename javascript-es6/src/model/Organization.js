@@ -30,13 +30,11 @@ export default class Organization {
   constructor(name) {
     this.links = null;
     this.alternateName = null;
-    this.billingEmailAddress = null;
     this.createdAt = null;
     this.description = null;
     this.enabled = null;
     this.id = null;
     this.name = name;
-    this.notificationEmailAddress = null;
     this.preferences = null;
     this.type = null;
     this.updatedAt = null;
@@ -69,12 +67,6 @@ export default class Organization {
         "String"
       );
     }
-    if (data.hasOwnProperty("billingEmailAddress")) {
-      object.billingEmailAddress = ApiClient.convertToType(
-        data["billingEmailAddress"],
-        "String"
-      );
-    }
     if (data.hasOwnProperty("createdAt")) {
       object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
     }
@@ -92,12 +84,6 @@ export default class Organization {
     }
     if (data.hasOwnProperty("name")) {
       object.name = ApiClient.convertToType(data["name"], "String");
-    }
-    if (data.hasOwnProperty("notificationEmailAddress")) {
-      object.notificationEmailAddress = ApiClient.convertToType(
-        data["notificationEmailAddress"],
-        "String"
-      );
     }
     if (data.hasOwnProperty("preferences")) {
       object.preferences = ApiClient.convertToType(
@@ -140,19 +126,6 @@ export default class Organization {
    */
   setAlternateName(alternateName) {
     this.alternateName = alternateName;
-  }
-  /**
-   * @return { String }
-   */
-  getBillingEmailAddress() {
-    return this.billingEmailAddress;
-  }
-
-  /**
-   * @param { String } billingEmailAddress
-   */
-  setBillingEmailAddress(billingEmailAddress) {
-    this.billingEmailAddress = billingEmailAddress;
   }
   /**
    * @return { Date }
@@ -206,19 +179,6 @@ export default class Organization {
    */
   setName(name) {
     this.name = name;
-  }
-  /**
-   * @return { String }
-   */
-  getNotificationEmailAddress() {
-    return this.notificationEmailAddress;
-  }
-
-  /**
-   * @param { String } notificationEmailAddress
-   */
-  setNotificationEmailAddress(notificationEmailAddress) {
-    this.notificationEmailAddress = notificationEmailAddress;
   }
   /**
    * @return { module:model/OrganizationPreferences }

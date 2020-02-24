@@ -3,7 +3,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**person** | **String** |  | 
+**contactPoint** | [**MemberDataContactPoint**](MemberDataContactPoint.md) |  | [optional] 
 **organization** | **String** |  | 
+**person** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
+
+
+<a name="TypeEnum"></a>
+## Enum: TypeEnum
+
+
+* `collaborator` (value: `"collaborator"`)
+
+* `contact` (value: `"contact"`)
+
+
 
 

@@ -28,9 +28,21 @@ import Application from "./model/Application";
 import ApplicationAbout from "./model/ApplicationAbout";
 import ApplicationAgreement from "./model/ApplicationAgreement";
 import ApplicationLinks from "./model/ApplicationLinks";
+import ApplicationLinksKnowledgeBase from "./model/ApplicationLinksKnowledgeBase";
+import ApplicationLinksKnowledgeBaseIriTemplate from "./model/ApplicationLinksKnowledgeBaseIriTemplate";
+import ApplicationLinksKnowledgeBaseIriTemplateMapping from "./model/ApplicationLinksKnowledgeBaseIriTemplateMapping";
 import ApplicationLinksSelf from "./model/ApplicationLinksSelf";
 import ApplicationLinksSelfIriTemplate from "./model/ApplicationLinksSelfIriTemplate";
 import ApplicationLinksSelfIriTemplateMapping from "./model/ApplicationLinksSelfIriTemplateMapping";
+import Article from "./model/Article";
+import ArticleCollection from "./model/ArticleCollection";
+import ArticleLinks from "./model/ArticleLinks";
+import ArticleLinksSection from "./model/ArticleLinksSection";
+import ArticleLinksSectionIriTemplate from "./model/ArticleLinksSectionIriTemplate";
+import ArticleLinksSectionIriTemplateMapping from "./model/ArticleLinksSectionIriTemplateMapping";
+import ArticleLinksSelf from "./model/ArticleLinksSelf";
+import ArticleLinksSelfIriTemplate from "./model/ArticleLinksSelfIriTemplate";
+import ArticleLinksSelfIriTemplateMapping from "./model/ArticleLinksSelfIriTemplateMapping";
 import AssignData from "./model/AssignData";
 import BusinessActivity from "./model/BusinessActivity";
 import BusinessActivityCollection from "./model/BusinessActivityCollection";
@@ -48,6 +60,7 @@ import BusinessActivitySchema from "./model/BusinessActivitySchema";
 import Category from "./model/Category";
 import CategoryCollection from "./model/CategoryCollection";
 import CategoryData from "./model/CategoryData";
+import CategoryEmbedded from "./model/CategoryEmbedded";
 import CategoryLinks from "./model/CategoryLinks";
 import CategoryLinksOrganization from "./model/CategoryLinksOrganization";
 import CategoryLinksOrganizationIriTemplate from "./model/CategoryLinksOrganizationIriTemplate";
@@ -182,10 +195,26 @@ import InternalServiceLinksSelf from "./model/InternalServiceLinksSelf";
 import InternalServiceLinksSelfIriTemplate from "./model/InternalServiceLinksSelfIriTemplate";
 import InternalServiceLinksSelfIriTemplateMapping from "./model/InternalServiceLinksSelfIriTemplateMapping";
 import InternalServicePatch from "./model/InternalServicePatch";
+import Invitation from "./model/Invitation";
+import InvitationData from "./model/InvitationData";
+import InvitationDateTime from "./model/InvitationDateTime";
+import InvitationLinks from "./model/InvitationLinks";
+import InvitationLinksMember from "./model/InvitationLinksMember";
+import InvitationLinksMemberIriTemplate from "./model/InvitationLinksMemberIriTemplate";
+import InvitationLinksMemberIriTemplateMapping from "./model/InvitationLinksMemberIriTemplateMapping";
+import InvitationLinksSelf from "./model/InvitationLinksSelf";
+import InvitationLinksSelfIriTemplate from "./model/InvitationLinksSelfIriTemplate";
+import InvitationLinksSelfIriTemplateMapping from "./model/InvitationLinksSelfIriTemplateMapping";
+import KnowledgeBase from "./model/KnowledgeBase";
+import KnowledgeBaseLinks from "./model/KnowledgeBaseLinks";
+import KnowledgeBaseLinksSelf from "./model/KnowledgeBaseLinksSelf";
+import KnowledgeBaseLinksSelfIriTemplate from "./model/KnowledgeBaseLinksSelfIriTemplate";
 import LoginData from "./model/LoginData";
 import Member from "./model/Member";
 import MemberCollection from "./model/MemberCollection";
+import MemberContactPoint from "./model/MemberContactPoint";
 import MemberData from "./model/MemberData";
+import MemberDataContactPoint from "./model/MemberDataContactPoint";
 import MemberEmbedded from "./model/MemberEmbedded";
 import MemberLinks from "./model/MemberLinks";
 import MemberLinksOrganization from "./model/MemberLinksOrganization";
@@ -194,8 +223,8 @@ import MemberLinksPerson from "./model/MemberLinksPerson";
 import MemberLinksPersonIriTemplate from "./model/MemberLinksPersonIriTemplate";
 import MemberLinksSelf from "./model/MemberLinksSelf";
 import MemberLinksSelfIriTemplate from "./model/MemberLinksSelfIriTemplate";
-import MemberLinksSelfIriTemplateMapping from "./model/MemberLinksSelfIriTemplateMapping";
 import MemberPatch from "./model/MemberPatch";
+import MemberPatchContactPoint from "./model/MemberPatchContactPoint";
 import Node from "./model/Node";
 import NodeEmbedded from "./model/NodeEmbedded";
 import NodePath from "./model/NodePath";
@@ -203,9 +232,10 @@ import NotificationReportNotification from "./model/NotificationReportNotificati
 import Occupant from "./model/Occupant";
 import OccupantCollection from "./model/OccupantCollection";
 import OccupantData from "./model/OccupantData";
+import OccupantEmbedded from "./model/OccupantEmbedded";
 import OccupantLinks from "./model/OccupantLinks";
-import OccupantLinksPerson from "./model/OccupantLinksPerson";
-import OccupantLinksPersonIriTemplate from "./model/OccupantLinksPersonIriTemplate";
+import OccupantLinksMember from "./model/OccupantLinksMember";
+import OccupantLinksMemberIriTemplate from "./model/OccupantLinksMemberIriTemplate";
 import OccupantLinksPlace from "./model/OccupantLinksPlace";
 import OccupantLinksPlaceIriTemplate from "./model/OccupantLinksPlaceIriTemplate";
 import OccupantLinksPlaceIriTemplateMapping from "./model/OccupantLinksPlaceIriTemplateMapping";
@@ -285,7 +315,6 @@ import PersonPreferences from "./model/PersonPreferences";
 import Place from "./model/Place";
 import PlaceCollection from "./model/PlaceCollection";
 import PlaceData from "./model/PlaceData";
-import PlaceEmbedded from "./model/PlaceEmbedded";
 import PlaceGeoShape from "./model/PlaceGeoShape";
 import PlaceLinks from "./model/PlaceLinks";
 import PlaceLinksContainedInPlace from "./model/PlaceLinksContainedInPlace";
@@ -322,7 +351,6 @@ import PublicationLinksSelfIriTemplateMapping from "./model/PublicationLinksSelf
 import RegisterData from "./model/RegisterData";
 import RegisterDataAgreement from "./model/RegisterDataAgreement";
 import Report from "./model/Report";
-import ReportCategory from "./model/ReportCategory";
 import ReportCollection from "./model/ReportCollection";
 import ReportEmbedded from "./model/ReportEmbedded";
 import ReportEmbeddedTargetGroups from "./model/ReportEmbeddedTargetGroups";
@@ -346,7 +374,6 @@ import ReportLinksSelfIriTemplate from "./model/ReportLinksSelfIriTemplate";
 import ReportLinksTracking from "./model/ReportLinksTracking";
 import ReportLinksTrackingIriTemplate from "./model/ReportLinksTrackingIriTemplate";
 import ReportPatch from "./model/ReportPatch";
-import ReportPlace from "./model/ReportPlace";
 import ReportTypeWorkflow from "./model/ReportTypeWorkflow";
 import ResetPasswordData from "./model/ResetPasswordData";
 import Review from "./model/Review";
@@ -376,6 +403,11 @@ import ReviewRequestLinksSelfIriTemplate from "./model/ReviewRequestLinksSelfIri
 import ReviewRequestLinksSelfIriTemplateMapping from "./model/ReviewRequestLinksSelfIriTemplateMapping";
 import Role from "./model/Role";
 import Schema from "./model/Schema";
+import Section from "./model/Section";
+import SectionCollection from "./model/SectionCollection";
+import SectionLinks from "./model/SectionLinks";
+import SectionLinksSelf from "./model/SectionLinksSelf";
+import SectionLinksSelfIriTemplate from "./model/SectionLinksSelfIriTemplate";
 import SignatureData from "./model/SignatureData";
 import SignatureDataSigner from "./model/SignatureDataSigner";
 import SignatureSigner from "./model/SignatureSigner";
@@ -406,6 +438,7 @@ import WorkflowLinksSelf from "./model/WorkflowLinksSelf";
 import WorkflowLinksSelfIriTemplate from "./model/WorkflowLinksSelfIriTemplate";
 import WorkflowLinksSelfIriTemplateMapping from "./model/WorkflowLinksSelfIriTemplateMapping";
 import WorkflowState from "./model/WorkflowState";
+import ArticlePagination from "./model/ArticlePagination";
 import BusinessActivityPagination from "./model/BusinessActivityPagination";
 import CategoryPagination from "./model/CategoryPagination";
 import ContributionPagination from "./model/ContributionPagination";
@@ -425,8 +458,10 @@ import PublicationPagination from "./model/PublicationPagination";
 import ReportPagination from "./model/ReportPagination";
 import ReviewPagination from "./model/ReviewPagination";
 import ReviewRequestPagination from "./model/ReviewRequestPagination";
+import SectionPagination from "./model/SectionPagination";
 import WebhookPagination from "./model/WebhookPagination";
 import ApplicationApi from "./api/ApplicationApi";
+import ArticleApi from "./api/ArticleApi";
 import BusinessActivityApi from "./api/BusinessActivityApi";
 import CategoryApi from "./api/CategoryApi";
 import ConfigurationApi from "./api/ConfigurationApi";
@@ -438,6 +473,8 @@ import ExternalServiceApi from "./api/ExternalServiceApi";
 import FeedApi from "./api/FeedApi";
 import FeedbackApi from "./api/FeedbackApi";
 import InternalServiceApi from "./api/InternalServiceApi";
+import InvitationApi from "./api/InvitationApi";
+import KnowledgeBaseApi from "./api/KnowledgeBaseApi";
 import MemberApi from "./api/MemberApi";
 import OccupantApi from "./api/OccupantApi";
 import OperationApi from "./api/OperationApi";
@@ -449,6 +486,7 @@ import ReportApi from "./api/ReportApi";
 import ReviewApi from "./api/ReviewApi";
 import ReviewRequestApi from "./api/ReviewRequestApi";
 import RoleApi from "./api/RoleApi";
+import SectionApi from "./api/SectionApi";
 import SecurityApi from "./api/SecurityApi";
 import WebhookApi from "./api/WebhookApi";
 import WorkflowApi from "./api/WorkflowApi";
@@ -473,7 +511,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.2.38
+ * @version 2.3.3
  */
 export {
   /**
@@ -542,6 +580,21 @@ export {
    */
   ApplicationLinks,
   /**
+   * The ApplicationLinksKnowledgeBase model constructor.
+   * @property { module:model/ApplicationLinksKnowledgeBase }
+   */
+  ApplicationLinksKnowledgeBase,
+  /**
+   * The ApplicationLinksKnowledgeBaseIriTemplate model constructor.
+   * @property { module:model/ApplicationLinksKnowledgeBaseIriTemplate }
+   */
+  ApplicationLinksKnowledgeBaseIriTemplate,
+  /**
+   * The ApplicationLinksKnowledgeBaseIriTemplateMapping model constructor.
+   * @property { module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping }
+   */
+  ApplicationLinksKnowledgeBaseIriTemplateMapping,
+  /**
    * The ApplicationLinksSelf model constructor.
    * @property { module:model/ApplicationLinksSelf }
    */
@@ -556,6 +609,51 @@ export {
    * @property { module:model/ApplicationLinksSelfIriTemplateMapping }
    */
   ApplicationLinksSelfIriTemplateMapping,
+  /**
+   * The Article model constructor.
+   * @property { module:model/Article }
+   */
+  Article,
+  /**
+   * The ArticleCollection model constructor.
+   * @property { module:model/ArticleCollection }
+   */
+  ArticleCollection,
+  /**
+   * The ArticleLinks model constructor.
+   * @property { module:model/ArticleLinks }
+   */
+  ArticleLinks,
+  /**
+   * The ArticleLinksSection model constructor.
+   * @property { module:model/ArticleLinksSection }
+   */
+  ArticleLinksSection,
+  /**
+   * The ArticleLinksSectionIriTemplate model constructor.
+   * @property { module:model/ArticleLinksSectionIriTemplate }
+   */
+  ArticleLinksSectionIriTemplate,
+  /**
+   * The ArticleLinksSectionIriTemplateMapping model constructor.
+   * @property { module:model/ArticleLinksSectionIriTemplateMapping }
+   */
+  ArticleLinksSectionIriTemplateMapping,
+  /**
+   * The ArticleLinksSelf model constructor.
+   * @property { module:model/ArticleLinksSelf }
+   */
+  ArticleLinksSelf,
+  /**
+   * The ArticleLinksSelfIriTemplate model constructor.
+   * @property { module:model/ArticleLinksSelfIriTemplate }
+   */
+  ArticleLinksSelfIriTemplate,
+  /**
+   * The ArticleLinksSelfIriTemplateMapping model constructor.
+   * @property { module:model/ArticleLinksSelfIriTemplateMapping }
+   */
+  ArticleLinksSelfIriTemplateMapping,
   /**
    * The AssignData model constructor.
    * @property { module:model/AssignData }
@@ -641,6 +739,11 @@ export {
    * @property { module:model/CategoryData }
    */
   CategoryData,
+  /**
+   * The CategoryEmbedded model constructor.
+   * @property { module:model/CategoryEmbedded }
+   */
+  CategoryEmbedded,
   /**
    * The CategoryLinks model constructor.
    * @property { module:model/CategoryLinks }
@@ -1312,6 +1415,76 @@ export {
    */
   InternalServicePatch,
   /**
+   * The Invitation model constructor.
+   * @property { module:model/Invitation }
+   */
+  Invitation,
+  /**
+   * The InvitationData model constructor.
+   * @property { module:model/InvitationData }
+   */
+  InvitationData,
+  /**
+   * The InvitationDateTime model constructor.
+   * @property { module:model/InvitationDateTime }
+   */
+  InvitationDateTime,
+  /**
+   * The InvitationLinks model constructor.
+   * @property { module:model/InvitationLinks }
+   */
+  InvitationLinks,
+  /**
+   * The InvitationLinksMember model constructor.
+   * @property { module:model/InvitationLinksMember }
+   */
+  InvitationLinksMember,
+  /**
+   * The InvitationLinksMemberIriTemplate model constructor.
+   * @property { module:model/InvitationLinksMemberIriTemplate }
+   */
+  InvitationLinksMemberIriTemplate,
+  /**
+   * The InvitationLinksMemberIriTemplateMapping model constructor.
+   * @property { module:model/InvitationLinksMemberIriTemplateMapping }
+   */
+  InvitationLinksMemberIriTemplateMapping,
+  /**
+   * The InvitationLinksSelf model constructor.
+   * @property { module:model/InvitationLinksSelf }
+   */
+  InvitationLinksSelf,
+  /**
+   * The InvitationLinksSelfIriTemplate model constructor.
+   * @property { module:model/InvitationLinksSelfIriTemplate }
+   */
+  InvitationLinksSelfIriTemplate,
+  /**
+   * The InvitationLinksSelfIriTemplateMapping model constructor.
+   * @property { module:model/InvitationLinksSelfIriTemplateMapping }
+   */
+  InvitationLinksSelfIriTemplateMapping,
+  /**
+   * The KnowledgeBase model constructor.
+   * @property { module:model/KnowledgeBase }
+   */
+  KnowledgeBase,
+  /**
+   * The KnowledgeBaseLinks model constructor.
+   * @property { module:model/KnowledgeBaseLinks }
+   */
+  KnowledgeBaseLinks,
+  /**
+   * The KnowledgeBaseLinksSelf model constructor.
+   * @property { module:model/KnowledgeBaseLinksSelf }
+   */
+  KnowledgeBaseLinksSelf,
+  /**
+   * The KnowledgeBaseLinksSelfIriTemplate model constructor.
+   * @property { module:model/KnowledgeBaseLinksSelfIriTemplate }
+   */
+  KnowledgeBaseLinksSelfIriTemplate,
+  /**
    * The LoginData model constructor.
    * @property { module:model/LoginData }
    */
@@ -1327,10 +1500,20 @@ export {
    */
   MemberCollection,
   /**
+   * The MemberContactPoint model constructor.
+   * @property { module:model/MemberContactPoint }
+   */
+  MemberContactPoint,
+  /**
    * The MemberData model constructor.
    * @property { module:model/MemberData }
    */
   MemberData,
+  /**
+   * The MemberDataContactPoint model constructor.
+   * @property { module:model/MemberDataContactPoint }
+   */
+  MemberDataContactPoint,
   /**
    * The MemberEmbedded model constructor.
    * @property { module:model/MemberEmbedded }
@@ -1372,15 +1555,15 @@ export {
    */
   MemberLinksSelfIriTemplate,
   /**
-   * The MemberLinksSelfIriTemplateMapping model constructor.
-   * @property { module:model/MemberLinksSelfIriTemplateMapping }
-   */
-  MemberLinksSelfIriTemplateMapping,
-  /**
    * The MemberPatch model constructor.
    * @property { module:model/MemberPatch }
    */
   MemberPatch,
+  /**
+   * The MemberPatchContactPoint model constructor.
+   * @property { module:model/MemberPatchContactPoint }
+   */
+  MemberPatchContactPoint,
   /**
    * The Node model constructor.
    * @property { module:model/Node }
@@ -1417,20 +1600,25 @@ export {
    */
   OccupantData,
   /**
+   * The OccupantEmbedded model constructor.
+   * @property { module:model/OccupantEmbedded }
+   */
+  OccupantEmbedded,
+  /**
    * The OccupantLinks model constructor.
    * @property { module:model/OccupantLinks }
    */
   OccupantLinks,
   /**
-   * The OccupantLinksPerson model constructor.
-   * @property { module:model/OccupantLinksPerson }
+   * The OccupantLinksMember model constructor.
+   * @property { module:model/OccupantLinksMember }
    */
-  OccupantLinksPerson,
+  OccupantLinksMember,
   /**
-   * The OccupantLinksPersonIriTemplate model constructor.
-   * @property { module:model/OccupantLinksPersonIriTemplate }
+   * The OccupantLinksMemberIriTemplate model constructor.
+   * @property { module:model/OccupantLinksMemberIriTemplate }
    */
-  OccupantLinksPersonIriTemplate,
+  OccupantLinksMemberIriTemplate,
   /**
    * The OccupantLinksPlace model constructor.
    * @property { module:model/OccupantLinksPlace }
@@ -1827,11 +2015,6 @@ export {
    */
   PlaceData,
   /**
-   * The PlaceEmbedded model constructor.
-   * @property { module:model/PlaceEmbedded }
-   */
-  PlaceEmbedded,
-  /**
    * The PlaceGeoShape model constructor.
    * @property { module:model/PlaceGeoShape }
    */
@@ -2012,11 +2195,6 @@ export {
    */
   Report,
   /**
-   * The ReportCategory model constructor.
-   * @property { module:model/ReportCategory }
-   */
-  ReportCategory,
-  /**
    * The ReportCollection model constructor.
    * @property { module:model/ReportCollection }
    */
@@ -2131,11 +2309,6 @@ export {
    * @property { module:model/ReportPatch }
    */
   ReportPatch,
-  /**
-   * The ReportPlace model constructor.
-   * @property { module:model/ReportPlace }
-   */
-  ReportPlace,
   /**
    * The ReportTypeWorkflow model constructor.
    * @property { module:model/ReportTypeWorkflow }
@@ -2281,6 +2454,31 @@ export {
    * @property { module:model/Schema }
    */
   Schema,
+  /**
+   * The Section model constructor.
+   * @property { module:model/Section }
+   */
+  Section,
+  /**
+   * The SectionCollection model constructor.
+   * @property { module:model/SectionCollection }
+   */
+  SectionCollection,
+  /**
+   * The SectionLinks model constructor.
+   * @property { module:model/SectionLinks }
+   */
+  SectionLinks,
+  /**
+   * The SectionLinksSelf model constructor.
+   * @property { module:model/SectionLinksSelf }
+   */
+  SectionLinksSelf,
+  /**
+   * The SectionLinksSelfIriTemplate model constructor.
+   * @property { module:model/SectionLinksSelfIriTemplate }
+   */
+  SectionLinksSelfIriTemplate,
   /**
    * The SignatureData model constructor.
    * @property { module:model/SignatureData }
@@ -2432,6 +2630,11 @@ export {
    */
   WorkflowState,
   /**
+   * The ArticlePagination model constructor.
+   * @property { module:model/ArticlePagination }
+   */
+  ArticlePagination,
+  /**
    * The BusinessActivityPagination model constructor.
    * @property { module:model/BusinessActivityPagination }
    */
@@ -2527,6 +2730,11 @@ export {
    */
   ReviewRequestPagination,
   /**
+   * The SectionPagination model constructor.
+   * @property { module:model/SectionPagination }
+   */
+  SectionPagination,
+  /**
    * The WebhookPagination model constructor.
    * @property { module:model/WebhookPagination }
    */
@@ -2536,6 +2744,11 @@ export {
    * @property { module:api/ApplicationApi }
    */
   ApplicationApi,
+  /**
+   * The ArticleApi service constructor.
+   * @property { module:api/ArticleApi }
+   */
+  ArticleApi,
   /**
    * The BusinessActivityApi service constructor.
    * @property { module:api/BusinessActivityApi }
@@ -2592,6 +2805,16 @@ export {
    */
   InternalServiceApi,
   /**
+   * The InvitationApi service constructor.
+   * @property { module:api/InvitationApi }
+   */
+  InvitationApi,
+  /**
+   * The KnowledgeBaseApi service constructor.
+   * @property { module:api/KnowledgeBaseApi }
+   */
+  KnowledgeBaseApi,
+  /**
    * The MemberApi service constructor.
    * @property { module:api/MemberApi }
    */
@@ -2646,6 +2869,11 @@ export {
    * @property { module:api/RoleApi }
    */
   RoleApi,
+  /**
+   * The SectionApi service constructor.
+   * @property { module:api/SectionApi }
+   */
+  SectionApi,
   /**
    * The SecurityApi service constructor.
    * @property { module:api/SecurityApi }

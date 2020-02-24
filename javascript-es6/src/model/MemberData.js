@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import MemberDataContactPoint from "./MemberDataContactPoint";
 
 /**
  * The MemberData model module.
@@ -22,18 +23,16 @@ export default class MemberData {
      * @alias module:model/MemberData
      * @class
     
-     * @param person { String }
-    
      * @param organization { String }
     
      */
-  constructor(
-    person,
-
-    organization
-  ) {
-    this.person = person;
+  constructor(organization) {
+    this.contactPoint = null;
     this.organization = organization;
+    this.person = null;
+    this.type = null;
+
+    this.contactPointType = MemberDataContactPoint;
   }
 
   /**
@@ -51,8 +50,11 @@ export default class MemberData {
       object = new MemberData();
     }
 
-    if (data.hasOwnProperty("person")) {
-      object.person = ApiClient.convertToType(data["person"], "String");
+    if (data.hasOwnProperty("contactPoint")) {
+      object.contactPoint = ApiClient.convertToType(
+        data["contactPoint"],
+        object.contactPointType
+      );
     }
     if (data.hasOwnProperty("organization")) {
       object.organization = ApiClient.convertToType(
@@ -60,22 +62,28 @@ export default class MemberData {
         "String"
       );
     }
+    if (data.hasOwnProperty("person")) {
+      object.person = ApiClient.convertToType(data["person"], "String");
+    }
+    if (data.hasOwnProperty("type")) {
+      object.type = ApiClient.convertToType(data["type"], "String");
+    }
 
     return object;
   }
 
   /**
-   * @return { String }
+   * @return { module:model/MemberDataContactPoint }
    */
-  getPerson() {
-    return this.person;
+  getContactPoint() {
+    return this.contactPoint;
   }
 
   /**
-   * @param { String } person
+   * @param { module:model/MemberDataContactPoint } contactPoint
    */
-  setPerson(person) {
-    this.person = person;
+  setContactPoint(contactPoint) {
+    this.contactPoint = contactPoint;
   }
   /**
    * @return { String }
@@ -90,4 +98,49 @@ export default class MemberData {
   setOrganization(organization) {
     this.organization = organization;
   }
+  /**
+   * @return { String }
+   */
+  getPerson() {
+    return this.person;
+  }
+
+  /**
+   * @param { String } person
+   */
+  setPerson(person) {
+    this.person = person;
+  }
+  /**
+   * @return { module:model/MemberData.TypeEnum }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @param { module:model/MemberData.TypeEnum } type
+   */
+  setType(type) {
+    this.type = type;
+  }
+
+  /**
+   * Allowed values for the "type" property.
+   * @enum { String }
+   */
+  static TypeEnum = {
+    /**
+     * value: "collaborator"
+     * @const
+     * @readonly
+     */
+    collaborator: "collaborator",
+    /**
+     * value: "contact"
+     * @const
+     * @readonly
+     */
+    contact: "contact"
+  };
 }

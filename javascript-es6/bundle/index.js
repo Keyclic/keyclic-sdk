@@ -461,6 +461,28 @@ Object.defineProperty(exports, "ApplicationLinks", {
     return _ApplicationLinks.default;
   }
 });
+Object.defineProperty(exports, "ApplicationLinksKnowledgeBase", {
+  enumerable: true,
+  get: function get() {
+    return _ApplicationLinksKnowledgeBase.default;
+  }
+});
+Object.defineProperty(exports, "ApplicationLinksKnowledgeBaseIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _ApplicationLinksKnowledgeBaseIriTemplate.default;
+  }
+});
+Object.defineProperty(
+  exports,
+  "ApplicationLinksKnowledgeBaseIriTemplateMapping",
+  {
+    enumerable: true,
+    get: function get() {
+      return _ApplicationLinksKnowledgeBaseIriTemplateMapping.default;
+    }
+  }
+);
 Object.defineProperty(exports, "ApplicationLinksSelf", {
   enumerable: true,
   get: function get() {
@@ -477,6 +499,60 @@ Object.defineProperty(exports, "ApplicationLinksSelfIriTemplateMapping", {
   enumerable: true,
   get: function get() {
     return _ApplicationLinksSelfIriTemplateMapping.default;
+  }
+});
+Object.defineProperty(exports, "Article", {
+  enumerable: true,
+  get: function get() {
+    return _Article.default;
+  }
+});
+Object.defineProperty(exports, "ArticleCollection", {
+  enumerable: true,
+  get: function get() {
+    return _ArticleCollection.default;
+  }
+});
+Object.defineProperty(exports, "ArticleLinks", {
+  enumerable: true,
+  get: function get() {
+    return _ArticleLinks.default;
+  }
+});
+Object.defineProperty(exports, "ArticleLinksSection", {
+  enumerable: true,
+  get: function get() {
+    return _ArticleLinksSection.default;
+  }
+});
+Object.defineProperty(exports, "ArticleLinksSectionIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _ArticleLinksSectionIriTemplate.default;
+  }
+});
+Object.defineProperty(exports, "ArticleLinksSectionIriTemplateMapping", {
+  enumerable: true,
+  get: function get() {
+    return _ArticleLinksSectionIriTemplateMapping.default;
+  }
+});
+Object.defineProperty(exports, "ArticleLinksSelf", {
+  enumerable: true,
+  get: function get() {
+    return _ArticleLinksSelf.default;
+  }
+});
+Object.defineProperty(exports, "ArticleLinksSelfIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _ArticleLinksSelfIriTemplate.default;
+  }
+});
+Object.defineProperty(exports, "ArticleLinksSelfIriTemplateMapping", {
+  enumerable: true,
+  get: function get() {
+    return _ArticleLinksSelfIriTemplateMapping.default;
   }
 });
 Object.defineProperty(exports, "AssignData", {
@@ -579,6 +655,12 @@ Object.defineProperty(exports, "CategoryData", {
   enumerable: true,
   get: function get() {
     return _CategoryData.default;
+  }
+});
+Object.defineProperty(exports, "CategoryEmbedded", {
+  enumerable: true,
+  get: function get() {
+    return _CategoryEmbedded.default;
   }
 });
 Object.defineProperty(exports, "CategoryLinks", {
@@ -1389,6 +1471,90 @@ Object.defineProperty(exports, "InternalServicePatch", {
     return _InternalServicePatch.default;
   }
 });
+Object.defineProperty(exports, "Invitation", {
+  enumerable: true,
+  get: function get() {
+    return _Invitation.default;
+  }
+});
+Object.defineProperty(exports, "InvitationData", {
+  enumerable: true,
+  get: function get() {
+    return _InvitationData.default;
+  }
+});
+Object.defineProperty(exports, "InvitationDateTime", {
+  enumerable: true,
+  get: function get() {
+    return _InvitationDateTime.default;
+  }
+});
+Object.defineProperty(exports, "InvitationLinks", {
+  enumerable: true,
+  get: function get() {
+    return _InvitationLinks.default;
+  }
+});
+Object.defineProperty(exports, "InvitationLinksMember", {
+  enumerable: true,
+  get: function get() {
+    return _InvitationLinksMember.default;
+  }
+});
+Object.defineProperty(exports, "InvitationLinksMemberIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _InvitationLinksMemberIriTemplate.default;
+  }
+});
+Object.defineProperty(exports, "InvitationLinksMemberIriTemplateMapping", {
+  enumerable: true,
+  get: function get() {
+    return _InvitationLinksMemberIriTemplateMapping.default;
+  }
+});
+Object.defineProperty(exports, "InvitationLinksSelf", {
+  enumerable: true,
+  get: function get() {
+    return _InvitationLinksSelf.default;
+  }
+});
+Object.defineProperty(exports, "InvitationLinksSelfIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _InvitationLinksSelfIriTemplate.default;
+  }
+});
+Object.defineProperty(exports, "InvitationLinksSelfIriTemplateMapping", {
+  enumerable: true,
+  get: function get() {
+    return _InvitationLinksSelfIriTemplateMapping.default;
+  }
+});
+Object.defineProperty(exports, "KnowledgeBase", {
+  enumerable: true,
+  get: function get() {
+    return _KnowledgeBase.default;
+  }
+});
+Object.defineProperty(exports, "KnowledgeBaseLinks", {
+  enumerable: true,
+  get: function get() {
+    return _KnowledgeBaseLinks.default;
+  }
+});
+Object.defineProperty(exports, "KnowledgeBaseLinksSelf", {
+  enumerable: true,
+  get: function get() {
+    return _KnowledgeBaseLinksSelf.default;
+  }
+});
+Object.defineProperty(exports, "KnowledgeBaseLinksSelfIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _KnowledgeBaseLinksSelfIriTemplate.default;
+  }
+});
 Object.defineProperty(exports, "LoginData", {
   enumerable: true,
   get: function get() {
@@ -1407,10 +1573,22 @@ Object.defineProperty(exports, "MemberCollection", {
     return _MemberCollection.default;
   }
 });
+Object.defineProperty(exports, "MemberContactPoint", {
+  enumerable: true,
+  get: function get() {
+    return _MemberContactPoint.default;
+  }
+});
 Object.defineProperty(exports, "MemberData", {
   enumerable: true,
   get: function get() {
     return _MemberData.default;
+  }
+});
+Object.defineProperty(exports, "MemberDataContactPoint", {
+  enumerable: true,
+  get: function get() {
+    return _MemberDataContactPoint.default;
   }
 });
 Object.defineProperty(exports, "MemberEmbedded", {
@@ -1461,16 +1639,16 @@ Object.defineProperty(exports, "MemberLinksSelfIriTemplate", {
     return _MemberLinksSelfIriTemplate.default;
   }
 });
-Object.defineProperty(exports, "MemberLinksSelfIriTemplateMapping", {
-  enumerable: true,
-  get: function get() {
-    return _MemberLinksSelfIriTemplateMapping.default;
-  }
-});
 Object.defineProperty(exports, "MemberPatch", {
   enumerable: true,
   get: function get() {
     return _MemberPatch.default;
+  }
+});
+Object.defineProperty(exports, "MemberPatchContactPoint", {
+  enumerable: true,
+  get: function get() {
+    return _MemberPatchContactPoint.default;
   }
 });
 Object.defineProperty(exports, "Node", {
@@ -1515,22 +1693,28 @@ Object.defineProperty(exports, "OccupantData", {
     return _OccupantData.default;
   }
 });
+Object.defineProperty(exports, "OccupantEmbedded", {
+  enumerable: true,
+  get: function get() {
+    return _OccupantEmbedded.default;
+  }
+});
 Object.defineProperty(exports, "OccupantLinks", {
   enumerable: true,
   get: function get() {
     return _OccupantLinks.default;
   }
 });
-Object.defineProperty(exports, "OccupantLinksPerson", {
+Object.defineProperty(exports, "OccupantLinksMember", {
   enumerable: true,
   get: function get() {
-    return _OccupantLinksPerson.default;
+    return _OccupantLinksMember.default;
   }
 });
-Object.defineProperty(exports, "OccupantLinksPersonIriTemplate", {
+Object.defineProperty(exports, "OccupantLinksMemberIriTemplate", {
   enumerable: true,
   get: function get() {
-    return _OccupantLinksPersonIriTemplate.default;
+    return _OccupantLinksMemberIriTemplate.default;
   }
 });
 Object.defineProperty(exports, "OccupantLinksPlace", {
@@ -2011,12 +2195,6 @@ Object.defineProperty(exports, "PlaceData", {
     return _PlaceData.default;
   }
 });
-Object.defineProperty(exports, "PlaceEmbedded", {
-  enumerable: true,
-  get: function get() {
-    return _PlaceEmbedded.default;
-  }
-});
 Object.defineProperty(exports, "PlaceGeoShape", {
   enumerable: true,
   get: function get() {
@@ -2233,12 +2411,6 @@ Object.defineProperty(exports, "Report", {
     return _Report.default;
   }
 });
-Object.defineProperty(exports, "ReportCategory", {
-  enumerable: true,
-  get: function get() {
-    return _ReportCategory.default;
-  }
-});
 Object.defineProperty(exports, "ReportCollection", {
   enumerable: true,
   get: function get() {
@@ -2375,12 +2547,6 @@ Object.defineProperty(exports, "ReportPatch", {
   enumerable: true,
   get: function get() {
     return _ReportPatch.default;
-  }
-});
-Object.defineProperty(exports, "ReportPlace", {
-  enumerable: true,
-  get: function get() {
-    return _ReportPlace.default;
   }
 });
 Object.defineProperty(exports, "ReportTypeWorkflow", {
@@ -2555,6 +2721,36 @@ Object.defineProperty(exports, "Schema", {
   enumerable: true,
   get: function get() {
     return _Schema.default;
+  }
+});
+Object.defineProperty(exports, "Section", {
+  enumerable: true,
+  get: function get() {
+    return _Section.default;
+  }
+});
+Object.defineProperty(exports, "SectionCollection", {
+  enumerable: true,
+  get: function get() {
+    return _SectionCollection.default;
+  }
+});
+Object.defineProperty(exports, "SectionLinks", {
+  enumerable: true,
+  get: function get() {
+    return _SectionLinks.default;
+  }
+});
+Object.defineProperty(exports, "SectionLinksSelf", {
+  enumerable: true,
+  get: function get() {
+    return _SectionLinksSelf.default;
+  }
+});
+Object.defineProperty(exports, "SectionLinksSelfIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _SectionLinksSelfIriTemplate.default;
   }
 });
 Object.defineProperty(exports, "SignatureData", {
@@ -2737,6 +2933,12 @@ Object.defineProperty(exports, "WorkflowState", {
     return _WorkflowState.default;
   }
 });
+Object.defineProperty(exports, "ArticlePagination", {
+  enumerable: true,
+  get: function get() {
+    return _ArticlePagination.default;
+  }
+});
 Object.defineProperty(exports, "BusinessActivityPagination", {
   enumerable: true,
   get: function get() {
@@ -2851,6 +3053,12 @@ Object.defineProperty(exports, "ReviewRequestPagination", {
     return _ReviewRequestPagination.default;
   }
 });
+Object.defineProperty(exports, "SectionPagination", {
+  enumerable: true,
+  get: function get() {
+    return _SectionPagination.default;
+  }
+});
 Object.defineProperty(exports, "WebhookPagination", {
   enumerable: true,
   get: function get() {
@@ -2861,6 +3069,12 @@ Object.defineProperty(exports, "ApplicationApi", {
   enumerable: true,
   get: function get() {
     return _ApplicationApi.default;
+  }
+});
+Object.defineProperty(exports, "ArticleApi", {
+  enumerable: true,
+  get: function get() {
+    return _ArticleApi.default;
   }
 });
 Object.defineProperty(exports, "BusinessActivityApi", {
@@ -2929,6 +3143,18 @@ Object.defineProperty(exports, "InternalServiceApi", {
     return _InternalServiceApi.default;
   }
 });
+Object.defineProperty(exports, "InvitationApi", {
+  enumerable: true,
+  get: function get() {
+    return _InvitationApi.default;
+  }
+});
+Object.defineProperty(exports, "KnowledgeBaseApi", {
+  enumerable: true,
+  get: function get() {
+    return _KnowledgeBaseApi.default;
+  }
+});
 Object.defineProperty(exports, "MemberApi", {
   enumerable: true,
   get: function get() {
@@ -2995,6 +3221,12 @@ Object.defineProperty(exports, "RoleApi", {
     return _RoleApi.default;
   }
 });
+Object.defineProperty(exports, "SectionApi", {
+  enumerable: true,
+  get: function get() {
+    return _SectionApi.default;
+  }
+});
 Object.defineProperty(exports, "SecurityApi", {
   enumerable: true,
   get: function get() {
@@ -3058,6 +3290,18 @@ var _ApplicationLinks = _interopRequireDefault(
   require("./model/ApplicationLinks")
 );
 
+var _ApplicationLinksKnowledgeBase = _interopRequireDefault(
+  require("./model/ApplicationLinksKnowledgeBase")
+);
+
+var _ApplicationLinksKnowledgeBaseIriTemplate = _interopRequireDefault(
+  require("./model/ApplicationLinksKnowledgeBaseIriTemplate")
+);
+
+var _ApplicationLinksKnowledgeBaseIriTemplateMapping = _interopRequireDefault(
+  require("./model/ApplicationLinksKnowledgeBaseIriTemplateMapping")
+);
+
 var _ApplicationLinksSelf = _interopRequireDefault(
   require("./model/ApplicationLinksSelf")
 );
@@ -3068,6 +3312,38 @@ var _ApplicationLinksSelfIriTemplate = _interopRequireDefault(
 
 var _ApplicationLinksSelfIriTemplateMapping = _interopRequireDefault(
   require("./model/ApplicationLinksSelfIriTemplateMapping")
+);
+
+var _Article = _interopRequireDefault(require("./model/Article"));
+
+var _ArticleCollection = _interopRequireDefault(
+  require("./model/ArticleCollection")
+);
+
+var _ArticleLinks = _interopRequireDefault(require("./model/ArticleLinks"));
+
+var _ArticleLinksSection = _interopRequireDefault(
+  require("./model/ArticleLinksSection")
+);
+
+var _ArticleLinksSectionIriTemplate = _interopRequireDefault(
+  require("./model/ArticleLinksSectionIriTemplate")
+);
+
+var _ArticleLinksSectionIriTemplateMapping = _interopRequireDefault(
+  require("./model/ArticleLinksSectionIriTemplateMapping")
+);
+
+var _ArticleLinksSelf = _interopRequireDefault(
+  require("./model/ArticleLinksSelf")
+);
+
+var _ArticleLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/ArticleLinksSelfIriTemplate")
+);
+
+var _ArticleLinksSelfIriTemplateMapping = _interopRequireDefault(
+  require("./model/ArticleLinksSelfIriTemplateMapping")
 );
 
 var _AssignData = _interopRequireDefault(require("./model/AssignData"));
@@ -3131,6 +3407,10 @@ var _CategoryCollection = _interopRequireDefault(
 );
 
 var _CategoryData = _interopRequireDefault(require("./model/CategoryData"));
+
+var _CategoryEmbedded = _interopRequireDefault(
+  require("./model/CategoryEmbedded")
+);
 
 var _CategoryLinks = _interopRequireDefault(require("./model/CategoryLinks"));
 
@@ -3610,6 +3890,56 @@ var _InternalServicePatch = _interopRequireDefault(
   require("./model/InternalServicePatch")
 );
 
+var _Invitation = _interopRequireDefault(require("./model/Invitation"));
+
+var _InvitationData = _interopRequireDefault(require("./model/InvitationData"));
+
+var _InvitationDateTime = _interopRequireDefault(
+  require("./model/InvitationDateTime")
+);
+
+var _InvitationLinks = _interopRequireDefault(
+  require("./model/InvitationLinks")
+);
+
+var _InvitationLinksMember = _interopRequireDefault(
+  require("./model/InvitationLinksMember")
+);
+
+var _InvitationLinksMemberIriTemplate = _interopRequireDefault(
+  require("./model/InvitationLinksMemberIriTemplate")
+);
+
+var _InvitationLinksMemberIriTemplateMapping = _interopRequireDefault(
+  require("./model/InvitationLinksMemberIriTemplateMapping")
+);
+
+var _InvitationLinksSelf = _interopRequireDefault(
+  require("./model/InvitationLinksSelf")
+);
+
+var _InvitationLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/InvitationLinksSelfIriTemplate")
+);
+
+var _InvitationLinksSelfIriTemplateMapping = _interopRequireDefault(
+  require("./model/InvitationLinksSelfIriTemplateMapping")
+);
+
+var _KnowledgeBase = _interopRequireDefault(require("./model/KnowledgeBase"));
+
+var _KnowledgeBaseLinks = _interopRequireDefault(
+  require("./model/KnowledgeBaseLinks")
+);
+
+var _KnowledgeBaseLinksSelf = _interopRequireDefault(
+  require("./model/KnowledgeBaseLinksSelf")
+);
+
+var _KnowledgeBaseLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/KnowledgeBaseLinksSelfIriTemplate")
+);
+
 var _LoginData = _interopRequireDefault(require("./model/LoginData"));
 
 var _Member = _interopRequireDefault(require("./model/Member"));
@@ -3618,7 +3948,15 @@ var _MemberCollection = _interopRequireDefault(
   require("./model/MemberCollection")
 );
 
+var _MemberContactPoint = _interopRequireDefault(
+  require("./model/MemberContactPoint")
+);
+
 var _MemberData = _interopRequireDefault(require("./model/MemberData"));
+
+var _MemberDataContactPoint = _interopRequireDefault(
+  require("./model/MemberDataContactPoint")
+);
 
 var _MemberEmbedded = _interopRequireDefault(require("./model/MemberEmbedded"));
 
@@ -3648,11 +3986,11 @@ var _MemberLinksSelfIriTemplate = _interopRequireDefault(
   require("./model/MemberLinksSelfIriTemplate")
 );
 
-var _MemberLinksSelfIriTemplateMapping = _interopRequireDefault(
-  require("./model/MemberLinksSelfIriTemplateMapping")
-);
-
 var _MemberPatch = _interopRequireDefault(require("./model/MemberPatch"));
+
+var _MemberPatchContactPoint = _interopRequireDefault(
+  require("./model/MemberPatchContactPoint")
+);
 
 var _Node = _interopRequireDefault(require("./model/Node"));
 
@@ -3672,14 +4010,18 @@ var _OccupantCollection = _interopRequireDefault(
 
 var _OccupantData = _interopRequireDefault(require("./model/OccupantData"));
 
-var _OccupantLinks = _interopRequireDefault(require("./model/OccupantLinks"));
-
-var _OccupantLinksPerson = _interopRequireDefault(
-  require("./model/OccupantLinksPerson")
+var _OccupantEmbedded = _interopRequireDefault(
+  require("./model/OccupantEmbedded")
 );
 
-var _OccupantLinksPersonIriTemplate = _interopRequireDefault(
-  require("./model/OccupantLinksPersonIriTemplate")
+var _OccupantLinks = _interopRequireDefault(require("./model/OccupantLinks"));
+
+var _OccupantLinksMember = _interopRequireDefault(
+  require("./model/OccupantLinksMember")
+);
+
+var _OccupantLinksMemberIriTemplate = _interopRequireDefault(
+  require("./model/OccupantLinksMemberIriTemplate")
 );
 
 var _OccupantLinksPlace = _interopRequireDefault(
@@ -3974,8 +4316,6 @@ var _PlaceCollection = _interopRequireDefault(
 
 var _PlaceData = _interopRequireDefault(require("./model/PlaceData"));
 
-var _PlaceEmbedded = _interopRequireDefault(require("./model/PlaceEmbedded"));
-
 var _PlaceGeoShape = _interopRequireDefault(require("./model/PlaceGeoShape"));
 
 var _PlaceLinks = _interopRequireDefault(require("./model/PlaceLinks"));
@@ -4098,8 +4438,6 @@ var _RegisterDataAgreement = _interopRequireDefault(
 
 var _Report = _interopRequireDefault(require("./model/Report"));
 
-var _ReportCategory = _interopRequireDefault(require("./model/ReportCategory"));
-
 var _ReportCollection = _interopRequireDefault(
   require("./model/ReportCollection")
 );
@@ -4185,8 +4523,6 @@ var _ReportLinksTrackingIriTemplate = _interopRequireDefault(
 );
 
 var _ReportPatch = _interopRequireDefault(require("./model/ReportPatch"));
-
-var _ReportPlace = _interopRequireDefault(require("./model/ReportPlace"));
 
 var _ReportTypeWorkflow = _interopRequireDefault(
   require("./model/ReportTypeWorkflow")
@@ -4292,6 +4628,22 @@ var _Role = _interopRequireDefault(require("./model/Role"));
 
 var _Schema = _interopRequireDefault(require("./model/Schema"));
 
+var _Section = _interopRequireDefault(require("./model/Section"));
+
+var _SectionCollection = _interopRequireDefault(
+  require("./model/SectionCollection")
+);
+
+var _SectionLinks = _interopRequireDefault(require("./model/SectionLinks"));
+
+var _SectionLinksSelf = _interopRequireDefault(
+  require("./model/SectionLinksSelf")
+);
+
+var _SectionLinksSelfIriTemplate = _interopRequireDefault(
+  require("./model/SectionLinksSelfIriTemplate")
+);
+
 var _SignatureData = _interopRequireDefault(require("./model/SignatureData"));
 
 var _SignatureDataSigner = _interopRequireDefault(
@@ -4386,6 +4738,10 @@ var _WorkflowLinksSelfIriTemplateMapping = _interopRequireDefault(
 
 var _WorkflowState = _interopRequireDefault(require("./model/WorkflowState"));
 
+var _ArticlePagination = _interopRequireDefault(
+  require("./model/ArticlePagination")
+);
+
 var _BusinessActivityPagination = _interopRequireDefault(
   require("./model/BusinessActivityPagination")
 );
@@ -4460,11 +4816,17 @@ var _ReviewRequestPagination = _interopRequireDefault(
   require("./model/ReviewRequestPagination")
 );
 
+var _SectionPagination = _interopRequireDefault(
+  require("./model/SectionPagination")
+);
+
 var _WebhookPagination = _interopRequireDefault(
   require("./model/WebhookPagination")
 );
 
 var _ApplicationApi = _interopRequireDefault(require("./api/ApplicationApi"));
+
+var _ArticleApi = _interopRequireDefault(require("./api/ArticleApi"));
 
 var _BusinessActivityApi = _interopRequireDefault(
   require("./api/BusinessActivityApi")
@@ -4496,6 +4858,12 @@ var _InternalServiceApi = _interopRequireDefault(
   require("./api/InternalServiceApi")
 );
 
+var _InvitationApi = _interopRequireDefault(require("./api/InvitationApi"));
+
+var _KnowledgeBaseApi = _interopRequireDefault(
+  require("./api/KnowledgeBaseApi")
+);
+
 var _MemberApi = _interopRequireDefault(require("./api/MemberApi"));
 
 var _OccupantApi = _interopRequireDefault(require("./api/OccupantApi"));
@@ -4519,6 +4887,8 @@ var _ReviewRequestApi = _interopRequireDefault(
 );
 
 var _RoleApi = _interopRequireDefault(require("./api/RoleApi"));
+
+var _SectionApi = _interopRequireDefault(require("./api/SectionApi"));
 
 var _SecurityApi = _interopRequireDefault(require("./api/SecurityApi"));
 

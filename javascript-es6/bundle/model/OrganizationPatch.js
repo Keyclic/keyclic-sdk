@@ -57,8 +57,6 @@ var OrganizationPatch =
       this.alternateName = null;
       this.description = null;
       this.logo = null;
-      this.billingEmailAddress = null;
-      this.notificationEmailAddress = null;
       this.preferences = null;
       this.preferencesType = _OrganizationPatchPreferences.default;
     }
@@ -145,44 +143,6 @@ var OrganizationPatch =
             this.logo = logo;
           }
           /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getBillingEmailAddress",
-          value: function getBillingEmailAddress() {
-            return this.billingEmailAddress;
-          }
-          /**
-           * @param { String } billingEmailAddress
-           */
-        },
-        {
-          key: "setBillingEmailAddress",
-          value: function setBillingEmailAddress(billingEmailAddress) {
-            this.billingEmailAddress = billingEmailAddress;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getNotificationEmailAddress",
-          value: function getNotificationEmailAddress() {
-            return this.notificationEmailAddress;
-          }
-          /**
-           * @param { String } notificationEmailAddress
-           */
-        },
-        {
-          key: "setNotificationEmailAddress",
-          value: function setNotificationEmailAddress(
-            notificationEmailAddress
-          ) {
-            this.notificationEmailAddress = notificationEmailAddress;
-          }
-          /**
            * @return { module:model/OrganizationPatchPreferences }
            */
         },
@@ -243,20 +203,6 @@ var OrganizationPatch =
             if (data.hasOwnProperty("logo")) {
               object.logo = _ApiClient.default.convertToType(
                 data["logo"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("billingEmailAddress")) {
-              object.billingEmailAddress = _ApiClient.default.convertToType(
-                data["billingEmailAddress"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("notificationEmailAddress")) {
-              object.notificationEmailAddress = _ApiClient.default.convertToType(
-                data["notificationEmailAddress"],
                 "String"
               );
             }

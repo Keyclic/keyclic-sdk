@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import MemberLinksSelfIriTemplateMapping from "./MemberLinksSelfIriTemplateMapping";
+import InvitationLinksMemberIriTemplateMapping from "./InvitationLinksMemberIriTemplateMapping";
 
 /**
  * The MemberLinksSelfIriTemplate model module.
@@ -27,7 +27,7 @@ export default class MemberLinksSelfIriTemplate {
   constructor() {
     this.mapping = null;
 
-    this.mappingType = MemberLinksSelfIriTemplateMapping;
+    this.mappingType = InvitationLinksMemberIriTemplateMapping;
   }
 
   /**
@@ -56,14 +56,14 @@ export default class MemberLinksSelfIriTemplate {
   }
 
   /**
-   * @return { module:model/MemberLinksSelfIriTemplateMapping }
+   * @return { module:model/InvitationLinksMemberIriTemplateMapping }
    */
   getMapping() {
     return this.mapping;
   }
 
   /**
-   * @param { module:model/MemberLinksSelfIriTemplateMapping } mapping
+   * @param { module:model/InvitationLinksMemberIriTemplateMapping } mapping
    */
   setMapping(mapping) {
     this.mapping = mapping;

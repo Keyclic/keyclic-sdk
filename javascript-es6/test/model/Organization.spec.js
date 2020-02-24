@@ -65,12 +65,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property billingEmailAddress (base name: "billingEmailAddress")', function() {
-      // uncomment below and update the code to test the property billingEmailAddress
-      //var instane = new @KeyclicSdkJavascript.Organization();
-      //expect(instance).to.be();
-    });
-
     it('should have the property createdAt (base name: "createdAt")', function() {
       // uncomment below and update the code to test the property createdAt
       //var instane = new @KeyclicSdkJavascript.Organization();
@@ -97,12 +91,6 @@
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @KeyclicSdkJavascript.Organization();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property notificationEmailAddress (base name: "notificationEmailAddress")', function() {
-      // uncomment below and update the code to test the property notificationEmailAddress
       //var instane = new @KeyclicSdkJavascript.Organization();
       //expect(instance).to.be();
     });

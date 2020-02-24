@@ -2,7 +2,9 @@ part of keyclic_sdk_api.api;
 
 class ReportEmbedded {
   ReportEmbedded({
+    this.category,
     this.duration,
+    this.place,
     this.stateTransitions,
     this.targetGroups,
     this.tracking,
@@ -15,7 +17,9 @@ class ReportEmbedded {
     }
 
     return ReportEmbedded(
+      category: Category.fromJson(json['category']),
       duration: OperationEmbeddedDuration.fromJson(json['duration']),
+      place: Place.fromJson(json['place']),
       stateTransitions: json['stateTransitions'] is List
           ? List<String>.from(json['stateTransitions'])
           : null,
@@ -26,7 +30,11 @@ class ReportEmbedded {
     );
   }
 
+  Category category;
+
   OperationEmbeddedDuration duration;
+
+  Place place;
 
   List<String> stateTransitions;
 
@@ -45,7 +53,9 @@ class ReportEmbedded {
 
     return other is ReportEmbedded &&
         runtimeType == other.runtimeType &&
+        category == other.category &&
         duration == other.duration &&
+        place == other.place &&
         DeepCollectionEquality.unordered()
             .equals(stateTransitions, other.stateTransitions) &&
         DeepCollectionEquality.unordered()
@@ -70,7 +80,9 @@ class ReportEmbedded {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
+    hashCode ^= category?.hashCode ?? 0;
     hashCode ^= duration?.hashCode ?? 0;
+    hashCode ^= place?.hashCode ?? 0;
     hashCode ^= tracking?.hashCode ?? 0;
     hashCode ^= workflow?.hashCode ?? 0;
 
@@ -95,7 +107,9 @@ class ReportEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
+      if (category != null) 'category': category,
       if (duration != null) 'duration': duration,
+      if (place != null) 'place': place,
       if (stateTransitions != null) 'stateTransitions': stateTransitions,
       if (targetGroups != null) 'targetGroups': targetGroups,
       if (tracking != null) 'tracking': tracking,
@@ -105,6 +119,6 @@ class ReportEmbedded {
 
   @override
   String toString() {
-    return 'ReportEmbedded[duration=$duration, stateTransitions=$stateTransitions, targetGroups=$targetGroups, tracking=$tracking, workflow=$workflow, ]';
+    return 'ReportEmbedded[category=$category, duration=$duration, place=$place, stateTransitions=$stateTransitions, targetGroups=$targetGroups, tracking=$tracking, workflow=$workflow, ]';
   }
 }

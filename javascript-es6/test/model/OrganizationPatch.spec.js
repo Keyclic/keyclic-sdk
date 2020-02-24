@@ -77,18 +77,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property billingEmailAddress (base name: "billingEmailAddress")', function() {
-      // uncomment below and update the code to test the property billingEmailAddress
-      //var instane = new @KeyclicSdkJavascript.OrganizationPatch();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property notificationEmailAddress (base name: "notificationEmailAddress")', function() {
-      // uncomment below and update the code to test the property notificationEmailAddress
-      //var instane = new @KeyclicSdkJavascript.OrganizationPatch();
-      //expect(instance).to.be();
-    });
-
     it('should have the property preferences (base name: "preferences")', function() {
       // uncomment below and update the code to test the property preferences
       //var instane = new @KeyclicSdkJavascript.OrganizationPatch();

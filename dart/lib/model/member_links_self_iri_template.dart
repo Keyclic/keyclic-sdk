@@ -11,11 +11,12 @@ class MemberLinksSelfIriTemplate {
     }
 
     return MemberLinksSelfIriTemplate(
-      mapping: MemberLinksSelfIriTemplateMapping.fromJson(json['mapping']),
+      mapping:
+          InvitationLinksMemberIriTemplateMapping.fromJson(json['mapping']),
     );
   }
 
-  MemberLinksSelfIriTemplateMapping mapping;
+  InvitationLinksMemberIriTemplateMapping mapping;
 
   @override
   bool operator ==(dynamic other) {

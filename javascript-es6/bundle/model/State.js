@@ -49,12 +49,12 @@ var State =
     function State() {
       _classCallCheck(this, State);
 
-      this.color = null;
-      this.description = null;
       this.id = null;
-      this.name = null;
-      this.progression = null;
       this.type = null;
+      this.name = null;
+      this.description = null;
+      this.color = null;
+      this.progression = null;
     }
     /**
      * Constructs a "State" from a plain JavaScript object.
@@ -67,22 +67,58 @@ var State =
       State,
       [
         {
-          key: "getColor",
+          key: "getId",
 
           /**
            * @return { String }
            */
-          value: function getColor() {
-            return this.color;
+          value: function getId() {
+            return this.id;
           }
           /**
-           * @param { String } color
+           * @param { String } id
            */
         },
         {
-          key: "setColor",
-          value: function setColor(color) {
-            this.color = color;
+          key: "setId",
+          value: function setId(id) {
+            this.id = id;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getType",
+          value: function getType() {
+            return this.type;
+          }
+          /**
+           * @param { String } type
+           */
+        },
+        {
+          key: "setType",
+          value: function setType(type) {
+            this.type = type;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getName",
+          value: function getName() {
+            return this.name;
+          }
+          /**
+           * @param { String } name
+           */
+        },
+        {
+          key: "setName",
+          value: function setName(name) {
+            this.name = name;
           }
           /**
            * @return { String }
@@ -107,27 +143,18 @@ var State =
            */
         },
         {
-          key: "getId",
-          value: function getId() {
-            return this.id;
+          key: "getColor",
+          value: function getColor() {
+            return this.color;
           }
           /**
-           * @return { String }
+           * @param { String } color
            */
         },
         {
-          key: "getName",
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
+          key: "setColor",
+          value: function setColor(color) {
+            this.color = color;
           }
           /**
            * @return { Number }
@@ -146,15 +173,6 @@ var State =
           key: "setProgression",
           value: function setProgression(progression) {
             this.progression = progression;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
           }
         }
       ],
@@ -175,23 +193,16 @@ var State =
               object = new State();
             }
 
-            if (data.hasOwnProperty("color")) {
-              object.color = _ApiClient.default.convertToType(
-                data["color"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("description")) {
-              object.description = _ApiClient.default.convertToType(
-                data["description"],
-                "String"
-              );
-            }
-
             if (data.hasOwnProperty("id")) {
               object.id = _ApiClient.default.convertToType(
                 data["id"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("type")) {
+              object.type = _ApiClient.default.convertToType(
+                data["type"],
                 "String"
               );
             }
@@ -203,17 +214,24 @@ var State =
               );
             }
 
+            if (data.hasOwnProperty("description")) {
+              object.description = _ApiClient.default.convertToType(
+                data["description"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("color")) {
+              object.color = _ApiClient.default.convertToType(
+                data["color"],
+                "String"
+              );
+            }
+
             if (data.hasOwnProperty("progression")) {
               object.progression = _ApiClient.default.convertToType(
                 data["progression"],
                 "Number"
-              );
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
               );
             }
 

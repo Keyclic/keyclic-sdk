@@ -25,11 +25,15 @@ export default class FeedbackData {
     
      * @param geo { module:model/FeedbackDataGeo }
     
+     * @param place { String }
+    
      * @param visibility { module:model/FeedbackData.VisibilityEnum }
     
      */
   constructor(
     geo,
+
+    place,
 
     visibility
   ) {
@@ -38,7 +42,7 @@ export default class FeedbackData {
     this.description = null;
     this.geo = geo;
     this.metadata = [];
-    this.place = null;
+    this.place = place;
     this.proMode = null;
     this.visibility = visibility;
 

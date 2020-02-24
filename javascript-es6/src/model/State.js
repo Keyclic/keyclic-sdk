@@ -24,12 +24,12 @@ export default class State {
     
      */
   constructor() {
-    this.color = null;
-    this.description = null;
     this.id = null;
-    this.name = null;
-    this.progression = null;
     this.type = null;
+    this.name = null;
+    this.description = null;
+    this.color = null;
+    this.progression = null;
   }
 
   /**
@@ -47,8 +47,14 @@ export default class State {
       object = new State();
     }
 
-    if (data.hasOwnProperty("color")) {
-      object.color = ApiClient.convertToType(data["color"], "String");
+    if (data.hasOwnProperty("id")) {
+      object.id = ApiClient.convertToType(data["id"], "String");
+    }
+    if (data.hasOwnProperty("type")) {
+      object.type = ApiClient.convertToType(data["type"], "String");
+    }
+    if (data.hasOwnProperty("name")) {
+      object.name = ApiClient.convertToType(data["name"], "String");
     }
     if (data.hasOwnProperty("description")) {
       object.description = ApiClient.convertToType(
@@ -56,20 +62,14 @@ export default class State {
         "String"
       );
     }
-    if (data.hasOwnProperty("id")) {
-      object.id = ApiClient.convertToType(data["id"], "String");
-    }
-    if (data.hasOwnProperty("name")) {
-      object.name = ApiClient.convertToType(data["name"], "String");
+    if (data.hasOwnProperty("color")) {
+      object.color = ApiClient.convertToType(data["color"], "String");
     }
     if (data.hasOwnProperty("progression")) {
       object.progression = ApiClient.convertToType(
         data["progression"],
         "Number"
       );
-    }
-    if (data.hasOwnProperty("type")) {
-      object.type = ApiClient.convertToType(data["type"], "String");
     }
 
     return object;
@@ -78,15 +78,41 @@ export default class State {
   /**
    * @return { String }
    */
-  getColor() {
-    return this.color;
+  getId() {
+    return this.id;
   }
 
   /**
-   * @param { String } color
+   * @param { String } id
    */
-  setColor(color) {
-    this.color = color;
+  setId(id) {
+    this.id = id;
+  }
+  /**
+   * @return { String }
+   */
+  getType() {
+    return this.type;
+  }
+
+  /**
+   * @param { String } type
+   */
+  setType(type) {
+    this.type = type;
+  }
+  /**
+   * @return { String }
+   */
+  getName() {
+    return this.name;
+  }
+
+  /**
+   * @param { String } name
+   */
+  setName(name) {
+    this.name = name;
   }
   /**
    * @return { String }
@@ -104,22 +130,15 @@ export default class State {
   /**
    * @return { String }
    */
-  getId() {
-    return this.id;
+  getColor() {
+    return this.color;
   }
 
   /**
-   * @return { String }
+   * @param { String } color
    */
-  getName() {
-    return this.name;
-  }
-
-  /**
-   * @param { String } name
-   */
-  setName(name) {
-    this.name = name;
+  setColor(color) {
+    this.color = color;
   }
   /**
    * @return { Number }
@@ -133,11 +152,5 @@ export default class State {
    */
   setProgression(progression) {
     this.progression = progression;
-  }
-  /**
-   * @return { String }
-   */
-  getType() {
-    return this.type;
   }
 }

@@ -22,17 +22,17 @@ export default class OccupantData {
      * @alias module:model/OccupantData
      * @class
     
-     * @param person { String }
+     * @param member { String }
     
      * @param place { String }
     
      */
   constructor(
-    person,
+    member,
 
     place
   ) {
-    this.person = person;
+    this.member = member;
     this.place = place;
   }
 
@@ -51,8 +51,8 @@ export default class OccupantData {
       object = new OccupantData();
     }
 
-    if (data.hasOwnProperty("person")) {
-      object.person = ApiClient.convertToType(data["person"], "String");
+    if (data.hasOwnProperty("member")) {
+      object.member = ApiClient.convertToType(data["member"], "String");
     }
     if (data.hasOwnProperty("place")) {
       object.place = ApiClient.convertToType(data["place"], "String");
@@ -64,15 +64,15 @@ export default class OccupantData {
   /**
    * @return { String }
    */
-  getPerson() {
-    return this.person;
+  getMember() {
+    return this.member;
   }
 
   /**
-   * @param { String } person
+   * @param { String } member
    */
-  setPerson(person) {
-    this.person = person;
+  setMember(member) {
+    this.member = member;
   }
   /**
    * @return { String }

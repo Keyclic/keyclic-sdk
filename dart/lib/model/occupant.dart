@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class Occupant {
   Occupant({
+    this.embedded,
     this.links,
     this.createdAt,
     this.id,
@@ -27,6 +28,7 @@ class Occupant {
     }
 
     return Occupant(
+      embedded: OccupantEmbedded.fromJson(json['_embedded']),
       links: OccupantLinks.fromJson(json['_links']),
       createdAt: createdAt,
       id: json['id'],
@@ -34,6 +36,8 @@ class Occupant {
       updatedAt: updatedAt,
     );
   }
+
+  OccupantEmbedded embedded;
 
   OccupantLinks links;
 
@@ -54,6 +58,7 @@ class Occupant {
 
     return other is Occupant &&
         runtimeType == other.runtimeType &&
+        embedded == other.embedded &&
         links == other.links &&
         createdAt == other.createdAt &&
         id == other.id &&
@@ -66,6 +71,7 @@ class Occupant {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
@@ -93,6 +99,7 @@ class Occupant {
 
   Map<String, dynamic> toJson() {
     return {
+      if (embedded != null) '_embedded': embedded,
       if (links != null) '_links': links,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
@@ -103,6 +110,6 @@ class Occupant {
 
   @override
   String toString() {
-    return 'Occupant[links=$links, createdAt=$createdAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
+    return 'Occupant[embedded=$embedded, links=$links, createdAt=$createdAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
   }
 }

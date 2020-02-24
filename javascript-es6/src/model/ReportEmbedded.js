@@ -11,8 +11,10 @@
  */
 
 import ApiClient from "../ApiClient";
+import Category from "./Category";
 import DelegationEmbeddedWorkflow from "./DelegationEmbeddedWorkflow";
 import OperationEmbeddedDuration from "./OperationEmbeddedDuration";
+import Place from "./Place";
 import ReportEmbeddedTargetGroups from "./ReportEmbeddedTargetGroups";
 
 /**
@@ -27,13 +29,17 @@ export default class ReportEmbedded {
     
      */
   constructor() {
+    this.category = null;
     this.duration = null;
+    this.place = null;
     this.stateTransitions = [];
     this.targetGroups = [];
     this.tracking = null;
     this.workflow = null;
 
+    this.categoryType = Category;
     this.durationType = OperationEmbeddedDuration;
+    this.placeType = Place;
     this.targetGroupsType = ReportEmbeddedTargetGroups;
     this.workflowType = DelegationEmbeddedWorkflow;
   }
@@ -53,11 +59,20 @@ export default class ReportEmbedded {
       object = new ReportEmbedded();
     }
 
+    if (data.hasOwnProperty("category")) {
+      object.category = ApiClient.convertToType(
+        data["category"],
+        object.categoryType
+      );
+    }
     if (data.hasOwnProperty("duration")) {
       object.duration = ApiClient.convertToType(
         data["duration"],
         object.durationType
       );
+    }
+    if (data.hasOwnProperty("place")) {
+      object.place = ApiClient.convertToType(data["place"], object.placeType);
     }
     if (data.hasOwnProperty("stateTransitions")) {
       object.stateTransitions = ApiClient.convertToType(
@@ -84,6 +99,19 @@ export default class ReportEmbedded {
   }
 
   /**
+   * @return { module:model/Category }
+   */
+  getCategory() {
+    return this.category;
+  }
+
+  /**
+   * @param { module:model/Category } category
+   */
+  setCategory(category) {
+    this.category = category;
+  }
+  /**
    * @return { module:model/OperationEmbeddedDuration }
    */
   getDuration() {
@@ -95,6 +123,19 @@ export default class ReportEmbedded {
    */
   setDuration(duration) {
     this.duration = duration;
+  }
+  /**
+   * @return { module:model/Place }
+   */
+  getPlace() {
+    return this.place;
+  }
+
+  /**
+   * @param { module:model/Place } place
+   */
+  setPlace(place) {
+    this.place = place;
   }
   /**
    * @return { Array.<String> }

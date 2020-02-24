@@ -33,9 +33,10 @@ export default class RegisterData {
 
     password
   ) {
-    this.email = email;
-    this.password = password;
     this.agreement = null;
+    this.email = email;
+    this.invitation = null;
+    this.password = password;
 
     this.agreementType = RegisterDataAgreement;
   }
@@ -55,22 +56,38 @@ export default class RegisterData {
       object = new RegisterData();
     }
 
-    if (data.hasOwnProperty("email")) {
-      object.email = ApiClient.convertToType(data["email"], "String");
-    }
-    if (data.hasOwnProperty("password")) {
-      object.password = ApiClient.convertToType(data["password"], "String");
-    }
     if (data.hasOwnProperty("agreement")) {
       object.agreement = ApiClient.convertToType(
         data["agreement"],
         object.agreementType
       );
     }
+    if (data.hasOwnProperty("email")) {
+      object.email = ApiClient.convertToType(data["email"], "String");
+    }
+    if (data.hasOwnProperty("invitation")) {
+      object.invitation = ApiClient.convertToType(data["invitation"], "String");
+    }
+    if (data.hasOwnProperty("password")) {
+      object.password = ApiClient.convertToType(data["password"], "String");
+    }
 
     return object;
   }
 
+  /**
+   * @return { module:model/RegisterDataAgreement }
+   */
+  getAgreement() {
+    return this.agreement;
+  }
+
+  /**
+   * @param { module:model/RegisterDataAgreement } agreement
+   */
+  setAgreement(agreement) {
+    this.agreement = agreement;
+  }
   /**
    * @return { String }
    */
@@ -87,6 +104,19 @@ export default class RegisterData {
   /**
    * @return { String }
    */
+  getInvitation() {
+    return this.invitation;
+  }
+
+  /**
+   * @param { String } invitation
+   */
+  setInvitation(invitation) {
+    this.invitation = invitation;
+  }
+  /**
+   * @return { String }
+   */
   getPassword() {
     return this.password;
   }
@@ -96,18 +126,5 @@ export default class RegisterData {
    */
   setPassword(password) {
     this.password = password;
-  }
-  /**
-   * @return { module:model/RegisterDataAgreement }
-   */
-  getAgreement() {
-    return this.agreement;
-  }
-
-  /**
-   * @param { module:model/RegisterDataAgreement } agreement
-   */
-  setAgreement(agreement) {
-    this.agreement = agreement;
   }
 }

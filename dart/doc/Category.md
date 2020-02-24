@@ -8,6 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**embedded** | [**CategoryEmbedded**](CategoryEmbedded.md) |  | [optional] [default to null]
 **links** | [**CategoryLinks**](CategoryLinks.md) |  | [optional] [default to null]
 **color** | **String** |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]

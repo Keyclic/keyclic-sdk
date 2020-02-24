@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **geo** | [**FeedbackDataGeo**](FeedbackDataGeo.md) |  | 
 **metadata** | **{String: String}** |  | [optional] 
-**place** | **String** |  | [optional] 
+**place** | **String** |  | 
 **proMode** | **Boolean** |  | [optional] 
 **visibility** | **String** |  | 
 

@@ -6,6 +6,7 @@ class CategoryData {
     this.color,
     this.icon,
     this.organization,
+    this.parent,
   });
 
   factory CategoryData.fromJson(Map<String, dynamic> json) {
@@ -18,6 +19,7 @@ class CategoryData {
       color: json['color'],
       icon: json['icon'],
       organization: json['organization'],
+      parent: json['parent'],
     );
   }
 
@@ -28,6 +30,8 @@ class CategoryData {
   String icon;
 
   String organization;
+
+  String parent;
 
   @override
   bool operator ==(dynamic other) {
@@ -41,7 +45,8 @@ class CategoryData {
         name == other.name &&
         color == other.color &&
         icon == other.icon &&
-        organization == other.organization;
+        organization == other.organization &&
+        parent == other.parent;
   }
 
   /// By default hashCode return reference
@@ -53,6 +58,7 @@ class CategoryData {
     hashCode ^= color?.hashCode ?? 0;
     hashCode ^= icon?.hashCode ?? 0;
     hashCode ^= organization?.hashCode ?? 0;
+    hashCode ^= parent?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -79,11 +85,12 @@ class CategoryData {
       if (color != null) 'color': color,
       if (icon != null) 'icon': icon,
       if (organization != null) 'organization': organization,
+      if (parent != null) 'parent': parent,
     };
   }
 
   @override
   String toString() {
-    return 'CategoryData[name=$name, color=$color, icon=$icon, organization=$organization, ]';
+    return 'CategoryData[name=$name, color=$color, icon=$icon, organization=$organization, parent=$parent, ]';
   }
 }

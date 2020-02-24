@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _OccupantLinksPerson = _interopRequireDefault(
-  require("./OccupantLinksPerson")
+var _OccupantLinksMember = _interopRequireDefault(
+  require("./OccupantLinksMember")
 );
 
 var _OccupantLinksPlace = _interopRequireDefault(
@@ -59,10 +59,10 @@ var OccupantLinks =
     function OccupantLinks() {
       _classCallCheck(this, OccupantLinks);
 
-      this.person = null;
+      this.member = null;
       this.place = null;
       this.self = null;
-      this.personType = _OccupantLinksPerson.default;
+      this.memberType = _OccupantLinksMember.default;
       this.placeType = _OccupantLinksPlace.default;
       this.selfType = _OccupantLinksSelf.default;
     }
@@ -77,22 +77,22 @@ var OccupantLinks =
       OccupantLinks,
       [
         {
-          key: "getPerson",
+          key: "getMember",
 
           /**
-           * @return { module:model/OccupantLinksPerson }
+           * @return { module:model/OccupantLinksMember }
            */
-          value: function getPerson() {
-            return this.person;
+          value: function getMember() {
+            return this.member;
           }
           /**
-           * @param { module:model/OccupantLinksPerson } person
+           * @param { module:model/OccupantLinksMember } member
            */
         },
         {
-          key: "setPerson",
-          value: function setPerson(person) {
-            this.person = person;
+          key: "setMember",
+          value: function setMember(member) {
+            this.member = member;
           }
           /**
            * @return { module:model/OccupantLinksPlace }
@@ -149,10 +149,10 @@ var OccupantLinks =
               object = new OccupantLinks();
             }
 
-            if (data.hasOwnProperty("person")) {
-              object.person = _ApiClient.default.convertToType(
-                data["person"],
-                object.personType
+            if (data.hasOwnProperty("member")) {
+              object.member = _ApiClient.default.convertToType(
+                data["member"],
+                object.memberType
               );
             }
 

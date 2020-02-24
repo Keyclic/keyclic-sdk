@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class MemberPatch {
   MemberPatch({
+    this.contactPoint,
     this.roles,
   });
 
@@ -11,9 +12,12 @@ class MemberPatch {
     }
 
     return MemberPatch(
+      contactPoint: MemberPatchContactPoint.fromJson(json['contactPoint']),
       roles: json['roles'] is List ? List<String>.from(json['roles']) : null,
     );
   }
+
+  MemberPatchContactPoint contactPoint;
 
   List<String> roles;
 
@@ -26,6 +30,7 @@ class MemberPatch {
 
     return other is MemberPatch &&
         runtimeType == other.runtimeType &&
+        contactPoint == other.contactPoint &&
         DeepCollectionEquality.unordered().equals(roles, other.roles);
   }
 
@@ -39,6 +44,8 @@ class MemberPatch {
           .map((String element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
+
+    hashCode ^= contactPoint?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -61,12 +68,13 @@ class MemberPatch {
 
   Map<String, dynamic> toJson() {
     return {
+      if (contactPoint != null) 'contactPoint': contactPoint,
       if (roles != null) 'roles': roles,
     };
   }
 
   @override
   String toString() {
-    return 'MemberPatch[roles=$roles, ]';
+    return 'MemberPatch[contactPoint=$contactPoint, roles=$roles, ]';
   }
 }

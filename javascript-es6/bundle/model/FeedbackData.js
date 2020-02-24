@@ -63,10 +63,12 @@ var FeedbackData =
   
    * @param geo { module:model/FeedbackDataGeo }
   
+   * @param place { String }
+  
    * @param visibility { module:model/FeedbackData.VisibilityEnum }
   
    */
-    function FeedbackData(geo, visibility) {
+    function FeedbackData(geo, place, visibility) {
       _classCallCheck(this, FeedbackData);
 
       this.businessActivity = null;
@@ -74,7 +76,7 @@ var FeedbackData =
       this.description = null;
       this.geo = geo;
       this.metadata = [];
-      this.place = null;
+      this.place = place;
       this.proMode = null;
       this.visibility = visibility;
       this.geoType = _FeedbackDataGeo.default;

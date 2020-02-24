@@ -7,8 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _MemberLinksSelfIriTemplateMapping = _interopRequireDefault(
-  require("./MemberLinksSelfIriTemplateMapping")
+var _InvitationLinksMemberIriTemplateMapping = _interopRequireDefault(
+  require("./InvitationLinksMemberIriTemplateMapping")
 );
 
 function _interopRequireDefault(obj) {
@@ -54,7 +54,7 @@ var MemberLinksSelfIriTemplate =
       _classCallCheck(this, MemberLinksSelfIriTemplate);
 
       this.mapping = null;
-      this.mappingType = _MemberLinksSelfIriTemplateMapping.default;
+      this.mappingType = _InvitationLinksMemberIriTemplateMapping.default;
     }
     /**
      * Constructs a "MemberLinksSelfIriTemplate" from a plain JavaScript object.
@@ -70,13 +70,13 @@ var MemberLinksSelfIriTemplate =
           key: "getMapping",
 
           /**
-           * @return { module:model/MemberLinksSelfIriTemplateMapping }
+           * @return { module:model/InvitationLinksMemberIriTemplateMapping }
            */
           value: function getMapping() {
             return this.mapping;
           }
           /**
-           * @param { module:model/MemberLinksSelfIriTemplateMapping } mapping
+           * @param { module:model/InvitationLinksMemberIriTemplateMapping } mapping
            */
         },
         {

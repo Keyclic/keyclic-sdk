@@ -57,9 +57,10 @@ var RegisterData =
     function RegisterData(email, password) {
       _classCallCheck(this, RegisterData);
 
-      this.email = email;
-      this.password = password;
       this.agreement = null;
+      this.email = email;
+      this.invitation = null;
+      this.password = password;
       this.agreementType = _RegisterDataAgreement.default;
     }
     /**
@@ -73,11 +74,29 @@ var RegisterData =
       RegisterData,
       [
         {
-          key: "getEmail",
+          key: "getAgreement",
 
+          /**
+           * @return { module:model/RegisterDataAgreement }
+           */
+          value: function getAgreement() {
+            return this.agreement;
+          }
+          /**
+           * @param { module:model/RegisterDataAgreement } agreement
+           */
+        },
+        {
+          key: "setAgreement",
+          value: function setAgreement(agreement) {
+            this.agreement = agreement;
+          }
           /**
            * @return { String }
            */
+        },
+        {
+          key: "getEmail",
           value: function getEmail() {
             return this.email;
           }
@@ -89,6 +108,24 @@ var RegisterData =
           key: "setEmail",
           value: function setEmail(email) {
             this.email = email;
+          }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getInvitation",
+          value: function getInvitation() {
+            return this.invitation;
+          }
+          /**
+           * @param { String } invitation
+           */
+        },
+        {
+          key: "setInvitation",
+          value: function setInvitation(invitation) {
+            this.invitation = invitation;
           }
           /**
            * @return { String }
@@ -107,24 +144,6 @@ var RegisterData =
           key: "setPassword",
           value: function setPassword(password) {
             this.password = password;
-          }
-          /**
-           * @return { module:model/RegisterDataAgreement }
-           */
-        },
-        {
-          key: "getAgreement",
-          value: function getAgreement() {
-            return this.agreement;
-          }
-          /**
-           * @param { module:model/RegisterDataAgreement } agreement
-           */
-        },
-        {
-          key: "setAgreement",
-          value: function setAgreement(agreement) {
-            this.agreement = agreement;
           }
         }
       ],
@@ -145,9 +164,23 @@ var RegisterData =
               object = new RegisterData();
             }
 
+            if (data.hasOwnProperty("agreement")) {
+              object.agreement = _ApiClient.default.convertToType(
+                data["agreement"],
+                object.agreementType
+              );
+            }
+
             if (data.hasOwnProperty("email")) {
               object.email = _ApiClient.default.convertToType(
                 data["email"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("invitation")) {
+              object.invitation = _ApiClient.default.convertToType(
+                data["invitation"],
                 "String"
               );
             }
@@ -156,13 +189,6 @@ var RegisterData =
               object.password = _ApiClient.default.convertToType(
                 data["password"],
                 "String"
-              );
-            }
-
-            if (data.hasOwnProperty("agreement")) {
-              object.agreement = _ApiClient.default.convertToType(
-                data["agreement"],
-                object.agreementType
               );
             }
 

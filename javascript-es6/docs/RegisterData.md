@@ -3,8 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **String** |  | 
-**password** | **String** |  | 
 **agreement** | [**RegisterDataAgreement**](RegisterDataAgreement.md) |  | [optional] 
+**email** | **String** |  | 
+**invitation** | **String** |  | [optional] 
+**password** | **String** |  | 
 
 

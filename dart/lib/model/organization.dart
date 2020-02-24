@@ -4,13 +4,11 @@ class Organization {
   Organization({
     this.links,
     this.alternateName,
-    this.billingEmailAddress,
     this.createdAt,
     this.description,
     this.enabled,
     this.id,
     this.name,
-    this.notificationEmailAddress,
     this.preferences,
     this.type,
     this.updatedAt,
@@ -36,13 +34,11 @@ class Organization {
     return Organization(
       links: OrganizationLinks.fromJson(json['_links']),
       alternateName: json['alternateName'],
-      billingEmailAddress: json['billingEmailAddress'],
       createdAt: createdAt,
       description: json['description'],
       enabled: json['enabled'],
       id: json['id'],
       name: json['name'],
-      notificationEmailAddress: json['notificationEmailAddress'],
       preferences: OrganizationPreferences.fromJson(json['preferences']),
       type: json['type'],
       updatedAt: updatedAt,
@@ -53,8 +49,6 @@ class Organization {
 
   String alternateName;
 
-  String billingEmailAddress;
-
   DateTime createdAt;
 
   String description;
@@ -64,8 +58,6 @@ class Organization {
   String id;
 
   String name;
-
-  String notificationEmailAddress;
 
   OrganizationPreferences preferences;
 
@@ -84,13 +76,11 @@ class Organization {
         runtimeType == other.runtimeType &&
         links == other.links &&
         alternateName == other.alternateName &&
-        billingEmailAddress == other.billingEmailAddress &&
         createdAt == other.createdAt &&
         description == other.description &&
         enabled == other.enabled &&
         id == other.id &&
         name == other.name &&
-        notificationEmailAddress == other.notificationEmailAddress &&
         preferences == other.preferences &&
         type == other.type &&
         updatedAt == other.updatedAt;
@@ -103,13 +93,11 @@ class Organization {
 
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= alternateName?.hashCode ?? 0;
-    hashCode ^= billingEmailAddress?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= enabled?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
-    hashCode ^= notificationEmailAddress?.hashCode ?? 0;
     hashCode ^= preferences?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
     hashCode ^= updatedAt?.hashCode ?? 0;
@@ -137,15 +125,11 @@ class Organization {
     return {
       if (links != null) '_links': links,
       if (alternateName != null) 'alternateName': alternateName,
-      if (billingEmailAddress != null)
-        'billingEmailAddress': billingEmailAddress,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (enabled != null) 'enabled': enabled,
       if (id != null) 'id': id,
       if (name != null) 'name': name,
-      if (notificationEmailAddress != null)
-        'notificationEmailAddress': notificationEmailAddress,
       if (preferences != null) 'preferences': preferences,
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
@@ -154,6 +138,6 @@ class Organization {
 
   @override
   String toString() {
-    return 'Organization[links=$links, alternateName=$alternateName, billingEmailAddress=$billingEmailAddress, createdAt=$createdAt, description=$description, enabled=$enabled, id=$id, name=$name, notificationEmailAddress=$notificationEmailAddress, preferences=$preferences, type=$type, updatedAt=$updatedAt, ]';
+    return 'Organization[links=$links, alternateName=$alternateName, createdAt=$createdAt, description=$description, enabled=$enabled, id=$id, name=$name, preferences=$preferences, type=$type, updatedAt=$updatedAt, ]';
   }
 }

@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import OccupantEmbedded from "./OccupantEmbedded";
 import OccupantLinks from "./OccupantLinks";
 
 /**
@@ -25,12 +26,14 @@ export default class Occupant {
     
      */
   constructor() {
+    this.embedded = null;
     this.links = null;
     this.createdAt = null;
     this.id = null;
     this.type = null;
     this.updatedAt = null;
 
+    this.embeddedType = OccupantEmbedded;
     this.linksType = OccupantLinks;
   }
 
@@ -49,6 +52,12 @@ export default class Occupant {
       object = new Occupant();
     }
 
+    if (data.hasOwnProperty("_embedded")) {
+      object.embedded = ApiClient.convertToType(
+        data["_embedded"],
+        object.embeddedType
+      );
+    }
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
@@ -68,6 +77,19 @@ export default class Occupant {
     return object;
   }
 
+  /**
+   * @return { module:model/OccupantEmbedded }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/OccupantEmbedded } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
   /**
    * @return { module:model/OccupantLinks }
    */

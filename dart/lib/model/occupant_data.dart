@@ -2,7 +2,7 @@ part of keyclic_sdk_api.api;
 
 class OccupantData {
   OccupantData({
-    this.person,
+    this.member,
     this.place,
   });
 
@@ -12,12 +12,12 @@ class OccupantData {
     }
 
     return OccupantData(
-      person: json['person'],
+      member: json['member'],
       place: json['place'],
     );
   }
 
-  String person;
+  String member;
 
   String place;
 
@@ -30,7 +30,7 @@ class OccupantData {
 
     return other is OccupantData &&
         runtimeType == other.runtimeType &&
-        person == other.person &&
+        member == other.member &&
         place == other.place;
   }
 
@@ -39,7 +39,7 @@ class OccupantData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= person?.hashCode ?? 0;
+    hashCode ^= member?.hashCode ?? 0;
     hashCode ^= place?.hashCode ?? 0;
 
     return hashCode;
@@ -63,13 +63,13 @@ class OccupantData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (person != null) 'person': person,
+      if (member != null) 'member': member,
       if (place != null) 'place': place,
     };
   }
 
   @override
   String toString() {
-    return 'OccupantData[person=$person, place=$place, ]';
+    return 'OccupantData[member=$member, place=$place, ]';
   }
 }

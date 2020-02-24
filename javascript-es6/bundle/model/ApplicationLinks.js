@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ApplicationLinksKnowledgeBase = _interopRequireDefault(
+  require("./ApplicationLinksKnowledgeBase")
+);
+
 var _ApplicationLinksSelf = _interopRequireDefault(
   require("./ApplicationLinksSelf")
 );
@@ -53,7 +57,9 @@ var ApplicationLinks =
     function ApplicationLinks() {
       _classCallCheck(this, ApplicationLinks);
 
+      this.knowledgeBase = null;
       this.self = null;
+      this.knowledgeBaseType = _ApplicationLinksKnowledgeBase.default;
       this.selfType = _ApplicationLinksSelf.default;
     }
     /**
@@ -67,11 +73,29 @@ var ApplicationLinks =
       ApplicationLinks,
       [
         {
-          key: "getSelf",
+          key: "getKnowledgeBase",
 
+          /**
+           * @return { module:model/ApplicationLinksKnowledgeBase }
+           */
+          value: function getKnowledgeBase() {
+            return this.knowledgeBase;
+          }
+          /**
+           * @param { module:model/ApplicationLinksKnowledgeBase } knowledgeBase
+           */
+        },
+        {
+          key: "setKnowledgeBase",
+          value: function setKnowledgeBase(knowledgeBase) {
+            this.knowledgeBase = knowledgeBase;
+          }
           /**
            * @return { module:model/ApplicationLinksSelf }
            */
+        },
+        {
+          key: "getSelf",
           value: function getSelf() {
             return this.self;
           }
@@ -101,6 +125,13 @@ var ApplicationLinks =
 
             if (object === null) {
               object = new ApplicationLinks();
+            }
+
+            if (data.hasOwnProperty("knowledgeBase")) {
+              object.knowledgeBase = _ApiClient.default.convertToType(
+                data["knowledgeBase"],
+                object.knowledgeBaseType
+              );
             }
 
             if (data.hasOwnProperty("self")) {

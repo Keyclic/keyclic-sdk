@@ -53,8 +53,20 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.ReportEmbedded);
     });
 
+    it('should have the property category (base name: "category")', function() {
+      // uncomment below and update the code to test the property category
+      //var instane = new @KeyclicSdkJavascript.ReportEmbedded();
+      //expect(instance).to.be();
+    });
+
     it('should have the property duration (base name: "duration")', function() {
       // uncomment below and update the code to test the property duration
+      //var instane = new @KeyclicSdkJavascript.ReportEmbedded();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property place (base name: "place")', function() {
+      // uncomment below and update the code to test the property place
       //var instane = new @KeyclicSdkJavascript.ReportEmbedded();
       //expect(instance).to.be();
     });

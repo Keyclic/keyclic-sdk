@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class ApplicationLinks {
   ApplicationLinks({
+    this.knowledgeBase,
     this.self,
   });
 
@@ -11,9 +12,13 @@ class ApplicationLinks {
     }
 
     return ApplicationLinks(
+      knowledgeBase:
+          ApplicationLinksKnowledgeBase.fromJson(json['knowledgeBase']),
       self: ApplicationLinksSelf.fromJson(json['self']),
     );
   }
+
+  ApplicationLinksKnowledgeBase knowledgeBase;
 
   ApplicationLinksSelf self;
 
@@ -26,6 +31,7 @@ class ApplicationLinks {
 
     return other is ApplicationLinks &&
         runtimeType == other.runtimeType &&
+        knowledgeBase == other.knowledgeBase &&
         self == other.self;
   }
 
@@ -34,6 +40,7 @@ class ApplicationLinks {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= knowledgeBase?.hashCode ?? 0;
     hashCode ^= self?.hashCode ?? 0;
 
     return hashCode;
@@ -59,12 +66,13 @@ class ApplicationLinks {
 
   Map<String, dynamic> toJson() {
     return {
+      if (knowledgeBase != null) 'knowledgeBase': knowledgeBase,
       if (self != null) 'self': self,
     };
   }
 
   @override
   String toString() {
-    return 'ApplicationLinks[self=$self, ]';
+    return 'ApplicationLinks[knowledgeBase=$knowledgeBase, self=$self, ]';
   }
 }

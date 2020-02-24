@@ -2,9 +2,10 @@ part of keyclic_sdk_api.api;
 
 class RegisterData {
   RegisterData({
-    this.email,
-    this.password,
     this.agreement,
+    this.email,
+    this.invitation,
+    this.password,
   });
 
   factory RegisterData.fromJson(Map<String, dynamic> json) {
@@ -13,17 +14,20 @@ class RegisterData {
     }
 
     return RegisterData(
-      email: json['email'],
-      password: json['password'],
       agreement: RegisterDataAgreement.fromJson(json['agreement']),
+      email: json['email'],
+      invitation: json['invitation'],
+      password: json['password'],
     );
   }
 
+  RegisterDataAgreement agreement;
+
   String email;
 
-  String password;
+  String invitation;
 
-  RegisterDataAgreement agreement;
+  String password;
 
   @override
   bool operator ==(dynamic other) {
@@ -34,9 +38,10 @@ class RegisterData {
 
     return other is RegisterData &&
         runtimeType == other.runtimeType &&
+        agreement == other.agreement &&
         email == other.email &&
-        password == other.password &&
-        agreement == other.agreement;
+        invitation == other.invitation &&
+        password == other.password;
   }
 
   /// By default hashCode return reference
@@ -44,9 +49,10 @@ class RegisterData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= email?.hashCode ?? 0;
-    hashCode ^= password?.hashCode ?? 0;
     hashCode ^= agreement?.hashCode ?? 0;
+    hashCode ^= email?.hashCode ?? 0;
+    hashCode ^= invitation?.hashCode ?? 0;
+    hashCode ^= password?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -69,14 +75,15 @@ class RegisterData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (email != null) 'email': email,
-      if (password != null) 'password': password,
       if (agreement != null) 'agreement': agreement,
+      if (email != null) 'email': email,
+      if (invitation != null) 'invitation': invitation,
+      if (password != null) 'password': password,
     };
   }
 
   @override
   String toString() {
-    return 'RegisterData[email=$email, password=$password, agreement=$agreement, ]';
+    return 'RegisterData[agreement=$agreement, email=$email, invitation=$invitation, password=$password, ]';
   }
 }

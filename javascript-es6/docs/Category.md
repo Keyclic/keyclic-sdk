@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**embedded** | [**CategoryEmbedded**](CategoryEmbedded.md) |  | [optional] 
 **links** | [**CategoryLinks**](CategoryLinks.md) |  | [optional] 
 **color** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 

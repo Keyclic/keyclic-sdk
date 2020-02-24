@@ -61,6 +61,7 @@ var CategoryData =
       this.color = color;
       this.icon = icon;
       this.organization = organization;
+      this.parent = null;
     }
     /**
      * Constructs a "CategoryData" from a plain JavaScript object.
@@ -144,6 +145,24 @@ var CategoryData =
           value: function setOrganization(organization) {
             this.organization = organization;
           }
+          /**
+           * @return { String }
+           */
+        },
+        {
+          key: "getParent",
+          value: function getParent() {
+            return this.parent;
+          }
+          /**
+           * @param { String } parent
+           */
+        },
+        {
+          key: "setParent",
+          value: function setParent(parent) {
+            this.parent = parent;
+          }
         }
       ],
       [
@@ -187,6 +206,13 @@ var CategoryData =
             if (data.hasOwnProperty("organization")) {
               object.organization = _ApiClient.default.convertToType(
                 data["organization"],
+                "String"
+              );
+            }
+
+            if (data.hasOwnProperty("parent")) {
+              object.parent = _ApiClient.default.convertToType(
+                data["parent"],
                 "String"
               );
             }

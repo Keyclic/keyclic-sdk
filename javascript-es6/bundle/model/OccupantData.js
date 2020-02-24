@@ -45,15 +45,15 @@ var OccupantData =
    * @alias module:model/OccupantData
    * @class
   
-   * @param person { String }
+   * @param member { String }
   
    * @param place { String }
   
    */
-    function OccupantData(person, place) {
+    function OccupantData(member, place) {
       _classCallCheck(this, OccupantData);
 
-      this.person = person;
+      this.member = member;
       this.place = place;
     }
     /**
@@ -67,22 +67,22 @@ var OccupantData =
       OccupantData,
       [
         {
-          key: "getPerson",
+          key: "getMember",
 
           /**
            * @return { String }
            */
-          value: function getPerson() {
-            return this.person;
+          value: function getMember() {
+            return this.member;
           }
           /**
-           * @param { String } person
+           * @param { String } member
            */
         },
         {
-          key: "setPerson",
-          value: function setPerson(person) {
-            this.person = person;
+          key: "setMember",
+          value: function setMember(member) {
+            this.member = member;
           }
           /**
            * @return { String }
@@ -121,9 +121,9 @@ var OccupantData =
               object = new OccupantData();
             }
 
-            if (data.hasOwnProperty("person")) {
-              object.person = _ApiClient.default.convertToType(
-                data["person"],
+            if (data.hasOwnProperty("member")) {
+              object.member = _ApiClient.default.convertToType(
+                data["member"],
                 "String"
               );
             }

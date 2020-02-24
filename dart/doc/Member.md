@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **embedded** | [**MemberEmbedded**](MemberEmbedded.md) |  | [optional] [default to null]
 **links** | [**MemberLinks**](MemberLinks.md) |  | [optional] [default to null]
+**contactPoint** | [**MemberContactPoint**](MemberContactPoint.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
 **roles** | **List&lt;String&gt;** |  | [optional] [default to []]
