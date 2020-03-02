@@ -134,97 +134,95 @@ function _setPrototypeOf(o, p) {
  * The FeedbackPagination model module.
  * @module model/FeedbackPagination
  */
-var FeedbackPagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(FeedbackPagination, _Pagination);
+var FeedbackPagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(FeedbackPagination, _Pagination);
 
-    /**
-   * Constructs a new "FeedbackPagination".
-   * @alias module:model/FeedbackPagination
-   * @class
-  
-   */
-    function FeedbackPagination() {
-      var _this;
-
-      _classCallCheck(this, FeedbackPagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(FeedbackPagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _FeedbackCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "FeedbackPagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FeedbackPagination } object Optional instance to populate.
-     * @return { module:model/FeedbackPagination } The populated "FeedbackPagination" instance.
+  /**
+     * Constructs a new "FeedbackPagination".
+     * @alias module:model/FeedbackPagination
+     * @class
+    
      */
+  function FeedbackPagination() {
+    var _this;
 
-    _createClass(
-      FeedbackPagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, FeedbackPagination);
 
-          /**
-           * @return { module:model/FeedbackCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/FeedbackCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new FeedbackPagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(FeedbackPagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(FeedbackPagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _FeedbackCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "FeedbackPagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/FeedbackPagination } object Optional instance to populate.
+   * @return { module:model/FeedbackPagination } The populated "FeedbackPagination" instance.
+   */
 
-    return FeedbackPagination;
-  })(_Pagination2.default);
+  _createClass(
+    FeedbackPagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/FeedbackCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/FeedbackCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new FeedbackPagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(FeedbackPagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return FeedbackPagination;
+})(_Pagination2.default);
 
 exports.default = FeedbackPagination;

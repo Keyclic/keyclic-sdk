@@ -55,167 +55,165 @@ function _defineProperty(obj, key, value) {
  * The MemberData model module.
  * @module model/MemberData
  */
-var MemberData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "MemberData".
-   * @alias module:model/MemberData
-   * @class
-  
-   * @param organization { String }
-  
-   */
-    function MemberData(organization) {
-      _classCallCheck(this, MemberData);
-
-      this.contactPoint = null;
-      this.organization = organization;
-      this.person = null;
-      this.type = null;
-      this.contactPointType = _MemberDataContactPoint.default;
-    }
-    /**
-     * Constructs a "MemberData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/MemberData } object Optional instance to populate.
-     * @return { module:model/MemberData } The populated "MemberData" instance.
+var MemberData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "MemberData".
+     * @alias module:model/MemberData
+     * @class
+    
+     * @param organization { String }
+    
      */
+  function MemberData(organization) {
+    _classCallCheck(this, MemberData);
 
-    _createClass(
-      MemberData,
-      [
-        {
-          key: "getContactPoint",
+    this.contactPoint = null;
+    this.organization = organization;
+    this.person = null;
+    this.type = null;
+    this.contactPointType = _MemberDataContactPoint.default;
+  }
+  /**
+   * Constructs a "MemberData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/MemberData } object Optional instance to populate.
+   * @return { module:model/MemberData } The populated "MemberData" instance.
+   */
 
-          /**
-           * @return { module:model/MemberDataContactPoint }
-           */
-          value: function getContactPoint() {
-            return this.contactPoint;
-          }
-          /**
-           * @param { module:model/MemberDataContactPoint } contactPoint
-           */
-        },
-        {
-          key: "setContactPoint",
-          value: function setContactPoint(contactPoint) {
-            this.contactPoint = contactPoint;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getOrganization",
-          value: function getOrganization() {
-            return this.organization;
-          }
-          /**
-           * @param { String } organization
-           */
-        },
-        {
-          key: "setOrganization",
-          value: function setOrganization(organization) {
-            this.organization = organization;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getPerson",
-          value: function getPerson() {
-            return this.person;
-          }
-          /**
-           * @param { String } person
-           */
-        },
-        {
-          key: "setPerson",
-          value: function setPerson(person) {
-            this.person = person;
-          }
-          /**
-           * @return { module:model/MemberData.TypeEnum }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
-          }
-          /**
-           * @param { module:model/MemberData.TypeEnum } type
-           */
-        },
-        {
-          key: "setType",
-          value: function setType(type) {
-            this.type = type;
-          }
-          /**
-           * Allowed values for the "type" property.
-           * @enum { String }
-           */
+  _createClass(
+    MemberData,
+    [
+      {
+        key: "getContactPoint",
+
+        /**
+         * @return { module:model/MemberDataContactPoint }
+         */
+        value: function getContactPoint() {
+          return this.contactPoint;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new MemberData();
-            }
-
-            if (data.hasOwnProperty("contactPoint")) {
-              object.contactPoint = _ApiClient.default.convertToType(
-                data["contactPoint"],
-                object.contactPointType
-              );
-            }
-
-            if (data.hasOwnProperty("organization")) {
-              object.organization = _ApiClient.default.convertToType(
-                data["organization"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("person")) {
-              object.person = _ApiClient.default.convertToType(
-                data["person"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/MemberDataContactPoint } contactPoint
+         */
+      },
+      {
+        key: "setContactPoint",
+        value: function setContactPoint(contactPoint) {
+          this.contactPoint = contactPoint;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getOrganization",
+        value: function getOrganization() {
+          return this.organization;
+        }
+        /**
+         * @param { String } organization
+         */
+      },
+      {
+        key: "setOrganization",
+        value: function setOrganization(organization) {
+          this.organization = organization;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getPerson",
+        value: function getPerson() {
+          return this.person;
+        }
+        /**
+         * @param { String } person
+         */
+      },
+      {
+        key: "setPerson",
+        value: function setPerson(person) {
+          this.person = person;
+        }
+        /**
+         * @return { module:model/MemberData.TypeEnum }
+         */
+      },
+      {
+        key: "getType",
+        value: function getType() {
+          return this.type;
+        }
+        /**
+         * @param { module:model/MemberData.TypeEnum } type
+         */
+      },
+      {
+        key: "setType",
+        value: function setType(type) {
+          this.type = type;
+        }
+        /**
+         * Allowed values for the "type" property.
+         * @enum { String }
+         */
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return MemberData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new MemberData();
+          }
+
+          if (data.hasOwnProperty("contactPoint")) {
+            object.contactPoint = _ApiClient.default.convertToType(
+              data["contactPoint"],
+              object.contactPointType
+            );
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("person")) {
+            object.person = _ApiClient.default.convertToType(
+              data["person"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return MemberData;
+})();
 
 exports.default = MemberData;
 

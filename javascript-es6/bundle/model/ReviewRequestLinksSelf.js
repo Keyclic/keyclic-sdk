@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReviewRequestLinksSelf model module.
  * @module model/ReviewRequestLinksSelf
  */
-var ReviewRequestLinksSelf =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReviewRequestLinksSelf".
-   * @alias module:model/ReviewRequestLinksSelf
-   * @class
-  
-   */
-    function ReviewRequestLinksSelf() {
-      _classCallCheck(this, ReviewRequestLinksSelf);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _ReviewRequestLinksSelfIriTemplate.default;
-    }
-    /**
-     * Constructs a "ReviewRequestLinksSelf" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReviewRequestLinksSelf } object Optional instance to populate.
-     * @return { module:model/ReviewRequestLinksSelf } The populated "ReviewRequestLinksSelf" instance.
+var ReviewRequestLinksSelf = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReviewRequestLinksSelf".
+     * @alias module:model/ReviewRequestLinksSelf
+     * @class
+    
      */
+  function ReviewRequestLinksSelf() {
+    _classCallCheck(this, ReviewRequestLinksSelf);
 
-    _createClass(
-      ReviewRequestLinksSelf,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _ReviewRequestLinksSelfIriTemplate.default;
+  }
+  /**
+   * Constructs a "ReviewRequestLinksSelf" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReviewRequestLinksSelf } object Optional instance to populate.
+   * @return { module:model/ReviewRequestLinksSelf } The populated "ReviewRequestLinksSelf" instance.
+   */
 
-          /**
-           * Gets The URI of the self associated to the given reviewrequest.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the self associated to the given reviewrequest.
-           * @param { String } href The URI of the self associated to the given reviewrequest.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/ReviewRequestLinksSelfIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/ReviewRequestLinksSelfIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    ReviewRequestLinksSelf,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the self associated to the given reviewrequest.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReviewRequestLinksSelf();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the self associated to the given reviewrequest.
+         * @param { String } href The URI of the self associated to the given reviewrequest.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/ReviewRequestLinksSelfIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/ReviewRequestLinksSelfIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReviewRequestLinksSelf;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReviewRequestLinksSelf();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReviewRequestLinksSelf;
+})();
 
 exports.default = ReviewRequestLinksSelf;

@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The InternalServiceCollection model module.
  * @module model/InternalServiceCollection
  */
-var InternalServiceCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "InternalServiceCollection".
-   * @alias module:model/InternalServiceCollection
-   * @class
-  
-   */
-    function InternalServiceCollection() {
-      _classCallCheck(this, InternalServiceCollection);
-
-      this.items = [];
-      this.itemsType = _InternalService.default;
-    }
-    /**
-     * Constructs a "InternalServiceCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/InternalServiceCollection } object Optional instance to populate.
-     * @return { module:model/InternalServiceCollection } The populated "InternalServiceCollection" instance.
+var InternalServiceCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "InternalServiceCollection".
+     * @alias module:model/InternalServiceCollection
+     * @class
+    
      */
+  function InternalServiceCollection() {
+    _classCallCheck(this, InternalServiceCollection);
 
-    _createClass(
-      InternalServiceCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _InternalService.default;
+  }
+  /**
+   * Constructs a "InternalServiceCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/InternalServiceCollection } object Optional instance to populate.
+   * @return { module:model/InternalServiceCollection } The populated "InternalServiceCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/InternalService> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/InternalService> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    InternalServiceCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/InternalService> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new InternalServiceCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/InternalService> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return InternalServiceCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new InternalServiceCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return InternalServiceCollection;
+})();
 
 exports.default = InternalServiceCollection;

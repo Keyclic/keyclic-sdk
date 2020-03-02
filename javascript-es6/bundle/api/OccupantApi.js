@@ -107,306 +107,289 @@ function _setPrototypeOf(o, p) {
  * Occupant service.
  * @module api/OccupantApi
  */
-var OccupantApi =
-  /*#__PURE__*/
-  (function(_ApiClient) {
-    _inherits(OccupantApi, _ApiClient);
+var OccupantApi = /*#__PURE__*/ (function(_ApiClient) {
+  _inherits(OccupantApi, _ApiClient);
 
-    /**
-     * @class
-     * { string } basePath To override basePath.
-     * { object } headers Additional headers for the instance.
-     * { int } timeout Number in seconds before timeout.
-     */
-    function OccupantApi() {
-      var basePath =
-        arguments.length > 0 && arguments[0] !== undefined
-          ? arguments[0]
-          : null;
-      var headers =
-        arguments.length > 1 && arguments[1] !== undefined
-          ? arguments[1]
-          : null;
-      var timeout =
-        arguments.length > 2 && arguments[2] !== undefined
-          ? arguments[2]
-          : null;
+  /**
+   * @class
+   * { string } basePath To override basePath.
+   * { object } headers Additional headers for the instance.
+   * { int } timeout Number in seconds before timeout.
+   */
+  function OccupantApi() {
+    var basePath =
+      arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+    var headers =
+      arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    var timeout =
+      arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
-      _classCallCheck(this, OccupantApi);
+    _classCallCheck(this, OccupantApi);
 
-      return _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(OccupantApi).call(this, basePath, headers, timeout)
-      );
-    }
-    /**
-     * Remove one Occupant resource.
-     * @param { String } xKeyclicApp
-     * @param { String } occupant The identifier of the resource.
-     * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
-     * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { Date } xDateTime
-     * @param { String } xKeyclicAppVersion
-     */
+    return _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(OccupantApi).call(this, basePath, headers, timeout)
+    );
+  }
+  /**
+   * Remove one Occupant resource.
+   * @param { String } xKeyclicApp
+   * @param { String } occupant The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
+   * @param { String } xKeyclicAppVersion
+   */
 
-    _createClass(OccupantApi, [
-      {
-        key: "deleteOccupant",
-        value: function deleteOccupant() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
-          var xKeyclicApp = options.xKeyclicApp,
-            occupant = options.occupant,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+  _createClass(OccupantApi, [
+    {
+      key: "deleteOccupant",
+      value: function deleteOccupant() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
+        var xKeyclicApp = options.xKeyclicApp,
+          occupant = options.occupant,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling deleteOccupant'
-            );
-          } // verify the required parameter 'occupant' is set
-
-          if (typeof occupant === "undefined" || occupant === null) {
-            throw new window.Error(
-              'Missing the required parameter "occupant" when calling deleteOccupant'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          var pathParams = {
-            occupant: occupant
-          };
-          var bodyParam = null;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/occupants/{occupant}",
-            "DELETE",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling deleteOccupant'
           );
-        }
-        /**
-         * Retrieve one Occupant resource.
-         * @param { String } xKeyclicApp
-         * @param { String } occupant The identifier of the resource.
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { Occupant }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { Date } xDateTime
-         * @param { String } xKeyclicAppVersion
-         */
-      },
-      {
-        key: "getOccupant",
-        value: function getOccupant() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
+        } // verify the required parameter 'occupant' is set
 
-          if (returnType === null) {
-            returnType = _Occupant.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            occupant = options.occupant,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling getOccupant'
-            );
-          } // verify the required parameter 'occupant' is set
-
-          if (typeof occupant === "undefined" || occupant === null) {
-            throw new window.Error(
-              'Missing the required parameter "occupant" when calling getOccupant'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          var pathParams = {
-            occupant: occupant
-          };
-          var bodyParam = null;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/occupants/{occupant}",
-            "GET",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
+        if (typeof occupant === "undefined" || occupant === null) {
+          throw new window.Error(
+            'Missing the required parameter "occupant" when calling deleteOccupant'
           );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
         }
-        /**
-         * Create one Occupant resource.
-         * @param { String } xKeyclicApp
-         * @param { module:model/OccupantData } occupantData
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { Occupant }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { Date } xDateTime
-         * @param { String } xKeyclicAppVersion
-         */
-      },
-      {
-        key: "postOccupant",
-        value: function postOccupant() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
 
-          if (returnType === null) {
-            returnType = _Occupant.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            occupantData = options.occupantData,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling postOccupant'
-            );
-          } // verify the required parameter 'occupantData' is set
-
-          if (typeof occupantData === "undefined" || occupantData === null) {
-            throw new window.Error(
-              'Missing the required parameter "occupantData" when calling postOccupant'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          var pathParams = {};
-          var bodyParam = occupantData;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/occupants",
-            "POST",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-          );
-        }
+        var pathParams = {
+          occupant: occupant
+        };
+        var bodyParam = null;
+        var queryParams = {};
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/occupants/{occupant}",
+          "DELETE",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
       }
-    ]);
+      /**
+       * Retrieve one Occupant resource.
+       * @param { String } xKeyclicApp
+       * @param { String } occupant The identifier of the resource.
+       * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+       * @param { Occupant }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+       * @param { module:model/String } acceptLanguage   (default to fr-FR)
+       * @param { Date } xDateTime
+       * @param { String } xKeyclicAppVersion
+       */
+    },
+    {
+      key: "getOccupant",
+      value: function getOccupant() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
 
-    return OccupantApi;
-  })(_ApiClient2.default);
+        if (returnType === null) {
+          returnType = _Occupant.default;
+        }
+
+        var xKeyclicApp = options.xKeyclicApp,
+          occupant = options.occupant,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling getOccupant'
+          );
+        } // verify the required parameter 'occupant' is set
+
+        if (typeof occupant === "undefined" || occupant === null) {
+          throw new window.Error(
+            'Missing the required parameter "occupant" when calling getOccupant'
+          );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
+        }
+
+        var pathParams = {
+          occupant: occupant
+        };
+        var bodyParam = null;
+        var queryParams = {};
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/occupants/{occupant}",
+          "GET",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
+      }
+      /**
+       * Create one Occupant resource.
+       * @param { String } xKeyclicApp
+       * @param { module:model/OccupantData } occupantData
+       * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+       * @param { Occupant }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+       * @param { module:model/String } acceptLanguage   (default to fr-FR)
+       * @param { Date } xDateTime
+       * @param { String } xKeyclicAppVersion
+       */
+    },
+    {
+      key: "postOccupant",
+      value: function postOccupant() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
+
+        if (returnType === null) {
+          returnType = _Occupant.default;
+        }
+
+        var xKeyclicApp = options.xKeyclicApp,
+          occupantData = options.occupantData,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling postOccupant'
+          );
+        } // verify the required parameter 'occupantData' is set
+
+        if (typeof occupantData === "undefined" || occupantData === null) {
+          throw new window.Error(
+            'Missing the required parameter "occupantData" when calling postOccupant'
+          );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
+        }
+
+        var pathParams = {};
+        var bodyParam = occupantData;
+        var queryParams = {};
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/occupants",
+          "POST",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
+      }
+    }
+  ]);
+
+  return OccupantApi;
+})(_ApiClient2.default);
 
 exports.default = OccupantApi;

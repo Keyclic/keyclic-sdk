@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The WorkflowLinksSelfIriTemplate model module.
  * @module model/WorkflowLinksSelfIriTemplate
  */
-var WorkflowLinksSelfIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "WorkflowLinksSelfIriTemplate".
-   * @alias module:model/WorkflowLinksSelfIriTemplate
-   * @class
-  
-   */
-    function WorkflowLinksSelfIriTemplate() {
-      _classCallCheck(this, WorkflowLinksSelfIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _WorkflowLinksSelfIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "WorkflowLinksSelfIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/WorkflowLinksSelfIriTemplate } object Optional instance to populate.
-     * @return { module:model/WorkflowLinksSelfIriTemplate } The populated "WorkflowLinksSelfIriTemplate" instance.
+var WorkflowLinksSelfIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "WorkflowLinksSelfIriTemplate".
+     * @alias module:model/WorkflowLinksSelfIriTemplate
+     * @class
+    
      */
+  function WorkflowLinksSelfIriTemplate() {
+    _classCallCheck(this, WorkflowLinksSelfIriTemplate);
 
-    _createClass(
-      WorkflowLinksSelfIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _WorkflowLinksSelfIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "WorkflowLinksSelfIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/WorkflowLinksSelfIriTemplate } object Optional instance to populate.
+   * @return { module:model/WorkflowLinksSelfIriTemplate } The populated "WorkflowLinksSelfIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/WorkflowLinksSelfIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/WorkflowLinksSelfIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    WorkflowLinksSelfIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/WorkflowLinksSelfIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new WorkflowLinksSelfIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/WorkflowLinksSelfIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return WorkflowLinksSelfIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new WorkflowLinksSelfIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return WorkflowLinksSelfIriTemplate;
+})();
 
 exports.default = WorkflowLinksSelfIriTemplate;

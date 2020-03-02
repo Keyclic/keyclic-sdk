@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReviewLinksSelfIriTemplateMapping model module.
  * @module model/ReviewLinksSelfIriTemplateMapping
  */
-var ReviewLinksSelfIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReviewLinksSelfIriTemplateMapping".
-   * @alias module:model/ReviewLinksSelfIriTemplateMapping
-   * @class
-  
-   */
-    function ReviewLinksSelfIriTemplateMapping() {
-      _classCallCheck(this, ReviewLinksSelfIriTemplateMapping);
-
-      this.review = null;
-    }
-    /**
-     * Constructs a "ReviewLinksSelfIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReviewLinksSelfIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/ReviewLinksSelfIriTemplateMapping } The populated "ReviewLinksSelfIriTemplateMapping" instance.
+var ReviewLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReviewLinksSelfIriTemplateMapping".
+     * @alias module:model/ReviewLinksSelfIriTemplateMapping
+     * @class
+    
      */
+  function ReviewLinksSelfIriTemplateMapping() {
+    _classCallCheck(this, ReviewLinksSelfIriTemplateMapping);
 
-    _createClass(
-      ReviewLinksSelfIriTemplateMapping,
-      [
-        {
-          key: "getReview",
+    this.review = null;
+  }
+  /**
+   * Constructs a "ReviewLinksSelfIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReviewLinksSelfIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/ReviewLinksSelfIriTemplateMapping } The populated "ReviewLinksSelfIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getReview() {
-            return this.review;
-          }
-          /**
-           * @param { String } review
-           */
-        },
-        {
-          key: "setReview",
-          value: function setReview(review) {
-            this.review = review;
-          }
+  _createClass(
+    ReviewLinksSelfIriTemplateMapping,
+    [
+      {
+        key: "getReview",
+
+        /**
+         * @return { String }
+         */
+        value: function getReview() {
+          return this.review;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReviewLinksSelfIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("review")) {
-              object.review = _ApiClient.default.convertToType(
-                data["review"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } review
+         */
+      },
+      {
+        key: "setReview",
+        value: function setReview(review) {
+          this.review = review;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReviewLinksSelfIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReviewLinksSelfIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("review")) {
+            object.review = _ApiClient.default.convertToType(
+              data["review"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReviewLinksSelfIriTemplateMapping;
+})();
 
 exports.default = ReviewLinksSelfIriTemplateMapping;

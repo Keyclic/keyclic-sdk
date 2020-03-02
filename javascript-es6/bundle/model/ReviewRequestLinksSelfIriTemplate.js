@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReviewRequestLinksSelfIriTemplate model module.
  * @module model/ReviewRequestLinksSelfIriTemplate
  */
-var ReviewRequestLinksSelfIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReviewRequestLinksSelfIriTemplate".
-   * @alias module:model/ReviewRequestLinksSelfIriTemplate
-   * @class
-  
-   */
-    function ReviewRequestLinksSelfIriTemplate() {
-      _classCallCheck(this, ReviewRequestLinksSelfIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _ReviewRequestLinksSelfIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "ReviewRequestLinksSelfIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReviewRequestLinksSelfIriTemplate } object Optional instance to populate.
-     * @return { module:model/ReviewRequestLinksSelfIriTemplate } The populated "ReviewRequestLinksSelfIriTemplate" instance.
+var ReviewRequestLinksSelfIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReviewRequestLinksSelfIriTemplate".
+     * @alias module:model/ReviewRequestLinksSelfIriTemplate
+     * @class
+    
      */
+  function ReviewRequestLinksSelfIriTemplate() {
+    _classCallCheck(this, ReviewRequestLinksSelfIriTemplate);
 
-    _createClass(
-      ReviewRequestLinksSelfIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _ReviewRequestLinksSelfIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "ReviewRequestLinksSelfIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReviewRequestLinksSelfIriTemplate } object Optional instance to populate.
+   * @return { module:model/ReviewRequestLinksSelfIriTemplate } The populated "ReviewRequestLinksSelfIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/ReviewRequestLinksSelfIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/ReviewRequestLinksSelfIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    ReviewRequestLinksSelfIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/ReviewRequestLinksSelfIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReviewRequestLinksSelfIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ReviewRequestLinksSelfIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReviewRequestLinksSelfIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReviewRequestLinksSelfIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReviewRequestLinksSelfIriTemplate;
+})();
 
 exports.default = ReviewRequestLinksSelfIriTemplate;

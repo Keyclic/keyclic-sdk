@@ -39,82 +39,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OccupantEmbedded model module.
  * @module model/OccupantEmbedded
  */
-var OccupantEmbedded =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OccupantEmbedded".
-   * @alias module:model/OccupantEmbedded
-   * @class
-  
-   */
-    function OccupantEmbedded() {
-      _classCallCheck(this, OccupantEmbedded);
-
-      this.member = null;
-      this.memberType = _Member.default;
-    }
-    /**
-     * Constructs a "OccupantEmbedded" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OccupantEmbedded } object Optional instance to populate.
-     * @return { module:model/OccupantEmbedded } The populated "OccupantEmbedded" instance.
+var OccupantEmbedded = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OccupantEmbedded".
+     * @alias module:model/OccupantEmbedded
+     * @class
+    
      */
+  function OccupantEmbedded() {
+    _classCallCheck(this, OccupantEmbedded);
 
-    _createClass(
-      OccupantEmbedded,
-      [
-        {
-          key: "getMember",
+    this.member = null;
+    this.memberType = _Member.default;
+  }
+  /**
+   * Constructs a "OccupantEmbedded" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OccupantEmbedded } object Optional instance to populate.
+   * @return { module:model/OccupantEmbedded } The populated "OccupantEmbedded" instance.
+   */
 
-          /**
-           * @return { module:model/Member }
-           */
-          value: function getMember() {
-            return this.member;
-          }
-          /**
-           * @param { module:model/Member } member
-           */
-        },
-        {
-          key: "setMember",
-          value: function setMember(member) {
-            this.member = member;
-          }
+  _createClass(
+    OccupantEmbedded,
+    [
+      {
+        key: "getMember",
+
+        /**
+         * @return { module:model/Member }
+         */
+        value: function getMember() {
+          return this.member;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OccupantEmbedded();
-            }
-
-            if (data.hasOwnProperty("member")) {
-              object.member = _ApiClient.default.convertToType(
-                data["member"],
-                object.memberType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/Member } member
+         */
+      },
+      {
+        key: "setMember",
+        value: function setMember(member) {
+          this.member = member;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OccupantEmbedded;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OccupantEmbedded();
+          }
+
+          if (data.hasOwnProperty("member")) {
+            object.member = _ApiClient.default.convertToType(
+              data["member"],
+              object.memberType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OccupantEmbedded;
+})();
 
 exports.default = OccupantEmbedded;

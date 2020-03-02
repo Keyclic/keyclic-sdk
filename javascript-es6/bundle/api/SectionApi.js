@@ -105,133 +105,122 @@ function _setPrototypeOf(o, p) {
  * Section service.
  * @module api/SectionApi
  */
-var SectionApi =
-  /*#__PURE__*/
-  (function(_ApiClient) {
-    _inherits(SectionApi, _ApiClient);
+var SectionApi = /*#__PURE__*/ (function(_ApiClient) {
+  _inherits(SectionApi, _ApiClient);
 
-    /**
-     * @class
-     * { string } basePath To override basePath.
-     * { object } headers Additional headers for the instance.
-     * { int } timeout Number in seconds before timeout.
-     */
-    function SectionApi() {
-      var basePath =
-        arguments.length > 0 && arguments[0] !== undefined
-          ? arguments[0]
-          : null;
-      var headers =
-        arguments.length > 1 && arguments[1] !== undefined
-          ? arguments[1]
-          : null;
-      var timeout =
-        arguments.length > 2 && arguments[2] !== undefined
-          ? arguments[2]
-          : null;
+  /**
+   * @class
+   * { string } basePath To override basePath.
+   * { object } headers Additional headers for the instance.
+   * { int } timeout Number in seconds before timeout.
+   */
+  function SectionApi() {
+    var basePath =
+      arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+    var headers =
+      arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    var timeout =
+      arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
-      _classCallCheck(this, SectionApi);
+    _classCallCheck(this, SectionApi);
 
-      return _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(SectionApi).call(this, basePath, headers, timeout)
-      );
-    }
-    /**
-     * Retrieve one Section resource.
-     * @param { String } xKeyclicApp
-     * @param { String } section
-     * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { Section }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-     * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { Date } xDateTime
-     * @param { String } xKeyclicAppVersion
-     */
+    return _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(SectionApi).call(this, basePath, headers, timeout)
+    );
+  }
+  /**
+   * Retrieve one Section resource.
+   * @param { String } xKeyclicApp
+   * @param { String } section
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Section }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
+   * @param { String } xKeyclicAppVersion
+   */
 
-    _createClass(SectionApi, [
-      {
-        key: "getSection",
-        value: function getSection() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
+  _createClass(SectionApi, [
+    {
+      key: "getSection",
+      value: function getSection() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
 
-          if (returnType === null) {
-            returnType = _Section.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            section = options.section,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling getSection'
-            );
-          } // verify the required parameter 'section' is set
-
-          if (typeof section === "undefined" || section === null) {
-            throw new window.Error(
-              'Missing the required parameter "section" when calling getSection'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          var pathParams = {
-            section: section
-          };
-          var bodyParam = null;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/sections/{section}",
-            "GET",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-          );
+        if (returnType === null) {
+          returnType = _Section.default;
         }
-      }
-    ]);
 
-    return SectionApi;
-  })(_ApiClient2.default);
+        var xKeyclicApp = options.xKeyclicApp,
+          section = options.section,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling getSection'
+          );
+        } // verify the required parameter 'section' is set
+
+        if (typeof section === "undefined" || section === null) {
+          throw new window.Error(
+            'Missing the required parameter "section" when calling getSection'
+          );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
+        }
+
+        var pathParams = {
+          section: section
+        };
+        var bodyParam = null;
+        var queryParams = {};
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/sections/{section}",
+          "GET",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
+      }
+    }
+  ]);
+
+  return SectionApi;
+})(_ApiClient2.default);
 
 exports.default = SectionApi;

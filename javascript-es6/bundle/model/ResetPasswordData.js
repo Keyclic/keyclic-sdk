@@ -37,83 +37,81 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ResetPasswordData model module.
  * @module model/ResetPasswordData
  */
-var ResetPasswordData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ResetPasswordData".
-   * @alias module:model/ResetPasswordData
-   * @class
-  
-   * @param email { String }
-  
-   */
-    function ResetPasswordData(email) {
-      _classCallCheck(this, ResetPasswordData);
-
-      this.email = email;
-    }
-    /**
-     * Constructs a "ResetPasswordData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ResetPasswordData } object Optional instance to populate.
-     * @return { module:model/ResetPasswordData } The populated "ResetPasswordData" instance.
+var ResetPasswordData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ResetPasswordData".
+     * @alias module:model/ResetPasswordData
+     * @class
+    
+     * @param email { String }
+    
      */
+  function ResetPasswordData(email) {
+    _classCallCheck(this, ResetPasswordData);
 
-    _createClass(
-      ResetPasswordData,
-      [
-        {
-          key: "getEmail",
+    this.email = email;
+  }
+  /**
+   * Constructs a "ResetPasswordData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ResetPasswordData } object Optional instance to populate.
+   * @return { module:model/ResetPasswordData } The populated "ResetPasswordData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getEmail() {
-            return this.email;
-          }
-          /**
-           * @param { String } email
-           */
-        },
-        {
-          key: "setEmail",
-          value: function setEmail(email) {
-            this.email = email;
-          }
+  _createClass(
+    ResetPasswordData,
+    [
+      {
+        key: "getEmail",
+
+        /**
+         * @return { String }
+         */
+        value: function getEmail() {
+          return this.email;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ResetPasswordData();
-            }
-
-            if (data.hasOwnProperty("email")) {
-              object.email = _ApiClient.default.convertToType(
-                data["email"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } email
+         */
+      },
+      {
+        key: "setEmail",
+        value: function setEmail(email) {
+          this.email = email;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ResetPasswordData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ResetPasswordData();
+          }
+
+          if (data.hasOwnProperty("email")) {
+            object.email = _ApiClient.default.convertToType(
+              data["email"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ResetPasswordData;
+})();
 
 exports.default = ResetPasswordData;

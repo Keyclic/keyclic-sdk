@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReviewLinksSelf model module.
  * @module model/ReviewLinksSelf
  */
-var ReviewLinksSelf =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReviewLinksSelf".
-   * @alias module:model/ReviewLinksSelf
-   * @class
-  
-   */
-    function ReviewLinksSelf() {
-      _classCallCheck(this, ReviewLinksSelf);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _ReviewLinksSelfIriTemplate.default;
-    }
-    /**
-     * Constructs a "ReviewLinksSelf" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReviewLinksSelf } object Optional instance to populate.
-     * @return { module:model/ReviewLinksSelf } The populated "ReviewLinksSelf" instance.
+var ReviewLinksSelf = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReviewLinksSelf".
+     * @alias module:model/ReviewLinksSelf
+     * @class
+    
      */
+  function ReviewLinksSelf() {
+    _classCallCheck(this, ReviewLinksSelf);
 
-    _createClass(
-      ReviewLinksSelf,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _ReviewLinksSelfIriTemplate.default;
+  }
+  /**
+   * Constructs a "ReviewLinksSelf" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReviewLinksSelf } object Optional instance to populate.
+   * @return { module:model/ReviewLinksSelf } The populated "ReviewLinksSelf" instance.
+   */
 
-          /**
-           * Gets The URI of the self associated to the given review.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the self associated to the given review.
-           * @param { String } href The URI of the self associated to the given review.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/ReviewLinksSelfIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/ReviewLinksSelfIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    ReviewLinksSelf,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the self associated to the given review.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReviewLinksSelf();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the self associated to the given review.
+         * @param { String } href The URI of the self associated to the given review.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/ReviewLinksSelfIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/ReviewLinksSelfIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReviewLinksSelf;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReviewLinksSelf();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReviewLinksSelf;
+})();
 
 exports.default = ReviewLinksSelf;

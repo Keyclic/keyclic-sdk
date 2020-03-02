@@ -37,107 +37,105 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The FeedbackLinksImageIriTemplateMapping model module.
  * @module model/FeedbackLinksImageIriTemplateMapping
  */
-var FeedbackLinksImageIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "FeedbackLinksImageIriTemplateMapping".
-   * @alias module:model/FeedbackLinksImageIriTemplateMapping
-   * @class
-  
-   */
-    function FeedbackLinksImageIriTemplateMapping() {
-      _classCallCheck(this, FeedbackLinksImageIriTemplateMapping);
-
-      this.feedback = null;
-      this.image = null;
-    }
-    /**
-     * Constructs a "FeedbackLinksImageIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FeedbackLinksImageIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/FeedbackLinksImageIriTemplateMapping } The populated "FeedbackLinksImageIriTemplateMapping" instance.
+var FeedbackLinksImageIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "FeedbackLinksImageIriTemplateMapping".
+     * @alias module:model/FeedbackLinksImageIriTemplateMapping
+     * @class
+    
      */
+  function FeedbackLinksImageIriTemplateMapping() {
+    _classCallCheck(this, FeedbackLinksImageIriTemplateMapping);
 
-    _createClass(
-      FeedbackLinksImageIriTemplateMapping,
-      [
-        {
-          key: "getFeedback",
+    this.feedback = null;
+    this.image = null;
+  }
+  /**
+   * Constructs a "FeedbackLinksImageIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/FeedbackLinksImageIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/FeedbackLinksImageIriTemplateMapping } The populated "FeedbackLinksImageIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getFeedback() {
-            return this.feedback;
-          }
-          /**
-           * @param { String } feedback
-           */
-        },
-        {
-          key: "setFeedback",
-          value: function setFeedback(feedback) {
-            this.feedback = feedback;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getImage",
-          value: function getImage() {
-            return this.image;
-          }
-          /**
-           * @param { String } image
-           */
-        },
-        {
-          key: "setImage",
-          value: function setImage(image) {
-            this.image = image;
-          }
+  _createClass(
+    FeedbackLinksImageIriTemplateMapping,
+    [
+      {
+        key: "getFeedback",
+
+        /**
+         * @return { String }
+         */
+        value: function getFeedback() {
+          return this.feedback;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new FeedbackLinksImageIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("feedback")) {
-              object.feedback = _ApiClient.default.convertToType(
-                data["feedback"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("image")) {
-              object.image = _ApiClient.default.convertToType(
-                data["image"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } feedback
+         */
+      },
+      {
+        key: "setFeedback",
+        value: function setFeedback(feedback) {
+          this.feedback = feedback;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getImage",
+        value: function getImage() {
+          return this.image;
+        }
+        /**
+         * @param { String } image
+         */
+      },
+      {
+        key: "setImage",
+        value: function setImage(image) {
+          this.image = image;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return FeedbackLinksImageIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new FeedbackLinksImageIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("feedback")) {
+            object.feedback = _ApiClient.default.convertToType(
+              data["feedback"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("image")) {
+            object.image = _ApiClient.default.convertToType(
+              data["image"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return FeedbackLinksImageIriTemplateMapping;
+})();
 
 exports.default = FeedbackLinksImageIriTemplateMapping;

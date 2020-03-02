@@ -41,83 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OperationLinksOperatorIriTemplate model module.
  * @module model/OperationLinksOperatorIriTemplate
  */
-var OperationLinksOperatorIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OperationLinksOperatorIriTemplate".
-   * @alias module:model/OperationLinksOperatorIriTemplate
-   * @class
-  
-   */
-    function OperationLinksOperatorIriTemplate() {
-      _classCallCheck(this, OperationLinksOperatorIriTemplate);
-
-      this.mapping = null;
-      this.mappingType =
-        _ContributionLinksContributorIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "OperationLinksOperatorIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OperationLinksOperatorIriTemplate } object Optional instance to populate.
-     * @return { module:model/OperationLinksOperatorIriTemplate } The populated "OperationLinksOperatorIriTemplate" instance.
+var OperationLinksOperatorIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OperationLinksOperatorIriTemplate".
+     * @alias module:model/OperationLinksOperatorIriTemplate
+     * @class
+    
      */
+  function OperationLinksOperatorIriTemplate() {
+    _classCallCheck(this, OperationLinksOperatorIriTemplate);
 
-    _createClass(
-      OperationLinksOperatorIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _ContributionLinksContributorIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "OperationLinksOperatorIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OperationLinksOperatorIriTemplate } object Optional instance to populate.
+   * @return { module:model/OperationLinksOperatorIriTemplate } The populated "OperationLinksOperatorIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/ContributionLinksContributorIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/ContributionLinksContributorIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    OperationLinksOperatorIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/ContributionLinksContributorIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OperationLinksOperatorIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ContributionLinksContributorIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OperationLinksOperatorIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OperationLinksOperatorIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OperationLinksOperatorIriTemplate;
+})();
 
 exports.default = OperationLinksOperatorIriTemplate;

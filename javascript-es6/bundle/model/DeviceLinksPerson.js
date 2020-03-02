@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DeviceLinksPerson model module.
  * @module model/DeviceLinksPerson
  */
-var DeviceLinksPerson =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DeviceLinksPerson".
-   * @alias module:model/DeviceLinksPerson
-   * @class
-  
-   */
-    function DeviceLinksPerson() {
-      _classCallCheck(this, DeviceLinksPerson);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _DeviceLinksPersonIriTemplate.default;
-    }
-    /**
-     * Constructs a "DeviceLinksPerson" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DeviceLinksPerson } object Optional instance to populate.
-     * @return { module:model/DeviceLinksPerson } The populated "DeviceLinksPerson" instance.
+var DeviceLinksPerson = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DeviceLinksPerson".
+     * @alias module:model/DeviceLinksPerson
+     * @class
+    
      */
+  function DeviceLinksPerson() {
+    _classCallCheck(this, DeviceLinksPerson);
 
-    _createClass(
-      DeviceLinksPerson,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _DeviceLinksPersonIriTemplate.default;
+  }
+  /**
+   * Constructs a "DeviceLinksPerson" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DeviceLinksPerson } object Optional instance to populate.
+   * @return { module:model/DeviceLinksPerson } The populated "DeviceLinksPerson" instance.
+   */
 
-          /**
-           * Gets The URI of the person associated to the given device.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the person associated to the given device.
-           * @param { String } href The URI of the person associated to the given device.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/DeviceLinksPersonIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/DeviceLinksPersonIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    DeviceLinksPerson,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the person associated to the given device.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DeviceLinksPerson();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the person associated to the given device.
+         * @param { String } href The URI of the person associated to the given device.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/DeviceLinksPersonIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/DeviceLinksPersonIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DeviceLinksPerson;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DeviceLinksPerson();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DeviceLinksPerson;
+})();
 
 exports.default = DeviceLinksPerson;

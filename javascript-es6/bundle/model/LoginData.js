@@ -37,111 +37,109 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The LoginData model module.
  * @module model/LoginData
  */
-var LoginData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "LoginData".
-   * @alias module:model/LoginData
-   * @class
-  
-   * @param login { String }
-  
-   * @param password { String }
-  
-   */
-    function LoginData(login, password) {
-      _classCallCheck(this, LoginData);
-
-      this.login = login;
-      this.password = password;
-    }
-    /**
-     * Constructs a "LoginData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/LoginData } object Optional instance to populate.
-     * @return { module:model/LoginData } The populated "LoginData" instance.
+var LoginData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "LoginData".
+     * @alias module:model/LoginData
+     * @class
+    
+     * @param login { String }
+    
+     * @param password { String }
+    
      */
+  function LoginData(login, password) {
+    _classCallCheck(this, LoginData);
 
-    _createClass(
-      LoginData,
-      [
-        {
-          key: "getLogin",
+    this.login = login;
+    this.password = password;
+  }
+  /**
+   * Constructs a "LoginData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/LoginData } object Optional instance to populate.
+   * @return { module:model/LoginData } The populated "LoginData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getLogin() {
-            return this.login;
-          }
-          /**
-           * @param { String } login
-           */
-        },
-        {
-          key: "setLogin",
-          value: function setLogin(login) {
-            this.login = login;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getPassword",
-          value: function getPassword() {
-            return this.password;
-          }
-          /**
-           * @param { String } password
-           */
-        },
-        {
-          key: "setPassword",
-          value: function setPassword(password) {
-            this.password = password;
-          }
+  _createClass(
+    LoginData,
+    [
+      {
+        key: "getLogin",
+
+        /**
+         * @return { String }
+         */
+        value: function getLogin() {
+          return this.login;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new LoginData();
-            }
-
-            if (data.hasOwnProperty("login")) {
-              object.login = _ApiClient.default.convertToType(
-                data["login"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("password")) {
-              object.password = _ApiClient.default.convertToType(
-                data["password"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } login
+         */
+      },
+      {
+        key: "setLogin",
+        value: function setLogin(login) {
+          this.login = login;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getPassword",
+        value: function getPassword() {
+          return this.password;
+        }
+        /**
+         * @param { String } password
+         */
+      },
+      {
+        key: "setPassword",
+        value: function setPassword(password) {
+          this.password = password;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return LoginData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new LoginData();
+          }
+
+          if (data.hasOwnProperty("login")) {
+            object.login = _ApiClient.default.convertToType(
+              data["login"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("password")) {
+            object.password = _ApiClient.default.convertToType(
+              data["password"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return LoginData;
+})();
 
 exports.default = LoginData;

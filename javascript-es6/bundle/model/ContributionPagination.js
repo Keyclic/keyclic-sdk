@@ -134,97 +134,95 @@ function _setPrototypeOf(o, p) {
  * The ContributionPagination model module.
  * @module model/ContributionPagination
  */
-var ContributionPagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(ContributionPagination, _Pagination);
+var ContributionPagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(ContributionPagination, _Pagination);
 
-    /**
-   * Constructs a new "ContributionPagination".
-   * @alias module:model/ContributionPagination
-   * @class
-  
-   */
-    function ContributionPagination() {
-      var _this;
-
-      _classCallCheck(this, ContributionPagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(ContributionPagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _ContributionCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "ContributionPagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ContributionPagination } object Optional instance to populate.
-     * @return { module:model/ContributionPagination } The populated "ContributionPagination" instance.
+  /**
+     * Constructs a new "ContributionPagination".
+     * @alias module:model/ContributionPagination
+     * @class
+    
      */
+  function ContributionPagination() {
+    var _this;
 
-    _createClass(
-      ContributionPagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, ContributionPagination);
 
-          /**
-           * @return { module:model/ContributionCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/ContributionCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ContributionPagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(ContributionPagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(ContributionPagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _ContributionCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "ContributionPagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ContributionPagination } object Optional instance to populate.
+   * @return { module:model/ContributionPagination } The populated "ContributionPagination" instance.
+   */
 
-    return ContributionPagination;
-  })(_Pagination2.default);
+  _createClass(
+    ContributionPagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/ContributionCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/ContributionCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ContributionPagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(ContributionPagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ContributionPagination;
+})(_Pagination2.default);
 
 exports.default = ContributionPagination;

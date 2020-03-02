@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OccupantLinksMemberIriTemplate model module.
  * @module model/OccupantLinksMemberIriTemplate
  */
-var OccupantLinksMemberIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OccupantLinksMemberIriTemplate".
-   * @alias module:model/OccupantLinksMemberIriTemplate
-   * @class
-  
-   */
-    function OccupantLinksMemberIriTemplate() {
-      _classCallCheck(this, OccupantLinksMemberIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _InvitationLinksMemberIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "OccupantLinksMemberIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OccupantLinksMemberIriTemplate } object Optional instance to populate.
-     * @return { module:model/OccupantLinksMemberIriTemplate } The populated "OccupantLinksMemberIriTemplate" instance.
+var OccupantLinksMemberIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OccupantLinksMemberIriTemplate".
+     * @alias module:model/OccupantLinksMemberIriTemplate
+     * @class
+    
      */
+  function OccupantLinksMemberIriTemplate() {
+    _classCallCheck(this, OccupantLinksMemberIriTemplate);
 
-    _createClass(
-      OccupantLinksMemberIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _InvitationLinksMemberIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "OccupantLinksMemberIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OccupantLinksMemberIriTemplate } object Optional instance to populate.
+   * @return { module:model/OccupantLinksMemberIriTemplate } The populated "OccupantLinksMemberIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/InvitationLinksMemberIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/InvitationLinksMemberIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    OccupantLinksMemberIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/InvitationLinksMemberIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OccupantLinksMemberIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/InvitationLinksMemberIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OccupantLinksMemberIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OccupantLinksMemberIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OccupantLinksMemberIriTemplate;
+})();
 
 exports.default = OccupantLinksMemberIriTemplate;

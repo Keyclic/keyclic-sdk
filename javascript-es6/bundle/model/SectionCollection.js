@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The SectionCollection model module.
  * @module model/SectionCollection
  */
-var SectionCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "SectionCollection".
-   * @alias module:model/SectionCollection
-   * @class
-  
-   */
-    function SectionCollection() {
-      _classCallCheck(this, SectionCollection);
-
-      this.items = [];
-      this.itemsType = _Section.default;
-    }
-    /**
-     * Constructs a "SectionCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/SectionCollection } object Optional instance to populate.
-     * @return { module:model/SectionCollection } The populated "SectionCollection" instance.
+var SectionCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "SectionCollection".
+     * @alias module:model/SectionCollection
+     * @class
+    
      */
+  function SectionCollection() {
+    _classCallCheck(this, SectionCollection);
 
-    _createClass(
-      SectionCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _Section.default;
+  }
+  /**
+   * Constructs a "SectionCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/SectionCollection } object Optional instance to populate.
+   * @return { module:model/SectionCollection } The populated "SectionCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Section> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/Section> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    SectionCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/Section> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new SectionCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Section> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return SectionCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new SectionCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return SectionCollection;
+})();
 
 exports.default = SectionCollection;

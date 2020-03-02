@@ -49,163 +49,161 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PersonLinks model module.
  * @module model/PersonLinks
  */
-var PersonLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PersonLinks".
-   * @alias module:model/PersonLinks
-   * @class
-  
-   */
-    function PersonLinks() {
-      _classCallCheck(this, PersonLinks);
-
-      this.application = null;
-      this.createdBy = null;
-      this.image = null;
-      this.self = null;
-      this.applicationType = _PersonLinksApplication.default;
-      this.createdByType = _PersonLinksCreatedBy.default;
-      this.imageType = _PersonLinksImage.default;
-      this.selfType = _PersonLinksSelf.default;
-    }
-    /**
-     * Constructs a "PersonLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PersonLinks } object Optional instance to populate.
-     * @return { module:model/PersonLinks } The populated "PersonLinks" instance.
+var PersonLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PersonLinks".
+     * @alias module:model/PersonLinks
+     * @class
+    
      */
+  function PersonLinks() {
+    _classCallCheck(this, PersonLinks);
 
-    _createClass(
-      PersonLinks,
-      [
-        {
-          key: "getApplication",
+    this.application = null;
+    this.createdBy = null;
+    this.image = null;
+    this.self = null;
+    this.applicationType = _PersonLinksApplication.default;
+    this.createdByType = _PersonLinksCreatedBy.default;
+    this.imageType = _PersonLinksImage.default;
+    this.selfType = _PersonLinksSelf.default;
+  }
+  /**
+   * Constructs a "PersonLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PersonLinks } object Optional instance to populate.
+   * @return { module:model/PersonLinks } The populated "PersonLinks" instance.
+   */
 
-          /**
-           * @return { module:model/PersonLinksApplication }
-           */
-          value: function getApplication() {
-            return this.application;
-          }
-          /**
-           * @param { module:model/PersonLinksApplication } application
-           */
-        },
-        {
-          key: "setApplication",
-          value: function setApplication(application) {
-            this.application = application;
-          }
-          /**
-           * @return { module:model/PersonLinksCreatedBy }
-           */
-        },
-        {
-          key: "getCreatedBy",
-          value: function getCreatedBy() {
-            return this.createdBy;
-          }
-          /**
-           * @param { module:model/PersonLinksCreatedBy } createdBy
-           */
-        },
-        {
-          key: "setCreatedBy",
-          value: function setCreatedBy(createdBy) {
-            this.createdBy = createdBy;
-          }
-          /**
-           * @return { module:model/PersonLinksImage }
-           */
-        },
-        {
-          key: "getImage",
-          value: function getImage() {
-            return this.image;
-          }
-          /**
-           * @param { module:model/PersonLinksImage } image
-           */
-        },
-        {
-          key: "setImage",
-          value: function setImage(image) {
-            this.image = image;
-          }
-          /**
-           * @return { module:model/PersonLinksSelf }
-           */
-        },
-        {
-          key: "getSelf",
-          value: function getSelf() {
-            return this.self;
-          }
-          /**
-           * @param { module:model/PersonLinksSelf } self
-           */
-        },
-        {
-          key: "setSelf",
-          value: function setSelf(self) {
-            this.self = self;
-          }
+  _createClass(
+    PersonLinks,
+    [
+      {
+        key: "getApplication",
+
+        /**
+         * @return { module:model/PersonLinksApplication }
+         */
+        value: function getApplication() {
+          return this.application;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PersonLinks();
-            }
-
-            if (data.hasOwnProperty("application")) {
-              object.application = _ApiClient.default.convertToType(
-                data["application"],
-                object.applicationType
-              );
-            }
-
-            if (data.hasOwnProperty("createdBy")) {
-              object.createdBy = _ApiClient.default.convertToType(
-                data["createdBy"],
-                object.createdByType
-              );
-            }
-
-            if (data.hasOwnProperty("image")) {
-              object.image = _ApiClient.default.convertToType(
-                data["image"],
-                object.imageType
-              );
-            }
-
-            if (data.hasOwnProperty("self")) {
-              object.self = _ApiClient.default.convertToType(
-                data["self"],
-                object.selfType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/PersonLinksApplication } application
+         */
+      },
+      {
+        key: "setApplication",
+        value: function setApplication(application) {
+          this.application = application;
         }
-      ]
-    );
+        /**
+         * @return { module:model/PersonLinksCreatedBy }
+         */
+      },
+      {
+        key: "getCreatedBy",
+        value: function getCreatedBy() {
+          return this.createdBy;
+        }
+        /**
+         * @param { module:model/PersonLinksCreatedBy } createdBy
+         */
+      },
+      {
+        key: "setCreatedBy",
+        value: function setCreatedBy(createdBy) {
+          this.createdBy = createdBy;
+        }
+        /**
+         * @return { module:model/PersonLinksImage }
+         */
+      },
+      {
+        key: "getImage",
+        value: function getImage() {
+          return this.image;
+        }
+        /**
+         * @param { module:model/PersonLinksImage } image
+         */
+      },
+      {
+        key: "setImage",
+        value: function setImage(image) {
+          this.image = image;
+        }
+        /**
+         * @return { module:model/PersonLinksSelf }
+         */
+      },
+      {
+        key: "getSelf",
+        value: function getSelf() {
+          return this.self;
+        }
+        /**
+         * @param { module:model/PersonLinksSelf } self
+         */
+      },
+      {
+        key: "setSelf",
+        value: function setSelf(self) {
+          this.self = self;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PersonLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PersonLinks();
+          }
+
+          if (data.hasOwnProperty("application")) {
+            object.application = _ApiClient.default.convertToType(
+              data["application"],
+              object.applicationType
+            );
+          }
+
+          if (data.hasOwnProperty("createdBy")) {
+            object.createdBy = _ApiClient.default.convertToType(
+              data["createdBy"],
+              object.createdByType
+            );
+          }
+
+          if (data.hasOwnProperty("image")) {
+            object.image = _ApiClient.default.convertToType(
+              data["image"],
+              object.imageType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PersonLinks;
+})();
 
 exports.default = PersonLinks;

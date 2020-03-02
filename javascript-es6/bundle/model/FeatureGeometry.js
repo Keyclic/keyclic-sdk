@@ -51,112 +51,110 @@ function _defineProperty(obj, key, value) {
  * The FeatureGeometry model module.
  * @module model/FeatureGeometry
  */
-var FeatureGeometry =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "FeatureGeometry".
-   * @alias module:model/FeatureGeometry
-   * @class
-  
-   */
-    function FeatureGeometry() {
-      _classCallCheck(this, FeatureGeometry);
-
-      this.type = null;
-      this.coordinates = [];
-    }
-    /**
-     * Constructs a "FeatureGeometry" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FeatureGeometry } object Optional instance to populate.
-     * @return { module:model/FeatureGeometry } The populated "FeatureGeometry" instance.
+var FeatureGeometry = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "FeatureGeometry".
+     * @alias module:model/FeatureGeometry
+     * @class
+    
      */
+  function FeatureGeometry() {
+    _classCallCheck(this, FeatureGeometry);
 
-    _createClass(
-      FeatureGeometry,
-      [
-        {
-          key: "getType",
+    this.type = null;
+    this.coordinates = [];
+  }
+  /**
+   * Constructs a "FeatureGeometry" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/FeatureGeometry } object Optional instance to populate.
+   * @return { module:model/FeatureGeometry } The populated "FeatureGeometry" instance.
+   */
 
-          /**
-           * @return { module:model/FeatureGeometry.TypeEnum }
-           */
-          value: function getType() {
-            return this.type;
-          }
-          /**
-           * @param { module:model/FeatureGeometry.TypeEnum } type
-           */
-        },
-        {
-          key: "setType",
-          value: function setType(type) {
-            this.type = type;
-          }
-          /**
-           * @return { Array.<Array.<Number>> }
-           */
-        },
-        {
-          key: "getCoordinates",
-          value: function getCoordinates() {
-            return this.coordinates;
-          }
-          /**
-           * @param { Array.<Array.<Number>> } coordinates
-           */
-        },
-        {
-          key: "setCoordinates",
-          value: function setCoordinates(coordinates) {
-            this.coordinates = coordinates;
-          }
-          /**
-           * Allowed values for the "type" property.
-           * @enum { String }
-           */
+  _createClass(
+    FeatureGeometry,
+    [
+      {
+        key: "getType",
+
+        /**
+         * @return { module:model/FeatureGeometry.TypeEnum }
+         */
+        value: function getType() {
+          return this.type;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new FeatureGeometry();
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("coordinates")) {
-              object.coordinates = _ApiClient.default.convertToType(
-                data["coordinates"],
-                "['Array']"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/FeatureGeometry.TypeEnum } type
+         */
+      },
+      {
+        key: "setType",
+        value: function setType(type) {
+          this.type = type;
         }
-      ]
-    );
+        /**
+         * @return { Array.<Array.<Number>> }
+         */
+      },
+      {
+        key: "getCoordinates",
+        value: function getCoordinates() {
+          return this.coordinates;
+        }
+        /**
+         * @param { Array.<Array.<Number>> } coordinates
+         */
+      },
+      {
+        key: "setCoordinates",
+        value: function setCoordinates(coordinates) {
+          this.coordinates = coordinates;
+        }
+        /**
+         * Allowed values for the "type" property.
+         * @enum { String }
+         */
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return FeatureGeometry;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new FeatureGeometry();
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("coordinates")) {
+            object.coordinates = _ApiClient.default.convertToType(
+              data["coordinates"],
+              "['Array']"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return FeatureGeometry;
+})();
 
 exports.default = FeatureGeometry;
 

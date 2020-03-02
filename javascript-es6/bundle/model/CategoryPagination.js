@@ -134,97 +134,95 @@ function _setPrototypeOf(o, p) {
  * The CategoryPagination model module.
  * @module model/CategoryPagination
  */
-var CategoryPagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(CategoryPagination, _Pagination);
+var CategoryPagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(CategoryPagination, _Pagination);
 
-    /**
-   * Constructs a new "CategoryPagination".
-   * @alias module:model/CategoryPagination
-   * @class
-  
-   */
-    function CategoryPagination() {
-      var _this;
-
-      _classCallCheck(this, CategoryPagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(CategoryPagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _CategoryCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "CategoryPagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/CategoryPagination } object Optional instance to populate.
-     * @return { module:model/CategoryPagination } The populated "CategoryPagination" instance.
+  /**
+     * Constructs a new "CategoryPagination".
+     * @alias module:model/CategoryPagination
+     * @class
+    
      */
+  function CategoryPagination() {
+    var _this;
 
-    _createClass(
-      CategoryPagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, CategoryPagination);
 
-          /**
-           * @return { module:model/CategoryCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/CategoryCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new CategoryPagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(CategoryPagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(CategoryPagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _CategoryCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "CategoryPagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/CategoryPagination } object Optional instance to populate.
+   * @return { module:model/CategoryPagination } The populated "CategoryPagination" instance.
+   */
 
-    return CategoryPagination;
-  })(_Pagination2.default);
+  _createClass(
+    CategoryPagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/CategoryCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/CategoryCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new CategoryPagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(CategoryPagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return CategoryPagination;
+})(_Pagination2.default);
 
 exports.default = CategoryPagination;

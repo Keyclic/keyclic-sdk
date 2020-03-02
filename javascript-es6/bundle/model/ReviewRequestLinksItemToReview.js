@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReviewRequestLinksItemToReview model module.
  * @module model/ReviewRequestLinksItemToReview
  */
-var ReviewRequestLinksItemToReview =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReviewRequestLinksItemToReview".
-   * @alias module:model/ReviewRequestLinksItemToReview
-   * @class
-  
-   */
-    function ReviewRequestLinksItemToReview() {
-      _classCallCheck(this, ReviewRequestLinksItemToReview);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _ReviewRequestLinksItemToReviewIriTemplate.default;
-    }
-    /**
-     * Constructs a "ReviewRequestLinksItemToReview" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReviewRequestLinksItemToReview } object Optional instance to populate.
-     * @return { module:model/ReviewRequestLinksItemToReview } The populated "ReviewRequestLinksItemToReview" instance.
+var ReviewRequestLinksItemToReview = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReviewRequestLinksItemToReview".
+     * @alias module:model/ReviewRequestLinksItemToReview
+     * @class
+    
      */
+  function ReviewRequestLinksItemToReview() {
+    _classCallCheck(this, ReviewRequestLinksItemToReview);
 
-    _createClass(
-      ReviewRequestLinksItemToReview,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _ReviewRequestLinksItemToReviewIriTemplate.default;
+  }
+  /**
+   * Constructs a "ReviewRequestLinksItemToReview" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReviewRequestLinksItemToReview } object Optional instance to populate.
+   * @return { module:model/ReviewRequestLinksItemToReview } The populated "ReviewRequestLinksItemToReview" instance.
+   */
 
-          /**
-           * Gets The URI of the itemToReview associated to the given reviewrequest.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the itemToReview associated to the given reviewrequest.
-           * @param { String } href The URI of the itemToReview associated to the given reviewrequest.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/ReviewRequestLinksItemToReviewIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/ReviewRequestLinksItemToReviewIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    ReviewRequestLinksItemToReview,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the itemToReview associated to the given reviewrequest.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReviewRequestLinksItemToReview();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the itemToReview associated to the given reviewrequest.
+         * @param { String } href The URI of the itemToReview associated to the given reviewrequest.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/ReviewRequestLinksItemToReviewIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/ReviewRequestLinksItemToReviewIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReviewRequestLinksItemToReview;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReviewRequestLinksItemToReview();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReviewRequestLinksItemToReview;
+})();
 
 exports.default = ReviewRequestLinksItemToReview;

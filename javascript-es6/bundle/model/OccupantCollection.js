@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OccupantCollection model module.
  * @module model/OccupantCollection
  */
-var OccupantCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OccupantCollection".
-   * @alias module:model/OccupantCollection
-   * @class
-  
-   */
-    function OccupantCollection() {
-      _classCallCheck(this, OccupantCollection);
-
-      this.items = [];
-      this.itemsType = _Occupant.default;
-    }
-    /**
-     * Constructs a "OccupantCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OccupantCollection } object Optional instance to populate.
-     * @return { module:model/OccupantCollection } The populated "OccupantCollection" instance.
+var OccupantCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OccupantCollection".
+     * @alias module:model/OccupantCollection
+     * @class
+    
      */
+  function OccupantCollection() {
+    _classCallCheck(this, OccupantCollection);
 
-    _createClass(
-      OccupantCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _Occupant.default;
+  }
+  /**
+   * Constructs a "OccupantCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OccupantCollection } object Optional instance to populate.
+   * @return { module:model/OccupantCollection } The populated "OccupantCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Occupant> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/Occupant> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    OccupantCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/Occupant> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OccupantCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Occupant> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OccupantCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OccupantCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OccupantCollection;
+})();
 
 exports.default = OccupantCollection;

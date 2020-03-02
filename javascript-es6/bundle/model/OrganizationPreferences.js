@@ -45,187 +45,185 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OrganizationPreferences model module.
  * @module model/OrganizationPreferences
  */
-var OrganizationPreferences =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OrganizationPreferences".
-   * @alias module:model/OrganizationPreferences
-   * @class
-  
-   */
-    function OrganizationPreferences() {
-      _classCallCheck(this, OrganizationPreferences);
-
-      this.notification = null;
-      this.offline = null;
-      this._public = null;
-      this.reference = null;
-      this.reviewEnabled = null;
-      this.notificationType = _PreferencesNotification.default;
-      this.referenceType = _PreferencesReference.default;
-    }
-    /**
-     * Constructs a "OrganizationPreferences" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OrganizationPreferences } object Optional instance to populate.
-     * @return { module:model/OrganizationPreferences } The populated "OrganizationPreferences" instance.
+var OrganizationPreferences = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OrganizationPreferences".
+     * @alias module:model/OrganizationPreferences
+     * @class
+    
      */
+  function OrganizationPreferences() {
+    _classCallCheck(this, OrganizationPreferences);
 
-    _createClass(
-      OrganizationPreferences,
-      [
-        {
-          key: "getNotification",
+    this.notification = null;
+    this.offline = null;
+    this._public = null;
+    this.reference = null;
+    this.reviewEnabled = null;
+    this.notificationType = _PreferencesNotification.default;
+    this.referenceType = _PreferencesReference.default;
+  }
+  /**
+   * Constructs a "OrganizationPreferences" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OrganizationPreferences } object Optional instance to populate.
+   * @return { module:model/OrganizationPreferences } The populated "OrganizationPreferences" instance.
+   */
 
-          /**
-           * @return { module:model/PreferencesNotification }
-           */
-          value: function getNotification() {
-            return this.notification;
-          }
-          /**
-           * @param { module:model/PreferencesNotification } notification
-           */
-        },
-        {
-          key: "setNotification",
-          value: function setNotification(notification) {
-            this.notification = notification;
-          }
-          /**
-           * @return { Boolean }
-           */
-        },
-        {
-          key: "getOffline",
-          value: function getOffline() {
-            return this.offline;
-          }
-          /**
-           * @param { Boolean } offline
-           */
-        },
-        {
-          key: "setOffline",
-          value: function setOffline(offline) {
-            this.offline = offline;
-          }
-          /**
-           * @return { Boolean }
-           */
-        },
-        {
-          key: "getPublic",
-          value: function getPublic() {
-            return this._public;
-          }
-          /**
-           * @param { Boolean } _public
-           */
-        },
-        {
-          key: "setPublic",
-          value: function setPublic(_public) {
-            this._public = _public;
-          }
-          /**
-           * @return { module:model/PreferencesReference }
-           */
-        },
-        {
-          key: "getReference",
-          value: function getReference() {
-            return this.reference;
-          }
-          /**
-           * @param { module:model/PreferencesReference } reference
-           */
-        },
-        {
-          key: "setReference",
-          value: function setReference(reference) {
-            this.reference = reference;
-          }
-          /**
-           * @return { Boolean }
-           */
-        },
-        {
-          key: "getReviewEnabled",
-          value: function getReviewEnabled() {
-            return this.reviewEnabled;
-          }
-          /**
-           * @param { Boolean } reviewEnabled
-           */
-        },
-        {
-          key: "setReviewEnabled",
-          value: function setReviewEnabled(reviewEnabled) {
-            this.reviewEnabled = reviewEnabled;
-          }
+  _createClass(
+    OrganizationPreferences,
+    [
+      {
+        key: "getNotification",
+
+        /**
+         * @return { module:model/PreferencesNotification }
+         */
+        value: function getNotification() {
+          return this.notification;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OrganizationPreferences();
-            }
-
-            if (data.hasOwnProperty("notification")) {
-              object.notification = _ApiClient.default.convertToType(
-                data["notification"],
-                object.notificationType
-              );
-            }
-
-            if (data.hasOwnProperty("offline")) {
-              object.offline = _ApiClient.default.convertToType(
-                data["offline"],
-                "Boolean"
-              );
-            }
-
-            if (data.hasOwnProperty("public")) {
-              object._public = _ApiClient.default.convertToType(
-                data["public"],
-                "Boolean"
-              );
-            }
-
-            if (data.hasOwnProperty("reference")) {
-              object.reference = _ApiClient.default.convertToType(
-                data["reference"],
-                object.referenceType
-              );
-            }
-
-            if (data.hasOwnProperty("reviewEnabled")) {
-              object.reviewEnabled = _ApiClient.default.convertToType(
-                data["reviewEnabled"],
-                "Boolean"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/PreferencesNotification } notification
+         */
+      },
+      {
+        key: "setNotification",
+        value: function setNotification(notification) {
+          this.notification = notification;
         }
-      ]
-    );
+        /**
+         * @return { Boolean }
+         */
+      },
+      {
+        key: "getOffline",
+        value: function getOffline() {
+          return this.offline;
+        }
+        /**
+         * @param { Boolean } offline
+         */
+      },
+      {
+        key: "setOffline",
+        value: function setOffline(offline) {
+          this.offline = offline;
+        }
+        /**
+         * @return { Boolean }
+         */
+      },
+      {
+        key: "getPublic",
+        value: function getPublic() {
+          return this._public;
+        }
+        /**
+         * @param { Boolean } _public
+         */
+      },
+      {
+        key: "setPublic",
+        value: function setPublic(_public) {
+          this._public = _public;
+        }
+        /**
+         * @return { module:model/PreferencesReference }
+         */
+      },
+      {
+        key: "getReference",
+        value: function getReference() {
+          return this.reference;
+        }
+        /**
+         * @param { module:model/PreferencesReference } reference
+         */
+      },
+      {
+        key: "setReference",
+        value: function setReference(reference) {
+          this.reference = reference;
+        }
+        /**
+         * @return { Boolean }
+         */
+      },
+      {
+        key: "getReviewEnabled",
+        value: function getReviewEnabled() {
+          return this.reviewEnabled;
+        }
+        /**
+         * @param { Boolean } reviewEnabled
+         */
+      },
+      {
+        key: "setReviewEnabled",
+        value: function setReviewEnabled(reviewEnabled) {
+          this.reviewEnabled = reviewEnabled;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OrganizationPreferences;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OrganizationPreferences();
+          }
+
+          if (data.hasOwnProperty("notification")) {
+            object.notification = _ApiClient.default.convertToType(
+              data["notification"],
+              object.notificationType
+            );
+          }
+
+          if (data.hasOwnProperty("offline")) {
+            object.offline = _ApiClient.default.convertToType(
+              data["offline"],
+              "Boolean"
+            );
+          }
+
+          if (data.hasOwnProperty("public")) {
+            object._public = _ApiClient.default.convertToType(
+              data["public"],
+              "Boolean"
+            );
+          }
+
+          if (data.hasOwnProperty("reference")) {
+            object.reference = _ApiClient.default.convertToType(
+              data["reference"],
+              object.referenceType
+            );
+          }
+
+          if (data.hasOwnProperty("reviewEnabled")) {
+            object.reviewEnabled = _ApiClient.default.convertToType(
+              data["reviewEnabled"],
+              "Boolean"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OrganizationPreferences;
+})();
 
 exports.default = OrganizationPreferences;

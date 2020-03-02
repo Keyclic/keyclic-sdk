@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OperationLinksSelfIriTemplateMapping model module.
  * @module model/OperationLinksSelfIriTemplateMapping
  */
-var OperationLinksSelfIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OperationLinksSelfIriTemplateMapping".
-   * @alias module:model/OperationLinksSelfIriTemplateMapping
-   * @class
-  
-   */
-    function OperationLinksSelfIriTemplateMapping() {
-      _classCallCheck(this, OperationLinksSelfIriTemplateMapping);
-
-      this.operation = null;
-    }
-    /**
-     * Constructs a "OperationLinksSelfIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OperationLinksSelfIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/OperationLinksSelfIriTemplateMapping } The populated "OperationLinksSelfIriTemplateMapping" instance.
+var OperationLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OperationLinksSelfIriTemplateMapping".
+     * @alias module:model/OperationLinksSelfIriTemplateMapping
+     * @class
+    
      */
+  function OperationLinksSelfIriTemplateMapping() {
+    _classCallCheck(this, OperationLinksSelfIriTemplateMapping);
 
-    _createClass(
-      OperationLinksSelfIriTemplateMapping,
-      [
-        {
-          key: "getOperation",
+    this.operation = null;
+  }
+  /**
+   * Constructs a "OperationLinksSelfIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OperationLinksSelfIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/OperationLinksSelfIriTemplateMapping } The populated "OperationLinksSelfIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getOperation() {
-            return this.operation;
-          }
-          /**
-           * @param { String } operation
-           */
-        },
-        {
-          key: "setOperation",
-          value: function setOperation(operation) {
-            this.operation = operation;
-          }
+  _createClass(
+    OperationLinksSelfIriTemplateMapping,
+    [
+      {
+        key: "getOperation",
+
+        /**
+         * @return { String }
+         */
+        value: function getOperation() {
+          return this.operation;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OperationLinksSelfIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("operation")) {
-              object.operation = _ApiClient.default.convertToType(
-                data["operation"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } operation
+         */
+      },
+      {
+        key: "setOperation",
+        value: function setOperation(operation) {
+          this.operation = operation;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OperationLinksSelfIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OperationLinksSelfIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("operation")) {
+            object.operation = _ApiClient.default.convertToType(
+              data["operation"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OperationLinksSelfIriTemplateMapping;
+})();
 
 exports.default = OperationLinksSelfIriTemplateMapping;

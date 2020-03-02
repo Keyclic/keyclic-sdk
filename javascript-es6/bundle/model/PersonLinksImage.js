@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PersonLinksImage model module.
  * @module model/PersonLinksImage
  */
-var PersonLinksImage =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PersonLinksImage".
-   * @alias module:model/PersonLinksImage
-   * @class
-  
-   */
-    function PersonLinksImage() {
-      _classCallCheck(this, PersonLinksImage);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _PersonLinksImageIriTemplate.default;
-    }
-    /**
-     * Constructs a "PersonLinksImage" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PersonLinksImage } object Optional instance to populate.
-     * @return { module:model/PersonLinksImage } The populated "PersonLinksImage" instance.
+var PersonLinksImage = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PersonLinksImage".
+     * @alias module:model/PersonLinksImage
+     * @class
+    
      */
+  function PersonLinksImage() {
+    _classCallCheck(this, PersonLinksImage);
 
-    _createClass(
-      PersonLinksImage,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _PersonLinksImageIriTemplate.default;
+  }
+  /**
+   * Constructs a "PersonLinksImage" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PersonLinksImage } object Optional instance to populate.
+   * @return { module:model/PersonLinksImage } The populated "PersonLinksImage" instance.
+   */
 
-          /**
-           * Gets The URI of the image associated to the given person.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the image associated to the given person.
-           * @param { String } href The URI of the image associated to the given person.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/PersonLinksImageIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/PersonLinksImageIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    PersonLinksImage,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the image associated to the given person.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PersonLinksImage();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the image associated to the given person.
+         * @param { String } href The URI of the image associated to the given person.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/PersonLinksImageIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/PersonLinksImageIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PersonLinksImage;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PersonLinksImage();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PersonLinksImage;
+})();
 
 exports.default = PersonLinksImage;

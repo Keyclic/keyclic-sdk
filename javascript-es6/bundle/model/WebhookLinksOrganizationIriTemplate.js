@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The WebhookLinksOrganizationIriTemplate model module.
  * @module model/WebhookLinksOrganizationIriTemplate
  */
-var WebhookLinksOrganizationIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "WebhookLinksOrganizationIriTemplate".
-   * @alias module:model/WebhookLinksOrganizationIriTemplate
-   * @class
-  
-   */
-    function WebhookLinksOrganizationIriTemplate() {
-      _classCallCheck(this, WebhookLinksOrganizationIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _CategoryLinksOrganizationIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "WebhookLinksOrganizationIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/WebhookLinksOrganizationIriTemplate } object Optional instance to populate.
-     * @return { module:model/WebhookLinksOrganizationIriTemplate } The populated "WebhookLinksOrganizationIriTemplate" instance.
+var WebhookLinksOrganizationIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "WebhookLinksOrganizationIriTemplate".
+     * @alias module:model/WebhookLinksOrganizationIriTemplate
+     * @class
+    
      */
+  function WebhookLinksOrganizationIriTemplate() {
+    _classCallCheck(this, WebhookLinksOrganizationIriTemplate);
 
-    _createClass(
-      WebhookLinksOrganizationIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _CategoryLinksOrganizationIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "WebhookLinksOrganizationIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/WebhookLinksOrganizationIriTemplate } object Optional instance to populate.
+   * @return { module:model/WebhookLinksOrganizationIriTemplate } The populated "WebhookLinksOrganizationIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/CategoryLinksOrganizationIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/CategoryLinksOrganizationIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    WebhookLinksOrganizationIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/CategoryLinksOrganizationIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new WebhookLinksOrganizationIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/CategoryLinksOrganizationIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return WebhookLinksOrganizationIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new WebhookLinksOrganizationIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return WebhookLinksOrganizationIriTemplate;
+})();
 
 exports.default = WebhookLinksOrganizationIriTemplate;

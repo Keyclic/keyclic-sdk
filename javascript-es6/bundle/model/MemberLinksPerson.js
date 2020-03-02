@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The MemberLinksPerson model module.
  * @module model/MemberLinksPerson
  */
-var MemberLinksPerson =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "MemberLinksPerson".
-   * @alias module:model/MemberLinksPerson
-   * @class
-  
-   */
-    function MemberLinksPerson() {
-      _classCallCheck(this, MemberLinksPerson);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _MemberLinksPersonIriTemplate.default;
-    }
-    /**
-     * Constructs a "MemberLinksPerson" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/MemberLinksPerson } object Optional instance to populate.
-     * @return { module:model/MemberLinksPerson } The populated "MemberLinksPerson" instance.
+var MemberLinksPerson = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "MemberLinksPerson".
+     * @alias module:model/MemberLinksPerson
+     * @class
+    
      */
+  function MemberLinksPerson() {
+    _classCallCheck(this, MemberLinksPerson);
 
-    _createClass(
-      MemberLinksPerson,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _MemberLinksPersonIriTemplate.default;
+  }
+  /**
+   * Constructs a "MemberLinksPerson" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/MemberLinksPerson } object Optional instance to populate.
+   * @return { module:model/MemberLinksPerson } The populated "MemberLinksPerson" instance.
+   */
 
-          /**
-           * Gets The URI of the person associated to the given member.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the person associated to the given member.
-           * @param { String } href The URI of the person associated to the given member.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/MemberLinksPersonIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/MemberLinksPersonIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    MemberLinksPerson,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the person associated to the given member.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new MemberLinksPerson();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the person associated to the given member.
+         * @param { String } href The URI of the person associated to the given member.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/MemberLinksPersonIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/MemberLinksPersonIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return MemberLinksPerson;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new MemberLinksPerson();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return MemberLinksPerson;
+})();
 
 exports.default = MemberLinksPerson;

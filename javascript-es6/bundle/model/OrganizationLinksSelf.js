@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OrganizationLinksSelf model module.
  * @module model/OrganizationLinksSelf
  */
-var OrganizationLinksSelf =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OrganizationLinksSelf".
-   * @alias module:model/OrganizationLinksSelf
-   * @class
-  
-   */
-    function OrganizationLinksSelf() {
-      _classCallCheck(this, OrganizationLinksSelf);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _OrganizationLinksSelfIriTemplate.default;
-    }
-    /**
-     * Constructs a "OrganizationLinksSelf" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OrganizationLinksSelf } object Optional instance to populate.
-     * @return { module:model/OrganizationLinksSelf } The populated "OrganizationLinksSelf" instance.
+var OrganizationLinksSelf = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OrganizationLinksSelf".
+     * @alias module:model/OrganizationLinksSelf
+     * @class
+    
      */
+  function OrganizationLinksSelf() {
+    _classCallCheck(this, OrganizationLinksSelf);
 
-    _createClass(
-      OrganizationLinksSelf,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _OrganizationLinksSelfIriTemplate.default;
+  }
+  /**
+   * Constructs a "OrganizationLinksSelf" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OrganizationLinksSelf } object Optional instance to populate.
+   * @return { module:model/OrganizationLinksSelf } The populated "OrganizationLinksSelf" instance.
+   */
 
-          /**
-           * Gets The URI of the self associated to the given organization.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the self associated to the given organization.
-           * @param { String } href The URI of the self associated to the given organization.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/OrganizationLinksSelfIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/OrganizationLinksSelfIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    OrganizationLinksSelf,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the self associated to the given organization.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OrganizationLinksSelf();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the self associated to the given organization.
+         * @param { String } href The URI of the self associated to the given organization.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/OrganizationLinksSelfIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/OrganizationLinksSelfIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OrganizationLinksSelf;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OrganizationLinksSelf();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OrganizationLinksSelf;
+})();
 
 exports.default = OrganizationLinksSelf;

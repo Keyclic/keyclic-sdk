@@ -132,97 +132,95 @@ function _setPrototypeOf(o, p) {
  * The ArticlePagination model module.
  * @module model/ArticlePagination
  */
-var ArticlePagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(ArticlePagination, _Pagination);
+var ArticlePagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(ArticlePagination, _Pagination);
 
-    /**
-   * Constructs a new "ArticlePagination".
-   * @alias module:model/ArticlePagination
-   * @class
-  
-   */
-    function ArticlePagination() {
-      var _this;
-
-      _classCallCheck(this, ArticlePagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(ArticlePagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _ArticleCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "ArticlePagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ArticlePagination } object Optional instance to populate.
-     * @return { module:model/ArticlePagination } The populated "ArticlePagination" instance.
+  /**
+     * Constructs a new "ArticlePagination".
+     * @alias module:model/ArticlePagination
+     * @class
+    
      */
+  function ArticlePagination() {
+    var _this;
 
-    _createClass(
-      ArticlePagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, ArticlePagination);
 
-          /**
-           * @return { module:model/ArticleCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/ArticleCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ArticlePagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(ArticlePagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(ArticlePagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _ArticleCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "ArticlePagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ArticlePagination } object Optional instance to populate.
+   * @return { module:model/ArticlePagination } The populated "ArticlePagination" instance.
+   */
 
-    return ArticlePagination;
-  })(_Pagination2.default);
+  _createClass(
+    ArticlePagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/ArticleCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/ArticleCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ArticlePagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(ArticlePagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ArticlePagination;
+})(_Pagination2.default);
 
 exports.default = ArticlePagination;

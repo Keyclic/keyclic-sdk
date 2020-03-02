@@ -134,97 +134,95 @@ function _setPrototypeOf(o, p) {
  * The DelegationPagination model module.
  * @module model/DelegationPagination
  */
-var DelegationPagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(DelegationPagination, _Pagination);
+var DelegationPagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(DelegationPagination, _Pagination);
 
-    /**
-   * Constructs a new "DelegationPagination".
-   * @alias module:model/DelegationPagination
-   * @class
-  
-   */
-    function DelegationPagination() {
-      var _this;
-
-      _classCallCheck(this, DelegationPagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(DelegationPagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _DelegationCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "DelegationPagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DelegationPagination } object Optional instance to populate.
-     * @return { module:model/DelegationPagination } The populated "DelegationPagination" instance.
+  /**
+     * Constructs a new "DelegationPagination".
+     * @alias module:model/DelegationPagination
+     * @class
+    
      */
+  function DelegationPagination() {
+    var _this;
 
-    _createClass(
-      DelegationPagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, DelegationPagination);
 
-          /**
-           * @return { module:model/DelegationCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/DelegationCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DelegationPagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(DelegationPagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(DelegationPagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _DelegationCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "DelegationPagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DelegationPagination } object Optional instance to populate.
+   * @return { module:model/DelegationPagination } The populated "DelegationPagination" instance.
+   */
 
-    return DelegationPagination;
-  })(_Pagination2.default);
+  _createClass(
+    DelegationPagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/DelegationCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/DelegationCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DelegationPagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(DelegationPagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DelegationPagination;
+})(_Pagination2.default);
 
 exports.default = DelegationPagination;

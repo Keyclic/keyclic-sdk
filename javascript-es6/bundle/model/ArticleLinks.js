@@ -43,109 +43,107 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ArticleLinks model module.
  * @module model/ArticleLinks
  */
-var ArticleLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ArticleLinks".
-   * @alias module:model/ArticleLinks
-   * @class
-  
-   */
-    function ArticleLinks() {
-      _classCallCheck(this, ArticleLinks);
-
-      this.section = null;
-      this.self = null;
-      this.sectionType = _ArticleLinksSection.default;
-      this.selfType = _ArticleLinksSelf.default;
-    }
-    /**
-     * Constructs a "ArticleLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ArticleLinks } object Optional instance to populate.
-     * @return { module:model/ArticleLinks } The populated "ArticleLinks" instance.
+var ArticleLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ArticleLinks".
+     * @alias module:model/ArticleLinks
+     * @class
+    
      */
+  function ArticleLinks() {
+    _classCallCheck(this, ArticleLinks);
 
-    _createClass(
-      ArticleLinks,
-      [
-        {
-          key: "getSection",
+    this.section = null;
+    this.self = null;
+    this.sectionType = _ArticleLinksSection.default;
+    this.selfType = _ArticleLinksSelf.default;
+  }
+  /**
+   * Constructs a "ArticleLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ArticleLinks } object Optional instance to populate.
+   * @return { module:model/ArticleLinks } The populated "ArticleLinks" instance.
+   */
 
-          /**
-           * @return { module:model/ArticleLinksSection }
-           */
-          value: function getSection() {
-            return this.section;
-          }
-          /**
-           * @param { module:model/ArticleLinksSection } section
-           */
-        },
-        {
-          key: "setSection",
-          value: function setSection(section) {
-            this.section = section;
-          }
-          /**
-           * @return { module:model/ArticleLinksSelf }
-           */
-        },
-        {
-          key: "getSelf",
-          value: function getSelf() {
-            return this.self;
-          }
-          /**
-           * @param { module:model/ArticleLinksSelf } self
-           */
-        },
-        {
-          key: "setSelf",
-          value: function setSelf(self) {
-            this.self = self;
-          }
+  _createClass(
+    ArticleLinks,
+    [
+      {
+        key: "getSection",
+
+        /**
+         * @return { module:model/ArticleLinksSection }
+         */
+        value: function getSection() {
+          return this.section;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ArticleLinks();
-            }
-
-            if (data.hasOwnProperty("section")) {
-              object.section = _ApiClient.default.convertToType(
-                data["section"],
-                object.sectionType
-              );
-            }
-
-            if (data.hasOwnProperty("self")) {
-              object.self = _ApiClient.default.convertToType(
-                data["self"],
-                object.selfType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ArticleLinksSection } section
+         */
+      },
+      {
+        key: "setSection",
+        value: function setSection(section) {
+          this.section = section;
         }
-      ]
-    );
+        /**
+         * @return { module:model/ArticleLinksSelf }
+         */
+      },
+      {
+        key: "getSelf",
+        value: function getSelf() {
+          return this.self;
+        }
+        /**
+         * @param { module:model/ArticleLinksSelf } self
+         */
+      },
+      {
+        key: "setSelf",
+        value: function setSelf(self) {
+          this.self = self;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ArticleLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ArticleLinks();
+          }
+
+          if (data.hasOwnProperty("section")) {
+            object.section = _ApiClient.default.convertToType(
+              data["section"],
+              object.sectionType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ArticleLinks;
+})();
 
 exports.default = ArticleLinks;

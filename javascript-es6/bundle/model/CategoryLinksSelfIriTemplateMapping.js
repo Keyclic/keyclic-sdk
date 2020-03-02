@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The CategoryLinksSelfIriTemplateMapping model module.
  * @module model/CategoryLinksSelfIriTemplateMapping
  */
-var CategoryLinksSelfIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "CategoryLinksSelfIriTemplateMapping".
-   * @alias module:model/CategoryLinksSelfIriTemplateMapping
-   * @class
-  
-   */
-    function CategoryLinksSelfIriTemplateMapping() {
-      _classCallCheck(this, CategoryLinksSelfIriTemplateMapping);
-
-      this.category = null;
-    }
-    /**
-     * Constructs a "CategoryLinksSelfIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/CategoryLinksSelfIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/CategoryLinksSelfIriTemplateMapping } The populated "CategoryLinksSelfIriTemplateMapping" instance.
+var CategoryLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "CategoryLinksSelfIriTemplateMapping".
+     * @alias module:model/CategoryLinksSelfIriTemplateMapping
+     * @class
+    
      */
+  function CategoryLinksSelfIriTemplateMapping() {
+    _classCallCheck(this, CategoryLinksSelfIriTemplateMapping);
 
-    _createClass(
-      CategoryLinksSelfIriTemplateMapping,
-      [
-        {
-          key: "getCategory",
+    this.category = null;
+  }
+  /**
+   * Constructs a "CategoryLinksSelfIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/CategoryLinksSelfIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/CategoryLinksSelfIriTemplateMapping } The populated "CategoryLinksSelfIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getCategory() {
-            return this.category;
-          }
-          /**
-           * @param { String } category
-           */
-        },
-        {
-          key: "setCategory",
-          value: function setCategory(category) {
-            this.category = category;
-          }
+  _createClass(
+    CategoryLinksSelfIriTemplateMapping,
+    [
+      {
+        key: "getCategory",
+
+        /**
+         * @return { String }
+         */
+        value: function getCategory() {
+          return this.category;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new CategoryLinksSelfIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("category")) {
-              object.category = _ApiClient.default.convertToType(
-                data["category"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } category
+         */
+      },
+      {
+        key: "setCategory",
+        value: function setCategory(category) {
+          this.category = category;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return CategoryLinksSelfIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new CategoryLinksSelfIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("category")) {
+            object.category = _ApiClient.default.convertToType(
+              data["category"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return CategoryLinksSelfIriTemplateMapping;
+})();
 
 exports.default = CategoryLinksSelfIriTemplateMapping;

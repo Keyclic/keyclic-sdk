@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ExternalServiceLinksSelf model module.
  * @module model/ExternalServiceLinksSelf
  */
-var ExternalServiceLinksSelf =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ExternalServiceLinksSelf".
-   * @alias module:model/ExternalServiceLinksSelf
-   * @class
-  
-   */
-    function ExternalServiceLinksSelf() {
-      _classCallCheck(this, ExternalServiceLinksSelf);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _ExternalServiceLinksSelfIriTemplate.default;
-    }
-    /**
-     * Constructs a "ExternalServiceLinksSelf" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ExternalServiceLinksSelf } object Optional instance to populate.
-     * @return { module:model/ExternalServiceLinksSelf } The populated "ExternalServiceLinksSelf" instance.
+var ExternalServiceLinksSelf = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ExternalServiceLinksSelf".
+     * @alias module:model/ExternalServiceLinksSelf
+     * @class
+    
      */
+  function ExternalServiceLinksSelf() {
+    _classCallCheck(this, ExternalServiceLinksSelf);
 
-    _createClass(
-      ExternalServiceLinksSelf,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _ExternalServiceLinksSelfIriTemplate.default;
+  }
+  /**
+   * Constructs a "ExternalServiceLinksSelf" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ExternalServiceLinksSelf } object Optional instance to populate.
+   * @return { module:model/ExternalServiceLinksSelf } The populated "ExternalServiceLinksSelf" instance.
+   */
 
-          /**
-           * Gets The URI of the self associated to the given externalservice.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the self associated to the given externalservice.
-           * @param { String } href The URI of the self associated to the given externalservice.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/ExternalServiceLinksSelfIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/ExternalServiceLinksSelfIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    ExternalServiceLinksSelf,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the self associated to the given externalservice.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ExternalServiceLinksSelf();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the self associated to the given externalservice.
+         * @param { String } href The URI of the self associated to the given externalservice.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/ExternalServiceLinksSelfIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/ExternalServiceLinksSelfIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ExternalServiceLinksSelf;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ExternalServiceLinksSelf();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ExternalServiceLinksSelf;
+})();
 
 exports.default = ExternalServiceLinksSelf;

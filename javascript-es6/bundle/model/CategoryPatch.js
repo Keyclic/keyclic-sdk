@@ -37,159 +37,157 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The CategoryPatch model module.
  * @module model/CategoryPatch
  */
-var CategoryPatch =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "CategoryPatch".
-   * @alias module:model/CategoryPatch
-   * @class
-  
-   */
-    function CategoryPatch() {
-      _classCallCheck(this, CategoryPatch);
-
-      this.color = null;
-      this.icon = null;
-      this.identificationNumber = null;
-      this.name = null;
-    }
-    /**
-     * Constructs a "CategoryPatch" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/CategoryPatch } object Optional instance to populate.
-     * @return { module:model/CategoryPatch } The populated "CategoryPatch" instance.
+var CategoryPatch = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "CategoryPatch".
+     * @alias module:model/CategoryPatch
+     * @class
+    
      */
+  function CategoryPatch() {
+    _classCallCheck(this, CategoryPatch);
 
-    _createClass(
-      CategoryPatch,
-      [
-        {
-          key: "getColor",
+    this.color = null;
+    this.icon = null;
+    this.identificationNumber = null;
+    this.name = null;
+  }
+  /**
+   * Constructs a "CategoryPatch" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/CategoryPatch } object Optional instance to populate.
+   * @return { module:model/CategoryPatch } The populated "CategoryPatch" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getColor() {
-            return this.color;
-          }
-          /**
-           * @param { String } color
-           */
-        },
-        {
-          key: "setColor",
-          value: function setColor(color) {
-            this.color = color;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getIcon",
-          value: function getIcon() {
-            return this.icon;
-          }
-          /**
-           * @param { String } icon
-           */
-        },
-        {
-          key: "setIcon",
-          value: function setIcon(icon) {
-            this.icon = icon;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getIdentificationNumber",
-          value: function getIdentificationNumber() {
-            return this.identificationNumber;
-          }
-          /**
-           * @param { String } identificationNumber
-           */
-        },
-        {
-          key: "setIdentificationNumber",
-          value: function setIdentificationNumber(identificationNumber) {
-            this.identificationNumber = identificationNumber;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getName",
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
+  _createClass(
+    CategoryPatch,
+    [
+      {
+        key: "getColor",
+
+        /**
+         * @return { String }
+         */
+        value: function getColor() {
+          return this.color;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new CategoryPatch();
-            }
-
-            if (data.hasOwnProperty("color")) {
-              object.color = _ApiClient.default.convertToType(
-                data["color"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("icon")) {
-              object.icon = _ApiClient.default.convertToType(
-                data["icon"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("identificationNumber")) {
-              object.identificationNumber = _ApiClient.default.convertToType(
-                data["identificationNumber"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } color
+         */
+      },
+      {
+        key: "setColor",
+        value: function setColor(color) {
+          this.color = color;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getIcon",
+        value: function getIcon() {
+          return this.icon;
+        }
+        /**
+         * @param { String } icon
+         */
+      },
+      {
+        key: "setIcon",
+        value: function setIcon(icon) {
+          this.icon = icon;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getIdentificationNumber",
+        value: function getIdentificationNumber() {
+          return this.identificationNumber;
+        }
+        /**
+         * @param { String } identificationNumber
+         */
+      },
+      {
+        key: "setIdentificationNumber",
+        value: function setIdentificationNumber(identificationNumber) {
+          this.identificationNumber = identificationNumber;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getName",
+        value: function getName() {
+          return this.name;
+        }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return CategoryPatch;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new CategoryPatch();
+          }
+
+          if (data.hasOwnProperty("color")) {
+            object.color = _ApiClient.default.convertToType(
+              data["color"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("icon")) {
+            object.icon = _ApiClient.default.convertToType(
+              data["icon"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("identificationNumber")) {
+            object.identificationNumber = _ApiClient.default.convertToType(
+              data["identificationNumber"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return CategoryPatch;
+})();
 
 exports.default = CategoryPatch;

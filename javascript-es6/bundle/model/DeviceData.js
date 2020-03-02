@@ -37,139 +37,137 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DeviceData model module.
  * @module model/DeviceData
  */
-var DeviceData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DeviceData".
-   * @alias module:model/DeviceData
-   * @class
-  
-   * @param token { String }
-  
-   * @param platform { String }
-  
-   * @param person { String }
-  
-   */
-    function DeviceData(token, platform, person) {
-      _classCallCheck(this, DeviceData);
-
-      this.token = token;
-      this.platform = platform;
-      this.person = person;
-    }
-    /**
-     * Constructs a "DeviceData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DeviceData } object Optional instance to populate.
-     * @return { module:model/DeviceData } The populated "DeviceData" instance.
+var DeviceData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DeviceData".
+     * @alias module:model/DeviceData
+     * @class
+    
+     * @param token { String }
+    
+     * @param platform { String }
+    
+     * @param person { String }
+    
      */
+  function DeviceData(token, platform, person) {
+    _classCallCheck(this, DeviceData);
 
-    _createClass(
-      DeviceData,
-      [
-        {
-          key: "getToken",
+    this.token = token;
+    this.platform = platform;
+    this.person = person;
+  }
+  /**
+   * Constructs a "DeviceData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DeviceData } object Optional instance to populate.
+   * @return { module:model/DeviceData } The populated "DeviceData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getToken() {
-            return this.token;
-          }
-          /**
-           * @param { String } token
-           */
-        },
-        {
-          key: "setToken",
-          value: function setToken(token) {
-            this.token = token;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getPlatform",
-          value: function getPlatform() {
-            return this.platform;
-          }
-          /**
-           * @param { String } platform
-           */
-        },
-        {
-          key: "setPlatform",
-          value: function setPlatform(platform) {
-            this.platform = platform;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getPerson",
-          value: function getPerson() {
-            return this.person;
-          }
-          /**
-           * @param { String } person
-           */
-        },
-        {
-          key: "setPerson",
-          value: function setPerson(person) {
-            this.person = person;
-          }
+  _createClass(
+    DeviceData,
+    [
+      {
+        key: "getToken",
+
+        /**
+         * @return { String }
+         */
+        value: function getToken() {
+          return this.token;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DeviceData();
-            }
-
-            if (data.hasOwnProperty("token")) {
-              object.token = _ApiClient.default.convertToType(
-                data["token"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("platform")) {
-              object.platform = _ApiClient.default.convertToType(
-                data["platform"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("person")) {
-              object.person = _ApiClient.default.convertToType(
-                data["person"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } token
+         */
+      },
+      {
+        key: "setToken",
+        value: function setToken(token) {
+          this.token = token;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getPlatform",
+        value: function getPlatform() {
+          return this.platform;
+        }
+        /**
+         * @param { String } platform
+         */
+      },
+      {
+        key: "setPlatform",
+        value: function setPlatform(platform) {
+          this.platform = platform;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getPerson",
+        value: function getPerson() {
+          return this.person;
+        }
+        /**
+         * @param { String } person
+         */
+      },
+      {
+        key: "setPerson",
+        value: function setPerson(person) {
+          this.person = person;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DeviceData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DeviceData();
+          }
+
+          if (data.hasOwnProperty("token")) {
+            object.token = _ApiClient.default.convertToType(
+              data["token"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("platform")) {
+            object.platform = _ApiClient.default.convertToType(
+              data["platform"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("person")) {
+            object.person = _ApiClient.default.convertToType(
+              data["person"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DeviceData;
+})();
 
 exports.default = DeviceData;

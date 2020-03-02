@@ -37,83 +37,81 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ImageData model module.
  * @module model/ImageData
  */
-var ImageData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ImageData".
-   * @alias module:model/ImageData
-   * @class
-  
-   * @param image { String }
-  
-   */
-    function ImageData(image) {
-      _classCallCheck(this, ImageData);
-
-      this.image = image;
-    }
-    /**
-     * Constructs a "ImageData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ImageData } object Optional instance to populate.
-     * @return { module:model/ImageData } The populated "ImageData" instance.
+var ImageData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ImageData".
+     * @alias module:model/ImageData
+     * @class
+    
+     * @param image { String }
+    
      */
+  function ImageData(image) {
+    _classCallCheck(this, ImageData);
 
-    _createClass(
-      ImageData,
-      [
-        {
-          key: "getImage",
+    this.image = image;
+  }
+  /**
+   * Constructs a "ImageData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ImageData } object Optional instance to populate.
+   * @return { module:model/ImageData } The populated "ImageData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getImage() {
-            return this.image;
-          }
-          /**
-           * @param { String } image
-           */
-        },
-        {
-          key: "setImage",
-          value: function setImage(image) {
-            this.image = image;
-          }
+  _createClass(
+    ImageData,
+    [
+      {
+        key: "getImage",
+
+        /**
+         * @return { String }
+         */
+        value: function getImage() {
+          return this.image;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ImageData();
-            }
-
-            if (data.hasOwnProperty("image")) {
-              object.image = _ApiClient.default.convertToType(
-                data["image"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } image
+         */
+      },
+      {
+        key: "setImage",
+        value: function setImage(image) {
+          this.image = image;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ImageData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ImageData();
+          }
+
+          if (data.hasOwnProperty("image")) {
+            object.image = _ApiClient.default.convertToType(
+              data["image"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ImageData;
+})();
 
 exports.default = ImageData;

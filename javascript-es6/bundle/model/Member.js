@@ -45,230 +45,225 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The Member model module.
  * @module model/Member
  */
-var Member =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "Member".
-   * @alias module:model/Member
-   * @class
-  
-   */
-    function Member() {
-      _classCallCheck(this, Member);
-
-      this.embedded = null;
-      this.links = null;
-      this.contactPoint = null;
-      this.createdAt = null;
-      this.id = null;
-      this.roles = [];
-      this.type = null;
-      this.updatedAt = null;
-      this.embeddedType = _MemberEmbedded.default;
-      this.linksType = _MemberLinks.default;
-      this.contactPointType = _MemberContactPoint.default;
-    }
-    /**
-     * Constructs a "Member" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/Member } object Optional instance to populate.
-     * @return { module:model/Member } The populated "Member" instance.
+var Member = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "Member".
+     * @alias module:model/Member
+     * @class
+    
      */
+  function Member() {
+    _classCallCheck(this, Member);
 
-    _createClass(
-      Member,
-      [
-        {
-          key: "getEmbedded",
+    this.embedded = null;
+    this.links = null;
+    this.contactPoint = null;
+    this.createdAt = null;
+    this.id = null;
+    this.roles = [];
+    this.type = null;
+    this.updatedAt = null;
+    this.embeddedType = _MemberEmbedded.default;
+    this.linksType = _MemberLinks.default;
+    this.contactPointType = _MemberContactPoint.default;
+  }
+  /**
+   * Constructs a "Member" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/Member } object Optional instance to populate.
+   * @return { module:model/Member } The populated "Member" instance.
+   */
 
-          /**
-           * @return { module:model/MemberEmbedded }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/MemberEmbedded } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-          /**
-           * @return { module:model/MemberLinks }
-           */
-        },
-        {
-          key: "getLinks",
-          value: function getLinks() {
-            return this.links;
-          }
-          /**
-           * @param { module:model/MemberLinks } links
-           */
-        },
-        {
-          key: "setLinks",
-          value: function setLinks(links) {
-            this.links = links;
-          }
-          /**
-           * @return { module:model/MemberContactPoint }
-           */
-        },
-        {
-          key: "getContactPoint",
-          value: function getContactPoint() {
-            return this.contactPoint;
-          }
-          /**
-           * @param { module:model/MemberContactPoint } contactPoint
-           */
-        },
-        {
-          key: "setContactPoint",
-          value: function setContactPoint(contactPoint) {
-            this.contactPoint = contactPoint;
-          }
-          /**
-           * @return { Date }
-           */
-        },
-        {
-          key: "getCreatedAt",
-          value: function getCreatedAt() {
-            return this.createdAt;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getId",
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @return { Array.<String> }
-           */
-        },
-        {
-          key: "getRoles",
-          value: function getRoles() {
-            return this.roles;
-          }
-          /**
-           * @param { Array.<String> } roles
-           */
-        },
-        {
-          key: "setRoles",
-          value: function setRoles(roles) {
-            this.roles = roles;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
-          }
-          /**
-           * @return { Date }
-           */
-        },
-        {
-          key: "getUpdatedAt",
-          value: function getUpdatedAt() {
-            return this.updatedAt;
-          }
+  _createClass(
+    Member,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/MemberEmbedded }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new Member();
-            }
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            if (data.hasOwnProperty("_links")) {
-              object.links = _ApiClient.default.convertToType(
-                data["_links"],
-                object.linksType
-              );
-            }
-
-            if (data.hasOwnProperty("contactPoint")) {
-              object.contactPoint = _ApiClient.default.convertToType(
-                data["contactPoint"],
-                object.contactPointType
-              );
-            }
-
-            if (data.hasOwnProperty("createdAt")) {
-              object.createdAt = _ApiClient.default.convertToType(
-                data["createdAt"],
-                "Date"
-              );
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("roles")) {
-              object.roles = _ApiClient.default.convertToType(
-                data["roles"],
-                "['String']"
-              );
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("updatedAt")) {
-              object.updatedAt = _ApiClient.default.convertToType(
-                data["updatedAt"],
-                "Date"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/MemberEmbedded } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
         }
-      ]
-    );
+        /**
+         * @return { module:model/MemberLinks }
+         */
+      },
+      {
+        key: "getLinks",
+        value: function getLinks() {
+          return this.links;
+        }
+        /**
+         * @param { module:model/MemberLinks } links
+         */
+      },
+      {
+        key: "setLinks",
+        value: function setLinks(links) {
+          this.links = links;
+        }
+        /**
+         * @return { module:model/MemberContactPoint }
+         */
+      },
+      {
+        key: "getContactPoint",
+        value: function getContactPoint() {
+          return this.contactPoint;
+        }
+        /**
+         * @param { module:model/MemberContactPoint } contactPoint
+         */
+      },
+      {
+        key: "setContactPoint",
+        value: function setContactPoint(contactPoint) {
+          this.contactPoint = contactPoint;
+        }
+        /**
+         * @return { Date }
+         */
+      },
+      {
+        key: "getCreatedAt",
+        value: function getCreatedAt() {
+          return this.createdAt;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getId",
+        value: function getId() {
+          return this.id;
+        }
+        /**
+         * @return { Array.<String> }
+         */
+      },
+      {
+        key: "getRoles",
+        value: function getRoles() {
+          return this.roles;
+        }
+        /**
+         * @param { Array.<String> } roles
+         */
+      },
+      {
+        key: "setRoles",
+        value: function setRoles(roles) {
+          this.roles = roles;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getType",
+        value: function getType() {
+          return this.type;
+        }
+        /**
+         * @return { Date }
+         */
+      },
+      {
+        key: "getUpdatedAt",
+        value: function getUpdatedAt() {
+          return this.updatedAt;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return Member;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new Member();
+          }
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
+          if (data.hasOwnProperty("contactPoint")) {
+            object.contactPoint = _ApiClient.default.convertToType(
+              data["contactPoint"],
+              object.contactPointType
+            );
+          }
+
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("roles")) {
+            object.roles = _ApiClient.default.convertToType(
+              data["roles"],
+              "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return Member;
+})();
 
 exports.default = Member;

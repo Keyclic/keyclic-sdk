@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PublicationCollection model module.
  * @module model/PublicationCollection
  */
-var PublicationCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PublicationCollection".
-   * @alias module:model/PublicationCollection
-   * @class
-  
-   */
-    function PublicationCollection() {
-      _classCallCheck(this, PublicationCollection);
-
-      this.items = [];
-      this.itemsType = _Publication.default;
-    }
-    /**
-     * Constructs a "PublicationCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PublicationCollection } object Optional instance to populate.
-     * @return { module:model/PublicationCollection } The populated "PublicationCollection" instance.
+var PublicationCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PublicationCollection".
+     * @alias module:model/PublicationCollection
+     * @class
+    
      */
+  function PublicationCollection() {
+    _classCallCheck(this, PublicationCollection);
 
-    _createClass(
-      PublicationCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _Publication.default;
+  }
+  /**
+   * Constructs a "PublicationCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PublicationCollection } object Optional instance to populate.
+   * @return { module:model/PublicationCollection } The populated "PublicationCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Publication> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/Publication> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    PublicationCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/Publication> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PublicationCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Publication> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PublicationCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PublicationCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PublicationCollection;
+})();
 
 exports.default = PublicationCollection;

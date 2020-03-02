@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ExternalServiceLinksSelfIriTemplate model module.
  * @module model/ExternalServiceLinksSelfIriTemplate
  */
-var ExternalServiceLinksSelfIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ExternalServiceLinksSelfIriTemplate".
-   * @alias module:model/ExternalServiceLinksSelfIriTemplate
-   * @class
-  
-   */
-    function ExternalServiceLinksSelfIriTemplate() {
-      _classCallCheck(this, ExternalServiceLinksSelfIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _DelegationLinksServiceIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "ExternalServiceLinksSelfIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ExternalServiceLinksSelfIriTemplate } object Optional instance to populate.
-     * @return { module:model/ExternalServiceLinksSelfIriTemplate } The populated "ExternalServiceLinksSelfIriTemplate" instance.
+var ExternalServiceLinksSelfIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ExternalServiceLinksSelfIriTemplate".
+     * @alias module:model/ExternalServiceLinksSelfIriTemplate
+     * @class
+    
      */
+  function ExternalServiceLinksSelfIriTemplate() {
+    _classCallCheck(this, ExternalServiceLinksSelfIriTemplate);
 
-    _createClass(
-      ExternalServiceLinksSelfIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _DelegationLinksServiceIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "ExternalServiceLinksSelfIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ExternalServiceLinksSelfIriTemplate } object Optional instance to populate.
+   * @return { module:model/ExternalServiceLinksSelfIriTemplate } The populated "ExternalServiceLinksSelfIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/DelegationLinksServiceIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/DelegationLinksServiceIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    ExternalServiceLinksSelfIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/DelegationLinksServiceIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ExternalServiceLinksSelfIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/DelegationLinksServiceIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ExternalServiceLinksSelfIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ExternalServiceLinksSelfIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ExternalServiceLinksSelfIriTemplate;
+})();
 
 exports.default = ExternalServiceLinksSelfIriTemplate;

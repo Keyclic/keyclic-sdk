@@ -41,83 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PersonLinksImageIriTemplate model module.
  * @module model/PersonLinksImageIriTemplate
  */
-var PersonLinksImageIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PersonLinksImageIriTemplate".
-   * @alias module:model/PersonLinksImageIriTemplate
-   * @class
-  
-   */
-    function PersonLinksImageIriTemplate() {
-      _classCallCheck(this, PersonLinksImageIriTemplate);
-
-      this.mapping = null;
-      this.mappingType =
-        _ContributionLinksContributorIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "PersonLinksImageIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PersonLinksImageIriTemplate } object Optional instance to populate.
-     * @return { module:model/PersonLinksImageIriTemplate } The populated "PersonLinksImageIriTemplate" instance.
+var PersonLinksImageIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PersonLinksImageIriTemplate".
+     * @alias module:model/PersonLinksImageIriTemplate
+     * @class
+    
      */
+  function PersonLinksImageIriTemplate() {
+    _classCallCheck(this, PersonLinksImageIriTemplate);
 
-    _createClass(
-      PersonLinksImageIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _ContributionLinksContributorIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "PersonLinksImageIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PersonLinksImageIriTemplate } object Optional instance to populate.
+   * @return { module:model/PersonLinksImageIriTemplate } The populated "PersonLinksImageIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/ContributionLinksContributorIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/ContributionLinksContributorIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    PersonLinksImageIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/ContributionLinksContributorIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PersonLinksImageIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ContributionLinksContributorIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PersonLinksImageIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PersonLinksImageIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PersonLinksImageIriTemplate;
+})();
 
 exports.default = PersonLinksImageIriTemplate;

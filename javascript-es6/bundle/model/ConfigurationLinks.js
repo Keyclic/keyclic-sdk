@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ConfigurationLinks model module.
  * @module model/ConfigurationLinks
  */
-var ConfigurationLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ConfigurationLinks".
-   * @alias module:model/ConfigurationLinks
-   * @class
-  
-   */
-    function ConfigurationLinks() {
-      _classCallCheck(this, ConfigurationLinks);
-
-      this.self = null;
-      this.selfType = _ConfigurationLinksSelf.default;
-    }
-    /**
-     * Constructs a "ConfigurationLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ConfigurationLinks } object Optional instance to populate.
-     * @return { module:model/ConfigurationLinks } The populated "ConfigurationLinks" instance.
+var ConfigurationLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ConfigurationLinks".
+     * @alias module:model/ConfigurationLinks
+     * @class
+    
      */
+  function ConfigurationLinks() {
+    _classCallCheck(this, ConfigurationLinks);
 
-    _createClass(
-      ConfigurationLinks,
-      [
-        {
-          key: "getSelf",
+    this.self = null;
+    this.selfType = _ConfigurationLinksSelf.default;
+  }
+  /**
+   * Constructs a "ConfigurationLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ConfigurationLinks } object Optional instance to populate.
+   * @return { module:model/ConfigurationLinks } The populated "ConfigurationLinks" instance.
+   */
 
-          /**
-           * @return { module:model/ConfigurationLinksSelf }
-           */
-          value: function getSelf() {
-            return this.self;
-          }
-          /**
-           * @param { module:model/ConfigurationLinksSelf } self
-           */
-        },
-        {
-          key: "setSelf",
-          value: function setSelf(self) {
-            this.self = self;
-          }
+  _createClass(
+    ConfigurationLinks,
+    [
+      {
+        key: "getSelf",
+
+        /**
+         * @return { module:model/ConfigurationLinksSelf }
+         */
+        value: function getSelf() {
+          return this.self;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ConfigurationLinks();
-            }
-
-            if (data.hasOwnProperty("self")) {
-              object.self = _ApiClient.default.convertToType(
-                data["self"],
-                object.selfType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ConfigurationLinksSelf } self
+         */
+      },
+      {
+        key: "setSelf",
+        value: function setSelf(self) {
+          this.self = self;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ConfigurationLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ConfigurationLinks();
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ConfigurationLinks;
+})();
 
 exports.default = ConfigurationLinks;

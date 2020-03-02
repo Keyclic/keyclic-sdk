@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OperationLinksReport model module.
  * @module model/OperationLinksReport
  */
-var OperationLinksReport =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OperationLinksReport".
-   * @alias module:model/OperationLinksReport
-   * @class
-  
-   */
-    function OperationLinksReport() {
-      _classCallCheck(this, OperationLinksReport);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _OperationLinksReportIriTemplate.default;
-    }
-    /**
-     * Constructs a "OperationLinksReport" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OperationLinksReport } object Optional instance to populate.
-     * @return { module:model/OperationLinksReport } The populated "OperationLinksReport" instance.
+var OperationLinksReport = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OperationLinksReport".
+     * @alias module:model/OperationLinksReport
+     * @class
+    
      */
+  function OperationLinksReport() {
+    _classCallCheck(this, OperationLinksReport);
 
-    _createClass(
-      OperationLinksReport,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _OperationLinksReportIriTemplate.default;
+  }
+  /**
+   * Constructs a "OperationLinksReport" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OperationLinksReport } object Optional instance to populate.
+   * @return { module:model/OperationLinksReport } The populated "OperationLinksReport" instance.
+   */
 
-          /**
-           * Gets The URI of the report associated to the given operation.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the report associated to the given operation.
-           * @param { String } href The URI of the report associated to the given operation.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/OperationLinksReportIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/OperationLinksReportIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    OperationLinksReport,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the report associated to the given operation.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OperationLinksReport();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the report associated to the given operation.
+         * @param { String } href The URI of the report associated to the given operation.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/OperationLinksReportIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/OperationLinksReportIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OperationLinksReport;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OperationLinksReport();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OperationLinksReport;
+})();
 
 exports.default = OperationLinksReport;

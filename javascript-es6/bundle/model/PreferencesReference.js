@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PreferencesReference model module.
  * @module model/PreferencesReference
  */
-var PreferencesReference =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PreferencesReference".
-   * @alias module:model/PreferencesReference
-   * @class
-  
-   */
-    function PreferencesReference() {
-      _classCallCheck(this, PreferencesReference);
-
-      this.prefix = null;
-    }
-    /**
-     * Constructs a "PreferencesReference" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PreferencesReference } object Optional instance to populate.
-     * @return { module:model/PreferencesReference } The populated "PreferencesReference" instance.
+var PreferencesReference = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PreferencesReference".
+     * @alias module:model/PreferencesReference
+     * @class
+    
      */
+  function PreferencesReference() {
+    _classCallCheck(this, PreferencesReference);
 
-    _createClass(
-      PreferencesReference,
-      [
-        {
-          key: "getPrefix",
+    this.prefix = null;
+  }
+  /**
+   * Constructs a "PreferencesReference" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PreferencesReference } object Optional instance to populate.
+   * @return { module:model/PreferencesReference } The populated "PreferencesReference" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getPrefix() {
-            return this.prefix;
-          }
-          /**
-           * @param { String } prefix
-           */
-        },
-        {
-          key: "setPrefix",
-          value: function setPrefix(prefix) {
-            this.prefix = prefix;
-          }
+  _createClass(
+    PreferencesReference,
+    [
+      {
+        key: "getPrefix",
+
+        /**
+         * @return { String }
+         */
+        value: function getPrefix() {
+          return this.prefix;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PreferencesReference();
-            }
-
-            if (data.hasOwnProperty("prefix")) {
-              object.prefix = _ApiClient.default.convertToType(
-                data["prefix"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } prefix
+         */
+      },
+      {
+        key: "setPrefix",
+        value: function setPrefix(prefix) {
+          this.prefix = prefix;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PreferencesReference;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PreferencesReference();
+          }
+
+          if (data.hasOwnProperty("prefix")) {
+            object.prefix = _ApiClient.default.convertToType(
+              data["prefix"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PreferencesReference;
+})();
 
 exports.default = PreferencesReference;

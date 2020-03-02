@@ -37,133 +37,131 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PersonPatchAgreement model module.
  * @module model/PersonPatchAgreement
  */
-var PersonPatchAgreement =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PersonPatchAgreement".
-   * @alias module:model/PersonPatchAgreement
-   * @class
-  
-   */
-    function PersonPatchAgreement() {
-      _classCallCheck(this, PersonPatchAgreement);
-
-      this.privacyPolicy = null;
-      this.termsOfService = null;
-      this.olderThan = null;
-    }
-    /**
-     * Constructs a "PersonPatchAgreement" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PersonPatchAgreement } object Optional instance to populate.
-     * @return { module:model/PersonPatchAgreement } The populated "PersonPatchAgreement" instance.
+var PersonPatchAgreement = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PersonPatchAgreement".
+     * @alias module:model/PersonPatchAgreement
+     * @class
+    
      */
+  function PersonPatchAgreement() {
+    _classCallCheck(this, PersonPatchAgreement);
 
-    _createClass(
-      PersonPatchAgreement,
-      [
-        {
-          key: "getPrivacyPolicy",
+    this.privacyPolicy = null;
+    this.termsOfService = null;
+    this.olderThan = null;
+  }
+  /**
+   * Constructs a "PersonPatchAgreement" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PersonPatchAgreement } object Optional instance to populate.
+   * @return { module:model/PersonPatchAgreement } The populated "PersonPatchAgreement" instance.
+   */
 
-          /**
-           * @return { Boolean }
-           */
-          value: function getPrivacyPolicy() {
-            return this.privacyPolicy;
-          }
-          /**
-           * @param { Boolean } privacyPolicy
-           */
-        },
-        {
-          key: "setPrivacyPolicy",
-          value: function setPrivacyPolicy(privacyPolicy) {
-            this.privacyPolicy = privacyPolicy;
-          }
-          /**
-           * @return { Boolean }
-           */
-        },
-        {
-          key: "getTermsOfService",
-          value: function getTermsOfService() {
-            return this.termsOfService;
-          }
-          /**
-           * @param { Boolean } termsOfService
-           */
-        },
-        {
-          key: "setTermsOfService",
-          value: function setTermsOfService(termsOfService) {
-            this.termsOfService = termsOfService;
-          }
-          /**
-           * @return { Boolean }
-           */
-        },
-        {
-          key: "getOlderThan",
-          value: function getOlderThan() {
-            return this.olderThan;
-          }
-          /**
-           * @param { Boolean } olderThan
-           */
-        },
-        {
-          key: "setOlderThan",
-          value: function setOlderThan(olderThan) {
-            this.olderThan = olderThan;
-          }
+  _createClass(
+    PersonPatchAgreement,
+    [
+      {
+        key: "getPrivacyPolicy",
+
+        /**
+         * @return { Boolean }
+         */
+        value: function getPrivacyPolicy() {
+          return this.privacyPolicy;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PersonPatchAgreement();
-            }
-
-            if (data.hasOwnProperty("privacyPolicy")) {
-              object.privacyPolicy = _ApiClient.default.convertToType(
-                data["privacyPolicy"],
-                "Boolean"
-              );
-            }
-
-            if (data.hasOwnProperty("termsOfService")) {
-              object.termsOfService = _ApiClient.default.convertToType(
-                data["termsOfService"],
-                "Boolean"
-              );
-            }
-
-            if (data.hasOwnProperty("olderThan")) {
-              object.olderThan = _ApiClient.default.convertToType(
-                data["olderThan"],
-                "Boolean"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { Boolean } privacyPolicy
+         */
+      },
+      {
+        key: "setPrivacyPolicy",
+        value: function setPrivacyPolicy(privacyPolicy) {
+          this.privacyPolicy = privacyPolicy;
         }
-      ]
-    );
+        /**
+         * @return { Boolean }
+         */
+      },
+      {
+        key: "getTermsOfService",
+        value: function getTermsOfService() {
+          return this.termsOfService;
+        }
+        /**
+         * @param { Boolean } termsOfService
+         */
+      },
+      {
+        key: "setTermsOfService",
+        value: function setTermsOfService(termsOfService) {
+          this.termsOfService = termsOfService;
+        }
+        /**
+         * @return { Boolean }
+         */
+      },
+      {
+        key: "getOlderThan",
+        value: function getOlderThan() {
+          return this.olderThan;
+        }
+        /**
+         * @param { Boolean } olderThan
+         */
+      },
+      {
+        key: "setOlderThan",
+        value: function setOlderThan(olderThan) {
+          this.olderThan = olderThan;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PersonPatchAgreement;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PersonPatchAgreement();
+          }
+
+          if (data.hasOwnProperty("privacyPolicy")) {
+            object.privacyPolicy = _ApiClient.default.convertToType(
+              data["privacyPolicy"],
+              "Boolean"
+            );
+          }
+
+          if (data.hasOwnProperty("termsOfService")) {
+            object.termsOfService = _ApiClient.default.convertToType(
+              data["termsOfService"],
+              "Boolean"
+            );
+          }
+
+          if (data.hasOwnProperty("olderThan")) {
+            object.olderThan = _ApiClient.default.convertToType(
+              data["olderThan"],
+              "Boolean"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PersonPatchAgreement;
+})();
 
 exports.default = PersonPatchAgreement;

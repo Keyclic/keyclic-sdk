@@ -132,97 +132,95 @@ function _setPrototypeOf(o, p) {
  * The WebhookPagination model module.
  * @module model/WebhookPagination
  */
-var WebhookPagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(WebhookPagination, _Pagination);
+var WebhookPagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(WebhookPagination, _Pagination);
 
-    /**
-   * Constructs a new "WebhookPagination".
-   * @alias module:model/WebhookPagination
-   * @class
-  
-   */
-    function WebhookPagination() {
-      var _this;
-
-      _classCallCheck(this, WebhookPagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(WebhookPagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _WebhookCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "WebhookPagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/WebhookPagination } object Optional instance to populate.
-     * @return { module:model/WebhookPagination } The populated "WebhookPagination" instance.
+  /**
+     * Constructs a new "WebhookPagination".
+     * @alias module:model/WebhookPagination
+     * @class
+    
      */
+  function WebhookPagination() {
+    var _this;
 
-    _createClass(
-      WebhookPagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, WebhookPagination);
 
-          /**
-           * @return { module:model/WebhookCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/WebhookCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new WebhookPagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(WebhookPagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(WebhookPagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _WebhookCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "WebhookPagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/WebhookPagination } object Optional instance to populate.
+   * @return { module:model/WebhookPagination } The populated "WebhookPagination" instance.
+   */
 
-    return WebhookPagination;
-  })(_Pagination2.default);
+  _createClass(
+    WebhookPagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/WebhookCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/WebhookCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new WebhookPagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(WebhookPagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return WebhookPagination;
+})(_Pagination2.default);
 
 exports.default = WebhookPagination;

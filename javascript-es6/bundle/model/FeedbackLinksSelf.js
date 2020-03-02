@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The FeedbackLinksSelf model module.
  * @module model/FeedbackLinksSelf
  */
-var FeedbackLinksSelf =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "FeedbackLinksSelf".
-   * @alias module:model/FeedbackLinksSelf
-   * @class
-  
-   */
-    function FeedbackLinksSelf() {
-      _classCallCheck(this, FeedbackLinksSelf);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _FeedbackLinksSelfIriTemplate.default;
-    }
-    /**
-     * Constructs a "FeedbackLinksSelf" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FeedbackLinksSelf } object Optional instance to populate.
-     * @return { module:model/FeedbackLinksSelf } The populated "FeedbackLinksSelf" instance.
+var FeedbackLinksSelf = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "FeedbackLinksSelf".
+     * @alias module:model/FeedbackLinksSelf
+     * @class
+    
      */
+  function FeedbackLinksSelf() {
+    _classCallCheck(this, FeedbackLinksSelf);
 
-    _createClass(
-      FeedbackLinksSelf,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _FeedbackLinksSelfIriTemplate.default;
+  }
+  /**
+   * Constructs a "FeedbackLinksSelf" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/FeedbackLinksSelf } object Optional instance to populate.
+   * @return { module:model/FeedbackLinksSelf } The populated "FeedbackLinksSelf" instance.
+   */
 
-          /**
-           * Gets The URI of the self associated to the given feedback.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the self associated to the given feedback.
-           * @param { String } href The URI of the self associated to the given feedback.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/FeedbackLinksSelfIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/FeedbackLinksSelfIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    FeedbackLinksSelf,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the self associated to the given feedback.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new FeedbackLinksSelf();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the self associated to the given feedback.
+         * @param { String } href The URI of the self associated to the given feedback.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/FeedbackLinksSelfIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/FeedbackLinksSelfIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return FeedbackLinksSelf;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new FeedbackLinksSelf();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return FeedbackLinksSelf;
+})();
 
 exports.default = FeedbackLinksSelf;

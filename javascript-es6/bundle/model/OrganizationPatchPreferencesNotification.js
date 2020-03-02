@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OrganizationPatchPreferencesNotification model module.
  * @module model/OrganizationPatchPreferencesNotification
  */
-var OrganizationPatchPreferencesNotification =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OrganizationPatchPreferencesNotification".
-   * @alias module:model/OrganizationPatchPreferencesNotification
-   * @class
-  
-   */
-    function OrganizationPatchPreferencesNotification() {
-      _classCallCheck(this, OrganizationPatchPreferencesNotification);
-
-      this.report = null;
-      this.reportType = _OrganizationPatchPreferencesNotificationReport.default;
-    }
-    /**
-     * Constructs a "OrganizationPatchPreferencesNotification" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OrganizationPatchPreferencesNotification } object Optional instance to populate.
-     * @return { module:model/OrganizationPatchPreferencesNotification } The populated "OrganizationPatchPreferencesNotification" instance.
+var OrganizationPatchPreferencesNotification = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OrganizationPatchPreferencesNotification".
+     * @alias module:model/OrganizationPatchPreferencesNotification
+     * @class
+    
      */
+  function OrganizationPatchPreferencesNotification() {
+    _classCallCheck(this, OrganizationPatchPreferencesNotification);
 
-    _createClass(
-      OrganizationPatchPreferencesNotification,
-      [
-        {
-          key: "getReport",
+    this.report = null;
+    this.reportType = _OrganizationPatchPreferencesNotificationReport.default;
+  }
+  /**
+   * Constructs a "OrganizationPatchPreferencesNotification" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OrganizationPatchPreferencesNotification } object Optional instance to populate.
+   * @return { module:model/OrganizationPatchPreferencesNotification } The populated "OrganizationPatchPreferencesNotification" instance.
+   */
 
-          /**
-           * @return { module:model/OrganizationPatchPreferencesNotificationReport }
-           */
-          value: function getReport() {
-            return this.report;
-          }
-          /**
-           * @param { module:model/OrganizationPatchPreferencesNotificationReport } report
-           */
-        },
-        {
-          key: "setReport",
-          value: function setReport(report) {
-            this.report = report;
-          }
+  _createClass(
+    OrganizationPatchPreferencesNotification,
+    [
+      {
+        key: "getReport",
+
+        /**
+         * @return { module:model/OrganizationPatchPreferencesNotificationReport }
+         */
+        value: function getReport() {
+          return this.report;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OrganizationPatchPreferencesNotification();
-            }
-
-            if (data.hasOwnProperty("report")) {
-              object.report = _ApiClient.default.convertToType(
-                data["report"],
-                object.reportType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/OrganizationPatchPreferencesNotificationReport } report
+         */
+      },
+      {
+        key: "setReport",
+        value: function setReport(report) {
+          this.report = report;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OrganizationPatchPreferencesNotification;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OrganizationPatchPreferencesNotification();
+          }
+
+          if (data.hasOwnProperty("report")) {
+            object.report = _ApiClient.default.convertToType(
+              data["report"],
+              object.reportType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OrganizationPatchPreferencesNotification;
+})();
 
 exports.default = OrganizationPatchPreferencesNotification;

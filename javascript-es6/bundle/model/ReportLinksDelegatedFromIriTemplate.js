@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReportLinksDelegatedFromIriTemplate model module.
  * @module model/ReportLinksDelegatedFromIriTemplate
  */
-var ReportLinksDelegatedFromIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReportLinksDelegatedFromIriTemplate".
-   * @alias module:model/ReportLinksDelegatedFromIriTemplate
-   * @class
-  
-   */
-    function ReportLinksDelegatedFromIriTemplate() {
-      _classCallCheck(this, ReportLinksDelegatedFromIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _CategoryLinksOrganizationIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "ReportLinksDelegatedFromIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReportLinksDelegatedFromIriTemplate } object Optional instance to populate.
-     * @return { module:model/ReportLinksDelegatedFromIriTemplate } The populated "ReportLinksDelegatedFromIriTemplate" instance.
+var ReportLinksDelegatedFromIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReportLinksDelegatedFromIriTemplate".
+     * @alias module:model/ReportLinksDelegatedFromIriTemplate
+     * @class
+    
      */
+  function ReportLinksDelegatedFromIriTemplate() {
+    _classCallCheck(this, ReportLinksDelegatedFromIriTemplate);
 
-    _createClass(
-      ReportLinksDelegatedFromIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _CategoryLinksOrganizationIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "ReportLinksDelegatedFromIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReportLinksDelegatedFromIriTemplate } object Optional instance to populate.
+   * @return { module:model/ReportLinksDelegatedFromIriTemplate } The populated "ReportLinksDelegatedFromIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/CategoryLinksOrganizationIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/CategoryLinksOrganizationIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    ReportLinksDelegatedFromIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/CategoryLinksOrganizationIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReportLinksDelegatedFromIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/CategoryLinksOrganizationIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReportLinksDelegatedFromIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReportLinksDelegatedFromIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReportLinksDelegatedFromIriTemplate;
+})();
 
 exports.default = ReportLinksDelegatedFromIriTemplate;

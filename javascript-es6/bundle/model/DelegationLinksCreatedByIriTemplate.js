@@ -41,83 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DelegationLinksCreatedByIriTemplate model module.
  * @module model/DelegationLinksCreatedByIriTemplate
  */
-var DelegationLinksCreatedByIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DelegationLinksCreatedByIriTemplate".
-   * @alias module:model/DelegationLinksCreatedByIriTemplate
-   * @class
-  
-   */
-    function DelegationLinksCreatedByIriTemplate() {
-      _classCallCheck(this, DelegationLinksCreatedByIriTemplate);
-
-      this.mapping = null;
-      this.mappingType =
-        _ContributionLinksContributorIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "DelegationLinksCreatedByIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DelegationLinksCreatedByIriTemplate } object Optional instance to populate.
-     * @return { module:model/DelegationLinksCreatedByIriTemplate } The populated "DelegationLinksCreatedByIriTemplate" instance.
+var DelegationLinksCreatedByIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DelegationLinksCreatedByIriTemplate".
+     * @alias module:model/DelegationLinksCreatedByIriTemplate
+     * @class
+    
      */
+  function DelegationLinksCreatedByIriTemplate() {
+    _classCallCheck(this, DelegationLinksCreatedByIriTemplate);
 
-    _createClass(
-      DelegationLinksCreatedByIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _ContributionLinksContributorIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "DelegationLinksCreatedByIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DelegationLinksCreatedByIriTemplate } object Optional instance to populate.
+   * @return { module:model/DelegationLinksCreatedByIriTemplate } The populated "DelegationLinksCreatedByIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/ContributionLinksContributorIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/ContributionLinksContributorIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    DelegationLinksCreatedByIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/ContributionLinksContributorIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DelegationLinksCreatedByIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ContributionLinksContributorIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DelegationLinksCreatedByIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DelegationLinksCreatedByIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DelegationLinksCreatedByIriTemplate;
+})();
 
 exports.default = DelegationLinksCreatedByIriTemplate;

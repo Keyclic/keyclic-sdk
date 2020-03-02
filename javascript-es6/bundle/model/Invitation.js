@@ -43,177 +43,172 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The Invitation model module.
  * @module model/Invitation
  */
-var Invitation =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "Invitation".
-   * @alias module:model/Invitation
-   * @class
-  
-   */
-    function Invitation() {
-      _classCallCheck(this, Invitation);
-
-      this.links = null;
-      this.createdAt = null;
-      this.expiredAt = null;
-      this.id = null;
-      this.type = null;
-      this.updatedAt = null;
-      this.linksType = _InvitationLinks.default;
-      this.expiredAtType = _InvitationDateTime.default;
-    }
-    /**
-     * Constructs a "Invitation" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/Invitation } object Optional instance to populate.
-     * @return { module:model/Invitation } The populated "Invitation" instance.
+var Invitation = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "Invitation".
+     * @alias module:model/Invitation
+     * @class
+    
      */
+  function Invitation() {
+    _classCallCheck(this, Invitation);
 
-    _createClass(
-      Invitation,
-      [
-        {
-          key: "getLinks",
+    this.links = null;
+    this.createdAt = null;
+    this.expiredAt = null;
+    this.id = null;
+    this.type = null;
+    this.updatedAt = null;
+    this.linksType = _InvitationLinks.default;
+    this.expiredAtType = _InvitationDateTime.default;
+  }
+  /**
+   * Constructs a "Invitation" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/Invitation } object Optional instance to populate.
+   * @return { module:model/Invitation } The populated "Invitation" instance.
+   */
 
-          /**
-           * @return { module:model/InvitationLinks }
-           */
-          value: function getLinks() {
-            return this.links;
-          }
-          /**
-           * @param { module:model/InvitationLinks } links
-           */
-        },
-        {
-          key: "setLinks",
-          value: function setLinks(links) {
-            this.links = links;
-          }
-          /**
-           * @return { Date }
-           */
-        },
-        {
-          key: "getCreatedAt",
-          value: function getCreatedAt() {
-            return this.createdAt;
-          }
-          /**
-           * @return { module:model/InvitationDateTime }
-           */
-        },
-        {
-          key: "getExpiredAt",
-          value: function getExpiredAt() {
-            return this.expiredAt;
-          }
-          /**
-           * @param { module:model/InvitationDateTime } expiredAt
-           */
-        },
-        {
-          key: "setExpiredAt",
-          value: function setExpiredAt(expiredAt) {
-            this.expiredAt = expiredAt;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getId",
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
-          }
-          /**
-           * @return { Date }
-           */
-        },
-        {
-          key: "getUpdatedAt",
-          value: function getUpdatedAt() {
-            return this.updatedAt;
-          }
+  _createClass(
+    Invitation,
+    [
+      {
+        key: "getLinks",
+
+        /**
+         * @return { module:model/InvitationLinks }
+         */
+        value: function getLinks() {
+          return this.links;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new Invitation();
-            }
-
-            if (data.hasOwnProperty("_links")) {
-              object.links = _ApiClient.default.convertToType(
-                data["_links"],
-                object.linksType
-              );
-            }
-
-            if (data.hasOwnProperty("createdAt")) {
-              object.createdAt = _ApiClient.default.convertToType(
-                data["createdAt"],
-                "Date"
-              );
-            }
-
-            if (data.hasOwnProperty("expiredAt")) {
-              object.expiredAt = _ApiClient.default.convertToType(
-                data["expiredAt"],
-                object.expiredAtType
-              );
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("updatedAt")) {
-              object.updatedAt = _ApiClient.default.convertToType(
-                data["updatedAt"],
-                "Date"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/InvitationLinks } links
+         */
+      },
+      {
+        key: "setLinks",
+        value: function setLinks(links) {
+          this.links = links;
         }
-      ]
-    );
+        /**
+         * @return { Date }
+         */
+      },
+      {
+        key: "getCreatedAt",
+        value: function getCreatedAt() {
+          return this.createdAt;
+        }
+        /**
+         * @return { module:model/InvitationDateTime }
+         */
+      },
+      {
+        key: "getExpiredAt",
+        value: function getExpiredAt() {
+          return this.expiredAt;
+        }
+        /**
+         * @param { module:model/InvitationDateTime } expiredAt
+         */
+      },
+      {
+        key: "setExpiredAt",
+        value: function setExpiredAt(expiredAt) {
+          this.expiredAt = expiredAt;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getId",
+        value: function getId() {
+          return this.id;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getType",
+        value: function getType() {
+          return this.type;
+        }
+        /**
+         * @return { Date }
+         */
+      },
+      {
+        key: "getUpdatedAt",
+        value: function getUpdatedAt() {
+          return this.updatedAt;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return Invitation;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new Invitation();
+          }
+
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("expiredAt")) {
+            object.expiredAt = _ApiClient.default.convertToType(
+              data["expiredAt"],
+              object.expiredAtType
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return Invitation;
+})();
 
 exports.default = Invitation;

@@ -39,107 +39,105 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The MemberEmbedded model module.
  * @module model/MemberEmbedded
  */
-var MemberEmbedded =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "MemberEmbedded".
-   * @alias module:model/MemberEmbedded
-   * @class
-  
-   */
-    function MemberEmbedded() {
-      _classCallCheck(this, MemberEmbedded);
-
-      this.availableRoles = [];
-      this.roles = [];
-      this.rolesType = _Role.default;
-    }
-    /**
-     * Constructs a "MemberEmbedded" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/MemberEmbedded } object Optional instance to populate.
-     * @return { module:model/MemberEmbedded } The populated "MemberEmbedded" instance.
+var MemberEmbedded = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "MemberEmbedded".
+     * @alias module:model/MemberEmbedded
+     * @class
+    
      */
+  function MemberEmbedded() {
+    _classCallCheck(this, MemberEmbedded);
 
-    _createClass(
-      MemberEmbedded,
-      [
-        {
-          key: "getAvailableRoles",
+    this.availableRoles = [];
+    this.roles = [];
+    this.rolesType = _Role.default;
+  }
+  /**
+   * Constructs a "MemberEmbedded" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/MemberEmbedded } object Optional instance to populate.
+   * @return { module:model/MemberEmbedded } The populated "MemberEmbedded" instance.
+   */
 
-          /**
-           * @return { Array.<String> }
-           */
-          value: function getAvailableRoles() {
-            return this.availableRoles;
-          }
-          /**
-           * @param { Array.<String> } availableRoles
-           */
-        },
-        {
-          key: "setAvailableRoles",
-          value: function setAvailableRoles(availableRoles) {
-            this.availableRoles = availableRoles;
-          }
-          /**
-           * @return { Array.<module:model/Role> }
-           */
-        },
-        {
-          key: "getRoles",
-          value: function getRoles() {
-            return this.roles;
-          }
-          /**
-           * @param { Array.<module:model/Role> } roles
-           */
-        },
-        {
-          key: "setRoles",
-          value: function setRoles(roles) {
-            this.roles = roles;
-          }
+  _createClass(
+    MemberEmbedded,
+    [
+      {
+        key: "getAvailableRoles",
+
+        /**
+         * @return { Array.<String> }
+         */
+        value: function getAvailableRoles() {
+          return this.availableRoles;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new MemberEmbedded();
-            }
-
-            if (data.hasOwnProperty("availableRoles")) {
-              object.availableRoles = _ApiClient.default.convertToType(
-                data["availableRoles"],
-                "['String']"
-              );
-            }
-
-            if (data.hasOwnProperty("roles")) {
-              object.roles = _ApiClient.default.convertToType(data["roles"], [
-                object.rolesType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<String> } availableRoles
+         */
+      },
+      {
+        key: "setAvailableRoles",
+        value: function setAvailableRoles(availableRoles) {
+          this.availableRoles = availableRoles;
         }
-      ]
-    );
+        /**
+         * @return { Array.<module:model/Role> }
+         */
+      },
+      {
+        key: "getRoles",
+        value: function getRoles() {
+          return this.roles;
+        }
+        /**
+         * @param { Array.<module:model/Role> } roles
+         */
+      },
+      {
+        key: "setRoles",
+        value: function setRoles(roles) {
+          this.roles = roles;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return MemberEmbedded;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new MemberEmbedded();
+          }
+
+          if (data.hasOwnProperty("availableRoles")) {
+            object.availableRoles = _ApiClient.default.convertToType(
+              data["availableRoles"],
+              "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("roles")) {
+            object.roles = _ApiClient.default.convertToType(data["roles"], [
+              object.rolesType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return MemberEmbedded;
+})();
 
 exports.default = MemberEmbedded;

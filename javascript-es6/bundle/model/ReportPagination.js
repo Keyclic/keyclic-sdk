@@ -132,97 +132,95 @@ function _setPrototypeOf(o, p) {
  * The ReportPagination model module.
  * @module model/ReportPagination
  */
-var ReportPagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(ReportPagination, _Pagination);
+var ReportPagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(ReportPagination, _Pagination);
 
-    /**
-   * Constructs a new "ReportPagination".
-   * @alias module:model/ReportPagination
-   * @class
-  
-   */
-    function ReportPagination() {
-      var _this;
-
-      _classCallCheck(this, ReportPagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(ReportPagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _ReportCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "ReportPagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReportPagination } object Optional instance to populate.
-     * @return { module:model/ReportPagination } The populated "ReportPagination" instance.
+  /**
+     * Constructs a new "ReportPagination".
+     * @alias module:model/ReportPagination
+     * @class
+    
      */
+  function ReportPagination() {
+    var _this;
 
-    _createClass(
-      ReportPagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, ReportPagination);
 
-          /**
-           * @return { module:model/ReportCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/ReportCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReportPagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(ReportPagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(ReportPagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _ReportCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "ReportPagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReportPagination } object Optional instance to populate.
+   * @return { module:model/ReportPagination } The populated "ReportPagination" instance.
+   */
 
-    return ReportPagination;
-  })(_Pagination2.default);
+  _createClass(
+    ReportPagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/ReportCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/ReportCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReportPagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(ReportPagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReportPagination;
+})(_Pagination2.default);
 
 exports.default = ReportPagination;

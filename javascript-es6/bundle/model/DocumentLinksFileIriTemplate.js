@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DocumentLinksFileIriTemplate model module.
  * @module model/DocumentLinksFileIriTemplate
  */
-var DocumentLinksFileIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DocumentLinksFileIriTemplate".
-   * @alias module:model/DocumentLinksFileIriTemplate
-   * @class
-  
-   */
-    function DocumentLinksFileIriTemplate() {
-      _classCallCheck(this, DocumentLinksFileIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _DocumentLinksFileIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "DocumentLinksFileIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DocumentLinksFileIriTemplate } object Optional instance to populate.
-     * @return { module:model/DocumentLinksFileIriTemplate } The populated "DocumentLinksFileIriTemplate" instance.
+var DocumentLinksFileIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DocumentLinksFileIriTemplate".
+     * @alias module:model/DocumentLinksFileIriTemplate
+     * @class
+    
      */
+  function DocumentLinksFileIriTemplate() {
+    _classCallCheck(this, DocumentLinksFileIriTemplate);
 
-    _createClass(
-      DocumentLinksFileIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _DocumentLinksFileIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "DocumentLinksFileIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DocumentLinksFileIriTemplate } object Optional instance to populate.
+   * @return { module:model/DocumentLinksFileIriTemplate } The populated "DocumentLinksFileIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/DocumentLinksFileIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/DocumentLinksFileIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    DocumentLinksFileIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/DocumentLinksFileIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DocumentLinksFileIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/DocumentLinksFileIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DocumentLinksFileIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DocumentLinksFileIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DocumentLinksFileIriTemplate;
+})();
 
 exports.default = DocumentLinksFileIriTemplate;

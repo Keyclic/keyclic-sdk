@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The KnowledgeBaseLinks model module.
  * @module model/KnowledgeBaseLinks
  */
-var KnowledgeBaseLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "KnowledgeBaseLinks".
-   * @alias module:model/KnowledgeBaseLinks
-   * @class
-  
-   */
-    function KnowledgeBaseLinks() {
-      _classCallCheck(this, KnowledgeBaseLinks);
-
-      this.self = null;
-      this.selfType = _KnowledgeBaseLinksSelf.default;
-    }
-    /**
-     * Constructs a "KnowledgeBaseLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/KnowledgeBaseLinks } object Optional instance to populate.
-     * @return { module:model/KnowledgeBaseLinks } The populated "KnowledgeBaseLinks" instance.
+var KnowledgeBaseLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "KnowledgeBaseLinks".
+     * @alias module:model/KnowledgeBaseLinks
+     * @class
+    
      */
+  function KnowledgeBaseLinks() {
+    _classCallCheck(this, KnowledgeBaseLinks);
 
-    _createClass(
-      KnowledgeBaseLinks,
-      [
-        {
-          key: "getSelf",
+    this.self = null;
+    this.selfType = _KnowledgeBaseLinksSelf.default;
+  }
+  /**
+   * Constructs a "KnowledgeBaseLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/KnowledgeBaseLinks } object Optional instance to populate.
+   * @return { module:model/KnowledgeBaseLinks } The populated "KnowledgeBaseLinks" instance.
+   */
 
-          /**
-           * @return { module:model/KnowledgeBaseLinksSelf }
-           */
-          value: function getSelf() {
-            return this.self;
-          }
-          /**
-           * @param { module:model/KnowledgeBaseLinksSelf } self
-           */
-        },
-        {
-          key: "setSelf",
-          value: function setSelf(self) {
-            this.self = self;
-          }
+  _createClass(
+    KnowledgeBaseLinks,
+    [
+      {
+        key: "getSelf",
+
+        /**
+         * @return { module:model/KnowledgeBaseLinksSelf }
+         */
+        value: function getSelf() {
+          return this.self;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new KnowledgeBaseLinks();
-            }
-
-            if (data.hasOwnProperty("self")) {
-              object.self = _ApiClient.default.convertToType(
-                data["self"],
-                object.selfType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/KnowledgeBaseLinksSelf } self
+         */
+      },
+      {
+        key: "setSelf",
+        value: function setSelf(self) {
+          this.self = self;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return KnowledgeBaseLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new KnowledgeBaseLinks();
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return KnowledgeBaseLinks;
+})();
 
 exports.default = KnowledgeBaseLinks;

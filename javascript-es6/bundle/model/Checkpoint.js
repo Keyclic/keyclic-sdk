@@ -39,125 +39,123 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The Checkpoint model module.
  * @module model/Checkpoint
  */
-var Checkpoint =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "Checkpoint".
-   * @alias module:model/Checkpoint
-   * @class
-  
-   */
-    function Checkpoint() {
-      _classCallCheck(this, Checkpoint);
-
-      this.createdAt = null;
-      this.state = [];
-      this.links = null;
-      this.linksType = _CheckpointLinks.default;
-    }
-    /**
-     * Constructs a "Checkpoint" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/Checkpoint } object Optional instance to populate.
-     * @return { module:model/Checkpoint } The populated "Checkpoint" instance.
+var Checkpoint = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "Checkpoint".
+     * @alias module:model/Checkpoint
+     * @class
+    
      */
+  function Checkpoint() {
+    _classCallCheck(this, Checkpoint);
 
-    _createClass(
-      Checkpoint,
-      [
-        {
-          key: "getCreatedAt",
+    this.createdAt = null;
+    this.state = [];
+    this.links = null;
+    this.linksType = _CheckpointLinks.default;
+  }
+  /**
+   * Constructs a "Checkpoint" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/Checkpoint } object Optional instance to populate.
+   * @return { module:model/Checkpoint } The populated "Checkpoint" instance.
+   */
 
-          /**
-           * @return { Date }
-           */
-          value: function getCreatedAt() {
-            return this.createdAt;
-          }
-          /**
-           * @return { Array.<String> }
-           */
-        },
-        {
-          key: "getState",
-          value: function getState() {
-            return this.state;
-          }
-          /**
-           * @param { Array.<String> } state
-           */
-        },
-        {
-          key: "setState",
-          value: function setState(state) {
-            this.state = state;
-          }
-          /**
-           * @return { module:model/CheckpointLinks }
-           */
-        },
-        {
-          key: "getLinks",
-          value: function getLinks() {
-            return this.links;
-          }
-          /**
-           * @param { module:model/CheckpointLinks } links
-           */
-        },
-        {
-          key: "setLinks",
-          value: function setLinks(links) {
-            this.links = links;
-          }
+  _createClass(
+    Checkpoint,
+    [
+      {
+        key: "getCreatedAt",
+
+        /**
+         * @return { Date }
+         */
+        value: function getCreatedAt() {
+          return this.createdAt;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new Checkpoint();
-            }
-
-            if (data.hasOwnProperty("createdAt")) {
-              object.createdAt = _ApiClient.default.convertToType(
-                data["createdAt"],
-                "Date"
-              );
-            }
-
-            if (data.hasOwnProperty("state")) {
-              object.state = _ApiClient.default.convertToType(
-                data["state"],
-                "['String']"
-              );
-            }
-
-            if (data.hasOwnProperty("_links")) {
-              object.links = _ApiClient.default.convertToType(
-                data["_links"],
-                object.linksType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @return { Array.<String> }
+         */
+      },
+      {
+        key: "getState",
+        value: function getState() {
+          return this.state;
         }
-      ]
-    );
+        /**
+         * @param { Array.<String> } state
+         */
+      },
+      {
+        key: "setState",
+        value: function setState(state) {
+          this.state = state;
+        }
+        /**
+         * @return { module:model/CheckpointLinks }
+         */
+      },
+      {
+        key: "getLinks",
+        value: function getLinks() {
+          return this.links;
+        }
+        /**
+         * @param { module:model/CheckpointLinks } links
+         */
+      },
+      {
+        key: "setLinks",
+        value: function setLinks(links) {
+          this.links = links;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return Checkpoint;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new Checkpoint();
+          }
+
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("state")) {
+            object.state = _ApiClient.default.convertToType(
+              data["state"],
+              "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return Checkpoint;
+})();
 
 exports.default = Checkpoint;

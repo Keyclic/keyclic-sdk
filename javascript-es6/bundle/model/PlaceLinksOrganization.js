@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PlaceLinksOrganization model module.
  * @module model/PlaceLinksOrganization
  */
-var PlaceLinksOrganization =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PlaceLinksOrganization".
-   * @alias module:model/PlaceLinksOrganization
-   * @class
-  
-   */
-    function PlaceLinksOrganization() {
-      _classCallCheck(this, PlaceLinksOrganization);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _PlaceLinksOrganizationIriTemplate.default;
-    }
-    /**
-     * Constructs a "PlaceLinksOrganization" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PlaceLinksOrganization } object Optional instance to populate.
-     * @return { module:model/PlaceLinksOrganization } The populated "PlaceLinksOrganization" instance.
+var PlaceLinksOrganization = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PlaceLinksOrganization".
+     * @alias module:model/PlaceLinksOrganization
+     * @class
+    
      */
+  function PlaceLinksOrganization() {
+    _classCallCheck(this, PlaceLinksOrganization);
 
-    _createClass(
-      PlaceLinksOrganization,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _PlaceLinksOrganizationIriTemplate.default;
+  }
+  /**
+   * Constructs a "PlaceLinksOrganization" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PlaceLinksOrganization } object Optional instance to populate.
+   * @return { module:model/PlaceLinksOrganization } The populated "PlaceLinksOrganization" instance.
+   */
 
-          /**
-           * Gets The URI of the organization associated to the given place.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the organization associated to the given place.
-           * @param { String } href The URI of the organization associated to the given place.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/PlaceLinksOrganizationIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/PlaceLinksOrganizationIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    PlaceLinksOrganization,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the organization associated to the given place.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PlaceLinksOrganization();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the organization associated to the given place.
+         * @param { String } href The URI of the organization associated to the given place.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/PlaceLinksOrganizationIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/PlaceLinksOrganizationIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PlaceLinksOrganization;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PlaceLinksOrganization();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PlaceLinksOrganization;
+})();
 
 exports.default = PlaceLinksOrganization;

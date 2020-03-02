@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The FeedbackLinksReporter model module.
  * @module model/FeedbackLinksReporter
  */
-var FeedbackLinksReporter =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "FeedbackLinksReporter".
-   * @alias module:model/FeedbackLinksReporter
-   * @class
-  
-   */
-    function FeedbackLinksReporter() {
-      _classCallCheck(this, FeedbackLinksReporter);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _FeedbackLinksReporterIriTemplate.default;
-    }
-    /**
-     * Constructs a "FeedbackLinksReporter" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FeedbackLinksReporter } object Optional instance to populate.
-     * @return { module:model/FeedbackLinksReporter } The populated "FeedbackLinksReporter" instance.
+var FeedbackLinksReporter = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "FeedbackLinksReporter".
+     * @alias module:model/FeedbackLinksReporter
+     * @class
+    
      */
+  function FeedbackLinksReporter() {
+    _classCallCheck(this, FeedbackLinksReporter);
 
-    _createClass(
-      FeedbackLinksReporter,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _FeedbackLinksReporterIriTemplate.default;
+  }
+  /**
+   * Constructs a "FeedbackLinksReporter" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/FeedbackLinksReporter } object Optional instance to populate.
+   * @return { module:model/FeedbackLinksReporter } The populated "FeedbackLinksReporter" instance.
+   */
 
-          /**
-           * Gets The URI of the reporter associated to the given feedback.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the reporter associated to the given feedback.
-           * @param { String } href The URI of the reporter associated to the given feedback.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/FeedbackLinksReporterIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/FeedbackLinksReporterIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    FeedbackLinksReporter,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the reporter associated to the given feedback.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new FeedbackLinksReporter();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the reporter associated to the given feedback.
+         * @param { String } href The URI of the reporter associated to the given feedback.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/FeedbackLinksReporterIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/FeedbackLinksReporterIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return FeedbackLinksReporter;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new FeedbackLinksReporter();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return FeedbackLinksReporter;
+})();
 
 exports.default = FeedbackLinksReporter;

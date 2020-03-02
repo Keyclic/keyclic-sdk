@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OrganizationPatchPreferencesReference model module.
  * @module model/OrganizationPatchPreferencesReference
  */
-var OrganizationPatchPreferencesReference =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OrganizationPatchPreferencesReference".
-   * @alias module:model/OrganizationPatchPreferencesReference
-   * @class
-  
-   */
-    function OrganizationPatchPreferencesReference() {
-      _classCallCheck(this, OrganizationPatchPreferencesReference);
-
-      this.prefix = null;
-    }
-    /**
-     * Constructs a "OrganizationPatchPreferencesReference" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OrganizationPatchPreferencesReference } object Optional instance to populate.
-     * @return { module:model/OrganizationPatchPreferencesReference } The populated "OrganizationPatchPreferencesReference" instance.
+var OrganizationPatchPreferencesReference = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OrganizationPatchPreferencesReference".
+     * @alias module:model/OrganizationPatchPreferencesReference
+     * @class
+    
      */
+  function OrganizationPatchPreferencesReference() {
+    _classCallCheck(this, OrganizationPatchPreferencesReference);
 
-    _createClass(
-      OrganizationPatchPreferencesReference,
-      [
-        {
-          key: "getPrefix",
+    this.prefix = null;
+  }
+  /**
+   * Constructs a "OrganizationPatchPreferencesReference" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OrganizationPatchPreferencesReference } object Optional instance to populate.
+   * @return { module:model/OrganizationPatchPreferencesReference } The populated "OrganizationPatchPreferencesReference" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getPrefix() {
-            return this.prefix;
-          }
-          /**
-           * @param { String } prefix
-           */
-        },
-        {
-          key: "setPrefix",
-          value: function setPrefix(prefix) {
-            this.prefix = prefix;
-          }
+  _createClass(
+    OrganizationPatchPreferencesReference,
+    [
+      {
+        key: "getPrefix",
+
+        /**
+         * @return { String }
+         */
+        value: function getPrefix() {
+          return this.prefix;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OrganizationPatchPreferencesReference();
-            }
-
-            if (data.hasOwnProperty("prefix")) {
-              object.prefix = _ApiClient.default.convertToType(
-                data["prefix"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } prefix
+         */
+      },
+      {
+        key: "setPrefix",
+        value: function setPrefix(prefix) {
+          this.prefix = prefix;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OrganizationPatchPreferencesReference;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OrganizationPatchPreferencesReference();
+          }
+
+          if (data.hasOwnProperty("prefix")) {
+            object.prefix = _ApiClient.default.convertToType(
+              data["prefix"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OrganizationPatchPreferencesReference;
+})();
 
 exports.default = OrganizationPatchPreferencesReference;

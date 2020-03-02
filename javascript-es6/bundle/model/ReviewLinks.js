@@ -45,136 +45,134 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReviewLinks model module.
  * @module model/ReviewLinks
  */
-var ReviewLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReviewLinks".
-   * @alias module:model/ReviewLinks
-   * @class
-  
-   */
-    function ReviewLinks() {
-      _classCallCheck(this, ReviewLinks);
-
-      this.author = null;
-      this.itemReviewed = null;
-      this.self = null;
-      this.authorType = _ReviewLinksAuthor.default;
-      this.itemReviewedType = _ReviewLinksItemReviewed.default;
-      this.selfType = _ReviewLinksSelf.default;
-    }
-    /**
-     * Constructs a "ReviewLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReviewLinks } object Optional instance to populate.
-     * @return { module:model/ReviewLinks } The populated "ReviewLinks" instance.
+var ReviewLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReviewLinks".
+     * @alias module:model/ReviewLinks
+     * @class
+    
      */
+  function ReviewLinks() {
+    _classCallCheck(this, ReviewLinks);
 
-    _createClass(
-      ReviewLinks,
-      [
-        {
-          key: "getAuthor",
+    this.author = null;
+    this.itemReviewed = null;
+    this.self = null;
+    this.authorType = _ReviewLinksAuthor.default;
+    this.itemReviewedType = _ReviewLinksItemReviewed.default;
+    this.selfType = _ReviewLinksSelf.default;
+  }
+  /**
+   * Constructs a "ReviewLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReviewLinks } object Optional instance to populate.
+   * @return { module:model/ReviewLinks } The populated "ReviewLinks" instance.
+   */
 
-          /**
-           * @return { module:model/ReviewLinksAuthor }
-           */
-          value: function getAuthor() {
-            return this.author;
-          }
-          /**
-           * @param { module:model/ReviewLinksAuthor } author
-           */
-        },
-        {
-          key: "setAuthor",
-          value: function setAuthor(author) {
-            this.author = author;
-          }
-          /**
-           * @return { module:model/ReviewLinksItemReviewed }
-           */
-        },
-        {
-          key: "getItemReviewed",
-          value: function getItemReviewed() {
-            return this.itemReviewed;
-          }
-          /**
-           * @param { module:model/ReviewLinksItemReviewed } itemReviewed
-           */
-        },
-        {
-          key: "setItemReviewed",
-          value: function setItemReviewed(itemReviewed) {
-            this.itemReviewed = itemReviewed;
-          }
-          /**
-           * @return { module:model/ReviewLinksSelf }
-           */
-        },
-        {
-          key: "getSelf",
-          value: function getSelf() {
-            return this.self;
-          }
-          /**
-           * @param { module:model/ReviewLinksSelf } self
-           */
-        },
-        {
-          key: "setSelf",
-          value: function setSelf(self) {
-            this.self = self;
-          }
+  _createClass(
+    ReviewLinks,
+    [
+      {
+        key: "getAuthor",
+
+        /**
+         * @return { module:model/ReviewLinksAuthor }
+         */
+        value: function getAuthor() {
+          return this.author;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReviewLinks();
-            }
-
-            if (data.hasOwnProperty("author")) {
-              object.author = _ApiClient.default.convertToType(
-                data["author"],
-                object.authorType
-              );
-            }
-
-            if (data.hasOwnProperty("itemReviewed")) {
-              object.itemReviewed = _ApiClient.default.convertToType(
-                data["itemReviewed"],
-                object.itemReviewedType
-              );
-            }
-
-            if (data.hasOwnProperty("self")) {
-              object.self = _ApiClient.default.convertToType(
-                data["self"],
-                object.selfType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ReviewLinksAuthor } author
+         */
+      },
+      {
+        key: "setAuthor",
+        value: function setAuthor(author) {
+          this.author = author;
         }
-      ]
-    );
+        /**
+         * @return { module:model/ReviewLinksItemReviewed }
+         */
+      },
+      {
+        key: "getItemReviewed",
+        value: function getItemReviewed() {
+          return this.itemReviewed;
+        }
+        /**
+         * @param { module:model/ReviewLinksItemReviewed } itemReviewed
+         */
+      },
+      {
+        key: "setItemReviewed",
+        value: function setItemReviewed(itemReviewed) {
+          this.itemReviewed = itemReviewed;
+        }
+        /**
+         * @return { module:model/ReviewLinksSelf }
+         */
+      },
+      {
+        key: "getSelf",
+        value: function getSelf() {
+          return this.self;
+        }
+        /**
+         * @param { module:model/ReviewLinksSelf } self
+         */
+      },
+      {
+        key: "setSelf",
+        value: function setSelf(self) {
+          this.self = self;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReviewLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReviewLinks();
+          }
+
+          if (data.hasOwnProperty("author")) {
+            object.author = _ApiClient.default.convertToType(
+              data["author"],
+              object.authorType
+            );
+          }
+
+          if (data.hasOwnProperty("itemReviewed")) {
+            object.itemReviewed = _ApiClient.default.convertToType(
+              data["itemReviewed"],
+              object.itemReviewedType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReviewLinks;
+})();
 
 exports.default = ReviewLinks;

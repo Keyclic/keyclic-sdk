@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ApplicationLinksSelfIriTemplateMapping model module.
  * @module model/ApplicationLinksSelfIriTemplateMapping
  */
-var ApplicationLinksSelfIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ApplicationLinksSelfIriTemplateMapping".
-   * @alias module:model/ApplicationLinksSelfIriTemplateMapping
-   * @class
-  
-   */
-    function ApplicationLinksSelfIriTemplateMapping() {
-      _classCallCheck(this, ApplicationLinksSelfIriTemplateMapping);
-
-      this.application = null;
-    }
-    /**
-     * Constructs a "ApplicationLinksSelfIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ApplicationLinksSelfIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/ApplicationLinksSelfIriTemplateMapping } The populated "ApplicationLinksSelfIriTemplateMapping" instance.
+var ApplicationLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ApplicationLinksSelfIriTemplateMapping".
+     * @alias module:model/ApplicationLinksSelfIriTemplateMapping
+     * @class
+    
      */
+  function ApplicationLinksSelfIriTemplateMapping() {
+    _classCallCheck(this, ApplicationLinksSelfIriTemplateMapping);
 
-    _createClass(
-      ApplicationLinksSelfIriTemplateMapping,
-      [
-        {
-          key: "getApplication",
+    this.application = null;
+  }
+  /**
+   * Constructs a "ApplicationLinksSelfIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ApplicationLinksSelfIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/ApplicationLinksSelfIriTemplateMapping } The populated "ApplicationLinksSelfIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getApplication() {
-            return this.application;
-          }
-          /**
-           * @param { String } application
-           */
-        },
-        {
-          key: "setApplication",
-          value: function setApplication(application) {
-            this.application = application;
-          }
+  _createClass(
+    ApplicationLinksSelfIriTemplateMapping,
+    [
+      {
+        key: "getApplication",
+
+        /**
+         * @return { String }
+         */
+        value: function getApplication() {
+          return this.application;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ApplicationLinksSelfIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("application")) {
-              object.application = _ApiClient.default.convertToType(
-                data["application"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } application
+         */
+      },
+      {
+        key: "setApplication",
+        value: function setApplication(application) {
+          this.application = application;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ApplicationLinksSelfIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ApplicationLinksSelfIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("application")) {
+            object.application = _ApiClient.default.convertToType(
+              data["application"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ApplicationLinksSelfIriTemplateMapping;
+})();
 
 exports.default = ApplicationLinksSelfIriTemplateMapping;

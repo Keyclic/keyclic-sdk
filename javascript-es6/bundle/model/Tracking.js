@@ -43,161 +43,159 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The Tracking model module.
  * @module model/Tracking
  */
-var Tracking =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "Tracking".
-   * @alias module:model/Tracking
-   * @class
-  
-   */
-    function Tracking() {
-      _classCallCheck(this, Tracking);
-
-      this.checkpoints = [];
-      this.progression = null;
-      this.state = null;
-      this.time = null;
-      this.checkpointsType = _Checkpoint.default;
-      this.progressionType = _TrackingProgression.default;
-    }
-    /**
-     * Constructs a "Tracking" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/Tracking } object Optional instance to populate.
-     * @return { module:model/Tracking } The populated "Tracking" instance.
+var Tracking = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "Tracking".
+     * @alias module:model/Tracking
+     * @class
+    
      */
+  function Tracking() {
+    _classCallCheck(this, Tracking);
 
-    _createClass(
-      Tracking,
-      [
-        {
-          key: "getCheckpoints",
+    this.checkpoints = [];
+    this.progression = null;
+    this.state = null;
+    this.time = null;
+    this.checkpointsType = _Checkpoint.default;
+    this.progressionType = _TrackingProgression.default;
+  }
+  /**
+   * Constructs a "Tracking" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/Tracking } object Optional instance to populate.
+   * @return { module:model/Tracking } The populated "Tracking" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Checkpoint> }
-           */
-          value: function getCheckpoints() {
-            return this.checkpoints;
-          }
-          /**
-           * @param { Array.<module:model/Checkpoint> } checkpoints
-           */
-        },
-        {
-          key: "setCheckpoints",
-          value: function setCheckpoints(checkpoints) {
-            this.checkpoints = checkpoints;
-          }
-          /**
-           * @return { module:model/TrackingProgression }
-           */
-        },
-        {
-          key: "getProgression",
-          value: function getProgression() {
-            return this.progression;
-          }
-          /**
-           * @param { module:model/TrackingProgression } progression
-           */
-        },
-        {
-          key: "setProgression",
-          value: function setProgression(progression) {
-            this.progression = progression;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getState",
-          value: function getState() {
-            return this.state;
-          }
-          /**
-           * @param { String } state
-           */
-        },
-        {
-          key: "setState",
-          value: function setState(state) {
-            this.state = state;
-          }
-          /**
-           * @return { Number }
-           */
-        },
-        {
-          key: "getTime",
-          value: function getTime() {
-            return this.time;
-          }
-          /**
-           * @param { Number } time
-           */
-        },
-        {
-          key: "setTime",
-          value: function setTime(time) {
-            this.time = time;
-          }
+  _createClass(
+    Tracking,
+    [
+      {
+        key: "getCheckpoints",
+
+        /**
+         * @return { Array.<module:model/Checkpoint> }
+         */
+        value: function getCheckpoints() {
+          return this.checkpoints;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new Tracking();
-            }
-
-            if (data.hasOwnProperty("checkpoints")) {
-              object.checkpoints = _ApiClient.default.convertToType(
-                data["checkpoints"],
-                [object.checkpointsType]
-              );
-            }
-
-            if (data.hasOwnProperty("progression")) {
-              object.progression = _ApiClient.default.convertToType(
-                data["progression"],
-                object.progressionType
-              );
-            }
-
-            if (data.hasOwnProperty("state")) {
-              object.state = _ApiClient.default.convertToType(
-                data["state"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("time")) {
-              object.time = _ApiClient.default.convertToType(
-                data["time"],
-                "Number"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Checkpoint> } checkpoints
+         */
+      },
+      {
+        key: "setCheckpoints",
+        value: function setCheckpoints(checkpoints) {
+          this.checkpoints = checkpoints;
         }
-      ]
-    );
+        /**
+         * @return { module:model/TrackingProgression }
+         */
+      },
+      {
+        key: "getProgression",
+        value: function getProgression() {
+          return this.progression;
+        }
+        /**
+         * @param { module:model/TrackingProgression } progression
+         */
+      },
+      {
+        key: "setProgression",
+        value: function setProgression(progression) {
+          this.progression = progression;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getState",
+        value: function getState() {
+          return this.state;
+        }
+        /**
+         * @param { String } state
+         */
+      },
+      {
+        key: "setState",
+        value: function setState(state) {
+          this.state = state;
+        }
+        /**
+         * @return { Number }
+         */
+      },
+      {
+        key: "getTime",
+        value: function getTime() {
+          return this.time;
+        }
+        /**
+         * @param { Number } time
+         */
+      },
+      {
+        key: "setTime",
+        value: function setTime(time) {
+          this.time = time;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return Tracking;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new Tracking();
+          }
+
+          if (data.hasOwnProperty("checkpoints")) {
+            object.checkpoints = _ApiClient.default.convertToType(
+              data["checkpoints"],
+              [object.checkpointsType]
+            );
+          }
+
+          if (data.hasOwnProperty("progression")) {
+            object.progression = _ApiClient.default.convertToType(
+              data["progression"],
+              object.progressionType
+            );
+          }
+
+          if (data.hasOwnProperty("state")) {
+            object.state = _ApiClient.default.convertToType(
+              data["state"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("time")) {
+            object.time = _ApiClient.default.convertToType(
+              data["time"],
+              "Number"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return Tracking;
+})();
 
 exports.default = Tracking;

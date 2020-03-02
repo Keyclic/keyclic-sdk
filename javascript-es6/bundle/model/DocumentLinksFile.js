@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DocumentLinksFile model module.
  * @module model/DocumentLinksFile
  */
-var DocumentLinksFile =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DocumentLinksFile".
-   * @alias module:model/DocumentLinksFile
-   * @class
-  
-   */
-    function DocumentLinksFile() {
-      _classCallCheck(this, DocumentLinksFile);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _DocumentLinksFileIriTemplate.default;
-    }
-    /**
-     * Constructs a "DocumentLinksFile" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DocumentLinksFile } object Optional instance to populate.
-     * @return { module:model/DocumentLinksFile } The populated "DocumentLinksFile" instance.
+var DocumentLinksFile = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DocumentLinksFile".
+     * @alias module:model/DocumentLinksFile
+     * @class
+    
      */
+  function DocumentLinksFile() {
+    _classCallCheck(this, DocumentLinksFile);
 
-    _createClass(
-      DocumentLinksFile,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _DocumentLinksFileIriTemplate.default;
+  }
+  /**
+   * Constructs a "DocumentLinksFile" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DocumentLinksFile } object Optional instance to populate.
+   * @return { module:model/DocumentLinksFile } The populated "DocumentLinksFile" instance.
+   */
 
-          /**
-           * Gets The URI of the file associated to the given document.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the file associated to the given document.
-           * @param { String } href The URI of the file associated to the given document.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/DocumentLinksFileIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/DocumentLinksFileIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    DocumentLinksFile,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the file associated to the given document.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DocumentLinksFile();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the file associated to the given document.
+         * @param { String } href The URI of the file associated to the given document.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/DocumentLinksFileIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/DocumentLinksFileIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DocumentLinksFile;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DocumentLinksFile();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DocumentLinksFile;
+})();
 
 exports.default = DocumentLinksFile;

@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DelegationLinksSelf model module.
  * @module model/DelegationLinksSelf
  */
-var DelegationLinksSelf =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DelegationLinksSelf".
-   * @alias module:model/DelegationLinksSelf
-   * @class
-  
-   */
-    function DelegationLinksSelf() {
-      _classCallCheck(this, DelegationLinksSelf);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _DelegationLinksSelfIriTemplate.default;
-    }
-    /**
-     * Constructs a "DelegationLinksSelf" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DelegationLinksSelf } object Optional instance to populate.
-     * @return { module:model/DelegationLinksSelf } The populated "DelegationLinksSelf" instance.
+var DelegationLinksSelf = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DelegationLinksSelf".
+     * @alias module:model/DelegationLinksSelf
+     * @class
+    
      */
+  function DelegationLinksSelf() {
+    _classCallCheck(this, DelegationLinksSelf);
 
-    _createClass(
-      DelegationLinksSelf,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _DelegationLinksSelfIriTemplate.default;
+  }
+  /**
+   * Constructs a "DelegationLinksSelf" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DelegationLinksSelf } object Optional instance to populate.
+   * @return { module:model/DelegationLinksSelf } The populated "DelegationLinksSelf" instance.
+   */
 
-          /**
-           * Gets The URI of the self associated to the given delegation.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the self associated to the given delegation.
-           * @param { String } href The URI of the self associated to the given delegation.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/DelegationLinksSelfIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/DelegationLinksSelfIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    DelegationLinksSelf,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the self associated to the given delegation.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DelegationLinksSelf();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the self associated to the given delegation.
+         * @param { String } href The URI of the self associated to the given delegation.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/DelegationLinksSelfIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/DelegationLinksSelfIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DelegationLinksSelf;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DelegationLinksSelf();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DelegationLinksSelf;
+})();
 
 exports.default = DelegationLinksSelf;

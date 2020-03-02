@@ -37,133 +37,131 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PlacePatch model module.
  * @module model/PlacePatch
  */
-var PlacePatch =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PlacePatch".
-   * @alias module:model/PlacePatch
-   * @class
-  
-   */
-    function PlacePatch() {
-      _classCallCheck(this, PlacePatch);
-
-      this.branchCode = null;
-      this.description = null;
-      this.name = null;
-    }
-    /**
-     * Constructs a "PlacePatch" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PlacePatch } object Optional instance to populate.
-     * @return { module:model/PlacePatch } The populated "PlacePatch" instance.
+var PlacePatch = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PlacePatch".
+     * @alias module:model/PlacePatch
+     * @class
+    
      */
+  function PlacePatch() {
+    _classCallCheck(this, PlacePatch);
 
-    _createClass(
-      PlacePatch,
-      [
-        {
-          key: "getBranchCode",
+    this.branchCode = null;
+    this.description = null;
+    this.name = null;
+  }
+  /**
+   * Constructs a "PlacePatch" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PlacePatch } object Optional instance to populate.
+   * @return { module:model/PlacePatch } The populated "PlacePatch" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getBranchCode() {
-            return this.branchCode;
-          }
-          /**
-           * @param { String } branchCode
-           */
-        },
-        {
-          key: "setBranchCode",
-          value: function setBranchCode(branchCode) {
-            this.branchCode = branchCode;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getDescription",
-          value: function getDescription() {
-            return this.description;
-          }
-          /**
-           * @param { String } description
-           */
-        },
-        {
-          key: "setDescription",
-          value: function setDescription(description) {
-            this.description = description;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getName",
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
+  _createClass(
+    PlacePatch,
+    [
+      {
+        key: "getBranchCode",
+
+        /**
+         * @return { String }
+         */
+        value: function getBranchCode() {
+          return this.branchCode;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PlacePatch();
-            }
-
-            if (data.hasOwnProperty("branchCode")) {
-              object.branchCode = _ApiClient.default.convertToType(
-                data["branchCode"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("description")) {
-              object.description = _ApiClient.default.convertToType(
-                data["description"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } branchCode
+         */
+      },
+      {
+        key: "setBranchCode",
+        value: function setBranchCode(branchCode) {
+          this.branchCode = branchCode;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getDescription",
+        value: function getDescription() {
+          return this.description;
+        }
+        /**
+         * @param { String } description
+         */
+      },
+      {
+        key: "setDescription",
+        value: function setDescription(description) {
+          this.description = description;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getName",
+        value: function getName() {
+          return this.name;
+        }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PlacePatch;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PlacePatch();
+          }
+
+          if (data.hasOwnProperty("branchCode")) {
+            object.branchCode = _ApiClient.default.convertToType(
+              data["branchCode"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PlacePatch;
+})();
 
 exports.default = PlacePatch;

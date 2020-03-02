@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ContributionCollection model module.
  * @module model/ContributionCollection
  */
-var ContributionCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ContributionCollection".
-   * @alias module:model/ContributionCollection
-   * @class
-  
-   */
-    function ContributionCollection() {
-      _classCallCheck(this, ContributionCollection);
-
-      this.items = [];
-      this.itemsType = _Contribution.default;
-    }
-    /**
-     * Constructs a "ContributionCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ContributionCollection } object Optional instance to populate.
-     * @return { module:model/ContributionCollection } The populated "ContributionCollection" instance.
+var ContributionCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ContributionCollection".
+     * @alias module:model/ContributionCollection
+     * @class
+    
      */
+  function ContributionCollection() {
+    _classCallCheck(this, ContributionCollection);
 
-    _createClass(
-      ContributionCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _Contribution.default;
+  }
+  /**
+   * Constructs a "ContributionCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ContributionCollection } object Optional instance to populate.
+   * @return { module:model/ContributionCollection } The populated "ContributionCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Contribution> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/Contribution> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    ContributionCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/Contribution> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ContributionCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Contribution> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ContributionCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ContributionCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ContributionCollection;
+})();
 
 exports.default = ContributionCollection;

@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PublicationLinksFeedIriTemplate model module.
  * @module model/PublicationLinksFeedIriTemplate
  */
-var PublicationLinksFeedIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PublicationLinksFeedIriTemplate".
-   * @alias module:model/PublicationLinksFeedIriTemplate
-   * @class
-  
-   */
-    function PublicationLinksFeedIriTemplate() {
-      _classCallCheck(this, PublicationLinksFeedIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _OccupantLinksPlaceIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "PublicationLinksFeedIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PublicationLinksFeedIriTemplate } object Optional instance to populate.
-     * @return { module:model/PublicationLinksFeedIriTemplate } The populated "PublicationLinksFeedIriTemplate" instance.
+var PublicationLinksFeedIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PublicationLinksFeedIriTemplate".
+     * @alias module:model/PublicationLinksFeedIriTemplate
+     * @class
+    
      */
+  function PublicationLinksFeedIriTemplate() {
+    _classCallCheck(this, PublicationLinksFeedIriTemplate);
 
-    _createClass(
-      PublicationLinksFeedIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _OccupantLinksPlaceIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "PublicationLinksFeedIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PublicationLinksFeedIriTemplate } object Optional instance to populate.
+   * @return { module:model/PublicationLinksFeedIriTemplate } The populated "PublicationLinksFeedIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/OccupantLinksPlaceIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/OccupantLinksPlaceIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    PublicationLinksFeedIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/OccupantLinksPlaceIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PublicationLinksFeedIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/OccupantLinksPlaceIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PublicationLinksFeedIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PublicationLinksFeedIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PublicationLinksFeedIriTemplate;
+})();
 
 exports.default = PublicationLinksFeedIriTemplate;

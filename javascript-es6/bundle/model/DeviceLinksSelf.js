@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DeviceLinksSelf model module.
  * @module model/DeviceLinksSelf
  */
-var DeviceLinksSelf =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DeviceLinksSelf".
-   * @alias module:model/DeviceLinksSelf
-   * @class
-  
-   */
-    function DeviceLinksSelf() {
-      _classCallCheck(this, DeviceLinksSelf);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _DeviceLinksSelfIriTemplate.default;
-    }
-    /**
-     * Constructs a "DeviceLinksSelf" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DeviceLinksSelf } object Optional instance to populate.
-     * @return { module:model/DeviceLinksSelf } The populated "DeviceLinksSelf" instance.
+var DeviceLinksSelf = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DeviceLinksSelf".
+     * @alias module:model/DeviceLinksSelf
+     * @class
+    
      */
+  function DeviceLinksSelf() {
+    _classCallCheck(this, DeviceLinksSelf);
 
-    _createClass(
-      DeviceLinksSelf,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _DeviceLinksSelfIriTemplate.default;
+  }
+  /**
+   * Constructs a "DeviceLinksSelf" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DeviceLinksSelf } object Optional instance to populate.
+   * @return { module:model/DeviceLinksSelf } The populated "DeviceLinksSelf" instance.
+   */
 
-          /**
-           * Gets The URI of the self associated to the given device.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the self associated to the given device.
-           * @param { String } href The URI of the self associated to the given device.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/DeviceLinksSelfIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/DeviceLinksSelfIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    DeviceLinksSelf,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the self associated to the given device.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DeviceLinksSelf();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the self associated to the given device.
+         * @param { String } href The URI of the self associated to the given device.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/DeviceLinksSelfIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/DeviceLinksSelfIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DeviceLinksSelf;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DeviceLinksSelf();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DeviceLinksSelf;
+})();
 
 exports.default = DeviceLinksSelf;

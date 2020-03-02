@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DocumentLinksCreatedBy model module.
  * @module model/DocumentLinksCreatedBy
  */
-var DocumentLinksCreatedBy =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DocumentLinksCreatedBy".
-   * @alias module:model/DocumentLinksCreatedBy
-   * @class
-  
-   */
-    function DocumentLinksCreatedBy() {
-      _classCallCheck(this, DocumentLinksCreatedBy);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _DocumentLinksCreatedByIriTemplate.default;
-    }
-    /**
-     * Constructs a "DocumentLinksCreatedBy" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DocumentLinksCreatedBy } object Optional instance to populate.
-     * @return { module:model/DocumentLinksCreatedBy } The populated "DocumentLinksCreatedBy" instance.
+var DocumentLinksCreatedBy = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DocumentLinksCreatedBy".
+     * @alias module:model/DocumentLinksCreatedBy
+     * @class
+    
      */
+  function DocumentLinksCreatedBy() {
+    _classCallCheck(this, DocumentLinksCreatedBy);
 
-    _createClass(
-      DocumentLinksCreatedBy,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _DocumentLinksCreatedByIriTemplate.default;
+  }
+  /**
+   * Constructs a "DocumentLinksCreatedBy" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DocumentLinksCreatedBy } object Optional instance to populate.
+   * @return { module:model/DocumentLinksCreatedBy } The populated "DocumentLinksCreatedBy" instance.
+   */
 
-          /**
-           * Gets The URI of the createdBy associated to the given document.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the createdBy associated to the given document.
-           * @param { String } href The URI of the createdBy associated to the given document.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/DocumentLinksCreatedByIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/DocumentLinksCreatedByIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    DocumentLinksCreatedBy,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the createdBy associated to the given document.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DocumentLinksCreatedBy();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the createdBy associated to the given document.
+         * @param { String } href The URI of the createdBy associated to the given document.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/DocumentLinksCreatedByIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/DocumentLinksCreatedByIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DocumentLinksCreatedBy;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DocumentLinksCreatedBy();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DocumentLinksCreatedBy;
+})();
 
 exports.default = DocumentLinksCreatedBy;

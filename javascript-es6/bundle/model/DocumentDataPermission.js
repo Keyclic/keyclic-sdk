@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DocumentDataPermission model module.
  * @module model/DocumentDataPermission
  */
-var DocumentDataPermission =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DocumentDataPermission".
-   * @alias module:model/DocumentDataPermission
-   * @class
-  
-   */
-    function DocumentDataPermission() {
-      _classCallCheck(this, DocumentDataPermission);
-
-      this.targetGroup = null;
-    }
-    /**
-     * Constructs a "DocumentDataPermission" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DocumentDataPermission } object Optional instance to populate.
-     * @return { module:model/DocumentDataPermission } The populated "DocumentDataPermission" instance.
+var DocumentDataPermission = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DocumentDataPermission".
+     * @alias module:model/DocumentDataPermission
+     * @class
+    
      */
+  function DocumentDataPermission() {
+    _classCallCheck(this, DocumentDataPermission);
 
-    _createClass(
-      DocumentDataPermission,
-      [
-        {
-          key: "getTargetGroup",
+    this.targetGroup = null;
+  }
+  /**
+   * Constructs a "DocumentDataPermission" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DocumentDataPermission } object Optional instance to populate.
+   * @return { module:model/DocumentDataPermission } The populated "DocumentDataPermission" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getTargetGroup() {
-            return this.targetGroup;
-          }
-          /**
-           * @param { String } targetGroup
-           */
-        },
-        {
-          key: "setTargetGroup",
-          value: function setTargetGroup(targetGroup) {
-            this.targetGroup = targetGroup;
-          }
+  _createClass(
+    DocumentDataPermission,
+    [
+      {
+        key: "getTargetGroup",
+
+        /**
+         * @return { String }
+         */
+        value: function getTargetGroup() {
+          return this.targetGroup;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DocumentDataPermission();
-            }
-
-            if (data.hasOwnProperty("targetGroup")) {
-              object.targetGroup = _ApiClient.default.convertToType(
-                data["targetGroup"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } targetGroup
+         */
+      },
+      {
+        key: "setTargetGroup",
+        value: function setTargetGroup(targetGroup) {
+          this.targetGroup = targetGroup;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DocumentDataPermission;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DocumentDataPermission();
+          }
+
+          if (data.hasOwnProperty("targetGroup")) {
+            object.targetGroup = _ApiClient.default.convertToType(
+              data["targetGroup"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DocumentDataPermission;
+})();
 
 exports.default = DocumentDataPermission;

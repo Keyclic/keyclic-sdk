@@ -37,83 +37,81 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The CommentData model module.
  * @module model/CommentData
  */
-var CommentData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "CommentData".
-   * @alias module:model/CommentData
-   * @class
-  
-   * @param text { String }
-  
-   */
-    function CommentData(text) {
-      _classCallCheck(this, CommentData);
-
-      this.text = text;
-    }
-    /**
-     * Constructs a "CommentData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/CommentData } object Optional instance to populate.
-     * @return { module:model/CommentData } The populated "CommentData" instance.
+var CommentData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "CommentData".
+     * @alias module:model/CommentData
+     * @class
+    
+     * @param text { String }
+    
      */
+  function CommentData(text) {
+    _classCallCheck(this, CommentData);
 
-    _createClass(
-      CommentData,
-      [
-        {
-          key: "getText",
+    this.text = text;
+  }
+  /**
+   * Constructs a "CommentData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/CommentData } object Optional instance to populate.
+   * @return { module:model/CommentData } The populated "CommentData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getText() {
-            return this.text;
-          }
-          /**
-           * @param { String } text
-           */
-        },
-        {
-          key: "setText",
-          value: function setText(text) {
-            this.text = text;
-          }
+  _createClass(
+    CommentData,
+    [
+      {
+        key: "getText",
+
+        /**
+         * @return { String }
+         */
+        value: function getText() {
+          return this.text;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new CommentData();
-            }
-
-            if (data.hasOwnProperty("text")) {
-              object.text = _ApiClient.default.convertToType(
-                data["text"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } text
+         */
+      },
+      {
+        key: "setText",
+        value: function setText(text) {
+          this.text = text;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return CommentData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new CommentData();
+          }
+
+          if (data.hasOwnProperty("text")) {
+            object.text = _ApiClient.default.convertToType(
+              data["text"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return CommentData;
+})();
 
 exports.default = CommentData;

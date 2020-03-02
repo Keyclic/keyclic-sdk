@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OperationEmbeddedDuration model module.
  * @module model/OperationEmbeddedDuration
  */
-var OperationEmbeddedDuration =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OperationEmbeddedDuration".
-   * @alias module:model/OperationEmbeddedDuration
-   * @class
-  
-   */
-    function OperationEmbeddedDuration() {
-      _classCallCheck(this, OperationEmbeddedDuration);
-
-      this.seconds = null;
-    }
-    /**
-     * Constructs a "OperationEmbeddedDuration" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OperationEmbeddedDuration } object Optional instance to populate.
-     * @return { module:model/OperationEmbeddedDuration } The populated "OperationEmbeddedDuration" instance.
+var OperationEmbeddedDuration = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OperationEmbeddedDuration".
+     * @alias module:model/OperationEmbeddedDuration
+     * @class
+    
      */
+  function OperationEmbeddedDuration() {
+    _classCallCheck(this, OperationEmbeddedDuration);
 
-    _createClass(
-      OperationEmbeddedDuration,
-      [
-        {
-          key: "getSeconds",
+    this.seconds = null;
+  }
+  /**
+   * Constructs a "OperationEmbeddedDuration" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OperationEmbeddedDuration } object Optional instance to populate.
+   * @return { module:model/OperationEmbeddedDuration } The populated "OperationEmbeddedDuration" instance.
+   */
 
-          /**
-           * @return { Number }
-           */
-          value: function getSeconds() {
-            return this.seconds;
-          }
-          /**
-           * @param { Number } seconds
-           */
-        },
-        {
-          key: "setSeconds",
-          value: function setSeconds(seconds) {
-            this.seconds = seconds;
-          }
+  _createClass(
+    OperationEmbeddedDuration,
+    [
+      {
+        key: "getSeconds",
+
+        /**
+         * @return { Number }
+         */
+        value: function getSeconds() {
+          return this.seconds;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OperationEmbeddedDuration();
-            }
-
-            if (data.hasOwnProperty("seconds")) {
-              object.seconds = _ApiClient.default.convertToType(
-                data["seconds"],
-                "Number"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { Number } seconds
+         */
+      },
+      {
+        key: "setSeconds",
+        value: function setSeconds(seconds) {
+          this.seconds = seconds;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OperationEmbeddedDuration;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OperationEmbeddedDuration();
+          }
+
+          if (data.hasOwnProperty("seconds")) {
+            object.seconds = _ApiClient.default.convertToType(
+              data["seconds"],
+              "Number"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OperationEmbeddedDuration;
+})();
 
 exports.default = OperationEmbeddedDuration;

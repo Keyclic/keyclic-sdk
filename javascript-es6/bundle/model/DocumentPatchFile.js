@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DocumentPatchFile model module.
  * @module model/DocumentPatchFile
  */
-var DocumentPatchFile =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DocumentPatchFile".
-   * @alias module:model/DocumentPatchFile
-   * @class
-  
-   */
-    function DocumentPatchFile() {
-      _classCallCheck(this, DocumentPatchFile);
-
-      this.name = null;
-    }
-    /**
-     * Constructs a "DocumentPatchFile" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DocumentPatchFile } object Optional instance to populate.
-     * @return { module:model/DocumentPatchFile } The populated "DocumentPatchFile" instance.
+var DocumentPatchFile = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DocumentPatchFile".
+     * @alias module:model/DocumentPatchFile
+     * @class
+    
      */
+  function DocumentPatchFile() {
+    _classCallCheck(this, DocumentPatchFile);
 
-    _createClass(
-      DocumentPatchFile,
-      [
-        {
-          key: "getName",
+    this.name = null;
+  }
+  /**
+   * Constructs a "DocumentPatchFile" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DocumentPatchFile } object Optional instance to populate.
+   * @return { module:model/DocumentPatchFile } The populated "DocumentPatchFile" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
+  _createClass(
+    DocumentPatchFile,
+    [
+      {
+        key: "getName",
+
+        /**
+         * @return { String }
+         */
+        value: function getName() {
+          return this.name;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DocumentPatchFile();
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DocumentPatchFile;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DocumentPatchFile();
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DocumentPatchFile;
+})();
 
 exports.default = DocumentPatchFile;

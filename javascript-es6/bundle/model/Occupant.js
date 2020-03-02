@@ -41,177 +41,172 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The Occupant model module.
  * @module model/Occupant
  */
-var Occupant =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "Occupant".
-   * @alias module:model/Occupant
-   * @class
-  
-   */
-    function Occupant() {
-      _classCallCheck(this, Occupant);
-
-      this.embedded = null;
-      this.links = null;
-      this.createdAt = null;
-      this.id = null;
-      this.type = null;
-      this.updatedAt = null;
-      this.embeddedType = _OccupantEmbedded.default;
-      this.linksType = _OccupantLinks.default;
-    }
-    /**
-     * Constructs a "Occupant" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/Occupant } object Optional instance to populate.
-     * @return { module:model/Occupant } The populated "Occupant" instance.
+var Occupant = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "Occupant".
+     * @alias module:model/Occupant
+     * @class
+    
      */
+  function Occupant() {
+    _classCallCheck(this, Occupant);
 
-    _createClass(
-      Occupant,
-      [
-        {
-          key: "getEmbedded",
+    this.embedded = null;
+    this.links = null;
+    this.createdAt = null;
+    this.id = null;
+    this.type = null;
+    this.updatedAt = null;
+    this.embeddedType = _OccupantEmbedded.default;
+    this.linksType = _OccupantLinks.default;
+  }
+  /**
+   * Constructs a "Occupant" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/Occupant } object Optional instance to populate.
+   * @return { module:model/Occupant } The populated "Occupant" instance.
+   */
 
-          /**
-           * @return { module:model/OccupantEmbedded }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/OccupantEmbedded } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-          /**
-           * @return { module:model/OccupantLinks }
-           */
-        },
-        {
-          key: "getLinks",
-          value: function getLinks() {
-            return this.links;
-          }
-          /**
-           * @param { module:model/OccupantLinks } links
-           */
-        },
-        {
-          key: "setLinks",
-          value: function setLinks(links) {
-            this.links = links;
-          }
-          /**
-           * @return { Date }
-           */
-        },
-        {
-          key: "getCreatedAt",
-          value: function getCreatedAt() {
-            return this.createdAt;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getId",
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
-          }
-          /**
-           * @return { Date }
-           */
-        },
-        {
-          key: "getUpdatedAt",
-          value: function getUpdatedAt() {
-            return this.updatedAt;
-          }
+  _createClass(
+    Occupant,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/OccupantEmbedded }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new Occupant();
-            }
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            if (data.hasOwnProperty("_links")) {
-              object.links = _ApiClient.default.convertToType(
-                data["_links"],
-                object.linksType
-              );
-            }
-
-            if (data.hasOwnProperty("createdAt")) {
-              object.createdAt = _ApiClient.default.convertToType(
-                data["createdAt"],
-                "Date"
-              );
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("updatedAt")) {
-              object.updatedAt = _ApiClient.default.convertToType(
-                data["updatedAt"],
-                "Date"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/OccupantEmbedded } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
         }
-      ]
-    );
+        /**
+         * @return { module:model/OccupantLinks }
+         */
+      },
+      {
+        key: "getLinks",
+        value: function getLinks() {
+          return this.links;
+        }
+        /**
+         * @param { module:model/OccupantLinks } links
+         */
+      },
+      {
+        key: "setLinks",
+        value: function setLinks(links) {
+          this.links = links;
+        }
+        /**
+         * @return { Date }
+         */
+      },
+      {
+        key: "getCreatedAt",
+        value: function getCreatedAt() {
+          return this.createdAt;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getId",
+        value: function getId() {
+          return this.id;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getType",
+        value: function getType() {
+          return this.type;
+        }
+        /**
+         * @return { Date }
+         */
+      },
+      {
+        key: "getUpdatedAt",
+        value: function getUpdatedAt() {
+          return this.updatedAt;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return Occupant;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new Occupant();
+          }
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return Occupant;
+})();
 
 exports.default = Occupant;

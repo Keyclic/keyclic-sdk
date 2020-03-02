@@ -134,97 +134,95 @@ function _setPrototypeOf(o, p) {
  * The ExternalServicePagination model module.
  * @module model/ExternalServicePagination
  */
-var ExternalServicePagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(ExternalServicePagination, _Pagination);
+var ExternalServicePagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(ExternalServicePagination, _Pagination);
 
-    /**
-   * Constructs a new "ExternalServicePagination".
-   * @alias module:model/ExternalServicePagination
-   * @class
-  
-   */
-    function ExternalServicePagination() {
-      var _this;
-
-      _classCallCheck(this, ExternalServicePagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(ExternalServicePagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _ExternalServiceCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "ExternalServicePagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ExternalServicePagination } object Optional instance to populate.
-     * @return { module:model/ExternalServicePagination } The populated "ExternalServicePagination" instance.
+  /**
+     * Constructs a new "ExternalServicePagination".
+     * @alias module:model/ExternalServicePagination
+     * @class
+    
      */
+  function ExternalServicePagination() {
+    var _this;
 
-    _createClass(
-      ExternalServicePagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, ExternalServicePagination);
 
-          /**
-           * @return { module:model/ExternalServiceCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/ExternalServiceCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ExternalServicePagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(ExternalServicePagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(ExternalServicePagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _ExternalServiceCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "ExternalServicePagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ExternalServicePagination } object Optional instance to populate.
+   * @return { module:model/ExternalServicePagination } The populated "ExternalServicePagination" instance.
+   */
 
-    return ExternalServicePagination;
-  })(_Pagination2.default);
+  _createClass(
+    ExternalServicePagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/ExternalServiceCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/ExternalServiceCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ExternalServicePagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(ExternalServicePagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ExternalServicePagination;
+})(_Pagination2.default);
 
 exports.default = ExternalServicePagination;

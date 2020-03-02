@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The InvitationLinksSelfIriTemplateMapping model module.
  * @module model/InvitationLinksSelfIriTemplateMapping
  */
-var InvitationLinksSelfIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "InvitationLinksSelfIriTemplateMapping".
-   * @alias module:model/InvitationLinksSelfIriTemplateMapping
-   * @class
-  
-   */
-    function InvitationLinksSelfIriTemplateMapping() {
-      _classCallCheck(this, InvitationLinksSelfIriTemplateMapping);
-
-      this.invitation = null;
-    }
-    /**
-     * Constructs a "InvitationLinksSelfIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/InvitationLinksSelfIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/InvitationLinksSelfIriTemplateMapping } The populated "InvitationLinksSelfIriTemplateMapping" instance.
+var InvitationLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "InvitationLinksSelfIriTemplateMapping".
+     * @alias module:model/InvitationLinksSelfIriTemplateMapping
+     * @class
+    
      */
+  function InvitationLinksSelfIriTemplateMapping() {
+    _classCallCheck(this, InvitationLinksSelfIriTemplateMapping);
 
-    _createClass(
-      InvitationLinksSelfIriTemplateMapping,
-      [
-        {
-          key: "getInvitation",
+    this.invitation = null;
+  }
+  /**
+   * Constructs a "InvitationLinksSelfIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/InvitationLinksSelfIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/InvitationLinksSelfIriTemplateMapping } The populated "InvitationLinksSelfIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getInvitation() {
-            return this.invitation;
-          }
-          /**
-           * @param { String } invitation
-           */
-        },
-        {
-          key: "setInvitation",
-          value: function setInvitation(invitation) {
-            this.invitation = invitation;
-          }
+  _createClass(
+    InvitationLinksSelfIriTemplateMapping,
+    [
+      {
+        key: "getInvitation",
+
+        /**
+         * @return { String }
+         */
+        value: function getInvitation() {
+          return this.invitation;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new InvitationLinksSelfIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("invitation")) {
-              object.invitation = _ApiClient.default.convertToType(
-                data["invitation"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } invitation
+         */
+      },
+      {
+        key: "setInvitation",
+        value: function setInvitation(invitation) {
+          this.invitation = invitation;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return InvitationLinksSelfIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new InvitationLinksSelfIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("invitation")) {
+            object.invitation = _ApiClient.default.convertToType(
+              data["invitation"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return InvitationLinksSelfIriTemplateMapping;
+})();
 
 exports.default = InvitationLinksSelfIriTemplateMapping;

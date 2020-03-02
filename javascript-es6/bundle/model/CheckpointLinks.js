@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The CheckpointLinks model module.
  * @module model/CheckpointLinks
  */
-var CheckpointLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "CheckpointLinks".
-   * @alias module:model/CheckpointLinks
-   * @class
-  
-   */
-    function CheckpointLinks() {
-      _classCallCheck(this, CheckpointLinks);
-
-      this.organization = null;
-      this.organizationType = _CheckpointLinksOrganization.default;
-    }
-    /**
-     * Constructs a "CheckpointLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/CheckpointLinks } object Optional instance to populate.
-     * @return { module:model/CheckpointLinks } The populated "CheckpointLinks" instance.
+var CheckpointLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "CheckpointLinks".
+     * @alias module:model/CheckpointLinks
+     * @class
+    
      */
+  function CheckpointLinks() {
+    _classCallCheck(this, CheckpointLinks);
 
-    _createClass(
-      CheckpointLinks,
-      [
-        {
-          key: "getOrganization",
+    this.organization = null;
+    this.organizationType = _CheckpointLinksOrganization.default;
+  }
+  /**
+   * Constructs a "CheckpointLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/CheckpointLinks } object Optional instance to populate.
+   * @return { module:model/CheckpointLinks } The populated "CheckpointLinks" instance.
+   */
 
-          /**
-           * @return { module:model/CheckpointLinksOrganization }
-           */
-          value: function getOrganization() {
-            return this.organization;
-          }
-          /**
-           * @param { module:model/CheckpointLinksOrganization } organization
-           */
-        },
-        {
-          key: "setOrganization",
-          value: function setOrganization(organization) {
-            this.organization = organization;
-          }
+  _createClass(
+    CheckpointLinks,
+    [
+      {
+        key: "getOrganization",
+
+        /**
+         * @return { module:model/CheckpointLinksOrganization }
+         */
+        value: function getOrganization() {
+          return this.organization;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new CheckpointLinks();
-            }
-
-            if (data.hasOwnProperty("organization")) {
-              object.organization = _ApiClient.default.convertToType(
-                data["organization"],
-                object.organizationType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/CheckpointLinksOrganization } organization
+         */
+      },
+      {
+        key: "setOrganization",
+        value: function setOrganization(organization) {
+          this.organization = organization;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return CheckpointLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new CheckpointLinks();
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
+              object.organizationType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return CheckpointLinks;
+})();
 
 exports.default = CheckpointLinks;

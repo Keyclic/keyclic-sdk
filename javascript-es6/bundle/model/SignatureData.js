@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The SignatureData model module.
  * @module model/SignatureData
  */
-var SignatureData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "SignatureData".
-   * @alias module:model/SignatureData
-   * @class
-  
-   * @param image { String }
-  
-   */
-    function SignatureData(image) {
-      _classCallCheck(this, SignatureData);
-
-      this.signer = null;
-      this.image = image;
-      this.signerType = _SignatureDataSigner.default;
-    }
-    /**
-     * Constructs a "SignatureData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/SignatureData } object Optional instance to populate.
-     * @return { module:model/SignatureData } The populated "SignatureData" instance.
+var SignatureData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "SignatureData".
+     * @alias module:model/SignatureData
+     * @class
+    
+     * @param image { String }
+    
      */
+  function SignatureData(image) {
+    _classCallCheck(this, SignatureData);
 
-    _createClass(
-      SignatureData,
-      [
-        {
-          key: "getSigner",
+    this.signer = null;
+    this.image = image;
+    this.signerType = _SignatureDataSigner.default;
+  }
+  /**
+   * Constructs a "SignatureData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/SignatureData } object Optional instance to populate.
+   * @return { module:model/SignatureData } The populated "SignatureData" instance.
+   */
 
-          /**
-           * @return { module:model/SignatureDataSigner }
-           */
-          value: function getSigner() {
-            return this.signer;
-          }
-          /**
-           * @param { module:model/SignatureDataSigner } signer
-           */
-        },
-        {
-          key: "setSigner",
-          value: function setSigner(signer) {
-            this.signer = signer;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getImage",
-          value: function getImage() {
-            return this.image;
-          }
-          /**
-           * @param { String } image
-           */
-        },
-        {
-          key: "setImage",
-          value: function setImage(image) {
-            this.image = image;
-          }
+  _createClass(
+    SignatureData,
+    [
+      {
+        key: "getSigner",
+
+        /**
+         * @return { module:model/SignatureDataSigner }
+         */
+        value: function getSigner() {
+          return this.signer;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new SignatureData();
-            }
-
-            if (data.hasOwnProperty("signer")) {
-              object.signer = _ApiClient.default.convertToType(
-                data["signer"],
-                object.signerType
-              );
-            }
-
-            if (data.hasOwnProperty("image")) {
-              object.image = _ApiClient.default.convertToType(
-                data["image"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/SignatureDataSigner } signer
+         */
+      },
+      {
+        key: "setSigner",
+        value: function setSigner(signer) {
+          this.signer = signer;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getImage",
+        value: function getImage() {
+          return this.image;
+        }
+        /**
+         * @param { String } image
+         */
+      },
+      {
+        key: "setImage",
+        value: function setImage(image) {
+          this.image = image;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return SignatureData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new SignatureData();
+          }
+
+          if (data.hasOwnProperty("signer")) {
+            object.signer = _ApiClient.default.convertToType(
+              data["signer"],
+              object.signerType
+            );
+          }
+
+          if (data.hasOwnProperty("image")) {
+            object.image = _ApiClient.default.convertToType(
+              data["image"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return SignatureData;
+})();
 
 exports.default = SignatureData;

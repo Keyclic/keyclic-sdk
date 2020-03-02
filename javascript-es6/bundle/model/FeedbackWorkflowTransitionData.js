@@ -51,88 +51,86 @@ function _defineProperty(obj, key, value) {
  * The FeedbackWorkflowTransitionData model module.
  * @module model/FeedbackWorkflowTransitionData
  */
-var FeedbackWorkflowTransitionData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "FeedbackWorkflowTransitionData".
-   * @alias module:model/FeedbackWorkflowTransitionData
-   * @class
-  
-   * @param transition { module:model/FeedbackWorkflowTransitionData.TransitionEnum }
-  
-   */
-    function FeedbackWorkflowTransitionData(transition) {
-      _classCallCheck(this, FeedbackWorkflowTransitionData);
-
-      this.transition = transition;
-    }
-    /**
-     * Constructs a "FeedbackWorkflowTransitionData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FeedbackWorkflowTransitionData } object Optional instance to populate.
-     * @return { module:model/FeedbackWorkflowTransitionData } The populated "FeedbackWorkflowTransitionData" instance.
+var FeedbackWorkflowTransitionData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "FeedbackWorkflowTransitionData".
+     * @alias module:model/FeedbackWorkflowTransitionData
+     * @class
+    
+     * @param transition { module:model/FeedbackWorkflowTransitionData.TransitionEnum }
+    
      */
+  function FeedbackWorkflowTransitionData(transition) {
+    _classCallCheck(this, FeedbackWorkflowTransitionData);
 
-    _createClass(
-      FeedbackWorkflowTransitionData,
-      [
-        {
-          key: "getTransition",
+    this.transition = transition;
+  }
+  /**
+   * Constructs a "FeedbackWorkflowTransitionData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/FeedbackWorkflowTransitionData } object Optional instance to populate.
+   * @return { module:model/FeedbackWorkflowTransitionData } The populated "FeedbackWorkflowTransitionData" instance.
+   */
 
-          /**
-           * @return { module:model/FeedbackWorkflowTransitionData.TransitionEnum }
-           */
-          value: function getTransition() {
-            return this.transition;
-          }
-          /**
-           * @param { module:model/FeedbackWorkflowTransitionData.TransitionEnum } transition
-           */
-        },
-        {
-          key: "setTransition",
-          value: function setTransition(transition) {
-            this.transition = transition;
-          }
-          /**
-           * Allowed values for the "transition" property.
-           * @enum { String }
-           */
+  _createClass(
+    FeedbackWorkflowTransitionData,
+    [
+      {
+        key: "getTransition",
+
+        /**
+         * @return { module:model/FeedbackWorkflowTransitionData.TransitionEnum }
+         */
+        value: function getTransition() {
+          return this.transition;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new FeedbackWorkflowTransitionData();
-            }
-
-            if (data.hasOwnProperty("transition")) {
-              object.transition = _ApiClient.default.convertToType(
-                data["transition"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/FeedbackWorkflowTransitionData.TransitionEnum } transition
+         */
+      },
+      {
+        key: "setTransition",
+        value: function setTransition(transition) {
+          this.transition = transition;
         }
-      ]
-    );
+        /**
+         * Allowed values for the "transition" property.
+         * @enum { String }
+         */
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return FeedbackWorkflowTransitionData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new FeedbackWorkflowTransitionData();
+          }
+
+          if (data.hasOwnProperty("transition")) {
+            object.transition = _ApiClient.default.convertToType(
+              data["transition"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return FeedbackWorkflowTransitionData;
+})();
 
 exports.default = FeedbackWorkflowTransitionData;
 

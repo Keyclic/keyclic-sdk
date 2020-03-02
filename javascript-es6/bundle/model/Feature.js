@@ -39,134 +39,132 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The Feature model module.
  * @module model/Feature
  */
-var Feature =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "Feature".
-   * @alias module:model/Feature
-   * @class
-  
-   */
-    function Feature() {
-      _classCallCheck(this, Feature);
-
-      this.type = "Feature";
-      this.geometry = null;
-      this.properties = [];
-      this.geometryType = _FeatureGeometry.default;
-    }
-    /**
-     * Constructs a "Feature" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/Feature } object Optional instance to populate.
-     * @return { module:model/Feature } The populated "Feature" instance.
+var Feature = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "Feature".
+     * @alias module:model/Feature
+     * @class
+    
      */
+  function Feature() {
+    _classCallCheck(this, Feature);
 
-    _createClass(
-      Feature,
-      [
-        {
-          key: "getType",
+    this.type = "Feature";
+    this.geometry = null;
+    this.properties = [];
+    this.geometryType = _FeatureGeometry.default;
+  }
+  /**
+   * Constructs a "Feature" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/Feature } object Optional instance to populate.
+   * @return { module:model/Feature } The populated "Feature" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getType() {
-            return this.type;
-          }
-          /**
-           * @param { String } type
-           */
-        },
-        {
-          key: "setType",
-          value: function setType(type) {
-            this.type = type;
-          }
-          /**
-           * @return { module:model/FeatureGeometry }
-           */
-        },
-        {
-          key: "getGeometry",
-          value: function getGeometry() {
-            return this.geometry;
-          }
-          /**
-           * @param { module:model/FeatureGeometry } geometry
-           */
-        },
-        {
-          key: "setGeometry",
-          value: function setGeometry(geometry) {
-            this.geometry = geometry;
-          }
-          /**
-           * @return { Array.<String> }
-           */
-        },
-        {
-          key: "getProperties",
-          value: function getProperties() {
-            return this.properties;
-          }
-          /**
-           * @param { Array.<String> } properties
-           */
-        },
-        {
-          key: "setProperties",
-          value: function setProperties(properties) {
-            this.properties = properties;
-          }
+  _createClass(
+    Feature,
+    [
+      {
+        key: "getType",
+
+        /**
+         * @return { String }
+         */
+        value: function getType() {
+          return this.type;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new Feature();
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("geometry")) {
-              object.geometry = _ApiClient.default.convertToType(
-                data["geometry"],
-                object.geometryType
-              );
-            }
-
-            if (data.hasOwnProperty("properties")) {
-              object.properties = _ApiClient.default.convertToType(
-                data["properties"],
-                "['String']"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } type
+         */
+      },
+      {
+        key: "setType",
+        value: function setType(type) {
+          this.type = type;
         }
-      ]
-    );
+        /**
+         * @return { module:model/FeatureGeometry }
+         */
+      },
+      {
+        key: "getGeometry",
+        value: function getGeometry() {
+          return this.geometry;
+        }
+        /**
+         * @param { module:model/FeatureGeometry } geometry
+         */
+      },
+      {
+        key: "setGeometry",
+        value: function setGeometry(geometry) {
+          this.geometry = geometry;
+        }
+        /**
+         * @return { Array.<String> }
+         */
+      },
+      {
+        key: "getProperties",
+        value: function getProperties() {
+          return this.properties;
+        }
+        /**
+         * @param { Array.<String> } properties
+         */
+      },
+      {
+        key: "setProperties",
+        value: function setProperties(properties) {
+          this.properties = properties;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return Feature;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new Feature();
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("geometry")) {
+            object.geometry = _ApiClient.default.convertToType(
+              data["geometry"],
+              object.geometryType
+            );
+          }
+
+          if (data.hasOwnProperty("properties")) {
+            object.properties = _ApiClient.default.convertToType(
+              data["properties"],
+              "['String']"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return Feature;
+})();
 
 exports.default = Feature;

@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PublicationLinksAuthor model module.
  * @module model/PublicationLinksAuthor
  */
-var PublicationLinksAuthor =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PublicationLinksAuthor".
-   * @alias module:model/PublicationLinksAuthor
-   * @class
-  
-   */
-    function PublicationLinksAuthor() {
-      _classCallCheck(this, PublicationLinksAuthor);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _PublicationLinksAuthorIriTemplate.default;
-    }
-    /**
-     * Constructs a "PublicationLinksAuthor" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PublicationLinksAuthor } object Optional instance to populate.
-     * @return { module:model/PublicationLinksAuthor } The populated "PublicationLinksAuthor" instance.
+var PublicationLinksAuthor = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PublicationLinksAuthor".
+     * @alias module:model/PublicationLinksAuthor
+     * @class
+    
      */
+  function PublicationLinksAuthor() {
+    _classCallCheck(this, PublicationLinksAuthor);
 
-    _createClass(
-      PublicationLinksAuthor,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _PublicationLinksAuthorIriTemplate.default;
+  }
+  /**
+   * Constructs a "PublicationLinksAuthor" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PublicationLinksAuthor } object Optional instance to populate.
+   * @return { module:model/PublicationLinksAuthor } The populated "PublicationLinksAuthor" instance.
+   */
 
-          /**
-           * Gets The URI of the author associated to the given publication.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the author associated to the given publication.
-           * @param { String } href The URI of the author associated to the given publication.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/PublicationLinksAuthorIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/PublicationLinksAuthorIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    PublicationLinksAuthor,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the author associated to the given publication.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PublicationLinksAuthor();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the author associated to the given publication.
+         * @param { String } href The URI of the author associated to the given publication.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/PublicationLinksAuthorIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/PublicationLinksAuthorIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PublicationLinksAuthor;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PublicationLinksAuthor();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PublicationLinksAuthor;
+})();
 
 exports.default = PublicationLinksAuthor;

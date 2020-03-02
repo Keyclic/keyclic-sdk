@@ -37,107 +37,105 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The Chart model module.
  * @module model/Chart
  */
-var Chart =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "Chart".
-   * @alias module:model/Chart
-   * @class
-  
-   */
-    function Chart() {
-      _classCallCheck(this, Chart);
-
-      this.data = [];
-      this.labels = [];
-    }
-    /**
-     * Constructs a "Chart" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/Chart } object Optional instance to populate.
-     * @return { module:model/Chart } The populated "Chart" instance.
+var Chart = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "Chart".
+     * @alias module:model/Chart
+     * @class
+    
      */
+  function Chart() {
+    _classCallCheck(this, Chart);
 
-    _createClass(
-      Chart,
-      [
-        {
-          key: "getData",
+    this.data = [];
+    this.labels = [];
+  }
+  /**
+   * Constructs a "Chart" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/Chart } object Optional instance to populate.
+   * @return { module:model/Chart } The populated "Chart" instance.
+   */
 
-          /**
-           * @return { Array.<Number> }
-           */
-          value: function getData() {
-            return this.data;
-          }
-          /**
-           * @param { Array.<Number> } data
-           */
-        },
-        {
-          key: "setData",
-          value: function setData(data) {
-            this.data = data;
-          }
-          /**
-           * @return { Array.<String> }
-           */
-        },
-        {
-          key: "getLabels",
-          value: function getLabels() {
-            return this.labels;
-          }
-          /**
-           * @param { Array.<String> } labels
-           */
-        },
-        {
-          key: "setLabels",
-          value: function setLabels(labels) {
-            this.labels = labels;
-          }
+  _createClass(
+    Chart,
+    [
+      {
+        key: "getData",
+
+        /**
+         * @return { Array.<Number> }
+         */
+        value: function getData() {
+          return this.data;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new Chart();
-            }
-
-            if (data.hasOwnProperty("data")) {
-              object.data = _ApiClient.default.convertToType(
-                data["data"],
-                "['Number']"
-              );
-            }
-
-            if (data.hasOwnProperty("labels")) {
-              object.labels = _ApiClient.default.convertToType(
-                data["labels"],
-                "['String']"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<Number> } data
+         */
+      },
+      {
+        key: "setData",
+        value: function setData(data) {
+          this.data = data;
         }
-      ]
-    );
+        /**
+         * @return { Array.<String> }
+         */
+      },
+      {
+        key: "getLabels",
+        value: function getLabels() {
+          return this.labels;
+        }
+        /**
+         * @param { Array.<String> } labels
+         */
+      },
+      {
+        key: "setLabels",
+        value: function setLabels(labels) {
+          this.labels = labels;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return Chart;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new Chart();
+          }
+
+          if (data.hasOwnProperty("data")) {
+            object.data = _ApiClient.default.convertToType(
+              data["data"],
+              "['Number']"
+            );
+          }
+
+          if (data.hasOwnProperty("labels")) {
+            object.labels = _ApiClient.default.convertToType(
+              data["labels"],
+              "['String']"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return Chart;
+})();
 
 exports.default = Chart;

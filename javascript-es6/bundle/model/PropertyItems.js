@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PropertyItems model module.
  * @module model/PropertyItems
  */
-var PropertyItems =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PropertyItems".
-   * @alias module:model/PropertyItems
-   * @class
-  
-   */
-    function PropertyItems() {
-      _classCallCheck(this, PropertyItems);
-
-      this.oneOf = [];
-      this.oneOfType = _Choice.default;
-    }
-    /**
-     * Constructs a "PropertyItems" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PropertyItems } object Optional instance to populate.
-     * @return { module:model/PropertyItems } The populated "PropertyItems" instance.
+var PropertyItems = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PropertyItems".
+     * @alias module:model/PropertyItems
+     * @class
+    
      */
+  function PropertyItems() {
+    _classCallCheck(this, PropertyItems);
 
-    _createClass(
-      PropertyItems,
-      [
-        {
-          key: "getOneOf",
+    this.oneOf = [];
+    this.oneOfType = _Choice.default;
+  }
+  /**
+   * Constructs a "PropertyItems" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PropertyItems } object Optional instance to populate.
+   * @return { module:model/PropertyItems } The populated "PropertyItems" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Choice> }
-           */
-          value: function getOneOf() {
-            return this.oneOf;
-          }
-          /**
-           * @param { Array.<module:model/Choice> } oneOf
-           */
-        },
-        {
-          key: "setOneOf",
-          value: function setOneOf(oneOf) {
-            this.oneOf = oneOf;
-          }
+  _createClass(
+    PropertyItems,
+    [
+      {
+        key: "getOneOf",
+
+        /**
+         * @return { Array.<module:model/Choice> }
+         */
+        value: function getOneOf() {
+          return this.oneOf;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PropertyItems();
-            }
-
-            if (data.hasOwnProperty("oneOf")) {
-              object.oneOf = _ApiClient.default.convertToType(data["oneOf"], [
-                object.oneOfType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Choice> } oneOf
+         */
+      },
+      {
+        key: "setOneOf",
+        value: function setOneOf(oneOf) {
+          this.oneOf = oneOf;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PropertyItems;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PropertyItems();
+          }
+
+          if (data.hasOwnProperty("oneOf")) {
+            object.oneOf = _ApiClient.default.convertToType(data["oneOf"], [
+              object.oneOfType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PropertyItems;
+})();
 
 exports.default = PropertyItems;

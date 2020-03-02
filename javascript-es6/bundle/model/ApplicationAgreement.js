@@ -49,136 +49,134 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ApplicationAgreement model module.
  * @module model/ApplicationAgreement
  */
-var ApplicationAgreement =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ApplicationAgreement".
-   * @alias module:model/ApplicationAgreement
-   * @class
-  
-   */
-    function ApplicationAgreement() {
-      _classCallCheck(this, ApplicationAgreement);
-
-      this.olderThan = null;
-      this.privacyPolicy = null;
-      this.termsOfService = null;
-      this.olderThanType = _AgreementOlderThan.default;
-      this.privacyPolicyType = _AgreementPrivacyPolicy.default;
-      this.termsOfServiceType = _AgreementTermsOfService.default;
-    }
-    /**
-     * Constructs a "ApplicationAgreement" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ApplicationAgreement } object Optional instance to populate.
-     * @return { module:model/ApplicationAgreement } The populated "ApplicationAgreement" instance.
+var ApplicationAgreement = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ApplicationAgreement".
+     * @alias module:model/ApplicationAgreement
+     * @class
+    
      */
+  function ApplicationAgreement() {
+    _classCallCheck(this, ApplicationAgreement);
 
-    _createClass(
-      ApplicationAgreement,
-      [
-        {
-          key: "getOlderThan",
+    this.olderThan = null;
+    this.privacyPolicy = null;
+    this.termsOfService = null;
+    this.olderThanType = _AgreementOlderThan.default;
+    this.privacyPolicyType = _AgreementPrivacyPolicy.default;
+    this.termsOfServiceType = _AgreementTermsOfService.default;
+  }
+  /**
+   * Constructs a "ApplicationAgreement" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ApplicationAgreement } object Optional instance to populate.
+   * @return { module:model/ApplicationAgreement } The populated "ApplicationAgreement" instance.
+   */
 
-          /**
-           * @return { module:model/AgreementOlderThan }
-           */
-          value: function getOlderThan() {
-            return this.olderThan;
-          }
-          /**
-           * @param { module:model/AgreementOlderThan } olderThan
-           */
-        },
-        {
-          key: "setOlderThan",
-          value: function setOlderThan(olderThan) {
-            this.olderThan = olderThan;
-          }
-          /**
-           * @return { module:model/AgreementPrivacyPolicy }
-           */
-        },
-        {
-          key: "getPrivacyPolicy",
-          value: function getPrivacyPolicy() {
-            return this.privacyPolicy;
-          }
-          /**
-           * @param { module:model/AgreementPrivacyPolicy } privacyPolicy
-           */
-        },
-        {
-          key: "setPrivacyPolicy",
-          value: function setPrivacyPolicy(privacyPolicy) {
-            this.privacyPolicy = privacyPolicy;
-          }
-          /**
-           * @return { module:model/AgreementTermsOfService }
-           */
-        },
-        {
-          key: "getTermsOfService",
-          value: function getTermsOfService() {
-            return this.termsOfService;
-          }
-          /**
-           * @param { module:model/AgreementTermsOfService } termsOfService
-           */
-        },
-        {
-          key: "setTermsOfService",
-          value: function setTermsOfService(termsOfService) {
-            this.termsOfService = termsOfService;
-          }
+  _createClass(
+    ApplicationAgreement,
+    [
+      {
+        key: "getOlderThan",
+
+        /**
+         * @return { module:model/AgreementOlderThan }
+         */
+        value: function getOlderThan() {
+          return this.olderThan;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ApplicationAgreement();
-            }
-
-            if (data.hasOwnProperty("olderThan")) {
-              object.olderThan = _ApiClient.default.convertToType(
-                data["olderThan"],
-                object.olderThanType
-              );
-            }
-
-            if (data.hasOwnProperty("privacyPolicy")) {
-              object.privacyPolicy = _ApiClient.default.convertToType(
-                data["privacyPolicy"],
-                object.privacyPolicyType
-              );
-            }
-
-            if (data.hasOwnProperty("termsOfService")) {
-              object.termsOfService = _ApiClient.default.convertToType(
-                data["termsOfService"],
-                object.termsOfServiceType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/AgreementOlderThan } olderThan
+         */
+      },
+      {
+        key: "setOlderThan",
+        value: function setOlderThan(olderThan) {
+          this.olderThan = olderThan;
         }
-      ]
-    );
+        /**
+         * @return { module:model/AgreementPrivacyPolicy }
+         */
+      },
+      {
+        key: "getPrivacyPolicy",
+        value: function getPrivacyPolicy() {
+          return this.privacyPolicy;
+        }
+        /**
+         * @param { module:model/AgreementPrivacyPolicy } privacyPolicy
+         */
+      },
+      {
+        key: "setPrivacyPolicy",
+        value: function setPrivacyPolicy(privacyPolicy) {
+          this.privacyPolicy = privacyPolicy;
+        }
+        /**
+         * @return { module:model/AgreementTermsOfService }
+         */
+      },
+      {
+        key: "getTermsOfService",
+        value: function getTermsOfService() {
+          return this.termsOfService;
+        }
+        /**
+         * @param { module:model/AgreementTermsOfService } termsOfService
+         */
+      },
+      {
+        key: "setTermsOfService",
+        value: function setTermsOfService(termsOfService) {
+          this.termsOfService = termsOfService;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ApplicationAgreement;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ApplicationAgreement();
+          }
+
+          if (data.hasOwnProperty("olderThan")) {
+            object.olderThan = _ApiClient.default.convertToType(
+              data["olderThan"],
+              object.olderThanType
+            );
+          }
+
+          if (data.hasOwnProperty("privacyPolicy")) {
+            object.privacyPolicy = _ApiClient.default.convertToType(
+              data["privacyPolicy"],
+              object.privacyPolicyType
+            );
+          }
+
+          if (data.hasOwnProperty("termsOfService")) {
+            object.termsOfService = _ApiClient.default.convertToType(
+              data["termsOfService"],
+              object.termsOfServiceType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ApplicationAgreement;
+})();
 
 exports.default = ApplicationAgreement;

@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The MemberLinksOrganization model module.
  * @module model/MemberLinksOrganization
  */
-var MemberLinksOrganization =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "MemberLinksOrganization".
-   * @alias module:model/MemberLinksOrganization
-   * @class
-  
-   */
-    function MemberLinksOrganization() {
-      _classCallCheck(this, MemberLinksOrganization);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _MemberLinksOrganizationIriTemplate.default;
-    }
-    /**
-     * Constructs a "MemberLinksOrganization" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/MemberLinksOrganization } object Optional instance to populate.
-     * @return { module:model/MemberLinksOrganization } The populated "MemberLinksOrganization" instance.
+var MemberLinksOrganization = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "MemberLinksOrganization".
+     * @alias module:model/MemberLinksOrganization
+     * @class
+    
      */
+  function MemberLinksOrganization() {
+    _classCallCheck(this, MemberLinksOrganization);
 
-    _createClass(
-      MemberLinksOrganization,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _MemberLinksOrganizationIriTemplate.default;
+  }
+  /**
+   * Constructs a "MemberLinksOrganization" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/MemberLinksOrganization } object Optional instance to populate.
+   * @return { module:model/MemberLinksOrganization } The populated "MemberLinksOrganization" instance.
+   */
 
-          /**
-           * Gets The URI of the organization associated to the given member.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the organization associated to the given member.
-           * @param { String } href The URI of the organization associated to the given member.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/MemberLinksOrganizationIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/MemberLinksOrganizationIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    MemberLinksOrganization,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the organization associated to the given member.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new MemberLinksOrganization();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the organization associated to the given member.
+         * @param { String } href The URI of the organization associated to the given member.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/MemberLinksOrganizationIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/MemberLinksOrganizationIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return MemberLinksOrganization;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new MemberLinksOrganization();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return MemberLinksOrganization;
+})();
 
 exports.default = MemberLinksOrganization;

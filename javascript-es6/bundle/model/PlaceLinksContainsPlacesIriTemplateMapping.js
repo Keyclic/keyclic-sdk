@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PlaceLinksContainsPlacesIriTemplateMapping model module.
  * @module model/PlaceLinksContainsPlacesIriTemplateMapping
  */
-var PlaceLinksContainsPlacesIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PlaceLinksContainsPlacesIriTemplateMapping".
-   * @alias module:model/PlaceLinksContainsPlacesIriTemplateMapping
-   * @class
-  
-   */
-    function PlaceLinksContainsPlacesIriTemplateMapping() {
-      _classCallCheck(this, PlaceLinksContainsPlacesIriTemplateMapping);
-
-      this.parent = null;
-    }
-    /**
-     * Constructs a "PlaceLinksContainsPlacesIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PlaceLinksContainsPlacesIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/PlaceLinksContainsPlacesIriTemplateMapping } The populated "PlaceLinksContainsPlacesIriTemplateMapping" instance.
+var PlaceLinksContainsPlacesIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PlaceLinksContainsPlacesIriTemplateMapping".
+     * @alias module:model/PlaceLinksContainsPlacesIriTemplateMapping
+     * @class
+    
      */
+  function PlaceLinksContainsPlacesIriTemplateMapping() {
+    _classCallCheck(this, PlaceLinksContainsPlacesIriTemplateMapping);
 
-    _createClass(
-      PlaceLinksContainsPlacesIriTemplateMapping,
-      [
-        {
-          key: "getParent",
+    this.parent = null;
+  }
+  /**
+   * Constructs a "PlaceLinksContainsPlacesIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PlaceLinksContainsPlacesIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/PlaceLinksContainsPlacesIriTemplateMapping } The populated "PlaceLinksContainsPlacesIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getParent() {
-            return this.parent;
-          }
-          /**
-           * @param { String } parent
-           */
-        },
-        {
-          key: "setParent",
-          value: function setParent(parent) {
-            this.parent = parent;
-          }
+  _createClass(
+    PlaceLinksContainsPlacesIriTemplateMapping,
+    [
+      {
+        key: "getParent",
+
+        /**
+         * @return { String }
+         */
+        value: function getParent() {
+          return this.parent;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PlaceLinksContainsPlacesIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("parent")) {
-              object.parent = _ApiClient.default.convertToType(
-                data["parent"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } parent
+         */
+      },
+      {
+        key: "setParent",
+        value: function setParent(parent) {
+          this.parent = parent;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PlaceLinksContainsPlacesIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PlaceLinksContainsPlacesIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("parent")) {
+            object.parent = _ApiClient.default.convertToType(
+              data["parent"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PlaceLinksContainsPlacesIriTemplateMapping;
+})();
 
 exports.default = PlaceLinksContainsPlacesIriTemplateMapping;

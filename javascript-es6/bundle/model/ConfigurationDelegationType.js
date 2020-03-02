@@ -41,116 +41,111 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ConfigurationDelegationType model module.
  * @module model/ConfigurationDelegationType
  */
-var ConfigurationDelegationType =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ConfigurationDelegationType".
-   * @alias module:model/ConfigurationDelegationType
-   * @class
-  
-   */
-    function ConfigurationDelegationType() {
-      _classCallCheck(this, ConfigurationDelegationType);
-
-      this.id = null;
-      this.type = null;
-      this.workflow = null;
-      this.workflowType = _DelegationTypeWorkflow.default;
-    }
-    /**
-     * Constructs a "ConfigurationDelegationType" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ConfigurationDelegationType } object Optional instance to populate.
-     * @return { module:model/ConfigurationDelegationType } The populated "ConfigurationDelegationType" instance.
+var ConfigurationDelegationType = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ConfigurationDelegationType".
+     * @alias module:model/ConfigurationDelegationType
+     * @class
+    
      */
+  function ConfigurationDelegationType() {
+    _classCallCheck(this, ConfigurationDelegationType);
 
-    _createClass(
-      ConfigurationDelegationType,
-      [
-        {
-          key: "getId",
+    this.id = null;
+    this.type = null;
+    this.workflow = null;
+    this.workflowType = _DelegationTypeWorkflow.default;
+  }
+  /**
+   * Constructs a "ConfigurationDelegationType" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ConfigurationDelegationType } object Optional instance to populate.
+   * @return { module:model/ConfigurationDelegationType } The populated "ConfigurationDelegationType" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
-          }
-          /**
-           * @return { module:model/DelegationTypeWorkflow }
-           */
-        },
-        {
-          key: "getWorkflow",
-          value: function getWorkflow() {
-            return this.workflow;
-          }
-          /**
-           * @param { module:model/DelegationTypeWorkflow } workflow
-           */
-        },
-        {
-          key: "setWorkflow",
-          value: function setWorkflow(workflow) {
-            this.workflow = workflow;
-          }
+  _createClass(
+    ConfigurationDelegationType,
+    [
+      {
+        key: "getId",
+
+        /**
+         * @return { String }
+         */
+        value: function getId() {
+          return this.id;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ConfigurationDelegationType();
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("workflow")) {
-              object.workflow = _ApiClient.default.convertToType(
-                data["workflow"],
-                object.workflowType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getType",
+        value: function getType() {
+          return this.type;
         }
-      ]
-    );
+        /**
+         * @return { module:model/DelegationTypeWorkflow }
+         */
+      },
+      {
+        key: "getWorkflow",
+        value: function getWorkflow() {
+          return this.workflow;
+        }
+        /**
+         * @param { module:model/DelegationTypeWorkflow } workflow
+         */
+      },
+      {
+        key: "setWorkflow",
+        value: function setWorkflow(workflow) {
+          this.workflow = workflow;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ConfigurationDelegationType;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ConfigurationDelegationType();
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("workflow")) {
+            object.workflow = _ApiClient.default.convertToType(
+              data["workflow"],
+              object.workflowType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ConfigurationDelegationType;
+})();
 
 exports.default = ConfigurationDelegationType;

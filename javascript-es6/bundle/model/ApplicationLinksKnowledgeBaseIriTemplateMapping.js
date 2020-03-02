@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ApplicationLinksKnowledgeBaseIriTemplateMapping model module.
  * @module model/ApplicationLinksKnowledgeBaseIriTemplateMapping
  */
-var ApplicationLinksKnowledgeBaseIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ApplicationLinksKnowledgeBaseIriTemplateMapping".
-   * @alias module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping
-   * @class
-  
-   */
-    function ApplicationLinksKnowledgeBaseIriTemplateMapping() {
-      _classCallCheck(this, ApplicationLinksKnowledgeBaseIriTemplateMapping);
-
-      this.knowledgeBase = null;
-    }
-    /**
-     * Constructs a "ApplicationLinksKnowledgeBaseIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping } The populated "ApplicationLinksKnowledgeBaseIriTemplateMapping" instance.
+var ApplicationLinksKnowledgeBaseIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ApplicationLinksKnowledgeBaseIriTemplateMapping".
+     * @alias module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping
+     * @class
+    
      */
+  function ApplicationLinksKnowledgeBaseIriTemplateMapping() {
+    _classCallCheck(this, ApplicationLinksKnowledgeBaseIriTemplateMapping);
 
-    _createClass(
-      ApplicationLinksKnowledgeBaseIriTemplateMapping,
-      [
-        {
-          key: "getKnowledgeBase",
+    this.knowledgeBase = null;
+  }
+  /**
+   * Constructs a "ApplicationLinksKnowledgeBaseIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping } The populated "ApplicationLinksKnowledgeBaseIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getKnowledgeBase() {
-            return this.knowledgeBase;
-          }
-          /**
-           * @param { String } knowledgeBase
-           */
-        },
-        {
-          key: "setKnowledgeBase",
-          value: function setKnowledgeBase(knowledgeBase) {
-            this.knowledgeBase = knowledgeBase;
-          }
+  _createClass(
+    ApplicationLinksKnowledgeBaseIriTemplateMapping,
+    [
+      {
+        key: "getKnowledgeBase",
+
+        /**
+         * @return { String }
+         */
+        value: function getKnowledgeBase() {
+          return this.knowledgeBase;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ApplicationLinksKnowledgeBaseIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("knowledgeBase")) {
-              object.knowledgeBase = _ApiClient.default.convertToType(
-                data["knowledgeBase"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } knowledgeBase
+         */
+      },
+      {
+        key: "setKnowledgeBase",
+        value: function setKnowledgeBase(knowledgeBase) {
+          this.knowledgeBase = knowledgeBase;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ApplicationLinksKnowledgeBaseIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ApplicationLinksKnowledgeBaseIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("knowledgeBase")) {
+            object.knowledgeBase = _ApiClient.default.convertToType(
+              data["knowledgeBase"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ApplicationLinksKnowledgeBaseIriTemplateMapping;
+})();
 
 exports.default = ApplicationLinksKnowledgeBaseIriTemplateMapping;

@@ -57,190 +57,188 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OrganizationLinks model module.
  * @module model/OrganizationLinks
  */
-var OrganizationLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OrganizationLinks".
-   * @alias module:model/OrganizationLinks
-   * @class
-  
-   */
-    function OrganizationLinks() {
-      _classCallCheck(this, OrganizationLinks);
-
-      this.application = null;
-      this.businessActivity = null;
-      this.configuration = null;
-      this.logo = null;
-      this.self = null;
-      this.applicationType = _OrganizationLinksApplication.default;
-      this.businessActivityType = _OrganizationLinksBusinessActivity.default;
-      this.configurationType = _OrganizationLinksConfiguration.default;
-      this.logoType = _OrganizationLinksLogo.default;
-      this.selfType = _OrganizationLinksSelf.default;
-    }
-    /**
-     * Constructs a "OrganizationLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OrganizationLinks } object Optional instance to populate.
-     * @return { module:model/OrganizationLinks } The populated "OrganizationLinks" instance.
+var OrganizationLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OrganizationLinks".
+     * @alias module:model/OrganizationLinks
+     * @class
+    
      */
+  function OrganizationLinks() {
+    _classCallCheck(this, OrganizationLinks);
 
-    _createClass(
-      OrganizationLinks,
-      [
-        {
-          key: "getApplication",
+    this.application = null;
+    this.businessActivity = null;
+    this.configuration = null;
+    this.logo = null;
+    this.self = null;
+    this.applicationType = _OrganizationLinksApplication.default;
+    this.businessActivityType = _OrganizationLinksBusinessActivity.default;
+    this.configurationType = _OrganizationLinksConfiguration.default;
+    this.logoType = _OrganizationLinksLogo.default;
+    this.selfType = _OrganizationLinksSelf.default;
+  }
+  /**
+   * Constructs a "OrganizationLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OrganizationLinks } object Optional instance to populate.
+   * @return { module:model/OrganizationLinks } The populated "OrganizationLinks" instance.
+   */
 
-          /**
-           * @return { module:model/OrganizationLinksApplication }
-           */
-          value: function getApplication() {
-            return this.application;
-          }
-          /**
-           * @param { module:model/OrganizationLinksApplication } application
-           */
-        },
-        {
-          key: "setApplication",
-          value: function setApplication(application) {
-            this.application = application;
-          }
-          /**
-           * @return { module:model/OrganizationLinksBusinessActivity }
-           */
-        },
-        {
-          key: "getBusinessActivity",
-          value: function getBusinessActivity() {
-            return this.businessActivity;
-          }
-          /**
-           * @param { module:model/OrganizationLinksBusinessActivity } businessActivity
-           */
-        },
-        {
-          key: "setBusinessActivity",
-          value: function setBusinessActivity(businessActivity) {
-            this.businessActivity = businessActivity;
-          }
-          /**
-           * @return { module:model/OrganizationLinksConfiguration }
-           */
-        },
-        {
-          key: "getConfiguration",
-          value: function getConfiguration() {
-            return this.configuration;
-          }
-          /**
-           * @param { module:model/OrganizationLinksConfiguration } configuration
-           */
-        },
-        {
-          key: "setConfiguration",
-          value: function setConfiguration(configuration) {
-            this.configuration = configuration;
-          }
-          /**
-           * @return { module:model/OrganizationLinksLogo }
-           */
-        },
-        {
-          key: "getLogo",
-          value: function getLogo() {
-            return this.logo;
-          }
-          /**
-           * @param { module:model/OrganizationLinksLogo } logo
-           */
-        },
-        {
-          key: "setLogo",
-          value: function setLogo(logo) {
-            this.logo = logo;
-          }
-          /**
-           * @return { module:model/OrganizationLinksSelf }
-           */
-        },
-        {
-          key: "getSelf",
-          value: function getSelf() {
-            return this.self;
-          }
-          /**
-           * @param { module:model/OrganizationLinksSelf } self
-           */
-        },
-        {
-          key: "setSelf",
-          value: function setSelf(self) {
-            this.self = self;
-          }
+  _createClass(
+    OrganizationLinks,
+    [
+      {
+        key: "getApplication",
+
+        /**
+         * @return { module:model/OrganizationLinksApplication }
+         */
+        value: function getApplication() {
+          return this.application;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OrganizationLinks();
-            }
-
-            if (data.hasOwnProperty("application")) {
-              object.application = _ApiClient.default.convertToType(
-                data["application"],
-                object.applicationType
-              );
-            }
-
-            if (data.hasOwnProperty("businessActivity")) {
-              object.businessActivity = _ApiClient.default.convertToType(
-                data["businessActivity"],
-                object.businessActivityType
-              );
-            }
-
-            if (data.hasOwnProperty("configuration")) {
-              object.configuration = _ApiClient.default.convertToType(
-                data["configuration"],
-                object.configurationType
-              );
-            }
-
-            if (data.hasOwnProperty("logo")) {
-              object.logo = _ApiClient.default.convertToType(
-                data["logo"],
-                object.logoType
-              );
-            }
-
-            if (data.hasOwnProperty("self")) {
-              object.self = _ApiClient.default.convertToType(
-                data["self"],
-                object.selfType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/OrganizationLinksApplication } application
+         */
+      },
+      {
+        key: "setApplication",
+        value: function setApplication(application) {
+          this.application = application;
         }
-      ]
-    );
+        /**
+         * @return { module:model/OrganizationLinksBusinessActivity }
+         */
+      },
+      {
+        key: "getBusinessActivity",
+        value: function getBusinessActivity() {
+          return this.businessActivity;
+        }
+        /**
+         * @param { module:model/OrganizationLinksBusinessActivity } businessActivity
+         */
+      },
+      {
+        key: "setBusinessActivity",
+        value: function setBusinessActivity(businessActivity) {
+          this.businessActivity = businessActivity;
+        }
+        /**
+         * @return { module:model/OrganizationLinksConfiguration }
+         */
+      },
+      {
+        key: "getConfiguration",
+        value: function getConfiguration() {
+          return this.configuration;
+        }
+        /**
+         * @param { module:model/OrganizationLinksConfiguration } configuration
+         */
+      },
+      {
+        key: "setConfiguration",
+        value: function setConfiguration(configuration) {
+          this.configuration = configuration;
+        }
+        /**
+         * @return { module:model/OrganizationLinksLogo }
+         */
+      },
+      {
+        key: "getLogo",
+        value: function getLogo() {
+          return this.logo;
+        }
+        /**
+         * @param { module:model/OrganizationLinksLogo } logo
+         */
+      },
+      {
+        key: "setLogo",
+        value: function setLogo(logo) {
+          this.logo = logo;
+        }
+        /**
+         * @return { module:model/OrganizationLinksSelf }
+         */
+      },
+      {
+        key: "getSelf",
+        value: function getSelf() {
+          return this.self;
+        }
+        /**
+         * @param { module:model/OrganizationLinksSelf } self
+         */
+      },
+      {
+        key: "setSelf",
+        value: function setSelf(self) {
+          this.self = self;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OrganizationLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OrganizationLinks();
+          }
+
+          if (data.hasOwnProperty("application")) {
+            object.application = _ApiClient.default.convertToType(
+              data["application"],
+              object.applicationType
+            );
+          }
+
+          if (data.hasOwnProperty("businessActivity")) {
+            object.businessActivity = _ApiClient.default.convertToType(
+              data["businessActivity"],
+              object.businessActivityType
+            );
+          }
+
+          if (data.hasOwnProperty("configuration")) {
+            object.configuration = _ApiClient.default.convertToType(
+              data["configuration"],
+              object.configurationType
+            );
+          }
+
+          if (data.hasOwnProperty("logo")) {
+            object.logo = _ApiClient.default.convertToType(
+              data["logo"],
+              object.logoType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OrganizationLinks;
+})();
 
 exports.default = OrganizationLinks;

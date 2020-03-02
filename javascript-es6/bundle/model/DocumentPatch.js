@@ -43,109 +43,107 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DocumentPatch model module.
  * @module model/DocumentPatch
  */
-var DocumentPatch =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DocumentPatch".
-   * @alias module:model/DocumentPatch
-   * @class
-  
-   */
-    function DocumentPatch() {
-      _classCallCheck(this, DocumentPatch);
-
-      this.file = null;
-      this.permission = null;
-      this.fileType = _DocumentPatchFile.default;
-      this.permissionType = _DocumentPatchPermission.default;
-    }
-    /**
-     * Constructs a "DocumentPatch" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DocumentPatch } object Optional instance to populate.
-     * @return { module:model/DocumentPatch } The populated "DocumentPatch" instance.
+var DocumentPatch = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DocumentPatch".
+     * @alias module:model/DocumentPatch
+     * @class
+    
      */
+  function DocumentPatch() {
+    _classCallCheck(this, DocumentPatch);
 
-    _createClass(
-      DocumentPatch,
-      [
-        {
-          key: "getFile",
+    this.file = null;
+    this.permission = null;
+    this.fileType = _DocumentPatchFile.default;
+    this.permissionType = _DocumentPatchPermission.default;
+  }
+  /**
+   * Constructs a "DocumentPatch" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DocumentPatch } object Optional instance to populate.
+   * @return { module:model/DocumentPatch } The populated "DocumentPatch" instance.
+   */
 
-          /**
-           * @return { module:model/DocumentPatchFile }
-           */
-          value: function getFile() {
-            return this.file;
-          }
-          /**
-           * @param { module:model/DocumentPatchFile } file
-           */
-        },
-        {
-          key: "setFile",
-          value: function setFile(file) {
-            this.file = file;
-          }
-          /**
-           * @return { module:model/DocumentPatchPermission }
-           */
-        },
-        {
-          key: "getPermission",
-          value: function getPermission() {
-            return this.permission;
-          }
-          /**
-           * @param { module:model/DocumentPatchPermission } permission
-           */
-        },
-        {
-          key: "setPermission",
-          value: function setPermission(permission) {
-            this.permission = permission;
-          }
+  _createClass(
+    DocumentPatch,
+    [
+      {
+        key: "getFile",
+
+        /**
+         * @return { module:model/DocumentPatchFile }
+         */
+        value: function getFile() {
+          return this.file;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DocumentPatch();
-            }
-
-            if (data.hasOwnProperty("file")) {
-              object.file = _ApiClient.default.convertToType(
-                data["file"],
-                object.fileType
-              );
-            }
-
-            if (data.hasOwnProperty("permission")) {
-              object.permission = _ApiClient.default.convertToType(
-                data["permission"],
-                object.permissionType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/DocumentPatchFile } file
+         */
+      },
+      {
+        key: "setFile",
+        value: function setFile(file) {
+          this.file = file;
         }
-      ]
-    );
+        /**
+         * @return { module:model/DocumentPatchPermission }
+         */
+      },
+      {
+        key: "getPermission",
+        value: function getPermission() {
+          return this.permission;
+        }
+        /**
+         * @param { module:model/DocumentPatchPermission } permission
+         */
+      },
+      {
+        key: "setPermission",
+        value: function setPermission(permission) {
+          this.permission = permission;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DocumentPatch;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DocumentPatch();
+          }
+
+          if (data.hasOwnProperty("file")) {
+            object.file = _ApiClient.default.convertToType(
+              data["file"],
+              object.fileType
+            );
+          }
+
+          if (data.hasOwnProperty("permission")) {
+            object.permission = _ApiClient.default.convertToType(
+              data["permission"],
+              object.permissionType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DocumentPatch;
+})();
 
 exports.default = DocumentPatch;

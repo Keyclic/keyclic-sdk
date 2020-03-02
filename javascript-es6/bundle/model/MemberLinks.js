@@ -45,136 +45,134 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The MemberLinks model module.
  * @module model/MemberLinks
  */
-var MemberLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "MemberLinks".
-   * @alias module:model/MemberLinks
-   * @class
-  
-   */
-    function MemberLinks() {
-      _classCallCheck(this, MemberLinks);
-
-      this.organization = null;
-      this.person = null;
-      this.self = null;
-      this.organizationType = _MemberLinksOrganization.default;
-      this.personType = _MemberLinksPerson.default;
-      this.selfType = _MemberLinksSelf.default;
-    }
-    /**
-     * Constructs a "MemberLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/MemberLinks } object Optional instance to populate.
-     * @return { module:model/MemberLinks } The populated "MemberLinks" instance.
+var MemberLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "MemberLinks".
+     * @alias module:model/MemberLinks
+     * @class
+    
      */
+  function MemberLinks() {
+    _classCallCheck(this, MemberLinks);
 
-    _createClass(
-      MemberLinks,
-      [
-        {
-          key: "getOrganization",
+    this.organization = null;
+    this.person = null;
+    this.self = null;
+    this.organizationType = _MemberLinksOrganization.default;
+    this.personType = _MemberLinksPerson.default;
+    this.selfType = _MemberLinksSelf.default;
+  }
+  /**
+   * Constructs a "MemberLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/MemberLinks } object Optional instance to populate.
+   * @return { module:model/MemberLinks } The populated "MemberLinks" instance.
+   */
 
-          /**
-           * @return { module:model/MemberLinksOrganization }
-           */
-          value: function getOrganization() {
-            return this.organization;
-          }
-          /**
-           * @param { module:model/MemberLinksOrganization } organization
-           */
-        },
-        {
-          key: "setOrganization",
-          value: function setOrganization(organization) {
-            this.organization = organization;
-          }
-          /**
-           * @return { module:model/MemberLinksPerson }
-           */
-        },
-        {
-          key: "getPerson",
-          value: function getPerson() {
-            return this.person;
-          }
-          /**
-           * @param { module:model/MemberLinksPerson } person
-           */
-        },
-        {
-          key: "setPerson",
-          value: function setPerson(person) {
-            this.person = person;
-          }
-          /**
-           * @return { module:model/MemberLinksSelf }
-           */
-        },
-        {
-          key: "getSelf",
-          value: function getSelf() {
-            return this.self;
-          }
-          /**
-           * @param { module:model/MemberLinksSelf } self
-           */
-        },
-        {
-          key: "setSelf",
-          value: function setSelf(self) {
-            this.self = self;
-          }
+  _createClass(
+    MemberLinks,
+    [
+      {
+        key: "getOrganization",
+
+        /**
+         * @return { module:model/MemberLinksOrganization }
+         */
+        value: function getOrganization() {
+          return this.organization;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new MemberLinks();
-            }
-
-            if (data.hasOwnProperty("organization")) {
-              object.organization = _ApiClient.default.convertToType(
-                data["organization"],
-                object.organizationType
-              );
-            }
-
-            if (data.hasOwnProperty("person")) {
-              object.person = _ApiClient.default.convertToType(
-                data["person"],
-                object.personType
-              );
-            }
-
-            if (data.hasOwnProperty("self")) {
-              object.self = _ApiClient.default.convertToType(
-                data["self"],
-                object.selfType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/MemberLinksOrganization } organization
+         */
+      },
+      {
+        key: "setOrganization",
+        value: function setOrganization(organization) {
+          this.organization = organization;
         }
-      ]
-    );
+        /**
+         * @return { module:model/MemberLinksPerson }
+         */
+      },
+      {
+        key: "getPerson",
+        value: function getPerson() {
+          return this.person;
+        }
+        /**
+         * @param { module:model/MemberLinksPerson } person
+         */
+      },
+      {
+        key: "setPerson",
+        value: function setPerson(person) {
+          this.person = person;
+        }
+        /**
+         * @return { module:model/MemberLinksSelf }
+         */
+      },
+      {
+        key: "getSelf",
+        value: function getSelf() {
+          return this.self;
+        }
+        /**
+         * @param { module:model/MemberLinksSelf } self
+         */
+      },
+      {
+        key: "setSelf",
+        value: function setSelf(self) {
+          this.self = self;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return MemberLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new MemberLinks();
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
+              object.organizationType
+            );
+          }
+
+          if (data.hasOwnProperty("person")) {
+            object.person = _ApiClient.default.convertToType(
+              data["person"],
+              object.personType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return MemberLinks;
+})();
 
 exports.default = MemberLinks;

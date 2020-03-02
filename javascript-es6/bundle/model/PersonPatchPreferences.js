@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PersonPatchPreferences model module.
  * @module model/PersonPatchPreferences
  */
-var PersonPatchPreferences =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PersonPatchPreferences".
-   * @alias module:model/PersonPatchPreferences
-   * @class
-  
-   */
-    function PersonPatchPreferences() {
-      _classCallCheck(this, PersonPatchPreferences);
-
-      this.notification = null;
-      this.notificationType = _PersonPatchPreferencesNotification.default;
-    }
-    /**
-     * Constructs a "PersonPatchPreferences" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PersonPatchPreferences } object Optional instance to populate.
-     * @return { module:model/PersonPatchPreferences } The populated "PersonPatchPreferences" instance.
+var PersonPatchPreferences = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PersonPatchPreferences".
+     * @alias module:model/PersonPatchPreferences
+     * @class
+    
      */
+  function PersonPatchPreferences() {
+    _classCallCheck(this, PersonPatchPreferences);
 
-    _createClass(
-      PersonPatchPreferences,
-      [
-        {
-          key: "getNotification",
+    this.notification = null;
+    this.notificationType = _PersonPatchPreferencesNotification.default;
+  }
+  /**
+   * Constructs a "PersonPatchPreferences" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PersonPatchPreferences } object Optional instance to populate.
+   * @return { module:model/PersonPatchPreferences } The populated "PersonPatchPreferences" instance.
+   */
 
-          /**
-           * @return { module:model/PersonPatchPreferencesNotification }
-           */
-          value: function getNotification() {
-            return this.notification;
-          }
-          /**
-           * @param { module:model/PersonPatchPreferencesNotification } notification
-           */
-        },
-        {
-          key: "setNotification",
-          value: function setNotification(notification) {
-            this.notification = notification;
-          }
+  _createClass(
+    PersonPatchPreferences,
+    [
+      {
+        key: "getNotification",
+
+        /**
+         * @return { module:model/PersonPatchPreferencesNotification }
+         */
+        value: function getNotification() {
+          return this.notification;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PersonPatchPreferences();
-            }
-
-            if (data.hasOwnProperty("notification")) {
-              object.notification = _ApiClient.default.convertToType(
-                data["notification"],
-                object.notificationType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/PersonPatchPreferencesNotification } notification
+         */
+      },
+      {
+        key: "setNotification",
+        value: function setNotification(notification) {
+          this.notification = notification;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PersonPatchPreferences;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PersonPatchPreferences();
+          }
+
+          if (data.hasOwnProperty("notification")) {
+            object.notification = _ApiClient.default.convertToType(
+              data["notification"],
+              object.notificationType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PersonPatchPreferences;
+})();
 
 exports.default = PersonPatchPreferences;

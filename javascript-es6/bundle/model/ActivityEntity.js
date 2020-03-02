@@ -37,89 +37,84 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ActivityEntity model module.
  * @module model/ActivityEntity
  */
-var ActivityEntity =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ActivityEntity".
-   * @alias module:model/ActivityEntity
-   * @class
-  
-   */
-    function ActivityEntity() {
-      _classCallCheck(this, ActivityEntity);
-
-      this.id = null;
-      this.type = null;
-    }
-    /**
-     * Constructs a "ActivityEntity" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ActivityEntity } object Optional instance to populate.
-     * @return { module:model/ActivityEntity } The populated "ActivityEntity" instance.
+var ActivityEntity = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ActivityEntity".
+     * @alias module:model/ActivityEntity
+     * @class
+    
      */
+  function ActivityEntity() {
+    _classCallCheck(this, ActivityEntity);
 
-    _createClass(
-      ActivityEntity,
-      [
-        {
-          key: "getId",
+    this.id = null;
+    this.type = null;
+  }
+  /**
+   * Constructs a "ActivityEntity" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ActivityEntity } object Optional instance to populate.
+   * @return { module:model/ActivityEntity } The populated "ActivityEntity" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
-          }
+  _createClass(
+    ActivityEntity,
+    [
+      {
+        key: "getId",
+
+        /**
+         * @return { String }
+         */
+        value: function getId() {
+          return this.id;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ActivityEntity();
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getType",
+        value: function getType() {
+          return this.type;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ActivityEntity;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ActivityEntity();
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ActivityEntity;
+})();
 
 exports.default = ActivityEntity;

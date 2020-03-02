@@ -41,109 +41,107 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DeviceLinks model module.
  * @module model/DeviceLinks
  */
-var DeviceLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DeviceLinks".
-   * @alias module:model/DeviceLinks
-   * @class
-  
-   */
-    function DeviceLinks() {
-      _classCallCheck(this, DeviceLinks);
-
-      this.person = null;
-      this.self = null;
-      this.personType = _DeviceLinksPerson.default;
-      this.selfType = _DeviceLinksSelf.default;
-    }
-    /**
-     * Constructs a "DeviceLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DeviceLinks } object Optional instance to populate.
-     * @return { module:model/DeviceLinks } The populated "DeviceLinks" instance.
+var DeviceLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DeviceLinks".
+     * @alias module:model/DeviceLinks
+     * @class
+    
      */
+  function DeviceLinks() {
+    _classCallCheck(this, DeviceLinks);
 
-    _createClass(
-      DeviceLinks,
-      [
-        {
-          key: "getPerson",
+    this.person = null;
+    this.self = null;
+    this.personType = _DeviceLinksPerson.default;
+    this.selfType = _DeviceLinksSelf.default;
+  }
+  /**
+   * Constructs a "DeviceLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DeviceLinks } object Optional instance to populate.
+   * @return { module:model/DeviceLinks } The populated "DeviceLinks" instance.
+   */
 
-          /**
-           * @return { module:model/DeviceLinksPerson }
-           */
-          value: function getPerson() {
-            return this.person;
-          }
-          /**
-           * @param { module:model/DeviceLinksPerson } person
-           */
-        },
-        {
-          key: "setPerson",
-          value: function setPerson(person) {
-            this.person = person;
-          }
-          /**
-           * @return { module:model/DeviceLinksSelf }
-           */
-        },
-        {
-          key: "getSelf",
-          value: function getSelf() {
-            return this.self;
-          }
-          /**
-           * @param { module:model/DeviceLinksSelf } self
-           */
-        },
-        {
-          key: "setSelf",
-          value: function setSelf(self) {
-            this.self = self;
-          }
+  _createClass(
+    DeviceLinks,
+    [
+      {
+        key: "getPerson",
+
+        /**
+         * @return { module:model/DeviceLinksPerson }
+         */
+        value: function getPerson() {
+          return this.person;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DeviceLinks();
-            }
-
-            if (data.hasOwnProperty("person")) {
-              object.person = _ApiClient.default.convertToType(
-                data["person"],
-                object.personType
-              );
-            }
-
-            if (data.hasOwnProperty("self")) {
-              object.self = _ApiClient.default.convertToType(
-                data["self"],
-                object.selfType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/DeviceLinksPerson } person
+         */
+      },
+      {
+        key: "setPerson",
+        value: function setPerson(person) {
+          this.person = person;
         }
-      ]
-    );
+        /**
+         * @return { module:model/DeviceLinksSelf }
+         */
+      },
+      {
+        key: "getSelf",
+        value: function getSelf() {
+          return this.self;
+        }
+        /**
+         * @param { module:model/DeviceLinksSelf } self
+         */
+      },
+      {
+        key: "setSelf",
+        value: function setSelf(self) {
+          this.self = self;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DeviceLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DeviceLinks();
+          }
+
+          if (data.hasOwnProperty("person")) {
+            object.person = _ApiClient.default.convertToType(
+              data["person"],
+              object.personType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DeviceLinks;
+})();
 
 exports.default = DeviceLinks;

@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ContributionLinksContributorIriTemplateMapping model module.
  * @module model/ContributionLinksContributorIriTemplateMapping
  */
-var ContributionLinksContributorIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ContributionLinksContributorIriTemplateMapping".
-   * @alias module:model/ContributionLinksContributorIriTemplateMapping
-   * @class
-  
-   */
-    function ContributionLinksContributorIriTemplateMapping() {
-      _classCallCheck(this, ContributionLinksContributorIriTemplateMapping);
-
-      this.person = null;
-    }
-    /**
-     * Constructs a "ContributionLinksContributorIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ContributionLinksContributorIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/ContributionLinksContributorIriTemplateMapping } The populated "ContributionLinksContributorIriTemplateMapping" instance.
+var ContributionLinksContributorIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ContributionLinksContributorIriTemplateMapping".
+     * @alias module:model/ContributionLinksContributorIriTemplateMapping
+     * @class
+    
      */
+  function ContributionLinksContributorIriTemplateMapping() {
+    _classCallCheck(this, ContributionLinksContributorIriTemplateMapping);
 
-    _createClass(
-      ContributionLinksContributorIriTemplateMapping,
-      [
-        {
-          key: "getPerson",
+    this.person = null;
+  }
+  /**
+   * Constructs a "ContributionLinksContributorIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ContributionLinksContributorIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/ContributionLinksContributorIriTemplateMapping } The populated "ContributionLinksContributorIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getPerson() {
-            return this.person;
-          }
-          /**
-           * @param { String } person
-           */
-        },
-        {
-          key: "setPerson",
-          value: function setPerson(person) {
-            this.person = person;
-          }
+  _createClass(
+    ContributionLinksContributorIriTemplateMapping,
+    [
+      {
+        key: "getPerson",
+
+        /**
+         * @return { String }
+         */
+        value: function getPerson() {
+          return this.person;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ContributionLinksContributorIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("person")) {
-              object.person = _ApiClient.default.convertToType(
-                data["person"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } person
+         */
+      },
+      {
+        key: "setPerson",
+        value: function setPerson(person) {
+          this.person = person;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ContributionLinksContributorIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ContributionLinksContributorIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("person")) {
+            object.person = _ApiClient.default.convertToType(
+              data["person"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ContributionLinksContributorIriTemplateMapping;
+})();
 
 exports.default = ContributionLinksContributorIriTemplateMapping;

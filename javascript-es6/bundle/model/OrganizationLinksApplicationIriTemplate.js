@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OrganizationLinksApplicationIriTemplate model module.
  * @module model/OrganizationLinksApplicationIriTemplate
  */
-var OrganizationLinksApplicationIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OrganizationLinksApplicationIriTemplate".
-   * @alias module:model/OrganizationLinksApplicationIriTemplate
-   * @class
-  
-   */
-    function OrganizationLinksApplicationIriTemplate() {
-      _classCallCheck(this, OrganizationLinksApplicationIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _ApplicationLinksSelfIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "OrganizationLinksApplicationIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OrganizationLinksApplicationIriTemplate } object Optional instance to populate.
-     * @return { module:model/OrganizationLinksApplicationIriTemplate } The populated "OrganizationLinksApplicationIriTemplate" instance.
+var OrganizationLinksApplicationIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OrganizationLinksApplicationIriTemplate".
+     * @alias module:model/OrganizationLinksApplicationIriTemplate
+     * @class
+    
      */
+  function OrganizationLinksApplicationIriTemplate() {
+    _classCallCheck(this, OrganizationLinksApplicationIriTemplate);
 
-    _createClass(
-      OrganizationLinksApplicationIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _ApplicationLinksSelfIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "OrganizationLinksApplicationIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OrganizationLinksApplicationIriTemplate } object Optional instance to populate.
+   * @return { module:model/OrganizationLinksApplicationIriTemplate } The populated "OrganizationLinksApplicationIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/ApplicationLinksSelfIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/ApplicationLinksSelfIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    OrganizationLinksApplicationIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/ApplicationLinksSelfIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OrganizationLinksApplicationIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ApplicationLinksSelfIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OrganizationLinksApplicationIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OrganizationLinksApplicationIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OrganizationLinksApplicationIriTemplate;
+})();
 
 exports.default = OrganizationLinksApplicationIriTemplate;

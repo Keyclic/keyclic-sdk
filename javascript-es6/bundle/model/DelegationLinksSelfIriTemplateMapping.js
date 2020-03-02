@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DelegationLinksSelfIriTemplateMapping model module.
  * @module model/DelegationLinksSelfIriTemplateMapping
  */
-var DelegationLinksSelfIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DelegationLinksSelfIriTemplateMapping".
-   * @alias module:model/DelegationLinksSelfIriTemplateMapping
-   * @class
-  
-   */
-    function DelegationLinksSelfIriTemplateMapping() {
-      _classCallCheck(this, DelegationLinksSelfIriTemplateMapping);
-
-      this.delegation = null;
-    }
-    /**
-     * Constructs a "DelegationLinksSelfIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DelegationLinksSelfIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/DelegationLinksSelfIriTemplateMapping } The populated "DelegationLinksSelfIriTemplateMapping" instance.
+var DelegationLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DelegationLinksSelfIriTemplateMapping".
+     * @alias module:model/DelegationLinksSelfIriTemplateMapping
+     * @class
+    
      */
+  function DelegationLinksSelfIriTemplateMapping() {
+    _classCallCheck(this, DelegationLinksSelfIriTemplateMapping);
 
-    _createClass(
-      DelegationLinksSelfIriTemplateMapping,
-      [
-        {
-          key: "getDelegation",
+    this.delegation = null;
+  }
+  /**
+   * Constructs a "DelegationLinksSelfIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DelegationLinksSelfIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/DelegationLinksSelfIriTemplateMapping } The populated "DelegationLinksSelfIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getDelegation() {
-            return this.delegation;
-          }
-          /**
-           * @param { String } delegation
-           */
-        },
-        {
-          key: "setDelegation",
-          value: function setDelegation(delegation) {
-            this.delegation = delegation;
-          }
+  _createClass(
+    DelegationLinksSelfIriTemplateMapping,
+    [
+      {
+        key: "getDelegation",
+
+        /**
+         * @return { String }
+         */
+        value: function getDelegation() {
+          return this.delegation;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DelegationLinksSelfIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("delegation")) {
-              object.delegation = _ApiClient.default.convertToType(
-                data["delegation"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } delegation
+         */
+      },
+      {
+        key: "setDelegation",
+        value: function setDelegation(delegation) {
+          this.delegation = delegation;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DelegationLinksSelfIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DelegationLinksSelfIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("delegation")) {
+            object.delegation = _ApiClient.default.convertToType(
+              data["delegation"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DelegationLinksSelfIriTemplateMapping;
+})();
 
 exports.default = DelegationLinksSelfIriTemplateMapping;

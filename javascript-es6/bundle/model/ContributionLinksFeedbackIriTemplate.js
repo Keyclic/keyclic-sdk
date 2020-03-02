@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ContributionLinksFeedbackIriTemplate model module.
  * @module model/ContributionLinksFeedbackIriTemplate
  */
-var ContributionLinksFeedbackIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ContributionLinksFeedbackIriTemplate".
-   * @alias module:model/ContributionLinksFeedbackIriTemplate
-   * @class
-  
-   */
-    function ContributionLinksFeedbackIriTemplate() {
-      _classCallCheck(this, ContributionLinksFeedbackIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _ContributionLinksFeedbackIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "ContributionLinksFeedbackIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ContributionLinksFeedbackIriTemplate } object Optional instance to populate.
-     * @return { module:model/ContributionLinksFeedbackIriTemplate } The populated "ContributionLinksFeedbackIriTemplate" instance.
+var ContributionLinksFeedbackIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ContributionLinksFeedbackIriTemplate".
+     * @alias module:model/ContributionLinksFeedbackIriTemplate
+     * @class
+    
      */
+  function ContributionLinksFeedbackIriTemplate() {
+    _classCallCheck(this, ContributionLinksFeedbackIriTemplate);
 
-    _createClass(
-      ContributionLinksFeedbackIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _ContributionLinksFeedbackIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "ContributionLinksFeedbackIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ContributionLinksFeedbackIriTemplate } object Optional instance to populate.
+   * @return { module:model/ContributionLinksFeedbackIriTemplate } The populated "ContributionLinksFeedbackIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/ContributionLinksFeedbackIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/ContributionLinksFeedbackIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    ContributionLinksFeedbackIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/ContributionLinksFeedbackIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ContributionLinksFeedbackIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ContributionLinksFeedbackIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ContributionLinksFeedbackIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ContributionLinksFeedbackIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ContributionLinksFeedbackIriTemplate;
+})();
 
 exports.default = ContributionLinksFeedbackIriTemplate;

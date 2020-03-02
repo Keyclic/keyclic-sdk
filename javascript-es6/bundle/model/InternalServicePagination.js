@@ -134,97 +134,95 @@ function _setPrototypeOf(o, p) {
  * The InternalServicePagination model module.
  * @module model/InternalServicePagination
  */
-var InternalServicePagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(InternalServicePagination, _Pagination);
+var InternalServicePagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(InternalServicePagination, _Pagination);
 
-    /**
-   * Constructs a new "InternalServicePagination".
-   * @alias module:model/InternalServicePagination
-   * @class
-  
-   */
-    function InternalServicePagination() {
-      var _this;
-
-      _classCallCheck(this, InternalServicePagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(InternalServicePagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _InternalServiceCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "InternalServicePagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/InternalServicePagination } object Optional instance to populate.
-     * @return { module:model/InternalServicePagination } The populated "InternalServicePagination" instance.
+  /**
+     * Constructs a new "InternalServicePagination".
+     * @alias module:model/InternalServicePagination
+     * @class
+    
      */
+  function InternalServicePagination() {
+    var _this;
 
-    _createClass(
-      InternalServicePagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, InternalServicePagination);
 
-          /**
-           * @return { module:model/InternalServiceCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/InternalServiceCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new InternalServicePagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(InternalServicePagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(InternalServicePagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _InternalServiceCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "InternalServicePagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/InternalServicePagination } object Optional instance to populate.
+   * @return { module:model/InternalServicePagination } The populated "InternalServicePagination" instance.
+   */
 
-    return InternalServicePagination;
-  })(_Pagination2.default);
+  _createClass(
+    InternalServicePagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/InternalServiceCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/InternalServiceCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new InternalServicePagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(InternalServicePagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return InternalServicePagination;
+})(_Pagination2.default);
 
 exports.default = InternalServicePagination;

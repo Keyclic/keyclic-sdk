@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DocumentPatchPermission model module.
  * @module model/DocumentPatchPermission
  */
-var DocumentPatchPermission =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DocumentPatchPermission".
-   * @alias module:model/DocumentPatchPermission
-   * @class
-  
-   */
-    function DocumentPatchPermission() {
-      _classCallCheck(this, DocumentPatchPermission);
-
-      this.targetGroup = null;
-    }
-    /**
-     * Constructs a "DocumentPatchPermission" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DocumentPatchPermission } object Optional instance to populate.
-     * @return { module:model/DocumentPatchPermission } The populated "DocumentPatchPermission" instance.
+var DocumentPatchPermission = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DocumentPatchPermission".
+     * @alias module:model/DocumentPatchPermission
+     * @class
+    
      */
+  function DocumentPatchPermission() {
+    _classCallCheck(this, DocumentPatchPermission);
 
-    _createClass(
-      DocumentPatchPermission,
-      [
-        {
-          key: "getTargetGroup",
+    this.targetGroup = null;
+  }
+  /**
+   * Constructs a "DocumentPatchPermission" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DocumentPatchPermission } object Optional instance to populate.
+   * @return { module:model/DocumentPatchPermission } The populated "DocumentPatchPermission" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getTargetGroup() {
-            return this.targetGroup;
-          }
-          /**
-           * @param { String } targetGroup
-           */
-        },
-        {
-          key: "setTargetGroup",
-          value: function setTargetGroup(targetGroup) {
-            this.targetGroup = targetGroup;
-          }
+  _createClass(
+    DocumentPatchPermission,
+    [
+      {
+        key: "getTargetGroup",
+
+        /**
+         * @return { String }
+         */
+        value: function getTargetGroup() {
+          return this.targetGroup;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DocumentPatchPermission();
-            }
-
-            if (data.hasOwnProperty("targetGroup")) {
-              object.targetGroup = _ApiClient.default.convertToType(
-                data["targetGroup"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } targetGroup
+         */
+      },
+      {
+        key: "setTargetGroup",
+        value: function setTargetGroup(targetGroup) {
+          this.targetGroup = targetGroup;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DocumentPatchPermission;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DocumentPatchPermission();
+          }
+
+          if (data.hasOwnProperty("targetGroup")) {
+            object.targetGroup = _ApiClient.default.convertToType(
+              data["targetGroup"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DocumentPatchPermission;
+})();
 
 exports.default = DocumentPatchPermission;

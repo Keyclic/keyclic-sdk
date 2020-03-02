@@ -37,83 +37,81 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The InvitationData model module.
  * @module model/InvitationData
  */
-var InvitationData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "InvitationData".
-   * @alias module:model/InvitationData
-   * @class
-  
-   * @param member { String }
-  
-   */
-    function InvitationData(member) {
-      _classCallCheck(this, InvitationData);
-
-      this.member = member;
-    }
-    /**
-     * Constructs a "InvitationData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/InvitationData } object Optional instance to populate.
-     * @return { module:model/InvitationData } The populated "InvitationData" instance.
+var InvitationData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "InvitationData".
+     * @alias module:model/InvitationData
+     * @class
+    
+     * @param member { String }
+    
      */
+  function InvitationData(member) {
+    _classCallCheck(this, InvitationData);
 
-    _createClass(
-      InvitationData,
-      [
-        {
-          key: "getMember",
+    this.member = member;
+  }
+  /**
+   * Constructs a "InvitationData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/InvitationData } object Optional instance to populate.
+   * @return { module:model/InvitationData } The populated "InvitationData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getMember() {
-            return this.member;
-          }
-          /**
-           * @param { String } member
-           */
-        },
-        {
-          key: "setMember",
-          value: function setMember(member) {
-            this.member = member;
-          }
+  _createClass(
+    InvitationData,
+    [
+      {
+        key: "getMember",
+
+        /**
+         * @return { String }
+         */
+        value: function getMember() {
+          return this.member;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new InvitationData();
-            }
-
-            if (data.hasOwnProperty("member")) {
-              object.member = _ApiClient.default.convertToType(
-                data["member"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } member
+         */
+      },
+      {
+        key: "setMember",
+        value: function setMember(member) {
+          this.member = member;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return InvitationData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new InvitationData();
+          }
+
+          if (data.hasOwnProperty("member")) {
+            object.member = _ApiClient.default.convertToType(
+              data["member"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return InvitationData;
+})();
 
 exports.default = InvitationData;

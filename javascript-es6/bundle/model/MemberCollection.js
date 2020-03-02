@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The MemberCollection model module.
  * @module model/MemberCollection
  */
-var MemberCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "MemberCollection".
-   * @alias module:model/MemberCollection
-   * @class
-  
-   */
-    function MemberCollection() {
-      _classCallCheck(this, MemberCollection);
-
-      this.items = [];
-      this.itemsType = _Member.default;
-    }
-    /**
-     * Constructs a "MemberCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/MemberCollection } object Optional instance to populate.
-     * @return { module:model/MemberCollection } The populated "MemberCollection" instance.
+var MemberCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "MemberCollection".
+     * @alias module:model/MemberCollection
+     * @class
+    
      */
+  function MemberCollection() {
+    _classCallCheck(this, MemberCollection);
 
-    _createClass(
-      MemberCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _Member.default;
+  }
+  /**
+   * Constructs a "MemberCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/MemberCollection } object Optional instance to populate.
+   * @return { module:model/MemberCollection } The populated "MemberCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Member> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/Member> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    MemberCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/Member> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new MemberCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Member> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return MemberCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new MemberCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return MemberCollection;
+})();
 
 exports.default = MemberCollection;

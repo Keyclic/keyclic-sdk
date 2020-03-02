@@ -39,213 +39,208 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The Transition model module.
  * @module model/Transition
  */
-var Transition =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "Transition".
-   * @alias module:model/Transition
-   * @class
-  
-   */
-    function Transition() {
-      _classCallCheck(this, Transition);
-
-      this.id = null;
-      this.type = null;
-      this.name = null;
-      this.description = null;
-      this.from = null;
-      this.to = null;
-      this.fromType = _State.default;
-      this.toType = _State.default;
-    }
-    /**
-     * Constructs a "Transition" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/Transition } object Optional instance to populate.
-     * @return { module:model/Transition } The populated "Transition" instance.
+var Transition = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "Transition".
+     * @alias module:model/Transition
+     * @class
+    
      */
+  function Transition() {
+    _classCallCheck(this, Transition);
 
-    _createClass(
-      Transition,
-      [
-        {
-          key: "getId",
+    this.id = null;
+    this.type = null;
+    this.name = null;
+    this.description = null;
+    this.from = null;
+    this.to = null;
+    this.fromType = _State.default;
+    this.toType = _State.default;
+  }
+  /**
+   * Constructs a "Transition" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/Transition } object Optional instance to populate.
+   * @return { module:model/Transition } The populated "Transition" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @param { String } id
-           */
-        },
-        {
-          key: "setId",
-          value: function setId(id) {
-            this.id = id;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
-          }
-          /**
-           * @param { String } type
-           */
-        },
-        {
-          key: "setType",
-          value: function setType(type) {
-            this.type = type;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getName",
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getDescription",
-          value: function getDescription() {
-            return this.description;
-          }
-          /**
-           * @param { String } description
-           */
-        },
-        {
-          key: "setDescription",
-          value: function setDescription(description) {
-            this.description = description;
-          }
-          /**
-           * @return { module:model/State }
-           */
-        },
-        {
-          key: "getFrom",
-          value: function getFrom() {
-            return this.from;
-          }
-          /**
-           * @param { module:model/State } from
-           */
-        },
-        {
-          key: "setFrom",
-          value: function setFrom(from) {
-            this.from = from;
-          }
-          /**
-           * @return { module:model/State }
-           */
-        },
-        {
-          key: "getTo",
-          value: function getTo() {
-            return this.to;
-          }
-          /**
-           * @param { module:model/State } to
-           */
-        },
-        {
-          key: "setTo",
-          value: function setTo(to) {
-            this.to = to;
-          }
+  _createClass(
+    Transition,
+    [
+      {
+        key: "getId",
+
+        /**
+         * @return { String }
+         */
+        value: function getId() {
+          return this.id;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new Transition();
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("description")) {
-              object.description = _ApiClient.default.convertToType(
-                data["description"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("from")) {
-              object.from = _ApiClient.default.convertToType(
-                data["from"],
-                object.fromType
-              );
-            }
-
-            if (data.hasOwnProperty("to")) {
-              object.to = _ApiClient.default.convertToType(
-                data["to"],
-                object.toType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } id
+         */
+      },
+      {
+        key: "setId",
+        value: function setId(id) {
+          this.id = id;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getType",
+        value: function getType() {
+          return this.type;
+        }
+        /**
+         * @param { String } type
+         */
+      },
+      {
+        key: "setType",
+        value: function setType(type) {
+          this.type = type;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getName",
+        value: function getName() {
+          return this.name;
+        }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getDescription",
+        value: function getDescription() {
+          return this.description;
+        }
+        /**
+         * @param { String } description
+         */
+      },
+      {
+        key: "setDescription",
+        value: function setDescription(description) {
+          this.description = description;
+        }
+        /**
+         * @return { module:model/State }
+         */
+      },
+      {
+        key: "getFrom",
+        value: function getFrom() {
+          return this.from;
+        }
+        /**
+         * @param { module:model/State } from
+         */
+      },
+      {
+        key: "setFrom",
+        value: function setFrom(from) {
+          this.from = from;
+        }
+        /**
+         * @return { module:model/State }
+         */
+      },
+      {
+        key: "getTo",
+        value: function getTo() {
+          return this.to;
+        }
+        /**
+         * @param { module:model/State } to
+         */
+      },
+      {
+        key: "setTo",
+        value: function setTo(to) {
+          this.to = to;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return Transition;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new Transition();
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("from")) {
+            object.from = _ApiClient.default.convertToType(
+              data["from"],
+              object.fromType
+            );
+          }
+
+          if (data.hasOwnProperty("to")) {
+            object.to = _ApiClient.default.convertToType(
+              data["to"],
+              object.toType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return Transition;
+})();
 
 exports.default = Transition;

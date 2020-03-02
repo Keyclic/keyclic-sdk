@@ -115,424 +115,399 @@ function _setPrototypeOf(o, p) {
  * ExternalService service.
  * @module api/ExternalServiceApi
  */
-var ExternalServiceApi =
-  /*#__PURE__*/
-  (function(_ApiClient) {
-    _inherits(ExternalServiceApi, _ApiClient);
+var ExternalServiceApi = /*#__PURE__*/ (function(_ApiClient) {
+  _inherits(ExternalServiceApi, _ApiClient);
 
-    /**
-     * @class
-     * { string } basePath To override basePath.
-     * { object } headers Additional headers for the instance.
-     * { int } timeout Number in seconds before timeout.
-     */
-    function ExternalServiceApi() {
-      var basePath =
-        arguments.length > 0 && arguments[0] !== undefined
-          ? arguments[0]
-          : null;
-      var headers =
-        arguments.length > 1 && arguments[1] !== undefined
-          ? arguments[1]
-          : null;
-      var timeout =
-        arguments.length > 2 && arguments[2] !== undefined
-          ? arguments[2]
-          : null;
+  /**
+   * @class
+   * { string } basePath To override basePath.
+   * { object } headers Additional headers for the instance.
+   * { int } timeout Number in seconds before timeout.
+   */
+  function ExternalServiceApi() {
+    var basePath =
+      arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+    var headers =
+      arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    var timeout =
+      arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
-      _classCallCheck(this, ExternalServiceApi);
+    _classCallCheck(this, ExternalServiceApi);
 
-      return _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(ExternalServiceApi).call(
-          this,
-          basePath,
-          headers,
-          timeout
-        )
-      );
-    }
-    /**
-     * Remove one ExternalService resource.
-     * @param { String } xKeyclicApp
-     * @param { String } externalService The identifier of the resource.
-     * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
-     * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { Date } xDateTime
-     * @param { String } xKeyclicAppVersion
-     */
+    return _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(ExternalServiceApi).call(this, basePath, headers, timeout)
+    );
+  }
+  /**
+   * Remove one ExternalService resource.
+   * @param { String } xKeyclicApp
+   * @param { String } externalService The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
+   * @param { String } xKeyclicAppVersion
+   */
 
-    _createClass(ExternalServiceApi, [
-      {
-        key: "deleteExternalService",
-        value: function deleteExternalService() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
-          var xKeyclicApp = options.xKeyclicApp,
-            externalService = options.externalService,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+  _createClass(ExternalServiceApi, [
+    {
+      key: "deleteExternalService",
+      value: function deleteExternalService() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
+        var xKeyclicApp = options.xKeyclicApp,
+          externalService = options.externalService,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling deleteExternalService'
-            );
-          } // verify the required parameter 'externalService' is set
-
-          if (
-            typeof externalService === "undefined" ||
-            externalService === null
-          ) {
-            throw new window.Error(
-              'Missing the required parameter "externalService" when calling deleteExternalService'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          var pathParams = {
-            externalService: externalService
-          };
-          var bodyParam = null;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/external-services/{externalService}",
-            "DELETE",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling deleteExternalService'
           );
-        }
-        /**
-         * Retrieve one ExternalService resource.
-         * @param { String } xKeyclicApp
-         * @param { String } externalService The identifier of the resource.
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { ExternalService }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { Date } xDateTime
-         * @param { String } xKeyclicAppVersion
-         */
-      },
-      {
-        key: "getExternalService",
-        value: function getExternalService() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
+        } // verify the required parameter 'externalService' is set
 
-          if (returnType === null) {
-            returnType = _ExternalService.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            externalService = options.externalService,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling getExternalService'
-            );
-          } // verify the required parameter 'externalService' is set
-
-          if (
-            typeof externalService === "undefined" ||
-            externalService === null
-          ) {
-            throw new window.Error(
-              'Missing the required parameter "externalService" when calling getExternalService'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          var pathParams = {
-            externalService: externalService
-          };
-          var bodyParam = null;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/external-services/{externalService}",
-            "GET",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
+        if (
+          typeof externalService === "undefined" ||
+          externalService === null
+        ) {
+          throw new window.Error(
+            'Missing the required parameter "externalService" when calling deleteExternalService'
           );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
         }
-        /**
-         * Edit one ExternalService resource.
-         * @param { String } xKeyclicApp
-         * @param { module:model/ExternalServicePatch } externalServicePatch
-         * @param { String } externalService The identifier of the resource.
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { ExternalService }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { Date } xDateTime
-         * @param { String } xKeyclicAppVersion
-         */
-      },
-      {
-        key: "patchExternalService",
-        value: function patchExternalService() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
 
-          if (returnType === null) {
-            returnType = _ExternalService.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            externalServicePatch = options.externalServicePatch,
-            externalService = options.externalService,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling patchExternalService'
-            );
-          } // verify the required parameter 'externalServicePatch' is set
-
-          if (
-            typeof externalServicePatch === "undefined" ||
-            externalServicePatch === null
-          ) {
-            throw new window.Error(
-              'Missing the required parameter "externalServicePatch" when calling patchExternalService'
-            );
-          } // verify the required parameter 'externalService' is set
-
-          if (
-            typeof externalService === "undefined" ||
-            externalService === null
-          ) {
-            throw new window.Error(
-              'Missing the required parameter "externalService" when calling patchExternalService'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          var pathParams = {
-            externalService: externalService
-          };
-          var bodyParam = externalServicePatch;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/external-services/{externalService}",
-            "PATCH",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-          );
-        }
-        /**
-         * Create one ExternalService resource.
-         * @param { String } xKeyclicApp
-         * @param { module:model/ExternalServiceData } externalServiceData
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { ExternalService }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { Date } xDateTime
-         * @param { String } xKeyclicAppVersion
-         */
-      },
-      {
-        key: "postExternalService",
-        value: function postExternalService() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
-
-          if (returnType === null) {
-            returnType = _ExternalService.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            externalServiceData = options.externalServiceData,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling postExternalService'
-            );
-          } // verify the required parameter 'externalServiceData' is set
-
-          if (
-            typeof externalServiceData === "undefined" ||
-            externalServiceData === null
-          ) {
-            throw new window.Error(
-              'Missing the required parameter "externalServiceData" when calling postExternalService'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          var pathParams = {};
-          var bodyParam = externalServiceData;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/external-services",
-            "POST",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-          );
-        }
+        var pathParams = {
+          externalService: externalService
+        };
+        var bodyParam = null;
+        var queryParams = {};
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/external-services/{externalService}",
+          "DELETE",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
       }
-    ]);
+      /**
+       * Retrieve one ExternalService resource.
+       * @param { String } xKeyclicApp
+       * @param { String } externalService The identifier of the resource.
+       * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+       * @param { ExternalService }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+       * @param { module:model/String } acceptLanguage   (default to fr-FR)
+       * @param { Date } xDateTime
+       * @param { String } xKeyclicAppVersion
+       */
+    },
+    {
+      key: "getExternalService",
+      value: function getExternalService() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
 
-    return ExternalServiceApi;
-  })(_ApiClient2.default);
+        if (returnType === null) {
+          returnType = _ExternalService.default;
+        }
+
+        var xKeyclicApp = options.xKeyclicApp,
+          externalService = options.externalService,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling getExternalService'
+          );
+        } // verify the required parameter 'externalService' is set
+
+        if (
+          typeof externalService === "undefined" ||
+          externalService === null
+        ) {
+          throw new window.Error(
+            'Missing the required parameter "externalService" when calling getExternalService'
+          );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
+        }
+
+        var pathParams = {
+          externalService: externalService
+        };
+        var bodyParam = null;
+        var queryParams = {};
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/external-services/{externalService}",
+          "GET",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
+      }
+      /**
+       * Edit one ExternalService resource.
+       * @param { String } xKeyclicApp
+       * @param { module:model/ExternalServicePatch } externalServicePatch
+       * @param { String } externalService The identifier of the resource.
+       * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+       * @param { ExternalService }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+       * @param { module:model/String } acceptLanguage   (default to fr-FR)
+       * @param { Date } xDateTime
+       * @param { String } xKeyclicAppVersion
+       */
+    },
+    {
+      key: "patchExternalService",
+      value: function patchExternalService() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
+
+        if (returnType === null) {
+          returnType = _ExternalService.default;
+        }
+
+        var xKeyclicApp = options.xKeyclicApp,
+          externalServicePatch = options.externalServicePatch,
+          externalService = options.externalService,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling patchExternalService'
+          );
+        } // verify the required parameter 'externalServicePatch' is set
+
+        if (
+          typeof externalServicePatch === "undefined" ||
+          externalServicePatch === null
+        ) {
+          throw new window.Error(
+            'Missing the required parameter "externalServicePatch" when calling patchExternalService'
+          );
+        } // verify the required parameter 'externalService' is set
+
+        if (
+          typeof externalService === "undefined" ||
+          externalService === null
+        ) {
+          throw new window.Error(
+            'Missing the required parameter "externalService" when calling patchExternalService'
+          );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
+        }
+
+        var pathParams = {
+          externalService: externalService
+        };
+        var bodyParam = externalServicePatch;
+        var queryParams = {};
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/external-services/{externalService}",
+          "PATCH",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
+      }
+      /**
+       * Create one ExternalService resource.
+       * @param { String } xKeyclicApp
+       * @param { module:model/ExternalServiceData } externalServiceData
+       * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+       * @param { ExternalService }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+       * @param { module:model/String } acceptLanguage   (default to fr-FR)
+       * @param { Date } xDateTime
+       * @param { String } xKeyclicAppVersion
+       */
+    },
+    {
+      key: "postExternalService",
+      value: function postExternalService() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
+
+        if (returnType === null) {
+          returnType = _ExternalService.default;
+        }
+
+        var xKeyclicApp = options.xKeyclicApp,
+          externalServiceData = options.externalServiceData,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling postExternalService'
+          );
+        } // verify the required parameter 'externalServiceData' is set
+
+        if (
+          typeof externalServiceData === "undefined" ||
+          externalServiceData === null
+        ) {
+          throw new window.Error(
+            'Missing the required parameter "externalServiceData" when calling postExternalService'
+          );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
+        }
+
+        var pathParams = {};
+        var bodyParam = externalServiceData;
+        var queryParams = {};
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/external-services",
+          "POST",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
+      }
+    }
+  ]);
+
+  return ExternalServiceApi;
+})(_ApiClient2.default);
 
 exports.default = ExternalServiceApi;

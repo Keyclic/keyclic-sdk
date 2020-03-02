@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OccupantLinksPlaceIriTemplateMapping model module.
  * @module model/OccupantLinksPlaceIriTemplateMapping
  */
-var OccupantLinksPlaceIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OccupantLinksPlaceIriTemplateMapping".
-   * @alias module:model/OccupantLinksPlaceIriTemplateMapping
-   * @class
-  
-   */
-    function OccupantLinksPlaceIriTemplateMapping() {
-      _classCallCheck(this, OccupantLinksPlaceIriTemplateMapping);
-
-      this.place = null;
-    }
-    /**
-     * Constructs a "OccupantLinksPlaceIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OccupantLinksPlaceIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/OccupantLinksPlaceIriTemplateMapping } The populated "OccupantLinksPlaceIriTemplateMapping" instance.
+var OccupantLinksPlaceIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OccupantLinksPlaceIriTemplateMapping".
+     * @alias module:model/OccupantLinksPlaceIriTemplateMapping
+     * @class
+    
      */
+  function OccupantLinksPlaceIriTemplateMapping() {
+    _classCallCheck(this, OccupantLinksPlaceIriTemplateMapping);
 
-    _createClass(
-      OccupantLinksPlaceIriTemplateMapping,
-      [
-        {
-          key: "getPlace",
+    this.place = null;
+  }
+  /**
+   * Constructs a "OccupantLinksPlaceIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OccupantLinksPlaceIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/OccupantLinksPlaceIriTemplateMapping } The populated "OccupantLinksPlaceIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getPlace() {
-            return this.place;
-          }
-          /**
-           * @param { String } place
-           */
-        },
-        {
-          key: "setPlace",
-          value: function setPlace(place) {
-            this.place = place;
-          }
+  _createClass(
+    OccupantLinksPlaceIriTemplateMapping,
+    [
+      {
+        key: "getPlace",
+
+        /**
+         * @return { String }
+         */
+        value: function getPlace() {
+          return this.place;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OccupantLinksPlaceIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("place")) {
-              object.place = _ApiClient.default.convertToType(
-                data["place"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } place
+         */
+      },
+      {
+        key: "setPlace",
+        value: function setPlace(place) {
+          this.place = place;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OccupantLinksPlaceIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OccupantLinksPlaceIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("place")) {
+            object.place = _ApiClient.default.convertToType(
+              data["place"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OccupantLinksPlaceIriTemplateMapping;
+})();
 
 exports.default = OccupantLinksPlaceIriTemplateMapping;

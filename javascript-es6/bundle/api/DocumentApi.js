@@ -107,316 +107,299 @@ function _setPrototypeOf(o, p) {
  * Document service.
  * @module api/DocumentApi
  */
-var DocumentApi =
-  /*#__PURE__*/
-  (function(_ApiClient) {
-    _inherits(DocumentApi, _ApiClient);
+var DocumentApi = /*#__PURE__*/ (function(_ApiClient) {
+  _inherits(DocumentApi, _ApiClient);
 
-    /**
-     * @class
-     * { string } basePath To override basePath.
-     * { object } headers Additional headers for the instance.
-     * { int } timeout Number in seconds before timeout.
-     */
-    function DocumentApi() {
-      var basePath =
-        arguments.length > 0 && arguments[0] !== undefined
-          ? arguments[0]
-          : null;
-      var headers =
-        arguments.length > 1 && arguments[1] !== undefined
-          ? arguments[1]
-          : null;
-      var timeout =
-        arguments.length > 2 && arguments[2] !== undefined
-          ? arguments[2]
-          : null;
+  /**
+   * @class
+   * { string } basePath To override basePath.
+   * { object } headers Additional headers for the instance.
+   * { int } timeout Number in seconds before timeout.
+   */
+  function DocumentApi() {
+    var basePath =
+      arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+    var headers =
+      arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    var timeout =
+      arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
-      _classCallCheck(this, DocumentApi);
+    _classCallCheck(this, DocumentApi);
 
-      return _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(DocumentApi).call(this, basePath, headers, timeout)
-      );
-    }
-    /**
-     * Remove one Document resource.
-     * @param { String } xKeyclicApp
-     * @param { String } document The identifier of the resource.
-     * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
-     * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { Date } xDateTime
-     * @param { String } xKeyclicAppVersion
-     */
+    return _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(DocumentApi).call(this, basePath, headers, timeout)
+    );
+  }
+  /**
+   * Remove one Document resource.
+   * @param { String } xKeyclicApp
+   * @param { String } document The identifier of the resource.
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { Object } returnType The required type to return; can be a string for simple types or the constructor for a complex type (default to null).
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
+   * @param { String } xKeyclicAppVersion
+   */
 
-    _createClass(DocumentApi, [
-      {
-        key: "deleteDocument",
-        value: function deleteDocument() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
-          var xKeyclicApp = options.xKeyclicApp,
-            document = options.document,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+  _createClass(DocumentApi, [
+    {
+      key: "deleteDocument",
+      value: function deleteDocument() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
+        var xKeyclicApp = options.xKeyclicApp,
+          document = options.document,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
 
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling deleteDocument'
-            );
-          } // verify the required parameter 'document' is set
-
-          if (typeof document === "undefined" || document === null) {
-            throw new window.Error(
-              'Missing the required parameter "document" when calling deleteDocument'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          var pathParams = {
-            document: document
-          };
-          var bodyParam = null;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/documents/{document}",
-            "DELETE",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling deleteDocument'
           );
-        }
-        /**
-         * Retrieve one Document resource.
-         * @param { String } xKeyclicApp
-         * @param { String } document The identifier of the resource.
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { Document }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { Date } xDateTime
-         * @param { String } xKeyclicAppVersion
-         */
-      },
-      {
-        key: "getDocument",
-        value: function getDocument() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
+        } // verify the required parameter 'document' is set
 
-          if (returnType === null) {
-            returnType = _Document.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            document = options.document,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling getDocument'
-            );
-          } // verify the required parameter 'document' is set
-
-          if (typeof document === "undefined" || document === null) {
-            throw new window.Error(
-              'Missing the required parameter "document" when calling getDocument'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          var pathParams = {
-            document: document
-          };
-          var bodyParam = null;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/documents/{document}",
-            "GET",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
+        if (typeof document === "undefined" || document === null) {
+          throw new window.Error(
+            'Missing the required parameter "document" when calling deleteDocument'
           );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
         }
-        /**
-         * Edit one Document resource.
-         * @param { String } xKeyclicApp
-         * @param { module:model/DocumentPatch } documentPatch
-         * @param { String } document The identifier of the resource.
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { Document }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { Date } xDateTime
-         * @param { String } xKeyclicAppVersion
-         */
-      },
-      {
-        key: "patchDocument",
-        value: function patchDocument() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
 
-          if (returnType === null) {
-            returnType = _Document.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            documentPatch = options.documentPatch,
-            document = options.document,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling patchDocument'
-            );
-          } // verify the required parameter 'documentPatch' is set
-
-          if (typeof documentPatch === "undefined" || documentPatch === null) {
-            throw new window.Error(
-              'Missing the required parameter "documentPatch" when calling patchDocument'
-            );
-          } // verify the required parameter 'document' is set
-
-          if (typeof document === "undefined" || document === null) {
-            throw new window.Error(
-              'Missing the required parameter "document" when calling patchDocument'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          var pathParams = {
-            document: document
-          };
-          var bodyParam = documentPatch;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/documents/{document}",
-            "PATCH",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-          );
-        }
+        var pathParams = {
+          document: document
+        };
+        var bodyParam = null;
+        var queryParams = {};
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/documents/{document}",
+          "DELETE",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
       }
-    ]);
+      /**
+       * Retrieve one Document resource.
+       * @param { String } xKeyclicApp
+       * @param { String } document The identifier of the resource.
+       * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+       * @param { Document }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+       * @param { module:model/String } acceptLanguage   (default to fr-FR)
+       * @param { Date } xDateTime
+       * @param { String } xKeyclicAppVersion
+       */
+    },
+    {
+      key: "getDocument",
+      value: function getDocument() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
 
-    return DocumentApi;
-  })(_ApiClient2.default);
+        if (returnType === null) {
+          returnType = _Document.default;
+        }
+
+        var xKeyclicApp = options.xKeyclicApp,
+          document = options.document,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling getDocument'
+          );
+        } // verify the required parameter 'document' is set
+
+        if (typeof document === "undefined" || document === null) {
+          throw new window.Error(
+            'Missing the required parameter "document" when calling getDocument'
+          );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
+        }
+
+        var pathParams = {
+          document: document
+        };
+        var bodyParam = null;
+        var queryParams = {};
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/documents/{document}",
+          "GET",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
+      }
+      /**
+       * Edit one Document resource.
+       * @param { String } xKeyclicApp
+       * @param { module:model/DocumentPatch } documentPatch
+       * @param { String } document The identifier of the resource.
+       * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+       * @param { Document }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+       * @param { module:model/String } acceptLanguage   (default to fr-FR)
+       * @param { Date } xDateTime
+       * @param { String } xKeyclicAppVersion
+       */
+    },
+    {
+      key: "patchDocument",
+      value: function patchDocument() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
+
+        if (returnType === null) {
+          returnType = _Document.default;
+        }
+
+        var xKeyclicApp = options.xKeyclicApp,
+          documentPatch = options.documentPatch,
+          document = options.document,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling patchDocument'
+          );
+        } // verify the required parameter 'documentPatch' is set
+
+        if (typeof documentPatch === "undefined" || documentPatch === null) {
+          throw new window.Error(
+            'Missing the required parameter "documentPatch" when calling patchDocument'
+          );
+        } // verify the required parameter 'document' is set
+
+        if (typeof document === "undefined" || document === null) {
+          throw new window.Error(
+            'Missing the required parameter "document" when calling patchDocument'
+          );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
+        }
+
+        var pathParams = {
+          document: document
+        };
+        var bodyParam = documentPatch;
+        var queryParams = {};
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/documents/{document}",
+          "PATCH",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
+      }
+    }
+  ]);
+
+  return DocumentApi;
+})(_ApiClient2.default);
 
 exports.default = DocumentApi;

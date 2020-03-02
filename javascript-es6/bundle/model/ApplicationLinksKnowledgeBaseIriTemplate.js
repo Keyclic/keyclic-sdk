@@ -41,83 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ApplicationLinksKnowledgeBaseIriTemplate model module.
  * @module model/ApplicationLinksKnowledgeBaseIriTemplate
  */
-var ApplicationLinksKnowledgeBaseIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ApplicationLinksKnowledgeBaseIriTemplate".
-   * @alias module:model/ApplicationLinksKnowledgeBaseIriTemplate
-   * @class
-  
-   */
-    function ApplicationLinksKnowledgeBaseIriTemplate() {
-      _classCallCheck(this, ApplicationLinksKnowledgeBaseIriTemplate);
-
-      this.mapping = null;
-      this.mappingType =
-        _ApplicationLinksKnowledgeBaseIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "ApplicationLinksKnowledgeBaseIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ApplicationLinksKnowledgeBaseIriTemplate } object Optional instance to populate.
-     * @return { module:model/ApplicationLinksKnowledgeBaseIriTemplate } The populated "ApplicationLinksKnowledgeBaseIriTemplate" instance.
+var ApplicationLinksKnowledgeBaseIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ApplicationLinksKnowledgeBaseIriTemplate".
+     * @alias module:model/ApplicationLinksKnowledgeBaseIriTemplate
+     * @class
+    
      */
+  function ApplicationLinksKnowledgeBaseIriTemplate() {
+    _classCallCheck(this, ApplicationLinksKnowledgeBaseIriTemplate);
 
-    _createClass(
-      ApplicationLinksKnowledgeBaseIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _ApplicationLinksKnowledgeBaseIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "ApplicationLinksKnowledgeBaseIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ApplicationLinksKnowledgeBaseIriTemplate } object Optional instance to populate.
+   * @return { module:model/ApplicationLinksKnowledgeBaseIriTemplate } The populated "ApplicationLinksKnowledgeBaseIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    ApplicationLinksKnowledgeBaseIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ApplicationLinksKnowledgeBaseIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ApplicationLinksKnowledgeBaseIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ApplicationLinksKnowledgeBaseIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ApplicationLinksKnowledgeBaseIriTemplate;
+})();
 
 exports.default = ApplicationLinksKnowledgeBaseIriTemplate;

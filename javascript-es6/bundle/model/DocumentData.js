@@ -43,113 +43,111 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DocumentData model module.
  * @module model/DocumentData
  */
-var DocumentData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DocumentData".
-   * @alias module:model/DocumentData
-   * @class
-  
-   * @param file { module:model/DocumentDataFile }
-  
-   * @param permission { module:model/DocumentDataPermission }
-  
-   */
-    function DocumentData(file, permission) {
-      _classCallCheck(this, DocumentData);
-
-      this.file = file;
-      this.permission = permission;
-      this.fileType = _DocumentDataFile.default;
-      this.permissionType = _DocumentDataPermission.default;
-    }
-    /**
-     * Constructs a "DocumentData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DocumentData } object Optional instance to populate.
-     * @return { module:model/DocumentData } The populated "DocumentData" instance.
+var DocumentData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DocumentData".
+     * @alias module:model/DocumentData
+     * @class
+    
+     * @param file { module:model/DocumentDataFile }
+    
+     * @param permission { module:model/DocumentDataPermission }
+    
      */
+  function DocumentData(file, permission) {
+    _classCallCheck(this, DocumentData);
 
-    _createClass(
-      DocumentData,
-      [
-        {
-          key: "getFile",
+    this.file = file;
+    this.permission = permission;
+    this.fileType = _DocumentDataFile.default;
+    this.permissionType = _DocumentDataPermission.default;
+  }
+  /**
+   * Constructs a "DocumentData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DocumentData } object Optional instance to populate.
+   * @return { module:model/DocumentData } The populated "DocumentData" instance.
+   */
 
-          /**
-           * @return { module:model/DocumentDataFile }
-           */
-          value: function getFile() {
-            return this.file;
-          }
-          /**
-           * @param { module:model/DocumentDataFile } file
-           */
-        },
-        {
-          key: "setFile",
-          value: function setFile(file) {
-            this.file = file;
-          }
-          /**
-           * @return { module:model/DocumentDataPermission }
-           */
-        },
-        {
-          key: "getPermission",
-          value: function getPermission() {
-            return this.permission;
-          }
-          /**
-           * @param { module:model/DocumentDataPermission } permission
-           */
-        },
-        {
-          key: "setPermission",
-          value: function setPermission(permission) {
-            this.permission = permission;
-          }
+  _createClass(
+    DocumentData,
+    [
+      {
+        key: "getFile",
+
+        /**
+         * @return { module:model/DocumentDataFile }
+         */
+        value: function getFile() {
+          return this.file;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DocumentData();
-            }
-
-            if (data.hasOwnProperty("file")) {
-              object.file = _ApiClient.default.convertToType(
-                data["file"],
-                object.fileType
-              );
-            }
-
-            if (data.hasOwnProperty("permission")) {
-              object.permission = _ApiClient.default.convertToType(
-                data["permission"],
-                object.permissionType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/DocumentDataFile } file
+         */
+      },
+      {
+        key: "setFile",
+        value: function setFile(file) {
+          this.file = file;
         }
-      ]
-    );
+        /**
+         * @return { module:model/DocumentDataPermission }
+         */
+      },
+      {
+        key: "getPermission",
+        value: function getPermission() {
+          return this.permission;
+        }
+        /**
+         * @param { module:model/DocumentDataPermission } permission
+         */
+      },
+      {
+        key: "setPermission",
+        value: function setPermission(permission) {
+          this.permission = permission;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DocumentData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DocumentData();
+          }
+
+          if (data.hasOwnProperty("file")) {
+            object.file = _ApiClient.default.convertToType(
+              data["file"],
+              object.fileType
+            );
+          }
+
+          if (data.hasOwnProperty("permission")) {
+            object.permission = _ApiClient.default.convertToType(
+              data["permission"],
+              object.permissionType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DocumentData;
+})();
 
 exports.default = DocumentData;

@@ -37,107 +37,105 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OrganizationPatchPreferencesNotificationReport model module.
  * @module model/OrganizationPatchPreferencesNotificationReport
  */
-var OrganizationPatchPreferencesNotificationReport =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OrganizationPatchPreferencesNotificationReport".
-   * @alias module:model/OrganizationPatchPreferencesNotificationReport
-   * @class
-  
-   */
-    function OrganizationPatchPreferencesNotificationReport() {
-      _classCallCheck(this, OrganizationPatchPreferencesNotificationReport);
-
-      this.accepted = null;
-      this.refused = null;
-    }
-    /**
-     * Constructs a "OrganizationPatchPreferencesNotificationReport" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OrganizationPatchPreferencesNotificationReport } object Optional instance to populate.
-     * @return { module:model/OrganizationPatchPreferencesNotificationReport } The populated "OrganizationPatchPreferencesNotificationReport" instance.
+var OrganizationPatchPreferencesNotificationReport = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OrganizationPatchPreferencesNotificationReport".
+     * @alias module:model/OrganizationPatchPreferencesNotificationReport
+     * @class
+    
      */
+  function OrganizationPatchPreferencesNotificationReport() {
+    _classCallCheck(this, OrganizationPatchPreferencesNotificationReport);
 
-    _createClass(
-      OrganizationPatchPreferencesNotificationReport,
-      [
-        {
-          key: "getAccepted",
+    this.accepted = null;
+    this.refused = null;
+  }
+  /**
+   * Constructs a "OrganizationPatchPreferencesNotificationReport" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OrganizationPatchPreferencesNotificationReport } object Optional instance to populate.
+   * @return { module:model/OrganizationPatchPreferencesNotificationReport } The populated "OrganizationPatchPreferencesNotificationReport" instance.
+   */
 
-          /**
-           * @return { Boolean }
-           */
-          value: function getAccepted() {
-            return this.accepted;
-          }
-          /**
-           * @param { Boolean } accepted
-           */
-        },
-        {
-          key: "setAccepted",
-          value: function setAccepted(accepted) {
-            this.accepted = accepted;
-          }
-          /**
-           * @return { Boolean }
-           */
-        },
-        {
-          key: "getRefused",
-          value: function getRefused() {
-            return this.refused;
-          }
-          /**
-           * @param { Boolean } refused
-           */
-        },
-        {
-          key: "setRefused",
-          value: function setRefused(refused) {
-            this.refused = refused;
-          }
+  _createClass(
+    OrganizationPatchPreferencesNotificationReport,
+    [
+      {
+        key: "getAccepted",
+
+        /**
+         * @return { Boolean }
+         */
+        value: function getAccepted() {
+          return this.accepted;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OrganizationPatchPreferencesNotificationReport();
-            }
-
-            if (data.hasOwnProperty("accepted")) {
-              object.accepted = _ApiClient.default.convertToType(
-                data["accepted"],
-                "Boolean"
-              );
-            }
-
-            if (data.hasOwnProperty("refused")) {
-              object.refused = _ApiClient.default.convertToType(
-                data["refused"],
-                "Boolean"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { Boolean } accepted
+         */
+      },
+      {
+        key: "setAccepted",
+        value: function setAccepted(accepted) {
+          this.accepted = accepted;
         }
-      ]
-    );
+        /**
+         * @return { Boolean }
+         */
+      },
+      {
+        key: "getRefused",
+        value: function getRefused() {
+          return this.refused;
+        }
+        /**
+         * @param { Boolean } refused
+         */
+      },
+      {
+        key: "setRefused",
+        value: function setRefused(refused) {
+          this.refused = refused;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OrganizationPatchPreferencesNotificationReport;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OrganizationPatchPreferencesNotificationReport();
+          }
+
+          if (data.hasOwnProperty("accepted")) {
+            object.accepted = _ApiClient.default.convertToType(
+              data["accepted"],
+              "Boolean"
+            );
+          }
+
+          if (data.hasOwnProperty("refused")) {
+            object.refused = _ApiClient.default.convertToType(
+              data["refused"],
+              "Boolean"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OrganizationPatchPreferencesNotificationReport;
+})();
 
 exports.default = OrganizationPatchPreferencesNotificationReport;

@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The InternalServiceLinksSelfIriTemplateMapping model module.
  * @module model/InternalServiceLinksSelfIriTemplateMapping
  */
-var InternalServiceLinksSelfIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "InternalServiceLinksSelfIriTemplateMapping".
-   * @alias module:model/InternalServiceLinksSelfIriTemplateMapping
-   * @class
-  
-   */
-    function InternalServiceLinksSelfIriTemplateMapping() {
-      _classCallCheck(this, InternalServiceLinksSelfIriTemplateMapping);
-
-      this.internalService = null;
-    }
-    /**
-     * Constructs a "InternalServiceLinksSelfIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/InternalServiceLinksSelfIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/InternalServiceLinksSelfIriTemplateMapping } The populated "InternalServiceLinksSelfIriTemplateMapping" instance.
+var InternalServiceLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "InternalServiceLinksSelfIriTemplateMapping".
+     * @alias module:model/InternalServiceLinksSelfIriTemplateMapping
+     * @class
+    
      */
+  function InternalServiceLinksSelfIriTemplateMapping() {
+    _classCallCheck(this, InternalServiceLinksSelfIriTemplateMapping);
 
-    _createClass(
-      InternalServiceLinksSelfIriTemplateMapping,
-      [
-        {
-          key: "getInternalService",
+    this.internalService = null;
+  }
+  /**
+   * Constructs a "InternalServiceLinksSelfIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/InternalServiceLinksSelfIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/InternalServiceLinksSelfIriTemplateMapping } The populated "InternalServiceLinksSelfIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getInternalService() {
-            return this.internalService;
-          }
-          /**
-           * @param { String } internalService
-           */
-        },
-        {
-          key: "setInternalService",
-          value: function setInternalService(internalService) {
-            this.internalService = internalService;
-          }
+  _createClass(
+    InternalServiceLinksSelfIriTemplateMapping,
+    [
+      {
+        key: "getInternalService",
+
+        /**
+         * @return { String }
+         */
+        value: function getInternalService() {
+          return this.internalService;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new InternalServiceLinksSelfIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("internalService")) {
-              object.internalService = _ApiClient.default.convertToType(
-                data["internalService"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } internalService
+         */
+      },
+      {
+        key: "setInternalService",
+        value: function setInternalService(internalService) {
+          this.internalService = internalService;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return InternalServiceLinksSelfIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new InternalServiceLinksSelfIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("internalService")) {
+            object.internalService = _ApiClient.default.convertToType(
+              data["internalService"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return InternalServiceLinksSelfIriTemplateMapping;
+})();
 
 exports.default = InternalServiceLinksSelfIriTemplateMapping;

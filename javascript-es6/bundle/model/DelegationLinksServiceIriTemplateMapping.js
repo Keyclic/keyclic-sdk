@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DelegationLinksServiceIriTemplateMapping model module.
  * @module model/DelegationLinksServiceIriTemplateMapping
  */
-var DelegationLinksServiceIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DelegationLinksServiceIriTemplateMapping".
-   * @alias module:model/DelegationLinksServiceIriTemplateMapping
-   * @class
-  
-   */
-    function DelegationLinksServiceIriTemplateMapping() {
-      _classCallCheck(this, DelegationLinksServiceIriTemplateMapping);
-
-      this.externalService = null;
-    }
-    /**
-     * Constructs a "DelegationLinksServiceIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DelegationLinksServiceIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/DelegationLinksServiceIriTemplateMapping } The populated "DelegationLinksServiceIriTemplateMapping" instance.
+var DelegationLinksServiceIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DelegationLinksServiceIriTemplateMapping".
+     * @alias module:model/DelegationLinksServiceIriTemplateMapping
+     * @class
+    
      */
+  function DelegationLinksServiceIriTemplateMapping() {
+    _classCallCheck(this, DelegationLinksServiceIriTemplateMapping);
 
-    _createClass(
-      DelegationLinksServiceIriTemplateMapping,
-      [
-        {
-          key: "getExternalService",
+    this.externalService = null;
+  }
+  /**
+   * Constructs a "DelegationLinksServiceIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DelegationLinksServiceIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/DelegationLinksServiceIriTemplateMapping } The populated "DelegationLinksServiceIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getExternalService() {
-            return this.externalService;
-          }
-          /**
-           * @param { String } externalService
-           */
-        },
-        {
-          key: "setExternalService",
-          value: function setExternalService(externalService) {
-            this.externalService = externalService;
-          }
+  _createClass(
+    DelegationLinksServiceIriTemplateMapping,
+    [
+      {
+        key: "getExternalService",
+
+        /**
+         * @return { String }
+         */
+        value: function getExternalService() {
+          return this.externalService;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DelegationLinksServiceIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("externalService")) {
-              object.externalService = _ApiClient.default.convertToType(
-                data["externalService"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } externalService
+         */
+      },
+      {
+        key: "setExternalService",
+        value: function setExternalService(externalService) {
+          this.externalService = externalService;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DelegationLinksServiceIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DelegationLinksServiceIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("externalService")) {
+            object.externalService = _ApiClient.default.convertToType(
+              data["externalService"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DelegationLinksServiceIriTemplateMapping;
+})();
 
 exports.default = DelegationLinksServiceIriTemplateMapping;

@@ -37,137 +37,135 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReviewData model module.
  * @module model/ReviewData
  */
-var ReviewData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReviewData".
-   * @alias module:model/ReviewData
-   * @class
-  
-   * @param reviewRating { Number }
-  
-   * @param reviewRequest { String }
-  
-   */
-    function ReviewData(reviewRating, reviewRequest) {
-      _classCallCheck(this, ReviewData);
-
-      this.reviewBody = null;
-      this.reviewRating = reviewRating;
-      this.reviewRequest = reviewRequest;
-    }
-    /**
-     * Constructs a "ReviewData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReviewData } object Optional instance to populate.
-     * @return { module:model/ReviewData } The populated "ReviewData" instance.
+var ReviewData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReviewData".
+     * @alias module:model/ReviewData
+     * @class
+    
+     * @param reviewRating { Number }
+    
+     * @param reviewRequest { String }
+    
      */
+  function ReviewData(reviewRating, reviewRequest) {
+    _classCallCheck(this, ReviewData);
 
-    _createClass(
-      ReviewData,
-      [
-        {
-          key: "getReviewBody",
+    this.reviewBody = null;
+    this.reviewRating = reviewRating;
+    this.reviewRequest = reviewRequest;
+  }
+  /**
+   * Constructs a "ReviewData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReviewData } object Optional instance to populate.
+   * @return { module:model/ReviewData } The populated "ReviewData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getReviewBody() {
-            return this.reviewBody;
-          }
-          /**
-           * @param { String } reviewBody
-           */
-        },
-        {
-          key: "setReviewBody",
-          value: function setReviewBody(reviewBody) {
-            this.reviewBody = reviewBody;
-          }
-          /**
-           * @return { Number }
-           */
-        },
-        {
-          key: "getReviewRating",
-          value: function getReviewRating() {
-            return this.reviewRating;
-          }
-          /**
-           * @param { Number } reviewRating
-           */
-        },
-        {
-          key: "setReviewRating",
-          value: function setReviewRating(reviewRating) {
-            this.reviewRating = reviewRating;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getReviewRequest",
-          value: function getReviewRequest() {
-            return this.reviewRequest;
-          }
-          /**
-           * @param { String } reviewRequest
-           */
-        },
-        {
-          key: "setReviewRequest",
-          value: function setReviewRequest(reviewRequest) {
-            this.reviewRequest = reviewRequest;
-          }
+  _createClass(
+    ReviewData,
+    [
+      {
+        key: "getReviewBody",
+
+        /**
+         * @return { String }
+         */
+        value: function getReviewBody() {
+          return this.reviewBody;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReviewData();
-            }
-
-            if (data.hasOwnProperty("reviewBody")) {
-              object.reviewBody = _ApiClient.default.convertToType(
-                data["reviewBody"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("reviewRating")) {
-              object.reviewRating = _ApiClient.default.convertToType(
-                data["reviewRating"],
-                "Number"
-              );
-            }
-
-            if (data.hasOwnProperty("reviewRequest")) {
-              object.reviewRequest = _ApiClient.default.convertToType(
-                data["reviewRequest"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } reviewBody
+         */
+      },
+      {
+        key: "setReviewBody",
+        value: function setReviewBody(reviewBody) {
+          this.reviewBody = reviewBody;
         }
-      ]
-    );
+        /**
+         * @return { Number }
+         */
+      },
+      {
+        key: "getReviewRating",
+        value: function getReviewRating() {
+          return this.reviewRating;
+        }
+        /**
+         * @param { Number } reviewRating
+         */
+      },
+      {
+        key: "setReviewRating",
+        value: function setReviewRating(reviewRating) {
+          this.reviewRating = reviewRating;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getReviewRequest",
+        value: function getReviewRequest() {
+          return this.reviewRequest;
+        }
+        /**
+         * @param { String } reviewRequest
+         */
+      },
+      {
+        key: "setReviewRequest",
+        value: function setReviewRequest(reviewRequest) {
+          this.reviewRequest = reviewRequest;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReviewData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReviewData();
+          }
+
+          if (data.hasOwnProperty("reviewBody")) {
+            object.reviewBody = _ApiClient.default.convertToType(
+              data["reviewBody"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("reviewRating")) {
+            object.reviewRating = _ApiClient.default.convertToType(
+              data["reviewRating"],
+              "Number"
+            );
+          }
+
+          if (data.hasOwnProperty("reviewRequest")) {
+            object.reviewRequest = _ApiClient.default.convertToType(
+              data["reviewRequest"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReviewData;
+})();
 
 exports.default = ReviewData;

@@ -37,133 +37,128 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReportEmbeddedTargetGroups model module.
  * @module model/ReportEmbeddedTargetGroups
  */
-var ReportEmbeddedTargetGroups =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReportEmbeddedTargetGroups".
-   * @alias module:model/ReportEmbeddedTargetGroups
-   * @class
-  
-   */
-    function ReportEmbeddedTargetGroups() {
-      _classCallCheck(this, ReportEmbeddedTargetGroups);
-
-      this.id = null;
-      this.name = null;
-      this.description = null;
-    }
-    /**
-     * Constructs a "ReportEmbeddedTargetGroups" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReportEmbeddedTargetGroups } object Optional instance to populate.
-     * @return { module:model/ReportEmbeddedTargetGroups } The populated "ReportEmbeddedTargetGroups" instance.
+var ReportEmbeddedTargetGroups = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReportEmbeddedTargetGroups".
+     * @alias module:model/ReportEmbeddedTargetGroups
+     * @class
+    
      */
+  function ReportEmbeddedTargetGroups() {
+    _classCallCheck(this, ReportEmbeddedTargetGroups);
 
-    _createClass(
-      ReportEmbeddedTargetGroups,
-      [
-        {
-          key: "getId",
+    this.id = null;
+    this.name = null;
+    this.description = null;
+  }
+  /**
+   * Constructs a "ReportEmbeddedTargetGroups" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReportEmbeddedTargetGroups } object Optional instance to populate.
+   * @return { module:model/ReportEmbeddedTargetGroups } The populated "ReportEmbeddedTargetGroups" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @param { String } id
-           */
-        },
-        {
-          key: "setId",
-          value: function setId(id) {
-            this.id = id;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getName",
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getDescription",
-          value: function getDescription() {
-            return this.description;
-          }
-          /**
-           * @param { String } description
-           */
-        },
-        {
-          key: "setDescription",
-          value: function setDescription(description) {
-            this.description = description;
-          }
+  _createClass(
+    ReportEmbeddedTargetGroups,
+    [
+      {
+        key: "getId",
+
+        /**
+         * @return { String }
+         */
+        value: function getId() {
+          return this.id;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReportEmbeddedTargetGroups();
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("description")) {
-              object.description = _ApiClient.default.convertToType(
-                data["description"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } id
+         */
+      },
+      {
+        key: "setId",
+        value: function setId(id) {
+          this.id = id;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getName",
+        value: function getName() {
+          return this.name;
+        }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getDescription",
+        value: function getDescription() {
+          return this.description;
+        }
+        /**
+         * @param { String } description
+         */
+      },
+      {
+        key: "setDescription",
+        value: function setDescription(description) {
+          this.description = description;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReportEmbeddedTargetGroups;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReportEmbeddedTargetGroups();
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReportEmbeddedTargetGroups;
+})();
 
 exports.default = ReportEmbeddedTargetGroups;

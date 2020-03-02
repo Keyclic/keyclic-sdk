@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PlaceLinksContainedInPlaceIriTemplate model module.
  * @module model/PlaceLinksContainedInPlaceIriTemplate
  */
-var PlaceLinksContainedInPlaceIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PlaceLinksContainedInPlaceIriTemplate".
-   * @alias module:model/PlaceLinksContainedInPlaceIriTemplate
-   * @class
-  
-   */
-    function PlaceLinksContainedInPlaceIriTemplate() {
-      _classCallCheck(this, PlaceLinksContainedInPlaceIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _OccupantLinksPlaceIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "PlaceLinksContainedInPlaceIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PlaceLinksContainedInPlaceIriTemplate } object Optional instance to populate.
-     * @return { module:model/PlaceLinksContainedInPlaceIriTemplate } The populated "PlaceLinksContainedInPlaceIriTemplate" instance.
+var PlaceLinksContainedInPlaceIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PlaceLinksContainedInPlaceIriTemplate".
+     * @alias module:model/PlaceLinksContainedInPlaceIriTemplate
+     * @class
+    
      */
+  function PlaceLinksContainedInPlaceIriTemplate() {
+    _classCallCheck(this, PlaceLinksContainedInPlaceIriTemplate);
 
-    _createClass(
-      PlaceLinksContainedInPlaceIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _OccupantLinksPlaceIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "PlaceLinksContainedInPlaceIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PlaceLinksContainedInPlaceIriTemplate } object Optional instance to populate.
+   * @return { module:model/PlaceLinksContainedInPlaceIriTemplate } The populated "PlaceLinksContainedInPlaceIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/OccupantLinksPlaceIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/OccupantLinksPlaceIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    PlaceLinksContainedInPlaceIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/OccupantLinksPlaceIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PlaceLinksContainedInPlaceIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/OccupantLinksPlaceIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PlaceLinksContainedInPlaceIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PlaceLinksContainedInPlaceIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PlaceLinksContainedInPlaceIriTemplate;
+})();
 
 exports.default = PlaceLinksContainedInPlaceIriTemplate;

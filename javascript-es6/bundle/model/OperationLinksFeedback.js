@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OperationLinksFeedback model module.
  * @module model/OperationLinksFeedback
  */
-var OperationLinksFeedback =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OperationLinksFeedback".
-   * @alias module:model/OperationLinksFeedback
-   * @class
-  
-   */
-    function OperationLinksFeedback() {
-      _classCallCheck(this, OperationLinksFeedback);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _OperationLinksFeedbackIriTemplate.default;
-    }
-    /**
-     * Constructs a "OperationLinksFeedback" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OperationLinksFeedback } object Optional instance to populate.
-     * @return { module:model/OperationLinksFeedback } The populated "OperationLinksFeedback" instance.
+var OperationLinksFeedback = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OperationLinksFeedback".
+     * @alias module:model/OperationLinksFeedback
+     * @class
+    
      */
+  function OperationLinksFeedback() {
+    _classCallCheck(this, OperationLinksFeedback);
 
-    _createClass(
-      OperationLinksFeedback,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _OperationLinksFeedbackIriTemplate.default;
+  }
+  /**
+   * Constructs a "OperationLinksFeedback" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OperationLinksFeedback } object Optional instance to populate.
+   * @return { module:model/OperationLinksFeedback } The populated "OperationLinksFeedback" instance.
+   */
 
-          /**
-           * Gets The URI of the feedback associated to the given operation.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the feedback associated to the given operation.
-           * @param { String } href The URI of the feedback associated to the given operation.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/OperationLinksFeedbackIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/OperationLinksFeedbackIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    OperationLinksFeedback,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the feedback associated to the given operation.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OperationLinksFeedback();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the feedback associated to the given operation.
+         * @param { String } href The URI of the feedback associated to the given operation.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/OperationLinksFeedbackIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/OperationLinksFeedbackIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OperationLinksFeedback;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OperationLinksFeedback();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OperationLinksFeedback;
+})();
 
 exports.default = OperationLinksFeedback;

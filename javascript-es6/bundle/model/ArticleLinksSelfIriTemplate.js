@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ArticleLinksSelfIriTemplate model module.
  * @module model/ArticleLinksSelfIriTemplate
  */
-var ArticleLinksSelfIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ArticleLinksSelfIriTemplate".
-   * @alias module:model/ArticleLinksSelfIriTemplate
-   * @class
-  
-   */
-    function ArticleLinksSelfIriTemplate() {
-      _classCallCheck(this, ArticleLinksSelfIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _ArticleLinksSelfIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "ArticleLinksSelfIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ArticleLinksSelfIriTemplate } object Optional instance to populate.
-     * @return { module:model/ArticleLinksSelfIriTemplate } The populated "ArticleLinksSelfIriTemplate" instance.
+var ArticleLinksSelfIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ArticleLinksSelfIriTemplate".
+     * @alias module:model/ArticleLinksSelfIriTemplate
+     * @class
+    
      */
+  function ArticleLinksSelfIriTemplate() {
+    _classCallCheck(this, ArticleLinksSelfIriTemplate);
 
-    _createClass(
-      ArticleLinksSelfIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _ArticleLinksSelfIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "ArticleLinksSelfIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ArticleLinksSelfIriTemplate } object Optional instance to populate.
+   * @return { module:model/ArticleLinksSelfIriTemplate } The populated "ArticleLinksSelfIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/ArticleLinksSelfIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/ArticleLinksSelfIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    ArticleLinksSelfIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/ArticleLinksSelfIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ArticleLinksSelfIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ArticleLinksSelfIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ArticleLinksSelfIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ArticleLinksSelfIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ArticleLinksSelfIriTemplate;
+})();
 
 exports.default = ArticleLinksSelfIriTemplate;

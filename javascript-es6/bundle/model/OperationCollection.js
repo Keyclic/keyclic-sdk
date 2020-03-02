@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OperationCollection model module.
  * @module model/OperationCollection
  */
-var OperationCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OperationCollection".
-   * @alias module:model/OperationCollection
-   * @class
-  
-   */
-    function OperationCollection() {
-      _classCallCheck(this, OperationCollection);
-
-      this.items = [];
-      this.itemsType = _Operation.default;
-    }
-    /**
-     * Constructs a "OperationCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OperationCollection } object Optional instance to populate.
-     * @return { module:model/OperationCollection } The populated "OperationCollection" instance.
+var OperationCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OperationCollection".
+     * @alias module:model/OperationCollection
+     * @class
+    
      */
+  function OperationCollection() {
+    _classCallCheck(this, OperationCollection);
 
-    _createClass(
-      OperationCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _Operation.default;
+  }
+  /**
+   * Constructs a "OperationCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OperationCollection } object Optional instance to populate.
+   * @return { module:model/OperationCollection } The populated "OperationCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Operation> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/Operation> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    OperationCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/Operation> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OperationCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Operation> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OperationCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OperationCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OperationCollection;
+})();
 
 exports.default = OperationCollection;

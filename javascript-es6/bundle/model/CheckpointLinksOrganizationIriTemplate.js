@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The CheckpointLinksOrganizationIriTemplate model module.
  * @module model/CheckpointLinksOrganizationIriTemplate
  */
-var CheckpointLinksOrganizationIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "CheckpointLinksOrganizationIriTemplate".
-   * @alias module:model/CheckpointLinksOrganizationIriTemplate
-   * @class
-  
-   */
-    function CheckpointLinksOrganizationIriTemplate() {
-      _classCallCheck(this, CheckpointLinksOrganizationIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _CategoryLinksOrganizationIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "CheckpointLinksOrganizationIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/CheckpointLinksOrganizationIriTemplate } object Optional instance to populate.
-     * @return { module:model/CheckpointLinksOrganizationIriTemplate } The populated "CheckpointLinksOrganizationIriTemplate" instance.
+var CheckpointLinksOrganizationIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "CheckpointLinksOrganizationIriTemplate".
+     * @alias module:model/CheckpointLinksOrganizationIriTemplate
+     * @class
+    
      */
+  function CheckpointLinksOrganizationIriTemplate() {
+    _classCallCheck(this, CheckpointLinksOrganizationIriTemplate);
 
-    _createClass(
-      CheckpointLinksOrganizationIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _CategoryLinksOrganizationIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "CheckpointLinksOrganizationIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/CheckpointLinksOrganizationIriTemplate } object Optional instance to populate.
+   * @return { module:model/CheckpointLinksOrganizationIriTemplate } The populated "CheckpointLinksOrganizationIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/CategoryLinksOrganizationIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/CategoryLinksOrganizationIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    CheckpointLinksOrganizationIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/CategoryLinksOrganizationIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new CheckpointLinksOrganizationIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/CategoryLinksOrganizationIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return CheckpointLinksOrganizationIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new CheckpointLinksOrganizationIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return CheckpointLinksOrganizationIriTemplate;
+})();
 
 exports.default = CheckpointLinksOrganizationIriTemplate;

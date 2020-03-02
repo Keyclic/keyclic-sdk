@@ -41,111 +41,109 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OrganizationLinksBusinessActivity model module.
  * @module model/OrganizationLinksBusinessActivity
  */
-var OrganizationLinksBusinessActivity =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OrganizationLinksBusinessActivity".
-   * @alias module:model/OrganizationLinksBusinessActivity
-   * @class
-  
-   */
-    function OrganizationLinksBusinessActivity() {
-      _classCallCheck(this, OrganizationLinksBusinessActivity);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType =
-        _OrganizationLinksBusinessActivityIriTemplate.default;
-    }
-    /**
-     * Constructs a "OrganizationLinksBusinessActivity" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OrganizationLinksBusinessActivity } object Optional instance to populate.
-     * @return { module:model/OrganizationLinksBusinessActivity } The populated "OrganizationLinksBusinessActivity" instance.
+var OrganizationLinksBusinessActivity = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OrganizationLinksBusinessActivity".
+     * @alias module:model/OrganizationLinksBusinessActivity
+     * @class
+    
      */
+  function OrganizationLinksBusinessActivity() {
+    _classCallCheck(this, OrganizationLinksBusinessActivity);
 
-    _createClass(
-      OrganizationLinksBusinessActivity,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType =
+      _OrganizationLinksBusinessActivityIriTemplate.default;
+  }
+  /**
+   * Constructs a "OrganizationLinksBusinessActivity" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OrganizationLinksBusinessActivity } object Optional instance to populate.
+   * @return { module:model/OrganizationLinksBusinessActivity } The populated "OrganizationLinksBusinessActivity" instance.
+   */
 
-          /**
-           * Gets The URI of the businessActivity associated to the given organization.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the businessActivity associated to the given organization.
-           * @param { String } href The URI of the businessActivity associated to the given organization.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/OrganizationLinksBusinessActivityIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/OrganizationLinksBusinessActivityIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    OrganizationLinksBusinessActivity,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the businessActivity associated to the given organization.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OrganizationLinksBusinessActivity();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the businessActivity associated to the given organization.
+         * @param { String } href The URI of the businessActivity associated to the given organization.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/OrganizationLinksBusinessActivityIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/OrganizationLinksBusinessActivityIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OrganizationLinksBusinessActivity;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OrganizationLinksBusinessActivity();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OrganizationLinksBusinessActivity;
+})();
 
 exports.default = OrganizationLinksBusinessActivity;

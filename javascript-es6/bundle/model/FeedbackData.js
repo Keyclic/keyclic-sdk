@@ -53,275 +53,273 @@ function _defineProperty(obj, key, value) {
  * The FeedbackData model module.
  * @module model/FeedbackData
  */
-var FeedbackData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "FeedbackData".
-   * @alias module:model/FeedbackData
-   * @class
-  
-   * @param geo { module:model/FeedbackDataGeo }
-  
-   * @param place { String }
-  
-   * @param visibility { module:model/FeedbackData.VisibilityEnum }
-  
-   */
-    function FeedbackData(geo, place, visibility) {
-      _classCallCheck(this, FeedbackData);
-
-      this.businessActivity = null;
-      this.category = null;
-      this.description = null;
-      this.geo = geo;
-      this.metadata = [];
-      this.place = place;
-      this.proMode = null;
-      this.visibility = visibility;
-      this.geoType = _FeedbackDataGeo.default;
-    }
-    /**
-     * Constructs a "FeedbackData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FeedbackData } object Optional instance to populate.
-     * @return { module:model/FeedbackData } The populated "FeedbackData" instance.
+var FeedbackData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "FeedbackData".
+     * @alias module:model/FeedbackData
+     * @class
+    
+     * @param geo { module:model/FeedbackDataGeo }
+    
+     * @param place { String }
+    
+     * @param visibility { module:model/FeedbackData.VisibilityEnum }
+    
      */
+  function FeedbackData(geo, place, visibility) {
+    _classCallCheck(this, FeedbackData);
 
-    _createClass(
-      FeedbackData,
-      [
-        {
-          key: "getBusinessActivity",
+    this.businessActivity = null;
+    this.category = null;
+    this.description = null;
+    this.geo = geo;
+    this.metadata = [];
+    this.place = place;
+    this.proMode = null;
+    this.visibility = visibility;
+    this.geoType = _FeedbackDataGeo.default;
+  }
+  /**
+   * Constructs a "FeedbackData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/FeedbackData } object Optional instance to populate.
+   * @return { module:model/FeedbackData } The populated "FeedbackData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getBusinessActivity() {
-            return this.businessActivity;
-          }
-          /**
-           * @param { String } businessActivity
-           */
-        },
-        {
-          key: "setBusinessActivity",
-          value: function setBusinessActivity(businessActivity) {
-            this.businessActivity = businessActivity;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getCategory",
-          value: function getCategory() {
-            return this.category;
-          }
-          /**
-           * @param { String } category
-           */
-        },
-        {
-          key: "setCategory",
-          value: function setCategory(category) {
-            this.category = category;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getDescription",
-          value: function getDescription() {
-            return this.description;
-          }
-          /**
-           * @param { String } description
-           */
-        },
-        {
-          key: "setDescription",
-          value: function setDescription(description) {
-            this.description = description;
-          }
-          /**
-           * @return { module:model/FeedbackDataGeo }
-           */
-        },
-        {
-          key: "getGeo",
-          value: function getGeo() {
-            return this.geo;
-          }
-          /**
-           * @param { module:model/FeedbackDataGeo } geo
-           */
-        },
-        {
-          key: "setGeo",
-          value: function setGeo(geo) {
-            this.geo = geo;
-          }
-          /**
-           * @return { Object.<String, String> }
-           */
-        },
-        {
-          key: "getMetadata",
-          value: function getMetadata() {
-            return this.metadata;
-          }
-          /**
-           * @param { Object.<String, String> } metadata
-           */
-        },
-        {
-          key: "setMetadata",
-          value: function setMetadata(metadata) {
-            this.metadata = metadata;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getPlace",
-          value: function getPlace() {
-            return this.place;
-          }
-          /**
-           * @param { String } place
-           */
-        },
-        {
-          key: "setPlace",
-          value: function setPlace(place) {
-            this.place = place;
-          }
-          /**
-           * @return { Boolean }
-           */
-        },
-        {
-          key: "getProMode",
-          value: function getProMode() {
-            return this.proMode;
-          }
-          /**
-           * @param { Boolean } proMode
-           */
-        },
-        {
-          key: "setProMode",
-          value: function setProMode(proMode) {
-            this.proMode = proMode;
-          }
-          /**
-           * @return { module:model/FeedbackData.VisibilityEnum }
-           */
-        },
-        {
-          key: "getVisibility",
-          value: function getVisibility() {
-            return this.visibility;
-          }
-          /**
-           * @param { module:model/FeedbackData.VisibilityEnum } visibility
-           */
-        },
-        {
-          key: "setVisibility",
-          value: function setVisibility(visibility) {
-            this.visibility = visibility;
-          }
-          /**
-           * Allowed values for the "visibility" property.
-           * @enum { String }
-           */
+  _createClass(
+    FeedbackData,
+    [
+      {
+        key: "getBusinessActivity",
+
+        /**
+         * @return { String }
+         */
+        value: function getBusinessActivity() {
+          return this.businessActivity;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new FeedbackData();
-            }
-
-            if (data.hasOwnProperty("businessActivity")) {
-              object.businessActivity = _ApiClient.default.convertToType(
-                data["businessActivity"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("category")) {
-              object.category = _ApiClient.default.convertToType(
-                data["category"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("description")) {
-              object.description = _ApiClient.default.convertToType(
-                data["description"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("geo")) {
-              object.geo = _ApiClient.default.convertToType(
-                data["geo"],
-                object.geoType
-              );
-            }
-
-            if (data.hasOwnProperty("metadata")) {
-              object.metadata = _ApiClient.default.convertToType(
-                data["metadata"],
-                "['String']"
-              );
-            }
-
-            if (data.hasOwnProperty("place")) {
-              object.place = _ApiClient.default.convertToType(
-                data["place"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("proMode")) {
-              object.proMode = _ApiClient.default.convertToType(
-                data["proMode"],
-                "Boolean"
-              );
-            }
-
-            if (data.hasOwnProperty("visibility")) {
-              object.visibility = _ApiClient.default.convertToType(
-                data["visibility"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } businessActivity
+         */
+      },
+      {
+        key: "setBusinessActivity",
+        value: function setBusinessActivity(businessActivity) {
+          this.businessActivity = businessActivity;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getCategory",
+        value: function getCategory() {
+          return this.category;
+        }
+        /**
+         * @param { String } category
+         */
+      },
+      {
+        key: "setCategory",
+        value: function setCategory(category) {
+          this.category = category;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getDescription",
+        value: function getDescription() {
+          return this.description;
+        }
+        /**
+         * @param { String } description
+         */
+      },
+      {
+        key: "setDescription",
+        value: function setDescription(description) {
+          this.description = description;
+        }
+        /**
+         * @return { module:model/FeedbackDataGeo }
+         */
+      },
+      {
+        key: "getGeo",
+        value: function getGeo() {
+          return this.geo;
+        }
+        /**
+         * @param { module:model/FeedbackDataGeo } geo
+         */
+      },
+      {
+        key: "setGeo",
+        value: function setGeo(geo) {
+          this.geo = geo;
+        }
+        /**
+         * @return { Object.<String, String> }
+         */
+      },
+      {
+        key: "getMetadata",
+        value: function getMetadata() {
+          return this.metadata;
+        }
+        /**
+         * @param { Object.<String, String> } metadata
+         */
+      },
+      {
+        key: "setMetadata",
+        value: function setMetadata(metadata) {
+          this.metadata = metadata;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getPlace",
+        value: function getPlace() {
+          return this.place;
+        }
+        /**
+         * @param { String } place
+         */
+      },
+      {
+        key: "setPlace",
+        value: function setPlace(place) {
+          this.place = place;
+        }
+        /**
+         * @return { Boolean }
+         */
+      },
+      {
+        key: "getProMode",
+        value: function getProMode() {
+          return this.proMode;
+        }
+        /**
+         * @param { Boolean } proMode
+         */
+      },
+      {
+        key: "setProMode",
+        value: function setProMode(proMode) {
+          this.proMode = proMode;
+        }
+        /**
+         * @return { module:model/FeedbackData.VisibilityEnum }
+         */
+      },
+      {
+        key: "getVisibility",
+        value: function getVisibility() {
+          return this.visibility;
+        }
+        /**
+         * @param { module:model/FeedbackData.VisibilityEnum } visibility
+         */
+      },
+      {
+        key: "setVisibility",
+        value: function setVisibility(visibility) {
+          this.visibility = visibility;
+        }
+        /**
+         * Allowed values for the "visibility" property.
+         * @enum { String }
+         */
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return FeedbackData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new FeedbackData();
+          }
+
+          if (data.hasOwnProperty("businessActivity")) {
+            object.businessActivity = _ApiClient.default.convertToType(
+              data["businessActivity"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("category")) {
+            object.category = _ApiClient.default.convertToType(
+              data["category"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("geo")) {
+            object.geo = _ApiClient.default.convertToType(
+              data["geo"],
+              object.geoType
+            );
+          }
+
+          if (data.hasOwnProperty("metadata")) {
+            object.metadata = _ApiClient.default.convertToType(
+              data["metadata"],
+              "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("place")) {
+            object.place = _ApiClient.default.convertToType(
+              data["place"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("proMode")) {
+            object.proMode = _ApiClient.default.convertToType(
+              data["proMode"],
+              "Boolean"
+            );
+          }
+
+          if (data.hasOwnProperty("visibility")) {
+            object.visibility = _ApiClient.default.convertToType(
+              data["visibility"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return FeedbackData;
+})();
 
 exports.default = FeedbackData;
 

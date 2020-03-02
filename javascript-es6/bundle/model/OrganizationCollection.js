@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OrganizationCollection model module.
  * @module model/OrganizationCollection
  */
-var OrganizationCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OrganizationCollection".
-   * @alias module:model/OrganizationCollection
-   * @class
-  
-   */
-    function OrganizationCollection() {
-      _classCallCheck(this, OrganizationCollection);
-
-      this.items = [];
-      this.itemsType = _Organization.default;
-    }
-    /**
-     * Constructs a "OrganizationCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OrganizationCollection } object Optional instance to populate.
-     * @return { module:model/OrganizationCollection } The populated "OrganizationCollection" instance.
+var OrganizationCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OrganizationCollection".
+     * @alias module:model/OrganizationCollection
+     * @class
+    
      */
+  function OrganizationCollection() {
+    _classCallCheck(this, OrganizationCollection);
 
-    _createClass(
-      OrganizationCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _Organization.default;
+  }
+  /**
+   * Constructs a "OrganizationCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OrganizationCollection } object Optional instance to populate.
+   * @return { module:model/OrganizationCollection } The populated "OrganizationCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Organization> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/Organization> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    OrganizationCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/Organization> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OrganizationCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Organization> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OrganizationCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OrganizationCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OrganizationCollection;
+})();
 
 exports.default = OrganizationCollection;

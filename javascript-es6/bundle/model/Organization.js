@@ -43,283 +43,278 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The Organization model module.
  * @module model/Organization
  */
-var Organization =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "Organization".
-   * @alias module:model/Organization
-   * @class
-  
-   * @param name { String }
-  
-   */
-    function Organization(name) {
-      _classCallCheck(this, Organization);
-
-      this.links = null;
-      this.alternateName = null;
-      this.createdAt = null;
-      this.description = null;
-      this.enabled = null;
-      this.id = null;
-      this.name = name;
-      this.preferences = null;
-      this.type = null;
-      this.updatedAt = null;
-      this.linksType = _OrganizationLinks.default;
-      this.preferencesType = _OrganizationPreferences.default;
-    }
-    /**
-     * Constructs a "Organization" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/Organization } object Optional instance to populate.
-     * @return { module:model/Organization } The populated "Organization" instance.
+var Organization = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "Organization".
+     * @alias module:model/Organization
+     * @class
+    
+     * @param name { String }
+    
      */
+  function Organization(name) {
+    _classCallCheck(this, Organization);
 
-    _createClass(
-      Organization,
-      [
-        {
-          key: "getLinks",
+    this.links = null;
+    this.alternateName = null;
+    this.createdAt = null;
+    this.description = null;
+    this.enabled = null;
+    this.id = null;
+    this.name = name;
+    this.preferences = null;
+    this.type = null;
+    this.updatedAt = null;
+    this.linksType = _OrganizationLinks.default;
+    this.preferencesType = _OrganizationPreferences.default;
+  }
+  /**
+   * Constructs a "Organization" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/Organization } object Optional instance to populate.
+   * @return { module:model/Organization } The populated "Organization" instance.
+   */
 
-          /**
-           * @return { module:model/OrganizationLinks }
-           */
-          value: function getLinks() {
-            return this.links;
-          }
-          /**
-           * @param { module:model/OrganizationLinks } links
-           */
-        },
-        {
-          key: "setLinks",
-          value: function setLinks(links) {
-            this.links = links;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getAlternateName",
-          value: function getAlternateName() {
-            return this.alternateName;
-          }
-          /**
-           * @param { String } alternateName
-           */
-        },
-        {
-          key: "setAlternateName",
-          value: function setAlternateName(alternateName) {
-            this.alternateName = alternateName;
-          }
-          /**
-           * @return { Date }
-           */
-        },
-        {
-          key: "getCreatedAt",
-          value: function getCreatedAt() {
-            return this.createdAt;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getDescription",
-          value: function getDescription() {
-            return this.description;
-          }
-          /**
-           * @param { String } description
-           */
-        },
-        {
-          key: "setDescription",
-          value: function setDescription(description) {
-            this.description = description;
-          }
-          /**
-           * @return { Boolean }
-           */
-        },
-        {
-          key: "getEnabled",
-          value: function getEnabled() {
-            return this.enabled;
-          }
-          /**
-           * @param { Boolean } enabled
-           */
-        },
-        {
-          key: "setEnabled",
-          value: function setEnabled(enabled) {
-            this.enabled = enabled;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getId",
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getName",
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
-          /**
-           * @return { module:model/OrganizationPreferences }
-           */
-        },
-        {
-          key: "getPreferences",
-          value: function getPreferences() {
-            return this.preferences;
-          }
-          /**
-           * @param { module:model/OrganizationPreferences } preferences
-           */
-        },
-        {
-          key: "setPreferences",
-          value: function setPreferences(preferences) {
-            this.preferences = preferences;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
-          }
-          /**
-           * @return { Date }
-           */
-        },
-        {
-          key: "getUpdatedAt",
-          value: function getUpdatedAt() {
-            return this.updatedAt;
-          }
+  _createClass(
+    Organization,
+    [
+      {
+        key: "getLinks",
+
+        /**
+         * @return { module:model/OrganizationLinks }
+         */
+        value: function getLinks() {
+          return this.links;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new Organization();
-            }
-
-            if (data.hasOwnProperty("_links")) {
-              object.links = _ApiClient.default.convertToType(
-                data["_links"],
-                object.linksType
-              );
-            }
-
-            if (data.hasOwnProperty("alternateName")) {
-              object.alternateName = _ApiClient.default.convertToType(
-                data["alternateName"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("createdAt")) {
-              object.createdAt = _ApiClient.default.convertToType(
-                data["createdAt"],
-                "Date"
-              );
-            }
-
-            if (data.hasOwnProperty("description")) {
-              object.description = _ApiClient.default.convertToType(
-                data["description"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("enabled")) {
-              object.enabled = _ApiClient.default.convertToType(
-                data["enabled"],
-                "Boolean"
-              );
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("preferences")) {
-              object.preferences = _ApiClient.default.convertToType(
-                data["preferences"],
-                object.preferencesType
-              );
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("updatedAt")) {
-              object.updatedAt = _ApiClient.default.convertToType(
-                data["updatedAt"],
-                "Date"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/OrganizationLinks } links
+         */
+      },
+      {
+        key: "setLinks",
+        value: function setLinks(links) {
+          this.links = links;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getAlternateName",
+        value: function getAlternateName() {
+          return this.alternateName;
+        }
+        /**
+         * @param { String } alternateName
+         */
+      },
+      {
+        key: "setAlternateName",
+        value: function setAlternateName(alternateName) {
+          this.alternateName = alternateName;
+        }
+        /**
+         * @return { Date }
+         */
+      },
+      {
+        key: "getCreatedAt",
+        value: function getCreatedAt() {
+          return this.createdAt;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getDescription",
+        value: function getDescription() {
+          return this.description;
+        }
+        /**
+         * @param { String } description
+         */
+      },
+      {
+        key: "setDescription",
+        value: function setDescription(description) {
+          this.description = description;
+        }
+        /**
+         * @return { Boolean }
+         */
+      },
+      {
+        key: "getEnabled",
+        value: function getEnabled() {
+          return this.enabled;
+        }
+        /**
+         * @param { Boolean } enabled
+         */
+      },
+      {
+        key: "setEnabled",
+        value: function setEnabled(enabled) {
+          this.enabled = enabled;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getId",
+        value: function getId() {
+          return this.id;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getName",
+        value: function getName() {
+          return this.name;
+        }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
+        }
+        /**
+         * @return { module:model/OrganizationPreferences }
+         */
+      },
+      {
+        key: "getPreferences",
+        value: function getPreferences() {
+          return this.preferences;
+        }
+        /**
+         * @param { module:model/OrganizationPreferences } preferences
+         */
+      },
+      {
+        key: "setPreferences",
+        value: function setPreferences(preferences) {
+          this.preferences = preferences;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getType",
+        value: function getType() {
+          return this.type;
+        }
+        /**
+         * @return { Date }
+         */
+      },
+      {
+        key: "getUpdatedAt",
+        value: function getUpdatedAt() {
+          return this.updatedAt;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return Organization;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new Organization();
+          }
+
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
+          if (data.hasOwnProperty("alternateName")) {
+            object.alternateName = _ApiClient.default.convertToType(
+              data["alternateName"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("enabled")) {
+            object.enabled = _ApiClient.default.convertToType(
+              data["enabled"],
+              "Boolean"
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("preferences")) {
+            object.preferences = _ApiClient.default.convertToType(
+              data["preferences"],
+              object.preferencesType
+            );
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return Organization;
+})();
 
 exports.default = Organization;

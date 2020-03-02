@@ -132,97 +132,95 @@ function _setPrototypeOf(o, p) {
  * The FeedPagination model module.
  * @module model/FeedPagination
  */
-var FeedPagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(FeedPagination, _Pagination);
+var FeedPagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(FeedPagination, _Pagination);
 
-    /**
-   * Constructs a new "FeedPagination".
-   * @alias module:model/FeedPagination
-   * @class
-  
-   */
-    function FeedPagination() {
-      var _this;
-
-      _classCallCheck(this, FeedPagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(FeedPagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _FeedCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "FeedPagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FeedPagination } object Optional instance to populate.
-     * @return { module:model/FeedPagination } The populated "FeedPagination" instance.
+  /**
+     * Constructs a new "FeedPagination".
+     * @alias module:model/FeedPagination
+     * @class
+    
      */
+  function FeedPagination() {
+    var _this;
 
-    _createClass(
-      FeedPagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, FeedPagination);
 
-          /**
-           * @return { module:model/FeedCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/FeedCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new FeedPagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(FeedPagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(FeedPagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _FeedCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "FeedPagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/FeedPagination } object Optional instance to populate.
+   * @return { module:model/FeedPagination } The populated "FeedPagination" instance.
+   */
 
-    return FeedPagination;
-  })(_Pagination2.default);
+  _createClass(
+    FeedPagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/FeedCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/FeedCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new FeedPagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(FeedPagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return FeedPagination;
+})(_Pagination2.default);
 
 exports.default = FeedPagination;

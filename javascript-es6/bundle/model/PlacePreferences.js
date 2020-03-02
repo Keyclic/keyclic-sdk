@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PlacePreferences model module.
  * @module model/PlacePreferences
  */
-var PlacePreferences =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PlacePreferences".
-   * @alias module:model/PlacePreferences
-   * @class
-  
-   */
-    function PlacePreferences() {
-      _classCallCheck(this, PlacePreferences);
-
-      this._public = null;
-    }
-    /**
-     * Constructs a "PlacePreferences" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PlacePreferences } object Optional instance to populate.
-     * @return { module:model/PlacePreferences } The populated "PlacePreferences" instance.
+var PlacePreferences = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PlacePreferences".
+     * @alias module:model/PlacePreferences
+     * @class
+    
      */
+  function PlacePreferences() {
+    _classCallCheck(this, PlacePreferences);
 
-    _createClass(
-      PlacePreferences,
-      [
-        {
-          key: "getPublic",
+    this._public = null;
+  }
+  /**
+   * Constructs a "PlacePreferences" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PlacePreferences } object Optional instance to populate.
+   * @return { module:model/PlacePreferences } The populated "PlacePreferences" instance.
+   */
 
-          /**
-           * @return { Boolean }
-           */
-          value: function getPublic() {
-            return this._public;
-          }
-          /**
-           * @param { Boolean } _public
-           */
-        },
-        {
-          key: "setPublic",
-          value: function setPublic(_public) {
-            this._public = _public;
-          }
+  _createClass(
+    PlacePreferences,
+    [
+      {
+        key: "getPublic",
+
+        /**
+         * @return { Boolean }
+         */
+        value: function getPublic() {
+          return this._public;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PlacePreferences();
-            }
-
-            if (data.hasOwnProperty("public")) {
-              object._public = _ApiClient.default.convertToType(
-                data["public"],
-                "Boolean"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { Boolean } _public
+         */
+      },
+      {
+        key: "setPublic",
+        value: function setPublic(_public) {
+          this._public = _public;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PlacePreferences;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PlacePreferences();
+          }
+
+          if (data.hasOwnProperty("public")) {
+            object._public = _ApiClient.default.convertToType(
+              data["public"],
+              "Boolean"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PlacePreferences;
+})();
 
 exports.default = PlacePreferences;

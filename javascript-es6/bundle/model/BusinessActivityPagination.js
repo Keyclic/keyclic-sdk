@@ -134,97 +134,95 @@ function _setPrototypeOf(o, p) {
  * The BusinessActivityPagination model module.
  * @module model/BusinessActivityPagination
  */
-var BusinessActivityPagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(BusinessActivityPagination, _Pagination);
+var BusinessActivityPagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(BusinessActivityPagination, _Pagination);
 
-    /**
-   * Constructs a new "BusinessActivityPagination".
-   * @alias module:model/BusinessActivityPagination
-   * @class
-  
-   */
-    function BusinessActivityPagination() {
-      var _this;
-
-      _classCallCheck(this, BusinessActivityPagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(BusinessActivityPagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _BusinessActivityCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "BusinessActivityPagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/BusinessActivityPagination } object Optional instance to populate.
-     * @return { module:model/BusinessActivityPagination } The populated "BusinessActivityPagination" instance.
+  /**
+     * Constructs a new "BusinessActivityPagination".
+     * @alias module:model/BusinessActivityPagination
+     * @class
+    
      */
+  function BusinessActivityPagination() {
+    var _this;
 
-    _createClass(
-      BusinessActivityPagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, BusinessActivityPagination);
 
-          /**
-           * @return { module:model/BusinessActivityCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/BusinessActivityCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new BusinessActivityPagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(BusinessActivityPagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(BusinessActivityPagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _BusinessActivityCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "BusinessActivityPagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/BusinessActivityPagination } object Optional instance to populate.
+   * @return { module:model/BusinessActivityPagination } The populated "BusinessActivityPagination" instance.
+   */
 
-    return BusinessActivityPagination;
-  })(_Pagination2.default);
+  _createClass(
+    BusinessActivityPagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/BusinessActivityCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/BusinessActivityCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new BusinessActivityPagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(BusinessActivityPagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return BusinessActivityPagination;
+})(_Pagination2.default);
 
 exports.default = BusinessActivityPagination;

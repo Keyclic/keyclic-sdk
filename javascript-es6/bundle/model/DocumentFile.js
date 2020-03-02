@@ -51,112 +51,110 @@ function _defineProperty(obj, key, value) {
  * The DocumentFile model module.
  * @module model/DocumentFile
  */
-var DocumentFile =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DocumentFile".
-   * @alias module:model/DocumentFile
-   * @class
-  
-   */
-    function DocumentFile() {
-      _classCallCheck(this, DocumentFile);
-
-      this.contentType = null;
-      this.name = null;
-    }
-    /**
-     * Constructs a "DocumentFile" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DocumentFile } object Optional instance to populate.
-     * @return { module:model/DocumentFile } The populated "DocumentFile" instance.
+var DocumentFile = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DocumentFile".
+     * @alias module:model/DocumentFile
+     * @class
+    
      */
+  function DocumentFile() {
+    _classCallCheck(this, DocumentFile);
 
-    _createClass(
-      DocumentFile,
-      [
-        {
-          key: "getContentType",
+    this.contentType = null;
+    this.name = null;
+  }
+  /**
+   * Constructs a "DocumentFile" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DocumentFile } object Optional instance to populate.
+   * @return { module:model/DocumentFile } The populated "DocumentFile" instance.
+   */
 
-          /**
-           * @return { module:model/DocumentFile.ContentTypeEnum }
-           */
-          value: function getContentType() {
-            return this.contentType;
-          }
-          /**
-           * @param { module:model/DocumentFile.ContentTypeEnum } contentType
-           */
-        },
-        {
-          key: "setContentType",
-          value: function setContentType(contentType) {
-            this.contentType = contentType;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getName",
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
-          /**
-           * Allowed values for the "contentType" property.
-           * @enum { String }
-           */
+  _createClass(
+    DocumentFile,
+    [
+      {
+        key: "getContentType",
+
+        /**
+         * @return { module:model/DocumentFile.ContentTypeEnum }
+         */
+        value: function getContentType() {
+          return this.contentType;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DocumentFile();
-            }
-
-            if (data.hasOwnProperty("contentType")) {
-              object.contentType = _ApiClient.default.convertToType(
-                data["contentType"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/DocumentFile.ContentTypeEnum } contentType
+         */
+      },
+      {
+        key: "setContentType",
+        value: function setContentType(contentType) {
+          this.contentType = contentType;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getName",
+        value: function getName() {
+          return this.name;
+        }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
+        }
+        /**
+         * Allowed values for the "contentType" property.
+         * @enum { String }
+         */
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DocumentFile;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DocumentFile();
+          }
+
+          if (data.hasOwnProperty("contentType")) {
+            object.contentType = _ApiClient.default.convertToType(
+              data["contentType"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DocumentFile;
+})();
 
 exports.default = DocumentFile;
 

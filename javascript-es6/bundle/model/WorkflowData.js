@@ -37,83 +37,81 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The WorkflowData model module.
  * @module model/WorkflowData
  */
-var WorkflowData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "WorkflowData".
-   * @alias module:model/WorkflowData
-   * @class
-  
-   * @param transition { String }
-  
-   */
-    function WorkflowData(transition) {
-      _classCallCheck(this, WorkflowData);
-
-      this.transition = transition;
-    }
-    /**
-     * Constructs a "WorkflowData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/WorkflowData } object Optional instance to populate.
-     * @return { module:model/WorkflowData } The populated "WorkflowData" instance.
+var WorkflowData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "WorkflowData".
+     * @alias module:model/WorkflowData
+     * @class
+    
+     * @param transition { String }
+    
      */
+  function WorkflowData(transition) {
+    _classCallCheck(this, WorkflowData);
 
-    _createClass(
-      WorkflowData,
-      [
-        {
-          key: "getTransition",
+    this.transition = transition;
+  }
+  /**
+   * Constructs a "WorkflowData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/WorkflowData } object Optional instance to populate.
+   * @return { module:model/WorkflowData } The populated "WorkflowData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getTransition() {
-            return this.transition;
-          }
-          /**
-           * @param { String } transition
-           */
-        },
-        {
-          key: "setTransition",
-          value: function setTransition(transition) {
-            this.transition = transition;
-          }
+  _createClass(
+    WorkflowData,
+    [
+      {
+        key: "getTransition",
+
+        /**
+         * @return { String }
+         */
+        value: function getTransition() {
+          return this.transition;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new WorkflowData();
-            }
-
-            if (data.hasOwnProperty("transition")) {
-              object.transition = _ApiClient.default.convertToType(
-                data["transition"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } transition
+         */
+      },
+      {
+        key: "setTransition",
+        value: function setTransition(transition) {
+          this.transition = transition;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return WorkflowData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new WorkflowData();
+          }
+
+          if (data.hasOwnProperty("transition")) {
+            object.transition = _ApiClient.default.convertToType(
+              data["transition"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return WorkflowData;
+})();
 
 exports.default = WorkflowData;

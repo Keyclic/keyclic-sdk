@@ -43,229 +43,224 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The Delegation model module.
  * @module model/Delegation
  */
-var Delegation =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "Delegation".
-   * @alias module:model/Delegation
-   * @class
-  
-   */
-    function Delegation() {
-      _classCallCheck(this, Delegation);
-
-      this.embedded = null;
-      this.links = null;
-      this.createdAt = null;
-      this.description = null;
-      this.id = null;
-      this.state = [];
-      this.type = null;
-      this.updatedAt = null;
-      this.embeddedType = _DelegationEmbedded.default;
-      this.linksType = _DelegationLinks.default;
-    }
-    /**
-     * Constructs a "Delegation" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/Delegation } object Optional instance to populate.
-     * @return { module:model/Delegation } The populated "Delegation" instance.
+var Delegation = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "Delegation".
+     * @alias module:model/Delegation
+     * @class
+    
      */
+  function Delegation() {
+    _classCallCheck(this, Delegation);
 
-    _createClass(
-      Delegation,
-      [
-        {
-          key: "getEmbedded",
+    this.embedded = null;
+    this.links = null;
+    this.createdAt = null;
+    this.description = null;
+    this.id = null;
+    this.state = [];
+    this.type = null;
+    this.updatedAt = null;
+    this.embeddedType = _DelegationEmbedded.default;
+    this.linksType = _DelegationLinks.default;
+  }
+  /**
+   * Constructs a "Delegation" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/Delegation } object Optional instance to populate.
+   * @return { module:model/Delegation } The populated "Delegation" instance.
+   */
 
-          /**
-           * @return { module:model/DelegationEmbedded }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/DelegationEmbedded } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-          /**
-           * @return { module:model/DelegationLinks }
-           */
-        },
-        {
-          key: "getLinks",
-          value: function getLinks() {
-            return this.links;
-          }
-          /**
-           * @param { module:model/DelegationLinks } links
-           */
-        },
-        {
-          key: "setLinks",
-          value: function setLinks(links) {
-            this.links = links;
-          }
-          /**
-           * @return { Date }
-           */
-        },
-        {
-          key: "getCreatedAt",
-          value: function getCreatedAt() {
-            return this.createdAt;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getDescription",
-          value: function getDescription() {
-            return this.description;
-          }
-          /**
-           * @param { String } description
-           */
-        },
-        {
-          key: "setDescription",
-          value: function setDescription(description) {
-            this.description = description;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getId",
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @return { Array.<String> }
-           */
-        },
-        {
-          key: "getState",
-          value: function getState() {
-            return this.state;
-          }
-          /**
-           * @param { Array.<String> } state
-           */
-        },
-        {
-          key: "setState",
-          value: function setState(state) {
-            this.state = state;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
-          }
-          /**
-           * @return { Date }
-           */
-        },
-        {
-          key: "getUpdatedAt",
-          value: function getUpdatedAt() {
-            return this.updatedAt;
-          }
+  _createClass(
+    Delegation,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/DelegationEmbedded }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new Delegation();
-            }
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            if (data.hasOwnProperty("_links")) {
-              object.links = _ApiClient.default.convertToType(
-                data["_links"],
-                object.linksType
-              );
-            }
-
-            if (data.hasOwnProperty("createdAt")) {
-              object.createdAt = _ApiClient.default.convertToType(
-                data["createdAt"],
-                "Date"
-              );
-            }
-
-            if (data.hasOwnProperty("description")) {
-              object.description = _ApiClient.default.convertToType(
-                data["description"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("state")) {
-              object.state = _ApiClient.default.convertToType(
-                data["state"],
-                "['String']"
-              );
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("updatedAt")) {
-              object.updatedAt = _ApiClient.default.convertToType(
-                data["updatedAt"],
-                "Date"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/DelegationEmbedded } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
         }
-      ]
-    );
+        /**
+         * @return { module:model/DelegationLinks }
+         */
+      },
+      {
+        key: "getLinks",
+        value: function getLinks() {
+          return this.links;
+        }
+        /**
+         * @param { module:model/DelegationLinks } links
+         */
+      },
+      {
+        key: "setLinks",
+        value: function setLinks(links) {
+          this.links = links;
+        }
+        /**
+         * @return { Date }
+         */
+      },
+      {
+        key: "getCreatedAt",
+        value: function getCreatedAt() {
+          return this.createdAt;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getDescription",
+        value: function getDescription() {
+          return this.description;
+        }
+        /**
+         * @param { String } description
+         */
+      },
+      {
+        key: "setDescription",
+        value: function setDescription(description) {
+          this.description = description;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getId",
+        value: function getId() {
+          return this.id;
+        }
+        /**
+         * @return { Array.<String> }
+         */
+      },
+      {
+        key: "getState",
+        value: function getState() {
+          return this.state;
+        }
+        /**
+         * @param { Array.<String> } state
+         */
+      },
+      {
+        key: "setState",
+        value: function setState(state) {
+          this.state = state;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getType",
+        value: function getType() {
+          return this.type;
+        }
+        /**
+         * @return { Date }
+         */
+      },
+      {
+        key: "getUpdatedAt",
+        value: function getUpdatedAt() {
+          return this.updatedAt;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return Delegation;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new Delegation();
+          }
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          if (data.hasOwnProperty("_links")) {
+            object.links = _ApiClient.default.convertToType(
+              data["_links"],
+              object.linksType
+            );
+          }
+
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("state")) {
+            object.state = _ApiClient.default.convertToType(
+              data["state"],
+              "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return Delegation;
+})();
 
 exports.default = Delegation;

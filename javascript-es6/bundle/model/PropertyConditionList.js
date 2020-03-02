@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PropertyConditionList model module.
  * @module model/PropertyConditionList
  */
-var PropertyConditionList =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PropertyConditionList".
-   * @alias module:model/PropertyConditionList
-   * @class
-  
-   */
-    function PropertyConditionList() {
-      _classCallCheck(this, PropertyConditionList);
-
-      this.allOf = [];
-      this.allOfType = _Condition.default;
-    }
-    /**
-     * Constructs a "PropertyConditionList" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PropertyConditionList } object Optional instance to populate.
-     * @return { module:model/PropertyConditionList } The populated "PropertyConditionList" instance.
+var PropertyConditionList = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PropertyConditionList".
+     * @alias module:model/PropertyConditionList
+     * @class
+    
      */
+  function PropertyConditionList() {
+    _classCallCheck(this, PropertyConditionList);
 
-    _createClass(
-      PropertyConditionList,
-      [
-        {
-          key: "getAllOf",
+    this.allOf = [];
+    this.allOfType = _Condition.default;
+  }
+  /**
+   * Constructs a "PropertyConditionList" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PropertyConditionList } object Optional instance to populate.
+   * @return { module:model/PropertyConditionList } The populated "PropertyConditionList" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Condition> }
-           */
-          value: function getAllOf() {
-            return this.allOf;
-          }
-          /**
-           * @param { Array.<module:model/Condition> } allOf
-           */
-        },
-        {
-          key: "setAllOf",
-          value: function setAllOf(allOf) {
-            this.allOf = allOf;
-          }
+  _createClass(
+    PropertyConditionList,
+    [
+      {
+        key: "getAllOf",
+
+        /**
+         * @return { Array.<module:model/Condition> }
+         */
+        value: function getAllOf() {
+          return this.allOf;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PropertyConditionList();
-            }
-
-            if (data.hasOwnProperty("allOf")) {
-              object.allOf = _ApiClient.default.convertToType(data["allOf"], [
-                object.allOfType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Condition> } allOf
+         */
+      },
+      {
+        key: "setAllOf",
+        value: function setAllOf(allOf) {
+          this.allOf = allOf;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PropertyConditionList;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PropertyConditionList();
+          }
+
+          if (data.hasOwnProperty("allOf")) {
+            object.allOf = _ApiClient.default.convertToType(data["allOf"], [
+              object.allOfType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PropertyConditionList;
+})();
 
 exports.default = PropertyConditionList;

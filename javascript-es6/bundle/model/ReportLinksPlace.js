@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReportLinksPlace model module.
  * @module model/ReportLinksPlace
  */
-var ReportLinksPlace =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReportLinksPlace".
-   * @alias module:model/ReportLinksPlace
-   * @class
-  
-   */
-    function ReportLinksPlace() {
-      _classCallCheck(this, ReportLinksPlace);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _ReportLinksPlaceIriTemplate.default;
-    }
-    /**
-     * Constructs a "ReportLinksPlace" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReportLinksPlace } object Optional instance to populate.
-     * @return { module:model/ReportLinksPlace } The populated "ReportLinksPlace" instance.
+var ReportLinksPlace = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReportLinksPlace".
+     * @alias module:model/ReportLinksPlace
+     * @class
+    
      */
+  function ReportLinksPlace() {
+    _classCallCheck(this, ReportLinksPlace);
 
-    _createClass(
-      ReportLinksPlace,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _ReportLinksPlaceIriTemplate.default;
+  }
+  /**
+   * Constructs a "ReportLinksPlace" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReportLinksPlace } object Optional instance to populate.
+   * @return { module:model/ReportLinksPlace } The populated "ReportLinksPlace" instance.
+   */
 
-          /**
-           * Gets The URI of the place associated to the given report.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the place associated to the given report.
-           * @param { String } href The URI of the place associated to the given report.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/ReportLinksPlaceIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/ReportLinksPlaceIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    ReportLinksPlace,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the place associated to the given report.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReportLinksPlace();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the place associated to the given report.
+         * @param { String } href The URI of the place associated to the given report.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/ReportLinksPlaceIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/ReportLinksPlaceIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReportLinksPlace;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReportLinksPlace();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReportLinksPlace;
+})();
 
 exports.default = ReportLinksPlace;

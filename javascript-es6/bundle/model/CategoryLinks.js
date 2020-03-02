@@ -43,109 +43,107 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The CategoryLinks model module.
  * @module model/CategoryLinks
  */
-var CategoryLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "CategoryLinks".
-   * @alias module:model/CategoryLinks
-   * @class
-  
-   */
-    function CategoryLinks() {
-      _classCallCheck(this, CategoryLinks);
-
-      this.organization = null;
-      this.self = null;
-      this.organizationType = _CategoryLinksOrganization.default;
-      this.selfType = _CategoryLinksSelf.default;
-    }
-    /**
-     * Constructs a "CategoryLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/CategoryLinks } object Optional instance to populate.
-     * @return { module:model/CategoryLinks } The populated "CategoryLinks" instance.
+var CategoryLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "CategoryLinks".
+     * @alias module:model/CategoryLinks
+     * @class
+    
      */
+  function CategoryLinks() {
+    _classCallCheck(this, CategoryLinks);
 
-    _createClass(
-      CategoryLinks,
-      [
-        {
-          key: "getOrganization",
+    this.organization = null;
+    this.self = null;
+    this.organizationType = _CategoryLinksOrganization.default;
+    this.selfType = _CategoryLinksSelf.default;
+  }
+  /**
+   * Constructs a "CategoryLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/CategoryLinks } object Optional instance to populate.
+   * @return { module:model/CategoryLinks } The populated "CategoryLinks" instance.
+   */
 
-          /**
-           * @return { module:model/CategoryLinksOrganization }
-           */
-          value: function getOrganization() {
-            return this.organization;
-          }
-          /**
-           * @param { module:model/CategoryLinksOrganization } organization
-           */
-        },
-        {
-          key: "setOrganization",
-          value: function setOrganization(organization) {
-            this.organization = organization;
-          }
-          /**
-           * @return { module:model/CategoryLinksSelf }
-           */
-        },
-        {
-          key: "getSelf",
-          value: function getSelf() {
-            return this.self;
-          }
-          /**
-           * @param { module:model/CategoryLinksSelf } self
-           */
-        },
-        {
-          key: "setSelf",
-          value: function setSelf(self) {
-            this.self = self;
-          }
+  _createClass(
+    CategoryLinks,
+    [
+      {
+        key: "getOrganization",
+
+        /**
+         * @return { module:model/CategoryLinksOrganization }
+         */
+        value: function getOrganization() {
+          return this.organization;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new CategoryLinks();
-            }
-
-            if (data.hasOwnProperty("organization")) {
-              object.organization = _ApiClient.default.convertToType(
-                data["organization"],
-                object.organizationType
-              );
-            }
-
-            if (data.hasOwnProperty("self")) {
-              object.self = _ApiClient.default.convertToType(
-                data["self"],
-                object.selfType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/CategoryLinksOrganization } organization
+         */
+      },
+      {
+        key: "setOrganization",
+        value: function setOrganization(organization) {
+          this.organization = organization;
         }
-      ]
-    );
+        /**
+         * @return { module:model/CategoryLinksSelf }
+         */
+      },
+      {
+        key: "getSelf",
+        value: function getSelf() {
+          return this.self;
+        }
+        /**
+         * @param { module:model/CategoryLinksSelf } self
+         */
+      },
+      {
+        key: "setSelf",
+        value: function setSelf(self) {
+          this.self = self;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return CategoryLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new CategoryLinks();
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
+              object.organizationType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return CategoryLinks;
+})();
 
 exports.default = CategoryLinks;

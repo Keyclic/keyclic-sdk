@@ -45,161 +45,159 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OperationEmbedded model module.
  * @module model/OperationEmbedded
  */
-var OperationEmbedded =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OperationEmbedded".
-   * @alias module:model/OperationEmbedded
-   * @class
-  
-   */
-    function OperationEmbedded() {
-      _classCallCheck(this, OperationEmbedded);
-
-      this.duration = null;
-      this.stateTransitions = [];
-      this.tracking = null;
-      this.workflow = null;
-      this.durationType = _OperationEmbeddedDuration.default;
-      this.workflowType = _DelegationEmbeddedWorkflow.default;
-    }
-    /**
-     * Constructs a "OperationEmbedded" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OperationEmbedded } object Optional instance to populate.
-     * @return { module:model/OperationEmbedded } The populated "OperationEmbedded" instance.
+var OperationEmbedded = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OperationEmbedded".
+     * @alias module:model/OperationEmbedded
+     * @class
+    
      */
+  function OperationEmbedded() {
+    _classCallCheck(this, OperationEmbedded);
 
-    _createClass(
-      OperationEmbedded,
-      [
-        {
-          key: "getDuration",
+    this.duration = null;
+    this.stateTransitions = [];
+    this.tracking = null;
+    this.workflow = null;
+    this.durationType = _OperationEmbeddedDuration.default;
+    this.workflowType = _DelegationEmbeddedWorkflow.default;
+  }
+  /**
+   * Constructs a "OperationEmbedded" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OperationEmbedded } object Optional instance to populate.
+   * @return { module:model/OperationEmbedded } The populated "OperationEmbedded" instance.
+   */
 
-          /**
-           * @return { module:model/OperationEmbeddedDuration }
-           */
-          value: function getDuration() {
-            return this.duration;
-          }
-          /**
-           * @param { module:model/OperationEmbeddedDuration } duration
-           */
-        },
-        {
-          key: "setDuration",
-          value: function setDuration(duration) {
-            this.duration = duration;
-          }
-          /**
-           * @return { Array.<String> }
-           */
-        },
-        {
-          key: "getStateTransitions",
-          value: function getStateTransitions() {
-            return this.stateTransitions;
-          }
-          /**
-           * @param { Array.<String> } stateTransitions
-           */
-        },
-        {
-          key: "setStateTransitions",
-          value: function setStateTransitions(stateTransitions) {
-            this.stateTransitions = stateTransitions;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getTracking",
-          value: function getTracking() {
-            return this.tracking;
-          }
-          /**
-           * @param { String } tracking
-           */
-        },
-        {
-          key: "setTracking",
-          value: function setTracking(tracking) {
-            this.tracking = tracking;
-          }
-          /**
-           * @return { module:model/DelegationEmbeddedWorkflow }
-           */
-        },
-        {
-          key: "getWorkflow",
-          value: function getWorkflow() {
-            return this.workflow;
-          }
-          /**
-           * @param { module:model/DelegationEmbeddedWorkflow } workflow
-           */
-        },
-        {
-          key: "setWorkflow",
-          value: function setWorkflow(workflow) {
-            this.workflow = workflow;
-          }
+  _createClass(
+    OperationEmbedded,
+    [
+      {
+        key: "getDuration",
+
+        /**
+         * @return { module:model/OperationEmbeddedDuration }
+         */
+        value: function getDuration() {
+          return this.duration;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OperationEmbedded();
-            }
-
-            if (data.hasOwnProperty("duration")) {
-              object.duration = _ApiClient.default.convertToType(
-                data["duration"],
-                object.durationType
-              );
-            }
-
-            if (data.hasOwnProperty("stateTransitions")) {
-              object.stateTransitions = _ApiClient.default.convertToType(
-                data["stateTransitions"],
-                "['String']"
-              );
-            }
-
-            if (data.hasOwnProperty("tracking")) {
-              object.tracking = _ApiClient.default.convertToType(
-                data["tracking"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("workflow")) {
-              object.workflow = _ApiClient.default.convertToType(
-                data["workflow"],
-                object.workflowType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/OperationEmbeddedDuration } duration
+         */
+      },
+      {
+        key: "setDuration",
+        value: function setDuration(duration) {
+          this.duration = duration;
         }
-      ]
-    );
+        /**
+         * @return { Array.<String> }
+         */
+      },
+      {
+        key: "getStateTransitions",
+        value: function getStateTransitions() {
+          return this.stateTransitions;
+        }
+        /**
+         * @param { Array.<String> } stateTransitions
+         */
+      },
+      {
+        key: "setStateTransitions",
+        value: function setStateTransitions(stateTransitions) {
+          this.stateTransitions = stateTransitions;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getTracking",
+        value: function getTracking() {
+          return this.tracking;
+        }
+        /**
+         * @param { String } tracking
+         */
+      },
+      {
+        key: "setTracking",
+        value: function setTracking(tracking) {
+          this.tracking = tracking;
+        }
+        /**
+         * @return { module:model/DelegationEmbeddedWorkflow }
+         */
+      },
+      {
+        key: "getWorkflow",
+        value: function getWorkflow() {
+          return this.workflow;
+        }
+        /**
+         * @param { module:model/DelegationEmbeddedWorkflow } workflow
+         */
+      },
+      {
+        key: "setWorkflow",
+        value: function setWorkflow(workflow) {
+          this.workflow = workflow;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OperationEmbedded;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OperationEmbedded();
+          }
+
+          if (data.hasOwnProperty("duration")) {
+            object.duration = _ApiClient.default.convertToType(
+              data["duration"],
+              object.durationType
+            );
+          }
+
+          if (data.hasOwnProperty("stateTransitions")) {
+            object.stateTransitions = _ApiClient.default.convertToType(
+              data["stateTransitions"],
+              "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("tracking")) {
+            object.tracking = _ApiClient.default.convertToType(
+              data["tracking"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("workflow")) {
+            object.workflow = _ApiClient.default.convertToType(
+              data["workflow"],
+              object.workflowType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OperationEmbedded;
+})();
 
 exports.default = OperationEmbedded;

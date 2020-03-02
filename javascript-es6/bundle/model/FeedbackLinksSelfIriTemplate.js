@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The FeedbackLinksSelfIriTemplate model module.
  * @module model/FeedbackLinksSelfIriTemplate
  */
-var FeedbackLinksSelfIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "FeedbackLinksSelfIriTemplate".
-   * @alias module:model/FeedbackLinksSelfIriTemplate
-   * @class
-  
-   */
-    function FeedbackLinksSelfIriTemplate() {
-      _classCallCheck(this, FeedbackLinksSelfIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _ContributionLinksFeedbackIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "FeedbackLinksSelfIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FeedbackLinksSelfIriTemplate } object Optional instance to populate.
-     * @return { module:model/FeedbackLinksSelfIriTemplate } The populated "FeedbackLinksSelfIriTemplate" instance.
+var FeedbackLinksSelfIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "FeedbackLinksSelfIriTemplate".
+     * @alias module:model/FeedbackLinksSelfIriTemplate
+     * @class
+    
      */
+  function FeedbackLinksSelfIriTemplate() {
+    _classCallCheck(this, FeedbackLinksSelfIriTemplate);
 
-    _createClass(
-      FeedbackLinksSelfIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _ContributionLinksFeedbackIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "FeedbackLinksSelfIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/FeedbackLinksSelfIriTemplate } object Optional instance to populate.
+   * @return { module:model/FeedbackLinksSelfIriTemplate } The populated "FeedbackLinksSelfIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/ContributionLinksFeedbackIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/ContributionLinksFeedbackIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    FeedbackLinksSelfIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/ContributionLinksFeedbackIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new FeedbackLinksSelfIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ContributionLinksFeedbackIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return FeedbackLinksSelfIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new FeedbackLinksSelfIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return FeedbackLinksSelfIriTemplate;
+})();
 
 exports.default = FeedbackLinksSelfIriTemplate;

@@ -37,133 +37,128 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The SuccessLoginCredentialsAdministratorOf model module.
  * @module model/SuccessLoginCredentialsAdministratorOf
  */
-var SuccessLoginCredentialsAdministratorOf =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "SuccessLoginCredentialsAdministratorOf".
-   * @alias module:model/SuccessLoginCredentialsAdministratorOf
-   * @class
-  
-   */
-    function SuccessLoginCredentialsAdministratorOf() {
-      _classCallCheck(this, SuccessLoginCredentialsAdministratorOf);
-
-      this.id = null;
-      this.token = null;
-      this.type = null;
-    }
-    /**
-     * Constructs a "SuccessLoginCredentialsAdministratorOf" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/SuccessLoginCredentialsAdministratorOf } object Optional instance to populate.
-     * @return { module:model/SuccessLoginCredentialsAdministratorOf } The populated "SuccessLoginCredentialsAdministratorOf" instance.
+var SuccessLoginCredentialsAdministratorOf = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "SuccessLoginCredentialsAdministratorOf".
+     * @alias module:model/SuccessLoginCredentialsAdministratorOf
+     * @class
+    
      */
+  function SuccessLoginCredentialsAdministratorOf() {
+    _classCallCheck(this, SuccessLoginCredentialsAdministratorOf);
 
-    _createClass(
-      SuccessLoginCredentialsAdministratorOf,
-      [
-        {
-          key: "getId",
+    this.id = null;
+    this.token = null;
+    this.type = null;
+  }
+  /**
+   * Constructs a "SuccessLoginCredentialsAdministratorOf" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/SuccessLoginCredentialsAdministratorOf } object Optional instance to populate.
+   * @return { module:model/SuccessLoginCredentialsAdministratorOf } The populated "SuccessLoginCredentialsAdministratorOf" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @param { String } id
-           */
-        },
-        {
-          key: "setId",
-          value: function setId(id) {
-            this.id = id;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getToken",
-          value: function getToken() {
-            return this.token;
-          }
-          /**
-           * @param { String } token
-           */
-        },
-        {
-          key: "setToken",
-          value: function setToken(token) {
-            this.token = token;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
-          }
-          /**
-           * @param { String } type
-           */
-        },
-        {
-          key: "setType",
-          value: function setType(type) {
-            this.type = type;
-          }
+  _createClass(
+    SuccessLoginCredentialsAdministratorOf,
+    [
+      {
+        key: "getId",
+
+        /**
+         * @return { String }
+         */
+        value: function getId() {
+          return this.id;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new SuccessLoginCredentialsAdministratorOf();
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("token")) {
-              object.token = _ApiClient.default.convertToType(
-                data["token"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } id
+         */
+      },
+      {
+        key: "setId",
+        value: function setId(id) {
+          this.id = id;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getToken",
+        value: function getToken() {
+          return this.token;
+        }
+        /**
+         * @param { String } token
+         */
+      },
+      {
+        key: "setToken",
+        value: function setToken(token) {
+          this.token = token;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getType",
+        value: function getType() {
+          return this.type;
+        }
+        /**
+         * @param { String } type
+         */
+      },
+      {
+        key: "setType",
+        value: function setType(type) {
+          this.type = type;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return SuccessLoginCredentialsAdministratorOf;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new SuccessLoginCredentialsAdministratorOf();
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("token")) {
+            object.token = _ApiClient.default.convertToType(
+              data["token"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return SuccessLoginCredentialsAdministratorOf;
+})();
 
 exports.default = SuccessLoginCredentialsAdministratorOf;

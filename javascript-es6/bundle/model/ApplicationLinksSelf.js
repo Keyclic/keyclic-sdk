@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ApplicationLinksSelf model module.
  * @module model/ApplicationLinksSelf
  */
-var ApplicationLinksSelf =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ApplicationLinksSelf".
-   * @alias module:model/ApplicationLinksSelf
-   * @class
-  
-   */
-    function ApplicationLinksSelf() {
-      _classCallCheck(this, ApplicationLinksSelf);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _ApplicationLinksSelfIriTemplate.default;
-    }
-    /**
-     * Constructs a "ApplicationLinksSelf" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ApplicationLinksSelf } object Optional instance to populate.
-     * @return { module:model/ApplicationLinksSelf } The populated "ApplicationLinksSelf" instance.
+var ApplicationLinksSelf = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ApplicationLinksSelf".
+     * @alias module:model/ApplicationLinksSelf
+     * @class
+    
      */
+  function ApplicationLinksSelf() {
+    _classCallCheck(this, ApplicationLinksSelf);
 
-    _createClass(
-      ApplicationLinksSelf,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _ApplicationLinksSelfIriTemplate.default;
+  }
+  /**
+   * Constructs a "ApplicationLinksSelf" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ApplicationLinksSelf } object Optional instance to populate.
+   * @return { module:model/ApplicationLinksSelf } The populated "ApplicationLinksSelf" instance.
+   */
 
-          /**
-           * Gets The URI of the self associated to the given application.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the self associated to the given application.
-           * @param { String } href The URI of the self associated to the given application.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/ApplicationLinksSelfIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/ApplicationLinksSelfIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    ApplicationLinksSelf,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the self associated to the given application.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ApplicationLinksSelf();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the self associated to the given application.
+         * @param { String } href The URI of the self associated to the given application.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/ApplicationLinksSelfIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/ApplicationLinksSelfIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ApplicationLinksSelf;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ApplicationLinksSelf();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ApplicationLinksSelf;
+})();
 
 exports.default = ApplicationLinksSelf;

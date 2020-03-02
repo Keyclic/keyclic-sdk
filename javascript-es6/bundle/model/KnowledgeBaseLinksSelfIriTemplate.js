@@ -41,83 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The KnowledgeBaseLinksSelfIriTemplate model module.
  * @module model/KnowledgeBaseLinksSelfIriTemplate
  */
-var KnowledgeBaseLinksSelfIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "KnowledgeBaseLinksSelfIriTemplate".
-   * @alias module:model/KnowledgeBaseLinksSelfIriTemplate
-   * @class
-  
-   */
-    function KnowledgeBaseLinksSelfIriTemplate() {
-      _classCallCheck(this, KnowledgeBaseLinksSelfIriTemplate);
-
-      this.mapping = null;
-      this.mappingType =
-        _ApplicationLinksKnowledgeBaseIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "KnowledgeBaseLinksSelfIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/KnowledgeBaseLinksSelfIriTemplate } object Optional instance to populate.
-     * @return { module:model/KnowledgeBaseLinksSelfIriTemplate } The populated "KnowledgeBaseLinksSelfIriTemplate" instance.
+var KnowledgeBaseLinksSelfIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "KnowledgeBaseLinksSelfIriTemplate".
+     * @alias module:model/KnowledgeBaseLinksSelfIriTemplate
+     * @class
+    
      */
+  function KnowledgeBaseLinksSelfIriTemplate() {
+    _classCallCheck(this, KnowledgeBaseLinksSelfIriTemplate);
 
-    _createClass(
-      KnowledgeBaseLinksSelfIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _ApplicationLinksKnowledgeBaseIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "KnowledgeBaseLinksSelfIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/KnowledgeBaseLinksSelfIriTemplate } object Optional instance to populate.
+   * @return { module:model/KnowledgeBaseLinksSelfIriTemplate } The populated "KnowledgeBaseLinksSelfIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    KnowledgeBaseLinksSelfIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new KnowledgeBaseLinksSelfIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return KnowledgeBaseLinksSelfIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new KnowledgeBaseLinksSelfIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return KnowledgeBaseLinksSelfIriTemplate;
+})();
 
 exports.default = KnowledgeBaseLinksSelfIriTemplate;

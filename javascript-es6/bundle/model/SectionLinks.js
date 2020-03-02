@@ -39,82 +39,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The SectionLinks model module.
  * @module model/SectionLinks
  */
-var SectionLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "SectionLinks".
-   * @alias module:model/SectionLinks
-   * @class
-  
-   */
-    function SectionLinks() {
-      _classCallCheck(this, SectionLinks);
-
-      this.self = null;
-      this.selfType = _SectionLinksSelf.default;
-    }
-    /**
-     * Constructs a "SectionLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/SectionLinks } object Optional instance to populate.
-     * @return { module:model/SectionLinks } The populated "SectionLinks" instance.
+var SectionLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "SectionLinks".
+     * @alias module:model/SectionLinks
+     * @class
+    
      */
+  function SectionLinks() {
+    _classCallCheck(this, SectionLinks);
 
-    _createClass(
-      SectionLinks,
-      [
-        {
-          key: "getSelf",
+    this.self = null;
+    this.selfType = _SectionLinksSelf.default;
+  }
+  /**
+   * Constructs a "SectionLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/SectionLinks } object Optional instance to populate.
+   * @return { module:model/SectionLinks } The populated "SectionLinks" instance.
+   */
 
-          /**
-           * @return { module:model/SectionLinksSelf }
-           */
-          value: function getSelf() {
-            return this.self;
-          }
-          /**
-           * @param { module:model/SectionLinksSelf } self
-           */
-        },
-        {
-          key: "setSelf",
-          value: function setSelf(self) {
-            this.self = self;
-          }
+  _createClass(
+    SectionLinks,
+    [
+      {
+        key: "getSelf",
+
+        /**
+         * @return { module:model/SectionLinksSelf }
+         */
+        value: function getSelf() {
+          return this.self;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new SectionLinks();
-            }
-
-            if (data.hasOwnProperty("self")) {
-              object.self = _ApiClient.default.convertToType(
-                data["self"],
-                object.selfType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/SectionLinksSelf } self
+         */
+      },
+      {
+        key: "setSelf",
+        value: function setSelf(self) {
+          this.self = self;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return SectionLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new SectionLinks();
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return SectionLinks;
+})();
 
 exports.default = SectionLinks;

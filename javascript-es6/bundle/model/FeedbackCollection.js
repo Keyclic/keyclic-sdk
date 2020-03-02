@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The FeedbackCollection model module.
  * @module model/FeedbackCollection
  */
-var FeedbackCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "FeedbackCollection".
-   * @alias module:model/FeedbackCollection
-   * @class
-  
-   */
-    function FeedbackCollection() {
-      _classCallCheck(this, FeedbackCollection);
-
-      this.items = [];
-      this.itemsType = _Feedback.default;
-    }
-    /**
-     * Constructs a "FeedbackCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FeedbackCollection } object Optional instance to populate.
-     * @return { module:model/FeedbackCollection } The populated "FeedbackCollection" instance.
+var FeedbackCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "FeedbackCollection".
+     * @alias module:model/FeedbackCollection
+     * @class
+    
      */
+  function FeedbackCollection() {
+    _classCallCheck(this, FeedbackCollection);
 
-    _createClass(
-      FeedbackCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _Feedback.default;
+  }
+  /**
+   * Constructs a "FeedbackCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/FeedbackCollection } object Optional instance to populate.
+   * @return { module:model/FeedbackCollection } The populated "FeedbackCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Feedback> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/Feedback> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    FeedbackCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/Feedback> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new FeedbackCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Feedback> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return FeedbackCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new FeedbackCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return FeedbackCollection;
+})();
 
 exports.default = FeedbackCollection;

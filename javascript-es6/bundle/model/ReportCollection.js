@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReportCollection model module.
  * @module model/ReportCollection
  */
-var ReportCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReportCollection".
-   * @alias module:model/ReportCollection
-   * @class
-  
-   */
-    function ReportCollection() {
-      _classCallCheck(this, ReportCollection);
-
-      this.items = [];
-      this.itemsType = _Report.default;
-    }
-    /**
-     * Constructs a "ReportCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReportCollection } object Optional instance to populate.
-     * @return { module:model/ReportCollection } The populated "ReportCollection" instance.
+var ReportCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReportCollection".
+     * @alias module:model/ReportCollection
+     * @class
+    
      */
+  function ReportCollection() {
+    _classCallCheck(this, ReportCollection);
 
-    _createClass(
-      ReportCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _Report.default;
+  }
+  /**
+   * Constructs a "ReportCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReportCollection } object Optional instance to populate.
+   * @return { module:model/ReportCollection } The populated "ReportCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Report> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/Report> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    ReportCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/Report> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReportCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Report> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReportCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReportCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReportCollection;
+})();
 
 exports.default = ReportCollection;

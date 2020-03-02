@@ -37,133 +37,131 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The MemberContactPoint model module.
  * @module model/MemberContactPoint
  */
-var MemberContactPoint =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "MemberContactPoint".
-   * @alias module:model/MemberContactPoint
-   * @class
-  
-   */
-    function MemberContactPoint() {
-      _classCallCheck(this, MemberContactPoint);
-
-      this.email = null;
-      this.name = null;
-      this.telephone = null;
-    }
-    /**
-     * Constructs a "MemberContactPoint" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/MemberContactPoint } object Optional instance to populate.
-     * @return { module:model/MemberContactPoint } The populated "MemberContactPoint" instance.
+var MemberContactPoint = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "MemberContactPoint".
+     * @alias module:model/MemberContactPoint
+     * @class
+    
      */
+  function MemberContactPoint() {
+    _classCallCheck(this, MemberContactPoint);
 
-    _createClass(
-      MemberContactPoint,
-      [
-        {
-          key: "getEmail",
+    this.email = null;
+    this.name = null;
+    this.telephone = null;
+  }
+  /**
+   * Constructs a "MemberContactPoint" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/MemberContactPoint } object Optional instance to populate.
+   * @return { module:model/MemberContactPoint } The populated "MemberContactPoint" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getEmail() {
-            return this.email;
-          }
-          /**
-           * @param { String } email
-           */
-        },
-        {
-          key: "setEmail",
-          value: function setEmail(email) {
-            this.email = email;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getName",
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getTelephone",
-          value: function getTelephone() {
-            return this.telephone;
-          }
-          /**
-           * @param { String } telephone
-           */
-        },
-        {
-          key: "setTelephone",
-          value: function setTelephone(telephone) {
-            this.telephone = telephone;
-          }
+  _createClass(
+    MemberContactPoint,
+    [
+      {
+        key: "getEmail",
+
+        /**
+         * @return { String }
+         */
+        value: function getEmail() {
+          return this.email;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new MemberContactPoint();
-            }
-
-            if (data.hasOwnProperty("email")) {
-              object.email = _ApiClient.default.convertToType(
-                data["email"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("telephone")) {
-              object.telephone = _ApiClient.default.convertToType(
-                data["telephone"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } email
+         */
+      },
+      {
+        key: "setEmail",
+        value: function setEmail(email) {
+          this.email = email;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getName",
+        value: function getName() {
+          return this.name;
+        }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getTelephone",
+        value: function getTelephone() {
+          return this.telephone;
+        }
+        /**
+         * @param { String } telephone
+         */
+      },
+      {
+        key: "setTelephone",
+        value: function setTelephone(telephone) {
+          this.telephone = telephone;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return MemberContactPoint;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new MemberContactPoint();
+          }
+
+          if (data.hasOwnProperty("email")) {
+            object.email = _ApiClient.default.convertToType(
+              data["email"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("telephone")) {
+            object.telephone = _ApiClient.default.convertToType(
+              data["telephone"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return MemberContactPoint;
+})();
 
 exports.default = MemberContactPoint;

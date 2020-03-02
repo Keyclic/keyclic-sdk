@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The AgreementTermsOfService model module.
  * @module model/AgreementTermsOfService
  */
-var AgreementTermsOfService =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "AgreementTermsOfService".
-   * @alias module:model/AgreementTermsOfService
-   * @class
-  
-   */
-    function AgreementTermsOfService() {
-      _classCallCheck(this, AgreementTermsOfService);
-
-      this.content = null;
-    }
-    /**
-     * Constructs a "AgreementTermsOfService" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/AgreementTermsOfService } object Optional instance to populate.
-     * @return { module:model/AgreementTermsOfService } The populated "AgreementTermsOfService" instance.
+var AgreementTermsOfService = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "AgreementTermsOfService".
+     * @alias module:model/AgreementTermsOfService
+     * @class
+    
      */
+  function AgreementTermsOfService() {
+    _classCallCheck(this, AgreementTermsOfService);
 
-    _createClass(
-      AgreementTermsOfService,
-      [
-        {
-          key: "getContent",
+    this.content = null;
+  }
+  /**
+   * Constructs a "AgreementTermsOfService" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/AgreementTermsOfService } object Optional instance to populate.
+   * @return { module:model/AgreementTermsOfService } The populated "AgreementTermsOfService" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getContent() {
-            return this.content;
-          }
-          /**
-           * @param { String } content
-           */
-        },
-        {
-          key: "setContent",
-          value: function setContent(content) {
-            this.content = content;
-          }
+  _createClass(
+    AgreementTermsOfService,
+    [
+      {
+        key: "getContent",
+
+        /**
+         * @return { String }
+         */
+        value: function getContent() {
+          return this.content;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new AgreementTermsOfService();
-            }
-
-            if (data.hasOwnProperty("content")) {
-              object.content = _ApiClient.default.convertToType(
-                data["content"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } content
+         */
+      },
+      {
+        key: "setContent",
+        value: function setContent(content) {
+          this.content = content;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return AgreementTermsOfService;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new AgreementTermsOfService();
+          }
+
+          if (data.hasOwnProperty("content")) {
+            object.content = _ApiClient.default.convertToType(
+              data["content"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return AgreementTermsOfService;
+})();
 
 exports.default = AgreementTermsOfService;

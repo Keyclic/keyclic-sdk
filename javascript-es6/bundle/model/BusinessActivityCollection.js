@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The BusinessActivityCollection model module.
  * @module model/BusinessActivityCollection
  */
-var BusinessActivityCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "BusinessActivityCollection".
-   * @alias module:model/BusinessActivityCollection
-   * @class
-  
-   */
-    function BusinessActivityCollection() {
-      _classCallCheck(this, BusinessActivityCollection);
-
-      this.items = [];
-      this.itemsType = _BusinessActivity.default;
-    }
-    /**
-     * Constructs a "BusinessActivityCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/BusinessActivityCollection } object Optional instance to populate.
-     * @return { module:model/BusinessActivityCollection } The populated "BusinessActivityCollection" instance.
+var BusinessActivityCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "BusinessActivityCollection".
+     * @alias module:model/BusinessActivityCollection
+     * @class
+    
      */
+  function BusinessActivityCollection() {
+    _classCallCheck(this, BusinessActivityCollection);
 
-    _createClass(
-      BusinessActivityCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _BusinessActivity.default;
+  }
+  /**
+   * Constructs a "BusinessActivityCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/BusinessActivityCollection } object Optional instance to populate.
+   * @return { module:model/BusinessActivityCollection } The populated "BusinessActivityCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/BusinessActivity> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/BusinessActivity> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    BusinessActivityCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/BusinessActivity> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new BusinessActivityCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/BusinessActivity> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return BusinessActivityCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new BusinessActivityCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return BusinessActivityCollection;
+})();
 
 exports.default = BusinessActivityCollection;

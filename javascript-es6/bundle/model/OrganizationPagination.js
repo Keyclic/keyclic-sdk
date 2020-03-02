@@ -134,97 +134,95 @@ function _setPrototypeOf(o, p) {
  * The OrganizationPagination model module.
  * @module model/OrganizationPagination
  */
-var OrganizationPagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(OrganizationPagination, _Pagination);
+var OrganizationPagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(OrganizationPagination, _Pagination);
 
-    /**
-   * Constructs a new "OrganizationPagination".
-   * @alias module:model/OrganizationPagination
-   * @class
-  
-   */
-    function OrganizationPagination() {
-      var _this;
-
-      _classCallCheck(this, OrganizationPagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(OrganizationPagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _OrganizationCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "OrganizationPagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OrganizationPagination } object Optional instance to populate.
-     * @return { module:model/OrganizationPagination } The populated "OrganizationPagination" instance.
+  /**
+     * Constructs a new "OrganizationPagination".
+     * @alias module:model/OrganizationPagination
+     * @class
+    
      */
+  function OrganizationPagination() {
+    var _this;
 
-    _createClass(
-      OrganizationPagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, OrganizationPagination);
 
-          /**
-           * @return { module:model/OrganizationCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/OrganizationCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OrganizationPagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(OrganizationPagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(OrganizationPagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _OrganizationCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "OrganizationPagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OrganizationPagination } object Optional instance to populate.
+   * @return { module:model/OrganizationPagination } The populated "OrganizationPagination" instance.
+   */
 
-    return OrganizationPagination;
-  })(_Pagination2.default);
+  _createClass(
+    OrganizationPagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/OrganizationCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/OrganizationCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OrganizationPagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(OrganizationPagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OrganizationPagination;
+})(_Pagination2.default);
 
 exports.default = OrganizationPagination;

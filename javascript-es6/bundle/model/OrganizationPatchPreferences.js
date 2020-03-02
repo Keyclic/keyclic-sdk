@@ -45,109 +45,107 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OrganizationPatchPreferences model module.
  * @module model/OrganizationPatchPreferences
  */
-var OrganizationPatchPreferences =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OrganizationPatchPreferences".
-   * @alias module:model/OrganizationPatchPreferences
-   * @class
-  
-   */
-    function OrganizationPatchPreferences() {
-      _classCallCheck(this, OrganizationPatchPreferences);
-
-      this.notification = null;
-      this.reference = null;
-      this.notificationType = _OrganizationPatchPreferencesNotification.default;
-      this.referenceType = _OrganizationPatchPreferencesReference.default;
-    }
-    /**
-     * Constructs a "OrganizationPatchPreferences" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OrganizationPatchPreferences } object Optional instance to populate.
-     * @return { module:model/OrganizationPatchPreferences } The populated "OrganizationPatchPreferences" instance.
+var OrganizationPatchPreferences = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OrganizationPatchPreferences".
+     * @alias module:model/OrganizationPatchPreferences
+     * @class
+    
      */
+  function OrganizationPatchPreferences() {
+    _classCallCheck(this, OrganizationPatchPreferences);
 
-    _createClass(
-      OrganizationPatchPreferences,
-      [
-        {
-          key: "getNotification",
+    this.notification = null;
+    this.reference = null;
+    this.notificationType = _OrganizationPatchPreferencesNotification.default;
+    this.referenceType = _OrganizationPatchPreferencesReference.default;
+  }
+  /**
+   * Constructs a "OrganizationPatchPreferences" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OrganizationPatchPreferences } object Optional instance to populate.
+   * @return { module:model/OrganizationPatchPreferences } The populated "OrganizationPatchPreferences" instance.
+   */
 
-          /**
-           * @return { module:model/OrganizationPatchPreferencesNotification }
-           */
-          value: function getNotification() {
-            return this.notification;
-          }
-          /**
-           * @param { module:model/OrganizationPatchPreferencesNotification } notification
-           */
-        },
-        {
-          key: "setNotification",
-          value: function setNotification(notification) {
-            this.notification = notification;
-          }
-          /**
-           * @return { module:model/OrganizationPatchPreferencesReference }
-           */
-        },
-        {
-          key: "getReference",
-          value: function getReference() {
-            return this.reference;
-          }
-          /**
-           * @param { module:model/OrganizationPatchPreferencesReference } reference
-           */
-        },
-        {
-          key: "setReference",
-          value: function setReference(reference) {
-            this.reference = reference;
-          }
+  _createClass(
+    OrganizationPatchPreferences,
+    [
+      {
+        key: "getNotification",
+
+        /**
+         * @return { module:model/OrganizationPatchPreferencesNotification }
+         */
+        value: function getNotification() {
+          return this.notification;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OrganizationPatchPreferences();
-            }
-
-            if (data.hasOwnProperty("notification")) {
-              object.notification = _ApiClient.default.convertToType(
-                data["notification"],
-                object.notificationType
-              );
-            }
-
-            if (data.hasOwnProperty("reference")) {
-              object.reference = _ApiClient.default.convertToType(
-                data["reference"],
-                object.referenceType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/OrganizationPatchPreferencesNotification } notification
+         */
+      },
+      {
+        key: "setNotification",
+        value: function setNotification(notification) {
+          this.notification = notification;
         }
-      ]
-    );
+        /**
+         * @return { module:model/OrganizationPatchPreferencesReference }
+         */
+      },
+      {
+        key: "getReference",
+        value: function getReference() {
+          return this.reference;
+        }
+        /**
+         * @param { module:model/OrganizationPatchPreferencesReference } reference
+         */
+      },
+      {
+        key: "setReference",
+        value: function setReference(reference) {
+          this.reference = reference;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OrganizationPatchPreferences;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OrganizationPatchPreferences();
+          }
+
+          if (data.hasOwnProperty("notification")) {
+            object.notification = _ApiClient.default.convertToType(
+              data["notification"],
+              object.notificationType
+            );
+          }
+
+          if (data.hasOwnProperty("reference")) {
+            object.reference = _ApiClient.default.convertToType(
+              data["reference"],
+              object.referenceType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OrganizationPatchPreferences;
+})();
 
 exports.default = OrganizationPatchPreferences;

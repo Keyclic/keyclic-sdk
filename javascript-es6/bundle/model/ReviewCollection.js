@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReviewCollection model module.
  * @module model/ReviewCollection
  */
-var ReviewCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReviewCollection".
-   * @alias module:model/ReviewCollection
-   * @class
-  
-   */
-    function ReviewCollection() {
-      _classCallCheck(this, ReviewCollection);
-
-      this.items = [];
-      this.itemsType = _Review.default;
-    }
-    /**
-     * Constructs a "ReviewCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReviewCollection } object Optional instance to populate.
-     * @return { module:model/ReviewCollection } The populated "ReviewCollection" instance.
+var ReviewCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReviewCollection".
+     * @alias module:model/ReviewCollection
+     * @class
+    
      */
+  function ReviewCollection() {
+    _classCallCheck(this, ReviewCollection);
 
-    _createClass(
-      ReviewCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _Review.default;
+  }
+  /**
+   * Constructs a "ReviewCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReviewCollection } object Optional instance to populate.
+   * @return { module:model/ReviewCollection } The populated "ReviewCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Review> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/Review> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    ReviewCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/Review> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReviewCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Review> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReviewCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReviewCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReviewCollection;
+})();
 
 exports.default = ReviewCollection;

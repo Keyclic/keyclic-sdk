@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OrganizationLinksBusinessActivityIriTemplate model module.
  * @module model/OrganizationLinksBusinessActivityIriTemplate
  */
-var OrganizationLinksBusinessActivityIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OrganizationLinksBusinessActivityIriTemplate".
-   * @alias module:model/OrganizationLinksBusinessActivityIriTemplate
-   * @class
-  
-   */
-    function OrganizationLinksBusinessActivityIriTemplate() {
-      _classCallCheck(this, OrganizationLinksBusinessActivityIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _BusinessActivityLinksImageIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "OrganizationLinksBusinessActivityIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OrganizationLinksBusinessActivityIriTemplate } object Optional instance to populate.
-     * @return { module:model/OrganizationLinksBusinessActivityIriTemplate } The populated "OrganizationLinksBusinessActivityIriTemplate" instance.
+var OrganizationLinksBusinessActivityIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OrganizationLinksBusinessActivityIriTemplate".
+     * @alias module:model/OrganizationLinksBusinessActivityIriTemplate
+     * @class
+    
      */
+  function OrganizationLinksBusinessActivityIriTemplate() {
+    _classCallCheck(this, OrganizationLinksBusinessActivityIriTemplate);
 
-    _createClass(
-      OrganizationLinksBusinessActivityIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _BusinessActivityLinksImageIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "OrganizationLinksBusinessActivityIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OrganizationLinksBusinessActivityIriTemplate } object Optional instance to populate.
+   * @return { module:model/OrganizationLinksBusinessActivityIriTemplate } The populated "OrganizationLinksBusinessActivityIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/BusinessActivityLinksImageIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/BusinessActivityLinksImageIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    OrganizationLinksBusinessActivityIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/BusinessActivityLinksImageIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OrganizationLinksBusinessActivityIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/BusinessActivityLinksImageIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OrganizationLinksBusinessActivityIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OrganizationLinksBusinessActivityIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OrganizationLinksBusinessActivityIriTemplate;
+})();
 
 exports.default = OrganizationLinksBusinessActivityIriTemplate;

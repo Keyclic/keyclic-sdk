@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ExternalServiceCollection model module.
  * @module model/ExternalServiceCollection
  */
-var ExternalServiceCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ExternalServiceCollection".
-   * @alias module:model/ExternalServiceCollection
-   * @class
-  
-   */
-    function ExternalServiceCollection() {
-      _classCallCheck(this, ExternalServiceCollection);
-
-      this.items = [];
-      this.itemsType = _ExternalService.default;
-    }
-    /**
-     * Constructs a "ExternalServiceCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ExternalServiceCollection } object Optional instance to populate.
-     * @return { module:model/ExternalServiceCollection } The populated "ExternalServiceCollection" instance.
+var ExternalServiceCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ExternalServiceCollection".
+     * @alias module:model/ExternalServiceCollection
+     * @class
+    
      */
+  function ExternalServiceCollection() {
+    _classCallCheck(this, ExternalServiceCollection);
 
-    _createClass(
-      ExternalServiceCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _ExternalService.default;
+  }
+  /**
+   * Constructs a "ExternalServiceCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ExternalServiceCollection } object Optional instance to populate.
+   * @return { module:model/ExternalServiceCollection } The populated "ExternalServiceCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/ExternalService> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/ExternalService> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    ExternalServiceCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/ExternalService> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ExternalServiceCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/ExternalService> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ExternalServiceCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ExternalServiceCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ExternalServiceCollection;
+})();
 
 exports.default = ExternalServiceCollection;

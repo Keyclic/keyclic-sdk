@@ -37,193 +37,191 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The CategoryData model module.
  * @module model/CategoryData
  */
-var CategoryData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "CategoryData".
-   * @alias module:model/CategoryData
-   * @class
-  
-   * @param name { String }
-  
-   * @param color { String }
-  
-   * @param icon { String }
-  
-   * @param organization { String }
-  
-   */
-    function CategoryData(name, color, icon, organization) {
-      _classCallCheck(this, CategoryData);
-
-      this.name = name;
-      this.color = color;
-      this.icon = icon;
-      this.organization = organization;
-      this.parent = null;
-    }
-    /**
-     * Constructs a "CategoryData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/CategoryData } object Optional instance to populate.
-     * @return { module:model/CategoryData } The populated "CategoryData" instance.
+var CategoryData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "CategoryData".
+     * @alias module:model/CategoryData
+     * @class
+    
+     * @param name { String }
+    
+     * @param color { String }
+    
+     * @param icon { String }
+    
+     * @param organization { String }
+    
      */
+  function CategoryData(name, color, icon, organization) {
+    _classCallCheck(this, CategoryData);
 
-    _createClass(
-      CategoryData,
-      [
-        {
-          key: "getName",
+    this.name = name;
+    this.color = color;
+    this.icon = icon;
+    this.organization = organization;
+    this.parent = null;
+  }
+  /**
+   * Constructs a "CategoryData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/CategoryData } object Optional instance to populate.
+   * @return { module:model/CategoryData } The populated "CategoryData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getColor",
-          value: function getColor() {
-            return this.color;
-          }
-          /**
-           * @param { String } color
-           */
-        },
-        {
-          key: "setColor",
-          value: function setColor(color) {
-            this.color = color;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getIcon",
-          value: function getIcon() {
-            return this.icon;
-          }
-          /**
-           * @param { String } icon
-           */
-        },
-        {
-          key: "setIcon",
-          value: function setIcon(icon) {
-            this.icon = icon;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getOrganization",
-          value: function getOrganization() {
-            return this.organization;
-          }
-          /**
-           * @param { String } organization
-           */
-        },
-        {
-          key: "setOrganization",
-          value: function setOrganization(organization) {
-            this.organization = organization;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getParent",
-          value: function getParent() {
-            return this.parent;
-          }
-          /**
-           * @param { String } parent
-           */
-        },
-        {
-          key: "setParent",
-          value: function setParent(parent) {
-            this.parent = parent;
-          }
+  _createClass(
+    CategoryData,
+    [
+      {
+        key: "getName",
+
+        /**
+         * @return { String }
+         */
+        value: function getName() {
+          return this.name;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new CategoryData();
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("color")) {
-              object.color = _ApiClient.default.convertToType(
-                data["color"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("icon")) {
-              object.icon = _ApiClient.default.convertToType(
-                data["icon"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("organization")) {
-              object.organization = _ApiClient.default.convertToType(
-                data["organization"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("parent")) {
-              object.parent = _ApiClient.default.convertToType(
-                data["parent"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getColor",
+        value: function getColor() {
+          return this.color;
+        }
+        /**
+         * @param { String } color
+         */
+      },
+      {
+        key: "setColor",
+        value: function setColor(color) {
+          this.color = color;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getIcon",
+        value: function getIcon() {
+          return this.icon;
+        }
+        /**
+         * @param { String } icon
+         */
+      },
+      {
+        key: "setIcon",
+        value: function setIcon(icon) {
+          this.icon = icon;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getOrganization",
+        value: function getOrganization() {
+          return this.organization;
+        }
+        /**
+         * @param { String } organization
+         */
+      },
+      {
+        key: "setOrganization",
+        value: function setOrganization(organization) {
+          this.organization = organization;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getParent",
+        value: function getParent() {
+          return this.parent;
+        }
+        /**
+         * @param { String } parent
+         */
+      },
+      {
+        key: "setParent",
+        value: function setParent(parent) {
+          this.parent = parent;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return CategoryData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new CategoryData();
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("color")) {
+            object.color = _ApiClient.default.convertToType(
+              data["color"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("icon")) {
+            object.icon = _ApiClient.default.convertToType(
+              data["icon"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("parent")) {
+            object.parent = _ApiClient.default.convertToType(
+              data["parent"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return CategoryData;
+})();
 
 exports.default = CategoryData;

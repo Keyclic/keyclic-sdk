@@ -41,134 +41,132 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The InternalServicePatch model module.
  * @module model/InternalServicePatch
  */
-var InternalServicePatch =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "InternalServicePatch".
-   * @alias module:model/InternalServicePatch
-   * @class
-  
-   */
-    function InternalServicePatch() {
-      _classCallCheck(this, InternalServicePatch);
-
-      this.contactPoint = null;
-      this.description = null;
-      this.name = null;
-      this.contactPointType = _ExternalServicePatchContactPoint.default;
-    }
-    /**
-     * Constructs a "InternalServicePatch" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/InternalServicePatch } object Optional instance to populate.
-     * @return { module:model/InternalServicePatch } The populated "InternalServicePatch" instance.
+var InternalServicePatch = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "InternalServicePatch".
+     * @alias module:model/InternalServicePatch
+     * @class
+    
      */
+  function InternalServicePatch() {
+    _classCallCheck(this, InternalServicePatch);
 
-    _createClass(
-      InternalServicePatch,
-      [
-        {
-          key: "getContactPoint",
+    this.contactPoint = null;
+    this.description = null;
+    this.name = null;
+    this.contactPointType = _ExternalServicePatchContactPoint.default;
+  }
+  /**
+   * Constructs a "InternalServicePatch" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/InternalServicePatch } object Optional instance to populate.
+   * @return { module:model/InternalServicePatch } The populated "InternalServicePatch" instance.
+   */
 
-          /**
-           * @return { module:model/ExternalServicePatchContactPoint }
-           */
-          value: function getContactPoint() {
-            return this.contactPoint;
-          }
-          /**
-           * @param { module:model/ExternalServicePatchContactPoint } contactPoint
-           */
-        },
-        {
-          key: "setContactPoint",
-          value: function setContactPoint(contactPoint) {
-            this.contactPoint = contactPoint;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getDescription",
-          value: function getDescription() {
-            return this.description;
-          }
-          /**
-           * @param { String } description
-           */
-        },
-        {
-          key: "setDescription",
-          value: function setDescription(description) {
-            this.description = description;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getName",
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
+  _createClass(
+    InternalServicePatch,
+    [
+      {
+        key: "getContactPoint",
+
+        /**
+         * @return { module:model/ExternalServicePatchContactPoint }
+         */
+        value: function getContactPoint() {
+          return this.contactPoint;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new InternalServicePatch();
-            }
-
-            if (data.hasOwnProperty("contactPoint")) {
-              object.contactPoint = _ApiClient.default.convertToType(
-                data["contactPoint"],
-                object.contactPointType
-              );
-            }
-
-            if (data.hasOwnProperty("description")) {
-              object.description = _ApiClient.default.convertToType(
-                data["description"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ExternalServicePatchContactPoint } contactPoint
+         */
+      },
+      {
+        key: "setContactPoint",
+        value: function setContactPoint(contactPoint) {
+          this.contactPoint = contactPoint;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getDescription",
+        value: function getDescription() {
+          return this.description;
+        }
+        /**
+         * @param { String } description
+         */
+      },
+      {
+        key: "setDescription",
+        value: function setDescription(description) {
+          this.description = description;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getName",
+        value: function getName() {
+          return this.name;
+        }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return InternalServicePatch;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new InternalServicePatch();
+          }
+
+          if (data.hasOwnProperty("contactPoint")) {
+            object.contactPoint = _ApiClient.default.convertToType(
+              data["contactPoint"],
+              object.contactPointType
+            );
+          }
+
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return InternalServicePatch;
+})();
 
 exports.default = InternalServicePatch;

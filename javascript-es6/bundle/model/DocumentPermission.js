@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DocumentPermission model module.
  * @module model/DocumentPermission
  */
-var DocumentPermission =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DocumentPermission".
-   * @alias module:model/DocumentPermission
-   * @class
-  
-   */
-    function DocumentPermission() {
-      _classCallCheck(this, DocumentPermission);
-
-      this.targetGroup = null;
-    }
-    /**
-     * Constructs a "DocumentPermission" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DocumentPermission } object Optional instance to populate.
-     * @return { module:model/DocumentPermission } The populated "DocumentPermission" instance.
+var DocumentPermission = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DocumentPermission".
+     * @alias module:model/DocumentPermission
+     * @class
+    
      */
+  function DocumentPermission() {
+    _classCallCheck(this, DocumentPermission);
 
-    _createClass(
-      DocumentPermission,
-      [
-        {
-          key: "getTargetGroup",
+    this.targetGroup = null;
+  }
+  /**
+   * Constructs a "DocumentPermission" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DocumentPermission } object Optional instance to populate.
+   * @return { module:model/DocumentPermission } The populated "DocumentPermission" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getTargetGroup() {
-            return this.targetGroup;
-          }
-          /**
-           * @param { String } targetGroup
-           */
-        },
-        {
-          key: "setTargetGroup",
-          value: function setTargetGroup(targetGroup) {
-            this.targetGroup = targetGroup;
-          }
+  _createClass(
+    DocumentPermission,
+    [
+      {
+        key: "getTargetGroup",
+
+        /**
+         * @return { String }
+         */
+        value: function getTargetGroup() {
+          return this.targetGroup;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DocumentPermission();
-            }
-
-            if (data.hasOwnProperty("targetGroup")) {
-              object.targetGroup = _ApiClient.default.convertToType(
-                data["targetGroup"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } targetGroup
+         */
+      },
+      {
+        key: "setTargetGroup",
+        value: function setTargetGroup(targetGroup) {
+          this.targetGroup = targetGroup;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DocumentPermission;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DocumentPermission();
+          }
+
+          if (data.hasOwnProperty("targetGroup")) {
+            object.targetGroup = _ApiClient.default.convertToType(
+              data["targetGroup"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DocumentPermission;
+})();
 
 exports.default = DocumentPermission;

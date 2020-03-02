@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The WebhookCollection model module.
  * @module model/WebhookCollection
  */
-var WebhookCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "WebhookCollection".
-   * @alias module:model/WebhookCollection
-   * @class
-  
-   */
-    function WebhookCollection() {
-      _classCallCheck(this, WebhookCollection);
-
-      this.items = [];
-      this.itemsType = _Webhook.default;
-    }
-    /**
-     * Constructs a "WebhookCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/WebhookCollection } object Optional instance to populate.
-     * @return { module:model/WebhookCollection } The populated "WebhookCollection" instance.
+var WebhookCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "WebhookCollection".
+     * @alias module:model/WebhookCollection
+     * @class
+    
      */
+  function WebhookCollection() {
+    _classCallCheck(this, WebhookCollection);
 
-    _createClass(
-      WebhookCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _Webhook.default;
+  }
+  /**
+   * Constructs a "WebhookCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/WebhookCollection } object Optional instance to populate.
+   * @return { module:model/WebhookCollection } The populated "WebhookCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Webhook> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/Webhook> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    WebhookCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/Webhook> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new WebhookCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Webhook> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return WebhookCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new WebhookCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return WebhookCollection;
+})();
 
 exports.default = WebhookCollection;

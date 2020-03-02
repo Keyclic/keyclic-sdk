@@ -37,133 +37,131 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ExternalServicePatchContactPoint model module.
  * @module model/ExternalServicePatchContactPoint
  */
-var ExternalServicePatchContactPoint =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ExternalServicePatchContactPoint".
-   * @alias module:model/ExternalServicePatchContactPoint
-   * @class
-  
-   */
-    function ExternalServicePatchContactPoint() {
-      _classCallCheck(this, ExternalServicePatchContactPoint);
-
-      this.email = null;
-      this.name = null;
-      this.telephone = null;
-    }
-    /**
-     * Constructs a "ExternalServicePatchContactPoint" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ExternalServicePatchContactPoint } object Optional instance to populate.
-     * @return { module:model/ExternalServicePatchContactPoint } The populated "ExternalServicePatchContactPoint" instance.
+var ExternalServicePatchContactPoint = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ExternalServicePatchContactPoint".
+     * @alias module:model/ExternalServicePatchContactPoint
+     * @class
+    
      */
+  function ExternalServicePatchContactPoint() {
+    _classCallCheck(this, ExternalServicePatchContactPoint);
 
-    _createClass(
-      ExternalServicePatchContactPoint,
-      [
-        {
-          key: "getEmail",
+    this.email = null;
+    this.name = null;
+    this.telephone = null;
+  }
+  /**
+   * Constructs a "ExternalServicePatchContactPoint" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ExternalServicePatchContactPoint } object Optional instance to populate.
+   * @return { module:model/ExternalServicePatchContactPoint } The populated "ExternalServicePatchContactPoint" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getEmail() {
-            return this.email;
-          }
-          /**
-           * @param { String } email
-           */
-        },
-        {
-          key: "setEmail",
-          value: function setEmail(email) {
-            this.email = email;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getName",
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getTelephone",
-          value: function getTelephone() {
-            return this.telephone;
-          }
-          /**
-           * @param { String } telephone
-           */
-        },
-        {
-          key: "setTelephone",
-          value: function setTelephone(telephone) {
-            this.telephone = telephone;
-          }
+  _createClass(
+    ExternalServicePatchContactPoint,
+    [
+      {
+        key: "getEmail",
+
+        /**
+         * @return { String }
+         */
+        value: function getEmail() {
+          return this.email;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ExternalServicePatchContactPoint();
-            }
-
-            if (data.hasOwnProperty("email")) {
-              object.email = _ApiClient.default.convertToType(
-                data["email"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("telephone")) {
-              object.telephone = _ApiClient.default.convertToType(
-                data["telephone"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } email
+         */
+      },
+      {
+        key: "setEmail",
+        value: function setEmail(email) {
+          this.email = email;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getName",
+        value: function getName() {
+          return this.name;
+        }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getTelephone",
+        value: function getTelephone() {
+          return this.telephone;
+        }
+        /**
+         * @param { String } telephone
+         */
+      },
+      {
+        key: "setTelephone",
+        value: function setTelephone(telephone) {
+          this.telephone = telephone;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ExternalServicePatchContactPoint;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ExternalServicePatchContactPoint();
+          }
+
+          if (data.hasOwnProperty("email")) {
+            object.email = _ApiClient.default.convertToType(
+              data["email"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("telephone")) {
+            object.telephone = _ApiClient.default.convertToType(
+              data["telephone"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ExternalServicePatchContactPoint;
+})();
 
 exports.default = ExternalServicePatchContactPoint;

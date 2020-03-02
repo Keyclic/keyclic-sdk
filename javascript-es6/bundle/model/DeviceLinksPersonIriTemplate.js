@@ -41,83 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DeviceLinksPersonIriTemplate model module.
  * @module model/DeviceLinksPersonIriTemplate
  */
-var DeviceLinksPersonIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DeviceLinksPersonIriTemplate".
-   * @alias module:model/DeviceLinksPersonIriTemplate
-   * @class
-  
-   */
-    function DeviceLinksPersonIriTemplate() {
-      _classCallCheck(this, DeviceLinksPersonIriTemplate);
-
-      this.mapping = null;
-      this.mappingType =
-        _ContributionLinksContributorIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "DeviceLinksPersonIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DeviceLinksPersonIriTemplate } object Optional instance to populate.
-     * @return { module:model/DeviceLinksPersonIriTemplate } The populated "DeviceLinksPersonIriTemplate" instance.
+var DeviceLinksPersonIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DeviceLinksPersonIriTemplate".
+     * @alias module:model/DeviceLinksPersonIriTemplate
+     * @class
+    
      */
+  function DeviceLinksPersonIriTemplate() {
+    _classCallCheck(this, DeviceLinksPersonIriTemplate);
 
-    _createClass(
-      DeviceLinksPersonIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _ContributionLinksContributorIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "DeviceLinksPersonIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DeviceLinksPersonIriTemplate } object Optional instance to populate.
+   * @return { module:model/DeviceLinksPersonIriTemplate } The populated "DeviceLinksPersonIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/ContributionLinksContributorIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/ContributionLinksContributorIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    DeviceLinksPersonIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/ContributionLinksContributorIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DeviceLinksPersonIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ContributionLinksContributorIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DeviceLinksPersonIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DeviceLinksPersonIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DeviceLinksPersonIriTemplate;
+})();
 
 exports.default = DeviceLinksPersonIriTemplate;

@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReportLinksDelegatedTo model module.
  * @module model/ReportLinksDelegatedTo
  */
-var ReportLinksDelegatedTo =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReportLinksDelegatedTo".
-   * @alias module:model/ReportLinksDelegatedTo
-   * @class
-  
-   */
-    function ReportLinksDelegatedTo() {
-      _classCallCheck(this, ReportLinksDelegatedTo);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _ReportLinksDelegatedToIriTemplate.default;
-    }
-    /**
-     * Constructs a "ReportLinksDelegatedTo" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReportLinksDelegatedTo } object Optional instance to populate.
-     * @return { module:model/ReportLinksDelegatedTo } The populated "ReportLinksDelegatedTo" instance.
+var ReportLinksDelegatedTo = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReportLinksDelegatedTo".
+     * @alias module:model/ReportLinksDelegatedTo
+     * @class
+    
      */
+  function ReportLinksDelegatedTo() {
+    _classCallCheck(this, ReportLinksDelegatedTo);
 
-    _createClass(
-      ReportLinksDelegatedTo,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _ReportLinksDelegatedToIriTemplate.default;
+  }
+  /**
+   * Constructs a "ReportLinksDelegatedTo" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReportLinksDelegatedTo } object Optional instance to populate.
+   * @return { module:model/ReportLinksDelegatedTo } The populated "ReportLinksDelegatedTo" instance.
+   */
 
-          /**
-           * Gets The URI of the delegatedTo associated to the given report.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the delegatedTo associated to the given report.
-           * @param { String } href The URI of the delegatedTo associated to the given report.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/ReportLinksDelegatedToIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/ReportLinksDelegatedToIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    ReportLinksDelegatedTo,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the delegatedTo associated to the given report.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReportLinksDelegatedTo();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the delegatedTo associated to the given report.
+         * @param { String } href The URI of the delegatedTo associated to the given report.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/ReportLinksDelegatedToIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/ReportLinksDelegatedToIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReportLinksDelegatedTo;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReportLinksDelegatedTo();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReportLinksDelegatedTo;
+})();
 
 exports.default = ReportLinksDelegatedTo;

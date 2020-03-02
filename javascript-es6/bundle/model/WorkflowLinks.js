@@ -39,82 +39,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The WorkflowLinks model module.
  * @module model/WorkflowLinks
  */
-var WorkflowLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "WorkflowLinks".
-   * @alias module:model/WorkflowLinks
-   * @class
-  
-   */
-    function WorkflowLinks() {
-      _classCallCheck(this, WorkflowLinks);
-
-      this.self = null;
-      this.selfType = _WorkflowLinksSelf.default;
-    }
-    /**
-     * Constructs a "WorkflowLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/WorkflowLinks } object Optional instance to populate.
-     * @return { module:model/WorkflowLinks } The populated "WorkflowLinks" instance.
+var WorkflowLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "WorkflowLinks".
+     * @alias module:model/WorkflowLinks
+     * @class
+    
      */
+  function WorkflowLinks() {
+    _classCallCheck(this, WorkflowLinks);
 
-    _createClass(
-      WorkflowLinks,
-      [
-        {
-          key: "getSelf",
+    this.self = null;
+    this.selfType = _WorkflowLinksSelf.default;
+  }
+  /**
+   * Constructs a "WorkflowLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/WorkflowLinks } object Optional instance to populate.
+   * @return { module:model/WorkflowLinks } The populated "WorkflowLinks" instance.
+   */
 
-          /**
-           * @return { module:model/WorkflowLinksSelf }
-           */
-          value: function getSelf() {
-            return this.self;
-          }
-          /**
-           * @param { module:model/WorkflowLinksSelf } self
-           */
-        },
-        {
-          key: "setSelf",
-          value: function setSelf(self) {
-            this.self = self;
-          }
+  _createClass(
+    WorkflowLinks,
+    [
+      {
+        key: "getSelf",
+
+        /**
+         * @return { module:model/WorkflowLinksSelf }
+         */
+        value: function getSelf() {
+          return this.self;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new WorkflowLinks();
-            }
-
-            if (data.hasOwnProperty("self")) {
-              object.self = _ApiClient.default.convertToType(
-                data["self"],
-                object.selfType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/WorkflowLinksSelf } self
+         */
+      },
+      {
+        key: "setSelf",
+        value: function setSelf(self) {
+          this.self = self;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return WorkflowLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new WorkflowLinks();
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return WorkflowLinks;
+})();
 
 exports.default = WorkflowLinks;

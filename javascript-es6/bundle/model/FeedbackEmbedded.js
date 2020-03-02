@@ -37,107 +37,105 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The FeedbackEmbedded model module.
  * @module model/FeedbackEmbedded
  */
-var FeedbackEmbedded =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "FeedbackEmbedded".
-   * @alias module:model/FeedbackEmbedded
-   * @class
-  
-   */
-    function FeedbackEmbedded() {
-      _classCallCheck(this, FeedbackEmbedded);
-
-      this.stateTransitions = [];
-      this.tracking = null;
-    }
-    /**
-     * Constructs a "FeedbackEmbedded" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FeedbackEmbedded } object Optional instance to populate.
-     * @return { module:model/FeedbackEmbedded } The populated "FeedbackEmbedded" instance.
+var FeedbackEmbedded = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "FeedbackEmbedded".
+     * @alias module:model/FeedbackEmbedded
+     * @class
+    
      */
+  function FeedbackEmbedded() {
+    _classCallCheck(this, FeedbackEmbedded);
 
-    _createClass(
-      FeedbackEmbedded,
-      [
-        {
-          key: "getStateTransitions",
+    this.stateTransitions = [];
+    this.tracking = null;
+  }
+  /**
+   * Constructs a "FeedbackEmbedded" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/FeedbackEmbedded } object Optional instance to populate.
+   * @return { module:model/FeedbackEmbedded } The populated "FeedbackEmbedded" instance.
+   */
 
-          /**
-           * @return { Array.<String> }
-           */
-          value: function getStateTransitions() {
-            return this.stateTransitions;
-          }
-          /**
-           * @param { Array.<String> } stateTransitions
-           */
-        },
-        {
-          key: "setStateTransitions",
-          value: function setStateTransitions(stateTransitions) {
-            this.stateTransitions = stateTransitions;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getTracking",
-          value: function getTracking() {
-            return this.tracking;
-          }
-          /**
-           * @param { String } tracking
-           */
-        },
-        {
-          key: "setTracking",
-          value: function setTracking(tracking) {
-            this.tracking = tracking;
-          }
+  _createClass(
+    FeedbackEmbedded,
+    [
+      {
+        key: "getStateTransitions",
+
+        /**
+         * @return { Array.<String> }
+         */
+        value: function getStateTransitions() {
+          return this.stateTransitions;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new FeedbackEmbedded();
-            }
-
-            if (data.hasOwnProperty("stateTransitions")) {
-              object.stateTransitions = _ApiClient.default.convertToType(
-                data["stateTransitions"],
-                "['String']"
-              );
-            }
-
-            if (data.hasOwnProperty("tracking")) {
-              object.tracking = _ApiClient.default.convertToType(
-                data["tracking"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<String> } stateTransitions
+         */
+      },
+      {
+        key: "setStateTransitions",
+        value: function setStateTransitions(stateTransitions) {
+          this.stateTransitions = stateTransitions;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getTracking",
+        value: function getTracking() {
+          return this.tracking;
+        }
+        /**
+         * @param { String } tracking
+         */
+      },
+      {
+        key: "setTracking",
+        value: function setTracking(tracking) {
+          this.tracking = tracking;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return FeedbackEmbedded;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new FeedbackEmbedded();
+          }
+
+          if (data.hasOwnProperty("stateTransitions")) {
+            object.stateTransitions = _ApiClient.default.convertToType(
+              data["stateTransitions"],
+              "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("tracking")) {
+            object.tracking = _ApiClient.default.convertToType(
+              data["tracking"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return FeedbackEmbedded;
+})();
 
 exports.default = FeedbackEmbedded;

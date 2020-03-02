@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DocumentLinksFileIriTemplateMapping model module.
  * @module model/DocumentLinksFileIriTemplateMapping
  */
-var DocumentLinksFileIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DocumentLinksFileIriTemplateMapping".
-   * @alias module:model/DocumentLinksFileIriTemplateMapping
-   * @class
-  
-   */
-    function DocumentLinksFileIriTemplateMapping() {
-      _classCallCheck(this, DocumentLinksFileIriTemplateMapping);
-
-      this.document = null;
-    }
-    /**
-     * Constructs a "DocumentLinksFileIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DocumentLinksFileIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/DocumentLinksFileIriTemplateMapping } The populated "DocumentLinksFileIriTemplateMapping" instance.
+var DocumentLinksFileIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DocumentLinksFileIriTemplateMapping".
+     * @alias module:model/DocumentLinksFileIriTemplateMapping
+     * @class
+    
      */
+  function DocumentLinksFileIriTemplateMapping() {
+    _classCallCheck(this, DocumentLinksFileIriTemplateMapping);
 
-    _createClass(
-      DocumentLinksFileIriTemplateMapping,
-      [
-        {
-          key: "getDocument",
+    this.document = null;
+  }
+  /**
+   * Constructs a "DocumentLinksFileIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DocumentLinksFileIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/DocumentLinksFileIriTemplateMapping } The populated "DocumentLinksFileIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getDocument() {
-            return this.document;
-          }
-          /**
-           * @param { String } document
-           */
-        },
-        {
-          key: "setDocument",
-          value: function setDocument(document) {
-            this.document = document;
-          }
+  _createClass(
+    DocumentLinksFileIriTemplateMapping,
+    [
+      {
+        key: "getDocument",
+
+        /**
+         * @return { String }
+         */
+        value: function getDocument() {
+          return this.document;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DocumentLinksFileIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("document")) {
-              object.document = _ApiClient.default.convertToType(
-                data["document"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } document
+         */
+      },
+      {
+        key: "setDocument",
+        value: function setDocument(document) {
+          this.document = document;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DocumentLinksFileIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DocumentLinksFileIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("document")) {
+            object.document = _ApiClient.default.convertToType(
+              data["document"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DocumentLinksFileIriTemplateMapping;
+})();
 
 exports.default = DocumentLinksFileIriTemplateMapping;

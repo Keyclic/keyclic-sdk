@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The AgreementOlderThan model module.
  * @module model/AgreementOlderThan
  */
-var AgreementOlderThan =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "AgreementOlderThan".
-   * @alias module:model/AgreementOlderThan
-   * @class
-  
-   */
-    function AgreementOlderThan() {
-      _classCallCheck(this, AgreementOlderThan);
-
-      this.content = null;
-    }
-    /**
-     * Constructs a "AgreementOlderThan" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/AgreementOlderThan } object Optional instance to populate.
-     * @return { module:model/AgreementOlderThan } The populated "AgreementOlderThan" instance.
+var AgreementOlderThan = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "AgreementOlderThan".
+     * @alias module:model/AgreementOlderThan
+     * @class
+    
      */
+  function AgreementOlderThan() {
+    _classCallCheck(this, AgreementOlderThan);
 
-    _createClass(
-      AgreementOlderThan,
-      [
-        {
-          key: "getContent",
+    this.content = null;
+  }
+  /**
+   * Constructs a "AgreementOlderThan" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/AgreementOlderThan } object Optional instance to populate.
+   * @return { module:model/AgreementOlderThan } The populated "AgreementOlderThan" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getContent() {
-            return this.content;
-          }
-          /**
-           * @param { String } content
-           */
-        },
-        {
-          key: "setContent",
-          value: function setContent(content) {
-            this.content = content;
-          }
+  _createClass(
+    AgreementOlderThan,
+    [
+      {
+        key: "getContent",
+
+        /**
+         * @return { String }
+         */
+        value: function getContent() {
+          return this.content;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new AgreementOlderThan();
-            }
-
-            if (data.hasOwnProperty("content")) {
-              object.content = _ApiClient.default.convertToType(
-                data["content"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } content
+         */
+      },
+      {
+        key: "setContent",
+        value: function setContent(content) {
+          this.content = content;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return AgreementOlderThan;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new AgreementOlderThan();
+          }
+
+          if (data.hasOwnProperty("content")) {
+            object.content = _ApiClient.default.convertToType(
+              data["content"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return AgreementOlderThan;
+})();
 
 exports.default = AgreementOlderThan;

@@ -37,83 +37,81 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The FacebookConnectData model module.
  * @module model/FacebookConnectData
  */
-var FacebookConnectData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "FacebookConnectData".
-   * @alias module:model/FacebookConnectData
-   * @class
-  
-   * @param accessToken { String }
-  
-   */
-    function FacebookConnectData(accessToken) {
-      _classCallCheck(this, FacebookConnectData);
-
-      this.accessToken = accessToken;
-    }
-    /**
-     * Constructs a "FacebookConnectData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FacebookConnectData } object Optional instance to populate.
-     * @return { module:model/FacebookConnectData } The populated "FacebookConnectData" instance.
+var FacebookConnectData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "FacebookConnectData".
+     * @alias module:model/FacebookConnectData
+     * @class
+    
+     * @param accessToken { String }
+    
      */
+  function FacebookConnectData(accessToken) {
+    _classCallCheck(this, FacebookConnectData);
 
-    _createClass(
-      FacebookConnectData,
-      [
-        {
-          key: "getAccessToken",
+    this.accessToken = accessToken;
+  }
+  /**
+   * Constructs a "FacebookConnectData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/FacebookConnectData } object Optional instance to populate.
+   * @return { module:model/FacebookConnectData } The populated "FacebookConnectData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getAccessToken() {
-            return this.accessToken;
-          }
-          /**
-           * @param { String } accessToken
-           */
-        },
-        {
-          key: "setAccessToken",
-          value: function setAccessToken(accessToken) {
-            this.accessToken = accessToken;
-          }
+  _createClass(
+    FacebookConnectData,
+    [
+      {
+        key: "getAccessToken",
+
+        /**
+         * @return { String }
+         */
+        value: function getAccessToken() {
+          return this.accessToken;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new FacebookConnectData();
-            }
-
-            if (data.hasOwnProperty("accessToken")) {
-              object.accessToken = _ApiClient.default.convertToType(
-                data["accessToken"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } accessToken
+         */
+      },
+      {
+        key: "setAccessToken",
+        value: function setAccessToken(accessToken) {
+          this.accessToken = accessToken;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return FacebookConnectData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new FacebookConnectData();
+          }
+
+          if (data.hasOwnProperty("accessToken")) {
+            object.accessToken = _ApiClient.default.convertToType(
+              data["accessToken"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return FacebookConnectData;
+})();
 
 exports.default = FacebookConnectData;

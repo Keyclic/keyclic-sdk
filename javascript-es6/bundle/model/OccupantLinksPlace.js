@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OccupantLinksPlace model module.
  * @module model/OccupantLinksPlace
  */
-var OccupantLinksPlace =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OccupantLinksPlace".
-   * @alias module:model/OccupantLinksPlace
-   * @class
-  
-   */
-    function OccupantLinksPlace() {
-      _classCallCheck(this, OccupantLinksPlace);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _OccupantLinksPlaceIriTemplate.default;
-    }
-    /**
-     * Constructs a "OccupantLinksPlace" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OccupantLinksPlace } object Optional instance to populate.
-     * @return { module:model/OccupantLinksPlace } The populated "OccupantLinksPlace" instance.
+var OccupantLinksPlace = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OccupantLinksPlace".
+     * @alias module:model/OccupantLinksPlace
+     * @class
+    
      */
+  function OccupantLinksPlace() {
+    _classCallCheck(this, OccupantLinksPlace);
 
-    _createClass(
-      OccupantLinksPlace,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _OccupantLinksPlaceIriTemplate.default;
+  }
+  /**
+   * Constructs a "OccupantLinksPlace" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OccupantLinksPlace } object Optional instance to populate.
+   * @return { module:model/OccupantLinksPlace } The populated "OccupantLinksPlace" instance.
+   */
 
-          /**
-           * Gets The URI of the place associated to the given occupant.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the place associated to the given occupant.
-           * @param { String } href The URI of the place associated to the given occupant.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/OccupantLinksPlaceIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/OccupantLinksPlaceIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    OccupantLinksPlace,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the place associated to the given occupant.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OccupantLinksPlace();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the place associated to the given occupant.
+         * @param { String } href The URI of the place associated to the given occupant.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/OccupantLinksPlaceIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/OccupantLinksPlaceIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OccupantLinksPlace;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OccupantLinksPlace();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OccupantLinksPlace;
+})();
 
 exports.default = OccupantLinksPlace;

@@ -37,48 +37,46 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The InvitationDateTime model module.
  * @module model/InvitationDateTime
  */
-var InvitationDateTime =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "InvitationDateTime".
-   * @alias module:model/InvitationDateTime
-   * @class
-  
-   */
-    function InvitationDateTime() {
-      _classCallCheck(this, InvitationDateTime);
-    }
-    /**
-     * Constructs a "InvitationDateTime" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/InvitationDateTime } object Optional instance to populate.
-     * @return { module:model/InvitationDateTime } The populated "InvitationDateTime" instance.
+var InvitationDateTime = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "InvitationDateTime".
+     * @alias module:model/InvitationDateTime
+     * @class
+    
      */
+  function InvitationDateTime() {
+    _classCallCheck(this, InvitationDateTime);
+  }
+  /**
+   * Constructs a "InvitationDateTime" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/InvitationDateTime } object Optional instance to populate.
+   * @return { module:model/InvitationDateTime } The populated "InvitationDateTime" instance.
+   */
 
-    _createClass(InvitationDateTime, null, [
-      {
-        key: "constructFromData",
-        value: function constructFromData(data) {
-          var object =
-            arguments.length > 1 && arguments[1] !== undefined
-              ? arguments[1]
-              : null;
+  _createClass(InvitationDateTime, null, [
+    {
+      key: "constructFromData",
+      value: function constructFromData(data) {
+        var object =
+          arguments.length > 1 && arguments[1] !== undefined
+            ? arguments[1]
+            : null;
 
-          if (data === null) {
-            throw new Error("No data to build object");
-          }
-
-          if (object === null) {
-            object = new InvitationDateTime();
-          }
-
-          return object;
+        if (data === null) {
+          throw new Error("No data to build object");
         }
-      }
-    ]);
 
-    return InvitationDateTime;
-  })();
+        if (object === null) {
+          object = new InvitationDateTime();
+        }
+
+        return object;
+      }
+    }
+  ]);
+
+  return InvitationDateTime;
+})();
 
 exports.default = InvitationDateTime;

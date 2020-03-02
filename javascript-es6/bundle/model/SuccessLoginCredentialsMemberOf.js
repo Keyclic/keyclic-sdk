@@ -41,134 +41,129 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The SuccessLoginCredentialsMemberOf model module.
  * @module model/SuccessLoginCredentialsMemberOf
  */
-var SuccessLoginCredentialsMemberOf =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "SuccessLoginCredentialsMemberOf".
-   * @alias module:model/SuccessLoginCredentialsMemberOf
-   * @class
-  
-   */
-    function SuccessLoginCredentialsMemberOf() {
-      _classCallCheck(this, SuccessLoginCredentialsMemberOf);
-
-      this.id = null;
-      this.organization = null;
-      this.roles = [];
-      this.organizationType = _SuccessLoginCredentialsOrganization.default;
-    }
-    /**
-     * Constructs a "SuccessLoginCredentialsMemberOf" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/SuccessLoginCredentialsMemberOf } object Optional instance to populate.
-     * @return { module:model/SuccessLoginCredentialsMemberOf } The populated "SuccessLoginCredentialsMemberOf" instance.
+var SuccessLoginCredentialsMemberOf = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "SuccessLoginCredentialsMemberOf".
+     * @alias module:model/SuccessLoginCredentialsMemberOf
+     * @class
+    
      */
+  function SuccessLoginCredentialsMemberOf() {
+    _classCallCheck(this, SuccessLoginCredentialsMemberOf);
 
-    _createClass(
-      SuccessLoginCredentialsMemberOf,
-      [
-        {
-          key: "getId",
+    this.id = null;
+    this.organization = null;
+    this.roles = [];
+    this.organizationType = _SuccessLoginCredentialsOrganization.default;
+  }
+  /**
+   * Constructs a "SuccessLoginCredentialsMemberOf" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/SuccessLoginCredentialsMemberOf } object Optional instance to populate.
+   * @return { module:model/SuccessLoginCredentialsMemberOf } The populated "SuccessLoginCredentialsMemberOf" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @param { String } id
-           */
-        },
-        {
-          key: "setId",
-          value: function setId(id) {
-            this.id = id;
-          }
-          /**
-           * @return { module:model/SuccessLoginCredentialsOrganization }
-           */
-        },
-        {
-          key: "getOrganization",
-          value: function getOrganization() {
-            return this.organization;
-          }
-          /**
-           * @param { module:model/SuccessLoginCredentialsOrganization } organization
-           */
-        },
-        {
-          key: "setOrganization",
-          value: function setOrganization(organization) {
-            this.organization = organization;
-          }
-          /**
-           * @return { Array.<String> }
-           */
-        },
-        {
-          key: "getRoles",
-          value: function getRoles() {
-            return this.roles;
-          }
-          /**
-           * @param { Array.<String> } roles
-           */
-        },
-        {
-          key: "setRoles",
-          value: function setRoles(roles) {
-            this.roles = roles;
-          }
+  _createClass(
+    SuccessLoginCredentialsMemberOf,
+    [
+      {
+        key: "getId",
+
+        /**
+         * @return { String }
+         */
+        value: function getId() {
+          return this.id;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new SuccessLoginCredentialsMemberOf();
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("organization")) {
-              object.organization = _ApiClient.default.convertToType(
-                data["organization"],
-                object.organizationType
-              );
-            }
-
-            if (data.hasOwnProperty("roles")) {
-              object.roles = _ApiClient.default.convertToType(
-                data["roles"],
-                "['String']"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } id
+         */
+      },
+      {
+        key: "setId",
+        value: function setId(id) {
+          this.id = id;
         }
-      ]
-    );
+        /**
+         * @return { module:model/SuccessLoginCredentialsOrganization }
+         */
+      },
+      {
+        key: "getOrganization",
+        value: function getOrganization() {
+          return this.organization;
+        }
+        /**
+         * @param { module:model/SuccessLoginCredentialsOrganization } organization
+         */
+      },
+      {
+        key: "setOrganization",
+        value: function setOrganization(organization) {
+          this.organization = organization;
+        }
+        /**
+         * @return { Array.<String> }
+         */
+      },
+      {
+        key: "getRoles",
+        value: function getRoles() {
+          return this.roles;
+        }
+        /**
+         * @param { Array.<String> } roles
+         */
+      },
+      {
+        key: "setRoles",
+        value: function setRoles(roles) {
+          this.roles = roles;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return SuccessLoginCredentialsMemberOf;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new SuccessLoginCredentialsMemberOf();
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
+              object.organizationType
+            );
+          }
+
+          if (data.hasOwnProperty("roles")) {
+            object.roles = _ApiClient.default.convertToType(
+              data["roles"],
+              "['String']"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return SuccessLoginCredentialsMemberOf;
+})();
 
 exports.default = SuccessLoginCredentialsMemberOf;

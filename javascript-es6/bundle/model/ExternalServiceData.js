@@ -37,165 +37,163 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ExternalServiceData model module.
  * @module model/ExternalServiceData
  */
-var ExternalServiceData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ExternalServiceData".
-   * @alias module:model/ExternalServiceData
-   * @class
-  
-   * @param organization { String }
-  
-   * @param name { String }
-  
-   * @param provider { String }
-  
-   */
-    function ExternalServiceData(organization, name, provider) {
-      _classCallCheck(this, ExternalServiceData);
-
-      this.organization = organization;
-      this.name = name;
-      this.description = null;
-      this.provider = provider;
-    }
-    /**
-     * Constructs a "ExternalServiceData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ExternalServiceData } object Optional instance to populate.
-     * @return { module:model/ExternalServiceData } The populated "ExternalServiceData" instance.
+var ExternalServiceData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ExternalServiceData".
+     * @alias module:model/ExternalServiceData
+     * @class
+    
+     * @param organization { String }
+    
+     * @param name { String }
+    
+     * @param provider { String }
+    
      */
+  function ExternalServiceData(organization, name, provider) {
+    _classCallCheck(this, ExternalServiceData);
 
-    _createClass(
-      ExternalServiceData,
-      [
-        {
-          key: "getOrganization",
+    this.organization = organization;
+    this.name = name;
+    this.description = null;
+    this.provider = provider;
+  }
+  /**
+   * Constructs a "ExternalServiceData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ExternalServiceData } object Optional instance to populate.
+   * @return { module:model/ExternalServiceData } The populated "ExternalServiceData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getOrganization() {
-            return this.organization;
-          }
-          /**
-           * @param { String } organization
-           */
-        },
-        {
-          key: "setOrganization",
-          value: function setOrganization(organization) {
-            this.organization = organization;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getName",
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getDescription",
-          value: function getDescription() {
-            return this.description;
-          }
-          /**
-           * @param { String } description
-           */
-        },
-        {
-          key: "setDescription",
-          value: function setDescription(description) {
-            this.description = description;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getProvider",
-          value: function getProvider() {
-            return this.provider;
-          }
-          /**
-           * @param { String } provider
-           */
-        },
-        {
-          key: "setProvider",
-          value: function setProvider(provider) {
-            this.provider = provider;
-          }
+  _createClass(
+    ExternalServiceData,
+    [
+      {
+        key: "getOrganization",
+
+        /**
+         * @return { String }
+         */
+        value: function getOrganization() {
+          return this.organization;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ExternalServiceData();
-            }
-
-            if (data.hasOwnProperty("organization")) {
-              object.organization = _ApiClient.default.convertToType(
-                data["organization"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("description")) {
-              object.description = _ApiClient.default.convertToType(
-                data["description"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("provider")) {
-              object.provider = _ApiClient.default.convertToType(
-                data["provider"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } organization
+         */
+      },
+      {
+        key: "setOrganization",
+        value: function setOrganization(organization) {
+          this.organization = organization;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getName",
+        value: function getName() {
+          return this.name;
+        }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getDescription",
+        value: function getDescription() {
+          return this.description;
+        }
+        /**
+         * @param { String } description
+         */
+      },
+      {
+        key: "setDescription",
+        value: function setDescription(description) {
+          this.description = description;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getProvider",
+        value: function getProvider() {
+          return this.provider;
+        }
+        /**
+         * @param { String } provider
+         */
+      },
+      {
+        key: "setProvider",
+        value: function setProvider(provider) {
+          this.provider = provider;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ExternalServiceData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ExternalServiceData();
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("provider")) {
+            object.provider = _ApiClient.default.convertToType(
+              data["provider"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ExternalServiceData;
+})();
 
 exports.default = ExternalServiceData;

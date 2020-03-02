@@ -37,107 +37,105 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The TrackingProgression model module.
  * @module model/TrackingProgression
  */
-var TrackingProgression =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "TrackingProgression".
-   * @alias module:model/TrackingProgression
-   * @class
-  
-   */
-    function TrackingProgression() {
-      _classCallCheck(this, TrackingProgression);
-
-      this.resolved = null;
-      this.total = null;
-    }
-    /**
-     * Constructs a "TrackingProgression" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/TrackingProgression } object Optional instance to populate.
-     * @return { module:model/TrackingProgression } The populated "TrackingProgression" instance.
+var TrackingProgression = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "TrackingProgression".
+     * @alias module:model/TrackingProgression
+     * @class
+    
      */
+  function TrackingProgression() {
+    _classCallCheck(this, TrackingProgression);
 
-    _createClass(
-      TrackingProgression,
-      [
-        {
-          key: "getResolved",
+    this.resolved = null;
+    this.total = null;
+  }
+  /**
+   * Constructs a "TrackingProgression" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/TrackingProgression } object Optional instance to populate.
+   * @return { module:model/TrackingProgression } The populated "TrackingProgression" instance.
+   */
 
-          /**
-           * @return { Number }
-           */
-          value: function getResolved() {
-            return this.resolved;
-          }
-          /**
-           * @param { Number } resolved
-           */
-        },
-        {
-          key: "setResolved",
-          value: function setResolved(resolved) {
-            this.resolved = resolved;
-          }
-          /**
-           * @return { Number }
-           */
-        },
-        {
-          key: "getTotal",
-          value: function getTotal() {
-            return this.total;
-          }
-          /**
-           * @param { Number } total
-           */
-        },
-        {
-          key: "setTotal",
-          value: function setTotal(total) {
-            this.total = total;
-          }
+  _createClass(
+    TrackingProgression,
+    [
+      {
+        key: "getResolved",
+
+        /**
+         * @return { Number }
+         */
+        value: function getResolved() {
+          return this.resolved;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new TrackingProgression();
-            }
-
-            if (data.hasOwnProperty("resolved")) {
-              object.resolved = _ApiClient.default.convertToType(
-                data["resolved"],
-                "Number"
-              );
-            }
-
-            if (data.hasOwnProperty("total")) {
-              object.total = _ApiClient.default.convertToType(
-                data["total"],
-                "Number"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { Number } resolved
+         */
+      },
+      {
+        key: "setResolved",
+        value: function setResolved(resolved) {
+          this.resolved = resolved;
         }
-      ]
-    );
+        /**
+         * @return { Number }
+         */
+      },
+      {
+        key: "getTotal",
+        value: function getTotal() {
+          return this.total;
+        }
+        /**
+         * @param { Number } total
+         */
+      },
+      {
+        key: "setTotal",
+        value: function setTotal(total) {
+          this.total = total;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return TrackingProgression;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new TrackingProgression();
+          }
+
+          if (data.hasOwnProperty("resolved")) {
+            object.resolved = _ApiClient.default.convertToType(
+              data["resolved"],
+              "Number"
+            );
+          }
+
+          if (data.hasOwnProperty("total")) {
+            object.total = _ApiClient.default.convertToType(
+              data["total"],
+              "Number"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return TrackingProgression;
+})();
 
 exports.default = TrackingProgression;

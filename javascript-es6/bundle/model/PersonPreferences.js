@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PersonPreferences model module.
  * @module model/PersonPreferences
  */
-var PersonPreferences =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PersonPreferences".
-   * @alias module:model/PersonPreferences
-   * @class
-  
-   */
-    function PersonPreferences() {
-      _classCallCheck(this, PersonPreferences);
-
-      this.notification = null;
-      this.notificationType = _PreferencesNotification.default;
-    }
-    /**
-     * Constructs a "PersonPreferences" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PersonPreferences } object Optional instance to populate.
-     * @return { module:model/PersonPreferences } The populated "PersonPreferences" instance.
+var PersonPreferences = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PersonPreferences".
+     * @alias module:model/PersonPreferences
+     * @class
+    
      */
+  function PersonPreferences() {
+    _classCallCheck(this, PersonPreferences);
 
-    _createClass(
-      PersonPreferences,
-      [
-        {
-          key: "getNotification",
+    this.notification = null;
+    this.notificationType = _PreferencesNotification.default;
+  }
+  /**
+   * Constructs a "PersonPreferences" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PersonPreferences } object Optional instance to populate.
+   * @return { module:model/PersonPreferences } The populated "PersonPreferences" instance.
+   */
 
-          /**
-           * @return { module:model/PreferencesNotification }
-           */
-          value: function getNotification() {
-            return this.notification;
-          }
-          /**
-           * @param { module:model/PreferencesNotification } notification
-           */
-        },
-        {
-          key: "setNotification",
-          value: function setNotification(notification) {
-            this.notification = notification;
-          }
+  _createClass(
+    PersonPreferences,
+    [
+      {
+        key: "getNotification",
+
+        /**
+         * @return { module:model/PreferencesNotification }
+         */
+        value: function getNotification() {
+          return this.notification;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PersonPreferences();
-            }
-
-            if (data.hasOwnProperty("notification")) {
-              object.notification = _ApiClient.default.convertToType(
-                data["notification"],
-                object.notificationType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/PreferencesNotification } notification
+         */
+      },
+      {
+        key: "setNotification",
+        value: function setNotification(notification) {
+          this.notification = notification;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PersonPreferences;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PersonPreferences();
+          }
+
+          if (data.hasOwnProperty("notification")) {
+            object.notification = _ApiClient.default.convertToType(
+              data["notification"],
+              object.notificationType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PersonPreferences;
+})();
 
 exports.default = PersonPreferences;

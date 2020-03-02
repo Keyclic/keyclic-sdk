@@ -37,83 +37,81 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ContributionData model module.
  * @module model/ContributionData
  */
-var ContributionData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ContributionData".
-   * @alias module:model/ContributionData
-   * @class
-  
-   * @param feedback { String }
-  
-   */
-    function ContributionData(feedback) {
-      _classCallCheck(this, ContributionData);
-
-      this.feedback = feedback;
-    }
-    /**
-     * Constructs a "ContributionData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ContributionData } object Optional instance to populate.
-     * @return { module:model/ContributionData } The populated "ContributionData" instance.
+var ContributionData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ContributionData".
+     * @alias module:model/ContributionData
+     * @class
+    
+     * @param feedback { String }
+    
      */
+  function ContributionData(feedback) {
+    _classCallCheck(this, ContributionData);
 
-    _createClass(
-      ContributionData,
-      [
-        {
-          key: "getFeedback",
+    this.feedback = feedback;
+  }
+  /**
+   * Constructs a "ContributionData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ContributionData } object Optional instance to populate.
+   * @return { module:model/ContributionData } The populated "ContributionData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getFeedback() {
-            return this.feedback;
-          }
-          /**
-           * @param { String } feedback
-           */
-        },
-        {
-          key: "setFeedback",
-          value: function setFeedback(feedback) {
-            this.feedback = feedback;
-          }
+  _createClass(
+    ContributionData,
+    [
+      {
+        key: "getFeedback",
+
+        /**
+         * @return { String }
+         */
+        value: function getFeedback() {
+          return this.feedback;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ContributionData();
-            }
-
-            if (data.hasOwnProperty("feedback")) {
-              object.feedback = _ApiClient.default.convertToType(
-                data["feedback"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } feedback
+         */
+      },
+      {
+        key: "setFeedback",
+        value: function setFeedback(feedback) {
+          this.feedback = feedback;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ContributionData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ContributionData();
+          }
+
+          if (data.hasOwnProperty("feedback")) {
+            object.feedback = _ApiClient.default.convertToType(
+              data["feedback"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ContributionData;
+})();
 
 exports.default = ContributionData;

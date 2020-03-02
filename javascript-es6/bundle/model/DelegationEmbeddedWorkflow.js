@@ -41,109 +41,107 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DelegationEmbeddedWorkflow model module.
  * @module model/DelegationEmbeddedWorkflow
  */
-var DelegationEmbeddedWorkflow =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DelegationEmbeddedWorkflow".
-   * @alias module:model/DelegationEmbeddedWorkflow
-   * @class
-  
-   */
-    function DelegationEmbeddedWorkflow() {
-      _classCallCheck(this, DelegationEmbeddedWorkflow);
-
-      this.state = null;
-      this.transitions = [];
-      this.stateType = _State.default;
-      this.transitionsType = _Transition.default;
-    }
-    /**
-     * Constructs a "DelegationEmbeddedWorkflow" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DelegationEmbeddedWorkflow } object Optional instance to populate.
-     * @return { module:model/DelegationEmbeddedWorkflow } The populated "DelegationEmbeddedWorkflow" instance.
+var DelegationEmbeddedWorkflow = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DelegationEmbeddedWorkflow".
+     * @alias module:model/DelegationEmbeddedWorkflow
+     * @class
+    
      */
+  function DelegationEmbeddedWorkflow() {
+    _classCallCheck(this, DelegationEmbeddedWorkflow);
 
-    _createClass(
-      DelegationEmbeddedWorkflow,
-      [
-        {
-          key: "getState",
+    this.state = null;
+    this.transitions = [];
+    this.stateType = _State.default;
+    this.transitionsType = _Transition.default;
+  }
+  /**
+   * Constructs a "DelegationEmbeddedWorkflow" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DelegationEmbeddedWorkflow } object Optional instance to populate.
+   * @return { module:model/DelegationEmbeddedWorkflow } The populated "DelegationEmbeddedWorkflow" instance.
+   */
 
-          /**
-           * @return { module:model/State }
-           */
-          value: function getState() {
-            return this.state;
-          }
-          /**
-           * @param { module:model/State } state
-           */
-        },
-        {
-          key: "setState",
-          value: function setState(state) {
-            this.state = state;
-          }
-          /**
-           * @return { Array.<module:model/Transition> }
-           */
-        },
-        {
-          key: "getTransitions",
-          value: function getTransitions() {
-            return this.transitions;
-          }
-          /**
-           * @param { Array.<module:model/Transition> } transitions
-           */
-        },
-        {
-          key: "setTransitions",
-          value: function setTransitions(transitions) {
-            this.transitions = transitions;
-          }
+  _createClass(
+    DelegationEmbeddedWorkflow,
+    [
+      {
+        key: "getState",
+
+        /**
+         * @return { module:model/State }
+         */
+        value: function getState() {
+          return this.state;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DelegationEmbeddedWorkflow();
-            }
-
-            if (data.hasOwnProperty("state")) {
-              object.state = _ApiClient.default.convertToType(
-                data["state"],
-                object.stateType
-              );
-            }
-
-            if (data.hasOwnProperty("transitions")) {
-              object.transitions = _ApiClient.default.convertToType(
-                data["transitions"],
-                [object.transitionsType]
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/State } state
+         */
+      },
+      {
+        key: "setState",
+        value: function setState(state) {
+          this.state = state;
         }
-      ]
-    );
+        /**
+         * @return { Array.<module:model/Transition> }
+         */
+      },
+      {
+        key: "getTransitions",
+        value: function getTransitions() {
+          return this.transitions;
+        }
+        /**
+         * @param { Array.<module:model/Transition> } transitions
+         */
+      },
+      {
+        key: "setTransitions",
+        value: function setTransitions(transitions) {
+          this.transitions = transitions;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DelegationEmbeddedWorkflow;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DelegationEmbeddedWorkflow();
+          }
+
+          if (data.hasOwnProperty("state")) {
+            object.state = _ApiClient.default.convertToType(
+              data["state"],
+              object.stateType
+            );
+          }
+
+          if (data.hasOwnProperty("transitions")) {
+            object.transitions = _ApiClient.default.convertToType(
+              data["transitions"],
+              [object.transitionsType]
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DelegationEmbeddedWorkflow;
+})();
 
 exports.default = DelegationEmbeddedWorkflow;

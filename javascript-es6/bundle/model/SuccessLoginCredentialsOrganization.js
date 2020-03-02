@@ -37,107 +37,102 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The SuccessLoginCredentialsOrganization model module.
  * @module model/SuccessLoginCredentialsOrganization
  */
-var SuccessLoginCredentialsOrganization =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "SuccessLoginCredentialsOrganization".
-   * @alias module:model/SuccessLoginCredentialsOrganization
-   * @class
-  
-   */
-    function SuccessLoginCredentialsOrganization() {
-      _classCallCheck(this, SuccessLoginCredentialsOrganization);
-
-      this.type = null;
-      this.id = null;
-    }
-    /**
-     * Constructs a "SuccessLoginCredentialsOrganization" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/SuccessLoginCredentialsOrganization } object Optional instance to populate.
-     * @return { module:model/SuccessLoginCredentialsOrganization } The populated "SuccessLoginCredentialsOrganization" instance.
+var SuccessLoginCredentialsOrganization = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "SuccessLoginCredentialsOrganization".
+     * @alias module:model/SuccessLoginCredentialsOrganization
+     * @class
+    
      */
+  function SuccessLoginCredentialsOrganization() {
+    _classCallCheck(this, SuccessLoginCredentialsOrganization);
 
-    _createClass(
-      SuccessLoginCredentialsOrganization,
-      [
-        {
-          key: "getType",
+    this.type = null;
+    this.id = null;
+  }
+  /**
+   * Constructs a "SuccessLoginCredentialsOrganization" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/SuccessLoginCredentialsOrganization } object Optional instance to populate.
+   * @return { module:model/SuccessLoginCredentialsOrganization } The populated "SuccessLoginCredentialsOrganization" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getType() {
-            return this.type;
-          }
-          /**
-           * @param { String } type
-           */
-        },
-        {
-          key: "setType",
-          value: function setType(type) {
-            this.type = type;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getId",
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @param { String } id
-           */
-        },
-        {
-          key: "setId",
-          value: function setId(id) {
-            this.id = id;
-          }
+  _createClass(
+    SuccessLoginCredentialsOrganization,
+    [
+      {
+        key: "getType",
+
+        /**
+         * @return { String }
+         */
+        value: function getType() {
+          return this.type;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new SuccessLoginCredentialsOrganization();
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } type
+         */
+      },
+      {
+        key: "setType",
+        value: function setType(type) {
+          this.type = type;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getId",
+        value: function getId() {
+          return this.id;
+        }
+        /**
+         * @param { String } id
+         */
+      },
+      {
+        key: "setId",
+        value: function setId(id) {
+          this.id = id;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return SuccessLoginCredentialsOrganization;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new SuccessLoginCredentialsOrganization();
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return SuccessLoginCredentialsOrganization;
+})();
 
 exports.default = SuccessLoginCredentialsOrganization;

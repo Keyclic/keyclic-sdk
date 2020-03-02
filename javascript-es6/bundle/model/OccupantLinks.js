@@ -47,136 +47,134 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OccupantLinks model module.
  * @module model/OccupantLinks
  */
-var OccupantLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OccupantLinks".
-   * @alias module:model/OccupantLinks
-   * @class
-  
-   */
-    function OccupantLinks() {
-      _classCallCheck(this, OccupantLinks);
-
-      this.member = null;
-      this.place = null;
-      this.self = null;
-      this.memberType = _OccupantLinksMember.default;
-      this.placeType = _OccupantLinksPlace.default;
-      this.selfType = _OccupantLinksSelf.default;
-    }
-    /**
-     * Constructs a "OccupantLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OccupantLinks } object Optional instance to populate.
-     * @return { module:model/OccupantLinks } The populated "OccupantLinks" instance.
+var OccupantLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OccupantLinks".
+     * @alias module:model/OccupantLinks
+     * @class
+    
      */
+  function OccupantLinks() {
+    _classCallCheck(this, OccupantLinks);
 
-    _createClass(
-      OccupantLinks,
-      [
-        {
-          key: "getMember",
+    this.member = null;
+    this.place = null;
+    this.self = null;
+    this.memberType = _OccupantLinksMember.default;
+    this.placeType = _OccupantLinksPlace.default;
+    this.selfType = _OccupantLinksSelf.default;
+  }
+  /**
+   * Constructs a "OccupantLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OccupantLinks } object Optional instance to populate.
+   * @return { module:model/OccupantLinks } The populated "OccupantLinks" instance.
+   */
 
-          /**
-           * @return { module:model/OccupantLinksMember }
-           */
-          value: function getMember() {
-            return this.member;
-          }
-          /**
-           * @param { module:model/OccupantLinksMember } member
-           */
-        },
-        {
-          key: "setMember",
-          value: function setMember(member) {
-            this.member = member;
-          }
-          /**
-           * @return { module:model/OccupantLinksPlace }
-           */
-        },
-        {
-          key: "getPlace",
-          value: function getPlace() {
-            return this.place;
-          }
-          /**
-           * @param { module:model/OccupantLinksPlace } place
-           */
-        },
-        {
-          key: "setPlace",
-          value: function setPlace(place) {
-            this.place = place;
-          }
-          /**
-           * @return { module:model/OccupantLinksSelf }
-           */
-        },
-        {
-          key: "getSelf",
-          value: function getSelf() {
-            return this.self;
-          }
-          /**
-           * @param { module:model/OccupantLinksSelf } self
-           */
-        },
-        {
-          key: "setSelf",
-          value: function setSelf(self) {
-            this.self = self;
-          }
+  _createClass(
+    OccupantLinks,
+    [
+      {
+        key: "getMember",
+
+        /**
+         * @return { module:model/OccupantLinksMember }
+         */
+        value: function getMember() {
+          return this.member;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OccupantLinks();
-            }
-
-            if (data.hasOwnProperty("member")) {
-              object.member = _ApiClient.default.convertToType(
-                data["member"],
-                object.memberType
-              );
-            }
-
-            if (data.hasOwnProperty("place")) {
-              object.place = _ApiClient.default.convertToType(
-                data["place"],
-                object.placeType
-              );
-            }
-
-            if (data.hasOwnProperty("self")) {
-              object.self = _ApiClient.default.convertToType(
-                data["self"],
-                object.selfType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/OccupantLinksMember } member
+         */
+      },
+      {
+        key: "setMember",
+        value: function setMember(member) {
+          this.member = member;
         }
-      ]
-    );
+        /**
+         * @return { module:model/OccupantLinksPlace }
+         */
+      },
+      {
+        key: "getPlace",
+        value: function getPlace() {
+          return this.place;
+        }
+        /**
+         * @param { module:model/OccupantLinksPlace } place
+         */
+      },
+      {
+        key: "setPlace",
+        value: function setPlace(place) {
+          this.place = place;
+        }
+        /**
+         * @return { module:model/OccupantLinksSelf }
+         */
+      },
+      {
+        key: "getSelf",
+        value: function getSelf() {
+          return this.self;
+        }
+        /**
+         * @param { module:model/OccupantLinksSelf } self
+         */
+      },
+      {
+        key: "setSelf",
+        value: function setSelf(self) {
+          this.self = self;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OccupantLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OccupantLinks();
+          }
+
+          if (data.hasOwnProperty("member")) {
+            object.member = _ApiClient.default.convertToType(
+              data["member"],
+              object.memberType
+            );
+          }
+
+          if (data.hasOwnProperty("place")) {
+            object.place = _ApiClient.default.convertToType(
+              data["place"],
+              object.placeType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OccupantLinks;
+})();
 
 exports.default = OccupantLinks;

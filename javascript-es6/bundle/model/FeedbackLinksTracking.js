@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The FeedbackLinksTracking model module.
  * @module model/FeedbackLinksTracking
  */
-var FeedbackLinksTracking =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "FeedbackLinksTracking".
-   * @alias module:model/FeedbackLinksTracking
-   * @class
-  
-   */
-    function FeedbackLinksTracking() {
-      _classCallCheck(this, FeedbackLinksTracking);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _FeedbackLinksTrackingIriTemplate.default;
-    }
-    /**
-     * Constructs a "FeedbackLinksTracking" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/FeedbackLinksTracking } object Optional instance to populate.
-     * @return { module:model/FeedbackLinksTracking } The populated "FeedbackLinksTracking" instance.
+var FeedbackLinksTracking = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "FeedbackLinksTracking".
+     * @alias module:model/FeedbackLinksTracking
+     * @class
+    
      */
+  function FeedbackLinksTracking() {
+    _classCallCheck(this, FeedbackLinksTracking);
 
-    _createClass(
-      FeedbackLinksTracking,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _FeedbackLinksTrackingIriTemplate.default;
+  }
+  /**
+   * Constructs a "FeedbackLinksTracking" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/FeedbackLinksTracking } object Optional instance to populate.
+   * @return { module:model/FeedbackLinksTracking } The populated "FeedbackLinksTracking" instance.
+   */
 
-          /**
-           * Gets The URI of the tracking associated to the given feedback.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the tracking associated to the given feedback.
-           * @param { String } href The URI of the tracking associated to the given feedback.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/FeedbackLinksTrackingIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/FeedbackLinksTrackingIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    FeedbackLinksTracking,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the tracking associated to the given feedback.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new FeedbackLinksTracking();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the tracking associated to the given feedback.
+         * @param { String } href The URI of the tracking associated to the given feedback.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/FeedbackLinksTrackingIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/FeedbackLinksTrackingIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return FeedbackLinksTracking;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new FeedbackLinksTracking();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return FeedbackLinksTracking;
+})();
 
 exports.default = FeedbackLinksTracking;

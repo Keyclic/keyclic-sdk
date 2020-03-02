@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DocumentCollection model module.
  * @module model/DocumentCollection
  */
-var DocumentCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DocumentCollection".
-   * @alias module:model/DocumentCollection
-   * @class
-  
-   */
-    function DocumentCollection() {
-      _classCallCheck(this, DocumentCollection);
-
-      this.items = [];
-      this.itemsType = _Document.default;
-    }
-    /**
-     * Constructs a "DocumentCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DocumentCollection } object Optional instance to populate.
-     * @return { module:model/DocumentCollection } The populated "DocumentCollection" instance.
+var DocumentCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DocumentCollection".
+     * @alias module:model/DocumentCollection
+     * @class
+    
      */
+  function DocumentCollection() {
+    _classCallCheck(this, DocumentCollection);
 
-    _createClass(
-      DocumentCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _Document.default;
+  }
+  /**
+   * Constructs a "DocumentCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DocumentCollection } object Optional instance to populate.
+   * @return { module:model/DocumentCollection } The populated "DocumentCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Document> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/Document> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    DocumentCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/Document> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DocumentCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Document> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DocumentCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DocumentCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DocumentCollection;
+})();
 
 exports.default = DocumentCollection;

@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The OrganizationLinksApplication model module.
  * @module model/OrganizationLinksApplication
  */
-var OrganizationLinksApplication =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "OrganizationLinksApplication".
-   * @alias module:model/OrganizationLinksApplication
-   * @class
-  
-   */
-    function OrganizationLinksApplication() {
-      _classCallCheck(this, OrganizationLinksApplication);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _OrganizationLinksApplicationIriTemplate.default;
-    }
-    /**
-     * Constructs a "OrganizationLinksApplication" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/OrganizationLinksApplication } object Optional instance to populate.
-     * @return { module:model/OrganizationLinksApplication } The populated "OrganizationLinksApplication" instance.
+var OrganizationLinksApplication = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "OrganizationLinksApplication".
+     * @alias module:model/OrganizationLinksApplication
+     * @class
+    
      */
+  function OrganizationLinksApplication() {
+    _classCallCheck(this, OrganizationLinksApplication);
 
-    _createClass(
-      OrganizationLinksApplication,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _OrganizationLinksApplicationIriTemplate.default;
+  }
+  /**
+   * Constructs a "OrganizationLinksApplication" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/OrganizationLinksApplication } object Optional instance to populate.
+   * @return { module:model/OrganizationLinksApplication } The populated "OrganizationLinksApplication" instance.
+   */
 
-          /**
-           * Gets The URI of the application associated to the given organization.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the application associated to the given organization.
-           * @param { String } href The URI of the application associated to the given organization.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/OrganizationLinksApplicationIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/OrganizationLinksApplicationIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    OrganizationLinksApplication,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the application associated to the given organization.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new OrganizationLinksApplication();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the application associated to the given organization.
+         * @param { String } href The URI of the application associated to the given organization.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/OrganizationLinksApplicationIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/OrganizationLinksApplicationIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return OrganizationLinksApplication;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new OrganizationLinksApplication();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return OrganizationLinksApplication;
+})();
 
 exports.default = OrganizationLinksApplication;

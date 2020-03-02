@@ -37,107 +37,102 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The NodePath model module.
  * @module model/NodePath
  */
-var NodePath =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "NodePath".
-   * @alias module:model/NodePath
-   * @class
-  
-   */
-    function NodePath() {
-      _classCallCheck(this, NodePath);
-
-      this.id = null;
-      this.name = null;
-    }
-    /**
-     * Constructs a "NodePath" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/NodePath } object Optional instance to populate.
-     * @return { module:model/NodePath } The populated "NodePath" instance.
+var NodePath = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "NodePath".
+     * @alias module:model/NodePath
+     * @class
+    
      */
+  function NodePath() {
+    _classCallCheck(this, NodePath);
 
-    _createClass(
-      NodePath,
-      [
-        {
-          key: "getId",
+    this.id = null;
+    this.name = null;
+  }
+  /**
+   * Constructs a "NodePath" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/NodePath } object Optional instance to populate.
+   * @return { module:model/NodePath } The populated "NodePath" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @param { String } id
-           */
-        },
-        {
-          key: "setId",
-          value: function setId(id) {
-            this.id = id;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getName",
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
+  _createClass(
+    NodePath,
+    [
+      {
+        key: "getId",
+
+        /**
+         * @return { String }
+         */
+        value: function getId() {
+          return this.id;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new NodePath();
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } id
+         */
+      },
+      {
+        key: "setId",
+        value: function setId(id) {
+          this.id = id;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getName",
+        value: function getName() {
+          return this.name;
+        }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return NodePath;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new NodePath();
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return NodePath;
+})();
 
 exports.default = NodePath;

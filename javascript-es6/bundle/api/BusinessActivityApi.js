@@ -113,371 +113,354 @@ function _setPrototypeOf(o, p) {
  * BusinessActivity service.
  * @module api/BusinessActivityApi
  */
-var BusinessActivityApi =
-  /*#__PURE__*/
-  (function(_ApiClient) {
-    _inherits(BusinessActivityApi, _ApiClient);
+var BusinessActivityApi = /*#__PURE__*/ (function(_ApiClient) {
+  _inherits(BusinessActivityApi, _ApiClient);
 
-    /**
-     * @class
-     * { string } basePath To override basePath.
-     * { object } headers Additional headers for the instance.
-     * { int } timeout Number in seconds before timeout.
-     */
-    function BusinessActivityApi() {
-      var basePath =
-        arguments.length > 0 && arguments[0] !== undefined
-          ? arguments[0]
-          : null;
-      var headers =
-        arguments.length > 1 && arguments[1] !== undefined
-          ? arguments[1]
-          : null;
-      var timeout =
-        arguments.length > 2 && arguments[2] !== undefined
-          ? arguments[2]
-          : null;
+  /**
+   * @class
+   * { string } basePath To override basePath.
+   * { object } headers Additional headers for the instance.
+   * { int } timeout Number in seconds before timeout.
+   */
+  function BusinessActivityApi() {
+    var basePath =
+      arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+    var headers =
+      arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    var timeout =
+      arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
-      _classCallCheck(this, BusinessActivityApi);
+    _classCallCheck(this, BusinessActivityApi);
 
-      return _possibleConstructorReturn(
+    return _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(BusinessActivityApi).call(
         this,
-        _getPrototypeOf(BusinessActivityApi).call(
-          this,
-          basePath,
-          headers,
-          timeout
-        )
-      );
-    }
-    /**
-     * Retrieve all BusinessActivity resources.
-     * @param { String } xKeyclicApp
-     * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-     * @param { BusinessActivityPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-     * @param { module:model/String } acceptLanguage   (default to fr-FR)
-     * @param { Date } xDateTime
-     * @param { String } xKeyclicAppVersion
-     * @param { module:model/Date } after
-     * @param { module:model/Date } before
-     * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
-     * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
-     * @param { module:model/String } order   (default to desc)
-     * @param { String } organization The identifier of the resource.
-     * @param { Number } page Page of the overview.  (default to 1)
-     * @param { Number } limit Page of the overview.  (default to 10)
-     */
+        basePath,
+        headers,
+        timeout
+      )
+    );
+  }
+  /**
+   * Retrieve all BusinessActivity resources.
+   * @param { String } xKeyclicApp
+   * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+   * @param { BusinessActivityPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { module:model/String } acceptLanguage   (default to fr-FR)
+   * @param { Date } xDateTime
+   * @param { String } xKeyclicAppVersion
+   * @param { module:model/Date } after
+   * @param { module:model/Date } before
+   * @param { String } geoPoint One latitude and one longitude serialized and separated by a plus or a minus sign.
+   * @param { String } geoCoordinates One latitude and one longitude serialized and separated by a plus or a minus sign.
+   * @param { module:model/String } order   (default to desc)
+   * @param { String } organization The identifier of the resource.
+   * @param { Number } page Page of the overview.  (default to 1)
+   * @param { Number } limit Page of the overview.  (default to 10)
+   */
 
-    _createClass(BusinessActivityApi, [
-      {
-        key: "cgetBusinessActivities",
-        value: function cgetBusinessActivities() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
+  _createClass(BusinessActivityApi, [
+    {
+      key: "cgetBusinessActivities",
+      value: function cgetBusinessActivities() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
 
-          if (returnType === null) {
-            returnType = _BusinessActivityPagination.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion,
-            after = options.after,
-            before = options.before,
-            geoPoint = options.geoPoint,
-            geoCoordinates = options.geoCoordinates,
-            order = options.order,
-            organization = options.organization,
-            page = options.page,
-            limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling cgetBusinessActivities'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the default value of parameter 'order'
-
-          if (typeof order === "undefined" || order === null) {
-            order = "desc";
-          } // verify the default value of parameter 'page'
-
-          if (typeof page === "undefined" || page === null) {
-            page = 1;
-          } // verify the default value of parameter 'limit'
-
-          if (typeof limit === "undefined" || limit === null) {
-            limit = 10;
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          } // verify the null value of parameter 'after'
-
-          if (typeof after === "undefined") {
-            after = null;
-          } // verify the null value of parameter 'before'
-
-          if (typeof before === "undefined") {
-            before = null;
-          } // verify the null value of parameter 'geoPoint'
-
-          if (typeof geoPoint === "undefined") {
-            geoPoint = null;
-          } // verify the null value of parameter 'geoCoordinates'
-
-          if (typeof geoCoordinates === "undefined") {
-            geoCoordinates = null;
-          } // verify the null value of parameter 'organization'
-
-          if (typeof organization === "undefined") {
-            organization = null;
-          }
-
-          var pathParams = {};
-          var bodyParam = null;
-          var queryParams = {
-            after: after,
-            before: before,
-            geo_point: geoPoint,
-            geo_coordinates: geoCoordinates,
-            order: order,
-            organization: organization,
-            page: page,
-            limit: limit
-          };
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/business-activities",
-            "GET",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-          );
+        if (returnType === null) {
+          returnType = _BusinessActivityPagination.default;
         }
-        /**
-         * Retrieve one BusinessActivity resource.
-         * @param { String } xKeyclicApp
-         * @param { String } businessActivity The identifier of the resource.
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { BusinessActivity }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { Date } xDateTime
-         * @param { String } xKeyclicAppVersion
-         */
-      },
-      {
-        key: "getBusinessActivity",
-        value: function getBusinessActivity() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
 
-          if (returnType === null) {
-            returnType = _BusinessActivity.default;
-          }
+        var xKeyclicApp = options.xKeyclicApp,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion,
+          after = options.after,
+          before = options.before,
+          geoPoint = options.geoPoint,
+          geoCoordinates = options.geoCoordinates,
+          order = options.order,
+          organization = options.organization,
+          page = options.page,
+          limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
-          var xKeyclicApp = options.xKeyclicApp,
-            businessActivity = options.businessActivity,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling getBusinessActivity'
-            );
-          } // verify the required parameter 'businessActivity' is set
-
-          if (
-            typeof businessActivity === "undefined" ||
-            businessActivity === null
-          ) {
-            throw new window.Error(
-              'Missing the required parameter "businessActivity" when calling getBusinessActivity'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          var pathParams = {
-            businessActivity: businessActivity
-          };
-          var bodyParam = null;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/business-activities/{businessActivity}",
-            "GET",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling cgetBusinessActivities'
           );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the default value of parameter 'order'
+
+        if (typeof order === "undefined" || order === null) {
+          order = "desc";
+        } // verify the default value of parameter 'page'
+
+        if (typeof page === "undefined" || page === null) {
+          page = 1;
+        } // verify the default value of parameter 'limit'
+
+        if (typeof limit === "undefined" || limit === null) {
+          limit = 10;
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
+        } // verify the null value of parameter 'after'
+
+        if (typeof after === "undefined") {
+          after = null;
+        } // verify the null value of parameter 'before'
+
+        if (typeof before === "undefined") {
+          before = null;
+        } // verify the null value of parameter 'geoPoint'
+
+        if (typeof geoPoint === "undefined") {
+          geoPoint = null;
+        } // verify the null value of parameter 'geoCoordinates'
+
+        if (typeof geoCoordinates === "undefined") {
+          geoCoordinates = null;
+        } // verify the null value of parameter 'organization'
+
+        if (typeof organization === "undefined") {
+          organization = null;
         }
-        /**
-         * Retrieve one Schema resource.
-         * @param { String } xKeyclicApp
-         * @param { String } businessActivity The identifier of the resource.
-         * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-         * @param { Schema }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
-         * @param { module:model/String } acceptLanguage   (default to fr-FR)
-         * @param { Date } xDateTime
-         * @param { String } xKeyclicAppVersion
-         */
-      },
-      {
-        key: "getSchemaByBusinessActivity",
-        value: function getSchemaByBusinessActivity() {
-          var returnType =
-            arguments.length > 0 && arguments[0] !== undefined
-              ? arguments[0]
-              : null;
-          var options = arguments.length > 1 ? arguments[1] : undefined;
-          var credentials =
-            arguments.length > 2 && arguments[2] !== undefined
-              ? arguments[2]
-              : null;
 
-          if (returnType === null) {
-            returnType = _Schema.default;
-          }
-
-          var xKeyclicApp = options.xKeyclicApp,
-            businessActivity = options.businessActivity,
-            acceptLanguage = options.acceptLanguage,
-            xDateTime = options.xDateTime,
-            xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
-
-          if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
-            throw new window.Error(
-              'Missing the required parameter "xKeyclicApp" when calling getSchemaByBusinessActivity'
-            );
-          } // verify the required parameter 'businessActivity' is set
-
-          if (
-            typeof businessActivity === "undefined" ||
-            businessActivity === null
-          ) {
-            throw new window.Error(
-              'Missing the required parameter "businessActivity" when calling getSchemaByBusinessActivity'
-            );
-          } // verify the default value of parameter 'acceptLanguage'
-
-          if (
-            typeof acceptLanguage === "undefined" ||
-            acceptLanguage === null
-          ) {
-            acceptLanguage = "fr-FR";
-          } // verify the null value of parameter 'xDateTime'
-
-          if (typeof xDateTime === "undefined") {
-            xDateTime = null;
-          } // verify the null value of parameter 'xKeyclicAppVersion'
-
-          if (typeof xKeyclicAppVersion === "undefined") {
-            xKeyclicAppVersion = null;
-          }
-
-          var pathParams = {
-            businessActivity: businessActivity
-          };
-          var bodyParam = null;
-          var queryParams = {};
-          var headerParams = {
-            "accept-language": acceptLanguage,
-            "x-date-time": xDateTime,
-            "x-keyclic-app": xKeyclicApp,
-            "x-keyclic-app-version": xKeyclicAppVersion
-          };
-          var credentialParams = credentials;
-          var authNames = ["bearer"];
-          var contentTypes = ["application/json;charset=UTF-8"];
-          var accepts = ["application/hal+json;charset=UTF-8"];
-          return this.callApi(
-            "/businessactivities/{businessActivity}/schema",
-            "GET",
-            pathParams,
-            queryParams,
-            headerParams,
-            bodyParam,
-            authNames,
-            credentialParams,
-            contentTypes,
-            accepts,
-            returnType
-          );
-        }
+        var pathParams = {};
+        var bodyParam = null;
+        var queryParams = {
+          after: after,
+          before: before,
+          geo_point: geoPoint,
+          geo_coordinates: geoCoordinates,
+          order: order,
+          organization: organization,
+          page: page,
+          limit: limit
+        };
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/business-activities",
+          "GET",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
       }
-    ]);
+      /**
+       * Retrieve one BusinessActivity resource.
+       * @param { String } xKeyclicApp
+       * @param { String } businessActivity The identifier of the resource.
+       * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+       * @param { BusinessActivity }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+       * @param { module:model/String } acceptLanguage   (default to fr-FR)
+       * @param { Date } xDateTime
+       * @param { String } xKeyclicAppVersion
+       */
+    },
+    {
+      key: "getBusinessActivity",
+      value: function getBusinessActivity() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
 
-    return BusinessActivityApi;
-  })(_ApiClient2.default);
+        if (returnType === null) {
+          returnType = _BusinessActivity.default;
+        }
+
+        var xKeyclicApp = options.xKeyclicApp,
+          businessActivity = options.businessActivity,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling getBusinessActivity'
+          );
+        } // verify the required parameter 'businessActivity' is set
+
+        if (
+          typeof businessActivity === "undefined" ||
+          businessActivity === null
+        ) {
+          throw new window.Error(
+            'Missing the required parameter "businessActivity" when calling getBusinessActivity'
+          );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
+        }
+
+        var pathParams = {
+          businessActivity: businessActivity
+        };
+        var bodyParam = null;
+        var queryParams = {};
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/business-activities/{businessActivity}",
+          "GET",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
+      }
+      /**
+       * Retrieve one Schema resource.
+       * @param { String } xKeyclicApp
+       * @param { String } businessActivity The identifier of the resource.
+       * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+       * @param { Schema }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+       * @param { module:model/String } acceptLanguage   (default to fr-FR)
+       * @param { Date } xDateTime
+       * @param { String } xKeyclicAppVersion
+       */
+    },
+    {
+      key: "getSchemaByBusinessActivity",
+      value: function getSchemaByBusinessActivity() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
+
+        if (returnType === null) {
+          returnType = _Schema.default;
+        }
+
+        var xKeyclicApp = options.xKeyclicApp,
+          businessActivity = options.businessActivity,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion; // verify the required parameter 'xKeyclicApp' is set
+
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling getSchemaByBusinessActivity'
+          );
+        } // verify the required parameter 'businessActivity' is set
+
+        if (
+          typeof businessActivity === "undefined" ||
+          businessActivity === null
+        ) {
+          throw new window.Error(
+            'Missing the required parameter "businessActivity" when calling getSchemaByBusinessActivity'
+          );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
+        }
+
+        var pathParams = {
+          businessActivity: businessActivity
+        };
+        var bodyParam = null;
+        var queryParams = {};
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/businessactivities/{businessActivity}/schema",
+          "GET",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
+      }
+    }
+  ]);
+
+  return BusinessActivityApi;
+})(_ApiClient2.default);
 
 exports.default = BusinessActivityApi;

@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ArticleLinksSectionIriTemplate model module.
  * @module model/ArticleLinksSectionIriTemplate
  */
-var ArticleLinksSectionIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ArticleLinksSectionIriTemplate".
-   * @alias module:model/ArticleLinksSectionIriTemplate
-   * @class
-  
-   */
-    function ArticleLinksSectionIriTemplate() {
-      _classCallCheck(this, ArticleLinksSectionIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _ArticleLinksSectionIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "ArticleLinksSectionIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ArticleLinksSectionIriTemplate } object Optional instance to populate.
-     * @return { module:model/ArticleLinksSectionIriTemplate } The populated "ArticleLinksSectionIriTemplate" instance.
+var ArticleLinksSectionIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ArticleLinksSectionIriTemplate".
+     * @alias module:model/ArticleLinksSectionIriTemplate
+     * @class
+    
      */
+  function ArticleLinksSectionIriTemplate() {
+    _classCallCheck(this, ArticleLinksSectionIriTemplate);
 
-    _createClass(
-      ArticleLinksSectionIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _ArticleLinksSectionIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "ArticleLinksSectionIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ArticleLinksSectionIriTemplate } object Optional instance to populate.
+   * @return { module:model/ArticleLinksSectionIriTemplate } The populated "ArticleLinksSectionIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/ArticleLinksSectionIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/ArticleLinksSectionIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    ArticleLinksSectionIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/ArticleLinksSectionIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ArticleLinksSectionIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/ArticleLinksSectionIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ArticleLinksSectionIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ArticleLinksSectionIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ArticleLinksSectionIriTemplate;
+})();
 
 exports.default = ArticleLinksSectionIriTemplate;

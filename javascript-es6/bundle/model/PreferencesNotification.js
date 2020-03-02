@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PreferencesNotification model module.
  * @module model/PreferencesNotification
  */
-var PreferencesNotification =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PreferencesNotification".
-   * @alias module:model/PreferencesNotification
-   * @class
-  
-   */
-    function PreferencesNotification() {
-      _classCallCheck(this, PreferencesNotification);
-
-      this.report = null;
-      this.reportType = _NotificationReportNotification.default;
-    }
-    /**
-     * Constructs a "PreferencesNotification" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PreferencesNotification } object Optional instance to populate.
-     * @return { module:model/PreferencesNotification } The populated "PreferencesNotification" instance.
+var PreferencesNotification = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PreferencesNotification".
+     * @alias module:model/PreferencesNotification
+     * @class
+    
      */
+  function PreferencesNotification() {
+    _classCallCheck(this, PreferencesNotification);
 
-    _createClass(
-      PreferencesNotification,
-      [
-        {
-          key: "getReport",
+    this.report = null;
+    this.reportType = _NotificationReportNotification.default;
+  }
+  /**
+   * Constructs a "PreferencesNotification" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PreferencesNotification } object Optional instance to populate.
+   * @return { module:model/PreferencesNotification } The populated "PreferencesNotification" instance.
+   */
 
-          /**
-           * @return { module:model/NotificationReportNotification }
-           */
-          value: function getReport() {
-            return this.report;
-          }
-          /**
-           * @param { module:model/NotificationReportNotification } report
-           */
-        },
-        {
-          key: "setReport",
-          value: function setReport(report) {
-            this.report = report;
-          }
+  _createClass(
+    PreferencesNotification,
+    [
+      {
+        key: "getReport",
+
+        /**
+         * @return { module:model/NotificationReportNotification }
+         */
+        value: function getReport() {
+          return this.report;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PreferencesNotification();
-            }
-
-            if (data.hasOwnProperty("report")) {
-              object.report = _ApiClient.default.convertToType(
-                data["report"],
-                object.reportType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/NotificationReportNotification } report
+         */
+      },
+      {
+        key: "setReport",
+        value: function setReport(report) {
+          this.report = report;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PreferencesNotification;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PreferencesNotification();
+          }
+
+          if (data.hasOwnProperty("report")) {
+            object.report = _ApiClient.default.convertToType(
+              data["report"],
+              object.reportType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PreferencesNotification;
+})();
 
 exports.default = PreferencesNotification;

@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ArticleLinksSelfIriTemplateMapping model module.
  * @module model/ArticleLinksSelfIriTemplateMapping
  */
-var ArticleLinksSelfIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ArticleLinksSelfIriTemplateMapping".
-   * @alias module:model/ArticleLinksSelfIriTemplateMapping
-   * @class
-  
-   */
-    function ArticleLinksSelfIriTemplateMapping() {
-      _classCallCheck(this, ArticleLinksSelfIriTemplateMapping);
-
-      this.article = null;
-    }
-    /**
-     * Constructs a "ArticleLinksSelfIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ArticleLinksSelfIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/ArticleLinksSelfIriTemplateMapping } The populated "ArticleLinksSelfIriTemplateMapping" instance.
+var ArticleLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ArticleLinksSelfIriTemplateMapping".
+     * @alias module:model/ArticleLinksSelfIriTemplateMapping
+     * @class
+    
      */
+  function ArticleLinksSelfIriTemplateMapping() {
+    _classCallCheck(this, ArticleLinksSelfIriTemplateMapping);
 
-    _createClass(
-      ArticleLinksSelfIriTemplateMapping,
-      [
-        {
-          key: "getArticle",
+    this.article = null;
+  }
+  /**
+   * Constructs a "ArticleLinksSelfIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ArticleLinksSelfIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/ArticleLinksSelfIriTemplateMapping } The populated "ArticleLinksSelfIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getArticle() {
-            return this.article;
-          }
-          /**
-           * @param { String } article
-           */
-        },
-        {
-          key: "setArticle",
-          value: function setArticle(article) {
-            this.article = article;
-          }
+  _createClass(
+    ArticleLinksSelfIriTemplateMapping,
+    [
+      {
+        key: "getArticle",
+
+        /**
+         * @return { String }
+         */
+        value: function getArticle() {
+          return this.article;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ArticleLinksSelfIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("article")) {
-              object.article = _ApiClient.default.convertToType(
-                data["article"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } article
+         */
+      },
+      {
+        key: "setArticle",
+        value: function setArticle(article) {
+          this.article = article;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ArticleLinksSelfIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ArticleLinksSelfIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("article")) {
+            object.article = _ApiClient.default.convertToType(
+              data["article"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ArticleLinksSelfIriTemplateMapping;
+})();
 
 exports.default = ArticleLinksSelfIriTemplateMapping;

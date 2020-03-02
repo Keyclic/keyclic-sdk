@@ -41,82 +41,80 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The BusinessActivityLinksSelfIriTemplate model module.
  * @module model/BusinessActivityLinksSelfIriTemplate
  */
-var BusinessActivityLinksSelfIriTemplate =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "BusinessActivityLinksSelfIriTemplate".
-   * @alias module:model/BusinessActivityLinksSelfIriTemplate
-   * @class
-  
-   */
-    function BusinessActivityLinksSelfIriTemplate() {
-      _classCallCheck(this, BusinessActivityLinksSelfIriTemplate);
-
-      this.mapping = null;
-      this.mappingType = _BusinessActivityLinksImageIriTemplateMapping.default;
-    }
-    /**
-     * Constructs a "BusinessActivityLinksSelfIriTemplate" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/BusinessActivityLinksSelfIriTemplate } object Optional instance to populate.
-     * @return { module:model/BusinessActivityLinksSelfIriTemplate } The populated "BusinessActivityLinksSelfIriTemplate" instance.
+var BusinessActivityLinksSelfIriTemplate = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "BusinessActivityLinksSelfIriTemplate".
+     * @alias module:model/BusinessActivityLinksSelfIriTemplate
+     * @class
+    
      */
+  function BusinessActivityLinksSelfIriTemplate() {
+    _classCallCheck(this, BusinessActivityLinksSelfIriTemplate);
 
-    _createClass(
-      BusinessActivityLinksSelfIriTemplate,
-      [
-        {
-          key: "getMapping",
+    this.mapping = null;
+    this.mappingType = _BusinessActivityLinksImageIriTemplateMapping.default;
+  }
+  /**
+   * Constructs a "BusinessActivityLinksSelfIriTemplate" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/BusinessActivityLinksSelfIriTemplate } object Optional instance to populate.
+   * @return { module:model/BusinessActivityLinksSelfIriTemplate } The populated "BusinessActivityLinksSelfIriTemplate" instance.
+   */
 
-          /**
-           * @return { module:model/BusinessActivityLinksImageIriTemplateMapping }
-           */
-          value: function getMapping() {
-            return this.mapping;
-          }
-          /**
-           * @param { module:model/BusinessActivityLinksImageIriTemplateMapping } mapping
-           */
-        },
-        {
-          key: "setMapping",
-          value: function setMapping(mapping) {
-            this.mapping = mapping;
-          }
+  _createClass(
+    BusinessActivityLinksSelfIriTemplate,
+    [
+      {
+        key: "getMapping",
+
+        /**
+         * @return { module:model/BusinessActivityLinksImageIriTemplateMapping }
+         */
+        value: function getMapping() {
+          return this.mapping;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new BusinessActivityLinksSelfIriTemplate();
-            }
-
-            if (data.hasOwnProperty("mapping")) {
-              object.mapping = _ApiClient.default.convertToType(
-                data["mapping"],
-                object.mappingType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/BusinessActivityLinksImageIriTemplateMapping } mapping
+         */
+      },
+      {
+        key: "setMapping",
+        value: function setMapping(mapping) {
+          this.mapping = mapping;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return BusinessActivityLinksSelfIriTemplate;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new BusinessActivityLinksSelfIriTemplate();
+          }
+
+          if (data.hasOwnProperty("mapping")) {
+            object.mapping = _ApiClient.default.convertToType(
+              data["mapping"],
+              object.mappingType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return BusinessActivityLinksSelfIriTemplate;
+})();
 
 exports.default = BusinessActivityLinksSelfIriTemplate;

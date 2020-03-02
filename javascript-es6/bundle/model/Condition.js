@@ -37,167 +37,162 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The Condition model module.
  * @module model/Condition
  */
-var Condition =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "Condition".
-   * @alias module:model/Condition
-   * @class
-  
-   */
-    function Condition() {
-      _classCallCheck(this, Condition);
-
-      this.id = null;
-      this.operator = null;
-      this.path = null;
-      this.type = null;
-      this.value = [];
-    }
-    /**
-     * Constructs a "Condition" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/Condition } object Optional instance to populate.
-     * @return { module:model/Condition } The populated "Condition" instance.
+var Condition = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "Condition".
+     * @alias module:model/Condition
+     * @class
+    
      */
+  function Condition() {
+    _classCallCheck(this, Condition);
 
-    _createClass(
-      Condition,
-      [
-        {
-          key: "getId",
+    this.id = null;
+    this.operator = null;
+    this.path = null;
+    this.type = null;
+    this.value = [];
+  }
+  /**
+   * Constructs a "Condition" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/Condition } object Optional instance to populate.
+   * @return { module:model/Condition } The populated "Condition" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getOperator",
-          value: function getOperator() {
-            return this.operator;
-          }
-          /**
-           * @param { String } operator
-           */
-        },
-        {
-          key: "setOperator",
-          value: function setOperator(operator) {
-            this.operator = operator;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getPath",
-          value: function getPath() {
-            return this.path;
-          }
-          /**
-           * @param { String } path
-           */
-        },
-        {
-          key: "setPath",
-          value: function setPath(path) {
-            this.path = path;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
-          }
-          /**
-           * @return { Array.<String> }
-           */
-        },
-        {
-          key: "getValue",
-          value: function getValue() {
-            return this.value;
-          }
-          /**
-           * @param { Array.<String> } value
-           */
-        },
-        {
-          key: "setValue",
-          value: function setValue(value) {
-            this.value = value;
-          }
+  _createClass(
+    Condition,
+    [
+      {
+        key: "getId",
+
+        /**
+         * @return { String }
+         */
+        value: function getId() {
+          return this.id;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new Condition();
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("operator")) {
-              object.operator = _ApiClient.default.convertToType(
-                data["operator"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("path")) {
-              object.path = _ApiClient.default.convertToType(
-                data["path"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("value")) {
-              object.value = _ApiClient.default.convertToType(
-                data["value"],
-                "['String']"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getOperator",
+        value: function getOperator() {
+          return this.operator;
         }
-      ]
-    );
+        /**
+         * @param { String } operator
+         */
+      },
+      {
+        key: "setOperator",
+        value: function setOperator(operator) {
+          this.operator = operator;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getPath",
+        value: function getPath() {
+          return this.path;
+        }
+        /**
+         * @param { String } path
+         */
+      },
+      {
+        key: "setPath",
+        value: function setPath(path) {
+          this.path = path;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getType",
+        value: function getType() {
+          return this.type;
+        }
+        /**
+         * @return { Array.<String> }
+         */
+      },
+      {
+        key: "getValue",
+        value: function getValue() {
+          return this.value;
+        }
+        /**
+         * @param { Array.<String> } value
+         */
+      },
+      {
+        key: "setValue",
+        value: function setValue(value) {
+          this.value = value;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return Condition;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new Condition();
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("operator")) {
+            object.operator = _ApiClient.default.convertToType(
+              data["operator"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("path")) {
+            object.path = _ApiClient.default.convertToType(
+              data["path"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("value")) {
+            object.value = _ApiClient.default.convertToType(
+              data["value"],
+              "['String']"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return Condition;
+})();
 
 exports.default = Condition;

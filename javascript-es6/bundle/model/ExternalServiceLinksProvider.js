@@ -41,110 +41,108 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ExternalServiceLinksProvider model module.
  * @module model/ExternalServiceLinksProvider
  */
-var ExternalServiceLinksProvider =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ExternalServiceLinksProvider".
-   * @alias module:model/ExternalServiceLinksProvider
-   * @class
-  
-   */
-    function ExternalServiceLinksProvider() {
-      _classCallCheck(this, ExternalServiceLinksProvider);
-
-      this.href = null;
-      this.iriTemplate = null;
-      this.iriTemplateType = _ExternalServiceLinksProviderIriTemplate.default;
-    }
-    /**
-     * Constructs a "ExternalServiceLinksProvider" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ExternalServiceLinksProvider } object Optional instance to populate.
-     * @return { module:model/ExternalServiceLinksProvider } The populated "ExternalServiceLinksProvider" instance.
+var ExternalServiceLinksProvider = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ExternalServiceLinksProvider".
+     * @alias module:model/ExternalServiceLinksProvider
+     * @class
+    
      */
+  function ExternalServiceLinksProvider() {
+    _classCallCheck(this, ExternalServiceLinksProvider);
 
-    _createClass(
-      ExternalServiceLinksProvider,
-      [
-        {
-          key: "getHref",
+    this.href = null;
+    this.iriTemplate = null;
+    this.iriTemplateType = _ExternalServiceLinksProviderIriTemplate.default;
+  }
+  /**
+   * Constructs a "ExternalServiceLinksProvider" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ExternalServiceLinksProvider } object Optional instance to populate.
+   * @return { module:model/ExternalServiceLinksProvider } The populated "ExternalServiceLinksProvider" instance.
+   */
 
-          /**
-           * Gets The URI of the provider associated to the given externalservice.
-           * @return { String }
-           */
-          value: function getHref() {
-            return this.href;
-          }
-          /**
-           * Sets The URI of the provider associated to the given externalservice.
-           * @param { String } href The URI of the provider associated to the given externalservice.
-           */
-        },
-        {
-          key: "setHref",
-          value: function setHref(href) {
-            this.href = href;
-          }
-          /**
-           * @return { module:model/ExternalServiceLinksProviderIriTemplate }
-           */
-        },
-        {
-          key: "getIriTemplate",
-          value: function getIriTemplate() {
-            return this.iriTemplate;
-          }
-          /**
-           * @param { module:model/ExternalServiceLinksProviderIriTemplate } iriTemplate
-           */
-        },
-        {
-          key: "setIriTemplate",
-          value: function setIriTemplate(iriTemplate) {
-            this.iriTemplate = iriTemplate;
-          }
+  _createClass(
+    ExternalServiceLinksProvider,
+    [
+      {
+        key: "getHref",
+
+        /**
+         * Gets The URI of the provider associated to the given externalservice.
+         * @return { String }
+         */
+        value: function getHref() {
+          return this.href;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ExternalServiceLinksProvider();
-            }
-
-            if (data.hasOwnProperty("href")) {
-              object.href = _ApiClient.default.convertToType(
-                data["href"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("iriTemplate")) {
-              object.iriTemplate = _ApiClient.default.convertToType(
-                data["iriTemplate"],
-                object.iriTemplateType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * Sets The URI of the provider associated to the given externalservice.
+         * @param { String } href The URI of the provider associated to the given externalservice.
+         */
+      },
+      {
+        key: "setHref",
+        value: function setHref(href) {
+          this.href = href;
         }
-      ]
-    );
+        /**
+         * @return { module:model/ExternalServiceLinksProviderIriTemplate }
+         */
+      },
+      {
+        key: "getIriTemplate",
+        value: function getIriTemplate() {
+          return this.iriTemplate;
+        }
+        /**
+         * @param { module:model/ExternalServiceLinksProviderIriTemplate } iriTemplate
+         */
+      },
+      {
+        key: "setIriTemplate",
+        value: function setIriTemplate(iriTemplate) {
+          this.iriTemplate = iriTemplate;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ExternalServiceLinksProvider;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ExternalServiceLinksProvider();
+          }
+
+          if (data.hasOwnProperty("href")) {
+            object.href = _ApiClient.default.convertToType(
+              data["href"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("iriTemplate")) {
+            object.iriTemplate = _ApiClient.default.convertToType(
+              data["iriTemplate"],
+              object.iriTemplateType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ExternalServiceLinksProvider;
+})();
 
 exports.default = ExternalServiceLinksProvider;

@@ -51,144 +51,142 @@ function _defineProperty(obj, key, value) {
  * The WebhookData model module.
  * @module model/WebhookData
  */
-var WebhookData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "WebhookData".
-   * @alias module:model/WebhookData
-   * @class
-  
-   * @param event { module:model/WebhookData.EventEnum }
-  
-   * @param organization { String }
-  
-   * @param payloadUrl { String }
-  
-   */
-    function WebhookData(event, organization, payloadUrl) {
-      _classCallCheck(this, WebhookData);
-
-      this.event = event;
-      this.organization = organization;
-      this.payloadUrl = payloadUrl;
-    }
-    /**
-     * Constructs a "WebhookData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/WebhookData } object Optional instance to populate.
-     * @return { module:model/WebhookData } The populated "WebhookData" instance.
+var WebhookData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "WebhookData".
+     * @alias module:model/WebhookData
+     * @class
+    
+     * @param event { module:model/WebhookData.EventEnum }
+    
+     * @param organization { String }
+    
+     * @param payloadUrl { String }
+    
      */
+  function WebhookData(event, organization, payloadUrl) {
+    _classCallCheck(this, WebhookData);
 
-    _createClass(
-      WebhookData,
-      [
-        {
-          key: "getEvent",
+    this.event = event;
+    this.organization = organization;
+    this.payloadUrl = payloadUrl;
+  }
+  /**
+   * Constructs a "WebhookData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/WebhookData } object Optional instance to populate.
+   * @return { module:model/WebhookData } The populated "WebhookData" instance.
+   */
 
-          /**
-           * @return { module:model/WebhookData.EventEnum }
-           */
-          value: function getEvent() {
-            return this.event;
-          }
-          /**
-           * @param { module:model/WebhookData.EventEnum } event
-           */
-        },
-        {
-          key: "setEvent",
-          value: function setEvent(event) {
-            this.event = event;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getOrganization",
-          value: function getOrganization() {
-            return this.organization;
-          }
-          /**
-           * @param { String } organization
-           */
-        },
-        {
-          key: "setOrganization",
-          value: function setOrganization(organization) {
-            this.organization = organization;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getPayloadUrl",
-          value: function getPayloadUrl() {
-            return this.payloadUrl;
-          }
-          /**
-           * @param { String } payloadUrl
-           */
-        },
-        {
-          key: "setPayloadUrl",
-          value: function setPayloadUrl(payloadUrl) {
-            this.payloadUrl = payloadUrl;
-          }
-          /**
-           * Allowed values for the "event" property.
-           * @enum { String }
-           */
+  _createClass(
+    WebhookData,
+    [
+      {
+        key: "getEvent",
+
+        /**
+         * @return { module:model/WebhookData.EventEnum }
+         */
+        value: function getEvent() {
+          return this.event;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new WebhookData();
-            }
-
-            if (data.hasOwnProperty("event")) {
-              object.event = _ApiClient.default.convertToType(
-                data["event"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("organization")) {
-              object.organization = _ApiClient.default.convertToType(
-                data["organization"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("payloadUrl")) {
-              object.payloadUrl = _ApiClient.default.convertToType(
-                data["payloadUrl"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/WebhookData.EventEnum } event
+         */
+      },
+      {
+        key: "setEvent",
+        value: function setEvent(event) {
+          this.event = event;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getOrganization",
+        value: function getOrganization() {
+          return this.organization;
+        }
+        /**
+         * @param { String } organization
+         */
+      },
+      {
+        key: "setOrganization",
+        value: function setOrganization(organization) {
+          this.organization = organization;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getPayloadUrl",
+        value: function getPayloadUrl() {
+          return this.payloadUrl;
+        }
+        /**
+         * @param { String } payloadUrl
+         */
+      },
+      {
+        key: "setPayloadUrl",
+        value: function setPayloadUrl(payloadUrl) {
+          this.payloadUrl = payloadUrl;
+        }
+        /**
+         * Allowed values for the "event" property.
+         * @enum { String }
+         */
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return WebhookData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new WebhookData();
+          }
+
+          if (data.hasOwnProperty("event")) {
+            object.event = _ApiClient.default.convertToType(
+              data["event"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("payloadUrl")) {
+            object.payloadUrl = _ApiClient.default.convertToType(
+              data["payloadUrl"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return WebhookData;
+})();
 
 exports.default = WebhookData;
 

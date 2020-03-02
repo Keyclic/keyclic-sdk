@@ -132,97 +132,95 @@ function _setPrototypeOf(o, p) {
  * The ReviewPagination model module.
  * @module model/ReviewPagination
  */
-var ReviewPagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(ReviewPagination, _Pagination);
+var ReviewPagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(ReviewPagination, _Pagination);
 
-    /**
-   * Constructs a new "ReviewPagination".
-   * @alias module:model/ReviewPagination
-   * @class
-  
-   */
-    function ReviewPagination() {
-      var _this;
-
-      _classCallCheck(this, ReviewPagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(ReviewPagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _ReviewCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "ReviewPagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReviewPagination } object Optional instance to populate.
-     * @return { module:model/ReviewPagination } The populated "ReviewPagination" instance.
+  /**
+     * Constructs a new "ReviewPagination".
+     * @alias module:model/ReviewPagination
+     * @class
+    
      */
+  function ReviewPagination() {
+    var _this;
 
-    _createClass(
-      ReviewPagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, ReviewPagination);
 
-          /**
-           * @return { module:model/ReviewCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/ReviewCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReviewPagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(ReviewPagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(ReviewPagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _ReviewCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "ReviewPagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReviewPagination } object Optional instance to populate.
+   * @return { module:model/ReviewPagination } The populated "ReviewPagination" instance.
+   */
 
-    return ReviewPagination;
-  })(_Pagination2.default);
+  _createClass(
+    ReviewPagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/ReviewCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/ReviewCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReviewPagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(ReviewPagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReviewPagination;
+})(_Pagination2.default);
 
 exports.default = ReviewPagination;

@@ -37,137 +37,135 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The InternalServiceData model module.
  * @module model/InternalServiceData
  */
-var InternalServiceData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "InternalServiceData".
-   * @alias module:model/InternalServiceData
-   * @class
-  
-   * @param organization { String }
-  
-   * @param name { String }
-  
-   */
-    function InternalServiceData(organization, name) {
-      _classCallCheck(this, InternalServiceData);
-
-      this.organization = organization;
-      this.name = name;
-      this.description = null;
-    }
-    /**
-     * Constructs a "InternalServiceData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/InternalServiceData } object Optional instance to populate.
-     * @return { module:model/InternalServiceData } The populated "InternalServiceData" instance.
+var InternalServiceData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "InternalServiceData".
+     * @alias module:model/InternalServiceData
+     * @class
+    
+     * @param organization { String }
+    
+     * @param name { String }
+    
      */
+  function InternalServiceData(organization, name) {
+    _classCallCheck(this, InternalServiceData);
 
-    _createClass(
-      InternalServiceData,
-      [
-        {
-          key: "getOrganization",
+    this.organization = organization;
+    this.name = name;
+    this.description = null;
+  }
+  /**
+   * Constructs a "InternalServiceData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/InternalServiceData } object Optional instance to populate.
+   * @return { module:model/InternalServiceData } The populated "InternalServiceData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getOrganization() {
-            return this.organization;
-          }
-          /**
-           * @param { String } organization
-           */
-        },
-        {
-          key: "setOrganization",
-          value: function setOrganization(organization) {
-            this.organization = organization;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getName",
-          value: function getName() {
-            return this.name;
-          }
-          /**
-           * @param { String } name
-           */
-        },
-        {
-          key: "setName",
-          value: function setName(name) {
-            this.name = name;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getDescription",
-          value: function getDescription() {
-            return this.description;
-          }
-          /**
-           * @param { String } description
-           */
-        },
-        {
-          key: "setDescription",
-          value: function setDescription(description) {
-            this.description = description;
-          }
+  _createClass(
+    InternalServiceData,
+    [
+      {
+        key: "getOrganization",
+
+        /**
+         * @return { String }
+         */
+        value: function getOrganization() {
+          return this.organization;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new InternalServiceData();
-            }
-
-            if (data.hasOwnProperty("organization")) {
-              object.organization = _ApiClient.default.convertToType(
-                data["organization"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("name")) {
-              object.name = _ApiClient.default.convertToType(
-                data["name"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("description")) {
-              object.description = _ApiClient.default.convertToType(
-                data["description"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } organization
+         */
+      },
+      {
+        key: "setOrganization",
+        value: function setOrganization(organization) {
+          this.organization = organization;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getName",
+        value: function getName() {
+          return this.name;
+        }
+        /**
+         * @param { String } name
+         */
+      },
+      {
+        key: "setName",
+        value: function setName(name) {
+          this.name = name;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getDescription",
+        value: function getDescription() {
+          return this.description;
+        }
+        /**
+         * @param { String } description
+         */
+      },
+      {
+        key: "setDescription",
+        value: function setDescription(description) {
+          this.description = description;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return InternalServiceData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new InternalServiceData();
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("name")) {
+            object.name = _ApiClient.default.convertToType(
+              data["name"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("description")) {
+            object.description = _ApiClient.default.convertToType(
+              data["description"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return InternalServiceData;
+})();
 
 exports.default = InternalServiceData;

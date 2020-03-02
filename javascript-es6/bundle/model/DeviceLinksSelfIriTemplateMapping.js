@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The DeviceLinksSelfIriTemplateMapping model module.
  * @module model/DeviceLinksSelfIriTemplateMapping
  */
-var DeviceLinksSelfIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "DeviceLinksSelfIriTemplateMapping".
-   * @alias module:model/DeviceLinksSelfIriTemplateMapping
-   * @class
-  
-   */
-    function DeviceLinksSelfIriTemplateMapping() {
-      _classCallCheck(this, DeviceLinksSelfIriTemplateMapping);
-
-      this.device = null;
-    }
-    /**
-     * Constructs a "DeviceLinksSelfIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/DeviceLinksSelfIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/DeviceLinksSelfIriTemplateMapping } The populated "DeviceLinksSelfIriTemplateMapping" instance.
+var DeviceLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "DeviceLinksSelfIriTemplateMapping".
+     * @alias module:model/DeviceLinksSelfIriTemplateMapping
+     * @class
+    
      */
+  function DeviceLinksSelfIriTemplateMapping() {
+    _classCallCheck(this, DeviceLinksSelfIriTemplateMapping);
 
-    _createClass(
-      DeviceLinksSelfIriTemplateMapping,
-      [
-        {
-          key: "getDevice",
+    this.device = null;
+  }
+  /**
+   * Constructs a "DeviceLinksSelfIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/DeviceLinksSelfIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/DeviceLinksSelfIriTemplateMapping } The populated "DeviceLinksSelfIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getDevice() {
-            return this.device;
-          }
-          /**
-           * @param { String } device
-           */
-        },
-        {
-          key: "setDevice",
-          value: function setDevice(device) {
-            this.device = device;
-          }
+  _createClass(
+    DeviceLinksSelfIriTemplateMapping,
+    [
+      {
+        key: "getDevice",
+
+        /**
+         * @return { String }
+         */
+        value: function getDevice() {
+          return this.device;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new DeviceLinksSelfIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("device")) {
-              object.device = _ApiClient.default.convertToType(
-                data["device"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } device
+         */
+      },
+      {
+        key: "setDevice",
+        value: function setDevice(device) {
+          this.device = device;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return DeviceLinksSelfIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new DeviceLinksSelfIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("device")) {
+            object.device = _ApiClient.default.convertToType(
+              data["device"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return DeviceLinksSelfIriTemplateMapping;
+})();
 
 exports.default = DeviceLinksSelfIriTemplateMapping;

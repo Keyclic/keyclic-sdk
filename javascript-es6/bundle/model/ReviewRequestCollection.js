@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ReviewRequestCollection model module.
  * @module model/ReviewRequestCollection
  */
-var ReviewRequestCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ReviewRequestCollection".
-   * @alias module:model/ReviewRequestCollection
-   * @class
-  
-   */
-    function ReviewRequestCollection() {
-      _classCallCheck(this, ReviewRequestCollection);
-
-      this.items = [];
-      this.itemsType = _ReviewRequest.default;
-    }
-    /**
-     * Constructs a "ReviewRequestCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ReviewRequestCollection } object Optional instance to populate.
-     * @return { module:model/ReviewRequestCollection } The populated "ReviewRequestCollection" instance.
+var ReviewRequestCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ReviewRequestCollection".
+     * @alias module:model/ReviewRequestCollection
+     * @class
+    
      */
+  function ReviewRequestCollection() {
+    _classCallCheck(this, ReviewRequestCollection);
 
-    _createClass(
-      ReviewRequestCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _ReviewRequest.default;
+  }
+  /**
+   * Constructs a "ReviewRequestCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ReviewRequestCollection } object Optional instance to populate.
+   * @return { module:model/ReviewRequestCollection } The populated "ReviewRequestCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/ReviewRequest> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/ReviewRequest> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    ReviewRequestCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/ReviewRequest> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ReviewRequestCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/ReviewRequest> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ReviewRequestCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ReviewRequestCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ReviewRequestCollection;
+})();
 
 exports.default = ReviewRequestCollection;

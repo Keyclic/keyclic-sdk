@@ -39,115 +39,110 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ConfigurationMemberType model module.
  * @module model/ConfigurationMemberType
  */
-var ConfigurationMemberType =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ConfigurationMemberType".
-   * @alias module:model/ConfigurationMemberType
-   * @class
-  
-   */
-    function ConfigurationMemberType() {
-      _classCallCheck(this, ConfigurationMemberType);
-
-      this.id = null;
-      this.roles = [];
-      this.type = null;
-      this.rolesType = _Role.default;
-    }
-    /**
-     * Constructs a "ConfigurationMemberType" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ConfigurationMemberType } object Optional instance to populate.
-     * @return { module:model/ConfigurationMemberType } The populated "ConfigurationMemberType" instance.
+var ConfigurationMemberType = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ConfigurationMemberType".
+     * @alias module:model/ConfigurationMemberType
+     * @class
+    
      */
+  function ConfigurationMemberType() {
+    _classCallCheck(this, ConfigurationMemberType);
 
-    _createClass(
-      ConfigurationMemberType,
-      [
-        {
-          key: "getId",
+    this.id = null;
+    this.roles = [];
+    this.type = null;
+    this.rolesType = _Role.default;
+  }
+  /**
+   * Constructs a "ConfigurationMemberType" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ConfigurationMemberType } object Optional instance to populate.
+   * @return { module:model/ConfigurationMemberType } The populated "ConfigurationMemberType" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getId() {
-            return this.id;
-          }
-          /**
-           * @return { Array.<module:model/Role> }
-           */
-        },
-        {
-          key: "getRoles",
-          value: function getRoles() {
-            return this.roles;
-          }
-          /**
-           * @param { Array.<module:model/Role> } roles
-           */
-        },
-        {
-          key: "setRoles",
-          value: function setRoles(roles) {
-            this.roles = roles;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getType",
-          value: function getType() {
-            return this.type;
-          }
+  _createClass(
+    ConfigurationMemberType,
+    [
+      {
+        key: "getId",
+
+        /**
+         * @return { String }
+         */
+        value: function getId() {
+          return this.id;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ConfigurationMemberType();
-            }
-
-            if (data.hasOwnProperty("id")) {
-              object.id = _ApiClient.default.convertToType(
-                data["id"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("roles")) {
-              object.roles = _ApiClient.default.convertToType(data["roles"], [
-                object.rolesType
-              ]);
-            }
-
-            if (data.hasOwnProperty("type")) {
-              object.type = _ApiClient.default.convertToType(
-                data["type"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @return { Array.<module:model/Role> }
+         */
+      },
+      {
+        key: "getRoles",
+        value: function getRoles() {
+          return this.roles;
         }
-      ]
-    );
+        /**
+         * @param { Array.<module:model/Role> } roles
+         */
+      },
+      {
+        key: "setRoles",
+        value: function setRoles(roles) {
+          this.roles = roles;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getType",
+        value: function getType() {
+          return this.type;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ConfigurationMemberType;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ConfigurationMemberType();
+          }
+
+          if (data.hasOwnProperty("id")) {
+            object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("roles")) {
+            object.roles = _ApiClient.default.convertToType(data["roles"], [
+              object.rolesType
+            ]);
+          }
+
+          if (data.hasOwnProperty("type")) {
+            object.type = _ApiClient.default.convertToType(
+              data["type"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ConfigurationMemberType;
+})();
 
 exports.default = ConfigurationMemberType;

@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ConfigurationLinksSelfIriTemplateMapping model module.
  * @module model/ConfigurationLinksSelfIriTemplateMapping
  */
-var ConfigurationLinksSelfIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ConfigurationLinksSelfIriTemplateMapping".
-   * @alias module:model/ConfigurationLinksSelfIriTemplateMapping
-   * @class
-  
-   */
-    function ConfigurationLinksSelfIriTemplateMapping() {
-      _classCallCheck(this, ConfigurationLinksSelfIriTemplateMapping);
-
-      this.configuration = null;
-    }
-    /**
-     * Constructs a "ConfigurationLinksSelfIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ConfigurationLinksSelfIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/ConfigurationLinksSelfIriTemplateMapping } The populated "ConfigurationLinksSelfIriTemplateMapping" instance.
+var ConfigurationLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ConfigurationLinksSelfIriTemplateMapping".
+     * @alias module:model/ConfigurationLinksSelfIriTemplateMapping
+     * @class
+    
      */
+  function ConfigurationLinksSelfIriTemplateMapping() {
+    _classCallCheck(this, ConfigurationLinksSelfIriTemplateMapping);
 
-    _createClass(
-      ConfigurationLinksSelfIriTemplateMapping,
-      [
-        {
-          key: "getConfiguration",
+    this.configuration = null;
+  }
+  /**
+   * Constructs a "ConfigurationLinksSelfIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ConfigurationLinksSelfIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/ConfigurationLinksSelfIriTemplateMapping } The populated "ConfigurationLinksSelfIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getConfiguration() {
-            return this.configuration;
-          }
-          /**
-           * @param { String } configuration
-           */
-        },
-        {
-          key: "setConfiguration",
-          value: function setConfiguration(configuration) {
-            this.configuration = configuration;
-          }
+  _createClass(
+    ConfigurationLinksSelfIriTemplateMapping,
+    [
+      {
+        key: "getConfiguration",
+
+        /**
+         * @return { String }
+         */
+        value: function getConfiguration() {
+          return this.configuration;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ConfigurationLinksSelfIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("configuration")) {
-              object.configuration = _ApiClient.default.convertToType(
-                data["configuration"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } configuration
+         */
+      },
+      {
+        key: "setConfiguration",
+        value: function setConfiguration(configuration) {
+          this.configuration = configuration;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ConfigurationLinksSelfIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ConfigurationLinksSelfIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("configuration")) {
+            object.configuration = _ApiClient.default.convertToType(
+              data["configuration"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ConfigurationLinksSelfIriTemplateMapping;
+})();
 
 exports.default = ConfigurationLinksSelfIriTemplateMapping;

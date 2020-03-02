@@ -37,107 +37,105 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The WebhookPatch model module.
  * @module model/WebhookPatch
  */
-var WebhookPatch =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "WebhookPatch".
-   * @alias module:model/WebhookPatch
-   * @class
-  
-   */
-    function WebhookPatch() {
-      _classCallCheck(this, WebhookPatch);
-
-      this.event = null;
-      this.payloadUrl = null;
-    }
-    /**
-     * Constructs a "WebhookPatch" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/WebhookPatch } object Optional instance to populate.
-     * @return { module:model/WebhookPatch } The populated "WebhookPatch" instance.
+var WebhookPatch = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "WebhookPatch".
+     * @alias module:model/WebhookPatch
+     * @class
+    
      */
+  function WebhookPatch() {
+    _classCallCheck(this, WebhookPatch);
 
-    _createClass(
-      WebhookPatch,
-      [
-        {
-          key: "getEvent",
+    this.event = null;
+    this.payloadUrl = null;
+  }
+  /**
+   * Constructs a "WebhookPatch" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/WebhookPatch } object Optional instance to populate.
+   * @return { module:model/WebhookPatch } The populated "WebhookPatch" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getEvent() {
-            return this.event;
-          }
-          /**
-           * @param { String } event
-           */
-        },
-        {
-          key: "setEvent",
-          value: function setEvent(event) {
-            this.event = event;
-          }
-          /**
-           * @return { String }
-           */
-        },
-        {
-          key: "getPayloadUrl",
-          value: function getPayloadUrl() {
-            return this.payloadUrl;
-          }
-          /**
-           * @param { String } payloadUrl
-           */
-        },
-        {
-          key: "setPayloadUrl",
-          value: function setPayloadUrl(payloadUrl) {
-            this.payloadUrl = payloadUrl;
-          }
+  _createClass(
+    WebhookPatch,
+    [
+      {
+        key: "getEvent",
+
+        /**
+         * @return { String }
+         */
+        value: function getEvent() {
+          return this.event;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new WebhookPatch();
-            }
-
-            if (data.hasOwnProperty("event")) {
-              object.event = _ApiClient.default.convertToType(
-                data["event"],
-                "String"
-              );
-            }
-
-            if (data.hasOwnProperty("payloadUrl")) {
-              object.payloadUrl = _ApiClient.default.convertToType(
-                data["payloadUrl"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } event
+         */
+      },
+      {
+        key: "setEvent",
+        value: function setEvent(event) {
+          this.event = event;
         }
-      ]
-    );
+        /**
+         * @return { String }
+         */
+      },
+      {
+        key: "getPayloadUrl",
+        value: function getPayloadUrl() {
+          return this.payloadUrl;
+        }
+        /**
+         * @param { String } payloadUrl
+         */
+      },
+      {
+        key: "setPayloadUrl",
+        value: function setPayloadUrl(payloadUrl) {
+          this.payloadUrl = payloadUrl;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return WebhookPatch;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new WebhookPatch();
+          }
+
+          if (data.hasOwnProperty("event")) {
+            object.event = _ApiClient.default.convertToType(
+              data["event"],
+              "String"
+            );
+          }
+
+          if (data.hasOwnProperty("payloadUrl")) {
+            object.payloadUrl = _ApiClient.default.convertToType(
+              data["payloadUrl"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return WebhookPatch;
+})();
 
 exports.default = WebhookPatch;

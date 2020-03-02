@@ -132,97 +132,95 @@ function _setPrototypeOf(o, p) {
  * The PlacePagination model module.
  * @module model/PlacePagination
  */
-var PlacePagination =
-  /*#__PURE__*/
-  (function(_Pagination) {
-    _inherits(PlacePagination, _Pagination);
+var PlacePagination = /*#__PURE__*/ (function(_Pagination) {
+  _inherits(PlacePagination, _Pagination);
 
-    /**
-   * Constructs a new "PlacePagination".
-   * @alias module:model/PlacePagination
-   * @class
-  
-   */
-    function PlacePagination() {
-      var _this;
-
-      _classCallCheck(this, PlacePagination);
-
-      _this = _possibleConstructorReturn(
-        this,
-        _getPrototypeOf(PlacePagination).call(this)
-      );
-      _this.embedded = null;
-      _this.embeddedType = _PlaceCollection.default;
-      return _this;
-    }
-    /**
-     * Constructs a "PlacePagination" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PlacePagination } object Optional instance to populate.
-     * @return { module:model/PlacePagination } The populated "PlacePagination" instance.
+  /**
+     * Constructs a new "PlacePagination".
+     * @alias module:model/PlacePagination
+     * @class
+    
      */
+  function PlacePagination() {
+    var _this;
 
-    _createClass(
-      PlacePagination,
-      [
-        {
-          key: "getEmbedded",
+    _classCallCheck(this, PlacePagination);
 
-          /**
-           * @return { module:model/PlaceCollection }
-           */
-          value: function getEmbedded() {
-            return this.embedded;
-          }
-          /**
-           * @param { module:model/PlaceCollection } embedded
-           */
-        },
-        {
-          key: "setEmbedded",
-          value: function setEmbedded(embedded) {
-            this.embedded = embedded;
-          }
-        }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PlacePagination();
-            }
-
-            object = _get(
-              _getPrototypeOf(PlacePagination),
-              "constructFromData",
-              this
-            ).call(this, data, object);
-
-            if (data.hasOwnProperty("_embedded")) {
-              object.embedded = _ApiClient.default.convertToType(
-                data["_embedded"],
-                object.embeddedType
-              );
-            }
-
-            return object;
-          }
-        }
-      ]
+    _this = _possibleConstructorReturn(
+      this,
+      _getPrototypeOf(PlacePagination).call(this)
     );
+    _this.embedded = null;
+    _this.embeddedType = _PlaceCollection.default;
+    return _this;
+  }
+  /**
+   * Constructs a "PlacePagination" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PlacePagination } object Optional instance to populate.
+   * @return { module:model/PlacePagination } The populated "PlacePagination" instance.
+   */
 
-    return PlacePagination;
-  })(_Pagination2.default);
+  _createClass(
+    PlacePagination,
+    [
+      {
+        key: "getEmbedded",
+
+        /**
+         * @return { module:model/PlaceCollection }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/PlaceCollection } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
+
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PlacePagination();
+          }
+
+          object = _get(
+            _getPrototypeOf(PlacePagination),
+            "constructFromData",
+            this
+          ).call(this, data, object);
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PlacePagination;
+})(_Pagination2.default);
 
 exports.default = PlacePagination;

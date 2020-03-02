@@ -37,83 +37,81 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The AssignData model module.
  * @module model/AssignData
  */
-var AssignData =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "AssignData".
-   * @alias module:model/AssignData
-   * @class
-  
-   * @param member { String }
-  
-   */
-    function AssignData(member) {
-      _classCallCheck(this, AssignData);
-
-      this.member = member;
-    }
-    /**
-     * Constructs a "AssignData" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/AssignData } object Optional instance to populate.
-     * @return { module:model/AssignData } The populated "AssignData" instance.
+var AssignData = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "AssignData".
+     * @alias module:model/AssignData
+     * @class
+    
+     * @param member { String }
+    
      */
+  function AssignData(member) {
+    _classCallCheck(this, AssignData);
 
-    _createClass(
-      AssignData,
-      [
-        {
-          key: "getMember",
+    this.member = member;
+  }
+  /**
+   * Constructs a "AssignData" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/AssignData } object Optional instance to populate.
+   * @return { module:model/AssignData } The populated "AssignData" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getMember() {
-            return this.member;
-          }
-          /**
-           * @param { String } member
-           */
-        },
-        {
-          key: "setMember",
-          value: function setMember(member) {
-            this.member = member;
-          }
+  _createClass(
+    AssignData,
+    [
+      {
+        key: "getMember",
+
+        /**
+         * @return { String }
+         */
+        value: function getMember() {
+          return this.member;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new AssignData();
-            }
-
-            if (data.hasOwnProperty("member")) {
-              object.member = _ApiClient.default.convertToType(
-                data["member"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } member
+         */
+      },
+      {
+        key: "setMember",
+        value: function setMember(member) {
+          this.member = member;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return AssignData;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new AssignData();
+          }
+
+          if (data.hasOwnProperty("member")) {
+            object.member = _ApiClient.default.convertToType(
+              data["member"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return AssignData;
+})();
 
 exports.default = AssignData;

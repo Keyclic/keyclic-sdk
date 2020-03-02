@@ -39,81 +39,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The ArticleCollection model module.
  * @module model/ArticleCollection
  */
-var ArticleCollection =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "ArticleCollection".
-   * @alias module:model/ArticleCollection
-   * @class
-  
-   */
-    function ArticleCollection() {
-      _classCallCheck(this, ArticleCollection);
-
-      this.items = [];
-      this.itemsType = _Article.default;
-    }
-    /**
-     * Constructs a "ArticleCollection" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/ArticleCollection } object Optional instance to populate.
-     * @return { module:model/ArticleCollection } The populated "ArticleCollection" instance.
+var ArticleCollection = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "ArticleCollection".
+     * @alias module:model/ArticleCollection
+     * @class
+    
      */
+  function ArticleCollection() {
+    _classCallCheck(this, ArticleCollection);
 
-    _createClass(
-      ArticleCollection,
-      [
-        {
-          key: "getItems",
+    this.items = [];
+    this.itemsType = _Article.default;
+  }
+  /**
+   * Constructs a "ArticleCollection" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/ArticleCollection } object Optional instance to populate.
+   * @return { module:model/ArticleCollection } The populated "ArticleCollection" instance.
+   */
 
-          /**
-           * @return { Array.<module:model/Article> }
-           */
-          value: function getItems() {
-            return this.items;
-          }
-          /**
-           * @param { Array.<module:model/Article> } items
-           */
-        },
-        {
-          key: "setItems",
-          value: function setItems(items) {
-            this.items = items;
-          }
+  _createClass(
+    ArticleCollection,
+    [
+      {
+        key: "getItems",
+
+        /**
+         * @return { Array.<module:model/Article> }
+         */
+        value: function getItems() {
+          return this.items;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new ArticleCollection();
-            }
-
-            if (data.hasOwnProperty("items")) {
-              object.items = _ApiClient.default.convertToType(data["items"], [
-                object.itemsType
-              ]);
-            }
-
-            return object;
-          }
+        /**
+         * @param { Array.<module:model/Article> } items
+         */
+      },
+      {
+        key: "setItems",
+        value: function setItems(items) {
+          this.items = items;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return ArticleCollection;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new ArticleCollection();
+          }
+
+          if (data.hasOwnProperty("items")) {
+            object.items = _ApiClient.default.convertToType(data["items"], [
+              object.itemsType
+            ]);
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return ArticleCollection;
+})();
 
 exports.default = ArticleCollection;

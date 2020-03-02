@@ -45,109 +45,107 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The InternalServiceLinks model module.
  * @module model/InternalServiceLinks
  */
-var InternalServiceLinks =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "InternalServiceLinks".
-   * @alias module:model/InternalServiceLinks
-   * @class
-  
-   */
-    function InternalServiceLinks() {
-      _classCallCheck(this, InternalServiceLinks);
-
-      this.organization = null;
-      this.self = null;
-      this.organizationType = _InternalServiceLinksOrganization.default;
-      this.selfType = _InternalServiceLinksSelf.default;
-    }
-    /**
-     * Constructs a "InternalServiceLinks" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/InternalServiceLinks } object Optional instance to populate.
-     * @return { module:model/InternalServiceLinks } The populated "InternalServiceLinks" instance.
+var InternalServiceLinks = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "InternalServiceLinks".
+     * @alias module:model/InternalServiceLinks
+     * @class
+    
      */
+  function InternalServiceLinks() {
+    _classCallCheck(this, InternalServiceLinks);
 
-    _createClass(
-      InternalServiceLinks,
-      [
-        {
-          key: "getOrganization",
+    this.organization = null;
+    this.self = null;
+    this.organizationType = _InternalServiceLinksOrganization.default;
+    this.selfType = _InternalServiceLinksSelf.default;
+  }
+  /**
+   * Constructs a "InternalServiceLinks" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/InternalServiceLinks } object Optional instance to populate.
+   * @return { module:model/InternalServiceLinks } The populated "InternalServiceLinks" instance.
+   */
 
-          /**
-           * @return { module:model/InternalServiceLinksOrganization }
-           */
-          value: function getOrganization() {
-            return this.organization;
-          }
-          /**
-           * @param { module:model/InternalServiceLinksOrganization } organization
-           */
-        },
-        {
-          key: "setOrganization",
-          value: function setOrganization(organization) {
-            this.organization = organization;
-          }
-          /**
-           * @return { module:model/InternalServiceLinksSelf }
-           */
-        },
-        {
-          key: "getSelf",
-          value: function getSelf() {
-            return this.self;
-          }
-          /**
-           * @param { module:model/InternalServiceLinksSelf } self
-           */
-        },
-        {
-          key: "setSelf",
-          value: function setSelf(self) {
-            this.self = self;
-          }
+  _createClass(
+    InternalServiceLinks,
+    [
+      {
+        key: "getOrganization",
+
+        /**
+         * @return { module:model/InternalServiceLinksOrganization }
+         */
+        value: function getOrganization() {
+          return this.organization;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new InternalServiceLinks();
-            }
-
-            if (data.hasOwnProperty("organization")) {
-              object.organization = _ApiClient.default.convertToType(
-                data["organization"],
-                object.organizationType
-              );
-            }
-
-            if (data.hasOwnProperty("self")) {
-              object.self = _ApiClient.default.convertToType(
-                data["self"],
-                object.selfType
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { module:model/InternalServiceLinksOrganization } organization
+         */
+      },
+      {
+        key: "setOrganization",
+        value: function setOrganization(organization) {
+          this.organization = organization;
         }
-      ]
-    );
+        /**
+         * @return { module:model/InternalServiceLinksSelf }
+         */
+      },
+      {
+        key: "getSelf",
+        value: function getSelf() {
+          return this.self;
+        }
+        /**
+         * @param { module:model/InternalServiceLinksSelf } self
+         */
+      },
+      {
+        key: "setSelf",
+        value: function setSelf(self) {
+          this.self = self;
+        }
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return InternalServiceLinks;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new InternalServiceLinks();
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
+              object.organizationType
+            );
+          }
+
+          if (data.hasOwnProperty("self")) {
+            object.self = _ApiClient.default.convertToType(
+              data["self"],
+              object.selfType
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return InternalServiceLinks;
+})();
 
 exports.default = InternalServiceLinks;

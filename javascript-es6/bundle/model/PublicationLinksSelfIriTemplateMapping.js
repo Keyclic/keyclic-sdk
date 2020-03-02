@@ -37,81 +37,79 @@ function _createClass(Constructor, protoProps, staticProps) {
  * The PublicationLinksSelfIriTemplateMapping model module.
  * @module model/PublicationLinksSelfIriTemplateMapping
  */
-var PublicationLinksSelfIriTemplateMapping =
-  /*#__PURE__*/
-  (function() {
-    /**
-   * Constructs a new "PublicationLinksSelfIriTemplateMapping".
-   * @alias module:model/PublicationLinksSelfIriTemplateMapping
-   * @class
-  
-   */
-    function PublicationLinksSelfIriTemplateMapping() {
-      _classCallCheck(this, PublicationLinksSelfIriTemplateMapping);
-
-      this.publication = null;
-    }
-    /**
-     * Constructs a "PublicationLinksSelfIriTemplateMapping" from a plain JavaScript object.
-     * @param { object } data The plain JavaScript object bearing properties of interest.
-     * @param { module:model/PublicationLinksSelfIriTemplateMapping } object Optional instance to populate.
-     * @return { module:model/PublicationLinksSelfIriTemplateMapping } The populated "PublicationLinksSelfIriTemplateMapping" instance.
+var PublicationLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
+  /**
+     * Constructs a new "PublicationLinksSelfIriTemplateMapping".
+     * @alias module:model/PublicationLinksSelfIriTemplateMapping
+     * @class
+    
      */
+  function PublicationLinksSelfIriTemplateMapping() {
+    _classCallCheck(this, PublicationLinksSelfIriTemplateMapping);
 
-    _createClass(
-      PublicationLinksSelfIriTemplateMapping,
-      [
-        {
-          key: "getPublication",
+    this.publication = null;
+  }
+  /**
+   * Constructs a "PublicationLinksSelfIriTemplateMapping" from a plain JavaScript object.
+   * @param { object } data The plain JavaScript object bearing properties of interest.
+   * @param { module:model/PublicationLinksSelfIriTemplateMapping } object Optional instance to populate.
+   * @return { module:model/PublicationLinksSelfIriTemplateMapping } The populated "PublicationLinksSelfIriTemplateMapping" instance.
+   */
 
-          /**
-           * @return { String }
-           */
-          value: function getPublication() {
-            return this.publication;
-          }
-          /**
-           * @param { String } publication
-           */
-        },
-        {
-          key: "setPublication",
-          value: function setPublication(publication) {
-            this.publication = publication;
-          }
+  _createClass(
+    PublicationLinksSelfIriTemplateMapping,
+    [
+      {
+        key: "getPublication",
+
+        /**
+         * @return { String }
+         */
+        value: function getPublication() {
+          return this.publication;
         }
-      ],
-      [
-        {
-          key: "constructFromData",
-          value: function constructFromData(data) {
-            var object =
-              arguments.length > 1 && arguments[1] !== undefined
-                ? arguments[1]
-                : null;
-
-            if (data === null) {
-              throw new Error("No data to build object");
-            }
-
-            if (object === null) {
-              object = new PublicationLinksSelfIriTemplateMapping();
-            }
-
-            if (data.hasOwnProperty("publication")) {
-              object.publication = _ApiClient.default.convertToType(
-                data["publication"],
-                "String"
-              );
-            }
-
-            return object;
-          }
+        /**
+         * @param { String } publication
+         */
+      },
+      {
+        key: "setPublication",
+        value: function setPublication(publication) {
+          this.publication = publication;
         }
-      ]
-    );
+      }
+    ],
+    [
+      {
+        key: "constructFromData",
+        value: function constructFromData(data) {
+          var object =
+            arguments.length > 1 && arguments[1] !== undefined
+              ? arguments[1]
+              : null;
 
-    return PublicationLinksSelfIriTemplateMapping;
-  })();
+          if (data === null) {
+            throw new Error("No data to build object");
+          }
+
+          if (object === null) {
+            object = new PublicationLinksSelfIriTemplateMapping();
+          }
+
+          if (data.hasOwnProperty("publication")) {
+            object.publication = _ApiClient.default.convertToType(
+              data["publication"],
+              "String"
+            );
+          }
+
+          return object;
+        }
+      }
+    ]
+  );
+
+  return PublicationLinksSelfIriTemplateMapping;
+})();
 
 exports.default = PublicationLinksSelfIriTemplateMapping;
