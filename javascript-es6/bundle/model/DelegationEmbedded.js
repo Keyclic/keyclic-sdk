@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DelegationEmbedded = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DelegationEmbedded".
-     * @alias module:model/DelegationEmbedded
-     * @class
-    
-     */
+   * Constructs a new "DelegationEmbedded".
+   * @alias module:model/DelegationEmbedded
+   * @class
+  
+   */
   function DelegationEmbedded() {
     _classCallCheck(this, DelegationEmbedded);
 

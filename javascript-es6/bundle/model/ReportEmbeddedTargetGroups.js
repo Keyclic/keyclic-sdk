@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ReportEmbeddedTargetGroups = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ReportEmbeddedTargetGroups".
-     * @alias module:model/ReportEmbeddedTargetGroups
-     * @class
-    
-     */
+   * Constructs a new "ReportEmbeddedTargetGroups".
+   * @alias module:model/ReportEmbeddedTargetGroups
+   * @class
+  
+   */
   function ReportEmbeddedTargetGroups() {
     _classCallCheck(this, ReportEmbeddedTargetGroups);
 

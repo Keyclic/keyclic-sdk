@@ -47,13 +47,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Workflow = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Workflow".
-     * @alias module:model/Workflow
-     * @class
-    
-     * @param name { String }
-    
-     */
+   * Constructs a new "Workflow".
+   * @alias module:model/Workflow
+   * @class
+  
+   * @param name { String }
+  
+   */
   function Workflow(name) {
     _classCallCheck(this, Workflow);
 

@@ -47,11 +47,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ApplicationLinks = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ApplicationLinks".
-     * @alias module:model/ApplicationLinks
-     * @class
-    
-     */
+   * Constructs a new "ApplicationLinks".
+   * @alias module:model/ApplicationLinks
+   * @class
+  
+   */
   function ApplicationLinks() {
     _classCallCheck(this, ApplicationLinks);
 

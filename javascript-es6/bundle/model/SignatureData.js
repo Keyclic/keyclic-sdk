@@ -43,13 +43,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var SignatureData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "SignatureData".
-     * @alias module:model/SignatureData
-     * @class
-    
-     * @param image { String }
-    
-     */
+   * Constructs a new "SignatureData".
+   * @alias module:model/SignatureData
+   * @class
+  
+   * @param image { String }
+  
+   */
   function SignatureData(image) {
     _classCallCheck(this, SignatureData);
 

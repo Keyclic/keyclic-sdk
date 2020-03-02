@@ -136,11 +136,11 @@ var ReviewPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(ReviewPagination, _Pagination);
 
   /**
-     * Constructs a new "ReviewPagination".
-     * @alias module:model/ReviewPagination
-     * @class
-    
-     */
+   * Constructs a new "ReviewPagination".
+   * @alias module:model/ReviewPagination
+   * @class
+  
+   */
   function ReviewPagination() {
     var _this;
 

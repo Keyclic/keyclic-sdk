@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DocumentDataPermission = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DocumentDataPermission".
-     * @alias module:model/DocumentDataPermission
-     * @class
-    
-     */
+   * Constructs a new "DocumentDataPermission".
+   * @alias module:model/DocumentDataPermission
+   * @class
+  
+   */
   function DocumentDataPermission() {
     _classCallCheck(this, DocumentDataPermission);
 

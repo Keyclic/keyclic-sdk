@@ -39,13 +39,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ContributionData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ContributionData".
-     * @alias module:model/ContributionData
-     * @class
-    
-     * @param feedback { String }
-    
-     */
+   * Constructs a new "ContributionData".
+   * @alias module:model/ContributionData
+   * @class
+  
+   * @param feedback { String }
+  
+   */
   function ContributionData(feedback) {
     _classCallCheck(this, ContributionData);
 

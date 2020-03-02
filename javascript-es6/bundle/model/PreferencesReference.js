@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PreferencesReference = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PreferencesReference".
-     * @alias module:model/PreferencesReference
-     * @class
-    
-     */
+   * Constructs a new "PreferencesReference".
+   * @alias module:model/PreferencesReference
+   * @class
+  
+   */
   function PreferencesReference() {
     _classCallCheck(this, PreferencesReference);
 

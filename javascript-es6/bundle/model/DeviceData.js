@@ -39,17 +39,17 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DeviceData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DeviceData".
-     * @alias module:model/DeviceData
-     * @class
-    
-     * @param token { String }
-    
-     * @param platform { String }
-    
-     * @param person { String }
-    
-     */
+   * Constructs a new "DeviceData".
+   * @alias module:model/DeviceData
+   * @class
+  
+   * @param token { String }
+  
+   * @param platform { String }
+  
+   * @param person { String }
+  
+   */
   function DeviceData(token, platform, person) {
     _classCallCheck(this, DeviceData);
 

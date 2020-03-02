@@ -136,11 +136,11 @@ var ReportPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(ReportPagination, _Pagination);
 
   /**
-     * Constructs a new "ReportPagination".
-     * @alias module:model/ReportPagination
-     * @class
-    
-     */
+   * Constructs a new "ReportPagination".
+   * @alias module:model/ReportPagination
+   * @class
+  
+   */
   function ReportPagination() {
     var _this;
 

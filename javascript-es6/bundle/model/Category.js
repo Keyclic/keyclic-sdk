@@ -43,13 +43,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Category = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Category".
-     * @alias module:model/Category
-     * @class
-    
-     * @param name { String }
-    
-     */
+   * Constructs a new "Category".
+   * @alias module:model/Category
+   * @class
+  
+   * @param name { String }
+  
+   */
   function Category(name) {
     _classCallCheck(this, Category);
 

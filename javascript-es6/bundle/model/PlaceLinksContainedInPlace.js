@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PlaceLinksContainedInPlace = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PlaceLinksContainedInPlace".
-     * @alias module:model/PlaceLinksContainedInPlace
-     * @class
-    
-     */
+   * Constructs a new "PlaceLinksContainedInPlace".
+   * @alias module:model/PlaceLinksContainedInPlace
+   * @class
+  
+   */
   function PlaceLinksContainedInPlace() {
     _classCallCheck(this, PlaceLinksContainedInPlace);
 

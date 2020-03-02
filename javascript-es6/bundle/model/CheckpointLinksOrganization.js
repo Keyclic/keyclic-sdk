@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var CheckpointLinksOrganization = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "CheckpointLinksOrganization".
-     * @alias module:model/CheckpointLinksOrganization
-     * @class
-    
-     */
+   * Constructs a new "CheckpointLinksOrganization".
+   * @alias module:model/CheckpointLinksOrganization
+   * @class
+  
+   */
   function CheckpointLinksOrganization() {
     _classCallCheck(this, CheckpointLinksOrganization);
 

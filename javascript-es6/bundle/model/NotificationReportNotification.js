@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var NotificationReportNotification = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "NotificationReportNotification".
-     * @alias module:model/NotificationReportNotification
-     * @class
-    
-     */
+   * Constructs a new "NotificationReportNotification".
+   * @alias module:model/NotificationReportNotification
+   * @class
+  
+   */
   function NotificationReportNotification() {
     _classCallCheck(this, NotificationReportNotification);
 

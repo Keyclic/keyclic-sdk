@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Role = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Role".
-     * @alias module:model/Role
-     * @class
-    
-     */
+   * Constructs a new "Role".
+   * @alias module:model/Role
+   * @class
+  
+   */
   function Role() {
     _classCallCheck(this, Role);
 

@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ActivityGroup = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ActivityGroup".
-     * @alias module:model/ActivityGroup
-     * @class
-    
-     */
+   * Constructs a new "ActivityGroup".
+   * @alias module:model/ActivityGroup
+   * @class
+  
+   */
   function ActivityGroup() {
     _classCallCheck(this, ActivityGroup);
 

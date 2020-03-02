@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _Organization = _interopRequireDefault(require("./Organization"));
+
+var _Person = _interopRequireDefault(require("./Person"));
+
 var _Role = _interopRequireDefault(require("./Role"));
 
 function _interopRequireDefault(obj) {
@@ -41,16 +45,20 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var MemberEmbedded = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "MemberEmbedded".
-     * @alias module:model/MemberEmbedded
-     * @class
-    
-     */
+   * Constructs a new "MemberEmbedded".
+   * @alias module:model/MemberEmbedded
+   * @class
+  
+   */
   function MemberEmbedded() {
     _classCallCheck(this, MemberEmbedded);
 
     this.availableRoles = [];
+    this.organization = null;
+    this.person = null;
     this.roles = [];
+    this.organizationType = _Organization.default;
+    this.personType = _Person.default;
     this.rolesType = _Role.default;
   }
   /**
@@ -80,6 +88,42 @@ var MemberEmbedded = /*#__PURE__*/ (function() {
         key: "setAvailableRoles",
         value: function setAvailableRoles(availableRoles) {
           this.availableRoles = availableRoles;
+        }
+        /**
+         * @return { module:model/Organization }
+         */
+      },
+      {
+        key: "getOrganization",
+        value: function getOrganization() {
+          return this.organization;
+        }
+        /**
+         * @param { module:model/Organization } organization
+         */
+      },
+      {
+        key: "setOrganization",
+        value: function setOrganization(organization) {
+          this.organization = organization;
+        }
+        /**
+         * @return { module:model/Person }
+         */
+      },
+      {
+        key: "getPerson",
+        value: function getPerson() {
+          return this.person;
+        }
+        /**
+         * @param { module:model/Person } person
+         */
+      },
+      {
+        key: "setPerson",
+        value: function setPerson(person) {
+          this.person = person;
         }
         /**
          * @return { Array.<module:model/Role> }
@@ -122,6 +166,20 @@ var MemberEmbedded = /*#__PURE__*/ (function() {
             object.availableRoles = _ApiClient.default.convertToType(
               data["availableRoles"],
               "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("organization")) {
+            object.organization = _ApiClient.default.convertToType(
+              data["organization"],
+              object.organizationType
+            );
+          }
+
+          if (data.hasOwnProperty("person")) {
+            object.person = _ApiClient.default.convertToType(
+              data["person"],
+              object.personType
             );
           }
 

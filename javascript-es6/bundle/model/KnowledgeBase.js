@@ -43,13 +43,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var KnowledgeBase = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "KnowledgeBase".
-     * @alias module:model/KnowledgeBase
-     * @class
-    
-     * @param name { String }
-    
-     */
+   * Constructs a new "KnowledgeBase".
+   * @alias module:model/KnowledgeBase
+   * @class
+  
+   * @param name { String }
+  
+   */
   function KnowledgeBase(name) {
     _classCallCheck(this, KnowledgeBase);
 

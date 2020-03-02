@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ReportLinksCategory = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ReportLinksCategory".
-     * @alias module:model/ReportLinksCategory
-     * @class
-    
-     */
+   * Constructs a new "ReportLinksCategory".
+   * @alias module:model/ReportLinksCategory
+   * @class
+  
+   */
   function ReportLinksCategory() {
     _classCallCheck(this, ReportLinksCategory);
 

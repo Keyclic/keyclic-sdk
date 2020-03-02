@@ -39,15 +39,15 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DelegationData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DelegationData".
-     * @alias module:model/DelegationData
-     * @class
-    
-     * @param report { String }
-    
-     * @param service { String }
-    
-     */
+   * Constructs a new "DelegationData".
+   * @alias module:model/DelegationData
+   * @class
+  
+   * @param report { String }
+  
+   * @param service { String }
+  
+   */
   function DelegationData(report, service) {
     _classCallCheck(this, DelegationData);
 

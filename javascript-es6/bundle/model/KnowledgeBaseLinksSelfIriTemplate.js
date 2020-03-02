@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var KnowledgeBaseLinksSelfIriTemplate = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "KnowledgeBaseLinksSelfIriTemplate".
-     * @alias module:model/KnowledgeBaseLinksSelfIriTemplate
-     * @class
-    
-     */
+   * Constructs a new "KnowledgeBaseLinksSelfIriTemplate".
+   * @alias module:model/KnowledgeBaseLinksSelfIriTemplate
+   * @class
+  
+   */
   function KnowledgeBaseLinksSelfIriTemplate() {
     _classCallCheck(this, KnowledgeBaseLinksSelfIriTemplate);
 

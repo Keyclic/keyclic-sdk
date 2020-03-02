@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var FeedbackLinksCategory = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "FeedbackLinksCategory".
-     * @alias module:model/FeedbackLinksCategory
-     * @class
-    
-     */
+   * Constructs a new "FeedbackLinksCategory".
+   * @alias module:model/FeedbackLinksCategory
+   * @class
+  
+   */
   function FeedbackLinksCategory() {
     _classCallCheck(this, FeedbackLinksCategory);
 

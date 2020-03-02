@@ -55,11 +55,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ReportEmbedded = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ReportEmbedded".
-     * @alias module:model/ReportEmbedded
-     * @class
-    
-     */
+   * Constructs a new "ReportEmbedded".
+   * @alias module:model/ReportEmbedded
+   * @class
+  
+   */
   function ReportEmbedded() {
     _classCallCheck(this, ReportEmbedded);
 

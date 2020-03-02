@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OperationCollection = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OperationCollection".
-     * @alias module:model/OperationCollection
-     * @class
-    
-     */
+   * Constructs a new "OperationCollection".
+   * @alias module:model/OperationCollection
+   * @class
+  
+   */
   function OperationCollection() {
     _classCallCheck(this, OperationCollection);
 

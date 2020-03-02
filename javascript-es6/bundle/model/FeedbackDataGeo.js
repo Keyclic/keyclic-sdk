@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var FeedbackDataGeo = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "FeedbackDataGeo".
-     * @alias module:model/FeedbackDataGeo
-     * @class
-    
-     */
+   * Constructs a new "FeedbackDataGeo".
+   * @alias module:model/FeedbackDataGeo
+   * @class
+  
+   */
   function FeedbackDataGeo() {
     _classCallCheck(this, FeedbackDataGeo);
 

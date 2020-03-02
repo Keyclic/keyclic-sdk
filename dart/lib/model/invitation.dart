@@ -21,6 +21,12 @@ class Invitation {
       createdAt = DateTime.parse('${createdAt.toIso8601String()}Z');
     }
 
+    DateTime expiredAt =
+        json['expiredAt'] == null ? null : DateTime.parse(json['expiredAt']);
+    if (expiredAt is DateTime && expiredAt.isUtc == false) {
+      expiredAt = DateTime.parse('${expiredAt.toIso8601String()}Z');
+    }
+
     DateTime updatedAt =
         json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt']);
     if (updatedAt is DateTime && updatedAt.isUtc == false) {
@@ -30,7 +36,7 @@ class Invitation {
     return Invitation(
       links: InvitationLinks.fromJson(json['_links']),
       createdAt: createdAt,
-      expiredAt: InvitationDateTime.fromJson(json['expiredAt']),
+      expiredAt: expiredAt,
       id: json['id'],
       type: json['type'],
       updatedAt: updatedAt,
@@ -41,7 +47,7 @@ class Invitation {
 
   DateTime createdAt;
 
-  InvitationDateTime expiredAt;
+  DateTime expiredAt;
 
   String id;
 
@@ -101,7 +107,7 @@ class Invitation {
     return {
       if (links != null) '_links': links,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (expiredAt != null) 'expiredAt': expiredAt,
+      if (expiredAt != null) 'expiredAt': expiredAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),

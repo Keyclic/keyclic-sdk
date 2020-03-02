@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Feature = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Feature".
-     * @alias module:model/Feature
-     * @class
-    
-     */
+   * Constructs a new "Feature".
+   * @alias module:model/Feature
+   * @class
+  
+   */
   function Feature() {
     _classCallCheck(this, Feature);
 

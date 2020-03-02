@@ -47,11 +47,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PersonPatch = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PersonPatch".
-     * @alias module:model/PersonPatch
-     * @class
-    
-     */
+   * Constructs a new "PersonPatch".
+   * @alias module:model/PersonPatch
+   * @class
+  
+   */
   function PersonPatch() {
     _classCallCheck(this, PersonPatch);
 

@@ -39,13 +39,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var AssignData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "AssignData".
-     * @alias module:model/AssignData
-     * @class
-    
-     * @param member { String }
-    
-     */
+   * Constructs a new "AssignData".
+   * @alias module:model/AssignData
+   * @class
+  
+   * @param member { String }
+  
+   */
   function AssignData(member) {
     _classCallCheck(this, AssignData);
 

@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var WebhookCollection = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "WebhookCollection".
-     * @alias module:model/WebhookCollection
-     * @class
-    
-     */
+   * Constructs a new "WebhookCollection".
+   * @alias module:model/WebhookCollection
+   * @class
+  
+   */
   function WebhookCollection() {
     _classCallCheck(this, WebhookCollection);
 

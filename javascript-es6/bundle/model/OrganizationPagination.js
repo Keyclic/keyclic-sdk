@@ -138,11 +138,11 @@ var OrganizationPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(OrganizationPagination, _Pagination);
 
   /**
-     * Constructs a new "OrganizationPagination".
-     * @alias module:model/OrganizationPagination
-     * @class
-    
-     */
+   * Constructs a new "OrganizationPagination".
+   * @alias module:model/OrganizationPagination
+   * @class
+  
+   */
   function OrganizationPagination() {
     var _this;
 

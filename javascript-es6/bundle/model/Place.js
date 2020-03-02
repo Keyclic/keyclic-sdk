@@ -47,13 +47,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Place = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Place".
-     * @alias module:model/Place
-     * @class
-    
-     * @param name { String }
-    
-     */
+   * Constructs a new "Place".
+   * @alias module:model/Place
+   * @class
+  
+   * @param name { String }
+  
+   */
   function Place(name) {
     _classCallCheck(this, Place);
 

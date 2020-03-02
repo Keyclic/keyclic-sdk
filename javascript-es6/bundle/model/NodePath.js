@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var NodePath = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "NodePath".
-     * @alias module:model/NodePath
-     * @class
-    
-     */
+   * Constructs a new "NodePath".
+   * @alias module:model/NodePath
+   * @class
+  
+   */
   function NodePath() {
     _classCallCheck(this, NodePath);
 

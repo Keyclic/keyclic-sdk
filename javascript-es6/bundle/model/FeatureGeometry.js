@@ -53,11 +53,11 @@ function _defineProperty(obj, key, value) {
  */
 var FeatureGeometry = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "FeatureGeometry".
-     * @alias module:model/FeatureGeometry
-     * @class
-    
-     */
+   * Constructs a new "FeatureGeometry".
+   * @alias module:model/FeatureGeometry
+   * @class
+  
+   */
   function FeatureGeometry() {
     _classCallCheck(this, FeatureGeometry);
 

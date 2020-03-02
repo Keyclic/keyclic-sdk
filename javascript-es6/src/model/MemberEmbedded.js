@@ -11,6 +11,8 @@
  */
 
 import ApiClient from "../ApiClient";
+import Organization from "./Organization";
+import Person from "./Person";
 import Role from "./Role";
 
 /**
@@ -26,8 +28,12 @@ export default class MemberEmbedded {
      */
   constructor() {
     this.availableRoles = [];
+    this.organization = null;
+    this.person = null;
     this.roles = [];
 
+    this.organizationType = Organization;
+    this.personType = Person;
     this.rolesType = Role;
   }
 
@@ -52,6 +58,18 @@ export default class MemberEmbedded {
         "['String']"
       );
     }
+    if (data.hasOwnProperty("organization")) {
+      object.organization = ApiClient.convertToType(
+        data["organization"],
+        object.organizationType
+      );
+    }
+    if (data.hasOwnProperty("person")) {
+      object.person = ApiClient.convertToType(
+        data["person"],
+        object.personType
+      );
+    }
     if (data.hasOwnProperty("roles")) {
       object.roles = ApiClient.convertToType(data["roles"], [object.rolesType]);
     }
@@ -71,6 +89,32 @@ export default class MemberEmbedded {
    */
   setAvailableRoles(availableRoles) {
     this.availableRoles = availableRoles;
+  }
+  /**
+   * @return { module:model/Organization }
+   */
+  getOrganization() {
+    return this.organization;
+  }
+
+  /**
+   * @param { module:model/Organization } organization
+   */
+  setOrganization(organization) {
+    this.organization = organization;
+  }
+  /**
+   * @return { module:model/Person }
+   */
+  getPerson() {
+    return this.person;
+  }
+
+  /**
+   * @param { module:model/Person } person
+   */
+  setPerson(person) {
+    this.person = person;
   }
   /**
    * @return { Array.<module:model/Role> }

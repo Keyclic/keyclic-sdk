@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PersonPatchPreferences = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PersonPatchPreferences".
-     * @alias module:model/PersonPatchPreferences
-     * @class
-    
-     */
+   * Constructs a new "PersonPatchPreferences".
+   * @alias module:model/PersonPatchPreferences
+   * @class
+  
+   */
   function PersonPatchPreferences() {
     _classCallCheck(this, PersonPatchPreferences);
 

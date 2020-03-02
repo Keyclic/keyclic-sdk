@@ -39,13 +39,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ResetPasswordData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ResetPasswordData".
-     * @alias module:model/ResetPasswordData
-     * @class
-    
-     * @param email { String }
-    
-     */
+   * Constructs a new "ResetPasswordData".
+   * @alias module:model/ResetPasswordData
+   * @class
+  
+   * @param email { String }
+  
+   */
   function ResetPasswordData(email) {
     _classCallCheck(this, ResetPasswordData);
 

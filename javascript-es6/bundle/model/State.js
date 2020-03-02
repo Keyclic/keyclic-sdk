@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var State = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "State".
-     * @alias module:model/State
-     * @class
-    
-     */
+   * Constructs a new "State".
+   * @alias module:model/State
+   * @class
+  
+   */
   function State() {
     _classCallCheck(this, State);
 

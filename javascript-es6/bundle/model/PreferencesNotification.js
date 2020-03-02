@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PreferencesNotification = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PreferencesNotification".
-     * @alias module:model/PreferencesNotification
-     * @class
-    
-     */
+   * Constructs a new "PreferencesNotification".
+   * @alias module:model/PreferencesNotification
+   * @class
+  
+   */
   function PreferencesNotification() {
     _classCallCheck(this, PreferencesNotification);
 

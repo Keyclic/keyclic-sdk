@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OperationLinksImage = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OperationLinksImage".
-     * @alias module:model/OperationLinksImage
-     * @class
-    
-     */
+   * Constructs a new "OperationLinksImage".
+   * @alias module:model/OperationLinksImage
+   * @class
+  
+   */
   function OperationLinksImage() {
     _classCallCheck(this, OperationLinksImage);
 

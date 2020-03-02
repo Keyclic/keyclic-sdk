@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PlaceLinksContainsPlacesIriTemplateMapping = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PlaceLinksContainsPlacesIriTemplateMapping".
-     * @alias module:model/PlaceLinksContainsPlacesIriTemplateMapping
-     * @class
-    
-     */
+   * Constructs a new "PlaceLinksContainsPlacesIriTemplateMapping".
+   * @alias module:model/PlaceLinksContainsPlacesIriTemplateMapping
+   * @class
+  
+   */
   function PlaceLinksContainsPlacesIriTemplateMapping() {
     _classCallCheck(this, PlaceLinksContainsPlacesIriTemplateMapping);
 

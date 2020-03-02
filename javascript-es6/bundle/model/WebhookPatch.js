@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var WebhookPatch = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "WebhookPatch".
-     * @alias module:model/WebhookPatch
-     * @class
-    
-     */
+   * Constructs a new "WebhookPatch".
+   * @alias module:model/WebhookPatch
+   * @class
+  
+   */
   function WebhookPatch() {
     _classCallCheck(this, WebhookPatch);
 

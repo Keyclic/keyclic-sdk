@@ -197,7 +197,6 @@ import InternalServiceLinksSelfIriTemplateMapping from "./model/InternalServiceL
 import InternalServicePatch from "./model/InternalServicePatch";
 import Invitation from "./model/Invitation";
 import InvitationData from "./model/InvitationData";
-import InvitationDateTime from "./model/InvitationDateTime";
 import InvitationLinks from "./model/InvitationLinks";
 import InvitationLinksMember from "./model/InvitationLinksMember";
 import InvitationLinksMemberIriTemplate from "./model/InvitationLinksMemberIriTemplate";
@@ -511,7 +510,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.3.3
+ * @version 2.3.7
  */
 export {
   /**
@@ -1424,11 +1423,6 @@ export {
    * @property { module:model/InvitationData }
    */
   InvitationData,
-  /**
-   * The InvitationDateTime model constructor.
-   * @property { module:model/InvitationDateTime }
-   */
-  InvitationDateTime,
   /**
    * The InvitationLinks model constructor.
    * @property { module:model/InvitationLinks }

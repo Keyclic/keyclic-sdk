@@ -39,15 +39,15 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ReviewData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ReviewData".
-     * @alias module:model/ReviewData
-     * @class
-    
-     * @param reviewRating { Number }
-    
-     * @param reviewRequest { String }
-    
-     */
+   * Constructs a new "ReviewData".
+   * @alias module:model/ReviewData
+   * @class
+  
+   * @param reviewRating { Number }
+  
+   * @param reviewRequest { String }
+  
+   */
   function ReviewData(reviewRating, reviewRequest) {
     _classCallCheck(this, ReviewData);
 

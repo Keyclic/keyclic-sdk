@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OccupantLinksMember = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OccupantLinksMember".
-     * @alias module:model/OccupantLinksMember
-     * @class
-    
-     */
+   * Constructs a new "OccupantLinksMember".
+   * @alias module:model/OccupantLinksMember
+   * @class
+  
+   */
   function OccupantLinksMember() {
     _classCallCheck(this, OccupantLinksMember);
 

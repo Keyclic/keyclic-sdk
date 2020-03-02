@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ConfigurationMemberType = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ConfigurationMemberType".
-     * @alias module:model/ConfigurationMemberType
-     * @class
-    
-     */
+   * Constructs a new "ConfigurationMemberType".
+   * @alias module:model/ConfigurationMemberType
+   * @class
+  
+   */
   function ConfigurationMemberType() {
     _classCallCheck(this, ConfigurationMemberType);
 

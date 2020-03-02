@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DeviceLinksPersonIriTemplate = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DeviceLinksPersonIriTemplate".
-     * @alias module:model/DeviceLinksPersonIriTemplate
-     * @class
-    
-     */
+   * Constructs a new "DeviceLinksPersonIriTemplate".
+   * @alias module:model/DeviceLinksPersonIriTemplate
+   * @class
+  
+   */
   function DeviceLinksPersonIriTemplate() {
     _classCallCheck(this, DeviceLinksPersonIriTemplate);
 

@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PropertyConditionList = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PropertyConditionList".
-     * @alias module:model/PropertyConditionList
-     * @class
-    
-     */
+   * Constructs a new "PropertyConditionList".
+   * @alias module:model/PropertyConditionList
+   * @class
+  
+   */
   function PropertyConditionList() {
     _classCallCheck(this, PropertyConditionList);
 

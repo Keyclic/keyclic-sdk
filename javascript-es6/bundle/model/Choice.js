@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Choice = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Choice".
-     * @alias module:model/Choice
-     * @class
-    
-     */
+   * Constructs a new "Choice".
+   * @alias module:model/Choice
+   * @class
+  
+   */
   function Choice() {
     _classCallCheck(this, Choice);
 

@@ -1483,12 +1483,6 @@ Object.defineProperty(exports, "InvitationData", {
     return _InvitationData.default;
   }
 });
-Object.defineProperty(exports, "InvitationDateTime", {
-  enumerable: true,
-  get: function get() {
-    return _InvitationDateTime.default;
-  }
-});
 Object.defineProperty(exports, "InvitationLinks", {
   enumerable: true,
   get: function get() {
@@ -3893,10 +3887,6 @@ var _InternalServicePatch = _interopRequireDefault(
 var _Invitation = _interopRequireDefault(require("./model/Invitation"));
 
 var _InvitationData = _interopRequireDefault(require("./model/InvitationData"));
-
-var _InvitationDateTime = _interopRequireDefault(
-  require("./model/InvitationDateTime")
-);
 
 var _InvitationLinks = _interopRequireDefault(
   require("./model/InvitationLinks")

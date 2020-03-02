@@ -47,13 +47,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var InternalService = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "InternalService".
-     * @alias module:model/InternalService
-     * @class
-    
-     * @param name { String }
-    
-     */
+   * Constructs a new "InternalService".
+   * @alias module:model/InternalService
+   * @class
+  
+   * @param name { String }
+  
+   */
   function InternalService(name) {
     _classCallCheck(this, InternalService);
 

@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ActivityEntity = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ActivityEntity".
-     * @alias module:model/ActivityEntity
-     * @class
-    
-     */
+   * Constructs a new "ActivityEntity".
+   * @alias module:model/ActivityEntity
+   * @class
+  
+   */
   function ActivityEntity() {
     _classCallCheck(this, ActivityEntity);
 

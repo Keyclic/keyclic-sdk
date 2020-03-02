@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var BusinessActivityLinksSchema = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "BusinessActivityLinksSchema".
-     * @alias module:model/BusinessActivityLinksSchema
-     * @class
-    
-     */
+   * Constructs a new "BusinessActivityLinksSchema".
+   * @alias module:model/BusinessActivityLinksSchema
+   * @class
+  
+   */
   function BusinessActivityLinksSchema() {
     _classCallCheck(this, BusinessActivityLinksSchema);
 

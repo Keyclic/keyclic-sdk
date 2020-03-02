@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OrganizationLinksLogo = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OrganizationLinksLogo".
-     * @alias module:model/OrganizationLinksLogo
-     * @class
-    
-     */
+   * Constructs a new "OrganizationLinksLogo".
+   * @alias module:model/OrganizationLinksLogo
+   * @class
+  
+   */
   function OrganizationLinksLogo() {
     _classCallCheck(this, OrganizationLinksLogo);
 

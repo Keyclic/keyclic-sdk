@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Polygon = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Polygon".
-     * @alias module:model/Polygon
-     * @class
-    
-     */
+   * Constructs a new "Polygon".
+   * @alias module:model/Polygon
+   * @class
+  
+   */
   function Polygon() {
     _classCallCheck(this, Polygon);
 

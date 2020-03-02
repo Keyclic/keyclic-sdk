@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ApplicationAbout = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ApplicationAbout".
-     * @alias module:model/ApplicationAbout
-     * @class
-    
-     */
+   * Constructs a new "ApplicationAbout".
+   * @alias module:model/ApplicationAbout
+   * @class
+  
+   */
   function ApplicationAbout() {
     _classCallCheck(this, ApplicationAbout);
 

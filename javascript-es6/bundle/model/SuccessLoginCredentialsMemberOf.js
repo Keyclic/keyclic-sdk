@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var SuccessLoginCredentialsMemberOf = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "SuccessLoginCredentialsMemberOf".
-     * @alias module:model/SuccessLoginCredentialsMemberOf
-     * @class
-    
-     */
+   * Constructs a new "SuccessLoginCredentialsMemberOf".
+   * @alias module:model/SuccessLoginCredentialsMemberOf
+   * @class
+  
+   */
   function SuccessLoginCredentialsMemberOf() {
     _classCallCheck(this, SuccessLoginCredentialsMemberOf);
 

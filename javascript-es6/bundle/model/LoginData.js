@@ -39,15 +39,15 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var LoginData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "LoginData".
-     * @alias module:model/LoginData
-     * @class
-    
-     * @param login { String }
-    
-     * @param password { String }
-    
-     */
+   * Constructs a new "LoginData".
+   * @alias module:model/LoginData
+   * @class
+  
+   * @param login { String }
+  
+   * @param password { String }
+  
+   */
   function LoginData(login, password) {
     _classCallCheck(this, LoginData);
 

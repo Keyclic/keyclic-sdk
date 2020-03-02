@@ -138,11 +138,11 @@ var InternalServicePagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(InternalServicePagination, _Pagination);
 
   /**
-     * Constructs a new "InternalServicePagination".
-     * @alias module:model/InternalServicePagination
-     * @class
-    
-     */
+   * Constructs a new "InternalServicePagination".
+   * @alias module:model/InternalServicePagination
+   * @class
+  
+   */
   function InternalServicePagination() {
     var _this;
 

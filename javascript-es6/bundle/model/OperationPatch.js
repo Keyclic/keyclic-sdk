@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OperationPatch = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OperationPatch".
-     * @alias module:model/OperationPatch
-     * @class
-    
-     */
+   * Constructs a new "OperationPatch".
+   * @alias module:model/OperationPatch
+   * @class
+  
+   */
   function OperationPatch() {
     _classCallCheck(this, OperationPatch);
 

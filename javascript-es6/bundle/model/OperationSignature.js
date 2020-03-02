@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OperationSignature = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OperationSignature".
-     * @alias module:model/OperationSignature
-     * @class
-    
-     */
+   * Constructs a new "OperationSignature".
+   * @alias module:model/OperationSignature
+   * @class
+  
+   */
   function OperationSignature() {
     _classCallCheck(this, OperationSignature);
 

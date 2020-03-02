@@ -138,11 +138,11 @@ var OccupantPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(OccupantPagination, _Pagination);
 
   /**
-     * Constructs a new "OccupantPagination".
-     * @alias module:model/OccupantPagination
-     * @class
-    
-     */
+   * Constructs a new "OccupantPagination".
+   * @alias module:model/OccupantPagination
+   * @class
+  
+   */
   function OccupantPagination() {
     var _this;
 

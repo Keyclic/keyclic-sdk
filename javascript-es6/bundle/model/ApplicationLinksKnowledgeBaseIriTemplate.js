@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ApplicationLinksKnowledgeBaseIriTemplate = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ApplicationLinksKnowledgeBaseIriTemplate".
-     * @alias module:model/ApplicationLinksKnowledgeBaseIriTemplate
-     * @class
-    
-     */
+   * Constructs a new "ApplicationLinksKnowledgeBaseIriTemplate".
+   * @alias module:model/ApplicationLinksKnowledgeBaseIriTemplate
+   * @class
+  
+   */
   function ApplicationLinksKnowledgeBaseIriTemplate() {
     _classCallCheck(this, ApplicationLinksKnowledgeBaseIriTemplate);
 

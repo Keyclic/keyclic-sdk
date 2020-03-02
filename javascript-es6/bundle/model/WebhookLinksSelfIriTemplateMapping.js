@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var WebhookLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "WebhookLinksSelfIriTemplateMapping".
-     * @alias module:model/WebhookLinksSelfIriTemplateMapping
-     * @class
-    
-     */
+   * Constructs a new "WebhookLinksSelfIriTemplateMapping".
+   * @alias module:model/WebhookLinksSelfIriTemplateMapping
+   * @class
+  
+   */
   function WebhookLinksSelfIriTemplateMapping() {
     _classCallCheck(this, WebhookLinksSelfIriTemplateMapping);
 

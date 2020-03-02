@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var BusinessActivityCollection = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "BusinessActivityCollection".
-     * @alias module:model/BusinessActivityCollection
-     * @class
-    
-     */
+   * Constructs a new "BusinessActivityCollection".
+   * @alias module:model/BusinessActivityCollection
+   * @class
+  
+   */
   function BusinessActivityCollection() {
     _classCallCheck(this, BusinessActivityCollection);
 

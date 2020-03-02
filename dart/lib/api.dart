@@ -226,7 +226,6 @@ part 'model/internal_service_links_self_iri_template_mapping.dart';
 part 'model/internal_service_patch.dart';
 part 'model/invitation.dart';
 part 'model/invitation_data.dart';
-part 'model/invitation_date_time.dart';
 part 'model/invitation_links.dart';
 part 'model/invitation_links_member.dart';
 part 'model/invitation_links_member_iri_template.dart';

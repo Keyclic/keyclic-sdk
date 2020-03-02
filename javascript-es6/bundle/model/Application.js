@@ -49,15 +49,15 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Application = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Application".
-     * @alias module:model/Application
-     * @class
-    
-     * @param name { String }
-    
-     * @param token { String }
-    
-     */
+   * Constructs a new "Application".
+   * @alias module:model/Application
+   * @class
+  
+   * @param name { String }
+  
+   * @param token { String }
+  
+   */
   function Application(name, token) {
     _classCallCheck(this, Application);
 

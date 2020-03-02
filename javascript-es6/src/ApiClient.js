@@ -12,7 +12,7 @@
 
 /**
  * @module ApiClient
- * @version 2.3.3
+ * @version 2.3.7
  */
 
 /**

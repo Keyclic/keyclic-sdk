@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var InternalServicePatch = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "InternalServicePatch".
-     * @alias module:model/InternalServicePatch
-     * @class
-    
-     */
+   * Constructs a new "InternalServicePatch".
+   * @alias module:model/InternalServicePatch
+   * @class
+  
+   */
   function InternalServicePatch() {
     _classCallCheck(this, InternalServicePatch);
 

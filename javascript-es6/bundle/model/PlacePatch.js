@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PlacePatch = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PlacePatch".
-     * @alias module:model/PlacePatch
-     * @class
-    
-     */
+   * Constructs a new "PlacePatch".
+   * @alias module:model/PlacePatch
+   * @class
+  
+   */
   function PlacePatch() {
     _classCallCheck(this, PlacePatch);
 

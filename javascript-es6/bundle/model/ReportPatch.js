@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ReportPatch = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ReportPatch".
-     * @alias module:model/ReportPatch
-     * @class
-    
-     */
+   * Constructs a new "ReportPatch".
+   * @alias module:model/ReportPatch
+   * @class
+  
+   */
   function ReportPatch() {
     _classCallCheck(this, ReportPatch);
 

@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var WebhookLinksOrganization = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "WebhookLinksOrganization".
-     * @alias module:model/WebhookLinksOrganization
-     * @class
-    
-     */
+   * Constructs a new "WebhookLinksOrganization".
+   * @alias module:model/WebhookLinksOrganization
+   * @class
+  
+   */
   function WebhookLinksOrganization() {
     _classCallCheck(this, WebhookLinksOrganization);
 

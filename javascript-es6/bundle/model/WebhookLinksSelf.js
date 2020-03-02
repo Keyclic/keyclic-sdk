@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var WebhookLinksSelf = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "WebhookLinksSelf".
-     * @alias module:model/WebhookLinksSelf
-     * @class
-    
-     */
+   * Constructs a new "WebhookLinksSelf".
+   * @alias module:model/WebhookLinksSelf
+   * @class
+  
+   */
   function WebhookLinksSelf() {
     _classCallCheck(this, WebhookLinksSelf);
 

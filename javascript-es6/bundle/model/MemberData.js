@@ -57,13 +57,13 @@ function _defineProperty(obj, key, value) {
  */
 var MemberData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "MemberData".
-     * @alias module:model/MemberData
-     * @class
-    
-     * @param organization { String }
-    
-     */
+   * Constructs a new "MemberData".
+   * @alias module:model/MemberData
+   * @class
+  
+   * @param organization { String }
+  
+   */
   function MemberData(organization) {
     _classCallCheck(this, MemberData);
 

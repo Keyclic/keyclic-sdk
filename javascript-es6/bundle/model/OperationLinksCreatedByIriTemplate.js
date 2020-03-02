@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OperationLinksCreatedByIriTemplate = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OperationLinksCreatedByIriTemplate".
-     * @alias module:model/OperationLinksCreatedByIriTemplate
-     * @class
-    
-     */
+   * Constructs a new "OperationLinksCreatedByIriTemplate".
+   * @alias module:model/OperationLinksCreatedByIriTemplate
+   * @class
+  
+   */
   function OperationLinksCreatedByIriTemplate() {
     _classCallCheck(this, OperationLinksCreatedByIriTemplate);
 

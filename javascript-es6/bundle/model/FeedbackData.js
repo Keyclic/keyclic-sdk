@@ -55,17 +55,17 @@ function _defineProperty(obj, key, value) {
  */
 var FeedbackData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "FeedbackData".
-     * @alias module:model/FeedbackData
-     * @class
-    
-     * @param geo { module:model/FeedbackDataGeo }
-    
-     * @param place { String }
-    
-     * @param visibility { module:model/FeedbackData.VisibilityEnum }
-    
-     */
+   * Constructs a new "FeedbackData".
+   * @alias module:model/FeedbackData
+   * @class
+  
+   * @param geo { module:model/FeedbackDataGeo }
+  
+   * @param place { String }
+  
+   * @param visibility { module:model/FeedbackData.VisibilityEnum }
+  
+   */
   function FeedbackData(geo, place, visibility) {
     _classCallCheck(this, FeedbackData);
 

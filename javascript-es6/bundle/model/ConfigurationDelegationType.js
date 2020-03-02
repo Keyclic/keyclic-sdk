@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ConfigurationDelegationType = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ConfigurationDelegationType".
-     * @alias module:model/ConfigurationDelegationType
-     * @class
-    
-     */
+   * Constructs a new "ConfigurationDelegationType".
+   * @alias module:model/ConfigurationDelegationType
+   * @class
+  
+   */
   function ConfigurationDelegationType() {
     _classCallCheck(this, ConfigurationDelegationType);
 

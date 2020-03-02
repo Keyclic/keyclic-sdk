@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var NodeEmbedded = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "NodeEmbedded".
-     * @alias module:model/NodeEmbedded
-     * @class
-    
-     */
+   * Constructs a new "NodeEmbedded".
+   * @alias module:model/NodeEmbedded
+   * @class
+  
+   */
   function NodeEmbedded() {
     _classCallCheck(this, NodeEmbedded);
 

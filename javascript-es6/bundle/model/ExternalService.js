@@ -47,13 +47,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ExternalService = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ExternalService".
-     * @alias module:model/ExternalService
-     * @class
-    
-     * @param name { String }
-    
-     */
+   * Constructs a new "ExternalService".
+   * @alias module:model/ExternalService
+   * @class
+  
+   * @param name { String }
+  
+   */
   function ExternalService(name) {
     _classCallCheck(this, ExternalService);
 

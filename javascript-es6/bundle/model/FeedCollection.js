@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var FeedCollection = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "FeedCollection".
-     * @alias module:model/FeedCollection
-     * @class
-    
-     */
+   * Constructs a new "FeedCollection".
+   * @alias module:model/FeedCollection
+   * @class
+  
+   */
   function FeedCollection() {
     _classCallCheck(this, FeedCollection);
 

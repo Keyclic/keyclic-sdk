@@ -47,13 +47,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Feedback = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Feedback".
-     * @alias module:model/Feedback
-     * @class
-    
-     * @param state { Array.<String> }
-    
-     */
+   * Constructs a new "Feedback".
+   * @alias module:model/Feedback
+   * @class
+  
+   * @param state { Array.<String> }
+  
+   */
   function Feedback(state) {
     _classCallCheck(this, Feedback);
 

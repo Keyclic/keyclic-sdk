@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ActivityAggregatedPagination = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ActivityAggregatedPagination".
-     * @alias module:model/ActivityAggregatedPagination
-     * @class
-    
-     */
+   * Constructs a new "ActivityAggregatedPagination".
+   * @alias module:model/ActivityAggregatedPagination
+   * @class
+  
+   */
   function ActivityAggregatedPagination() {
     _classCallCheck(this, ActivityAggregatedPagination);
 

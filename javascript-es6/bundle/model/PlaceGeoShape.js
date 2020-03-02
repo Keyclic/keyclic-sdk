@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PlaceGeoShape = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PlaceGeoShape".
-     * @alias module:model/PlaceGeoShape
-     * @class
-    
-     */
+   * Constructs a new "PlaceGeoShape".
+   * @alias module:model/PlaceGeoShape
+   * @class
+  
+   */
   function PlaceGeoShape() {
     _classCallCheck(this, PlaceGeoShape);
 

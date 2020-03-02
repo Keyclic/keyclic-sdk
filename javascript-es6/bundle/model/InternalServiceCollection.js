@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var InternalServiceCollection = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "InternalServiceCollection".
-     * @alias module:model/InternalServiceCollection
-     * @class
-    
-     */
+   * Constructs a new "InternalServiceCollection".
+   * @alias module:model/InternalServiceCollection
+   * @class
+  
+   */
   function InternalServiceCollection() {
     _classCallCheck(this, InternalServiceCollection);
 

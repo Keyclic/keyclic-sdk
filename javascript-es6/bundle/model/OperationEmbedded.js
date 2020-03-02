@@ -47,11 +47,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OperationEmbedded = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OperationEmbedded".
-     * @alias module:model/OperationEmbedded
-     * @class
-    
-     */
+   * Constructs a new "OperationEmbedded".
+   * @alias module:model/OperationEmbedded
+   * @class
+  
+   */
   function OperationEmbedded() {
     _classCallCheck(this, OperationEmbedded);
 

@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PersonAgreement = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PersonAgreement".
-     * @alias module:model/PersonAgreement
-     * @class
-    
-     */
+   * Constructs a new "PersonAgreement".
+   * @alias module:model/PersonAgreement
+   * @class
+  
+   */
   function PersonAgreement() {
     _classCallCheck(this, PersonAgreement);
 

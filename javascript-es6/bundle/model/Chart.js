@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Chart = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Chart".
-     * @alias module:model/Chart
-     * @class
-    
-     */
+   * Constructs a new "Chart".
+   * @alias module:model/Chart
+   * @class
+  
+   */
   function Chart() {
     _classCallCheck(this, Chart);
 

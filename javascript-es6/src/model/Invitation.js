@@ -11,7 +11,6 @@
  */
 
 import ApiClient from "../ApiClient";
-import InvitationDateTime from "./InvitationDateTime";
 import InvitationLinks from "./InvitationLinks";
 
 /**
@@ -34,7 +33,6 @@ export default class Invitation {
     this.updatedAt = null;
 
     this.linksType = InvitationLinks;
-    this.expiredAtType = InvitationDateTime;
   }
 
   /**
@@ -59,10 +57,7 @@ export default class Invitation {
       object.createdAt = ApiClient.convertToType(data["createdAt"], "Date");
     }
     if (data.hasOwnProperty("expiredAt")) {
-      object.expiredAt = ApiClient.convertToType(
-        data["expiredAt"],
-        object.expiredAtType
-      );
+      object.expiredAt = ApiClient.convertToType(data["expiredAt"], "Date");
     }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
@@ -98,14 +93,14 @@ export default class Invitation {
   }
 
   /**
-   * @return { module:model/InvitationDateTime }
+   * @return { Date }
    */
   getExpiredAt() {
     return this.expiredAt;
   }
 
   /**
-   * @param { module:model/InvitationDateTime } expiredAt
+   * @param { Date } expiredAt
    */
   setExpiredAt(expiredAt) {
     this.expiredAt = expiredAt;

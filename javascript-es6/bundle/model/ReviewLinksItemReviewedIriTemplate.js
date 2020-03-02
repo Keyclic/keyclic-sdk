@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ReviewLinksItemReviewedIriTemplate = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ReviewLinksItemReviewedIriTemplate".
-     * @alias module:model/ReviewLinksItemReviewedIriTemplate
-     * @class
-    
-     */
+   * Constructs a new "ReviewLinksItemReviewedIriTemplate".
+   * @alias module:model/ReviewLinksItemReviewedIriTemplate
+   * @class
+  
+   */
   function ReviewLinksItemReviewedIriTemplate() {
     _classCallCheck(this, ReviewLinksItemReviewedIriTemplate);
 

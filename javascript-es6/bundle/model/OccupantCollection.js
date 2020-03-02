@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OccupantCollection = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OccupantCollection".
-     * @alias module:model/OccupantCollection
-     * @class
-    
-     */
+   * Constructs a new "OccupantCollection".
+   * @alias module:model/OccupantCollection
+   * @class
+  
+   */
   function OccupantCollection() {
     _classCallCheck(this, OccupantCollection);
 

@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var AgreementTermsOfService = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "AgreementTermsOfService".
-     * @alias module:model/AgreementTermsOfService
-     * @class
-    
-     */
+   * Constructs a new "AgreementTermsOfService".
+   * @alias module:model/AgreementTermsOfService
+   * @class
+  
+   */
   function AgreementTermsOfService() {
     _classCallCheck(this, AgreementTermsOfService);
 

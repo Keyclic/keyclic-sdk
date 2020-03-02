@@ -138,11 +138,11 @@ var CategoryPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(CategoryPagination, _Pagination);
 
   /**
-     * Constructs a new "CategoryPagination".
-     * @alias module:model/CategoryPagination
-     * @class
-    
-     */
+   * Constructs a new "CategoryPagination".
+   * @alias module:model/CategoryPagination
+   * @class
+  
+   */
   function CategoryPagination() {
     var _this;
 

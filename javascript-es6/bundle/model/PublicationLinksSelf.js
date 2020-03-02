@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PublicationLinksSelf = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PublicationLinksSelf".
-     * @alias module:model/PublicationLinksSelf
-     * @class
-    
-     */
+   * Constructs a new "PublicationLinksSelf".
+   * @alias module:model/PublicationLinksSelf
+   * @class
+  
+   */
   function PublicationLinksSelf() {
     _classCallCheck(this, PublicationLinksSelf);
 

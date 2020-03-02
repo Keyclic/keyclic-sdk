@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PersonCollection = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PersonCollection".
-     * @alias module:model/PersonCollection
-     * @class
-    
-     */
+   * Constructs a new "PersonCollection".
+   * @alias module:model/PersonCollection
+   * @class
+  
+   */
   function PersonCollection() {
     _classCallCheck(this, PersonCollection);
 

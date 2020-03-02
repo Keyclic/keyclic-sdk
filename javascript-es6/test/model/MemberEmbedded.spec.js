@@ -59,6 +59,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property organization (base name: "organization")', function() {
+      // uncomment below and update the code to test the property organization
+      //var instane = new @KeyclicSdkJavascript.MemberEmbedded();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property person (base name: "person")', function() {
+      // uncomment below and update the code to test the property person
+      //var instane = new @KeyclicSdkJavascript.MemberEmbedded();
+      //expect(instance).to.be();
+    });
+
     it('should have the property roles (base name: "roles")', function() {
       // uncomment below and update the code to test the property roles
       //var instane = new @KeyclicSdkJavascript.MemberEmbedded();

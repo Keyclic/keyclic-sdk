@@ -59,11 +59,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Configuration = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Configuration".
-     * @alias module:model/Configuration
-     * @class
-    
-     */
+   * Constructs a new "Configuration".
+   * @alias module:model/Configuration
+   * @class
+  
+   */
   function Configuration() {
     _classCallCheck(this, Configuration);
 

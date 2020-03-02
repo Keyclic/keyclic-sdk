@@ -41,17 +41,17 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Webhook = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Webhook".
-     * @alias module:model/Webhook
-     * @class
-    
-     * @param enabled { Boolean }
-    
-     * @param event { String }
-    
-     * @param payloadUrl { String }
-    
-     */
+   * Constructs a new "Webhook".
+   * @alias module:model/Webhook
+   * @class
+  
+   * @param enabled { Boolean }
+  
+   * @param event { String }
+  
+   * @param payloadUrl { String }
+  
+   */
   function Webhook(enabled, event, payloadUrl) {
     _classCallCheck(this, Webhook);
 

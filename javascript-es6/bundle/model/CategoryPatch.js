@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var CategoryPatch = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "CategoryPatch".
-     * @alias module:model/CategoryPatch
-     * @class
-    
-     */
+   * Constructs a new "CategoryPatch".
+   * @alias module:model/CategoryPatch
+   * @class
+  
+   */
   function CategoryPatch() {
     _classCallCheck(this, CategoryPatch);
 

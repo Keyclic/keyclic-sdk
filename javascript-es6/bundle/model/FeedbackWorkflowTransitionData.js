@@ -53,13 +53,13 @@ function _defineProperty(obj, key, value) {
  */
 var FeedbackWorkflowTransitionData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "FeedbackWorkflowTransitionData".
-     * @alias module:model/FeedbackWorkflowTransitionData
-     * @class
-    
-     * @param transition { module:model/FeedbackWorkflowTransitionData.TransitionEnum }
-    
-     */
+   * Constructs a new "FeedbackWorkflowTransitionData".
+   * @alias module:model/FeedbackWorkflowTransitionData
+   * @class
+  
+   * @param transition { module:model/FeedbackWorkflowTransitionData.TransitionEnum }
+  
+   */
   function FeedbackWorkflowTransitionData(transition) {
     _classCallCheck(this, FeedbackWorkflowTransitionData);
 

@@ -136,11 +136,11 @@ var MemberPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(MemberPagination, _Pagination);
 
   /**
-     * Constructs a new "MemberPagination".
-     * @alias module:model/MemberPagination
-     * @class
-    
-     */
+   * Constructs a new "MemberPagination".
+   * @alias module:model/MemberPagination
+   * @class
+  
+   */
   function MemberPagination() {
     var _this;
 

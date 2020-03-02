@@ -39,13 +39,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var FacebookConnectData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "FacebookConnectData".
-     * @alias module:model/FacebookConnectData
-     * @class
-    
-     * @param accessToken { String }
-    
-     */
+   * Constructs a new "FacebookConnectData".
+   * @alias module:model/FacebookConnectData
+   * @class
+  
+   * @param accessToken { String }
+  
+   */
   function FacebookConnectData(accessToken) {
     _classCallCheck(this, FacebookConnectData);
 

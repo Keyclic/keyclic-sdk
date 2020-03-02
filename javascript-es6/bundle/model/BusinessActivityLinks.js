@@ -55,11 +55,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var BusinessActivityLinks = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "BusinessActivityLinks".
-     * @alias module:model/BusinessActivityLinks
-     * @class
-    
-     */
+   * Constructs a new "BusinessActivityLinks".
+   * @alias module:model/BusinessActivityLinks
+   * @class
+  
+   */
   function BusinessActivityLinks() {
     _classCallCheck(this, BusinessActivityLinks);
 

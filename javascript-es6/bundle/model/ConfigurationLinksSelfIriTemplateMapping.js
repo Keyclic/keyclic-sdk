@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ConfigurationLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ConfigurationLinksSelfIriTemplateMapping".
-     * @alias module:model/ConfigurationLinksSelfIriTemplateMapping
-     * @class
-    
-     */
+   * Constructs a new "ConfigurationLinksSelfIriTemplateMapping".
+   * @alias module:model/ConfigurationLinksSelfIriTemplateMapping
+   * @class
+  
+   */
   function ConfigurationLinksSelfIriTemplateMapping() {
     _classCallCheck(this, ConfigurationLinksSelfIriTemplateMapping);
 

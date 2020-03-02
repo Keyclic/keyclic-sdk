@@ -138,11 +138,11 @@ var DocumentPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(DocumentPagination, _Pagination);
 
   /**
-     * Constructs a new "DocumentPagination".
-     * @alias module:model/DocumentPagination
-     * @class
-    
-     */
+   * Constructs a new "DocumentPagination".
+   * @alias module:model/DocumentPagination
+   * @class
+  
+   */
   function DocumentPagination() {
     var _this;
 

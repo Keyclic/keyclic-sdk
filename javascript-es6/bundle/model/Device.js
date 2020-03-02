@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Device = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Device".
-     * @alias module:model/Device
-     * @class
-    
-     */
+   * Constructs a new "Device".
+   * @alias module:model/Device
+   * @class
+  
+   */
   function Device() {
     _classCallCheck(this, Device);
 

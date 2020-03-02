@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var SectionLinksSelf = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "SectionLinksSelf".
-     * @alias module:model/SectionLinksSelf
-     * @class
-    
-     */
+   * Constructs a new "SectionLinksSelf".
+   * @alias module:model/SectionLinksSelf
+   * @class
+  
+   */
   function SectionLinksSelf() {
     _classCallCheck(this, SectionLinksSelf);
 

@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var FeedbackEmbedded = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "FeedbackEmbedded".
-     * @alias module:model/FeedbackEmbedded
-     * @class
-    
-     */
+   * Constructs a new "FeedbackEmbedded".
+   * @alias module:model/FeedbackEmbedded
+   * @class
+  
+   */
   function FeedbackEmbedded() {
     _classCallCheck(this, FeedbackEmbedded);
 

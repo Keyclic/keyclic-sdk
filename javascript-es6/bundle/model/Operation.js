@@ -47,13 +47,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Operation = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Operation".
-     * @alias module:model/Operation
-     * @class
-    
-     * @param state { Array.<String> }
-    
-     */
+   * Constructs a new "Operation".
+   * @alias module:model/Operation
+   * @class
+  
+   * @param state { Array.<String> }
+  
+   */
   function Operation(state) {
     _classCallCheck(this, Operation);
 

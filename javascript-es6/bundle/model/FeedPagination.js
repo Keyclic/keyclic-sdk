@@ -136,11 +136,11 @@ var FeedPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(FeedPagination, _Pagination);
 
   /**
-     * Constructs a new "FeedPagination".
-     * @alias module:model/FeedPagination
-     * @class
-    
-     */
+   * Constructs a new "FeedPagination".
+   * @alias module:model/FeedPagination
+   * @class
+  
+   */
   function FeedPagination() {
     var _this;
 

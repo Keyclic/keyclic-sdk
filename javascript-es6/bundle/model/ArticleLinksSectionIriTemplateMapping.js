@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ArticleLinksSectionIriTemplateMapping = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ArticleLinksSectionIriTemplateMapping".
-     * @alias module:model/ArticleLinksSectionIriTemplateMapping
-     * @class
-    
-     */
+   * Constructs a new "ArticleLinksSectionIriTemplateMapping".
+   * @alias module:model/ArticleLinksSectionIriTemplateMapping
+   * @class
+  
+   */
   function ArticleLinksSectionIriTemplateMapping() {
     _classCallCheck(this, ArticleLinksSectionIriTemplateMapping);
 

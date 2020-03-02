@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OperationLinksCreatedBy = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OperationLinksCreatedBy".
-     * @alias module:model/OperationLinksCreatedBy
-     * @class
-    
-     */
+   * Constructs a new "OperationLinksCreatedBy".
+   * @alias module:model/OperationLinksCreatedBy
+   * @class
+  
+   */
   function OperationLinksCreatedBy() {
     _classCallCheck(this, OperationLinksCreatedBy);
 

@@ -138,11 +138,11 @@ var FeedbackPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(FeedbackPagination, _Pagination);
 
   /**
-     * Constructs a new "FeedbackPagination".
-     * @alias module:model/FeedbackPagination
-     * @class
-    
-     */
+   * Constructs a new "FeedbackPagination".
+   * @alias module:model/FeedbackPagination
+   * @class
+  
+   */
   function FeedbackPagination() {
     var _this;
 

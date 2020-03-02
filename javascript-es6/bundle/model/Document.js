@@ -47,11 +47,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Document = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Document".
-     * @alias module:model/Document
-     * @class
-    
-     */
+   * Constructs a new "Document".
+   * @alias module:model/Document
+   * @class
+  
+   */
   function Document() {
     _classCallCheck(this, Document);
 

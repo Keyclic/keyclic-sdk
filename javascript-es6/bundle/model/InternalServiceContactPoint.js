@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var InternalServiceContactPoint = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "InternalServiceContactPoint".
-     * @alias module:model/InternalServiceContactPoint
-     * @class
-    
-     */
+   * Constructs a new "InternalServiceContactPoint".
+   * @alias module:model/InternalServiceContactPoint
+   * @class
+  
+   */
   function InternalServiceContactPoint() {
     _classCallCheck(this, InternalServiceContactPoint);
 

@@ -138,11 +138,11 @@ var DelegationPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(DelegationPagination, _Pagination);
 
   /**
-     * Constructs a new "DelegationPagination".
-     * @alias module:model/DelegationPagination
-     * @class
-    
-     */
+   * Constructs a new "DelegationPagination".
+   * @alias module:model/DelegationPagination
+   * @class
+  
+   */
   function DelegationPagination() {
     var _this;
 

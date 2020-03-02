@@ -138,11 +138,11 @@ var BusinessActivityPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(BusinessActivityPagination, _Pagination);
 
   /**
-     * Constructs a new "BusinessActivityPagination".
-     * @alias module:model/BusinessActivityPagination
-     * @class
-    
-     */
+   * Constructs a new "BusinessActivityPagination".
+   * @alias module:model/BusinessActivityPagination
+   * @class
+  
+   */
   function BusinessActivityPagination() {
     var _this;
 

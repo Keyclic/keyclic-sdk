@@ -39,15 +39,15 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var InternalServiceData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "InternalServiceData".
-     * @alias module:model/InternalServiceData
-     * @class
-    
-     * @param organization { String }
-    
-     * @param name { String }
-    
-     */
+   * Constructs a new "InternalServiceData".
+   * @alias module:model/InternalServiceData
+   * @class
+  
+   * @param organization { String }
+  
+   * @param name { String }
+  
+   */
   function InternalServiceData(organization, name) {
     _classCallCheck(this, InternalServiceData);
 

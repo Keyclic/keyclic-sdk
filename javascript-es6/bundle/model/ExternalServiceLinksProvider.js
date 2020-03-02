@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ExternalServiceLinksProvider = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ExternalServiceLinksProvider".
-     * @alias module:model/ExternalServiceLinksProvider
-     * @class
-    
-     */
+   * Constructs a new "ExternalServiceLinksProvider".
+   * @alias module:model/ExternalServiceLinksProvider
+   * @class
+  
+   */
   function ExternalServiceLinksProvider() {
     _classCallCheck(this, ExternalServiceLinksProvider);
 

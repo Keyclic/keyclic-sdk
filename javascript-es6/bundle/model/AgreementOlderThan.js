@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var AgreementOlderThan = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "AgreementOlderThan".
-     * @alias module:model/AgreementOlderThan
-     * @class
-    
-     */
+   * Constructs a new "AgreementOlderThan".
+   * @alias module:model/AgreementOlderThan
+   * @class
+  
+   */
   function AgreementOlderThan() {
     _classCallCheck(this, AgreementOlderThan);
 

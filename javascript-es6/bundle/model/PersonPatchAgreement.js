@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PersonPatchAgreement = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PersonPatchAgreement".
-     * @alias module:model/PersonPatchAgreement
-     * @class
-    
-     */
+   * Constructs a new "PersonPatchAgreement".
+   * @alias module:model/PersonPatchAgreement
+   * @class
+  
+   */
   function PersonPatchAgreement() {
     _classCallCheck(this, PersonPatchAgreement);
 

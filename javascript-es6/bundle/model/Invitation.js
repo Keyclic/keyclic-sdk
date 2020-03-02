@@ -7,10 +7,6 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _InvitationDateTime = _interopRequireDefault(
-  require("./InvitationDateTime")
-);
-
 var _InvitationLinks = _interopRequireDefault(require("./InvitationLinks"));
 
 function _interopRequireDefault(obj) {
@@ -45,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Invitation = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Invitation".
-     * @alias module:model/Invitation
-     * @class
-    
-     */
+   * Constructs a new "Invitation".
+   * @alias module:model/Invitation
+   * @class
+  
+   */
   function Invitation() {
     _classCallCheck(this, Invitation);
 
@@ -60,7 +56,6 @@ var Invitation = /*#__PURE__*/ (function() {
     this.type = null;
     this.updatedAt = null;
     this.linksType = _InvitationLinks.default;
-    this.expiredAtType = _InvitationDateTime.default;
   }
   /**
    * Constructs a "Invitation" from a plain JavaScript object.
@@ -100,7 +95,7 @@ var Invitation = /*#__PURE__*/ (function() {
           return this.createdAt;
         }
         /**
-         * @return { module:model/InvitationDateTime }
+         * @return { Date }
          */
       },
       {
@@ -109,7 +104,7 @@ var Invitation = /*#__PURE__*/ (function() {
           return this.expiredAt;
         }
         /**
-         * @param { module:model/InvitationDateTime } expiredAt
+         * @param { Date } expiredAt
          */
       },
       {
@@ -180,7 +175,7 @@ var Invitation = /*#__PURE__*/ (function() {
           if (data.hasOwnProperty("expiredAt")) {
             object.expiredAt = _ApiClient.default.convertToType(
               data["expiredAt"],
-              object.expiredAtType
+              "Date"
             );
           }
 

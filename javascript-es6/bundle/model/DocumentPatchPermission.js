@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DocumentPatchPermission = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DocumentPatchPermission".
-     * @alias module:model/DocumentPatchPermission
-     * @class
-    
-     */
+   * Constructs a new "DocumentPatchPermission".
+   * @alias module:model/DocumentPatchPermission
+   * @class
+  
+   */
   function DocumentPatchPermission() {
     _classCallCheck(this, DocumentPatchPermission);
 

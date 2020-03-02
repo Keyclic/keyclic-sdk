@@ -39,17 +39,17 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ExternalServiceData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ExternalServiceData".
-     * @alias module:model/ExternalServiceData
-     * @class
-    
-     * @param organization { String }
-    
-     * @param name { String }
-    
-     * @param provider { String }
-    
-     */
+   * Constructs a new "ExternalServiceData".
+   * @alias module:model/ExternalServiceData
+   * @class
+  
+   * @param organization { String }
+  
+   * @param name { String }
+  
+   * @param provider { String }
+  
+   */
   function ExternalServiceData(organization, name, provider) {
     _classCallCheck(this, ExternalServiceData);
 

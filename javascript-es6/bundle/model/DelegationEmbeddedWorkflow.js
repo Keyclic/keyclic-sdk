@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DelegationEmbeddedWorkflow = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DelegationEmbeddedWorkflow".
-     * @alias module:model/DelegationEmbeddedWorkflow
-     * @class
-    
-     */
+   * Constructs a new "DelegationEmbeddedWorkflow".
+   * @alias module:model/DelegationEmbeddedWorkflow
+   * @class
+  
+   */
   function DelegationEmbeddedWorkflow() {
     _classCallCheck(this, DelegationEmbeddedWorkflow);
 

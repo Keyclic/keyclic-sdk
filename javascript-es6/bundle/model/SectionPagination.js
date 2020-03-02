@@ -136,11 +136,11 @@ var SectionPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(SectionPagination, _Pagination);
 
   /**
-     * Constructs a new "SectionPagination".
-     * @alias module:model/SectionPagination
-     * @class
-    
-     */
+   * Constructs a new "SectionPagination".
+   * @alias module:model/SectionPagination
+   * @class
+  
+   */
   function SectionPagination() {
     var _this;
 

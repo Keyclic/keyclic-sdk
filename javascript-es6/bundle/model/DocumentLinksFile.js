@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DocumentLinksFile = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DocumentLinksFile".
-     * @alias module:model/DocumentLinksFile
-     * @class
-    
-     */
+   * Constructs a new "DocumentLinksFile".
+   * @alias module:model/DocumentLinksFile
+   * @class
+  
+   */
   function DocumentLinksFile() {
     _classCallCheck(this, DocumentLinksFile);
 

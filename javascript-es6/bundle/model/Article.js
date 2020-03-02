@@ -41,13 +41,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Article = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Article".
-     * @alias module:model/Article
-     * @class
-    
-     * @param name { String }
-    
-     */
+   * Constructs a new "Article".
+   * @alias module:model/Article
+   * @class
+  
+   * @param name { String }
+  
+   */
   function Article(name) {
     _classCallCheck(this, Article);
 

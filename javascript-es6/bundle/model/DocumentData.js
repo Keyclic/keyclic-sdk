@@ -45,15 +45,15 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DocumentData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DocumentData".
-     * @alias module:model/DocumentData
-     * @class
-    
-     * @param file { module:model/DocumentDataFile }
-    
-     * @param permission { module:model/DocumentDataPermission }
-    
-     */
+   * Constructs a new "DocumentData".
+   * @alias module:model/DocumentData
+   * @class
+  
+   * @param file { module:model/DocumentDataFile }
+  
+   * @param permission { module:model/DocumentDataPermission }
+  
+   */
   function DocumentData(file, permission) {
     _classCallCheck(this, DocumentData);
 

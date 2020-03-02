@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var FeedbackGeoCoordinates = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "FeedbackGeoCoordinates".
-     * @alias module:model/FeedbackGeoCoordinates
-     * @class
-    
-     */
+   * Constructs a new "FeedbackGeoCoordinates".
+   * @alias module:model/FeedbackGeoCoordinates
+   * @class
+  
+   */
   function FeedbackGeoCoordinates() {
     _classCallCheck(this, FeedbackGeoCoordinates);
 

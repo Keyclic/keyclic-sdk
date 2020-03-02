@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Schema = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Schema".
-     * @alias module:model/Schema
-     * @class
-    
-     */
+   * Constructs a new "Schema".
+   * @alias module:model/Schema
+   * @class
+  
+   */
   function Schema() {
     _classCallCheck(this, Schema);
 

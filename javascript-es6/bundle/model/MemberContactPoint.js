@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var MemberContactPoint = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "MemberContactPoint".
-     * @alias module:model/MemberContactPoint
-     * @class
-    
-     */
+   * Constructs a new "MemberContactPoint".
+   * @alias module:model/MemberContactPoint
+   * @class
+  
+   */
   function MemberContactPoint() {
     _classCallCheck(this, MemberContactPoint);
 

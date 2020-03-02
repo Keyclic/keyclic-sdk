@@ -71,11 +71,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ReportLinks = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ReportLinks".
-     * @alias module:model/ReportLinks
-     * @class
-    
-     */
+   * Constructs a new "ReportLinks".
+   * @alias module:model/ReportLinks
+   * @class
+  
+   */
   function ReportLinks() {
     _classCallCheck(this, ReportLinks);
 

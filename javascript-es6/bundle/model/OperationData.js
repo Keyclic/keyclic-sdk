@@ -39,13 +39,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OperationData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OperationData".
-     * @alias module:model/OperationData
-     * @class
-    
-     * @param report { String }
-    
-     */
+   * Constructs a new "OperationData".
+   * @alias module:model/OperationData
+   * @class
+  
+   * @param report { String }
+  
+   */
   function OperationData(report) {
     _classCallCheck(this, OperationData);
 

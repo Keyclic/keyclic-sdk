@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OrganizationPatch = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OrganizationPatch".
-     * @alias module:model/OrganizationPatch
-     * @class
-    
-     */
+   * Constructs a new "OrganizationPatch".
+   * @alias module:model/OrganizationPatch
+   * @class
+  
+   */
   function OrganizationPatch() {
     _classCallCheck(this, OrganizationPatch);
 

@@ -39,13 +39,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var WorkflowData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "WorkflowData".
-     * @alias module:model/WorkflowData
-     * @class
-    
-     * @param transition { String }
-    
-     */
+   * Constructs a new "WorkflowData".
+   * @alias module:model/WorkflowData
+   * @class
+  
+   * @param transition { String }
+  
+   */
   function WorkflowData(transition) {
     _classCallCheck(this, WorkflowData);
 

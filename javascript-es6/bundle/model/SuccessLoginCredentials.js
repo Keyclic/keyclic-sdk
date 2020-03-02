@@ -47,11 +47,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var SuccessLoginCredentials = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "SuccessLoginCredentials".
-     * @alias module:model/SuccessLoginCredentials
-     * @class
-    
-     */
+   * Constructs a new "SuccessLoginCredentials".
+   * @alias module:model/SuccessLoginCredentials
+   * @class
+  
+   */
   function SuccessLoginCredentials() {
     _classCallCheck(this, SuccessLoginCredentials);
 

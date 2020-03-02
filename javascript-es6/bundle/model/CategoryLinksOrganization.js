@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var CategoryLinksOrganization = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "CategoryLinksOrganization".
-     * @alias module:model/CategoryLinksOrganization
-     * @class
-    
-     */
+   * Constructs a new "CategoryLinksOrganization".
+   * @alias module:model/CategoryLinksOrganization
+   * @class
+  
+   */
   function CategoryLinksOrganization() {
     _classCallCheck(this, CategoryLinksOrganization);
 

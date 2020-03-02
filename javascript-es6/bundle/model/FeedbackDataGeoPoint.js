@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var FeedbackDataGeoPoint = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "FeedbackDataGeoPoint".
-     * @alias module:model/FeedbackDataGeoPoint
-     * @class
-    
-     */
+   * Constructs a new "FeedbackDataGeoPoint".
+   * @alias module:model/FeedbackDataGeoPoint
+   * @class
+  
+   */
   function FeedbackDataGeoPoint() {
     _classCallCheck(this, FeedbackDataGeoPoint);
 

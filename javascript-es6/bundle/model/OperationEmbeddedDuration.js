@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OperationEmbeddedDuration = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OperationEmbeddedDuration".
-     * @alias module:model/OperationEmbeddedDuration
-     * @class
-    
-     */
+   * Constructs a new "OperationEmbeddedDuration".
+   * @alias module:model/OperationEmbeddedDuration
+   * @class
+  
+   */
   function OperationEmbeddedDuration() {
     _classCallCheck(this, OperationEmbeddedDuration);
 

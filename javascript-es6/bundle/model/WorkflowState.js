@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var WorkflowState = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "WorkflowState".
-     * @alias module:model/WorkflowState
-     * @class
-    
-     */
+   * Constructs a new "WorkflowState".
+   * @alias module:model/WorkflowState
+   * @class
+  
+   */
   function WorkflowState() {
     _classCallCheck(this, WorkflowState);
 

@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ExternalServiceCollection = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ExternalServiceCollection".
-     * @alias module:model/ExternalServiceCollection
-     * @class
-    
-     */
+   * Constructs a new "ExternalServiceCollection".
+   * @alias module:model/ExternalServiceCollection
+   * @class
+  
+   */
   function ExternalServiceCollection() {
     _classCallCheck(this, ExternalServiceCollection);
 

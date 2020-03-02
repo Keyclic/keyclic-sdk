@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var TrackingProgression = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "TrackingProgression".
-     * @alias module:model/TrackingProgression
-     * @class
-    
-     */
+   * Constructs a new "TrackingProgression".
+   * @alias module:model/TrackingProgression
+   * @class
+  
+   */
   function TrackingProgression() {
     _classCallCheck(this, TrackingProgression);
 

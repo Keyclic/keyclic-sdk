@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PropertyItems = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PropertyItems".
-     * @alias module:model/PropertyItems
-     * @class
-    
-     */
+   * Constructs a new "PropertyItems".
+   * @alias module:model/PropertyItems
+   * @class
+  
+   */
   function PropertyItems() {
     _classCallCheck(this, PropertyItems);
 

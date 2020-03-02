@@ -45,11 +45,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DocumentPatch = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DocumentPatch".
-     * @alias module:model/DocumentPatch
-     * @class
-    
-     */
+   * Constructs a new "DocumentPatch".
+   * @alias module:model/DocumentPatch
+   * @class
+  
+   */
   function DocumentPatch() {
     _classCallCheck(this, DocumentPatch);
 

@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Node = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Node".
-     * @alias module:model/Node
-     * @class
-    
-     */
+   * Constructs a new "Node".
+   * @alias module:model/Node
+   * @class
+  
+   */
   function Node() {
     _classCallCheck(this, Node);
 

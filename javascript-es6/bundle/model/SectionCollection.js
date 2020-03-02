@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var SectionCollection = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "SectionCollection".
-     * @alias module:model/SectionCollection
-     * @class
-    
-     */
+   * Constructs a new "SectionCollection".
+   * @alias module:model/SectionCollection
+   * @class
+  
+   */
   function SectionCollection() {
     _classCallCheck(this, SectionCollection);
 

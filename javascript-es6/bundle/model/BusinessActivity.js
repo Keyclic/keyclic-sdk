@@ -47,13 +47,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var BusinessActivity = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "BusinessActivity".
-     * @alias module:model/BusinessActivity
-     * @class
-    
-     * @param name { String }
-    
-     */
+   * Constructs a new "BusinessActivity".
+   * @alias module:model/BusinessActivity
+   * @class
+  
+   * @param name { String }
+  
+   */
   function BusinessActivity(name) {
     _classCallCheck(this, BusinessActivity);
 

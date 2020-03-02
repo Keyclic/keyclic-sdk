@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DocumentCollection = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DocumentCollection".
-     * @alias module:model/DocumentCollection
-     * @class
-    
-     */
+   * Constructs a new "DocumentCollection".
+   * @alias module:model/DocumentCollection
+   * @class
+  
+   */
   function DocumentCollection() {
     _classCallCheck(this, DocumentCollection);
 

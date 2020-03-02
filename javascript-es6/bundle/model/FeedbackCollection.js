@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var FeedbackCollection = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "FeedbackCollection".
-     * @alias module:model/FeedbackCollection
-     * @class
-    
-     */
+   * Constructs a new "FeedbackCollection".
+   * @alias module:model/FeedbackCollection
+   * @class
+  
+   */
   function FeedbackCollection() {
     _classCallCheck(this, FeedbackCollection);
 

@@ -39,13 +39,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ImageData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ImageData".
-     * @alias module:model/ImageData
-     * @class
-    
-     * @param image { String }
-    
-     */
+   * Constructs a new "ImageData".
+   * @alias module:model/ImageData
+   * @class
+  
+   * @param image { String }
+  
+   */
   function ImageData(image) {
     _classCallCheck(this, ImageData);
 

@@ -45,13 +45,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Organization = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Organization".
-     * @alias module:model/Organization
-     * @class
-    
-     * @param name { String }
-    
-     */
+   * Constructs a new "Organization".
+   * @alias module:model/Organization
+   * @class
+  
+   * @param name { String }
+  
+   */
   function Organization(name) {
     _classCallCheck(this, Organization);
 

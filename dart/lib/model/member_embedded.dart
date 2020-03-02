@@ -3,6 +3,8 @@ part of keyclic_sdk_api.api;
 class MemberEmbedded {
   MemberEmbedded({
     this.availableRoles,
+    this.organization,
+    this.person,
     this.roles,
   });
 
@@ -15,11 +17,17 @@ class MemberEmbedded {
       availableRoles: json['availableRoles'] is List
           ? List<String>.from(json['availableRoles'])
           : null,
+      organization: Organization.fromJson(json['organization']),
+      person: Person.fromJson(json['person']),
       roles: Role.listFromJson(json['roles']),
     );
   }
 
   List<String> availableRoles;
+
+  Organization organization;
+
+  Person person;
 
   List<Role> roles;
 
@@ -34,6 +42,8 @@ class MemberEmbedded {
         runtimeType == other.runtimeType &&
         DeepCollectionEquality.unordered()
             .equals(availableRoles, other.availableRoles) &&
+        organization == other.organization &&
+        person == other.person &&
         DeepCollectionEquality.unordered().equals(roles, other.roles);
   }
 
@@ -52,6 +62,9 @@ class MemberEmbedded {
           .map((Role element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
+
+    hashCode ^= organization?.hashCode ?? 0;
+    hashCode ^= person?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -75,12 +88,14 @@ class MemberEmbedded {
   Map<String, dynamic> toJson() {
     return {
       if (availableRoles != null) 'availableRoles': availableRoles,
+      if (organization != null) 'organization': organization,
+      if (person != null) 'person': person,
       if (roles != null) 'roles': roles,
     };
   }
 
   @override
   String toString() {
-    return 'MemberEmbedded[availableRoles=$availableRoles, roles=$roles, ]';
+    return 'MemberEmbedded[availableRoles=$availableRoles, organization=$organization, person=$person, roles=$roles, ]';
   }
 }

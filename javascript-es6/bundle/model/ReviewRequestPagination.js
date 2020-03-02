@@ -138,11 +138,11 @@ var ReviewRequestPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(ReviewRequestPagination, _Pagination);
 
   /**
-     * Constructs a new "ReviewRequestPagination".
-     * @alias module:model/ReviewRequestPagination
-     * @class
-    
-     */
+   * Constructs a new "ReviewRequestPagination".
+   * @alias module:model/ReviewRequestPagination
+   * @class
+  
+   */
   function ReviewRequestPagination() {
     var _this;
 

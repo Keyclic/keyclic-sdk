@@ -39,13 +39,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var CommentData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "CommentData".
-     * @alias module:model/CommentData
-     * @class
-    
-     * @param text { String }
-    
-     */
+   * Constructs a new "CommentData".
+   * @alias module:model/CommentData
+   * @class
+  
+   * @param text { String }
+  
+   */
   function CommentData(text) {
     _classCallCheck(this, CommentData);
 

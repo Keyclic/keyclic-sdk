@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var SignatureDataSigner = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "SignatureDataSigner".
-     * @alias module:model/SignatureDataSigner
-     * @class
-    
-     */
+   * Constructs a new "SignatureDataSigner".
+   * @alias module:model/SignatureDataSigner
+   * @class
+  
+   */
   function SignatureDataSigner() {
     _classCallCheck(this, SignatureDataSigner);
 

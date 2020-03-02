@@ -138,11 +138,11 @@ var ExternalServicePagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(ExternalServicePagination, _Pagination);
 
   /**
-     * Constructs a new "ExternalServicePagination".
-     * @alias module:model/ExternalServicePagination
-     * @class
-    
-     */
+   * Constructs a new "ExternalServicePagination".
+   * @alias module:model/ExternalServicePagination
+   * @class
+  
+   */
   function ExternalServicePagination() {
     var _this;
 

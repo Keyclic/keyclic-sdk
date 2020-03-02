@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ApplicationLinksKnowledgeBaseIriTemplateMapping = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ApplicationLinksKnowledgeBaseIriTemplateMapping".
-     * @alias module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping
-     * @class
-    
-     */
+   * Constructs a new "ApplicationLinksKnowledgeBaseIriTemplateMapping".
+   * @alias module:model/ApplicationLinksKnowledgeBaseIriTemplateMapping
+   * @class
+  
+   */
   function ApplicationLinksKnowledgeBaseIriTemplateMapping() {
     _classCallCheck(this, ApplicationLinksKnowledgeBaseIriTemplateMapping);
 

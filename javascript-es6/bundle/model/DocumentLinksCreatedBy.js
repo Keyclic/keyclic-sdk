@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DocumentLinksCreatedBy = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DocumentLinksCreatedBy".
-     * @alias module:model/DocumentLinksCreatedBy
-     * @class
-    
-     */
+   * Constructs a new "DocumentLinksCreatedBy".
+   * @alias module:model/DocumentLinksCreatedBy
+   * @class
+  
+   */
   function DocumentLinksCreatedBy() {
     _classCallCheck(this, DocumentLinksCreatedBy);
 

@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DelegationCollection = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DelegationCollection".
-     * @alias module:model/DelegationCollection
-     * @class
-    
-     */
+   * Constructs a new "DelegationCollection".
+   * @alias module:model/DelegationCollection
+   * @class
+  
+   */
   function DelegationCollection() {
     _classCallCheck(this, DelegationCollection);
 

@@ -47,11 +47,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Member = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Member".
-     * @alias module:model/Member
-     * @class
-    
-     */
+   * Constructs a new "Member".
+   * @alias module:model/Member
+   * @class
+  
+   */
   function Member() {
     _classCallCheck(this, Member);
 

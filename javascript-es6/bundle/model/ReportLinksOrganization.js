@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ReportLinksOrganization = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ReportLinksOrganization".
-     * @alias module:model/ReportLinksOrganization
-     * @class
-    
-     */
+   * Constructs a new "ReportLinksOrganization".
+   * @alias module:model/ReportLinksOrganization
+   * @class
+  
+   */
   function ReportLinksOrganization() {
     _classCallCheck(this, ReportLinksOrganization);
 

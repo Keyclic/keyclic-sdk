@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ConfigurationLinks = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ConfigurationLinks".
-     * @alias module:model/ConfigurationLinks
-     * @class
-    
-     */
+   * Constructs a new "ConfigurationLinks".
+   * @alias module:model/ConfigurationLinks
+   * @class
+  
+   */
   function ConfigurationLinks() {
     _classCallCheck(this, ConfigurationLinks);
 

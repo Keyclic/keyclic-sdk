@@ -47,11 +47,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ReviewLinks = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ReviewLinks".
-     * @alias module:model/ReviewLinks
-     * @class
-    
-     */
+   * Constructs a new "ReviewLinks".
+   * @alias module:model/ReviewLinks
+   * @class
+  
+   */
   function ReviewLinks() {
     _classCallCheck(this, ReviewLinks);
 

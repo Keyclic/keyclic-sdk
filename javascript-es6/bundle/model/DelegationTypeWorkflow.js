@@ -45,11 +45,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DelegationTypeWorkflow = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DelegationTypeWorkflow".
-     * @alias module:model/DelegationTypeWorkflow
-     * @class
-    
-     */
+   * Constructs a new "DelegationTypeWorkflow".
+   * @alias module:model/DelegationTypeWorkflow
+   * @class
+  
+   */
   function DelegationTypeWorkflow() {
     _classCallCheck(this, DelegationTypeWorkflow);
 

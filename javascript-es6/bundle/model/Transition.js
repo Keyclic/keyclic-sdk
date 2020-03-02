@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Transition = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Transition".
-     * @alias module:model/Transition
-     * @class
-    
-     */
+   * Constructs a new "Transition".
+   * @alias module:model/Transition
+   * @class
+  
+   */
   function Transition() {
     _classCallCheck(this, Transition);
 

@@ -47,11 +47,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var InvitationLinks = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "InvitationLinks".
-     * @alias module:model/InvitationLinks
-     * @class
-    
-     */
+   * Constructs a new "InvitationLinks".
+   * @alias module:model/InvitationLinks
+   * @class
+  
+   */
   function InvitationLinks() {
     _classCallCheck(this, InvitationLinks);
 

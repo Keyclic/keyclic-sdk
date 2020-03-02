@@ -45,11 +45,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OperationTypeWorkflow = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OperationTypeWorkflow".
-     * @alias module:model/OperationTypeWorkflow
-     * @class
-    
-     */
+   * Constructs a new "OperationTypeWorkflow".
+   * @alias module:model/OperationTypeWorkflow
+   * @class
+  
+   */
   function OperationTypeWorkflow() {
     _classCallCheck(this, OperationTypeWorkflow);
 

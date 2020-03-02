@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PersonPreferences = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PersonPreferences".
-     * @alias module:model/PersonPreferences
-     * @class
-    
-     */
+   * Constructs a new "PersonPreferences".
+   * @alias module:model/PersonPreferences
+   * @class
+  
+   */
   function PersonPreferences() {
     _classCallCheck(this, PersonPreferences);
 

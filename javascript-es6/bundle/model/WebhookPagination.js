@@ -136,11 +136,11 @@ var WebhookPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(WebhookPagination, _Pagination);
 
   /**
-     * Constructs a new "WebhookPagination".
-     * @alias module:model/WebhookPagination
-     * @class
-    
-     */
+   * Constructs a new "WebhookPagination".
+   * @alias module:model/WebhookPagination
+   * @class
+  
+   */
   function WebhookPagination() {
     var _this;
 

@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ErrorEmbedded = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ErrorEmbedded".
-     * @alias module:model/ErrorEmbedded
-     * @class
-    
-     */
+   * Constructs a new "ErrorEmbedded".
+   * @alias module:model/ErrorEmbedded
+   * @class
+  
+   */
   function ErrorEmbedded() {
     _classCallCheck(this, ErrorEmbedded);
 

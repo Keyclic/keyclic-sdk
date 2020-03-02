@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ExternalServicePatch = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ExternalServicePatch".
-     * @alias module:model/ExternalServicePatch
-     * @class
-    
-     */
+   * Constructs a new "ExternalServicePatch".
+   * @alias module:model/ExternalServicePatch
+   * @class
+  
+   */
   function ExternalServicePatch() {
     _classCallCheck(this, ExternalServicePatch);
 

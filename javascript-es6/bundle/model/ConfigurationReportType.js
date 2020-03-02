@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ConfigurationReportType = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ConfigurationReportType".
-     * @alias module:model/ConfigurationReportType
-     * @class
-    
-     */
+   * Constructs a new "ConfigurationReportType".
+   * @alias module:model/ConfigurationReportType
+   * @class
+  
+   */
   function ConfigurationReportType() {
     _classCallCheck(this, ConfigurationReportType);
 

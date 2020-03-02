@@ -45,11 +45,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Delegation = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Delegation".
-     * @alias module:model/Delegation
-     * @class
-    
-     */
+   * Constructs a new "Delegation".
+   * @alias module:model/Delegation
+   * @class
+  
+   */
   function Delegation() {
     _classCallCheck(this, Delegation);
 

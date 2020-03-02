@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DelegationLinksService = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DelegationLinksService".
-     * @alias module:model/DelegationLinksService
-     * @class
-    
-     */
+   * Constructs a new "DelegationLinksService".
+   * @alias module:model/DelegationLinksService
+   * @class
+  
+   */
   function DelegationLinksService() {
     _classCallCheck(this, DelegationLinksService);
 

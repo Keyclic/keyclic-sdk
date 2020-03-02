@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DelegationLinksReportIriTemplate = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DelegationLinksReportIriTemplate".
-     * @alias module:model/DelegationLinksReportIriTemplate
-     * @class
-    
-     */
+   * Constructs a new "DelegationLinksReportIriTemplate".
+   * @alias module:model/DelegationLinksReportIriTemplate
+   * @class
+  
+   */
   function DelegationLinksReportIriTemplate() {
     _classCallCheck(this, DelegationLinksReportIriTemplate);
 

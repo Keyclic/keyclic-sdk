@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var MemberPatch = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "MemberPatch".
-     * @alias module:model/MemberPatch
-     * @class
-    
-     */
+   * Constructs a new "MemberPatch".
+   * @alias module:model/MemberPatch
+   * @class
+  
+   */
   function MemberPatch() {
     _classCallCheck(this, MemberPatch);
 

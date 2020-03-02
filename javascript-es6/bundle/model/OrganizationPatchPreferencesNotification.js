@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OrganizationPatchPreferencesNotification = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OrganizationPatchPreferencesNotification".
-     * @alias module:model/OrganizationPatchPreferencesNotification
-     * @class
-    
-     */
+   * Constructs a new "OrganizationPatchPreferencesNotification".
+   * @alias module:model/OrganizationPatchPreferencesNotification
+   * @class
+  
+   */
   function OrganizationPatchPreferencesNotification() {
     _classCallCheck(this, OrganizationPatchPreferencesNotification);
 

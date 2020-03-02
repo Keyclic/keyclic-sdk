@@ -41,13 +41,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Section = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Section".
-     * @alias module:model/Section
-     * @class
-    
-     * @param name { String }
-    
-     */
+   * Constructs a new "Section".
+   * @alias module:model/Section
+   * @class
+  
+   * @param name { String }
+  
+   */
   function Section(name) {
     _classCallCheck(this, Section);
 

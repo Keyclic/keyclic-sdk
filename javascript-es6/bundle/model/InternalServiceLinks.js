@@ -47,11 +47,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var InternalServiceLinks = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "InternalServiceLinks".
-     * @alias module:model/InternalServiceLinks
-     * @class
-    
-     */
+   * Constructs a new "InternalServiceLinks".
+   * @alias module:model/InternalServiceLinks
+   * @class
+  
+   */
   function InternalServiceLinks() {
     _classCallCheck(this, InternalServiceLinks);
 

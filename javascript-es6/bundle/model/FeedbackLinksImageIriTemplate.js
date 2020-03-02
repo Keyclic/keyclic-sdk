@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var FeedbackLinksImageIriTemplate = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "FeedbackLinksImageIriTemplate".
-     * @alias module:model/FeedbackLinksImageIriTemplate
-     * @class
-    
-     */
+   * Constructs a new "FeedbackLinksImageIriTemplate".
+   * @alias module:model/FeedbackLinksImageIriTemplate
+   * @class
+  
+   */
   function FeedbackLinksImageIriTemplate() {
     _classCallCheck(this, FeedbackLinksImageIriTemplate);
 

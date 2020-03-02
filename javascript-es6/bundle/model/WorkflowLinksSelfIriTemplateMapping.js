@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var WorkflowLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "WorkflowLinksSelfIriTemplateMapping".
-     * @alias module:model/WorkflowLinksSelfIriTemplateMapping
-     * @class
-    
-     */
+   * Constructs a new "WorkflowLinksSelfIriTemplateMapping".
+   * @alias module:model/WorkflowLinksSelfIriTemplateMapping
+   * @class
+  
+   */
   function WorkflowLinksSelfIriTemplateMapping() {
     _classCallCheck(this, WorkflowLinksSelfIriTemplateMapping);
 

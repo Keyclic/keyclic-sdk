@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ReportLinksDelegatedFrom = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ReportLinksDelegatedFrom".
-     * @alias module:model/ReportLinksDelegatedFrom
-     * @class
-    
-     */
+   * Constructs a new "ReportLinksDelegatedFrom".
+   * @alias module:model/ReportLinksDelegatedFrom
+   * @class
+  
+   */
   function ReportLinksDelegatedFrom() {
     _classCallCheck(this, ReportLinksDelegatedFrom);
 

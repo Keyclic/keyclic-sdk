@@ -39,15 +39,15 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OccupantData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OccupantData".
-     * @alias module:model/OccupantData
-     * @class
-    
-     * @param member { String }
-    
-     * @param place { String }
-    
-     */
+   * Constructs a new "OccupantData".
+   * @alias module:model/OccupantData
+   * @class
+  
+   * @param member { String }
+  
+   * @param place { String }
+  
+   */
   function OccupantData(member, place) {
     _classCallCheck(this, OccupantData);
 

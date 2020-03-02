@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var KnowledgeBaseLinks = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "KnowledgeBaseLinks".
-     * @alias module:model/KnowledgeBaseLinks
-     * @class
-    
-     */
+   * Constructs a new "KnowledgeBaseLinks".
+   * @alias module:model/KnowledgeBaseLinks
+   * @class
+  
+   */
   function KnowledgeBaseLinks() {
     _classCallCheck(this, KnowledgeBaseLinks);
 

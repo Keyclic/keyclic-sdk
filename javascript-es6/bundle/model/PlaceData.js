@@ -39,17 +39,17 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PlaceData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PlaceData".
-     * @alias module:model/PlaceData
-     * @class
-    
-     * @param name { String }
-    
-     * @param polygon { String }
-    
-     * @param organization { String }
-    
-     */
+   * Constructs a new "PlaceData".
+   * @alias module:model/PlaceData
+   * @class
+  
+   * @param name { String }
+  
+   * @param polygon { String }
+  
+   * @param organization { String }
+  
+   */
   function PlaceData(name, polygon, organization) {
     _classCallCheck(this, PlaceData);
 

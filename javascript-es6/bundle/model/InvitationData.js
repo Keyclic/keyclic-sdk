@@ -39,13 +39,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var InvitationData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "InvitationData".
-     * @alias module:model/InvitationData
-     * @class
-    
-     * @param member { String }
-    
-     */
+   * Constructs a new "InvitationData".
+   * @alias module:model/InvitationData
+   * @class
+  
+   * @param member { String }
+  
+   */
   function InvitationData(member) {
     _classCallCheck(this, InvitationData);
 

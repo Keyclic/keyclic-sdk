@@ -45,13 +45,13 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Person = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Person".
-     * @alias module:model/Person
-     * @class
-    
-     * @param optIn { Boolean }
-    
-     */
+   * Constructs a new "Person".
+   * @alias module:model/Person
+   * @class
+  
+   * @param optIn { Boolean }
+  
+   */
   function Person(optIn) {
     _classCallCheck(this, Person);
 

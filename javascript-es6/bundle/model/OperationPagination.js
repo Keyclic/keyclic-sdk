@@ -138,11 +138,11 @@ var OperationPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(OperationPagination, _Pagination);
 
   /**
-     * Constructs a new "OperationPagination".
-     * @alias module:model/OperationPagination
-     * @class
-    
-     */
+   * Constructs a new "OperationPagination".
+   * @alias module:model/OperationPagination
+   * @class
+  
+   */
   function OperationPagination() {
     var _this;
 

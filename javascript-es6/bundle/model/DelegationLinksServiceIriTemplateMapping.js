@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DelegationLinksServiceIriTemplateMapping = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DelegationLinksServiceIriTemplateMapping".
-     * @alias module:model/DelegationLinksServiceIriTemplateMapping
-     * @class
-    
-     */
+   * Constructs a new "DelegationLinksServiceIriTemplateMapping".
+   * @alias module:model/DelegationLinksServiceIriTemplateMapping
+   * @class
+  
+   */
   function DelegationLinksServiceIriTemplateMapping() {
     _classCallCheck(this, DelegationLinksServiceIriTemplateMapping);
 

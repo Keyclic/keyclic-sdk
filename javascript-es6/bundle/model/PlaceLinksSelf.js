@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PlaceLinksSelf = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PlaceLinksSelf".
-     * @alias module:model/PlaceLinksSelf
-     * @class
-    
-     */
+   * Constructs a new "PlaceLinksSelf".
+   * @alias module:model/PlaceLinksSelf
+   * @class
+  
+   */
   function PlaceLinksSelf() {
     _classCallCheck(this, PlaceLinksSelf);
 

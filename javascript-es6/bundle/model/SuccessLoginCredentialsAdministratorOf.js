@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var SuccessLoginCredentialsAdministratorOf = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "SuccessLoginCredentialsAdministratorOf".
-     * @alias module:model/SuccessLoginCredentialsAdministratorOf
-     * @class
-    
-     */
+   * Constructs a new "SuccessLoginCredentialsAdministratorOf".
+   * @alias module:model/SuccessLoginCredentialsAdministratorOf
+   * @class
+  
+   */
   function SuccessLoginCredentialsAdministratorOf() {
     _classCallCheck(this, SuccessLoginCredentialsAdministratorOf);
 

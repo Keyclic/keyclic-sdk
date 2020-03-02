@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Condition = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Condition".
-     * @alias module:model/Condition
-     * @class
-    
-     */
+   * Constructs a new "Condition".
+   * @alias module:model/Condition
+   * @class
+  
+   */
   function Condition() {
     _classCallCheck(this, Condition);
 

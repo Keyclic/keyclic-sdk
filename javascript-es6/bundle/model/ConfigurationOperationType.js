@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ConfigurationOperationType = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ConfigurationOperationType".
-     * @alias module:model/ConfigurationOperationType
-     * @class
-    
-     */
+   * Constructs a new "ConfigurationOperationType".
+   * @alias module:model/ConfigurationOperationType
+   * @class
+  
+   */
   function ConfigurationOperationType() {
     _classCallCheck(this, ConfigurationOperationType);
 

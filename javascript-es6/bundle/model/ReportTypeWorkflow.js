@@ -45,11 +45,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ReportTypeWorkflow = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ReportTypeWorkflow".
-     * @alias module:model/ReportTypeWorkflow
-     * @class
-    
-     */
+   * Constructs a new "ReportTypeWorkflow".
+   * @alias module:model/ReportTypeWorkflow
+   * @class
+  
+   */
   function ReportTypeWorkflow() {
     _classCallCheck(this, ReportTypeWorkflow);
 

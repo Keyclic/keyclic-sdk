@@ -53,11 +53,11 @@ function _defineProperty(obj, key, value) {
  */
 var DocumentFile = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DocumentFile".
-     * @alias module:model/DocumentFile
-     * @class
-    
-     */
+   * Constructs a new "DocumentFile".
+   * @alias module:model/DocumentFile
+   * @class
+  
+   */
   function DocumentFile() {
     _classCallCheck(this, DocumentFile);
 

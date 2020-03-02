@@ -39,19 +39,19 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var CategoryData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "CategoryData".
-     * @alias module:model/CategoryData
-     * @class
-    
-     * @param name { String }
-    
-     * @param color { String }
-    
-     * @param icon { String }
-    
-     * @param organization { String }
-    
-     */
+   * Constructs a new "CategoryData".
+   * @alias module:model/CategoryData
+   * @class
+  
+   * @param name { String }
+  
+   * @param color { String }
+  
+   * @param icon { String }
+  
+   * @param organization { String }
+  
+   */
   function CategoryData(name, color, icon, organization) {
     _classCallCheck(this, CategoryData);
 

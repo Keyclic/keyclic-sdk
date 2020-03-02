@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PaginationLink = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PaginationLink".
-     * @alias module:model/PaginationLink
-     * @class
-    
-     */
+   * Constructs a new "PaginationLink".
+   * @alias module:model/PaginationLink
+   * @class
+  
+   */
   function PaginationLink() {
     _classCallCheck(this, PaginationLink);
 

@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var AgreementPrivacyPolicy = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "AgreementPrivacyPolicy".
-     * @alias module:model/AgreementPrivacyPolicy
-     * @class
-    
-     */
+   * Constructs a new "AgreementPrivacyPolicy".
+   * @alias module:model/AgreementPrivacyPolicy
+   * @class
+  
+   */
   function AgreementPrivacyPolicy() {
     _classCallCheck(this, AgreementPrivacyPolicy);
 

@@ -136,11 +136,11 @@ var PlacePagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(PlacePagination, _Pagination);
 
   /**
-     * Constructs a new "PlacePagination".
-     * @alias module:model/PlacePagination
-     * @class
-    
-     */
+   * Constructs a new "PlacePagination".
+   * @alias module:model/PlacePagination
+   * @class
+  
+   */
   function PlacePagination() {
     var _this;
 

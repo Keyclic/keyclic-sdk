@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var WorkflowLinks = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "WorkflowLinks".
-     * @alias module:model/WorkflowLinks
-     * @class
-    
-     */
+   * Constructs a new "WorkflowLinks".
+   * @alias module:model/WorkflowLinks
+   * @class
+  
+   */
   function WorkflowLinks() {
     _classCallCheck(this, WorkflowLinks);
 

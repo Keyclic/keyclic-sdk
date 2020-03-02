@@ -43,15 +43,15 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Report = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Report".
-     * @alias module:model/Report
-     * @class
-    
-     * @param priority { Number }
-    
-     * @param state { Array.<String> }
-    
-     */
+   * Constructs a new "Report".
+   * @alias module:model/Report
+   * @class
+  
+   * @param priority { Number }
+  
+   * @param state { Array.<String> }
+  
+   */
   function Report(priority, state) {
     _classCallCheck(this, Report);
 

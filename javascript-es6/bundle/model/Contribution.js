@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Contribution = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Contribution".
-     * @alias module:model/Contribution
-     * @class
-    
-     */
+   * Constructs a new "Contribution".
+   * @alias module:model/Contribution
+   * @class
+  
+   */
   function Contribution() {
     _classCallCheck(this, Contribution);
 

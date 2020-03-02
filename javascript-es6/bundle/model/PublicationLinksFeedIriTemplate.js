@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PublicationLinksFeedIriTemplate = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PublicationLinksFeedIriTemplate".
-     * @alias module:model/PublicationLinksFeedIriTemplate
-     * @class
-    
-     */
+   * Constructs a new "PublicationLinksFeedIriTemplate".
+   * @alias module:model/PublicationLinksFeedIriTemplate
+   * @class
+  
+   */
   function PublicationLinksFeedIriTemplate() {
     _classCallCheck(this, PublicationLinksFeedIriTemplate);
 

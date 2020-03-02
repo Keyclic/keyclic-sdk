@@ -478,8 +478,6 @@ class ApiClient {
           return Invitation.fromJson(value);
         case 'InvitationData':
           return InvitationData.fromJson(value);
-        case 'InvitationDateTime':
-          return InvitationDateTime.fromJson(value);
         case 'InvitationLinks':
           return InvitationLinks.fromJson(value);
         case 'InvitationLinksMember':

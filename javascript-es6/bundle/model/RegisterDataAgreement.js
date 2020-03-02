@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var RegisterDataAgreement = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "RegisterDataAgreement".
-     * @alias module:model/RegisterDataAgreement
-     * @class
-    
-     */
+   * Constructs a new "RegisterDataAgreement".
+   * @alias module:model/RegisterDataAgreement
+   * @class
+  
+   */
   function RegisterDataAgreement() {
     _classCallCheck(this, RegisterDataAgreement);
 

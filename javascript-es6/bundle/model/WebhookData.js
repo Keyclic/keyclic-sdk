@@ -53,17 +53,17 @@ function _defineProperty(obj, key, value) {
  */
 var WebhookData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "WebhookData".
-     * @alias module:model/WebhookData
-     * @class
-    
-     * @param event { module:model/WebhookData.EventEnum }
-    
-     * @param organization { String }
-    
-     * @param payloadUrl { String }
-    
-     */
+   * Constructs a new "WebhookData".
+   * @alias module:model/WebhookData
+   * @class
+  
+   * @param event { module:model/WebhookData.EventEnum }
+  
+   * @param organization { String }
+  
+   * @param payloadUrl { String }
+  
+   */
   function WebhookData(event, organization, payloadUrl) {
     _classCallCheck(this, WebhookData);
 

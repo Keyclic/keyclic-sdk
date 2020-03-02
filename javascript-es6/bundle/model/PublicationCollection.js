@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PublicationCollection = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PublicationCollection".
-     * @alias module:model/PublicationCollection
-     * @class
-    
-     */
+   * Constructs a new "PublicationCollection".
+   * @alias module:model/PublicationCollection
+   * @class
+  
+   */
   function PublicationCollection() {
     _classCallCheck(this, PublicationCollection);
 

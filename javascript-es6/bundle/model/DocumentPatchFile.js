@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DocumentPatchFile = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DocumentPatchFile".
-     * @alias module:model/DocumentPatchFile
-     * @class
-    
-     */
+   * Constructs a new "DocumentPatchFile".
+   * @alias module:model/DocumentPatchFile
+   * @class
+  
+   */
   function DocumentPatchFile() {
     _classCallCheck(this, DocumentPatchFile);
 

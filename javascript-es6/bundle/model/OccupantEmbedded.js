@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OccupantEmbedded = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OccupantEmbedded".
-     * @alias module:model/OccupantEmbedded
-     * @class
-    
-     */
+   * Constructs a new "OccupantEmbedded".
+   * @alias module:model/OccupantEmbedded
+   * @class
+  
+   */
   function OccupantEmbedded() {
     _classCallCheck(this, OccupantEmbedded);
 

@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var DeviceLinksSelfIriTemplateMapping = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "DeviceLinksSelfIriTemplateMapping".
-     * @alias module:model/DeviceLinksSelfIriTemplateMapping
-     * @class
-    
-     */
+   * Constructs a new "DeviceLinksSelfIriTemplateMapping".
+   * @alias module:model/DeviceLinksSelfIriTemplateMapping
+   * @class
+  
+   */
   function DeviceLinksSelfIriTemplateMapping() {
     _classCallCheck(this, DeviceLinksSelfIriTemplateMapping);
 

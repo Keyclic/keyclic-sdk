@@ -51,11 +51,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ApplicationAgreement = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ApplicationAgreement".
-     * @alias module:model/ApplicationAgreement
-     * @class
-    
-     */
+   * Constructs a new "ApplicationAgreement".
+   * @alias module:model/ApplicationAgreement
+   * @class
+  
+   */
   function ApplicationAgreement() {
     _classCallCheck(this, ApplicationAgreement);
 

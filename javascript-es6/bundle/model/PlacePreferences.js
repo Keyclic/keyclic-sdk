@@ -39,11 +39,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PlacePreferences = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PlacePreferences".
-     * @alias module:model/PlacePreferences
-     * @class
-    
-     */
+   * Constructs a new "PlacePreferences".
+   * @alias module:model/PlacePreferences
+   * @class
+  
+   */
   function PlacePreferences() {
     _classCallCheck(this, PlacePreferences);
 

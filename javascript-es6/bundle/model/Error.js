@@ -41,11 +41,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var Error = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "Error".
-     * @alias module:model/Error
-     * @class
-    
-     */
+   * Constructs a new "Error".
+   * @alias module:model/Error
+   * @class
+  
+   */
   function Error() {
     _classCallCheck(this, Error);
 

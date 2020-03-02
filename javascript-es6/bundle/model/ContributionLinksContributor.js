@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var ContributionLinksContributor = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "ContributionLinksContributor".
-     * @alias module:model/ContributionLinksContributor
-     * @class
-    
-     */
+   * Constructs a new "ContributionLinksContributor".
+   * @alias module:model/ContributionLinksContributor
+   * @class
+  
+   */
   function ContributionLinksContributor() {
     _classCallCheck(this, ContributionLinksContributor);
 

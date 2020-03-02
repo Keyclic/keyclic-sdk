@@ -138,11 +138,11 @@ var ContributionPagination = /*#__PURE__*/ (function(_Pagination) {
   _inherits(ContributionPagination, _Pagination);
 
   /**
-     * Constructs a new "ContributionPagination".
-     * @alias module:model/ContributionPagination
-     * @class
-    
-     */
+   * Constructs a new "ContributionPagination".
+   * @alias module:model/ContributionPagination
+   * @class
+  
+   */
   function ContributionPagination() {
     var _this;
 

@@ -47,11 +47,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OrganizationPreferences = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OrganizationPreferences".
-     * @alias module:model/OrganizationPreferences
-     * @class
-    
-     */
+   * Constructs a new "OrganizationPreferences".
+   * @alias module:model/OrganizationPreferences
+   * @class
+  
+   */
   function OrganizationPreferences() {
     _classCallCheck(this, OrganizationPreferences);
 

@@ -75,11 +75,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OperationLinks = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OperationLinks".
-     * @alias module:model/OperationLinks
-     * @class
-    
-     */
+   * Constructs a new "OperationLinks".
+   * @alias module:model/OperationLinks
+   * @class
+  
+   */
   function OperationLinks() {
     _classCallCheck(this, OperationLinks);
 

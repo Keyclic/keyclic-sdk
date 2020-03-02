@@ -43,15 +43,15 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var RegisterData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "RegisterData".
-     * @alias module:model/RegisterData
-     * @class
-    
-     * @param email { String }
-    
-     * @param password { String }
-    
-     */
+   * Constructs a new "RegisterData".
+   * @alias module:model/RegisterData
+   * @class
+  
+   * @param email { String }
+  
+   * @param password { String }
+  
+   */
   function RegisterData(email, password) {
     _classCallCheck(this, RegisterData);
 

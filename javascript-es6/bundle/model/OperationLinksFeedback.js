@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var OperationLinksFeedback = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "OperationLinksFeedback".
-     * @alias module:model/OperationLinksFeedback
-     * @class
-    
-     */
+   * Constructs a new "OperationLinksFeedback".
+   * @alias module:model/OperationLinksFeedback
+   * @class
+  
+   */
   function OperationLinksFeedback() {
     _classCallCheck(this, OperationLinksFeedback);
 

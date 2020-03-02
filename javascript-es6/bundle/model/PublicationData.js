@@ -39,19 +39,19 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var PublicationData = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "PublicationData".
-     * @alias module:model/PublicationData
-     * @class
-    
-     * @param message { String }
-    
-     * @param feed { String }
-    
-     * @param title { String }
-    
-     * @param organization { String }
-    
-     */
+   * Constructs a new "PublicationData".
+   * @alias module:model/PublicationData
+   * @class
+  
+   * @param message { String }
+  
+   * @param feed { String }
+  
+   * @param title { String }
+  
+   * @param organization { String }
+  
+   */
   function PublicationData(message, feed, title, organization) {
     _classCallCheck(this, PublicationData);
 

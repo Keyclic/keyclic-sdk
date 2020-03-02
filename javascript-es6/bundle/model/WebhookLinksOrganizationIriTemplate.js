@@ -43,11 +43,11 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 var WebhookLinksOrganizationIriTemplate = /*#__PURE__*/ (function() {
   /**
-     * Constructs a new "WebhookLinksOrganizationIriTemplate".
-     * @alias module:model/WebhookLinksOrganizationIriTemplate
-     * @class
-    
-     */
+   * Constructs a new "WebhookLinksOrganizationIriTemplate".
+   * @alias module:model/WebhookLinksOrganizationIriTemplate
+   * @class
+  
+   */
   function WebhookLinksOrganizationIriTemplate() {
     _classCallCheck(this, WebhookLinksOrganizationIriTemplate);
 
