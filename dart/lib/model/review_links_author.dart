@@ -47,27 +47,23 @@ class ReviewLinksAuthor {
   }
 
   static List<ReviewLinksAuthor> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ReviewLinksAuthor>[]
-        : json
-            .map((dynamic value) => ReviewLinksAuthor.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ReviewLinksAuthor.fromJson(value))
+            ?.toList() ??
+        <ReviewLinksAuthor>[];
   }
 
   static Map<String, ReviewLinksAuthor> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ReviewLinksAuthor>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReviewLinksAuthor.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ReviewLinksAuthor.fromJson(value));
+        }) ??
+        <String, ReviewLinksAuthor>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

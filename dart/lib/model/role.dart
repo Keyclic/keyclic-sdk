@@ -102,19 +102,15 @@ class Role {
   }
 
   static List<Role> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Role>[]
-        : json.map((dynamic value) => Role.fromJson(value)).toList();
+    return json?.map((dynamic value) => Role.fromJson(value))?.toList() ??
+        <Role>[];
   }
 
   static Map<String, Role> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Role>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Role.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Role.fromJson(value));
+        }) ??
+        <String, Role>{};
   }
 
   Map<String, dynamic> toJson() {

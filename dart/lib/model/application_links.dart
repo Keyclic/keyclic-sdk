@@ -47,27 +47,23 @@ class ApplicationLinks {
   }
 
   static List<ApplicationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ApplicationLinks>[]
-        : json
-            .map((dynamic value) => ApplicationLinks.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ApplicationLinks.fromJson(value))
+            ?.toList() ??
+        <ApplicationLinks>[];
   }
 
   static Map<String, ApplicationLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ApplicationLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ApplicationLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ApplicationLinks.fromJson(value));
+        }) ??
+        <String, ApplicationLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (knowledgeBase != null) 'knowledgeBase': knowledgeBase,
-      if (self != null) 'self': self,
+      if (knowledgeBase != null) 'knowledgeBase': knowledgeBase.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

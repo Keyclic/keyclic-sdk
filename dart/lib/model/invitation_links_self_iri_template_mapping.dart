@@ -42,23 +42,20 @@ class InvitationLinksSelfIriTemplateMapping {
 
   static List<InvitationLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <InvitationLinksSelfIriTemplateMapping>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 InvitationLinksSelfIriTemplateMapping.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <InvitationLinksSelfIriTemplateMapping>[];
   }
 
   static Map<String, InvitationLinksSelfIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, InvitationLinksSelfIriTemplateMapping>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = InvitationLinksSelfIriTemplateMapping.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, InvitationLinksSelfIriTemplateMapping.fromJson(value));
+        }) ??
+        <String, InvitationLinksSelfIriTemplateMapping>{};
   }
 
   Map<String, dynamic> toJson() {

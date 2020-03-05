@@ -40,22 +40,18 @@ class AgreementPrivacyPolicy {
   }
 
   static List<AgreementPrivacyPolicy> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <AgreementPrivacyPolicy>[]
-        : json
-            .map((dynamic value) => AgreementPrivacyPolicy.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => AgreementPrivacyPolicy.fromJson(value))
+            ?.toList() ??
+        <AgreementPrivacyPolicy>[];
   }
 
   static Map<String, AgreementPrivacyPolicy> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, AgreementPrivacyPolicy>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = AgreementPrivacyPolicy.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, AgreementPrivacyPolicy.fromJson(value));
+        }) ??
+        <String, AgreementPrivacyPolicy>{};
   }
 
   Map<String, dynamic> toJson() {

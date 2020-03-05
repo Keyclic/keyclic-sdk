@@ -94,24 +94,20 @@ class Webhook {
   }
 
   static List<Webhook> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Webhook>[]
-        : json.map((dynamic value) => Webhook.fromJson(value)).toList();
+    return json?.map((dynamic value) => Webhook.fromJson(value))?.toList() ??
+        <Webhook>[];
   }
 
   static Map<String, Webhook> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Webhook>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Webhook.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Webhook.fromJson(value));
+        }) ??
+        <String, Webhook>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
+      if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (enabled != null) 'enabled': enabled,
       if (event != null) 'event': event,

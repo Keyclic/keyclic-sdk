@@ -106,25 +106,21 @@ class Category {
   }
 
   static List<Category> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Category>[]
-        : json.map((dynamic value) => Category.fromJson(value)).toList();
+    return json?.map((dynamic value) => Category.fromJson(value))?.toList() ??
+        <Category>[];
   }
 
   static Map<String, Category> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Category>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Category.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Category.fromJson(value));
+        }) ??
+        <String, Category>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (embedded != null) '_embedded': embedded,
-      if (links != null) '_links': links,
+      if (embedded != null) '_embedded': embedded.toJson(),
+      if (links != null) '_links': links.toJson(),
       if (color != null) 'color': color,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (icon != null) 'icon': icon,

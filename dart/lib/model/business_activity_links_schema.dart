@@ -48,28 +48,25 @@ class BusinessActivityLinksSchema {
   }
 
   static List<BusinessActivityLinksSchema> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <BusinessActivityLinksSchema>[]
-        : json
-            .map((dynamic value) => BusinessActivityLinksSchema.fromJson(value))
-            .toList();
+    return json
+            ?.map(
+                (dynamic value) => BusinessActivityLinksSchema.fromJson(value))
+            ?.toList() ??
+        <BusinessActivityLinksSchema>[];
   }
 
   static Map<String, BusinessActivityLinksSchema> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, BusinessActivityLinksSchema>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = BusinessActivityLinksSchema.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, BusinessActivityLinksSchema.fromJson(value));
+        }) ??
+        <String, BusinessActivityLinksSchema>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

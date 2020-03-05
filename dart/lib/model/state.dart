@@ -70,19 +70,15 @@ class State {
   }
 
   static List<State> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <State>[]
-        : json.map((dynamic value) => State.fromJson(value)).toList();
+    return json?.map((dynamic value) => State.fromJson(value))?.toList() ??
+        <State>[];
   }
 
   static Map<String, State> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, State>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = State.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, State.fromJson(value));
+        }) ??
+        <String, State>{};
   }
 
   Map<String, dynamic> toJson() {

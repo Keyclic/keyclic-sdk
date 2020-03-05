@@ -46,28 +46,24 @@ class ExternalServiceLinks {
   }
 
   static List<ExternalServiceLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ExternalServiceLinks>[]
-        : json
-            .map((dynamic value) => ExternalServiceLinks.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ExternalServiceLinks.fromJson(value))
+            ?.toList() ??
+        <ExternalServiceLinks>[];
   }
 
   static Map<String, ExternalServiceLinks> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ExternalServiceLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ExternalServiceLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ExternalServiceLinks.fromJson(value));
+        }) ??
+        <String, ExternalServiceLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (provider != null) 'provider': provider,
-      if (self != null) 'self': self,
+      if (provider != null) 'provider': provider.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

@@ -58,27 +58,25 @@ class DelegationLinks {
   }
 
   static List<DelegationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DelegationLinks>[]
-        : json.map((dynamic value) => DelegationLinks.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => DelegationLinks.fromJson(value))
+            ?.toList() ??
+        <DelegationLinks>[];
   }
 
   static Map<String, DelegationLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, DelegationLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DelegationLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DelegationLinks.fromJson(value));
+        }) ??
+        <String, DelegationLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (createdBy != null) 'createdBy': createdBy,
-      if (report != null) 'report': report,
-      if (self != null) 'self': self,
-      if (service != null) 'service': service,
+      if (createdBy != null) 'createdBy': createdBy.toJson(),
+      if (report != null) 'report': report.toJson(),
+      if (self != null) 'self': self.toJson(),
+      if (service != null) 'service': service.toJson(),
     };
   }
 

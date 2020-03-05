@@ -53,27 +53,23 @@ class ExternalServicePatch {
   }
 
   static List<ExternalServicePatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ExternalServicePatch>[]
-        : json
-            .map((dynamic value) => ExternalServicePatch.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ExternalServicePatch.fromJson(value))
+            ?.toList() ??
+        <ExternalServicePatch>[];
   }
 
   static Map<String, ExternalServicePatch> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ExternalServicePatch>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ExternalServicePatch.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ExternalServicePatch.fromJson(value));
+        }) ??
+        <String, ExternalServicePatch>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (contactPoint != null) 'contactPoint': contactPoint,
+      if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (description != null) 'description': description,
       if (name != null) 'name': name,
     };

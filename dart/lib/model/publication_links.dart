@@ -58,29 +58,25 @@ class PublicationLinks {
   }
 
   static List<PublicationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PublicationLinks>[]
-        : json
-            .map((dynamic value) => PublicationLinks.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PublicationLinks.fromJson(value))
+            ?.toList() ??
+        <PublicationLinks>[];
   }
 
   static Map<String, PublicationLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PublicationLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PublicationLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PublicationLinks.fromJson(value));
+        }) ??
+        <String, PublicationLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (author != null) 'author': author,
-      if (feed != null) 'feed': feed,
-      if (organization != null) 'organization': organization,
-      if (self != null) 'self': self,
+      if (author != null) 'author': author.toJson(),
+      if (feed != null) 'feed': feed.toJson(),
+      if (organization != null) 'organization': organization.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

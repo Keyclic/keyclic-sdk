@@ -40,28 +40,24 @@ class OccupantLinksPlaceIriTemplate {
   }
 
   static List<OccupantLinksPlaceIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OccupantLinksPlaceIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 OccupantLinksPlaceIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <OccupantLinksPlaceIriTemplate>[];
   }
 
   static Map<String, OccupantLinksPlaceIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OccupantLinksPlaceIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OccupantLinksPlaceIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OccupantLinksPlaceIriTemplate.fromJson(value));
+        }) ??
+        <String, OccupantLinksPlaceIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

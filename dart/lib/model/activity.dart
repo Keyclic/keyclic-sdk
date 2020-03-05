@@ -87,19 +87,15 @@ class Activity {
   }
 
   static List<Activity> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Activity>[]
-        : json.map((dynamic value) => Activity.fromJson(value)).toList();
+    return json?.map((dynamic value) => Activity.fromJson(value))?.toList() ??
+        <Activity>[];
   }
 
   static Map<String, Activity> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Activity>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Activity.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Activity.fromJson(value));
+        }) ??
+        <String, Activity>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -108,7 +104,7 @@ class Activity {
       if (message != null) 'message': message,
       if (object != null) 'object': object,
       if (origin != null) 'origin': origin,
-      if (subject != null) 'subject': subject,
+      if (subject != null) 'subject': subject.toJson(),
       if (time != null) 'time': time.toUtc().toIso8601String(),
       if (title != null) 'title': title,
       if (verb != null) 'verb': verb,

@@ -47,27 +47,23 @@ class FeedbackLinksSelf {
   }
 
   static List<FeedbackLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeedbackLinksSelf>[]
-        : json
-            .map((dynamic value) => FeedbackLinksSelf.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => FeedbackLinksSelf.fromJson(value))
+            ?.toList() ??
+        <FeedbackLinksSelf>[];
   }
 
   static Map<String, FeedbackLinksSelf> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, FeedbackLinksSelf>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackLinksSelf.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeedbackLinksSelf.fromJson(value));
+        }) ??
+        <String, FeedbackLinksSelf>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

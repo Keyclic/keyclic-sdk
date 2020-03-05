@@ -88,24 +88,20 @@ class Section {
   }
 
   static List<Section> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Section>[]
-        : json.map((dynamic value) => Section.fromJson(value)).toList();
+    return json?.map((dynamic value) => Section.fromJson(value))?.toList() ??
+        <Section>[];
   }
 
   static Map<String, Section> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Section>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Section.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Section.fromJson(value));
+        }) ??
+        <String, Section>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
+      if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (id != null) 'id': id,

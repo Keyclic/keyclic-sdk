@@ -11,8 +11,6 @@
  */
 
 import ApiClient from "../ApiClient";
-import SuccessLoginCredentialsAdministratorOf from "./SuccessLoginCredentialsAdministratorOf";
-import SuccessLoginCredentialsMemberOf from "./SuccessLoginCredentialsMemberOf";
 
 /**
  * The SuccessLoginCredentials model module.
@@ -28,11 +26,6 @@ export default class SuccessLoginCredentials {
   constructor() {
     this.id = null;
     this.login = null;
-    this.administratorOf = [];
-    this.memberOf = [];
-
-    this.administratorOfType = SuccessLoginCredentialsAdministratorOf;
-    this.memberOfType = SuccessLoginCredentialsMemberOf;
   }
 
   /**
@@ -55,17 +48,6 @@ export default class SuccessLoginCredentials {
     }
     if (data.hasOwnProperty("login")) {
       object.login = ApiClient.convertToType(data["login"], "String");
-    }
-    if (data.hasOwnProperty("administratorOf")) {
-      object.administratorOf = ApiClient.convertToType(
-        data["administratorOf"],
-        [object.administratorOfType]
-      );
-    }
-    if (data.hasOwnProperty("memberOf")) {
-      object.memberOf = ApiClient.convertToType(data["memberOf"], [
-        object.memberOfType
-      ]);
     }
 
     return object;
@@ -96,31 +78,5 @@ export default class SuccessLoginCredentials {
    */
   setLogin(login) {
     this.login = login;
-  }
-  /**
-   * @return { Array.<module:model/SuccessLoginCredentialsAdministratorOf> }
-   */
-  getAdministratorOf() {
-    return this.administratorOf;
-  }
-
-  /**
-   * @param { Array.<module:model/SuccessLoginCredentialsAdministratorOf> } administratorOf
-   */
-  setAdministratorOf(administratorOf) {
-    this.administratorOf = administratorOf;
-  }
-  /**
-   * @return { Array.<module:model/SuccessLoginCredentialsMemberOf> }
-   */
-  getMemberOf() {
-    return this.memberOf;
-  }
-
-  /**
-   * @param { Array.<module:model/SuccessLoginCredentialsMemberOf> } memberOf
-   */
-  setMemberOf(memberOf) {
-    this.memberOf = memberOf;
   }
 }

@@ -42,23 +42,20 @@ class OccupantLinksPlaceIriTemplateMapping {
 
   static List<OccupantLinksPlaceIriTemplateMapping> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <OccupantLinksPlaceIriTemplateMapping>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 OccupantLinksPlaceIriTemplateMapping.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <OccupantLinksPlaceIriTemplateMapping>[];
   }
 
   static Map<String, OccupantLinksPlaceIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OccupantLinksPlaceIriTemplateMapping>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OccupantLinksPlaceIriTemplateMapping.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, OccupantLinksPlaceIriTemplateMapping.fromJson(value));
+        }) ??
+        <String, OccupantLinksPlaceIriTemplateMapping>{};
   }
 
   Map<String, dynamic> toJson() {

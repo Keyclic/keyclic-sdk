@@ -66,30 +66,27 @@ class OrganizationLinks {
   }
 
   static List<OrganizationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OrganizationLinks>[]
-        : json
-            .map((dynamic value) => OrganizationLinks.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => OrganizationLinks.fromJson(value))
+            ?.toList() ??
+        <OrganizationLinks>[];
   }
 
   static Map<String, OrganizationLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OrganizationLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OrganizationLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OrganizationLinks.fromJson(value));
+        }) ??
+        <String, OrganizationLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (application != null) 'application': application,
-      if (businessActivity != null) 'businessActivity': businessActivity,
-      if (configuration != null) 'configuration': configuration,
-      if (logo != null) 'logo': logo,
-      if (self != null) 'self': self,
+      if (application != null) 'application': application.toJson(),
+      if (businessActivity != null)
+        'businessActivity': businessActivity.toJson(),
+      if (configuration != null) 'configuration': configuration.toJson(),
+      if (logo != null) 'logo': logo.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

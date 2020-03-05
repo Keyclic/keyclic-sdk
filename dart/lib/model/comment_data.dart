@@ -40,19 +40,17 @@ class CommentData {
   }
 
   static List<CommentData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <CommentData>[]
-        : json.map((dynamic value) => CommentData.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => CommentData.fromJson(value))
+            ?.toList() ??
+        <CommentData>[];
   }
 
   static Map<String, CommentData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, CommentData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = CommentData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, CommentData.fromJson(value));
+        }) ??
+        <String, CommentData>{};
   }
 
   Map<String, dynamic> toJson() {

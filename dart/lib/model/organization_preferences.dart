@@ -64,30 +64,26 @@ class OrganizationPreferences {
   }
 
   static List<OrganizationPreferences> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OrganizationPreferences>[]
-        : json
-            .map((dynamic value) => OrganizationPreferences.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => OrganizationPreferences.fromJson(value))
+            ?.toList() ??
+        <OrganizationPreferences>[];
   }
 
   static Map<String, OrganizationPreferences> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OrganizationPreferences>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OrganizationPreferences.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OrganizationPreferences.fromJson(value));
+        }) ??
+        <String, OrganizationPreferences>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (notification != null) 'notification': notification,
+      if (notification != null) 'notification': notification.toJson(),
       if (offline != null) 'offline': offline,
       if (public != null) 'public': public,
-      if (reference != null) 'reference': reference,
+      if (reference != null) 'reference': reference.toJson(),
       if (reviewEnabled != null) 'reviewEnabled': reviewEnabled,
     };
   }

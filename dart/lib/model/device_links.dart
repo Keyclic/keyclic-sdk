@@ -46,25 +46,23 @@ class DeviceLinks {
   }
 
   static List<DeviceLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DeviceLinks>[]
-        : json.map((dynamic value) => DeviceLinks.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => DeviceLinks.fromJson(value))
+            ?.toList() ??
+        <DeviceLinks>[];
   }
 
   static Map<String, DeviceLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, DeviceLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DeviceLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DeviceLinks.fromJson(value));
+        }) ??
+        <String, DeviceLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (person != null) 'person': person,
-      if (self != null) 'self': self,
+      if (person != null) 'person': person.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

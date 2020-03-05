@@ -46,19 +46,15 @@ class NodePath {
   }
 
   static List<NodePath> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <NodePath>[]
-        : json.map((dynamic value) => NodePath.fromJson(value)).toList();
+    return json?.map((dynamic value) => NodePath.fromJson(value))?.toList() ??
+        <NodePath>[];
   }
 
   static Map<String, NodePath> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, NodePath>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = NodePath.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, NodePath.fromJson(value));
+        }) ??
+        <String, NodePath>{};
   }
 
   Map<String, dynamic> toJson() {

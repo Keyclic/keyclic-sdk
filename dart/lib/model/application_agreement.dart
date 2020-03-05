@@ -52,29 +52,25 @@ class ApplicationAgreement {
   }
 
   static List<ApplicationAgreement> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ApplicationAgreement>[]
-        : json
-            .map((dynamic value) => ApplicationAgreement.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ApplicationAgreement.fromJson(value))
+            ?.toList() ??
+        <ApplicationAgreement>[];
   }
 
   static Map<String, ApplicationAgreement> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ApplicationAgreement>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ApplicationAgreement.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ApplicationAgreement.fromJson(value));
+        }) ??
+        <String, ApplicationAgreement>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (olderThan != null) 'olderThan': olderThan,
-      if (privacyPolicy != null) 'privacyPolicy': privacyPolicy,
-      if (termsOfService != null) 'termsOfService': termsOfService,
+      if (olderThan != null) 'olderThan': olderThan.toJson(),
+      if (privacyPolicy != null) 'privacyPolicy': privacyPolicy.toJson(),
+      if (termsOfService != null) 'termsOfService': termsOfService.toJson(),
     };
   }
 

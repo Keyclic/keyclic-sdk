@@ -88,28 +88,24 @@ class Document {
   }
 
   static List<Document> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Document>[]
-        : json.map((dynamic value) => Document.fromJson(value)).toList();
+    return json?.map((dynamic value) => Document.fromJson(value))?.toList() ??
+        <Document>[];
   }
 
   static Map<String, Document> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Document>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Document.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Document.fromJson(value));
+        }) ??
+        <String, Document>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
+      if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (file != null) 'file': file,
+      if (file != null) 'file': file.toJson(),
       if (id != null) 'id': id,
-      if (permission != null) 'permission': permission,
+      if (permission != null) 'permission': permission.toJson(),
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };

@@ -42,23 +42,20 @@ class DocumentLinksFileIriTemplateMapping {
 
   static List<DocumentLinksFileIriTemplateMapping> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <DocumentLinksFileIriTemplateMapping>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 DocumentLinksFileIriTemplateMapping.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <DocumentLinksFileIriTemplateMapping>[];
   }
 
   static Map<String, DocumentLinksFileIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, DocumentLinksFileIriTemplateMapping>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentLinksFileIriTemplateMapping.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, DocumentLinksFileIriTemplateMapping.fromJson(value));
+        }) ??
+        <String, DocumentLinksFileIriTemplateMapping>{};
   }
 
   Map<String, dynamic> toJson() {

@@ -48,28 +48,24 @@ class DelegationLinksService {
   }
 
   static List<DelegationLinksService> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DelegationLinksService>[]
-        : json
-            .map((dynamic value) => DelegationLinksService.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => DelegationLinksService.fromJson(value))
+            ?.toList() ??
+        <DelegationLinksService>[];
   }
 
   static Map<String, DelegationLinksService> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, DelegationLinksService>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DelegationLinksService.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DelegationLinksService.fromJson(value));
+        }) ??
+        <String, DelegationLinksService>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

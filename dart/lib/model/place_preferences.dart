@@ -40,21 +40,17 @@ class PlacePreferences {
   }
 
   static List<PlacePreferences> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PlacePreferences>[]
-        : json
-            .map((dynamic value) => PlacePreferences.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PlacePreferences.fromJson(value))
+            ?.toList() ??
+        <PlacePreferences>[];
   }
 
   static Map<String, PlacePreferences> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PlacePreferences>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PlacePreferences.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PlacePreferences.fromJson(value));
+        }) ??
+        <String, PlacePreferences>{};
   }
 
   Map<String, dynamic> toJson() {

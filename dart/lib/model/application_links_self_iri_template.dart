@@ -41,28 +41,24 @@ class ApplicationLinksSelfIriTemplate {
 
   static List<ApplicationLinksSelfIriTemplate> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <ApplicationLinksSelfIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 ApplicationLinksSelfIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <ApplicationLinksSelfIriTemplate>[];
   }
 
   static Map<String, ApplicationLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ApplicationLinksSelfIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ApplicationLinksSelfIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ApplicationLinksSelfIriTemplate.fromJson(value));
+        }) ??
+        <String, ApplicationLinksSelfIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

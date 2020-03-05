@@ -46,19 +46,17 @@ class OccupantData {
   }
 
   static List<OccupantData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OccupantData>[]
-        : json.map((dynamic value) => OccupantData.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => OccupantData.fromJson(value))
+            ?.toList() ??
+        <OccupantData>[];
   }
 
   static Map<String, OccupantData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OccupantData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OccupantData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OccupantData.fromJson(value));
+        }) ??
+        <String, OccupantData>{};
   }
 
   Map<String, dynamic> toJson() {

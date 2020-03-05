@@ -47,27 +47,23 @@ class DeviceLinksPerson {
   }
 
   static List<DeviceLinksPerson> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DeviceLinksPerson>[]
-        : json
-            .map((dynamic value) => DeviceLinksPerson.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => DeviceLinksPerson.fromJson(value))
+            ?.toList() ??
+        <DeviceLinksPerson>[];
   }
 
   static Map<String, DeviceLinksPerson> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, DeviceLinksPerson>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DeviceLinksPerson.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DeviceLinksPerson.fromJson(value));
+        }) ??
+        <String, DeviceLinksPerson>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

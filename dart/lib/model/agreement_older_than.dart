@@ -40,22 +40,18 @@ class AgreementOlderThan {
   }
 
   static List<AgreementOlderThan> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <AgreementOlderThan>[]
-        : json
-            .map((dynamic value) => AgreementOlderThan.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => AgreementOlderThan.fromJson(value))
+            ?.toList() ??
+        <AgreementOlderThan>[];
   }
 
   static Map<String, AgreementOlderThan> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, AgreementOlderThan>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = AgreementOlderThan.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, AgreementOlderThan.fromJson(value));
+        }) ??
+        <String, AgreementOlderThan>{};
   }
 
   Map<String, dynamic> toJson() {

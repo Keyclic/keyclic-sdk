@@ -40,22 +40,18 @@ class OperationEmbeddedDuration {
   }
 
   static List<OperationEmbeddedDuration> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OperationEmbeddedDuration>[]
-        : json
-            .map((dynamic value) => OperationEmbeddedDuration.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => OperationEmbeddedDuration.fromJson(value))
+            ?.toList() ??
+        <OperationEmbeddedDuration>[];
   }
 
   static Map<String, OperationEmbeddedDuration> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OperationEmbeddedDuration>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationEmbeddedDuration.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OperationEmbeddedDuration.fromJson(value));
+        }) ??
+        <String, OperationEmbeddedDuration>{};
   }
 
   Map<String, dynamic> toJson() {

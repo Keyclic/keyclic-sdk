@@ -40,27 +40,23 @@ class DeviceLinksSelfIriTemplate {
   }
 
   static List<DeviceLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DeviceLinksSelfIriTemplate>[]
-        : json
-            .map((dynamic value) => DeviceLinksSelfIriTemplate.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => DeviceLinksSelfIriTemplate.fromJson(value))
+            ?.toList() ??
+        <DeviceLinksSelfIriTemplate>[];
   }
 
   static Map<String, DeviceLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, DeviceLinksSelfIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DeviceLinksSelfIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DeviceLinksSelfIriTemplate.fromJson(value));
+        }) ??
+        <String, DeviceLinksSelfIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

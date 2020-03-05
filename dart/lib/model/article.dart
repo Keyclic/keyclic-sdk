@@ -88,24 +88,20 @@ class Article {
   }
 
   static List<Article> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Article>[]
-        : json.map((dynamic value) => Article.fromJson(value)).toList();
+    return json?.map((dynamic value) => Article.fromJson(value))?.toList() ??
+        <Article>[];
   }
 
   static Map<String, Article> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Article>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Article.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Article.fromJson(value));
+        }) ??
+        <String, Article>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
+      if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
       if (name != null) 'name': name,

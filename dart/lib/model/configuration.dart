@@ -113,32 +113,30 @@ class Configuration {
   }
 
   static List<Configuration> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Configuration>[]
-        : json.map((dynamic value) => Configuration.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => Configuration.fromJson(value))
+            ?.toList() ??
+        <Configuration>[];
   }
 
   static Map<String, Configuration> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Configuration>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = Configuration.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Configuration.fromJson(value));
+        }) ??
+        <String, Configuration>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
+      if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (delegationType != null) 'delegationType': delegationType,
+      if (delegationType != null) 'delegationType': delegationType.toJson(),
       if (description != null) 'description': description,
       if (id != null) 'id': id,
-      if (memberType != null) 'memberType': memberType,
+      if (memberType != null) 'memberType': memberType.toJson(),
       if (name != null) 'name': name,
-      if (operationType != null) 'operationType': operationType,
-      if (reportType != null) 'reportType': reportType,
+      if (operationType != null) 'operationType': operationType.toJson(),
+      if (reportType != null) 'reportType': reportType.toJson(),
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };

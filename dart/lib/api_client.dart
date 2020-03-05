@@ -25,7 +25,7 @@ class ApiClient {
   final bool debug;
   final Client client = Client();
 
-  Map<String, String> _defaultHeaderMap = {};
+  Map<String, String> _defaultHeaderMap = <String, String>{};
 
   void addDefaultHeader(String key, String value) {
     _defaultHeaderMap[key] = value;
@@ -46,7 +46,7 @@ class ApiClient {
 
   // We don't use a Map<String, String> for queryParams.
   // If collectionFormat is 'multi' a key might appear multiple times.
-  Future<Response> invokeAPI(
+  Future<Response> invokeAPI({
     String path,
     String method,
     Iterable<QueryParam> queryParams,
@@ -54,7 +54,7 @@ class ApiClient {
     Map<String, String> headerParams,
     String contentType,
     List<String> authNames,
-  ) async {
+  }) async {
     _updateParamsForAuth(authNames, queryParams, headerParams);
 
     final List<String> queryParamList = queryParams
@@ -62,10 +62,11 @@ class ApiClient {
         .map<String>(
             (QueryParam queryParam) => '${queryParam.name}=${queryParam.value}')
         .toList();
-    String queryString =
-        queryParamList.isNotEmpty ? '?' + queryParamList.join('&') : '';
 
-    final String url = basePath + path + queryString;
+    String queryString =
+        queryParamList.isNotEmpty ? '?${queryParamList.join('&')}' : '';
+
+    final String url = '$basePath$path$queryString';
 
     headerParams.addAll(_defaultHeaderMap);
     headerParams['Content-Type'] = contentType;
@@ -860,6 +861,8 @@ class ApiClient {
           return ReviewRequest.fromJson(value);
         case 'ReviewRequestCollection':
           return ReviewRequestCollection.fromJson(value);
+        case 'ReviewRequestEmbedded':
+          return ReviewRequestEmbedded.fromJson(value);
         case 'ReviewRequestLinks':
           return ReviewRequestLinks.fromJson(value);
         case 'ReviewRequestLinksItemToReview':
@@ -910,12 +913,6 @@ class ApiClient {
           return SuccessLogin.fromJson(value);
         case 'SuccessLoginCredentials':
           return SuccessLoginCredentials.fromJson(value);
-        case 'SuccessLoginCredentialsAdministratorOf':
-          return SuccessLoginCredentialsAdministratorOf.fromJson(value);
-        case 'SuccessLoginCredentialsMemberOf':
-          return SuccessLoginCredentialsMemberOf.fromJson(value);
-        case 'SuccessLoginCredentialsOrganization':
-          return SuccessLoginCredentialsOrganization.fromJson(value);
         case 'Tracking':
           return Tracking.fromJson(value);
         case 'TrackingProgression':

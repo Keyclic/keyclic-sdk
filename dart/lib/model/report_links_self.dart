@@ -47,25 +47,23 @@ class ReportLinksSelf {
   }
 
   static List<ReportLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ReportLinksSelf>[]
-        : json.map((dynamic value) => ReportLinksSelf.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => ReportLinksSelf.fromJson(value))
+            ?.toList() ??
+        <ReportLinksSelf>[];
   }
 
   static Map<String, ReportLinksSelf> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ReportLinksSelf>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReportLinksSelf.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ReportLinksSelf.fromJson(value));
+        }) ??
+        <String, ReportLinksSelf>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

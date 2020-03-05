@@ -48,29 +48,25 @@ class OrganizationLinksApplication {
   }
 
   static List<OrganizationLinksApplication> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OrganizationLinksApplication>[]
-        : json
-            .map(
+    return json
+            ?.map(
                 (dynamic value) => OrganizationLinksApplication.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <OrganizationLinksApplication>[];
   }
 
   static Map<String, OrganizationLinksApplication> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OrganizationLinksApplication>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OrganizationLinksApplication.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OrganizationLinksApplication.fromJson(value));
+        }) ??
+        <String, OrganizationLinksApplication>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

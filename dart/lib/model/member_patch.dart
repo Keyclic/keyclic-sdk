@@ -51,24 +51,22 @@ class MemberPatch {
   }
 
   static List<MemberPatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <MemberPatch>[]
-        : json.map((dynamic value) => MemberPatch.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => MemberPatch.fromJson(value))
+            ?.toList() ??
+        <MemberPatch>[];
   }
 
   static Map<String, MemberPatch> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, MemberPatch>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MemberPatch.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, MemberPatch.fromJson(value));
+        }) ??
+        <String, MemberPatch>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (contactPoint != null) 'contactPoint': contactPoint,
+      if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (roles != null) 'roles': roles,
     };
   }

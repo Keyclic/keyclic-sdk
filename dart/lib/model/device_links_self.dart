@@ -47,25 +47,23 @@ class DeviceLinksSelf {
   }
 
   static List<DeviceLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DeviceLinksSelf>[]
-        : json.map((dynamic value) => DeviceLinksSelf.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => DeviceLinksSelf.fromJson(value))
+            ?.toList() ??
+        <DeviceLinksSelf>[];
   }
 
   static Map<String, DeviceLinksSelf> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, DeviceLinksSelf>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DeviceLinksSelf.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DeviceLinksSelf.fromJson(value));
+        }) ??
+        <String, DeviceLinksSelf>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

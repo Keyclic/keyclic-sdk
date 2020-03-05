@@ -93,32 +93,30 @@ class OperationLinks {
   }
 
   static List<OperationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OperationLinks>[]
-        : json.map((dynamic value) => OperationLinks.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => OperationLinks.fromJson(value))
+            ?.toList() ??
+        <OperationLinks>[];
   }
 
   static Map<String, OperationLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OperationLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OperationLinks.fromJson(value));
+        }) ??
+        <String, OperationLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (createdBy != null) 'createdBy': createdBy,
-      if (feedback != null) 'feedback': feedback,
-      if (image != null) 'image': image,
+      if (createdBy != null) 'createdBy': createdBy.toJson(),
+      if (feedback != null) 'feedback': feedback.toJson(),
+      if (image != null) 'image': image.toJson(),
       if (images != null) 'images': images,
-      if (operator_ != null) 'operator': operator_,
-      if (organization != null) 'organization': organization,
-      if (report != null) 'report': report,
-      if (self != null) 'self': self,
-      if (tracking != null) 'tracking': tracking,
+      if (operator_ != null) 'operator': operator_.toJson(),
+      if (organization != null) 'organization': organization.toJson(),
+      if (report != null) 'report': report.toJson(),
+      if (self != null) 'self': self.toJson(),
+      if (tracking != null) 'tracking': tracking.toJson(),
     };
   }
 

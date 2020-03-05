@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ReviewRequestEmbedded = _interopRequireDefault(
+  require("./ReviewRequestEmbedded")
+);
+
 var _ReviewRequestLinks = _interopRequireDefault(
   require("./ReviewRequestLinks")
 );
@@ -51,11 +55,13 @@ var ReviewRequest = /*#__PURE__*/ (function() {
   function ReviewRequest() {
     _classCallCheck(this, ReviewRequest);
 
+    this.embedded = null;
     this.links = null;
     this.createdAt = null;
     this.id = null;
     this.type = null;
     this.updatedAt = null;
+    this.embeddedType = _ReviewRequestEmbedded.default;
     this.linksType = _ReviewRequestLinks.default;
   }
   /**
@@ -69,11 +75,29 @@ var ReviewRequest = /*#__PURE__*/ (function() {
     ReviewRequest,
     [
       {
-        key: "getLinks",
+        key: "getEmbedded",
 
+        /**
+         * @return { module:model/ReviewRequestEmbedded }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/ReviewRequestEmbedded } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
         /**
          * @return { module:model/ReviewRequestLinks }
          */
+      },
+      {
+        key: "getLinks",
         value: function getLinks() {
           return this.links;
         }
@@ -139,6 +163,13 @@ var ReviewRequest = /*#__PURE__*/ (function() {
 
           if (object === null) {
             object = new ReviewRequest();
+          }
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
           }
 
           if (data.hasOwnProperty("_links")) {

@@ -48,28 +48,24 @@ class DelegationLinksCreatedBy {
   }
 
   static List<DelegationLinksCreatedBy> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DelegationLinksCreatedBy>[]
-        : json
-            .map((dynamic value) => DelegationLinksCreatedBy.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => DelegationLinksCreatedBy.fromJson(value))
+            ?.toList() ??
+        <DelegationLinksCreatedBy>[];
   }
 
   static Map<String, DelegationLinksCreatedBy> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, DelegationLinksCreatedBy>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DelegationLinksCreatedBy.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DelegationLinksCreatedBy.fromJson(value));
+        }) ??
+        <String, DelegationLinksCreatedBy>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

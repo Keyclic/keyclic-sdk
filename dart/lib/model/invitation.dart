@@ -88,24 +88,20 @@ class Invitation {
   }
 
   static List<Invitation> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Invitation>[]
-        : json.map((dynamic value) => Invitation.fromJson(value)).toList();
+    return json?.map((dynamic value) => Invitation.fromJson(value))?.toList() ??
+        <Invitation>[];
   }
 
   static Map<String, Invitation> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Invitation>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Invitation.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Invitation.fromJson(value));
+        }) ??
+        <String, Invitation>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
+      if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (expiredAt != null) 'expiredAt': expiredAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,

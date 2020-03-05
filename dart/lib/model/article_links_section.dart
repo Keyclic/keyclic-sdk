@@ -47,28 +47,24 @@ class ArticleLinksSection {
   }
 
   static List<ArticleLinksSection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ArticleLinksSection>[]
-        : json
-            .map((dynamic value) => ArticleLinksSection.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ArticleLinksSection.fromJson(value))
+            ?.toList() ??
+        <ArticleLinksSection>[];
   }
 
   static Map<String, ArticleLinksSection> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ArticleLinksSection>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ArticleLinksSection.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ArticleLinksSection.fromJson(value));
+        }) ??
+        <String, ArticleLinksSection>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

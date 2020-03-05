@@ -42,28 +42,24 @@ class OperationLinksReportIriTemplate {
 
   static List<OperationLinksReportIriTemplate> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <OperationLinksReportIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 OperationLinksReportIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <OperationLinksReportIriTemplate>[];
   }
 
   static Map<String, OperationLinksReportIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OperationLinksReportIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationLinksReportIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OperationLinksReportIriTemplate.fromJson(value));
+        }) ??
+        <String, OperationLinksReportIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

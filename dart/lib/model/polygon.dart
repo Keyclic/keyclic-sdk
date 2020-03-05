@@ -51,19 +51,15 @@ class Polygon {
   }
 
   static List<Polygon> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Polygon>[]
-        : json.map((dynamic value) => Polygon.fromJson(value)).toList();
+    return json?.map((dynamic value) => Polygon.fromJson(value))?.toList() ??
+        <Polygon>[];
   }
 
   static Map<String, Polygon> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Polygon>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Polygon.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Polygon.fromJson(value));
+        }) ??
+        <String, Polygon>{};
   }
 
   Map<String, dynamic> toJson() {

@@ -94,25 +94,23 @@ class InternalService {
   }
 
   static List<InternalService> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <InternalService>[]
-        : json.map((dynamic value) => InternalService.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => InternalService.fromJson(value))
+            ?.toList() ??
+        <InternalService>[];
   }
 
   static Map<String, InternalService> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, InternalService>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = InternalService.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, InternalService.fromJson(value));
+        }) ??
+        <String, InternalService>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
-      if (contactPoint != null) 'contactPoint': contactPoint,
+      if (links != null) '_links': links.toJson(),
+      if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (id != null) 'id': id,

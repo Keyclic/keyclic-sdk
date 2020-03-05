@@ -40,21 +40,17 @@ class DocumentPatchFile {
   }
 
   static List<DocumentPatchFile> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DocumentPatchFile>[]
-        : json
-            .map((dynamic value) => DocumentPatchFile.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => DocumentPatchFile.fromJson(value))
+            ?.toList() ??
+        <DocumentPatchFile>[];
   }
 
   static Map<String, DocumentPatchFile> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, DocumentPatchFile>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentPatchFile.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DocumentPatchFile.fromJson(value));
+        }) ??
+        <String, DocumentPatchFile>{};
   }
 
   Map<String, dynamic> toJson() {

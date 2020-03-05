@@ -58,22 +58,19 @@ class ExternalServiceContactPoint {
   }
 
   static List<ExternalServiceContactPoint> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ExternalServiceContactPoint>[]
-        : json
-            .map((dynamic value) => ExternalServiceContactPoint.fromJson(value))
-            .toList();
+    return json
+            ?.map(
+                (dynamic value) => ExternalServiceContactPoint.fromJson(value))
+            ?.toList() ??
+        <ExternalServiceContactPoint>[];
   }
 
   static Map<String, ExternalServiceContactPoint> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ExternalServiceContactPoint>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ExternalServiceContactPoint.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ExternalServiceContactPoint.fromJson(value));
+        }) ??
+        <String, ExternalServiceContactPoint>{};
   }
 
   Map<String, dynamic> toJson() {

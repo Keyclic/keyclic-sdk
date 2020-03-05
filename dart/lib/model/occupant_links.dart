@@ -52,26 +52,24 @@ class OccupantLinks {
   }
 
   static List<OccupantLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OccupantLinks>[]
-        : json.map((dynamic value) => OccupantLinks.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => OccupantLinks.fromJson(value))
+            ?.toList() ??
+        <OccupantLinks>[];
   }
 
   static Map<String, OccupantLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OccupantLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OccupantLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OccupantLinks.fromJson(value));
+        }) ??
+        <String, OccupantLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (member != null) 'member': member,
-      if (place != null) 'place': place,
-      if (self != null) 'self': self,
+      if (member != null) 'member': member.toJson(),
+      if (place != null) 'place': place.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

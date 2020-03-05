@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import ReviewRequestEmbedded from "./ReviewRequestEmbedded";
 import ReviewRequestLinks from "./ReviewRequestLinks";
 
 /**
@@ -25,12 +26,14 @@ export default class ReviewRequest {
     
      */
   constructor() {
+    this.embedded = null;
     this.links = null;
     this.createdAt = null;
     this.id = null;
     this.type = null;
     this.updatedAt = null;
 
+    this.embeddedType = ReviewRequestEmbedded;
     this.linksType = ReviewRequestLinks;
   }
 
@@ -49,6 +52,12 @@ export default class ReviewRequest {
       object = new ReviewRequest();
     }
 
+    if (data.hasOwnProperty("_embedded")) {
+      object.embedded = ApiClient.convertToType(
+        data["_embedded"],
+        object.embeddedType
+      );
+    }
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
@@ -68,6 +77,19 @@ export default class ReviewRequest {
     return object;
   }
 
+  /**
+   * @return { module:model/ReviewRequestEmbedded }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/ReviewRequestEmbedded } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
   /**
    * @return { module:model/ReviewRequestLinks }
    */

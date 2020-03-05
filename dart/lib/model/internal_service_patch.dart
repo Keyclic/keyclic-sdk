@@ -53,27 +53,23 @@ class InternalServicePatch {
   }
 
   static List<InternalServicePatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <InternalServicePatch>[]
-        : json
-            .map((dynamic value) => InternalServicePatch.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => InternalServicePatch.fromJson(value))
+            ?.toList() ??
+        <InternalServicePatch>[];
   }
 
   static Map<String, InternalServicePatch> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, InternalServicePatch>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = InternalServicePatch.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, InternalServicePatch.fromJson(value));
+        }) ??
+        <String, InternalServicePatch>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (contactPoint != null) 'contactPoint': contactPoint,
+      if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (description != null) 'description': description,
       if (name != null) 'name': name,
     };

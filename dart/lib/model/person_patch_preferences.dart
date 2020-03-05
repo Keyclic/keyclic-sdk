@@ -41,27 +41,23 @@ class PersonPatchPreferences {
   }
 
   static List<PersonPatchPreferences> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PersonPatchPreferences>[]
-        : json
-            .map((dynamic value) => PersonPatchPreferences.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PersonPatchPreferences.fromJson(value))
+            ?.toList() ??
+        <PersonPatchPreferences>[];
   }
 
   static Map<String, PersonPatchPreferences> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, PersonPatchPreferences>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PersonPatchPreferences.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PersonPatchPreferences.fromJson(value));
+        }) ??
+        <String, PersonPatchPreferences>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (notification != null) 'notification': notification,
+      if (notification != null) 'notification': notification.toJson(),
     };
   }
 

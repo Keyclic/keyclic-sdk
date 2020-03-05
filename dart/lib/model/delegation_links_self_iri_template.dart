@@ -40,28 +40,24 @@ class DelegationLinksSelfIriTemplate {
   }
 
   static List<DelegationLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DelegationLinksSelfIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 DelegationLinksSelfIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <DelegationLinksSelfIriTemplate>[];
   }
 
   static Map<String, DelegationLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, DelegationLinksSelfIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DelegationLinksSelfIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DelegationLinksSelfIriTemplate.fromJson(value));
+        }) ??
+        <String, DelegationLinksSelfIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

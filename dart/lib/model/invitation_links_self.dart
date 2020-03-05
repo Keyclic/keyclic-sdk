@@ -47,28 +47,24 @@ class InvitationLinksSelf {
   }
 
   static List<InvitationLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <InvitationLinksSelf>[]
-        : json
-            .map((dynamic value) => InvitationLinksSelf.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => InvitationLinksSelf.fromJson(value))
+            ?.toList() ??
+        <InvitationLinksSelf>[];
   }
 
   static Map<String, InvitationLinksSelf> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, InvitationLinksSelf>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = InvitationLinksSelf.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, InvitationLinksSelf.fromJson(value));
+        }) ??
+        <String, InvitationLinksSelf>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

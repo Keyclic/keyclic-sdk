@@ -48,28 +48,24 @@ class OperationLinksCreatedBy {
   }
 
   static List<OperationLinksCreatedBy> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OperationLinksCreatedBy>[]
-        : json
-            .map((dynamic value) => OperationLinksCreatedBy.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => OperationLinksCreatedBy.fromJson(value))
+            ?.toList() ??
+        <OperationLinksCreatedBy>[];
   }
 
   static Map<String, OperationLinksCreatedBy> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OperationLinksCreatedBy>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationLinksCreatedBy.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OperationLinksCreatedBy.fromJson(value));
+        }) ??
+        <String, OperationLinksCreatedBy>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

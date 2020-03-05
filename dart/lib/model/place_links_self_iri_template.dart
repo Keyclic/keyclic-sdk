@@ -40,27 +40,23 @@ class PlaceLinksSelfIriTemplate {
   }
 
   static List<PlaceLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PlaceLinksSelfIriTemplate>[]
-        : json
-            .map((dynamic value) => PlaceLinksSelfIriTemplate.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PlaceLinksSelfIriTemplate.fromJson(value))
+            ?.toList() ??
+        <PlaceLinksSelfIriTemplate>[];
   }
 
   static Map<String, PlaceLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, PlaceLinksSelfIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PlaceLinksSelfIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PlaceLinksSelfIriTemplate.fromJson(value));
+        }) ??
+        <String, PlaceLinksSelfIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

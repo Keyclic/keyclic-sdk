@@ -52,29 +52,25 @@ class ConfigurationReportType {
   }
 
   static List<ConfigurationReportType> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ConfigurationReportType>[]
-        : json
-            .map((dynamic value) => ConfigurationReportType.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ConfigurationReportType.fromJson(value))
+            ?.toList() ??
+        <ConfigurationReportType>[];
   }
 
   static Map<String, ConfigurationReportType> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ConfigurationReportType>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ConfigurationReportType.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ConfigurationReportType.fromJson(value));
+        }) ??
+        <String, ConfigurationReportType>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (id != null) 'id': id,
       if (type != null) 'type': type,
-      if (workflow != null) 'workflow': workflow,
+      if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 

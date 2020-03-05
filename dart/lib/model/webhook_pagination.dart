@@ -70,21 +70,17 @@ class WebhookPagination extends Pagination {
   }
 
   static List<WebhookPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <WebhookPagination>[]
-        : json
-            .map((dynamic value) => WebhookPagination.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => WebhookPagination.fromJson(value))
+            ?.toList() ??
+        <WebhookPagination>[];
   }
 
   static Map<String, WebhookPagination> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WebhookPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WebhookPagination.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, WebhookPagination.fromJson(value));
+        }) ??
+        <String, WebhookPagination>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -93,8 +89,8 @@ class WebhookPagination extends Pagination {
       if (page != null) 'page': page,
       if (pages != null) 'pages': pages,
       if (total != null) 'total': total,
-      if (links != null) '_links': links,
-      if (embedded != null) '_embedded': embedded,
+      if (links != null) '_links': links.toJson(),
+      if (embedded != null) '_embedded': embedded.toJson(),
     };
   }
 

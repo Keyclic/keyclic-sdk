@@ -70,19 +70,17 @@ class TransitionState {
   }
 
   static List<TransitionState> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <TransitionState>[]
-        : json.map((dynamic value) => TransitionState.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => TransitionState.fromJson(value))
+            ?.toList() ??
+        <TransitionState>[];
   }
 
   static Map<String, TransitionState> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, TransitionState>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = TransitionState.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, TransitionState.fromJson(value));
+        }) ??
+        <String, TransitionState>{};
   }
 
   Map<String, dynamic> toJson() {

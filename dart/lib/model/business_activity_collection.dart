@@ -44,22 +44,18 @@ class BusinessActivityCollection {
   }
 
   static List<BusinessActivityCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <BusinessActivityCollection>[]
-        : json
-            .map((dynamic value) => BusinessActivityCollection.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => BusinessActivityCollection.fromJson(value))
+            ?.toList() ??
+        <BusinessActivityCollection>[];
   }
 
   static Map<String, BusinessActivityCollection> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, BusinessActivityCollection>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = BusinessActivityCollection.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, BusinessActivityCollection.fromJson(value));
+        }) ??
+        <String, BusinessActivityCollection>{};
   }
 
   Map<String, dynamic> toJson() {

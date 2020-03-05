@@ -42,28 +42,25 @@ class PersonLinksApplicationIriTemplate {
 
   static List<PersonLinksApplicationIriTemplate> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <PersonLinksApplicationIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 PersonLinksApplicationIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <PersonLinksApplicationIriTemplate>[];
   }
 
   static Map<String, PersonLinksApplicationIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, PersonLinksApplicationIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PersonLinksApplicationIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, PersonLinksApplicationIriTemplate.fromJson(value));
+        }) ??
+        <String, PersonLinksApplicationIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

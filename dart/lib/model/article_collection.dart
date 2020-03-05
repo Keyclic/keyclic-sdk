@@ -44,21 +44,17 @@ class ArticleCollection {
   }
 
   static List<ArticleCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ArticleCollection>[]
-        : json
-            .map((dynamic value) => ArticleCollection.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ArticleCollection.fromJson(value))
+            ?.toList() ??
+        <ArticleCollection>[];
   }
 
   static Map<String, ArticleCollection> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ArticleCollection>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ArticleCollection.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ArticleCollection.fromJson(value));
+        }) ??
+        <String, ArticleCollection>{};
   }
 
   Map<String, dynamic> toJson() {

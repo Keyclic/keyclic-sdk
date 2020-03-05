@@ -52,21 +52,17 @@ class DocumentDataFile {
   }
 
   static List<DocumentDataFile> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DocumentDataFile>[]
-        : json
-            .map((dynamic value) => DocumentDataFile.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => DocumentDataFile.fromJson(value))
+            ?.toList() ??
+        <DocumentDataFile>[];
   }
 
   static Map<String, DocumentDataFile> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, DocumentDataFile>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentDataFile.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DocumentDataFile.fromJson(value));
+        }) ??
+        <String, DocumentDataFile>{};
   }
 
   Map<String, dynamic> toJson() {

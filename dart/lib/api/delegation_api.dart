@@ -32,35 +32,32 @@ class DelegationApi {
         .replaceAll("{" + "delegation" + "}", delegation.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final Object postBody = null;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'GET',
+      queryParams: queryParams,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -98,35 +95,33 @@ class DelegationApi {
     final String path = "/delegations".replaceAll("{format}", "json");
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final DelegationData postBody = delegationData;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'POST',
+      queryParams: queryParams,
+      body: delegationData,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -171,35 +166,33 @@ class DelegationApi {
         .replaceAll("{" + "delegation" + "}", delegation.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final WorkflowData postBody = workflowData;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'POST',
+      queryParams: queryParams,
+      body: workflowData,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {

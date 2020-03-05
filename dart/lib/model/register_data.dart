@@ -58,24 +58,22 @@ class RegisterData {
   }
 
   static List<RegisterData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <RegisterData>[]
-        : json.map((dynamic value) => RegisterData.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => RegisterData.fromJson(value))
+            ?.toList() ??
+        <RegisterData>[];
   }
 
   static Map<String, RegisterData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, RegisterData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = RegisterData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, RegisterData.fromJson(value));
+        }) ??
+        <String, RegisterData>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (agreement != null) 'agreement': agreement,
+      if (agreement != null) 'agreement': agreement.toJson(),
       if (email != null) 'email': email,
       if (invitation != null) 'invitation': invitation,
       if (password != null) 'password': password,

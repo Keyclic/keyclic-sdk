@@ -70,22 +70,18 @@ class OccupantPagination extends Pagination {
   }
 
   static List<OccupantPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OccupantPagination>[]
-        : json
-            .map((dynamic value) => OccupantPagination.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => OccupantPagination.fromJson(value))
+            ?.toList() ??
+        <OccupantPagination>[];
   }
 
   static Map<String, OccupantPagination> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OccupantPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OccupantPagination.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OccupantPagination.fromJson(value));
+        }) ??
+        <String, OccupantPagination>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -94,8 +90,8 @@ class OccupantPagination extends Pagination {
       if (page != null) 'page': page,
       if (pages != null) 'pages': pages,
       if (total != null) 'total': total,
-      if (links != null) '_links': links,
-      if (embedded != null) '_embedded': embedded,
+      if (links != null) '_links': links.toJson(),
+      if (embedded != null) '_embedded': embedded.toJson(),
     };
   }
 

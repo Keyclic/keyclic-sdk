@@ -42,23 +42,20 @@ class ApplicationLinksKnowledgeBaseIriTemplateMapping {
 
   static List<ApplicationLinksKnowledgeBaseIriTemplateMapping> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <ApplicationLinksKnowledgeBaseIriTemplateMapping>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 ApplicationLinksKnowledgeBaseIriTemplateMapping.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <ApplicationLinksKnowledgeBaseIriTemplateMapping>[];
   }
 
   static Map<String, ApplicationLinksKnowledgeBaseIriTemplateMapping>
       mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ApplicationLinksKnowledgeBaseIriTemplateMapping>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] =
-          ApplicationLinksKnowledgeBaseIriTemplateMapping.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key,
+              ApplicationLinksKnowledgeBaseIriTemplateMapping.fromJson(value));
+        }) ??
+        <String, ApplicationLinksKnowledgeBaseIriTemplateMapping>{};
   }
 
   Map<String, dynamic> toJson() {

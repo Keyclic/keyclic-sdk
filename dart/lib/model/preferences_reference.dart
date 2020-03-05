@@ -40,22 +40,18 @@ class PreferencesReference {
   }
 
   static List<PreferencesReference> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PreferencesReference>[]
-        : json
-            .map((dynamic value) => PreferencesReference.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PreferencesReference.fromJson(value))
+            ?.toList() ??
+        <PreferencesReference>[];
   }
 
   static Map<String, PreferencesReference> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, PreferencesReference>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PreferencesReference.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PreferencesReference.fromJson(value));
+        }) ??
+        <String, PreferencesReference>{};
   }
 
   Map<String, dynamic> toJson() {

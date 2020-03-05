@@ -118,26 +118,24 @@ class Application {
   }
 
   static List<Application> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Application>[]
-        : json.map((dynamic value) => Application.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => Application.fromJson(value))
+            ?.toList() ??
+        <Application>[];
   }
 
   static Map<String, Application> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Application>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = Application.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Application.fromJson(value));
+        }) ??
+        <String, Application>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
-      if (about != null) 'about': about,
-      if (agreement != null) 'agreement': agreement,
+      if (links != null) '_links': links.toJson(),
+      if (about != null) 'about': about.toJson(),
+      if (agreement != null) 'agreement': agreement.toJson(),
       if (contactPoints != null) 'contactPoints': contactPoints,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,

@@ -34,39 +34,36 @@ class FeedbackApi {
         .replaceAll("{" + "feedback" + "}", feedback.toString());
 
     // query params
-    final List<QueryParam> queryParams = [
+    final List<QueryParam> queryParams = <QueryParam>[
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),
     ];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final Object postBody = null;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'GET',
+      queryParams: queryParams,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -110,7 +107,7 @@ class FeedbackApi {
     final String path = "/feedbacks".replaceAll("{format}", "json");
 
     // query params
-    final List<QueryParam> queryParams = [
+    final List<QueryParam> queryParams = <QueryParam>[
       if (state != null)
         ..._convertParametersForCollectionFormat("state", state),
       if (category != null)
@@ -135,32 +132,29 @@ class FeedbackApi {
     ];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final Object postBody = null;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'GET',
+      queryParams: queryParams,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -206,7 +200,7 @@ class FeedbackApi {
         .replaceAll("{" + "feedback" + "}", feedback.toString());
 
     // query params
-    final List<QueryParam> queryParams = [
+    final List<QueryParam> queryParams = <QueryParam>[
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
@@ -219,32 +213,29 @@ class FeedbackApi {
     ];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final Object postBody = null;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'GET',
+      queryParams: queryParams,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -285,35 +276,32 @@ class FeedbackApi {
         .replaceAll("{" + "feedback" + "}", feedback.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final Object postBody = null;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'GET',
+      queryParams: queryParams,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -353,35 +341,32 @@ class FeedbackApi {
         .replaceAll("{" + "feedback" + "}", feedback.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final Object postBody = null;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'GET',
+      queryParams: queryParams,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -426,35 +411,33 @@ class FeedbackApi {
         .replaceAll("{" + "feedback" + "}", feedback.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final CommentData postBody = commentData;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'POST',
+      queryParams: queryParams,
+      body: commentData,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -499,35 +482,33 @@ class FeedbackApi {
         .replaceAll("{" + "feedback" + "}", feedback.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final ImageData postBody = imageData;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'POST',
+      queryParams: queryParams,
+      body: imageData,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -565,35 +546,33 @@ class FeedbackApi {
     final String path = "/feedbacks/issues".replaceAll("{format}", "json");
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final FeedbackData postBody = feedbackData;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'POST',
+      queryParams: queryParams,
+      body: feedbackData,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -639,36 +618,33 @@ class FeedbackApi {
         .replaceAll("{" + "feedback" + "}", feedback.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final FeedbackWorkflowTransitionData postBody =
-        feedbackWorkflowTransitionData;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'POST',
+      queryParams: queryParams,
+      body: feedbackWorkflowTransitionData,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {

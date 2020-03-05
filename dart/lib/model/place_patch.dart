@@ -52,19 +52,15 @@ class PlacePatch {
   }
 
   static List<PlacePatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PlacePatch>[]
-        : json.map((dynamic value) => PlacePatch.fromJson(value)).toList();
+    return json?.map((dynamic value) => PlacePatch.fromJson(value))?.toList() ??
+        <PlacePatch>[];
   }
 
   static Map<String, PlacePatch> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PlacePatch>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = PlacePatch.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PlacePatch.fromJson(value));
+        }) ??
+        <String, PlacePatch>{};
   }
 
   Map<String, dynamic> toJson() {

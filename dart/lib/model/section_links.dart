@@ -40,24 +40,22 @@ class SectionLinks {
   }
 
   static List<SectionLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <SectionLinks>[]
-        : json.map((dynamic value) => SectionLinks.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => SectionLinks.fromJson(value))
+            ?.toList() ??
+        <SectionLinks>[];
   }
 
   static Map<String, SectionLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, SectionLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = SectionLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, SectionLinks.fromJson(value));
+        }) ??
+        <String, SectionLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (self != null) 'self': self,
+      if (self != null) 'self': self.toJson(),
     };
   }
 

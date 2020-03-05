@@ -116,32 +116,28 @@ class OperationTypeWorkflow {
   }
 
   static List<OperationTypeWorkflow> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OperationTypeWorkflow>[]
-        : json
-            .map((dynamic value) => OperationTypeWorkflow.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => OperationTypeWorkflow.fromJson(value))
+            ?.toList() ??
+        <OperationTypeWorkflow>[];
   }
 
   static Map<String, OperationTypeWorkflow> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OperationTypeWorkflow>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationTypeWorkflow.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OperationTypeWorkflow.fromJson(value));
+        }) ??
+        <String, OperationTypeWorkflow>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
-      if (end != null) 'end': end,
+      if (end != null) 'end': end.toJson(),
       if (id != null) 'id': id,
       if (name != null) 'name': name,
-      if (start != null) 'start': start,
+      if (start != null) 'start': start.toJson(),
       if (states != null) 'states': states,
       if (transitions != null) 'transitions': transitions,
       if (type != null) 'type': type,

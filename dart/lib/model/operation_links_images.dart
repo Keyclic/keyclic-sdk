@@ -48,28 +48,24 @@ class OperationLinksImages {
   }
 
   static List<OperationLinksImages> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OperationLinksImages>[]
-        : json
-            .map((dynamic value) => OperationLinksImages.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => OperationLinksImages.fromJson(value))
+            ?.toList() ??
+        <OperationLinksImages>[];
   }
 
   static Map<String, OperationLinksImages> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OperationLinksImages>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationLinksImages.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OperationLinksImages.fromJson(value));
+        }) ??
+        <String, OperationLinksImages>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

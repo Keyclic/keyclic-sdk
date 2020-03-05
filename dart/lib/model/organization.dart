@@ -106,31 +106,29 @@ class Organization {
   }
 
   static List<Organization> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Organization>[]
-        : json.map((dynamic value) => Organization.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => Organization.fromJson(value))
+            ?.toList() ??
+        <Organization>[];
   }
 
   static Map<String, Organization> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Organization>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = Organization.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Organization.fromJson(value));
+        }) ??
+        <String, Organization>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
+      if (links != null) '_links': links.toJson(),
       if (alternateName != null) 'alternateName': alternateName,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (enabled != null) 'enabled': enabled,
       if (id != null) 'id': id,
       if (name != null) 'name': name,
-      if (preferences != null) 'preferences': preferences,
+      if (preferences != null) 'preferences': preferences.toJson(),
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };

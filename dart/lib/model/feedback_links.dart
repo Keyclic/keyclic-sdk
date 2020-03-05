@@ -82,30 +82,29 @@ class FeedbackLinks {
   }
 
   static List<FeedbackLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeedbackLinks>[]
-        : json.map((dynamic value) => FeedbackLinks.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => FeedbackLinks.fromJson(value))
+            ?.toList() ??
+        <FeedbackLinks>[];
   }
 
   static Map<String, FeedbackLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, FeedbackLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeedbackLinks.fromJson(value));
+        }) ??
+        <String, FeedbackLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (businessActivity != null) 'businessActivity': businessActivity,
-      if (category != null) 'category': category,
-      if (image != null) 'image': image,
+      if (businessActivity != null)
+        'businessActivity': businessActivity.toJson(),
+      if (category != null) 'category': category.toJson(),
+      if (image != null) 'image': image.toJson(),
       if (images != null) 'images': images,
-      if (reporter != null) 'reporter': reporter,
-      if (self != null) 'self': self,
-      if (tracking != null) 'tracking': tracking,
+      if (reporter != null) 'reporter': reporter.toJson(),
+      if (self != null) 'self': self.toJson(),
+      if (tracking != null) 'tracking': tracking.toJson(),
     };
   }
 

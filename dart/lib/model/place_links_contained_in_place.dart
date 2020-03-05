@@ -48,28 +48,24 @@ class PlaceLinksContainedInPlace {
   }
 
   static List<PlaceLinksContainedInPlace> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PlaceLinksContainedInPlace>[]
-        : json
-            .map((dynamic value) => PlaceLinksContainedInPlace.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PlaceLinksContainedInPlace.fromJson(value))
+            ?.toList() ??
+        <PlaceLinksContainedInPlace>[];
   }
 
   static Map<String, PlaceLinksContainedInPlace> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, PlaceLinksContainedInPlace>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PlaceLinksContainedInPlace.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PlaceLinksContainedInPlace.fromJson(value));
+        }) ??
+        <String, PlaceLinksContainedInPlace>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

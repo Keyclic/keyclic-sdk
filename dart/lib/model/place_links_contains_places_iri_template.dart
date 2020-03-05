@@ -43,28 +43,25 @@ class PlaceLinksContainsPlacesIriTemplate {
 
   static List<PlaceLinksContainsPlacesIriTemplate> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <PlaceLinksContainsPlacesIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 PlaceLinksContainsPlacesIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <PlaceLinksContainsPlacesIriTemplate>[];
   }
 
   static Map<String, PlaceLinksContainsPlacesIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, PlaceLinksContainsPlacesIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PlaceLinksContainsPlacesIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, PlaceLinksContainsPlacesIriTemplate.fromJson(value));
+        }) ??
+        <String, PlaceLinksContainsPlacesIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

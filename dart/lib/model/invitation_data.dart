@@ -40,19 +40,17 @@ class InvitationData {
   }
 
   static List<InvitationData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <InvitationData>[]
-        : json.map((dynamic value) => InvitationData.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => InvitationData.fromJson(value))
+            ?.toList() ??
+        <InvitationData>[];
   }
 
   static Map<String, InvitationData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, InvitationData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = InvitationData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, InvitationData.fromJson(value));
+        }) ??
+        <String, InvitationData>{};
   }
 
   Map<String, dynamic> toJson() {

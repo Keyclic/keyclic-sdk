@@ -40,27 +40,23 @@ class KnowledgeBaseLinks {
   }
 
   static List<KnowledgeBaseLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <KnowledgeBaseLinks>[]
-        : json
-            .map((dynamic value) => KnowledgeBaseLinks.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => KnowledgeBaseLinks.fromJson(value))
+            ?.toList() ??
+        <KnowledgeBaseLinks>[];
   }
 
   static Map<String, KnowledgeBaseLinks> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, KnowledgeBaseLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = KnowledgeBaseLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, KnowledgeBaseLinks.fromJson(value));
+        }) ??
+        <String, KnowledgeBaseLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (self != null) 'self': self,
+      if (self != null) 'self': self.toJson(),
     };
   }
 

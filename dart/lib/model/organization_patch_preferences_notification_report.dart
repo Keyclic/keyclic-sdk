@@ -48,23 +48,20 @@ class OrganizationPatchPreferencesNotificationReport {
 
   static List<OrganizationPatchPreferencesNotificationReport> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <OrganizationPatchPreferencesNotificationReport>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 OrganizationPatchPreferencesNotificationReport.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <OrganizationPatchPreferencesNotificationReport>[];
   }
 
   static Map<String, OrganizationPatchPreferencesNotificationReport>
       mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OrganizationPatchPreferencesNotificationReport>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] =
-          OrganizationPatchPreferencesNotificationReport.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key,
+              OrganizationPatchPreferencesNotificationReport.fromJson(value));
+        }) ??
+        <String, OrganizationPatchPreferencesNotificationReport>{};
   }
 
   Map<String, dynamic> toJson() {

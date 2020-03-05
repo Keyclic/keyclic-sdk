@@ -43,28 +43,25 @@ class DocumentLinksCreatedByIriTemplate {
 
   static List<DocumentLinksCreatedByIriTemplate> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <DocumentLinksCreatedByIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 DocumentLinksCreatedByIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <DocumentLinksCreatedByIriTemplate>[];
   }
 
   static Map<String, DocumentLinksCreatedByIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, DocumentLinksCreatedByIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentLinksCreatedByIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, DocumentLinksCreatedByIriTemplate.fromJson(value));
+        }) ??
+        <String, DocumentLinksCreatedByIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

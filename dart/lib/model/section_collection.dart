@@ -44,21 +44,17 @@ class SectionCollection {
   }
 
   static List<SectionCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <SectionCollection>[]
-        : json
-            .map((dynamic value) => SectionCollection.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => SectionCollection.fromJson(value))
+            ?.toList() ??
+        <SectionCollection>[];
   }
 
   static Map<String, SectionCollection> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, SectionCollection>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = SectionCollection.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, SectionCollection.fromJson(value));
+        }) ??
+        <String, SectionCollection>{};
   }
 
   Map<String, dynamic> toJson() {

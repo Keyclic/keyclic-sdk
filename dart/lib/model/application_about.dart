@@ -46,21 +46,17 @@ class ApplicationAbout {
   }
 
   static List<ApplicationAbout> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ApplicationAbout>[]
-        : json
-            .map((dynamic value) => ApplicationAbout.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ApplicationAbout.fromJson(value))
+            ?.toList() ??
+        <ApplicationAbout>[];
   }
 
   static Map<String, ApplicationAbout> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ApplicationAbout>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ApplicationAbout.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ApplicationAbout.fromJson(value));
+        }) ??
+        <String, ApplicationAbout>{};
   }
 
   Map<String, dynamic> toJson() {

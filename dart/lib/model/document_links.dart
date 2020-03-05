@@ -52,26 +52,24 @@ class DocumentLinks {
   }
 
   static List<DocumentLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DocumentLinks>[]
-        : json.map((dynamic value) => DocumentLinks.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => DocumentLinks.fromJson(value))
+            ?.toList() ??
+        <DocumentLinks>[];
   }
 
   static Map<String, DocumentLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, DocumentLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DocumentLinks.fromJson(value));
+        }) ??
+        <String, DocumentLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (createdBy != null) 'createdBy': createdBy,
-      if (file != null) 'file': file,
-      if (self != null) 'self': self,
+      if (createdBy != null) 'createdBy': createdBy.toJson(),
+      if (file != null) 'file': file.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

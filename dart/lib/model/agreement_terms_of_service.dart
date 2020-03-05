@@ -40,22 +40,18 @@ class AgreementTermsOfService {
   }
 
   static List<AgreementTermsOfService> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <AgreementTermsOfService>[]
-        : json
-            .map((dynamic value) => AgreementTermsOfService.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => AgreementTermsOfService.fromJson(value))
+            ?.toList() ??
+        <AgreementTermsOfService>[];
   }
 
   static Map<String, AgreementTermsOfService> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, AgreementTermsOfService>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = AgreementTermsOfService.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, AgreementTermsOfService.fromJson(value));
+        }) ??
+        <String, AgreementTermsOfService>{};
   }
 
   Map<String, dynamic> toJson() {

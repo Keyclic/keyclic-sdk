@@ -116,32 +116,28 @@ class ReportTypeWorkflow {
   }
 
   static List<ReportTypeWorkflow> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ReportTypeWorkflow>[]
-        : json
-            .map((dynamic value) => ReportTypeWorkflow.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ReportTypeWorkflow.fromJson(value))
+            ?.toList() ??
+        <ReportTypeWorkflow>[];
   }
 
   static Map<String, ReportTypeWorkflow> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ReportTypeWorkflow>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReportTypeWorkflow.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ReportTypeWorkflow.fromJson(value));
+        }) ??
+        <String, ReportTypeWorkflow>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
-      if (end != null) 'end': end,
+      if (end != null) 'end': end.toJson(),
       if (id != null) 'id': id,
       if (name != null) 'name': name,
-      if (start != null) 'start': start,
+      if (start != null) 'start': start.toJson(),
       if (states != null) 'states': states,
       if (transitions != null) 'transitions': transitions,
       if (type != null) 'type': type,

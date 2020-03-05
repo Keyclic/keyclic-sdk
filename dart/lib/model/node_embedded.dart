@@ -54,19 +54,17 @@ class NodeEmbedded {
   }
 
   static List<NodeEmbedded> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <NodeEmbedded>[]
-        : json.map((dynamic value) => NodeEmbedded.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => NodeEmbedded.fromJson(value))
+            ?.toList() ??
+        <NodeEmbedded>[];
   }
 
   static Map<String, NodeEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, NodeEmbedded>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = NodeEmbedded.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, NodeEmbedded.fromJson(value));
+        }) ??
+        <String, NodeEmbedded>{};
   }
 
   Map<String, dynamic> toJson() {

@@ -52,19 +52,15 @@ class Feed {
   }
 
   static List<Feed> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Feed>[]
-        : json.map((dynamic value) => Feed.fromJson(value)).toList();
+    return json?.map((dynamic value) => Feed.fromJson(value))?.toList() ??
+        <Feed>[];
   }
 
   static Map<String, Feed> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Feed>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Feed.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Feed.fromJson(value));
+        }) ??
+        <String, Feed>{};
   }
 
   Map<String, dynamic> toJson() {

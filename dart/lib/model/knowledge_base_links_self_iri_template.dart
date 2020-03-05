@@ -43,28 +43,25 @@ class KnowledgeBaseLinksSelfIriTemplate {
 
   static List<KnowledgeBaseLinksSelfIriTemplate> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <KnowledgeBaseLinksSelfIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 KnowledgeBaseLinksSelfIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <KnowledgeBaseLinksSelfIriTemplate>[];
   }
 
   static Map<String, KnowledgeBaseLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, KnowledgeBaseLinksSelfIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = KnowledgeBaseLinksSelfIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, KnowledgeBaseLinksSelfIriTemplate.fromJson(value));
+        }) ??
+        <String, KnowledgeBaseLinksSelfIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

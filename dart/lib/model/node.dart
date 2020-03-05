@@ -58,19 +58,15 @@ class Node {
   }
 
   static List<Node> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Node>[]
-        : json.map((dynamic value) => Node.fromJson(value)).toList();
+    return json?.map((dynamic value) => Node.fromJson(value))?.toList() ??
+        <Node>[];
   }
 
   static Map<String, Node> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Node>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Node.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Node.fromJson(value));
+        }) ??
+        <String, Node>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -78,7 +74,7 @@ class Node {
       if (id != null) 'id': id,
       if (type != null) 'type': type,
       if (name != null) 'name': name,
-      if (embedded != null) '_embedded': embedded,
+      if (embedded != null) '_embedded': embedded.toJson(),
     };
   }
 

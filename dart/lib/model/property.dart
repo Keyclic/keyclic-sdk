@@ -111,30 +111,26 @@ class Property {
   }
 
   static List<Property> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Property>[]
-        : json.map((dynamic value) => Property.fromJson(value)).toList();
+    return json?.map((dynamic value) => Property.fromJson(value))?.toList() ??
+        <Property>[];
   }
 
   static Map<String, Property> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Property>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Property.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Property.fromJson(value));
+        }) ??
+        <String, Property>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (conditions != null) 'conditions': conditions,
+      if (conditions != null) 'conditions': conditions.toJson(),
       if (default_ != null) 'default': default_,
       if (description != null) 'description': description,
       if (enum_ != null) 'enum': enum_,
       if (format != null) 'format': format,
       if (id != null) 'id': id,
-      if (items != null) 'items': items,
+      if (items != null) 'items': items.toJson(),
       if (maxItems != null) 'maxItems': maxItems,
       if (minItems != null) 'minItems': minItems,
       if (propertyOrder != null) 'propertyOrder': propertyOrder,

@@ -94,24 +94,22 @@ class Publication {
   }
 
   static List<Publication> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Publication>[]
-        : json.map((dynamic value) => Publication.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => Publication.fromJson(value))
+            ?.toList() ??
+        <Publication>[];
   }
 
   static Map<String, Publication> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Publication>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = Publication.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Publication.fromJson(value));
+        }) ??
+        <String, Publication>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
+      if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
       if (message != null) 'message': message,

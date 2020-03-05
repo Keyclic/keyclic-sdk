@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.3.7"
+        "version": "2.3.8"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -17563,6 +17563,14 @@
         "ReviewRequest": {
             "type": "object",
             "properties": {
+                "_embedded": {
+                    "type": "object",
+                    "properties": {
+                        "review": {
+                            "$ref": "#\/definitions\/Review"
+                        }
+                    }
+                },
                 "_links": {
                     "type": "object",
                     "properties": {
@@ -18396,58 +18404,6 @@
                         "login": {
                             "type": "string",
                             "format": "string"
-                        },
-                        "administratorOf": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "id": {
-                                        "type": "string",
-                                        "format": "uuid"
-                                    },
-                                    "token": {
-                                        "type": "string",
-                                        "format": "string"
-                                    },
-                                    "type": {
-                                        "type": "string",
-                                        "format": "string"
-                                    }
-                                }
-                            }
-                        },
-                        "memberOf": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "id": {
-                                        "type": "string",
-                                        "format": "uuid"
-                                    },
-                                    "organization": {
-                                        "type": "object",
-                                        "properties": {
-                                            "type": {
-                                                "type": "string",
-                                                "format": "string"
-                                            },
-                                            "id": {
-                                                "type": "string",
-                                                "format": "uuid"
-                                            }
-                                        }
-                                    },
-                                    "roles": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string",
-                                            "format": "string"
-                                        }
-                                    }
-                                }
-                            }
                         }
                     }
                 },

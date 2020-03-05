@@ -48,29 +48,25 @@ class FeedbackLinksBusinessActivity {
   }
 
   static List<FeedbackLinksBusinessActivity> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeedbackLinksBusinessActivity>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 FeedbackLinksBusinessActivity.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <FeedbackLinksBusinessActivity>[];
   }
 
   static Map<String, FeedbackLinksBusinessActivity> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, FeedbackLinksBusinessActivity>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackLinksBusinessActivity.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeedbackLinksBusinessActivity.fromJson(value));
+        }) ??
+        <String, FeedbackLinksBusinessActivity>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

@@ -44,22 +44,18 @@ class OccupantCollection {
   }
 
   static List<OccupantCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OccupantCollection>[]
-        : json
-            .map((dynamic value) => OccupantCollection.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => OccupantCollection.fromJson(value))
+            ?.toList() ??
+        <OccupantCollection>[];
   }
 
   static Map<String, OccupantCollection> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OccupantCollection>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OccupantCollection.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OccupantCollection.fromJson(value));
+        }) ??
+        <String, OccupantCollection>{};
   }
 
   Map<String, dynamic> toJson() {

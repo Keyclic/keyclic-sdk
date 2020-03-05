@@ -70,21 +70,17 @@ class ReportPagination extends Pagination {
   }
 
   static List<ReportPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ReportPagination>[]
-        : json
-            .map((dynamic value) => ReportPagination.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ReportPagination.fromJson(value))
+            ?.toList() ??
+        <ReportPagination>[];
   }
 
   static Map<String, ReportPagination> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ReportPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReportPagination.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ReportPagination.fromJson(value));
+        }) ??
+        <String, ReportPagination>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -93,8 +89,8 @@ class ReportPagination extends Pagination {
       if (page != null) 'page': page,
       if (pages != null) 'pages': pages,
       if (total != null) 'total': total,
-      if (links != null) '_links': links,
-      if (embedded != null) '_embedded': embedded,
+      if (links != null) '_links': links.toJson(),
+      if (embedded != null) '_embedded': embedded.toJson(),
     };
   }
 

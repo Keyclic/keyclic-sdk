@@ -48,29 +48,25 @@ class OrganizationPatchPreferences {
   }
 
   static List<OrganizationPatchPreferences> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OrganizationPatchPreferences>[]
-        : json
-            .map(
+    return json
+            ?.map(
                 (dynamic value) => OrganizationPatchPreferences.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <OrganizationPatchPreferences>[];
   }
 
   static Map<String, OrganizationPatchPreferences> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OrganizationPatchPreferences>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OrganizationPatchPreferences.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OrganizationPatchPreferences.fromJson(value));
+        }) ??
+        <String, OrganizationPatchPreferences>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (notification != null) 'notification': notification,
-      if (reference != null) 'reference': reference,
+      if (notification != null) 'notification': notification.toJson(),
+      if (reference != null) 'reference': reference.toJson(),
     };
   }
 

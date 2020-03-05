@@ -47,28 +47,24 @@ class InternalServiceLinks {
   }
 
   static List<InternalServiceLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <InternalServiceLinks>[]
-        : json
-            .map((dynamic value) => InternalServiceLinks.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => InternalServiceLinks.fromJson(value))
+            ?.toList() ??
+        <InternalServiceLinks>[];
   }
 
   static Map<String, InternalServiceLinks> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, InternalServiceLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = InternalServiceLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, InternalServiceLinks.fromJson(value));
+        }) ??
+        <String, InternalServiceLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (organization != null) 'organization': organization,
-      if (self != null) 'self': self,
+      if (organization != null) 'organization': organization.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

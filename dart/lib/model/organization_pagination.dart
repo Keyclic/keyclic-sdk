@@ -70,22 +70,18 @@ class OrganizationPagination extends Pagination {
   }
 
   static List<OrganizationPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OrganizationPagination>[]
-        : json
-            .map((dynamic value) => OrganizationPagination.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => OrganizationPagination.fromJson(value))
+            ?.toList() ??
+        <OrganizationPagination>[];
   }
 
   static Map<String, OrganizationPagination> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OrganizationPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OrganizationPagination.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OrganizationPagination.fromJson(value));
+        }) ??
+        <String, OrganizationPagination>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -94,8 +90,8 @@ class OrganizationPagination extends Pagination {
       if (page != null) 'page': page,
       if (pages != null) 'pages': pages,
       if (total != null) 'total': total,
-      if (links != null) '_links': links,
-      if (embedded != null) '_embedded': embedded,
+      if (links != null) '_links': links.toJson(),
+      if (embedded != null) '_embedded': embedded.toJson(),
     };
   }
 

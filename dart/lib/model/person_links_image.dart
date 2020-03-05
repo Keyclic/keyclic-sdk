@@ -47,27 +47,23 @@ class PersonLinksImage {
   }
 
   static List<PersonLinksImage> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PersonLinksImage>[]
-        : json
-            .map((dynamic value) => PersonLinksImage.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PersonLinksImage.fromJson(value))
+            ?.toList() ??
+        <PersonLinksImage>[];
   }
 
   static Map<String, PersonLinksImage> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PersonLinksImage>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PersonLinksImage.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PersonLinksImage.fromJson(value));
+        }) ??
+        <String, PersonLinksImage>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

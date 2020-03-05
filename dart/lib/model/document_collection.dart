@@ -44,22 +44,18 @@ class DocumentCollection {
   }
 
   static List<DocumentCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DocumentCollection>[]
-        : json
-            .map((dynamic value) => DocumentCollection.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => DocumentCollection.fromJson(value))
+            ?.toList() ??
+        <DocumentCollection>[];
   }
 
   static Map<String, DocumentCollection> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, DocumentCollection>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentCollection.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DocumentCollection.fromJson(value));
+        }) ??
+        <String, DocumentCollection>{};
   }
 
   Map<String, dynamic> toJson() {

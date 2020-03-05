@@ -44,22 +44,18 @@ class FeedbackCollection {
   }
 
   static List<FeedbackCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeedbackCollection>[]
-        : json
-            .map((dynamic value) => FeedbackCollection.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => FeedbackCollection.fromJson(value))
+            ?.toList() ??
+        <FeedbackCollection>[];
   }
 
   static Map<String, FeedbackCollection> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, FeedbackCollection>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackCollection.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeedbackCollection.fromJson(value));
+        }) ??
+        <String, FeedbackCollection>{};
   }
 
   Map<String, dynamic> toJson() {

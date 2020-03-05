@@ -48,29 +48,25 @@ class ApplicationLinksKnowledgeBase {
   }
 
   static List<ApplicationLinksKnowledgeBase> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ApplicationLinksKnowledgeBase>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 ApplicationLinksKnowledgeBase.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <ApplicationLinksKnowledgeBase>[];
   }
 
   static Map<String, ApplicationLinksKnowledgeBase> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ApplicationLinksKnowledgeBase>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ApplicationLinksKnowledgeBase.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ApplicationLinksKnowledgeBase.fromJson(value));
+        }) ??
+        <String, ApplicationLinksKnowledgeBase>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

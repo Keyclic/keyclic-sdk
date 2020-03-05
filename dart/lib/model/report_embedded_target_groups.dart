@@ -52,22 +52,18 @@ class ReportEmbeddedTargetGroups {
   }
 
   static List<ReportEmbeddedTargetGroups> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ReportEmbeddedTargetGroups>[]
-        : json
-            .map((dynamic value) => ReportEmbeddedTargetGroups.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ReportEmbeddedTargetGroups.fromJson(value))
+            ?.toList() ??
+        <ReportEmbeddedTargetGroups>[];
   }
 
   static Map<String, ReportEmbeddedTargetGroups> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ReportEmbeddedTargetGroups>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReportEmbeddedTargetGroups.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ReportEmbeddedTargetGroups.fromJson(value));
+        }) ??
+        <String, ReportEmbeddedTargetGroups>{};
   }
 
   Map<String, dynamic> toJson() {

@@ -58,27 +58,25 @@ class PaginationLinks {
   }
 
   static List<PaginationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PaginationLinks>[]
-        : json.map((dynamic value) => PaginationLinks.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => PaginationLinks.fromJson(value))
+            ?.toList() ??
+        <PaginationLinks>[];
   }
 
   static Map<String, PaginationLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PaginationLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PaginationLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PaginationLinks.fromJson(value));
+        }) ??
+        <String, PaginationLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (first != null) 'first': first,
-      if (last != null) 'last': last,
-      if (next != null) 'next': next,
-      if (self != null) 'self': self,
+      if (first != null) 'first': first.toJson(),
+      if (last != null) 'last': last.toJson(),
+      if (next != null) 'next': next.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

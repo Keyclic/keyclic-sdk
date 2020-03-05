@@ -31,33 +31,31 @@ class SecurityApi {
         "/security/connect/facebook".replaceAll("{format}", "json");
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [];
-
-    final FacebookConnectData postBody = facebookConnectData;
+    final List<String> authNames = <String>[];
 
     final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'POST',
+      queryParams: queryParams,
+      body: facebookConnectData,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -95,33 +93,31 @@ class SecurityApi {
     final String path = "/security/login".replaceAll("{format}", "json");
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [];
-
-    final LoginData postBody = loginData;
+    final List<String> authNames = <String>[];
 
     final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'POST',
+      queryParams: queryParams,
+      body: loginData,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -166,33 +162,31 @@ class SecurityApi {
         .replaceAll("{" + "token" + "}", token.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [];
-
-    final PasswordChangeData postBody = passwordChangeData;
+    final List<String> authNames = <String>[];
 
     final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'POST',
+      queryParams: queryParams,
+      body: passwordChangeData,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -200,7 +194,7 @@ class SecurityApi {
     }
 
     if (response.body == null) {
-      return;
+      return null;
     }
 
     return;
@@ -231,33 +225,31 @@ class SecurityApi {
         "/security/password/change-request".replaceAll("{format}", "json");
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [];
-
-    final ResetPasswordData postBody = resetPasswordData;
+    final List<String> authNames = <String>[];
 
     final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'POST',
+      queryParams: queryParams,
+      body: resetPasswordData,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -265,7 +257,7 @@ class SecurityApi {
     }
 
     if (response.body == null) {
-      return;
+      return null;
     }
 
     return;
@@ -295,35 +287,33 @@ class SecurityApi {
     final String path = "/security/register".replaceAll("{format}", "json");
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final RegisterData postBody = registerData;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'POST',
+      queryParams: queryParams,
+      body: registerData,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {

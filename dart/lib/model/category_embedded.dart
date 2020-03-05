@@ -54,21 +54,17 @@ class CategoryEmbedded {
   }
 
   static List<CategoryEmbedded> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <CategoryEmbedded>[]
-        : json
-            .map((dynamic value) => CategoryEmbedded.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => CategoryEmbedded.fromJson(value))
+            ?.toList() ??
+        <CategoryEmbedded>[];
   }
 
   static Map<String, CategoryEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, CategoryEmbedded>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = CategoryEmbedded.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, CategoryEmbedded.fromJson(value));
+        }) ??
+        <String, CategoryEmbedded>{};
   }
 
   Map<String, dynamic> toJson() {

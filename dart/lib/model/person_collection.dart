@@ -44,21 +44,17 @@ class PersonCollection {
   }
 
   static List<PersonCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PersonCollection>[]
-        : json
-            .map((dynamic value) => PersonCollection.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PersonCollection.fromJson(value))
+            ?.toList() ??
+        <PersonCollection>[];
   }
 
   static Map<String, PersonCollection> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PersonCollection>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PersonCollection.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PersonCollection.fromJson(value));
+        }) ??
+        <String, PersonCollection>{};
   }
 
   Map<String, dynamic> toJson() {

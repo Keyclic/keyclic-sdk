@@ -48,28 +48,24 @@ class FeedbackLinksCategory {
   }
 
   static List<FeedbackLinksCategory> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeedbackLinksCategory>[]
-        : json
-            .map((dynamic value) => FeedbackLinksCategory.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => FeedbackLinksCategory.fromJson(value))
+            ?.toList() ??
+        <FeedbackLinksCategory>[];
   }
 
   static Map<String, FeedbackLinksCategory> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, FeedbackLinksCategory>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackLinksCategory.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeedbackLinksCategory.fromJson(value));
+        }) ??
+        <String, FeedbackLinksCategory>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

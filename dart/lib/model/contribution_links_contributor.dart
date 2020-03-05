@@ -48,29 +48,25 @@ class ContributionLinksContributor {
   }
 
   static List<ContributionLinksContributor> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ContributionLinksContributor>[]
-        : json
-            .map(
+    return json
+            ?.map(
                 (dynamic value) => ContributionLinksContributor.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <ContributionLinksContributor>[];
   }
 
   static Map<String, ContributionLinksContributor> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ContributionLinksContributor>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ContributionLinksContributor.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ContributionLinksContributor.fromJson(value));
+        }) ??
+        <String, ContributionLinksContributor>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

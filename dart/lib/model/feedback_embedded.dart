@@ -54,21 +54,17 @@ class FeedbackEmbedded {
   }
 
   static List<FeedbackEmbedded> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeedbackEmbedded>[]
-        : json
-            .map((dynamic value) => FeedbackEmbedded.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => FeedbackEmbedded.fromJson(value))
+            ?.toList() ??
+        <FeedbackEmbedded>[];
   }
 
   static Map<String, FeedbackEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, FeedbackEmbedded>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackEmbedded.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeedbackEmbedded.fromJson(value));
+        }) ??
+        <String, FeedbackEmbedded>{};
   }
 
   Map<String, dynamic> toJson() {

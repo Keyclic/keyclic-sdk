@@ -58,22 +58,19 @@ class InternalServiceContactPoint {
   }
 
   static List<InternalServiceContactPoint> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <InternalServiceContactPoint>[]
-        : json
-            .map((dynamic value) => InternalServiceContactPoint.fromJson(value))
-            .toList();
+    return json
+            ?.map(
+                (dynamic value) => InternalServiceContactPoint.fromJson(value))
+            ?.toList() ??
+        <InternalServiceContactPoint>[];
   }
 
   static Map<String, InternalServiceContactPoint> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, InternalServiceContactPoint>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = InternalServiceContactPoint.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, InternalServiceContactPoint.fromJson(value));
+        }) ??
+        <String, InternalServiceContactPoint>{};
   }
 
   Map<String, dynamic> toJson() {

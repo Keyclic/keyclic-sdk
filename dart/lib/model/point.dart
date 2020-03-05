@@ -52,19 +52,15 @@ class Point {
   }
 
   static List<Point> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Point>[]
-        : json.map((dynamic value) => Point.fromJson(value)).toList();
+    return json?.map((dynamic value) => Point.fromJson(value))?.toList() ??
+        <Point>[];
   }
 
   static Map<String, Point> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Point>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Point.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Point.fromJson(value));
+        }) ??
+        <String, Point>{};
   }
 
   Map<String, dynamic> toJson() {

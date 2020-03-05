@@ -43,28 +43,25 @@ class MemberLinksOrganizationIriTemplate {
 
   static List<MemberLinksOrganizationIriTemplate> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <MemberLinksOrganizationIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 MemberLinksOrganizationIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <MemberLinksOrganizationIriTemplate>[];
   }
 
   static Map<String, MemberLinksOrganizationIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, MemberLinksOrganizationIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MemberLinksOrganizationIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, MemberLinksOrganizationIriTemplate.fromJson(value));
+        }) ??
+        <String, MemberLinksOrganizationIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

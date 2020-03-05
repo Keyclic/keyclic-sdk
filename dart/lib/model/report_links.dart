@@ -88,32 +88,30 @@ class ReportLinks {
   }
 
   static List<ReportLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ReportLinks>[]
-        : json.map((dynamic value) => ReportLinks.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => ReportLinks.fromJson(value))
+            ?.toList() ??
+        <ReportLinks>[];
   }
 
   static Map<String, ReportLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ReportLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReportLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ReportLinks.fromJson(value));
+        }) ??
+        <String, ReportLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (category != null) 'category': category,
-      if (delegatedFrom != null) 'delegatedFrom': delegatedFrom,
-      if (delegatedTo != null) 'delegatedTo': delegatedTo,
-      if (feedback != null) 'feedback': feedback,
-      if (operations != null) 'operations': operations,
-      if (organization != null) 'organization': organization,
-      if (place != null) 'place': place,
-      if (self != null) 'self': self,
-      if (tracking != null) 'tracking': tracking,
+      if (category != null) 'category': category.toJson(),
+      if (delegatedFrom != null) 'delegatedFrom': delegatedFrom.toJson(),
+      if (delegatedTo != null) 'delegatedTo': delegatedTo.toJson(),
+      if (feedback != null) 'feedback': feedback.toJson(),
+      if (operations != null) 'operations': operations.toJson(),
+      if (organization != null) 'organization': organization.toJson(),
+      if (place != null) 'place': place.toJson(),
+      if (self != null) 'self': self.toJson(),
+      if (tracking != null) 'tracking': tracking.toJson(),
     };
   }
 

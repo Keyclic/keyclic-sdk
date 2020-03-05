@@ -64,19 +64,17 @@ class ContactPoint {
   }
 
   static List<ContactPoint> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ContactPoint>[]
-        : json.map((dynamic value) => ContactPoint.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => ContactPoint.fromJson(value))
+            ?.toList() ??
+        <ContactPoint>[];
   }
 
   static Map<String, ContactPoint> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ContactPoint>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ContactPoint.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ContactPoint.fromJson(value));
+        }) ??
+        <String, ContactPoint>{};
   }
 
   Map<String, dynamic> toJson() {

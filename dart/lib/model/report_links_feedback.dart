@@ -47,28 +47,24 @@ class ReportLinksFeedback {
   }
 
   static List<ReportLinksFeedback> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ReportLinksFeedback>[]
-        : json
-            .map((dynamic value) => ReportLinksFeedback.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ReportLinksFeedback.fromJson(value))
+            ?.toList() ??
+        <ReportLinksFeedback>[];
   }
 
   static Map<String, ReportLinksFeedback> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ReportLinksFeedback>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReportLinksFeedback.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ReportLinksFeedback.fromJson(value));
+        }) ??
+        <String, ReportLinksFeedback>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

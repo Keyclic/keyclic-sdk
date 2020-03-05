@@ -52,19 +52,17 @@ class DelegationData {
   }
 
   static List<DelegationData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DelegationData>[]
-        : json.map((dynamic value) => DelegationData.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => DelegationData.fromJson(value))
+            ?.toList() ??
+        <DelegationData>[];
   }
 
   static Map<String, DelegationData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, DelegationData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DelegationData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DelegationData.fromJson(value));
+        }) ??
+        <String, DelegationData>{};
   }
 
   Map<String, dynamic> toJson() {

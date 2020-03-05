@@ -59,27 +59,24 @@ class PlaceLinks {
   }
 
   static List<PlaceLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PlaceLinks>[]
-        : json.map((dynamic value) => PlaceLinks.fromJson(value)).toList();
+    return json?.map((dynamic value) => PlaceLinks.fromJson(value))?.toList() ??
+        <PlaceLinks>[];
   }
 
   static Map<String, PlaceLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PlaceLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = PlaceLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PlaceLinks.fromJson(value));
+        }) ??
+        <String, PlaceLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (containedInPlace != null) 'containedInPlace': containedInPlace,
-      if (containsPlaces != null) 'containsPlaces': containsPlaces,
-      if (organization != null) 'organization': organization,
-      if (self != null) 'self': self,
+      if (containedInPlace != null)
+        'containedInPlace': containedInPlace.toJson(),
+      if (containsPlaces != null) 'containsPlaces': containsPlaces.toJson(),
+      if (organization != null) 'organization': organization.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

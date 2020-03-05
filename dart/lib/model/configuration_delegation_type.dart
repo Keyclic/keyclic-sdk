@@ -52,29 +52,26 @@ class ConfigurationDelegationType {
   }
 
   static List<ConfigurationDelegationType> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ConfigurationDelegationType>[]
-        : json
-            .map((dynamic value) => ConfigurationDelegationType.fromJson(value))
-            .toList();
+    return json
+            ?.map(
+                (dynamic value) => ConfigurationDelegationType.fromJson(value))
+            ?.toList() ??
+        <ConfigurationDelegationType>[];
   }
 
   static Map<String, ConfigurationDelegationType> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ConfigurationDelegationType>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ConfigurationDelegationType.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ConfigurationDelegationType.fromJson(value));
+        }) ??
+        <String, ConfigurationDelegationType>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (id != null) 'id': id,
       if (type != null) 'type': type,
-      if (workflow != null) 'workflow': workflow,
+      if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 

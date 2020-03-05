@@ -59,25 +59,21 @@ class Feature {
   }
 
   static List<Feature> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Feature>[]
-        : json.map((dynamic value) => Feature.fromJson(value)).toList();
+    return json?.map((dynamic value) => Feature.fromJson(value))?.toList() ??
+        <Feature>[];
   }
 
   static Map<String, Feature> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Feature>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Feature.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Feature.fromJson(value));
+        }) ??
+        <String, Feature>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (type != null) 'type': type,
-      if (geometry != null) 'geometry': geometry,
+      if (geometry != null) 'geometry': geometry.toJson(),
       if (properties != null) 'properties': properties,
     };
   }

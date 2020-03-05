@@ -44,19 +44,17 @@ class FeedCollection {
   }
 
   static List<FeedCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeedCollection>[]
-        : json.map((dynamic value) => FeedCollection.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => FeedCollection.fromJson(value))
+            ?.toList() ??
+        <FeedCollection>[];
   }
 
   static Map<String, FeedCollection> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, FeedCollection>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedCollection.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeedCollection.fromJson(value));
+        }) ??
+        <String, FeedCollection>{};
   }
 
   Map<String, dynamic> toJson() {

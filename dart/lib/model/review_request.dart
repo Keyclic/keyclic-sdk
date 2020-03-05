@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class ReviewRequest {
   ReviewRequest({
+    this.embedded,
     this.links,
     this.createdAt,
     this.id,
@@ -27,6 +28,7 @@ class ReviewRequest {
     }
 
     return ReviewRequest(
+      embedded: ReviewRequestEmbedded.fromJson(json['_embedded']),
       links: ReviewRequestLinks.fromJson(json['_links']),
       createdAt: createdAt,
       id: json['id'],
@@ -34,6 +36,8 @@ class ReviewRequest {
       updatedAt: updatedAt,
     );
   }
+
+  ReviewRequestEmbedded embedded;
 
   ReviewRequestLinks links;
 
@@ -54,6 +58,7 @@ class ReviewRequest {
 
     return other is ReviewRequest &&
         runtimeType == other.runtimeType &&
+        embedded == other.embedded &&
         links == other.links &&
         createdAt == other.createdAt &&
         id == other.id &&
@@ -66,6 +71,7 @@ class ReviewRequest {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
@@ -76,24 +82,23 @@ class ReviewRequest {
   }
 
   static List<ReviewRequest> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ReviewRequest>[]
-        : json.map((dynamic value) => ReviewRequest.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => ReviewRequest.fromJson(value))
+            ?.toList() ??
+        <ReviewRequest>[];
   }
 
   static Map<String, ReviewRequest> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ReviewRequest>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReviewRequest.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ReviewRequest.fromJson(value));
+        }) ??
+        <String, ReviewRequest>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
+      if (embedded != null) '_embedded': embedded.toJson(),
+      if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
       if (type != null) 'type': type,
@@ -103,6 +108,6 @@ class ReviewRequest {
 
   @override
   String toString() {
-    return 'ReviewRequest[links=$links, createdAt=$createdAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
+    return 'ReviewRequest[embedded=$embedded, links=$links, createdAt=$createdAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
   }
 }

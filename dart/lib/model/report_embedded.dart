@@ -90,30 +90,28 @@ class ReportEmbedded {
   }
 
   static List<ReportEmbedded> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ReportEmbedded>[]
-        : json.map((dynamic value) => ReportEmbedded.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => ReportEmbedded.fromJson(value))
+            ?.toList() ??
+        <ReportEmbedded>[];
   }
 
   static Map<String, ReportEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ReportEmbedded>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReportEmbedded.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ReportEmbedded.fromJson(value));
+        }) ??
+        <String, ReportEmbedded>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (category != null) 'category': category,
-      if (duration != null) 'duration': duration,
-      if (place != null) 'place': place,
+      if (category != null) 'category': category.toJson(),
+      if (duration != null) 'duration': duration.toJson(),
+      if (place != null) 'place': place.toJson(),
       if (stateTransitions != null) 'stateTransitions': stateTransitions,
       if (targetGroups != null) 'targetGroups': targetGroups,
       if (tracking != null) 'tracking': tracking,
-      if (workflow != null) 'workflow': workflow,
+      if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 

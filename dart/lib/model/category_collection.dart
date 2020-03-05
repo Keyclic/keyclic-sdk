@@ -44,22 +44,18 @@ class CategoryCollection {
   }
 
   static List<CategoryCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <CategoryCollection>[]
-        : json
-            .map((dynamic value) => CategoryCollection.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => CategoryCollection.fromJson(value))
+            ?.toList() ??
+        <CategoryCollection>[];
   }
 
   static Map<String, CategoryCollection> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, CategoryCollection>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = CategoryCollection.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, CategoryCollection.fromJson(value));
+        }) ??
+        <String, CategoryCollection>{};
   }
 
   Map<String, dynamic> toJson() {

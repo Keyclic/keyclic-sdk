@@ -52,22 +52,18 @@ class FeedbackDataGeoPoint {
   }
 
   static List<FeedbackDataGeoPoint> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeedbackDataGeoPoint>[]
-        : json
-            .map((dynamic value) => FeedbackDataGeoPoint.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => FeedbackDataGeoPoint.fromJson(value))
+            ?.toList() ??
+        <FeedbackDataGeoPoint>[];
   }
 
   static Map<String, FeedbackDataGeoPoint> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, FeedbackDataGeoPoint>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackDataGeoPoint.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeedbackDataGeoPoint.fromJson(value));
+        }) ??
+        <String, FeedbackDataGeoPoint>{};
   }
 
   Map<String, dynamic> toJson() {

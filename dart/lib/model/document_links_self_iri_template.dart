@@ -40,28 +40,24 @@ class DocumentLinksSelfIriTemplate {
   }
 
   static List<DocumentLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DocumentLinksSelfIriTemplate>[]
-        : json
-            .map(
+    return json
+            ?.map(
                 (dynamic value) => DocumentLinksSelfIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <DocumentLinksSelfIriTemplate>[];
   }
 
   static Map<String, DocumentLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, DocumentLinksSelfIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentLinksSelfIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DocumentLinksSelfIriTemplate.fromJson(value));
+        }) ??
+        <String, DocumentLinksSelfIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

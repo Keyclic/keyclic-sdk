@@ -42,23 +42,20 @@ class WebhookLinksSelfIriTemplateMapping {
 
   static List<WebhookLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <WebhookLinksSelfIriTemplateMapping>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 WebhookLinksSelfIriTemplateMapping.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <WebhookLinksSelfIriTemplateMapping>[];
   }
 
   static Map<String, WebhookLinksSelfIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, WebhookLinksSelfIriTemplateMapping>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WebhookLinksSelfIriTemplateMapping.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, WebhookLinksSelfIriTemplateMapping.fromJson(value));
+        }) ??
+        <String, WebhookLinksSelfIriTemplateMapping>{};
   }
 
   Map<String, dynamic> toJson() {

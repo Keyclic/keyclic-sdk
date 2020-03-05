@@ -48,28 +48,24 @@ class WebhookLinksOrganization {
   }
 
   static List<WebhookLinksOrganization> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <WebhookLinksOrganization>[]
-        : json
-            .map((dynamic value) => WebhookLinksOrganization.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => WebhookLinksOrganization.fromJson(value))
+            ?.toList() ??
+        <WebhookLinksOrganization>[];
   }
 
   static Map<String, WebhookLinksOrganization> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, WebhookLinksOrganization>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WebhookLinksOrganization.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, WebhookLinksOrganization.fromJson(value));
+        }) ??
+        <String, WebhookLinksOrganization>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

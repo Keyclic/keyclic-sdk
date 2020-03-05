@@ -70,19 +70,15 @@ class Transition {
   }
 
   static List<Transition> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Transition>[]
-        : json.map((dynamic value) => Transition.fromJson(value)).toList();
+    return json?.map((dynamic value) => Transition.fromJson(value))?.toList() ??
+        <Transition>[];
   }
 
   static Map<String, Transition> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Transition>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Transition.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Transition.fromJson(value));
+        }) ??
+        <String, Transition>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -91,8 +87,8 @@ class Transition {
       if (type != null) 'type': type,
       if (name != null) 'name': name,
       if (description != null) 'description': description,
-      if (from != null) 'from': from,
-      if (to != null) 'to': to,
+      if (from != null) 'from': from.toJson(),
+      if (to != null) 'to': to.toJson(),
     };
   }
 

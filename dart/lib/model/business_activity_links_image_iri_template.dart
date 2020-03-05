@@ -43,28 +43,25 @@ class BusinessActivityLinksImageIriTemplate {
 
   static List<BusinessActivityLinksImageIriTemplate> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <BusinessActivityLinksImageIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 BusinessActivityLinksImageIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <BusinessActivityLinksImageIriTemplate>[];
   }
 
   static Map<String, BusinessActivityLinksImageIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, BusinessActivityLinksImageIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = BusinessActivityLinksImageIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, BusinessActivityLinksImageIriTemplate.fromJson(value));
+        }) ??
+        <String, BusinessActivityLinksImageIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

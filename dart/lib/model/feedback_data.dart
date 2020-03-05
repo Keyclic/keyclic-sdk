@@ -96,19 +96,17 @@ class FeedbackData {
   }
 
   static List<FeedbackData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeedbackData>[]
-        : json.map((dynamic value) => FeedbackData.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => FeedbackData.fromJson(value))
+            ?.toList() ??
+        <FeedbackData>[];
   }
 
   static Map<String, FeedbackData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, FeedbackData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeedbackData.fromJson(value));
+        }) ??
+        <String, FeedbackData>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -116,7 +114,7 @@ class FeedbackData {
       if (businessActivity != null) 'businessActivity': businessActivity,
       if (category != null) 'category': category,
       if (description != null) 'description': description,
-      if (geo != null) 'geo': geo,
+      if (geo != null) 'geo': geo.toJson(),
       if (metadata != null) 'metadata': metadata,
       if (place != null) 'place': place,
       if (proMode != null) 'proMode': proMode,

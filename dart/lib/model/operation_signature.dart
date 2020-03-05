@@ -52,28 +52,24 @@ class OperationSignature {
   }
 
   static List<OperationSignature> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OperationSignature>[]
-        : json
-            .map((dynamic value) => OperationSignature.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => OperationSignature.fromJson(value))
+            ?.toList() ??
+        <OperationSignature>[];
   }
 
   static Map<String, OperationSignature> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OperationSignature>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationSignature.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OperationSignature.fromJson(value));
+        }) ??
+        <String, OperationSignature>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (signedAt != null) 'signedAt': signedAt.toUtc().toIso8601String(),
-      if (signer != null) 'signer': signer,
+      if (signer != null) 'signer': signer.toJson(),
     };
   }
 

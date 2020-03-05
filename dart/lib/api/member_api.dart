@@ -31,35 +31,32 @@ class MemberApi {
         .replaceAll("{" + "member" + "}", member.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final Object postBody = null;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'DELETE',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'DELETE',
+      queryParams: queryParams,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -67,7 +64,7 @@ class MemberApi {
     }
 
     if (response.body == null) {
-      return;
+      return null;
     }
 
     return;
@@ -99,35 +96,32 @@ class MemberApi {
         .replaceAll("{" + "member" + "}", member.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final Object postBody = null;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'GET',
+      queryParams: queryParams,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -172,35 +166,33 @@ class MemberApi {
         .replaceAll("{" + "member" + "}", member.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final MemberPatch postBody = memberPatch;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'PATCH',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'PATCH',
+      queryParams: queryParams,
+      body: memberPatch,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -238,35 +230,33 @@ class MemberApi {
     final String path = "/members".replaceAll("{format}", "json");
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final MemberData postBody = memberData;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'POST',
+      queryParams: queryParams,
+      body: memberData,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {

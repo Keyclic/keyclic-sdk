@@ -57,22 +57,18 @@ class ConfigurationMemberType {
   }
 
   static List<ConfigurationMemberType> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ConfigurationMemberType>[]
-        : json
-            .map((dynamic value) => ConfigurationMemberType.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ConfigurationMemberType.fromJson(value))
+            ?.toList() ??
+        <ConfigurationMemberType>[];
   }
 
   static Map<String, ConfigurationMemberType> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ConfigurationMemberType>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ConfigurationMemberType.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ConfigurationMemberType.fromJson(value));
+        }) ??
+        <String, ConfigurationMemberType>{};
   }
 
   Map<String, dynamic> toJson() {

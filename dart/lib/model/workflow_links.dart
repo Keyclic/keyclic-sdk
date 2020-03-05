@@ -40,24 +40,22 @@ class WorkflowLinks {
   }
 
   static List<WorkflowLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <WorkflowLinks>[]
-        : json.map((dynamic value) => WorkflowLinks.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => WorkflowLinks.fromJson(value))
+            ?.toList() ??
+        <WorkflowLinks>[];
   }
 
   static Map<String, WorkflowLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WorkflowLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WorkflowLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, WorkflowLinks.fromJson(value));
+        }) ??
+        <String, WorkflowLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (self != null) 'self': self,
+      if (self != null) 'self': self.toJson(),
     };
   }
 

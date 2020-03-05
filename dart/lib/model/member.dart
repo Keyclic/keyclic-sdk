@@ -99,26 +99,22 @@ class Member {
   }
 
   static List<Member> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Member>[]
-        : json.map((dynamic value) => Member.fromJson(value)).toList();
+    return json?.map((dynamic value) => Member.fromJson(value))?.toList() ??
+        <Member>[];
   }
 
   static Map<String, Member> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Member>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Member.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Member.fromJson(value));
+        }) ??
+        <String, Member>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (embedded != null) '_embedded': embedded,
-      if (links != null) '_links': links,
-      if (contactPoint != null) 'contactPoint': contactPoint,
+      if (embedded != null) '_embedded': embedded.toJson(),
+      if (links != null) '_links': links.toJson(),
+      if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
       if (roles != null) 'roles': roles,

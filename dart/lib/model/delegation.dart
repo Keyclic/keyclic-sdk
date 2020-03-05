@@ -99,25 +99,21 @@ class Delegation {
   }
 
   static List<Delegation> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Delegation>[]
-        : json.map((dynamic value) => Delegation.fromJson(value)).toList();
+    return json?.map((dynamic value) => Delegation.fromJson(value))?.toList() ??
+        <Delegation>[];
   }
 
   static Map<String, Delegation> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Delegation>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Delegation.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Delegation.fromJson(value));
+        }) ??
+        <String, Delegation>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (embedded != null) '_embedded': embedded,
-      if (links != null) '_links': links,
+      if (embedded != null) '_embedded': embedded.toJson(),
+      if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (id != null) 'id': id,

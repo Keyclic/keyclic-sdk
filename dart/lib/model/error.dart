@@ -52,26 +52,22 @@ class Error {
   }
 
   static List<Error> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Error>[]
-        : json.map((dynamic value) => Error.fromJson(value)).toList();
+    return json?.map((dynamic value) => Error.fromJson(value))?.toList() ??
+        <Error>[];
   }
 
   static Map<String, Error> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Error>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Error.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Error.fromJson(value));
+        }) ??
+        <String, Error>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (message != null) 'message': message,
       if (total != null) 'total': total,
-      if (embedded != null) '_embedded': embedded,
+      if (embedded != null) '_embedded': embedded.toJson(),
     };
   }
 

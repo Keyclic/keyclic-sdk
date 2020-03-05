@@ -48,28 +48,24 @@ class ReviewRequestLinksSelf {
   }
 
   static List<ReviewRequestLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ReviewRequestLinksSelf>[]
-        : json
-            .map((dynamic value) => ReviewRequestLinksSelf.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ReviewRequestLinksSelf.fromJson(value))
+            ?.toList() ??
+        <ReviewRequestLinksSelf>[];
   }
 
   static Map<String, ReviewRequestLinksSelf> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ReviewRequestLinksSelf>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReviewRequestLinksSelf.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ReviewRequestLinksSelf.fromJson(value));
+        }) ??
+        <String, ReviewRequestLinksSelf>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

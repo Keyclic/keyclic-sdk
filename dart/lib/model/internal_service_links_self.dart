@@ -48,28 +48,24 @@ class InternalServiceLinksSelf {
   }
 
   static List<InternalServiceLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <InternalServiceLinksSelf>[]
-        : json
-            .map((dynamic value) => InternalServiceLinksSelf.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => InternalServiceLinksSelf.fromJson(value))
+            ?.toList() ??
+        <InternalServiceLinksSelf>[];
   }
 
   static Map<String, InternalServiceLinksSelf> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, InternalServiceLinksSelf>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = InternalServiceLinksSelf.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, InternalServiceLinksSelf.fromJson(value));
+        }) ??
+        <String, InternalServiceLinksSelf>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

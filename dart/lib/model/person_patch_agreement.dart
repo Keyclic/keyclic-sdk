@@ -52,22 +52,18 @@ class PersonPatchAgreement {
   }
 
   static List<PersonPatchAgreement> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PersonPatchAgreement>[]
-        : json
-            .map((dynamic value) => PersonPatchAgreement.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PersonPatchAgreement.fromJson(value))
+            ?.toList() ??
+        <PersonPatchAgreement>[];
   }
 
   static Map<String, PersonPatchAgreement> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, PersonPatchAgreement>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PersonPatchAgreement.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PersonPatchAgreement.fromJson(value));
+        }) ??
+        <String, PersonPatchAgreement>{};
   }
 
   Map<String, dynamic> toJson() {

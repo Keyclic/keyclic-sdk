@@ -43,28 +43,25 @@ class ContributionLinksFeedbackIriTemplate {
 
   static List<ContributionLinksFeedbackIriTemplate> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <ContributionLinksFeedbackIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 ContributionLinksFeedbackIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <ContributionLinksFeedbackIriTemplate>[];
   }
 
   static Map<String, ContributionLinksFeedbackIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ContributionLinksFeedbackIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ContributionLinksFeedbackIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, ContributionLinksFeedbackIriTemplate.fromJson(value));
+        }) ??
+        <String, ContributionLinksFeedbackIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

@@ -52,27 +52,23 @@ class DelegationEmbeddedWorkflow {
   }
 
   static List<DelegationEmbeddedWorkflow> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DelegationEmbeddedWorkflow>[]
-        : json
-            .map((dynamic value) => DelegationEmbeddedWorkflow.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => DelegationEmbeddedWorkflow.fromJson(value))
+            ?.toList() ??
+        <DelegationEmbeddedWorkflow>[];
   }
 
   static Map<String, DelegationEmbeddedWorkflow> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, DelegationEmbeddedWorkflow>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DelegationEmbeddedWorkflow.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DelegationEmbeddedWorkflow.fromJson(value));
+        }) ??
+        <String, DelegationEmbeddedWorkflow>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (state != null) 'state': state,
+      if (state != null) 'state': state.toJson(),
       if (transitions != null) 'transitions': transitions,
     };
   }

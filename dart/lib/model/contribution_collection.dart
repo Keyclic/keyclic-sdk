@@ -44,22 +44,18 @@ class ContributionCollection {
   }
 
   static List<ContributionCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ContributionCollection>[]
-        : json
-            .map((dynamic value) => ContributionCollection.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ContributionCollection.fromJson(value))
+            ?.toList() ??
+        <ContributionCollection>[];
   }
 
   static Map<String, ContributionCollection> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ContributionCollection>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ContributionCollection.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ContributionCollection.fromJson(value));
+        }) ??
+        <String, ContributionCollection>{};
   }
 
   Map<String, dynamic> toJson() {

@@ -94,30 +94,26 @@ class BusinessActivity {
   }
 
   static List<BusinessActivity> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <BusinessActivity>[]
-        : json
-            .map((dynamic value) => BusinessActivity.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => BusinessActivity.fromJson(value))
+            ?.toList() ??
+        <BusinessActivity>[];
   }
 
   static Map<String, BusinessActivity> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, BusinessActivity>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = BusinessActivity.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, BusinessActivity.fromJson(value));
+        }) ??
+        <String, BusinessActivity>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
+      if (links != null) '_links': links.toJson(),
       if (alternateName != null) 'alternateName': alternateName,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
-      if (metadataSchema != null) 'metadataSchema': metadataSchema,
+      if (metadataSchema != null) 'metadataSchema': metadataSchema.toJson(),
       if (name != null) 'name': name,
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),

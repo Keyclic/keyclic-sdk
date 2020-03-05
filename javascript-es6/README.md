@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.3.7
-- Package version: 2.3.7
+- API version: 2.3.8
+- Package version: 2.3.8
 
 ## Getting started
 
@@ -531,6 +531,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ReviewLinksSelfIriTemplateMapping](docs/ReviewLinksSelfIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.ReviewRequest](docs/ReviewRequest.md)
 - [@KeyclicSdkJavascript.ReviewRequestCollection](docs/ReviewRequestCollection.md)
+- [@KeyclicSdkJavascript.ReviewRequestEmbedded](docs/ReviewRequestEmbedded.md)
 - [@KeyclicSdkJavascript.ReviewRequestLinks](docs/ReviewRequestLinks.md)
 - [@KeyclicSdkJavascript.ReviewRequestLinksItemToReview](docs/ReviewRequestLinksItemToReview.md)
 - [@KeyclicSdkJavascript.ReviewRequestLinksItemToReviewIriTemplate](docs/ReviewRequestLinksItemToReviewIriTemplate.md)
@@ -556,9 +557,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.State](docs/State.md)
 - [@KeyclicSdkJavascript.SuccessLogin](docs/SuccessLogin.md)
 - [@KeyclicSdkJavascript.SuccessLoginCredentials](docs/SuccessLoginCredentials.md)
-- [@KeyclicSdkJavascript.SuccessLoginCredentialsAdministratorOf](docs/SuccessLoginCredentialsAdministratorOf.md)
-- [@KeyclicSdkJavascript.SuccessLoginCredentialsMemberOf](docs/SuccessLoginCredentialsMemberOf.md)
-- [@KeyclicSdkJavascript.SuccessLoginCredentialsOrganization](docs/SuccessLoginCredentialsOrganization.md)
 - [@KeyclicSdkJavascript.Tracking](docs/Tracking.md)
 - [@KeyclicSdkJavascript.TrackingProgression](docs/TrackingProgression.md)
 - [@KeyclicSdkJavascript.Transition](docs/Transition.md)

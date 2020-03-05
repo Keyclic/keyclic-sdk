@@ -40,26 +40,22 @@ class OccupantEmbedded {
   }
 
   static List<OccupantEmbedded> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OccupantEmbedded>[]
-        : json
-            .map((dynamic value) => OccupantEmbedded.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => OccupantEmbedded.fromJson(value))
+            ?.toList() ??
+        <OccupantEmbedded>[];
   }
 
   static Map<String, OccupantEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OccupantEmbedded>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OccupantEmbedded.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OccupantEmbedded.fromJson(value));
+        }) ??
+        <String, OccupantEmbedded>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (member != null) 'member': member,
+      if (member != null) 'member': member.toJson(),
     };
   }
 

@@ -69,22 +69,18 @@ class ActivityPagination {
   }
 
   static List<ActivityPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ActivityPagination>[]
-        : json
-            .map((dynamic value) => ActivityPagination.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ActivityPagination.fromJson(value))
+            ?.toList() ??
+        <ActivityPagination>[];
   }
 
   static Map<String, ActivityPagination> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ActivityPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ActivityPagination.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ActivityPagination.fromJson(value));
+        }) ??
+        <String, ActivityPagination>{};
   }
 
   Map<String, dynamic> toJson() {

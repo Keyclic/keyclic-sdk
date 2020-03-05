@@ -46,23 +46,19 @@ class NotificationReportNotification {
   }
 
   static List<NotificationReportNotification> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <NotificationReportNotification>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 NotificationReportNotification.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <NotificationReportNotification>[];
   }
 
   static Map<String, NotificationReportNotification> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, NotificationReportNotification>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = NotificationReportNotification.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, NotificationReportNotification.fromJson(value));
+        }) ??
+        <String, NotificationReportNotification>{};
   }
 
   Map<String, dynamic> toJson() {

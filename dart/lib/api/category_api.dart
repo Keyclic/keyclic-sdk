@@ -35,7 +35,7 @@ class CategoryApi {
     final String path = "/categories".replaceAll("{format}", "json");
 
     // query params
-    final List<QueryParam> queryParams = [
+    final List<QueryParam> queryParams = <QueryParam>[
       if (businessActivity != null)
         ..._convertParametersForCollectionFormat(
             "business_activity", businessActivity),
@@ -60,32 +60,29 @@ class CategoryApi {
     ];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final Object postBody = null;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'GET',
+      queryParams: queryParams,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -126,35 +123,32 @@ class CategoryApi {
         .replaceAll("{" + "category" + "}", category.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final Object postBody = null;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'DELETE',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'DELETE',
+      queryParams: queryParams,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -162,7 +156,7 @@ class CategoryApi {
     }
 
     if (response.body == null) {
-      return;
+      return null;
     }
 
     return;
@@ -194,35 +188,32 @@ class CategoryApi {
         .replaceAll("{" + "category" + "}", category.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final Object postBody = null;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'GET',
+      queryParams: queryParams,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -267,35 +258,33 @@ class CategoryApi {
         .replaceAll("{" + "category" + "}", category.toString());
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final CategoryPatch postBody = categoryPatch;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'PATCH',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'PATCH',
+      queryParams: queryParams,
+      body: categoryPatch,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -333,35 +322,33 @@ class CategoryApi {
     final String path = "/categories".replaceAll("{format}", "json");
 
     // query params
-    final List<QueryParam> queryParams = [];
+    final List<QueryParam> queryParams = <QueryParam>[];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       "accept-language": acceptLanguage,
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       "x-keyclic-app": xKeyclicApp,
       "x-keyclic-app-version": xKeyclicAppVersion,
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       "application/json;charset=UTF-8",
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       "bearer",
     ];
 
-    final CategoryData postBody = categoryData;
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: 'POST',
+      queryParams: queryParams,
+      body: categoryData,
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {

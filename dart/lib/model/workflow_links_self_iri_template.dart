@@ -40,28 +40,24 @@ class WorkflowLinksSelfIriTemplate {
   }
 
   static List<WorkflowLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <WorkflowLinksSelfIriTemplate>[]
-        : json
-            .map(
+    return json
+            ?.map(
                 (dynamic value) => WorkflowLinksSelfIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <WorkflowLinksSelfIriTemplate>[];
   }
 
   static Map<String, WorkflowLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, WorkflowLinksSelfIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WorkflowLinksSelfIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, WorkflowLinksSelfIriTemplate.fromJson(value));
+        }) ??
+        <String, WorkflowLinksSelfIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

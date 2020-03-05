@@ -66,29 +66,25 @@ class OperationEmbedded {
   }
 
   static List<OperationEmbedded> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OperationEmbedded>[]
-        : json
-            .map((dynamic value) => OperationEmbedded.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => OperationEmbedded.fromJson(value))
+            ?.toList() ??
+        <OperationEmbedded>[];
   }
 
   static Map<String, OperationEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OperationEmbedded>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationEmbedded.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OperationEmbedded.fromJson(value));
+        }) ??
+        <String, OperationEmbedded>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (duration != null) 'duration': duration,
+      if (duration != null) 'duration': duration.toJson(),
       if (stateTransitions != null) 'stateTransitions': stateTransitions,
       if (tracking != null) 'tracking': tracking,
-      if (workflow != null) 'workflow': workflow,
+      if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 

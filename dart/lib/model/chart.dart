@@ -54,19 +54,15 @@ class Chart {
   }
 
   static List<Chart> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Chart>[]
-        : json.map((dynamic value) => Chart.fromJson(value)).toList();
+    return json?.map((dynamic value) => Chart.fromJson(value))?.toList() ??
+        <Chart>[];
   }
 
   static Map<String, Chart> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Chart>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Chart.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Chart.fromJson(value));
+        }) ??
+        <String, Chart>{};
   }
 
   Map<String, dynamic> toJson() {

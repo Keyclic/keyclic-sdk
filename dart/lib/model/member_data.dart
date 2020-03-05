@@ -64,24 +64,20 @@ class MemberData {
   }
 
   static List<MemberData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <MemberData>[]
-        : json.map((dynamic value) => MemberData.fromJson(value)).toList();
+    return json?.map((dynamic value) => MemberData.fromJson(value))?.toList() ??
+        <MemberData>[];
   }
 
   static Map<String, MemberData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, MemberData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = MemberData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, MemberData.fromJson(value));
+        }) ??
+        <String, MemberData>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (contactPoint != null) 'contactPoint': contactPoint,
+      if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (organization != null) 'organization': organization,
       if (person != null) 'person': person,
       if (type != null) 'type': type,

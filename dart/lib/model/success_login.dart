@@ -52,25 +52,23 @@ class SuccessLogin {
   }
 
   static List<SuccessLogin> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <SuccessLogin>[]
-        : json.map((dynamic value) => SuccessLogin.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => SuccessLogin.fromJson(value))
+            ?.toList() ??
+        <SuccessLogin>[];
   }
 
   static Map<String, SuccessLogin> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, SuccessLogin>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = SuccessLogin.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, SuccessLogin.fromJson(value));
+        }) ??
+        <String, SuccessLogin>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (accessToken != null) 'accessToken': accessToken,
-      if (credentials != null) 'credentials': credentials,
+      if (credentials != null) 'credentials': credentials.toJson(),
       if (tokenType != null) 'tokenType': tokenType,
     };
   }

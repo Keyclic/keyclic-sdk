@@ -40,22 +40,18 @@ class FacebookConnectData {
   }
 
   static List<FacebookConnectData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FacebookConnectData>[]
-        : json
-            .map((dynamic value) => FacebookConnectData.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => FacebookConnectData.fromJson(value))
+            ?.toList() ??
+        <FacebookConnectData>[];
   }
 
   static Map<String, FacebookConnectData> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, FacebookConnectData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FacebookConnectData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FacebookConnectData.fromJson(value));
+        }) ??
+        <String, FacebookConnectData>{};
   }
 
   Map<String, dynamic> toJson() {

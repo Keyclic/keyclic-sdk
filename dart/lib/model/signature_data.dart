@@ -46,24 +46,22 @@ class SignatureData {
   }
 
   static List<SignatureData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <SignatureData>[]
-        : json.map((dynamic value) => SignatureData.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => SignatureData.fromJson(value))
+            ?.toList() ??
+        <SignatureData>[];
   }
 
   static Map<String, SignatureData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, SignatureData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = SignatureData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, SignatureData.fromJson(value));
+        }) ??
+        <String, SignatureData>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (signer != null) 'signer': signer,
+      if (signer != null) 'signer': signer.toJson(),
       if (image != null) 'image': image,
     };
   }

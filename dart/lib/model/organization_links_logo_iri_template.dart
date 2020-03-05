@@ -42,28 +42,25 @@ class OrganizationLinksLogoIriTemplate {
 
   static List<OrganizationLinksLogoIriTemplate> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <OrganizationLinksLogoIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 OrganizationLinksLogoIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <OrganizationLinksLogoIriTemplate>[];
   }
 
   static Map<String, OrganizationLinksLogoIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OrganizationLinksLogoIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OrganizationLinksLogoIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, OrganizationLinksLogoIriTemplate.fromJson(value));
+        }) ??
+        <String, OrganizationLinksLogoIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

@@ -47,27 +47,23 @@ class SectionLinksSelf {
   }
 
   static List<SectionLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <SectionLinksSelf>[]
-        : json
-            .map((dynamic value) => SectionLinksSelf.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => SectionLinksSelf.fromJson(value))
+            ?.toList() ??
+        <SectionLinksSelf>[];
   }
 
   static Map<String, SectionLinksSelf> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, SectionLinksSelf>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = SectionLinksSelf.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, SectionLinksSelf.fromJson(value));
+        }) ??
+        <String, SectionLinksSelf>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

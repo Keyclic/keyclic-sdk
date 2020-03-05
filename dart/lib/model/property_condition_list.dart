@@ -44,22 +44,18 @@ class PropertyConditionList {
   }
 
   static List<PropertyConditionList> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PropertyConditionList>[]
-        : json
-            .map((dynamic value) => PropertyConditionList.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PropertyConditionList.fromJson(value))
+            ?.toList() ??
+        <PropertyConditionList>[];
   }
 
   static Map<String, PropertyConditionList> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, PropertyConditionList>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PropertyConditionList.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PropertyConditionList.fromJson(value));
+        }) ??
+        <String, PropertyConditionList>{};
   }
 
   Map<String, dynamic> toJson() {

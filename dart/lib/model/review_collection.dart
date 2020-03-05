@@ -44,21 +44,17 @@ class ReviewCollection {
   }
 
   static List<ReviewCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ReviewCollection>[]
-        : json
-            .map((dynamic value) => ReviewCollection.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ReviewCollection.fromJson(value))
+            ?.toList() ??
+        <ReviewCollection>[];
   }
 
   static Map<String, ReviewCollection> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ReviewCollection>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReviewCollection.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ReviewCollection.fromJson(value));
+        }) ??
+        <String, ReviewCollection>{};
   }
 
   Map<String, dynamic> toJson() {

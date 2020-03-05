@@ -40,26 +40,22 @@ class PersonPreferences {
   }
 
   static List<PersonPreferences> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PersonPreferences>[]
-        : json
-            .map((dynamic value) => PersonPreferences.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PersonPreferences.fromJson(value))
+            ?.toList() ??
+        <PersonPreferences>[];
   }
 
   static Map<String, PersonPreferences> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PersonPreferences>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PersonPreferences.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PersonPreferences.fromJson(value));
+        }) ??
+        <String, PersonPreferences>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (notification != null) 'notification': notification,
+      if (notification != null) 'notification': notification.toJson(),
     };
   }
 

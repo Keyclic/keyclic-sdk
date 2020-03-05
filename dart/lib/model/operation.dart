@@ -130,25 +130,21 @@ class Operation {
   }
 
   static List<Operation> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Operation>[]
-        : json.map((dynamic value) => Operation.fromJson(value)).toList();
+    return json?.map((dynamic value) => Operation.fromJson(value))?.toList() ??
+        <Operation>[];
   }
 
   static Map<String, Operation> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Operation>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Operation.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Operation.fromJson(value));
+        }) ??
+        <String, Operation>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (embedded != null) '_embedded': embedded,
-      if (links != null) '_links': links,
+      if (embedded != null) '_embedded': embedded.toJson(),
+      if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (id != null) 'id': id,
@@ -157,7 +153,7 @@ class Operation {
       if (name != null) 'name': name,
       if (scheduledAt != null)
         'scheduledAt': scheduledAt.toUtc().toIso8601String(),
-      if (signature != null) 'signature': signature,
+      if (signature != null) 'signature': signature.toJson(),
       if (state != null) 'state': state,
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),

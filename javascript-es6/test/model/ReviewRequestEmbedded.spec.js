@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.SuccessLoginCredentialsOrganization();
+    instance = new @KeyclicSdkJavascript.ReviewRequestEmbedded();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,22 +46,16 @@
       object[property] = value;
   }
 
-  describe('SuccessLoginCredentialsOrganization', function() {
-    it('should create an instance of SuccessLoginCredentialsOrganization', function() {
-      // uncomment below and update the code to test SuccessLoginCredentialsOrganization
-      //var instane = new @KeyclicSdkJavascript.SuccessLoginCredentialsOrganization();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.SuccessLoginCredentialsOrganization);
+  describe('ReviewRequestEmbedded', function() {
+    it('should create an instance of ReviewRequestEmbedded', function() {
+      // uncomment below and update the code to test ReviewRequestEmbedded
+      //var instane = new @KeyclicSdkJavascript.ReviewRequestEmbedded();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.ReviewRequestEmbedded);
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new @KeyclicSdkJavascript.SuccessLoginCredentialsOrganization();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new @KeyclicSdkJavascript.SuccessLoginCredentialsOrganization();
+    it('should have the property review (base name: "review")', function() {
+      // uncomment below and update the code to test the property review
+      //var instane = new @KeyclicSdkJavascript.ReviewRequestEmbedded();
       //expect(instance).to.be();
     });
 

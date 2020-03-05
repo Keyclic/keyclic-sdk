@@ -48,28 +48,24 @@ class PublicationLinksAuthor {
   }
 
   static List<PublicationLinksAuthor> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PublicationLinksAuthor>[]
-        : json
-            .map((dynamic value) => PublicationLinksAuthor.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PublicationLinksAuthor.fromJson(value))
+            ?.toList() ??
+        <PublicationLinksAuthor>[];
   }
 
   static Map<String, PublicationLinksAuthor> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, PublicationLinksAuthor>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PublicationLinksAuthor.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PublicationLinksAuthor.fromJson(value));
+        }) ??
+        <String, PublicationLinksAuthor>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

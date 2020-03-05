@@ -64,21 +64,17 @@ class OrganizationPatch {
   }
 
   static List<OrganizationPatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OrganizationPatch>[]
-        : json
-            .map((dynamic value) => OrganizationPatch.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => OrganizationPatch.fromJson(value))
+            ?.toList() ??
+        <OrganizationPatch>[];
   }
 
   static Map<String, OrganizationPatch> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OrganizationPatch>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OrganizationPatch.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OrganizationPatch.fromJson(value));
+        }) ??
+        <String, OrganizationPatch>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -87,7 +83,7 @@ class OrganizationPatch {
       if (alternateName != null) 'alternateName': alternateName,
       if (description != null) 'description': description,
       if (logo != null) 'logo': logo,
-      if (preferences != null) 'preferences': preferences,
+      if (preferences != null) 'preferences': preferences.toJson(),
     };
   }
 

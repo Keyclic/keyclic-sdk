@@ -48,28 +48,24 @@ class PublicationLinksFeed {
   }
 
   static List<PublicationLinksFeed> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PublicationLinksFeed>[]
-        : json
-            .map((dynamic value) => PublicationLinksFeed.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PublicationLinksFeed.fromJson(value))
+            ?.toList() ??
+        <PublicationLinksFeed>[];
   }
 
   static Map<String, PublicationLinksFeed> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, PublicationLinksFeed>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PublicationLinksFeed.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PublicationLinksFeed.fromJson(value));
+        }) ??
+        <String, PublicationLinksFeed>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

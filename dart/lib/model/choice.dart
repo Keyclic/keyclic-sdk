@@ -99,19 +99,15 @@ class Choice {
   }
 
   static List<Choice> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Choice>[]
-        : json.map((dynamic value) => Choice.fromJson(value)).toList();
+    return json?.map((dynamic value) => Choice.fromJson(value))?.toList() ??
+        <Choice>[];
   }
 
   static Map<String, Choice> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Choice>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Choice.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Choice.fromJson(value));
+        }) ??
+        <String, Choice>{};
   }
 
   Map<String, dynamic> toJson() {

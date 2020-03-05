@@ -388,6 +388,7 @@ import ReviewLinksSelfIriTemplate from "./model/ReviewLinksSelfIriTemplate";
 import ReviewLinksSelfIriTemplateMapping from "./model/ReviewLinksSelfIriTemplateMapping";
 import ReviewRequest from "./model/ReviewRequest";
 import ReviewRequestCollection from "./model/ReviewRequestCollection";
+import ReviewRequestEmbedded from "./model/ReviewRequestEmbedded";
 import ReviewRequestLinks from "./model/ReviewRequestLinks";
 import ReviewRequestLinksItemToReview from "./model/ReviewRequestLinksItemToReview";
 import ReviewRequestLinksItemToReviewIriTemplate from "./model/ReviewRequestLinksItemToReviewIriTemplate";
@@ -413,9 +414,6 @@ import SignatureSigner from "./model/SignatureSigner";
 import State from "./model/State";
 import SuccessLogin from "./model/SuccessLogin";
 import SuccessLoginCredentials from "./model/SuccessLoginCredentials";
-import SuccessLoginCredentialsAdministratorOf from "./model/SuccessLoginCredentialsAdministratorOf";
-import SuccessLoginCredentialsMemberOf from "./model/SuccessLoginCredentialsMemberOf";
-import SuccessLoginCredentialsOrganization from "./model/SuccessLoginCredentialsOrganization";
 import Tracking from "./model/Tracking";
 import TrackingProgression from "./model/TrackingProgression";
 import Transition from "./model/Transition";
@@ -510,7 +508,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.3.7
+ * @version 2.3.8
  */
 export {
   /**
@@ -2379,6 +2377,11 @@ export {
    */
   ReviewRequestCollection,
   /**
+   * The ReviewRequestEmbedded model constructor.
+   * @property { module:model/ReviewRequestEmbedded }
+   */
+  ReviewRequestEmbedded,
+  /**
    * The ReviewRequestLinks model constructor.
    * @property { module:model/ReviewRequestLinks }
    */
@@ -2503,21 +2506,6 @@ export {
    * @property { module:model/SuccessLoginCredentials }
    */
   SuccessLoginCredentials,
-  /**
-   * The SuccessLoginCredentialsAdministratorOf model constructor.
-   * @property { module:model/SuccessLoginCredentialsAdministratorOf }
-   */
-  SuccessLoginCredentialsAdministratorOf,
-  /**
-   * The SuccessLoginCredentialsMemberOf model constructor.
-   * @property { module:model/SuccessLoginCredentialsMemberOf }
-   */
-  SuccessLoginCredentialsMemberOf,
-  /**
-   * The SuccessLoginCredentialsOrganization model constructor.
-   * @property { module:model/SuccessLoginCredentialsOrganization }
-   */
-  SuccessLoginCredentialsOrganization,
   /**
    * The Tracking model constructor.
    * @property { module:model/Tracking }

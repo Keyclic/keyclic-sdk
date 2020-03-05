@@ -46,22 +46,18 @@ class TrackingProgression {
   }
 
   static List<TrackingProgression> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <TrackingProgression>[]
-        : json
-            .map((dynamic value) => TrackingProgression.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => TrackingProgression.fromJson(value))
+            ?.toList() ??
+        <TrackingProgression>[];
   }
 
   static Map<String, TrackingProgression> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, TrackingProgression>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = TrackingProgression.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, TrackingProgression.fromJson(value));
+        }) ??
+        <String, TrackingProgression>{};
   }
 
   Map<String, dynamic> toJson() {

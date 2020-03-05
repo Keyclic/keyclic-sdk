@@ -46,19 +46,17 @@ class WebhookPatch {
   }
 
   static List<WebhookPatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <WebhookPatch>[]
-        : json.map((dynamic value) => WebhookPatch.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => WebhookPatch.fromJson(value))
+            ?.toList() ??
+        <WebhookPatch>[];
   }
 
   static Map<String, WebhookPatch> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WebhookPatch>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WebhookPatch.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, WebhookPatch.fromJson(value));
+        }) ??
+        <String, WebhookPatch>{};
   }
 
   Map<String, dynamic> toJson() {

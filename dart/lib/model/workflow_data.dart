@@ -40,19 +40,17 @@ class WorkflowData {
   }
 
   static List<WorkflowData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <WorkflowData>[]
-        : json.map((dynamic value) => WorkflowData.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => WorkflowData.fromJson(value))
+            ?.toList() ??
+        <WorkflowData>[];
   }
 
   static Map<String, WorkflowData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WorkflowData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WorkflowData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, WorkflowData.fromJson(value));
+        }) ??
+        <String, WorkflowData>{};
   }
 
   Map<String, dynamic> toJson() {

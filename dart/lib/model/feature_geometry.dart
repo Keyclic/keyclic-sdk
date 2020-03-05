@@ -58,19 +58,17 @@ class FeatureGeometry {
   }
 
   static List<FeatureGeometry> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeatureGeometry>[]
-        : json.map((dynamic value) => FeatureGeometry.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => FeatureGeometry.fromJson(value))
+            ?.toList() ??
+        <FeatureGeometry>[];
   }
 
   static Map<String, FeatureGeometry> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, FeatureGeometry>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeatureGeometry.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeatureGeometry.fromJson(value));
+        }) ??
+        <String, FeatureGeometry>{};
   }
 
   Map<String, dynamic> toJson() {

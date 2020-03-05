@@ -40,21 +40,17 @@ class ResetPasswordData {
   }
 
   static List<ResetPasswordData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ResetPasswordData>[]
-        : json
-            .map((dynamic value) => ResetPasswordData.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ResetPasswordData.fromJson(value))
+            ?.toList() ??
+        <ResetPasswordData>[];
   }
 
   static Map<String, ResetPasswordData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ResetPasswordData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ResetPasswordData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ResetPasswordData.fromJson(value));
+        }) ??
+        <String, ResetPasswordData>{};
   }
 
   Map<String, dynamic> toJson() {

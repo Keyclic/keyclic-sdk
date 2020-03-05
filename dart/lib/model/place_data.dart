@@ -58,19 +58,15 @@ class PlaceData {
   }
 
   static List<PlaceData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PlaceData>[]
-        : json.map((dynamic value) => PlaceData.fromJson(value)).toList();
+    return json?.map((dynamic value) => PlaceData.fromJson(value))?.toList() ??
+        <PlaceData>[];
   }
 
   static Map<String, PlaceData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PlaceData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = PlaceData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PlaceData.fromJson(value));
+        }) ??
+        <String, PlaceData>{};
   }
 
   Map<String, dynamic> toJson() {

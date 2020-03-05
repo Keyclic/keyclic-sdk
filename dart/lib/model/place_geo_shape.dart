@@ -52,26 +52,24 @@ class PlaceGeoShape {
   }
 
   static List<PlaceGeoShape> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PlaceGeoShape>[]
-        : json.map((dynamic value) => PlaceGeoShape.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => PlaceGeoShape.fromJson(value))
+            ?.toList() ??
+        <PlaceGeoShape>[];
   }
 
   static Map<String, PlaceGeoShape> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PlaceGeoShape>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PlaceGeoShape.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PlaceGeoShape.fromJson(value));
+        }) ??
+        <String, PlaceGeoShape>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (centroid != null) 'centroid': centroid,
+      if (centroid != null) 'centroid': centroid.toJson(),
       if (elevation != null) 'elevation': elevation,
-      if (polygon != null) 'polygon': polygon,
+      if (polygon != null) 'polygon': polygon.toJson(),
     };
   }
 

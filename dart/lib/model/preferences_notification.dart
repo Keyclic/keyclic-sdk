@@ -40,27 +40,23 @@ class PreferencesNotification {
   }
 
   static List<PreferencesNotification> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PreferencesNotification>[]
-        : json
-            .map((dynamic value) => PreferencesNotification.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PreferencesNotification.fromJson(value))
+            ?.toList() ??
+        <PreferencesNotification>[];
   }
 
   static Map<String, PreferencesNotification> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, PreferencesNotification>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PreferencesNotification.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PreferencesNotification.fromJson(value));
+        }) ??
+        <String, PreferencesNotification>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (report != null) 'report': report,
+      if (report != null) 'report': report.toJson(),
     };
   }
 

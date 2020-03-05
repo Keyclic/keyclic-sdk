@@ -40,28 +40,24 @@ class FeedbackLinksImageIriTemplate {
   }
 
   static List<FeedbackLinksImageIriTemplate> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeedbackLinksImageIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 FeedbackLinksImageIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <FeedbackLinksImageIriTemplate>[];
   }
 
   static Map<String, FeedbackLinksImageIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, FeedbackLinksImageIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackLinksImageIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeedbackLinksImageIriTemplate.fromJson(value));
+        }) ??
+        <String, FeedbackLinksImageIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

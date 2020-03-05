@@ -42,23 +42,20 @@ class PublicationLinksSelfIriTemplateMapping {
 
   static List<PublicationLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <PublicationLinksSelfIriTemplateMapping>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 PublicationLinksSelfIriTemplateMapping.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <PublicationLinksSelfIriTemplateMapping>[];
   }
 
   static Map<String, PublicationLinksSelfIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, PublicationLinksSelfIriTemplateMapping>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PublicationLinksSelfIriTemplateMapping.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, PublicationLinksSelfIriTemplateMapping.fromJson(value));
+        }) ??
+        <String, PublicationLinksSelfIriTemplateMapping>{};
   }
 
   Map<String, dynamic> toJson() {

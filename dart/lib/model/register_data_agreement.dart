@@ -52,22 +52,18 @@ class RegisterDataAgreement {
   }
 
   static List<RegisterDataAgreement> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <RegisterDataAgreement>[]
-        : json
-            .map((dynamic value) => RegisterDataAgreement.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => RegisterDataAgreement.fromJson(value))
+            ?.toList() ??
+        <RegisterDataAgreement>[];
   }
 
   static Map<String, RegisterDataAgreement> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, RegisterDataAgreement>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = RegisterDataAgreement.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, RegisterDataAgreement.fromJson(value));
+        }) ??
+        <String, RegisterDataAgreement>{};
   }
 
   Map<String, dynamic> toJson() {

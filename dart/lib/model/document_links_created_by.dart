@@ -48,28 +48,24 @@ class DocumentLinksCreatedBy {
   }
 
   static List<DocumentLinksCreatedBy> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DocumentLinksCreatedBy>[]
-        : json
-            .map((dynamic value) => DocumentLinksCreatedBy.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => DocumentLinksCreatedBy.fromJson(value))
+            ?.toList() ??
+        <DocumentLinksCreatedBy>[];
   }
 
   static Map<String, DocumentLinksCreatedBy> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, DocumentLinksCreatedBy>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentLinksCreatedBy.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DocumentLinksCreatedBy.fromJson(value));
+        }) ??
+        <String, DocumentLinksCreatedBy>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

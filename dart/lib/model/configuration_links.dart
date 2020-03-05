@@ -40,27 +40,23 @@ class ConfigurationLinks {
   }
 
   static List<ConfigurationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ConfigurationLinks>[]
-        : json
-            .map((dynamic value) => ConfigurationLinks.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ConfigurationLinks.fromJson(value))
+            ?.toList() ??
+        <ConfigurationLinks>[];
   }
 
   static Map<String, ConfigurationLinks> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ConfigurationLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ConfigurationLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ConfigurationLinks.fromJson(value));
+        }) ??
+        <String, ConfigurationLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (self != null) 'self': self,
+      if (self != null) 'self': self.toJson(),
     };
   }
 

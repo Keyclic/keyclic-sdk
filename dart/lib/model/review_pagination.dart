@@ -70,21 +70,17 @@ class ReviewPagination extends Pagination {
   }
 
   static List<ReviewPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ReviewPagination>[]
-        : json
-            .map((dynamic value) => ReviewPagination.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ReviewPagination.fromJson(value))
+            ?.toList() ??
+        <ReviewPagination>[];
   }
 
   static Map<String, ReviewPagination> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ReviewPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReviewPagination.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ReviewPagination.fromJson(value));
+        }) ??
+        <String, ReviewPagination>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -93,8 +89,8 @@ class ReviewPagination extends Pagination {
       if (page != null) 'page': page,
       if (pages != null) 'pages': pages,
       if (total != null) 'total': total,
-      if (links != null) '_links': links,
-      if (embedded != null) '_embedded': embedded,
+      if (links != null) '_links': links.toJson(),
+      if (embedded != null) '_embedded': embedded.toJson(),
     };
   }
 

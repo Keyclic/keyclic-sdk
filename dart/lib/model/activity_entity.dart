@@ -46,19 +46,17 @@ class ActivityEntity {
   }
 
   static List<ActivityEntity> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ActivityEntity>[]
-        : json.map((dynamic value) => ActivityEntity.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => ActivityEntity.fromJson(value))
+            ?.toList() ??
+        <ActivityEntity>[];
   }
 
   static Map<String, ActivityEntity> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ActivityEntity>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ActivityEntity.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ActivityEntity.fromJson(value));
+        }) ??
+        <String, ActivityEntity>{};
   }
 
   Map<String, dynamic> toJson() {

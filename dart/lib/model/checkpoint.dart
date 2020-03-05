@@ -63,26 +63,22 @@ class Checkpoint {
   }
 
   static List<Checkpoint> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Checkpoint>[]
-        : json.map((dynamic value) => Checkpoint.fromJson(value)).toList();
+    return json?.map((dynamic value) => Checkpoint.fromJson(value))?.toList() ??
+        <Checkpoint>[];
   }
 
   static Map<String, Checkpoint> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Checkpoint>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Checkpoint.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Checkpoint.fromJson(value));
+        }) ??
+        <String, Checkpoint>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (state != null) 'state': state,
-      if (links != null) '_links': links,
+      if (links != null) '_links': links.toJson(),
     };
   }
 

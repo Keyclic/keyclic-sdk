@@ -52,22 +52,18 @@ class InternalServiceData {
   }
 
   static List<InternalServiceData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <InternalServiceData>[]
-        : json
-            .map((dynamic value) => InternalServiceData.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => InternalServiceData.fromJson(value))
+            ?.toList() ??
+        <InternalServiceData>[];
   }
 
   static Map<String, InternalServiceData> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, InternalServiceData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = InternalServiceData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, InternalServiceData.fromJson(value));
+        }) ??
+        <String, InternalServiceData>{};
   }
 
   Map<String, dynamic> toJson() {

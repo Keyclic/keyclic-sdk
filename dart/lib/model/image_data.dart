@@ -40,19 +40,15 @@ class ImageData {
   }
 
   static List<ImageData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ImageData>[]
-        : json.map((dynamic value) => ImageData.fromJson(value)).toList();
+    return json?.map((dynamic value) => ImageData.fromJson(value))?.toList() ??
+        <ImageData>[];
   }
 
   static Map<String, ImageData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ImageData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = ImageData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ImageData.fromJson(value));
+        }) ??
+        <String, ImageData>{};
   }
 
   Map<String, dynamic> toJson() {

@@ -46,19 +46,15 @@ class LoginData {
   }
 
   static List<LoginData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <LoginData>[]
-        : json.map((dynamic value) => LoginData.fromJson(value)).toList();
+    return json?.map((dynamic value) => LoginData.fromJson(value))?.toList() ??
+        <LoginData>[];
   }
 
   static Map<String, LoginData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, LoginData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = LoginData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, LoginData.fromJson(value));
+        }) ??
+        <String, LoginData>{};
   }
 
   Map<String, dynamic> toJson() {

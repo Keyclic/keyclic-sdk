@@ -136,25 +136,21 @@ class Person {
   }
 
   static List<Person> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Person>[]
-        : json.map((dynamic value) => Person.fromJson(value)).toList();
+    return json?.map((dynamic value) => Person.fromJson(value))?.toList() ??
+        <Person>[];
   }
 
   static Map<String, Person> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Person>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Person.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Person.fromJson(value));
+        }) ??
+        <String, Person>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
-      if (agreement != null) 'agreement': agreement,
+      if (links != null) '_links': links.toJson(),
+      if (agreement != null) 'agreement': agreement.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (email != null) 'email': email,
       if (enabled != null) 'enabled': enabled,
@@ -163,7 +159,7 @@ class Person {
       if (id != null) 'id': id,
       if (jobTitle != null) 'jobTitle': jobTitle,
       if (optIn != null) 'optIn': optIn,
-      if (preferences != null) 'preferences': preferences,
+      if (preferences != null) 'preferences': preferences.toJson(),
       if (telephone != null) 'telephone': telephone,
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),

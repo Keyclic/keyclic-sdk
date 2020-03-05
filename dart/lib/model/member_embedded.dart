@@ -70,26 +70,24 @@ class MemberEmbedded {
   }
 
   static List<MemberEmbedded> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <MemberEmbedded>[]
-        : json.map((dynamic value) => MemberEmbedded.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => MemberEmbedded.fromJson(value))
+            ?.toList() ??
+        <MemberEmbedded>[];
   }
 
   static Map<String, MemberEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, MemberEmbedded>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MemberEmbedded.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, MemberEmbedded.fromJson(value));
+        }) ??
+        <String, MemberEmbedded>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (availableRoles != null) 'availableRoles': availableRoles,
-      if (organization != null) 'organization': organization,
-      if (person != null) 'person': person,
+      if (organization != null) 'organization': organization.toJson(),
+      if (person != null) 'person': person.toJson(),
       if (roles != null) 'roles': roles,
     };
   }

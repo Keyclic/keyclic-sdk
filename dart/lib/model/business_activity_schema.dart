@@ -60,22 +60,18 @@ class BusinessActivitySchema {
   }
 
   static List<BusinessActivitySchema> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <BusinessActivitySchema>[]
-        : json
-            .map((dynamic value) => BusinessActivitySchema.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => BusinessActivitySchema.fromJson(value))
+            ?.toList() ??
+        <BusinessActivitySchema>[];
   }
 
   static Map<String, BusinessActivitySchema> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, BusinessActivitySchema>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = BusinessActivitySchema.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, BusinessActivitySchema.fromJson(value));
+        }) ??
+        <String, BusinessActivitySchema>{};
   }
 
   Map<String, dynamic> toJson() {

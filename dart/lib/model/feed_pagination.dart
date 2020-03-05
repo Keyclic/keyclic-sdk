@@ -70,19 +70,17 @@ class FeedPagination extends Pagination {
   }
 
   static List<FeedPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeedPagination>[]
-        : json.map((dynamic value) => FeedPagination.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => FeedPagination.fromJson(value))
+            ?.toList() ??
+        <FeedPagination>[];
   }
 
   static Map<String, FeedPagination> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, FeedPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedPagination.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeedPagination.fromJson(value));
+        }) ??
+        <String, FeedPagination>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -91,8 +89,8 @@ class FeedPagination extends Pagination {
       if (page != null) 'page': page,
       if (pages != null) 'pages': pages,
       if (total != null) 'total': total,
-      if (links != null) '_links': links,
-      if (embedded != null) '_embedded': embedded,
+      if (links != null) '_links': links.toJson(),
+      if (embedded != null) '_embedded': embedded.toJson(),
     };
   }
 

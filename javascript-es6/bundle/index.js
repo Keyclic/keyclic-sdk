@@ -72,8 +72,6 @@ require("core-js/modules/es.array.slice");
 
 require("core-js/modules/es.array.some");
 
-require("core-js/modules/es.array.sort");
-
 require("core-js/modules/es.array.species");
 
 require("core-js/modules/es.array.splice");
@@ -2633,6 +2631,12 @@ Object.defineProperty(exports, "ReviewRequestCollection", {
     return _ReviewRequestCollection.default;
   }
 });
+Object.defineProperty(exports, "ReviewRequestEmbedded", {
+  enumerable: true,
+  get: function get() {
+    return _ReviewRequestEmbedded.default;
+  }
+});
 Object.defineProperty(exports, "ReviewRequestLinks", {
   enumerable: true,
   get: function get() {
@@ -2781,24 +2785,6 @@ Object.defineProperty(exports, "SuccessLoginCredentials", {
   enumerable: true,
   get: function get() {
     return _SuccessLoginCredentials.default;
-  }
-});
-Object.defineProperty(exports, "SuccessLoginCredentialsAdministratorOf", {
-  enumerable: true,
-  get: function get() {
-    return _SuccessLoginCredentialsAdministratorOf.default;
-  }
-});
-Object.defineProperty(exports, "SuccessLoginCredentialsMemberOf", {
-  enumerable: true,
-  get: function get() {
-    return _SuccessLoginCredentialsMemberOf.default;
-  }
-});
-Object.defineProperty(exports, "SuccessLoginCredentialsOrganization", {
-  enumerable: true,
-  get: function get() {
-    return _SuccessLoginCredentialsOrganization.default;
   }
 });
 Object.defineProperty(exports, "Tracking", {
@@ -4566,6 +4552,10 @@ var _ReviewRequestCollection = _interopRequireDefault(
   require("./model/ReviewRequestCollection")
 );
 
+var _ReviewRequestEmbedded = _interopRequireDefault(
+  require("./model/ReviewRequestEmbedded")
+);
+
 var _ReviewRequestLinks = _interopRequireDefault(
   require("./model/ReviewRequestLinks")
 );
@@ -4650,18 +4640,6 @@ var _SuccessLogin = _interopRequireDefault(require("./model/SuccessLogin"));
 
 var _SuccessLoginCredentials = _interopRequireDefault(
   require("./model/SuccessLoginCredentials")
-);
-
-var _SuccessLoginCredentialsAdministratorOf = _interopRequireDefault(
-  require("./model/SuccessLoginCredentialsAdministratorOf")
-);
-
-var _SuccessLoginCredentialsMemberOf = _interopRequireDefault(
-  require("./model/SuccessLoginCredentialsMemberOf")
-);
-
-var _SuccessLoginCredentialsOrganization = _interopRequireDefault(
-  require("./model/SuccessLoginCredentialsOrganization")
 );
 
 var _Tracking = _interopRequireDefault(require("./model/Tracking"));

@@ -46,22 +46,18 @@ class SignatureDataSigner {
   }
 
   static List<SignatureDataSigner> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <SignatureDataSigner>[]
-        : json
-            .map((dynamic value) => SignatureDataSigner.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => SignatureDataSigner.fromJson(value))
+            ?.toList() ??
+        <SignatureDataSigner>[];
   }
 
   static Map<String, SignatureDataSigner> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, SignatureDataSigner>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = SignatureDataSigner.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, SignatureDataSigner.fromJson(value));
+        }) ??
+        <String, SignatureDataSigner>{};
   }
 
   Map<String, dynamic> toJson() {

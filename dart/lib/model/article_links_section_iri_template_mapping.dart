@@ -42,23 +42,20 @@ class ArticleLinksSectionIriTemplateMapping {
 
   static List<ArticleLinksSectionIriTemplateMapping> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <ArticleLinksSectionIriTemplateMapping>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 ArticleLinksSectionIriTemplateMapping.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <ArticleLinksSectionIriTemplateMapping>[];
   }
 
   static Map<String, ArticleLinksSectionIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ArticleLinksSectionIriTemplateMapping>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ArticleLinksSectionIriTemplateMapping.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, ArticleLinksSectionIriTemplateMapping.fromJson(value));
+        }) ??
+        <String, ArticleLinksSectionIriTemplateMapping>{};
   }
 
   Map<String, dynamic> toJson() {

@@ -42,23 +42,20 @@ class OperationLinksSelfIriTemplateMapping {
 
   static List<OperationLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <OperationLinksSelfIriTemplateMapping>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 OperationLinksSelfIriTemplateMapping.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <OperationLinksSelfIriTemplateMapping>[];
   }
 
   static Map<String, OperationLinksSelfIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, OperationLinksSelfIriTemplateMapping>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationLinksSelfIriTemplateMapping.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, OperationLinksSelfIriTemplateMapping.fromJson(value));
+        }) ??
+        <String, OperationLinksSelfIriTemplateMapping>{};
   }
 
   Map<String, dynamic> toJson() {

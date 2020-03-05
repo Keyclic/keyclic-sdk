@@ -52,22 +52,18 @@ class MemberDataContactPoint {
   }
 
   static List<MemberDataContactPoint> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <MemberDataContactPoint>[]
-        : json
-            .map((dynamic value) => MemberDataContactPoint.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => MemberDataContactPoint.fromJson(value))
+            ?.toList() ??
+        <MemberDataContactPoint>[];
   }
 
   static Map<String, MemberDataContactPoint> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, MemberDataContactPoint>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = MemberDataContactPoint.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, MemberDataContactPoint.fromJson(value));
+        }) ??
+        <String, MemberDataContactPoint>{};
   }
 
   Map<String, dynamic> toJson() {

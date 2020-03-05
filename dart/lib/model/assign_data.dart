@@ -40,19 +40,15 @@ class AssignData {
   }
 
   static List<AssignData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <AssignData>[]
-        : json.map((dynamic value) => AssignData.fromJson(value)).toList();
+    return json?.map((dynamic value) => AssignData.fromJson(value))?.toList() ??
+        <AssignData>[];
   }
 
   static Map<String, AssignData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, AssignData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = AssignData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, AssignData.fromJson(value));
+        }) ??
+        <String, AssignData>{};
   }
 
   Map<String, dynamic> toJson() {

@@ -70,22 +70,18 @@ class InternalServicePagination extends Pagination {
   }
 
   static List<InternalServicePagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <InternalServicePagination>[]
-        : json
-            .map((dynamic value) => InternalServicePagination.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => InternalServicePagination.fromJson(value))
+            ?.toList() ??
+        <InternalServicePagination>[];
   }
 
   static Map<String, InternalServicePagination> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, InternalServicePagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = InternalServicePagination.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, InternalServicePagination.fromJson(value));
+        }) ??
+        <String, InternalServicePagination>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -94,8 +90,8 @@ class InternalServicePagination extends Pagination {
       if (page != null) 'page': page,
       if (pages != null) 'pages': pages,
       if (total != null) 'total': total,
-      if (links != null) '_links': links,
-      if (embedded != null) '_embedded': embedded,
+      if (links != null) '_links': links.toJson(),
+      if (embedded != null) '_embedded': embedded.toJson(),
     };
   }
 

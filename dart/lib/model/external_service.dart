@@ -94,25 +94,23 @@ class ExternalService {
   }
 
   static List<ExternalService> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ExternalService>[]
-        : json.map((dynamic value) => ExternalService.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => ExternalService.fromJson(value))
+            ?.toList() ??
+        <ExternalService>[];
   }
 
   static Map<String, ExternalService> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ExternalService>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ExternalService.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ExternalService.fromJson(value));
+        }) ??
+        <String, ExternalService>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
-      if (contactPoint != null) 'contactPoint': contactPoint,
+      if (links != null) '_links': links.toJson(),
+      if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (id != null) 'id': id,

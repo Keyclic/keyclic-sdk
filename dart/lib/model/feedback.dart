@@ -125,28 +125,24 @@ class Feedback {
   }
 
   static List<Feedback> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Feedback>[]
-        : json.map((dynamic value) => Feedback.fromJson(value)).toList();
+    return json?.map((dynamic value) => Feedback.fromJson(value))?.toList() ??
+        <Feedback>[];
   }
 
   static Map<String, Feedback> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Feedback>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Feedback.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Feedback.fromJson(value));
+        }) ??
+        <String, Feedback>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (embedded != null) '_embedded': embedded,
-      if (links != null) '_links': links,
+      if (embedded != null) '_embedded': embedded.toJson(),
+      if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
-      if (geoCoordinates != null) 'geoCoordinates': geoCoordinates,
+      if (geoCoordinates != null) 'geoCoordinates': geoCoordinates.toJson(),
       if (id != null) 'id': id,
       if (metadata != null) 'metadata': metadata,
       if (public != null) 'public': public,

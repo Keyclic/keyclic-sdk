@@ -52,29 +52,25 @@ class ConfigurationOperationType {
   }
 
   static List<ConfigurationOperationType> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ConfigurationOperationType>[]
-        : json
-            .map((dynamic value) => ConfigurationOperationType.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ConfigurationOperationType.fromJson(value))
+            ?.toList() ??
+        <ConfigurationOperationType>[];
   }
 
   static Map<String, ConfigurationOperationType> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ConfigurationOperationType>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ConfigurationOperationType.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ConfigurationOperationType.fromJson(value));
+        }) ??
+        <String, ConfigurationOperationType>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (id != null) 'id': id,
       if (type != null) 'type': type,
-      if (workflow != null) 'workflow': workflow,
+      if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 

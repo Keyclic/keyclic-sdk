@@ -70,21 +70,17 @@ class SectionPagination extends Pagination {
   }
 
   static List<SectionPagination> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <SectionPagination>[]
-        : json
-            .map((dynamic value) => SectionPagination.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => SectionPagination.fromJson(value))
+            ?.toList() ??
+        <SectionPagination>[];
   }
 
   static Map<String, SectionPagination> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, SectionPagination>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = SectionPagination.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, SectionPagination.fromJson(value));
+        }) ??
+        <String, SectionPagination>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -93,8 +89,8 @@ class SectionPagination extends Pagination {
       if (page != null) 'page': page,
       if (pages != null) 'pages': pages,
       if (total != null) 'total': total,
-      if (links != null) '_links': links,
-      if (embedded != null) '_embedded': embedded,
+      if (links != null) '_links': links.toJson(),
+      if (embedded != null) '_embedded': embedded.toJson(),
     };
   }
 

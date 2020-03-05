@@ -88,31 +88,29 @@ class PersonPatch {
   }
 
   static List<PersonPatch> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PersonPatch>[]
-        : json.map((dynamic value) => PersonPatch.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => PersonPatch.fromJson(value))
+            ?.toList() ??
+        <PersonPatch>[];
   }
 
   static Map<String, PersonPatch> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PersonPatch>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PersonPatch.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PersonPatch.fromJson(value));
+        }) ??
+        <String, PersonPatch>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (agreement != null) 'agreement': agreement,
+      if (agreement != null) 'agreement': agreement.toJson(),
       if (givenName != null) 'givenName': givenName,
       if (familyName != null) 'familyName': familyName,
       if (email != null) 'email': email,
       if (jobTitle != null) 'jobTitle': jobTitle,
       if (image != null) 'image': image,
       if (optIn != null) 'optIn': optIn,
-      if (preferences != null) 'preferences': preferences,
+      if (preferences != null) 'preferences': preferences.toJson(),
       if (telephone != null) 'telephone': telephone,
     };
   }

@@ -52,19 +52,15 @@ class ReviewData {
   }
 
   static List<ReviewData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ReviewData>[]
-        : json.map((dynamic value) => ReviewData.fromJson(value)).toList();
+    return json?.map((dynamic value) => ReviewData.fromJson(value))?.toList() ??
+        <ReviewData>[];
   }
 
   static Map<String, ReviewData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ReviewData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = ReviewData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ReviewData.fromJson(value));
+        }) ??
+        <String, ReviewData>{};
   }
 
   Map<String, dynamic> toJson() {

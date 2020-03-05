@@ -70,19 +70,17 @@ class OperationData {
   }
 
   static List<OperationData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <OperationData>[]
-        : json.map((dynamic value) => OperationData.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => OperationData.fromJson(value))
+            ?.toList() ??
+        <OperationData>[];
   }
 
   static Map<String, OperationData> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, OperationData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = OperationData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, OperationData.fromJson(value));
+        }) ??
+        <String, OperationData>{};
   }
 
   Map<String, dynamic> toJson() {

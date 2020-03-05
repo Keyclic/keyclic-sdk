@@ -42,23 +42,20 @@ class CategoryLinksSelfIriTemplateMapping {
 
   static List<CategoryLinksSelfIriTemplateMapping> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <CategoryLinksSelfIriTemplateMapping>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 CategoryLinksSelfIriTemplateMapping.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <CategoryLinksSelfIriTemplateMapping>[];
   }
 
   static Map<String, CategoryLinksSelfIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, CategoryLinksSelfIriTemplateMapping>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = CategoryLinksSelfIriTemplateMapping.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, CategoryLinksSelfIriTemplateMapping.fromJson(value));
+        }) ??
+        <String, CategoryLinksSelfIriTemplateMapping>{};
   }
 
   Map<String, dynamic> toJson() {

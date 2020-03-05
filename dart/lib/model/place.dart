@@ -112,32 +112,28 @@ class Place {
   }
 
   static List<Place> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Place>[]
-        : json.map((dynamic value) => Place.fromJson(value)).toList();
+    return json?.map((dynamic value) => Place.fromJson(value))?.toList() ??
+        <Place>[];
   }
 
   static Map<String, Place> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Place>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Place.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Place.fromJson(value));
+        }) ??
+        <String, Place>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (embedded != null) '_embedded': embedded,
-      if (links != null) '_links': links,
+      if (embedded != null) '_embedded': embedded.toJson(),
+      if (links != null) '_links': links.toJson(),
       if (branchCode != null) 'branchCode': branchCode,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
-      if (geo != null) 'geo': geo,
+      if (geo != null) 'geo': geo.toJson(),
       if (id != null) 'id': id,
       if (name != null) 'name': name,
-      if (preferences != null) 'preferences': preferences,
+      if (preferences != null) 'preferences': preferences.toJson(),
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };

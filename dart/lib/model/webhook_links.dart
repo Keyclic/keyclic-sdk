@@ -46,25 +46,23 @@ class WebhookLinks {
   }
 
   static List<WebhookLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <WebhookLinks>[]
-        : json.map((dynamic value) => WebhookLinks.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => WebhookLinks.fromJson(value))
+            ?.toList() ??
+        <WebhookLinks>[];
   }
 
   static Map<String, WebhookLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WebhookLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WebhookLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, WebhookLinks.fromJson(value));
+        }) ??
+        <String, WebhookLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (organization != null) 'organization': organization,
-      if (self != null) 'self': self,
+      if (organization != null) 'organization': organization.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

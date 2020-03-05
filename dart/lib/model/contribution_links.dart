@@ -46,27 +46,23 @@ class ContributionLinks {
   }
 
   static List<ContributionLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ContributionLinks>[]
-        : json
-            .map((dynamic value) => ContributionLinks.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => ContributionLinks.fromJson(value))
+            ?.toList() ??
+        <ContributionLinks>[];
   }
 
   static Map<String, ContributionLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ContributionLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ContributionLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ContributionLinks.fromJson(value));
+        }) ??
+        <String, ContributionLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (contributor != null) 'contributor': contributor,
-      if (feedback != null) 'feedback': feedback,
+      if (contributor != null) 'contributor': contributor.toJson(),
+      if (feedback != null) 'feedback': feedback.toJson(),
     };
   }
 

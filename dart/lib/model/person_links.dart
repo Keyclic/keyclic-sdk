@@ -58,27 +58,25 @@ class PersonLinks {
   }
 
   static List<PersonLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PersonLinks>[]
-        : json.map((dynamic value) => PersonLinks.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => PersonLinks.fromJson(value))
+            ?.toList() ??
+        <PersonLinks>[];
   }
 
   static Map<String, PersonLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, PersonLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PersonLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PersonLinks.fromJson(value));
+        }) ??
+        <String, PersonLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (application != null) 'application': application,
-      if (createdBy != null) 'createdBy': createdBy,
-      if (image != null) 'image': image,
-      if (self != null) 'self': self,
+      if (application != null) 'application': application.toJson(),
+      if (createdBy != null) 'createdBy': createdBy.toJson(),
+      if (image != null) 'image': image.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

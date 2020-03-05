@@ -47,28 +47,24 @@ class FeedbackGeoCoordinates {
   }
 
   static List<FeedbackGeoCoordinates> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeedbackGeoCoordinates>[]
-        : json
-            .map((dynamic value) => FeedbackGeoCoordinates.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => FeedbackGeoCoordinates.fromJson(value))
+            ?.toList() ??
+        <FeedbackGeoCoordinates>[];
   }
 
   static Map<String, FeedbackGeoCoordinates> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, FeedbackGeoCoordinates>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackGeoCoordinates.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeedbackGeoCoordinates.fromJson(value));
+        }) ??
+        <String, FeedbackGeoCoordinates>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (elevation != null) 'elevation': elevation,
-      if (point != null) 'point': point,
+      if (point != null) 'point': point.toJson(),
     };
   }
 

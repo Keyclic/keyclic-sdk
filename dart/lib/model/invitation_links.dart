@@ -46,25 +46,23 @@ class InvitationLinks {
   }
 
   static List<InvitationLinks> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <InvitationLinks>[]
-        : json.map((dynamic value) => InvitationLinks.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => InvitationLinks.fromJson(value))
+            ?.toList() ??
+        <InvitationLinks>[];
   }
 
   static Map<String, InvitationLinks> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, InvitationLinks>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = InvitationLinks.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, InvitationLinks.fromJson(value));
+        }) ??
+        <String, InvitationLinks>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (member != null) 'member': member,
-      if (self != null) 'self': self,
+      if (member != null) 'member': member.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

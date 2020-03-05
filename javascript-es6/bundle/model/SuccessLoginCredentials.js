@@ -7,14 +7,6 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _SuccessLoginCredentialsAdministratorOf = _interopRequireDefault(
-  require("./SuccessLoginCredentialsAdministratorOf")
-);
-
-var _SuccessLoginCredentialsMemberOf = _interopRequireDefault(
-  require("./SuccessLoginCredentialsMemberOf")
-);
-
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -57,10 +49,6 @@ var SuccessLoginCredentials = /*#__PURE__*/ (function() {
 
     this.id = null;
     this.login = null;
-    this.administratorOf = [];
-    this.memberOf = [];
-    this.administratorOfType = _SuccessLoginCredentialsAdministratorOf.default;
-    this.memberOfType = _SuccessLoginCredentialsMemberOf.default;
   }
   /**
    * Constructs a "SuccessLoginCredentials" from a plain JavaScript object.
@@ -108,42 +96,6 @@ var SuccessLoginCredentials = /*#__PURE__*/ (function() {
         value: function setLogin(login) {
           this.login = login;
         }
-        /**
-         * @return { Array.<module:model/SuccessLoginCredentialsAdministratorOf> }
-         */
-      },
-      {
-        key: "getAdministratorOf",
-        value: function getAdministratorOf() {
-          return this.administratorOf;
-        }
-        /**
-         * @param { Array.<module:model/SuccessLoginCredentialsAdministratorOf> } administratorOf
-         */
-      },
-      {
-        key: "setAdministratorOf",
-        value: function setAdministratorOf(administratorOf) {
-          this.administratorOf = administratorOf;
-        }
-        /**
-         * @return { Array.<module:model/SuccessLoginCredentialsMemberOf> }
-         */
-      },
-      {
-        key: "getMemberOf",
-        value: function getMemberOf() {
-          return this.memberOf;
-        }
-        /**
-         * @param { Array.<module:model/SuccessLoginCredentialsMemberOf> } memberOf
-         */
-      },
-      {
-        key: "setMemberOf",
-        value: function setMemberOf(memberOf) {
-          this.memberOf = memberOf;
-        }
       }
     ],
     [
@@ -171,20 +123,6 @@ var SuccessLoginCredentials = /*#__PURE__*/ (function() {
             object.login = _ApiClient.default.convertToType(
               data["login"],
               "String"
-            );
-          }
-
-          if (data.hasOwnProperty("administratorOf")) {
-            object.administratorOf = _ApiClient.default.convertToType(
-              data["administratorOf"],
-              [object.administratorOfType]
-            );
-          }
-
-          if (data.hasOwnProperty("memberOf")) {
-            object.memberOf = _ApiClient.default.convertToType(
-              data["memberOf"],
-              [object.memberOfType]
             );
           }
 

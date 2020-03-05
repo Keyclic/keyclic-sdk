@@ -48,28 +48,25 @@ class CheckpointLinksOrganization {
   }
 
   static List<CheckpointLinksOrganization> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <CheckpointLinksOrganization>[]
-        : json
-            .map((dynamic value) => CheckpointLinksOrganization.fromJson(value))
-            .toList();
+    return json
+            ?.map(
+                (dynamic value) => CheckpointLinksOrganization.fromJson(value))
+            ?.toList() ??
+        <CheckpointLinksOrganization>[];
   }
 
   static Map<String, CheckpointLinksOrganization> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, CheckpointLinksOrganization>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = CheckpointLinksOrganization.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, CheckpointLinksOrganization.fromJson(value));
+        }) ??
+        <String, CheckpointLinksOrganization>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

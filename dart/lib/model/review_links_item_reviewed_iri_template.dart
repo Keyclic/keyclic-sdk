@@ -43,28 +43,25 @@ class ReviewLinksItemReviewedIriTemplate {
 
   static List<ReviewLinksItemReviewedIriTemplate> listFromJson(
       List<dynamic> json) {
-    return json == null
-        ? <ReviewLinksItemReviewedIriTemplate>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 ReviewLinksItemReviewedIriTemplate.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <ReviewLinksItemReviewedIriTemplate>[];
   }
 
   static Map<String, ReviewLinksItemReviewedIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ReviewLinksItemReviewedIriTemplate>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ReviewLinksItemReviewedIriTemplate.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(
+              key, ReviewLinksItemReviewedIriTemplate.fromJson(value));
+        }) ??
+        <String, ReviewLinksItemReviewedIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (mapping != null) 'mapping': mapping,
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

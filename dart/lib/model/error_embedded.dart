@@ -44,19 +44,17 @@ class ErrorEmbedded {
   }
 
   static List<ErrorEmbedded> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ErrorEmbedded>[]
-        : json.map((dynamic value) => ErrorEmbedded.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => ErrorEmbedded.fromJson(value))
+            ?.toList() ??
+        <ErrorEmbedded>[];
   }
 
   static Map<String, ErrorEmbedded> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, ErrorEmbedded>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ErrorEmbedded.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ErrorEmbedded.fromJson(value));
+        }) ??
+        <String, ErrorEmbedded>{};
   }
 
   Map<String, dynamic> toJson() {

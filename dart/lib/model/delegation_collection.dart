@@ -44,22 +44,18 @@ class DelegationCollection {
   }
 
   static List<DelegationCollection> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DelegationCollection>[]
-        : json
-            .map((dynamic value) => DelegationCollection.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => DelegationCollection.fromJson(value))
+            ?.toList() ??
+        <DelegationCollection>[];
   }
 
   static Map<String, DelegationCollection> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, DelegationCollection>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DelegationCollection.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DelegationCollection.fromJson(value));
+        }) ??
+        <String, DelegationCollection>{};
   }
 
   Map<String, dynamic> toJson() {

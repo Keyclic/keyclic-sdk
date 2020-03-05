@@ -46,23 +46,19 @@ class FeedbackWorkflowTransitionData {
   }
 
   static List<FeedbackWorkflowTransitionData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <FeedbackWorkflowTransitionData>[]
-        : json
-            .map((dynamic value) =>
+    return json
+            ?.map((dynamic value) =>
                 FeedbackWorkflowTransitionData.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <FeedbackWorkflowTransitionData>[];
   }
 
   static Map<String, FeedbackWorkflowTransitionData> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, FeedbackWorkflowTransitionData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = FeedbackWorkflowTransitionData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, FeedbackWorkflowTransitionData.fromJson(value));
+        }) ??
+        <String, FeedbackWorkflowTransitionData>{};
   }
 
   Map<String, dynamic> toJson() {

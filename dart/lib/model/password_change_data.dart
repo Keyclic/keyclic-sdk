@@ -40,22 +40,18 @@ class PasswordChangeData {
   }
 
   static List<PasswordChangeData> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <PasswordChangeData>[]
-        : json
-            .map((dynamic value) => PasswordChangeData.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => PasswordChangeData.fromJson(value))
+            ?.toList() ??
+        <PasswordChangeData>[];
   }
 
   static Map<String, PasswordChangeData> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, PasswordChangeData>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = PasswordChangeData.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, PasswordChangeData.fromJson(value));
+        }) ??
+        <String, PasswordChangeData>{};
   }
 
   Map<String, dynamic> toJson() {

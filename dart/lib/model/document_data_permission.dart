@@ -40,22 +40,18 @@ class DocumentDataPermission {
   }
 
   static List<DocumentDataPermission> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <DocumentDataPermission>[]
-        : json
-            .map((dynamic value) => DocumentDataPermission.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => DocumentDataPermission.fromJson(value))
+            ?.toList() ??
+        <DocumentDataPermission>[];
   }
 
   static Map<String, DocumentDataPermission> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, DocumentDataPermission>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = DocumentDataPermission.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, DocumentDataPermission.fromJson(value));
+        }) ??
+        <String, DocumentDataPermission>{};
   }
 
   Map<String, dynamic> toJson() {

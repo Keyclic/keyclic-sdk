@@ -48,29 +48,25 @@ class ExternalServiceLinksProvider {
   }
 
   static List<ExternalServiceLinksProvider> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <ExternalServiceLinksProvider>[]
-        : json
-            .map(
+    return json
+            ?.map(
                 (dynamic value) => ExternalServiceLinksProvider.fromJson(value))
-            .toList();
+            ?.toList() ??
+        <ExternalServiceLinksProvider>[];
   }
 
   static Map<String, ExternalServiceLinksProvider> mapFromJson(
       Map<String, dynamic> json) {
-    var map = Map<String, ExternalServiceLinksProvider>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = ExternalServiceLinksProvider.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, ExternalServiceLinksProvider.fromJson(value));
+        }) ??
+        <String, ExternalServiceLinksProvider>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

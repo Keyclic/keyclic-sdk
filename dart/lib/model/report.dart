@@ -139,25 +139,21 @@ class Report {
   }
 
   static List<Report> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Report>[]
-        : json.map((dynamic value) => Report.fromJson(value)).toList();
+    return json?.map((dynamic value) => Report.fromJson(value))?.toList() ??
+        <Report>[];
   }
 
   static Map<String, Report> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Report>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach(
-          (String key, dynamic value) => map[key] = Report.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Report.fromJson(value));
+        }) ??
+        <String, Report>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (embedded != null) '_embedded': embedded,
-      if (links != null) '_links': links,
+      if (embedded != null) '_embedded': embedded.toJson(),
+      if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (dueAt != null) 'dueAt': dueAt.toUtc().toIso8601String(),

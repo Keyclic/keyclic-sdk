@@ -47,27 +47,23 @@ class WebhookLinksSelf {
   }
 
   static List<WebhookLinksSelf> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <WebhookLinksSelf>[]
-        : json
-            .map((dynamic value) => WebhookLinksSelf.fromJson(value))
-            .toList();
+    return json
+            ?.map((dynamic value) => WebhookLinksSelf.fromJson(value))
+            ?.toList() ??
+        <WebhookLinksSelf>[];
   }
 
   static Map<String, WebhookLinksSelf> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, WebhookLinksSelf>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = WebhookLinksSelf.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, WebhookLinksSelf.fromJson(value));
+        }) ??
+        <String, WebhookLinksSelf>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
       if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

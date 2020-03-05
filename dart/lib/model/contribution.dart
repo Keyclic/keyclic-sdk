@@ -76,24 +76,22 @@ class Contribution {
   }
 
   static List<Contribution> listFromJson(List<dynamic> json) {
-    return json == null
-        ? <Contribution>[]
-        : json.map((dynamic value) => Contribution.fromJson(value)).toList();
+    return json
+            ?.map((dynamic value) => Contribution.fromJson(value))
+            ?.toList() ??
+        <Contribution>[];
   }
 
   static Map<String, Contribution> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, Contribution>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) =>
-          map[key] = Contribution.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+          return MapEntry(key, Contribution.fromJson(value));
+        }) ??
+        <String, Contribution>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links,
+      if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
       if (type != null) 'type': type,
