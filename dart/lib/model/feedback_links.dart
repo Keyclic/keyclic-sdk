@@ -6,6 +6,7 @@ class FeedbackLinks {
     this.category,
     this.image,
     this.images,
+    this.report,
     this.reporter,
     this.self,
     this.tracking,
@@ -22,6 +23,7 @@ class FeedbackLinks {
       category: FeedbackLinksCategory.fromJson(json['category']),
       image: FeedbackLinksImage.fromJson(json['image']),
       images: FeedbackLinksImages.listFromJson(json['images']),
+      report: FeedbackLinksReport.fromJson(json['report']),
       reporter: FeedbackLinksReporter.fromJson(json['reporter']),
       self: FeedbackLinksSelf.fromJson(json['self']),
       tracking: FeedbackLinksTracking.fromJson(json['tracking']),
@@ -35,6 +37,8 @@ class FeedbackLinks {
   FeedbackLinksImage image;
 
   List<FeedbackLinksImages> images;
+
+  FeedbackLinksReport report;
 
   FeedbackLinksReporter reporter;
 
@@ -55,6 +59,7 @@ class FeedbackLinks {
         category == other.category &&
         image == other.image &&
         DeepCollectionEquality.unordered().equals(images, other.images) &&
+        report == other.report &&
         reporter == other.reporter &&
         self == other.self &&
         tracking == other.tracking;
@@ -74,6 +79,7 @@ class FeedbackLinks {
     hashCode ^= businessActivity?.hashCode ?? 0;
     hashCode ^= category?.hashCode ?? 0;
     hashCode ^= image?.hashCode ?? 0;
+    hashCode ^= report?.hashCode ?? 0;
     hashCode ^= reporter?.hashCode ?? 0;
     hashCode ^= self?.hashCode ?? 0;
     hashCode ^= tracking?.hashCode ?? 0;
@@ -102,6 +108,7 @@ class FeedbackLinks {
       if (category != null) 'category': category.toJson(),
       if (image != null) 'image': image.toJson(),
       if (images != null) 'images': images,
+      if (report != null) 'report': report.toJson(),
       if (reporter != null) 'reporter': reporter.toJson(),
       if (self != null) 'self': self.toJson(),
       if (tracking != null) 'tracking': tracking.toJson(),
@@ -110,6 +117,6 @@ class FeedbackLinks {
 
   @override
   String toString() {
-    return 'FeedbackLinks[businessActivity=$businessActivity, category=$category, image=$image, images=$images, reporter=$reporter, self=$self, tracking=$tracking, ]';
+    return 'FeedbackLinks[businessActivity=$businessActivity, category=$category, image=$image, images=$images, report=$report, reporter=$reporter, self=$self, tracking=$tracking, ]';
   }
 }

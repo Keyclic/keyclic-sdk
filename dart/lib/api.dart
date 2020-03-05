@@ -205,6 +205,8 @@ part 'model/feedback_links_image_iri_template.dart';
 part 'model/feedback_links_image_iri_template_mapping.dart';
 part 'model/feedback_links_images.dart';
 part 'model/feedback_links_images_iri_template.dart';
+part 'model/feedback_links_report.dart';
+part 'model/feedback_links_report_iri_template.dart';
 part 'model/feedback_links_reporter.dart';
 part 'model/feedback_links_reporter_iri_template.dart';
 part 'model/feedback_links_self.dart';

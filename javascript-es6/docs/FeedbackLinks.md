@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **category** | [**FeedbackLinksCategory**](FeedbackLinksCategory.md) |  | [optional] 
 **image** | [**FeedbackLinksImage**](FeedbackLinksImage.md) |  | [optional] 
 **images** | [**[FeedbackLinksImages]**](FeedbackLinksImages.md) |  | [optional] 
+**report** | [**FeedbackLinksReport**](FeedbackLinksReport.md) |  | [optional] 
 **reporter** | [**FeedbackLinksReporter**](FeedbackLinksReporter.md) |  | [optional] 
 **self** | [**FeedbackLinksSelf**](FeedbackLinksSelf.md) |  | [optional] 
 **tracking** | [**FeedbackLinksTracking**](FeedbackLinksTracking.md) |  | [optional] 

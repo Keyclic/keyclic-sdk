@@ -176,6 +176,8 @@ import FeedbackLinksImageIriTemplate from "./model/FeedbackLinksImageIriTemplate
 import FeedbackLinksImageIriTemplateMapping from "./model/FeedbackLinksImageIriTemplateMapping";
 import FeedbackLinksImages from "./model/FeedbackLinksImages";
 import FeedbackLinksImagesIriTemplate from "./model/FeedbackLinksImagesIriTemplate";
+import FeedbackLinksReport from "./model/FeedbackLinksReport";
+import FeedbackLinksReportIriTemplate from "./model/FeedbackLinksReportIriTemplate";
 import FeedbackLinksReporter from "./model/FeedbackLinksReporter";
 import FeedbackLinksReporterIriTemplate from "./model/FeedbackLinksReporterIriTemplate";
 import FeedbackLinksSelf from "./model/FeedbackLinksSelf";
@@ -508,7 +510,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.3.8
+ * @version 2.3.9
  */
 export {
   /**
@@ -1316,6 +1318,16 @@ export {
    * @property { module:model/FeedbackLinksImagesIriTemplate }
    */
   FeedbackLinksImagesIriTemplate,
+  /**
+   * The FeedbackLinksReport model constructor.
+   * @property { module:model/FeedbackLinksReport }
+   */
+  FeedbackLinksReport,
+  /**
+   * The FeedbackLinksReportIriTemplate model constructor.
+   * @property { module:model/FeedbackLinksReportIriTemplate }
+   */
+  FeedbackLinksReportIriTemplate,
   /**
    * The FeedbackLinksReporter model constructor.
    * @property { module:model/FeedbackLinksReporter }

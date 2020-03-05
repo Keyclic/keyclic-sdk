@@ -15,6 +15,7 @@ import FeedbackLinksBusinessActivity from "./FeedbackLinksBusinessActivity";
 import FeedbackLinksCategory from "./FeedbackLinksCategory";
 import FeedbackLinksImage from "./FeedbackLinksImage";
 import FeedbackLinksImages from "./FeedbackLinksImages";
+import FeedbackLinksReport from "./FeedbackLinksReport";
 import FeedbackLinksReporter from "./FeedbackLinksReporter";
 import FeedbackLinksSelf from "./FeedbackLinksSelf";
 import FeedbackLinksTracking from "./FeedbackLinksTracking";
@@ -35,6 +36,7 @@ export default class FeedbackLinks {
     this.category = null;
     this.image = null;
     this.images = [];
+    this.report = null;
     this.reporter = null;
     this.self = null;
     this.tracking = null;
@@ -43,6 +45,7 @@ export default class FeedbackLinks {
     this.categoryType = FeedbackLinksCategory;
     this.imageType = FeedbackLinksImage;
     this.imagesType = FeedbackLinksImages;
+    this.reportType = FeedbackLinksReport;
     this.reporterType = FeedbackLinksReporter;
     this.selfType = FeedbackLinksSelf;
     this.trackingType = FeedbackLinksTracking;
@@ -82,6 +85,12 @@ export default class FeedbackLinks {
       object.images = ApiClient.convertToType(data["images"], [
         object.imagesType
       ]);
+    }
+    if (data.hasOwnProperty("report")) {
+      object.report = ApiClient.convertToType(
+        data["report"],
+        object.reportType
+      );
     }
     if (data.hasOwnProperty("reporter")) {
       object.reporter = ApiClient.convertToType(
@@ -153,6 +162,19 @@ export default class FeedbackLinks {
    */
   setImages(images) {
     this.images = images;
+  }
+  /**
+   * @return { module:model/FeedbackLinksReport }
+   */
+  getReport() {
+    return this.report;
+  }
+
+  /**
+   * @param { module:model/FeedbackLinksReport } report
+   */
+  setReport(report) {
+    this.report = report;
   }
   /**
    * @return { module:model/FeedbackLinksReporter }

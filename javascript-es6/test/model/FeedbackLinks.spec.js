@@ -77,6 +77,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property report (base name: "report")', function() {
+      // uncomment below and update the code to test the property report
+      //var instane = new @KeyclicSdkJavascript.FeedbackLinks();
+      //expect(instance).to.be();
+    });
+
     it('should have the property reporter (base name: "reporter")', function() {
       // uncomment below and update the code to test the property reporter
       //var instane = new @KeyclicSdkJavascript.FeedbackLinks();

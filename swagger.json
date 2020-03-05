@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.3.8"
+        "version": "2.3.9"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -13769,6 +13769,9 @@
                                 "$ref": "#\/definitions\/FeedbackLinksImages"
                             }
                         },
+                        "report": {
+                            "$ref": "#\/definitions\/FeedbackLinksReport"
+                        },
                         "reporter": {
                             "$ref": "#\/definitions\/FeedbackLinksReporter"
                         },
@@ -14019,6 +14022,32 @@
                             "type": "string"
                         },
                         "image": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "FeedbackLinksReport": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the report associated to the given feedback.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/FeedbackLinksReportIriTemplate"
+                }
+            }
+        },
+        "FeedbackLinksReportIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "report": {
                             "type": "string"
                         }
                     }

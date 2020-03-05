@@ -1355,6 +1355,18 @@ Object.defineProperty(exports, "FeedbackLinksImagesIriTemplate", {
     return _FeedbackLinksImagesIriTemplate.default;
   }
 });
+Object.defineProperty(exports, "FeedbackLinksReport", {
+  enumerable: true,
+  get: function get() {
+    return _FeedbackLinksReport.default;
+  }
+});
+Object.defineProperty(exports, "FeedbackLinksReportIriTemplate", {
+  enumerable: true,
+  get: function get() {
+    return _FeedbackLinksReportIriTemplate.default;
+  }
+});
 Object.defineProperty(exports, "FeedbackLinksReporter", {
   enumerable: true,
   get: function get() {
@@ -3794,6 +3806,14 @@ var _FeedbackLinksImages = _interopRequireDefault(
 
 var _FeedbackLinksImagesIriTemplate = _interopRequireDefault(
   require("./model/FeedbackLinksImagesIriTemplate")
+);
+
+var _FeedbackLinksReport = _interopRequireDefault(
+  require("./model/FeedbackLinksReport")
+);
+
+var _FeedbackLinksReportIriTemplate = _interopRequireDefault(
+  require("./model/FeedbackLinksReportIriTemplate")
 );
 
 var _FeedbackLinksReporter = _interopRequireDefault(

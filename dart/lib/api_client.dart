@@ -437,6 +437,10 @@ class ApiClient {
           return FeedbackLinksImages.fromJson(value);
         case 'FeedbackLinksImagesIriTemplate':
           return FeedbackLinksImagesIriTemplate.fromJson(value);
+        case 'FeedbackLinksReport':
+          return FeedbackLinksReport.fromJson(value);
+        case 'FeedbackLinksReportIriTemplate':
+          return FeedbackLinksReportIriTemplate.fromJson(value);
         case 'FeedbackLinksReporter':
           return FeedbackLinksReporter.fromJson(value);
         case 'FeedbackLinksReporterIriTemplate':

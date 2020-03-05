@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.3.8
-- Package version: 2.3.8
+- API version: 2.3.9
+- Package version: 2.3.9
 
 ## Getting started
 
@@ -319,6 +319,8 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.FeedbackLinksImageIriTemplateMapping](docs/FeedbackLinksImageIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.FeedbackLinksImages](docs/FeedbackLinksImages.md)
 - [@KeyclicSdkJavascript.FeedbackLinksImagesIriTemplate](docs/FeedbackLinksImagesIriTemplate.md)
+- [@KeyclicSdkJavascript.FeedbackLinksReport](docs/FeedbackLinksReport.md)
+- [@KeyclicSdkJavascript.FeedbackLinksReportIriTemplate](docs/FeedbackLinksReportIriTemplate.md)
 - [@KeyclicSdkJavascript.FeedbackLinksReporter](docs/FeedbackLinksReporter.md)
 - [@KeyclicSdkJavascript.FeedbackLinksReporterIriTemplate](docs/FeedbackLinksReporterIriTemplate.md)
 - [@KeyclicSdkJavascript.FeedbackLinksSelf](docs/FeedbackLinksSelf.md)

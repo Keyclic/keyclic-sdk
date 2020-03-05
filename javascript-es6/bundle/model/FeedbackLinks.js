@@ -23,6 +23,10 @@ var _FeedbackLinksImages = _interopRequireDefault(
   require("./FeedbackLinksImages")
 );
 
+var _FeedbackLinksReport = _interopRequireDefault(
+  require("./FeedbackLinksReport")
+);
+
 var _FeedbackLinksReporter = _interopRequireDefault(
   require("./FeedbackLinksReporter")
 );
@@ -77,6 +81,7 @@ var FeedbackLinks = /*#__PURE__*/ (function() {
     this.category = null;
     this.image = null;
     this.images = [];
+    this.report = null;
     this.reporter = null;
     this.self = null;
     this.tracking = null;
@@ -84,6 +89,7 @@ var FeedbackLinks = /*#__PURE__*/ (function() {
     this.categoryType = _FeedbackLinksCategory.default;
     this.imageType = _FeedbackLinksImage.default;
     this.imagesType = _FeedbackLinksImages.default;
+    this.reportType = _FeedbackLinksReport.default;
     this.reporterType = _FeedbackLinksReporter.default;
     this.selfType = _FeedbackLinksSelf.default;
     this.trackingType = _FeedbackLinksTracking.default;
@@ -169,6 +175,24 @@ var FeedbackLinks = /*#__PURE__*/ (function() {
         key: "setImages",
         value: function setImages(images) {
           this.images = images;
+        }
+        /**
+         * @return { module:model/FeedbackLinksReport }
+         */
+      },
+      {
+        key: "getReport",
+        value: function getReport() {
+          return this.report;
+        }
+        /**
+         * @param { module:model/FeedbackLinksReport } report
+         */
+      },
+      {
+        key: "setReport",
+        value: function setReport(report) {
+          this.report = report;
         }
         /**
          * @return { module:model/FeedbackLinksReporter }
@@ -268,6 +292,13 @@ var FeedbackLinks = /*#__PURE__*/ (function() {
             object.images = _ApiClient.default.convertToType(data["images"], [
               object.imagesType
             ]);
+          }
+
+          if (data.hasOwnProperty("report")) {
+            object.report = _ApiClient.default.convertToType(
+              data["report"],
+              object.reportType
+            );
           }
 
           if (data.hasOwnProperty("reporter")) {
