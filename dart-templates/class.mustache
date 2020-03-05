@@ -134,16 +134,13 @@ class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
   }
 
   static List<{{classname}}> listFromJson(List<dynamic> json) {
-    return json == null ? <{{classname}}>[] : json.map((dynamic value) => {{classname}}.fromJson(value)).toList();
+    return json?.map((dynamic value) => {{classname}}.fromJson(value))?.toList() ?? <{{classname}}>[];
   }
 
   static Map<String, {{classname}}> mapFromJson(Map<String, dynamic> json) {
-    var map = Map<String, {{classname}}>();
-    if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = {{classname}}.fromJson(value));
-    }
-
-    return map;
+    return json?.map((String key, dynamic value) {
+      return MapEntry(key, {{classname}}.fromJson(value));
+    }) ?? <String, {{classname}}>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -154,7 +151,17 @@ class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
           '{{{baseName}}}': {{name}}.toUtc().toIso8601String(),
         {{/isDateTime}}
         {{^isDateTime}}
-          '{{{baseName}}}': {{name}},
+          {{#complexType}}
+            {{#isContainer}}
+              '{{{baseName}}}': {{name}},
+            {{/isContainer}}
+            {{^isContainer}}
+              '{{{baseName}}}': {{name}}.toJson(),
+            {{/isContainer}}
+          {{/complexType}}
+          {{^complexType}}
+            '{{{baseName}}}': {{name}},
+          {{/complexType}}
         {{/isDateTime}}
       {{/vars}}
     };

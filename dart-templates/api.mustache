@@ -27,7 +27,7 @@ class {{classname}} {
     final String path = "{{{path}}}".replaceAll("{format}","json"){{#pathParams}}.replaceAll("{" + "{{baseName}}" + "}", {{{paramName}}}.toString()){{/pathParams}};
 
     // query params
-    final List<QueryParam> queryParams = [
+    final List<QueryParam> queryParams = <QueryParam>[
     {{#queryParams}}
       {{^required}}
       if ({{paramName}} != null)
@@ -37,7 +37,7 @@ class {{classname}} {
     ];
 
     // header params
-    final Map<String, String> headerParams = {
+    final Map<String, String> headerParams = <String, String>{
       {{#headerParams}}
         {{#isDateTime}}
           if({{paramName}} is {{{dataType}}}) "{{baseName}}": {{paramName}}.toIso8601String(),
@@ -48,30 +48,23 @@ class {{classname}} {
       {{/headerParams}}
     };
 
-    final List<String> contentTypes = [
+    final List<String> contentTypes = <String>[
       {{#consumes}}"{{{mediaType}}}",{{/consumes}}
       "application/json",
     ];
 
-    final List<String> authNames = [
+    final List<String> authNames = <String>[
       {{#authMethods}}"{{name}}", {{/authMethods}}
     ];
 
-    {{#bodyParam}}
-    final {{{dataType}}} postBody = {{paramName}};
-    {{/bodyParam}}
-    {{^bodyParam}}
-    final Object postBody = null;
-    {{/bodyParam}}
-
     final Response response = await apiClient.invokeAPI(
-      path,
-      '{{httpMethod}}',
-      queryParams,
-      postBody,
-      headerParams,
-      contentTypes[0],
-      authNames,
+      path: path,
+      method: '{{httpMethod}}',
+      queryParams: queryParams,
+      {{#bodyParam}}body: {{paramName}},{{/bodyParam}}
+      headerParams: headerParams,
+      contentType: contentTypes[0],
+      authNames: authNames,
     );
 
     if (response.statusCode >= 400) {
@@ -79,21 +72,20 @@ class {{classname}} {
     }
 
     if (response.body == null) {
-      return {{#returnType}}null{{/returnType}};
+      return null;
     }
 
-    return
-      {{#isListContainer}}
-        {{#returnType}}(apiClient.deserialize(response.body, '{{{returnType}}}') as List).map((item) => item as {{returnBaseType}}).toList();{{/returnType}}
-      {{/isListContainer}}
-      {{^isListContainer}}
-        {{#isMapContainer}}
-          {{#returnType}}{{{returnType}}}.from(apiClient.deserialize(response.body, '{{{returnType}}}')) {{/returnType}};
-        {{/isMapContainer}}
-        {{^isMapContainer}}
-          {{#returnType}}apiClient.deserialize(response.body, '{{{returnType}}}') as {{{returnType}}} {{/returnType}};
-        {{/isMapContainer}}
-      {{/isListContainer}}
+    {{#isListContainer}}
+      return {{#returnType}}List<{{{returnBaseType}}}>.from(apiClient.deserialize(response.body, '{{{returnType}}}')){{/returnType}};
+    {{/isListContainer}}
+    {{^isListContainer}}
+      {{#isMapContainer}}
+        return {{#returnType}}{{{returnType}}}.from(apiClient.deserialize(response.body, '{{{returnType}}}')) {{/returnType}};
+      {{/isMapContainer}}
+      {{^isMapContainer}}
+        return {{#returnType}}apiClient.deserialize(response.body, '{{{returnType}}}') as {{{returnType}}} {{/returnType}};
+      {{/isMapContainer}}
+    {{/isListContainer}}
   }
   {{/operation}}
 }
