@@ -103,6 +103,7 @@ part 'model/checkpoint.dart';
 part 'model/checkpoint_links.dart';
 part 'model/checkpoint_links_organization.dart';
 part 'model/checkpoint_links_organization_iri_template.dart';
+part 'model/checkpoint_state.dart';
 part 'model/choice.dart';
 part 'model/comment_data.dart';
 part 'model/condition.dart';

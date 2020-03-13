@@ -51,7 +51,8 @@ class CategoryLinksSelfIriTemplateMapping {
 
   static Map<String, CategoryLinksSelfIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, CategoryLinksSelfIriTemplateMapping>(
+            (String key, dynamic value) {
           return MapEntry(
               key, CategoryLinksSelfIriTemplateMapping.fromJson(value));
         }) ??

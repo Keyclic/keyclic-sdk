@@ -78,7 +78,7 @@ class DelegationPagination extends Pagination {
 
   static Map<String, DelegationPagination> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DelegationPagination>((String key, dynamic value) {
           return MapEntry(key, DelegationPagination.fromJson(value));
         }) ??
         <String, DelegationPagination>{};

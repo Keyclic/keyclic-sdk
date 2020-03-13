@@ -113,7 +113,7 @@ class Organization {
   }
 
   static Map<String, Organization> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Organization>((String key, dynamic value) {
           return MapEntry(key, Organization.fromJson(value));
         }) ??
         <String, Organization>{};

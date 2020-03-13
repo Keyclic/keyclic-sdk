@@ -52,7 +52,8 @@ class WebhookLinksOrganizationIriTemplate {
 
   static Map<String, WebhookLinksOrganizationIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, WebhookLinksOrganizationIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, WebhookLinksOrganizationIriTemplate.fromJson(value));
         }) ??

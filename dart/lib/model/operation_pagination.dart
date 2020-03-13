@@ -78,7 +78,7 @@ class OperationPagination extends Pagination {
 
   static Map<String, OperationPagination> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OperationPagination>((String key, dynamic value) {
           return MapEntry(key, OperationPagination.fromJson(value));
         }) ??
         <String, OperationPagination>{};

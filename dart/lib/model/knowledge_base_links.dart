@@ -48,7 +48,7 @@ class KnowledgeBaseLinks {
 
   static Map<String, KnowledgeBaseLinks> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, KnowledgeBaseLinks>((String key, dynamic value) {
           return MapEntry(key, KnowledgeBaseLinks.fromJson(value));
         }) ??
         <String, KnowledgeBaseLinks>{};

@@ -53,7 +53,7 @@ class ApplicationAbout {
   }
 
   static Map<String, ApplicationAbout> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ApplicationAbout>((String key, dynamic value) {
           return MapEntry(key, ApplicationAbout.fromJson(value));
         }) ??
         <String, ApplicationAbout>{};

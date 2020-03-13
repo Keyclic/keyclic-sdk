@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **type** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
-**from** | [**State**](State.md) |  | [optional] 
-**to** | [**State**](State.md) |  | [optional] 
+**commentRequired** | **Boolean** |  | [optional] 
+**from** | [**WorkflowState**](WorkflowState.md) |  | [optional] 
+**to** | [**WorkflowState**](WorkflowState.md) |  | [optional] 
 
 

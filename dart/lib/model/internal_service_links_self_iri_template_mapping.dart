@@ -51,7 +51,8 @@ class InternalServiceLinksSelfIriTemplateMapping {
 
   static Map<String, InternalServiceLinksSelfIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, InternalServiceLinksSelfIriTemplateMapping>(
+            (String key, dynamic value) {
           return MapEntry(
               key, InternalServiceLinksSelfIriTemplateMapping.fromJson(value));
         }) ??

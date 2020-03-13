@@ -46,7 +46,7 @@ var geoHash[] = []; // List<String> |
 var order = order_example; // String | 
 var organization = ; // String | The identifier of the resource.
 var state = state_example; // String | 
-var visibility[] = []; // List<String> | 
+var visibility[] = visibility[]_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
  **state** | **String**|  | [optional] 
- **visibility[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **visibility[]** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 

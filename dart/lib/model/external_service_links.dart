@@ -54,7 +54,7 @@ class ExternalServiceLinks {
 
   static Map<String, ExternalServiceLinks> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ExternalServiceLinks>((String key, dynamic value) {
           return MapEntry(key, ExternalServiceLinks.fromJson(value));
         }) ??
         <String, ExternalServiceLinks>{};

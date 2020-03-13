@@ -101,7 +101,7 @@ class InternalService {
   }
 
   static Map<String, InternalService> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, InternalService>((String key, dynamic value) {
           return MapEntry(key, InternalService.fromJson(value));
         }) ??
         <String, InternalService>{};

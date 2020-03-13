@@ -112,7 +112,7 @@ let opts = {
   'geoHash': ["geoHash_example"], // [String] | 
   'order': "desc", // String | 
   'organization': "organization_example", // String | The identifier of the resource.
-  'visibility': ["visibility_example"], // [String] | 
+  'visibility': "VISIBILITY_PUBLIC", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10 // Number | Page of the overview.
 };
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
  **geoHash** | [**[String]**](String.md)|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
- **visibility** | [**[String]**](String.md)|  | [optional] 
+ **visibility** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
 

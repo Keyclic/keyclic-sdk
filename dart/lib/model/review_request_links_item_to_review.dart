@@ -57,7 +57,8 @@ class ReviewRequestLinksItemToReview {
 
   static Map<String, ReviewRequestLinksItemToReview> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ReviewRequestLinksItemToReview>(
+            (String key, dynamic value) {
           return MapEntry(key, ReviewRequestLinksItemToReview.fromJson(value));
         }) ??
         <String, ReviewRequestLinksItemToReview>{};

@@ -56,7 +56,8 @@ class InternalServiceLinksSelf {
 
   static Map<String, InternalServiceLinksSelf> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, InternalServiceLinksSelf>(
+            (String key, dynamic value) {
           return MapEntry(key, InternalServiceLinksSelf.fromJson(value));
         }) ??
         <String, InternalServiceLinksSelf>{};

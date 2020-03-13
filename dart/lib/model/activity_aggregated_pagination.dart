@@ -78,7 +78,8 @@ class ActivityAggregatedPagination {
 
   static Map<String, ActivityAggregatedPagination> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ActivityAggregatedPagination>(
+            (String key, dynamic value) {
           return MapEntry(key, ActivityAggregatedPagination.fromJson(value));
         }) ??
         <String, ActivityAggregatedPagination>{};

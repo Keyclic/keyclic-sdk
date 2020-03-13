@@ -56,7 +56,7 @@ class OperationLinksReport {
 
   static Map<String, OperationLinksReport> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OperationLinksReport>((String key, dynamic value) {
           return MapEntry(key, OperationLinksReport.fromJson(value));
         }) ??
         <String, OperationLinksReport>{};

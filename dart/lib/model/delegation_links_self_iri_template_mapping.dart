@@ -51,7 +51,8 @@ class DelegationLinksSelfIriTemplateMapping {
 
   static Map<String, DelegationLinksSelfIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DelegationLinksSelfIriTemplateMapping>(
+            (String key, dynamic value) {
           return MapEntry(
               key, DelegationLinksSelfIriTemplateMapping.fromJson(value));
         }) ??

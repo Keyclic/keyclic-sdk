@@ -135,7 +135,7 @@ class Operation {
   }
 
   static Map<String, Operation> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Operation>((String key, dynamic value) {
           return MapEntry(key, Operation.fromJson(value));
         }) ??
         <String, Operation>{};

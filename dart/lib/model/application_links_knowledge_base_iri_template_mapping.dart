@@ -51,7 +51,8 @@ class ApplicationLinksKnowledgeBaseIriTemplateMapping {
 
   static Map<String, ApplicationLinksKnowledgeBaseIriTemplateMapping>
       mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ApplicationLinksKnowledgeBaseIriTemplateMapping>(
+            (String key, dynamic value) {
           return MapEntry(key,
               ApplicationLinksKnowledgeBaseIriTemplateMapping.fromJson(value));
         }) ??

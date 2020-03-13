@@ -124,7 +124,7 @@ class ReportTypeWorkflow {
 
   static Map<String, ReportTypeWorkflow> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ReportTypeWorkflow>((String key, dynamic value) {
           return MapEntry(key, ReportTypeWorkflow.fromJson(value));
         }) ??
         <String, ReportTypeWorkflow>{};

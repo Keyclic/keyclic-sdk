@@ -65,7 +65,7 @@ class DocumentApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;

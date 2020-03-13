@@ -52,7 +52,8 @@ class CheckpointLinksOrganizationIriTemplate {
 
   static Map<String, CheckpointLinksOrganizationIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, CheckpointLinksOrganizationIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, CheckpointLinksOrganizationIriTemplate.fromJson(value));
         }) ??

@@ -55,6 +55,7 @@ var OrganizationPreferences = /*#__PURE__*/ (function() {
   function OrganizationPreferences() {
     _classCallCheck(this, OrganizationPreferences);
 
+    this.categoryRequired = null;
     this.notification = null;
     this.offline = null;
     this._public = null;
@@ -74,11 +75,29 @@ var OrganizationPreferences = /*#__PURE__*/ (function() {
     OrganizationPreferences,
     [
       {
-        key: "getNotification",
+        key: "getCategoryRequired",
 
+        /**
+         * @return { Boolean }
+         */
+        value: function getCategoryRequired() {
+          return this.categoryRequired;
+        }
+        /**
+         * @param { Boolean } categoryRequired
+         */
+      },
+      {
+        key: "setCategoryRequired",
+        value: function setCategoryRequired(categoryRequired) {
+          this.categoryRequired = categoryRequired;
+        }
         /**
          * @return { module:model/PreferencesNotification }
          */
+      },
+      {
+        key: "getNotification",
         value: function getNotification() {
           return this.notification;
         }
@@ -180,6 +199,13 @@ var OrganizationPreferences = /*#__PURE__*/ (function() {
 
           if (object === null) {
             object = new OrganizationPreferences();
+          }
+
+          if (data.hasOwnProperty("categoryRequired")) {
+            object.categoryRequired = _ApiClient.default.convertToType(
+              data["categoryRequired"],
+              "Boolean"
+            );
           }
 
           if (data.hasOwnProperty("notification")) {

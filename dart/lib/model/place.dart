@@ -117,7 +117,7 @@ class Place {
   }
 
   static Map<String, Place> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Place>((String key, dynamic value) {
           return MapEntry(key, Place.fromJson(value));
         }) ??
         <String, Place>{};

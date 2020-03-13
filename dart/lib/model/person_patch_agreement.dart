@@ -60,7 +60,7 @@ class PersonPatchAgreement {
 
   static Map<String, PersonPatchAgreement> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PersonPatchAgreement>((String key, dynamic value) {
           return MapEntry(key, PersonPatchAgreement.fromJson(value));
         }) ??
         <String, PersonPatchAgreement>{};

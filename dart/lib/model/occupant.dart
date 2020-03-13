@@ -87,7 +87,7 @@ class Occupant {
   }
 
   static Map<String, Occupant> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Occupant>((String key, dynamic value) {
           return MapEntry(key, Occupant.fromJson(value));
         }) ??
         <String, Occupant>{};

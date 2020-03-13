@@ -47,7 +47,7 @@ class WorkflowData {
   }
 
   static Map<String, WorkflowData> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, WorkflowData>((String key, dynamic value) {
           return MapEntry(key, WorkflowData.fromJson(value));
         }) ??
         <String, WorkflowData>{};

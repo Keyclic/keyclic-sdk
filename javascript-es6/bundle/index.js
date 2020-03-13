@@ -739,6 +739,12 @@ Object.defineProperty(exports, "CheckpointLinksOrganizationIriTemplate", {
     return _CheckpointLinksOrganizationIriTemplate.default;
   }
 });
+Object.defineProperty(exports, "CheckpointState", {
+  enumerable: true,
+  get: function get() {
+    return _CheckpointState.default;
+  }
+});
 Object.defineProperty(exports, "Choice", {
   enumerable: true,
   get: function get() {
@@ -3446,6 +3452,10 @@ var _CheckpointLinksOrganization = _interopRequireDefault(
 
 var _CheckpointLinksOrganizationIriTemplate = _interopRequireDefault(
   require("./model/CheckpointLinksOrganizationIriTemplate")
+);
+
+var _CheckpointState = _interopRequireDefault(
+  require("./model/CheckpointState")
 );
 
 var _Choice = _interopRequireDefault(require("./model/Choice"));

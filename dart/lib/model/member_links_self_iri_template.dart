@@ -49,7 +49,8 @@ class MemberLinksSelfIriTemplate {
 
   static Map<String, MemberLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, MemberLinksSelfIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(key, MemberLinksSelfIriTemplate.fromJson(value));
         }) ??
         <String, MemberLinksSelfIriTemplate>{};

@@ -51,7 +51,8 @@ class ReportLinksOperationsIriTemplate {
 
   static Map<String, ReportLinksOperationsIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ReportLinksOperationsIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, ReportLinksOperationsIriTemplate.fromJson(value));
         }) ??

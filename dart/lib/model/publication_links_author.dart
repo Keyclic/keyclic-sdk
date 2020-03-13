@@ -56,7 +56,8 @@ class PublicationLinksAuthor {
 
   static Map<String, PublicationLinksAuthor> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, PublicationLinksAuthor>((String key, dynamic value) {
           return MapEntry(key, PublicationLinksAuthor.fromJson(value));
         }) ??
         <String, PublicationLinksAuthor>{};

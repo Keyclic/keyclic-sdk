@@ -57,7 +57,8 @@ class ApplicationLinksKnowledgeBase {
 
   static Map<String, ApplicationLinksKnowledgeBase> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ApplicationLinksKnowledgeBase>(
+            (String key, dynamic value) {
           return MapEntry(key, ApplicationLinksKnowledgeBase.fromJson(value));
         }) ??
         <String, ApplicationLinksKnowledgeBase>{};

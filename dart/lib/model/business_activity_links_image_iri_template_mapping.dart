@@ -51,7 +51,8 @@ class BusinessActivityLinksImageIriTemplateMapping {
 
   static Map<String, BusinessActivityLinksImageIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, BusinessActivityLinksImageIriTemplateMapping>(
+            (String key, dynamic value) {
           return MapEntry(key,
               BusinessActivityLinksImageIriTemplateMapping.fromJson(value));
         }) ??

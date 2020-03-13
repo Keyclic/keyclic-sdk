@@ -57,7 +57,7 @@ class Error {
   }
 
   static Map<String, Error> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Error>((String key, dynamic value) {
           return MapEntry(key, Error.fromJson(value));
         }) ??
         <String, Error>{};

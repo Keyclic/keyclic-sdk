@@ -65,7 +65,7 @@ class OccupantApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;

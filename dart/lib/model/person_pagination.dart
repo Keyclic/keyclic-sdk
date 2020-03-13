@@ -77,7 +77,7 @@ class PersonPagination extends Pagination {
   }
 
   static Map<String, PersonPagination> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PersonPagination>((String key, dynamic value) {
           return MapEntry(key, PersonPagination.fromJson(value));
         }) ??
         <String, PersonPagination>{};

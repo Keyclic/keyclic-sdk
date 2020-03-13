@@ -64,7 +64,7 @@ class Feature {
   }
 
   static Map<String, Feature> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Feature>((String key, dynamic value) {
           return MapEntry(key, Feature.fromJson(value));
         }) ??
         <String, Feature>{};

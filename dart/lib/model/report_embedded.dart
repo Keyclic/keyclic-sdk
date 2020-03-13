@@ -97,7 +97,7 @@ class ReportEmbedded {
   }
 
   static Map<String, ReportEmbedded> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ReportEmbedded>((String key, dynamic value) {
           return MapEntry(key, ReportEmbedded.fromJson(value));
         }) ??
         <String, ReportEmbedded>{};

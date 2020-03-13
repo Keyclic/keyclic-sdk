@@ -78,7 +78,8 @@ class OrganizationPagination extends Pagination {
 
   static Map<String, OrganizationPagination> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, OrganizationPagination>((String key, dynamic value) {
           return MapEntry(key, OrganizationPagination.fromJson(value));
         }) ??
         <String, OrganizationPagination>{};

@@ -78,7 +78,8 @@ class InternalServicePagination extends Pagination {
 
   static Map<String, InternalServicePagination> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, InternalServicePagination>(
+            (String key, dynamic value) {
           return MapEntry(key, InternalServicePagination.fromJson(value));
         }) ??
         <String, InternalServicePagination>{};

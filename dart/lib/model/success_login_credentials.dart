@@ -54,7 +54,8 @@ class SuccessLoginCredentials {
 
   static Map<String, SuccessLoginCredentials> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, SuccessLoginCredentials>((String key, dynamic value) {
           return MapEntry(key, SuccessLoginCredentials.fromJson(value));
         }) ??
         <String, SuccessLoginCredentials>{};

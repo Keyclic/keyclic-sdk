@@ -58,7 +58,7 @@ class MemberPatch {
   }
 
   static Map<String, MemberPatch> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, MemberPatch>((String key, dynamic value) {
           return MapEntry(key, MemberPatch.fromJson(value));
         }) ??
         <String, MemberPatch>{};

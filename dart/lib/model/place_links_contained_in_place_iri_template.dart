@@ -51,7 +51,8 @@ class PlaceLinksContainedInPlaceIriTemplate {
 
   static Map<String, PlaceLinksContainedInPlaceIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PlaceLinksContainedInPlaceIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, PlaceLinksContainedInPlaceIriTemplate.fromJson(value));
         }) ??

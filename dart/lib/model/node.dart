@@ -63,7 +63,7 @@ class Node {
   }
 
   static Map<String, Node> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Node>((String key, dynamic value) {
           return MapEntry(key, Node.fromJson(value));
         }) ??
         <String, Node>{};

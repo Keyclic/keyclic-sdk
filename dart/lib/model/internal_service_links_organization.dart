@@ -58,7 +58,8 @@ class InternalServiceLinksOrganization {
 
   static Map<String, InternalServiceLinksOrganization> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, InternalServiceLinksOrganization>(
+            (String key, dynamic value) {
           return MapEntry(
               key, InternalServiceLinksOrganization.fromJson(value));
         }) ??

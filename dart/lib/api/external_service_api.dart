@@ -65,7 +65,7 @@ class ExternalServiceApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;

@@ -61,7 +61,7 @@ class CategoryEmbedded {
   }
 
   static Map<String, CategoryEmbedded> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, CategoryEmbedded>((String key, dynamic value) {
           return MapEntry(key, CategoryEmbedded.fromJson(value));
         }) ??
         <String, CategoryEmbedded>{};

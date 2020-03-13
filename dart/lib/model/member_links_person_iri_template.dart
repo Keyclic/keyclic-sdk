@@ -50,7 +50,8 @@ class MemberLinksPersonIriTemplate {
 
   static Map<String, MemberLinksPersonIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, MemberLinksPersonIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(key, MemberLinksPersonIriTemplate.fromJson(value));
         }) ??
         <String, MemberLinksPersonIriTemplate>{};

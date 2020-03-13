@@ -54,7 +54,7 @@ class WorkflowLinksSelf {
   }
 
   static Map<String, WorkflowLinksSelf> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, WorkflowLinksSelf>((String key, dynamic value) {
           return MapEntry(key, WorkflowLinksSelf.fromJson(value));
         }) ??
         <String, WorkflowLinksSelf>{};

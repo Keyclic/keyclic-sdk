@@ -2,6 +2,8 @@ part of keyclic_sdk_api.api;
 
 class WorkflowState {
   WorkflowState({
+    this.allowAdd,
+    this.allowDispatch,
     this.color,
     this.description,
     this.id,
@@ -16,6 +18,8 @@ class WorkflowState {
     }
 
     return WorkflowState(
+      allowAdd: json['allowAdd'],
+      allowDispatch: json['allowDispatch'],
       color: json['color'],
       description: json['description'],
       id: json['id'],
@@ -24,6 +28,10 @@ class WorkflowState {
       type: json['type'],
     );
   }
+
+  bool allowAdd;
+
+  bool allowDispatch;
 
   String color;
 
@@ -46,6 +54,8 @@ class WorkflowState {
 
     return other is WorkflowState &&
         runtimeType == other.runtimeType &&
+        allowAdd == other.allowAdd &&
+        allowDispatch == other.allowDispatch &&
         color == other.color &&
         description == other.description &&
         id == other.id &&
@@ -59,6 +69,8 @@ class WorkflowState {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= allowAdd?.hashCode ?? 0;
+    hashCode ^= allowDispatch?.hashCode ?? 0;
     hashCode ^= color?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
@@ -77,7 +89,7 @@ class WorkflowState {
   }
 
   static Map<String, WorkflowState> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, WorkflowState>((String key, dynamic value) {
           return MapEntry(key, WorkflowState.fromJson(value));
         }) ??
         <String, WorkflowState>{};
@@ -85,6 +97,8 @@ class WorkflowState {
 
   Map<String, dynamic> toJson() {
     return {
+      if (allowAdd != null) 'allowAdd': allowAdd,
+      if (allowDispatch != null) 'allowDispatch': allowDispatch,
       if (color != null) 'color': color,
       if (description != null) 'description': description,
       if (id != null) 'id': id,
@@ -96,6 +110,6 @@ class WorkflowState {
 
   @override
   String toString() {
-    return 'WorkflowState[color=$color, description=$description, id=$id, name=$name, progression=$progression, type=$type, ]';
+    return 'WorkflowState[allowAdd=$allowAdd, allowDispatch=$allowDispatch, color=$color, description=$description, id=$id, name=$name, progression=$progression, type=$type, ]';
   }
 }

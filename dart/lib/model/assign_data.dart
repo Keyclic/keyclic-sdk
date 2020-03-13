@@ -45,7 +45,7 @@ class AssignData {
   }
 
   static Map<String, AssignData> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, AssignData>((String key, dynamic value) {
           return MapEntry(key, AssignData.fromJson(value));
         }) ??
         <String, AssignData>{};

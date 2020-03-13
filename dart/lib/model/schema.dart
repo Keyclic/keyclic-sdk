@@ -65,7 +65,7 @@ class Schema {
   }
 
   static Map<String, Schema> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Schema>((String key, dynamic value) {
           return MapEntry(key, Schema.fromJson(value));
         }) ??
         <String, Schema>{};

@@ -65,7 +65,7 @@ class DelegationLinks {
   }
 
   static Map<String, DelegationLinks> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DelegationLinks>((String key, dynamic value) {
           return MapEntry(key, DelegationLinks.fromJson(value));
         }) ??
         <String, DelegationLinks>{};

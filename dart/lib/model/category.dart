@@ -111,7 +111,7 @@ class Category {
   }
 
   static Map<String, Category> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Category>((String key, dynamic value) {
           return MapEntry(key, Category.fromJson(value));
         }) ??
         <String, Category>{};

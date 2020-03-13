@@ -74,7 +74,7 @@ class Condition {
   }
 
   static Map<String, Condition> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Condition>((String key, dynamic value) {
           return MapEntry(key, Condition.fromJson(value));
         }) ??
         <String, Condition>{};

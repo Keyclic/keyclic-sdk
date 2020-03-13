@@ -47,7 +47,7 @@ class PersonPreferences {
   }
 
   static Map<String, PersonPreferences> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PersonPreferences>((String key, dynamic value) {
           return MapEntry(key, PersonPreferences.fromJson(value));
         }) ??
         <String, PersonPreferences>{};

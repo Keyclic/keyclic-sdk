@@ -93,7 +93,7 @@ class Document {
   }
 
   static Map<String, Document> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Document>((String key, dynamic value) {
           return MapEntry(key, Document.fromJson(value));
         }) ??
         <String, Document>{};

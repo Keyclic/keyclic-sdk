@@ -52,7 +52,8 @@ class ExternalServiceLinksProviderIriTemplate {
 
   static Map<String, ExternalServiceLinksProviderIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ExternalServiceLinksProviderIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, ExternalServiceLinksProviderIriTemplate.fromJson(value));
         }) ??

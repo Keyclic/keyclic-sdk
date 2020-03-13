@@ -47,7 +47,7 @@ class DocumentPatchFile {
   }
 
   static Map<String, DocumentPatchFile> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DocumentPatchFile>((String key, dynamic value) {
           return MapEntry(key, DocumentPatchFile.fromJson(value));
         }) ??
         <String, DocumentPatchFile>{};

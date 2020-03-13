@@ -57,7 +57,8 @@ class ContributionLinksContributor {
 
   static Map<String, ContributionLinksContributor> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ContributionLinksContributor>(
+            (String key, dynamic value) {
           return MapEntry(key, ContributionLinksContributor.fromJson(value));
         }) ??
         <String, ContributionLinksContributor>{};

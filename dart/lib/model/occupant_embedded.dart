@@ -47,7 +47,7 @@ class OccupantEmbedded {
   }
 
   static Map<String, OccupantEmbedded> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OccupantEmbedded>((String key, dynamic value) {
           return MapEntry(key, OccupantEmbedded.fromJson(value));
         }) ??
         <String, OccupantEmbedded>{};

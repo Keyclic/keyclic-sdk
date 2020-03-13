@@ -48,7 +48,7 @@ class FacebookConnectData {
 
   static Map<String, FacebookConnectData> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, FacebookConnectData>((String key, dynamic value) {
           return MapEntry(key, FacebookConnectData.fromJson(value));
         }) ??
         <String, FacebookConnectData>{};

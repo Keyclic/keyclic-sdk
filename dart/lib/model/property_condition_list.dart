@@ -52,7 +52,8 @@ class PropertyConditionList {
 
   static Map<String, PropertyConditionList> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, PropertyConditionList>((String key, dynamic value) {
           return MapEntry(key, PropertyConditionList.fromJson(value));
         }) ??
         <String, PropertyConditionList>{};

@@ -52,7 +52,8 @@ class ContributionCollection {
 
   static Map<String, ContributionCollection> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, ContributionCollection>((String key, dynamic value) {
           return MapEntry(key, ContributionCollection.fromJson(value));
         }) ??
         <String, ContributionCollection>{};

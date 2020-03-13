@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class Checkpoint {
   Checkpoint({
     this.createdAt,
+    this.data,
     this.state,
     this.links,
   });
@@ -20,12 +21,15 @@ class Checkpoint {
 
     return Checkpoint(
       createdAt: createdAt,
+      data: CheckpointState.fromJson(json['data']),
       state: json['state'] is List ? List<String>.from(json['state']) : null,
       links: CheckpointLinks.fromJson(json['_links']),
     );
   }
 
   DateTime createdAt;
+
+  CheckpointState data;
 
   List<String> state;
 
@@ -41,6 +45,7 @@ class Checkpoint {
     return other is Checkpoint &&
         runtimeType == other.runtimeType &&
         createdAt == other.createdAt &&
+        data == other.data &&
         DeepCollectionEquality.unordered().equals(state, other.state) &&
         links == other.links;
   }
@@ -57,6 +62,7 @@ class Checkpoint {
     }
 
     hashCode ^= createdAt?.hashCode ?? 0;
+    hashCode ^= data?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
 
     return hashCode;
@@ -68,7 +74,7 @@ class Checkpoint {
   }
 
   static Map<String, Checkpoint> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Checkpoint>((String key, dynamic value) {
           return MapEntry(key, Checkpoint.fromJson(value));
         }) ??
         <String, Checkpoint>{};
@@ -77,6 +83,7 @@ class Checkpoint {
   Map<String, dynamic> toJson() {
     return {
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (data != null) 'data': data.toJson(),
       if (state != null) 'state': state,
       if (links != null) '_links': links.toJson(),
     };
@@ -84,6 +91,6 @@ class Checkpoint {
 
   @override
   String toString() {
-    return 'Checkpoint[createdAt=$createdAt, state=$state, links=$links, ]';
+    return 'Checkpoint[createdAt=$createdAt, data=$data, state=$state, links=$links, ]';
   }
 }

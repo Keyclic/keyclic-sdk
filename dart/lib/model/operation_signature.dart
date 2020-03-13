@@ -60,7 +60,7 @@ class OperationSignature {
 
   static Map<String, OperationSignature> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OperationSignature>((String key, dynamic value) {
           return MapEntry(key, OperationSignature.fromJson(value));
         }) ??
         <String, OperationSignature>{};

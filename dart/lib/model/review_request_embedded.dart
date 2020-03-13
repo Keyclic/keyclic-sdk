@@ -48,7 +48,8 @@ class ReviewRequestEmbedded {
 
   static Map<String, ReviewRequestEmbedded> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, ReviewRequestEmbedded>((String key, dynamic value) {
           return MapEntry(key, ReviewRequestEmbedded.fromJson(value));
         }) ??
         <String, ReviewRequestEmbedded>{};

@@ -48,7 +48,8 @@ class OperationEmbeddedDuration {
 
   static Map<String, OperationEmbeddedDuration> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OperationEmbeddedDuration>(
+            (String key, dynamic value) {
           return MapEntry(key, OperationEmbeddedDuration.fromJson(value));
         }) ??
         <String, OperationEmbeddedDuration>{};

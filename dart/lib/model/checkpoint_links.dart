@@ -47,7 +47,7 @@ class CheckpointLinks {
   }
 
   static Map<String, CheckpointLinks> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, CheckpointLinks>((String key, dynamic value) {
           return MapEntry(key, CheckpointLinks.fromJson(value));
         }) ??
         <String, CheckpointLinks>{};

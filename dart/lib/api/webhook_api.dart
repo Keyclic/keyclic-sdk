@@ -64,7 +64,7 @@ class WebhookApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;

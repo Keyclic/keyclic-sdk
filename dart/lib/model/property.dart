@@ -116,7 +116,7 @@ class Property {
   }
 
   static Map<String, Property> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Property>((String key, dynamic value) {
           return MapEntry(key, Property.fromJson(value));
         }) ??
         <String, Property>{};

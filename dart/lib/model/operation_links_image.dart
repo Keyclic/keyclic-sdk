@@ -55,7 +55,7 @@ class OperationLinksImage {
 
   static Map<String, OperationLinksImage> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OperationLinksImage>((String key, dynamic value) {
           return MapEntry(key, OperationLinksImage.fromJson(value));
         }) ??
         <String, OperationLinksImage>{};

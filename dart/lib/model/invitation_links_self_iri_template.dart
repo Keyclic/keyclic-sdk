@@ -49,7 +49,8 @@ class InvitationLinksSelfIriTemplate {
 
   static Map<String, InvitationLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, InvitationLinksSelfIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(key, InvitationLinksSelfIriTemplate.fromJson(value));
         }) ??
         <String, InvitationLinksSelfIriTemplate>{};

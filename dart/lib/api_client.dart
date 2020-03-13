@@ -233,6 +233,8 @@ class ApiClient {
           return CheckpointLinksOrganization.fromJson(value);
         case 'CheckpointLinksOrganizationIriTemplate':
           return CheckpointLinksOrganizationIriTemplate.fromJson(value);
+        case 'CheckpointState':
+          return CheckpointState.fromJson(value);
         case 'Choice':
           return Choice.fromJson(value);
         case 'CommentData':

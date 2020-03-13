@@ -175,7 +175,7 @@ var PersonApi = /*#__PURE__*/ (function(_ApiClient) {
    * @param { module:model/String } order   (default to desc)
    * @param { String } organization The identifier of the resource.
    * @param { String } state
-   * @param { Array.<String> } visibility
+   * @param { module:model/String } visibility   (default to VISIBILITY_PUBLIC)
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
@@ -232,6 +232,10 @@ var PersonApi = /*#__PURE__*/ (function(_ApiClient) {
 
         if (typeof order === "undefined" || order === null) {
           order = "desc";
+        } // verify the default value of parameter 'visibility'
+
+        if (typeof visibility === "undefined" || visibility === null) {
+          visibility = "VISIBILITY_PUBLIC";
         } // verify the default value of parameter 'page'
 
         if (typeof page === "undefined" || page === null) {
@@ -272,10 +276,6 @@ var PersonApi = /*#__PURE__*/ (function(_ApiClient) {
 
         if (typeof state === "undefined") {
           state = null;
-        } // verify the null value of parameter 'visibility'
-
-        if (typeof visibility === "undefined") {
-          visibility = null;
         }
 
         var pathParams = {

@@ -69,7 +69,7 @@ class Pagination {
   }
 
   static Map<String, Pagination> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Pagination>((String key, dynamic value) {
           return MapEntry(key, Pagination.fromJson(value));
         }) ??
         <String, Pagination>{};

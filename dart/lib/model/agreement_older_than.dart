@@ -48,7 +48,7 @@ class AgreementOlderThan {
 
   static Map<String, AgreementOlderThan> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, AgreementOlderThan>((String key, dynamic value) {
           return MapEntry(key, AgreementOlderThan.fromJson(value));
         }) ??
         <String, AgreementOlderThan>{};

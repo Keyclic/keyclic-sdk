@@ -50,7 +50,8 @@ class FeedbackLinksCategoryIriTemplate {
 
   static Map<String, FeedbackLinksCategoryIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, FeedbackLinksCategoryIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, FeedbackLinksCategoryIriTemplate.fromJson(value));
         }) ??

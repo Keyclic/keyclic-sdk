@@ -57,7 +57,7 @@ class Feed {
   }
 
   static Map<String, Feed> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Feed>((String key, dynamic value) {
           return MapEntry(key, Feed.fromJson(value));
         }) ??
         <String, Feed>{};

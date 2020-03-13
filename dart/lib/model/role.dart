@@ -107,7 +107,7 @@ class Role {
   }
 
   static Map<String, Role> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Role>((String key, dynamic value) {
           return MapEntry(key, Role.fromJson(value));
         }) ??
         <String, Role>{};

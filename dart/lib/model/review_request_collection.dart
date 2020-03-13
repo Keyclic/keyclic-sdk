@@ -52,7 +52,8 @@ class ReviewRequestCollection {
 
   static Map<String, ReviewRequestCollection> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, ReviewRequestCollection>((String key, dynamic value) {
           return MapEntry(key, ReviewRequestCollection.fromJson(value));
         }) ??
         <String, ReviewRequestCollection>{};

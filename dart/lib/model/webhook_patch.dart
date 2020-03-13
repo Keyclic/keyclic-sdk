@@ -53,7 +53,7 @@ class WebhookPatch {
   }
 
   static Map<String, WebhookPatch> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, WebhookPatch>((String key, dynamic value) {
           return MapEntry(key, WebhookPatch.fromJson(value));
         }) ??
         <String, WebhookPatch>{};

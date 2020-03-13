@@ -120,7 +120,7 @@ class Configuration {
   }
 
   static Map<String, Configuration> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Configuration>((String key, dynamic value) {
           return MapEntry(key, Configuration.fromJson(value));
         }) ??
         <String, Configuration>{};

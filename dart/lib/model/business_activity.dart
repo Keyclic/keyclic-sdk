@@ -101,7 +101,7 @@ class BusinessActivity {
   }
 
   static Map<String, BusinessActivity> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, BusinessActivity>((String key, dynamic value) {
           return MapEntry(key, BusinessActivity.fromJson(value));
         }) ??
         <String, BusinessActivity>{};

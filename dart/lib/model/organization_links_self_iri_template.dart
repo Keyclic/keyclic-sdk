@@ -51,7 +51,8 @@ class OrganizationLinksSelfIriTemplate {
 
   static Map<String, OrganizationLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OrganizationLinksSelfIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, OrganizationLinksSelfIriTemplate.fromJson(value));
         }) ??

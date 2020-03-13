@@ -125,7 +125,7 @@ class Application {
   }
 
   static Map<String, Application> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Application>((String key, dynamic value) {
           return MapEntry(key, Application.fromJson(value));
         }) ??
         <String, Application>{};

@@ -11,8 +11,8 @@
  */
 
 import ApiClient from "../ApiClient";
-import State from "./State";
 import Transition from "./Transition";
+import WorkflowState from "./WorkflowState";
 
 /**
  * The DelegationEmbeddedWorkflow model module.
@@ -29,7 +29,7 @@ export default class DelegationEmbeddedWorkflow {
     this.state = null;
     this.transitions = [];
 
-    this.stateType = State;
+    this.stateType = WorkflowState;
     this.transitionsType = Transition;
   }
 
@@ -61,14 +61,14 @@ export default class DelegationEmbeddedWorkflow {
   }
 
   /**
-   * @return { module:model/State }
+   * @return { module:model/WorkflowState }
    */
   getState() {
     return this.state;
   }
 
   /**
-   * @param { module:model/State } state
+   * @param { module:model/WorkflowState } state
    */
   setState(state) {
     this.state = state;

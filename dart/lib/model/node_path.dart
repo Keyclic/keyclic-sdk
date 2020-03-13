@@ -51,7 +51,7 @@ class NodePath {
   }
 
   static Map<String, NodePath> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, NodePath>((String key, dynamic value) {
           return MapEntry(key, NodePath.fromJson(value));
         }) ??
         <String, NodePath>{};

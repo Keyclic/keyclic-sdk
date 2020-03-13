@@ -51,7 +51,7 @@ class SectionCollection {
   }
 
   static Map<String, SectionCollection> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, SectionCollection>((String key, dynamic value) {
           return MapEntry(key, SectionCollection.fromJson(value));
         }) ??
         <String, SectionCollection>{};

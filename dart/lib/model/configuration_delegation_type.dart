@@ -61,7 +61,8 @@ class ConfigurationDelegationType {
 
   static Map<String, ConfigurationDelegationType> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ConfigurationDelegationType>(
+            (String key, dynamic value) {
           return MapEntry(key, ConfigurationDelegationType.fromJson(value));
         }) ??
         <String, ConfigurationDelegationType>{};

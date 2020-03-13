@@ -49,7 +49,8 @@ class DocumentLinksSelfIriTemplate {
 
   static Map<String, DocumentLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DocumentLinksSelfIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(key, DocumentLinksSelfIriTemplate.fromJson(value));
         }) ??
         <String, DocumentLinksSelfIriTemplate>{};

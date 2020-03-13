@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**state** | [**State**](State.md) |  | [optional] 
+**state** | [**WorkflowState**](WorkflowState.md) |  | [optional] 
 **transitions** | [**[Transition]**](Transition.md) |  | [optional] 
 
 

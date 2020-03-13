@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import State from "./State";
+import WorkflowState from "./WorkflowState";
 
 /**
  * The Transition model module.
@@ -29,11 +29,12 @@ export default class Transition {
     this.type = null;
     this.name = null;
     this.description = null;
+    this.commentRequired = null;
     this.from = null;
     this.to = null;
 
-    this.fromType = State;
-    this.toType = State;
+    this.fromType = WorkflowState;
+    this.toType = WorkflowState;
   }
 
   /**
@@ -64,6 +65,12 @@ export default class Transition {
       object.description = ApiClient.convertToType(
         data["description"],
         "String"
+      );
+    }
+    if (data.hasOwnProperty("commentRequired")) {
+      object.commentRequired = ApiClient.convertToType(
+        data["commentRequired"],
+        "Boolean"
       );
     }
     if (data.hasOwnProperty("from")) {
@@ -129,27 +136,40 @@ export default class Transition {
     this.description = description;
   }
   /**
-   * @return { module:model/State }
+   * @return { Boolean }
+   */
+  getCommentRequired() {
+    return this.commentRequired;
+  }
+
+  /**
+   * @param { Boolean } commentRequired
+   */
+  setCommentRequired(commentRequired) {
+    this.commentRequired = commentRequired;
+  }
+  /**
+   * @return { module:model/WorkflowState }
    */
   getFrom() {
     return this.from;
   }
 
   /**
-   * @param { module:model/State } from
+   * @param { module:model/WorkflowState } from
    */
   setFrom(from) {
     this.from = from;
   }
   /**
-   * @return { module:model/State }
+   * @return { module:model/WorkflowState }
    */
   getTo() {
     return this.to;
   }
 
   /**
-   * @param { module:model/State } to
+   * @param { module:model/WorkflowState } to
    */
   setTo(to) {
     this.to = to;

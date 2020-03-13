@@ -49,7 +49,7 @@ let opts = {
   'order': "desc", // String | 
   'organization': "organization_example", // String | The identifier of the resource.
   'state': "state_example", // String | 
-  'visibility': ["visibility_example"], // [String] | 
+  'visibility': "VISIBILITY_PUBLIC", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10 // Number | Page of the overview.
 };
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
  **state** | **String**|  | [optional] 
- **visibility** | [**[String]**](String.md)|  | [optional] 
+ **visibility** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
 

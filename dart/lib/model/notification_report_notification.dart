@@ -55,7 +55,8 @@ class NotificationReportNotification {
 
   static Map<String, NotificationReportNotification> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, NotificationReportNotification>(
+            (String key, dynamic value) {
           return MapEntry(key, NotificationReportNotification.fromJson(value));
         }) ??
         <String, NotificationReportNotification>{};

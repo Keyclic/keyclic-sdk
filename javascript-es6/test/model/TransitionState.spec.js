@@ -53,6 +53,18 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.TransitionState);
     });
 
+    it('should have the property allowAdd (base name: "allowAdd")', function() {
+      // uncomment below and update the code to test the property allowAdd
+      //var instane = new @KeyclicSdkJavascript.TransitionState();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property allowDispatch (base name: "allowDispatch")', function() {
+      // uncomment below and update the code to test the property allowDispatch
+      //var instane = new @KeyclicSdkJavascript.TransitionState();
+      //expect(instance).to.be();
+    });
+
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
       //var instane = new @KeyclicSdkJavascript.TransitionState();

@@ -65,7 +65,7 @@ class InvitationApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;

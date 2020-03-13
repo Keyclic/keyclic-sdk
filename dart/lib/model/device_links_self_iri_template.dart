@@ -48,7 +48,8 @@ class DeviceLinksSelfIriTemplate {
 
   static Map<String, DeviceLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DeviceLinksSelfIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(key, DeviceLinksSelfIriTemplate.fromJson(value));
         }) ??
         <String, DeviceLinksSelfIriTemplate>{};

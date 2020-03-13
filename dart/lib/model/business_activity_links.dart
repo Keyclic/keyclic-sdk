@@ -66,7 +66,8 @@ class BusinessActivityLinks {
 
   static Map<String, BusinessActivityLinks> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, BusinessActivityLinks>((String key, dynamic value) {
           return MapEntry(key, BusinessActivityLinks.fromJson(value));
         }) ??
         <String, BusinessActivityLinks>{};

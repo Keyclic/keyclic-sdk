@@ -49,7 +49,8 @@ class SectionLinksSelfIriTemplate {
 
   static Map<String, SectionLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, SectionLinksSelfIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(key, SectionLinksSelfIriTemplate.fromJson(value));
         }) ??
         <String, SectionLinksSelfIriTemplate>{};

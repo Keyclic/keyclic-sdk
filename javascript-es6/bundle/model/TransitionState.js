@@ -47,6 +47,8 @@ var TransitionState = /*#__PURE__*/ (function() {
   function TransitionState() {
     _classCallCheck(this, TransitionState);
 
+    this.allowAdd = null;
+    this.allowDispatch = null;
     this.color = null;
     this.description = null;
     this.id = null;
@@ -65,11 +67,47 @@ var TransitionState = /*#__PURE__*/ (function() {
     TransitionState,
     [
       {
-        key: "getColor",
+        key: "getAllowAdd",
 
+        /**
+         * @return { Boolean }
+         */
+        value: function getAllowAdd() {
+          return this.allowAdd;
+        }
+        /**
+         * @param { Boolean } allowAdd
+         */
+      },
+      {
+        key: "setAllowAdd",
+        value: function setAllowAdd(allowAdd) {
+          this.allowAdd = allowAdd;
+        }
+        /**
+         * @return { Boolean }
+         */
+      },
+      {
+        key: "getAllowDispatch",
+        value: function getAllowDispatch() {
+          return this.allowDispatch;
+        }
+        /**
+         * @param { Boolean } allowDispatch
+         */
+      },
+      {
+        key: "setAllowDispatch",
+        value: function setAllowDispatch(allowDispatch) {
+          this.allowDispatch = allowDispatch;
+        }
         /**
          * @return { String }
          */
+      },
+      {
+        key: "getColor",
         value: function getColor() {
           return this.color;
         }
@@ -171,6 +209,20 @@ var TransitionState = /*#__PURE__*/ (function() {
 
           if (object === null) {
             object = new TransitionState();
+          }
+
+          if (data.hasOwnProperty("allowAdd")) {
+            object.allowAdd = _ApiClient.default.convertToType(
+              data["allowAdd"],
+              "Boolean"
+            );
+          }
+
+          if (data.hasOwnProperty("allowDispatch")) {
+            object.allowDispatch = _ApiClient.default.convertToType(
+              data["allowDispatch"],
+              "Boolean"
+            );
           }
 
           if (data.hasOwnProperty("color")) {

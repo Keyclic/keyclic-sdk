@@ -56,7 +56,8 @@ class PlaceLinksContainedInPlace {
 
   static Map<String, PlaceLinksContainedInPlace> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PlaceLinksContainedInPlace>(
+            (String key, dynamic value) {
           return MapEntry(key, PlaceLinksContainedInPlace.fromJson(value));
         }) ??
         <String, PlaceLinksContainedInPlace>{};

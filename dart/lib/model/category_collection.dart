@@ -52,7 +52,7 @@ class CategoryCollection {
 
   static Map<String, CategoryCollection> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, CategoryCollection>((String key, dynamic value) {
           return MapEntry(key, CategoryCollection.fromJson(value));
         }) ??
         <String, CategoryCollection>{};

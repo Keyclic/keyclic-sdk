@@ -59,7 +59,7 @@ class DocumentDataFile {
   }
 
   static Map<String, DocumentDataFile> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DocumentDataFile>((String key, dynamic value) {
           return MapEntry(key, DocumentDataFile.fromJson(value));
         }) ??
         <String, DocumentDataFile>{};

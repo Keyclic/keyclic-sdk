@@ -49,7 +49,8 @@ class PersonLinksSelfIriTemplate {
 
   static Map<String, PersonLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PersonLinksSelfIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(key, PersonLinksSelfIriTemplate.fromJson(value));
         }) ??
         <String, PersonLinksSelfIriTemplate>{};

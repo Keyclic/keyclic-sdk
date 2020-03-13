@@ -68,7 +68,8 @@ class BusinessActivitySchema {
 
   static Map<String, BusinessActivitySchema> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, BusinessActivitySchema>((String key, dynamic value) {
           return MapEntry(key, BusinessActivitySchema.fromJson(value));
         }) ??
         <String, BusinessActivitySchema>{};

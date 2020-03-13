@@ -65,7 +65,7 @@ class PublicationData {
   }
 
   static Map<String, PublicationData> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PublicationData>((String key, dynamic value) {
           return MapEntry(key, PublicationData.fromJson(value));
         }) ??
         <String, PublicationData>{};

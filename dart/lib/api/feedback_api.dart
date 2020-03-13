@@ -93,7 +93,7 @@ class FeedbackApi {
     List<String> geoHash__,
     String order,
     String organization,
-    List<String> visibility__,
+    String visibility__,
     int page,
     int limit,
   }) async {
@@ -124,8 +124,7 @@ class FeedbackApi {
       if (organization != null)
         ..._convertParametersForCollectionFormat("organization", organization),
       if (visibility__ != null)
-        ..._convertParametersForCollectionFormat("visibility[]", visibility__,
-            collectionFormat: "multi"),
+        ..._convertParametersForCollectionFormat("visibility[]", visibility__),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),

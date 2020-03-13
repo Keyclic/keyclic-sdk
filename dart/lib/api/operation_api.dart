@@ -143,7 +143,7 @@ class OperationApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;
@@ -208,7 +208,7 @@ class OperationApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;

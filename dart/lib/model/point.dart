@@ -57,7 +57,7 @@ class Point {
   }
 
   static Map<String, Point> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Point>((String key, dynamic value) {
           return MapEntry(key, Point.fromJson(value));
         }) ??
         <String, Point>{};

@@ -59,7 +59,7 @@ class PlaceGeoShape {
   }
 
   static Map<String, PlaceGeoShape> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PlaceGeoShape>((String key, dynamic value) {
           return MapEntry(key, PlaceGeoShape.fromJson(value));
         }) ??
         <String, PlaceGeoShape>{};

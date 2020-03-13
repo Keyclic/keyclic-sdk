@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _State = _interopRequireDefault(require("./State"));
+var _WorkflowState = _interopRequireDefault(require("./WorkflowState"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -53,10 +53,11 @@ var Transition = /*#__PURE__*/ (function() {
     this.type = null;
     this.name = null;
     this.description = null;
+    this.commentRequired = null;
     this.from = null;
     this.to = null;
-    this.fromType = _State.default;
-    this.toType = _State.default;
+    this.fromType = _WorkflowState.default;
+    this.toType = _WorkflowState.default;
   }
   /**
    * Constructs a "Transition" from a plain JavaScript object.
@@ -141,7 +142,25 @@ var Transition = /*#__PURE__*/ (function() {
           this.description = description;
         }
         /**
-         * @return { module:model/State }
+         * @return { Boolean }
+         */
+      },
+      {
+        key: "getCommentRequired",
+        value: function getCommentRequired() {
+          return this.commentRequired;
+        }
+        /**
+         * @param { Boolean } commentRequired
+         */
+      },
+      {
+        key: "setCommentRequired",
+        value: function setCommentRequired(commentRequired) {
+          this.commentRequired = commentRequired;
+        }
+        /**
+         * @return { module:model/WorkflowState }
          */
       },
       {
@@ -150,7 +169,7 @@ var Transition = /*#__PURE__*/ (function() {
           return this.from;
         }
         /**
-         * @param { module:model/State } from
+         * @param { module:model/WorkflowState } from
          */
       },
       {
@@ -159,7 +178,7 @@ var Transition = /*#__PURE__*/ (function() {
           this.from = from;
         }
         /**
-         * @return { module:model/State }
+         * @return { module:model/WorkflowState }
          */
       },
       {
@@ -168,7 +187,7 @@ var Transition = /*#__PURE__*/ (function() {
           return this.to;
         }
         /**
-         * @param { module:model/State } to
+         * @param { module:model/WorkflowState } to
          */
       },
       {
@@ -217,6 +236,13 @@ var Transition = /*#__PURE__*/ (function() {
             object.description = _ApiClient.default.convertToType(
               data["description"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("commentRequired")) {
+            object.commentRequired = _ApiClient.default.convertToType(
+              data["commentRequired"],
+              "Boolean"
             );
           }
 

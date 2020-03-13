@@ -48,7 +48,7 @@ class PreferencesReference {
 
   static Map<String, PreferencesReference> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PreferencesReference>((String key, dynamic value) {
           return MapEntry(key, PreferencesReference.fromJson(value));
         }) ??
         <String, PreferencesReference>{};

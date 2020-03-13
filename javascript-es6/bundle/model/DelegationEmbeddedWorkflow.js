@@ -7,9 +7,9 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _State = _interopRequireDefault(require("./State"));
-
 var _Transition = _interopRequireDefault(require("./Transition"));
+
+var _WorkflowState = _interopRequireDefault(require("./WorkflowState"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -53,7 +53,7 @@ var DelegationEmbeddedWorkflow = /*#__PURE__*/ (function() {
 
     this.state = null;
     this.transitions = [];
-    this.stateType = _State.default;
+    this.stateType = _WorkflowState.default;
     this.transitionsType = _Transition.default;
   }
   /**
@@ -70,13 +70,13 @@ var DelegationEmbeddedWorkflow = /*#__PURE__*/ (function() {
         key: "getState",
 
         /**
-         * @return { module:model/State }
+         * @return { module:model/WorkflowState }
          */
         value: function getState() {
           return this.state;
         }
         /**
-         * @param { module:model/State } state
+         * @param { module:model/WorkflowState } state
          */
       },
       {

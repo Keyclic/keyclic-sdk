@@ -62,7 +62,7 @@ class DelegationEmbedded {
 
   static Map<String, DelegationEmbedded> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DelegationEmbedded>((String key, dynamic value) {
           return MapEntry(key, DelegationEmbedded.fromJson(value));
         }) ??
         <String, DelegationEmbedded>{};

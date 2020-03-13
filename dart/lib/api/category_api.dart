@@ -156,7 +156,7 @@ class CategoryApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;

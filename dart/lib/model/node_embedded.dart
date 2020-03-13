@@ -61,7 +61,7 @@ class NodeEmbedded {
   }
 
   static Map<String, NodeEmbedded> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, NodeEmbedded>((String key, dynamic value) {
           return MapEntry(key, NodeEmbedded.fromJson(value));
         }) ??
         <String, NodeEmbedded>{};

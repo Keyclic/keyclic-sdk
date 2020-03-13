@@ -55,7 +55,7 @@ class OperationLinksSelf {
 
   static Map<String, OperationLinksSelf> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OperationLinksSelf>((String key, dynamic value) {
           return MapEntry(key, OperationLinksSelf.fromJson(value));
         }) ??
         <String, OperationLinksSelf>{};

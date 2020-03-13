@@ -2,6 +2,8 @@ part of keyclic_sdk_api.api;
 
 class TransitionState {
   TransitionState({
+    this.allowAdd,
+    this.allowDispatch,
     this.color,
     this.description,
     this.id,
@@ -16,6 +18,8 @@ class TransitionState {
     }
 
     return TransitionState(
+      allowAdd: json['allowAdd'],
+      allowDispatch: json['allowDispatch'],
       color: json['color'],
       description: json['description'],
       id: json['id'],
@@ -24,6 +28,10 @@ class TransitionState {
       type: json['type'],
     );
   }
+
+  bool allowAdd;
+
+  bool allowDispatch;
 
   String color;
 
@@ -46,6 +54,8 @@ class TransitionState {
 
     return other is TransitionState &&
         runtimeType == other.runtimeType &&
+        allowAdd == other.allowAdd &&
+        allowDispatch == other.allowDispatch &&
         color == other.color &&
         description == other.description &&
         id == other.id &&
@@ -59,6 +69,8 @@ class TransitionState {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= allowAdd?.hashCode ?? 0;
+    hashCode ^= allowDispatch?.hashCode ?? 0;
     hashCode ^= color?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
@@ -77,7 +89,7 @@ class TransitionState {
   }
 
   static Map<String, TransitionState> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, TransitionState>((String key, dynamic value) {
           return MapEntry(key, TransitionState.fromJson(value));
         }) ??
         <String, TransitionState>{};
@@ -85,6 +97,8 @@ class TransitionState {
 
   Map<String, dynamic> toJson() {
     return {
+      if (allowAdd != null) 'allowAdd': allowAdd,
+      if (allowDispatch != null) 'allowDispatch': allowDispatch,
       if (color != null) 'color': color,
       if (description != null) 'description': description,
       if (id != null) 'id': id,
@@ -96,6 +110,6 @@ class TransitionState {
 
   @override
   String toString() {
-    return 'TransitionState[color=$color, description=$description, id=$id, name=$name, progression=$progression, type=$type, ]';
+    return 'TransitionState[allowAdd=$allowAdd, allowDispatch=$allowDispatch, color=$color, description=$description, id=$id, name=$name, progression=$progression, type=$type, ]';
   }
 }

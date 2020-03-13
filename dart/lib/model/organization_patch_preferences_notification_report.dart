@@ -57,7 +57,8 @@ class OrganizationPatchPreferencesNotificationReport {
 
   static Map<String, OrganizationPatchPreferencesNotificationReport>
       mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OrganizationPatchPreferencesNotificationReport>(
+            (String key, dynamic value) {
           return MapEntry(key,
               OrganizationPatchPreferencesNotificationReport.fromJson(value));
         }) ??

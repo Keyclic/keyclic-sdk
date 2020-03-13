@@ -51,7 +51,7 @@ class LoginData {
   }
 
   static Map<String, LoginData> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, LoginData>((String key, dynamic value) {
           return MapEntry(key, LoginData.fromJson(value));
         }) ??
         <String, LoginData>{};

@@ -47,7 +47,7 @@ class SectionLinks {
   }
 
   static Map<String, SectionLinks> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, SectionLinks>((String key, dynamic value) {
           return MapEntry(key, SectionLinks.fromJson(value));
         }) ??
         <String, SectionLinks>{};

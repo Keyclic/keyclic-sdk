@@ -51,7 +51,8 @@ class ReviewRequestLinksSelfIriTemplateMapping {
 
   static Map<String, ReviewRequestLinksSelfIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ReviewRequestLinksSelfIriTemplateMapping>(
+            (String key, dynamic value) {
           return MapEntry(
               key, ReviewRequestLinksSelfIriTemplateMapping.fromJson(value));
         }) ??

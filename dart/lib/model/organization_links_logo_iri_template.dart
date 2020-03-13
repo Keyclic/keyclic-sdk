@@ -51,7 +51,8 @@ class OrganizationLinksLogoIriTemplate {
 
   static Map<String, OrganizationLinksLogoIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OrganizationLinksLogoIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, OrganizationLinksLogoIriTemplate.fromJson(value));
         }) ??

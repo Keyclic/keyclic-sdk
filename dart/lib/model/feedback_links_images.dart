@@ -55,7 +55,7 @@ class FeedbackLinksImages {
 
   static Map<String, FeedbackLinksImages> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, FeedbackLinksImages>((String key, dynamic value) {
           return MapEntry(key, FeedbackLinksImages.fromJson(value));
         }) ??
         <String, FeedbackLinksImages>{};

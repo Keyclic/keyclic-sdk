@@ -77,7 +77,7 @@ class WebhookPagination extends Pagination {
   }
 
   static Map<String, WebhookPagination> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, WebhookPagination>((String key, dynamic value) {
           return MapEntry(key, WebhookPagination.fromJson(value));
         }) ??
         <String, WebhookPagination>{};

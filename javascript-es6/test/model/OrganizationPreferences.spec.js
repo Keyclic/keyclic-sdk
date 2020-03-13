@@ -53,6 +53,12 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.OrganizationPreferences);
     });
 
+    it('should have the property categoryRequired (base name: "categoryRequired")', function() {
+      // uncomment below and update the code to test the property categoryRequired
+      //var instane = new @KeyclicSdkJavascript.OrganizationPreferences();
+      //expect(instance).to.be();
+    });
+
     it('should have the property notification (base name: "notification")', function() {
       // uncomment below and update the code to test the property notification
       //var instane = new @KeyclicSdkJavascript.OrganizationPreferences();

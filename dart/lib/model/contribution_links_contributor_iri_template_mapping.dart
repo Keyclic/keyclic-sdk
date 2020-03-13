@@ -51,7 +51,8 @@ class ContributionLinksContributorIriTemplateMapping {
 
   static Map<String, ContributionLinksContributorIriTemplateMapping>
       mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ContributionLinksContributorIriTemplateMapping>(
+            (String key, dynamic value) {
           return MapEntry(key,
               ContributionLinksContributorIriTemplateMapping.fromJson(value));
         }) ??

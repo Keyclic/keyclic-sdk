@@ -78,7 +78,8 @@ class ContributionPagination extends Pagination {
 
   static Map<String, ContributionPagination> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, ContributionPagination>((String key, dynamic value) {
           return MapEntry(key, ContributionPagination.fromJson(value));
         }) ??
         <String, ContributionPagination>{};

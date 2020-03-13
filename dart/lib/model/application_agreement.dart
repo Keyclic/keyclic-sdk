@@ -60,7 +60,7 @@ class ApplicationAgreement {
 
   static Map<String, ApplicationAgreement> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ApplicationAgreement>((String key, dynamic value) {
           return MapEntry(key, ApplicationAgreement.fromJson(value));
         }) ??
         <String, ApplicationAgreement>{};

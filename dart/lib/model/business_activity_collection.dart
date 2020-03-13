@@ -52,7 +52,8 @@ class BusinessActivityCollection {
 
   static Map<String, BusinessActivityCollection> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, BusinessActivityCollection>(
+            (String key, dynamic value) {
           return MapEntry(key, BusinessActivityCollection.fromJson(value));
         }) ??
         <String, BusinessActivityCollection>{};

@@ -93,7 +93,7 @@ class Section {
   }
 
   static Map<String, Section> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Section>((String key, dynamic value) {
           return MapEntry(key, Section.fromJson(value));
         }) ??
         <String, Section>{};

@@ -74,6 +74,7 @@ import Checkpoint from "./model/Checkpoint";
 import CheckpointLinks from "./model/CheckpointLinks";
 import CheckpointLinksOrganization from "./model/CheckpointLinksOrganization";
 import CheckpointLinksOrganizationIriTemplate from "./model/CheckpointLinksOrganizationIriTemplate";
+import CheckpointState from "./model/CheckpointState";
 import Choice from "./model/Choice";
 import CommentData from "./model/CommentData";
 import Condition from "./model/Condition";
@@ -510,7 +511,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.3.9
+ * @version 2.4.1
  */
 export {
   /**
@@ -808,6 +809,11 @@ export {
    * @property { module:model/CheckpointLinksOrganizationIriTemplate }
    */
   CheckpointLinksOrganizationIriTemplate,
+  /**
+   * The CheckpointState model constructor.
+   * @property { module:model/CheckpointState }
+   */
+  CheckpointState,
   /**
    * The Choice model constructor.
    * @property { module:model/Choice }

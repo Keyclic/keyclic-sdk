@@ -12,12 +12,12 @@ class DelegationEmbeddedWorkflow {
     }
 
     return DelegationEmbeddedWorkflow(
-      state: State.fromJson(json['state']),
+      state: WorkflowState.fromJson(json['state']),
       transitions: Transition.listFromJson(json['transitions']),
     );
   }
 
-  State state;
+  WorkflowState state;
 
   List<Transition> transitions;
 
@@ -60,7 +60,8 @@ class DelegationEmbeddedWorkflow {
 
   static Map<String, DelegationEmbeddedWorkflow> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DelegationEmbeddedWorkflow>(
+            (String key, dynamic value) {
           return MapEntry(key, DelegationEmbeddedWorkflow.fromJson(value));
         }) ??
         <String, DelegationEmbeddedWorkflow>{};

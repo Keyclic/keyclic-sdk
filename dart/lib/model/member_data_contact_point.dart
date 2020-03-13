@@ -60,7 +60,8 @@ class MemberDataContactPoint {
 
   static Map<String, MemberDataContactPoint> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, MemberDataContactPoint>((String key, dynamic value) {
           return MapEntry(key, MemberDataContactPoint.fromJson(value));
         }) ??
         <String, MemberDataContactPoint>{};

@@ -51,7 +51,7 @@ class PropertyItems {
   }
 
   static Map<String, PropertyItems> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PropertyItems>((String key, dynamic value) {
           return MapEntry(key, PropertyItems.fromJson(value));
         }) ??
         <String, PropertyItems>{};

@@ -48,7 +48,8 @@ class DocumentPatchPermission {
 
   static Map<String, DocumentPatchPermission> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, DocumentPatchPermission>((String key, dynamic value) {
           return MapEntry(key, DocumentPatchPermission.fromJson(value));
         }) ??
         <String, DocumentPatchPermission>{};

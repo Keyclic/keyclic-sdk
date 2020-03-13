@@ -53,7 +53,7 @@ export default class PersonApi extends ApiClient {
    * @param { module:model/String } order   (default to desc)
    * @param { String } organization The identifier of the resource.
    * @param { String } state
-   * @param { Array.<String> } visibility
+   * @param { module:model/String } visibility   (default to VISIBILITY_PUBLIC)
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
@@ -104,6 +104,11 @@ export default class PersonApi extends ApiClient {
       order = "desc";
     }
 
+    // verify the default value of parameter 'visibility'
+    if (typeof visibility === "undefined" || visibility === null) {
+      visibility = "VISIBILITY_PUBLIC";
+    }
+
     // verify the default value of parameter 'page'
     if (typeof page === "undefined" || page === null) {
       page = 1;
@@ -152,11 +157,6 @@ export default class PersonApi extends ApiClient {
     // verify the null value of parameter 'state'
     if (typeof state === "undefined") {
       state = null;
-    }
-
-    // verify the null value of parameter 'visibility'
-    if (typeof visibility === "undefined") {
-      visibility = null;
     }
 
     const pathParams = {

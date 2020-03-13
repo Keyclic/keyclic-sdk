@@ -104,7 +104,7 @@ class Member {
   }
 
   static Map<String, Member> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Member>((String key, dynamic value) {
           return MapEntry(key, Member.fromJson(value));
         }) ??
         <String, Member>{};

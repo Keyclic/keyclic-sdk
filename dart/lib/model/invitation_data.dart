@@ -47,7 +47,7 @@ class InvitationData {
   }
 
   static Map<String, InvitationData> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, InvitationData>((String key, dynamic value) {
           return MapEntry(key, InvitationData.fromJson(value));
         }) ??
         <String, InvitationData>{};

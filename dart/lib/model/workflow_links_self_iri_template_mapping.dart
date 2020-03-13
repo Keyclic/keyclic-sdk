@@ -51,7 +51,8 @@ class WorkflowLinksSelfIriTemplateMapping {
 
   static Map<String, WorkflowLinksSelfIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, WorkflowLinksSelfIriTemplateMapping>(
+            (String key, dynamic value) {
           return MapEntry(
               key, WorkflowLinksSelfIriTemplateMapping.fromJson(value));
         }) ??

@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class OrganizationPreferences {
   OrganizationPreferences({
+    this.categoryRequired,
     this.notification,
     this.offline,
     this.public,
@@ -15,6 +16,7 @@ class OrganizationPreferences {
     }
 
     return OrganizationPreferences(
+      categoryRequired: json['categoryRequired'],
       notification: PreferencesNotification.fromJson(json['notification']),
       offline: json['offline'],
       public: json['public'],
@@ -22,6 +24,8 @@ class OrganizationPreferences {
       reviewEnabled: json['reviewEnabled'],
     );
   }
+
+  bool categoryRequired;
 
   PreferencesNotification notification;
 
@@ -42,6 +46,7 @@ class OrganizationPreferences {
 
     return other is OrganizationPreferences &&
         runtimeType == other.runtimeType &&
+        categoryRequired == other.categoryRequired &&
         notification == other.notification &&
         offline == other.offline &&
         public == other.public &&
@@ -54,6 +59,7 @@ class OrganizationPreferences {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= categoryRequired?.hashCode ?? 0;
     hashCode ^= notification?.hashCode ?? 0;
     hashCode ^= offline?.hashCode ?? 0;
     hashCode ^= public?.hashCode ?? 0;
@@ -72,7 +78,8 @@ class OrganizationPreferences {
 
   static Map<String, OrganizationPreferences> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, OrganizationPreferences>((String key, dynamic value) {
           return MapEntry(key, OrganizationPreferences.fromJson(value));
         }) ??
         <String, OrganizationPreferences>{};
@@ -80,6 +87,7 @@ class OrganizationPreferences {
 
   Map<String, dynamic> toJson() {
     return {
+      if (categoryRequired != null) 'categoryRequired': categoryRequired,
       if (notification != null) 'notification': notification.toJson(),
       if (offline != null) 'offline': offline,
       if (public != null) 'public': public,
@@ -90,6 +98,6 @@ class OrganizationPreferences {
 
   @override
   String toString() {
-    return 'OrganizationPreferences[notification=$notification, offline=$offline, public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
+    return 'OrganizationPreferences[categoryRequired=$categoryRequired, notification=$notification, offline=$offline, public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
   }
 }

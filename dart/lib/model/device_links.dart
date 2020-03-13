@@ -53,7 +53,7 @@ class DeviceLinks {
   }
 
   static Map<String, DeviceLinks> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DeviceLinks>((String key, dynamic value) {
           return MapEntry(key, DeviceLinks.fromJson(value));
         }) ??
         <String, DeviceLinks>{};

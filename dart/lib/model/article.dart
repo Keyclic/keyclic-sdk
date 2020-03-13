@@ -93,7 +93,7 @@ class Article {
   }
 
   static Map<String, Article> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Article>((String key, dynamic value) {
           return MapEntry(key, Article.fromJson(value));
         }) ??
         <String, Article>{};

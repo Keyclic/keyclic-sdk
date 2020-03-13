@@ -52,7 +52,8 @@ class KnowledgeBaseLinksSelfIriTemplate {
 
   static Map<String, KnowledgeBaseLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, KnowledgeBaseLinksSelfIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, KnowledgeBaseLinksSelfIriTemplate.fromJson(value));
         }) ??

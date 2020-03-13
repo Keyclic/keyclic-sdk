@@ -104,7 +104,7 @@ class Choice {
   }
 
   static Map<String, Choice> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Choice>((String key, dynamic value) {
           return MapEntry(key, Choice.fromJson(value));
         }) ??
         <String, Choice>{};

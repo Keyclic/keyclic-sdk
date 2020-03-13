@@ -51,7 +51,8 @@ class OccupantLinksPlaceIriTemplateMapping {
 
   static Map<String, OccupantLinksPlaceIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OccupantLinksPlaceIriTemplateMapping>(
+            (String key, dynamic value) {
           return MapEntry(
               key, OccupantLinksPlaceIriTemplateMapping.fromJson(value));
         }) ??

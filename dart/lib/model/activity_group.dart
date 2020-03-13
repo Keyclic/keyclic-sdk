@@ -119,7 +119,7 @@ class ActivityGroup {
   }
 
   static Map<String, ActivityGroup> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ActivityGroup>((String key, dynamic value) {
           return MapEntry(key, ActivityGroup.fromJson(value));
         }) ??
         <String, ActivityGroup>{};

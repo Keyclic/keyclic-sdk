@@ -48,7 +48,8 @@ class AgreementTermsOfService {
 
   static Map<String, AgreementTermsOfService> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, AgreementTermsOfService>((String key, dynamic value) {
           return MapEntry(key, AgreementTermsOfService.fromJson(value));
         }) ??
         <String, AgreementTermsOfService>{};

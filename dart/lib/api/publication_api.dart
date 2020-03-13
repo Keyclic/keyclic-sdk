@@ -65,7 +65,7 @@ class PublicationApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;

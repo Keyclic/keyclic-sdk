@@ -56,7 +56,8 @@ class DocumentLinksCreatedBy {
 
   static Map<String, DocumentLinksCreatedBy> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, DocumentLinksCreatedBy>((String key, dynamic value) {
           return MapEntry(key, DocumentLinksCreatedBy.fromJson(value));
         }) ??
         <String, DocumentLinksCreatedBy>{};

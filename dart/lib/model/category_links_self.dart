@@ -54,7 +54,7 @@ class CategoryLinksSelf {
   }
 
   static Map<String, CategoryLinksSelf> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, CategoryLinksSelf>((String key, dynamic value) {
           return MapEntry(key, CategoryLinksSelf.fromJson(value));
         }) ??
         <String, CategoryLinksSelf>{};

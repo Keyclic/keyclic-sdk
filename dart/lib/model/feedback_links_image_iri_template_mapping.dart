@@ -57,7 +57,8 @@ class FeedbackLinksImageIriTemplateMapping {
 
   static Map<String, FeedbackLinksImageIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, FeedbackLinksImageIriTemplateMapping>(
+            (String key, dynamic value) {
           return MapEntry(
               key, FeedbackLinksImageIriTemplateMapping.fromJson(value));
         }) ??

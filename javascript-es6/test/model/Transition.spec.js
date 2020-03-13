@@ -77,6 +77,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property commentRequired (base name: "commentRequired")', function() {
+      // uncomment below and update the code to test the property commentRequired
+      //var instane = new @KeyclicSdkJavascript.Transition();
+      //expect(instance).to.be();
+    });
+
     it('should have the property from (base name: "from")', function() {
       // uncomment below and update the code to test the property from
       //var instane = new @KeyclicSdkJavascript.Transition();

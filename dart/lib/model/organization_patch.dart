@@ -71,7 +71,7 @@ class OrganizationPatch {
   }
 
   static Map<String, OrganizationPatch> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OrganizationPatch>((String key, dynamic value) {
           return MapEntry(key, OrganizationPatch.fromJson(value));
         }) ??
         <String, OrganizationPatch>{};

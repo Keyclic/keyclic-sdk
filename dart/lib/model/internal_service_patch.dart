@@ -61,7 +61,7 @@ class InternalServicePatch {
 
   static Map<String, InternalServicePatch> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, InternalServicePatch>((String key, dynamic value) {
           return MapEntry(key, InternalServicePatch.fromJson(value));
         }) ??
         <String, InternalServicePatch>{};

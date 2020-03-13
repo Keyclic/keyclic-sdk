@@ -50,7 +50,8 @@ class DeviceLinksPersonIriTemplate {
 
   static Map<String, DeviceLinksPersonIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DeviceLinksPersonIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(key, DeviceLinksPersonIriTemplate.fromJson(value));
         }) ??
         <String, DeviceLinksPersonIriTemplate>{};

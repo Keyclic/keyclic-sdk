@@ -52,7 +52,8 @@ class DelegationLinksServiceIriTemplate {
 
   static Map<String, DelegationLinksServiceIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DelegationLinksServiceIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, DelegationLinksServiceIriTemplate.fromJson(value));
         }) ??

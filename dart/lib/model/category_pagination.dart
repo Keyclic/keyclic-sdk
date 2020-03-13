@@ -78,7 +78,7 @@ class CategoryPagination extends Pagination {
 
   static Map<String, CategoryPagination> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, CategoryPagination>((String key, dynamic value) {
           return MapEntry(key, CategoryPagination.fromJson(value));
         }) ??
         <String, CategoryPagination>{};

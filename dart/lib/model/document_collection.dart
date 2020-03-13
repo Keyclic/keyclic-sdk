@@ -52,7 +52,7 @@ class DocumentCollection {
 
   static Map<String, DocumentCollection> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DocumentCollection>((String key, dynamic value) {
           return MapEntry(key, DocumentCollection.fromJson(value));
         }) ??
         <String, DocumentCollection>{};

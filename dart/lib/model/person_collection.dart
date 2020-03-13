@@ -51,7 +51,7 @@ class PersonCollection {
   }
 
   static Map<String, PersonCollection> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PersonCollection>((String key, dynamic value) {
           return MapEntry(key, PersonCollection.fromJson(value));
         }) ??
         <String, PersonCollection>{};

@@ -78,7 +78,7 @@ class FeedbackPagination extends Pagination {
 
   static Map<String, FeedbackPagination> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, FeedbackPagination>((String key, dynamic value) {
           return MapEntry(key, FeedbackPagination.fromJson(value));
         }) ??
         <String, FeedbackPagination>{};

@@ -47,7 +47,7 @@ class CommentData {
   }
 
   static Map<String, CommentData> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, CommentData>((String key, dynamic value) {
           return MapEntry(key, CommentData.fromJson(value));
         }) ??
         <String, CommentData>{};

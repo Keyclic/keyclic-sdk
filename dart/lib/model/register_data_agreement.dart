@@ -60,7 +60,8 @@ class RegisterDataAgreement {
 
   static Map<String, RegisterDataAgreement> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, RegisterDataAgreement>((String key, dynamic value) {
           return MapEntry(key, RegisterDataAgreement.fromJson(value));
         }) ??
         <String, RegisterDataAgreement>{};

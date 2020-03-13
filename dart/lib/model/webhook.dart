@@ -99,7 +99,7 @@ class Webhook {
   }
 
   static Map<String, Webhook> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Webhook>((String key, dynamic value) {
           return MapEntry(key, Webhook.fromJson(value));
         }) ??
         <String, Webhook>{};

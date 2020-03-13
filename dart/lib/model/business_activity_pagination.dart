@@ -78,7 +78,8 @@ class BusinessActivityPagination extends Pagination {
 
   static Map<String, BusinessActivityPagination> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, BusinessActivityPagination>(
+            (String key, dynamic value) {
           return MapEntry(key, BusinessActivityPagination.fromJson(value));
         }) ??
         <String, BusinessActivityPagination>{};

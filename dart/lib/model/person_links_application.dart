@@ -56,7 +56,8 @@ class PersonLinksApplication {
 
   static Map<String, PersonLinksApplication> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, PersonLinksApplication>((String key, dynamic value) {
           return MapEntry(key, PersonLinksApplication.fromJson(value));
         }) ??
         <String, PersonLinksApplication>{};

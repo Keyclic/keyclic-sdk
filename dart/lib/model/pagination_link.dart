@@ -47,7 +47,7 @@ class PaginationLink {
   }
 
   static Map<String, PaginationLink> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PaginationLink>((String key, dynamic value) {
           return MapEntry(key, PaginationLink.fromJson(value));
         }) ??
         <String, PaginationLink>{};

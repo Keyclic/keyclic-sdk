@@ -52,7 +52,7 @@ class OccupantCollection {
 
   static Map<String, OccupantCollection> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OccupantCollection>((String key, dynamic value) {
           return MapEntry(key, OccupantCollection.fromJson(value));
         }) ??
         <String, OccupantCollection>{};

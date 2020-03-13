@@ -130,7 +130,7 @@ class Feedback {
   }
 
   static Map<String, Feedback> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Feedback>((String key, dynamic value) {
           return MapEntry(key, Feedback.fromJson(value));
         }) ??
         <String, Feedback>{};

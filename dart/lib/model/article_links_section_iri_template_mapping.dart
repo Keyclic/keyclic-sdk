@@ -51,7 +51,8 @@ class ArticleLinksSectionIriTemplateMapping {
 
   static Map<String, ArticleLinksSectionIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ArticleLinksSectionIriTemplateMapping>(
+            (String key, dynamic value) {
           return MapEntry(
               key, ArticleLinksSectionIriTemplateMapping.fromJson(value));
         }) ??

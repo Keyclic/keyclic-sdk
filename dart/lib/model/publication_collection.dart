@@ -52,7 +52,8 @@ class PublicationCollection {
 
   static Map<String, PublicationCollection> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, PublicationCollection>((String key, dynamic value) {
           return MapEntry(key, PublicationCollection.fromJson(value));
         }) ??
         <String, PublicationCollection>{};

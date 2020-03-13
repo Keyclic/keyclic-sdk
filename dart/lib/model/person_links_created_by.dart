@@ -56,7 +56,7 @@ class PersonLinksCreatedBy {
 
   static Map<String, PersonLinksCreatedBy> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PersonLinksCreatedBy>((String key, dynamic value) {
           return MapEntry(key, PersonLinksCreatedBy.fromJson(value));
         }) ??
         <String, PersonLinksCreatedBy>{};

@@ -273,7 +273,7 @@ class FeedApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;
@@ -344,7 +344,7 @@ class FeedApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;
@@ -409,7 +409,7 @@ class FeedApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;

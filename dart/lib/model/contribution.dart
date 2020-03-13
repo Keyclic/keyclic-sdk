@@ -83,7 +83,7 @@ class Contribution {
   }
 
   static Map<String, Contribution> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Contribution>((String key, dynamic value) {
           return MapEntry(key, Contribution.fromJson(value));
         }) ??
         <String, Contribution>{};

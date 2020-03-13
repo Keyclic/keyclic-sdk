@@ -47,7 +47,7 @@ class PlacePreferences {
   }
 
   static Map<String, PlacePreferences> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PlacePreferences>((String key, dynamic value) {
           return MapEntry(key, PlacePreferences.fromJson(value));
         }) ??
         <String, PlacePreferences>{};

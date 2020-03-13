@@ -21,7 +21,7 @@ class PersonApi {
     String order,
     String organization,
     String state,
-    List<String> visibility__,
+    String visibility__,
     int page,
     int limit,
   }) async {
@@ -58,8 +58,7 @@ class PersonApi {
       if (state != null)
         ..._convertParametersForCollectionFormat("state", state),
       if (visibility__ != null)
-        ..._convertParametersForCollectionFormat("visibility[]", visibility__,
-            collectionFormat: "multi"),
+        ..._convertParametersForCollectionFormat("visibility[]", visibility__),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),

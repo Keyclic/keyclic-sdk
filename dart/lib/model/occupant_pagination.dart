@@ -78,7 +78,7 @@ class OccupantPagination extends Pagination {
 
   static Map<String, OccupantPagination> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OccupantPagination>((String key, dynamic value) {
           return MapEntry(key, OccupantPagination.fromJson(value));
         }) ??
         <String, OccupantPagination>{};

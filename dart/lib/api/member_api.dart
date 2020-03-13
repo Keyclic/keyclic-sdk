@@ -64,7 +64,7 @@ class MemberApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;

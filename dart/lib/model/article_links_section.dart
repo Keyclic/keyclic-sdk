@@ -55,7 +55,7 @@ class ArticleLinksSection {
 
   static Map<String, ArticleLinksSection> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ArticleLinksSection>((String key, dynamic value) {
           return MapEntry(key, ArticleLinksSection.fromJson(value));
         }) ??
         <String, ArticleLinksSection>{};

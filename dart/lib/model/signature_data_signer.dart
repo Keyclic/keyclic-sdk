@@ -54,7 +54,7 @@ class SignatureDataSigner {
 
   static Map<String, SignatureDataSigner> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, SignatureDataSigner>((String key, dynamic value) {
           return MapEntry(key, SignatureDataSigner.fromJson(value));
         }) ??
         <String, SignatureDataSigner>{};

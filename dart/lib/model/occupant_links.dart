@@ -59,7 +59,7 @@ class OccupantLinks {
   }
 
   static Map<String, OccupantLinks> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OccupantLinks>((String key, dynamic value) {
           return MapEntry(key, OccupantLinks.fromJson(value));
         }) ??
         <String, OccupantLinks>{};

@@ -59,7 +59,7 @@ class Chart {
   }
 
   static Map<String, Chart> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Chart>((String key, dynamic value) {
           return MapEntry(key, Chart.fromJson(value));
         }) ??
         <String, Chart>{};

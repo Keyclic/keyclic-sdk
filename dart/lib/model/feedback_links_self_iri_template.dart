@@ -50,7 +50,8 @@ class FeedbackLinksSelfIriTemplate {
 
   static Map<String, FeedbackLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, FeedbackLinksSelfIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(key, FeedbackLinksSelfIriTemplate.fromJson(value));
         }) ??
         <String, FeedbackLinksSelfIriTemplate>{};

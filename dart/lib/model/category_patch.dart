@@ -65,7 +65,7 @@ class CategoryPatch {
   }
 
   static Map<String, CategoryPatch> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, CategoryPatch>((String key, dynamic value) {
           return MapEntry(key, CategoryPatch.fromJson(value));
         }) ??
         <String, CategoryPatch>{};

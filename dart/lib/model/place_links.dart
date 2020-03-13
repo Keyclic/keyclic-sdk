@@ -64,7 +64,7 @@ class PlaceLinks {
   }
 
   static Map<String, PlaceLinks> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PlaceLinks>((String key, dynamic value) {
           return MapEntry(key, PlaceLinks.fromJson(value));
         }) ??
         <String, PlaceLinks>{};

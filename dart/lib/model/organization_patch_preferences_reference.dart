@@ -51,7 +51,8 @@ class OrganizationPatchPreferencesReference {
 
   static Map<String, OrganizationPatchPreferencesReference> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OrganizationPatchPreferencesReference>(
+            (String key, dynamic value) {
           return MapEntry(
               key, OrganizationPatchPreferencesReference.fromJson(value));
         }) ??

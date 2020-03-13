@@ -77,7 +77,7 @@ class MemberEmbedded {
   }
 
   static Map<String, MemberEmbedded> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, MemberEmbedded>((String key, dynamic value) {
           return MapEntry(key, MemberEmbedded.fromJson(value));
         }) ??
         <String, MemberEmbedded>{};

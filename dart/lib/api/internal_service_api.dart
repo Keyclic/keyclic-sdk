@@ -65,7 +65,7 @@ class InternalServiceApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;

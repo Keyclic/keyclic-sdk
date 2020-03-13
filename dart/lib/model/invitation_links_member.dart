@@ -56,7 +56,8 @@ class InvitationLinksMember {
 
   static Map<String, InvitationLinksMember> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, InvitationLinksMember>((String key, dynamic value) {
           return MapEntry(key, InvitationLinksMember.fromJson(value));
         }) ??
         <String, InvitationLinksMember>{};

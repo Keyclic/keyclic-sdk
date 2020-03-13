@@ -52,7 +52,8 @@ class PublicationLinksAuthorIriTemplate {
 
   static Map<String, PublicationLinksAuthorIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PublicationLinksAuthorIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, PublicationLinksAuthorIriTemplate.fromJson(value));
         }) ??

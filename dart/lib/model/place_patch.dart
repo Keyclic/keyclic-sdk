@@ -57,7 +57,7 @@ class PlacePatch {
   }
 
   static Map<String, PlacePatch> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PlacePatch>((String key, dynamic value) {
           return MapEntry(key, PlacePatch.fromJson(value));
         }) ??
         <String, PlacePatch>{};

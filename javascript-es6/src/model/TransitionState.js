@@ -24,6 +24,8 @@ export default class TransitionState {
     
      */
   constructor() {
+    this.allowAdd = null;
+    this.allowDispatch = null;
     this.color = null;
     this.description = null;
     this.id = null;
@@ -47,6 +49,15 @@ export default class TransitionState {
       object = new TransitionState();
     }
 
+    if (data.hasOwnProperty("allowAdd")) {
+      object.allowAdd = ApiClient.convertToType(data["allowAdd"], "Boolean");
+    }
+    if (data.hasOwnProperty("allowDispatch")) {
+      object.allowDispatch = ApiClient.convertToType(
+        data["allowDispatch"],
+        "Boolean"
+      );
+    }
     if (data.hasOwnProperty("color")) {
       object.color = ApiClient.convertToType(data["color"], "String");
     }
@@ -75,6 +86,32 @@ export default class TransitionState {
     return object;
   }
 
+  /**
+   * @return { Boolean }
+   */
+  getAllowAdd() {
+    return this.allowAdd;
+  }
+
+  /**
+   * @param { Boolean } allowAdd
+   */
+  setAllowAdd(allowAdd) {
+    this.allowAdd = allowAdd;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getAllowDispatch() {
+    return this.allowDispatch;
+  }
+
+  /**
+   * @param { Boolean } allowDispatch
+   */
+  setAllowDispatch(allowDispatch) {
+    this.allowDispatch = allowDispatch;
+  }
   /**
    * @return { String }
    */

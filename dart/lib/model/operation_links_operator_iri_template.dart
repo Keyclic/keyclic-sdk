@@ -52,7 +52,8 @@ class OperationLinksOperatorIriTemplate {
 
   static Map<String, OperationLinksOperatorIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OperationLinksOperatorIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, OperationLinksOperatorIriTemplate.fromJson(value));
         }) ??

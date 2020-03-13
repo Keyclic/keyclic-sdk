@@ -77,7 +77,7 @@ class FeedPagination extends Pagination {
   }
 
   static Map<String, FeedPagination> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, FeedPagination>((String key, dynamic value) {
           return MapEntry(key, FeedPagination.fromJson(value));
         }) ??
         <String, FeedPagination>{};

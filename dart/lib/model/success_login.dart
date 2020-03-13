@@ -59,7 +59,7 @@ class SuccessLogin {
   }
 
   static Map<String, SuccessLogin> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, SuccessLogin>((String key, dynamic value) {
           return MapEntry(key, SuccessLogin.fromJson(value));
         }) ??
         <String, SuccessLogin>{};

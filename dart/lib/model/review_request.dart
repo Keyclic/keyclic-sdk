@@ -89,7 +89,7 @@ class ReviewRequest {
   }
 
   static Map<String, ReviewRequest> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ReviewRequest>((String key, dynamic value) {
           return MapEntry(key, ReviewRequest.fromJson(value));
         }) ??
         <String, ReviewRequest>{};

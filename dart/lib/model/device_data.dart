@@ -57,7 +57,7 @@ class DeviceData {
   }
 
   static Map<String, DeviceData> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DeviceData>((String key, dynamic value) {
           return MapEntry(key, DeviceData.fromJson(value));
         }) ??
         <String, DeviceData>{};

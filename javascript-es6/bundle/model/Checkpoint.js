@@ -9,6 +9,8 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _CheckpointLinks = _interopRequireDefault(require("./CheckpointLinks"));
 
+var _CheckpointState = _interopRequireDefault(require("./CheckpointState"));
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -50,8 +52,10 @@ var Checkpoint = /*#__PURE__*/ (function() {
     _classCallCheck(this, Checkpoint);
 
     this.createdAt = null;
+    this.data = null;
     this.state = [];
     this.links = null;
+    this.dataType = _CheckpointState.default;
     this.linksType = _CheckpointLinks.default;
   }
   /**
@@ -72,6 +76,24 @@ var Checkpoint = /*#__PURE__*/ (function() {
          */
         value: function getCreatedAt() {
           return this.createdAt;
+        }
+        /**
+         * @return { module:model/CheckpointState }
+         */
+      },
+      {
+        key: "getData",
+        value: function getData() {
+          return this.data;
+        }
+        /**
+         * @param { module:model/CheckpointState } data
+         */
+      },
+      {
+        key: "setData",
+        value: function setData(data) {
+          this.data = data;
         }
         /**
          * @return { Array.<String> }
@@ -132,6 +154,13 @@ var Checkpoint = /*#__PURE__*/ (function() {
             object.createdAt = _ApiClient.default.convertToType(
               data["createdAt"],
               "Date"
+            );
+          }
+
+          if (data.hasOwnProperty("data")) {
+            object.data = _ApiClient.default.convertToType(
+              data["data"],
+              object.dataType
             );
           }
 

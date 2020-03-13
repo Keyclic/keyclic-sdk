@@ -55,7 +55,8 @@ class FeedbackWorkflowTransitionData {
 
   static Map<String, FeedbackWorkflowTransitionData> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, FeedbackWorkflowTransitionData>(
+            (String key, dynamic value) {
           return MapEntry(key, FeedbackWorkflowTransitionData.fromJson(value));
         }) ??
         <String, FeedbackWorkflowTransitionData>{};

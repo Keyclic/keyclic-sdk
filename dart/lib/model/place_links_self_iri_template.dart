@@ -48,7 +48,8 @@ class PlaceLinksSelfIriTemplate {
 
   static Map<String, PlaceLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PlaceLinksSelfIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(key, PlaceLinksSelfIriTemplate.fromJson(value));
         }) ??
         <String, PlaceLinksSelfIriTemplate>{};

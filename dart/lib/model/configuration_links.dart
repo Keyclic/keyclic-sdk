@@ -48,7 +48,7 @@ class ConfigurationLinks {
 
   static Map<String, ConfigurationLinks> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ConfigurationLinks>((String key, dynamic value) {
           return MapEntry(key, ConfigurationLinks.fromJson(value));
         }) ??
         <String, ConfigurationLinks>{};

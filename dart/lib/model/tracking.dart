@@ -69,7 +69,7 @@ class Tracking {
   }
 
   static Map<String, Tracking> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Tracking>((String key, dynamic value) {
           return MapEntry(key, Tracking.fromJson(value));
         }) ??
         <String, Tracking>{};

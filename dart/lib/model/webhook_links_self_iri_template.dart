@@ -49,7 +49,8 @@ class WebhookLinksSelfIriTemplate {
 
   static Map<String, WebhookLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, WebhookLinksSelfIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(key, WebhookLinksSelfIriTemplate.fromJson(value));
         }) ??
         <String, WebhookLinksSelfIriTemplate>{};

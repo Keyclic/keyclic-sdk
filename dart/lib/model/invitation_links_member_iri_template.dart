@@ -51,7 +51,8 @@ class InvitationLinksMemberIriTemplate {
 
   static Map<String, InvitationLinksMemberIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, InvitationLinksMemberIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, InvitationLinksMemberIriTemplate.fromJson(value));
         }) ??

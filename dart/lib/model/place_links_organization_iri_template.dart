@@ -52,7 +52,8 @@ class PlaceLinksOrganizationIriTemplate {
 
   static Map<String, PlaceLinksOrganizationIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PlaceLinksOrganizationIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(
               key, PlaceLinksOrganizationIriTemplate.fromJson(value));
         }) ??

@@ -52,7 +52,7 @@ class OperationCollection {
 
   static Map<String, OperationCollection> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, OperationCollection>((String key, dynamic value) {
           return MapEntry(key, OperationCollection.fromJson(value));
         }) ??
         <String, OperationCollection>{};

@@ -271,7 +271,7 @@ var FeedbackApi = /*#__PURE__*/ (function(_ApiClient) {
        * @param { Array.<String> } geoHash
        * @param { module:model/String } order   (default to desc)
        * @param { String } organization The identifier of the resource.
-       * @param { Array.<String> } visibility
+       * @param { module:model/String } visibility   (default to VISIBILITY_PUBLIC)
        * @param { Number } page Page of the overview.  (default to 1)
        * @param { Number } limit Page of the overview.  (default to 10)
        */
@@ -324,6 +324,10 @@ var FeedbackApi = /*#__PURE__*/ (function(_ApiClient) {
 
         if (typeof order === "undefined" || order === null) {
           order = "desc";
+        } // verify the default value of parameter 'visibility'
+
+        if (typeof visibility === "undefined" || visibility === null) {
+          visibility = "VISIBILITY_PUBLIC";
         } // verify the default value of parameter 'page'
 
         if (typeof page === "undefined" || page === null) {
@@ -360,10 +364,6 @@ var FeedbackApi = /*#__PURE__*/ (function(_ApiClient) {
 
         if (typeof organization === "undefined") {
           organization = null;
-        } // verify the null value of parameter 'visibility'
-
-        if (typeof visibility === "undefined") {
-          visibility = null;
         }
 
         var pathParams = {};

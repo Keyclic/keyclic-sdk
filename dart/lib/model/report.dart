@@ -144,7 +144,7 @@ class Report {
   }
 
   static Map<String, Report> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Report>((String key, dynamic value) {
           return MapEntry(key, Report.fromJson(value));
         }) ??
         <String, Report>{};

@@ -56,7 +56,8 @@ class KnowledgeBaseLinksSelf {
 
   static Map<String, KnowledgeBaseLinksSelf> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, KnowledgeBaseLinksSelf>((String key, dynamic value) {
           return MapEntry(key, KnowledgeBaseLinksSelf.fromJson(value));
         }) ??
         <String, KnowledgeBaseLinksSelf>{};

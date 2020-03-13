@@ -78,7 +78,8 @@ class ExternalServicePagination extends Pagination {
 
   static Map<String, ExternalServicePagination> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ExternalServicePagination>(
+            (String key, dynamic value) {
           return MapEntry(key, ExternalServicePagination.fromJson(value));
         }) ??
         <String, ExternalServicePagination>{};

@@ -104,7 +104,7 @@ class Delegation {
   }
 
   static Map<String, Delegation> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Delegation>((String key, dynamic value) {
           return MapEntry(key, Delegation.fromJson(value));
         }) ??
         <String, Delegation>{};

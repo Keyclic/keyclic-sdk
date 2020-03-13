@@ -48,7 +48,8 @@ class ReviewLinksSelfIriTemplate {
 
   static Map<String, ReviewLinksSelfIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ReviewLinksSelfIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(key, ReviewLinksSelfIriTemplate.fromJson(value));
         }) ??
         <String, ReviewLinksSelfIriTemplate>{};

@@ -60,7 +60,8 @@ class ReportEmbeddedTargetGroups {
 
   static Map<String, ReportEmbeddedTargetGroups> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ReportEmbeddedTargetGroups>(
+            (String key, dynamic value) {
           return MapEntry(key, ReportEmbeddedTargetGroups.fromJson(value));
         }) ??
         <String, ReportEmbeddedTargetGroups>{};

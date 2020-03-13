@@ -6,6 +6,7 @@ class Transition {
     this.type,
     this.name,
     this.description,
+    this.commentRequired,
     this.from,
     this.to,
   });
@@ -20,8 +21,9 @@ class Transition {
       type: json['type'],
       name: json['name'],
       description: json['description'],
-      from: State.fromJson(json['from']),
-      to: State.fromJson(json['to']),
+      commentRequired: json['commentRequired'],
+      from: WorkflowState.fromJson(json['from']),
+      to: WorkflowState.fromJson(json['to']),
     );
   }
 
@@ -33,9 +35,11 @@ class Transition {
 
   String description;
 
-  State from;
+  bool commentRequired;
 
-  State to;
+  WorkflowState from;
+
+  WorkflowState to;
 
   @override
   bool operator ==(dynamic other) {
@@ -50,6 +54,7 @@ class Transition {
         type == other.type &&
         name == other.name &&
         description == other.description &&
+        commentRequired == other.commentRequired &&
         from == other.from &&
         to == other.to;
   }
@@ -63,6 +68,7 @@ class Transition {
     hashCode ^= type?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= commentRequired?.hashCode ?? 0;
     hashCode ^= from?.hashCode ?? 0;
     hashCode ^= to?.hashCode ?? 0;
 
@@ -75,7 +81,7 @@ class Transition {
   }
 
   static Map<String, Transition> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Transition>((String key, dynamic value) {
           return MapEntry(key, Transition.fromJson(value));
         }) ??
         <String, Transition>{};
@@ -87,6 +93,7 @@ class Transition {
       if (type != null) 'type': type,
       if (name != null) 'name': name,
       if (description != null) 'description': description,
+      if (commentRequired != null) 'commentRequired': commentRequired,
       if (from != null) 'from': from.toJson(),
       if (to != null) 'to': to.toJson(),
     };
@@ -94,6 +101,6 @@ class Transition {
 
   @override
   String toString() {
-    return 'Transition[id=$id, type=$type, name=$name, description=$description, from=$from, to=$to, ]';
+    return 'Transition[id=$id, type=$type, name=$name, description=$description, commentRequired=$commentRequired, from=$from, to=$to, ]';
   }
 }

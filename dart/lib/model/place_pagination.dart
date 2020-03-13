@@ -77,7 +77,7 @@ class PlacePagination extends Pagination {
   }
 
   static Map<String, PlacePagination> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PlacePagination>((String key, dynamic value) {
           return MapEntry(key, PlacePagination.fromJson(value));
         }) ??
         <String, PlacePagination>{};

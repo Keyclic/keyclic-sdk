@@ -59,7 +59,7 @@ class DocumentLinks {
   }
 
   static Map<String, DocumentLinks> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DocumentLinks>((String key, dynamic value) {
           return MapEntry(key, DocumentLinks.fromJson(value));
         }) ??
         <String, DocumentLinks>{};

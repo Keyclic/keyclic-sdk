@@ -56,7 +56,8 @@ class FeedbackLinksCategory {
 
   static Map<String, FeedbackLinksCategory> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, FeedbackLinksCategory>((String key, dynamic value) {
           return MapEntry(key, FeedbackLinksCategory.fromJson(value));
         }) ??
         <String, FeedbackLinksCategory>{};

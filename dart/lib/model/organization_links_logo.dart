@@ -56,7 +56,8 @@ class OrganizationLinksLogo {
 
   static Map<String, OrganizationLinksLogo> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, OrganizationLinksLogo>((String key, dynamic value) {
           return MapEntry(key, OrganizationLinksLogo.fromJson(value));
         }) ??
         <String, OrganizationLinksLogo>{};

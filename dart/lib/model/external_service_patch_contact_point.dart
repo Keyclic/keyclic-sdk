@@ -62,7 +62,8 @@ class ExternalServicePatchContactPoint {
 
   static Map<String, ExternalServicePatchContactPoint> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ExternalServicePatchContactPoint>(
+            (String key, dynamic value) {
           return MapEntry(
               key, ExternalServicePatchContactPoint.fromJson(value));
         }) ??

@@ -56,7 +56,7 @@ class Polygon {
   }
 
   static Map<String, Polygon> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Polygon>((String key, dynamic value) {
           return MapEntry(key, Polygon.fromJson(value));
         }) ??
         <String, Polygon>{};

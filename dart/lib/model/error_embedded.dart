@@ -51,7 +51,7 @@ class ErrorEmbedded {
   }
 
   static Map<String, ErrorEmbedded> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ErrorEmbedded>((String key, dynamic value) {
           return MapEntry(key, ErrorEmbedded.fromJson(value));
         }) ??
         <String, ErrorEmbedded>{};

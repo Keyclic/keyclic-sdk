@@ -57,7 +57,8 @@ class PersonPatchPreferencesNotification {
 
   static Map<String, PersonPatchPreferencesNotification> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, PersonPatchPreferencesNotification>(
+            (String key, dynamic value) {
           return MapEntry(
               key, PersonPatchPreferencesNotification.fromJson(value));
         }) ??

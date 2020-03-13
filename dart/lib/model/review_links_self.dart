@@ -54,7 +54,7 @@ class ReviewLinksSelf {
   }
 
   static Map<String, ReviewLinksSelf> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ReviewLinksSelf>((String key, dynamic value) {
           return MapEntry(key, ReviewLinksSelf.fromJson(value));
         }) ??
         <String, ReviewLinksSelf>{};

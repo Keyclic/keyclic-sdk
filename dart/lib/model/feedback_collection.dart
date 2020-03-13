@@ -52,7 +52,7 @@ class FeedbackCollection {
 
   static Map<String, FeedbackCollection> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, FeedbackCollection>((String key, dynamic value) {
           return MapEntry(key, FeedbackCollection.fromJson(value));
         }) ??
         <String, FeedbackCollection>{};

@@ -26,6 +26,7 @@ export default class OrganizationPreferences {
     
      */
   constructor() {
+    this.categoryRequired = null;
     this.notification = null;
     this.offline = null;
     this._public = null;
@@ -51,6 +52,12 @@ export default class OrganizationPreferences {
       object = new OrganizationPreferences();
     }
 
+    if (data.hasOwnProperty("categoryRequired")) {
+      object.categoryRequired = ApiClient.convertToType(
+        data["categoryRequired"],
+        "Boolean"
+      );
+    }
     if (data.hasOwnProperty("notification")) {
       object.notification = ApiClient.convertToType(
         data["notification"],
@@ -79,6 +86,19 @@ export default class OrganizationPreferences {
     return object;
   }
 
+  /**
+   * @return { Boolean }
+   */
+  getCategoryRequired() {
+    return this.categoryRequired;
+  }
+
+  /**
+   * @param { Boolean } categoryRequired
+   */
+  setCategoryRequired(categoryRequired) {
+    this.categoryRequired = categoryRequired;
+  }
   /**
    * @return { module:model/PreferencesNotification }
    */

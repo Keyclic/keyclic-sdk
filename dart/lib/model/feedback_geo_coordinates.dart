@@ -55,7 +55,8 @@ class FeedbackGeoCoordinates {
 
   static Map<String, FeedbackGeoCoordinates> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, FeedbackGeoCoordinates>((String key, dynamic value) {
           return MapEntry(key, FeedbackGeoCoordinates.fromJson(value));
         }) ??
         <String, FeedbackGeoCoordinates>{};

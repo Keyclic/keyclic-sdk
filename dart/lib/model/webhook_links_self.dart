@@ -54,7 +54,7 @@ class WebhookLinksSelf {
   }
 
   static Map<String, WebhookLinksSelf> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, WebhookLinksSelf>((String key, dynamic value) {
           return MapEntry(key, WebhookLinksSelf.fromJson(value));
         }) ??
         <String, WebhookLinksSelf>{};

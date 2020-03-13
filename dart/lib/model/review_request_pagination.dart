@@ -78,7 +78,8 @@ class ReviewRequestPagination extends Pagination {
 
   static Map<String, ReviewRequestPagination> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json
+            ?.map<String, ReviewRequestPagination>((String key, dynamic value) {
           return MapEntry(key, ReviewRequestPagination.fromJson(value));
         }) ??
         <String, ReviewRequestPagination>{};

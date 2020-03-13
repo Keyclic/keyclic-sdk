@@ -194,7 +194,7 @@ class SecurityApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;
@@ -257,7 +257,7 @@ class SecurityApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
     return;

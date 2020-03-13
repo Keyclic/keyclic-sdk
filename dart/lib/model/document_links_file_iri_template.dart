@@ -49,7 +49,8 @@ class DocumentLinksFileIriTemplate {
 
   static Map<String, DocumentLinksFileIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, DocumentLinksFileIriTemplate>(
+            (String key, dynamic value) {
           return MapEntry(key, DocumentLinksFileIriTemplate.fromJson(value));
         }) ??
         <String, DocumentLinksFileIriTemplate>{};

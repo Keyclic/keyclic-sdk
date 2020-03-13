@@ -51,7 +51,7 @@ class ArticleCollection {
   }
 
   static Map<String, ArticleCollection> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ArticleCollection>((String key, dynamic value) {
           return MapEntry(key, ArticleCollection.fromJson(value));
         }) ??
         <String, ArticleCollection>{};

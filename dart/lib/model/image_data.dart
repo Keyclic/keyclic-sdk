@@ -45,7 +45,7 @@ class ImageData {
   }
 
   static Map<String, ImageData> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, ImageData>((String key, dynamic value) {
           return MapEntry(key, ImageData.fromJson(value));
         }) ??
         <String, ImageData>{};

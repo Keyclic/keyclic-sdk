@@ -92,7 +92,7 @@ class Activity {
   }
 
   static Map<String, Activity> mapFromJson(Map<String, dynamic> json) {
-    return json?.map((String key, dynamic value) {
+    return json?.map<String, Activity>((String key, dynamic value) {
           return MapEntry(key, Activity.fromJson(value));
         }) ??
         <String, Activity>{};
