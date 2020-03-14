@@ -47,6 +47,16 @@
   }
 
   describe('ReportApi', function() {
+    describe('cgetDelegationsByReport', function() {
+      it('should call cgetDelegationsByReport successfully', function(done) {
+        //uncomment below and update the code to test cgetDelegationsByReport
+        //instance.cgetDelegationsByReport(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('cgetDocumentsByReport', function() {
       it('should call cgetDocumentsByReport successfully', function(done) {
         //uncomment below and update the code to test cgetDocumentsByReport

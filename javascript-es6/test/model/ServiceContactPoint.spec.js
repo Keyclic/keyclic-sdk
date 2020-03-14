@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.DelegationEmbedded();
+    instance = new @KeyclicSdkJavascript.ServiceContactPoint();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,28 +46,34 @@
       object[property] = value;
   }
 
-  describe('DelegationEmbedded', function() {
-    it('should create an instance of DelegationEmbedded', function() {
-      // uncomment below and update the code to test DelegationEmbedded
-      //var instane = new @KeyclicSdkJavascript.DelegationEmbedded();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.DelegationEmbedded);
+  describe('ServiceContactPoint', function() {
+    it('should create an instance of ServiceContactPoint', function() {
+      // uncomment below and update the code to test ServiceContactPoint
+      //var instane = new @KeyclicSdkJavascript.ServiceContactPoint();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.ServiceContactPoint);
     });
 
-    it('should have the property service (base name: "service")', function() {
-      // uncomment below and update the code to test the property service
-      //var instane = new @KeyclicSdkJavascript.DelegationEmbedded();
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instane = new @KeyclicSdkJavascript.ServiceContactPoint();
       //expect(instance).to.be();
     });
 
-    it('should have the property stateTransitions (base name: "stateTransitions")', function() {
-      // uncomment below and update the code to test the property stateTransitions
-      //var instane = new @KeyclicSdkJavascript.DelegationEmbedded();
+    it('should have the property isOpen (base name: "isOpen")', function() {
+      // uncomment below and update the code to test the property isOpen
+      //var instane = new @KeyclicSdkJavascript.ServiceContactPoint();
       //expect(instance).to.be();
     });
 
-    it('should have the property workflow (base name: "workflow")', function() {
-      // uncomment below and update the code to test the property workflow
-      //var instane = new @KeyclicSdkJavascript.DelegationEmbedded();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new @KeyclicSdkJavascript.ServiceContactPoint();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property telephone (base name: "telephone")', function() {
+      // uncomment below and update the code to test the property telephone
+      //var instane = new @KeyclicSdkJavascript.ServiceContactPoint();
       //expect(instance).to.be();
     });
 

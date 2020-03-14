@@ -12,6 +12,7 @@
 
 import ApiClient from "../ApiClient";
 import DelegationEmbeddedWorkflow from "./DelegationEmbeddedWorkflow";
+import Service from "./Service";
 
 /**
  * The DelegationEmbedded model module.
@@ -25,9 +26,11 @@ export default class DelegationEmbedded {
     
      */
   constructor() {
+    this.service = null;
     this.stateTransitions = [];
     this.workflow = null;
 
+    this.serviceType = Service;
     this.workflowType = DelegationEmbeddedWorkflow;
   }
 
@@ -46,6 +49,12 @@ export default class DelegationEmbedded {
       object = new DelegationEmbedded();
     }
 
+    if (data.hasOwnProperty("service")) {
+      object.service = ApiClient.convertToType(
+        data["service"],
+        object.serviceType
+      );
+    }
     if (data.hasOwnProperty("stateTransitions")) {
       object.stateTransitions = ApiClient.convertToType(
         data["stateTransitions"],
@@ -62,6 +71,19 @@ export default class DelegationEmbedded {
     return object;
   }
 
+  /**
+   * @return { module:model/Service }
+   */
+  getService() {
+    return this.service;
+  }
+
+  /**
+   * @param { module:model/Service } service
+   */
+  setService(service) {
+    this.service = service;
+  }
   /**
    * @return { Array.<String> }
    */

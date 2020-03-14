@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **color** | **String** |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
+**key** | **String** |  | [optional] [default to null]
 **name** | **String** |  | [optional] [default to null]
 **progression** | **double** |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]

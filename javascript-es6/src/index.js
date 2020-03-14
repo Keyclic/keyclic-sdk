@@ -411,6 +411,8 @@ import SectionCollection from "./model/SectionCollection";
 import SectionLinks from "./model/SectionLinks";
 import SectionLinksSelf from "./model/SectionLinksSelf";
 import SectionLinksSelfIriTemplate from "./model/SectionLinksSelfIriTemplate";
+import Service from "./model/Service";
+import ServiceContactPoint from "./model/ServiceContactPoint";
 import SignatureData from "./model/SignatureData";
 import SignatureDataSigner from "./model/SignatureDataSigner";
 import SignatureSigner from "./model/SignatureSigner";
@@ -488,6 +490,7 @@ import ReviewRequestApi from "./api/ReviewRequestApi";
 import RoleApi from "./api/RoleApi";
 import SectionApi from "./api/SectionApi";
 import SecurityApi from "./api/SecurityApi";
+import ServiceApi from "./api/ServiceApi";
 import WebhookApi from "./api/WebhookApi";
 import WorkflowApi from "./api/WorkflowApi";
 
@@ -511,7 +514,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.4.1
+ * @version 2.4.6
  */
 export {
   /**
@@ -2495,6 +2498,16 @@ export {
    */
   SectionLinksSelfIriTemplate,
   /**
+   * The Service model constructor.
+   * @property { module:model/Service }
+   */
+  Service,
+  /**
+   * The ServiceContactPoint model constructor.
+   * @property { module:model/ServiceContactPoint }
+   */
+  ServiceContactPoint,
+  /**
    * The SignatureData model constructor.
    * @property { module:model/SignatureData }
    */
@@ -2879,6 +2892,11 @@ export {
    * @property { module:api/SecurityApi }
    */
   SecurityApi,
+  /**
+   * The ServiceApi service constructor.
+   * @property { module:api/ServiceApi }
+   */
+  ServiceApi,
   /**
    * The WebhookApi service constructor.
    * @property { module:api/WebhookApi }

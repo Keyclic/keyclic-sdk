@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient2 = _interopRequireDefault(require("../ApiClient"));
 
+var _DelegationPagination = _interopRequireDefault(
+  require("../model/DelegationPagination")
+);
+
 var _Document = _interopRequireDefault(require("../model/Document"));
 
 var _DocumentData = _interopRequireDefault(require("../model/DocumentData"));
@@ -148,22 +152,152 @@ var ReportApi = /*#__PURE__*/ (function(_ApiClient) {
     );
   }
   /**
-   * Retrieve all Document resources.
+   * Retrieve all Delegation resources.
    * @param { String } xKeyclicApp
    * @param { String } report The identifier of the resource.
    * @param { Object } credentials The required credentials with good properties to use different types of authentication.
-   * @param { DocumentPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+   * @param { DelegationPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
    * @param { module:model/String } acceptLanguage   (default to fr-FR)
    * @param { Date } xDateTime
    * @param { String } xKeyclicAppVersion
    * @param { module:model/Date } after
    * @param { module:model/Date } before
    * @param { module:model/String } order   (default to desc)
+   * @param { String } state
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
 
   _createClass(ReportApi, [
+    {
+      key: "cgetDelegationsByReport",
+      value: function cgetDelegationsByReport() {
+        var returnType =
+          arguments.length > 0 && arguments[0] !== undefined
+            ? arguments[0]
+            : null;
+        var options = arguments.length > 1 ? arguments[1] : undefined;
+        var credentials =
+          arguments.length > 2 && arguments[2] !== undefined
+            ? arguments[2]
+            : null;
+
+        if (returnType === null) {
+          returnType = _DelegationPagination.default;
+        }
+
+        var xKeyclicApp = options.xKeyclicApp,
+          report = options.report,
+          acceptLanguage = options.acceptLanguage,
+          xDateTime = options.xDateTime,
+          xKeyclicAppVersion = options.xKeyclicAppVersion,
+          after = options.after,
+          before = options.before,
+          order = options.order,
+          state = options.state,
+          page = options.page,
+          limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
+
+        if (typeof xKeyclicApp === "undefined" || xKeyclicApp === null) {
+          throw new window.Error(
+            'Missing the required parameter "xKeyclicApp" when calling cgetDelegationsByReport'
+          );
+        } // verify the required parameter 'report' is set
+
+        if (typeof report === "undefined" || report === null) {
+          throw new window.Error(
+            'Missing the required parameter "report" when calling cgetDelegationsByReport'
+          );
+        } // verify the default value of parameter 'acceptLanguage'
+
+        if (typeof acceptLanguage === "undefined" || acceptLanguage === null) {
+          acceptLanguage = "fr-FR";
+        } // verify the default value of parameter 'order'
+
+        if (typeof order === "undefined" || order === null) {
+          order = "desc";
+        } // verify the default value of parameter 'page'
+
+        if (typeof page === "undefined" || page === null) {
+          page = 1;
+        } // verify the default value of parameter 'limit'
+
+        if (typeof limit === "undefined" || limit === null) {
+          limit = 10;
+        } // verify the null value of parameter 'xDateTime'
+
+        if (typeof xDateTime === "undefined") {
+          xDateTime = null;
+        } // verify the null value of parameter 'xKeyclicAppVersion'
+
+        if (typeof xKeyclicAppVersion === "undefined") {
+          xKeyclicAppVersion = null;
+        } // verify the null value of parameter 'after'
+
+        if (typeof after === "undefined") {
+          after = null;
+        } // verify the null value of parameter 'before'
+
+        if (typeof before === "undefined") {
+          before = null;
+        } // verify the null value of parameter 'state'
+
+        if (typeof state === "undefined") {
+          state = null;
+        }
+
+        var pathParams = {
+          report: report
+        };
+        var bodyParam = null;
+        var queryParams = {
+          after: after,
+          before: before,
+          order: order,
+          state: state,
+          page: page,
+          limit: limit
+        };
+        var headerParams = {
+          "accept-language": acceptLanguage,
+          "x-date-time": xDateTime,
+          "x-keyclic-app": xKeyclicApp,
+          "x-keyclic-app-version": xKeyclicAppVersion
+        };
+        var credentialParams = credentials;
+        var authNames = ["bearer"];
+        var contentTypes = ["application/json;charset=UTF-8"];
+        var accepts = ["application/hal+json;charset=UTF-8"];
+        return this.callApi(
+          "/reports/{report}/delegations",
+          "GET",
+          pathParams,
+          queryParams,
+          headerParams,
+          bodyParam,
+          authNames,
+          credentialParams,
+          contentTypes,
+          accepts,
+          returnType
+        );
+      }
+      /**
+       * Retrieve all Document resources.
+       * @param { String } xKeyclicApp
+       * @param { String } report The identifier of the resource.
+       * @param { Object } credentials The required credentials with good properties to use different types of authentication.
+       * @param { DocumentPagination }  returnType The required type to return; can be a string for simple types or the constructor for a complex type.
+       * @param { module:model/String } acceptLanguage   (default to fr-FR)
+       * @param { Date } xDateTime
+       * @param { String } xKeyclicAppVersion
+       * @param { module:model/Date } after
+       * @param { module:model/Date } before
+       * @param { module:model/String } order   (default to desc)
+       * @param { Number } page Page of the overview.  (default to 1)
+       * @param { Number } limit Page of the overview.  (default to 10)
+       */
+    },
     {
       key: "cgetDocumentsByReport",
       value: function cgetDocumentsByReport() {

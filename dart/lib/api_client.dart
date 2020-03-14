@@ -907,6 +907,10 @@ class ApiClient {
           return SectionLinksSelf.fromJson(value);
         case 'SectionLinksSelfIriTemplate':
           return SectionLinksSelfIriTemplate.fromJson(value);
+        case 'Service':
+          return Service.fromJson(value);
+        case 'ServiceContactPoint':
+          return ServiceContactPoint.fromJson(value);
         case 'SignatureData':
           return SignatureData.fromJson(value);
         case 'SignatureDataSigner':

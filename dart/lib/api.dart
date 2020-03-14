@@ -42,6 +42,7 @@ part 'api/review_request_api.dart';
 part 'api/role_api.dart';
 part 'api/section_api.dart';
 part 'api/security_api.dart';
+part 'api/service_api.dart';
 part 'api/webhook_api.dart';
 part 'api/workflow_api.dart';
 
@@ -440,6 +441,8 @@ part 'model/section_collection.dart';
 part 'model/section_links.dart';
 part 'model/section_links_self.dart';
 part 'model/section_links_self_iri_template.dart';
+part 'model/service.dart';
+part 'model/service_contact_point.dart';
 part 'model/signature_data.dart';
 part 'model/signature_data_signer.dart';
 part 'model/signature_signer.dart';

@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.TransitionState();
+    instance = new @KeyclicSdkJavascript.Service();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,64 +46,52 @@
       object[property] = value;
   }
 
-  describe('TransitionState', function() {
-    it('should create an instance of TransitionState', function() {
-      // uncomment below and update the code to test TransitionState
-      //var instane = new @KeyclicSdkJavascript.TransitionState();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.TransitionState);
+  describe('Service', function() {
+    it('should create an instance of Service', function() {
+      // uncomment below and update the code to test Service
+      //var instane = new @KeyclicSdkJavascript.Service();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.Service);
     });
 
-    it('should have the property allowAdd (base name: "allowAdd")', function() {
-      // uncomment below and update the code to test the property allowAdd
-      //var instane = new @KeyclicSdkJavascript.TransitionState();
+    it('should have the property contactPoint (base name: "contactPoint")', function() {
+      // uncomment below and update the code to test the property contactPoint
+      //var instane = new @KeyclicSdkJavascript.Service();
       //expect(instance).to.be();
     });
 
-    it('should have the property allowDispatch (base name: "allowDispatch")', function() {
-      // uncomment below and update the code to test the property allowDispatch
-      //var instane = new @KeyclicSdkJavascript.TransitionState();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property color (base name: "color")', function() {
-      // uncomment below and update the code to test the property color
-      //var instane = new @KeyclicSdkJavascript.TransitionState();
+    it('should have the property createdAt (base name: "createdAt")', function() {
+      // uncomment below and update the code to test the property createdAt
+      //var instane = new @KeyclicSdkJavascript.Service();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new @KeyclicSdkJavascript.TransitionState();
+      //var instane = new @KeyclicSdkJavascript.Service();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new @KeyclicSdkJavascript.TransitionState();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property key (base name: "key")', function() {
-      // uncomment below and update the code to test the property key
-      //var instane = new @KeyclicSdkJavascript.TransitionState();
+      //var instane = new @KeyclicSdkJavascript.Service();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new @KeyclicSdkJavascript.TransitionState();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property progression (base name: "progression")', function() {
-      // uncomment below and update the code to test the property progression
-      //var instane = new @KeyclicSdkJavascript.TransitionState();
+      //var instane = new @KeyclicSdkJavascript.Service();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new @KeyclicSdkJavascript.TransitionState();
+      //var instane = new @KeyclicSdkJavascript.Service();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property updatedAt (base name: "updatedAt")', function() {
+      // uncomment below and update the code to test the property updatedAt
+      //var instane = new @KeyclicSdkJavascript.Service();
       //expect(instance).to.be();
     });
 

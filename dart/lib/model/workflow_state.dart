@@ -7,6 +7,7 @@ class WorkflowState {
     this.color,
     this.description,
     this.id,
+    this.key,
     this.name,
     this.progression,
     this.type,
@@ -23,6 +24,7 @@ class WorkflowState {
       color: json['color'],
       description: json['description'],
       id: json['id'],
+      key: json['key'],
       name: json['name'],
       progression: json['progression']?.toDouble(),
       type: json['type'],
@@ -38,6 +40,8 @@ class WorkflowState {
   String description;
 
   String id;
+
+  String key;
 
   String name;
 
@@ -59,6 +63,7 @@ class WorkflowState {
         color == other.color &&
         description == other.description &&
         id == other.id &&
+        key == other.key &&
         name == other.name &&
         progression == other.progression &&
         type == other.type;
@@ -74,6 +79,7 @@ class WorkflowState {
     hashCode ^= color?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= key?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
     hashCode ^= progression?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
@@ -102,6 +108,7 @@ class WorkflowState {
       if (color != null) 'color': color,
       if (description != null) 'description': description,
       if (id != null) 'id': id,
+      if (key != null) 'key': key,
       if (name != null) 'name': name,
       if (progression != null) 'progression': progression,
       if (type != null) 'type': type,
@@ -110,6 +117,6 @@ class WorkflowState {
 
   @override
   String toString() {
-    return 'WorkflowState[allowAdd=$allowAdd, allowDispatch=$allowDispatch, color=$color, description=$description, id=$id, name=$name, progression=$progression, type=$type, ]';
+    return 'WorkflowState[allowAdd=$allowAdd, allowDispatch=$allowDispatch, color=$color, description=$description, id=$id, key=$key, name=$name, progression=$progression, type=$type, ]';
   }
 }

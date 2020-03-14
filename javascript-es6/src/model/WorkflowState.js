@@ -29,6 +29,7 @@ export default class WorkflowState {
     this.color = null;
     this.description = null;
     this.id = null;
+    this.key = null;
     this.name = null;
     this.progression = null;
     this.type = null;
@@ -69,6 +70,9 @@ export default class WorkflowState {
     }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
+    }
+    if (data.hasOwnProperty("key")) {
+      object.key = ApiClient.convertToType(data["key"], "String");
     }
     if (data.hasOwnProperty("name")) {
       object.name = ApiClient.convertToType(data["name"], "String");
@@ -145,6 +149,19 @@ export default class WorkflowState {
     return this.id;
   }
 
+  /**
+   * @return { String }
+   */
+  getKey() {
+    return this.key;
+  }
+
+  /**
+   * @param { String } key
+   */
+  setKey(key) {
+    this.key = key;
+  }
   /**
    * @return { String }
    */

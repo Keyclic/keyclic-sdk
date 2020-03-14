@@ -52,6 +52,7 @@ var WorkflowState = /*#__PURE__*/ (function() {
     this.color = null;
     this.description = null;
     this.id = null;
+    this.key = null;
     this.name = null;
     this.progression = null;
     this.type = null;
@@ -152,6 +153,24 @@ var WorkflowState = /*#__PURE__*/ (function() {
          */
       },
       {
+        key: "getKey",
+        value: function getKey() {
+          return this.key;
+        }
+        /**
+         * @param { String } key
+         */
+      },
+      {
+        key: "setKey",
+        value: function setKey(key) {
+          this.key = key;
+        }
+        /**
+         * @return { String }
+         */
+      },
+      {
         key: "getName",
         value: function getName() {
           return this.name;
@@ -241,6 +260,13 @@ var WorkflowState = /*#__PURE__*/ (function() {
 
           if (data.hasOwnProperty("id")) {
             object.id = _ApiClient.default.convertToType(data["id"], "String");
+          }
+
+          if (data.hasOwnProperty("key")) {
+            object.key = _ApiClient.default.convertToType(
+              data["key"],
+              "String"
+            );
           }
 
           if (data.hasOwnProperty("name")) {

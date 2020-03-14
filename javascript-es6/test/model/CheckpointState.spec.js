@@ -83,6 +83,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property key (base name: "key")', function() {
+      // uncomment below and update the code to test the property key
+      //var instane = new @KeyclicSdkJavascript.CheckpointState();
+      //expect(instance).to.be();
+    });
+
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instane = new @KeyclicSdkJavascript.CheckpointState();

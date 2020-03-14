@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ServiceContactPoint = _interopRequireDefault(
+  require("./ServiceContactPoint")
+);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -34,92 +38,66 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 /**
- * The CheckpointState model module.
- * @module model/CheckpointState
+ * The Service model module.
+ * @module model/Service
  */
-var CheckpointState = /*#__PURE__*/ (function() {
+var Service = /*#__PURE__*/ (function() {
   /**
-   * Constructs a new "CheckpointState".
-   * @alias module:model/CheckpointState
+   * Constructs a new "Service".
+   * @alias module:model/Service
    * @class
   
+   * @param name { String }
+  
    */
-  function CheckpointState() {
-    _classCallCheck(this, CheckpointState);
+  function Service(name) {
+    _classCallCheck(this, Service);
 
-    this.allowAdd = null;
-    this.allowDispatch = null;
-    this.color = null;
+    this.contactPoint = null;
+    this.createdAt = null;
     this.description = null;
     this.id = null;
-    this.key = null;
-    this.name = null;
-    this.progression = null;
+    this.name = name;
     this.type = null;
+    this.updatedAt = null;
+    this.contactPointType = _ServiceContactPoint.default;
   }
   /**
-   * Constructs a "CheckpointState" from a plain JavaScript object.
+   * Constructs a "Service" from a plain JavaScript object.
    * @param { object } data The plain JavaScript object bearing properties of interest.
-   * @param { module:model/CheckpointState } object Optional instance to populate.
-   * @return { module:model/CheckpointState } The populated "CheckpointState" instance.
+   * @param { module:model/Service } object Optional instance to populate.
+   * @return { module:model/Service } The populated "Service" instance.
    */
 
   _createClass(
-    CheckpointState,
+    Service,
     [
       {
-        key: "getAllowAdd",
+        key: "getContactPoint",
 
         /**
-         * @return { Boolean }
+         * @return { module:model/ServiceContactPoint }
          */
-        value: function getAllowAdd() {
-          return this.allowAdd;
+        value: function getContactPoint() {
+          return this.contactPoint;
         }
         /**
-         * @param { Boolean } allowAdd
+         * @param { module:model/ServiceContactPoint } contactPoint
          */
       },
       {
-        key: "setAllowAdd",
-        value: function setAllowAdd(allowAdd) {
-          this.allowAdd = allowAdd;
+        key: "setContactPoint",
+        value: function setContactPoint(contactPoint) {
+          this.contactPoint = contactPoint;
         }
         /**
-         * @return { Boolean }
+         * @return { Date }
          */
       },
       {
-        key: "getAllowDispatch",
-        value: function getAllowDispatch() {
-          return this.allowDispatch;
-        }
-        /**
-         * @param { Boolean } allowDispatch
-         */
-      },
-      {
-        key: "setAllowDispatch",
-        value: function setAllowDispatch(allowDispatch) {
-          this.allowDispatch = allowDispatch;
-        }
-        /**
-         * @return { String }
-         */
-      },
-      {
-        key: "getColor",
-        value: function getColor() {
-          return this.color;
-        }
-        /**
-         * @param { String } color
-         */
-      },
-      {
-        key: "setColor",
-        value: function setColor(color) {
-          this.color = color;
+        key: "getCreatedAt",
+        value: function getCreatedAt() {
+          return this.createdAt;
         }
         /**
          * @return { String }
@@ -153,24 +131,6 @@ var CheckpointState = /*#__PURE__*/ (function() {
          */
       },
       {
-        key: "getKey",
-        value: function getKey() {
-          return this.key;
-        }
-        /**
-         * @param { String } key
-         */
-      },
-      {
-        key: "setKey",
-        value: function setKey(key) {
-          this.key = key;
-        }
-        /**
-         * @return { String }
-         */
-      },
-      {
         key: "getName",
         value: function getName() {
           return this.name;
@@ -185,24 +145,6 @@ var CheckpointState = /*#__PURE__*/ (function() {
           this.name = name;
         }
         /**
-         * @return { Number }
-         */
-      },
-      {
-        key: "getProgression",
-        value: function getProgression() {
-          return this.progression;
-        }
-        /**
-         * @param { Number } progression
-         */
-      },
-      {
-        key: "setProgression",
-        value: function setProgression(progression) {
-          this.progression = progression;
-        }
-        /**
          * @return { String }
          */
       },
@@ -210,6 +152,15 @@ var CheckpointState = /*#__PURE__*/ (function() {
         key: "getType",
         value: function getType() {
           return this.type;
+        }
+        /**
+         * @return { Date }
+         */
+      },
+      {
+        key: "getUpdatedAt",
+        value: function getUpdatedAt() {
+          return this.updatedAt;
         }
       }
     ],
@@ -227,27 +178,20 @@ var CheckpointState = /*#__PURE__*/ (function() {
           }
 
           if (object === null) {
-            object = new CheckpointState();
+            object = new Service();
           }
 
-          if (data.hasOwnProperty("allowAdd")) {
-            object.allowAdd = _ApiClient.default.convertToType(
-              data["allowAdd"],
-              "Boolean"
+          if (data.hasOwnProperty("contactPoint")) {
+            object.contactPoint = _ApiClient.default.convertToType(
+              data["contactPoint"],
+              object.contactPointType
             );
           }
 
-          if (data.hasOwnProperty("allowDispatch")) {
-            object.allowDispatch = _ApiClient.default.convertToType(
-              data["allowDispatch"],
-              "Boolean"
-            );
-          }
-
-          if (data.hasOwnProperty("color")) {
-            object.color = _ApiClient.default.convertToType(
-              data["color"],
-              "String"
+          if (data.hasOwnProperty("createdAt")) {
+            object.createdAt = _ApiClient.default.convertToType(
+              data["createdAt"],
+              "Date"
             );
           }
 
@@ -262,24 +206,10 @@ var CheckpointState = /*#__PURE__*/ (function() {
             object.id = _ApiClient.default.convertToType(data["id"], "String");
           }
 
-          if (data.hasOwnProperty("key")) {
-            object.key = _ApiClient.default.convertToType(
-              data["key"],
-              "String"
-            );
-          }
-
           if (data.hasOwnProperty("name")) {
             object.name = _ApiClient.default.convertToType(
               data["name"],
               "String"
-            );
-          }
-
-          if (data.hasOwnProperty("progression")) {
-            object.progression = _ApiClient.default.convertToType(
-              data["progression"],
-              "Number"
             );
           }
 
@@ -290,13 +220,20 @@ var CheckpointState = /*#__PURE__*/ (function() {
             );
           }
 
+          if (data.hasOwnProperty("updatedAt")) {
+            object.updatedAt = _ApiClient.default.convertToType(
+              data["updatedAt"],
+              "Date"
+            );
+          }
+
           return object;
         }
       }
     ]
   );
 
-  return CheckpointState;
+  return Service;
 })();
 
-exports.default = CheckpointState;
+exports.default = Service;

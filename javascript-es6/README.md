@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.4.1
-- Package version: 2.4.1
+- API version: 2.4.6
+- Package version: 2.4.6
 
 ## Getting started
 
@@ -133,6 +133,7 @@ Class | Method | HTTP request | Description
 *@KeyclicSdkJavascript.PublicationApi* | [**deletePublication**](docs/PublicationApi.md#deletePublication) | **DELETE** /publications/{publication} | Remove one Publication resource.
 *@KeyclicSdkJavascript.PublicationApi* | [**getPublication**](docs/PublicationApi.md#getPublication) | **GET** /publications/{publication} | Retrieve one Publication resource.
 *@KeyclicSdkJavascript.PublicationApi* | [**postPublication**](docs/PublicationApi.md#postPublication) | **POST** /publications | Create one Publication resource.
+*@KeyclicSdkJavascript.ReportApi* | [**cgetDelegationsByReport**](docs/ReportApi.md#cgetDelegationsByReport) | **GET** /reports/{report}/delegations | Retrieve all Delegation resources.
 *@KeyclicSdkJavascript.ReportApi* | [**cgetDocumentsByReport**](docs/ReportApi.md#cgetDocumentsByReport) | **GET** /reports/{report}/documents | Retrieve all Document resources.
 *@KeyclicSdkJavascript.ReportApi* | [**cgetOperationsByReport**](docs/ReportApi.md#cgetOperationsByReport) | **GET** /reports/{report}/operations | Retrieve all Operation resources.
 *@KeyclicSdkJavascript.ReportApi* | [**getReport**](docs/ReportApi.md#getReport) | **GET** /reports/{report} | Retrieve one Report resource.
@@ -150,6 +151,7 @@ Class | Method | HTTP request | Description
 *@KeyclicSdkJavascript.SecurityApi* | [**postPasswordChangeByToken**](docs/SecurityApi.md#postPasswordChangeByToken) | **POST** /security/password/change/{token} | Create one PasswordChange resource.
 *@KeyclicSdkJavascript.SecurityApi* | [**postPasswordReset**](docs/SecurityApi.md#postPasswordReset) | **POST** /security/password/change-request | Create one PasswordReset resource.
 *@KeyclicSdkJavascript.SecurityApi* | [**postRegister**](docs/SecurityApi.md#postRegister) | **POST** /security/register | Create one Register resource.
+*@KeyclicSdkJavascript.ServiceApi* | [**getService**](docs/ServiceApi.md#getService) | **GET** /services/{service} | Retrieve one Service resource.
 *@KeyclicSdkJavascript.WebhookApi* | [**deleteWebhook**](docs/WebhookApi.md#deleteWebhook) | **DELETE** /webhooks/{webhook} | Remove one Webhook resource.
 *@KeyclicSdkJavascript.WebhookApi* | [**getWebhook**](docs/WebhookApi.md#getWebhook) | **GET** /webhooks/{webhook} | Retrieve one Webhook resource.
 *@KeyclicSdkJavascript.WebhookApi* | [**patchWebhook**](docs/WebhookApi.md#patchWebhook) | **PATCH** /webhooks/{webhook} | Edit one Webhook resource.
@@ -554,6 +556,8 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.SectionLinks](docs/SectionLinks.md)
 - [@KeyclicSdkJavascript.SectionLinksSelf](docs/SectionLinksSelf.md)
 - [@KeyclicSdkJavascript.SectionLinksSelfIriTemplate](docs/SectionLinksSelfIriTemplate.md)
+- [@KeyclicSdkJavascript.Service](docs/Service.md)
+- [@KeyclicSdkJavascript.ServiceContactPoint](docs/ServiceContactPoint.md)
 - [@KeyclicSdkJavascript.SignatureData](docs/SignatureData.md)
 - [@KeyclicSdkJavascript.SignatureDataSigner](docs/SignatureDataSigner.md)
 - [@KeyclicSdkJavascript.SignatureSigner](docs/SignatureSigner.md)

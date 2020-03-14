@@ -2769,6 +2769,18 @@ Object.defineProperty(exports, "SectionLinksSelfIriTemplate", {
     return _SectionLinksSelfIriTemplate.default;
   }
 });
+Object.defineProperty(exports, "Service", {
+  enumerable: true,
+  get: function get() {
+    return _Service.default;
+  }
+});
+Object.defineProperty(exports, "ServiceContactPoint", {
+  enumerable: true,
+  get: function get() {
+    return _ServiceContactPoint.default;
+  }
+});
 Object.defineProperty(exports, "SignatureData", {
   enumerable: true,
   get: function get() {
@@ -3229,6 +3241,12 @@ Object.defineProperty(exports, "SecurityApi", {
   enumerable: true,
   get: function get() {
     return _SecurityApi.default;
+  }
+});
+Object.defineProperty(exports, "ServiceApi", {
+  enumerable: true,
+  get: function get() {
+    return _ServiceApi.default;
   }
 });
 Object.defineProperty(exports, "WebhookApi", {
@@ -4654,6 +4672,12 @@ var _SectionLinksSelfIriTemplate = _interopRequireDefault(
   require("./model/SectionLinksSelfIriTemplate")
 );
 
+var _Service = _interopRequireDefault(require("./model/Service"));
+
+var _ServiceContactPoint = _interopRequireDefault(
+  require("./model/ServiceContactPoint")
+);
+
 var _SignatureData = _interopRequireDefault(require("./model/SignatureData"));
 
 var _SignatureDataSigner = _interopRequireDefault(
@@ -4889,6 +4913,8 @@ var _RoleApi = _interopRequireDefault(require("./api/RoleApi"));
 var _SectionApi = _interopRequireDefault(require("./api/SectionApi"));
 
 var _SecurityApi = _interopRequireDefault(require("./api/SecurityApi"));
+
+var _ServiceApi = _interopRequireDefault(require("./api/ServiceApi"));
 
 var _WebhookApi = _interopRequireDefault(require("./api/WebhookApi"));
 

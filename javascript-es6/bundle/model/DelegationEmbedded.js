@@ -11,6 +11,8 @@ var _DelegationEmbeddedWorkflow = _interopRequireDefault(
   require("./DelegationEmbeddedWorkflow")
 );
 
+var _Service = _interopRequireDefault(require("./Service"));
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -51,8 +53,10 @@ var DelegationEmbedded = /*#__PURE__*/ (function() {
   function DelegationEmbedded() {
     _classCallCheck(this, DelegationEmbedded);
 
+    this.service = null;
     this.stateTransitions = [];
     this.workflow = null;
+    this.serviceType = _Service.default;
     this.workflowType = _DelegationEmbeddedWorkflow.default;
   }
   /**
@@ -66,11 +70,29 @@ var DelegationEmbedded = /*#__PURE__*/ (function() {
     DelegationEmbedded,
     [
       {
-        key: "getStateTransitions",
+        key: "getService",
 
+        /**
+         * @return { module:model/Service }
+         */
+        value: function getService() {
+          return this.service;
+        }
+        /**
+         * @param { module:model/Service } service
+         */
+      },
+      {
+        key: "setService",
+        value: function setService(service) {
+          this.service = service;
+        }
         /**
          * @return { Array.<String> }
          */
+      },
+      {
+        key: "getStateTransitions",
         value: function getStateTransitions() {
           return this.stateTransitions;
         }
@@ -118,6 +140,13 @@ var DelegationEmbedded = /*#__PURE__*/ (function() {
 
           if (object === null) {
             object = new DelegationEmbedded();
+          }
+
+          if (data.hasOwnProperty("service")) {
+            object.service = _ApiClient.default.convertToType(
+              data["service"],
+              object.serviceType
+            );
           }
 
           if (data.hasOwnProperty("stateTransitions")) {
