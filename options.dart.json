@@ -2,6 +2,6 @@
     "browserClient": false,
     "pubDescription": "The keyclic_sdk_api package is an implementation of the Keyclic API.",
     "pubName": "keyclic_sdk_api",
-    "pubVersion": "2.4.6",
+    "pubVersion": "2.4.7",
     "useEnumExtension": true
 }
