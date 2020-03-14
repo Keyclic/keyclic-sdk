@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**oneOf** | [**[Choice]**](Choice.md) |  | [optional] 
+**oneOf** | [**[ItemsChoice]**](ItemsChoice.md) |  | [optional] 
 
 

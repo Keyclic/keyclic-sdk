@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Role = _interopRequireDefault(require("./Role"));
+var _MemberTypeRole = _interopRequireDefault(require("./MemberTypeRole"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -52,7 +52,7 @@ var ConfigurationMemberType = /*#__PURE__*/ (function() {
     this.id = null;
     this.roles = [];
     this.type = null;
-    this.rolesType = _Role.default;
+    this.rolesType = _MemberTypeRole.default;
   }
   /**
    * Constructs a "ConfigurationMemberType" from a plain JavaScript object.
@@ -74,7 +74,7 @@ var ConfigurationMemberType = /*#__PURE__*/ (function() {
           return this.id;
         }
         /**
-         * @return { Array.<module:model/Role> }
+         * @return { Array.<module:model/MemberTypeRole> }
          */
       },
       {
@@ -83,7 +83,7 @@ var ConfigurationMemberType = /*#__PURE__*/ (function() {
           return this.roles;
         }
         /**
-         * @param { Array.<module:model/Role> } roles
+         * @param { Array.<module:model/MemberTypeRole> } roles
          */
       },
       {

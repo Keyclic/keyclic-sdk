@@ -11,11 +11,11 @@ class PropertyItems {
     }
 
     return PropertyItems(
-      oneOf: Choice.listFromJson(json['oneOf']),
+      oneOf: ItemsChoice.listFromJson(json['oneOf']),
     );
   }
 
-  List<Choice> oneOf;
+  List<ItemsChoice> oneOf;
 
   @override
   bool operator ==(dynamic other) {
@@ -36,7 +36,7 @@ class PropertyItems {
 
     if (oneOf is List && oneOf.isNotEmpty) {
       hashCode ^= oneOf
-          .map((Choice element) => element.hashCode)
+          .map((ItemsChoice element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
 

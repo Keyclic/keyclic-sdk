@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] [default to null]
 **name** | **String** |  | [optional] [default to null]
 **start** | [**WorkflowState**](WorkflowState.md) |  | [optional] [default to null]
-**states** | [**List&lt;State&gt;**](State.md) |  | [optional] [default to []]
-**transitions** | [**List&lt;Transition&gt;**](Transition.md) |  | [optional] [default to []]
+**states** | [**List&lt;WorkflowState&gt;**](WorkflowState.md) |  | [optional] [default to []]
+**transitions** | [**List&lt;WorkflowTransition&gt;**](WorkflowTransition.md) |  | [optional] [default to []]
 **type** | **String** |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 

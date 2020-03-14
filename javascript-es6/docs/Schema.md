@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**properties** | [**{String: Property}**](Property.md) |  | [optional] 
+**properties** | [**{String: SchemaProperty}**](SchemaProperty.md) |  | [optional] 
 **required** | **[String]** |  | [optional] 
 
 

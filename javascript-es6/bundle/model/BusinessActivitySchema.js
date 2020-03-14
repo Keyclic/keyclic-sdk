@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Property = _interopRequireDefault(require("./Property"));
+var _SchemaProperty = _interopRequireDefault(require("./SchemaProperty"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -51,7 +51,7 @@ var BusinessActivitySchema = /*#__PURE__*/ (function() {
 
     this.properties = [];
     this.required = [];
-    this.propertiesType = _Property.default;
+    this.propertiesType = _SchemaProperty.default;
   }
   /**
    * Constructs a "BusinessActivitySchema" from a plain JavaScript object.
@@ -67,13 +67,13 @@ var BusinessActivitySchema = /*#__PURE__*/ (function() {
         key: "getProperties",
 
         /**
-         * @return { Object.<String, module:model/Property> }
+         * @return { Object.<String, module:model/SchemaProperty> }
          */
         value: function getProperties() {
           return this.properties;
         }
         /**
-         * @param { Object.<String, module:model/Property> } properties
+         * @param { Object.<String, module:model/SchemaProperty> } properties
          */
       },
       {

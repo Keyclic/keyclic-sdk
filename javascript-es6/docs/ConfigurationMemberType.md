@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
-**roles** | [**[Role]**](Role.md) |  | [optional] 
+**roles** | [**[MemberTypeRole]**](MemberTypeRole.md) |  | [optional] 
 **type** | **String** |  | [optional] 
 
 

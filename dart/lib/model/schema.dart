@@ -12,13 +12,13 @@ class Schema {
     }
 
     return Schema(
-      properties: Property.mapFromJson(json['properties']),
+      properties: SchemaProperty.mapFromJson(json['properties']),
       required:
           json['required'] is List ? List<String>.from(json['required']) : null,
     );
   }
 
-  Map<String, Property> properties;
+  Map<String, SchemaProperty> properties;
 
   List<String> required;
 

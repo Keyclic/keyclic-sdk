@@ -14,14 +14,14 @@ class ConfigurationMemberType {
 
     return ConfigurationMemberType(
       id: json['id'],
-      roles: Role.listFromJson(json['roles']),
+      roles: MemberTypeRole.listFromJson(json['roles']),
       type: json['type'],
     );
   }
 
   String id;
 
-  List<Role> roles;
+  List<MemberTypeRole> roles;
 
   String type;
 
@@ -46,7 +46,7 @@ class ConfigurationMemberType {
 
     if (roles is List && roles.isNotEmpty) {
       hashCode ^= roles
-          .map((Role element) => element.hashCode)
+          .map((MemberTypeRole element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
 

@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import Choice from "./Choice";
+import ItemsChoice from "./ItemsChoice";
 
 /**
  * The PropertyItems model module.
@@ -27,7 +27,7 @@ export default class PropertyItems {
   constructor() {
     this.oneOf = [];
 
-    this.oneOfType = Choice;
+    this.oneOfType = ItemsChoice;
   }
 
   /**
@@ -53,14 +53,14 @@ export default class PropertyItems {
   }
 
   /**
-   * @return { Array.<module:model/Choice> }
+   * @return { Array.<module:model/ItemsChoice> }
    */
   getOneOf() {
     return this.oneOf;
   }
 
   /**
-   * @param { Array.<module:model/Choice> } oneOf
+   * @param { Array.<module:model/ItemsChoice> } oneOf
    */
   setOneOf(oneOf) {
     this.oneOf = oneOf;

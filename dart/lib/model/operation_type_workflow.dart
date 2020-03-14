@@ -38,8 +38,8 @@ class OperationTypeWorkflow {
       id: json['id'],
       name: json['name'],
       start: WorkflowState.fromJson(json['start']),
-      states: State.listFromJson(json['states']),
-      transitions: Transition.listFromJson(json['transitions']),
+      states: WorkflowState.listFromJson(json['states']),
+      transitions: WorkflowTransition.listFromJson(json['transitions']),
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -57,9 +57,9 @@ class OperationTypeWorkflow {
 
   WorkflowState start;
 
-  List<State> states;
+  List<WorkflowState> states;
 
-  List<Transition> transitions;
+  List<WorkflowTransition> transitions;
 
   String type;
 
@@ -94,12 +94,12 @@ class OperationTypeWorkflow {
 
     if (states is List && states.isNotEmpty) {
       hashCode ^= states
-          .map((State element) => element.hashCode)
+          .map((WorkflowState element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
     if (transitions is List && transitions.isNotEmpty) {
       hashCode ^= transitions
-          .map((Transition element) => element.hashCode)
+          .map((WorkflowTransition element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
 

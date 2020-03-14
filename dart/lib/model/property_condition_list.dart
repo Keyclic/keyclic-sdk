@@ -11,11 +11,11 @@ class PropertyConditionList {
     }
 
     return PropertyConditionList(
-      allOf: Condition.listFromJson(json['allOf']),
+      allOf: ConditionListCondition.listFromJson(json['allOf']),
     );
   }
 
-  List<Condition> allOf;
+  List<ConditionListCondition> allOf;
 
   @override
   bool operator ==(dynamic other) {
@@ -36,7 +36,7 @@ class PropertyConditionList {
 
     if (allOf is List && allOf.isNotEmpty) {
       hashCode ^= allOf
-          .map((Condition element) => element.hashCode)
+          .map((ConditionListCondition element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
 

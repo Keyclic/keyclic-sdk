@@ -27,6 +27,7 @@ import AgreementTermsOfService from "./model/AgreementTermsOfService";
 import Application from "./model/Application";
 import ApplicationAbout from "./model/ApplicationAbout";
 import ApplicationAgreement from "./model/ApplicationAgreement";
+import ApplicationContactPoint from "./model/ApplicationContactPoint";
 import ApplicationLinks from "./model/ApplicationLinks";
 import ApplicationLinksKnowledgeBase from "./model/ApplicationLinksKnowledgeBase";
 import ApplicationLinksKnowledgeBaseIriTemplate from "./model/ApplicationLinksKnowledgeBaseIriTemplate";
@@ -75,9 +76,8 @@ import CheckpointLinks from "./model/CheckpointLinks";
 import CheckpointLinksOrganization from "./model/CheckpointLinksOrganization";
 import CheckpointLinksOrganizationIriTemplate from "./model/CheckpointLinksOrganizationIriTemplate";
 import CheckpointState from "./model/CheckpointState";
-import Choice from "./model/Choice";
 import CommentData from "./model/CommentData";
-import Condition from "./model/Condition";
+import ConditionListCondition from "./model/ConditionListCondition";
 import Configuration from "./model/Configuration";
 import ConfigurationDelegationType from "./model/ConfigurationDelegationType";
 import ConfigurationLinks from "./model/ConfigurationLinks";
@@ -87,7 +87,6 @@ import ConfigurationLinksSelfIriTemplateMapping from "./model/ConfigurationLinks
 import ConfigurationMemberType from "./model/ConfigurationMemberType";
 import ConfigurationOperationType from "./model/ConfigurationOperationType";
 import ConfigurationReportType from "./model/ConfigurationReportType";
-import ContactPoint from "./model/ContactPoint";
 import Contribution from "./model/Contribution";
 import ContributionCollection from "./model/ContributionCollection";
 import ContributionData from "./model/ContributionData";
@@ -207,6 +206,7 @@ import InvitationLinksMemberIriTemplateMapping from "./model/InvitationLinksMemb
 import InvitationLinksSelf from "./model/InvitationLinksSelf";
 import InvitationLinksSelfIriTemplate from "./model/InvitationLinksSelfIriTemplate";
 import InvitationLinksSelfIriTemplateMapping from "./model/InvitationLinksSelfIriTemplateMapping";
+import ItemsChoice from "./model/ItemsChoice";
 import KnowledgeBase from "./model/KnowledgeBase";
 import KnowledgeBaseLinks from "./model/KnowledgeBaseLinks";
 import KnowledgeBaseLinksSelf from "./model/KnowledgeBaseLinksSelf";
@@ -227,6 +227,7 @@ import MemberLinksSelf from "./model/MemberLinksSelf";
 import MemberLinksSelfIriTemplate from "./model/MemberLinksSelfIriTemplate";
 import MemberPatch from "./model/MemberPatch";
 import MemberPatchContactPoint from "./model/MemberPatchContactPoint";
+import MemberTypeRole from "./model/MemberTypeRole";
 import Node from "./model/Node";
 import NodeEmbedded from "./model/NodeEmbedded";
 import NodePath from "./model/NodePath";
@@ -334,7 +335,6 @@ import Point from "./model/Point";
 import Polygon from "./model/Polygon";
 import PreferencesNotification from "./model/PreferencesNotification";
 import PreferencesReference from "./model/PreferencesReference";
-import Property from "./model/Property";
 import PropertyConditionList from "./model/PropertyConditionList";
 import PropertyItems from "./model/PropertyItems";
 import Publication from "./model/Publication";
@@ -406,6 +406,7 @@ import ReviewRequestLinksSelfIriTemplate from "./model/ReviewRequestLinksSelfIri
 import ReviewRequestLinksSelfIriTemplateMapping from "./model/ReviewRequestLinksSelfIriTemplateMapping";
 import Role from "./model/Role";
 import Schema from "./model/Schema";
+import SchemaProperty from "./model/SchemaProperty";
 import Section from "./model/Section";
 import SectionCollection from "./model/SectionCollection";
 import SectionLinks from "./model/SectionLinks";
@@ -420,6 +421,7 @@ import State from "./model/State";
 import SuccessLogin from "./model/SuccessLogin";
 import SuccessLoginCredentials from "./model/SuccessLoginCredentials";
 import Tracking from "./model/Tracking";
+import TrackingCheckpoint from "./model/TrackingCheckpoint";
 import TrackingProgression from "./model/TrackingProgression";
 import Transition from "./model/Transition";
 import TransitionState from "./model/TransitionState";
@@ -440,6 +442,7 @@ import WorkflowLinksSelf from "./model/WorkflowLinksSelf";
 import WorkflowLinksSelfIriTemplate from "./model/WorkflowLinksSelfIriTemplate";
 import WorkflowLinksSelfIriTemplateMapping from "./model/WorkflowLinksSelfIriTemplateMapping";
 import WorkflowState from "./model/WorkflowState";
+import WorkflowTransition from "./model/WorkflowTransition";
 import ArticlePagination from "./model/ArticlePagination";
 import BusinessActivityPagination from "./model/BusinessActivityPagination";
 import CategoryPagination from "./model/CategoryPagination";
@@ -514,7 +517,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.4.6
+ * @version 2.4.7
  */
 export {
   /**
@@ -577,6 +580,11 @@ export {
    * @property { module:model/ApplicationAgreement }
    */
   ApplicationAgreement,
+  /**
+   * The ApplicationContactPoint model constructor.
+   * @property { module:model/ApplicationContactPoint }
+   */
+  ApplicationContactPoint,
   /**
    * The ApplicationLinks model constructor.
    * @property { module:model/ApplicationLinks }
@@ -818,20 +826,15 @@ export {
    */
   CheckpointState,
   /**
-   * The Choice model constructor.
-   * @property { module:model/Choice }
-   */
-  Choice,
-  /**
    * The CommentData model constructor.
    * @property { module:model/CommentData }
    */
   CommentData,
   /**
-   * The Condition model constructor.
-   * @property { module:model/Condition }
+   * The ConditionListCondition model constructor.
+   * @property { module:model/ConditionListCondition }
    */
-  Condition,
+  ConditionListCondition,
   /**
    * The Configuration model constructor.
    * @property { module:model/Configuration }
@@ -877,11 +880,6 @@ export {
    * @property { module:model/ConfigurationReportType }
    */
   ConfigurationReportType,
-  /**
-   * The ContactPoint model constructor.
-   * @property { module:model/ContactPoint }
-   */
-  ContactPoint,
   /**
    * The Contribution model constructor.
    * @property { module:model/Contribution }
@@ -1478,6 +1476,11 @@ export {
    */
   InvitationLinksSelfIriTemplateMapping,
   /**
+   * The ItemsChoice model constructor.
+   * @property { module:model/ItemsChoice }
+   */
+  ItemsChoice,
+  /**
    * The KnowledgeBase model constructor.
    * @property { module:model/KnowledgeBase }
    */
@@ -1577,6 +1580,11 @@ export {
    * @property { module:model/MemberPatchContactPoint }
    */
   MemberPatchContactPoint,
+  /**
+   * The MemberTypeRole model constructor.
+   * @property { module:model/MemberTypeRole }
+   */
+  MemberTypeRole,
   /**
    * The Node model constructor.
    * @property { module:model/Node }
@@ -2113,11 +2121,6 @@ export {
    */
   PreferencesReference,
   /**
-   * The Property model constructor.
-   * @property { module:model/Property }
-   */
-  Property,
-  /**
    * The PropertyConditionList model constructor.
    * @property { module:model/PropertyConditionList }
    */
@@ -2473,6 +2476,11 @@ export {
    */
   Schema,
   /**
+   * The SchemaProperty model constructor.
+   * @property { module:model/SchemaProperty }
+   */
+  SchemaProperty,
+  /**
    * The Section model constructor.
    * @property { module:model/Section }
    */
@@ -2542,6 +2550,11 @@ export {
    * @property { module:model/Tracking }
    */
   Tracking,
+  /**
+   * The TrackingCheckpoint model constructor.
+   * @property { module:model/TrackingCheckpoint }
+   */
+  TrackingCheckpoint,
   /**
    * The TrackingProgression model constructor.
    * @property { module:model/TrackingProgression }
@@ -2642,6 +2655,11 @@ export {
    * @property { module:model/WorkflowState }
    */
   WorkflowState,
+  /**
+   * The WorkflowTransition model constructor.
+   * @property { module:model/WorkflowTransition }
+   */
+  WorkflowTransition,
   /**
    * The ArticlePagination model constructor.
    * @property { module:model/ArticlePagination }

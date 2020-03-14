@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.4.6
-- Package version: 2.4.6
+- API version: 2.4.7
+- Package version: 2.4.7
 
 ## Getting started
 
@@ -172,6 +172,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.Application](docs/Application.md)
 - [@KeyclicSdkJavascript.ApplicationAbout](docs/ApplicationAbout.md)
 - [@KeyclicSdkJavascript.ApplicationAgreement](docs/ApplicationAgreement.md)
+- [@KeyclicSdkJavascript.ApplicationContactPoint](docs/ApplicationContactPoint.md)
 - [@KeyclicSdkJavascript.ApplicationLinks](docs/ApplicationLinks.md)
 - [@KeyclicSdkJavascript.ApplicationLinksKnowledgeBase](docs/ApplicationLinksKnowledgeBase.md)
 - [@KeyclicSdkJavascript.ApplicationLinksKnowledgeBaseIriTemplate](docs/ApplicationLinksKnowledgeBaseIriTemplate.md)
@@ -220,9 +221,8 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.CheckpointLinksOrganization](docs/CheckpointLinksOrganization.md)
 - [@KeyclicSdkJavascript.CheckpointLinksOrganizationIriTemplate](docs/CheckpointLinksOrganizationIriTemplate.md)
 - [@KeyclicSdkJavascript.CheckpointState](docs/CheckpointState.md)
-- [@KeyclicSdkJavascript.Choice](docs/Choice.md)
 - [@KeyclicSdkJavascript.CommentData](docs/CommentData.md)
-- [@KeyclicSdkJavascript.Condition](docs/Condition.md)
+- [@KeyclicSdkJavascript.ConditionListCondition](docs/ConditionListCondition.md)
 - [@KeyclicSdkJavascript.Configuration](docs/Configuration.md)
 - [@KeyclicSdkJavascript.ConfigurationDelegationType](docs/ConfigurationDelegationType.md)
 - [@KeyclicSdkJavascript.ConfigurationLinks](docs/ConfigurationLinks.md)
@@ -232,7 +232,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ConfigurationMemberType](docs/ConfigurationMemberType.md)
 - [@KeyclicSdkJavascript.ConfigurationOperationType](docs/ConfigurationOperationType.md)
 - [@KeyclicSdkJavascript.ConfigurationReportType](docs/ConfigurationReportType.md)
-- [@KeyclicSdkJavascript.ContactPoint](docs/ContactPoint.md)
 - [@KeyclicSdkJavascript.Contribution](docs/Contribution.md)
 - [@KeyclicSdkJavascript.ContributionCollection](docs/ContributionCollection.md)
 - [@KeyclicSdkJavascript.ContributionData](docs/ContributionData.md)
@@ -352,6 +351,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.InvitationLinksSelf](docs/InvitationLinksSelf.md)
 - [@KeyclicSdkJavascript.InvitationLinksSelfIriTemplate](docs/InvitationLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.InvitationLinksSelfIriTemplateMapping](docs/InvitationLinksSelfIriTemplateMapping.md)
+- [@KeyclicSdkJavascript.ItemsChoice](docs/ItemsChoice.md)
 - [@KeyclicSdkJavascript.KnowledgeBase](docs/KnowledgeBase.md)
 - [@KeyclicSdkJavascript.KnowledgeBaseLinks](docs/KnowledgeBaseLinks.md)
 - [@KeyclicSdkJavascript.KnowledgeBaseLinksSelf](docs/KnowledgeBaseLinksSelf.md)
@@ -372,6 +372,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.MemberLinksSelfIriTemplate](docs/MemberLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.MemberPatch](docs/MemberPatch.md)
 - [@KeyclicSdkJavascript.MemberPatchContactPoint](docs/MemberPatchContactPoint.md)
+- [@KeyclicSdkJavascript.MemberTypeRole](docs/MemberTypeRole.md)
 - [@KeyclicSdkJavascript.Node](docs/Node.md)
 - [@KeyclicSdkJavascript.NodeEmbedded](docs/NodeEmbedded.md)
 - [@KeyclicSdkJavascript.NodePath](docs/NodePath.md)
@@ -479,7 +480,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.Polygon](docs/Polygon.md)
 - [@KeyclicSdkJavascript.PreferencesNotification](docs/PreferencesNotification.md)
 - [@KeyclicSdkJavascript.PreferencesReference](docs/PreferencesReference.md)
-- [@KeyclicSdkJavascript.Property](docs/Property.md)
 - [@KeyclicSdkJavascript.PropertyConditionList](docs/PropertyConditionList.md)
 - [@KeyclicSdkJavascript.PropertyItems](docs/PropertyItems.md)
 - [@KeyclicSdkJavascript.Publication](docs/Publication.md)
@@ -551,6 +551,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ReviewRequestLinksSelfIriTemplateMapping](docs/ReviewRequestLinksSelfIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.Role](docs/Role.md)
 - [@KeyclicSdkJavascript.Schema](docs/Schema.md)
+- [@KeyclicSdkJavascript.SchemaProperty](docs/SchemaProperty.md)
 - [@KeyclicSdkJavascript.Section](docs/Section.md)
 - [@KeyclicSdkJavascript.SectionCollection](docs/SectionCollection.md)
 - [@KeyclicSdkJavascript.SectionLinks](docs/SectionLinks.md)
@@ -565,6 +566,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.SuccessLogin](docs/SuccessLogin.md)
 - [@KeyclicSdkJavascript.SuccessLoginCredentials](docs/SuccessLoginCredentials.md)
 - [@KeyclicSdkJavascript.Tracking](docs/Tracking.md)
+- [@KeyclicSdkJavascript.TrackingCheckpoint](docs/TrackingCheckpoint.md)
 - [@KeyclicSdkJavascript.TrackingProgression](docs/TrackingProgression.md)
 - [@KeyclicSdkJavascript.Transition](docs/Transition.md)
 - [@KeyclicSdkJavascript.TransitionState](docs/TransitionState.md)
@@ -585,6 +587,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.WorkflowLinksSelfIriTemplate](docs/WorkflowLinksSelfIriTemplate.md)
 - [@KeyclicSdkJavascript.WorkflowLinksSelfIriTemplateMapping](docs/WorkflowLinksSelfIriTemplateMapping.md)
 - [@KeyclicSdkJavascript.WorkflowState](docs/WorkflowState.md)
+- [@KeyclicSdkJavascript.WorkflowTransition](docs/WorkflowTransition.md)
 - [@KeyclicSdkJavascript.ArticlePagination](docs/ArticlePagination.md)
 - [@KeyclicSdkJavascript.BusinessActivityPagination](docs/BusinessActivityPagination.md)
 - [@KeyclicSdkJavascript.CategoryPagination](docs/CategoryPagination.md)

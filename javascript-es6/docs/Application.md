@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **links** | [**ApplicationLinks**](ApplicationLinks.md) |  | [optional] 
 **about** | [**ApplicationAbout**](ApplicationAbout.md) |  | [optional] 
 **agreement** | [**ApplicationAgreement**](ApplicationAgreement.md) |  | [optional] 
-**contactPoints** | [**[ContactPoint]**](ContactPoint.md) |  | [optional] 
+**contactPoints** | [**[ApplicationContactPoint]**](ApplicationContactPoint.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **id** | **String** |  | [optional] 
 **name** | **String** |  | 

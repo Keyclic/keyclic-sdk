@@ -13,9 +13,11 @@ var _ApplicationAgreement = _interopRequireDefault(
   require("./ApplicationAgreement")
 );
 
-var _ApplicationLinks = _interopRequireDefault(require("./ApplicationLinks"));
+var _ApplicationContactPoint = _interopRequireDefault(
+  require("./ApplicationContactPoint")
+);
 
-var _ContactPoint = _interopRequireDefault(require("./ContactPoint"));
+var _ApplicationLinks = _interopRequireDefault(require("./ApplicationLinks"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -75,7 +77,7 @@ var Application = /*#__PURE__*/ (function() {
     this.linksType = _ApplicationLinks.default;
     this.aboutType = _ApplicationAbout.default;
     this.agreementType = _ApplicationAgreement.default;
-    this.contactPointsType = _ContactPoint.default;
+    this.contactPointsType = _ApplicationContactPoint.default;
   }
   /**
    * Constructs a "Application" from a plain JavaScript object.
@@ -142,7 +144,7 @@ var Application = /*#__PURE__*/ (function() {
           this.agreement = agreement;
         }
         /**
-         * @return { Array.<module:model/ContactPoint> }
+         * @return { Array.<module:model/ApplicationContactPoint> }
          */
       },
       {
@@ -151,7 +153,7 @@ var Application = /*#__PURE__*/ (function() {
           return this.contactPoints;
         }
         /**
-         * @param { Array.<module:model/ContactPoint> } contactPoints
+         * @param { Array.<module:model/ApplicationContactPoint> } contactPoints
          */
       },
       {

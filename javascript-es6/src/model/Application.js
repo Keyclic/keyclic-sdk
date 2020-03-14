@@ -13,8 +13,8 @@
 import ApiClient from "../ApiClient";
 import ApplicationAbout from "./ApplicationAbout";
 import ApplicationAgreement from "./ApplicationAgreement";
+import ApplicationContactPoint from "./ApplicationContactPoint";
 import ApplicationLinks from "./ApplicationLinks";
-import ContactPoint from "./ContactPoint";
 
 /**
  * The Application model module.
@@ -51,7 +51,7 @@ export default class Application {
     this.linksType = ApplicationLinks;
     this.aboutType = ApplicationAbout;
     this.agreementType = ApplicationAgreement;
-    this.contactPointsType = ContactPoint;
+    this.contactPointsType = ApplicationContactPoint;
   }
 
   /**
@@ -151,14 +151,14 @@ export default class Application {
     this.agreement = agreement;
   }
   /**
-   * @return { Array.<module:model/ContactPoint> }
+   * @return { Array.<module:model/ApplicationContactPoint> }
    */
   getContactPoints() {
     return this.contactPoints;
   }
 
   /**
-   * @param { Array.<module:model/ContactPoint> } contactPoints
+   * @param { Array.<module:model/ApplicationContactPoint> } contactPoints
    */
   setContactPoints(contactPoints) {
     this.contactPoints = contactPoints;

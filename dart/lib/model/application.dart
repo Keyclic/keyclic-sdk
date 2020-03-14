@@ -36,7 +36,8 @@ class Application {
       links: ApplicationLinks.fromJson(json['_links']),
       about: ApplicationAbout.fromJson(json['about']),
       agreement: ApplicationAgreement.fromJson(json['agreement']),
-      contactPoints: ContactPoint.listFromJson(json['contactPoints']),
+      contactPoints:
+          ApplicationContactPoint.listFromJson(json['contactPoints']),
       createdAt: createdAt,
       id: json['id'],
       name: json['name'],
@@ -53,7 +54,7 @@ class Application {
 
   ApplicationAgreement agreement;
 
-  List<ContactPoint> contactPoints;
+  List<ApplicationContactPoint> contactPoints;
 
   DateTime createdAt;
 
@@ -99,7 +100,7 @@ class Application {
 
     if (contactPoints is List && contactPoints.isNotEmpty) {
       hashCode ^= contactPoints
-          .map((ContactPoint element) => element.hashCode)
+          .map((ApplicationContactPoint element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
 

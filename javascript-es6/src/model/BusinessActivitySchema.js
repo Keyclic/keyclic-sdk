@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import Property from "./Property";
+import SchemaProperty from "./SchemaProperty";
 
 /**
  * The BusinessActivitySchema model module.
@@ -28,7 +28,7 @@ export default class BusinessActivitySchema {
     this.properties = [];
     this.required = [];
 
-    this.propertiesType = Property;
+    this.propertiesType = SchemaProperty;
   }
 
   /**
@@ -59,14 +59,14 @@ export default class BusinessActivitySchema {
   }
 
   /**
-   * @return { Object.<String, module:model/Property> }
+   * @return { Object.<String, module:model/SchemaProperty> }
    */
   getProperties() {
     return this.properties;
   }
 
   /**
-   * @param { Object.<String, module:model/Property> } properties
+   * @param { Object.<String, module:model/SchemaProperty> } properties
    */
   setProperties(properties) {
     this.properties = properties;

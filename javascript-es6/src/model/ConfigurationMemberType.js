@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import Role from "./Role";
+import MemberTypeRole from "./MemberTypeRole";
 
 /**
  * The ConfigurationMemberType model module.
@@ -29,7 +29,7 @@ export default class ConfigurationMemberType {
     this.roles = [];
     this.type = null;
 
-    this.rolesType = Role;
+    this.rolesType = MemberTypeRole;
   }
 
   /**
@@ -68,14 +68,14 @@ export default class ConfigurationMemberType {
   }
 
   /**
-   * @return { Array.<module:model/Role> }
+   * @return { Array.<module:model/MemberTypeRole> }
    */
   getRoles() {
     return this.roles;
   }
 
   /**
-   * @param { Array.<module:model/Role> } roles
+   * @param { Array.<module:model/MemberTypeRole> } roles
    */
   setRoles(roles) {
     this.roles = roles;

@@ -11,9 +11,8 @@
  */
 
 import ApiClient from "../ApiClient";
-import State from "./State";
-import Transition from "./Transition";
 import WorkflowState from "./WorkflowState";
+import WorkflowTransition from "./WorkflowTransition";
 
 /**
  * The OperationTypeWorkflow model module.
@@ -40,8 +39,8 @@ export default class OperationTypeWorkflow {
 
     this.endType = WorkflowState;
     this.startType = WorkflowState;
-    this.statesType = State;
-    this.transitionsType = Transition;
+    this.statesType = WorkflowState;
+    this.transitionsType = WorkflowTransition;
   }
 
   /**
@@ -167,27 +166,27 @@ export default class OperationTypeWorkflow {
     this.start = start;
   }
   /**
-   * @return { Array.<module:model/State> }
+   * @return { Array.<module:model/WorkflowState> }
    */
   getStates() {
     return this.states;
   }
 
   /**
-   * @param { Array.<module:model/State> } states
+   * @param { Array.<module:model/WorkflowState> } states
    */
   setStates(states) {
     this.states = states;
   }
   /**
-   * @return { Array.<module:model/Transition> }
+   * @return { Array.<module:model/WorkflowTransition> }
    */
   getTransitions() {
     return this.transitions;
   }
 
   /**
-   * @param { Array.<module:model/Transition> } transitions
+   * @param { Array.<module:model/WorkflowTransition> } transitions
    */
   setTransitions(transitions) {
     this.transitions = transitions;

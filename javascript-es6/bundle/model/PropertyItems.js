@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Choice = _interopRequireDefault(require("./Choice"));
+var _ItemsChoice = _interopRequireDefault(require("./ItemsChoice"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -50,7 +50,7 @@ var PropertyItems = /*#__PURE__*/ (function() {
     _classCallCheck(this, PropertyItems);
 
     this.oneOf = [];
-    this.oneOfType = _Choice.default;
+    this.oneOfType = _ItemsChoice.default;
   }
   /**
    * Constructs a "PropertyItems" from a plain JavaScript object.
@@ -66,13 +66,13 @@ var PropertyItems = /*#__PURE__*/ (function() {
         key: "getOneOf",
 
         /**
-         * @return { Array.<module:model/Choice> }
+         * @return { Array.<module:model/ItemsChoice> }
          */
         value: function getOneOf() {
           return this.oneOf;
         }
         /**
-         * @param { Array.<module:model/Choice> } oneOf
+         * @param { Array.<module:model/ItemsChoice> } oneOf
          */
       },
       {

@@ -7,7 +7,9 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Condition = _interopRequireDefault(require("./Condition"));
+var _ConditionListCondition = _interopRequireDefault(
+  require("./ConditionListCondition")
+);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -50,7 +52,7 @@ var PropertyConditionList = /*#__PURE__*/ (function() {
     _classCallCheck(this, PropertyConditionList);
 
     this.allOf = [];
-    this.allOfType = _Condition.default;
+    this.allOfType = _ConditionListCondition.default;
   }
   /**
    * Constructs a "PropertyConditionList" from a plain JavaScript object.
@@ -66,13 +68,13 @@ var PropertyConditionList = /*#__PURE__*/ (function() {
         key: "getAllOf",
 
         /**
-         * @return { Array.<module:model/Condition> }
+         * @return { Array.<module:model/ConditionListCondition> }
          */
         value: function getAllOf() {
           return this.allOf;
         }
         /**
-         * @param { Array.<module:model/Condition> } allOf
+         * @param { Array.<module:model/ConditionListCondition> } allOf
          */
       },
       {

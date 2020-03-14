@@ -7,13 +7,13 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _State = _interopRequireDefault(require("./State"));
-
-var _Transition = _interopRequireDefault(require("./Transition"));
-
 var _WorkflowLinks = _interopRequireDefault(require("./WorkflowLinks"));
 
 var _WorkflowState = _interopRequireDefault(require("./WorkflowState"));
+
+var _WorkflowTransition = _interopRequireDefault(
+  require("./WorkflowTransition")
+);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -71,8 +71,8 @@ var Workflow = /*#__PURE__*/ (function() {
     this.linksType = _WorkflowLinks.default;
     this.endType = _WorkflowState.default;
     this.startType = _WorkflowState.default;
-    this.statesType = _State.default;
-    this.transitionsType = _Transition.default;
+    this.statesType = _WorkflowState.default;
+    this.transitionsType = _WorkflowTransition.default;
   }
   /**
    * Constructs a "Workflow" from a plain JavaScript object.
@@ -193,7 +193,7 @@ var Workflow = /*#__PURE__*/ (function() {
           this.start = start;
         }
         /**
-         * @return { Array.<module:model/State> }
+         * @return { Array.<module:model/WorkflowState> }
          */
       },
       {
@@ -202,7 +202,7 @@ var Workflow = /*#__PURE__*/ (function() {
           return this.states;
         }
         /**
-         * @param { Array.<module:model/State> } states
+         * @param { Array.<module:model/WorkflowState> } states
          */
       },
       {
@@ -211,7 +211,7 @@ var Workflow = /*#__PURE__*/ (function() {
           this.states = states;
         }
         /**
-         * @return { Array.<module:model/Transition> }
+         * @return { Array.<module:model/WorkflowTransition> }
          */
       },
       {
@@ -220,7 +220,7 @@ var Workflow = /*#__PURE__*/ (function() {
           return this.transitions;
         }
         /**
-         * @param { Array.<module:model/Transition> } transitions
+         * @param { Array.<module:model/WorkflowTransition> } transitions
          */
       },
       {

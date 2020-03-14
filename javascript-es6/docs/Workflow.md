@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **name** | **String** |  | 
 **start** | [**WorkflowState**](WorkflowState.md) |  | [optional] 
-**states** | [**[State]**](State.md) |  | [optional] 
-**transitions** | [**[Transition]**](Transition.md) |  | [optional] 
+**states** | [**[WorkflowState]**](WorkflowState.md) |  | [optional] 
+**transitions** | [**[WorkflowTransition]**](WorkflowTransition.md) |  | [optional] 
 **type** | **String** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 

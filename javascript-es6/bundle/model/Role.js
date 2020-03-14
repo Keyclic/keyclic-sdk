@@ -43,15 +43,19 @@ var Role = /*#__PURE__*/ (function() {
    * @alias module:model/Role
    * @class
   
+   * @param key { String }
+  
+   * @param name { String }
+  
    */
-  function Role() {
+  function Role(key, name) {
     _classCallCheck(this, Role);
 
     this.createdAt = null;
     this.description = null;
     this.id = null;
-    this.key = null;
-    this.name = null;
+    this.key = key;
+    this.name = name;
     this.permissions = [];
     this.type = null;
     this.updatedAt = null;

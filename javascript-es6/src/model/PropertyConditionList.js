@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import Condition from "./Condition";
+import ConditionListCondition from "./ConditionListCondition";
 
 /**
  * The PropertyConditionList model module.
@@ -27,7 +27,7 @@ export default class PropertyConditionList {
   constructor() {
     this.allOf = [];
 
-    this.allOfType = Condition;
+    this.allOfType = ConditionListCondition;
   }
 
   /**
@@ -53,14 +53,14 @@ export default class PropertyConditionList {
   }
 
   /**
-   * @return { Array.<module:model/Condition> }
+   * @return { Array.<module:model/ConditionListCondition> }
    */
   getAllOf() {
     return this.allOf;
   }
 
   /**
-   * @param { Array.<module:model/Condition> } allOf
+   * @param { Array.<module:model/ConditionListCondition> } allOf
    */
   setAllOf(allOf) {
     this.allOf = allOf;
