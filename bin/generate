@@ -27,13 +27,13 @@ docker run \
     --rm \
     --volume ${PWD}:/local \
     --user "$(id -u)":"$(id -g)" \
-    swaggerapi/swagger-codegen-cli:2.4.8 \
+    openapitools/openapi-generator-cli \
     generate \
     --config /local/options.dart.json \
     --input-spec ${SWAGGER_FILE} \
-    --lang dart \
-    --output /local/dart \
-    --template-dir /local/dart-templates
+    --generator-name dart \
+    --output /local/dart #\
+    #--template-dir /local/dart-templates
 
 sleep 10
 
