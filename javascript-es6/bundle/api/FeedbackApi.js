@@ -80,6 +80,20 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
+function _createSuper(Derived) {
+  return function() {
+    var Super = _getPrototypeOf(Derived),
+      result;
+    if (_isNativeReflectConstruct()) {
+      var NewTarget = _getPrototypeOf(this).constructor;
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+    return _possibleConstructorReturn(this, result);
+  };
+}
+
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
     return call;
@@ -94,6 +108,18 @@ function _assertThisInitialized(self) {
     );
   }
   return self;
+}
+
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+  try {
+    Date.prototype.toString.call(Reflect.construct(Date, [], function() {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
 }
 
 function _getPrototypeOf(o) {
@@ -132,6 +158,8 @@ function _setPrototypeOf(o, p) {
 var FeedbackApi = /*#__PURE__*/ (function(_ApiClient) {
   _inherits(FeedbackApi, _ApiClient);
 
+  var _super = _createSuper(FeedbackApi);
+
   /**
    * @class
    * { string } basePath To override basePath.
@@ -148,10 +176,7 @@ var FeedbackApi = /*#__PURE__*/ (function(_ApiClient) {
 
     _classCallCheck(this, FeedbackApi);
 
-    return _possibleConstructorReturn(
-      this,
-      _getPrototypeOf(FeedbackApi).call(this, basePath, headers, timeout)
-    );
+    return _super.call(this, basePath, headers, timeout);
   }
   /**
    * Retrieve all Comment resources.

@@ -13,6 +13,7 @@
 import ApiClient from "../ApiClient";
 import Category from "./Category";
 import DelegationEmbeddedWorkflow from "./DelegationEmbeddedWorkflow";
+import Feedback from "./Feedback";
 import OperationEmbeddedDuration from "./OperationEmbeddedDuration";
 import Place from "./Place";
 import ReportEmbeddedTargetGroups from "./ReportEmbeddedTargetGroups";
@@ -31,6 +32,7 @@ export default class ReportEmbedded {
   constructor() {
     this.category = null;
     this.duration = null;
+    this.feedback = null;
     this.place = null;
     this.stateTransitions = [];
     this.targetGroups = [];
@@ -39,6 +41,7 @@ export default class ReportEmbedded {
 
     this.categoryType = Category;
     this.durationType = OperationEmbeddedDuration;
+    this.feedbackType = Feedback;
     this.placeType = Place;
     this.targetGroupsType = ReportEmbeddedTargetGroups;
     this.workflowType = DelegationEmbeddedWorkflow;
@@ -69,6 +72,12 @@ export default class ReportEmbedded {
       object.duration = ApiClient.convertToType(
         data["duration"],
         object.durationType
+      );
+    }
+    if (data.hasOwnProperty("feedback")) {
+      object.feedback = ApiClient.convertToType(
+        data["feedback"],
+        object.feedbackType
       );
     }
     if (data.hasOwnProperty("place")) {
@@ -123,6 +132,19 @@ export default class ReportEmbedded {
    */
   setDuration(duration) {
     this.duration = duration;
+  }
+  /**
+   * @return { module:model/Feedback }
+   */
+  getFeedback() {
+    return this.feedback;
+  }
+
+  /**
+   * @param { module:model/Feedback } feedback
+   */
+  setFeedback(feedback) {
+    this.feedback = feedback;
   }
   /**
    * @return { module:model/Place }

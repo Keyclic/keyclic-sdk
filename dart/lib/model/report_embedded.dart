@@ -4,6 +4,7 @@ class ReportEmbedded {
   ReportEmbedded({
     this.category,
     this.duration,
+    this.feedback,
     this.place,
     this.stateTransitions,
     this.targetGroups,
@@ -19,6 +20,7 @@ class ReportEmbedded {
     return ReportEmbedded(
       category: Category.fromJson(json['category']),
       duration: OperationEmbeddedDuration.fromJson(json['duration']),
+      feedback: Feedback.fromJson(json['feedback']),
       place: Place.fromJson(json['place']),
       stateTransitions: json['stateTransitions'] is List
           ? List<String>.from(json['stateTransitions'])
@@ -33,6 +35,8 @@ class ReportEmbedded {
   Category category;
 
   OperationEmbeddedDuration duration;
+
+  Feedback feedback;
 
   Place place;
 
@@ -55,6 +59,7 @@ class ReportEmbedded {
         runtimeType == other.runtimeType &&
         category == other.category &&
         duration == other.duration &&
+        feedback == other.feedback &&
         place == other.place &&
         DeepCollectionEquality.unordered()
             .equals(stateTransitions, other.stateTransitions) &&
@@ -82,6 +87,7 @@ class ReportEmbedded {
 
     hashCode ^= category?.hashCode ?? 0;
     hashCode ^= duration?.hashCode ?? 0;
+    hashCode ^= feedback?.hashCode ?? 0;
     hashCode ^= place?.hashCode ?? 0;
     hashCode ^= tracking?.hashCode ?? 0;
     hashCode ^= workflow?.hashCode ?? 0;
@@ -107,6 +113,7 @@ class ReportEmbedded {
     return {
       if (category != null) 'category': category.toJson(),
       if (duration != null) 'duration': duration.toJson(),
+      if (feedback != null) 'feedback': feedback.toJson(),
       if (place != null) 'place': place.toJson(),
       if (stateTransitions != null) 'stateTransitions': stateTransitions,
       if (targetGroups != null) 'targetGroups': targetGroups,
@@ -117,6 +124,6 @@ class ReportEmbedded {
 
   @override
   String toString() {
-    return 'ReportEmbedded[category=$category, duration=$duration, place=$place, stateTransitions=$stateTransitions, targetGroups=$targetGroups, tracking=$tracking, workflow=$workflow, ]';
+    return 'ReportEmbedded[category=$category, duration=$duration, feedback=$feedback, place=$place, stateTransitions=$stateTransitions, targetGroups=$targetGroups, tracking=$tracking, workflow=$workflow, ]';
   }
 }

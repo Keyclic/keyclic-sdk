@@ -13,6 +13,8 @@ var _DelegationEmbeddedWorkflow = _interopRequireDefault(
   require("./DelegationEmbeddedWorkflow")
 );
 
+var _Feedback = _interopRequireDefault(require("./Feedback"));
+
 var _OperationEmbeddedDuration = _interopRequireDefault(
   require("./OperationEmbeddedDuration")
 );
@@ -65,6 +67,7 @@ var ReportEmbedded = /*#__PURE__*/ (function() {
 
     this.category = null;
     this.duration = null;
+    this.feedback = null;
     this.place = null;
     this.stateTransitions = [];
     this.targetGroups = [];
@@ -72,6 +75,7 @@ var ReportEmbedded = /*#__PURE__*/ (function() {
     this.workflow = null;
     this.categoryType = _Category.default;
     this.durationType = _OperationEmbeddedDuration.default;
+    this.feedbackType = _Feedback.default;
     this.placeType = _Place.default;
     this.targetGroupsType = _ReportEmbeddedTargetGroups.default;
     this.workflowType = _DelegationEmbeddedWorkflow.default;
@@ -121,6 +125,24 @@ var ReportEmbedded = /*#__PURE__*/ (function() {
         key: "setDuration",
         value: function setDuration(duration) {
           this.duration = duration;
+        }
+        /**
+         * @return { module:model/Feedback }
+         */
+      },
+      {
+        key: "getFeedback",
+        value: function getFeedback() {
+          return this.feedback;
+        }
+        /**
+         * @param { module:model/Feedback } feedback
+         */
+      },
+      {
+        key: "setFeedback",
+        value: function setFeedback(feedback) {
+          this.feedback = feedback;
         }
         /**
          * @return { module:model/Place }
@@ -242,6 +264,13 @@ var ReportEmbedded = /*#__PURE__*/ (function() {
             object.duration = _ApiClient.default.convertToType(
               data["duration"],
               object.durationType
+            );
+          }
+
+          if (data.hasOwnProperty("feedback")) {
+            object.feedback = _ApiClient.default.convertToType(
+              data["feedback"],
+              object.feedbackType
             );
           }
 

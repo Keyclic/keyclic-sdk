@@ -65,6 +65,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property feedback (base name: "feedback")', function() {
+      // uncomment below and update the code to test the property feedback
+      //var instane = new @KeyclicSdkJavascript.ReportEmbedded();
+      //expect(instance).to.be();
+    });
+
     it('should have the property place (base name: "place")', function() {
       // uncomment below and update the code to test the property place
       //var instane = new @KeyclicSdkJavascript.ReportEmbedded();
