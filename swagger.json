@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.4.16"
+    "version": "2.4.17"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -12621,6 +12621,9 @@
           "format": "string",
           "type": "string"
         },
+        "end": {
+          "type": "boolean"
+        },
         "id": {
           "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
@@ -18485,6 +18488,9 @@
           "format": "string",
           "type": "string"
         },
+        "end": {
+          "type": "boolean"
+        },
         "id": {
           "format": "uuid",
           "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
@@ -18800,6 +18806,9 @@
         "description": {
           "format": "string",
           "type": "string"
+        },
+        "end": {
+          "type": "boolean"
         },
         "id": {
           "format": "uuid",
