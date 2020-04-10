@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **allowDispatch** | **bool** |  | [optional] [default to null]
 **color** | **String** |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
+**end** | **bool** |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
 **key** | **String** |  | [optional] [default to null]
 **name** | **String** |  | [optional] [default to null]

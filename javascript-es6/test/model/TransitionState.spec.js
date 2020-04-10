@@ -77,6 +77,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property end (base name: "end")', function() {
+      // uncomment below and update the code to test the property end
+      //var instane = new @KeyclicSdkJavascript.TransitionState();
+      //expect(instance).to.be();
+    });
+
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new @KeyclicSdkJavascript.TransitionState();

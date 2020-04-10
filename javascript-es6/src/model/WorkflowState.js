@@ -28,6 +28,7 @@ export default class WorkflowState {
     this.allowDispatch = null;
     this.color = null;
     this.description = null;
+    this.end = null;
     this.id = null;
     this.key = null;
     this.name = null;
@@ -67,6 +68,9 @@ export default class WorkflowState {
         data["description"],
         "String"
       );
+    }
+    if (data.hasOwnProperty("end")) {
+      object.end = ApiClient.convertToType(data["end"], "Boolean");
     }
     if (data.hasOwnProperty("id")) {
       object.id = ApiClient.convertToType(data["id"], "String");
@@ -141,6 +145,19 @@ export default class WorkflowState {
    */
   setDescription(description) {
     this.description = description;
+  }
+  /**
+   * @return { Boolean }
+   */
+  getEnd() {
+    return this.end;
+  }
+
+  /**
+   * @param { Boolean } end
+   */
+  setEnd(end) {
+    this.end = end;
   }
   /**
    * @return { String }

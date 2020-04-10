@@ -51,6 +51,7 @@ var TransitionState = /*#__PURE__*/ (function() {
     this.allowDispatch = null;
     this.color = null;
     this.description = null;
+    this.end = null;
     this.id = null;
     this.key = null;
     this.name = null;
@@ -138,6 +139,24 @@ var TransitionState = /*#__PURE__*/ (function() {
         key: "setDescription",
         value: function setDescription(description) {
           this.description = description;
+        }
+        /**
+         * @return { Boolean }
+         */
+      },
+      {
+        key: "getEnd",
+        value: function getEnd() {
+          return this.end;
+        }
+        /**
+         * @param { Boolean } end
+         */
+      },
+      {
+        key: "setEnd",
+        value: function setEnd(end) {
+          this.end = end;
         }
         /**
          * @return { String }
@@ -255,6 +274,13 @@ var TransitionState = /*#__PURE__*/ (function() {
             object.description = _ApiClient.default.convertToType(
               data["description"],
               "String"
+            );
+          }
+
+          if (data.hasOwnProperty("end")) {
+            object.end = _ApiClient.default.convertToType(
+              data["end"],
+              "Boolean"
             );
           }
 

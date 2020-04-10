@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **allowDispatch** | **Boolean** |  | [optional] 
 **color** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
+**end** | **Boolean** |  | [optional] 
 **id** | **String** |  | [optional] 
 **key** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 

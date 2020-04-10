@@ -6,6 +6,7 @@ class CheckpointState {
     this.allowDispatch,
     this.color,
     this.description,
+    this.end,
     this.id,
     this.key,
     this.name,
@@ -23,6 +24,7 @@ class CheckpointState {
       allowDispatch: json['allowDispatch'],
       color: json['color'],
       description: json['description'],
+      end: json['end'],
       id: json['id'],
       key: json['key'],
       name: json['name'],
@@ -38,6 +40,8 @@ class CheckpointState {
   String color;
 
   String description;
+
+  bool end;
 
   String id;
 
@@ -62,6 +66,7 @@ class CheckpointState {
         allowDispatch == other.allowDispatch &&
         color == other.color &&
         description == other.description &&
+        end == other.end &&
         id == other.id &&
         key == other.key &&
         name == other.name &&
@@ -78,6 +83,7 @@ class CheckpointState {
     hashCode ^= allowDispatch?.hashCode ?? 0;
     hashCode ^= color?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= end?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= key?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
@@ -107,6 +113,7 @@ class CheckpointState {
       if (allowDispatch != null) 'allowDispatch': allowDispatch,
       if (color != null) 'color': color,
       if (description != null) 'description': description,
+      if (end != null) 'end': end,
       if (id != null) 'id': id,
       if (key != null) 'key': key,
       if (name != null) 'name': name,
@@ -117,6 +124,6 @@ class CheckpointState {
 
   @override
   String toString() {
-    return 'CheckpointState[allowAdd=$allowAdd, allowDispatch=$allowDispatch, color=$color, description=$description, id=$id, key=$key, name=$name, progression=$progression, type=$type, ]';
+    return 'CheckpointState[allowAdd=$allowAdd, allowDispatch=$allowDispatch, color=$color, description=$description, end=$end, id=$id, key=$key, name=$name, progression=$progression, type=$type, ]';
   }
 }
