@@ -8,6 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**reporter** | [**Person**](Person.md) |  | [optional] [default to null]
 **stateTransitions** | **List&lt;String&gt;** |  | [optional] [default to []]
 **tracking** | **String** |  | [optional] [default to null]
 

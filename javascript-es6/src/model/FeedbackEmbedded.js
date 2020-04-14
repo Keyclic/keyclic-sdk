@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import Person from "./Person";
 
 /**
  * The FeedbackEmbedded model module.
@@ -24,8 +25,11 @@ export default class FeedbackEmbedded {
     
      */
   constructor() {
+    this.reporter = null;
     this.stateTransitions = [];
     this.tracking = null;
+
+    this.reporterType = Person;
   }
 
   /**
@@ -43,6 +47,12 @@ export default class FeedbackEmbedded {
       object = new FeedbackEmbedded();
     }
 
+    if (data.hasOwnProperty("reporter")) {
+      object.reporter = ApiClient.convertToType(
+        data["reporter"],
+        object.reporterType
+      );
+    }
     if (data.hasOwnProperty("stateTransitions")) {
       object.stateTransitions = ApiClient.convertToType(
         data["stateTransitions"],
@@ -56,6 +66,19 @@ export default class FeedbackEmbedded {
     return object;
   }
 
+  /**
+   * @return { module:model/Person }
+   */
+  getReporter() {
+    return this.reporter;
+  }
+
+  /**
+   * @param { module:model/Person } reporter
+   */
+  setReporter(reporter) {
+    this.reporter = reporter;
+  }
   /**
    * @return { Array.<String> }
    */

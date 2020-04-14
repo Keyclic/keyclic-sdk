@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _Person = _interopRequireDefault(require("./Person"));
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -47,8 +49,10 @@ var FeedbackEmbedded = /*#__PURE__*/ (function() {
   function FeedbackEmbedded() {
     _classCallCheck(this, FeedbackEmbedded);
 
+    this.reporter = null;
     this.stateTransitions = [];
     this.tracking = null;
+    this.reporterType = _Person.default;
   }
   /**
    * Constructs a "FeedbackEmbedded" from a plain JavaScript object.
@@ -61,11 +65,29 @@ var FeedbackEmbedded = /*#__PURE__*/ (function() {
     FeedbackEmbedded,
     [
       {
-        key: "getStateTransitions",
+        key: "getReporter",
 
+        /**
+         * @return { module:model/Person }
+         */
+        value: function getReporter() {
+          return this.reporter;
+        }
+        /**
+         * @param { module:model/Person } reporter
+         */
+      },
+      {
+        key: "setReporter",
+        value: function setReporter(reporter) {
+          this.reporter = reporter;
+        }
         /**
          * @return { Array.<String> }
          */
+      },
+      {
+        key: "getStateTransitions",
         value: function getStateTransitions() {
           return this.stateTransitions;
         }
@@ -113,6 +135,13 @@ var FeedbackEmbedded = /*#__PURE__*/ (function() {
 
           if (object === null) {
             object = new FeedbackEmbedded();
+          }
+
+          if (data.hasOwnProperty("reporter")) {
+            object.reporter = _ApiClient.default.convertToType(
+              data["reporter"],
+              object.reporterType
+            );
           }
 
           if (data.hasOwnProperty("stateTransitions")) {

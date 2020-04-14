@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class FeedbackEmbedded {
   FeedbackEmbedded({
+    this.reporter,
     this.stateTransitions,
     this.tracking,
   });
@@ -12,12 +13,15 @@ class FeedbackEmbedded {
     }
 
     return FeedbackEmbedded(
+      reporter: Person.fromJson(json['reporter']),
       stateTransitions: json['stateTransitions'] is List
           ? List<String>.from(json['stateTransitions'])
           : null,
       tracking: json['tracking'],
     );
   }
+
+  Person reporter;
 
   List<String> stateTransitions;
 
@@ -32,6 +36,7 @@ class FeedbackEmbedded {
 
     return other is FeedbackEmbedded &&
         runtimeType == other.runtimeType &&
+        reporter == other.reporter &&
         DeepCollectionEquality.unordered()
             .equals(stateTransitions, other.stateTransitions) &&
         tracking == other.tracking;
@@ -48,6 +53,7 @@ class FeedbackEmbedded {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
+    hashCode ^= reporter?.hashCode ?? 0;
     hashCode ^= tracking?.hashCode ?? 0;
 
     return hashCode;
@@ -69,6 +75,7 @@ class FeedbackEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
+      if (reporter != null) 'reporter': reporter.toJson(),
       if (stateTransitions != null) 'stateTransitions': stateTransitions,
       if (tracking != null) 'tracking': tracking,
     };
@@ -76,6 +83,6 @@ class FeedbackEmbedded {
 
   @override
   String toString() {
-    return 'FeedbackEmbedded[stateTransitions=$stateTransitions, tracking=$tracking, ]';
+    return 'FeedbackEmbedded[reporter=$reporter, stateTransitions=$stateTransitions, tracking=$tracking, ]';
   }
 }

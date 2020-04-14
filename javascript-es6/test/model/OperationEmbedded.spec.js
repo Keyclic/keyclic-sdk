@@ -59,6 +59,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property operator (base name: "operator")', function() {
+      // uncomment below and update the code to test the property operator
+      //var instane = new @KeyclicSdkJavascript.OperationEmbedded();
+      //expect(instance).to.be();
+    });
+
     it('should have the property stateTransitions (base name: "stateTransitions")', function() {
       // uncomment below and update the code to test the property stateTransitions
       //var instane = new @KeyclicSdkJavascript.OperationEmbedded();

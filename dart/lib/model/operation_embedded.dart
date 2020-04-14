@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class OperationEmbedded {
   OperationEmbedded({
     this.duration,
+    this.operator_,
     this.stateTransitions,
     this.tracking,
     this.workflow,
@@ -15,6 +16,7 @@ class OperationEmbedded {
 
     return OperationEmbedded(
       duration: OperationEmbeddedDuration.fromJson(json['duration']),
+      operator_: Person.fromJson(json['operator']),
       stateTransitions: json['stateTransitions'] is List
           ? List<String>.from(json['stateTransitions'])
           : null,
@@ -24,6 +26,8 @@ class OperationEmbedded {
   }
 
   OperationEmbeddedDuration duration;
+
+  Person operator_;
 
   List<String> stateTransitions;
 
@@ -41,6 +45,7 @@ class OperationEmbedded {
     return other is OperationEmbedded &&
         runtimeType == other.runtimeType &&
         duration == other.duration &&
+        operator_ == other.operator_ &&
         DeepCollectionEquality.unordered()
             .equals(stateTransitions, other.stateTransitions) &&
         tracking == other.tracking &&
@@ -59,6 +64,7 @@ class OperationEmbedded {
     }
 
     hashCode ^= duration?.hashCode ?? 0;
+    hashCode ^= operator_?.hashCode ?? 0;
     hashCode ^= tracking?.hashCode ?? 0;
     hashCode ^= workflow?.hashCode ?? 0;
 
@@ -82,6 +88,7 @@ class OperationEmbedded {
   Map<String, dynamic> toJson() {
     return {
       if (duration != null) 'duration': duration.toJson(),
+      if (operator_ != null) 'operator': operator_.toJson(),
       if (stateTransitions != null) 'stateTransitions': stateTransitions,
       if (tracking != null) 'tracking': tracking,
       if (workflow != null) 'workflow': workflow.toJson(),
@@ -90,6 +97,6 @@ class OperationEmbedded {
 
   @override
   String toString() {
-    return 'OperationEmbedded[duration=$duration, stateTransitions=$stateTransitions, tracking=$tracking, workflow=$workflow, ]';
+    return 'OperationEmbedded[duration=$duration, operator_=$operator_, stateTransitions=$stateTransitions, tracking=$tracking, workflow=$workflow, ]';
   }
 }

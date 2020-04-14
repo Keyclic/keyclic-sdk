@@ -15,6 +15,8 @@ var _OperationEmbeddedDuration = _interopRequireDefault(
   require("./OperationEmbeddedDuration")
 );
 
+var _Person = _interopRequireDefault(require("./Person"));
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -56,10 +58,12 @@ var OperationEmbedded = /*#__PURE__*/ (function() {
     _classCallCheck(this, OperationEmbedded);
 
     this.duration = null;
+    this.operator = null;
     this.stateTransitions = [];
     this.tracking = null;
     this.workflow = null;
     this.durationType = _OperationEmbeddedDuration.default;
+    this.operatorType = _Person.default;
     this.workflowType = _DelegationEmbeddedWorkflow.default;
   }
   /**
@@ -89,6 +93,24 @@ var OperationEmbedded = /*#__PURE__*/ (function() {
         key: "setDuration",
         value: function setDuration(duration) {
           this.duration = duration;
+        }
+        /**
+         * @return { module:model/Person }
+         */
+      },
+      {
+        key: "getOperator",
+        value: function getOperator() {
+          return this.operator;
+        }
+        /**
+         * @param { module:model/Person } operator
+         */
+      },
+      {
+        key: "setOperator",
+        value: function setOperator(operator) {
+          this.operator = operator;
         }
         /**
          * @return { Array.<String> }
@@ -167,6 +189,13 @@ var OperationEmbedded = /*#__PURE__*/ (function() {
             object.duration = _ApiClient.default.convertToType(
               data["duration"],
               object.durationType
+            );
+          }
+
+          if (data.hasOwnProperty("operator")) {
+            object.operator = _ApiClient.default.convertToType(
+              data["operator"],
+              object.operatorType
             );
           }
 

@@ -53,6 +53,12 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.FeedbackEmbedded);
     });
 
+    it('should have the property reporter (base name: "reporter")', function() {
+      // uncomment below and update the code to test the property reporter
+      //var instane = new @KeyclicSdkJavascript.FeedbackEmbedded();
+      //expect(instance).to.be();
+    });
+
     it('should have the property stateTransitions (base name: "stateTransitions")', function() {
       // uncomment below and update the code to test the property stateTransitions
       //var instane = new @KeyclicSdkJavascript.FeedbackEmbedded();

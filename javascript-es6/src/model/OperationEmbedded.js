@@ -13,6 +13,7 @@
 import ApiClient from "../ApiClient";
 import DelegationEmbeddedWorkflow from "./DelegationEmbeddedWorkflow";
 import OperationEmbeddedDuration from "./OperationEmbeddedDuration";
+import Person from "./Person";
 
 /**
  * The OperationEmbedded model module.
@@ -27,11 +28,13 @@ export default class OperationEmbedded {
      */
   constructor() {
     this.duration = null;
+    this.operator = null;
     this.stateTransitions = [];
     this.tracking = null;
     this.workflow = null;
 
     this.durationType = OperationEmbeddedDuration;
+    this.operatorType = Person;
     this.workflowType = DelegationEmbeddedWorkflow;
   }
 
@@ -54,6 +57,12 @@ export default class OperationEmbedded {
       object.duration = ApiClient.convertToType(
         data["duration"],
         object.durationType
+      );
+    }
+    if (data.hasOwnProperty("operator")) {
+      object.operator = ApiClient.convertToType(
+        data["operator"],
+        object.operatorType
       );
     }
     if (data.hasOwnProperty("stateTransitions")) {
@@ -87,6 +96,19 @@ export default class OperationEmbedded {
    */
   setDuration(duration) {
     this.duration = duration;
+  }
+  /**
+   * @return { module:model/Person }
+   */
+  getOperator() {
+    return this.operator;
+  }
+
+  /**
+   * @param { module:model/Person } operator
+   */
+  setOperator(operator) {
+    this.operator = operator;
   }
   /**
    * @return { Array.<String> }
