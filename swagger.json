@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.4.17"
+    "version": "2.4.18"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -13937,6 +13937,9 @@
         "_embedded": {
           "type": "object",
           "properties": {
+            "reporter": {
+              "$ref": "#\/definitions\/Person"
+            },
             "stateTransitions": {
               "type": "array",
               "items": {
@@ -15349,6 +15352,9 @@
                   "format": "int32"
                 }
               }
+            },
+            "operator": {
+              "$ref": "#\/definitions\/Person"
             },
             "stateTransitions": {
               "type": "array",
