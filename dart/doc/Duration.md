@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.DelegationEmbeddedWorkflow
+# keyclic_sdk_api.model.Duration
 
 ## Load the model package
 ```dart
@@ -8,9 +8,9 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metrics** | [**List&lt;Metric&gt;**](Metric.md) |  | [optional] [default to []]
-**state** | [**WorkflowState**](WorkflowState.md) |  | [optional] [default to null]
-**transitions** | [**List&lt;Transition&gt;**](Transition.md) |  | [optional] [default to []]
+**hours** | **double** |  | [optional] [default to null]
+**minutes** | **double** |  | [optional] [default to null]
+**seconds** | **int** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

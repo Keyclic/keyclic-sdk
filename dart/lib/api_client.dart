@@ -367,6 +367,8 @@ class ApiClient {
           return DocumentPatchPermission.fromJson(value);
         case 'DocumentPermission':
           return DocumentPermission.fromJson(value);
+        case 'Duration':
+          return Duration.fromJson(value);
         case 'Error':
           return Error.fromJson(value);
         case 'ErrorEmbedded':
@@ -541,6 +543,8 @@ class ApiClient {
           return MemberPatchContactPoint.fromJson(value);
         case 'MemberTypeRole':
           return MemberTypeRole.fromJson(value);
+        case 'Metric':
+          return Metric.fromJson(value);
         case 'Node':
           return Node.fromJson(value);
         case 'NodeEmbedded':

@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
+    instance = new @KeyclicSdkJavascript.Duration();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,28 +46,28 @@
       object[property] = value;
   }
 
-  describe('DelegationEmbeddedWorkflow', function() {
-    it('should create an instance of DelegationEmbeddedWorkflow', function() {
-      // uncomment below and update the code to test DelegationEmbeddedWorkflow
-      //var instane = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.DelegationEmbeddedWorkflow);
+  describe('Duration', function() {
+    it('should create an instance of Duration', function() {
+      // uncomment below and update the code to test Duration
+      //var instane = new @KeyclicSdkJavascript.Duration();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.Duration);
     });
 
-    it('should have the property metrics (base name: "metrics")', function() {
-      // uncomment below and update the code to test the property metrics
-      //var instane = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
+    it('should have the property hours (base name: "hours")', function() {
+      // uncomment below and update the code to test the property hours
+      //var instane = new @KeyclicSdkJavascript.Duration();
       //expect(instance).to.be();
     });
 
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
-      //var instane = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
+    it('should have the property minutes (base name: "minutes")', function() {
+      // uncomment below and update the code to test the property minutes
+      //var instane = new @KeyclicSdkJavascript.Duration();
       //expect(instance).to.be();
     });
 
-    it('should have the property transitions (base name: "transitions")', function() {
-      // uncomment below and update the code to test the property transitions
-      //var instane = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
+    it('should have the property seconds (base name: "seconds")', function() {
+      // uncomment below and update the code to test the property seconds
+      //var instane = new @KeyclicSdkJavascript.Duration();
       //expect(instance).to.be();
     });
 

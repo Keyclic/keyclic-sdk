@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.4.18
-- Package version: 2.4.18
+- API version: 2.4.19
+- Package version: 2.4.19
 
 ## Getting started
 
@@ -286,6 +286,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.DocumentPatchFile](docs/DocumentPatchFile.md)
 - [@KeyclicSdkJavascript.DocumentPatchPermission](docs/DocumentPatchPermission.md)
 - [@KeyclicSdkJavascript.DocumentPermission](docs/DocumentPermission.md)
+- [@KeyclicSdkJavascript.Duration](docs/Duration.md)
 - [@KeyclicSdkJavascript.Error](docs/Error.md)
 - [@KeyclicSdkJavascript.ErrorEmbedded](docs/ErrorEmbedded.md)
 - [@KeyclicSdkJavascript.ExternalService](docs/ExternalService.md)
@@ -373,6 +374,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.MemberPatch](docs/MemberPatch.md)
 - [@KeyclicSdkJavascript.MemberPatchContactPoint](docs/MemberPatchContactPoint.md)
 - [@KeyclicSdkJavascript.MemberTypeRole](docs/MemberTypeRole.md)
+- [@KeyclicSdkJavascript.Metric](docs/Metric.md)
 - [@KeyclicSdkJavascript.Node](docs/Node.md)
 - [@KeyclicSdkJavascript.NodeEmbedded](docs/NodeEmbedded.md)
 - [@KeyclicSdkJavascript.NodePath](docs/NodePath.md)

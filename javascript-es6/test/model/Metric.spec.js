@@ -27,7 +27,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
+    instance = new @KeyclicSdkJavascript.Metric();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,28 +46,22 @@
       object[property] = value;
   }
 
-  describe('DelegationEmbeddedWorkflow', function() {
-    it('should create an instance of DelegationEmbeddedWorkflow', function() {
-      // uncomment below and update the code to test DelegationEmbeddedWorkflow
-      //var instane = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
-      //expect(instance).to.be.a(@KeyclicSdkJavascript.DelegationEmbeddedWorkflow);
+  describe('Metric', function() {
+    it('should create an instance of Metric', function() {
+      // uncomment below and update the code to test Metric
+      //var instane = new @KeyclicSdkJavascript.Metric();
+      //expect(instance).to.be.a(@KeyclicSdkJavascript.Metric);
     });
 
-    it('should have the property metrics (base name: "metrics")', function() {
-      // uncomment below and update the code to test the property metrics
-      //var instane = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new @KeyclicSdkJavascript.Metric();
       //expect(instance).to.be();
     });
 
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
-      //var instane = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property transitions (base name: "transitions")', function() {
-      // uncomment below and update the code to test the property transitions
-      //var instane = new @KeyclicSdkJavascript.DelegationEmbeddedWorkflow();
+    it('should have the property duration (base name: "duration")', function() {
+      // uncomment below and update the code to test the property duration
+      //var instane = new @KeyclicSdkJavascript.Metric();
       //expect(instance).to.be();
     });
 

@@ -1145,6 +1145,12 @@ Object.defineProperty(exports, "DocumentPermission", {
     return _DocumentPermission.default;
   }
 });
+Object.defineProperty(exports, "Duration", {
+  enumerable: true,
+  get: function get() {
+    return _Duration.default;
+  }
+});
 Object.defineProperty(exports, "Error", {
   enumerable: true,
   get: function get() {
@@ -1665,6 +1671,12 @@ Object.defineProperty(exports, "MemberTypeRole", {
   enumerable: true,
   get: function get() {
     return _MemberTypeRole.default;
+  }
+});
+Object.defineProperty(exports, "Metric", {
+  enumerable: true,
+  get: function get() {
+    return _Metric.default;
   }
 });
 Object.defineProperty(exports, "Node", {
@@ -3732,6 +3744,8 @@ var _DocumentPermission = _interopRequireDefault(
   require("./model/DocumentPermission")
 );
 
+var _Duration = _interopRequireDefault(require("./model/Duration"));
+
 var _Error = _interopRequireDefault(require("./model/Error"));
 
 var _ErrorEmbedded = _interopRequireDefault(require("./model/ErrorEmbedded"));
@@ -4039,6 +4053,8 @@ var _MemberPatchContactPoint = _interopRequireDefault(
 );
 
 var _MemberTypeRole = _interopRequireDefault(require("./model/MemberTypeRole"));
+
+var _Metric = _interopRequireDefault(require("./model/Metric"));
 
 var _Node = _interopRequireDefault(require("./model/Node"));
 

@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import Metric from "./Metric";
 import Transition from "./Transition";
 import WorkflowState from "./WorkflowState";
 
@@ -26,9 +27,11 @@ export default class DelegationEmbeddedWorkflow {
     
      */
   constructor() {
+    this.metrics = [];
     this.state = null;
     this.transitions = [];
 
+    this.metricsType = Metric;
     this.stateType = WorkflowState;
     this.transitionsType = Transition;
   }
@@ -48,6 +51,11 @@ export default class DelegationEmbeddedWorkflow {
       object = new DelegationEmbeddedWorkflow();
     }
 
+    if (data.hasOwnProperty("metrics")) {
+      object.metrics = ApiClient.convertToType(data["metrics"], [
+        object.metricsType
+      ]);
+    }
     if (data.hasOwnProperty("state")) {
       object.state = ApiClient.convertToType(data["state"], object.stateType);
     }
@@ -60,6 +68,19 @@ export default class DelegationEmbeddedWorkflow {
     return object;
   }
 
+  /**
+   * @return { Array.<module:model/Metric> }
+   */
+  getMetrics() {
+    return this.metrics;
+  }
+
+  /**
+   * @param { Array.<module:model/Metric> } metrics
+   */
+  setMetrics(metrics) {
+    this.metrics = metrics;
+  }
   /**
    * @return { module:model/WorkflowState }
    */

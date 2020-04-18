@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _Metric = _interopRequireDefault(require("./Metric"));
+
 var _Transition = _interopRequireDefault(require("./Transition"));
 
 var _WorkflowState = _interopRequireDefault(require("./WorkflowState"));
@@ -51,8 +53,10 @@ var DelegationEmbeddedWorkflow = /*#__PURE__*/ (function() {
   function DelegationEmbeddedWorkflow() {
     _classCallCheck(this, DelegationEmbeddedWorkflow);
 
+    this.metrics = [];
     this.state = null;
     this.transitions = [];
+    this.metricsType = _Metric.default;
     this.stateType = _WorkflowState.default;
     this.transitionsType = _Transition.default;
   }
@@ -67,11 +71,29 @@ var DelegationEmbeddedWorkflow = /*#__PURE__*/ (function() {
     DelegationEmbeddedWorkflow,
     [
       {
-        key: "getState",
+        key: "getMetrics",
 
+        /**
+         * @return { Array.<module:model/Metric> }
+         */
+        value: function getMetrics() {
+          return this.metrics;
+        }
+        /**
+         * @param { Array.<module:model/Metric> } metrics
+         */
+      },
+      {
+        key: "setMetrics",
+        value: function setMetrics(metrics) {
+          this.metrics = metrics;
+        }
         /**
          * @return { module:model/WorkflowState }
          */
+      },
+      {
+        key: "getState",
         value: function getState() {
           return this.state;
         }
@@ -119,6 +141,12 @@ var DelegationEmbeddedWorkflow = /*#__PURE__*/ (function() {
 
           if (object === null) {
             object = new DelegationEmbeddedWorkflow();
+          }
+
+          if (data.hasOwnProperty("metrics")) {
+            object.metrics = _ApiClient.default.convertToType(data["metrics"], [
+              object.metricsType
+            ]);
           }
 
           if (data.hasOwnProperty("state")) {

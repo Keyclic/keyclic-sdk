@@ -141,6 +141,7 @@ import DocumentPatch from "./model/DocumentPatch";
 import DocumentPatchFile from "./model/DocumentPatchFile";
 import DocumentPatchPermission from "./model/DocumentPatchPermission";
 import DocumentPermission from "./model/DocumentPermission";
+import Duration from "./model/Duration";
 import Error from "./model/Error";
 import ErrorEmbedded from "./model/ErrorEmbedded";
 import ExternalService from "./model/ExternalService";
@@ -228,6 +229,7 @@ import MemberLinksSelfIriTemplate from "./model/MemberLinksSelfIriTemplate";
 import MemberPatch from "./model/MemberPatch";
 import MemberPatchContactPoint from "./model/MemberPatchContactPoint";
 import MemberTypeRole from "./model/MemberTypeRole";
+import Metric from "./model/Metric";
 import Node from "./model/Node";
 import NodeEmbedded from "./model/NodeEmbedded";
 import NodePath from "./model/NodePath";
@@ -517,7 +519,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.4.18
+ * @version 2.4.19
  */
 export {
   /**
@@ -1151,6 +1153,11 @@ export {
    */
   DocumentPermission,
   /**
+   * The Duration model constructor.
+   * @property { module:model/Duration }
+   */
+  Duration,
+  /**
    * The Error model constructor.
    * @property { module:model/Error }
    */
@@ -1585,6 +1592,11 @@ export {
    * @property { module:model/MemberTypeRole }
    */
   MemberTypeRole,
+  /**
+   * The Metric model constructor.
+   * @property { module:model/Metric }
+   */
+  Metric,
   /**
    * The Node model constructor.
    * @property { module:model/Node }
