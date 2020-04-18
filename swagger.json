@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.4.18"
+    "version": "2.4.19"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -12998,6 +12998,12 @@
             "workflow": {
               "type": "object",
               "properties": {
+                "metrics": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#\/definitions\/Metric"
+                  }
+                },
                 "state": {
                   "$ref": "#\/definitions\/WorkflowState"
                 },
@@ -13608,6 +13614,22 @@
         "targetGroup": {
           "format": "string",
           "type": "string"
+        }
+      }
+    },
+    "Duration": {
+      "type": "object",
+      "properties": {
+        "hours": {
+          "format": "float",
+          "type": "number"
+        },
+        "minutes": {
+          "format": "float",
+          "type": "number"
+        },
+        "seconds": {
+          "type": "integer"
         }
       }
     },
@@ -15117,6 +15139,17 @@
         }
       }
     },
+    "Metric": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "duration": {
+          "$ref": "#\/definitions\/Duration"
+        }
+      }
+    },
     "Node": {
       "type": "object",
       "properties": {
@@ -15370,6 +15403,12 @@
             "workflow": {
               "type": "object",
               "properties": {
+                "metrics": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#\/definitions\/Metric"
+                  }
+                },
                 "state": {
                   "$ref": "#\/definitions\/WorkflowState"
                 },
@@ -17192,6 +17231,12 @@
             "workflow": {
               "type": "object",
               "properties": {
+                "metrics": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#\/definitions\/Metric"
+                  }
+                },
                 "state": {
                   "$ref": "#\/definitions\/WorkflowState"
                 },
