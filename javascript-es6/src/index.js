@@ -519,7 +519,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.4.19
+ * @version 2.4.22
  */
 export {
   /**

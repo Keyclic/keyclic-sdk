@@ -9,6 +9,8 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _Member = _interopRequireDefault(require("./Member"));
 
+var _Place = _interopRequireDefault(require("./Place"));
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -50,7 +52,9 @@ var OccupantEmbedded = /*#__PURE__*/ (function() {
     _classCallCheck(this, OccupantEmbedded);
 
     this.member = null;
+    this.place = null;
     this.memberType = _Member.default;
+    this.placeType = _Place.default;
   }
   /**
    * Constructs a "OccupantEmbedded" from a plain JavaScript object.
@@ -80,6 +84,24 @@ var OccupantEmbedded = /*#__PURE__*/ (function() {
         value: function setMember(member) {
           this.member = member;
         }
+        /**
+         * @return { module:model/Place }
+         */
+      },
+      {
+        key: "getPlace",
+        value: function getPlace() {
+          return this.place;
+        }
+        /**
+         * @param { module:model/Place } place
+         */
+      },
+      {
+        key: "setPlace",
+        value: function setPlace(place) {
+          this.place = place;
+        }
       }
     ],
     [
@@ -103,6 +125,13 @@ var OccupantEmbedded = /*#__PURE__*/ (function() {
             object.member = _ApiClient.default.convertToType(
               data["member"],
               object.memberType
+            );
+          }
+
+          if (data.hasOwnProperty("place")) {
+            object.place = _ApiClient.default.convertToType(
+              data["place"],
+              object.placeType
             );
           }
 

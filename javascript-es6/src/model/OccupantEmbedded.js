@@ -12,6 +12,7 @@
 
 import ApiClient from "../ApiClient";
 import Member from "./Member";
+import Place from "./Place";
 
 /**
  * The OccupantEmbedded model module.
@@ -26,8 +27,10 @@ export default class OccupantEmbedded {
      */
   constructor() {
     this.member = null;
+    this.place = null;
 
     this.memberType = Member;
+    this.placeType = Place;
   }
 
   /**
@@ -51,6 +54,9 @@ export default class OccupantEmbedded {
         object.memberType
       );
     }
+    if (data.hasOwnProperty("place")) {
+      object.place = ApiClient.convertToType(data["place"], object.placeType);
+    }
 
     return object;
   }
@@ -67,5 +73,18 @@ export default class OccupantEmbedded {
    */
   setMember(member) {
     this.member = member;
+  }
+  /**
+   * @return { module:model/Place }
+   */
+  getPlace() {
+    return this.place;
+  }
+
+  /**
+   * @param { module:model/Place } place
+   */
+  setPlace(place) {
+    this.place = place;
   }
 }

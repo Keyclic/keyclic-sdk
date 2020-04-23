@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class OccupantEmbedded {
   OccupantEmbedded({
     this.member,
+    this.place,
   });
 
   factory OccupantEmbedded.fromJson(Map<String, dynamic> json) {
@@ -12,10 +13,13 @@ class OccupantEmbedded {
 
     return OccupantEmbedded(
       member: Member.fromJson(json['member']),
+      place: Place.fromJson(json['place']),
     );
   }
 
   Member member;
+
+  Place place;
 
   @override
   bool operator ==(dynamic other) {
@@ -26,7 +30,8 @@ class OccupantEmbedded {
 
     return other is OccupantEmbedded &&
         runtimeType == other.runtimeType &&
-        member == other.member;
+        member == other.member &&
+        place == other.place;
   }
 
   /// By default hashCode return reference
@@ -35,6 +40,7 @@ class OccupantEmbedded {
     int hashCode = 0;
 
     hashCode ^= member?.hashCode ?? 0;
+    hashCode ^= place?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -56,11 +62,12 @@ class OccupantEmbedded {
   Map<String, dynamic> toJson() {
     return {
       if (member != null) 'member': member.toJson(),
+      if (place != null) 'place': place.toJson(),
     };
   }
 
   @override
   String toString() {
-    return 'OccupantEmbedded[member=$member, ]';
+    return 'OccupantEmbedded[member=$member, place=$place, ]';
   }
 }

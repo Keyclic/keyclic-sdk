@@ -4,5 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **member** | [**Member**](Member.md) |  | [optional] 
+**place** | [**Place**](Place.md) |  | [optional] 
 
 
