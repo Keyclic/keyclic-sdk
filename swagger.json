@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.4.19"
+    "version": "2.4.22"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -15211,6 +15211,9 @@
           "properties": {
             "member": {
               "$ref": "#\/definitions\/Member"
+            },
+            "place": {
+              "$ref": "#\/definitions\/Place"
             }
           }
         },
