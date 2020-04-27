@@ -42,6 +42,7 @@ let opts = {
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'order': "desc", // String | 
   'person': "person_example", // String | The identifier of the resource.
+  'query': "query_example", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10 // Number | Page of the overview.
 };
@@ -68,6 +69,7 @@ Name | Type | Description  | Notes
  **before** | **Date**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **person** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **query** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
 

@@ -499,6 +499,7 @@ var PersonApi = /*#__PURE__*/ (function(_ApiClient) {
        * @param { module:model/Date } after
        * @param { module:model/Date } before
        * @param { module:model/String } order   (default to desc)
+       * @param { String } query
        * @param { Number } page Page of the overview.  (default to 1)
        * @param { Number } limit Page of the overview.  (default to 10)
        */
@@ -528,6 +529,7 @@ var PersonApi = /*#__PURE__*/ (function(_ApiClient) {
           after = options.after,
           before = options.before,
           order = options.order,
+          query = options.query,
           page = options.page,
           limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
@@ -573,6 +575,10 @@ var PersonApi = /*#__PURE__*/ (function(_ApiClient) {
 
         if (typeof before === "undefined") {
           before = null;
+        } // verify the null value of parameter 'query'
+
+        if (typeof query === "undefined") {
+          query = null;
         }
 
         var pathParams = {
@@ -583,6 +589,7 @@ var PersonApi = /*#__PURE__*/ (function(_ApiClient) {
           after: after,
           before: before,
           order: order,
+          query: query,
           page: page,
           limit: limit
         };

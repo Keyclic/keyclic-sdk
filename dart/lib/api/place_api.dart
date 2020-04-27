@@ -18,6 +18,7 @@ class PlaceApi {
     DateTime before,
     String order,
     String person,
+    String query,
     int page,
     int limit,
   }) async {
@@ -46,6 +47,8 @@ class PlaceApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (person != null)
         ..._convertParametersForCollectionFormat("person", person),
+      if (query != null)
+        ..._convertParametersForCollectionFormat("query", query),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),

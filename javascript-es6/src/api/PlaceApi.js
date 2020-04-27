@@ -46,6 +46,7 @@ export default class PlaceApi extends ApiClient {
    * @param { module:model/Date } before
    * @param { module:model/String } order   (default to desc)
    * @param { String } person The identifier of the resource.
+   * @param { String } query
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
@@ -64,6 +65,7 @@ export default class PlaceApi extends ApiClient {
       before,
       order,
       person,
+      query,
       page,
       limit
     } = options;
@@ -127,6 +129,11 @@ export default class PlaceApi extends ApiClient {
       person = null;
     }
 
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
+    }
+
     const pathParams = {
       place: place
     };
@@ -138,6 +145,7 @@ export default class PlaceApi extends ApiClient {
       before: before,
       order: order,
       person: person,
+      query: query,
       page: page,
       limit: limit
     };

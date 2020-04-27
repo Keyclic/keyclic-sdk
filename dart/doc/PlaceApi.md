@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **cgetOccupantsByPlace**
-> OccupantPagination cgetOccupantsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, person, page, limit)
+> OccupantPagination cgetOccupantsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, person, query, page, limit)
 
 Retrieve all Occupant resources.
 
@@ -39,11 +39,12 @@ var after = 2013-10-20T19:20:30+01:00; // DateTime |
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
 var person = ; // String | The identifier of the resource.
+var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetOccupantsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, person, page, limit);
+    var result = api_instance.cgetOccupantsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, person, query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PlaceApi->cgetOccupantsByPlace: $e\n");
@@ -63,6 +64,7 @@ Name | Type | Description  | Notes
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **person** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 

@@ -204,6 +204,7 @@ class PersonApi {
     DateTime after,
     DateTime before,
     String order,
+    String query,
     int page,
     int limit,
   }) async {
@@ -230,6 +231,8 @@ class PersonApi {
         ..._convertParametersForCollectionFormat("before", before),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
+      if (query != null)
+        ..._convertParametersForCollectionFormat("query", query),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),

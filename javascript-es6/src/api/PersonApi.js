@@ -375,6 +375,7 @@ export default class PersonApi extends ApiClient {
    * @param { module:model/Date } after
    * @param { module:model/Date } before
    * @param { module:model/String } order   (default to desc)
+   * @param { String } query
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
@@ -392,6 +393,7 @@ export default class PersonApi extends ApiClient {
       after,
       before,
       order,
+      query,
       page,
       limit
     } = options;
@@ -450,6 +452,11 @@ export default class PersonApi extends ApiClient {
       before = null;
     }
 
+    // verify the null value of parameter 'query'
+    if (typeof query === "undefined") {
+      query = null;
+    }
+
     const pathParams = {
       person: person
     };
@@ -460,6 +467,7 @@ export default class PersonApi extends ApiClient {
       after: after,
       before: before,
       order: order,
+      query: query,
       page: page,
       limit: limit
     };

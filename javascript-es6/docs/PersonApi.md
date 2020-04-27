@@ -203,6 +203,7 @@ let opts = {
   'after': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'before': new Date("2013-10-20T19:20:30+01:00"), // Date | 
   'order': "desc", // String | 
+  'query': "query_example", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10 // Number | Page of the overview.
 };
@@ -228,6 +229,7 @@ Name | Type | Description  | Notes
  **after** | **Date**|  | [optional] 
  **before** | **Date**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
+ **query** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
 
