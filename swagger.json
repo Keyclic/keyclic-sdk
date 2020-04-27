@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.4.23"
+    "version": "2.4.24"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -8295,6 +8295,9 @@
             "$ref": "#\/parameters\/order"
           },
           {
+            "$ref": "#\/parameters\/query"
+          },
+          {
             "$ref": "#\/parameters\/page"
           },
           {
@@ -9104,6 +9107,9 @@
           },
           {
             "$ref": "#\/parameters\/person"
+          },
+          {
+            "$ref": "#\/parameters\/query"
           },
           {
             "$ref": "#\/parameters\/page"
