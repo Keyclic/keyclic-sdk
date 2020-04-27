@@ -935,8 +935,6 @@ class ApiClient {
           return TrackingCheckpoint.fromJson(value);
         case 'TrackingProgression':
           return TrackingProgression.fromJson(value);
-        case 'Transition':
-          return Transition.fromJson(value);
         case 'TransitionState':
           return TransitionState.fromJson(value);
         case 'Webhook':

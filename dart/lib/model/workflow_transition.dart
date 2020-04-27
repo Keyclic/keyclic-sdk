@@ -19,10 +19,10 @@ class WorkflowTransition {
     return WorkflowTransition(
       commentRequired: json['commentRequired'],
       description: json['description'],
-      from: TransitionState.fromJson(json['from']),
+      from: WorkflowState.fromJson(json['from']),
       id: json['id'],
       name: json['name'],
-      to: TransitionState.fromJson(json['to']),
+      to: WorkflowState.fromJson(json['to']),
       type: json['type'],
     );
   }
@@ -31,13 +31,13 @@ class WorkflowTransition {
 
   String description;
 
-  TransitionState from;
+  WorkflowState from;
 
   String id;
 
   String name;
 
-  TransitionState to;
+  WorkflowState to;
 
   String type;
 

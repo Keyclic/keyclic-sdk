@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _TransitionState = _interopRequireDefault(require("./TransitionState"));
+var _WorkflowState = _interopRequireDefault(require("./WorkflowState"));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -56,8 +56,8 @@ var WorkflowTransition = /*#__PURE__*/ (function() {
     this.name = null;
     this.to = null;
     this.type = null;
-    this.fromType = _TransitionState.default;
-    this.toType = _TransitionState.default;
+    this.fromType = _WorkflowState.default;
+    this.toType = _WorkflowState.default;
   }
   /**
    * Constructs a "WorkflowTransition" from a plain JavaScript object.
@@ -106,7 +106,7 @@ var WorkflowTransition = /*#__PURE__*/ (function() {
           this.description = description;
         }
         /**
-         * @return { module:model/TransitionState }
+         * @return { module:model/WorkflowState }
          */
       },
       {
@@ -115,7 +115,7 @@ var WorkflowTransition = /*#__PURE__*/ (function() {
           return this.from;
         }
         /**
-         * @param { module:model/TransitionState } from
+         * @param { module:model/WorkflowState } from
          */
       },
       {
@@ -151,7 +151,7 @@ var WorkflowTransition = /*#__PURE__*/ (function() {
           this.name = name;
         }
         /**
-         * @return { module:model/TransitionState }
+         * @return { module:model/WorkflowState }
          */
       },
       {
@@ -160,7 +160,7 @@ var WorkflowTransition = /*#__PURE__*/ (function() {
           return this.to;
         }
         /**
-         * @param { module:model/TransitionState } to
+         * @param { module:model/WorkflowState } to
          */
       },
       {

@@ -455,7 +455,6 @@ part 'model/success_login_credentials.dart';
 part 'model/tracking.dart';
 part 'model/tracking_checkpoint.dart';
 part 'model/tracking_progression.dart';
-part 'model/transition.dart';
 part 'model/transition_state.dart';
 part 'model/webhook.dart';
 part 'model/webhook_collection.dart';

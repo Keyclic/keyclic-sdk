@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import TransitionState from "./TransitionState";
+import WorkflowState from "./WorkflowState";
 
 /**
  * The WorkflowTransition model module.
@@ -33,8 +33,8 @@ export default class WorkflowTransition {
     this.to = null;
     this.type = null;
 
-    this.fromType = TransitionState;
-    this.toType = TransitionState;
+    this.fromType = WorkflowState;
+    this.toType = WorkflowState;
   }
 
   /**
@@ -110,14 +110,14 @@ export default class WorkflowTransition {
     this.description = description;
   }
   /**
-   * @return { module:model/TransitionState }
+   * @return { module:model/WorkflowState }
    */
   getFrom() {
     return this.from;
   }
 
   /**
-   * @param { module:model/TransitionState } from
+   * @param { module:model/WorkflowState } from
    */
   setFrom(from) {
     this.from = from;
@@ -143,14 +143,14 @@ export default class WorkflowTransition {
     this.name = name;
   }
   /**
-   * @return { module:model/TransitionState }
+   * @return { module:model/WorkflowState }
    */
   getTo() {
     return this.to;
   }
 
   /**
-   * @param { module:model/TransitionState } to
+   * @param { module:model/WorkflowState } to
    */
   setTo(to) {
     this.to = to;

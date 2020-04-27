@@ -2853,12 +2853,6 @@ Object.defineProperty(exports, "TrackingProgression", {
     return _TrackingProgression.default;
   }
 });
-Object.defineProperty(exports, "Transition", {
-  enumerable: true,
-  get: function get() {
-    return _Transition.default;
-  }
-});
 Object.defineProperty(exports, "TransitionState", {
   enumerable: true,
   get: function get() {
@@ -4745,8 +4739,6 @@ var _TrackingCheckpoint = _interopRequireDefault(
 var _TrackingProgression = _interopRequireDefault(
   require("./model/TrackingProgression")
 );
-
-var _Transition = _interopRequireDefault(require("./model/Transition"));
 
 var _TransitionState = _interopRequireDefault(
   require("./model/TransitionState")

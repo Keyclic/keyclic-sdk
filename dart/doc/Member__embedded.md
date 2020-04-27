@@ -9,6 +9,7 @@ import 'package:keyclic_sdk_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **availableRoles** | **List&lt;String&gt;** |  | [optional] [default to []]
+**invitation** | [**Invitation**](Invitation.md) |  | [optional] [default to null]
 **organization** | [**Organization**](Organization.md) |  | [optional] [default to null]
 **person** | [**Person**](Person.md) |  | [optional] [default to null]
 **roles** | [**List&lt;Role&gt;**](Role.md) |  | [optional] [default to []]

@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class MemberEmbedded {
   MemberEmbedded({
     this.availableRoles,
+    this.invitation,
     this.organization,
     this.person,
     this.roles,
@@ -17,6 +18,7 @@ class MemberEmbedded {
       availableRoles: json['availableRoles'] is List
           ? List<String>.from(json['availableRoles'])
           : null,
+      invitation: Invitation.fromJson(json['invitation']),
       organization: Organization.fromJson(json['organization']),
       person: Person.fromJson(json['person']),
       roles: Role.listFromJson(json['roles']),
@@ -24,6 +26,8 @@ class MemberEmbedded {
   }
 
   List<String> availableRoles;
+
+  Invitation invitation;
 
   Organization organization;
 
@@ -42,6 +46,7 @@ class MemberEmbedded {
         runtimeType == other.runtimeType &&
         DeepCollectionEquality.unordered()
             .equals(availableRoles, other.availableRoles) &&
+        invitation == other.invitation &&
         organization == other.organization &&
         person == other.person &&
         DeepCollectionEquality.unordered().equals(roles, other.roles);
@@ -63,6 +68,7 @@ class MemberEmbedded {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
+    hashCode ^= invitation?.hashCode ?? 0;
     hashCode ^= organization?.hashCode ?? 0;
     hashCode ^= person?.hashCode ?? 0;
 
@@ -86,6 +92,7 @@ class MemberEmbedded {
   Map<String, dynamic> toJson() {
     return {
       if (availableRoles != null) 'availableRoles': availableRoles,
+      if (invitation != null) 'invitation': invitation.toJson(),
       if (organization != null) 'organization': organization.toJson(),
       if (person != null) 'person': person.toJson(),
       if (roles != null) 'roles': roles,
@@ -94,6 +101,6 @@ class MemberEmbedded {
 
   @override
   String toString() {
-    return 'MemberEmbedded[availableRoles=$availableRoles, organization=$organization, person=$person, roles=$roles, ]';
+    return 'MemberEmbedded[availableRoles=$availableRoles, invitation=$invitation, organization=$organization, person=$person, roles=$roles, ]';
   }
 }

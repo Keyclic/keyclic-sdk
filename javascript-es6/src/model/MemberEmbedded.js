@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import Invitation from "./Invitation";
 import Organization from "./Organization";
 import Person from "./Person";
 import Role from "./Role";
@@ -28,10 +29,12 @@ export default class MemberEmbedded {
      */
   constructor() {
     this.availableRoles = [];
+    this.invitation = null;
     this.organization = null;
     this.person = null;
     this.roles = [];
 
+    this.invitationType = Invitation;
     this.organizationType = Organization;
     this.personType = Person;
     this.rolesType = Role;
@@ -56,6 +59,12 @@ export default class MemberEmbedded {
       object.availableRoles = ApiClient.convertToType(
         data["availableRoles"],
         "['String']"
+      );
+    }
+    if (data.hasOwnProperty("invitation")) {
+      object.invitation = ApiClient.convertToType(
+        data["invitation"],
+        object.invitationType
       );
     }
     if (data.hasOwnProperty("organization")) {
@@ -89,6 +98,19 @@ export default class MemberEmbedded {
    */
   setAvailableRoles(availableRoles) {
     this.availableRoles = availableRoles;
+  }
+  /**
+   * @return { module:model/Invitation }
+   */
+  getInvitation() {
+    return this.invitation;
+  }
+
+  /**
+   * @param { module:model/Invitation } invitation
+   */
+  setInvitation(invitation) {
+    this.invitation = invitation;
   }
   /**
    * @return { module:model/Organization }

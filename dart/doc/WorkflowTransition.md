@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **commentRequired** | **bool** |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
-**from** | [**TransitionState**](TransitionState.md) |  | [optional] [default to null]
+**from** | [**WorkflowState**](WorkflowState.md) |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
 **name** | **String** |  | [optional] [default to null]
-**to** | [**TransitionState**](TransitionState.md) |  | [optional] [default to null]
+**to** | [**WorkflowState**](WorkflowState.md) |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

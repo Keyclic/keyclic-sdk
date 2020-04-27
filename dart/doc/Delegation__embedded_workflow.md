@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **metrics** | [**List&lt;Metric&gt;**](Metric.md) |  | [optional] [default to []]
 **state** | [**WorkflowState**](WorkflowState.md) |  | [optional] [default to null]
-**transitions** | [**List&lt;Transition&gt;**](Transition.md) |  | [optional] [default to []]
+**transitions** | [**List&lt;WorkflowTransition&gt;**](WorkflowTransition.md) |  | [optional] [default to []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

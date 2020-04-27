@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _Invitation = _interopRequireDefault(require("./Invitation"));
+
 var _Organization = _interopRequireDefault(require("./Organization"));
 
 var _Person = _interopRequireDefault(require("./Person"));
@@ -54,9 +56,11 @@ var MemberEmbedded = /*#__PURE__*/ (function() {
     _classCallCheck(this, MemberEmbedded);
 
     this.availableRoles = [];
+    this.invitation = null;
     this.organization = null;
     this.person = null;
     this.roles = [];
+    this.invitationType = _Invitation.default;
     this.organizationType = _Organization.default;
     this.personType = _Person.default;
     this.rolesType = _Role.default;
@@ -88,6 +92,24 @@ var MemberEmbedded = /*#__PURE__*/ (function() {
         key: "setAvailableRoles",
         value: function setAvailableRoles(availableRoles) {
           this.availableRoles = availableRoles;
+        }
+        /**
+         * @return { module:model/Invitation }
+         */
+      },
+      {
+        key: "getInvitation",
+        value: function getInvitation() {
+          return this.invitation;
+        }
+        /**
+         * @param { module:model/Invitation } invitation
+         */
+      },
+      {
+        key: "setInvitation",
+        value: function setInvitation(invitation) {
+          this.invitation = invitation;
         }
         /**
          * @return { module:model/Organization }
@@ -166,6 +188,13 @@ var MemberEmbedded = /*#__PURE__*/ (function() {
             object.availableRoles = _ApiClient.default.convertToType(
               data["availableRoles"],
               "['String']"
+            );
+          }
+
+          if (data.hasOwnProperty("invitation")) {
+            object.invitation = _ApiClient.default.convertToType(
+              data["invitation"],
+              object.invitationType
             );
           }
 

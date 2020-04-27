@@ -15,7 +15,7 @@ class DelegationEmbeddedWorkflow {
     return DelegationEmbeddedWorkflow(
       metrics: Metric.listFromJson(json['metrics']),
       state: WorkflowState.fromJson(json['state']),
-      transitions: Transition.listFromJson(json['transitions']),
+      transitions: WorkflowTransition.listFromJson(json['transitions']),
     );
   }
 
@@ -23,7 +23,7 @@ class DelegationEmbeddedWorkflow {
 
   WorkflowState state;
 
-  List<Transition> transitions;
+  List<WorkflowTransition> transitions;
 
   @override
   bool operator ==(dynamic other) {
@@ -52,7 +52,7 @@ class DelegationEmbeddedWorkflow {
     }
     if (transitions is List && transitions.isNotEmpty) {
       hashCode ^= transitions
-          .map((Transition element) => element.hashCode)
+          .map((WorkflowTransition element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
 

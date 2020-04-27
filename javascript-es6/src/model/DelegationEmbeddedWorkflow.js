@@ -12,8 +12,8 @@
 
 import ApiClient from "../ApiClient";
 import Metric from "./Metric";
-import Transition from "./Transition";
 import WorkflowState from "./WorkflowState";
+import WorkflowTransition from "./WorkflowTransition";
 
 /**
  * The DelegationEmbeddedWorkflow model module.
@@ -33,7 +33,7 @@ export default class DelegationEmbeddedWorkflow {
 
     this.metricsType = Metric;
     this.stateType = WorkflowState;
-    this.transitionsType = Transition;
+    this.transitionsType = WorkflowTransition;
   }
 
   /**
@@ -95,14 +95,14 @@ export default class DelegationEmbeddedWorkflow {
     this.state = state;
   }
   /**
-   * @return { Array.<module:model/Transition> }
+   * @return { Array.<module:model/WorkflowTransition> }
    */
   getTransitions() {
     return this.transitions;
   }
 
   /**
-   * @param { Array.<module:model/Transition> } transitions
+   * @param { Array.<module:model/WorkflowTransition> } transitions
    */
   setTransitions(transitions) {
     this.transitions = transitions;

@@ -425,7 +425,6 @@ import SuccessLoginCredentials from "./model/SuccessLoginCredentials";
 import Tracking from "./model/Tracking";
 import TrackingCheckpoint from "./model/TrackingCheckpoint";
 import TrackingProgression from "./model/TrackingProgression";
-import Transition from "./model/Transition";
 import TransitionState from "./model/TransitionState";
 import Webhook from "./model/Webhook";
 import WebhookCollection from "./model/WebhookCollection";
@@ -519,7 +518,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.4.22
+ * @version 2.4.23
  */
 export {
   /**
@@ -2572,11 +2571,6 @@ export {
    * @property { module:model/TrackingProgression }
    */
   TrackingProgression,
-  /**
-   * The Transition model constructor.
-   * @property { module:model/Transition }
-   */
-  Transition,
   /**
    * The TransitionState model constructor.
    * @property { module:model/TransitionState }

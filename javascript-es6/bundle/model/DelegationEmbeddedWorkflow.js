@@ -9,9 +9,11 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _Metric = _interopRequireDefault(require("./Metric"));
 
-var _Transition = _interopRequireDefault(require("./Transition"));
-
 var _WorkflowState = _interopRequireDefault(require("./WorkflowState"));
+
+var _WorkflowTransition = _interopRequireDefault(
+  require("./WorkflowTransition")
+);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -58,7 +60,7 @@ var DelegationEmbeddedWorkflow = /*#__PURE__*/ (function() {
     this.transitions = [];
     this.metricsType = _Metric.default;
     this.stateType = _WorkflowState.default;
-    this.transitionsType = _Transition.default;
+    this.transitionsType = _WorkflowTransition.default;
   }
   /**
    * Constructs a "DelegationEmbeddedWorkflow" from a plain JavaScript object.
@@ -107,7 +109,7 @@ var DelegationEmbeddedWorkflow = /*#__PURE__*/ (function() {
           this.state = state;
         }
         /**
-         * @return { Array.<module:model/Transition> }
+         * @return { Array.<module:model/WorkflowTransition> }
          */
       },
       {
@@ -116,7 +118,7 @@ var DelegationEmbeddedWorkflow = /*#__PURE__*/ (function() {
           return this.transitions;
         }
         /**
-         * @param { Array.<module:model/Transition> } transitions
+         * @param { Array.<module:model/WorkflowTransition> } transitions
          */
       },
       {

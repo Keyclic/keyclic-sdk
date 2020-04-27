@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.4.22
-- Package version: 2.4.22
+- API version: 2.4.23
+- Package version: 2.4.23
 
 ## Getting started
 
@@ -570,7 +570,6 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.Tracking](docs/Tracking.md)
 - [@KeyclicSdkJavascript.TrackingCheckpoint](docs/TrackingCheckpoint.md)
 - [@KeyclicSdkJavascript.TrackingProgression](docs/TrackingProgression.md)
-- [@KeyclicSdkJavascript.Transition](docs/Transition.md)
 - [@KeyclicSdkJavascript.TransitionState](docs/TransitionState.md)
 - [@KeyclicSdkJavascript.Webhook](docs/Webhook.md)
 - [@KeyclicSdkJavascript.WebhookCollection](docs/WebhookCollection.md)
