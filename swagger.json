@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.4.22"
+    "version": "2.4.23"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -13010,7 +13010,7 @@
                 "transitions": {
                   "type": "array",
                   "items": {
-                    "$ref": "#\/definitions\/Transition"
+                    "$ref": "#\/definitions\/WorkflowTransition"
                   }
                 }
               }
@@ -14850,6 +14850,9 @@
                 "format": "string"
               }
             },
+            "invitation": {
+              "$ref": "#\/definitions\/Invitation"
+            },
             "organization": {
               "$ref": "#\/definitions\/Organization"
             },
@@ -15418,7 +15421,7 @@
                 "transitions": {
                   "type": "array",
                   "items": {
-                    "$ref": "#\/definitions\/Transition"
+                    "$ref": "#\/definitions\/WorkflowTransition"
                   }
                 }
               }
@@ -17246,7 +17249,7 @@
                 "transitions": {
                   "type": "array",
                   "items": {
-                    "$ref": "#\/definitions\/Transition"
+                    "$ref": "#\/definitions\/WorkflowTransition"
                   }
                 }
               }
@@ -18498,32 +18501,6 @@
         }
       }
     },
-    "Transition": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "commentRequired": {
-          "type": "boolean"
-        },
-        "from": {
-          "$ref": "#\/definitions\/WorkflowState"
-        },
-        "to": {
-          "$ref": "#\/definitions\/WorkflowState"
-        }
-      }
-    },
     "TransitionState": {
       "type": "object",
       "properties": {
@@ -18902,7 +18879,7 @@
           "type": "string"
         },
         "from": {
-          "$ref": "#\/definitions\/TransitionState"
+          "$ref": "#\/definitions\/WorkflowState"
         },
         "id": {
           "format": "uuid",
@@ -18916,7 +18893,7 @@
           "type": "string"
         },
         "to": {
-          "$ref": "#\/definitions\/TransitionState"
+          "$ref": "#\/definitions\/WorkflowState"
         },
         "type": {
           "format": "string",
