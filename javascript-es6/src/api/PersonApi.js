@@ -223,6 +223,7 @@ export default class PersonApi extends ApiClient {
    * @param { String } role
    * @param { String } query
    * @param { Array.<String> } roles
+   * @param { String } type
    * @param { Number } page Page of the overview.  (default to 1)
    * @param { Number } limit Page of the overview.  (default to 10)
    */
@@ -243,6 +244,7 @@ export default class PersonApi extends ApiClient {
       role,
       query,
       roles,
+      type,
       page,
       limit
     } = options;
@@ -316,6 +318,11 @@ export default class PersonApi extends ApiClient {
       roles = null;
     }
 
+    // verify the null value of parameter 'type'
+    if (typeof type === "undefined") {
+      type = null;
+    }
+
     const pathParams = {
       person: person
     };
@@ -329,6 +336,7 @@ export default class PersonApi extends ApiClient {
       role: role,
       query: query,
       "roles[]": roles,
+      type: type,
       page: page,
       limit: limit
     };

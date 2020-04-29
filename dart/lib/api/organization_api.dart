@@ -368,6 +368,7 @@ class OrganizationApi {
     String role,
     String query,
     List<String> roles__,
+    String type,
     int page,
     int limit,
   }) async {
@@ -400,6 +401,7 @@ class OrganizationApi {
       if (roles__ != null)
         ..._convertParametersForCollectionFormat("roles[]", roles__,
             collectionFormat: "multi"),
+      if (type != null) ..._convertParametersForCollectionFormat("type", type),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),

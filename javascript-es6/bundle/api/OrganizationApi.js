@@ -767,6 +767,7 @@ var OrganizationApi = /*#__PURE__*/ (function(_ApiClient) {
        * @param { String } role
        * @param { String } query
        * @param { Array.<String> } roles
+       * @param { String } type
        * @param { Number } page Page of the overview.  (default to 1)
        * @param { Number } limit Page of the overview.  (default to 10)
        */
@@ -799,6 +800,7 @@ var OrganizationApi = /*#__PURE__*/ (function(_ApiClient) {
           role = options.role,
           query = options.query,
           roles = options.roles,
+          type = options.type,
           page = options.page,
           limit = options.limit; // verify the required parameter 'xKeyclicApp' is set
 
@@ -856,6 +858,10 @@ var OrganizationApi = /*#__PURE__*/ (function(_ApiClient) {
 
         if (typeof roles === "undefined") {
           roles = null;
+        } // verify the null value of parameter 'type'
+
+        if (typeof type === "undefined") {
+          type = null;
         }
 
         var pathParams = {
@@ -869,6 +875,7 @@ var OrganizationApi = /*#__PURE__*/ (function(_ApiClient) {
           role: role,
           query: query,
           "roles[]": roles,
+          type: type,
           page: page,
           limit: limit
         };

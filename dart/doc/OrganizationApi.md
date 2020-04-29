@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetMembersByOrganization**
-> MemberPagination cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, role, query, roles[], page, limit)
+> MemberPagination cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit)
 
 Retrieve all Member resources.
 
@@ -319,11 +319,12 @@ var order = order_example; // String |
 var role = role_example; // String | 
 var query = query_example; // String | 
 var roles[] = []; // List<String> | 
+var type = type_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, role, query, roles[], page, limit);
+    var result = api_instance.cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetMembersByOrganization: $e\n");
@@ -345,6 +346,7 @@ Name | Type | Description  | Notes
  **role** | **String**|  | [optional] 
  **query** | **String**|  | [optional] 
  **roles[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **type** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 

@@ -129,6 +129,7 @@ let opts = {
   'role': "role_example", // String | 
   'query': "query_example", // String | 
   'roles': ["roles_example"], // [String] | 
+  'type': "type_example", // String | 
   'page': 1, // Number | Page of the overview.
   'limit': 10 // Number | Page of the overview.
 };
@@ -157,6 +158,7 @@ Name | Type | Description  | Notes
  **role** | **String**|  | [optional] 
  **query** | **String**|  | [optional] 
  **roles** | [**[String]**](String.md)|  | [optional] 
+ **type** | **String**|  | [optional] 
  **page** | **Number**| Page of the overview. | [optional] [default to 1]
  **limit** | **Number**| Page of the overview. | [optional] [default to 10]
 
