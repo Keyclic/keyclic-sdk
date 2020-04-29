@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.4.24"
+    "version": "2.4.25"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -6724,6 +6724,9 @@
             "$ref": "#\/parameters\/roles__"
           },
           {
+            "$ref": "#\/parameters\/type"
+          },
+          {
             "$ref": "#\/parameters\/page"
           },
           {
@@ -8191,6 +8194,9 @@
           },
           {
             "$ref": "#\/parameters\/roles__"
+          },
+          {
+            "$ref": "#\/parameters\/type"
           },
           {
             "$ref": "#\/parameters\/page"
@@ -19304,6 +19310,12 @@
       "name": "roles[]",
       "pattern": ".*",
       "type": "array"
+    },
+    "type": {
+      "in": "query",
+      "name": "type",
+      "pattern": ".*",
+      "type": "string"
     },
     "assigned_to": {
       "description": "The identifier of the resource.",
