@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.4.25"
+    "version": "2.4.30"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -16948,6 +16948,17 @@
     "Publication": {
       "type": "object",
       "properties": {
+        "_embedded": {
+          "type": "object",
+          "properties": {
+            "author": {
+              "$ref": "#\/definitions\/Person"
+            },
+            "place": {
+              "$ref": "#\/definitions\/Place"
+            }
+          }
+        },
         "_links": {
           "type": "object",
           "properties": {
