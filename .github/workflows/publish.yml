@@ -6,14 +6,24 @@ on:
       - '*'
 
 jobs:
-  publish-npm:
+  publish-dart:
     runs-on: ubuntu-latest
+    container:
+      image:  google/dart:latest
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-          registry-url: 'https://registry.npmjs.org/'
+      - name: Setup credentials
+        run: |
+          mkdir -p ~/.pub-cache
+          cat <<EOF > ~/.pub-cache/credentials.json
+          {
+            "accessToken":"${{secrets.PUB_AUTH_ACCESS_TOKEN}}",
+            "refreshToken":"${{secrets.DART_AUTH_REFRESH_TOKEN}}",
+            "tokenEndpoint":"https://accounts.google.com/o/oauth2/token",
+            "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
+            "expiration": 1570721159347
+          }
+          EOF
       - name: Print infos
         run: |
           set -x
@@ -21,27 +31,5 @@ jobs:
           echo $PATH
           pwd
           ls -la
-      - run: bin/app deploy-js
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.node_auth_token}}
-
-#  publish-gpr:
-#    needs: build
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v1
-#      - uses: actions/setup-node@v1
-#        with:
-#          node-version: 12
-#          registry-url: https://npm.pkg.github.com/
-#          scope: '@your-github-username'
-#      - name: Print infos
-#        run: |
-#          set -x
-#          whoami
-#          echo $PATH
-#          pwd
-#          ls -la
-#      - run: npm publish
-#        env:
-#          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Publish package
+        run: pub publish -f
