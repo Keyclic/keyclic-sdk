@@ -11,6 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
+import PublicationEmbedded from "./PublicationEmbedded";
 import PublicationLinks from "./PublicationLinks";
 
 /**
@@ -37,6 +38,7 @@ export default class Publication {
 
     title
   ) {
+    this.embedded = null;
     this.links = null;
     this.createdAt = null;
     this.id = null;
@@ -46,6 +48,7 @@ export default class Publication {
     this.type = null;
     this.updatedAt = null;
 
+    this.embeddedType = PublicationEmbedded;
     this.linksType = PublicationLinks;
   }
 
@@ -64,6 +67,12 @@ export default class Publication {
       object = new Publication();
     }
 
+    if (data.hasOwnProperty("_embedded")) {
+      object.embedded = ApiClient.convertToType(
+        data["_embedded"],
+        object.embeddedType
+      );
+    }
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
@@ -92,6 +101,19 @@ export default class Publication {
     return object;
   }
 
+  /**
+   * @return { module:model/PublicationEmbedded }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/PublicationEmbedded } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
   /**
    * @return { module:model/PublicationLinks }
    */

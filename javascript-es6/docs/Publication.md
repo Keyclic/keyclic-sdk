@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**embedded** | [**PublicationEmbedded**](PublicationEmbedded.md) |  | [optional] 
 **links** | [**PublicationLinks**](PublicationLinks.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **id** | **String** |  | [optional] 

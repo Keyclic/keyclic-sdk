@@ -2355,6 +2355,12 @@ Object.defineProperty(exports, "PublicationData", {
     return _PublicationData.default;
   }
 });
+Object.defineProperty(exports, "PublicationEmbedded", {
+  enumerable: true,
+  get: function get() {
+    return _PublicationEmbedded.default;
+  }
+});
 Object.defineProperty(exports, "PublicationLinks", {
   enumerable: true,
   get: function get() {
@@ -4444,6 +4450,10 @@ var _PublicationCollection = _interopRequireDefault(
 
 var _PublicationData = _interopRequireDefault(
   require("./model/PublicationData")
+);
+
+var _PublicationEmbedded = _interopRequireDefault(
+  require("./model/PublicationEmbedded")
 );
 
 var _PublicationLinks = _interopRequireDefault(

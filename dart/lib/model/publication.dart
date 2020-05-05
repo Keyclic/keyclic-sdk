@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class Publication {
   Publication({
+    this.embedded,
     this.links,
     this.createdAt,
     this.id,
@@ -30,6 +31,7 @@ class Publication {
     }
 
     return Publication(
+      embedded: PublicationEmbedded.fromJson(json['_embedded']),
       links: PublicationLinks.fromJson(json['_links']),
       createdAt: createdAt,
       id: json['id'],
@@ -40,6 +42,8 @@ class Publication {
       updatedAt: updatedAt,
     );
   }
+
+  PublicationEmbedded embedded;
 
   PublicationLinks links;
 
@@ -66,6 +70,7 @@ class Publication {
 
     return other is Publication &&
         runtimeType == other.runtimeType &&
+        embedded == other.embedded &&
         links == other.links &&
         createdAt == other.createdAt &&
         id == other.id &&
@@ -81,6 +86,7 @@ class Publication {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
@@ -109,6 +115,7 @@ class Publication {
 
   Map<String, dynamic> toJson() {
     return {
+      if (embedded != null) '_embedded': embedded.toJson(),
       if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
@@ -122,6 +129,6 @@ class Publication {
 
   @override
   String toString() {
-    return 'Publication[links=$links, createdAt=$createdAt, id=$id, message=$message, read=$read, title=$title, type=$type, updatedAt=$updatedAt, ]';
+    return 'Publication[embedded=$embedded, links=$links, createdAt=$createdAt, id=$id, message=$message, read=$read, title=$title, type=$type, updatedAt=$updatedAt, ]';
   }
 }

@@ -769,6 +769,8 @@ class ApiClient {
           return PublicationCollection.fromJson(value);
         case 'PublicationData':
           return PublicationData.fromJson(value);
+        case 'PublicationEmbedded':
+          return PublicationEmbedded.fromJson(value);
         case 'PublicationLinks':
           return PublicationLinks.fromJson(value);
         case 'PublicationLinksAuthor':

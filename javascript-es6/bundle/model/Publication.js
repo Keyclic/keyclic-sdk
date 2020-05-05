@@ -7,6 +7,10 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _PublicationEmbedded = _interopRequireDefault(
+  require("./PublicationEmbedded")
+);
+
 var _PublicationLinks = _interopRequireDefault(require("./PublicationLinks"));
 
 function _interopRequireDefault(obj) {
@@ -55,6 +59,7 @@ var Publication = /*#__PURE__*/ (function() {
   function Publication(message, read, title) {
     _classCallCheck(this, Publication);
 
+    this.embedded = null;
     this.links = null;
     this.createdAt = null;
     this.id = null;
@@ -63,6 +68,7 @@ var Publication = /*#__PURE__*/ (function() {
     this.title = title;
     this.type = null;
     this.updatedAt = null;
+    this.embeddedType = _PublicationEmbedded.default;
     this.linksType = _PublicationLinks.default;
   }
   /**
@@ -76,11 +82,29 @@ var Publication = /*#__PURE__*/ (function() {
     Publication,
     [
       {
-        key: "getLinks",
+        key: "getEmbedded",
 
+        /**
+         * @return { module:model/PublicationEmbedded }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/PublicationEmbedded } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
         /**
          * @return { module:model/PublicationLinks }
          */
+      },
+      {
+        key: "getLinks",
         value: function getLinks() {
           return this.links;
         }
@@ -200,6 +224,13 @@ var Publication = /*#__PURE__*/ (function() {
 
           if (object === null) {
             object = new Publication();
+          }
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
           }
 
           if (data.hasOwnProperty("_links")) {

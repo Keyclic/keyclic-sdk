@@ -342,6 +342,7 @@ import PropertyItems from "./model/PropertyItems";
 import Publication from "./model/Publication";
 import PublicationCollection from "./model/PublicationCollection";
 import PublicationData from "./model/PublicationData";
+import PublicationEmbedded from "./model/PublicationEmbedded";
 import PublicationLinks from "./model/PublicationLinks";
 import PublicationLinksAuthor from "./model/PublicationLinksAuthor";
 import PublicationLinksAuthorIriTemplate from "./model/PublicationLinksAuthorIriTemplate";
@@ -518,7 +519,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.4.25
+ * @version 2.4.30
  */
 export {
   /**
@@ -2156,6 +2157,11 @@ export {
    * @property { module:model/PublicationData }
    */
   PublicationData,
+  /**
+   * The PublicationEmbedded model constructor.
+   * @property { module:model/PublicationEmbedded }
+   */
+  PublicationEmbedded,
   /**
    * The PublicationLinks model constructor.
    * @property { module:model/PublicationLinks }

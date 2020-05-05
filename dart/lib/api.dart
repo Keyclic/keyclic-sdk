@@ -372,6 +372,7 @@ part 'model/property_items.dart';
 part 'model/publication.dart';
 part 'model/publication_collection.dart';
 part 'model/publication_data.dart';
+part 'model/publication_embedded.dart';
 part 'model/publication_links.dart';
 part 'model/publication_links_author.dart';
 part 'model/publication_links_author_iri_template.dart';

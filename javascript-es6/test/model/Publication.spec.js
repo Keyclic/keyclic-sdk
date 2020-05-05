@@ -53,6 +53,12 @@
       //expect(instance).to.be.a(@KeyclicSdkJavascript.Publication);
     });
 
+    it('should have the property embedded (base name: "_embedded")', function() {
+      // uncomment below and update the code to test the property embedded
+      //var instane = new @KeyclicSdkJavascript.Publication();
+      //expect(instance).to.be();
+    });
+
     it('should have the property links (base name: "_links")', function() {
       // uncomment below and update the code to test the property links
       //var instane = new @KeyclicSdkJavascript.Publication();
