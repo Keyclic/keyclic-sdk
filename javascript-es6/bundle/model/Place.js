@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CategoryEmbedded = _interopRequireDefault(require("./CategoryEmbedded"));
+var _PlaceEmbedded = _interopRequireDefault(require("./PlaceEmbedded"));
 
 var _PlaceGeoShape = _interopRequireDefault(require("./PlaceGeoShape"));
 
@@ -68,7 +68,7 @@ var Place = /*#__PURE__*/ (function() {
     this.preferences = null;
     this.type = null;
     this.updatedAt = null;
-    this.embeddedType = _CategoryEmbedded.default;
+    this.embeddedType = _PlaceEmbedded.default;
     this.linksType = _PlaceLinks.default;
     this.geoType = _PlaceGeoShape.default;
     this.preferencesType = _PlacePreferences.default;
@@ -87,13 +87,13 @@ var Place = /*#__PURE__*/ (function() {
         key: "getEmbedded",
 
         /**
-         * @return { module:model/CategoryEmbedded }
+         * @return { module:model/PlaceEmbedded }
          */
         value: function getEmbedded() {
           return this.embedded;
         }
         /**
-         * @param { module:model/CategoryEmbedded } embedded
+         * @param { module:model/PlaceEmbedded } embedded
          */
       },
       {

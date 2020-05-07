@@ -148,6 +148,7 @@ import ExternalService from "./model/ExternalService";
 import ExternalServiceCollection from "./model/ExternalServiceCollection";
 import ExternalServiceContactPoint from "./model/ExternalServiceContactPoint";
 import ExternalServiceData from "./model/ExternalServiceData";
+import ExternalServiceEmbedded from "./model/ExternalServiceEmbedded";
 import ExternalServiceLinks from "./model/ExternalServiceLinks";
 import ExternalServiceLinksProvider from "./model/ExternalServiceLinksProvider";
 import ExternalServiceLinksProviderIriTemplate from "./model/ExternalServiceLinksProviderIriTemplate";
@@ -320,6 +321,7 @@ import PersonPreferences from "./model/PersonPreferences";
 import Place from "./model/Place";
 import PlaceCollection from "./model/PlaceCollection";
 import PlaceData from "./model/PlaceData";
+import PlaceEmbedded from "./model/PlaceEmbedded";
 import PlaceGeoShape from "./model/PlaceGeoShape";
 import PlaceLinks from "./model/PlaceLinks";
 import PlaceLinksContainedInPlace from "./model/PlaceLinksContainedInPlace";
@@ -519,7 +521,7 @@ import WorkflowApi from "./api/WorkflowApi";
  * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
  * ...
  * @module index
- * @version 2.4.30
+ * @version 2.4.32
  */
 export {
   /**
@@ -1187,6 +1189,11 @@ export {
    * @property { module:model/ExternalServiceData }
    */
   ExternalServiceData,
+  /**
+   * The ExternalServiceEmbedded model constructor.
+   * @property { module:model/ExternalServiceEmbedded }
+   */
+  ExternalServiceEmbedded,
   /**
    * The ExternalServiceLinks model constructor.
    * @property { module:model/ExternalServiceLinks }
@@ -2047,6 +2054,11 @@ export {
    * @property { module:model/PlaceData }
    */
   PlaceData,
+  /**
+   * The PlaceEmbedded model constructor.
+   * @property { module:model/PlaceEmbedded }
+   */
+  PlaceEmbedded,
   /**
    * The PlaceGeoShape model constructor.
    * @property { module:model/PlaceGeoShape }

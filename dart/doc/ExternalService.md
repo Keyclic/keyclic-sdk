@@ -8,6 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**embedded** | [**ExternalServiceEmbedded**](ExternalServiceEmbedded.md) |  | [optional] [default to null]
 **links** | [**ExternalServiceLinks**](ExternalServiceLinks.md) |  | [optional] [default to null]
 **contactPoint** | [**ExternalServiceContactPoint**](ExternalServiceContactPoint.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]

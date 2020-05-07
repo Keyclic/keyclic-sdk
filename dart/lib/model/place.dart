@@ -33,7 +33,7 @@ class Place {
     }
 
     return Place(
-      embedded: CategoryEmbedded.fromJson(json['_embedded']),
+      embedded: PlaceEmbedded.fromJson(json['_embedded']),
       links: PlaceLinks.fromJson(json['_links']),
       branchCode: json['branchCode'],
       createdAt: createdAt,
@@ -47,7 +47,7 @@ class Place {
     );
   }
 
-  CategoryEmbedded embedded;
+  PlaceEmbedded embedded;
 
   PlaceLinks links;
 

@@ -1187,6 +1187,12 @@ Object.defineProperty(exports, "ExternalServiceData", {
     return _ExternalServiceData.default;
   }
 });
+Object.defineProperty(exports, "ExternalServiceEmbedded", {
+  enumerable: true,
+  get: function get() {
+    return _ExternalServiceEmbedded.default;
+  }
+});
 Object.defineProperty(exports, "ExternalServiceLinks", {
   enumerable: true,
   get: function get() {
@@ -2221,6 +2227,12 @@ Object.defineProperty(exports, "PlaceData", {
   enumerable: true,
   get: function get() {
     return _PlaceData.default;
+  }
+});
+Object.defineProperty(exports, "PlaceEmbedded", {
+  enumerable: true,
+  get: function get() {
+    return _PlaceEmbedded.default;
   }
 });
 Object.defineProperty(exports, "PlaceGeoShape", {
@@ -3766,6 +3778,10 @@ var _ExternalServiceData = _interopRequireDefault(
   require("./model/ExternalServiceData")
 );
 
+var _ExternalServiceEmbedded = _interopRequireDefault(
+  require("./model/ExternalServiceEmbedded")
+);
+
 var _ExternalServiceLinks = _interopRequireDefault(
   require("./model/ExternalServiceLinks")
 );
@@ -4379,6 +4395,8 @@ var _PlaceCollection = _interopRequireDefault(
 );
 
 var _PlaceData = _interopRequireDefault(require("./model/PlaceData"));
+
+var _PlaceEmbedded = _interopRequireDefault(require("./model/PlaceEmbedded"));
 
 var _PlaceGeoShape = _interopRequireDefault(require("./model/PlaceGeoShape"));
 

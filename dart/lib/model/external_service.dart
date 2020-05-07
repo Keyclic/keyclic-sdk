@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class ExternalService {
   ExternalService({
+    this.embedded,
     this.links,
     this.contactPoint,
     this.createdAt,
@@ -30,6 +31,7 @@ class ExternalService {
     }
 
     return ExternalService(
+      embedded: ExternalServiceEmbedded.fromJson(json['_embedded']),
       links: ExternalServiceLinks.fromJson(json['_links']),
       contactPoint: ExternalServiceContactPoint.fromJson(json['contactPoint']),
       createdAt: createdAt,
@@ -40,6 +42,8 @@ class ExternalService {
       updatedAt: updatedAt,
     );
   }
+
+  ExternalServiceEmbedded embedded;
 
   ExternalServiceLinks links;
 
@@ -66,6 +70,7 @@ class ExternalService {
 
     return other is ExternalService &&
         runtimeType == other.runtimeType &&
+        embedded == other.embedded &&
         links == other.links &&
         contactPoint == other.contactPoint &&
         createdAt == other.createdAt &&
@@ -81,6 +86,7 @@ class ExternalService {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= contactPoint?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
@@ -109,6 +115,7 @@ class ExternalService {
 
   Map<String, dynamic> toJson() {
     return {
+      if (embedded != null) '_embedded': embedded.toJson(),
       if (links != null) '_links': links.toJson(),
       if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
@@ -122,6 +129,6 @@ class ExternalService {
 
   @override
   String toString() {
-    return 'ExternalService[links=$links, contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
+    return 'ExternalService[embedded=$embedded, links=$links, contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
   }
 }

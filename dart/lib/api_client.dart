@@ -381,6 +381,8 @@ class ApiClient {
           return ExternalServiceContactPoint.fromJson(value);
         case 'ExternalServiceData':
           return ExternalServiceData.fromJson(value);
+        case 'ExternalServiceEmbedded':
+          return ExternalServiceEmbedded.fromJson(value);
         case 'ExternalServiceLinks':
           return ExternalServiceLinks.fromJson(value);
         case 'ExternalServiceLinksProvider':
@@ -725,6 +727,8 @@ class ApiClient {
           return PlaceCollection.fromJson(value);
         case 'PlaceData':
           return PlaceData.fromJson(value);
+        case 'PlaceEmbedded':
+          return PlaceEmbedded.fromJson(value);
         case 'PlaceGeoShape':
           return PlaceGeoShape.fromJson(value);
         case 'PlaceLinks':

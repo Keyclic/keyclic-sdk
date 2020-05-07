@@ -12,6 +12,7 @@
 
 import ApiClient from "../ApiClient";
 import ExternalServiceContactPoint from "./ExternalServiceContactPoint";
+import ExternalServiceEmbedded from "./ExternalServiceEmbedded";
 import ExternalServiceLinks from "./ExternalServiceLinks";
 
 /**
@@ -28,6 +29,7 @@ export default class ExternalService {
     
      */
   constructor(name) {
+    this.embedded = null;
     this.links = null;
     this.contactPoint = null;
     this.createdAt = null;
@@ -37,6 +39,7 @@ export default class ExternalService {
     this.type = null;
     this.updatedAt = null;
 
+    this.embeddedType = ExternalServiceEmbedded;
     this.linksType = ExternalServiceLinks;
     this.contactPointType = ExternalServiceContactPoint;
   }
@@ -56,6 +59,12 @@ export default class ExternalService {
       object = new ExternalService();
     }
 
+    if (data.hasOwnProperty("_embedded")) {
+      object.embedded = ApiClient.convertToType(
+        data["_embedded"],
+        object.embeddedType
+      );
+    }
     if (data.hasOwnProperty("_links")) {
       object.links = ApiClient.convertToType(data["_links"], object.linksType);
     }
@@ -90,6 +99,19 @@ export default class ExternalService {
     return object;
   }
 
+  /**
+   * @return { module:model/ExternalServiceEmbedded }
+   */
+  getEmbedded() {
+    return this.embedded;
+  }
+
+  /**
+   * @param { module:model/ExternalServiceEmbedded } embedded
+   */
+  setEmbedded(embedded) {
+    this.embedded = embedded;
+  }
   /**
    * @return { module:model/ExternalServiceLinks }
    */

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**embedded** | [**CategoryEmbedded**](CategoryEmbedded.md) |  | [optional] 
+**embedded** | [**PlaceEmbedded**](PlaceEmbedded.md) |  | [optional] 
 **links** | [**PlaceLinks**](PlaceLinks.md) |  | [optional] 
 **branchCode** | **String** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 

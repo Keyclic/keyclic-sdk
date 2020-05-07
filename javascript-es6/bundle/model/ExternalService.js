@@ -11,6 +11,10 @@ var _ExternalServiceContactPoint = _interopRequireDefault(
   require("./ExternalServiceContactPoint")
 );
 
+var _ExternalServiceEmbedded = _interopRequireDefault(
+  require("./ExternalServiceEmbedded")
+);
+
 var _ExternalServiceLinks = _interopRequireDefault(
   require("./ExternalServiceLinks")
 );
@@ -57,6 +61,7 @@ var ExternalService = /*#__PURE__*/ (function() {
   function ExternalService(name) {
     _classCallCheck(this, ExternalService);
 
+    this.embedded = null;
     this.links = null;
     this.contactPoint = null;
     this.createdAt = null;
@@ -65,6 +70,7 @@ var ExternalService = /*#__PURE__*/ (function() {
     this.name = name;
     this.type = null;
     this.updatedAt = null;
+    this.embeddedType = _ExternalServiceEmbedded.default;
     this.linksType = _ExternalServiceLinks.default;
     this.contactPointType = _ExternalServiceContactPoint.default;
   }
@@ -79,11 +85,29 @@ var ExternalService = /*#__PURE__*/ (function() {
     ExternalService,
     [
       {
-        key: "getLinks",
+        key: "getEmbedded",
 
+        /**
+         * @return { module:model/ExternalServiceEmbedded }
+         */
+        value: function getEmbedded() {
+          return this.embedded;
+        }
+        /**
+         * @param { module:model/ExternalServiceEmbedded } embedded
+         */
+      },
+      {
+        key: "setEmbedded",
+        value: function setEmbedded(embedded) {
+          this.embedded = embedded;
+        }
         /**
          * @return { module:model/ExternalServiceLinks }
          */
+      },
+      {
+        key: "getLinks",
         value: function getLinks() {
           return this.links;
         }
@@ -203,6 +227,13 @@ var ExternalService = /*#__PURE__*/ (function() {
 
           if (object === null) {
             object = new ExternalService();
+          }
+
+          if (data.hasOwnProperty("_embedded")) {
+            object.embedded = _ApiClient.default.convertToType(
+              data["_embedded"],
+              object.embeddedType
+            );
           }
 
           if (data.hasOwnProperty("_links")) {

@@ -9,8 +9,8 @@ For more information, please visit [keyclic.com](http://keyclic.com) and [develo
 ## The JavaScript client for Keyclic API
 This SDK is intended to bootstrap any JavaScript based application. It provides all API request using the fetch API or polyfill, and transforms all responses into POJOs.
 This SDK is based upon :
-- API version: 2.4.30
-- Package version: 2.4.30
+- API version: 2.4.32
+- Package version: 2.4.32
 
 ## Getting started
 
@@ -293,6 +293,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.ExternalServiceCollection](docs/ExternalServiceCollection.md)
 - [@KeyclicSdkJavascript.ExternalServiceContactPoint](docs/ExternalServiceContactPoint.md)
 - [@KeyclicSdkJavascript.ExternalServiceData](docs/ExternalServiceData.md)
+- [@KeyclicSdkJavascript.ExternalServiceEmbedded](docs/ExternalServiceEmbedded.md)
 - [@KeyclicSdkJavascript.ExternalServiceLinks](docs/ExternalServiceLinks.md)
 - [@KeyclicSdkJavascript.ExternalServiceLinksProvider](docs/ExternalServiceLinksProvider.md)
 - [@KeyclicSdkJavascript.ExternalServiceLinksProviderIriTemplate](docs/ExternalServiceLinksProviderIriTemplate.md)
@@ -465,6 +466,7 @@ Class | Method | HTTP request | Description
 - [@KeyclicSdkJavascript.Place](docs/Place.md)
 - [@KeyclicSdkJavascript.PlaceCollection](docs/PlaceCollection.md)
 - [@KeyclicSdkJavascript.PlaceData](docs/PlaceData.md)
+- [@KeyclicSdkJavascript.PlaceEmbedded](docs/PlaceEmbedded.md)
 - [@KeyclicSdkJavascript.PlaceGeoShape](docs/PlaceGeoShape.md)
 - [@KeyclicSdkJavascript.PlaceLinks](docs/PlaceLinks.md)
 - [@KeyclicSdkJavascript.PlaceLinksContainedInPlace](docs/PlaceLinksContainedInPlace.md)

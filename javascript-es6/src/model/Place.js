@@ -11,7 +11,7 @@
  */
 
 import ApiClient from "../ApiClient";
-import CategoryEmbedded from "./CategoryEmbedded";
+import PlaceEmbedded from "./PlaceEmbedded";
 import PlaceGeoShape from "./PlaceGeoShape";
 import PlaceLinks from "./PlaceLinks";
 import PlacePreferences from "./PlacePreferences";
@@ -42,7 +42,7 @@ export default class Place {
     this.type = null;
     this.updatedAt = null;
 
-    this.embeddedType = CategoryEmbedded;
+    this.embeddedType = PlaceEmbedded;
     this.linksType = PlaceLinks;
     this.geoType = PlaceGeoShape;
     this.preferencesType = PlacePreferences;
@@ -110,14 +110,14 @@ export default class Place {
   }
 
   /**
-   * @return { module:model/CategoryEmbedded }
+   * @return { module:model/PlaceEmbedded }
    */
   getEmbedded() {
     return this.embedded;
   }
 
   /**
-   * @param { module:model/CategoryEmbedded } embedded
+   * @param { module:model/PlaceEmbedded } embedded
    */
   setEmbedded(embedded) {
     this.embedded = embedded;
