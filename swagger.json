@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.4.32"
+    "version": "2.4.38"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -14753,6 +14753,12 @@
         "minItems": {
           "format": "int32",
           "type": "integer"
+        },
+        "oneOf": {
+          "items": {
+            "$ref": "#\/definitions\/ItemsChoice"
+          },
+          "type": "array"
         },
         "propertyOrder": {
           "format": "int32",
