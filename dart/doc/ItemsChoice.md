@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] [default to null]
 **maxItems** | **int** |  | [optional] [default to null]
 **minItems** | **int** |  | [optional] [default to null]
+**oneOf** | [**List&lt;ItemsChoice&gt;**](ItemsChoice.md) |  | [optional] [default to []]
 **propertyOrder** | **int** |  | [optional] [default to null]
 **title** | **String** |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]

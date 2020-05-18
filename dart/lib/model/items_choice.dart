@@ -9,6 +9,7 @@ class ItemsChoice {
     this.id,
     this.maxItems,
     this.minItems,
+    this.oneOf,
     this.propertyOrder,
     this.title,
     this.type,
@@ -27,6 +28,7 @@ class ItemsChoice {
       id: json['id'],
       maxItems: json['maxItems'],
       minItems: json['minItems'],
+      oneOf: ItemsChoice.listFromJson(json['oneOf']),
       propertyOrder: json['propertyOrder'],
       title: json['title'],
       type: json['type'],
@@ -46,6 +48,8 @@ class ItemsChoice {
   int maxItems;
 
   int minItems;
+
+  List<ItemsChoice> oneOf;
 
   int propertyOrder;
 
@@ -69,6 +73,7 @@ class ItemsChoice {
         id == other.id &&
         maxItems == other.maxItems &&
         minItems == other.minItems &&
+        DeepCollectionEquality.unordered().equals(oneOf, other.oneOf) &&
         propertyOrder == other.propertyOrder &&
         title == other.title &&
         type == other.type;
@@ -82,6 +87,11 @@ class ItemsChoice {
     if (enum_ is List && enum_.isNotEmpty) {
       hashCode ^= enum_
           .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+    if (oneOf is List && oneOf.isNotEmpty) {
+      hashCode ^= oneOf
+          .map((ItemsChoice element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
@@ -121,6 +131,7 @@ class ItemsChoice {
       if (id != null) 'id': id,
       if (maxItems != null) 'maxItems': maxItems,
       if (minItems != null) 'minItems': minItems,
+      if (oneOf != null) 'oneOf': oneOf,
       if (propertyOrder != null) 'propertyOrder': propertyOrder,
       if (title != null) 'title': title,
       if (type != null) 'type': type,
@@ -129,6 +140,6 @@ class ItemsChoice {
 
   @override
   String toString() {
-    return 'ItemsChoice[default_=$default_, description=$description, enum_=$enum_, format=$format, id=$id, maxItems=$maxItems, minItems=$minItems, propertyOrder=$propertyOrder, title=$title, type=$type, ]';
+    return 'ItemsChoice[default_=$default_, description=$description, enum_=$enum_, format=$format, id=$id, maxItems=$maxItems, minItems=$minItems, oneOf=$oneOf, propertyOrder=$propertyOrder, title=$title, type=$type, ]';
   }
 }
