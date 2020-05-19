@@ -9,7 +9,7 @@
       "url": "http:\/\/keyclic.com",
       "email": "techies@keyclic.com"
     },
-    "version": "2.4.38"
+    "version": "2.4.39"
   },
   "host": "api.keyclic.com",
   "basePath": "\/",
@@ -7889,11 +7889,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#\/definitions\/Report"
-            }
+          "204": {
+            "description": ""
           },
           "400": {
             "description": "Returned when the request is invalid.",
@@ -14618,6 +14615,14 @@
     "Invitation": {
       "type": "object",
       "properties": {
+        "_embedded": {
+          "type": "object",
+          "properties": {
+            "organization": {
+              "$ref": "#\/definitions\/Organization"
+            }
+          }
+        },
         "_links": {
           "type": "object",
           "properties": {
