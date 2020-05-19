@@ -8,6 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**embedded** | [**InvitationEmbedded**](InvitationEmbedded.md) |  | [optional] [default to null]
 **links** | [**InvitationLinks**](InvitationLinks.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **expiredAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]

@@ -1005,7 +1005,7 @@ class OrganizationApi {
   /// Retrieve all Export resources.
   ///
   ///
-  Future<Report> cpostExportByOrganization(
+  Future<void> cpostExportByOrganization(
     String xKeyclicApp,
     String organization, {
     String acceptLanguage,
@@ -1094,10 +1094,10 @@ class OrganizationApi {
     }
 
     if (response.body == null) {
-      return null;
+      return;
     }
 
-    return apiClient.deserialize(response.body, 'Report') as Report;
+    return;
   }
 
   /// Retrieve one Analytic resource.

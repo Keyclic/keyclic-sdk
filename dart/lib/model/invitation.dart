@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class Invitation {
   Invitation({
+    this.embedded,
     this.links,
     this.createdAt,
     this.expiredAt,
@@ -34,6 +35,7 @@ class Invitation {
     }
 
     return Invitation(
+      embedded: InvitationEmbedded.fromJson(json['_embedded']),
       links: InvitationLinks.fromJson(json['_links']),
       createdAt: createdAt,
       expiredAt: expiredAt,
@@ -42,6 +44,8 @@ class Invitation {
       updatedAt: updatedAt,
     );
   }
+
+  InvitationEmbedded embedded;
 
   InvitationLinks links;
 
@@ -64,6 +68,7 @@ class Invitation {
 
     return other is Invitation &&
         runtimeType == other.runtimeType &&
+        embedded == other.embedded &&
         links == other.links &&
         createdAt == other.createdAt &&
         expiredAt == other.expiredAt &&
@@ -77,6 +82,7 @@ class Invitation {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= expiredAt?.hashCode ?? 0;
@@ -101,6 +107,7 @@ class Invitation {
 
   Map<String, dynamic> toJson() {
     return {
+      if (embedded != null) '_embedded': embedded.toJson(),
       if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (expiredAt != null) 'expiredAt': expiredAt.toUtc().toIso8601String(),
@@ -112,6 +119,6 @@ class Invitation {
 
   @override
   String toString() {
-    return 'Invitation[links=$links, createdAt=$createdAt, expiredAt=$expiredAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
+    return 'Invitation[embedded=$embedded, links=$links, createdAt=$createdAt, expiredAt=$expiredAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
   }
 }

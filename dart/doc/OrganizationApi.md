@@ -790,7 +790,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cpostExportByOrganization**
-> Report cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, order, place, query, state, page, limit)
+> cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, order, place, query, state, page, limit)
 
 Retrieve all Export resources.
 
@@ -821,8 +821,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, order, place, query, state, page, limit);
-    print(result);
+    api_instance.cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, order, place, query, state, page, limit);
 } catch (e) {
     print("Exception when calling OrganizationApi->cpostExportByOrganization: $e\n");
 }
@@ -851,7 +850,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Report**](Report.md)
+void (empty response body)
 
 ### Authorization
 
