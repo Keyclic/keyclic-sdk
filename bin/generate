@@ -77,14 +77,3 @@ trap cleanup EXIT
 #   --output dart \
 #   --template-dir dart-templates \
 #   > .codegen.dart.log
-#
-#java \
-#    -DdebugModels \
-#   -jar ../swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
-#   generate \
-#   --config options.dart.json \
-#   --input-spec ${SWAGGER_FILE} \
-#   --lang javascript \
-#   --output javascript-es6 \
-#   --template-dir javascript-es6-templates \
-#   > .codegen.javascript.log
