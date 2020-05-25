@@ -10,7 +10,7 @@ CURRENT_DIR=$(pwd)
 
 cleanup() {
     cd "${CURRENT_DIR}" || exit
-    echo "Don't forget to publish on Github, NPM and dart registries."
+    echo "Don't forget to publish on Github and dart registries."
 }
 
 SWAGGER_FILE="${1}"
@@ -19,22 +19,6 @@ if [[ -z "${SWAGGER_FILE}" ]]; then
 fi
 echo "Use file ${SWAGGER_FILE} as definition API."
 echo
-
-### Javascript generation of @keyclic/sdk-javascript ###
-echo "Javasript es6 generation."
-rm -rf "${CURRENT_DIR}"/javascript-es6 2>&1
-mkdir "${CURRENT_DIR}"/javascript-es6
-docker run \
-    --rm \
-    --volume ${PWD}:/local \
-    --user "$(id -u)":"$(id -g)" \
-    swaggerapi/swagger-codegen-cli:2.4.8 \
-    generate \
-    --config /local/options.javascript-es6.json \
-    --input-spec ${SWAGGER_FILE} \
-    --lang javascript \
-    --output /local/javascript-es6 \
-    --template-dir /local/javascript-es6-templates
 
 #### Dart generation of keyclic_sdk_api ###
 echo "Dart generation."
@@ -52,13 +36,6 @@ docker run \
     --template-dir /local/dart-templates
 
 sleep 10
-
-# Prepare and build package for javascript-es6
-cd "${CURRENT_DIR}"/javascript-es6 || { echo -e "Cannot find javascript-es6 directory"; exit 1; }
-
-npm install
-npm run build
-npm run prettier
 
 # Prepare and build package for dart
 cd "${CURRENT_DIR}"/dart || { echo -e "Cannot find dart directory"; exit 1; }
@@ -89,7 +66,7 @@ dartfmt --fix --overwrite lib
 # When the script exits call cleanup function
 trap cleanup EXIT
 
-#Old options example
+# examples
 #java \
 #   -DdebugModels \
 #   -jar ../swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
@@ -100,14 +77,3 @@ trap cleanup EXIT
 #   --output dart \
 #   --template-dir dart-templates \
 #   > .codegen.dart.log
-#
-#java \
-#    -DdebugModels \
-#   -jar ../swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
-#   generate \
-#   --config options.dart.json \
-#   --input-spec ${SWAGGER_FILE} \
-#   --lang javascript \
-#   --output javascript-es6 \
-#   --template-dir javascript-es6-templates \
-#   > .codegen.javascript.log
