@@ -4,7 +4,6 @@ usage() {
     echo "Usage of app command:
 
     deploy-dart                     Deploy SDK to Dart Packages registry (pub.dartlang.org).
-    deploy-js                       Deploy SDK to npmjs.com registry.
     generate                        Generate documentations, sources and tests thanks to swagger definition.
     "
 }
@@ -39,38 +38,6 @@ deploy-dart() {
     cd ${CURRENT_DIR} || exit
 }
 
-deploy-js() {
-    CURRENT_DIR=$(pwd)
-
-    echo "
-    ---------------------------------------
-    Deploying @keyclic/app-sdk to npmjs.com
-    ---------------------------------------
-
-    Need to be logged to npmjs registry,
-    add user with \"npm adduser --scope=@keyclic\" command.
-    "
-
-    WORKING_DIR=javascript-es6
-
-    cd ${CURRENT_DIR}/${WORKING_DIR} || { echo -e "Cannot find ${WORKING_DIR} directory"; exit 1; }
-
-    echo -e "Prepare javascript-es6 package."
-    rm -rf dist 2>&1
-    mkdir -p dist
-    cp -R bundle dist/.
-    cp -R src dist/.
-    cp package.json dist/.
-    cp ../LICENSE dist/.
-
-    echo -e "Publish javascript-es6 package."
-    npm publish dist --access public
-
-    rm -rf dist 2>&1
-
-    cd ${CURRENT_DIR} || exit
-}
-
 pana() {
     check pana "pub global activate pana"
 
@@ -79,7 +46,6 @@ pana() {
 }
 
 generate() {
-  check npm
   check pub
   check dartfmt
 
@@ -92,7 +58,7 @@ main() {
         exit 0
     fi
 
-    if [[ ! ${1} =~ ^deploy-dart$|^deploy-js$|^generate$ ]]; then
+    if [[ ! ${1} =~ ^deploy-dart$|^generate$ ]]; then
         echo "${1} is not a supported command."
         exit 1
     fi
