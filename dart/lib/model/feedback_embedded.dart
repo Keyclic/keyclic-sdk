@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class FeedbackEmbedded {
   FeedbackEmbedded({
+    this.category,
     this.reporter,
     this.stateTransitions,
     this.tracking,
@@ -13,6 +14,7 @@ class FeedbackEmbedded {
     }
 
     return FeedbackEmbedded(
+      category: Category.fromJson(json['category']),
       reporter: Person.fromJson(json['reporter']),
       stateTransitions: json['stateTransitions'] is List
           ? List<String>.from(json['stateTransitions'])
@@ -20,6 +22,8 @@ class FeedbackEmbedded {
       tracking: json['tracking'],
     );
   }
+
+  Category category;
 
   Person reporter;
 
@@ -36,6 +40,7 @@ class FeedbackEmbedded {
 
     return other is FeedbackEmbedded &&
         runtimeType == other.runtimeType &&
+        category == other.category &&
         reporter == other.reporter &&
         DeepCollectionEquality.unordered()
             .equals(stateTransitions, other.stateTransitions) &&
@@ -53,6 +58,7 @@ class FeedbackEmbedded {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
+    hashCode ^= category?.hashCode ?? 0;
     hashCode ^= reporter?.hashCode ?? 0;
     hashCode ^= tracking?.hashCode ?? 0;
 
@@ -75,6 +81,7 @@ class FeedbackEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
+      if (category != null) 'category': category.toJson(),
       if (reporter != null) 'reporter': reporter.toJson(),
       if (stateTransitions != null) 'stateTransitions': stateTransitions,
       if (tracking != null) 'tracking': tracking,
@@ -83,6 +90,6 @@ class FeedbackEmbedded {
 
   @override
   String toString() {
-    return 'FeedbackEmbedded[reporter=$reporter, stateTransitions=$stateTransitions, tracking=$tracking, ]';
+    return 'FeedbackEmbedded[category=$category, reporter=$reporter, stateTransitions=$stateTransitions, tracking=$tracking, ]';
   }
 }
