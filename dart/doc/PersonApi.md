@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetOperationsByPerson**
-> OperationPagination cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, page, limit)
+> OperationPagination cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, states[], page, limit)
 
 Retrieve all Operation resources.
 
@@ -255,11 +255,12 @@ var order = order_example; // String |
 var organization = ; // String | The identifier of the resource.
 var query = query_example; // String | 
 var state = state_example; // String | 
+var states[] = []; // List<String> | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, page, limit);
+    var result = api_instance.cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, states[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetOperationsByPerson: $e\n");
@@ -282,6 +283,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
+ **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
@@ -364,7 +366,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetReportsByPerson**
-> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, order, place, query, state, page, limit)
+> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, operationState, order, place, query, state, states[], page, limit)
 
 Retrieve all Report resources.
 
@@ -387,15 +389,17 @@ var category = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var delegatedTo = ; // String | The identifier of the resource.
+var operationState = operationState_example; // String | 
 var order = order_example; // String | 
 var place = ; // String | The identifier of the resource.
 var query = query_example; // String | 
 var state = state_example; // String | 
+var states[] = []; // List<String> | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, order, place, query, state, page, limit);
+    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, operationState, order, place, query, state, states[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetReportsByPerson: $e\n");
@@ -416,10 +420,12 @@ Name | Type | Description  | Notes
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **delegatedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **operationState** | **String**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **place** | [**String**](.md)| The identifier of the resource. | [optional] 
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
+ **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 

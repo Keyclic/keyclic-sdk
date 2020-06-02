@@ -294,6 +294,7 @@ class PersonApi {
     String organization,
     String query,
     String state,
+    List<String> states__,
     int page,
     int limit,
   }) async {
@@ -328,6 +329,9 @@ class PersonApi {
         ..._convertParametersForCollectionFormat("query", query),
       if (state != null)
         ..._convertParametersForCollectionFormat("state", state),
+      if (states__ != null)
+        ..._convertParametersForCollectionFormat("states[]", states__,
+            collectionFormat: "multi"),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),
@@ -462,10 +466,12 @@ class PersonApi {
     DateTime after,
     DateTime before,
     String delegatedTo,
+    String operationState,
     String order,
     String place,
     String query,
     String state,
+    List<String> states__,
     int page,
     int limit,
   }) async {
@@ -496,6 +502,9 @@ class PersonApi {
         ..._convertParametersForCollectionFormat("before", before),
       if (delegatedTo != null)
         ..._convertParametersForCollectionFormat("delegated_to", delegatedTo),
+      if (operationState != null)
+        ..._convertParametersForCollectionFormat(
+            "operation_state", operationState),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
       if (place != null)
@@ -504,6 +513,9 @@ class PersonApi {
         ..._convertParametersForCollectionFormat("query", query),
       if (state != null)
         ..._convertParametersForCollectionFormat("state", state),
+      if (states__ != null)
+        ..._convertParametersForCollectionFormat("states[]", states__,
+            collectionFormat: "multi"),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),

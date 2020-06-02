@@ -186,6 +186,7 @@ class ReportApi {
     String organization,
     String query,
     String state,
+    List<String> states__,
     int page,
     int limit,
   }) async {
@@ -220,6 +221,9 @@ class ReportApi {
         ..._convertParametersForCollectionFormat("query", query),
       if (state != null)
         ..._convertParametersForCollectionFormat("state", state),
+      if (states__ != null)
+        ..._convertParametersForCollectionFormat("states[]", states__,
+            collectionFormat: "multi"),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),

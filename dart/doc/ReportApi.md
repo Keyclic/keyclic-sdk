@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetOperationsByReport**
-> OperationPagination cgetOperationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, page, limit)
+> OperationPagination cgetOperationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, states[], page, limit)
 
 Retrieve all Operation resources.
 
@@ -173,11 +173,12 @@ var order = order_example; // String |
 var organization = ; // String | The identifier of the resource.
 var query = query_example; // String | 
 var state = state_example; // String | 
+var states[] = []; // List<String> | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetOperationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, page, limit);
+    var result = api_instance.cgetOperationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, states[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling ReportApi->cgetOperationsByReport: $e\n");
@@ -200,6 +201,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
+ **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
