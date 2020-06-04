@@ -43,7 +43,7 @@ class {{classname}} {
           if({{paramName}} is {{{dataType}}}) "{{baseName}}": {{paramName}}.toIso8601String(),
         {{/isDateTime}}
         {{^isDateTime}}
-          "{{baseName}}": {{paramName}},
+          if({{paramName}} is {{{dataType}}}) "{{baseName}}": {{paramName}}.toString(),
         {{/isDateTime}}
       {{/headerParams}}
     };
