@@ -61,10 +61,12 @@ class CategoryApi {
 
     // header params
     final Map<String, String> headerParams = <String, String>{
-      "accept-language": acceptLanguage,
+      if (acceptLanguage is String)
+        "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
-      "x-keyclic-app": xKeyclicApp,
-      "x-keyclic-app-version": xKeyclicAppVersion,
+      if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppVersion is String)
+        "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
 
     final List<String> contentTypes = <String>[
@@ -127,10 +129,12 @@ class CategoryApi {
 
     // header params
     final Map<String, String> headerParams = <String, String>{
-      "accept-language": acceptLanguage,
+      if (acceptLanguage is String)
+        "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
-      "x-keyclic-app": xKeyclicApp,
-      "x-keyclic-app-version": xKeyclicAppVersion,
+      if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppVersion is String)
+        "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
 
     final List<String> contentTypes = <String>[
@@ -192,10 +196,12 @@ class CategoryApi {
 
     // header params
     final Map<String, String> headerParams = <String, String>{
-      "accept-language": acceptLanguage,
+      if (acceptLanguage is String)
+        "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
-      "x-keyclic-app": xKeyclicApp,
-      "x-keyclic-app-version": xKeyclicAppVersion,
+      if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppVersion is String)
+        "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
 
     final List<String> contentTypes = <String>[
@@ -262,10 +268,12 @@ class CategoryApi {
 
     // header params
     final Map<String, String> headerParams = <String, String>{
-      "accept-language": acceptLanguage,
+      if (acceptLanguage is String)
+        "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
-      "x-keyclic-app": xKeyclicApp,
-      "x-keyclic-app-version": xKeyclicAppVersion,
+      if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppVersion is String)
+        "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
 
     final List<String> contentTypes = <String>[
@@ -326,10 +334,12 @@ class CategoryApi {
 
     // header params
     final Map<String, String> headerParams = <String, String>{
-      "accept-language": acceptLanguage,
+      if (acceptLanguage is String)
+        "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
-      "x-keyclic-app": xKeyclicApp,
-      "x-keyclic-app-version": xKeyclicAppVersion,
+      if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppVersion is String)
+        "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
 
     final List<String> contentTypes = <String>[
