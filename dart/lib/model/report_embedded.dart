@@ -3,12 +3,9 @@ part of keyclic_sdk_api.api;
 class ReportEmbedded {
   ReportEmbedded({
     this.category,
-    this.duration,
     this.feedback,
     this.place,
-    this.stateTransitions,
     this.targetGroups,
-    this.tracking,
     this.workflow,
   });
 
@@ -19,32 +16,21 @@ class ReportEmbedded {
 
     return ReportEmbedded(
       category: Category.fromJson(json['category']),
-      duration: OperationEmbeddedDuration.fromJson(json['duration']),
       feedback: Feedback.fromJson(json['feedback']),
       place: Place.fromJson(json['place']),
-      stateTransitions: json['stateTransitions'] is List
-          ? List<String>.from(json['stateTransitions'])
-          : null,
       targetGroups:
           ReportEmbeddedTargetGroups.listFromJson(json['targetGroups']),
-      tracking: json['tracking'],
       workflow: DelegationEmbeddedWorkflow.fromJson(json['workflow']),
     );
   }
 
   Category category;
 
-  OperationEmbeddedDuration duration;
-
   Feedback feedback;
 
   Place place;
 
-  List<String> stateTransitions;
-
   List<ReportEmbeddedTargetGroups> targetGroups;
-
-  String tracking;
 
   DelegationEmbeddedWorkflow workflow;
 
@@ -58,14 +44,10 @@ class ReportEmbedded {
     return other is ReportEmbedded &&
         runtimeType == other.runtimeType &&
         category == other.category &&
-        duration == other.duration &&
         feedback == other.feedback &&
         place == other.place &&
         DeepCollectionEquality.unordered()
-            .equals(stateTransitions, other.stateTransitions) &&
-        DeepCollectionEquality.unordered()
             .equals(targetGroups, other.targetGroups) &&
-        tracking == other.tracking &&
         workflow == other.workflow;
   }
 
@@ -74,11 +56,6 @@ class ReportEmbedded {
   int get hashCode {
     int hashCode = 0;
 
-    if (stateTransitions is List && stateTransitions.isNotEmpty) {
-      hashCode ^= stateTransitions
-          .map((String element) => element.hashCode)
-          .reduce((int value, int cursor) => value ^ cursor);
-    }
     if (targetGroups is List && targetGroups.isNotEmpty) {
       hashCode ^= targetGroups
           .map((ReportEmbeddedTargetGroups element) => element.hashCode)
@@ -86,10 +63,8 @@ class ReportEmbedded {
     }
 
     hashCode ^= category?.hashCode ?? 0;
-    hashCode ^= duration?.hashCode ?? 0;
     hashCode ^= feedback?.hashCode ?? 0;
     hashCode ^= place?.hashCode ?? 0;
-    hashCode ^= tracking?.hashCode ?? 0;
     hashCode ^= workflow?.hashCode ?? 0;
 
     return hashCode;
@@ -112,18 +87,15 @@ class ReportEmbedded {
   Map<String, dynamic> toJson() {
     return {
       if (category != null) 'category': category.toJson(),
-      if (duration != null) 'duration': duration.toJson(),
       if (feedback != null) 'feedback': feedback.toJson(),
       if (place != null) 'place': place.toJson(),
-      if (stateTransitions != null) 'stateTransitions': stateTransitions,
       if (targetGroups != null) 'targetGroups': targetGroups,
-      if (tracking != null) 'tracking': tracking,
       if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 
   @override
   String toString() {
-    return 'ReportEmbedded[category=$category, duration=$duration, feedback=$feedback, place=$place, stateTransitions=$stateTransitions, targetGroups=$targetGroups, tracking=$tracking, workflow=$workflow, ]';
+    return 'ReportEmbedded[category=$category, feedback=$feedback, place=$place, targetGroups=$targetGroups, workflow=$workflow, ]';
   }
 }

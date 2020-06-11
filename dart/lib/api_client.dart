@@ -397,8 +397,6 @@ class ApiClient {
           return ExternalServicePatch.fromJson(value);
         case 'ExternalServicePatchContactPoint':
           return ExternalServicePatchContactPoint.fromJson(value);
-        case 'FacebookConnectData':
-          return FacebookConnectData.fromJson(value);
         case 'Feature':
           return Feature.fromJson(value);
         case 'FeatureGeometry':
@@ -591,8 +589,6 @@ class ApiClient {
           return OperationData.fromJson(value);
         case 'OperationEmbedded':
           return OperationEmbedded.fromJson(value);
-        case 'OperationEmbeddedDuration':
-          return OperationEmbeddedDuration.fromJson(value);
         case 'OperationLinks':
           return OperationLinks.fromJson(value);
         case 'OperationLinksCreatedBy':

@@ -855,6 +855,7 @@ class OrganizationApi {
     String xKeyclicAppVersion,
     String assignedTo,
     String category,
+    String createdBy,
     DateTime after,
     DateTime before,
     String delegatedTo,
@@ -888,6 +889,8 @@ class OrganizationApi {
         ..._convertParametersForCollectionFormat("assigned_to", assignedTo),
       if (category != null)
         ..._convertParametersForCollectionFormat("category", category),
+      if (createdBy != null)
+        ..._convertParametersForCollectionFormat("created_by", createdBy),
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
@@ -1047,6 +1050,7 @@ class OrganizationApi {
     String xKeyclicAppVersion,
     String assignedTo,
     String category,
+    String createdBy,
     DateTime after,
     DateTime before,
     String delegatedTo,
@@ -1080,6 +1084,8 @@ class OrganizationApi {
         ..._convertParametersForCollectionFormat("assigned_to", assignedTo),
       if (category != null)
         ..._convertParametersForCollectionFormat("category", category),
+      if (createdBy != null)
+        ..._convertParametersForCollectionFormat("created_by", createdBy),
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)

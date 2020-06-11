@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetReportsByPerson**
-> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, operationState, order, place, query, state, states[], page, limit)
+> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], page, limit)
 
 Retrieve all Report resources.
 
@@ -386,6 +386,7 @@ var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime |
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var assignedTo = ; // String | The identifier of the resource.
 var category = ; // String | The identifier of the resource.
+var createdBy = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var delegatedTo = ; // String | The identifier of the resource.
@@ -399,7 +400,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, after, before, delegatedTo, operationState, order, place, query, state, states[], page, limit);
+    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetReportsByPerson: $e\n");
@@ -417,6 +418,7 @@ Name | Type | Description  | Notes
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **category** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **createdBy** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **delegatedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
