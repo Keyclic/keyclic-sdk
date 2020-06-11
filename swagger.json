@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.4.48"
+        "version": "2.4.52"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -7174,6 +7174,9 @@
                         "$ref": "#\/parameters\/category"
                     },
                     {
+                        "$ref": "#\/parameters\/created_by"
+                    },
+                    {
                         "$ref": "#\/parameters\/after"
                     },
                     {
@@ -7859,6 +7862,9 @@
                         "$ref": "#\/parameters\/category"
                     },
                     {
+                        "$ref": "#\/parameters\/created_by"
+                    },
+                    {
                         "$ref": "#\/parameters\/after"
                     },
                     {
@@ -8533,6 +8539,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/category"
+                    },
+                    {
+                        "$ref": "#\/parameters\/created_by"
                     },
                     {
                         "$ref": "#\/parameters\/after"
@@ -10813,68 +10822,6 @@
                 ]
             }
         },
-        "\/security\/connect\/facebook": {
-            "post": {
-                "tags": [
-                    "Security"
-                ],
-                "summary": "Create one ConnectFacebook resource.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "postConnectFacebook",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-date-time"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "$ref": "#\/parameters\/FacebookConnectData"
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": ""
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/successLogin"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ]
-            }
-        },
         "\/security\/login": {
             "post": {
                 "tags": [
@@ -13024,13 +12971,6 @@
                         "service": {
                             "$ref": "#\/definitions\/Service"
                         },
-                        "stateTransitions": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "format": "string"
-                            }
-                        },
                         "workflow": {
                             "type": "object",
                             "properties": {
@@ -13902,17 +13842,6 @@
                     "type": "string"
                 }
             }
-        },
-        "FacebookConnectData": {
-            "type": "object",
-            "properties": {
-                "accessToken": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "accessToken"
-            ]
         },
         "Feature": {
             "type": "object",
@@ -15444,28 +15373,8 @@
                 "_embedded": {
                     "type": "object",
                     "properties": {
-                        "duration": {
-                            "type": "object",
-                            "properties": {
-                                "seconds": {
-                                    "type": "integer",
-                                    "format": "int32"
-                                }
-                            }
-                        },
                         "operator": {
                             "$ref": "#\/definitions\/Person"
-                        },
-                        "stateTransitions": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "format": "string"
-                            }
-                        },
-                        "tracking": {
-                            "type": "string",
-                            "format": "string"
                         },
                         "workflow": {
                             "type": "object",
@@ -17266,27 +17175,11 @@
                         "category": {
                             "$ref": "#\/definitions\/Category"
                         },
-                        "duration": {
-                            "type": "object",
-                            "properties": {
-                                "seconds": {
-                                    "type": "integer",
-                                    "format": "int32"
-                                }
-                            }
-                        },
                         "feedback": {
                             "$ref": "#\/definitions\/Feedback"
                         },
                         "place": {
                             "$ref": "#\/definitions\/Place"
-                        },
-                        "stateTransitions": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "format": "string"
-                            }
                         },
                         "targetGroups": {
                             "type": "array",
@@ -17304,10 +17197,6 @@
                                     }
                                 }
                             }
-                        },
-                        "tracking": {
-                            "type": "string",
-                            "format": "string"
                         },
                         "workflow": {
                             "type": "object",
@@ -19428,6 +19317,13 @@
             "name": "parents[]",
             "type": "array"
         },
+        "created_by": {
+            "description": "The identifier of the resource.",
+            "format": "uuid",
+            "in": "query",
+            "name": "created_by",
+            "type": "string"
+        },
         "delegated_to": {
             "description": "The identifier of the resource.",
             "format": "uuid",
@@ -19524,14 +19420,6 @@
             "in": "body",
             "schema": {
                 "$ref": "#\/definitions\/ReviewData"
-            },
-            "required": true
-        },
-        "FacebookConnectData": {
-            "name": "FacebookConnectData",
-            "in": "body",
-            "schema": {
-                "$ref": "#\/definitions\/FacebookConnectData"
             },
             "required": true
         },
