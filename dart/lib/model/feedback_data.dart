@@ -13,7 +13,6 @@ class FeedbackData {
     this.geo,
     this.metadata,
     this.place,
-    this.proMode,
     this.visibility,
   });
 
@@ -29,7 +28,6 @@ class FeedbackData {
       geo: FeedbackDataGeo.fromJson(json['geo']),
       metadata: json['metadata'],
       place: json['place'],
-      proMode: json['proMode'],
       visibility: json['visibility'],
     );
   }
@@ -45,8 +43,6 @@ class FeedbackData {
   Map<String, dynamic> metadata;
 
   String place;
-
-  bool proMode;
 
   /// use FeedbackDataVisibilityEnum
   String visibility;
@@ -66,7 +62,6 @@ class FeedbackData {
         geo == other.geo &&
         DeepCollectionEquality.unordered().equals(metadata, other.metadata) &&
         place == other.place &&
-        proMode == other.proMode &&
         visibility == other.visibility;
   }
 
@@ -89,7 +84,6 @@ class FeedbackData {
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= geo?.hashCode ?? 0;
     hashCode ^= place?.hashCode ?? 0;
-    hashCode ^= proMode?.hashCode ?? 0;
     hashCode ^= visibility?.hashCode ?? 0;
 
     return hashCode;
@@ -117,13 +111,12 @@ class FeedbackData {
       if (geo != null) 'geo': geo.toJson(),
       if (metadata != null) 'metadata': metadata,
       if (place != null) 'place': place,
-      if (proMode != null) 'proMode': proMode,
       if (visibility != null) 'visibility': visibility,
     };
   }
 
   @override
   String toString() {
-    return 'FeedbackData[businessActivity=$businessActivity, category=$category, description=$description, geo=$geo, metadata=$metadata, place=$place, proMode=$proMode, visibility=$visibility, ]';
+    return 'FeedbackData[businessActivity=$businessActivity, category=$category, description=$description, geo=$geo, metadata=$metadata, place=$place, visibility=$visibility, ]';
   }
 }
