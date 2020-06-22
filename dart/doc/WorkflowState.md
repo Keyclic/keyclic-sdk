@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allowAdd** | **bool** |  | [optional] [default to null]
 **allowDispatch** | **bool** |  | [optional] [default to null]
+**backgroundColor** | **String** |  | [optional] [default to null]
 **color** | **String** |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
 **end** | **bool** |  | [optional] [default to null]
