@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.4.55"
+        "version": "2.4.56"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -12595,6 +12595,11 @@
                 "allowDispatch": {
                     "type": "boolean"
                 },
+                "backgroundColor": {
+                    "format": "string",
+                    "maxLength": 255,
+                    "type": "string"
+                },
                 "color": {
                     "format": "string",
                     "maxLength": 255,
@@ -18471,6 +18476,11 @@
                 "allowDispatch": {
                     "type": "boolean"
                 },
+                "backgroundColor": {
+                    "format": "string",
+                    "maxLength": 255,
+                    "type": "string"
+                },
                 "color": {
                     "format": "string",
                     "maxLength": 255,
@@ -18789,6 +18799,11 @@
                 },
                 "allowDispatch": {
                     "type": "boolean"
+                },
+                "backgroundColor": {
+                    "format": "string",
+                    "maxLength": 255,
+                    "type": "string"
                 },
                 "color": {
                     "format": "string",
