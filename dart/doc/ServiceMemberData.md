@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.NotificationReportNotification
+# keyclic_sdk_api.model.ServiceMemberData
 
 ## Load the model package
 ```dart
@@ -8,8 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accepted** | **bool** |  | [optional] [default to null]
-**refused** | **bool** |  | [optional] [default to null]
+**member** | **String** |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

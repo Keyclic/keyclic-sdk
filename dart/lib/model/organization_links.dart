@@ -5,6 +5,7 @@ class OrganizationLinks {
     this.application,
     this.businessActivity,
     this.configuration,
+    this.dispatcher,
     this.logo,
     this.self,
   });
@@ -20,6 +21,7 @@ class OrganizationLinks {
           OrganizationLinksBusinessActivity.fromJson(json['businessActivity']),
       configuration:
           OrganizationLinksConfiguration.fromJson(json['configuration']),
+      dispatcher: OrganizationLinksDispatcher.fromJson(json['dispatcher']),
       logo: OrganizationLinksLogo.fromJson(json['logo']),
       self: OrganizationLinksSelf.fromJson(json['self']),
     );
@@ -30,6 +32,8 @@ class OrganizationLinks {
   OrganizationLinksBusinessActivity businessActivity;
 
   OrganizationLinksConfiguration configuration;
+
+  OrganizationLinksDispatcher dispatcher;
 
   OrganizationLinksLogo logo;
 
@@ -47,6 +51,7 @@ class OrganizationLinks {
         application == other.application &&
         businessActivity == other.businessActivity &&
         configuration == other.configuration &&
+        dispatcher == other.dispatcher &&
         logo == other.logo &&
         self == other.self;
   }
@@ -59,6 +64,7 @@ class OrganizationLinks {
     hashCode ^= application?.hashCode ?? 0;
     hashCode ^= businessActivity?.hashCode ?? 0;
     hashCode ^= configuration?.hashCode ?? 0;
+    hashCode ^= dispatcher?.hashCode ?? 0;
     hashCode ^= logo?.hashCode ?? 0;
     hashCode ^= self?.hashCode ?? 0;
 
@@ -85,6 +91,7 @@ class OrganizationLinks {
       if (businessActivity != null)
         'businessActivity': businessActivity.toJson(),
       if (configuration != null) 'configuration': configuration.toJson(),
+      if (dispatcher != null) 'dispatcher': dispatcher.toJson(),
       if (logo != null) 'logo': logo.toJson(),
       if (self != null) 'self': self.toJson(),
     };
@@ -92,6 +99,6 @@ class OrganizationLinks {
 
   @override
   String toString() {
-    return 'OrganizationLinks[application=$application, businessActivity=$businessActivity, configuration=$configuration, logo=$logo, self=$self, ]';
+    return 'OrganizationLinks[application=$application, businessActivity=$businessActivity, configuration=$configuration, dispatcher=$dispatcher, logo=$logo, self=$self, ]';
   }
 }

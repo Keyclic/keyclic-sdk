@@ -3,7 +3,6 @@ part of keyclic_sdk_api.api;
 class OrganizationPreferences {
   OrganizationPreferences({
     this.categoryRequired,
-    this.notification,
     this.offline,
     this.public,
     this.reference,
@@ -17,7 +16,6 @@ class OrganizationPreferences {
 
     return OrganizationPreferences(
       categoryRequired: json['categoryRequired'],
-      notification: PreferencesNotification.fromJson(json['notification']),
       offline: json['offline'],
       public: json['public'],
       reference: PreferencesReference.fromJson(json['reference']),
@@ -26,8 +24,6 @@ class OrganizationPreferences {
   }
 
   bool categoryRequired;
-
-  PreferencesNotification notification;
 
   bool offline;
 
@@ -47,7 +43,6 @@ class OrganizationPreferences {
     return other is OrganizationPreferences &&
         runtimeType == other.runtimeType &&
         categoryRequired == other.categoryRequired &&
-        notification == other.notification &&
         offline == other.offline &&
         public == other.public &&
         reference == other.reference &&
@@ -60,7 +55,6 @@ class OrganizationPreferences {
     int hashCode = 0;
 
     hashCode ^= categoryRequired?.hashCode ?? 0;
-    hashCode ^= notification?.hashCode ?? 0;
     hashCode ^= offline?.hashCode ?? 0;
     hashCode ^= public?.hashCode ?? 0;
     hashCode ^= reference?.hashCode ?? 0;
@@ -88,7 +82,6 @@ class OrganizationPreferences {
   Map<String, dynamic> toJson() {
     return {
       if (categoryRequired != null) 'categoryRequired': categoryRequired,
-      if (notification != null) 'notification': notification.toJson(),
       if (offline != null) 'offline': offline,
       if (public != null) 'public': public,
       if (reference != null) 'reference': reference.toJson(),
@@ -98,6 +91,6 @@ class OrganizationPreferences {
 
   @override
   String toString() {
-    return 'OrganizationPreferences[categoryRequired=$categoryRequired, notification=$notification, offline=$offline, public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
+    return 'OrganizationPreferences[categoryRequired=$categoryRequired, offline=$offline, public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
   }
 }

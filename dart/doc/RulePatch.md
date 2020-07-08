@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.OrganizationPatchPreferences
+# keyclic_sdk_api.model.RulePatch
 
 ## Load the model package
 ```dart
@@ -8,7 +8,8 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reference** | [**OrganizationPatchPreferencesReference**](OrganizationPatchPreferencesReference.md) |  | [optional] [default to null]
+**category** | **String** |  | [optional] [default to null]
+**service** | **String** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -9,7 +9,6 @@ import 'package:keyclic_sdk_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **categoryRequired** | **bool** |  | [optional] [default to null]
-**notification** | [**PreferencesNotification**](PreferencesNotification.md) |  | [optional] [default to null]
 **offline** | **bool** |  | [optional] [default to null]
 **public** | **bool** |  | [optional] [default to null]
 **reference** | [**PreferencesReference**](PreferencesReference.md) |  | [optional] [default to null]

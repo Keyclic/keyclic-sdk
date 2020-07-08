@@ -2,7 +2,8 @@ part of keyclic_sdk_api.api;
 
 class PreferencesNotification {
   PreferencesNotification({
-    this.report,
+    this.mail,
+    this.push,
   });
 
   factory PreferencesNotification.fromJson(Map<String, dynamic> json) {
@@ -11,11 +12,14 @@ class PreferencesNotification {
     }
 
     return PreferencesNotification(
-      report: NotificationReportNotification.fromJson(json['report']),
+      mail: json['mail'],
+      push: json['push'],
     );
   }
 
-  NotificationReportNotification report;
+  bool mail;
+
+  bool push;
 
   @override
   bool operator ==(dynamic other) {
@@ -26,7 +30,8 @@ class PreferencesNotification {
 
     return other is PreferencesNotification &&
         runtimeType == other.runtimeType &&
-        report == other.report;
+        mail == other.mail &&
+        push == other.push;
   }
 
   /// By default hashCode return reference
@@ -34,7 +39,8 @@ class PreferencesNotification {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= report?.hashCode ?? 0;
+    hashCode ^= mail?.hashCode ?? 0;
+    hashCode ^= push?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -57,12 +63,13 @@ class PreferencesNotification {
 
   Map<String, dynamic> toJson() {
     return {
-      if (report != null) 'report': report.toJson(),
+      if (mail != null) 'mail': mail,
+      if (push != null) 'push': push,
     };
   }
 
   @override
   String toString() {
-    return 'PreferencesNotification[report=$report, ]';
+    return 'PreferencesNotification[mail=$mail, push=$push, ]';
   }
 }

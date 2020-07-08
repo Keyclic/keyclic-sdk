@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **application** | [**OrganizationLinksApplication**](OrganizationLinksApplication.md) |  | [optional] [default to null]
 **businessActivity** | [**OrganizationLinksBusinessActivity**](OrganizationLinksBusinessActivity.md) |  | [optional] [default to null]
 **configuration** | [**OrganizationLinksConfiguration**](OrganizationLinksConfiguration.md) |  | [optional] [default to null]
+**dispatcher** | [**OrganizationLinksDispatcher**](OrganizationLinksDispatcher.md) |  | [optional] [default to null]
 **logo** | [**OrganizationLinksLogo**](OrganizationLinksLogo.md) |  | [optional] [default to null]
 **self** | [**OrganizationLinksSelf**](OrganizationLinksSelf.md) |  | [optional] [default to null]
 

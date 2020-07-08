@@ -331,6 +331,8 @@ class ApiClient {
           return DeviceLinksSelfIriTemplate.fromJson(value);
         case 'DeviceLinksSelfIriTemplateMapping':
           return DeviceLinksSelfIriTemplateMapping.fromJson(value);
+        case 'Dispatcher':
+          return Dispatcher.fromJson(value);
         case 'Document':
           return Document.fromJson(value);
         case 'DocumentCollection':
@@ -553,8 +555,6 @@ class ApiClient {
           return NodeEmbedded.fromJson(value);
         case 'NodePath':
           return NodePath.fromJson(value);
-        case 'NotificationReportNotification':
-          return NotificationReportNotification.fromJson(value);
         case 'Occupant':
           return Occupant.fromJson(value);
         case 'OccupantCollection':
@@ -657,6 +657,12 @@ class ApiClient {
           return OrganizationLinksConfiguration.fromJson(value);
         case 'OrganizationLinksConfigurationIriTemplate':
           return OrganizationLinksConfigurationIriTemplate.fromJson(value);
+        case 'OrganizationLinksDispatcher':
+          return OrganizationLinksDispatcher.fromJson(value);
+        case 'OrganizationLinksDispatcherIriTemplate':
+          return OrganizationLinksDispatcherIriTemplate.fromJson(value);
+        case 'OrganizationLinksDispatcherIriTemplateMapping':
+          return OrganizationLinksDispatcherIriTemplateMapping.fromJson(value);
         case 'OrganizationLinksLogo':
           return OrganizationLinksLogo.fromJson(value);
         case 'OrganizationLinksLogoIriTemplate':
@@ -669,10 +675,6 @@ class ApiClient {
           return OrganizationPatch.fromJson(value);
         case 'OrganizationPatchPreferences':
           return OrganizationPatchPreferences.fromJson(value);
-        case 'OrganizationPatchPreferencesNotification':
-          return OrganizationPatchPreferencesNotification.fromJson(value);
-        case 'OrganizationPatchPreferencesNotificationReport':
-          return OrganizationPatchPreferencesNotificationReport.fromJson(value);
         case 'OrganizationPatchPreferencesReference':
           return OrganizationPatchPreferencesReference.fromJson(value);
         case 'OrganizationPreferences':
@@ -903,6 +905,24 @@ class ApiClient {
           return ReviewRequestLinksSelfIriTemplateMapping.fromJson(value);
         case 'Role':
           return Role.fromJson(value);
+        case 'Rule':
+          return Rule.fromJson(value);
+        case 'RuleCollection':
+          return RuleCollection.fromJson(value);
+        case 'RuleData':
+          return RuleData.fromJson(value);
+        case 'RuleEmbedded':
+          return RuleEmbedded.fromJson(value);
+        case 'RuleLinks':
+          return RuleLinks.fromJson(value);
+        case 'RuleLinksSelf':
+          return RuleLinksSelf.fromJson(value);
+        case 'RuleLinksSelfIriTemplate':
+          return RuleLinksSelfIriTemplate.fromJson(value);
+        case 'RuleLinksSelfIriTemplateMapping':
+          return RuleLinksSelfIriTemplateMapping.fromJson(value);
+        case 'RulePatch':
+          return RulePatch.fromJson(value);
         case 'Schema':
           return Schema.fromJson(value);
         case 'SchemaProperty':
@@ -921,6 +941,8 @@ class ApiClient {
           return Service.fromJson(value);
         case 'ServiceContactPoint':
           return ServiceContactPoint.fromJson(value);
+        case 'ServiceMemberData':
+          return ServiceMemberData.fromJson(value);
         case 'SignatureData':
           return SignatureData.fromJson(value);
         case 'SignatureDataSigner':
@@ -1017,6 +1039,8 @@ class ApiClient {
           return ReviewPagination.fromJson(value);
         case 'ReviewRequestPagination':
           return ReviewRequestPagination.fromJson(value);
+        case 'RulePagination':
+          return RulePagination.fromJson(value);
         case 'SectionPagination':
           return SectionPagination.fromJson(value);
         case 'WebhookPagination':
