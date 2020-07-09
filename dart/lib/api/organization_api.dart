@@ -865,6 +865,7 @@ class OrganizationApi {
     String query,
     String state,
     List<String> states__,
+    String visibility__,
     int page,
     int limit,
   }) async {
@@ -911,6 +912,8 @@ class OrganizationApi {
       if (states__ != null)
         ..._convertParametersForCollectionFormat("states[]", states__,
             collectionFormat: "multi"),
+      if (visibility__ != null)
+        ..._convertParametersForCollectionFormat("visibility[]", visibility__),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),
@@ -1060,6 +1063,7 @@ class OrganizationApi {
     String query,
     String state,
     List<String> states__,
+    String visibility__,
     int page,
     int limit,
   }) async {
@@ -1106,6 +1110,8 @@ class OrganizationApi {
       if (states__ != null)
         ..._convertParametersForCollectionFormat("states[]", states__,
             collectionFormat: "multi"),
+      if (visibility__ != null)
+        ..._convertParametersForCollectionFormat("visibility[]", visibility__),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),

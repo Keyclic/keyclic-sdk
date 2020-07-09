@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
  **geoHash[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
- **visibility[]** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
+ **visibility[]** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 

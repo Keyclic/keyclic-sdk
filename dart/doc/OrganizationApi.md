@@ -654,7 +654,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetReportsByOrganization**
-> ReportPagination cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], page, limit)
+> ReportPagination cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], visibility[], page, limit)
 
 Retrieve all Report resources.
 
@@ -684,11 +684,12 @@ var place = ; // String | The identifier of the resource.
 var query = query_example; // String | 
 var state = state_example; // String | 
 var states[] = []; // List<String> | 
+var visibility[] = visibility[]_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], page, limit);
+    var result = api_instance.cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], visibility[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetReportsByOrganization: $e\n");
@@ -716,6 +717,7 @@ Name | Type | Description  | Notes
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **visibility[]** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
@@ -798,7 +800,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cpostExportByOrganization**
-> cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], page, limit)
+> cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], visibility[], page, limit)
 
 Retrieve all Export resources.
 
@@ -828,11 +830,12 @@ var place = ; // String | The identifier of the resource.
 var query = query_example; // String | 
 var state = state_example; // String | 
 var states[] = []; // List<String> | 
+var visibility[] = visibility[]_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    api_instance.cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], page, limit);
+    api_instance.cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], visibility[], page, limit);
 } catch (e) {
     print("Exception when calling OrganizationApi->cpostExportByOrganization: $e\n");
 }
@@ -859,6 +862,7 @@ Name | Type | Description  | Notes
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **visibility[]** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
