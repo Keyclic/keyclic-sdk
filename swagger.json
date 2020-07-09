@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.4.62"
+        "version": "2.5.1"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -7690,6 +7690,9 @@
                         "$ref": "#\/parameters\/states__"
                     },
                     {
+                        "$ref": "#\/parameters\/visibility__"
+                    },
+                    {
                         "$ref": "#\/parameters\/page"
                     },
                     {
@@ -8378,6 +8381,9 @@
                         "$ref": "#\/parameters\/states__"
                     },
                     {
+                        "$ref": "#\/parameters\/visibility__"
+                    },
+                    {
                         "$ref": "#\/parameters\/page"
                     },
                     {
@@ -9055,6 +9061,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/states__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/visibility__"
                     },
                     {
                         "$ref": "#\/parameters\/page"
@@ -20085,7 +20094,6 @@
         },
         "visibility__": {
             "collectionFormat": "multi",
-            "default": "VISIBILITY_PUBLIC",
             "enum": [
                 "VISIBILITY_PUBLIC",
                 "VISIBILITY_PRIVATE"
