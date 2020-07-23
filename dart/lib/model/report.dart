@@ -11,7 +11,6 @@ class Report {
     this.identificationNumber,
     this.priority,
     this.reference,
-    this.state,
     this.tags,
     this.type,
     this.updatedAt,
@@ -48,9 +47,8 @@ class Report {
       dueAt: dueAt,
       id: json['id'],
       identificationNumber: json['identificationNumber'],
-      priority: json['priority'],
+      priority: ReportPriority.fromJson(json['priority']),
       reference: json['reference'],
-      state: json['state'] is List ? List<String>.from(json['state']) : null,
       tags: json['tags'] is List ? List<String>.from(json['tags']) : null,
       type: json['type'],
       updatedAt: updatedAt,
@@ -71,11 +69,9 @@ class Report {
 
   String identificationNumber;
 
-  int priority;
+  ReportPriority priority;
 
   String reference;
-
-  List<String> state;
 
   List<String> tags;
 
@@ -101,7 +97,6 @@ class Report {
         identificationNumber == other.identificationNumber &&
         priority == other.priority &&
         reference == other.reference &&
-        DeepCollectionEquality.unordered().equals(state, other.state) &&
         DeepCollectionEquality.unordered().equals(tags, other.tags) &&
         type == other.type &&
         updatedAt == other.updatedAt;
@@ -112,11 +107,6 @@ class Report {
   int get hashCode {
     int hashCode = 0;
 
-    if (state is List && state.isNotEmpty) {
-      hashCode ^= state
-          .map((String element) => element.hashCode)
-          .reduce((int value, int cursor) => value ^ cursor);
-    }
     if (tags is List && tags.isNotEmpty) {
       hashCode ^= tags
           .map((String element) => element.hashCode)
@@ -160,9 +150,8 @@ class Report {
       if (id != null) 'id': id,
       if (identificationNumber != null)
         'identificationNumber': identificationNumber,
-      if (priority != null) 'priority': priority,
+      if (priority != null) 'priority': priority.toJson(),
       if (reference != null) 'reference': reference,
-      if (state != null) 'state': state,
       if (tags != null) 'tags': tags,
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
@@ -171,6 +160,6 @@ class Report {
 
   @override
   String toString() {
-    return 'Report[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, dueAt=$dueAt, id=$id, identificationNumber=$identificationNumber, priority=$priority, reference=$reference, state=$state, tags=$tags, type=$type, updatedAt=$updatedAt, ]';
+    return 'Report[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, dueAt=$dueAt, id=$id, identificationNumber=$identificationNumber, priority=$priority, reference=$reference, tags=$tags, type=$type, updatedAt=$updatedAt, ]';
   }
 }

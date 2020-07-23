@@ -39,7 +39,7 @@ class ReportPatch {
 
   String identificationNumber;
 
-  int priority;
+  String priority;
 
   List<String> tags;
 

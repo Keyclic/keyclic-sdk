@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 
 # **cgetCommentsByOperation**
-> ActivityPagination cgetCommentsByOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppVersion, page, limit)
+> ActivityPagination cgetCommentsByOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, page, limit)
 
 Retrieve all Comment resources.
 
@@ -41,12 +41,13 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetCommentsByOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppVersion, page, limit);
+    var result = api_instance.cgetCommentsByOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->cgetCommentsByOperation: $e\n");
@@ -61,6 +62,7 @@ Name | Type | Description  | Notes
  **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
@@ -81,7 +83,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteImageByOperationAndImage**
-> deleteImageByOperationAndImage(xKeyclicApp, operation, image, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> deleteImageByOperationAndImage(xKeyclicApp, operation, image, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Remove one Image resource.
 
@@ -99,10 +101,11 @@ var operation = ; // String | The identifier of the resource.
 var image = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteImageByOperationAndImage(xKeyclicApp, operation, image, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    api_instance.deleteImageByOperationAndImage(xKeyclicApp, operation, image, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling OperationApi->deleteImageByOperationAndImage: $e\n");
 }
@@ -117,6 +120,7 @@ Name | Type | Description  | Notes
  **image** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -135,7 +139,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteOperation**
-> deleteOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> deleteOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Remove one Operation resource.
 
@@ -152,10 +156,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    api_instance.deleteOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling OperationApi->deleteOperation: $e\n");
 }
@@ -169,6 +174,7 @@ Name | Type | Description  | Notes
  **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -187,7 +193,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getOperation**
-> Operation getOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Operation getOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Operation resource.
 
@@ -204,10 +210,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->getOperation: $e\n");
@@ -222,6 +229,7 @@ Name | Type | Description  | Notes
  **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -240,7 +248,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTrackingByOperation**
-> Tracking getTrackingByOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Tracking getTrackingByOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Tracking resource.
 
@@ -257,10 +265,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getTrackingByOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getTrackingByOperation(xKeyclicApp, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->getTrackingByOperation: $e\n");
@@ -275,6 +284,7 @@ Name | Type | Description  | Notes
  **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -293,7 +303,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchOperation**
-> Operation patchOperation(xKeyclicApp, operationPatch, operation, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Operation patchOperation(xKeyclicApp, operationPatch, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Edit one Operation resource.
 
@@ -311,10 +321,11 @@ var operationPatch = OperationPatch(); // OperationPatch |
 var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.patchOperation(xKeyclicApp, operationPatch, operation, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.patchOperation(xKeyclicApp, operationPatch, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->patchOperation: $e\n");
@@ -330,6 +341,7 @@ Name | Type | Description  | Notes
  **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -348,7 +360,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postAssignByOperation**
-> Operation postAssignByOperation(xKeyclicApp, assignData, operation, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Operation postAssignByOperation(xKeyclicApp, assignData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Assign resource.
 
@@ -366,10 +378,11 @@ var assignData = AssignData(); // AssignData |
 var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postAssignByOperation(xKeyclicApp, assignData, operation, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postAssignByOperation(xKeyclicApp, assignData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->postAssignByOperation: $e\n");
@@ -385,6 +398,7 @@ Name | Type | Description  | Notes
  **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -403,7 +417,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postCommentByOperation**
-> Operation postCommentByOperation(xKeyclicApp, commentData, operation, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Operation postCommentByOperation(xKeyclicApp, commentData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Comment resource.
 
@@ -421,10 +435,11 @@ var commentData = CommentData(); // CommentData |
 var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postCommentByOperation(xKeyclicApp, commentData, operation, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postCommentByOperation(xKeyclicApp, commentData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->postCommentByOperation: $e\n");
@@ -440,6 +455,7 @@ Name | Type | Description  | Notes
  **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -458,7 +474,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postImageByOperation**
-> Operation postImageByOperation(xKeyclicApp, imageData, operation, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Operation postImageByOperation(xKeyclicApp, imageData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Image resource.
 
@@ -476,10 +492,11 @@ var imageData = ImageData(); // ImageData |
 var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postImageByOperation(xKeyclicApp, imageData, operation, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postImageByOperation(xKeyclicApp, imageData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->postImageByOperation: $e\n");
@@ -495,6 +512,7 @@ Name | Type | Description  | Notes
  **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -513,7 +531,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postOperation**
-> Operation postOperation(xKeyclicApp, operationData, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Operation postOperation(xKeyclicApp, operationData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Operation resource.
 
@@ -530,10 +548,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var operationData = OperationData(); // OperationData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postOperation(xKeyclicApp, operationData, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postOperation(xKeyclicApp, operationData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->postOperation: $e\n");
@@ -548,6 +567,7 @@ Name | Type | Description  | Notes
  **operationData** | [**OperationData**](OperationData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -566,7 +586,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSignByOperation**
-> Operation postSignByOperation(xKeyclicApp, signatureData, operation, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Operation postSignByOperation(xKeyclicApp, signatureData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Sign resource.
 
@@ -584,10 +604,11 @@ var signatureData = SignatureData(); // SignatureData |
 var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postSignByOperation(xKeyclicApp, signatureData, operation, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postSignByOperation(xKeyclicApp, signatureData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->postSignByOperation: $e\n");
@@ -603,6 +624,7 @@ Name | Type | Description  | Notes
  **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -621,7 +643,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postWorkflowByOperation**
-> Operation postWorkflowByOperation(xKeyclicApp, workflowData, operation, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Operation postWorkflowByOperation(xKeyclicApp, workflowData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Workflow resource.
 
@@ -639,10 +661,11 @@ var workflowData = WorkflowData(); // WorkflowData |
 var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postWorkflowByOperation(xKeyclicApp, workflowData, operation, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postWorkflowByOperation(xKeyclicApp, workflowData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->postWorkflowByOperation: $e\n");
@@ -658,6 +681,7 @@ Name | Type | Description  | Notes
  **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

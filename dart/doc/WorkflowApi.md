@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getWorkflow**
-> Workflow getWorkflow(xKeyclicApp, workflow, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Workflow getWorkflow(xKeyclicApp, workflow, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Workflow resource.
 
@@ -30,10 +30,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var workflow = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getWorkflow(xKeyclicApp, workflow, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getWorkflow(xKeyclicApp, workflow, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling WorkflowApi->getWorkflow: $e\n");
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
  **workflow** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

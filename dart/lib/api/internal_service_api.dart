@@ -14,6 +14,7 @@ class InternalServiceApi {
     String internalService, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -66,6 +67,8 @@ class InternalServiceApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -108,6 +111,7 @@ class InternalServiceApi {
     String internalService, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -134,6 +138,8 @@ class InternalServiceApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -176,6 +182,7 @@ class InternalServiceApi {
     String member, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -207,6 +214,8 @@ class InternalServiceApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -248,6 +257,7 @@ class InternalServiceApi {
     String internalService, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -274,6 +284,8 @@ class InternalServiceApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -317,6 +329,7 @@ class InternalServiceApi {
     String internalService, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -347,6 +360,8 @@ class InternalServiceApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -390,6 +405,7 @@ class InternalServiceApi {
     InternalServiceData internalServiceData, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -414,6 +430,8 @@ class InternalServiceApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -458,6 +476,7 @@ class InternalServiceApi {
     String internalService, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -488,6 +507,8 @@ class InternalServiceApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };

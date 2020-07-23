@@ -14,6 +14,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String businessActivity,
     DateTime after,
@@ -69,6 +70,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -111,6 +114,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -155,6 +159,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -197,6 +203,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -241,6 +248,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -283,6 +292,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -327,6 +337,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -369,6 +381,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -421,6 +434,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -463,6 +478,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String assignedTo,
     DateTime after,
@@ -517,6 +533,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -558,6 +576,7 @@ class OrganizationApi {
     String xKeyclicApp, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String businessActivity,
     DateTime after,
@@ -613,6 +632,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -655,6 +676,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String businessActivity,
     DateTime after,
@@ -724,6 +746,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -766,6 +790,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -810,6 +835,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -852,6 +879,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String assignedTo,
     String category,
@@ -862,6 +890,7 @@ class OrganizationApi {
     String operationState,
     String order,
     String place,
+    String priority,
     String query,
     String state,
     List<String> states__,
@@ -905,6 +934,8 @@ class OrganizationApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (place != null)
         ..._convertParametersForCollectionFormat("place", place),
+      if (priority != null)
+        ..._convertParametersForCollectionFormat("priority", priority),
       if (query != null)
         ..._convertParametersForCollectionFormat("query", query),
       if (state != null)
@@ -925,6 +956,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -967,6 +1000,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -1008,6 +1042,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -1050,6 +1086,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String assignedTo,
     String category,
@@ -1060,6 +1097,7 @@ class OrganizationApi {
     String operationState,
     String order,
     String place,
+    String priority,
     String query,
     String state,
     List<String> states__,
@@ -1103,6 +1141,8 @@ class OrganizationApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (place != null)
         ..._convertParametersForCollectionFormat("place", place),
+      if (priority != null)
+        ..._convertParametersForCollectionFormat("priority", priority),
       if (query != null)
         ..._convertParametersForCollectionFormat("query", query),
       if (state != null)
@@ -1123,6 +1163,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -1164,6 +1206,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String category,
     String place,
@@ -1208,6 +1251,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -1249,6 +1294,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -1275,6 +1321,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -1317,6 +1365,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -1343,6 +1392,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -1384,6 +1435,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -1410,6 +1462,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -1452,6 +1506,7 @@ class OrganizationApi {
     String organization, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -1482,6 +1537,8 @@ class OrganizationApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };

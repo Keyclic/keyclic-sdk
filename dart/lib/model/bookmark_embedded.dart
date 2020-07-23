@@ -1,17 +1,17 @@
 part of keyclic_sdk_api.api;
 
-class OccupantEmbedded {
-  OccupantEmbedded({
+class BookmarkEmbedded {
+  BookmarkEmbedded({
     this.member,
     this.place,
   });
 
-  factory OccupantEmbedded.fromJson(Map<String, dynamic> json) {
+  factory BookmarkEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return OccupantEmbedded(
+    return BookmarkEmbedded(
       member: Member.fromJson(json['member']),
       place: Place.fromJson(json['place']),
     );
@@ -28,7 +28,7 @@ class OccupantEmbedded {
       return true;
     }
 
-    return other is OccupantEmbedded &&
+    return other is BookmarkEmbedded &&
         runtimeType == other.runtimeType &&
         member == other.member &&
         place == other.place;
@@ -45,18 +45,18 @@ class OccupantEmbedded {
     return hashCode;
   }
 
-  static List<OccupantEmbedded> listFromJson(List<dynamic> json) {
+  static List<BookmarkEmbedded> listFromJson(List<dynamic> json) {
     return json
-            ?.map((dynamic value) => OccupantEmbedded.fromJson(value))
+            ?.map((dynamic value) => BookmarkEmbedded.fromJson(value))
             ?.toList() ??
-        <OccupantEmbedded>[];
+        <BookmarkEmbedded>[];
   }
 
-  static Map<String, OccupantEmbedded> mapFromJson(Map<String, dynamic> json) {
-    return json?.map<String, OccupantEmbedded>((String key, dynamic value) {
-          return MapEntry(key, OccupantEmbedded.fromJson(value));
+  static Map<String, BookmarkEmbedded> mapFromJson(Map<String, dynamic> json) {
+    return json?.map<String, BookmarkEmbedded>((String key, dynamic value) {
+          return MapEntry(key, BookmarkEmbedded.fromJson(value));
         }) ??
-        <String, OccupantEmbedded>{};
+        <String, BookmarkEmbedded>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -68,6 +68,6 @@ class OccupantEmbedded {
 
   @override
   String toString() {
-    return 'OccupantEmbedded[member=$member, place=$place, ]';
+    return 'BookmarkEmbedded[member=$member, place=$place, ]';
   }
 }

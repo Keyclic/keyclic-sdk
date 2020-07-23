@@ -13,6 +13,7 @@ class ContributionApi {
     String xKeyclicApp, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -51,6 +52,8 @@ class ContributionApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -93,6 +96,7 @@ class ContributionApi {
     String contribution, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -119,6 +123,8 @@ class ContributionApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -160,6 +166,7 @@ class ContributionApi {
     ContributionData contributionData, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -184,6 +191,8 @@ class ContributionApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };

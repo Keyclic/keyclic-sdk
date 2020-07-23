@@ -1,17 +1,17 @@
 part of keyclic_sdk_api.api;
 
-class OccupantLinksPlaceIriTemplateMapping {
-  OccupantLinksPlaceIriTemplateMapping({
+class BookmarkLinksPlaceIriTemplateMapping {
+  BookmarkLinksPlaceIriTemplateMapping({
     this.place,
   });
 
-  factory OccupantLinksPlaceIriTemplateMapping.fromJson(
+  factory BookmarkLinksPlaceIriTemplateMapping.fromJson(
       Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return OccupantLinksPlaceIriTemplateMapping(
+    return BookmarkLinksPlaceIriTemplateMapping(
       place: json['place'],
     );
   }
@@ -25,7 +25,7 @@ class OccupantLinksPlaceIriTemplateMapping {
       return true;
     }
 
-    return other is OccupantLinksPlaceIriTemplateMapping &&
+    return other is BookmarkLinksPlaceIriTemplateMapping &&
         runtimeType == other.runtimeType &&
         place == other.place;
   }
@@ -40,23 +40,23 @@ class OccupantLinksPlaceIriTemplateMapping {
     return hashCode;
   }
 
-  static List<OccupantLinksPlaceIriTemplateMapping> listFromJson(
+  static List<BookmarkLinksPlaceIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json
             ?.map((dynamic value) =>
-                OccupantLinksPlaceIriTemplateMapping.fromJson(value))
+                BookmarkLinksPlaceIriTemplateMapping.fromJson(value))
             ?.toList() ??
-        <OccupantLinksPlaceIriTemplateMapping>[];
+        <BookmarkLinksPlaceIriTemplateMapping>[];
   }
 
-  static Map<String, OccupantLinksPlaceIriTemplateMapping> mapFromJson(
+  static Map<String, BookmarkLinksPlaceIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map<String, OccupantLinksPlaceIriTemplateMapping>(
+    return json?.map<String, BookmarkLinksPlaceIriTemplateMapping>(
             (String key, dynamic value) {
           return MapEntry(
-              key, OccupantLinksPlaceIriTemplateMapping.fromJson(value));
+              key, BookmarkLinksPlaceIriTemplateMapping.fromJson(value));
         }) ??
-        <String, OccupantLinksPlaceIriTemplateMapping>{};
+        <String, BookmarkLinksPlaceIriTemplateMapping>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -67,6 +67,6 @@ class OccupantLinksPlaceIriTemplateMapping {
 
   @override
   String toString() {
-    return 'OccupantLinksPlaceIriTemplateMapping[place=$place, ]';
+    return 'BookmarkLinksPlaceIriTemplateMapping[place=$place, ]';
   }
 }

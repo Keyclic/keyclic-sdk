@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **deleteExternalService**
-> deleteExternalService(xKeyclicApp, externalService, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> deleteExternalService(xKeyclicApp, externalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Remove one ExternalService resource.
 
@@ -33,10 +33,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var externalService = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteExternalService(xKeyclicApp, externalService, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    api_instance.deleteExternalService(xKeyclicApp, externalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling ExternalServiceApi->deleteExternalService: $e\n");
 }
@@ -50,6 +51,7 @@ Name | Type | Description  | Notes
  **externalService** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -68,7 +70,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getExternalService**
-> ExternalService getExternalService(xKeyclicApp, externalService, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> ExternalService getExternalService(xKeyclicApp, externalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one ExternalService resource.
 
@@ -85,10 +87,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var externalService = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getExternalService(xKeyclicApp, externalService, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getExternalService(xKeyclicApp, externalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ExternalServiceApi->getExternalService: $e\n");
@@ -103,6 +106,7 @@ Name | Type | Description  | Notes
  **externalService** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -121,7 +125,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchExternalService**
-> ExternalService patchExternalService(xKeyclicApp, externalServicePatch, externalService, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> ExternalService patchExternalService(xKeyclicApp, externalServicePatch, externalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Edit one ExternalService resource.
 
@@ -139,10 +143,11 @@ var externalServicePatch = ExternalServicePatch(); // ExternalServicePatch |
 var externalService = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.patchExternalService(xKeyclicApp, externalServicePatch, externalService, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.patchExternalService(xKeyclicApp, externalServicePatch, externalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ExternalServiceApi->patchExternalService: $e\n");
@@ -158,6 +163,7 @@ Name | Type | Description  | Notes
  **externalService** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -176,7 +182,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postExternalService**
-> ExternalService postExternalService(xKeyclicApp, externalServiceData, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> ExternalService postExternalService(xKeyclicApp, externalServiceData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one ExternalService resource.
 
@@ -193,10 +199,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var externalServiceData = ExternalServiceData(); // ExternalServiceData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postExternalService(xKeyclicApp, externalServiceData, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postExternalService(xKeyclicApp, externalServiceData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ExternalServiceApi->postExternalService: $e\n");
@@ -211,6 +218,7 @@ Name | Type | Description  | Notes
  **externalServiceData** | [**ExternalServiceData**](ExternalServiceData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

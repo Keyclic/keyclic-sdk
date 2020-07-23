@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **cgetOccupantsByPlace**
-> OccupantPagination cgetOccupantsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, person, query, page, limit)
+> OccupantPagination cgetOccupantsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, person, query, page, limit)
 
 Retrieve all Occupant resources.
 
@@ -34,6 +34,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var place = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -44,7 +45,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetOccupantsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, person, query, page, limit);
+    var result = api_instance.cgetOccupantsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, person, query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PlaceApi->cgetOccupantsByPlace: $e\n");
@@ -59,6 +60,7 @@ Name | Type | Description  | Notes
  **place** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -84,7 +86,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetPlaces**
-> PlacePagination cgetPlaces(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, organization, parent, parents[], query, page, limit)
+> PlacePagination cgetPlaces(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, organization, parent, parents[], query, page, limit)
 
 Retrieve all Place resources.
 
@@ -100,6 +102,7 @@ var api_instance = PlaceApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var businessActivity = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -117,7 +120,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetPlaces(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, organization, parent, parents[], query, page, limit);
+    var result = api_instance.cgetPlaces(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, organization, parent, parents[], query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PlaceApi->cgetPlaces: $e\n");
@@ -131,6 +134,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 
@@ -163,7 +167,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPlace**
-> Place getPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Place getPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Place resource.
 
@@ -180,10 +184,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var place = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling PlaceApi->getPlace: $e\n");
@@ -198,6 +203,7 @@ Name | Type | Description  | Notes
  **place** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -216,7 +222,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchPlace**
-> Place patchPlace(xKeyclicApp, placePatch, place, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Place patchPlace(xKeyclicApp, placePatch, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Edit one Place resource.
 
@@ -234,10 +240,11 @@ var placePatch = PlacePatch(); // PlacePatch |
 var place = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.patchPlace(xKeyclicApp, placePatch, place, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.patchPlace(xKeyclicApp, placePatch, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling PlaceApi->patchPlace: $e\n");
@@ -253,6 +260,7 @@ Name | Type | Description  | Notes
  **place** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -271,7 +279,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postPlace**
-> Place postPlace(xKeyclicApp, placeData, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Place postPlace(xKeyclicApp, placeData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Place resource.
 
@@ -288,10 +296,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var placeData = PlaceData(); // PlaceData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postPlace(xKeyclicApp, placeData, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postPlace(xKeyclicApp, placeData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling PlaceApi->postPlace: $e\n");
@@ -306,6 +315,7 @@ Name | Type | Description  | Notes
  **placeData** | [**PlaceData**](PlaceData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

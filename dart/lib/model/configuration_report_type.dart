@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class ConfigurationReportType {
   ConfigurationReportType({
     this.id,
+    this.priorities,
     this.type,
     this.workflow,
   });
@@ -14,12 +15,15 @@ class ConfigurationReportType {
 
     return ConfigurationReportType(
       id: json['id'],
+      priorities: ReportTypePriority.listFromJson(json['priorities']),
       type: json['type'],
       workflow: ReportTypeWorkflow.fromJson(json['workflow']),
     );
   }
 
   String id;
+
+  List<ReportTypePriority> priorities;
 
   String type;
 
@@ -35,6 +39,8 @@ class ConfigurationReportType {
     return other is ConfigurationReportType &&
         runtimeType == other.runtimeType &&
         id == other.id &&
+        DeepCollectionEquality.unordered()
+            .equals(priorities, other.priorities) &&
         type == other.type &&
         workflow == other.workflow;
   }
@@ -43,6 +49,12 @@ class ConfigurationReportType {
   @override
   int get hashCode {
     int hashCode = 0;
+
+    if (priorities is List && priorities.isNotEmpty) {
+      hashCode ^= priorities
+          .map((ReportTypePriority element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
 
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
@@ -70,6 +82,7 @@ class ConfigurationReportType {
   Map<String, dynamic> toJson() {
     return {
       if (id != null) 'id': id,
+      if (priorities != null) 'priorities': priorities,
       if (type != null) 'type': type,
       if (workflow != null) 'workflow': workflow.toJson(),
     };
@@ -77,6 +90,6 @@ class ConfigurationReportType {
 
   @override
   String toString() {
-    return 'ConfigurationReportType[id=$id, type=$type, workflow=$workflow, ]';
+    return 'ConfigurationReportType[id=$id, priorities=$priorities, type=$type, workflow=$workflow, ]';
   }
 }

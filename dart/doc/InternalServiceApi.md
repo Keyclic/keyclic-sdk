@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **cgetMembersByInternalService**
-> MemberPagination cgetMembersByInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit)
+> MemberPagination cgetMembersByInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit)
 
 Retrieve all Member resources.
 
@@ -36,11 +36,12 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var internalService = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
-var role = role_example; // String | 
+var role = ; // String | The identifier of the resource.
 var query = query_example; // String | 
 var roles[] = []; // List<String> | 
 var type = type_example; // String | 
@@ -48,7 +49,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetMembersByInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit);
+    var result = api_instance.cgetMembersByInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling InternalServiceApi->cgetMembersByInternalService: $e\n");
@@ -63,11 +64,12 @@ Name | Type | Description  | Notes
  **internalService** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **role** | **String**|  | [optional] 
+ **role** | [**String**](.md)| The identifier of the resource. | [optional] 
  **query** | **String**|  | [optional] 
  **roles[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **type** | **String**|  | [optional] 
@@ -90,7 +92,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteInternalService**
-> deleteInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> deleteInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Remove one InternalService resource.
 
@@ -107,10 +109,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var internalService = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    api_instance.deleteInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling InternalServiceApi->deleteInternalService: $e\n");
 }
@@ -124,6 +127,7 @@ Name | Type | Description  | Notes
  **internalService** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -142,7 +146,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteMemberByInternalServiceAndMember**
-> deleteMemberByInternalServiceAndMember(xKeyclicApp, internalService, member, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> deleteMemberByInternalServiceAndMember(xKeyclicApp, internalService, member, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Remove one Member resource.
 
@@ -160,10 +164,11 @@ var internalService = ; // String | The identifier of the resource.
 var member = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteMemberByInternalServiceAndMember(xKeyclicApp, internalService, member, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    api_instance.deleteMemberByInternalServiceAndMember(xKeyclicApp, internalService, member, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling InternalServiceApi->deleteMemberByInternalServiceAndMember: $e\n");
 }
@@ -178,6 +183,7 @@ Name | Type | Description  | Notes
  **member** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -196,7 +202,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getInternalService**
-> InternalService getInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> InternalService getInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one InternalService resource.
 
@@ -213,10 +219,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var internalService = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getInternalService(xKeyclicApp, internalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling InternalServiceApi->getInternalService: $e\n");
@@ -231,6 +238,7 @@ Name | Type | Description  | Notes
  **internalService** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -249,7 +257,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchInternalService**
-> InternalService patchInternalService(xKeyclicApp, internalServicePatch, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> InternalService patchInternalService(xKeyclicApp, internalServicePatch, internalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Edit one InternalService resource.
 
@@ -267,10 +275,11 @@ var internalServicePatch = InternalServicePatch(); // InternalServicePatch |
 var internalService = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.patchInternalService(xKeyclicApp, internalServicePatch, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.patchInternalService(xKeyclicApp, internalServicePatch, internalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling InternalServiceApi->patchInternalService: $e\n");
@@ -286,6 +295,7 @@ Name | Type | Description  | Notes
  **internalService** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -304,7 +314,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postInternalService**
-> InternalService postInternalService(xKeyclicApp, internalServiceData, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> InternalService postInternalService(xKeyclicApp, internalServiceData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one InternalService resource.
 
@@ -321,10 +331,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var internalServiceData = InternalServiceData(); // InternalServiceData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postInternalService(xKeyclicApp, internalServiceData, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postInternalService(xKeyclicApp, internalServiceData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling InternalServiceApi->postInternalService: $e\n");
@@ -339,6 +350,7 @@ Name | Type | Description  | Notes
  **internalServiceData** | [**InternalServiceData**](InternalServiceData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -357,7 +369,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postMemberByInternalService**
-> InternalService postMemberByInternalService(xKeyclicApp, serviceMemberData, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> InternalService postMemberByInternalService(xKeyclicApp, serviceMemberData, internalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Member resource.
 
@@ -375,10 +387,11 @@ var serviceMemberData = ServiceMemberData(); // ServiceMemberData |
 var internalService = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postMemberByInternalService(xKeyclicApp, serviceMemberData, internalService, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postMemberByInternalService(xKeyclicApp, serviceMemberData, internalService, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling InternalServiceApi->postMemberByInternalService: $e\n");
@@ -394,6 +407,7 @@ Name | Type | Description  | Notes
  **internalService** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

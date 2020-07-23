@@ -7,7 +7,6 @@ class Member {
     this.contactPoint,
     this.createdAt,
     this.id,
-    this.roles,
     this.type,
     this.updatedAt,
   });
@@ -35,7 +34,6 @@ class Member {
       contactPoint: MemberContactPoint.fromJson(json['contactPoint']),
       createdAt: createdAt,
       id: json['id'],
-      roles: json['roles'] is List ? List<String>.from(json['roles']) : null,
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -50,8 +48,6 @@ class Member {
   DateTime createdAt;
 
   String id;
-
-  List<String> roles;
 
   String type;
 
@@ -71,7 +67,6 @@ class Member {
         contactPoint == other.contactPoint &&
         createdAt == other.createdAt &&
         id == other.id &&
-        DeepCollectionEquality.unordered().equals(roles, other.roles) &&
         type == other.type &&
         updatedAt == other.updatedAt;
   }
@@ -80,12 +75,6 @@ class Member {
   @override
   int get hashCode {
     int hashCode = 0;
-
-    if (roles is List && roles.isNotEmpty) {
-      hashCode ^= roles
-          .map((String element) => element.hashCode)
-          .reduce((int value, int cursor) => value ^ cursor);
-    }
 
     hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
@@ -117,7 +106,6 @@ class Member {
       if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
-      if (roles != null) 'roles': roles,
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
@@ -125,6 +113,6 @@ class Member {
 
   @override
   String toString() {
-    return 'Member[embedded=$embedded, links=$links, contactPoint=$contactPoint, createdAt=$createdAt, id=$id, roles=$roles, type=$type, updatedAt=$updatedAt, ]';
+    return 'Member[embedded=$embedded, links=$links, contactPoint=$contactPoint, createdAt=$createdAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
   }
 }

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getSection**
-> Section getSection(xKeyclicApp, section, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Section getSection(xKeyclicApp, section, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Section resource.
 
@@ -30,10 +30,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var section = section_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getSection(xKeyclicApp, section, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getSection(xKeyclicApp, section, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling SectionApi->getSection: $e\n");
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
  **section** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

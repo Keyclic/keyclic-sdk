@@ -28,7 +28,7 @@ class Occupant {
     }
 
     return Occupant(
-      embedded: OccupantEmbedded.fromJson(json['_embedded']),
+      embedded: BookmarkEmbedded.fromJson(json['_embedded']),
       links: OccupantLinks.fromJson(json['_links']),
       createdAt: createdAt,
       id: json['id'],
@@ -37,7 +37,7 @@ class Occupant {
     );
   }
 
-  OccupantEmbedded embedded;
+  BookmarkEmbedded embedded;
 
   OccupantLinks links;
 

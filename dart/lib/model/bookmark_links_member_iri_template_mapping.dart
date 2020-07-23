@@ -1,17 +1,17 @@
 part of keyclic_sdk_api.api;
 
-class InvitationLinksMemberIriTemplateMapping {
-  InvitationLinksMemberIriTemplateMapping({
+class BookmarkLinksMemberIriTemplateMapping {
+  BookmarkLinksMemberIriTemplateMapping({
     this.member,
   });
 
-  factory InvitationLinksMemberIriTemplateMapping.fromJson(
+  factory BookmarkLinksMemberIriTemplateMapping.fromJson(
       Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return InvitationLinksMemberIriTemplateMapping(
+    return BookmarkLinksMemberIriTemplateMapping(
       member: json['member'],
     );
   }
@@ -25,7 +25,7 @@ class InvitationLinksMemberIriTemplateMapping {
       return true;
     }
 
-    return other is InvitationLinksMemberIriTemplateMapping &&
+    return other is BookmarkLinksMemberIriTemplateMapping &&
         runtimeType == other.runtimeType &&
         member == other.member;
   }
@@ -40,23 +40,23 @@ class InvitationLinksMemberIriTemplateMapping {
     return hashCode;
   }
 
-  static List<InvitationLinksMemberIriTemplateMapping> listFromJson(
+  static List<BookmarkLinksMemberIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json
             ?.map((dynamic value) =>
-                InvitationLinksMemberIriTemplateMapping.fromJson(value))
+                BookmarkLinksMemberIriTemplateMapping.fromJson(value))
             ?.toList() ??
-        <InvitationLinksMemberIriTemplateMapping>[];
+        <BookmarkLinksMemberIriTemplateMapping>[];
   }
 
-  static Map<String, InvitationLinksMemberIriTemplateMapping> mapFromJson(
+  static Map<String, BookmarkLinksMemberIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map<String, InvitationLinksMemberIriTemplateMapping>(
+    return json?.map<String, BookmarkLinksMemberIriTemplateMapping>(
             (String key, dynamic value) {
           return MapEntry(
-              key, InvitationLinksMemberIriTemplateMapping.fromJson(value));
+              key, BookmarkLinksMemberIriTemplateMapping.fromJson(value));
         }) ??
-        <String, InvitationLinksMemberIriTemplateMapping>{};
+        <String, BookmarkLinksMemberIriTemplateMapping>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -67,6 +67,6 @@ class InvitationLinksMemberIriTemplateMapping {
 
   @override
   String toString() {
-    return 'InvitationLinksMemberIriTemplateMapping[member=$member, ]';
+    return 'BookmarkLinksMemberIriTemplateMapping[member=$member, ]';
   }
 }

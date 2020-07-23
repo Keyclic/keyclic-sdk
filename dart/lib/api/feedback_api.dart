@@ -14,6 +14,7 @@ class FeedbackApi {
     String feedback, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     int page,
     int limit,
@@ -46,6 +47,8 @@ class FeedbackApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -87,15 +90,16 @@ class FeedbackApi {
     String xKeyclicApp, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String state,
+    String visibility__,
     String category,
     DateTime after,
     DateTime before,
     List<String> geoHash__,
     String order,
     String organization,
-    String visibility__,
     int page,
     int limit,
   }) async {
@@ -112,6 +116,8 @@ class FeedbackApi {
     final List<QueryParam> queryParams = <QueryParam>[
       if (state != null)
         ..._convertParametersForCollectionFormat("state", state),
+      if (visibility__ != null)
+        ..._convertParametersForCollectionFormat("visibility[]", visibility__),
       if (category != null)
         ..._convertParametersForCollectionFormat("category", category),
       if (after != null)
@@ -125,8 +131,6 @@ class FeedbackApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (organization != null)
         ..._convertParametersForCollectionFormat("organization", organization),
-      if (visibility__ != null)
-        ..._convertParametersForCollectionFormat("visibility[]", visibility__),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),
@@ -138,6 +142,8 @@ class FeedbackApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -180,6 +186,7 @@ class FeedbackApi {
     String feedback, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
@@ -221,6 +228,8 @@ class FeedbackApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -263,6 +272,7 @@ class FeedbackApi {
     String feedback, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -289,6 +299,8 @@ class FeedbackApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -330,6 +342,7 @@ class FeedbackApi {
     String feedback, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -356,6 +369,8 @@ class FeedbackApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -398,6 +413,7 @@ class FeedbackApi {
     String feedback, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -428,6 +444,8 @@ class FeedbackApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -471,6 +489,7 @@ class FeedbackApi {
     String feedback, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -501,6 +520,8 @@ class FeedbackApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -543,6 +564,7 @@ class FeedbackApi {
     FeedbackData feedbackData, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -567,6 +589,8 @@ class FeedbackApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };
@@ -610,6 +634,7 @@ class FeedbackApi {
     String feedback, {
     String acceptLanguage,
     DateTime xDateTime,
+    String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
   }) async {
     // verify required params are set
@@ -641,6 +666,8 @@ class FeedbackApi {
         "accept-language": acceptLanguage.toString(),
       if (xDateTime is DateTime) "x-date-time": xDateTime.toIso8601String(),
       if (xKeyclicApp is String) "x-keyclic-app": xKeyclicApp.toString(),
+      if (xKeyclicAppPlatform is String)
+        "x-keyclic-app-platform": xKeyclicAppPlatform.toString(),
       if (xKeyclicAppVersion is String)
         "x-keyclic-app-version": xKeyclicAppVersion.toString(),
     };

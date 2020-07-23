@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **deleteDocument**
-> deleteDocument(xKeyclicApp, document, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> deleteDocument(xKeyclicApp, document, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Remove one Document resource.
 
@@ -32,10 +32,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var document = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteDocument(xKeyclicApp, document, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    api_instance.deleteDocument(xKeyclicApp, document, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling DocumentApi->deleteDocument: $e\n");
 }
@@ -49,6 +50,7 @@ Name | Type | Description  | Notes
  **document** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -67,7 +69,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDocument**
-> Document getDocument(xKeyclicApp, document, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Document getDocument(xKeyclicApp, document, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Document resource.
 
@@ -84,10 +86,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var document = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getDocument(xKeyclicApp, document, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getDocument(xKeyclicApp, document, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling DocumentApi->getDocument: $e\n");
@@ -102,6 +105,7 @@ Name | Type | Description  | Notes
  **document** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -120,7 +124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchDocument**
-> Document patchDocument(xKeyclicApp, documentPatch, document, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Document patchDocument(xKeyclicApp, documentPatch, document, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Edit one Document resource.
 
@@ -138,10 +142,11 @@ var documentPatch = DocumentPatch(); // DocumentPatch |
 var document = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.patchDocument(xKeyclicApp, documentPatch, document, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.patchDocument(xKeyclicApp, documentPatch, document, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling DocumentApi->patchDocument: $e\n");
@@ -157,6 +162,7 @@ Name | Type | Description  | Notes
  **document** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

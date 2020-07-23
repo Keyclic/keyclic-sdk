@@ -11,7 +11,6 @@ class Operation {
     this.name,
     this.scheduledAt,
     this.signature,
-    this.state,
     this.type,
     this.updatedAt,
   });
@@ -50,7 +49,6 @@ class Operation {
       name: json['name'],
       scheduledAt: scheduledAt,
       signature: OperationSignature.fromJson(json['signature']),
-      state: json['state'] is List ? List<String>.from(json['state']) : null,
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -74,8 +72,6 @@ class Operation {
 
   OperationSignature signature;
 
-  List<String> state;
-
   String type;
 
   DateTime updatedAt;
@@ -98,7 +94,6 @@ class Operation {
         name == other.name &&
         scheduledAt == other.scheduledAt &&
         signature == other.signature &&
-        DeepCollectionEquality.unordered().equals(state, other.state) &&
         type == other.type &&
         updatedAt == other.updatedAt;
   }
@@ -107,12 +102,6 @@ class Operation {
   @override
   int get hashCode {
     int hashCode = 0;
-
-    if (state is List && state.isNotEmpty) {
-      hashCode ^= state
-          .map((String element) => element.hashCode)
-          .reduce((int value, int cursor) => value ^ cursor);
-    }
 
     hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
@@ -154,7 +143,6 @@ class Operation {
       if (scheduledAt != null)
         'scheduledAt': scheduledAt.toUtc().toIso8601String(),
       if (signature != null) 'signature': signature.toJson(),
-      if (state != null) 'state': state,
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
@@ -162,6 +150,6 @@ class Operation {
 
   @override
   String toString() {
-    return 'Operation[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, id=$id, identificationNumber=$identificationNumber, name=$name, scheduledAt=$scheduledAt, signature=$signature, state=$state, type=$type, updatedAt=$updatedAt, ]';
+    return 'Operation[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, id=$id, identificationNumber=$identificationNumber, name=$name, scheduledAt=$scheduledAt, signature=$signature, type=$type, updatedAt=$updatedAt, ]';
   }
 }

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **deleteDevice**
-> deleteDevice(xKeyclicApp, device, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> deleteDevice(xKeyclicApp, device, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Remove one Device resource.
 
@@ -32,10 +32,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var device = device_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteDevice(xKeyclicApp, device, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    api_instance.deleteDevice(xKeyclicApp, device, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling DeviceApi->deleteDevice: $e\n");
 }
@@ -49,6 +50,7 @@ Name | Type | Description  | Notes
  **device** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -67,7 +69,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDevice**
-> getDevice(xKeyclicApp, device, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> getDevice(xKeyclicApp, device, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Device resource.
 
@@ -84,10 +86,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var device = device_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.getDevice(xKeyclicApp, device, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    api_instance.getDevice(xKeyclicApp, device, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling DeviceApi->getDevice: $e\n");
 }
@@ -101,6 +104,7 @@ Name | Type | Description  | Notes
  **device** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -119,7 +123,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postDevice**
-> Device postDevice(xKeyclicApp, deviceData, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Device postDevice(xKeyclicApp, deviceData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Device resource.
 
@@ -136,10 +140,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var deviceData = DeviceData(); // DeviceData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postDevice(xKeyclicApp, deviceData, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postDevice(xKeyclicApp, deviceData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling DeviceApi->postDevice: $e\n");
@@ -154,6 +159,7 @@ Name | Type | Description  | Notes
  **deviceData** | [**DeviceData**](DeviceData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

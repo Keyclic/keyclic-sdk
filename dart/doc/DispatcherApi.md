@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **cgetRulesByDispatcher**
-> RulePagination cgetRulesByDispatcher(xKeyclicApp, dispatcher, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit)
+> RulePagination cgetRulesByDispatcher(xKeyclicApp, dispatcher, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, page, limit)
 
 Retrieve all Rule resources.
 
@@ -31,6 +31,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var dispatcher = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -39,7 +40,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetRulesByDispatcher(xKeyclicApp, dispatcher, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit);
+    var result = api_instance.cgetRulesByDispatcher(xKeyclicApp, dispatcher, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling DispatcherApi->cgetRulesByDispatcher: $e\n");
@@ -54,6 +55,7 @@ Name | Type | Description  | Notes
  **dispatcher** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -77,7 +79,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDispatcher**
-> Dispatcher getDispatcher(xKeyclicApp, dispatcher, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Dispatcher getDispatcher(xKeyclicApp, dispatcher, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Dispatcher resource.
 
@@ -94,10 +96,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var dispatcher = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getDispatcher(xKeyclicApp, dispatcher, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getDispatcher(xKeyclicApp, dispatcher, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling DispatcherApi->getDispatcher: $e\n");
@@ -112,6 +115,7 @@ Name | Type | Description  | Notes
  **dispatcher** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **deleteOccupant**
-> deleteOccupant(xKeyclicApp, occupant, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> deleteOccupant(xKeyclicApp, occupant, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Remove one Occupant resource.
 
@@ -32,10 +32,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var occupant = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteOccupant(xKeyclicApp, occupant, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    api_instance.deleteOccupant(xKeyclicApp, occupant, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling OccupantApi->deleteOccupant: $e\n");
 }
@@ -49,6 +50,7 @@ Name | Type | Description  | Notes
  **occupant** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -67,7 +69,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getOccupant**
-> Occupant getOccupant(xKeyclicApp, occupant, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Occupant getOccupant(xKeyclicApp, occupant, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Occupant resource.
 
@@ -84,10 +86,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var occupant = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getOccupant(xKeyclicApp, occupant, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getOccupant(xKeyclicApp, occupant, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OccupantApi->getOccupant: $e\n");
@@ -102,6 +105,7 @@ Name | Type | Description  | Notes
  **occupant** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -120,7 +124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postOccupant**
-> Occupant postOccupant(xKeyclicApp, occupantData, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Occupant postOccupant(xKeyclicApp, occupantData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Occupant resource.
 
@@ -137,10 +141,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var occupantData = OccupantData(); // OccupantData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postOccupant(xKeyclicApp, occupantData, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postOccupant(xKeyclicApp, occupantData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OccupantApi->postOccupant: $e\n");
@@ -155,6 +160,7 @@ Name | Type | Description  | Notes
  **occupantData** | [**OccupantData**](OccupantData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

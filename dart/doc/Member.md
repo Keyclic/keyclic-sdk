@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **contactPoint** | [**MemberContactPoint**](MemberContactPoint.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
-**roles** | **List&lt;String&gt;** |  | [optional] [default to []]
 **type** | **String** |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 

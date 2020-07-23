@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getRole**
-> Role getRole(xKeyclicApp, role, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Role getRole(xKeyclicApp, role, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Role resource.
 
@@ -30,10 +30,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var role = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getRole(xKeyclicApp, role, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getRole(xKeyclicApp, role, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling RoleApi->getRole: $e\n");
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
  **role** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

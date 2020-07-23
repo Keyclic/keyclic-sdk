@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **cgetArticlesByKnowledgeBase**
-> ArticlePagination cgetArticlesByKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, section, page, limit)
+> ArticlePagination cgetArticlesByKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, section, page, limit)
 
 Retrieve all Article resources.
 
@@ -29,9 +29,10 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = KnowledgeBaseApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var knowledgeBase = knowledgeBase_example; // String | 
+var knowledgeBase = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -41,7 +42,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetArticlesByKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, section, page, limit);
+    var result = api_instance.cgetArticlesByKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, section, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling KnowledgeBaseApi->cgetArticlesByKnowledgeBase: $e\n");
@@ -53,9 +54,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **knowledgeBase** | **String**|  | 
+ **knowledgeBase** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -80,7 +82,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetSectionsByKnowledgeBase**
-> SectionPagination cgetSectionsByKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit)
+> SectionPagination cgetSectionsByKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, page, limit)
 
 Retrieve all Section resources.
 
@@ -94,9 +96,10 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = KnowledgeBaseApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var knowledgeBase = knowledgeBase_example; // String | 
+var knowledgeBase = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -105,7 +108,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetSectionsByKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit);
+    var result = api_instance.cgetSectionsByKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling KnowledgeBaseApi->cgetSectionsByKnowledgeBase: $e\n");
@@ -117,9 +120,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **knowledgeBase** | **String**|  | 
+ **knowledgeBase** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -143,7 +147,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getKnowledgeBase**
-> KnowledgeBase getKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> KnowledgeBase getKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one KnowledgeBase resource.
 
@@ -157,13 +161,14 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = KnowledgeBaseApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var knowledgeBase = knowledgeBase_example; // String | 
+var knowledgeBase = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling KnowledgeBaseApi->getKnowledgeBase: $e\n");
@@ -175,9 +180,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **knowledgeBase** | **String**|  | 
+ **knowledgeBase** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

@@ -2,7 +2,6 @@ part of keyclic_sdk_api.api;
 
 class MemberEmbedded {
   MemberEmbedded({
-    this.availableRoles,
     this.invitation,
     this.organization,
     this.person,
@@ -15,17 +14,12 @@ class MemberEmbedded {
     }
 
     return MemberEmbedded(
-      availableRoles: json['availableRoles'] is List
-          ? List<String>.from(json['availableRoles'])
-          : null,
       invitation: Invitation.fromJson(json['invitation']),
       organization: Organization.fromJson(json['organization']),
       person: Person.fromJson(json['person']),
       roles: Role.listFromJson(json['roles']),
     );
   }
-
-  List<String> availableRoles;
 
   Invitation invitation;
 
@@ -44,8 +38,6 @@ class MemberEmbedded {
 
     return other is MemberEmbedded &&
         runtimeType == other.runtimeType &&
-        DeepCollectionEquality.unordered()
-            .equals(availableRoles, other.availableRoles) &&
         invitation == other.invitation &&
         organization == other.organization &&
         person == other.person &&
@@ -57,11 +49,6 @@ class MemberEmbedded {
   int get hashCode {
     int hashCode = 0;
 
-    if (availableRoles is List && availableRoles.isNotEmpty) {
-      hashCode ^= availableRoles
-          .map((String element) => element.hashCode)
-          .reduce((int value, int cursor) => value ^ cursor);
-    }
     if (roles is List && roles.isNotEmpty) {
       hashCode ^= roles
           .map((Role element) => element.hashCode)
@@ -91,7 +78,6 @@ class MemberEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      if (availableRoles != null) 'availableRoles': availableRoles,
       if (invitation != null) 'invitation': invitation.toJson(),
       if (organization != null) 'organization': organization.toJson(),
       if (person != null) 'person': person.toJson(),
@@ -101,6 +87,6 @@ class MemberEmbedded {
 
   @override
   String toString() {
-    return 'MemberEmbedded[availableRoles=$availableRoles, invitation=$invitation, organization=$organization, person=$person, roles=$roles, ]';
+    return 'MemberEmbedded[invitation=$invitation, organization=$organization, person=$person, roles=$roles, ]';
   }
 }

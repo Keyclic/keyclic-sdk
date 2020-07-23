@@ -5,7 +5,6 @@ class MemberTypeRole {
     this.createdAt,
     this.description,
     this.id,
-    this.key,
     this.name,
     this.permissions,
     this.type,
@@ -33,7 +32,6 @@ class MemberTypeRole {
       createdAt: createdAt,
       description: json['description'],
       id: json['id'],
-      key: json['key'],
       name: json['name'],
       permissions: json['permissions'] is List
           ? List<String>.from(json['permissions'])
@@ -48,8 +46,6 @@ class MemberTypeRole {
   String description;
 
   String id;
-
-  String key;
 
   String name;
 
@@ -71,7 +67,6 @@ class MemberTypeRole {
         createdAt == other.createdAt &&
         description == other.description &&
         id == other.id &&
-        key == other.key &&
         name == other.name &&
         DeepCollectionEquality.unordered()
             .equals(permissions, other.permissions) &&
@@ -93,7 +88,6 @@ class MemberTypeRole {
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
-    hashCode ^= key?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
     hashCode ^= updatedAt?.hashCode ?? 0;
@@ -120,7 +114,6 @@ class MemberTypeRole {
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (id != null) 'id': id,
-      if (key != null) 'key': key,
       if (name != null) 'name': name,
       if (permissions != null) 'permissions': permissions,
       if (type != null) 'type': type,
@@ -130,6 +123,6 @@ class MemberTypeRole {
 
   @override
   String toString() {
-    return 'MemberTypeRole[createdAt=$createdAt, description=$description, id=$id, key=$key, name=$name, permissions=$permissions, type=$type, updatedAt=$updatedAt, ]';
+    return 'MemberTypeRole[createdAt=$createdAt, description=$description, id=$id, name=$name, permissions=$permissions, type=$type, updatedAt=$updatedAt, ]';
   }
 }

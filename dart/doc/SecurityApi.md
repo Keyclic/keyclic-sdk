@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **postLogin**
-> SuccessLogin postLogin(xKeyclicApp, loginData, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> SuccessLogin postLogin(xKeyclicApp, loginData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Login resource.
 
@@ -29,10 +29,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var loginData = LoginData(); // LoginData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postLogin(xKeyclicApp, loginData, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postLogin(xKeyclicApp, loginData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling SecurityApi->postLogin: $e\n");
@@ -47,6 +48,7 @@ Name | Type | Description  | Notes
  **loginData** | [**LoginData**](LoginData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -65,7 +67,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postPasswordChangeByToken**
-> postPasswordChangeByToken(xKeyclicApp, passwordChangeData, token, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> postPasswordChangeByToken(xKeyclicApp, passwordChangeData, token, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one PasswordChange resource.
 
@@ -79,10 +81,11 @@ var passwordChangeData = PasswordChangeData(); // PasswordChangeData |
 var token = token_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.postPasswordChangeByToken(xKeyclicApp, passwordChangeData, token, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    api_instance.postPasswordChangeByToken(xKeyclicApp, passwordChangeData, token, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling SecurityApi->postPasswordChangeByToken: $e\n");
 }
@@ -97,6 +100,7 @@ Name | Type | Description  | Notes
  **token** | **String**|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -115,7 +119,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postPasswordReset**
-> postPasswordReset(xKeyclicApp, resetPasswordData, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> postPasswordReset(xKeyclicApp, resetPasswordData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one PasswordReset resource.
 
@@ -128,10 +132,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var resetPasswordData = ResetPasswordData(); // ResetPasswordData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.postPasswordReset(xKeyclicApp, resetPasswordData, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    api_instance.postPasswordReset(xKeyclicApp, resetPasswordData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling SecurityApi->postPasswordReset: $e\n");
 }
@@ -145,6 +150,7 @@ Name | Type | Description  | Notes
  **resetPasswordData** | [**ResetPasswordData**](ResetPasswordData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -163,7 +169,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postRegister**
-> Person postRegister(xKeyclicApp, registerData, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Person postRegister(xKeyclicApp, registerData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Register resource.
 
@@ -180,10 +186,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var registerData = RegisterData(); // RegisterData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postRegister(xKeyclicApp, registerData, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postRegister(xKeyclicApp, registerData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling SecurityApi->postRegister: $e\n");
@@ -198,6 +205,7 @@ Name | Type | Description  | Notes
  **registerData** | [**RegisterData**](RegisterData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

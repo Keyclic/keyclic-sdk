@@ -7,7 +7,6 @@ class Delegation {
     this.createdAt,
     this.description,
     this.id,
-    this.state,
     this.type,
     this.updatedAt,
   });
@@ -35,7 +34,6 @@ class Delegation {
       createdAt: createdAt,
       description: json['description'],
       id: json['id'],
-      state: json['state'] is List ? List<String>.from(json['state']) : null,
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -50,8 +48,6 @@ class Delegation {
   String description;
 
   String id;
-
-  List<String> state;
 
   String type;
 
@@ -71,7 +67,6 @@ class Delegation {
         createdAt == other.createdAt &&
         description == other.description &&
         id == other.id &&
-        DeepCollectionEquality.unordered().equals(state, other.state) &&
         type == other.type &&
         updatedAt == other.updatedAt;
   }
@@ -80,12 +75,6 @@ class Delegation {
   @override
   int get hashCode {
     int hashCode = 0;
-
-    if (state is List && state.isNotEmpty) {
-      hashCode ^= state
-          .map((String element) => element.hashCode)
-          .reduce((int value, int cursor) => value ^ cursor);
-    }
 
     hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
@@ -117,7 +106,6 @@ class Delegation {
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
       if (id != null) 'id': id,
-      if (state != null) 'state': state,
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
@@ -125,6 +113,6 @@ class Delegation {
 
   @override
   String toString() {
-    return 'Delegation[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, id=$id, state=$state, type=$type, updatedAt=$updatedAt, ]';
+    return 'Delegation[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, id=$id, type=$type, updatedAt=$updatedAt, ]';
   }
 }

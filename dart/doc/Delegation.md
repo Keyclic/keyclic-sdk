@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
-**state** | **List&lt;String&gt;** |  | [optional] [default to []]
 **type** | **String** |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 

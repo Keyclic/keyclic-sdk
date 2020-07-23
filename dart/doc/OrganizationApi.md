@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 
 # **cgetCategoriesByOrganization**
-> CategoryPagination cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, query, page, limit)
+> CategoryPagination cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, query, page, limit)
 
 Retrieve all Category resources.
 
@@ -46,6 +46,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var businessActivity = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -58,7 +59,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, query, page, limit);
+    var result = api_instance.cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetCategoriesByOrganization: $e\n");
@@ -73,6 +74,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 
@@ -100,7 +102,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetDelegationsByOrganization**
-> DelegationPagination cgetDelegationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, state, page, limit)
+> DelegationPagination cgetDelegationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, page, limit)
 
 Retrieve all Delegation resources.
 
@@ -117,6 +119,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -126,7 +129,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetDelegationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, state, page, limit);
+    var result = api_instance.cgetDelegationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetDelegationsByOrganization: $e\n");
@@ -141,6 +144,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -165,7 +169,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetExternalServicesByOrganization**
-> ExternalServicePagination cgetExternalServicesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, query, page, limit)
+> ExternalServicePagination cgetExternalServicesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, query, page, limit)
 
 Retrieve all ExternalService resources.
 
@@ -182,6 +186,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -191,7 +196,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetExternalServicesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, query, page, limit);
+    var result = api_instance.cgetExternalServicesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetExternalServicesByOrganization: $e\n");
@@ -206,6 +211,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -230,7 +236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetInternalServicesByOrganization**
-> InternalServicePagination cgetInternalServicesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, query, page, limit)
+> InternalServicePagination cgetInternalServicesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, query, page, limit)
 
 Retrieve all InternalService resources.
 
@@ -247,6 +253,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -256,7 +263,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetInternalServicesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, query, page, limit);
+    var result = api_instance.cgetInternalServicesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetInternalServicesByOrganization: $e\n");
@@ -271,6 +278,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -295,7 +303,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetMembersByOrganization**
-> MemberPagination cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit)
+> MemberPagination cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit)
 
 Retrieve all Member resources.
 
@@ -312,11 +320,12 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
-var role = role_example; // String | 
+var role = ; // String | The identifier of the resource.
 var query = query_example; // String | 
 var roles[] = []; // List<String> | 
 var type = type_example; // String | 
@@ -324,7 +333,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit);
+    var result = api_instance.cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetMembersByOrganization: $e\n");
@@ -339,11 +348,12 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **role** | **String**|  | [optional] 
+ **role** | [**String**](.md)| The identifier of the resource. | [optional] 
  **query** | **String**|  | [optional] 
  **roles[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **type** | **String**|  | [optional] 
@@ -366,7 +376,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetOperationsByOrganization**
-> OperationPagination cgetOperationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, query, state, states[], page, limit)
+> OperationPagination cgetOperationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, after, before, order, query, state, states[], page, limit)
 
 Retrieve all Operation resources.
 
@@ -383,6 +393,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var assignedTo = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -395,7 +406,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetOperationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, query, state, states[], page, limit);
+    var result = api_instance.cgetOperationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, after, before, order, query, state, states[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetOperationsByOrganization: $e\n");
@@ -410,6 +421,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 
@@ -437,7 +449,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetOrganizations**
-> OrganizationPagination cgetOrganizations(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, businessActivity, after, before, disabledAt, geoPoint, geoCoordinates, order, organization, query, page, limit)
+> OrganizationPagination cgetOrganizations(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, disabledAt, geoPoint, geoCoordinates, order, organization, query, page, limit)
 
 Retrieve all Organization resources.
 
@@ -453,6 +465,7 @@ var api_instance = OrganizationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var businessActivity = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -467,7 +480,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetOrganizations(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppVersion, businessActivity, after, before, disabledAt, geoPoint, geoCoordinates, order, organization, query, page, limit);
+    var result = api_instance.cgetOrganizations(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, disabledAt, geoPoint, geoCoordinates, order, organization, query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetOrganizations: $e\n");
@@ -481,6 +494,7 @@ Name | Type | Description  | Notes
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 
@@ -510,7 +524,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetPlacesByOrganization**
-> PlacePagination cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, parent, parents[], query, page, limit)
+> PlacePagination cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, parent, parents[], query, page, limit)
 
 Retrieve all Place resources.
 
@@ -527,6 +541,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var businessActivity = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -543,7 +558,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, parent, parents[], query, page, limit);
+    var result = api_instance.cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, parent, parents[], query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetPlacesByOrganization: $e\n");
@@ -558,6 +573,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 
@@ -589,7 +605,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetPublicationsByOrganization**
-> PublicationPagination cgetPublicationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, place, page, limit)
+> PublicationPagination cgetPublicationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, place, page, limit)
 
 Retrieve all Publication resources.
 
@@ -606,6 +622,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -615,7 +632,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetPublicationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, place, page, limit);
+    var result = api_instance.cgetPublicationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, place, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetPublicationsByOrganization: $e\n");
@@ -630,6 +647,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -654,7 +672,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetReportsByOrganization**
-> ReportPagination cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], visibility[], page, limit)
+> ReportPagination cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, priority, query, state, states[], visibility[], page, limit)
 
 Retrieve all Report resources.
 
@@ -671,6 +689,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var assignedTo = ; // String | The identifier of the resource.
 var category = ; // String | The identifier of the resource.
@@ -681,6 +700,7 @@ var delegatedTo = ; // String | The identifier of the resource.
 var operationState = operationState_example; // String | 
 var order = order_example; // String | 
 var place = ; // String | The identifier of the resource.
+var priority = ; // String | The identifier of the resource.
 var query = query_example; // String | 
 var state = state_example; // String | 
 var states[] = []; // List<String> | 
@@ -689,7 +709,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], visibility[], page, limit);
+    var result = api_instance.cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, priority, query, state, states[], visibility[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetReportsByOrganization: $e\n");
@@ -704,6 +724,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **category** | [**String**](.md)| The identifier of the resource. | [optional] 
@@ -714,10 +735,11 @@ Name | Type | Description  | Notes
  **operationState** | **String**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **place** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **priority** | [**String**](.md)| The identifier of the resource. | [optional] 
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
- **visibility[]** | **String**|  | [optional] 
+ **visibility[]** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
@@ -737,7 +759,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetWebhooksByOrganization**
-> WebhookPagination cgetWebhooksByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit)
+> WebhookPagination cgetWebhooksByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, page, limit)
 
 Retrieve all Webhook resources.
 
@@ -754,6 +776,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -762,7 +785,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetWebhooksByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit);
+    var result = api_instance.cgetWebhooksByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetWebhooksByOrganization: $e\n");
@@ -777,6 +800,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -800,7 +824,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cpostExportByOrganization**
-> cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], visibility[], page, limit)
+> cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, priority, query, state, states[], visibility[], page, limit)
 
 Retrieve all Export resources.
 
@@ -817,6 +841,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var assignedTo = ; // String | The identifier of the resource.
 var category = ; // String | The identifier of the resource.
@@ -827,6 +852,7 @@ var delegatedTo = ; // String | The identifier of the resource.
 var operationState = operationState_example; // String | 
 var order = order_example; // String | 
 var place = ; // String | The identifier of the resource.
+var priority = ; // String | The identifier of the resource.
 var query = query_example; // String | 
 var state = state_example; // String | 
 var states[] = []; // List<String> | 
@@ -835,7 +861,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    api_instance.cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, query, state, states[], visibility[], page, limit);
+    api_instance.cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, priority, query, state, states[], visibility[], page, limit);
 } catch (e) {
     print("Exception when calling OrganizationApi->cpostExportByOrganization: $e\n");
 }
@@ -849,6 +875,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **category** | [**String**](.md)| The identifier of the resource. | [optional] 
@@ -859,10 +886,11 @@ Name | Type | Description  | Notes
  **operationState** | **String**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **place** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **priority** | [**String**](.md)| The identifier of the resource. | [optional] 
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
- **visibility[]** | **String**|  | [optional] 
+ **visibility[]** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
@@ -882,7 +910,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAnalyticByOrganization**
-> Chart getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, category, place, state, options[property], options[sort])
+> Chart getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, category, place, state, options[property], options[sort])
 
 Retrieve one Analytic resource.
 
@@ -899,6 +927,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var category = ; // String | The identifier of the resource.
 var place = ; // String | The identifier of the resource.
@@ -907,7 +936,7 @@ var options[property] = options[property]_example; // String |
 var options[sort] = options[sort]_example; // String | 
 
 try { 
-    var result = api_instance.getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion, category, place, state, options[property], options[sort]);
+    var result = api_instance.getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, category, place, state, options[property], options[sort]);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->getAnalyticByOrganization: $e\n");
@@ -922,6 +951,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **category** | [**String**](.md)| The identifier of the resource. | [optional] 
  **place** | [**String**](.md)| The identifier of the resource. | [optional] 
@@ -945,7 +975,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getConfigurationByOrganization**
-> Configuration getConfigurationByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Configuration getConfigurationByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Configuration resource.
 
@@ -962,10 +992,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getConfigurationByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getConfigurationByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->getConfigurationByOrganization: $e\n");
@@ -980,6 +1011,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -998,7 +1030,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFormByOrganization**
-> Schema getFormByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Schema getFormByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Form resource.
 
@@ -1015,10 +1047,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getFormByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getFormByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->getFormByOrganization: $e\n");
@@ -1033,6 +1066,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -1051,7 +1085,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getOrganization**
-> Organization getOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Organization getOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Organization resource.
 
@@ -1068,10 +1102,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->getOrganization: $e\n");
@@ -1086,6 +1121,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -1104,7 +1140,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchOrganization**
-> Organization patchOrganization(xKeyclicApp, organizationPatch, organization, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Organization patchOrganization(xKeyclicApp, organizationPatch, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Edit one Organization resource.
 
@@ -1122,10 +1158,11 @@ var organizationPatch = OrganizationPatch(); // OrganizationPatch |
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.patchOrganization(xKeyclicApp, organizationPatch, organization, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.patchOrganization(xKeyclicApp, organizationPatch, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->patchOrganization: $e\n");
@@ -1141,6 +1178,7 @@ Name | Type | Description  | Notes
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

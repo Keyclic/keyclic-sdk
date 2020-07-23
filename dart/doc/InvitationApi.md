@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **deleteInvitation**
-> deleteInvitation(xKeyclicApp, invitation, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> deleteInvitation(xKeyclicApp, invitation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Remove one Invitation resource.
 
@@ -32,10 +32,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var invitation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deleteInvitation(xKeyclicApp, invitation, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    api_instance.deleteInvitation(xKeyclicApp, invitation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling InvitationApi->deleteInvitation: $e\n");
 }
@@ -49,6 +50,7 @@ Name | Type | Description  | Notes
  **invitation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -67,7 +69,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getInvitation**
-> Invitation getInvitation(xKeyclicApp, invitation, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Invitation getInvitation(xKeyclicApp, invitation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Invitation resource.
 
@@ -84,10 +86,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var invitation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getInvitation(xKeyclicApp, invitation, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getInvitation(xKeyclicApp, invitation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling InvitationApi->getInvitation: $e\n");
@@ -102,6 +105,7 @@ Name | Type | Description  | Notes
  **invitation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -120,7 +124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postInvitation**
-> Invitation postInvitation(xKeyclicApp, invitationData, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Invitation postInvitation(xKeyclicApp, invitationData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Invitation resource.
 
@@ -137,10 +141,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var invitationData = InvitationData(); // InvitationData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postInvitation(xKeyclicApp, invitationData, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postInvitation(xKeyclicApp, invitationData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling InvitationApi->postInvitation: $e\n");
@@ -155,6 +160,7 @@ Name | Type | Description  | Notes
  **invitationData** | [**InvitationData**](InvitationData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

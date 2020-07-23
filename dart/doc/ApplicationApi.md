@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getApplication**
-> Application getApplication(xKeyclicApp, application, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Application getApplication(xKeyclicApp, application, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Application resource.
 
@@ -26,10 +26,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var application = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getApplication(xKeyclicApp, application, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getApplication(xKeyclicApp, application, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ApplicationApi->getApplication: $e\n");
@@ -44,6 +45,7 @@ Name | Type | Description  | Notes
  **application** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

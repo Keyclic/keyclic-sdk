@@ -175,6 +175,34 @@ class ApiClient {
           return ArticleLinksSelfIriTemplateMapping.fromJson(value);
         case 'AssignData':
           return AssignData.fromJson(value);
+        case 'Bookmark':
+          return Bookmark.fromJson(value);
+        case 'BookmarkCollection':
+          return BookmarkCollection.fromJson(value);
+        case 'BookmarkData':
+          return BookmarkData.fromJson(value);
+        case 'BookmarkEmbedded':
+          return BookmarkEmbedded.fromJson(value);
+        case 'BookmarkLinks':
+          return BookmarkLinks.fromJson(value);
+        case 'BookmarkLinksMember':
+          return BookmarkLinksMember.fromJson(value);
+        case 'BookmarkLinksMemberIriTemplate':
+          return BookmarkLinksMemberIriTemplate.fromJson(value);
+        case 'BookmarkLinksMemberIriTemplateMapping':
+          return BookmarkLinksMemberIriTemplateMapping.fromJson(value);
+        case 'BookmarkLinksPlace':
+          return BookmarkLinksPlace.fromJson(value);
+        case 'BookmarkLinksPlaceIriTemplate':
+          return BookmarkLinksPlaceIriTemplate.fromJson(value);
+        case 'BookmarkLinksPlaceIriTemplateMapping':
+          return BookmarkLinksPlaceIriTemplateMapping.fromJson(value);
+        case 'BookmarkLinksSelf':
+          return BookmarkLinksSelf.fromJson(value);
+        case 'BookmarkLinksSelfIriTemplate':
+          return BookmarkLinksSelfIriTemplate.fromJson(value);
+        case 'BookmarkLinksSelfIriTemplateMapping':
+          return BookmarkLinksSelfIriTemplateMapping.fromJson(value);
         case 'BusinessActivity':
           return BusinessActivity.fromJson(value);
         case 'BusinessActivityCollection':
@@ -495,8 +523,6 @@ class ApiClient {
           return InvitationLinksMember.fromJson(value);
         case 'InvitationLinksMemberIriTemplate':
           return InvitationLinksMemberIriTemplate.fromJson(value);
-        case 'InvitationLinksMemberIriTemplateMapping':
-          return InvitationLinksMemberIriTemplateMapping.fromJson(value);
         case 'InvitationLinksSelf':
           return InvitationLinksSelf.fromJson(value);
         case 'InvitationLinksSelfIriTemplate':
@@ -561,8 +587,6 @@ class ApiClient {
           return OccupantCollection.fromJson(value);
         case 'OccupantData':
           return OccupantData.fromJson(value);
-        case 'OccupantEmbedded':
-          return OccupantEmbedded.fromJson(value);
         case 'OccupantLinks':
           return OccupantLinks.fromJson(value);
         case 'OccupantLinksMember':
@@ -573,8 +597,6 @@ class ApiClient {
           return OccupantLinksPlace.fromJson(value);
         case 'OccupantLinksPlaceIriTemplate':
           return OccupantLinksPlaceIriTemplate.fromJson(value);
-        case 'OccupantLinksPlaceIriTemplateMapping':
-          return OccupantLinksPlaceIriTemplateMapping.fromJson(value);
         case 'OccupantLinksSelf':
           return OccupantLinksSelf.fromJson(value);
         case 'OccupantLinksSelfIriTemplate':
@@ -847,6 +869,10 @@ class ApiClient {
           return ReportLinksTrackingIriTemplate.fromJson(value);
         case 'ReportPatch':
           return ReportPatch.fromJson(value);
+        case 'ReportPriority':
+          return ReportPriority.fromJson(value);
+        case 'ReportTypePriority':
+          return ReportTypePriority.fromJson(value);
         case 'ReportTypeWorkflow':
           return ReportTypeWorkflow.fromJson(value);
         case 'ResetPasswordData':
@@ -1001,6 +1027,8 @@ class ApiClient {
           return WorkflowTransition.fromJson(value);
         case 'ArticlePagination':
           return ArticlePagination.fromJson(value);
+        case 'BookmarkPagination':
+          return BookmarkPagination.fromJson(value);
         case 'BusinessActivityPagination':
           return BusinessActivityPagination.fromJson(value);
         case 'CategoryPagination':

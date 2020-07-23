@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **deletePublication**
-> deletePublication(xKeyclicApp, publication, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> deletePublication(xKeyclicApp, publication, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Remove one Publication resource.
 
@@ -32,10 +32,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var publication = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    api_instance.deletePublication(xKeyclicApp, publication, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    api_instance.deletePublication(xKeyclicApp, publication, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
 } catch (e) {
     print("Exception when calling PublicationApi->deletePublication: $e\n");
 }
@@ -49,6 +50,7 @@ Name | Type | Description  | Notes
  **publication** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -67,7 +69,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPublication**
-> Publication getPublication(xKeyclicApp, publication, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Publication getPublication(xKeyclicApp, publication, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Publication resource.
 
@@ -84,10 +86,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var publication = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getPublication(xKeyclicApp, publication, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getPublication(xKeyclicApp, publication, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling PublicationApi->getPublication: $e\n");
@@ -102,6 +105,7 @@ Name | Type | Description  | Notes
  **publication** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -120,7 +124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postPublication**
-> Publication postPublication(xKeyclicApp, publicationData, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Publication postPublication(xKeyclicApp, publicationData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Publication resource.
 
@@ -137,10 +141,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var publicationData = PublicationData(); // PublicationData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postPublication(xKeyclicApp, publicationData, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postPublication(xKeyclicApp, publicationData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling PublicationApi->postPublication: $e\n");
@@ -155,6 +160,7 @@ Name | Type | Description  | Notes
  **publicationData** | [**PublicationData**](PublicationData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

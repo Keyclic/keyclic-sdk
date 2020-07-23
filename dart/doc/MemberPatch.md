@@ -9,7 +9,7 @@ import 'package:keyclic_sdk_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **contactPoint** | [**MemberPatchContactPoint**](MemberPatchContactPoint.md) |  | [optional] [default to null]
-**roles** | **List&lt;String&gt;** |  | [optional] [default to []]
+**roles** | **String** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

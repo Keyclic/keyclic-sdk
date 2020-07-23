@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **cgetDelegationsByReport**
-> DelegationPagination cgetDelegationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, state, page, limit)
+> DelegationPagination cgetDelegationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, page, limit)
 
 Retrieve all Delegation resources.
 
@@ -37,6 +37,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var report = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -46,7 +47,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetDelegationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, state, page, limit);
+    var result = api_instance.cgetDelegationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling ReportApi->cgetDelegationsByReport: $e\n");
@@ -61,6 +62,7 @@ Name | Type | Description  | Notes
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -85,7 +87,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetDocumentsByReport**
-> DocumentPagination cgetDocumentsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit)
+> DocumentPagination cgetDocumentsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, page, limit)
 
 Retrieve all Document resources.
 
@@ -102,6 +104,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var report = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -110,7 +113,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetDocumentsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion, after, before, order, page, limit);
+    var result = api_instance.cgetDocumentsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling ReportApi->cgetDocumentsByReport: $e\n");
@@ -125,6 +128,7 @@ Name | Type | Description  | Notes
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -148,7 +152,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetOperationsByReport**
-> OperationPagination cgetOperationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, states[], page, limit)
+> OperationPagination cgetOperationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, states[], page, limit)
 
 Retrieve all Operation resources.
 
@@ -165,6 +169,7 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var report = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var assignedTo = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -178,7 +183,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetOperationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, states[], page, limit);
+    var result = api_instance.cgetOperationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, states[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling ReportApi->cgetOperationsByReport: $e\n");
@@ -193,6 +198,7 @@ Name | Type | Description  | Notes
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 
@@ -221,7 +227,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getReport**
-> Report getReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Report getReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Report resource.
 
@@ -238,10 +244,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var report = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ReportApi->getReport: $e\n");
@@ -256,6 +263,7 @@ Name | Type | Description  | Notes
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -274,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTrackingByReport**
-> Tracking getTrackingByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Tracking getTrackingByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Tracking resource.
 
@@ -291,10 +299,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var report = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getTrackingByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getTrackingByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ReportApi->getTrackingByReport: $e\n");
@@ -309,6 +318,7 @@ Name | Type | Description  | Notes
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -327,7 +337,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchReport**
-> Report patchReport(xKeyclicApp, reportPatch, report, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Report patchReport(xKeyclicApp, reportPatch, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Edit one Report resource.
 
@@ -345,10 +355,11 @@ var reportPatch = ReportPatch(); // ReportPatch |
 var report = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.patchReport(xKeyclicApp, reportPatch, report, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.patchReport(xKeyclicApp, reportPatch, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ReportApi->patchReport: $e\n");
@@ -364,6 +375,7 @@ Name | Type | Description  | Notes
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -382,7 +394,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postDocumentByReport**
-> Document postDocumentByReport(xKeyclicApp, documentData, report, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Document postDocumentByReport(xKeyclicApp, documentData, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Document resource.
 
@@ -400,10 +412,11 @@ var documentData = DocumentData(); // DocumentData |
 var report = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postDocumentByReport(xKeyclicApp, documentData, report, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postDocumentByReport(xKeyclicApp, documentData, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ReportApi->postDocumentByReport: $e\n");
@@ -419,6 +432,7 @@ Name | Type | Description  | Notes
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -437,7 +451,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postWorkflowByReport**
-> Report postWorkflowByReport(xKeyclicApp, workflowData, report, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Report postWorkflowByReport(xKeyclicApp, workflowData, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Workflow resource.
 
@@ -455,10 +469,11 @@ var workflowData = WorkflowData(); // WorkflowData |
 var report = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postWorkflowByReport(xKeyclicApp, workflowData, report, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postWorkflowByReport(xKeyclicApp, workflowData, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ReportApi->postWorkflowByReport: $e\n");
@@ -474,6 +489,7 @@ Name | Type | Description  | Notes
  **report** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type

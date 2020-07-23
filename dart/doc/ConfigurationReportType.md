@@ -9,6 +9,7 @@ import 'package:keyclic_sdk_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] [default to null]
+**priorities** | [**List&lt;ReportTypePriority&gt;**](ReportTypePriority.md) |  | [optional] [default to []]
 **type** | **String** |  | [optional] [default to null]
 **workflow** | [**ReportTypeWorkflow**](ReportTypeWorkflow.md) |  | [optional] [default to null]
 

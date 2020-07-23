@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **getReview**
-> Review getReview(xKeyclicApp, review, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Review getReview(xKeyclicApp, review, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one Review resource.
 
@@ -31,10 +31,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var review = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.getReview(xKeyclicApp, review, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.getReview(xKeyclicApp, review, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ReviewApi->getReview: $e\n");
@@ -49,6 +50,7 @@ Name | Type | Description  | Notes
  **review** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
@@ -67,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postReview**
-> Review postReview(xKeyclicApp, reviewData, acceptLanguage, xDateTime, xKeyclicAppVersion)
+> Review postReview(xKeyclicApp, reviewData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Review resource.
 
@@ -84,10 +86,11 @@ var xKeyclicApp = xKeyclicApp_example; // String |
 var reviewData = ReviewData(); // ReviewData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
+var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postReview(xKeyclicApp, reviewData, acceptLanguage, xDateTime, xKeyclicAppVersion);
+    var result = api_instance.postReview(xKeyclicApp, reviewData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling ReviewApi->postReview: $e\n");
@@ -102,6 +105,7 @@ Name | Type | Description  | Notes
  **reviewData** | [**ReviewData**](ReviewData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
+ **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
 
 ### Return type
